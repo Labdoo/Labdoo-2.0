@@ -1,0 +1,117 @@
+name = Labdoo
+description = Drupal installation profile for Labdoo.
+version = 1.x
+core = 7.x
+
+;--------------------
+; Files
+;--------------------
+files[] = labdoo.install
+files[] = labdoo.profile
+
+;--------------------
+; Core
+;--------------------
+dependencies[] = book
+dependencies[] = contact
+dependencies[] = blog
+dependencies[] = field
+dependencies[] = field_sql_storage
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = menu
+dependencies[] = path
+dependencies[] = taxonomy
+dependencies[] = block
+dependencies[] = aggregator
+dependencies[] = comment
+dependencies[] = dashboard
+dependencies[] = filter
+dependencies[] = image
+dependencies[] = locale
+dependencies[] = node
+dependencies[] = search
+dependencies[] = system
+dependencies[] = toolbar
+dependencies[] = trigger
+dependencies[] = update
+dependencies[] = user
+dependencies[] = syslog
+dependencies[] = rdf
+dependencies[] = list
+dependencies[] = number
+dependencies[] = options
+dependencies[] = text
+
+;--------------------
+; Contrib
+;--------------------
+dependencies[] = context
+dependencies[] = context_ui
+dependencies[] = ctools
+dependencies[] = strongarm
+dependencies[] = views
+dependencies[] = views_ui
+dependencies[] = edit_profile
+dependencies[] = token
+dependencies[] = color
+dependencies[] = simpletest_clone
+dependencies[] = rules_scheduler
+dependencies[] = rules_admin
+dependencies[] = features
+dependencies[] = diff
+dependencies[] = fe_block
+dependencies[] = boxes
+dependencies[] = uuid
+dependencies[] = node_export
+dependencies[] = node_export_features
+dependencies[] = xautoload
+dependencies[] = jquery_update
+dependencies[] = delete_all
+dependencies[] = entity
+dependencies[] = replicate
+dependencies[] = outline_designer
+dependencies[] = pathauto
+dependencies[] = subpathauto
+dependencies[] = redirect
+dependencies[] = pathologic
+
+
+;--------------------
+; Drupal Localization
+;--------------------
+;dependencies[] = l10n_update
+;dependencies[] = l10n_client
+
+;--------------------
+; Contrib Mail
+;--------------------
+dependencies[] = mailsystem
+dependencies[] = phpmailer
+dependencies[] = mimemail
+dependencies[] = mimemail_action
+dependencies[] = mimemail_compress
+
+;--------------------
+; Labdoo
+;--------------------
+;dependencies[] = labdoo_hub
+;dependencies[] = labdoo_village
+
+;--------------------
+; Other
+;--------------------
+dependencies[] = libraries
+dependencies[] = module_filter
+
+;--------------------
+; Development
+;--------------------
+dependencies[] = reroute_email
+dependencies[] = devel
+
+;--------------------
+; Performance and scalability
+;--------------------
+dependencies[] = boost
+dependencies[] = memcache

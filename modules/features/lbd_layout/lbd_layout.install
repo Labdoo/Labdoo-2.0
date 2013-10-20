@@ -1,0 +1,55 @@
+<?php
+
+/**
+ * Implements hook_enable().
+ */
+function lbd_layout_enable() {
+  _lbd_layout_create_aliases();
+  _lbd_layout_add_login_link();
+  _lbd_layout_block_settings();
+}
+
+
+function _lbd_layout_create_aliases() {
+  $aliases = array(
+    'about' => 'About',
+  );
+
+  foreach ($aliases as $alias => $title) {
+    $query = "SELECT nid FROM {node} WHERE title='$title' AND status=1";
+    $nid = db_query($query)->fetchField();
+    if ($nid == FALSE)  continue;
+    $source = "node/$nid";
+    db_query("DELETE FROM {url_alias} WHERE source='$source' AND alias='$alias'");
+    $args = array('source' => $source, 'alias' => $alias);
+    path_save($args);
+  }
+}
+
+function _lbd_layout_add_login_link() {
+  $query = "DELETE FROM {menu_links}
+            WHERE menu_name='user-menu'
+              AND link_path='user/login'
+              AND link_title='Login' AND plid='0' ";
+  db_query($query);
+
+  $login = array(
+    'menu_name' => 'user-menu',
+    'link_path' => 'user/login',
+    'link_title' => 'Login',
+    'plid' => '0',
+    'router_path' => 'user/login',
+  );
+  menu_link_save($login);
+}
+
+function  _lbd_layout_block_settings() {
+  // change the title of the book navigation block
+  // (set '<none>' to remove it)
+  db_query("UPDATE {block} SET title=' '
+            WHERE theme='bootstrap1' AND module='book' AND delta='navigation'");
+
+  // disable all the blocks for theme bootstrap1
+  // their place is managed by module context
+  db_query("UPDATE {block} SET status = '0' WHERE theme = 'bootstrap1'");
+}

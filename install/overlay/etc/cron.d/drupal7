@@ -1,0 +1,7 @@
+# Use the Linux system cron instead of Drupal's "Poor Man's Cron".  
+# To use "Poor Man's Cron", comment out the last line below
+# and the line "$conf['cron_safe_threshold'] = 0;" in settings.php
+#
+# Note: drush cron should be run as the apache user to prevent file permissions problems
+
+0 * * * *    www-data    [ -x /usr/bin/drush ] && /usr/bin/drush cron > /dev/null 2>&1

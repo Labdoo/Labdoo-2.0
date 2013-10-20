@@ -1,0 +1,7 @@
+context
+menu_custom:main-menu
+menu_links:main-menu:<front>
+variable:theme_bootstrap1_settings
+variable:theme_default
+user_permission:search content
+user_permission:use advanced search

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the lbd_layout feature.
+ */
+
+include_once 'lbd_layout.features.inc';

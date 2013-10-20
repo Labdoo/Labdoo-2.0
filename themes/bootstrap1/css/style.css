@@ -1,0 +1,57 @@
+/**
+ * This file should get overwritten if Method 1 is used. If Method 2 is chosen,
+ * remove this comment and start adding your styles to this file.
+ */
+
+/**
+ * Make the navbar (at top of the site) a bit thinner.
+ */
+.navbar-inner {
+    min-height: 30px;
+}
+.navbar .brand, .navbar .nav>li>a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/**
+ * Set the font of the site title (DocBookWiki).
+ */
+a.brand {
+    font-family: 'comic sans ms', sans-serif;
+}
+
+/**
+ * The style of the box that is used as the header of the front page.
+ */
+#boxes-box-headerbox {
+    color: #ff0000;
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+    font-family: 'comic sans ms', sans-serif;
+    margin-bottom: 25px;
+}
+
+/**
+ * The styles for the header of the content page.
+ */
+h1.page-header {
+    font-size: x-large;
+    font-family: 'comic sans ms', sans-serif;
+    color: #ff0000;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+/**
+ * H2 is used for subsections of the page,
+ * teaser title, block title, etc.
+ */
+h2 {
+    font-size: large;
+    font-family: 'comic sans ms', sans-serif;
+}
+h2.block-title {
+    color: #009900;
+}

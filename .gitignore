@@ -1,0 +1,8 @@
+*~
+.emacs*
+TAGS
+*.sql.gz
+libraries/
+modules/contrib/
+modules/libraries/
+themes/contrib/

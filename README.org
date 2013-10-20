@@ -1,0 +1,34 @@
+
+* Installation
+
+  The recommended way of installation is to build a new server from
+  scratch, inside a chroot environment.
+
+  + Get a copy of the project from GitHub:
+    #+BEGIN_EXAMPLE
+    mkdir /var/chroot
+    cd /var/chroot/
+    git clone https://github.com/dashohoxha/Labdoo.git
+    #+END_EXAMPLE
+
+  + Install Labdoo inside a chroot system:
+    #+BEGIN_EXAMPLE
+    nohup nice Labdoo/install/install.sh lbd &
+    tail -f nohup.out
+    #+END_EXAMPLE
+
+  + Configure it: =chroot lbd/ /tmp/install/config.sh=
+
+  + It is advisable to reboot the host after the installation: =reboot=
+
+  + Start services: =service chroot-lbd start=
+
+  + If this is a local copy (installed on a local machine), then add
+    the domain name =dev.labdoo.org= on ~/etc/hosts~:
+    #+BEGIN_EXAMPLE
+    127.0.0.1       dev.labdoo.org  localhost
+    #+END_EXAMPLE
+    This way it can be accessed by typing =https://dev.labdoo.org= on
+    the browser location (not =https://127.0.0.1= or
+    =https://localhost=).
+

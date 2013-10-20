@@ -1,0 +1,188 @@
+diff -rubB disqus/disqus.admin.inc disqus-1/disqus.admin.inc
+--- disqus/disqus.admin.inc	2011-09-02 01:45:24.000000000 +0000
++++ disqus-1/disqus.admin.inc	2012-12-19 23:00:08.000000000 +0000
+@@ -13,7 +13,7 @@
+   $form['disqus_domain'] = array(
+     '#type' => 'textfield',
+     '#title' => t('Shortname'),
+-    '#description' => t('The website shortname that you registered Disqus with. If you registered http://example.disqus.com, you would enter "example" here.'),
++    '#description' => t('The website shortname that you registered Disqus with. If you registered https://example.disqus.com, you would enter "example" here.'),
+     '#default_value' => variable_get('disqus_domain', ''),
+   );
+   $form['settings'] = array(
+@@ -69,7 +69,7 @@
+   $form['behavior']['disqus_userapikey'] = array(
+     '#type' => 'textfield',
+     '#title' => t('User API Key'),
+-    '#description' => t('The API key of the administrator account on Disqus. You can get yours <a href="@key">here</a>.', array('@key' => 'http://disqus.com/api/get_my_key/')),
++    '#description' => t('The API key of the administrator account on Disqus. You can get yours <a href="@key">here</a>.', array('@key' => 'https://disqus.com/api/get_my_key/')),
+     '#default_value' => variable_get('disqus_userapikey', ''),
+   );
+   $form['behavior']['disqus_localization'] = array(
+@@ -87,7 +87,7 @@
+   $form['behavior']['disqus_developer'] = array(
+     '#type' => 'checkbox',
+     '#title' => t('Testing'),
+-    '#description' => t('When enabled, uses the <a href="http://docs.disqus.com/help/2/">disqus_developer</a> flag to tell Disqus that you are in a testing environment. Threads will not display on the public community page with this set.'),
++    '#description' => t('When enabled, uses the <a href="https://docs.disqus.com/help/2/">disqus_developer</a> flag to tell Disqus that you are in a testing environment. Threads will not display on the public community page with this set.'),
+     '#default_value' => variable_get('disqus_developer', FALSE),
+   );
+   // Advanced settings.
+@@ -96,8 +96,8 @@
+     '#title' => t('Advanced'),
+     '#group' => 'settings',
+     '#description' => t('Use these settings to configure the more advanced uses of Disqus. You can find more information about these in the <a href="@applications">Applications</a> section of Disqus. To enable some of these features, you will require a <a href="@addons">Disqus Add-on Package</a>.', array(
+-      '@applications' => 'http://disqus.com/api/applications/',
+-      '@addons' => 'http://disqus.com/addons/',
++      '@applications' => 'https://disqus.com/api/applications/',
++      '@addons' => 'https://disqus.com/addons/',
+     )),
+   );
+   $form['advanced']['disqus_publickey'] = array(
+@@ -114,7 +114,7 @@
+     '#type' => 'checkbox',
+     '#title' => t('Single Sign-On'),
+     '#description' => t('Provide <a href="@sso">Single Sign-On</a> access to your site.', array(
+-      '@sso' => 'http://disqus.com/api/sso/',
++      '@sso' => 'https://disqus.com/api/sso/',
+     )),
+     '#default_value' => variable_get('disqus_sso', FALSE),
+     '#states' => array(
+diff -rubB disqus/disqus.js disqus-1/disqus.js
+--- disqus/disqus.js	2011-09-02 01:45:24.000000000 +0000
++++ disqus-1/disqus.js	2012-12-19 23:01:05.000000000 +0000
+@@ -51,7 +51,7 @@
+         // Make the AJAX call to get the Disqus comments.
+         jQuery.ajax({
+           type: 'GET',
+-          url: 'http://' + disqus_shortname + '.disqus.com/embed.js',
++          url: 'https://' + disqus_shortname + '.disqus.com/embed.js',
+           dataType: 'script',
+           cache: false
+         });
+@@ -63,7 +63,7 @@
+         // Make the AJAX call to get the number of comments.
+         jQuery.ajax({
+           type: 'GET',
+-          url: 'http://' + disqus_shortname + '.disqus.com/count.js',
++          url: 'https://' + disqus_shortname + '.disqus.com/count.js',
+           dataType: 'script',
+           cache: false
+         });
+diff -rubB disqus/disqus.module disqus-1/disqus.module
+--- disqus/disqus.module	2011-09-02 01:45:24.000000000 +0000
++++ disqus-1/disqus.module	2012-12-19 22:59:22.000000000 +0000
+@@ -11,14 +11,14 @@
+ function disqus_help($path, $arg) {
+   switch ($path) {
+   case 'admin/help#disqus':
+-    $output = '<p>'. t('Uses the <a href="@disqus">Disqus</a> comment system to enhance comments.', array('@disqus' => 'http://disqus.com')) .'</p>';
++    $output = '<p>'. t('Uses the <a href="@disqus">Disqus</a> comment system to enhance comments.', array('@disqus' => 'https://disqus.com')) .'</p>';
+     $output.= '<h3>'. t('Installation') .'</h3>';
+-    $output.= '<ol><li>'. t('Register your site information at <a href="http://disqus.com">Disqus</a>') .'</li>';
++    $output.= '<ol><li>'. t('Register your site information at <a href="https://disqus.com">Disqus</a>') .'</li>';
+     $output.= '<li>'. t('In the <a href="@configuration">Disqus configuration</a>, set the domain to what you registered with Disqus, and what node types you would like to have comments', array('@configuration' => url('admin/config/services/disqus'))) .'</li>';
+     $output.= '<li>'. t('Visit the <a href="@permissions">permissions</a>, and set which users you would like to have the ability to view Disqus threads (recommended for role)', array('@permissions' => url('admin/people/permissions', array('fragment' => 'module-disqus')))) .'</li></ol>';
+     return $output;
+   case 'admin/config/services/disqus':
+-    return '<p>'. t('The following provides the general configuration options for the <a href="@disqus">Disqus</a> comment web service.', array('@disqus' => 'http://disqus.com')) .'</p>';
++    return '<p>'. t('The following provides the general configuration options for the <a href="@disqus">Disqus</a> comment web service.', array('@disqus' => 'https://disqus.com')) .'</p>';
+   }
+ }
+ 
+@@ -509,25 +509,25 @@
+     case 'disqus_recent_comments':
+       $subject = t('Recent Comments');
+       $content = <<<EOT
+-<div id="dsq-recentcomments" class="dsq-widget"><script type="text/javascript" src="http://disqus.com/forums/$domain/recent_comments_widget.js?num_items=$num_items&amp;excerpt_length=$excerpt_length$avatars"></script></div>
++<div id="dsq-recentcomments" class="dsq-widget"><script type="text/javascript" src="https://disqus.com/forums/$domain/recent_comments_widget.js?num_items=$num_items&amp;excerpt_length=$excerpt_length$avatars"></script></div>
+ EOT;
+     break;
+     case 'disqus_popular_threads':
+       $subject = t('Popular Threads');
+       $content = <<<EOT
+-<div id="dsq-popthreads" class="dsq-widget"><script type="text/javascript" src="http://disqus.com/forums/$domain/popular_threads_widget.js?num_items=$num_items"></script></div>
++<div id="dsq-popthreads" class="dsq-widget"><script type="text/javascript" src="https://disqus.com/forums/$domain/popular_threads_widget.js?num_items=$num_items"></script></div>
+ EOT;
+     break;
+     case 'disqus_top_commenters':
+       $subject = t('Top Commenters');
+       $content = <<<EOT
+-<div id="dsq-topcommenters" class="dsq-widget"><script type="text/javascript" src="http://disqus.com/forums/$domain/top_commenters_widget.js?hide_mods=$hide_mods&amp;num_items=$num_items$avatars"></script></div>
++<div id="dsq-topcommenters" class="dsq-widget"><script type="text/javascript" src="https://disqus.com/forums/$domain/top_commenters_widget.js?hide_mods=$hide_mods&amp;num_items=$num_items$avatars"></script></div>
+ EOT;
+     break;
+     case 'disqus_combination_widget':
+       $subject = t('Comments');
+       $content = <<<EOT
+-<script type="text/javascript" src="http://disqus.com/forums/$domain/combination_widget.js?num_items=$num_items&amp;hide_mods=$hide_mods&amp;excerpt_length=$excerpt_length&amp;color=$color&amp;default_tab=$default_tab"></script>
++<script type="text/javascript" src="https://disqus.com/forums/$domain/combination_widget.js?num_items=$num_items&amp;hide_mods=$hide_mods&amp;excerpt_length=$excerpt_length&amp;color=$color&amp;default_tab=$default_tab"></script>
+ EOT;
+     break;
+     case 'disqus_comments':
+@@ -596,7 +596,7 @@
+       $form['comment_settings']['disqus_status'] = array(
+         '#type' => 'checkbox',
+         '#title' => t('Disqus comments'),
+-        '#description' => t('Users can post comments using <a href="@disqus">Disqus</a>.', array('@disqus' => 'http://disqus.com')),
++        '#description' => t('Users can post comments using <a href="@disqus">Disqus</a>.', array('@disqus' => 'https://disqus.com')),
+         '#default_value' => isset($node->disqus['status']) ? $node->disqus['status'] : TRUE,
+         '#access' => user_access('toggle disqus comments'),
+       );
+@@ -623,12 +623,12 @@
+  *     - "domain": The domain associated with this Disqus account.
+  *     - "title": The title of the thread.
+  *     - "developer": Whether or not testing is enabled.
+- *     - "url": The disqus_url variable (http://disqus.com/docs/help/#faq-16).
++ *     - "url": The disqus_url variable (https://disqus.com/docs/help/#faq-16).
+  */
+ function theme_disqus_noscript($variables = array()) {
+   $disqus = $variables['disqus'];
+   // Return the comment markup.
+-  return '<noscript><p>' . l(t('View the discussion thread.'), 'http://' . $disqus['domain'] . '.disqus.com/?url=' . urlencode($disqus['url'])) . '</p></noscript>';
++  return '<noscript><p>' . l(t('View the discussion thread.'), 'https://' . $disqus['domain'] . '.disqus.com/?url=' . urlencode($disqus['url'])) . '</p></noscript>';
+ }
+ 
+ /**
+diff -rubB disqus/disqus.php disqus-1/disqus.php
+--- disqus/disqus.php	2011-09-02 01:45:24.000000000 +0000
++++ disqus-1/disqus.php	2012-12-19 23:00:45.000000000 +0000
+@@ -16,7 +16,7 @@
+  *
+  * @example
+  * @code
+- *   // The user API key obtained from http://disqus.com/api/get_my_key/ .
++ *   // The user API key obtained from https://disqus.com/api/get_my_key/ .
+  *   $user_api_key = 'Your Key Here!';
+  *
+  *   // Make sure to catch any errors generated by Disqus.
+@@ -38,7 +38,7 @@
+ class Disqus {
+   public $user_api_key = NULL;
+   public $forum_api_key = NULL;
+-  public $api_url = 'http://disqus.com/api/';
++  public $api_url = 'https://disqus.com/api/';
+   public $api_version = '1.1';
+ 
+   /**
+@@ -51,7 +51,7 @@
+    * @param $api_url
+    *   (optional) The prefix URL to use when calling the Disqus API.
+    */
+-  function __construct($user_api_key = NULL, $forum_api_key = NULL, $api_url = 'http://disqus.com/api/') {
++  function __construct($user_api_key = NULL, $forum_api_key = NULL, $api_url = 'https://disqus.com/api/') {
+     $this->user_api_key = $user_api_key;
+     $this->forum_api_key = $forum_api_key;
+     $this->$api_url = $api_url;
+diff -rubB disqus/disqus.views.inc disqus-1/disqus.views.inc
+--- disqus/disqus.views.inc	2011-09-02 01:45:24.000000000 +0000
++++ disqus-1/disqus.views.inc	2012-12-19 23:00:16.000000000 +0000
+@@ -49,7 +49,7 @@
+           'fragment' => 'disqus_thread',
+           'attributes' => array(
+             // Identify the node for Disqus with the unique identifier:
+-            // http://docs.disqus.com/developers/universal/#comment-count
++            // https://docs.disqus.com/developers/universal/#comment-count
+             'data-disqus-identifier' => $disqus['identifier'],
+           ),
+           'html' => FALSE,
