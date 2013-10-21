@@ -20,9 +20,9 @@ then
 fi
 
 ### settings for the database and the drupal site
-db_name=labdoo
-db_user=labdoo
-db_pass=labdoo
+db_name=lbd
+db_user=lbd
+db_pass=lbd
 site_name="Labdoo"
 site_mail="admin@example.org"
 account_name=admin

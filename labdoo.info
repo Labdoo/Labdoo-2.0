@@ -69,12 +69,8 @@ dependencies[] = xautoload
 dependencies[] = jquery_update
 dependencies[] = delete_all
 dependencies[] = entity
-dependencies[] = replicate
-dependencies[] = outline_designer
 dependencies[] = pathauto
 dependencies[] = subpathauto
-dependencies[] = redirect
-dependencies[] = pathologic
 
 
 ;--------------------
