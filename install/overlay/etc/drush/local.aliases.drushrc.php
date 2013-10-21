@@ -9,8 +9,8 @@
     drush help sql-sync
  */
 
-$aliases['main'] = array (
-  'root' => '/var/www/labdoo',
+$aliases['lbd'] = array (
+  'root' => '/var/www/lbd',
   'uri' => 'http://example.org',
   'path-aliases' => array (
     '%profile' => 'profiles/labdoo',
@@ -20,6 +20,6 @@ $aliases['main'] = array (
 
 $aliases['dev'] = array (
   'parent' => '@main',
-  'root' => '/var/www/labdoo_dev',
+  'root' => '/var/www/lbd_dev',
   'uri' => 'http://dev.example.org',
 );

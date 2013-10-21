@@ -1,0 +1,5 @@
+Alias /downloads /var/www/downloads
+
+<Directory /var/www/downloads>
+    Options Indexes FollowSymLinks
+</Directory>

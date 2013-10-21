@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CHROOT=/var/chroot/labdoo
+CHROOT=/var/chroot/lbd
 
 HOST_SERVICES="mysql apache2"
 #CHROOT_SERVICES="cron php5-fpm memcached mysql nginx"

@@ -9,7 +9,7 @@ case $1 in
 
 	drush @local -y dis memcache
 	service memcached stop
-	for file in $(ls /var/www/labdoo*/sites/default/settings.php)
+	for file in $(ls /var/www/lbd*/sites/default/settings.php)
 	do
 	    sed -i $file -e "/comment memcache config/ d"
 	    sed -i $file \
@@ -23,7 +23,7 @@ case $1 in
     stop)
 	service apache2 stop
 
-	for file in $(ls /var/www/labdoo*/sites/default/settings.php)
+	for file in $(ls /var/www/lbd*/sites/default/settings.php)
 	do
 	    sed -i $file -e "/comment memcache config/ d"
 	done

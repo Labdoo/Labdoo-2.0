@@ -14,11 +14,14 @@ then
     sleep 5  # give time mysqld to start
 fi
 
+### go to the directory given as argument
+test $1 && cd $1
+
 ### settings for the database and the drupal site
-appdir="/var/www/labdoo"
-db_name=labdoo
-db_user=labdoo
-db_pass=labdoo
+drupal_dir=$(drush drupal-directory)
+db_name=$(drush sql-connect | tr ' ' "\n" | grep -e '--database=' | cut -d= -f2)
+db_user=$(drush sql-connect | tr ' ' "\n" | grep -e '--user=' | cut -d= -f2)
+db_pass=$(drush sql-connect | tr ' ' "\n" | grep -e '--password=' | cut -d= -f2)
 site_name="Labdoo"
 site_mail="admin@example.org"
 account_name=admin
@@ -35,7 +38,7 @@ $mysql -e "
 
 ### start site installation
 sed -e '/memory_limit/ c memory_limit = -1' -i /etc/php5/cli/php.ini
-cd $appdir
+cd $drupal_dir
 rm sites/default/settings.php
 drush site-install --verbose --yes labdoo \
       --db-url="mysql://$db_user:$db_pass@localhost/$db_name" \

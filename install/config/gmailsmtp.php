@@ -1,4 +1,3 @@
-#!/usr/bin/drush php-script
 <?php
    /**
     * Set drupal variables related to email and smtp.

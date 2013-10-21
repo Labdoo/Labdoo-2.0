@@ -5,14 +5,14 @@ if [ $# -ne 1 ]
 then
     echo " * Usage: $0 variant
 
-   Deletes the application with root /var/www/labdoo_<variant>
+   Deletes the application with root /var/www/lbd_<variant>
    and with DB named labdoo_<variant>
    <variant> is something like 'dev', 'test', '01', etc.
 "
     exit 1
 fi
 var=$1
-root_dir=/var/www/labdoo_$var
+root_dir=/var/www/lbd_$var
 db_name=labdoo_$var
 
 ### remove the root directory

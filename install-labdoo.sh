@@ -4,7 +4,7 @@
 ### retrieve all the projects/modules and build the application directory
 #makefile="https://raw.github.com/dashohoxha/Labdoo/master/build-labdoo.make"
 makefile="/var/www/Labdoo/build-labdoo.make"
-appdir="/var/www/labdoo"
+appdir="/var/www/lbd"
 rm -rf $appdir
 drush make --prepare-install --force-complete \
            --contrib-destination=profiles/labdoo \

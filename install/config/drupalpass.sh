@@ -10,8 +10,8 @@ stty echo
 echo
 
 $(dirname $0)/mysqld.sh start
-drush user-password admin --password="$passwd"
+drush @lbd user-password admin --password="$passwd"
 
 ### drush may create css/js files with wrong(root) permissions
-rm -rf /var/www/labdoo/sites/default/files/css/
-rm -rf /var/www/labdoo/sites/default/files/js/
+rm -rf /var/www/lbd/sites/default/files/css/
+rm -rf /var/www/lbd/sites/default/files/js/

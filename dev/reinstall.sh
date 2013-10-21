@@ -2,7 +2,10 @@
 ### Reinstall labdoo from scratch.
 ### Useful for testing installation scripts.
 
-mv /var/www/labdoo /var/www/labdoo-bak
+export drupal_dir=/var/www/lbd
+export drush="drush --root=$drupal_dir"
+
+mv $drupal_dir $drupal_dir-bak
 
 cd $(dirname $0)
 cd ../install/install-scripts/

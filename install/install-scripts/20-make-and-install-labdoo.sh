@@ -2,12 +2,15 @@
 
 ### retrieve all the projects/modules and build the application directory
 makefile="https://raw.github.com/dashohoxha/Labdoo/master/build-labdoo.make"
-appdir="/var/www/labdoo"
-rm -rf $appdir
+rm -rf $drupal_dir
 drush make --prepare-install --force-complete \
            --contrib-destination=profiles/labdoo \
-           $makefile $appdir
-cp -a $appdir/profiles/labdoo/{libraries/bootstrap,themes/contrib/bootstrap/}
+           $makefile $drupal_dir
+cp -a $drupal_dir/profiles/labdoo/{libraries/bootstrap,themes/contrib/bootstrap/}
+
+### create the downloads dir
+mkdir -p /var/www/downloads/
+chown www-data /var/www/downloads/
 
 ### start mysqld manually, if it is not running
 if test -z "$(ps ax | grep [m]ysqld)"
@@ -36,21 +39,11 @@ $mysql -e "
 
 ### start site installation
 sed -e '/memory_limit/ c memory_limit = -1' -i /etc/php5/cli/php.ini
-cd $appdir
+cd $drupal_dir
 drush site-install --verbose --yes labdoo \
       --db-url="mysql://$db_user:$db_pass@localhost/$db_name" \
       --site-name="$site_name" --site-mail="$site_mail" \
       --account-name="$account_name" --account-pass="$account_pass" --account-mail="$account_mail"
-
-### disable module comment
-drush --yes pm-disable comment
-
-### import test books
-profiles/labdoo/test/import-docs.sh
-
-### create the downloads dir
-mkdir -p /var/www/downloads/
-chown www-data /var/www/downloads/
 
 ### set propper directory permissions
 mkdir -p sites/default/files/

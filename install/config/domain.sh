@@ -11,7 +11,7 @@ It will modify the files:
  2) /etc/hosts
  3) /etc/nginx/sites-available/*
  4) /etc/apache2/sites-available/*
- 5) /var/www/labdoo*/sites/default/settings.php
+ 5) /var/www/lbd*/sites/default/settings.php
 "
 FQDN='example.org'
 read -p "Enter the domain [$FQDN]: " input
@@ -32,7 +32,7 @@ do
     sed -i $file -e "s/ServerName .*\$/ServerName $FQDN/"
 done
 
-for file in $(ls /var/www/labdoo*/sites/default/settings.php)
+for file in $(ls /var/www/lbd*/sites/default/settings.php)
 do
     sed -i $file -e "/^\\\$base_url/c \$base_url = \"https://$FQDN\";"
 done

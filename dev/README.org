@@ -29,8 +29,8 @@ Development Setup of Labdoo
   suitable. It can be started and stopped like this:
   #+BEGIN_EXAMPLE
   chroot /var/chroot/lbd/
-  /var/www/labdoo/profiles/labdoo/dev/apache2.sh start
-  /var/www/labdoo/profiles/labdoo/dev/apache2.sh stop
+  /var/www/lbd/profiles/labdoo/dev/apache2.sh start
+  /var/www/lbd/profiles/labdoo/dev/apache2.sh stop
   #+END_EXAMPLE
 
   *Important:* When /apache2/ is started, the services /nginx/,
@@ -47,7 +47,7 @@ Development Setup of Labdoo
   I also add something like this on */etc/hosts*, so that I can access
   it on the browser with a domain name:
   #+BEGIN_EXAMPLE
-  127.0.0.1  example.org dev.example.org
+  127.0.0.1  labdoo.org dev.labdoo.org
   #+END_EXAMPLE
   This modification has to be done manually as well.
 
@@ -57,22 +57,21 @@ Development Setup of Labdoo
   It can be done with the script =dev/install.sh=:
   #+BEGIN_EXAMPLE
   chroot /var/chroot/lbd/
-  /var/www/labdoo/profiles/labdoo/dev/reinstall.sh
+  /var/www/lbd/profiles/labdoo/dev/reinstall.sh
   #+END_EXAMPLE
   It will rebuild the Drupal directory with *drush make* and install
-  the labdoo profile with *drush site-install*, and then do all
-  the rest of configurations just like they are done during
-  installation.
+  the labdoo profile with *drush site-install*, and then do all the
+  rest of configurations just like they are done during installation.
 
   Normally there is no need to reinstall the application, unless we
   want to test the installation profile and the installation scripts.
 
   Another kind of re-installation, which touches only the database of
-  Drupal (labdoo) and nothing else, can be done with the script
+  Drupal (lbd) and nothing else, can be done with the script
   =dev/install.sh=:
   #+BEGIN_EXAMPLE
   chroot /var/chroot/lbd/
-  /var/www/labdoo/profiles/labdoo/dev/reinstall-db.sh
+  /var/www/lbd/profiles/labdoo/dev/reinstall-db.sh
   #+END_EXAMPLE
 
   It is useful for testing the features. Usually, when features are
@@ -87,14 +86,14 @@ Development Setup of Labdoo
   Inside the chroot I make a clone for development like this:
   #+BEGIN_EXAMPLE
   chroot /var/chroot/lbd/
-  cd /var/www/labdoo/profiles/labdoo/
+  cd /var/www/lbd/profiles/labdoo/
   dev/clone.sh dev
   #+END_EXAMPLE
 
-  It creates a new application with root */var/www/labdoo_dev/* and
-  with DB named *labdoo_dev*. It also creates the drush alias *@dev*,
-  and modifies the configuration of the webserver so that the cloned
-  application can be accessed at *dev.example.org*.
+  It creates a new application with root */var/www/lbd_dev/* and with
+  DB named *lbd_dev*. It also creates the drush alias *@dev*, and
+  modifies the configuration of the webserver so that the cloned
+  application can be accessed at *dev.labdoo.org*.
 
   *Caution:* The root directory and the DB of the clone will be
   erased, if they exist.
@@ -103,7 +102,7 @@ Development Setup of Labdoo
   (remove/erase) a clone, we can use *clone_rm.sh* like this:
   #+BEGIN_EXAMPLE
   chroot /var/chroot/lbd/
-  cd /var/www/labdoo/profiles/labdoo/
+  cd /var/www/lbd/profiles/labdoo/
   dev/clone_rm.sh dev
   #+END_EXAMPLE
 
@@ -114,8 +113,8 @@ Development Setup of Labdoo
   #+BEGIN_EXAMPLE
   chroot /var/chroot/lbd/
   cd /var/www/
-  drush php-script labdoo/profiles/labdoo/config.php dev1
-  drush @dev php-script labdoo/profiles/labdoo/config.php dev2
+  drush @lbd php-script lbd/profiles/labdoo/dev/config.php dev1
+  drush @dev php-script lbd/profiles/labdoo/dev/config.php dev2
   #+END_EXAMPLE
 
   It will set site_name to 'Labdoo (dev1)', will make site email
@@ -139,19 +138,18 @@ Development Setup of Labdoo
   #+BEGIN_EXAMPLE
   chroot /var/chroot/lbd/
   cd /var/www/
-  ln -s labdoo_dev/profiles/labdoo/ Labdoo
+  ln -s lbd_dev/profiles/labdoo/ Labdoo
 
-  Labdoo/dev/snapshot.sh make
+  Labdoo/dev/snapshot.sh make @lbd
   Labdoo/dev/snapshot.sh make @dev
   #+END_EXAMPLE
-  These will create the files ~snapshot-labdoo-20130602.tgz~
-  and ~snapshot-labdoo_dev-20130602.tgz~. They can be restored
-  like this:
+  These will create the files ~snapshot-lbd-20130602.tgz~ and
+  ~snapshot-lbd_dev-20130602.tgz~. They can be restored like this:
   #+BEGIN_EXAMPLE
-  Labdoo/dev/snapshot.sh restore --file=snapshot-labdoo-20130602.tgz
-  Labdoo/dev/snapshot.sh restore --file=snapshot-labdoo_dev-20130602.tgz
-  Labdoo/dev/snapshot.sh restore @dev --file=snapshot-labdoo-20130602.tgz
-  Labdoo/dev/snapshot.sh restore @dev --file=snapshot-labdoo_dev-20130602.tgz
+  Labdoo/dev/snapshot.sh restore @lbd --file=snapshot-lbd-20130602.tgz
+  Labdoo/dev/snapshot.sh restore @lbd --file=snapshot-lbd_dev-20130602.tgz
+  Labdoo/dev/snapshot.sh restore @dev --file=snapshot-lbd-20130602.tgz
+  Labdoo/dev/snapshot.sh restore @dev --file=snapshot-lbd_dev-20130602.tgz
   #+END_EXAMPLE
   As you may notice, a snapshot of @dev can also be restored on the
   main application, and the other way around.
@@ -160,14 +158,14 @@ Development Setup of Labdoo
   is needed, and it is more efficient. It can be done with *drush
   sql-dump* and *drush sql-query* like this:
   #+BEGIN_EXAMPLE
-  drush sql-dump > labdoo.sql
-  drush sql-dump @dev > labdoo_dev.sql
+  drush sql-dump @lbd > lbd.sql
+  drush sql-dump @dev > lbd_dev.sql
 
-  drush sql-query --file=$(pwd)/labdoo.sql
-  drush sql-query --file=$(pwd)/labdoo_dev.sql
+  drush @lbd sql-query --file=$(pwd)/lbd.sql
+  drush @lbd sql-query --file=$(pwd)/lbd_dev.sql
 
-  drush @dev sql-query --file=$(pwd)/labdoo.sql
-  drush @dev sql-query --file=$(pwd)/labdoo_dev.sql
+  drush @dev sql-query --file=$(pwd)/lbd.sql
+  drush @dev sql-query --file=$(pwd)/lbd_dev.sql
   #+END_EXAMPLE
 
 
@@ -177,7 +175,7 @@ Development Setup of Labdoo
   chroot, I create a symbolic link like this:
   #+BEGIN_EXAMPLE
   cd /var/chroot/
-  ln -s lbd/var/www/labdoo_dev/profiles/labdoo/ \
+  ln -s lbd/var/www/lbd_dev/profiles/labdoo/ \
         dev
   #+END_EXAMPLE
 
@@ -189,10 +187,9 @@ Development Setup of Labdoo
 
 * Pushing commits to github
 
-  The copy of the application on
-  =/var/www/labdoo_dev/profiles/labdoo/= (as well as the one
-  on =/var/www/labdoo/profiles/labdoo/=) are actually clones
-  of the git repository at https://github.com/dashohoxha/Labdoo
+  The copy of the application on =/var/www/lbd_dev/profiles/labdoo/=
+  (as well as the one on =/var/www/lbd/profiles/labdoo/=) are actually
+  clones of the git repository at https://github.com/dashohoxha/Labdoo
   so we can *pull* from it and *push* to it. Pulling (to get
   up-to-date) can be done by everybody, however pushing requires a
   username and password (the ones that are used to access the account
@@ -218,12 +215,12 @@ Development Setup of Labdoo
   git branch -D dev       ### erase the branch
   #+END_EXAMPLE
 
-  Usually there are no commits comming from github, since I am
-  the only developper (unless I have worked and commited from some
-  other location). So, when I merge without *--squash* this usually
-  results in *fast-forward* merge, which means that all the
-  commits that I have done on the branch *dev* are automatically
-  transferred to the branch *master*.
+  Usually there are no commits comming from github, since I am the
+  only developper (unless I have worked and commited from some other
+  location). So, when I merge without *--squash* this usually results
+  in *fast-forward* merge, which means that all the commits that I
+  have done on the branch *dev* are automatically transferred to the
+  branch *master*.
 
   However sometimes there may be /dirty commits/ on the *dev* branch,
   which means that there may be incomplete commits, or commits that
@@ -239,29 +236,28 @@ Development Setup of Labdoo
 * Making a local git clone of the dev application
 
   Sometimes it is not easy or suitable to test modifications on the
-  *@dev* application (~/var/www/labdoo_dev~). For example this is
-  the case when I have to test install/uninstall, enable/disable
-  modules, features, etc. In this case I test them on the main
-  application instance (~/var/www/labdoo~). Since both
-  applications are clones of the [[https://github.com/dashohoxha/Labdoo][GitHub repository]] it is easy to push
-  commits from /labdoo_dev/ to /github/ and to pull them from
-  /github/ to /labdoo/.
+  *@dev* application (~/var/www/lbd_dev~). For example this is the
+  case when I have to test install/uninstall, enable/disable modules,
+  features, etc. In this case I test them on the main application
+  instance (~/var/www/lbd~). Since both applications are clones of the
+  [[https://github.com/dashohoxha/Labdoo][GitHub repository]] it is easy to push commits from /lbd_dev/ to
+  /github/ and to pull them from /github/ to /lbd/.
 
   However, sometimes it is better to test modifications and make sure
   that they work, before pushing them to /github/. This can be done if
-  the code on /labdoo/ is a git clone of the code on
-  /labdoo_dev/ (instead of being a clone from /github/).
+  the code on /lbd/ is a git clone of the code on /lbd_dev/ (instead
+  of being a clone from /github/).
 
   The script =dev/git-clone-dev.sh= makes just this. It replaces the
-  code of /labdoo/ with a git clone of the *dev branch* from
-  /labdoo_dev/. Then the workflow is like this:
-  1. Work and commit on the branch *dev* of *labdoo_dev*
-  2. Pull on *labdoo* and test.
+  code of /lbd/ with a git clone of the *dev branch* from
+  /lbd_dev/. Then the workflow is like this:
+  1. Work and commit on the branch *dev* of *lbd_dev*
+  2. Pull on *lbd* and test.
   3. Repeat steps *1* and *2* until the modification that we are
      making is OK.
   4. Push changes upwards to github, like this:
      #+BEGIN_EXAMPLE
-     cd /var/www/labdoo_dev/profiles/labdoo
+     cd /var/www/lbd_dev/profiles/labdoo
      git checkout master
      git merge dev [--squash]
      git push
@@ -270,9 +266,9 @@ Development Setup of Labdoo
      #+END_EXAMPLE
      So, after merging to *master* and pushing to /github/, we delete
      the branch *dev* and create a new one.
-  5. Make a git pull on *labdoo* and sync it with *labdoo_dev*
+  5. Make a git pull on *lbd* and sync it with *lbd_dev*
      #+BEGIN_EXAMPLE
-     cd /var/www/labdoo/profiles/labdoo
+     cd /var/www/lbd/profiles/labdoo
      git pull
      #+END_EXAMPLE
 
@@ -306,7 +302,7 @@ Development Setup of Labdoo
   <?php
 
   $aliases['live'] = array (
-    'root' => '/var/www/labdoo',
+    'root' => '/var/www/lbd',
     'uri' => 'http://labdoo.org',
 
     'remote-host' => 'labdoo.org',
@@ -315,7 +311,6 @@ Development Setup of Labdoo
 
     'path-aliases' => array (
       '%profile' => 'profiles/labdoo',
-      '%exports' => '/var/www/exports',
       '%downloads' => '/var/www/downloads',
     ),
 
@@ -331,7 +326,7 @@ Development Setup of Labdoo
 
   $aliases['test'] = array (
     'parent' => '@live',
-    'root' => '/var/www/labdoo',
+    'root' => '/var/www/lbd',
     'uri' => 'http://test.labdoo.org',
     'remote-host' => 'test.labdoo.org',
 
@@ -350,10 +345,10 @@ Development Setup of Labdoo
   is almost identical to the live/production one, however it is not
   for public use. The idea is to test there first any updates/upgrades
   of the application, in order to make sure that they don't break any
-  things, before applying them to the real live application. In my case
-  it is placed on a different server, however it can also be placed on
-  the same server as the live application (just make a clone of the main
-  application with =dev/clone.sh test=).
+  things, before applying them to the real live application. In my
+  case it is placed on a different server, however it can also be
+  placed on the same server as the live application (just make a clone
+  of the main application with =dev/clone.sh test=).
 
   When everything is set up correctly, the synchronization can be done
   as simply as this:

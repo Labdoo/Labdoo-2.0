@@ -1,17 +1,17 @@
 #!/bin/bash
 ### Clone the dev branch from
-### /var/www/labdoo_dev/profiles/labdoo/
+### /var/www/lbd_dev/profiles/labdoo/
 
-### create a symlink /var/www/Labdoo to the git repo
+### create a symlink /var/www/lbd to the git repo
 cd /var/www/
-test -h Labdoo || ln -s labdoo_dev/profiles/labdoo/ Labdoo
+test -h Labdoo || ln -s lbd_dev/profiles/labdoo/ Labdoo
 
 ### on the repo create a 'dev' branch
 cd Labdoo/
 git branch dev master
 
 ### clone the dev branch
-cd /var/www/labdoo/profiles/
+cd /var/www/lbd/profiles/
 rm -rf labdoo-bak
 mv labdoo labdoo-bak
 git clone -b dev /var/www/Labdoo labdoo

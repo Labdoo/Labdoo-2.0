@@ -1,6 +1,6 @@
 #!/bin/bash
 ### Create a local clone of the main drupal
-### application (/var/www/labdoo).
+### application (/var/www/lbd).
 
 if [ $# -ne 1 ]
 then
@@ -9,7 +9,7 @@ then
       Creates a local clone of the main drupal application.
       <variant> can be something like 'dev', 'test', '01', etc.
       It will create a new application with root
-      /var/www/labdoo_<variant> and with DB named
+      /var/www/lbd_<variant> and with DB named
       labdoo_<variant>
 
       Caution: The root directory and the DB will be erased,
@@ -18,12 +18,12 @@ then
     exit 1
 fi
 var=$1
-root_dir=/var/www/labdoo_$var
+root_dir=/var/www/lbd_$var
 db_name=labdoo_$var
 
 ### copy the root directory
 rm -rf $root_dir
-cp -a /var/www/labdoo $root_dir
+cp -a /var/www/lbd $root_dir
 
 ### modify settings.php
 domain=$(cat /etc/hostname)
@@ -37,8 +37,8 @@ sed -i /etc/drush/local.aliases.drushrc.php \
     -e "/^\\\$aliases\['$var'\] = /,+5 d"
 cat <<EOF >> /etc/drush/local.aliases.drushrc.php
 \$aliases['$var'] = array (
-  'parent' => '@main',
-  'root' => '/var/www/labdoo_$var',
+  'parent' => '@lbd',
+  'root' => '/var/www/lbd_$var',
   'uri' => 'http://$var.example.org',
 );
 
@@ -52,7 +52,7 @@ mysql --defaults-file=/etc/mysql/debian.cnf -e "
 "
 
 ### copy the database
-drush sql-sync @self @$var
+drush sql-sync @lbd @$var
 
 ### clear the cache
 drush @$var cc all

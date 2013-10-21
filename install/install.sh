@@ -31,7 +31,7 @@ do
 done
 
 ### set default values for the missing options
-target_dir=${target_dir:-labdoo}
+target_dir=${target_dir:-lbd}
 arch=${arch:-i386}
 suite=${suite:-precise}
 apt_mirror=${apt_mirror:-http://archive.ubuntu.com/ubuntu}

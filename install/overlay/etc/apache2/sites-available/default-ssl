@@ -3,12 +3,12 @@
         ServerName example.org
 	ServerAdmin info@example.org
 
-	DocumentRoot /var/www/labdoo
+	DocumentRoot /var/www/lbd
 	<Directory />
 		Options FollowSymLinks
 		AllowOverride None
 	</Directory>
-	<Directory /var/www/labdoo/>
+	<Directory /var/www/lbd/>
 		Options Indexes FollowSymLinks MultiViews
 		# AllowOverride None
 		AllowOverride All

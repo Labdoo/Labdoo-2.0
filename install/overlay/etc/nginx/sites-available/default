@@ -6,7 +6,7 @@ server {
 	ssl_certificate_key	/etc/ssl/private/ssl-cert-snakeoil.key;
 
 	server_name example.org;
-	root /var/www/labdoo;
+	root /var/www/lbd;
 
 	access_log /var/log/nginx/labdoo.access.log;
  	error_log  /var/log/nginx/labdoo.error.log info;

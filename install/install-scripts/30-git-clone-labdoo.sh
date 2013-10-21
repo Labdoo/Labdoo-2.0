@@ -5,7 +5,7 @@
 ### reinstall the whole application).
 
 ### clone labdoo from github
-cd /var/www/labdoo/profiles/
+cd $drupal_dir/profiles/
 mv labdoo labdoo-bak
 git clone https://github.com/dashohoxha/Labdoo labdoo
 
