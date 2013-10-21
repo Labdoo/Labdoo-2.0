@@ -10,7 +10,7 @@ then
       <variant> can be something like 'dev', 'test', '01', etc.
       It will create a new application with root
       /var/www/lbd_<variant> and with DB named
-      labdoo_<variant>
+      lbd_<variant>
 
       Caution: The root directory and the DB will be erased,
       if they exist.
@@ -19,7 +19,7 @@ then
 fi
 var=$1
 root_dir=/var/www/lbd_$var
-db_name=labdoo_$var
+db_name=lbd_$var
 
 ### copy the root directory
 rm -rf $root_dir
@@ -30,7 +30,7 @@ domain=$(cat /etc/hostname)
 sed -i $root_dir/sites/default/settings.php \
     -e "/^\\\$databases = array/,+10  s/'database' => .*/'database' => '$db_name',/" \
     -e "/^\\\$base_url/c \$base_url = \"https://$var.$domain\";" \
-    -e "/^\\\$conf\['memcache_key_prefix'\]/c \$conf['memcache_key_prefix'] = 'labdoo_$var';"
+    -e "/^\\\$conf\['memcache_key_prefix'\]/c \$conf['memcache_key_prefix'] = 'lbd_$var';"
 
 ### create a drush alias
 sed -i /etc/drush/local.aliases.drushrc.php \
@@ -63,7 +63,7 @@ cp /etc/nginx/sites-available/{default,$var}
 sed -i /etc/nginx/sites-available/$var \
     -e "s/443 default ssl/443 ssl/" \
     -e "s/server_name \(.*\);/server_name $var.\\1;/" \
-    -e "s/labdoo/labdoo_$var/g"
+    -e "s/lbd/lbd_$var/g"
 ln -s /etc/nginx/sites-{available,enabled}/$var
 
 ### copy and modify the configuration of apache2
@@ -72,10 +72,10 @@ cp /etc/apache2/sites-available/{default,$var}
 cp /etc/apache2/sites-available/{default-ssl,$var-ssl}
 sed -i /etc/apache2/sites-available/$var \
     -e "s/ServerName \(.*\)/ServerName $var.\\1/" \
-    -e "s/labdoo/labdoo_$var/g"
+    -e "s/lbd/lbd_$var/g"
 sed -i /etc/apache2/sites-available/$var-ssl \
     -e "s/ServerName \(.*\)/ServerName $var.\\1/" \
-    -e "s/labdoo/labdoo_$var/g"
+    -e "s/lbd/lbd_$var/g"
 a2ensite $var $var-ssl
 
 ### restart services
