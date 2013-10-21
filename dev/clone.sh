@@ -48,7 +48,7 @@ EOF
 mysql --defaults-file=/etc/mysql/debian.cnf -e "
     DROP DATABASE IF EXISTS $db_name;
     CREATE DATABASE $db_name;
-    GRANT ALL ON $db_name.* TO labdoo@localhost;
+    GRANT ALL ON $db_name.* TO lbd@localhost;
 "
 
 ### copy the database
