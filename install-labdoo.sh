@@ -54,7 +54,7 @@ chmod 640 $drupal_settings
 ### clone labdoo from git
 cd $appdir/profiles/
 mv labdoo labdoo-bak
-#git clone https://github.com/dashohoxha/Labdoo labdoo
+#git clone https://github.com/Labdoo/Drupal7 labdoo
 git clone /var/www/Labdoo -b dev labdoo
 
 ### copy contrib libraries and modules

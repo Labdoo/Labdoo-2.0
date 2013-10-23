@@ -8,7 +8,7 @@
     #+BEGIN_EXAMPLE
     mkdir /var/chroot
     cd /var/chroot/
-    git clone https://github.com/dashohoxha/Labdoo.git
+    git clone https://github.com/Labdoo/Drupal7.git Labdoo
     #+END_EXAMPLE
 
   + Install Labdoo inside a chroot system:
