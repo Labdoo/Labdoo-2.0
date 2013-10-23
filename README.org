@@ -32,3 +32,23 @@
     the browser location (not =https://127.0.0.1= or
     =https://localhost=).
 
+
+* Documentation
+
+  - Internal doc files:
+    + [[https://github.com/Labdoo/Drupal7/blob/master/README.org][README.org]] (this file)
+    + [[https://github.com/Labdoo/Drupal7/blob/master/dev/README.org][dev/README.org]] (tips for developers)
+    + [[https://github.com/Labdoo/Drupal7/blob/master/modules/features/README.org][modules/features/README.org]]
+
+  - External docs:
+    + http://academia.edu/3993827/Development_Setup_Of_B-Translator
+    + http://academia.edu/3992404/Using_Drupal_Features_In_B-Translator
+    + http://www.academia.edu/4054221/Cloning_a_B-Translator_Server
+
+  - Other docs that may be useful:
+    + http://dashohoxha.blogspot.com/2012/08/how-to-secure-ubuntu-server.html
+    + http://dashohoxha.blogspot.com/2013/07/how-to-manage-your-own-domain-name.html
+    + http://dashohoxha.blogspot.com/2013/02/how-to-set-up-chroot-environment-for.html
+    + http://dashohoxha.blogspot.com/2012/10/using-nginx-as-web-server-for-drupal.html
+    + http://www.havetheknowhow.com/Configure-the-server/Install-ssmtp.html
+    + http://arstechnica.com/security/2009/12/how-to-get-set-with-a-secure-sertificate-for-free/
