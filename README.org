@@ -1,4 +1,3 @@
-
 * Installation
 
   The recommended way of installation is to build a new server from
@@ -8,7 +7,7 @@
     #+BEGIN_EXAMPLE
     mkdir /var/chroot
     cd /var/chroot/
-    git clone https://github.com/Labdoo/Drupal7.git Labdoo
+    git clone https://github.com/Labdoo/Labdoo-2.0.git Labdoo
     #+END_EXAMPLE
 
   + Install Labdoo inside a chroot system:
