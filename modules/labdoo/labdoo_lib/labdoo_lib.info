@@ -1,0 +1,5 @@
+name = Labdoo Library 
+description = Implements some of the Labdoo core building blocks and exposes a set of basic utilities ("Swiss army knife")
+core = 7.x
+package = Labdoo 
+dependencies[] = features 

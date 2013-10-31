@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Labdoo Objects feature.
+ */
+
+include_once 'labdoo_objects.features.inc';
