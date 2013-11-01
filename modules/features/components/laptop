@@ -1,0 +1,16 @@
+field:node-laptop-field_serial_number
+node:laptop
+variable:comment_anonymous_laptop
+variable:comment_default_mode_laptop
+variable:comment_default_per_page_laptop
+variable:comment_form_location_laptop
+variable:comment_laptop
+variable:comment_preview_laptop
+variable:comment_subject_field_laptop
+variable:field_bundle_settings_node__laptop
+variable:language_content_type_laptop
+variable:menu_options_laptop
+variable:menu_parent_laptop
+variable:node_options_laptop
+variable:node_preview_laptop
+variable:node_submitted_laptop
