@@ -7,7 +7,7 @@
 ### clone labdoo from github
 cd $drupal_dir/profiles/
 mv labdoo labdoo-bak
-git clone https://github.com/Labdoo/Drupal7 labdoo
+git clone https://github.com/Labdoo/Labdoo-2.0 labdoo
 
 ### copy contrib libraries and modules
 cp -a labdoo-bak/libraries/ labdoo/
