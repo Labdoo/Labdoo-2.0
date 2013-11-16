@@ -34,7 +34,7 @@ function labdoo_get_next_id() {
    * increment it by one and return that value
    * while taking care of the initial condition
    */
-  $query = "SELECT title FROM node WHERE type='laptop' AND title=(SELECT MAX(title) FROM node)";
+  $query = "SELECT title FROM node WHERE type='laptop' AND title=(SELECT MAX(title) FROM node WHERE type='laptop')";
   $currentId = db_query($query)->fetchField();
   if(empty($currentId))
     return ("000000001");
@@ -58,16 +58,49 @@ function labdoo_lib_node_insert($node) {
     $loadedNode->title = labdoo_get_next_id();
     node_save($loadedNode);
   }
+
+  if($node->type == 'dootrip') {
+    /*
+     * Dootrip's title is automatically generated
+     */
+    $loadedNode = node_load($node->nid);
+    $loadedNode->title = "Dootrip from X to Y (temporary title)";
+    node_save($loadedNode);
+  }
+
+  if($node->type == 'edoovillage') {
+    /*
+     * Dootrip's title is automatically generated
+     */
+    $loadedNode = node_load($node->nid);
+    $loadedNode->title = "Country, Village: description (temporary title)";
+    node_save($loadedNode);
+  }
+
+  if($node->type == 'hub') {
+    /*
+     * Dootrip's title is automatically generated
+     */
+    $loadedNode = node_load($node->nid);
+    $loadedNode->title = "Labdoo Hub name (temporary title)";
+    node_save($loadedNode);
+  }
+
 }
 
 
 /**
- * Implementation of hook_form_alter
+ * Implementation of hook_form_node_form_alter
  *
  */
-function labdoo_lib_form_alter(&$form, &$form_state, $form_id) {
+function labdoo_lib_form_node_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
 
+  /*
+   * Node is a laptop
+   */
   if($form_id == 'laptop_node_form') {
+
     /*
      * Hide the title from the form
      * so that users can't write to it.
@@ -76,6 +109,58 @@ function labdoo_lib_form_alter(&$form, &$form_state, $form_id) {
      * the laptop's Labdoo ID
      */
     unset($form['title']);
+
+    /*
+     * Defaults for node creation
+     */
+    $node = $form_state['node'];
+    if (!isset($node->nid) || isset($node->is_new)) {
+      if(empty($form['field_tagger']['und'][0]['target_id']['#default_value'])) {    
+        $form['field_tagger']['und'][0]['target_id']['#default_value'] = $user->name . " (" . $user->uid . ")";
+        $form['field_manager']['und'][0]['target_id']['#default_value'] = $user->name . " (" . $user->uid . ")";
+      }
+    }
   }
+
+  /*
+   * Node is a dootrip
+   */
+  if($form_id == 'dootrip_node_form') {
+
+    // Hide title
+    unset($form['title']);
+
+    /*
+     * Defaults for node creation
+     */
+    $node = $form_state['node'];
+    if (!isset($node->nid) || isset($node->is_new)) {
+      if(empty($form['field_dootripper_s_']['und'][0]['target_id']['#default_value'])) {    
+        $form['field_dootripper_s_']['und'][0]['target_id']['#default_value'] = $user->name . " (" . $user->uid . ")";
+      }
+    }
+
+  }
+
+  /*
+   * Node is an edoovillage
+   */
+  if($form_id == 'edoovillage_node_form') {
+
+    // Hide title
+    unset($form['title']);
+
+  }
+
+  /*
+   * Node is a hub
+   */
+  if($form_id == 'hub_node_form') {
+
+    // Hide title
+    unset($form['title']);
+
+  }
+
 }
 
