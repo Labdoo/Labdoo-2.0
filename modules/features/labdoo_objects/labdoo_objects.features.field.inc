@@ -19,11 +19,11 @@ function labdoo_objects_field_default_fields() {
       'entity_types' => array(),
       'field_name' => 'field_dootripper_s_',
       'foreign keys' => array(
-        'node' => array(
+        'users' => array(
           'columns' => array(
-            'target_id' => 'nid',
+            'target_id' => 'uid',
           ),
-          'table' => 'node',
+          'table' => 'users',
         ),
       ),
       'indexes' => array(
@@ -333,11 +333,11 @@ function labdoo_objects_field_default_fields() {
       'entity_types' => array(),
       'field_name' => 'field_project_manager_s_',
       'foreign keys' => array(
-        'node' => array(
+        'users' => array(
           'columns' => array(
-            'target_id' => 'nid',
+            'target_id' => 'uid',
           ),
-          'table' => 'node',
+          'table' => 'users',
         ),
       ),
       'indexes' => array(
@@ -417,11 +417,11 @@ function labdoo_objects_field_default_fields() {
       'entity_types' => array(),
       'field_name' => 'field_hub_manager_s_',
       'foreign keys' => array(
-        'node' => array(
+        'users' => array(
           'columns' => array(
-            'target_id' => 'nid',
+            'target_id' => 'uid',
           ),
-          'table' => 'node',
+          'table' => 'users',
         ),
       ),
       'indexes' => array(
@@ -501,11 +501,11 @@ function labdoo_objects_field_default_fields() {
       'entity_types' => array(),
       'field_name' => 'field_additional_editors',
       'foreign keys' => array(
-        'node' => array(
+        'users' => array(
           'columns' => array(
-            'target_id' => 'nid',
+            'target_id' => 'uid',
           ),
-          'table' => 'node',
+          'table' => 'users',
         ),
       ),
       'indexes' => array(
@@ -757,11 +757,11 @@ function labdoo_objects_field_default_fields() {
       'entity_types' => array(),
       'field_name' => 'field_manager',
       'foreign keys' => array(
-        'node' => array(
+        'users' => array(
           'columns' => array(
-            'target_id' => 'nid',
+            'target_id' => 'uid',
           ),
-          'table' => 'node',
+          'table' => 'users',
         ),
       ),
       'indexes' => array(
@@ -984,11 +984,11 @@ function labdoo_objects_field_default_fields() {
       'entity_types' => array(),
       'field_name' => 'field_tagger',
       'foreign keys' => array(
-        'node' => array(
+        'users' => array(
           'columns' => array(
-            'target_id' => 'nid',
+            'target_id' => 'uid',
           ),
-          'table' => 'node',
+          'table' => 'users',
         ),
       ),
       'indexes' => array(
