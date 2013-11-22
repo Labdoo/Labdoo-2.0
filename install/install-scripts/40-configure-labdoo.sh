@@ -55,13 +55,13 @@ cat >> $drupal_settings << EOF
 
 EOF
 
-### update to the latest version of core and modules
-### $drush is an alias for 'drush --root=/var/www/lbd'
-#$drush --yes pm-update
-
 ### install features modules
+### $drush is an alias for 'drush --root=/var/www/lbd'
 $drush --yes pm-enable lbd_layout
 $drush --yes features-revert lbd_layout
+
+$drush --yes pm-enable labdoo_objects
+$drush --yes features-revert labdoo_objects
 
 #$drush --yes pm-enable lbd_misc
 #$drush --yes features-revert lbd_misc
@@ -83,8 +83,11 @@ $drush --yes features-revert lbd_layout
 #$drush --yes pm-enable lbd_googleanalytics
 #$drush --yes pm-enable lbd_drupalchat
 
+### update to the latest version of core and modules
+$drush --yes pm-update
+
 ### install also multi-language support
-#$drush --yes pm-enable l10n_client l10n_update
-#mkdir -p $drupal_dir/sites/all/translations
-#chown -R www-data: $drupal_dir/sites/all/translations
-#$drush --yes l10n-update
+$drush --yes pm-enable l10n_client l10n_update
+mkdir -p $drupal_dir/sites/all/translations
+chown -R www-data: $drupal_dir/sites/all/translations
+$drush --yes l10n-update
