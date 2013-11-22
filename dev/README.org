@@ -11,7 +11,7 @@ Development Setup of Labdoo
   #+BEGIN_EXAMPLE
   mkdir /var/chroot
   cd /var/chroot/
-  git clone https://github.com/Labdoo/Drupal7.git Labdoo
+  git clone https://github.com/Labdoo/Labdoo-2.0.git Labdoo
   nohup nice Labdoo/install/install.sh lbd &
   tail -f nohup.out
   chroot lbd/ /tmp/install/config.sh
@@ -189,7 +189,7 @@ Development Setup of Labdoo
 
   The copy of the application on =/var/www/lbd_dev/profiles/labdoo/=
   (as well as the one on =/var/www/lbd/profiles/labdoo/=) are actually
-  clones of the git repository at https://github.com/Labdoo/Drupal7
+  clones of the git repository at https://github.com/Labdoo/Labdoo-2.0
   so we can *pull* from it and *push* to it. Pulling (to get
   up-to-date) can be done by everybody, however pushing requires a
   username and password (the ones that are used to access the account
@@ -240,7 +240,7 @@ Development Setup of Labdoo
   case when I have to test install/uninstall, enable/disable modules,
   features, etc. In this case I test them on the main application
   instance (~/var/www/lbd~). Since both applications are clones of the
-  [[https://github.com/Labdoo/Drupal7][GitHub repository]] it is easy to push commits from /lbd_dev/ to
+  [[https://github.com/Labdoo/Labdoo-2.0][GitHub repository]] it is easy to push commits from /lbd_dev/ to
   /github/ and to pull them from /github/ to /lbd/.
 
   However, sometimes it is better to test modifications and make sure

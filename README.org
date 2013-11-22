@@ -35,9 +35,9 @@
 * Documentation
 
   - Internal doc files:
-    + [[https://github.com/Labdoo/Drupal7/blob/master/README.org][README.org]] (this file)
-    + [[https://github.com/Labdoo/Drupal7/blob/master/dev/README.org][dev/README.org]] (tips for developers)
-    + [[https://github.com/Labdoo/Drupal7/blob/master/modules/features/README.org][modules/features/README.org]]
+    + [[https://github.com/Labdoo/Labdoo-2.0/blob/master/README.org][README.org]] (this file)
+    + [[https://github.com/Labdoo/Labdoo-2.0/blob/master/dev/README.org][dev/README.org]] (tips for developers)
+    + [[https://github.com/Labdoo/Labdoo-2.0/blob/master/modules/features/README.org][modules/features/README.org]]
 
   - External docs:
     + http://academia.edu/3993827/Development_Setup_Of_B-Translator
