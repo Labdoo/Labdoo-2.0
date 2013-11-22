@@ -1,0 +1,166 @@
+<?php
+
+/**
+ * @defgroup labdoolib LabdooLib: Set of core APIs and library functions exposed by Labdoo
+ *
+ * This module is Labdoo's "Swiss Army Knife" providing the general core functionality
+ * and exposing general Labdoo APIs that are not specific to any other more specialized module
+ *
+ */
+
+
+/**
+ * @file
+ * Main file for the Labdoo Library module
+ *
+ * @ingroup labdoolib 
+ */
+
+
+/**
+ * Returns the next Labdoo ID
+ *
+ * The Labdoo ID is a unique identifier assigned to each device.
+ * Labdoo ID's are 9 digit numbers running sequentially and
+ * starting at 000000001.  
+ *
+ * @return The next Labdoo ID 
+ *
+ */
+function labdoo_get_next_id() {
+
+  /*
+   * Get the Labdoo ID of the last tagged laptop,
+   * increment it by one and return that value
+   * while taking care of the initial condition
+   */
+  $query = "SELECT title FROM node WHERE type='laptop' AND title=(SELECT MAX(title) FROM node WHERE type='laptop')";
+  $currentId = db_query($query)->fetchField();
+  if(empty($currentId))
+    return ("000000001");
+
+  return sprintf("%09d", intval($currentId) + 1);
+}
+
+
+/**
+ * Implementation of hook_node_insert  
+ *
+ */
+function labdoo_lib_node_insert($node) {
+
+  if($node->type == 'laptop') {
+    /*
+     * The Labdoo identifier of each
+     * laptop is stored as the node's title
+     */
+    $loadedNode = node_load($node->nid);
+    $loadedNode->title = labdoo_get_next_id();
+    node_save($loadedNode);
+  }
+
+  if($node->type == 'dootrip') {
+    /*
+     * Dootrip's title is automatically generated
+     */
+    $loadedNode = node_load($node->nid);
+    $loadedNode->title = "Dootrip from X to Y (temporary title)";
+    node_save($loadedNode);
+  }
+
+  if($node->type == 'edoovillage') {
+    /*
+     * Dootrip's title is automatically generated
+     */
+    $loadedNode = node_load($node->nid);
+    $loadedNode->title = "Country, Village: description (temporary title)";
+    node_save($loadedNode);
+  }
+
+  if($node->type == 'hub') {
+    /*
+     * Dootrip's title is automatically generated
+     */
+    $loadedNode = node_load($node->nid);
+    $loadedNode->title = "Labdoo Hub name (temporary title)";
+    node_save($loadedNode);
+  }
+
+}
+
+
+/**
+ * Implementation of hook_form_node_form_alter
+ *
+ */
+function labdoo_lib_form_node_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+
+  /*
+   * Node is a laptop
+   */
+  if($form_id == 'laptop_node_form') {
+
+    /*
+     * Hide the title from the form
+     * so that users can't write to it.
+     * That's done because the title is
+     * programmatically given the value of
+     * the laptop's Labdoo ID
+     */
+    unset($form['title']);
+
+    /*
+     * Defaults for node creation
+     */
+    $node = $form_state['node'];
+    if (!isset($node->nid) || isset($node->is_new)) {
+      if(empty($form['field_tagger']['und'][0]['target_id']['#default_value'])) {    
+        $form['field_tagger']['und'][0]['target_id']['#default_value'] = $user->name . " (" . $user->uid . ")";
+        $form['field_manager']['und'][0]['target_id']['#default_value'] = $user->name . " (" . $user->uid . ")";
+      }
+    }
+  }
+
+  /*
+   * Node is a dootrip
+   */
+  if($form_id == 'dootrip_node_form') {
+
+    // Hide title
+    unset($form['title']);
+
+    /*
+     * Defaults for node creation
+     */
+    $node = $form_state['node'];
+    if (!isset($node->nid) || isset($node->is_new)) {
+      if(empty($form['field_dootripper_s_']['und'][0]['target_id']['#default_value'])) {    
+        $form['field_dootripper_s_']['und'][0]['target_id']['#default_value'] = $user->name . " (" . $user->uid . ")";
+      }
+    }
+
+  }
+
+  /*
+   * Node is an edoovillage
+   */
+  if($form_id == 'edoovillage_node_form') {
+
+    // Hide title
+    unset($form['title']);
+
+  }
+
+  /*
+   * Node is a hub
+   */
+  if($form_id == 'hub_node_form') {
+
+    // Hide title
+    unset($form['title']);
+
+  }
+
+}
+
