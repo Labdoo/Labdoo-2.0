@@ -45,6 +45,7 @@ projects[services][version] = "3.5"
 projects[services][patch][] = "https://drupal.org/files/fix_controller_settings-1154420-51.patch"
 projects[entityreference][version] = "1.1"
 projects[oauth2_server][version] = "1.0-rc3"
+projects[conditional_fields][version] = "3.0-alpha1"
 
 ;--------------------
 ; Performance

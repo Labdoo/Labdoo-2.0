@@ -45,15 +45,12 @@ drush site-install --verbose --yes labdoo \
       --site-name="$site_name" --site-mail="$site_mail" \
       --account-name="$account_name" --account-pass="$account_pass" --account-mail="$account_mail"
 
-### disable module comment
-drush --yes pm-disable comment
-
-### import test books
-profiles/labdoo/test/import-docs.sh
-
 ### install features modules
 drush --yes pm-enable lbd_layout
 drush --yes features-revert lbd_layout
+
+drush --yes pm-enable labdoo_objects
+drush --yes features-revert labdoo_objects
 
 #drush --yes pm-enable lbd_misc
 #drush --yes features-revert lbd_misc
