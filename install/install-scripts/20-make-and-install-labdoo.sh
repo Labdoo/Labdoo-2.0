@@ -1,7 +1,7 @@
 #!/bin/bash -x
 
 ### retrieve all the projects/modules and build the application directory
-makefile="https://raw.github.com/dashohoxha/Labdoo/master/build-labdoo.make"
+makefile="https://raw.github.com/Labdoo/Labdoo-2.0/master/build-labdoo.make"
 rm -rf $drupal_dir
 drush make --prepare-install --force-complete \
            --contrib-destination=profiles/labdoo \
