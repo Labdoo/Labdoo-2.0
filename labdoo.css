@@ -1,25 +1,3 @@
-/**
- * Stylesheet for Panopoly Profile
- */
-
-#panopoly-theme-selection-form .form-item-theme {
-  clear: both;
-  margin-top: .5em;
-  margin-bottom: .5em;
-}
-
-#panopoly-theme-selection-form .form-item-theme label img {
-  float: left;
-  width: 100px;
-  margin-right: 1em;
-}
-
-#panopoly-apps-check #edit-pantheon img {
-  float: right;
-  margin-left: 1em;
-  margin-bottom: 1em;
-}
-
 body.maintenance-page #logo {
   background:transparent url(labdoo.png) no-repeat top left;
   height:0;
