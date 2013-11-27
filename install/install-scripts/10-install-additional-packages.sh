@@ -24,6 +24,11 @@ install mysql-server ssmtp memcached php5-memcached \
         make ssl-cert gawk unzip wget curl diff phpmyadmin git
 install screen logwatch
 
+# TODO: hub depends on Ruby, install ruby as well
+### install hub: http://hub.github.com/
+#curl http://hub.github.com/standalone -sLo /bin/hub
+#chmod +x /bin/hub
+
 ### phpmyadmin will install apache2 and start it
 ### so we should stop and disable it
 service apache2 stop
