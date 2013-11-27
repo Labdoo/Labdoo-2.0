@@ -1,0 +1,7 @@
+body.maintenance-page #logo {
+  background:transparent url(labdoo.png) no-repeat top left;
+  height:0;
+  overflow:hidden;
+  padding-top: 187px; /* height of logo  */
+  width: 622px; /* width of logo  */
+}
