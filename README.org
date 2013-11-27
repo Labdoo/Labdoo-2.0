@@ -45,6 +45,7 @@
     + http://www.academia.edu/4054221/Cloning_a_B-Translator_Server
 
   - Other docs that may be useful:
+    + http://codeinthehole.com/writing/pull-requests-and-other-good-practices-for-teams-using-github/
     + http://dashohoxha.blogspot.com/2012/08/how-to-secure-ubuntu-server.html
     + http://dashohoxha.blogspot.com/2013/07/how-to-manage-your-own-domain-name.html
     + http://dashohoxha.blogspot.com/2013/02/how-to-set-up-chroot-environment-for.html

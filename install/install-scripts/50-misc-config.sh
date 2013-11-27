@@ -16,10 +16,19 @@ EOF
 mkdir -p /var/run/memcached/
 chown nobody /var/run/memcached/
 
-### make the prompt colored and display the chroot name
-sed -i /root/.bashrc \
-    -e '/^#force_color_prompt=/c force_color_prompt=yes'
+### change the prompt to display the chroot name, the git branch etc
 echo 'labdoo' > /etc/debian_chroot
+sed -i /root/.bashrc \
+    -e '/^# get the git branch/,+4 d'
+cat <<EOF >> /root/.bashrc
+# get the git branch (used in the prompt below)
+function parse_git_branch {
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+EOF
+PS1='${debian_chroot:+($debian_chroot)}\\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\e[32m\\]$(parse_git_branch)\\[\\033[00m\\]\\$ '
+sed -i /root/.bashrc \
+    -e "/^if \[ \"\$color_prompt\" = yes \]/,+2 s/PS1=.*/PS1='$PS1'/"
 
 ### configure apache2
 a2enmod ssl
