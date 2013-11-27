@@ -2,6 +2,7 @@ name = Labdoo
 description = Drupal installation profile for Labdoo.
 version = 1.x
 core = 7.x
+exclusive = TRUE
 
 ;--------------------
 ; Files
