@@ -24,6 +24,19 @@
     print render($content);
   ?>
 
+  <?php 
+    // Show the date the node it was created or last updated
+    // for some specific content types
+    if ($type == "laptop" || $type == "dootrip" || $type == "edoovillage" || $type == "hub") {
+      print "<br>";
+      if($type == "laptop")
+        print "<b>Date it was tagged:</b> " . format_date($node->created, 'custom', 'd/m/y/') . "<br>"; 
+      else
+        print "<b>Date it was created:</b> " . format_date($node->created, 'custom', 'd/m/y/') . "<br>"; 
+      print "<b>Date it was last updated:</b> " . format_date($node->changed, 'custom', 'd/m/y');
+    }
+  ?>
+
   <?php if (!empty($content['field_tags']) || !empty($content['links'])): ?>
     <footer>
       <?php print render($content['field_tags']); ?>
@@ -32,5 +45,6 @@
   <?php endif; ?>
 
   <?php print render($content['comments']); ?>
+
 
 </article> <!-- /.node -->

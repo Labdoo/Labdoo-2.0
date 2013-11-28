@@ -45,6 +45,11 @@ projects[services][version] = "3.5"
 projects[services][patch][] = "https://drupal.org/files/fix_controller_settings-1154420-51.patch"
 projects[entityreference][version] = "1.1"
 projects[oauth2_server][version] = "1.0-rc3"
+projects[field_group][version] = "1.3"
+projects[date][version] = "2.6"
+projects[location][version] = "3.1"
+projects[nodeaccess_userreference][version] = "3.10"
+projects[email][version] = "1.2"
 
 ;--------------------
 ; Performance
