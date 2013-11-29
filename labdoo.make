@@ -94,7 +94,3 @@ libraries[oauth2-server-php][download][url] = "https://github.com/bshaffer/oauth
 libraries[bootstrap][directory_name] = "bootstrap"
 libraries[bootstrap][download][type] = "get"
 libraries[bootstrap][download][url] = "https://github.com/twbs/bootstrap/archive/v3.0.0.zip"
-
-libraries[facebook-php-sdk][directory_name] = "facebook-php-sdk"
-libraries[facebook-php-sdk][download][type] = "git"
-libraries[facebook-php-sdk][download][url] = "https://github.com/facebook/facebook-php-sdk.git"
