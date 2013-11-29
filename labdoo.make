@@ -50,6 +50,7 @@ projects[date][version] = "2.6"
 projects[location][version] = "3.1"
 projects[nodeaccess_userreference][version] = "3.10"
 projects[email][version] = "1.2"
+projects[conditional_fields][version] = "3.0-alpha1"
 
 ;--------------------
 ; Performance
