@@ -19,6 +19,7 @@ chown nobody /var/run/memcached/
 ### change the prompt to display the chroot name, the git branch etc
 echo 'labdoo' > /etc/debian_chroot
 sed -i /root/.bashrc \
+    -e '/^#force_color_prompt=/c force_color_prompt=yes' \
     -e '/^# get the git branch/,+4 d'
 cat <<EOF >> /root/.bashrc
 # get the git branch (used in the prompt below)
