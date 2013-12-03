@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the lbd_webservices feature.
+ */
+
+include_once 'lbd_webservices.features.inc';

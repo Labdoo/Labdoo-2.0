@@ -41,10 +41,6 @@ projects[delete_all][version] = "1.1"
 projects[drush_language][version] = "1.2"
 projects[pathauto][version] = "1.2"
 projects[subpathauto][version] = "1.3"
-projects[services][version] = "3.5"
-projects[services][patch][] = "https://drupal.org/files/fix_controller_settings-1154420-51.patch"
-projects[entityreference][version] = "1.1"
-projects[oauth2_server][version] = "1.0-rc3"
 projects[conditional_fields][version] = "3.0-alpha1"
 projects[field_group][version] = "1.3"
 projects[date][version] = "2.6"
@@ -52,6 +48,36 @@ projects[location][version] = "3.1"
 projects[nodeaccess_userreference][version] = "3.10"
 projects[email][version] = "1.2"
 projects[conditional_fields][version] = "3.0-alpha1"
+
+;--------------------
+; Web Services
+;--------------------
+projects[services][version] = "3.5"
+projects[services][patch][] = "https://drupal.org/files/fix_controller_settings-1154420-51.patch"
+
+projects[entityreference][version] = "1.1"
+projects[oauth2_server][version] = "1.0-rc3"
+
+libraries[oauth2-server-php][directory_name] = "oauth2-server-php"
+libraries[oauth2-server-php][download][type] = "git"
+libraries[oauth2-server-php][download][url] = "https://github.com/bshaffer/oauth2-server-php.git"
+
+;
+;projects[oauth2_client][download][type] = git
+;projects[oauth2_client][download][url] = "https://github.com/dashohoxha/oauth2_client.git"
+;
+;libraries[PHP-OAuth2][directory_name] = "PHP-OAuth2"
+;libraries[PHP-OAuth2][download][type] = "git"
+;libraries[PHP-OAuth2][download][url] = "https://github.com/adoy/PHP-OAuth2.git"
+;
+;projects[wsclient][version] = "1.0"
+;projects[wsclient][patch] = "https://drupal.org/files/wsclient-1285310-http_basic_authentication-14.patch"
+;projects[wsclient][patch] = "https://drupal.org/files/issues/wsclient-2138617-oauth2_support.patch"
+;
+;projects[http_client][version] = "2.4"
+;projects[http_client][patch] = "https://drupal.org/files/http_client-2042205-create_basic_http_auth_plugin-2.patch"
+;projects[http_client][patch] = "https://drupal.org/files/issues/http_client-2138627-plugin_for_oauth2_authentication.patch"
+;
 
 ;--------------------
 ; Performance
@@ -92,10 +118,6 @@ projects[mass_contact][version] = "1.0-beta3"
 libraries[phpmailer][directory_name] = "phpmailer"
 libraries[phpmailer][download][type] = "get"
 libraries[phpmailer][download][url] = "https://github.com/PHPMailer/PHPMailer/archive/v5.2.6.zip"
-
-libraries[oauth2-server-php][directory_name] = "oauth2-server-php"
-libraries[oauth2-server-php][download][type] = "git"
-libraries[oauth2-server-php][download][url] = "https://github.com/bshaffer/oauth2-server-php.git"
 
 libraries[bootstrap][directory_name] = "bootstrap"
 libraries[bootstrap][download][type] = "get"

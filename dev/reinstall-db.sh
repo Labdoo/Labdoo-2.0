@@ -52,6 +52,9 @@ drush --yes features-revert lbd_layout
 drush --yes pm-enable labdoo_objects
 drush --yes features-revert labdoo_objects
 
+drush --yes pm-enable lbd_webservices
+drush --yes features-revert lbd_webservices
+
 #drush --yes pm-enable lbd_misc
 #drush --yes features-revert lbd_misc
 
