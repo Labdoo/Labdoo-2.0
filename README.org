@@ -1,3 +1,7 @@
+* License
+
+  All of Labdoo's source code is released under GPL version 3 or later.
+
 * Installation
 
   The recommended way of installation is to build a new server from
