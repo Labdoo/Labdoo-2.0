@@ -1,0 +1,27 @@
+<?php
+
+//TODO Add comments
+
+class LabdooRestUnitaryTest extends DrupalUnitTestCase {
+
+  public static function getInfo() {
+    return array(
+      'name' => 'Labdoo REST test functionality',
+      'description' => "Test SQL  operations: Review functions with SQL queries. ",
+      'group' => 'Labdoo'
+    );
+  }
+
+  function testHelloWorld ()  {
+	print "test message\n";
+	$this->assertTrue(TRUE,"My first test works");
+ }
+ function testGetLaptop ()  {
+	$id=2;
+	$result = labdoo_rest_get_laptop($id);
+	print "$result"."\n";
+	$this->assertTrue(TRUE,"Test get laptop");
+}
+
+
+}

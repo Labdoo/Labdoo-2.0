@@ -1,0 +1,7 @@
+name = Labdoo rest
+description = TODO: Description of module
+package = Labdoo
+core = 7.x
+files[] = labdoo_rest.inc
+files[] = labdoo_rest.test
+files[] = labdoo_rest.module

@@ -1,0 +1,138 @@
+<?php
+function labdoo_rest_get_laptop($id) {
+	db_query("DELETE FROM {cache};");
+
+	//TODO Add file wich configurations
+	print "---- trying to load node\n";
+	print print_r(node_load(2), 1);
+//	$node = node_load(2);
+
+	print "-------- var_dump ---------\n";
+	var_dump($node);
+	print "---------------------------\n";
+	exit();
+	return NULL;
+//  return db_query('SELECT * FROM node WHERE type=\'laptop\' AND  nid=:id', array(':id' => $id))
+//           ->fetchAll();
+}
+
+function labdoo_rest_write_laptop($laptop) {
+  $primary_key = !empty($laptop->nid) ? array('nid') : NULL;
+  drupal_write_record('node', $laptop, $primary_key);
+}
+
+function labdoo_rest_delete_laptop($id) {
+  db_query('DELETE FROM {node} WHERE type="laptop" AND nid=:id', array(':id' => $id));
+}
+/**
+ * Implementation of hook_services_resources().
+ */
+function labdoo_rest_services_resources() {
+  return array(
+    'laptop' => array(
+      'retrieve' => array(
+        'help' => 'Retrieves a note',
+        'file' => array('file' => 'inc', 'module' => 'labdoo_rest'),
+        'callback' => '_laptop_retrieve',
+        'access callback' => '_laptop_access',
+        'access arguments' => array('view'),
+        'access arguments append' => TRUE,
+        'args' => array(
+          array(
+            'name' => 'id',
+            'type' => 'int',
+            'description' => 'The id of the note to get',
+            'source' => array('path' => '0'),
+            'optional' => FALSE,
+          ),
+        ),
+      ),
+      'create' => array(
+        'help' => 'Creates a note',
+        'file' => array('file' => 'inc', 'module' => 'labdoo_rest'),
+        'callback' => '_laptop_create',
+        'access arguments' => array('note resource create'),
+        'access arguments append' => FALSE,
+        'args' => array(
+          array(
+            'name' => 'data',
+            'type' => 'struct',
+            'description' => 'The note object',
+            'source' => 'data',
+            'optional' => FALSE,
+          ),
+        ),
+      ),
+      'update' => array(
+        'help' => 'Updates a note',
+        'file' => array('file' => 'inc', 'module' => 'labdoo_rest'),
+        'callback' => '_laptop_update',
+        'access callback' => '_laptop_access',
+        'access arguments' => array('update'),
+        'access arguments append' => TRUE,
+        'args' => array(
+          array(
+            'name' => 'id',
+            'type' => 'int',
+            'description' => 'The id of the node to update',
+            'source' => array('path' => '0'),
+            'optional' => FALSE,
+          ),
+          array(
+            'name' => 'data',
+            'type' => 'struct',
+            'description' => 'The note data object',
+            'source' => 'data',
+            'optional' => FALSE,
+          ),
+        ),
+      ),
+      'delete' => array(
+        'help' => 'Deletes a note',
+        'file' => array('file' => 'inc', 'module' => 'labdoo_rest'),
+        'callback' => '_laptop_delete',
+        'access callback' => '_laptop_access',
+        'access arguments' => array('delete'),
+        'access arguments append' => TRUE,
+        'args' => array(
+          array(
+            'name' => 'id',
+            'type' => 'int',
+            'description' => 'The id of the note to delete',
+            'source' => array('path' => '0'),
+            'optional' => FALSE,
+          ),
+        ),
+      ),
+      'index' => array(
+        'help' => 'Retrieves a listing of notes',
+        'file' => array('file' => 'inc', 'module' => 'labdoo_rest'),
+        'callback' => '_laptop_index',
+        'access callback' => '_laptop_access',
+        'access arguments' => array('access content'),
+        'access arguments append' => FALSE,
+        'args' => array(
+          array(
+            'name' => 'page',
+            'type' => 'int',
+            'description' => '',
+            'source' => array(
+              'param' => 'page',
+            ),
+            'optional' => TRUE,
+            'default value' => 0,
+          ),
+          array(
+           'name' => 'parameters',
+           'type' => 'array',
+           'description' => '',
+           'source' => 'param',
+           'optional' => TRUE,
+           'default value' => array(),
+          ),
+        ),
+      ),
+    ),
+  );
+}
+?>
