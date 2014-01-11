@@ -18,32 +18,6 @@
 
 
 /**
- * Returns the next Labdoo ID
- *
- * The Labdoo ID is a unique identifier assigned to each device.
- * Labdoo ID's are 9 digit numbers running sequentially and
- * starting at 000000001.  
- *
- * @return The next Labdoo ID 
- *
- */
-function labdoo_get_next_id() {
-
-  /*
-   * Get the Labdoo ID of the last tagged laptop,
-   * increment it by one and return that value
-   * while taking care of the initial condition
-   */
-  $query = "SELECT title FROM node WHERE type='laptop' AND title=(SELECT MAX(title) FROM node WHERE type='laptop')";
-  $currentId = db_query($query)->fetchField();
-  if(empty($currentId))
-    return ("000000001");
-
-  return sprintf("%09d", intval($currentId) + 1);
-}
-
-
-/**
  * Implementation of hook_node_insert  
  *
  */
@@ -55,7 +29,20 @@ function labdoo_lib_node_insert($node) {
      * laptop is stored as the node's title
      */
     $loadedNode = node_load($node->nid);
-    $loadedNode->title = labdoo_get_next_id();
+
+    // The ID of this laptop is equal to the 
+    // current number of laptops in the database
+    // TODO: global lock for the counter
+    $query = "SELECT COUNT(*) FROM node laptop WHERE (type='laptop' AND vid=(SELECT MAX(vid) FROM node WHERE nid=laptop.nid))";
+    $numLaptops = db_query($query)->fetchField();
+    $loadedNode->title = sprintf("%09d", intval($numLaptops));
+
+    // Add laptop path alias for 1.0 compatibility.
+    // There are basically two ways to access a laptop:
+    // via laptop/$ID or content/$ID
+    $path = 'laptop/' . $loadedNode->title;
+    $node->path = array('alias' => $path);
+
     node_save($loadedNode);
   }
 
@@ -162,5 +149,164 @@ function labdoo_lib_form_node_form_alter(&$form, &$form_state, $form_id) {
 
   }
 
+}
+
+
+/** 
+ * Calculates the number of objects for each city
+ * 
+ * @return An array indexed by the name of the city in capital letters
+ * and with various fields: 
+ *
+ *   'count': The number of doojects in the city
+ *     'lat': The latitude of the city
+ *     'lon': The longitude of the city
+ * 'country': The country of the city 
+ *  
+ */ 
+function labdoo_getnum_objects_by_city($type) {
+
+  $country_names = location_get_iso3166_list();
+
+//  $query = "SELECT nid, vid FROM node object WHERE (type='$type' AND vid=(SELECT MAX(vid) FROM node WHERE nid=object.nid))";
+  $query = "SELECT nid, vid FROM node WHERE type='$type'";
+  $doojects = db_query($query);
+
+  foreach($doojects as $dooject) {
+
+    $query = "SELECT lid FROM location_instance WHERE nid=$dooject->nid AND vid=$dooject->vid";
+    $loc = db_query($query)->fetchField();
+    $query = "SELECT city, country FROM location WHERE lid=$loc";
+    $city = db_query($query)->fetchObject()->city;
+    $country = db_query($query)->fetchObject()->country;
+    $query = "SELECT latitude, longitude FROM location WHERE lid=$loc";
+    $lat = db_query($query)->fetchObject()->latitude;
+    $lon = db_query($query)->fetchObject()->longitude;
+
+    if(array_key_exists($country, $country_names))
+        $countryExt = $country_names[$country];
+    else 
+        $countryExt = $country;
+
+    if(!isset($doojectsCount[strtoupper($city)]))
+    {
+      $doojectsCount[strtoupper($city)]['count'] = 0;
+      $doojectsCount[strtoupper($city)]['lat'] = $lat;
+      $doojectsCount[strtoupper($city)]['lon'] = $lon;
+      $doojectsCount[strtoupper($city)]['country'] = $countryExt;
+    }
+
+    $doojectsCount[strtoupper($city)]['count']++;
+    $doojectsCount[strtoupper($city)]['city'] = $city;
+
+  } 
+
+  return $doojectsCount;
+}
+
+/**
+ * Calculates the total number of doojects
+ * in demand from the list of edoovillages
+ *
+ * @param edoovillageId node ID of the edoovillage we want to find the demand for 
+ * @param hubId node ID of the hub we want to find the demand for 
+ * @param $doAverage calculate the fair share of demand that a hub should take
+ * for each edoovillage, understood as demand divided by the number of hubs
+ * taking care of that edoovillage
+ *
+ */
+function labdoo_get_demand($edoovillageId, $hubId, $doAverage) {
+
+  if($doAverage) {
+
+    if($hubId) {
+
+      $query = "SELECT SUM(b.field_number_of_laptops_needed_value / a.numberHubs) 
+                FROM 
+                  (SELECT COUNT(*) numberHubs, entity_id 
+                    FROM field_data_field_hub WHERE entity_id IN (SELECT entity_id 
+                      FROM field_data_field_hub WHERE field_hub_target_id=$hubId) GROUP BY entity_id) a 
+                INNER JOIN 
+                  (SELECT entity_id, field_number_of_laptops_needed_value 
+                    FROM field_data_field_number_of_laptops_needed  WHERE entity_id IN (SELECT entity_id 
+                      FROM field_data_field_hub WHERE field_hub_target_id=$hubId)) b ON a.entity_id = b.entity_id";
+
+    }
+    else {
+
+      // TODO: not implemented yet
+      return -1;
+
+    }
+
+  }
+
+  else {
+
+    if($hubId) {
+ 
+      $query = "SELECT SUM(field_number_of_laptops_needed_value) 
+                FROM field_data_field_number_of_laptops_needed 
+                WHERE entity_id IN (SELECT entity_id 
+                FROM field_data_field_hub WHERE field_hub_target_id=$hubId)"; 
+
+    }
+
+    else if($edoovillageId) {
+
+      $query = "SELECT SUM(field_number_of_laptops_needed_value) 
+                FROM field_data_field_number_of_laptops_needed WHERE entity_id=$edoovillageId"; 
+
+    }
+
+    else {
+
+      $query = "SELECT SUM(field_number_of_laptops_needed_value) FROM field_data_field_number_of_laptops_needed"; 
+
+    }
+
+  }
+
+  $numLaptops = db_query($query)->fetchField();
+
+  return $numLaptops;
+}
+
+
+/** 
+ *
+ * Calculates the number of doojects assigned 
+ * to a hub in a give state
+ * 
+ */ 
+function labdoo_getnum_doojects($edoovillageId, $hubId, $status) {
+
+  $country_names = location_get_iso3166_list();
+
+  if($hubId) 
+    $query = "SELECT COUNT(*) FROM field_data_field_status WHERE field_status_value='$status' AND entity_id IN (SELECT entity_id FROM field_data_field_hub_laptop WHERE field_hub_laptop_target_id=$hubId)"; 
+  else if($edoovillageId)
+    $query = "SELECT COUNT(*) FROM field_data_field_status WHERE field_status_value='$status' AND entity_id IN (SELECT entity_id FROM field_data_field_edoovillage_destination WHERE field_edoovillage_destination_target_id=$edoovillageId)"; 
+  else
+    $query = "SELECT COUNT(*) FROM field_data_field_status WHERE field_status_value='$status'"; 
+
+  $numLaptops = db_query($query)->fetchField();
+
+  return $numLaptops;
+}
+
+
+/**
+ * Returns the title of a node
+ *
+ * @param nodeid The ID of a node
+ *
+ * @return The title of the node 
+ * 
+ */
+function lbd_nodeid2title($nodeid)
+{
+    $title = db_query("SELECT title FROM node WHERE nid = :nid ", array(':nid' => $nodeid))->fetchField();
+    return $title; 
 }
 

@@ -1,0 +1,99 @@
+<?php
+
+/**
+ * @file
+ * Installation file for the Labdoo Visualization module
+ *
+ * @ingroup labdoovisualize 
+ */
+
+
+/**
+ *
+ * Creates nodes to hold the various dashboards
+ */
+function lbd_visualize_create_node($function, $title, $path)
+{
+
+  switch($function) {
+
+    case "lbd_display_dashboard_doojects":
+      $functionExt = $function . "(\$user, \$hub, \$edoovillage, \$country)";
+      break;
+    case "lbd_display_dashboard_edoovillages":
+      $functionExt = $function . "(\$hub, \$country)";
+      break;
+    case "lbd_display_dashboard_hubs":
+      $functionExt = $function . "(\$country)";
+      break;
+
+  }
+ 
+  $body_text = "
+<?php 
+
+\$edoovillage = \$hub = \$user = \$country = NULL;
+if(!empty(\$_GET['e'])) \$edoovillage = \$_GET['e'];
+if(!empty(\$_GET['h'])) \$hub = \$_GET['h'];
+if(!empty(\$_GET['u'])) \$user = \$_GET['u'];
+if(!empty(\$_GET['c'])) \$country = \$_GET['c'];
+
+" . $functionExt . "; 
+
+?>
+  ";
+
+  $node = new stdClass();
+  $node->type = 'page';
+  node_object_prepare($node);
+  
+  $node->title = $title;
+  $node->language = LANGUAGE_NONE;
+
+  $node->body[$node->language][0]['value']   = $body_text;
+  $node->body[$node->language][0]['summary'] = '';
+  $node->body[$node->language][0]['format']  = 'php_code';
+  
+  $node->path = array('alias' => $path);
+
+  node_save($node);
+}
+
+
+/**
+ *
+ * Deletes the nodes that were holding the various dashboards
+ */
+function lbd_visualize_delete_node($dashboardPath)
+{
+  $path = drupal_lookup_path("source", $dashboardPath); 
+  $node = menu_get_object("node", 1, $path);
+  node_delete($node->nid);
+}
+
+
+/**
+ * Implements hook_install
+ *
+ */
+function lbd_visualize_install()
+{
+  lbd_visualize_create_node("lbd_display_dashboard_doojects", "Doojects Dashboard", "content/doojects-dashboard"); 
+  lbd_visualize_create_node("lbd_display_dashboard_edoovillages", "Edoovillages Dashboard", "content/edoovillages-dashboard"); 
+  lbd_visualize_create_node("lbd_display_dashboard_hubs", "Hubs Dashboard", "content/hubs-dashboard"); 
+  drupal_set_message("lbd_visualize installed correctly");
+}
+
+
+/**
+ * Implements hook_uninstall
+ *
+ */
+function lbd_visualize_uninstall()
+{
+  lbd_visualize_delete_node("content/edoovillages-dashboard");
+  lbd_visualize_delete_node("content/hubs-dashboard");
+  lbd_visualize_delete_node("content/doojects-dashboard");
+  drupal_set_message("lbd_visualize uninstalled correctly");
+}
+
