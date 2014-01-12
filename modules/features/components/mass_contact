@@ -1,0 +1,24 @@
+variable:mass_contact_attachment_location
+variable:mass_contact_bcc_d
+variable:mass_contact_category_override
+variable:mass_contact_character_set
+variable:mass_contact_hourly_threshold
+variable:mass_contact_include_from_name
+variable:mass_contact_include_to_name
+variable:mass_contact_nodecc_d
+variable:mass_contact_number_of_attachments
+variable:mass_contact_optout_d
+variable:mass_contact_recipient_limit
+user_permission:create mass_contact content
+user_permission:edit own mass_contact content
+user_permission:edit any mass_contact content
+user_permission:delete own mass_contact content
+user_permission:delete any mass_contact content
+user_permission:mass contact administer
+user_permission:mass contact archive messages
+user_permission:mass contact include attachments
+user_permission:mass contact change default sender information
+user_permission:mass contact override archiving
+user_permission:mass contact override bcc
+user_permission:mass contact override text format
+user_permission:mass contact send messages
