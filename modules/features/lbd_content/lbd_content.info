@@ -1,0 +1,9 @@
+name = lbd_content
+core = 7.x
+package = Features
+dependencies[] = blog
+dependencies[] = btr_layout
+dependencies[] = node_export_features
+features[features_api][] = api:1
+features[node_export_features][] = 22ca1b5b-31d6-4bfb-be6f-c5c679af27d9
+features[node_export_features][] = cdd868f4-63bd-4c89-b1cc-87d32fe3358f
