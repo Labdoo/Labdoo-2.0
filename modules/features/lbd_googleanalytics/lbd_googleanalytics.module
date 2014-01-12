@@ -1,0 +1,8 @@
+<?php
+/**
+ * @file
+ * Code for the lbd_googleanalytics feature.
+ */
+
+include_once 'lbd_googleanalytics.admin.inc';
+include_once 'lbd_googleanalytics.features.inc';
