@@ -1,0 +1,40 @@
+variable:additional_settings__active_tab_simplenews
+variable:simplenews_debug
+variable:simplenews_format
+variable:simplenews_priority
+variable:simplenews_receipt
+variable:simplenews_send
+variable:simplenews_source_cache
+variable:simplenews_spool_expire
+variable:simplenews_sync_account
+variable:simplenews_test_address_override
+variable:simplenews_throttle
+variable:simplenews_use_combined
+variable:simplenews_use_cron
+variable:simplenews_vid
+variable:comment_anonymous_simplenews
+variable:comment_default_mode_simplenews
+variable:comment_default_per_page_simplenews
+variable:comment_form_location_simplenews
+variable:comment_preview_simplenews
+variable:comment_simplenews
+variable:comment_subject_field_simplenews
+variable:language_content_type_simplenews
+variable:menu_options_simplenews
+variable:menu_parent_simplenews
+variable:node_options_simplenews
+variable:node_preview_simplenews
+variable:node_submitted_simplenews
+variable:simplenews_content_type_simplenews
+user_permission:create simplenews content
+user_permission:edit own simplenews content
+user_permission:edit any simplenews content
+user_permission:delete own simplenews content
+user_permission:delete any simplenews content
+user_permission:administer newsletters
+user_permission:administer simplenews subscriptions
+user_permission:administer simplenews settings
+user_permission:send newsletter
+user_permission:subscribe to newsletters
+user_permission:edit terms in newsletter
+user_permission:delete terms in newsletter
