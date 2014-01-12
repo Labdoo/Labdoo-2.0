@@ -1,0 +1,8 @@
+<?php
+/**
+ * @file
+ * Code for the lbd_captcha feature.
+ */
+
+include_once 'lbd_captcha.admin.inc';
+include_once 'lbd_captcha.features.inc';
