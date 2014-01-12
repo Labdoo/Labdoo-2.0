@@ -7,6 +7,8 @@ drush make --prepare-install --force-complete \
            --contrib-destination=profiles/labdoo \
            $makefile $drupal_dir
 cp -a $drupal_dir/profiles/labdoo/{libraries/bootstrap,themes/contrib/bootstrap/}
+cp -a $drupal_dir/profiles/labdoo/{libraries/hybridauth-2.1.2/hybridauth,libraries/}
+cp $drupal_dir/profiles/labdoo/libraries/hybridauth-additional-providers-1.8/hybridauth-github/Providers/GitHub.php $drupal_dir/profiles/labdoo/libraries/hybridauth/Hybrid/Providers/
 
 ### create the downloads dir
 mkdir -p /var/www/downloads/

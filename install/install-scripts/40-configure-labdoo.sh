@@ -60,6 +60,9 @@ EOF
 $drush --yes pm-enable lbd_layout
 $drush --yes features-revert lbd_layout
 
+$drush --yes pm-enable lbd_hybridauth
+$drush --yes features-revert lbd_hybridauth
+
 $drush --yes pm-enable labdoo_objects
 $drush --yes features-revert labdoo_objects
 

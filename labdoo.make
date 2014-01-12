@@ -67,6 +67,7 @@ projects[disqus][version] = "1.9"
 projects[disqus][patch][] = "http://drupal.org/files/disqus-https.patch"
 projects[sharethis][version] = "2.5"
 projects[invite][version] = "2.1-beta2"
+projects[hybridauth][version] = "2.8"
 
 ;--------------------
 ; Drupal Localization
@@ -100,3 +101,11 @@ libraries[oauth2-server-php][download][url] = "https://github.com/bshaffer/oauth
 libraries[bootstrap][directory_name] = "bootstrap"
 libraries[bootstrap][download][type] = "get"
 libraries[bootstrap][download][url] = "https://github.com/twbs/bootstrap/archive/v3.0.0.zip"
+
+libraries[hybridauth][directory_name] = "hybridauth-2.1.2"
+libraries[hybridauth][download][type] = "get"
+libraries[hybridauth][download][url] = "http://sourceforge.net/projects/hybridauth/files/hybridauth-2.1.2.zip"
+
+libraries[hybridauth-additional-providers][directory_name] = "hybridauth-additional-providers-1.8"
+libraries[hybridauth-additional-providers][download][type] = "get"
+libraries[hybridauth-additional-providers][download][url] = "http://sourceforge.net/projects/hybridauth/files/hybridauth-additional-providers-1.8.zip"
