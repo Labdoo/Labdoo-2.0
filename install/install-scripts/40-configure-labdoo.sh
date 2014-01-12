@@ -36,6 +36,7 @@ EOF
 # set the memcache configuration
 cat >> $drupal_settings << EOF
 // Adds memcache as a cache backend
+/* comment memcache config
 \$conf['cache_backends'][] = 'profiles/labdoo/modules/contrib/memcache/memcache.inc';
 // Makes it so that memcache is the default caching backend
 \$conf['cache_default_class'] = 'MemCacheDrupal';
@@ -52,6 +53,7 @@ cat >> $drupal_settings << EOF
 
 // If you wanted multiple Drupal installations to share one Memcache instance use the prefix like so:
 \$conf['memcache_key_prefix'] = 'labdoo';
+comment memcache config */
 
 EOF
 
