@@ -209,6 +209,34 @@ function labdoo_objects_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_dootrip';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_dootrip'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_edoovillage';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_edoovillage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_hub';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_hub'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_laptop';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_laptop'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__dootrip';
   $strongarm->value = array(
     'view_modes' => array(),
@@ -787,6 +815,7 @@ function labdoo_objects_strongarm() {
   $strongarm->value = array(
     0 => 'status',
     1 => 'promote',
+    2 => 'revision',
   );
   $export['node_options_dootrip'] = $strongarm;
 
@@ -797,6 +826,7 @@ function labdoo_objects_strongarm() {
   $strongarm->value = array(
     0 => 'status',
     1 => 'promote',
+    2 => 'revision',
   );
   $export['node_options_edoovillage'] = $strongarm;
 
@@ -807,6 +837,7 @@ function labdoo_objects_strongarm() {
   $strongarm->value = array(
     0 => 'status',
     1 => 'promote',
+    2 => 'revision',
   );
   $export['node_options_hub'] = $strongarm;
 
@@ -817,6 +848,7 @@ function labdoo_objects_strongarm() {
   $strongarm->value = array(
     0 => 'status',
     1 => 'promote',
+    2 => 'revision',
   );
   $export['node_options_laptop'] = $strongarm;
 

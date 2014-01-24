@@ -42,6 +42,7 @@ function labdoo_objects_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'dootrip',
+      'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -87,7 +88,7 @@ function labdoo_objects_field_default_fields() {
           'text_parts' => array(),
           'year_range' => '-3:+3',
         ),
-        'type' => 'date_popup',
+        'type' => 'date_select',
         'weight' => '8',
       ),
     ),
@@ -192,6 +193,7 @@ function labdoo_objects_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'dootrip',
+      'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -237,7 +239,7 @@ function labdoo_objects_field_default_fields() {
           'text_parts' => array(),
           'year_range' => '-3:+3',
         ),
-        'type' => 'date_popup',
+        'type' => 'date_select',
         'weight' => '5',
       ),
     ),

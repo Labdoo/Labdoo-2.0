@@ -1,0 +1,892 @@
+<?php
+
+/**
+ * @defgroup labdoovisualize LabdooVisualize: Set of dashboards and displays to help visualize Labdoo data
+ *
+ * This module provides the Labdoo's dashboards and the set of displays to help organize and visualize data.
+ *
+ * Design principle: module towards enabling transparency, opennes of data and ease of management.
+ *
+ */
+
+
+/**
+ * @file
+ * Main file for the Labdoo Visualization module
+ *
+ * @ingroup labdoovisualize 
+ *
+ */
+
+
+/**
+ * Displays a dashboard of doojects
+ * 
+ * @param userId Identifier of the user or NULL for all users
+ * @param hubId Identifier of a hub or NULL for all hubs 
+ * @param edoovillageId Identifier of the edoovillage or NULL for all edoovillages
+ * @param country Country in which the doojects reside or NULL for all countries 
+ *
+ * @return A dashboard of the doojects 
+ *
+ */
+function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovillageId = NULL, $country = NULL) {
+
+  $possibleStates = array('S0', 'S1', 'S2',  'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S9', 'T1', 'T2');
+
+  if($userId != NULL)
+  {
+    $query = "SELECT entity_id FROM field_data_field_tagger WHERE (field_tagger_target_id=:nid)";
+    $result = db_query($query, array(':nid' => $userId));
+  }
+  else if($hubId != NULL) 
+  {
+    $query = "SELECT entity_id FROM field_data_field_hub_laptop WHERE (field_hub_laptop_target_id=:nid)";
+    $result = db_query($query, array(':nid' => $hubId));
+  }
+  else if($edoovillageId != NULL)
+  {
+    $query = "SELECT entity_id FROM field_data_field_edoovillage_destination WHERE (field_edoovillage_destination_target_id=:nid)";
+    $result = db_query($query, array(':nid' => $edoovillageId));
+  }
+  else if($country != NULL)
+  {
+    $query = "SELECT nid as entity_id FROM location_instance 
+              WHERE lid IN (SELECT lid FROM location WHERE country=:co) 
+              AND nid IN (SELECT entity_id FROM field_data_field_tagger)";
+    $result = db_query($query, array(':co' => $country));
+  } 
+  else
+  {
+    // Fetch all objects
+    $query = "SELECT entity_id FROM field_data_field_tagger";
+    $result = db_query($query);
+  }
+
+  $objects = array();
+  foreach($result as $item) {
+
+    $objectNid = $item->entity_id;
+
+    $node = node_load($item->entity_id);
+
+    // Extract Labdoo ID (mandatory field)
+    $objects[$objectNid]['ID'] = $node->title; 
+
+    // Extract Hub Field (mandatory field)
+    $objects[$objectNid]['hub'] = lbd_nodeid2title($node->field_hub_laptop['und'][0]['target_id']);
+
+    // Extract Edoovillage Field (optional field)
+    if(!empty($node->field_edoovillage_destination)) 
+      $objects[$objectNid]['edoovillage'] = lbd_nodeid2title($node->field_edoovillage_destination['und'][0]['target_id']);
+    else
+      $objects[$objectNid]['edoovillage'] = "Not assigned";
+
+    // Extract Status Field (mandatory field)
+    $objects[$objectNid]['status'] = $objectstatus = $node->field_status['und'][0]['value'];
+
+    // Extract Notes Field (optional field)
+    if(!empty($node->field_additional_notes)) 
+      $objects[$objectNid]['notes'] = $node->field_additional_notes['und'][0]['value']; 
+    else
+      $objects[$objectNid]['notes'] = "";
+
+    // Extract Model Field (mandatory field)
+    $objects[$objectNid]['model'] = $node->field_model['und'][0]['value'];
+
+    // Extract Tagger Field (mandatory field)
+    $query = "SELECT name FROM users WHERE uid = " . $node->field_tagger['und'][0]['target_id'];
+    $objects[$objectNid]['tagger'] = db_query($query)->fetchField(); 
+
+    // Extract Manager Field (mandatory field)
+    $query = "SELECT name FROM users WHERE uid = " . $node->field_manager['und'][0]['target_id'];
+    $objects[$objectNid]['manager'] = db_query($query)->fetchField(); 
+
+    // Extract email list field (optional field)
+    $objects[$objectNid]['emails'] = "";
+    if(!empty($node->field_additional_notification_em)) 
+      foreach($node->field_additional_notification_em['und'] as $item)
+        $objects[$objectNid]['emails'] = $objects[$objectNid]['emails'] . " " . $item['email'];
+
+    // Get the country
+    $country_names = location_get_iso3166_list();
+    $objects[$objectNid]['country'] = $node->location['country'];
+    if(array_key_exists($node->location['country'], $country_names))
+        $objects[$objectNid]['country'] = $country_names[$node->location['country']];
+        
+    // Calculate the link to the object 
+    global $language;
+    if ($language->language != "en")
+      $urlPrefix = "/" . $language->language;
+    else
+      $urlPrefix = "";
+    $objects[$objectNid]['link'] = "<!--$node->title (comment added to help alphabetically order this column)-->" . 
+                                   "<a href='$urlPrefix/node/$objectNid'>$node->title</a>";
+
+    // Mark the state so we can perform counting operations
+    foreach($possibleStates as $thisState)
+      $objects[$objectNid][$thisState] = ($objectstatus == $thisState ? 1 : 0);
+
+  }
+
+  $metrics[0] = array('label' => 'Labdoo ID', 'field' => 'link', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[1] = array('label' => 'Status', 'field' => 'status', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+  $metrics[2] = array('label' => 'Hub', 'field' => 'hub', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+  $metrics[3] = array('label' => 'Edoovillage', 'field' => 'edoovillage', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+  $metrics[4] = array('label' => 'Country', 'field' => 'country', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+  $metrics[5] = array('label' => 'S0 - tagged', 'field' => 'S0', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[6] = array('label' => 'S1 - donated', 'field' => 'S1', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[7] = array('label' => 'S2 - sanitized', 'field' => 'S2', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[8] = array('label' => 'S3 - assigned', 'field' => 'S3', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[9] = array('label' => 'T1 - in transit', 'field' => 'T1', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[10] = array('label' => 'S4 - deployed', 'field' => 'S4', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[11] = array('label' => 'S5 - needs recycle', 'field' => 'S5', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[12] = array('label' => 'S6 - recycled', 'field' => 'S6', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+
+  if(empty($objects)) {
+
+    $objects[0]['edoovillage'] = ""; 
+    $objects[0]['hub'] = "";
+    $objects[0]['status'] = "";
+    $objects[0]['country'] = "";
+    $objects[0]['link'] = "No doojects in this view"; 
+    $objects[0]['completed'] = $objects[0]['open'] = 0; 
+    foreach($possibleStates as $thisState)
+      $objects[0][$thisState] = 0;
+
+  }
+
+  print_dashboard_switcher();
+  print_dashboard_objects('laptop', $objects, $metrics);
+
+}
+
+
+/**
+ * Displays a dashboard of edoovillages
+ * 
+ * @param hubId Identifier of a hub or NULL for all hubs 
+ * @param country Country in which the edoovillages reside or NULL for all countries 
+ *
+ * @return A dashboard of the edoovillages 
+ *
+ */
+function lbd_display_dashboard_edoovillages($hubId = NULL, $country = NULL) {
+
+  if($hubId != NULL) 
+  {
+    $query = "SELECT entity_id FROM field_data_field_hub WHERE (field_hub_target_id=:nid)";
+    $result = db_query($query, array(':nid' => $hubId));
+  }
+  else if($country != NULL)
+  {
+    $query = "SELECT nid as entity_id FROM location_instance 
+              WHERE lid IN (SELECT lid FROM location WHERE country=:co) 
+              AND nid IN (SELECT entity_id FROM field_data_field_edoovillage_status)";
+    $result = db_query($query, array(':co' => $country));
+  } 
+  else
+  {
+    // Fetch all objects
+    $query = "SELECT entity_id FROM field_data_field_edoovillage_status";
+    $result = db_query($query);
+  }
+
+  $objects = array();
+  foreach($result as $item) {
+
+    $objectNid = $item->entity_id;
+
+    $node = node_load($item->entity_id);
+
+    // Extract title (mandatory field)
+    $objects[$objectNid]['title'] = $node->title; 
+
+    // Extract hubs (mandatory field)
+    $objects[$objectNid]['hub'] = "";
+    foreach($node->field_hub['und'] as $item)
+      $objects[$objectNid]['hub'] = $objects[$objectNid]['hub'] . " " . lbd_nodeid2title($item['target_id']);
+
+    // Extract needed field (mandatory field)
+    $objects[$objectNid]['needed'] = $needed = $node->field_number_of_laptops_needed['und'][0]['value'];
+
+    // Extract intransit field 
+    $objects[$objectNid]['intransit'] = $inTransit = labdoo_getnum_doojects($objectNid, NULL, "T1") +
+                                                     labdoo_getnum_doojects($objectNid, NULL, "S3");
+
+    // Extract delivered field 
+    $objects[$objectNid]['delivered'] = $delivered = labdoo_getnum_doojects($objectNid, NULL, "S4"); 
+
+    // Extract remaining field 
+    $objects[$objectNid]['remaining'] = $remaining = $needed - $inTransit - $delivered; 
+
+    // Extract %completed field 
+    $objects[$objectNid]['pcompleted'] = floor(($needed - $remaining) / $needed * 100.00); 
+
+    // Extract status field (mandatory field)
+    $objects[$objectNid]['status'] = $objectstatus = $node->field_edoovillage_status['und'][0]['value']; 
+
+    // Get the country
+    $country_names = location_get_iso3166_list();
+    $objects[$objectNid]['country'] = $node->location['country'];
+    if(array_key_exists($node->location['country'], $country_names))
+        $objects[$objectNid]['country'] = $country_names[$node->location['country']];
+        
+    // Calculate the link to the object
+    global $language;
+    if ($language->language != "en")
+      $urlPrefix = "/" . $language->language;
+    else
+      $urlPrefix = "";
+    $objects[$objectNid]['link'] = "<!--$node->title (comment added to help alphabetically order this column)-->" . 
+                                   "<a href='$urlPrefix/node/$objectNid'>$node->title</a>";
+
+    // Mark the state so we can perform counting operations
+    $possibleStates = array('completed', 'open');
+    foreach($possibleStates as $thisState) {
+      $objects[$objectNid][$thisState] = ($objectstatus == $thisState ? 1 : 0);
+    }
+
+  }
+
+  if(empty($objects)) {
+
+    $objects[0]['title'] = ""; 
+    $objects[0]['hub'] = "";
+    $objects[0]['needed'] = "";
+    $objects[0]['intransit'] = "";
+    $objects[0]['delivered'] = ""; 
+    $objects[0]['remaining'] = ""; 
+    $objects[0]['pcompleted'] = 0;
+    $objects[0]['status'] = "";
+    $objects[0]['country'] = "";
+    $objects[0]['link'] = "No edoovillages in this view"; 
+    $objects[0]['completed'] = $objects[0]['open'] = 0; 
+
+  }
+
+  $metrics[0] = array('label' => 'Edoovillage', 'field' => 'link', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[1] = array('label' => 'Hubs', 'field' => 'hub', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+  $metrics[2] = array('label' => 'Needed', 'field' => 'needed', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[3] = array('label' => 'In transit', 'field' => 'intransit', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[4] = array('label' => 'Delivered', 'field' => 'delivered', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[5] = array('label' => 'Remaining', 'field' => 'remaining', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[6] = array('label' => '% Completed', 'field' => 'pcompleted', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
+  $metrics[7] = array('label' => 'Status', 'field' => 'status', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+  $metrics[8] = array('label' => 'Countries', 'field' => 'country', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+  $metrics[9] = array('label' => 'Completed', 'field' => 'completed', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[10] = array('label' => 'Open', 'field' => 'open', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+
+  print_dashboard_switcher();
+  print_dashboard_objects('laptop', $objects, $metrics);
+
+}
+
+
+/**
+ * Displays a dashboard of hubs
+ * 
+ * @param country Country in which the hubs reside or NULL for all countries 
+ *
+ * @return A dashboard of the edoovillages 
+ *
+ */
+function lbd_display_dashboard_hubs($country = NULL) {
+
+  // Fetch all objects
+  if($country != NULL)
+  {
+    $query = "SELECT nid as entity_id FROM location_instance 
+              WHERE lid IN (SELECT lid FROM location WHERE country=:co) 
+              AND nid IN (SELECT entity_id FROM field_data_field_hub_manager_s_)";
+    $result = db_query($query, array(':co' => $country));
+  } 
+  else {
+    $query = "SELECT entity_id FROM field_data_field_hub_manager_s_";
+    $result = db_query($query);
+  }
+
+  $objects = array();
+  foreach($result as $item) {
+
+    $objectNid = $item->entity_id;
+
+    $node = node_load($item->entity_id);
+
+    // Extract title (mandatory field)
+    $objects[$objectNid]['title'] = $node->title; 
+
+    // Extract needed field (mandatory field)
+    $objects[$objectNid]['needed'] = $needed = labdoo_get_demand(NULL, $objectNid, FALSE);
+
+    // Extract intransit field 
+    $objects[$objectNid]['intransit'] = $inTransit = labdoo_getnum_doojects(NULL, $objectNid, "T1") +
+                                                     labdoo_getnum_doojects(NULL, $objectNid, "S3");
+
+    // Extract delivered field 
+    $objects[$objectNid]['delivered'] = $delivered = labdoo_getnum_doojects(NULL, $objectNid, "S4"); 
+
+    // Extract remaining field 
+    $objects[$objectNid]['remaining'] = $remaining = $needed - $inTransit - $delivered; 
+
+    // Extract needed field (mandatory field)
+    $objects[$objectNid]['neededShared'] = $neededShared = floor(labdoo_get_demand(NULL, $objectNid, TRUE));
+
+    // Extract remaining field 
+    $objects[$objectNid]['remainingShared'] = $remainingShared = $neededShared - $inTransit - $delivered; 
+
+    // Extract %completed field 
+    $objects[$objectNid]['pcompleted'] = floor(($needed - $remaining) / $needed * 100.00); 
+
+    // Get the country
+    $country_names = location_get_iso3166_list();
+    $objects[$objectNid]['country'] = $node->location['country'];
+    if(array_key_exists($node->location['country'], $country_names))
+        $objects[$objectNid]['country'] = $country_names[$node->location['country']];
+        
+    // Calculate the link to the object
+    global $language;
+    if ($language->language != "en")
+      $urlPrefix = "/" . $language->language;
+    else
+      $urlPrefix = "";
+    $objects[$objectNid]['link'] = "<!--$node->title (comment added to help alphabetically order this column)-->" . 
+                                   "<a href='$urlPrefix/node/$objectNid'>$node->title</a>";
+
+  }
+
+  if(empty($objects)) {
+
+    $objects[0]['title'] = ""; 
+    $objects[0]['hub'] = "";
+    $objects[0]['needed'] = "";
+    $objects[0]['neededShared'] = "";
+    $objects[0]['intransit'] = "";
+    $objects[0]['delivered'] = ""; 
+    $objects[0]['remaining'] = ""; 
+    $objects[0]['remainingShared'] = ""; 
+    $objects[0]['pcompleted'] = 0;
+    $objects[0]['country'] = "";
+    $objects[0]['link'] = "No edoovillages in this view"; 
+
+  }
+
+  $metrics[0] = array('label' => 'Hub', 'field' => 'link', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[1] = array('label' => 'Needed', 'field' => 'needed', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[2] = array('label' => 'Remaining', 'field' => 'remaining', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[3] = array('label' => '% Completed', 'field' => 'pcompleted', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
+  $metrics[4] = array('label' => 'Countries', 'field' => 'country', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+  $metrics[5] = array('label' => 'Needed', 'field' => 'neededShared', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[6] = array('label' => 'In transit', 'field' => 'intransit', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[7] = array('label' => 'Delivered', 'field' => 'delivered', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[8] = array('label' => 'Remaining', 'field' => 'remainingShared', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+
+  print_dashboard_switcher();
+  print_dashboard_objects('laptop', $objects, $metrics);
+
+}
+
+
+/**
+ * print_dashboard_switcher
+ *
+ */
+function print_dashboard_switcher()
+{
+  global $language;
+
+  if ($language->language != 'en')
+    $lang = '/' . $language->language;
+  else
+    $lang = '';
+
+  switch(drupal_get_path_alias(current_path())) {
+    
+    case "content/doojects-dashboard":
+      $url1 = "Doojects";
+      $url2 = "Edoovillages";
+      $url3 = "Hubs";
+      break;
+
+    case "content/hubs-dashboard":
+      $url1 = "Hubs";
+      $url2 = "Edoovillages";
+      $url3 = "Doojects";
+      break;
+
+    case "content/edoovillages-dashboard":
+      $url1 = "Edoovillages";
+      $url2 = "Doojects";
+      $url3 = "Hubs";
+      break;
+
+  }
+
+  $code = "<p><strong><span style='color:#ff3300;'>Labdoo Metrics | Select dashboard:</span></strong></p>
+           <form>
+           <select name='URL' onchange='window.location.href=this.form.URL.options[this.form.URL.selectedIndex].value'>
+           <option value='$lang/content/$url1-dashboard'>$url1</option>
+           <option value='$lang/content/$url2-dashboard'>$url2</option>
+           <option value='$lang/content/$url3-dashboard'>$url3</option>
+           </select>
+           </form>";
+
+  print($code);
+
+  return;
+}
+
+
+/**
+ *
+ * Prints a dashboard of Labdoo objects
+ * Examples of objects are: doojects, hubs, edoovillages. 
+ *
+ */
+function print_dashboard_objects($objectsType, $objects, $metrics)
+{
+
+  $lastElement = sizeof($metrics)+1;
+
+  $numTableColumns = 1;
+  foreach($metrics as $metric)
+    if($metric['menu'] == 'yes')
+      $numTableColumns = $numTableColumns + 1;
+
+  file_put_contents("/tmp/file3", $numTableColumns);
+
+  print("
+
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+  <meta http-equiv='content-type' content='text/html; charset=utf-8'/>
+    <title>Doojects Dashboard Using Google Visualization API</title>
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    <script type='text/javascript'>google.load('visualization', '1.1', {packages: ['controls', 'geomap']});</script>
+    <script type='text/javascript'>
+      function drawVisualization() {
+        // Prepare the data
+        var data = google.visualization.arrayToDataTable([
+        [");
+
+  foreach($metrics as $index => $metric)
+    print("'" . $metrics[$index]['label'] . "', ");
+
+  print("'Free-Text Search', 'ConstantNull'], ");
+
+  foreach($objects as $object) {
+
+    $searchtext = '';
+    foreach($object as $field)
+        $searchtext = $searchtext . ' ' . $field;
+
+    print('[');
+    foreach($metrics as $index => $metric) { 
+      // TODO: checking for whether it is numeric
+      // may not be the most generic way to approach this
+      // and may not accommodate for all cases
+      if(is_numeric($object[$metric['field']]))
+        print($object[$metric['field']] . ',');
+      else
+        print('"' . $object[$metric['field']] . '",');
+    }
+
+    print('"' . $searchtext . '",""],');
+
+  }
+
+  print("
+
+]);
+
+  ");
+
+  foreach($metrics as $index => $metric) {
+    if($metric['slider'] == "yes")
+      print("
+
+// Define a slider control for the Needed column.
+var sliderControl$index = new google.visualization.ControlWrapper({
+                            'controlType': 'NumberRangeFilter',
+                            'containerId': 'sliderControlID$index',
+                            'options': {
+                              'filterColumnLabel': '" . $metric['label'] . "' ,
+                              'ui': {'labelStacking': 'vertical'}
+                            }
+                          });
+
+
+    ");
+  }
+
+  foreach($metrics as $index => $metric) {
+    if($metric['picker'] == "yes")
+      print("
+
+var pickerControl$index = new google.visualization.ControlWrapper({
+                             'controlType': 'CategoryFilter',
+                             'containerId': 'pickerControlID$index',
+                             'options': {
+                               'filterColumnLabel': '" . $metric['label'] . "' ,
+                               'ui': {
+                                 'labelStacking': 'vertical',
+                                 'allowTyping': false,
+                                 'caption': '" . $metric['label'] . "' ,
+                                 'label': false
+                               }
+                             }
+                           });
+
+    ");
+  }
+
+  print("
+
+/*
+ * StringFilter control for the 'Text' column
+ */
+var stringFilter = new google.visualization.ControlWrapper({
+                     'controlType': 'StringFilter',
+                     'containerId': 'controlTextFilter',
+                     'options': {
+                       'filterColumnLabel': 'Free-Text Search',
+                       'label': 'Free-Text Search',
+                       'matchType': 'any'
+                     }
+                   });
+
+/*
+ * Table chart
+ */
+var table = new google.visualization.ChartWrapper({
+              'chartType': 'Table',
+              'containerId': 'chartTable',
+              'options': {
+                'width': '720px',
+                'allowHtml': true, 
+                'showRowNumber': true,
+                'page': 'enable',
+                'pageSize' : 50,
+                'sortColumn' : 0,
+                'sortAscending' : false
+              },
+              view: {columns: [0, 1, 2, 3, 4]} 
+            });
+
+/*
+ * Create a dashboard
+ */
+new google.visualization.Dashboard(document.getElementById('dashboard')).
+
+/*
+ * Establish bindings
+ */
+bind([
+
+  ");
+
+  foreach($metrics as $index => $metric) {
+    if($metric['picker'] == "yes")
+      print("pickerControl$index, ");
+    if($metric['slider'] == "yes")
+      print("sliderControl$index, ");
+  }
+
+  print("
+ stringFilter], [table]).
+
+/*
+ * Draw the dashboard.
+ */
+draw(data);
+
+/*
+ * Create a column-table
+ */
+var columnsTable = new google.visualization.DataTable();
+columnsTable.addColumn('number', 'colIndex');
+columnsTable.addColumn('string', 'colLabel');
+var initState = {
+  selectedValues: []
+};
+
+
+/*
+ * put the columns into this data table (skip column 0)
+ * do not include the first column (the key) and the last column (the NULL column used for aggregation)
+ */
+
+ ");
+
+  foreach($metrics as $index => $metric) 
+    if($metric['menu'] == "yes") {
+      print("columnsTable.addRow([$index, data.getColumnLabel($index)]);");
+      print("initState.selectedValues.push(data.getColumnLabel($index));");
+  }
+  
+  print("
+
+/*
+ * Picker to control the columns displayed in the table 
+ */
+var columnFilter = new google.visualization.ControlWrapper({
+                     controlType: 'CategoryFilter',
+                     containerId: 'pickerControlIDCol',
+                     dataTable: columnsTable,
+                     options: {
+                       filterColumnLabel: 'colLabel',
+                       ui: {
+                         'caption': 'Fields',
+                         allowTyping: false,
+                         allowMultiple: true,
+                         'label': false,
+                       }
+                     },
+                     state: initState
+                   });
+
+/*
+ * Draw it
+ */
+columnFilter.draw();
+
+/*
+ * Listen for events on the column-filter
+ */
+google.visualization.events.addListener(columnFilter, 'statechange', function () {
+        var state = columnFilter.getState();
+        var row;
+        var columnIndices = [0];
+        for (var i = 0; i < state.selectedValues.length; i++) {
+            row = columnsTable.getFilteredRows([{
+                column: 1,
+                value: state.selectedValues[i]
+            }])[0];
+            columnIndices.push(columnsTable.getValue(row, 0));
+        }
+        // sort the indices into their original order
+        columnIndices.sort(function (a, b) {
+            return (a - b);
+        });
+
+        table.setView({
+            columns: columnIndices
+        });
+
+        table.draw();
+
+    });
+
+/*
+ * Geolocation map
+ */
+var dataMap = new google.visualization.DataTable();
+dataMap.addColumn('number', 'LATITUDE', 'Latitude');
+dataMap.addColumn('number', 'LONGITUDE', 'Longitude');
+dataMap.addColumn('string', 'DESCRIPTION', 'Description');
+dataMap.addColumn('number', 'Number of Doojects', 'Number of Doojects');
+
+var rows = [
+
+");
+
+  $objectsGeoCount = labdoo_getnum_objects_by_city($objectsType);
+  foreach ($objectsGeoCount as $item)
+    print("[" . $item['lat']. ", " . $item['lon'] . ", \"" . $item['city'] . ", " . $item['country'] . "\", ". $item['count'] ."],");
+
+  print("
+
+];
+
+dataMap.addRows(rows);
+
+var options = {
+    title : 'The Labdoo Global Inventory',
+    region: 'world',
+    displayMode: 'markers',
+    colorAxis: {colors: ['red', 'orange']},
+    legend: 'none'
+  };
+
+var container = document.getElementById('chartLaptopsGeo');
+var geomap = new google.visualization.GeoChart(container);
+geomap.draw(dataMap, options);
+
+/*
+ * Column chart
+ */
+var columnChart = new google.visualization.ChartWrapper({
+                    'chartType': 'ColumnChart',
+                    'containerId': 'chartColumns',
+                    'dataTable' : google.visualization.data.group(data, [$lastElement],
+                    [
+
+  ");
+
+  foreach($metrics as $index => $metric)
+    if($metric['aggregate'] == 'yes')
+      print("{'column': $index, 'aggregation': google.visualization.data.sum, 'type': 'number'},");  
+
+  print("
+
+])});  
+
+columnChart.draw();
+
+/*
+ * Updates the table based on user's input
+ */
+function updateColumnChart() {
+  // group the data of the filtered table and set the result in the pie chart.
+  columnChart.setDataTable(google.visualization.data.group(
+    // get the filtered results
+    table.getDataTable(),
+    [$lastElement],
+    [
+
+  ");
+
+  foreach($metrics as $index => $metric)
+    if($metric['aggregate'] == 'yes')
+      print("{'column': $index, 'aggregation': google.visualization.data.sum, 'type': 'number'},");  
+
+  print("
+
+]));
+
+  // redraw the pie chart to reflect changes
+  columnChart.draw();
+}
+
+  ");
+
+  foreach($metrics as $index => $metric) { 
+    if($metric['picker'] == "yes")
+      print("google.visualization.events.addListener(pickerControl$index, 'statechange', updateColumnChart);");
+    if($metric['slider'] == "yes")
+      print("google.visualization.events.addListener(sliderControl$index, 'statechange', updateColumnChart);");
+  }
+
+  print("
+
+google.visualization.events.addListener(stringFilter, 'statechange', updateColumnChart);
+
+/*
+ * Attach an event handler to the CSV download button
+ */
+var runOnce = google.visualization.events.addListener(table, 'ready', function () {
+  document.getElementById('dashboardToCSV').onclick = function () {
+    var tempData = table.getDataTable();
+    var csvData = [];
+    var tmpArr = [];
+    var tmpStr = '';
+    for (var i = 0; i < $numTableColumns; i++) {
+      // replace double-quotes with double-double quotes for CSV compatibility
+      tmpStr = tempData.getColumnLabel(i).replace(/\"/g, '\"\"');
+      tmpArr.push('\"' + tmpStr + '\"');
+    }
+    csvData.push(tmpArr.join(';'));
+    for (var i = 0; i < tempData.getNumberOfRows(); i++) {
+      tmpArr = [];
+      for (var j = 0; j < $numTableColumns; j++) {
+        switch(data.getColumnType(j)) {
+          case 'string':
+            tmpStr = tempData.getValue(i, j).replace(/\"/g, '\"\"');
+            // remove html tags
+            tmpStr = tmpStr.replace(/<\/?[^>]+(>|$)/g, \"\"); 
+            tmpArr.push('\"' + tmpStr + '\"');
+            break;
+          case 'number':
+            tmpArr.push(tempData.getValue(i, j));
+            break;
+          case 'boolean':
+            tmpArr.push((tempData.getValue(i, j)) ? 'True' : 'False');
+            break;
+          default:
+            // should never trigger
+        }
+      }
+      csvData.push(tmpArr.join(';'));
+    }
+    var output = csvData.join('\\n');
+    var uri = 'data:text/csv;charset=UTF-8,' + encodeURIComponent(output);
+    window.open(uri);
+  };
+  google.visualization.events.removeListener(runOnce);
+});
+
+}
+
+google.setOnLoadCallback(drawVisualization);
+
+</script>
+  </head>
+  <body style='font-family: Arial;border: 0 none;'>
+    <div id='dashboard'>
+      <table>
+        <tr style='vertical-align: top'>
+          <td colspan='3'; style='width: 780px'>
+            <div id='chartLaptopsGeo' style='align: center; width: 600px; height: 360px;'></div>
+          </td>
+        </tr>
+        <tr style='vertical-align: top'>
+          <td colspan='3'; style='width: 780px'>
+            <div id='chartColumns'></div>
+          </td>
+        </tr>
+        <tr style='vertical-align: top'>
+          <td colspan='1'; style='width: 200px'>
+            <div id='controlTextFilter'></div>
+          </td>
+
+  ");
+
+  foreach($metrics as $index => $metric) 
+    if($metric['slider'] == "yes")
+      print("
+          <td colspan='1'; style='width: 300px'>
+            <div id='sliderControlID$index'></div>
+          </td>
+      ");
+
+  print("
+
+        </tr>
+  ");
+
+
+  foreach($metrics as $index => $metric) 
+    if($metric['picker'] == "yes")
+      print("
+        <tr style='vertical-align: top'>
+          <td colspan='3'; style='width: 780px'>
+            <div id='pickerControlID$index'></div>
+          </td>
+        </tr>
+      ");
+
+  print("
+        <tr style='vertical-align: top'>
+          <td colspan='3'; style='width: 780px'>
+            <div id='pickerControlIDCol'></div>
+          </td>
+        </tr>
+        <tr style='vertical-align: top'>
+          <td colspan='3'; style='width: 780px'>
+            <div style='float: left;' id='chartTable'></div>
+          </td>
+        </tr>
+        <tr style='vertical-align: top'>
+          <td colspan='3'; style='width: 780px'>
+            <input type='button' id='dashboardToCSV' value='Click to download data' />
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
+
+");
+
+}
+
