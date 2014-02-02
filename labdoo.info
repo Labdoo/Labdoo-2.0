@@ -73,7 +73,7 @@ dependencies[] = delete_all
 dependencies[] = entity
 dependencies[] = pathauto
 dependencies[] = subpathauto
-dependencies[] = node_clone
+;dependencies[] = node_clone
 
 ;--------------------
 ; Drupal Localization
