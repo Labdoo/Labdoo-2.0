@@ -93,8 +93,8 @@ dependencies[] = mimemail_compress
 ;--------------------
 ; Labdoo
 ;--------------------
-;dependencies[] = lbd_hub
-;dependencies[] = lbd_village
+dependencies[] = labdoo_lib
+dependencies[] = lbd_visualize 
 
 ;--------------------
 ; Other

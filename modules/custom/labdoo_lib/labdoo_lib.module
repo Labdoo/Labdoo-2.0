@@ -57,21 +57,25 @@ function labdoo_lib_node_insert($node) {
 
   if($node->type == 'edoovillage') {
     /*
-     * Dootrip's title is automatically generated
+     * Edoovillage's title is automatically generated
      */
+    $countryNames = location_get_iso3166_list();
+    $nodeCountry = $countryNames[$node->locations[0]['country']];
+    $nodeCity = $node->locations[0]['city'];
+
     $loadedNode = node_load($node->nid);
-    $loadedNode->title = "Country, Village: description (temporary title)";
+    $loadedNode->title = $nodeCountry . ", " . $nodeCity . ": " . $loadedNode->field_project_summary['und'][0]['value'];
     node_save($loadedNode);
   }
 
-  if($node->type == 'hub') {
-    /*
-     * Dootrip's title is automatically generated
-     */
-    $loadedNode = node_load($node->nid);
-    $loadedNode->title = "Labdoo Hub name (temporary title)";
-    node_save($loadedNode);
-  }
+//  if($node->type == 'hub') {
+//    /*
+//     * Hub's title is automatically generated
+//     */
+//    $loadedNode = node_load($node->nid);
+//    $loadedNode->title = "Labdoo Hub name (temporary title)";
+//    node_save($loadedNode);
+//  }
 
 }
 
@@ -144,8 +148,8 @@ function labdoo_lib_form_node_form_alter(&$form, &$form_state, $form_id) {
    */
   if($form_id == 'hub_node_form') {
 
-    // Hide title
-    unset($form['title']);
+//    // Hide title
+//    unset($form['title']);
 
   }
 
