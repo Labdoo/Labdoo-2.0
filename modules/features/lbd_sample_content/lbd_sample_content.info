@@ -1,9 +1,0 @@
-name = lbd_sample_content
-core = 7.x
-package = Features
-dependencies[] = labdoo_objects
-dependencies[] = node_export_features
-features[features_api][] = api:1
-features[node_export_features][] = 8077150b-db8c-4f9f-973f-3be15cecadb1
-features[node_export_features][] = 91463088-e14d-4f45-ae0b-7dc2053edec9
-features[node_export_features][] = f386fece-46c5-4fd2-9834-495555544768
