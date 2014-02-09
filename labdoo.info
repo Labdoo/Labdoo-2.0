@@ -94,7 +94,7 @@ dependencies[] = mimemail_compress
 ; Labdoo
 ;--------------------
 dependencies[] = labdoo_lib
-dependencies[] = lbd_visualize 
+;dependencies[] = lbd_visualize 
 
 ;--------------------
 ; Other
