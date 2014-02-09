@@ -4,7 +4,6 @@ core = 7.x
 package = Features
 dependencies[] = labdoo_objects
 dependencies[] = node_export_features
-dependencies[] = lbd_sample_doojects 
 features[features_api][] = api:1
 features[node_export_features][] = 6d539cc3-cd14-4ef3-983f-91708487c84c
 features[node_export_features][] = f386fece-46c5-4fd2-9834-495555544768
