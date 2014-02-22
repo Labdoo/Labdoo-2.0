@@ -81,6 +81,64 @@ function labdoo_lib_node_insert($node) {
 
 
 /**
+ * _update_laptop_location_from_edoovillage
+ *
+ * Updates the location of a laptop to match that of its 
+ * assigned edoovillage
+ *
+ */
+function _update_laptop_location_from_edoovillage($node) {
+
+  // Get destination project
+  $query = "SELECT field_edoovillage_destination_target_id 
+            FROM field_data_field_edoovillage_destination WHERE entity_id=$node->nid";
+  $edoovillageId = db_query($query)->fetchField();
+
+  // Get the location id of the destination project
+  $query = "SELECT lid FROM location_instance project 
+            WHERE vid=(SELECT MAX(vid) FROM location_instance WHERE nid=project.nid) AND (nid=$edoovillageId)";
+  $edoovillageLid = db_query($query)->fetchField();
+
+  // Update the location of the laptop to be that of the destination project
+  $query = "SELECT vid FROM location_instance project 
+            WHERE vid=(SELECT MAX(vid) FROM location_instance WHERE nid=project.nid) AND (nid=$node->nid)";
+  $laptopVid = db_query($query)->fetchField();
+  $query ="UPDATE location_instance SET lid=$edoovillageLid WHERE vid=$laptopVid AND nid=$node->nid";
+  $result = db_query($query);
+  drupal_set_message(t('The location of this dooject has been automatically assigned to the location of its edoovillage.'));
+
+  return;
+}
+
+
+/**
+ * Implementation of hook_node_update
+ *
+ */
+function labdoo_lib_node_update($node) {
+
+  if($node->type == 'laptop') {
+
+    /*
+     * Automatically update the location of a dooject
+     * to match that of its assigned edoovillage for states
+     * T1 or S4.
+     */
+    $doojectStatus = $node->field_status['und'][0]['value'];
+    if($doojectStatus == "T1" || $doojectStatus == "S4") {
+      // Use a PHP shutdown callback (invoked upon exiting the PHP thread)
+      // because this appears to be the only way to make sure the node 
+      // has been stored in the database prior to updating the location
+      register_shutdown_function('_update_laptop_location_from_edoovillage', $node);
+   }
+
+  }
+
+  return;
+}
+
+
+/**
  * Implementation of hook_node_presave
  *
  */
