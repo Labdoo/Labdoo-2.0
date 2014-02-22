@@ -81,6 +81,25 @@ function labdoo_lib_node_insert($node) {
 
 
 /**
+ * Implementation of hook_node_presave
+ *
+ */
+function labdoo_lib_node_presave($node) {
+
+  if($node->type == 'edoovillage') {
+    /*
+     * Update title in case any of its parts was modified
+     */
+    $countryNames = location_get_iso3166_list();
+    $nodeCountry = $countryNames[$node->locations[0]['country']];
+    $nodeCity = $node->locations[0]['city'];
+    $node->title = $nodeCountry . ", " . $nodeCity . ": " . $node->field_project_summary['und'][0]['value'];
+  }
+
+}
+
+
+/**
  * Implementation of hook_form_node_form_alter
  *
  */
