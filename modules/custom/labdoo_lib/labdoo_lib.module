@@ -33,8 +33,7 @@ function labdoo_lib_node_insert($node) {
     // The ID of this laptop is equal to the 
     // current number of laptops in the database
     // TODO: global lock for the counter
-    $query = "SELECT COUNT(*) FROM node laptop WHERE (type='laptop' AND vid=(SELECT MAX(vid) FROM node WHERE nid=laptop.nid))";
-    $numLaptops = db_query($query)->fetchField();
+    $numLaptops = lbd_get_total_num_doojects(); 
     $loadedNode->title = sprintf("%09d", intval($numLaptops));
 
     // Add laptop path alias for 1.0 compatibility.
@@ -234,6 +233,21 @@ function labdoo_lib_form_node_form_alter(&$form, &$form_state, $form_id) {
 
 
 /** 
+ * Calculates the total number of doojects 
+ * 
+ * @return The total number of doojects in the Labdoo inventory 
+ *  
+ */
+function lbd_get_total_num_doojects() {
+
+  $query = "SELECT COUNT(*) FROM node WHERE type='laptop'";
+  $numDoojects = db_query($query)->fetchField();
+
+  return($numDoojects);
+}
+
+
+/** 
  * Calculates the number of objects for each city
  * 
  * @return An array indexed by the name of the city in capital letters
@@ -389,5 +403,184 @@ function lbd_nodeid2title($nodeid)
 {
     $title = db_query("SELECT title FROM node WHERE nid = :nid ", array(':nid' => $nodeid))->fetchField();
     return $title; 
+}
+
+
+/**
+ * Prints the header of a dooject
+ *
+ * @param nodeid The ID of the dooject 
+ *
+ */
+function lbd_print_dooject_header($nodeid)
+{
+  $node = node_load($nodeid);
+  if($node == FALSE)
+    return;
+  $laptopId = $node->title;
+
+  $query = "SELECT field_edoovillage_destination_target_id 
+            FROM field_data_field_edoovillage_destination WHERE entity_id=$nodeid";
+  $edoovillageId = db_query($query)->fetchField();
+
+  $numDoojects = lbd_get_total_num_doojects();
+
+  if(intval($laptopId) == $numDoojects) {
+    $nextUri = "";
+  }
+  else {
+    $nextIdFull = sprintf("%09d", intval(intval($laptopId)+1));
+    $nextUri = "<a href=\"" . request_uri() . "/../.." . "/laptop/" . $nextIdFull . "\">";
+  }
+  if(intval($laptopId) == 1) {
+    $prevUri = "";
+  }
+  else {
+    $prevIdFull = sprintf("%09d", intval(intval($laptopId)-1));
+    $prevUri = "<a href=\"" . request_uri() . "/../.." . "/laptop/" . $prevIdFull . "\">";
+  }
+
+  $tagsUri = "/content/tag-one-laptop?id=" . $laptopId;
+
+  // Table header
+  print('<table border="0" cellpadding="1" cellspacing="1" style="width: 800px;"><tbody><tr><td>');
+
+  // Left arrow
+  print(t('<p class="small rteleft" style="font-family: monospace;">'
+        .$prevUri.
+        '<img alt="" src="/profiles/labdoo/files/pictures/arrow_left.png" style="width: 40px; height: 49px; "/> 
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>'));
+
+  // Next cell
+  print('</td><td>');
+
+  // Tagging howto (lightbox)
+  print(t('<p class="small" style="font-family: monospace; "><a href="/profiles/labdoo/files/pictures/tagging-flow.png" 
+        rel="lightbox" style="line-height: 10px; color: rgb(17, 85, 119);"><img alt="image labdoo" rel="lightbox" 
+        src="/profiles/labdoo/files/pictures/tagging-flow.png" style="border-style: solid; color: rgb(51, 51, 51); 
+        width: 151px; height: 100px;" /></a></p>'));
+  
+  // Button for tagging 
+  print(t('<p><input type="button" value="Print Tags for this Laptop"onclick="window.open(\''.$tagsUri.'\', 
+        \'windowpopup\', \'resizable=yes,menubar=1,status=no,width=700,height=700\');"/>'));
+
+  // Next cell
+  print('</td><td>');
+
+  // Photo album icon and button
+  if($edoovillageId) {
+    $albumUri = request_uri() . "/../../node/" . $edoovillageId;
+    print(t('<p class="small" style="font-family: monospace; ">
+          <img alt="" src="/profiles/labdoo/files/pictures/photo-album-icon.jpg" style="width: 122px; height: 100px; "/></a>'));
+    print(t('<p><input type="button" value="Go to Photo Album"onclick="window.open(\''.$albumUri.'\', \'target=_self\');"/>'));
+  }
+
+  // Next cell
+  print('</td><td>');
+
+  // Print right arrow
+  print(t('<p class="small rteright" style="font-family: monospace;">'.$nextUri.'&nbsp; &nbsp; &nbsp; 
+        &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<img alt="" src="/profiles/labdoo/files/pictures/arrow_right.png" 
+        style="width: 40px; height: 49px; "/> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>'));
+
+  // Table ending
+  print(t('</td></tr></tbody></table>'));
+
+  return;
+}
+
+
+/*
+ * lbd_generate_qrcode
+ *
+ * @param tag dooject identifier
+ * @param widthHeight height of the QR code
+ * @param EC_level error correction level
+ * @param margin margin 
+ *
+ */
+function lbd_generate_qrcode($tag, $widthHeight ='60', $EC_level='L', $margin='0') {
+  $thisTag = urlencode("http://www.labdoo.org/laptop/".$tag);
+  echo '<img src="http://chart.apis.google.com/chart?chs='.$widthHeight.
+       'x'.$widthHeight.'&cht=qr&chld='.$EC_level.'|'.$margin.
+       '&chl='.$thisTag.'" alt="QR code" widthHeight="'.$widthHeight.
+       '" widthHeight="'.$widthHeight.'"/>';
+  return;
+}
+
+
+/**
+ * Prints the labels of a dooject
+ *
+ * @param laptopid The ID of the dooject 
+ *
+ */
+function lbd_print_dooject_labels($laptopid = NULL) {
+
+  if(($laptopid == NULL) || 
+     (!is_numeric($laptopid)) || 
+     (intval($laptopid) < 1) || 
+     (intval($laptopid) > lbd_get_total_num_doojects()) || 
+     (strlen($laptopid) != 9))
+  {
+    print(t('<p><strong>Wrong Identifier. &nbsp;
+            Please use a <span style="color:#ff0000;">9 digit</span> number to correctly display the tags.</strong></p> 
+            <p><a href="http://www.labdoo.org">Back to Labdoo.org</a></p>'));
+    return;
+  }
+
+  print('
+
+Print and attach these three labels to: (1) the device, (2) the power adaptor and <br>(3)
+inside the battery compartment of the device. You can omit the third tag if the<br> device has no battery
+compartment.
+Check this <a href="http://www.labdoo.org/sites/default/files/tagging-flow.png" target="_blank">drawing</a> if in doubt.
+<br>
+<br>
+
+<table border="0" cellpadding="1" cellspacing="1" style="width: 580px;">
+        <tbody>
+                <tr>
+                        <td style="width: 120px;">
+<p><strong style="color: rgb(0, 0, 0); font-family: monospace; line-height: 2px; font-size: 11px;">
+Device tag<br>www.<span style="color: rgb(255, 0, 0);">lab</span><span style="color: rgb(0, 102, 255);">d</span><span style="color: rgb(102, 204, 51);">oo</span>.org<br>
+ID: '.$laptopid.'
+</strong></p>
+                        </td>
+                        <td style="width: 120px;">
+  ');
+  lbd_generate_qrcode($laptopid);
+  print('
+                        </td>
+                        <td style="width: 120px;">
+<p><strong style="color: rgb(0, 0, 0); font-family: monospace; line-height: 2px; font-size: 11px;">
+Power adap. tag<br>www.<span style="color: rgb(255, 0, 0);">lab</span><span style="color: rgb(0, 102, 255);">d</span><span style="color: rgb(102, 204, 51);">oo</span>.org<br>
+ID: '.$laptopid.'
+</strong></p>
+                        </td>
+                        <td style="width: 120px;">
+  ');
+  lbd_generate_qrcode($laptopid);
+  print('
+                        </td>
+                        <td style="width: 120px;">
+<p><strong style="color: rgb(0, 0, 0); font-family: monospace; line-height: 2px; font-size: 11px;">
+Batt. comp. tag<br>www.<span style="color: rgb(255, 0, 0);">lab</span><span style="color: rgb(0, 102, 255);">d</span><span style="color: rgb(102, 204, 51);">oo</span>.org<br>
+ID: '.$laptopid.'
+</strong></p>
+                        </td>
+                        <td style="width: 120px;">
+  ');
+  lbd_generate_qrcode($laptopid);
+  print('
+                        </td>
+
+                </tr>
+        </tbody>
+</table>
+
+  ');
+
+  return;
 }
 

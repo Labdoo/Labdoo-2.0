@@ -1,0 +1,71 @@
+<?php
+
+/**
+ * @file
+ * Installation file for the Labdoo Library module
+ *
+ * @ingroup labdoolib 
+ */
+
+
+/**
+ *
+ * Creates a node to generate dooject tags 
+ */
+function lbd_create_tag_node()
+{
+
+  $bodyText = "<?php lbd_print_dooject_labels(\$_GET['id']); ?>";
+
+  $node = new stdClass();
+  $node->type = 'page';
+  node_object_prepare($node);
+  
+  $node->title = "Tag One Dooject";
+  $node->language = LANGUAGE_NONE;
+
+  $node->body[$node->language][0]['value']   = $bodyText;
+  $node->body[$node->language][0]['summary'] = '';
+  $node->body[$node->language][0]['format']  = 'php_code';
+  
+  $node->path = array('alias' => "content/tag-one-laptop");
+
+  node_save($node);
+}
+
+
+/**
+ * Deletes the node to tag doojects 
+ *
+ * @param  
+ *
+ */
+function lbd_delete_tag_node()
+{
+  $path = drupal_lookup_path("source", "content/tag-one-laptop"); 
+  $node = menu_get_object("node", 1, $path);
+  node_delete($node->nid);
+}
+
+
+/**
+ * Implements hook_install
+ *
+ */
+function labdoo_lib_install()
+{
+  lbd_create_tag_node(); 
+  drupal_set_message("labdoo_lib installed correctly");
+}
+
+
+/**
+ * Implements hook_uninstall
+ *
+ */
+function labdoo_lib_uninstall()
+{
+  lbd_delete_tag_node();
+  drupal_set_message("labdoo_lib uninstalled correctly");
+}
+
