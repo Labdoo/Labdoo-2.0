@@ -73,6 +73,7 @@ dependencies[] = delete_all
 dependencies[] = entity
 dependencies[] = pathauto
 dependencies[] = subpathauto
+dependencies[] = lightbox2 
 ;dependencies[] = node_clone
 
 ;--------------------
