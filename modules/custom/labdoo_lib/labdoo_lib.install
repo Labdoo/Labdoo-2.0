@@ -12,7 +12,7 @@
  *
  * Creates a node to generate dooject tags 
  */
-function lbd_create_tag_node()
+function lbd_create_tag_dooject_node()
 {
 
   $bodyText = "<?php lbd_print_dooject_labels(\$_GET['id']); ?>";
@@ -35,14 +35,61 @@ function lbd_create_tag_node()
 
 
 /**
+ *
+ * Creates a node to follow a dooject 
+ */
+function lbd_create_follow_dooject_node()
+{
+
+  $bodyText = "
+<?php 
+\$dooject = '';
+\$user = '';
+\$follow = '';
+\$dooject = \$hub = NULL;
+if(!empty(\$_GET['d'])) \$dooject = \$_GET['d'];
+if(!empty(\$_GET['u'])) \$user = \$_GET['u'];
+if(!empty(\$_GET['f'])) \$follow = \$_GET['f'];
+labdoo_follow_dooject(\$dooject, \$user, \$follow);
+?>
+  ";
+
+  $node = new stdClass();
+  $node->type = 'page';
+  node_object_prepare($node);
+  
+  $node->title = "Follow A Dooject";
+  $node->language = LANGUAGE_NONE;
+
+  $node->body[$node->language][0]['value']   = $bodyText;
+  $node->body[$node->language][0]['summary'] = '';
+  $node->body[$node->language][0]['format']  = 'php_code';
+  
+  $node->path = array('alias' => "content/follow-dooject");
+
+  node_save($node);
+}
+
+
+/**
  * Deletes the node to tag doojects 
  *
- * @param  
- *
  */
-function lbd_delete_tag_node()
+function lbd_delete_tag_dooject_node()
 {
   $path = drupal_lookup_path("source", "content/tag-one-laptop"); 
+  $node = menu_get_object("node", 1, $path);
+  node_delete($node->nid);
+}
+
+
+/**
+ * Deletes the node to follow doojects 
+ *
+ */
+function lbd_delete_follow_dooject_node()
+{
+  $path = drupal_lookup_path("source", "content/follow-dooject"); 
   $node = menu_get_object("node", 1, $path);
   node_delete($node->nid);
 }
@@ -54,7 +101,8 @@ function lbd_delete_tag_node()
  */
 function labdoo_lib_install()
 {
-  lbd_create_tag_node(); 
+  lbd_create_tag_dooject_node(); 
+  lbd_create_follow_dooject_node();
   drupal_set_message("labdoo_lib installed correctly");
 }
 
@@ -65,7 +113,8 @@ function labdoo_lib_install()
  */
 function labdoo_lib_uninstall()
 {
-  lbd_delete_tag_node();
+  lbd_delete_tag_dooject_node();
+  lbd_delete_follow_dooject_node();
   drupal_set_message("labdoo_lib uninstalled correctly");
 }
 

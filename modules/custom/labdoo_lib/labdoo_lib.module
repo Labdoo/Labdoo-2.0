@@ -584,3 +584,89 @@ ID: '.$laptopid.'
   return;
 }
 
+
+/**
+ * Allows a user to follow a dooject
+ *
+ * @param laptopid The ID of the dooject 
+ * @param userid The ID of the user 
+ * @param follow If '1', follow the dooject; if '0', stop following the dooject 
+ *
+ */
+function labdoo_follow_dooject($doojectId = NULL, $userId = NULL, $follow = NULL) {
+
+  print('<img alt="" src="/profiles/labdoo/files/pictures/laptop_follow.png" style="width: 117px; height: 108px; "/> ');
+
+  if(($doojectId == NULL) || 
+     (!is_numeric($doojectId)) || 
+     (intval($doojectId) < 0))
+  {
+    print(t("Not a valid dooject."));
+    return;
+  }
+
+  if(($userId == NULL) || 
+     (!is_numeric($userId)) || 
+     (intval($userId) < 0))
+  {
+    print(t("Not a valid user."));
+    return;
+  }
+ 
+  if($follow != 0 && $follow != 1)
+  {
+    print(t("Wrong parameter"));
+    return;
+  }
+
+  $doojectNode = node_load($doojectId);
+  if($doojectNode == FALSE || $doojectNode->type != 'laptop')
+  {
+    print(t("Dooject not found"));
+    return;
+  }
+
+  $newRef = user_load($userId);
+  if($newRef == FALSE)
+  {
+    print(t("User not found"));
+    return;
+  }
+
+  $wDoojectNode = entity_metadata_wrapper('node', $doojectNode);
+  $currList = $wDoojectNode->field_additional_followers->value();
+  if(!$currList)
+    $currList = array();
+
+  if(in_array($newRef, $currList))
+  {
+    if($follow == '1') 
+    {
+      drupal_set_message(t('You are already tracking Dooject ' . $doojectNode->title));
+      return; // User is already following this dooject, just return
+    }
+  }
+  else if($follow == '0')
+  {
+    drupal_set_message(t('You are not tracking Dooject ' . $doojectNode->title));
+    return; // User is already following this dooject, just return
+  }
+
+  if($follow == '1')
+  {
+    $currList[] = $newRef;
+    drupal_set_message(t('You are now tracking Dooject ' . $doojectNode->title));
+  }
+  else
+  {
+    $key = array_search($newRef, $currList);
+    unset($currList[$key]);
+    drupal_set_message(t('You are no longer tracking Dooject ' . $doojectNode->title));
+  }
+
+  $wDoojectNode->field_additional_followers->set($currList);
+  $wDoojectNode->save();
+
+  return;
+}
+
