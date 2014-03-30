@@ -2296,7 +2296,7 @@ function labdoo_objects_field_default_fields() {
       'bundle' => 'laptop',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Add users who need to have permission to edit this laptop.',
+      'description' => 'Add users who need to have permission to edit this dooject.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -2372,6 +2372,90 @@ function labdoo_objects_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-laptop-field_additional_followers'.
+  $fields['node-laptop-field_additional_followers'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_additional_followers',
+      'foreign keys' => array(
+        'users' => array(
+          'columns' => array(
+            'target_id' => 'uid',
+          ),
+          'table' => 'users',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(),
+        ),
+        'target_type' => 'user',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'laptop',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Add users who want to follow this dooject.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'entityreference',
+          'settings' => array(
+            'link' => FALSE,
+          ),
+          'type' => 'entityreference_label',
+          'weight' => 15,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_additional_followers',
+      'label' => 'Additional followers',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'size' => '60',
+        ),
+        'type' => 'entityreference_autocomplete',
+        'weight' => '9',
+      ),
+    ),
+  );
+
   // Exported field: 'node-laptop-field_additional_notes'.
   $fields['node-laptop-field_additional_notes'] = array(
     'field_config' => array(
@@ -2434,7 +2518,7 @@ function labdoo_objects_field_default_fields() {
           'rows' => '3',
         ),
         'type' => 'text_textarea',
-        'weight' => '17',
+        'weight' => '16',
       ),
     ),
   );
@@ -2489,7 +2573,7 @@ function labdoo_objects_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'email_textfield',
-        'weight' => '11',
+        'weight' => '10',
       ),
     ),
   );
@@ -2551,7 +2635,7 @@ function labdoo_objects_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '12',
+        'weight' => '11',
       ),
     ),
   );
@@ -2620,7 +2704,7 @@ function labdoo_objects_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '13',
+        'weight' => '12',
       ),
     ),
   );
@@ -2689,7 +2773,7 @@ function labdoo_objects_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '16',
+        'weight' => '15',
       ),
     ),
   );
@@ -2907,7 +2991,7 @@ function labdoo_objects_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '15',
+        'weight' => '14',
       ),
     ),
   );
@@ -3139,7 +3223,7 @@ function labdoo_objects_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '14',
+        'weight' => '13',
       ),
     ),
   );
@@ -3288,7 +3372,7 @@ function labdoo_objects_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
-        'weight' => '9',
+        'weight' => '8',
       ),
     ),
   );
@@ -3524,9 +3608,11 @@ function labdoo_objects_field_default_fields() {
   // Included for use with string extractors like potx.
   t('Add here any observations you would like to make. For instance you can add notes such as the quality of the laptop or if something is broken, a reminder, or a note on who donated the laptop.');
   t('Add here the email address(es) of additional people that you would like to be notified whenever this laptop changes its status.');
-  t('Add users who need to have permission to edit this laptop.');
+  t('Add users who need to have permission to edit this dooject.');
+  t('Add users who want to follow this dooject.');
   t('Additional editors');
   t('Additional files');
+  t('Additional followers');
   t('Additional notes');
   t('Additional notification emails');
   t('Arrival date');
