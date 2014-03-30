@@ -13,3 +13,20 @@ function lbd_content_types_ctools_plugin_api() {
     return array("version" => "1");
   }
 }
+
+/**
+ * Implements hook_node_info().
+ */
+function lbd_content_types_node_info() {
+  $items = array(
+    'private_page' => array(
+      'name' => t('Private page'),
+      'base' => 'node_content',
+      'description' => t('Pages that can only be accessed by registered users'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+  );
+  return $items;
+}

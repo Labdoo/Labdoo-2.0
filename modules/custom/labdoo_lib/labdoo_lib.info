@@ -5,3 +5,6 @@ package = Labdoo
 dependencies[] = features 
 dependencies[] = php 
 dependencies[] = lightbox2
+dependencies[] = node_view_permissions 
+dependencies[] = r4032login 
+dependencies[] = lbd_content_types 

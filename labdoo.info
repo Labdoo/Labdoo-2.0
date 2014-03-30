@@ -74,6 +74,9 @@ dependencies[] = entity
 dependencies[] = pathauto
 dependencies[] = subpathauto
 dependencies[] = lightbox2 
+dependencies[] = node_view_permissions 
+dependencies[] = r4032login 
+dependencies[] = lbd_content_types 
 ;dependencies[] = node_clone
 
 ;--------------------
