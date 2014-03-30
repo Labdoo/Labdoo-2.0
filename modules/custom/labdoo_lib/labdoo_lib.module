@@ -379,9 +379,12 @@ function labdoo_getnum_doojects($edoovillageId, $hubId, $status) {
   $country_names = location_get_iso3166_list();
 
   if($hubId) 
-    $query = "SELECT COUNT(*) FROM field_data_field_status WHERE field_status_value='$status' AND entity_id IN (SELECT entity_id FROM field_data_field_hub_laptop WHERE field_hub_laptop_target_id=$hubId)"; 
+    $query = "SELECT COUNT(*) FROM field_data_field_status WHERE field_status_value='$status' 
+              AND entity_id IN (SELECT entity_id FROM field_data_field_hub_laptop WHERE field_hub_laptop_target_id=$hubId)"; 
   else if($edoovillageId)
-    $query = "SELECT COUNT(*) FROM field_data_field_status WHERE field_status_value='$status' AND entity_id IN (SELECT entity_id FROM field_data_field_edoovillage_destination WHERE field_edoovillage_destination_target_id=$edoovillageId)"; 
+    $query = "SELECT COUNT(*) FROM field_data_field_status WHERE field_status_value='$status' 
+              AND entity_id IN (SELECT entity_id FROM field_data_field_edoovillage_destination 
+              WHERE field_edoovillage_destination_target_id=$edoovillageId)"; 
   else
     $query = "SELECT COUNT(*) FROM field_data_field_status WHERE field_status_value='$status'"; 
 
@@ -394,14 +397,14 @@ function labdoo_getnum_doojects($edoovillageId, $hubId, $status) {
 /**
  * Returns the title of a node
  *
- * @param nodeid The ID of a node
+ * @param nodeId The ID of a node
  *
  * @return The title of the node 
  * 
  */
-function lbd_nodeid2title($nodeid)
+function lbd_nodeid2title($nodeId)
 {
-    $title = db_query("SELECT title FROM node WHERE nid = :nid ", array(':nid' => $nodeid))->fetchField();
+    $title = db_query("SELECT title FROM node WHERE nid = :nid ", array(':nid' => $nodeId))->fetchField();
     return $title; 
 }
 
@@ -409,18 +412,18 @@ function lbd_nodeid2title($nodeid)
 /**
  * Prints the header of a dooject
  *
- * @param nodeid The ID of the dooject 
+ * @param nodeId The ID of the dooject 
  *
  */
-function lbd_print_dooject_header($nodeid)
+function lbd_print_dooject_header($nodeId)
 {
-  $node = node_load($nodeid);
-  if($node == FALSE)
+  $nodeObj = node_load($nodeId);
+  if($nodeObj == FALSE)
     return;
-  $laptopId = $node->title;
+  $laptopId = $nodeObj->title;
 
   $query = "SELECT field_edoovillage_destination_target_id 
-            FROM field_data_field_edoovillage_destination WHERE entity_id=$nodeid";
+            FROM field_data_field_edoovillage_destination WHERE entity_id=$nodeId";
   $edoovillageId = db_query($query)->fetchField();
 
   $numDoojects = lbd_get_total_num_doojects();
@@ -443,7 +446,7 @@ function lbd_print_dooject_header($nodeid)
   $tagsUri = "/content/tag-one-laptop?id=" . $laptopId;
 
   // Table header
-  print('<table border="0" cellpadding="1" cellspacing="1" style="width: 800px;"><tbody><tr><td>');
+  print('<table border="0" cellpadding="1" cellspacing="1" style="width: 850px;"><tbody><tr><td>');
 
   // Left arrow
   print(t('<p class="small rteleft" style="font-family: monospace;">'
@@ -455,13 +458,13 @@ function lbd_print_dooject_header($nodeid)
   print('</td><td>');
 
   // Tagging howto (lightbox)
-  print(t('<p class="small" style="font-family: monospace; "><a href="/profiles/labdoo/files/pictures/tagging-flow.png" 
+  print(t('<p class="small" style="font-family: monospace; " align="middle"><a href="/profiles/labdoo/files/pictures/tagging-flow.png" 
         rel="lightbox" style="line-height: 10px; color: rgb(17, 85, 119);"><img alt="image labdoo" rel="lightbox" 
         src="/profiles/labdoo/files/pictures/tagging-flow.png" style="border-style: solid; color: rgb(51, 51, 51); 
         width: 151px; height: 100px;" /></a></p>'));
   
   // Button for tagging 
-  print(t('<p><input type="button" value="Print Tags for this Laptop"onclick="window.open(\''.$tagsUri.'\', 
+  print(t('<p><input type="button" value="Print tags for this dooject"onclick="window.open(\''.$tagsUri.'\', 
         \'windowpopup\', \'resizable=yes,menubar=1,status=no,width=700,height=700\');"/>'));
 
   // Next cell
@@ -470,18 +473,45 @@ function lbd_print_dooject_header($nodeid)
   // Photo album icon and button
   if($edoovillageId) {
     $albumUri = request_uri() . "/../../node/" . $edoovillageId;
-    print(t('<p class="small" style="font-family: monospace; ">
+    print(t('<p class="small" style="font-family: monospace; " align="middle">
           <img alt="" src="/profiles/labdoo/files/pictures/photo-album-icon.jpg" style="width: 122px; height: 100px; "/></a>'));
-    print(t('<p><input type="button" value="Go to Photo Album"onclick="window.open(\''.$albumUri.'\', \'target=_self\');"/>'));
+    print(t('<p><input type="button" value="Go to photo album"onclick="window.open(\''.$albumUri.'\', \'target=_self\');"/>'));
   }
+
+  // Next cell
+  print('</td><td>');
+
+  // Follow dooject button
+  if (user_is_logged_in()) {
+    global $user;
+    $userId = $user->uid; 
+    $userObj = user_load($userId);
+    if(labdoo_is_dooject_followed($nodeObj, $userObj)) { 
+      $followDoojectUrl = request_uri() . "/../../content/follow-dooject?d=$nodeId&u=$userId&f=0";
+      $followMsg = "Unfollow this dooject";
+    }
+    else {
+      $followDoojectUrl = request_uri() . "/../../content/follow-dooject?d=$nodeId&u=$userId&f=1";
+      $followMsg = "Follow this dooject";
+    }
+  }
+  else {
+    $followDoojectUrl = request_uri() . "/../../content/follow-dooject?d=$nodeId&f=1";
+    $followMsg = "Follow this dooject";
+  }
+  
+  print(t('<p class="small" style="font-family: monospace; " align="middle">
+           <img alt="" src="/profiles/labdoo/files/pictures/laptop.png" style="width: 102px; height: 100px; "/>&nbsp;&nbsp; </a>'));
+  print(t('<p><input type="button" value="' . $followMsg . '" onclick="window.open(\''.$followDoojectUrl.'\', 
+           \'windowpopup\', \'resizable=yes,menubar=1,status=no,width=700,height=700\');setTimeout(\'history.go(0);\',2000);"/>'));
 
   // Next cell
   print('</td><td>');
 
   // Print right arrow
   print(t('<p class="small rteright" style="font-family: monospace;">'.$nextUri.'&nbsp; &nbsp; &nbsp; 
-        &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<img alt="" src="/profiles/labdoo/files/pictures/arrow_right.png" 
-        style="width: 40px; height: 49px; "/> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>'));
+           &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<img alt="" src="/profiles/labdoo/files/pictures/arrow_right.png" 
+           style="width: 40px; height: 49px; "/> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>'));
 
   // Table ending
   print(t('</td></tr></tbody></table>'));
@@ -584,6 +614,24 @@ ID: '.$laptopid.'
   return;
 }
 
+
+/**
+ * Checks if a dooject is being followed by a user
+ *
+ * @param doojectObject The dooject object 
+ * @param userObject The user object 
+ */
+function labdoo_is_dooject_followed($doojectObject, $userObject) {
+
+  $wDoojectNode = entity_metadata_wrapper('node', $doojectObject);
+  $currList = $wDoojectNode->field_additional_followers->value();
+
+  if(in_array($userObject, $currList))
+    return True;
+  else
+    return False;
+}
+ 
 
 /**
  * Allows a user to follow a dooject

@@ -44,18 +44,19 @@ function lbd_create_follow_dooject_node()
   $bodyText = "
 <?php 
 \$dooject = '';
-\$user = '';
+\$usr = '';
 \$follow = '';
 \$dooject = \$hub = NULL;
 if(!empty(\$_GET['d'])) \$dooject = \$_GET['d'];
-if(!empty(\$_GET['u'])) \$user = \$_GET['u'];
+if(!empty(\$_GET['u'])) \$usr = \$_GET['u'];
+else {global \$user; \$usr = \$user->uid;}
 if(!empty(\$_GET['f'])) \$follow = \$_GET['f'];
-labdoo_follow_dooject(\$dooject, \$user, \$follow);
+labdoo_follow_dooject(\$dooject, \$usr, \$follow);
 ?>
   ";
 
   $node = new stdClass();
-  $node->type = 'page';
+  $node->type = 'private_page';
   node_object_prepare($node);
   
   $node->title = "Follow A Dooject";
