@@ -1,6 +1,6 @@
 alias mysql='mysql --defaults-file=/etc/mysql/debian.cnf'
 
-alias git='hub'
+#alias git='hub'
 alias g='git status -sb'
 alias gh='git hist'
 alias gp='git pull'

@@ -89,7 +89,7 @@ function labdoo_objects_field_default_fields() {
           'year_range' => '-3:+3',
         ),
         'type' => 'date_select',
-        'weight' => '8',
+        'weight' => '9',
       ),
     ),
   );
@@ -156,7 +156,7 @@ function labdoo_objects_field_default_fields() {
           'rows' => '3',
         ),
         'type' => 'text_textarea',
-        'weight' => '11',
+        'weight' => '12',
       ),
     ),
   );
@@ -240,7 +240,7 @@ function labdoo_objects_field_default_fields() {
           'year_range' => '-3:+3',
         ),
         'type' => 'date_select',
-        'weight' => '5',
+        'weight' => '6',
       ),
     ),
   );
@@ -286,42 +286,42 @@ function labdoo_objects_field_default_fields() {
               'additional' => array(
                 'collect' => '0',
                 'default' => '',
-                'weight' => '6',
+                'weight' => '-98',
               ),
               'city' => array(
                 'collect' => '2',
                 'default' => '',
-                'weight' => '8',
+                'weight' => '-97',
               ),
               'country' => array(
                 'collect' => '2',
                 'default' => 'us',
-                'weight' => '14',
+                'weight' => '-96',
               ),
               'locpick' => array(
                 'collect' => '0',
-                'weight' => '20',
+                'weight' => '-93',
               ),
               'name' => array(
                 'collect' => '0',
                 'default' => '',
-                'weight' => '2',
+                'weight' => '-100',
               ),
               'postal_code' => array(
                 'collect' => '1',
                 'default' => '',
-                'weight' => '12',
+                'weight' => '-94',
               ),
               'province' => array(
                 'collect' => '1',
                 'default' => '',
-                'weight' => '10',
+                'weight' => '-95',
                 'widget' => 'select',
               ),
               'street' => array(
                 'collect' => '0',
                 'default' => '',
-                'weight' => '4',
+                'weight' => '-99',
               ),
             ),
           ),
@@ -424,7 +424,7 @@ function labdoo_objects_field_default_fields() {
                   'collect' => '1',
                   'default' => '',
                   'weight' => '10',
-                  'widget' => 'autocomplete',
+                  'widget' => 'select',
                 ),
                 'source' => array(
                   'default' => 0,
@@ -472,7 +472,7 @@ function labdoo_objects_field_default_fields() {
         'module' => 'location_cck',
         'settings' => array(),
         'type' => 'location',
-        'weight' => '7',
+        'weight' => '8',
       ),
     ),
   );
@@ -534,7 +534,7 @@ function labdoo_objects_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '3',
+        'weight' => '4',
       ),
     ),
   );
@@ -618,7 +618,7 @@ function labdoo_objects_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '2',
+        'weight' => '3',
       ),
     ),
   );
@@ -704,7 +704,7 @@ function labdoo_objects_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '10',
+        'weight' => '11',
       ),
     ),
   );
@@ -766,7 +766,7 @@ function labdoo_objects_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '9',
+        'weight' => '10',
       ),
     ),
   );
@@ -828,7 +828,7 @@ function labdoo_objects_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '6',
+        'weight' => '7',
       ),
     ),
   );
@@ -874,42 +874,42 @@ function labdoo_objects_field_default_fields() {
               'additional' => array(
                 'collect' => '0',
                 'default' => '',
-                'weight' => '6',
+                'weight' => '-98',
               ),
               'city' => array(
                 'collect' => '2',
                 'default' => '',
-                'weight' => '8',
+                'weight' => '-97',
               ),
               'country' => array(
                 'collect' => '2',
                 'default' => 'us',
-                'weight' => '14',
+                'weight' => '-96',
               ),
               'locpick' => array(
                 'collect' => '0',
-                'weight' => '20',
+                'weight' => '-93',
               ),
               'name' => array(
                 'collect' => '0',
                 'default' => '',
-                'weight' => '2',
+                'weight' => '-100',
               ),
               'postal_code' => array(
                 'collect' => '1',
                 'default' => '',
-                'weight' => '12',
+                'weight' => '-94',
               ),
               'province' => array(
                 'collect' => '1',
                 'default' => '',
-                'weight' => '10',
+                'weight' => '-95',
                 'widget' => 'select',
               ),
               'street' => array(
                 'collect' => '0',
                 'default' => '',
-                'weight' => '4',
+                'weight' => '-99',
               ),
             ),
           ),
@@ -1060,7 +1060,7 @@ function labdoo_objects_field_default_fields() {
         'module' => 'location_cck',
         'settings' => array(),
         'type' => 'location',
-        'weight' => '4',
+        'weight' => '5',
       ),
     ),
   );

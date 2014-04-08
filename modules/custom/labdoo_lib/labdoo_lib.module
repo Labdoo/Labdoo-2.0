@@ -18,6 +18,99 @@
 
 
 /**
+ * Generates the title of a dootrip 
+ *
+ * @param node The node of the dootrip 
+ * @param dootripId The numeric identifier of the dootrip 
+ *
+ * @return a string containing the new title
+ *
+ */
+function _generate_dootrip_title($node, $dootripId) {
+
+  $countryNames = location_get_iso3166_list();
+
+  $srcCity = $node->field_origin_of_the_trip['und'][0]['city'];
+  $srcCountry = $node->field_origin_of_the_trip['und'][0]['country'];
+  $srcCountry = $countryNames[$srcCountry];
+
+  $dstCity = $node->field_destination_of_the_trip['und'][0]['city'];
+  $dstCountry = $node->field_destination_of_the_trip['und'][0]['country'];
+  $dstCountry = $countryNames[$dstCountry];
+
+  $newTitle = $dootripId . " - Dootrip from " . $srcCity . " (" . $srcCountry . ") to " . $dstCity . " (" . $dstCountry . ")";
+
+  return $newTitle;
+}
+
+
+/**
+ * Updates the location of a dooject to match that of its 
+ * assigned edoovillage
+ *
+ * @param node Node id of the dooject
+ *
+ */
+function _update_dooject_location_from_edoovillage($node) {
+
+  // Get destination project
+  $query = "SELECT field_edoovillage_destination_target_id 
+            FROM field_data_field_edoovillage_destination WHERE entity_id=$node->nid";
+  $edoovillageId = db_query($query)->fetchField();
+
+  // Get the location id of the destination project
+  $query = "SELECT lid FROM location_instance project 
+            WHERE vid=(SELECT MAX(vid) FROM location_instance WHERE nid=project.nid) AND (nid=$edoovillageId)";
+  $edoovillageLid = db_query($query)->fetchField();
+
+  // Update the location of the laptop to be that of the destination project
+  $query = "SELECT vid FROM location_instance project 
+            WHERE vid=(SELECT MAX(vid) FROM location_instance WHERE nid=project.nid) AND (nid=$node->nid)";
+  $laptopVid = db_query($query)->fetchField();
+  $query ="UPDATE location_instance SET lid=$edoovillageLid WHERE vid=$laptopVid AND nid=$node->nid";
+  $result = db_query($query);
+
+  return;
+}
+
+
+/**
+ * Generates a comma-separated list of emails that need
+ * to be notified upon a change of status of a dooject
+ *
+ * @param node The dooject's node
+ *
+ */
+function labdoo_dooject_extract_emails($node) {
+    $emailsList = "";
+
+    foreach($node->field_tagger['und'] as $element) {
+      $userObj = user_load($element['target_id']);
+      $emailsList = $emailsList . ", " . $userObj->mail;
+    }
+
+    foreach($node->field_manager['und'] as $element) {
+      $userObj = user_load($element['target_id']);
+      $emailsList = $emailsList . ", " . $userObj->mail;
+    }
+ 
+    foreach($node->field_additional_followers['und'] as $element) {
+      $userObj = user_load($element['target_id']);
+      $emailsList = $emailsList . ", " . $userObj->mail;
+    }
+
+    foreach($node->field_additional_notification_em['und'] as $element) {
+      $emailsList = $emailsList . ", " . $element["email"];
+    }
+
+    if($emailsList[0] == ",")
+      $emailsList = substr($emailsList, 2);
+ 
+    return $emailsList; 
+}
+
+
+/**
  * Implementation of hook_node_insert  
  *
  */
@@ -33,7 +126,7 @@ function labdoo_lib_node_insert($node) {
     // The ID of this laptop is equal to the 
     // current number of laptops in the database
     // TODO: global lock for the counter
-    $numLaptops = lbd_get_total_num_doojects(); 
+    $numLaptops = lbd_get_total_num_objects("laptop"); 
     $loadedNode->title = sprintf("%09d", intval($numLaptops));
 
     // Add laptop path alias for 1.0 compatibility.
@@ -49,8 +142,11 @@ function labdoo_lib_node_insert($node) {
     /*
      * Dootrip's title is automatically generated
      */
+    $dootripId = lbd_get_total_num_objects("dootrip"); 
+    $newTitle = _generate_dootrip_title($node, $dootripId);
+
     $loadedNode = node_load($node->nid);
-    $loadedNode->title = "Dootrip from X to Y (temporary title)";
+    $loadedNode->title = $newTitle;
     node_save($loadedNode);
   }
 
@@ -80,37 +176,6 @@ function labdoo_lib_node_insert($node) {
 
 
 /**
- * _update_laptop_location_from_edoovillage
- *
- * Updates the location of a laptop to match that of its 
- * assigned edoovillage
- *
- */
-function _update_laptop_location_from_edoovillage($node) {
-
-  // Get destination project
-  $query = "SELECT field_edoovillage_destination_target_id 
-            FROM field_data_field_edoovillage_destination WHERE entity_id=$node->nid";
-  $edoovillageId = db_query($query)->fetchField();
-
-  // Get the location id of the destination project
-  $query = "SELECT lid FROM location_instance project 
-            WHERE vid=(SELECT MAX(vid) FROM location_instance WHERE nid=project.nid) AND (nid=$edoovillageId)";
-  $edoovillageLid = db_query($query)->fetchField();
-
-  // Update the location of the laptop to be that of the destination project
-  $query = "SELECT vid FROM location_instance project 
-            WHERE vid=(SELECT MAX(vid) FROM location_instance WHERE nid=project.nid) AND (nid=$node->nid)";
-  $laptopVid = db_query($query)->fetchField();
-  $query ="UPDATE location_instance SET lid=$edoovillageLid WHERE vid=$laptopVid AND nid=$node->nid";
-  $result = db_query($query);
-  drupal_set_message(t('The location of this dooject has been automatically assigned to the location of its edoovillage.'));
-
-  return;
-}
-
-
-/**
  * Implementation of hook_node_update
  *
  */
@@ -126,9 +191,11 @@ function labdoo_lib_node_update($node) {
     $doojectStatus = $node->field_status['und'][0]['value'];
     if($doojectStatus == "T1" || $doojectStatus == "S4") {
       // Use a PHP shutdown callback (invoked upon exiting the PHP thread)
-      // because this appears to be the only way to make sure the node 
-      // has been stored in the database prior to updating the location
-      register_shutdown_function('_update_laptop_location_from_edoovillage', $node);
+      // to ensure the node has been stored in the database prior to updating the location.
+      // FIX: this can also be probably done using hook_node_presave
+      //      just like we are doing with other fields
+      register_shutdown_function('_update_dooject_location_from_edoovillage', $node);
+      drupal_set_message(t('The location of this dooject has been automatically assigned to the location of its edoovillage.'));
    }
 
   }
@@ -153,6 +220,17 @@ function labdoo_lib_node_presave($node) {
     $node->title = $nodeCountry . ", " . $nodeCity . ": " . $node->field_project_summary['und'][0]['value'];
   }
 
+  if($node->type == 'dootrip') {
+    /*
+     * Update the title
+     */
+    $dootripIdExp = explode(' ', trim($node->title));
+    $dootripId = $dootripIdExp[0];
+    $dootripTitle = _generate_dootrip_title($node, $dootripId);
+    $node->title = $dootripTitle;
+  }
+
+  return;
 }
 
 
@@ -238,9 +316,9 @@ function labdoo_lib_form_node_form_alter(&$form, &$form_state, $form_id) {
  * @return The total number of doojects in the Labdoo inventory 
  *  
  */
-function lbd_get_total_num_doojects() {
+function lbd_get_total_num_objects($objectType) {
 
-  $query = "SELECT COUNT(*) FROM node WHERE type='laptop'";
+  $query = "SELECT COUNT(*) FROM node WHERE type='$objectType'";
   $numDoojects = db_query($query)->fetchField();
 
   return($numDoojects);
@@ -426,7 +504,7 @@ function lbd_print_dooject_header($nodeId)
             FROM field_data_field_edoovillage_destination WHERE entity_id=$nodeId";
   $edoovillageId = db_query($query)->fetchField();
 
-  $numDoojects = lbd_get_total_num_doojects();
+  $numDoojects = lbd_get_total_num_objects("laptop");
 
   if(intval($laptopId) == $numDoojects) {
     $nextUri = "";
@@ -550,7 +628,7 @@ function lbd_print_dooject_labels($laptopid = NULL) {
   if(($laptopid == NULL) || 
      (!is_numeric($laptopid)) || 
      (intval($laptopid) < 1) || 
-     (intval($laptopid) > lbd_get_total_num_doojects()) || 
+     (intval($laptopid) > lbd_get_total_num_objects("laptop")) || 
      (strlen($laptopid) != 9))
   {
     print(t('<p><strong>Wrong Identifier. &nbsp;
