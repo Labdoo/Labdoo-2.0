@@ -1,0 +1,217 @@
+<?php
+
+/**
+ * @defgroup labdoocommunicate LabdooCommunicate: Module implementing Labdoo's communication subroutines
+ *
+ * This module implements the various communication features within Labdoo, such as automatic email notifications
+ *
+ */
+
+
+/**
+ * @file
+ * Main module file for the Labdoo Communication module
+ *
+ * @ingroup labdoocommunicate
+ *
+ */
+
+/**
+ * Implements hook_mail().
+ *
+ * This hook defines a list of possible e-mail templates that this module can
+ * send. Each e-mail is given a unique identifier, or 'key'.
+ *
+ * $message comes in with some standard properties already set: 'to' address,
+ * 'from' address, and a set of default 'headers' from drupal_mail(). The goal
+ * of hook_mail() is to set the message's 'subject' and 'body' properties, as
+ * well as make any adjustments to the headers that are necessary.
+ *
+ * The $email_params argument is an array which can hold any additional data required
+ * to build the mail subject and body; for example, user-entered form data, or
+ * some context information as to where the mail request came from.
+ *
+ * Note that hook_mail() is not actually a hook. It is only called for a single
+ * module, the module named in the first argument of drupal_mail(). So it's
+ * a callback of a type, but not a hook.
+ */
+function lbd_communicate_mail($key, &$message, $email_params) {
+
+  // All the work has already been done, so just
+  // assign the subject and body
+  $message['subject'] = $email_params['subject'];
+  $message['body'][] = $email_params['body'];
+
+  return;
+}
+
+
+/**
+ * Sends a notification email
+ *
+ * @param email_params An array of values defining the template of the email
+ *
+ */
+function lbd_communicate_mail_send($email_params) {
+  global $user;
+
+  // Module that calls this hook_mail API and the type of email to sent
+  $module = 'lbd_communicate';
+  $key = $email_params['type'];
+
+  // Specify 'to' and 'from' addresses.
+  $to = $email_params['to'];
+  $from = variable_get('site_mail', 'contact@labdoo.org');
+
+  // The language of the e-mail. Possible values:
+  // - user_preferred_language(): Used for sending mail to a particular website
+  //   user, so that the mail appears in their preferred language.
+  // - global $language: Used when sending a mail back to the user currently
+  //   viewing the site. This will send it in the language they're currently
+  //   using.
+  // - language_default(): Used when sending mail to a pre-existing, 'neutral'
+  //   address, such as the system e-mail address, or when you're unsure of the
+  //   language preferences of the intended recipient.
+  //
+  $language = user_preferred_language($user);
+
+  // Whether or not to automatically send the mail when drupal_mail() is called. 
+  $send = TRUE;
+
+  // Send the mail, and check for success. Note that this does not guarantee
+  // message delivery; only that there were no PHP-related issues encountered
+  // while sending.
+  $result = drupal_mail($module, $key, $to, $language, $email_params, $from, $send);
+
+  if ($result['result'] == TRUE) {
+    drupal_set_message(t('An automatic message has been sent out to users subscribed to this event.'));
+  }
+  else {
+    drupal_set_message(t('There was a problem sending an automatic message, please contant Labdoo at ' . variable_get('site_mail', 'contact@labdoo.org')), 'error');
+  }
+
+}
+
+
+/**
+ * Implementation of hook_node_presave
+ *
+ */
+function lbd_communicate_node_presave($node) {
+
+  if($node->type == 'laptop') {
+    global $user;
+
+    if(property_exists($node, 'original'))
+      $previousStatus =  $node->original->field_status['und'][0]['value'];
+    else
+      $previousStatus = "WAS_NOT_TAGGED";
+
+    $newStatus = $node->field_status['und'][0]['value'];
+
+    if($previousStatus == $newStatus) 
+      return;
+
+    $edoovillageId = 0;  // An arbitrary initial value
+    $langCode = user_preferred_language($user)->language;
+    $laptopId = $node->title; 
+
+    /*
+     * Send out notification email 
+     */
+    if($previousStatus == "WAS_NOT_TAGGED" && $newStatus != "S4") {
+      $email_params['type'] = "LAPTOP_TAGGED";        
+      $subjectFileName = dirname(__FILE__) . "/laptop_tagged_subject-" . $langCode . ".email";
+      $bodyFileName = dirname(__FILE__) . "/laptop_tagged_body-" . $langCode . ".email";
+      // This is a new object, so the title (i.e., the Labdoo ID) has not 
+      // being set yet.  Hence, we need to manually calculate the laptopId.
+      $numLaptops = lbd_get_total_num_objects("laptop"); 
+      $laptopId = sprintf("%09d", $numLaptops + 1);
+    }
+    else if($newStatus == "S4") {
+      $email_params['type'] = "LAPTOP_DELIVERED";
+      $subjectFileName = dirname(__FILE__) . "/laptop_delivered_subject-" . $langCode . ".email";
+      $bodyFileName = dirname(__FILE__) . "/laptop_delivered_body-" . $langCode . ".email";
+      $edoovillageId = $node->field_edoovillage_destination['und'][0]['target_id'];
+    }
+    else {
+      $email_params['type'] = "LAPTOP_UPDATED";
+      $subjectFileName = dirname(__FILE__) . "/laptop_updated_subject-" . $langCode . ".email";
+      $bodyFileName = dirname(__FILE__) . "/laptop_updated_body-" . $langCode . ".email";
+    }
+
+    $emailsList = $user->mail;
+    $emailsList = $emailsList . ", " . labdoo_dooject_extract_emails($node);    
+    $email_params['to'] = $emailsList; 
+
+    $subjectTemplate = file_get_contents($subjectFileName);
+    $bodyTemplate = file_get_contents($bodyFileName);
+
+    $statusLabels = list_allowed_values(field_info_field("field_status"));
+
+    $subject = str_replace("[ID]", $laptopId, $subjectTemplate);
+    $body = str_replace("[ID]", $laptopId, $bodyTemplate);
+    $body = str_replace("[STATUS]", $statusLabels[$newStatus], $body);
+    $body = str_replace("[LAPTOP_URL]", url('content/'. $laptopId, array('absolute' => TRUE)), $body);
+    $body = str_replace("[EDOOVILLAGE_URL]", url('node/'. $edoovillageId, array('absolute' => TRUE)), $body);
+    $body = str_replace("[CONTACT_EMAIL]", variable_get('site_mail', ''), $body);
+
+    $email_params['subject'] = $subject;
+    $email_params['body'] = $body;
+
+    lbd_communicate_mail_send($email_params);
+  }
+
+  return;
+}
+
+
+/**
+ * Implementation of hook_node_presave
+ *
+ */
+function lbd_communicate_user_insert(&$edit, $account, $category) {
+  global $user;
+
+  drupal_set_message("username: " . $edit['name']);
+  drupal_set_message("user email: " . $edit['mail']);
+
+  $langCode = user_preferred_language($user)->language;
+
+  drupal_set_message("language: " . $langCode);
+
+  $email_params['type'] = "USER_CREATED";        
+  $email_params['to'] = $edit['mail']; 
+
+  $subjectFileName = dirname(__FILE__) . "/user_created_subject-" . $langCode . ".email";
+  $bodyFileName = dirname(__FILE__) . "/user_created_body-" . $langCode . ".email";
+
+  $subjectTemplate = file_get_contents($subjectFileName);
+  $bodyTemplate = file_get_contents($bodyFileName);
+
+  $subject = $subjectTemplate;
+  $body = str_replace("[LABDOOUSER]", $edit['name'], $bodyTemplate);
+
+  $email_params['subject'] = $subject;
+  $email_params['body'] = $body;
+   
+  lbd_communicate_mail_send($email_params);
+
+  return;
+}
+
+
+/*
+ * Implementation of hook_mail_alter
+ *
+ */
+function lbd_communicate_mail_alter(&$message) {
+
+  // Do not send any system message when user registers
+  if ($message['id'] == 'user_register_no_approval_required') {
+    $message['send'] = FALSE;
+  }
+
+  return;
+}
+

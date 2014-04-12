@@ -82,20 +82,20 @@ projects[l10n_client][version] = "1.3"
 ; Mail Related
 ;--------------------
 projects[mailsystem][version] = "2.34"
-projects[phpmailer][version] = "3.x-dev"
+;projects[phpmailer][version] = "3.x-dev"
 projects[mimemail][version] = "1.0-beta1"
 projects[reroute_email][version] = "1.1"
 projects[simplenews][version] = "1.0"
 projects[mass_contact][version] = "1.0-beta3"
-
+projects[smtp][version] = "1.0"
 
 ;--------------------
 ; Libraries
 ;--------------------
 
-libraries[phpmailer][directory_name] = "phpmailer"
-libraries[phpmailer][download][type] = "get"
-libraries[phpmailer][download][url] = "https://github.com/PHPMailer/PHPMailer/archive/v5.2.6.zip"
+;libraries[phpmailer][directory_name] = "phpmailer"
+;libraries[phpmailer][download][type] = "get"
+;libraries[phpmailer][download][url] = "https://github.com/PHPMailer/PHPMailer/archive/v5.2.6.zip"
 
 libraries[oauth2-server-php][directory_name] = "oauth2-server-php"
 libraries[oauth2-server-php][download][type] = "git"
