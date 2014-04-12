@@ -1,0 +1,6 @@
+name = Labdoo Communication Module 
+description = Implements the various communication features within Labdoo, such as automatic email notification 
+core = 7.x
+package = Labdoo 
+dependencies[] = features 
+dependencies[] = labdoo_lib 
