@@ -165,3 +165,53 @@ function lbd_communicate_node_presave($node) {
   return;
 }
 
+
+/**
+ * Implementation of hook_node_presave
+ *
+ */
+function lbd_communicate_user_insert(&$edit, $account, $category) {
+  global $user;
+
+  drupal_set_message("username: " . $edit['name']);
+  drupal_set_message("user email: " . $edit['mail']);
+
+  $langCode = user_preferred_language($user)->language;
+
+  drupal_set_message("language: " . $langCode);
+
+  $email_params['type'] = "USER_CREATED";        
+  $email_params['to'] = $edit['mail']; 
+
+  $subjectFileName = dirname(__FILE__) . "/user_created_subject-" . $langCode . ".email";
+  $bodyFileName = dirname(__FILE__) . "/user_created_body-" . $langCode . ".email";
+
+  $subjectTemplate = file_get_contents($subjectFileName);
+  $bodyTemplate = file_get_contents($bodyFileName);
+
+  $subject = $subjectTemplate;
+  $body = str_replace("[LABDOOUSER]", $edit['name'], $bodyTemplate);
+
+  $email_params['subject'] = $subject;
+  $email_params['body'] = $body;
+   
+  lbd_communicate_mail_send($email_params);
+
+  return;
+}
+
+
+/*
+ * Implementation of hook_mail_alter
+ *
+ */
+function lbd_communicate_mail_alter(&$message) {
+
+  // Do not send any system message when user registers
+  if ($message['id'] == 'user_register_no_approval_required') {
+    $message['send'] = FALSE;
+  }
+
+  return;
+}
+
