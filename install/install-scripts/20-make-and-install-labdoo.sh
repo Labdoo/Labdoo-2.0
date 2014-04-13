@@ -1,7 +1,18 @@
 #!/bin/bash -x
 
+#makefile="https://raw.github.com/Labdoo/Labdoo-2.0/master/build-labdoo.make"
+cp $drupal_dir/profiles/labdoo/build-labdoo.make /tmp/
+makefile=/tmp/build-labdoo.make
+
+### Add branch and revision to the makefile to ensure we are checking out the right code base
+export labdoo_branch=`git --work-tree=$drupal_dir/profiles/labdoo/ branch | sed -n '/\* /s///p'`
+export labdoo_revision=`git --work-tree=$drupal_dir/profiles/labdoo/ rev-parse HEAD`
+sed -i '/projects\[labdoo\]\[download\]\[branch\]/d' $makefile
+sed -i '/projects\[labdoo\]\[download\]\[revision\]/d' $makefile
+echo "projects[labdoo][download][branch] = $labdoo_branch" >> $makefile 
+echo "projects[labdoo][download][revision] = $labdoo_revision" >> $makefile
+
 ### retrieve all the projects/modules and build the application directory
-makefile="https://raw.github.com/Labdoo/Labdoo-2.0/master/build-labdoo.make"
 rm -rf $drupal_dir
 drush make --prepare-install --force-complete \
            --contrib-destination=profiles/labdoo \

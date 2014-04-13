@@ -9,7 +9,7 @@ cwd=$(dirname $0)
 
 $cwd/10-install-additional-packages.sh
 $cwd/20-make-and-install-labdoo.sh
-$cwd/30-git-clone-labdoo.sh
+#$cwd/30-git-clone-labdoo.sh
 $cwd/40-configure-labdoo.sh
 
 ### copy overlay files over to the system
