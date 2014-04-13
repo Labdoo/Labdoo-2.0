@@ -89,7 +89,7 @@ dependencies[] = lbd_content_types
 ; Contrib Mail
 ;--------------------
 dependencies[] = mailsystem
-;dependencies[] = phpmailer
+dependencies[] = phpmailer
 dependencies[] = mimemail
 dependencies[] = mimemail_action
 dependencies[] = mimemail_compress
