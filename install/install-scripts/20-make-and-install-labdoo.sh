@@ -1,7 +1,6 @@
 #!/bin/bash -x
 
 #makefile="https://raw.github.com/Labdoo/Labdoo-2.0/master/build-labdoo.make"
-cp $drupal_dir/profiles/labdoo/build-labdoo.make /tmp/
 makefile=/tmp/build-labdoo.make
 
 ### Add branch and revision to the makefile to ensure we are checking out the right code base
