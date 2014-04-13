@@ -5,8 +5,6 @@ cp $drupal_dir/profiles/labdoo/build-labdoo.make /tmp/
 makefile=/tmp/build-labdoo.make
 
 ### Add branch and revision to the makefile to ensure we are checking out the right code base
-export labdoo_branch=`git --work-tree=$drupal_dir/profiles/labdoo/ branch | sed -n '/\* /s///p'`
-export labdoo_revision=`git --work-tree=$drupal_dir/profiles/labdoo/ rev-parse HEAD`
 sed -i '/projects\[labdoo\]\[download\]\[branch\]/d' $makefile
 sed -i '/projects\[labdoo\]\[download\]\[revision\]/d' $makefile
 echo "projects[labdoo][download][branch] = $labdoo_branch" >> $makefile 

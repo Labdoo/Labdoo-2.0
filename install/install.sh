@@ -63,7 +63,9 @@ do service $SRV stop; done
 install_dir=$(dirname $0)
 chroot $target_dir mkdir -p /tmp/install
 cp -a $install_dir/* $target_dir/tmp/install/
-chroot $target_dir /tmp/install/install-scripts/00-config.sh
+labdoo_branch=`cd $install_dir/../; git branch | sed -n '/\* /s///p'`
+labdoo_revision=`cd $install_dir/../; git rev-parse HEAD`
+chroot $target_dir /tmp/install/install-scripts/00-config.sh $labdoo_branch $labdoo_revision
 
 ### create an init script and make it start at boot
 current_dir=$(pwd)
