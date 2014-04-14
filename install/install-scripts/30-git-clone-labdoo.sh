@@ -8,6 +8,16 @@
 cd $drupal_dir/profiles/
 mv labdoo labdoo-bak
 git clone https://github.com/Labdoo/Labdoo-2.0 labdoo
+pushd labdoo
+git checkout $labdoo_branch
+current_revision=`git rev-parse HEAD`
+if [ "$labdoo_revision" != "$current_revision" ]; then
+  git checkout $labdoo_revision
+  echo "Please notice that you are now on a dettached head"
+else
+  echo "You are on a branch HEAD"
+fi
+popd
 
 ### copy contrib libraries and modules
 cp -a labdoo-bak/libraries/ labdoo/
