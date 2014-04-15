@@ -84,7 +84,7 @@ function lbd_communicate_mail_send($email_params) {
   $result = drupal_mail($module, $key, $to, $language, $email_params, $from, $send);
 
   if ($result['result'] == TRUE) {
-    drupal_set_message(t('An automatic message has been sent out to users subscribed to this event.'));
+    drupal_set_message(t('An automatic email has been sent out to the user(s) connected with this event.'));
   }
   else {
     drupal_set_message(t('There was a problem sending an automatic message, please contant Labdoo at ' . variable_get('site_mail', 'contact@labdoo.org')), 'error');
@@ -173,12 +173,7 @@ function lbd_communicate_node_presave($node) {
 function lbd_communicate_user_insert(&$edit, $account, $category) {
   global $user;
 
-  drupal_set_message("username: " . $edit['name']);
-  drupal_set_message("user email: " . $edit['mail']);
-
   $langCode = user_preferred_language($user)->language;
-
-  drupal_set_message("language: " . $langCode);
 
   $email_params['type'] = "USER_CREATED";        
   $email_params['to'] = $edit['mail']; 
@@ -208,7 +203,14 @@ function lbd_communicate_user_insert(&$edit, $account, $category) {
 function lbd_communicate_mail_alter(&$message) {
 
   // Do not send any system message when user registers
-  if ($message['id'] == 'user_register_no_approval_required') {
+  if($message['id'] == 'user_register_no_approval_required') {
+    $message['send'] = FALSE;
+  }
+
+  // TODO: figure out why some events attempt to generate an email without a 'to'
+  // field. One such event is the registration of a new user.
+  if($message['to'] == "") {
+    watchdog("lbd_communicate", "Trying to send a message without a 'to' field", NULL, WATCHDOG_WARNING);
     $message['send'] = FALSE;
   }
 
