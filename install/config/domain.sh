@@ -13,7 +13,7 @@ It will modify the files:
  4) /etc/apache2/sites-available/*
  5) /var/www/lbd*/sites/default/settings.php
 "
-FQDN='example.org'
+FQDN='www.labdoo-dev.org'
 read -p "Enter the domain [$FQDN]: " input
 FQDN=${input:-$FQDN}
 
