@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash 
 
 ### read GMAIL and PASSWD
 echo "
@@ -40,7 +40,7 @@ echo "Modifying drupal variables that are used for sending email..."
 $(dirname $0)/mysqld.sh start
 
 drush site-alias --local | grep "local" | while read -r line ; do 
-  drush $line php-script ./gmailsmtp.php "$GMAIL" "$PASSWD"
+  drush $line php-script $(dirname $0)/gmailsmtp.php "$GMAIL" "$PASSWD"
 done
 
 ### drush may create css/js files with wrong(root) permissions
