@@ -97,25 +97,25 @@ function lbd_delete_follow_dooject_node()
 
 
 /**
- * Implements hook_install
+ * Implements hook_enable
  *
  */
-function labdoo_lib_install()
+function labdoo_lib_enable()
 {
   lbd_create_tag_dooject_node(); 
   lbd_create_follow_dooject_node();
-  drupal_set_message("labdoo_lib installed correctly");
+  drupal_set_message("labdoo_lib enabled correctly");
 }
 
 
 /**
- * Implements hook_uninstall
+ * Implements hook_disable
  *
  */
-function labdoo_lib_uninstall()
+function labdoo_lib_disable()
 {
   lbd_delete_tag_dooject_node();
   lbd_delete_follow_dooject_node();
-  drupal_set_message("labdoo_lib uninstalled correctly");
+  drupal_set_message("labdoo_lib disabled correctly");
 }
 

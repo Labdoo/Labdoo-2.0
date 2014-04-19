@@ -94,16 +94,20 @@ function labdoo_dooject_extract_emails($node) {
       $emailsList = $emailsList . ", " . $userObj->mail;
     }
  
-    if(array_key_exists('und', $node->field_additional_followers)) {
-      foreach($node->field_additional_followers['und'] as $element) {
-        $userObj = user_load($element['target_id']);
-        $emailsList = $emailsList . ", " . $userObj->mail;
+    if($node->field_additional_followers) {
+      if(array_key_exists('und', $node->field_additional_followers)) {
+        foreach($node->field_additional_followers['und'] as $element) {
+          $userObj = user_load($element['target_id']);
+          $emailsList = $emailsList . ", " . $userObj->mail;
+        }
       }
     }
 
-    if(array_key_exists('und', $node->field_additional_notification_em)) {
-      foreach($node->field_additional_notification_em['und'] as $element) {
-        $emailsList = $emailsList . ", " . $element["email"];
+    if($node->field_additional_notification_em) {
+      if(array_key_exists('und', $node->field_additional_notification_em)) {
+        foreach($node->field_additional_notification_em['und'] as $element) {
+          $emailsList = $emailsList . ", " . $element["email"];
+        }
       }
     }
 

@@ -73,27 +73,27 @@ function lbd_visualize_delete_node($dashboardPath)
 
 
 /**
- * Implements hook_install
+ * Implements hook_enable
  *
  */
-function lbd_visualize_install()
+function lbd_visualize_enable()
 {
   lbd_visualize_create_node("lbd_display_dashboard_doojects", "Doojects Dashboard", "content/doojects-dashboard"); 
   lbd_visualize_create_node("lbd_display_dashboard_edoovillages", "Edoovillages Dashboard", "content/edoovillages-dashboard"); 
   lbd_visualize_create_node("lbd_display_dashboard_hubs", "Hubs Dashboard", "content/hubs-dashboard"); 
-  drupal_set_message("lbd_visualize installed correctly");
+  drupal_set_message("lbd_visualize enabled correctly");
 }
 
 
 /**
- * Implements hook_uninstall
+ * Implements hook_disable
  *
  */
-function lbd_visualize_uninstall()
+function lbd_visualize_disable()
 {
   lbd_visualize_delete_node("content/edoovillages-dashboard");
   lbd_visualize_delete_node("content/hubs-dashboard");
   lbd_visualize_delete_node("content/doojects-dashboard");
-  drupal_set_message("lbd_visualize uninstalled correctly");
+  drupal_set_message("lbd_visualize disabled correctly");
 }
 
