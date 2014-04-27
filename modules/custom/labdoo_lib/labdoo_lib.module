@@ -121,9 +121,11 @@ function labdoo_render_map_geolocate_node() {
   }
   else { // It's a dootrip
     $srcCity = $node->field_origin_of_the_trip['und'][0]['city'];
+    $srcCity = preg_replace('/\s+/', '%20', $srcCity);
     $srcCountry = $node->field_origin_of_the_trip['und'][0]['country'];
     $srcCountryLong = $countryNames[$srcCountry];
     $dstCity = $node->field_destination_of_the_trip['und'][0]['city'];
+    $dstCity = preg_replace('/\s+/', '%20', $dstCity);
     $dstCountry = $node->field_destination_of_the_trip['und'][0]['country'];
     $dstCountryLong = $countryNames[$dstCountry];
 
@@ -134,13 +136,13 @@ function labdoo_render_map_geolocate_node() {
     $coordinates = $mapQueryDecoded['results'][0]['geometry']['location'];
     $locations[0]->latitude = $coordinates['lat'];
     $locations[0]->longitude = $coordinates['lng']; 
-    $locations[0]->balloon_text = "Dootrip origin: $srcCity, $srcCountryLong";
+    $locations[0]->balloon_text = "Dootrip origin: " . str_replace('%20', ' ', $srcCity) . ", $srcCountryLong";
     $mapQuery = drupal_http_request('https://maps.googleapis.com/maps/api/geocode/json?address='.$dstCity.'&sensor=false&region='.$dstCountry);
     $mapQueryDecoded = drupal_json_decode($mapQuery->data);
     $coordinates = $mapQueryDecoded['results'][0]['geometry']['location'];
     $locations[1]->latitude = $coordinates['lat'];
     $locations[1]->longitude = $coordinates['lng']; 
-    $locations[1]->balloon_text = "Dootrip destination: $dstCity, $dstCountryLong";
+    $locations[1]->balloon_text = "Dootrip destination: " . str_replace('%20', ' ', $dstCity) . ", $dstCountryLong";
 
     $map_style = 'height:400px;'; 
     $map_options = '{"mapTypeId":"roadmap", "zoom":2}';
