@@ -14,5 +14,5 @@ drush @lbd dis -y labdoo_lib
 drush @lbd en -y labdoo_lib lbd_communicate
 
 # Some sample nodes for development
-drush @lbd $enOrDis -y lbd_sample_doojects lbd_sample_edoovillages lbd_sample_hub 
+#drush @lbd $enOrDis -y lbd_sample_doojects lbd_sample_edoovillages lbd_sample_hubs 
 
