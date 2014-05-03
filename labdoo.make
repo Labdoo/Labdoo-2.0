@@ -54,6 +54,7 @@ projects[conditional_fields][version] = "3.0-alpha1"
 projects[lightbox2][version] = "1.0-beta1"
 projects[node_view_permissions][version] = "1.3"
 projects[r4032login][version] = "1.7"
+projects[ip_geoloc][version] = "1.25"
 ;projects[node_clone][version] = "1.0-rc2"
 
 ;--------------------

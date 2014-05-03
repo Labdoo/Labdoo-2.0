@@ -76,6 +76,7 @@ dependencies[] = subpathauto
 dependencies[] = lightbox2 
 dependencies[] = node_view_permissions 
 dependencies[] = r4032login 
+dependencies[] = ip_geoloc 
 ;dependencies[] = node_clone
 
 ;--------------------

@@ -1,0 +1,8 @@
+name = Labdoo Blocks
+description = Enables Labdoo Blocks 
+core = 7.x
+package = Features
+dependencies[] = fe_block
+features[fe_block_boxes][] = block_geolocation_map_node
+features[fe_block_settings][] = block-block_geolocation_map_node
+features[features_api][] = api:1

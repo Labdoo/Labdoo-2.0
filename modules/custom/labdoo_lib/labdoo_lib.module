@@ -75,6 +75,88 @@ function _update_dooject_location_from_edoovillage($node) {
 
 
 /**
+ * Renders a map geolocating the node where this function is invoked from
+ *
+ */
+function labdoo_render_map_geolocate_node() {
+
+  // Make sure this is called from a valid node
+  if ((arg(0) != 'node') || !is_numeric(arg(1))) 
+    return;
+
+  $node = node_load(arg(1));
+
+  // Accept only certain types of content types
+  $types = array('laptop' => 1,'dootrip' => 1,'hub' => 1, 'edoovillage' => 1) ;
+  if(!isset($types[$node->type]))
+    return;
+
+  $countryNames = location_get_iso3166_list();
+
+  $div_id = 'map-geolocate-node'; 
+  $map_style = 'height:200px;'; 
+  $map_options = '{"mapTypeId":"roadmap", "zoom":10}';
+  $marker_color = NULL; 
+  $visitor_marker = FALSE;
+  $center_option = 1;
+  $center_latlng = array(0, 0);
+
+  if($node->type != 'dootrip') {
+    $locations = array();
+    $locations[0]->latitude = $node->locations[0]['latitude'];
+    $locations[0]->longitude = $node->locations[0]['longitude']; 
+    if($node->type == 'laptop') {
+      $locations[0]->balloon_text = "Dooject ID: $node->title";
+    }
+    if($node->type == 'edoovillage') {
+      $nodeCity = $node->locations[0]['city'];
+      $nodeCountry = $countryNames[$node->locations[0]['country']];
+      $locations[0]->balloon_text = "Edoovillage: $nodeCity, $nodeCountry";
+    }
+    if($node->type == 'hub') {
+      $nodeCity = $node->locations[0]['city'];
+      $nodeCountry = $countryNames[$node->locations[0]['country']];
+      $locations[0]->balloon_text = "Hub: $nodeCity, $nodeCountry";
+    }
+  }
+  else { // It's a dootrip
+    $srcCity = $node->field_origin_of_the_trip['und'][0]['city'];
+    $srcCity = preg_replace('/\s+/', '%20', $srcCity);
+    $srcCountry = $node->field_origin_of_the_trip['und'][0]['country'];
+    $srcCountryLong = $countryNames[$srcCountry];
+    $dstCity = $node->field_destination_of_the_trip['und'][0]['city'];
+    $dstCity = preg_replace('/\s+/', '%20', $dstCity);
+    $dstCountry = $node->field_destination_of_the_trip['und'][0]['country'];
+    $dstCountryLong = $countryNames[$dstCountry];
+
+    # There are various online services to pull the GPS coordinates 
+    # of a location. Use one of them.
+    $mapQuery = drupal_http_request('https://maps.googleapis.com/maps/api/geocode/json?address='.$srcCity.'&sensor=false&region='.$srcCountry);
+    $mapQueryDecoded = drupal_json_decode($mapQuery->data);
+    $coordinates = $mapQueryDecoded['results'][0]['geometry']['location'];
+    $locations[0]->latitude = $coordinates['lat'];
+    $locations[0]->longitude = $coordinates['lng']; 
+    $locations[0]->balloon_text = "Dootrip origin: " . str_replace('%20', ' ', $srcCity) . ", $srcCountryLong";
+    $mapQuery = drupal_http_request('https://maps.googleapis.com/maps/api/geocode/json?address='.$dstCity.'&sensor=false&region='.$dstCountry);
+    $mapQueryDecoded = drupal_json_decode($mapQuery->data);
+    $coordinates = $mapQueryDecoded['results'][0]['geometry']['location'];
+    $locations[1]->latitude = $coordinates['lat'];
+    $locations[1]->longitude = $coordinates['lng']; 
+    $locations[1]->balloon_text = "Dootrip destination: " . str_replace('%20', ' ', $dstCity) . ", $dstCountryLong";
+
+    $map_style = 'height:400px;'; 
+    $map_options = '{"mapTypeId":"roadmap", "zoom":2}';
+  }
+
+  print ip_geoloc_output_map_multi_location($locations, $div_id, $map_options, $map_style, 
+                                            $marker_color, $visitor_marker, 
+                                            $center_option, $center_latlng, FALSE);
+
+  return;
+}
+
+
+/**
  * Generates a comma-separated list of emails that need
  * to be notified upon a change of status of a dooject
  *
