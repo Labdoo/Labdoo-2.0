@@ -132,12 +132,20 @@ function labdoo_render_map_geolocate_node() {
     # There are various online services to pull the GPS coordinates 
     # of a location. Use one of them.
     $mapQuery = drupal_http_request('https://maps.googleapis.com/maps/api/geocode/json?address='.$srcCity.'&sensor=false&region='.$srcCountry);
+    if(!property_exists($mapQuery, 'data')) {
+      drupal_set_message('Geolocation maps are currently not available');
+      return;
+    }
     $mapQueryDecoded = drupal_json_decode($mapQuery->data);
     $coordinates = $mapQueryDecoded['results'][0]['geometry']['location'];
     $locations[0]->latitude = $coordinates['lat'];
     $locations[0]->longitude = $coordinates['lng']; 
     $locations[0]->balloon_text = "Dootrip origin: " . str_replace('%20', ' ', $srcCity) . ", $srcCountryLong";
     $mapQuery = drupal_http_request('https://maps.googleapis.com/maps/api/geocode/json?address='.$dstCity.'&sensor=false&region='.$dstCountry);
+    if(!property_exists($mapQuery, 'data')) {
+      drupal_set_message('Geolocation maps are currently not available');
+      return;
+    }
     $mapQueryDecoded = drupal_json_decode($mapQuery->data);
     $coordinates = $mapQueryDecoded['results'][0]['geometry']['location'];
     $locations[1]->latitude = $coordinates['lat'];
@@ -279,14 +287,19 @@ function labdoo_lib_node_update($node) {
      * T1 or S4.
      */
     $doojectStatus = $node->field_status['und'][0]['value'];
-    if($doojectStatus == "T1" || $doojectStatus == "S4") {
+    $oldNode = node_load($node->nid);
+    if($oldNode)
+      $oldDoojectStatus = $oldNode->field_status['und'][0]['value'];
+    else // This is a newly inserted node
+      $oldDoojectStatus = "-1";  // Any non-status string will do it
+    if($doojectStatus != $oldDoojectStatus && ($doojectStatus == "T1" || $doojectStatus == "S4")) {
       // Use a PHP shutdown callback (invoked upon exiting the PHP thread)
       // to ensure the node has been stored in the database prior to updating the location.
       // FIX: this can also be probably done using hook_node_presave
       //      just like we are doing with other fields
       register_shutdown_function('_update_dooject_location_from_edoovillage', $node);
       drupal_set_message(t('The location of this dooject has been automatically assigned to the location of its edoovillage.'));
-   }
+    }
 
   }
 

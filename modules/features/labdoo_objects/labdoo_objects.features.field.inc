@@ -57,7 +57,7 @@ function labdoo_objects_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => 9,
+          'weight' => '7',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -89,7 +89,7 @@ function labdoo_objects_field_default_fields() {
           'year_range' => '-3:+3',
         ),
         'type' => 'date_select',
-        'weight' => '9',
+        'weight' => '8',
       ),
     ),
   );
@@ -132,7 +132,7 @@ function labdoo_objects_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 10,
+          'weight' => '10',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -208,7 +208,7 @@ function labdoo_objects_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => 8,
+          'weight' => '6',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -240,7 +240,7 @@ function labdoo_objects_field_default_fields() {
           'year_range' => '-3:+3',
         ),
         'type' => 'date_select',
-        'weight' => '6',
+        'weight' => '5',
       ),
     ),
   );
@@ -451,7 +451,7 @@ function labdoo_objects_field_default_fields() {
           'module' => 'location_cck',
           'settings' => array(),
           'type' => 'location_default',
-          'weight' => 7,
+          'weight' => '5',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -472,7 +472,7 @@ function labdoo_objects_field_default_fields() {
         'module' => 'location_cck',
         'settings' => array(),
         'type' => 'location',
-        'weight' => '8',
+        'weight' => '7',
       ),
     ),
   );
@@ -509,7 +509,7 @@ function labdoo_objects_field_default_fields() {
             'thousand_separator' => ' ',
           ),
           'type' => 'number_integer',
-          'weight' => 5,
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -520,7 +520,7 @@ function labdoo_objects_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_dootrip_capacity',
-      'label' => 'Number of laptops you can carry',
+      'label' => 'Number of doojects you can carry',
       'required' => 1,
       'settings' => array(
         'max' => '',
@@ -534,7 +534,7 @@ function labdoo_objects_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '4',
+        'weight' => '3',
       ),
     ),
   );
@@ -590,10 +590,10 @@ function labdoo_objects_field_default_fields() {
           'label' => 'above',
           'module' => 'entityreference',
           'settings' => array(
-            'link' => FALSE,
+            'link' => 1,
           ),
           'type' => 'entityreference_label',
-          'weight' => 0,
+          'weight' => '9',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -618,7 +618,7 @@ function labdoo_objects_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '3',
+        'weight' => '2',
       ),
     ),
   );
@@ -670,16 +670,16 @@ function labdoo_objects_field_default_fields() {
       'bundle' => 'dootrip',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Once you know the laptop(s) that you will be carrying with this dootrip, enter their Labdoo identifier here.',
+      'description' => 'Once you know the dooject(s) that you will be carrying with this dootrip, enter their Labdoo identifier here.',
       'display' => array(
         'default' => array(
           'label' => 'above',
           'module' => 'entityreference',
           'settings' => array(
-            'link' => FALSE,
+            'link' => 1,
           ),
           'type' => 'entityreference_label',
-          'weight' => 1,
+          'weight' => '8',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -690,7 +690,7 @@ function labdoo_objects_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_laptops',
-      'label' => 'Laptops',
+      'label' => 'Dooject identifiers',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -704,7 +704,7 @@ function labdoo_objects_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '11',
+        'weight' => '10',
       ),
     ),
   );
@@ -741,7 +741,7 @@ function labdoo_objects_field_default_fields() {
             'thousand_separator' => ' ',
           ),
           'type' => 'number_integer',
-          'weight' => 3,
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -752,7 +752,7 @@ function labdoo_objects_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_number_of_days_after',
-      'label' => 'Number of days you can store the laptop after the arrival date',
+      'label' => 'Number of days you can store the dooject after the arrival date',
       'required' => 1,
       'settings' => array(
         'max' => '',
@@ -766,7 +766,7 @@ function labdoo_objects_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '10',
+        'weight' => '9',
       ),
     ),
   );
@@ -803,7 +803,7 @@ function labdoo_objects_field_default_fields() {
             'thousand_separator' => ' ',
           ),
           'type' => 'number_integer',
-          'weight' => 4,
+          'weight' => '2',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -814,7 +814,7 @@ function labdoo_objects_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_number_of_days_before',
-      'label' => 'Number of days you can store the laptop before the departure date',
+      'label' => 'Number of days you can store the dooject before the departure date',
       'required' => 1,
       'settings' => array(
         'max' => '',
@@ -828,7 +828,7 @@ function labdoo_objects_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '7',
+        'weight' => '6',
       ),
     ),
   );
@@ -1039,7 +1039,7 @@ function labdoo_objects_field_default_fields() {
           'module' => 'location_cck',
           'settings' => array(),
           'type' => 'location_default',
-          'weight' => 6,
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1060,7 +1060,71 @@ function labdoo_objects_field_default_fields() {
         'module' => 'location_cck',
         'settings' => array(),
         'type' => 'location',
-        'weight' => '5',
+        'weight' => '4',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-dootrip-field_status_dootrip'.
+  $fields['node-dootrip-field_status_dootrip'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_status_dootrip',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          'DS0' => 'Pending',
+          'DS1' => 'Completed',
+          'DS2' => 'Cancelled',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'dootrip',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => '0',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_status_dootrip',
+      'label' => 'Status',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
+        'weight' => '11',
       ),
     ),
   );
@@ -2302,7 +2366,7 @@ function labdoo_objects_field_default_fields() {
           'label' => 'above',
           'module' => 'entityreference',
           'settings' => array(
-            'link' => FALSE,
+            'link' => 1,
           ),
           'type' => 'entityreference_label',
           'weight' => '7',
@@ -2423,10 +2487,10 @@ function labdoo_objects_field_default_fields() {
           'label' => 'above',
           'module' => 'entityreference',
           'settings' => array(
-            'link' => FALSE,
+            'link' => 1,
           ),
           'type' => 'entityreference_label',
-          'weight' => 15,
+          'weight' => '15',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -2518,7 +2582,7 @@ function labdoo_objects_field_default_fields() {
           'rows' => '3',
         ),
         'type' => 'text_textarea',
-        'weight' => '16',
+        'weight' => '17',
       ),
     ),
   );
@@ -2848,6 +2912,92 @@ function labdoo_objects_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-laptop-field_dootrips'.
+  $fields['node-laptop-field_dootrips'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_dootrips',
+      'foreign keys' => array(
+        'node' => array(
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(
+            'dootrip' => 'dootrip',
+          ),
+        ),
+        'target_type' => 'node',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'laptop',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'This field is updated automatically once dootrips are assigned to this dooject. You can also optionally set this field manually adding dootrips by typing their name.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'entityreference',
+          'settings' => array(
+            'link' => 1,
+          ),
+          'type' => 'entityreference_label',
+          'weight' => '9',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_dootrips',
+      'label' => 'Dootrips assigned to this dooject',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'size' => '60',
+        ),
+        'type' => 'entityreference_autocomplete',
+        'weight' => '16',
+      ),
+    ),
+  );
+
   // Exported field: 'node-laptop-field_edoovillage_destination'.
   $fields['node-laptop-field_edoovillage_destination'] = array(
     'field_config' => array(
@@ -2901,7 +3051,7 @@ function labdoo_objects_field_default_fields() {
           'label' => 'above',
           'module' => 'entityreference',
           'settings' => array(
-            'link' => FALSE,
+            'link' => 1,
           ),
           'type' => 'entityreference_label',
           'weight' => '3',
@@ -3049,7 +3199,7 @@ function labdoo_objects_field_default_fields() {
           'label' => 'above',
           'module' => 'entityreference',
           'settings' => array(
-            'link' => FALSE,
+            'link' => 1,
           ),
           'type' => 'entityreference_label',
           'weight' => '4',
@@ -3133,7 +3283,7 @@ function labdoo_objects_field_default_fields() {
           'label' => 'above',
           'module' => 'entityreference',
           'settings' => array(
-            'link' => FALSE,
+            'link' => 1,
           ),
           'type' => 'entityreference_label',
           'weight' => '5',
@@ -3625,7 +3775,9 @@ function labdoo_objects_field_default_fields() {
   t('Departure date');
   t('Destination of the trip');
   t('Device type');
+  t('Dooject identifiers');
   t('Dootripper(s)');
+  t('Dootrips assigned to this dooject');
   t('Edoovillage destination');
   t('Email address, phone number, website, etc.');
   t('Example: Ubuntu 12.04, Mac OS X, Windows 7, etc.');
@@ -3633,20 +3785,19 @@ function labdoo_objects_field_default_fields() {
   t('Hub manager(s)');
   t('If you are an individual tagger, select here the group "Grassroots". If you belong to a hub, select the name of your hub.');
   t('Internet connection type');
-  t('Laptops');
   t('Local language(s)');
   t('Manager');
   t('Memory');
   t('Model');
   t('Number of cores (CPU type)');
-  t('Number of days you can store the laptop after the arrival date');
-  t('Number of days you can store the laptop before the departure date');
+  t('Number of days you can store the dooject after the arrival date');
+  t('Number of days you can store the dooject before the departure date');
+  t('Number of doojects you can carry');
   t('Number of laptops needed');
-  t('Number of laptops you can carry');
   t('Number of students');
   t('Number of teachers');
   t('On-site point of contact');
-  t('Once you know the laptop(s) that you will be carrying with this dootrip, enter their Labdoo identifier here.');
+  t('Once you know the dooject(s) that you will be carrying with this dootrip, enter their Labdoo identifier here.');
   t('Origin of the trip');
   t('Picture');
   t('Project application');
@@ -3661,6 +3812,7 @@ function labdoo_objects_field_default_fields() {
   t('Tagger');
   t('The user currently managing this laptop. ');
   t('The user who tagged this laptop.');
+  t('This field is updated automatically once dootrips are assigned to this dooject. You can also optionally set this field manually adding dootrips by typing their name.');
   t('Upload here a picture of the laptop. A picture is a helpful way for donors to ensure that they are looking at the correct laptop. Please do not use pictures that you may find on the Internet, as they may be copyrighted.  Instead, please take a picture with your own camera.');
   t('User(s) who will be part of this dootrip.');
   t('Write here the serial number of the laptop. Usually the serial number can be found in the back of the laptop, search for keywords such as "Serial Number" or "S/N", or if you see a bar code with a number under it, use this number. If the laptop has no sticker with the serial number, then write in this field the words "Unknown".');

@@ -1,0 +1,130 @@
+<?php
+
+/**
+ * @defgroup labdoodootrip LabdooDootrip: Module implementing Labdoo's Dootrip System
+ *
+ * This module implements the Labdoo Dootrip System
+ *
+ */
+
+
+/**
+ * @file
+ * Main module file for the Labdoo Dootrip module 
+ *
+ * @ingroup labdoodootrip
+ *
+ */
+
+/**
+ * Given a source node and linked field in it, update the corresponding destination 
+ * field. A linked field in a source node is herein understood as an entity 
+ * field linked to other nodes (called the destination nodes) which in turn
+ * have an entity field linked back to the source node. An example of such type of
+ * relationships are the dootrip and dooject fields found in the dooject and dootrip 
+ * node types, respectively.
+ *
+ * @param node $node
+ *   The source node
+ * @param string $src_field
+ *   The linked field in the source node
+ * @param string $dst_field
+ *   The linked field in the destination node
+ * @param string $src_name
+ *   A user friendly name for the source field
+ * @param string $dst_name
+ *   A user friendly name for the destination field
+ */
+function _update_linked_nodes($node, $src_field, $dst_field, $src_name, $dst_name) {
+
+  $wSrcNodeNew = entity_metadata_wrapper('node', $node);
+  $dstListNew = $wSrcNodeNew->$src_field->value();
+
+  $srcLoaded = node_load($node->nid);
+  if($srcLoaded) { // node already existed (this is not an insert operation)
+    $wSrcNodeOld = entity_metadata_wrapper('node', $srcLoaded);
+    $dstListOld = $wSrcNodeOld->$src_field->value();
+  }
+  else
+    $dstListOld == array();
+
+  if($dstListNew == $dstListOld)
+    return; 
+
+  // Try to add this source to the destinations:
+  // For each dst added by the newly submitted form, if
+  // this src is not assigned to such dst, then assign it.
+  foreach($dstListNew as $dstNode) {
+    $changed = FALSE; 
+
+    $dstLoaded = node_load($dstNode->nid);
+    $wDstNode = entity_metadata_wrapper('node', $dstLoaded);
+    $srcList = $wDstNode->$dst_field->value();
+    if(!$srcList) 
+      $srcList = array();
+
+    if(!$srcLoaded || !in_array($srcLoaded, $srcList)) {
+      drupal_set_message("The " . $src_name . " '" . $node->title . "'  was added to the " . $dst_name . " '" . $dstNode->title . "'");
+      $srcList[] = $node;
+      $changed = TRUE;
+    }
+
+    if($changed == TRUE) {  
+      $wDstNode->$dst_field->set($srcList);
+      $wDstNode->save();
+    }
+  }
+
+  // Try to remove this source from the destinations:
+  // For each dst removed by the newly submitted form, if
+  // this src is assigned to such dst, then unassign it.
+  if($srcLoaded) { 
+    foreach($dstListOld as $dstNode) {
+      $changed = FALSE;
+
+      if(in_array($dstNode, $dstListNew))
+        continue;      
+
+      $dstLoaded = node_load($dstNode->nid);
+      $wDstNode = entity_metadata_wrapper('node', $dstLoaded);
+      $srcList = $wDstNode->$dst_field->value();
+      if(!$srcList)
+        return;
+
+      foreach($srcList as $key => $srcNode) {
+        if($srcNode->nid == $srcLoaded->nid) {
+          unset($srcList[$key]);
+          drupal_set_message("The " . $src_name . " '" . $node->title . "'  was removed from the " . $dst_name . " '" . $dstNode->title . "'");
+          $changed = TRUE;
+        }
+      }
+
+      if($changed == TRUE) { 
+        $wDstNode->$dst_field->set($srcList);
+        $wDstNode->save();
+      }
+    }
+  }
+
+  return;
+}
+
+
+/**
+ * Implementation of hook_node_update
+ *
+ * Note: the calling of _update_linked_nodes would generate an infinite loop
+ * if they were implemented in the hook_node_presave.
+ *
+ */
+function lbd_dootrip_node_update($node) {
+
+  if($node->type == 'laptop') 
+    _update_linked_nodes($node, 'field_dootrips', 'field_laptops', 'dooject', 'dootrip'); 
+
+  if($node->type == 'dootrip') 
+    _update_linked_nodes($node, 'field_laptops', 'field_dootrips', 'dootrip', 'dooject'); 
+
+  return;
+}
+

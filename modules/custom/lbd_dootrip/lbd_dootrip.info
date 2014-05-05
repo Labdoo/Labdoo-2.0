@@ -1,0 +1,8 @@
+name = Labdoo Dootrip Module 
+description = Implements the Labdoo Dootrip System 
+core = 7.x
+package = Labdoo 
+dependencies[] = features 
+dependencies[] = labdoo_objects 
+dependencies[] = labdoo_lib 
+dependencies[] = lbd_communicate
