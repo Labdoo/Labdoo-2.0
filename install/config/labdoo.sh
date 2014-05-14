@@ -1,4 +1,7 @@
 #!/bin/bash
+
+cwd=$(dirname $0)
+
 ### Configure the Labdoo modules
 
 # Parameter must be either "en" or "dis"
@@ -13,6 +16,11 @@ drush @lbd $enOrDis -y labdoo_lib lbd_content_types labdoo_objects lbd_communica
 drush @lbd dis -y labdoo_lib
 drush @lbd en -y labdoo_lib lbd_communicate
 
-# Some sample nodes for development
+# install smtp
+$cwd/gmailsmtp.sh
+
+# Some sample nodes for development (disable this for production)
+# Note: these modules need to be installed after smtp is installed
+#       since they need to send out notification emails
 drush @lbd $enOrDis -y lbd_sample_doojects lbd_sample_edoovillages lbd_sample_hub 
 
