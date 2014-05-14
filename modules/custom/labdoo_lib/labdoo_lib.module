@@ -201,9 +201,36 @@ function labdoo_dooject_extract_emails($node) {
       }
     }
 
+    $emailsList = $emailsList . ", " . variable_get('site_mail', '');
+
     if($emailsList[0] == ",")
       $emailsList = substr($emailsList, 2);
  
+    return $emailsList; 
+}
+
+
+/**
+ * Generates a comma-separated list of emails that need
+ * to be notified upon a change of status of a dootrip
+ *
+ * @param node $node
+ *   The dooject's node
+ *
+ */
+function labdoo_dootrip_extract_emails($node) {
+    $emailsList = "";
+
+    foreach($node->field_dootripper_s_['und'] as $element) {
+      $userObj = user_load($element['target_id']);
+      $emailsList = $emailsList . ", " . $userObj->mail;
+    }
+
+    $emailsList = $emailsList . ", " . variable_get('site_mail', '');
+
+    if($emailsList[0] == ",")
+      $emailsList = substr($emailsList, 2);
+
     return $emailsList; 
 }
 

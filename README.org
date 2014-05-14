@@ -43,11 +43,6 @@
     + [[https://github.com/Labdoo/Labdoo-2.0/blob/master/dev/README.org][dev/README.org]] (tips for developers)
     + [[https://github.com/Labdoo/Labdoo-2.0/blob/master/modules/features/README.org][modules/features/README.org]]
 
-  - External docs:
-    + http://academia.edu/3993827/Development_Setup_Of_B-Translator
-    + http://academia.edu/3992404/Using_Drupal_Features_In_B-Translator
-    + http://www.academia.edu/4054221/Cloning_a_B-Translator_Server
-
   - Other docs that may be useful:
     + http://codeinthehole.com/writing/pull-requests-and-other-good-practices-for-teams-using-github/
     + http://dashohoxha.blogspot.com/2012/08/how-to-secure-ubuntu-server.html
@@ -56,3 +51,4 @@
     + http://dashohoxha.blogspot.com/2012/10/using-nginx-as-web-server-for-drupal.html
     + http://www.havetheknowhow.com/Configure-the-server/Install-ssmtp.html
     + http://arstechnica.com/security/2009/12/how-to-get-set-with-a-secure-sertificate-for-free/
+    + http://academia.edu/3993827/Development_Setup_Of_B-Translator
