@@ -83,7 +83,7 @@ projects[l10n_client][version] = "1.3"
 ; Mail Related
 ;--------------------
 projects[mailsystem][version] = "2.34"
-;projects[phpmailer][version] = "3.x-dev"
+projects[phpmailer][version] = "3.x-dev"
 projects[mimemail][version] = "1.0-beta1"
 projects[reroute_email][version] = "1.1"
 projects[simplenews][version] = "1.0"
