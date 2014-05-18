@@ -9,7 +9,7 @@ enOrDis=$1
 
 $(dirname $0)/mysqld.sh start
 drush @lbd $enOrDis -y labdoo_lib lbd_content_types labdoo_objects lbd_communicate\
-                       lbd_visualize lbd_blocks 
+                       lbd_visualize lbd_blocks lbd_dootrip 
 
 # FIXME: Somehow labdoo_lib needs a reinstall (so that the nodes created by labdoo_lib.install are correct) 
 # Remember to enable back labdoo_lib and all the libraries that depend on it
