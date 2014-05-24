@@ -1,0 +1,39 @@
+* Introduction: Labdoo Modules
+
+  Labdoo features are generally implemented via modules, which act as standalone
+  building blocks. This document describes how to create a Labdoo module.
+
+* Steps to Create a Labdoo Module
+
+  - Create a new folder under the path lbd/profiles/labdoo/modules/custom/
+
+    #+BEGIN_EXAMPLE
+    cd /var/www/lbd/profiles/labdoo/modules/custom/
+    mkdir lbd_mymodule
+    #+END_EXAMPLE
+
+    (Change the keyword mymodule for a word reflecting the functionality of your module)
+
+  - Create your code inside the folder lbd_mymodule following the standard
+    process of building modules in Drupal. That is, create at least the files 
+    lbd_mymodule.info and lbd_mymodule.module plus any additional files needed
+    to support your module.
+
+  - Make sure to document correctly your code. Don't forget to include the clauses
+    @defgroup, @file and @ingroup and make sure that each function is properly
+    documented following the Drupal standard. (E.g., make sure to use the clauses 
+    @param and @return.) This is important to ensure that 
+    documentation of the code can be properly and automatically generated.
+    For an example of how the code should be documented, see for instance
+    the Dootrip module (lbd_dootrip).
+
+  - If your module requires other modules, make sure to include the proper dependencies
+    in the following files:
+
+      + Add dependencies[] clauses in the file lbd_mymodule.info
+      + Add projects[] clauses in the file lbd/profiles/labdoo/labdoo.make if they are not there yet
+
+  - Finally, if you want your module to be enabled by default upon building Labdoo, then: 
+
+      + Add a dependencies[] clause in the file lbd/profiles/labdoo/labdoo.info 
+
