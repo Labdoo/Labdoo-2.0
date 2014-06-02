@@ -16,6 +16,24 @@
  * @ingroup labdoolib 
  */
 
+/**
+ *
+ * Given a country code, it returns the name of the country
+ *
+ * @param string @countryCode
+ *   Country code
+ * @return string
+ *   Country name
+ *
+ */
+function labdoo_country_code2name($countryCode) {
+  $countryNames = location_get_iso3166_list();
+  if(array_key_exists($countryCode, $countryNames))
+    return $countryNames[$countryCode];
+  else
+    return "[country not defined]";
+}
+
 
 /**
  * Generates the title of a dootrip 
@@ -28,15 +46,13 @@
  */
 function _generate_dootrip_title($node, $dootripId) {
 
-  $countryNames = location_get_iso3166_list();
-
   $srcCity = $node->field_origin_of_the_trip['und'][0]['city'];
   $srcCountry = $node->field_origin_of_the_trip['und'][0]['country'];
-  $srcCountry = $countryNames[$srcCountry];
+  $srcCountry = labdoo_country_code2name($srcCountry);
 
   $dstCity = $node->field_destination_of_the_trip['und'][0]['city'];
   $dstCountry = $node->field_destination_of_the_trip['und'][0]['country'];
-  $dstCountry = $countryNames[$dstCountry];
+  $dstCountry = labdoo_country_code2name($dstCountry);
 
   $newTitle = $dootripId . " - Dootrip from " . $srcCity . " (" . $srcCountry . ") to " . $dstCity . " (" . $dstCountry . ")";
 
@@ -75,6 +91,40 @@ function _update_dooject_location_from_edoovillage($node) {
 
 
 /**
+ * Attempts to estimate latitude and longitude from the names of the city and country
+ * by querying an Internet service. Therefore, requires connectivity to the Internet.
+ *
+ * @param string $country
+ *   Country code (e.g. us, de, ...)
+ * @param string $city
+ *   City name (e.g. New York City, Nairobi, ...)
+ * @param string $lat
+ *   Latitude returned as result
+ * @param string $long
+ *   Longitude returned as result 
+ * @return integer 
+ *   Returns -1 if it could not resolve the query, 0 otherwise.
+ *
+ */
+function labdoo_lookup_coordinates($country, $city, &$lat, &$lon) {
+
+    # There are various online services to pull the GPS  
+    # coordinates of a location. Use one of them.
+    $query = str_replace(' ', '%', 'https://maps.googleapis.com/maps/api/geocode/json?address='.$city.'&sensor=false&region='.$country);
+    $mapQuery = drupal_http_request($query);
+    if(!property_exists($mapQuery, 'data')) {
+      drupal_set_message('Could not resolve coordinates from the given city and country names.');
+      return -1;
+    }
+    $mapQueryDecoded = drupal_json_decode($mapQuery->data);
+    $coordinates = $mapQueryDecoded['results'][0]['geometry']['location'];
+    $lat = $coordinates['lat'];
+    $lon = $coordinates['lng']; 
+    return 0;
+}
+
+
+/**
  * Renders a map geolocating the node where this function is invoked from
  *
  */
@@ -90,8 +140,6 @@ function labdoo_render_map_geolocate_node() {
   $types = array('laptop' => 1,'dootrip' => 1,'hub' => 1, 'edoovillage' => 1) ;
   if(!isset($types[$node->type]))
     return;
-
-  $countryNames = location_get_iso3166_list();
 
   $div_id = 'map-geolocate-node'; 
   $map_style = 'height:200px;'; 
@@ -110,12 +158,12 @@ function labdoo_render_map_geolocate_node() {
     }
     if($node->type == 'edoovillage') {
       $nodeCity = $node->locations[0]['city'];
-      $nodeCountry = $countryNames[$node->locations[0]['country']];
+      $nodeCountry = labdoo_country_code2name($node->locations[0]['country']);
       $locations[0]->balloon_text = "Edoovillage: $nodeCity, $nodeCountry";
     }
     if($node->type == 'hub') {
       $nodeCity = $node->locations[0]['city'];
-      $nodeCountry = $countryNames[$node->locations[0]['country']];
+      $nodeCountry = labdoo_country_code2name($node->locations[0]['country']);
       $locations[0]->balloon_text = "Hub: $nodeCity, $nodeCountry";
     }
   }
@@ -123,33 +171,17 @@ function labdoo_render_map_geolocate_node() {
     $srcCity = $node->field_origin_of_the_trip['und'][0]['city'];
     $srcCity = preg_replace('/\s+/', '%20', $srcCity);
     $srcCountry = $node->field_origin_of_the_trip['und'][0]['country'];
-    $srcCountryLong = $countryNames[$srcCountry];
+    $srcCountryLong = labdoo_country_code2name($srcCountry);
     $dstCity = $node->field_destination_of_the_trip['und'][0]['city'];
     $dstCity = preg_replace('/\s+/', '%20', $dstCity);
     $dstCountry = $node->field_destination_of_the_trip['und'][0]['country'];
-    $dstCountryLong = $countryNames[$dstCountry];
+    $dstCountryLong = labdoo_country_code2name($dstCountry);
 
-    # There are various online services to pull the GPS coordinates 
-    # of a location. Use one of them.
-    $mapQuery = drupal_http_request('https://maps.googleapis.com/maps/api/geocode/json?address='.$srcCity.'&sensor=false&region='.$srcCountry);
-    if(!property_exists($mapQuery, 'data')) {
-      drupal_set_message('Geolocation maps are currently not available');
+    if(labdoo_lookup_coordinates($srcCountry, $srcCity, $locations[0]->latitude, $locations[0]->longitude) < 0) 
       return;
-    }
-    $mapQueryDecoded = drupal_json_decode($mapQuery->data);
-    $coordinates = $mapQueryDecoded['results'][0]['geometry']['location'];
-    $locations[0]->latitude = $coordinates['lat'];
-    $locations[0]->longitude = $coordinates['lng']; 
     $locations[0]->balloon_text = "Dootrip origin: " . str_replace('%20', ' ', $srcCity) . ", $srcCountryLong";
-    $mapQuery = drupal_http_request('https://maps.googleapis.com/maps/api/geocode/json?address='.$dstCity.'&sensor=false&region='.$dstCountry);
-    if(!property_exists($mapQuery, 'data')) {
-      drupal_set_message('Geolocation maps are currently not available');
+    if(labdoo_lookup_coordinates($dstCountry, $dstCity, $locations[1]->latitude, $locations[1]->longitude) < 0) 
       return;
-    }
-    $mapQueryDecoded = drupal_json_decode($mapQuery->data);
-    $coordinates = $mapQueryDecoded['results'][0]['geometry']['location'];
-    $locations[1]->latitude = $coordinates['lat'];
-    $locations[1]->longitude = $coordinates['lng']; 
     $locations[1]->balloon_text = "Dootrip destination: " . str_replace('%20', ' ', $dstCity) . ", $dstCountryLong";
 
     $map_style = 'height:400px;'; 
@@ -236,71 +268,6 @@ function labdoo_dootrip_extract_emails($node) {
 
 
 /**
- * Implementation of hook_node_insert  
- *
- */
-function labdoo_lib_node_insert($node) {
-
-  if($node->type == 'laptop') {
-    /*
-     * The Labdoo identifier of each
-     * laptop is stored as the node's title
-     */
-    $loadedNode = node_load($node->nid);
-
-    // The ID of this laptop is equal to the 
-    // current number of laptops in the database
-    // TODO: global lock for the counter
-    $numLaptops = lbd_get_total_num_objects("laptop"); 
-    $loadedNode->title = sprintf("%09d", intval($numLaptops));
-
-    // Add laptop path alias for 1.0 compatibility.
-    // There are basically two ways to access a laptop:
-    // via laptop/$ID or content/$ID
-    $path = 'laptop/' . $loadedNode->title;
-    $node->path = array('alias' => $path);
-
-    node_save($loadedNode);
-  }
-
-  if($node->type == 'dootrip') {
-    /*
-     * Dootrip's title is automatically generated
-     */
-    $dootripId = lbd_get_total_num_objects("dootrip"); 
-    $newTitle = _generate_dootrip_title($node, $dootripId);
-
-    $loadedNode = node_load($node->nid);
-    $loadedNode->title = $newTitle;
-    node_save($loadedNode);
-  }
-
-  if($node->type == 'edoovillage') {
-    /*
-     * Edoovillage's title is automatically generated
-     */
-    $countryNames = location_get_iso3166_list();
-    $nodeCountry = $countryNames[$node->locations[0]['country']];
-    $nodeCity = $node->locations[0]['city'];
-
-    $loadedNode = node_load($node->nid);
-    $loadedNode->title = $nodeCountry . ", " . $nodeCity . ": " . $loadedNode->field_project_summary['und'][0]['value'];
-    node_save($loadedNode);
-  }
-
-//  if($node->type == 'hub') {
-//    /*
-//     * Hub's title is automatically generated
-//     */
-//    $loadedNode = node_load($node->nid);
-//    $loadedNode->title = "Labdoo Hub name (temporary title)";
-//    node_save($loadedNode);
-//  }
-
-}
-
-
-/**
  * Implementation of hook_node_update
  *
  */
@@ -323,7 +290,8 @@ function labdoo_lib_node_update($node) {
       // Use a PHP shutdown callback (invoked upon exiting the PHP thread)
       // to ensure the node has been stored in the database prior to updating the location.
       // FIX: this can also be probably done using hook_node_presave
-      //      just like we are doing with other fields
+      //      just like we are doing with other fields.
+      //      For now we leave it here as an example of an alternative technique.
       register_shutdown_function('_update_dooject_location_from_edoovillage', $node);
       drupal_set_message(t('The location of this dooject has been automatically assigned to the location of its edoovillage.'));
     }
@@ -340,12 +308,42 @@ function labdoo_lib_node_update($node) {
  */
 function labdoo_lib_node_presave($node) {
 
+  if(!property_exists($node, 'original') && $node->type == 'laptop') {
+    /*
+     * Update the title and path alias
+     */
+    // The ID of this new dooject is equal to the 
+    // current number of laptops in the database
+    // TODO: global lock for the counter
+    $numLaptops = lbd_get_total_num_objects("laptop") + 1; 
+    // The Labdoo identifier of each
+    // laptop is stored as the node's title
+    $node->title = sprintf("%09d", intval($numLaptops));
+
+    // Add laptop path alias for 1.0 compatibility.
+    // There are basically two ways to access a laptop:
+    // via laptop/$ID or content/$ID
+    $path = 'laptop/' . $node->title;
+    $node->path = array('alias' => $path);
+  }
+
+  if($node->type == 'laptop') {
+    // If not set, make a best estimate of its GPS coordinates
+    $location = $node->locations[0]; 
+    if(!array_key_exists('latitude', $location) || !array_key_exists('longitude', $location)) {
+      // Attempt to find out the coordinates.
+      // Latitude and longitude are passed as reference.
+      $ret = labdoo_lookup_coordinates($location['country'], $location['city'], $node->locations[0]['latitude'], $node->locations[0]['longitude']);
+      if($ret == 0) // If successful, do not let the system attempt to geolocate it anymore
+        $node->locations[0]['inhibit_geocode'] = TRUE;
+    }
+  }
+
   if($node->type == 'edoovillage') {
     /*
      * Update title in case any of its parts was modified
      */
-    $countryNames = location_get_iso3166_list();
-    $nodeCountry = $countryNames[$node->locations[0]['country']];
+    $nodeCountry = labdoo_country_code2name($node->locations[0]['country']);
     $nodeCity = $node->locations[0]['city'];
     $node->title = $nodeCountry . ", " . $nodeCity . ": " . $node->field_project_summary['und'][0]['value'];
   }
@@ -354,8 +352,12 @@ function labdoo_lib_node_presave($node) {
     /*
      * Update the title
      */
-    $dootripIdExp = explode(' ', trim($node->title));
-    $dootripId = $dootripIdExp[0];
+    if(!property_exists($node, 'original'))
+      $dootripId = lbd_get_total_num_objects("dootrip") + 1; 
+    else {
+      $dootripIdExp = explode(' ', trim($node->title));
+      $dootripId = $dootripIdExp[0];
+    }
     $dootripTitle = _generate_dootrip_title($node, $dootripId);
     $node->title = $dootripTitle;
   }
@@ -421,20 +423,8 @@ function labdoo_lib_form_node_form_alter(&$form, &$form_state, $form_id) {
    * Node is an edoovillage
    */
   if($form_id == 'edoovillage_node_form') {
-
     // Hide title
     unset($form['title']);
-
-  }
-
-  /*
-   * Node is a hub
-   */
-  if($form_id == 'hub_node_form') {
-
-//    // Hide title
-//    unset($form['title']);
-
   }
 
 }
@@ -637,14 +627,15 @@ function lbd_print_dooject_header($nodeId)
   $numDoojects = lbd_get_total_num_objects("laptop");
 
   if(intval($laptopId) == $numDoojects) {
-    $nextUri = "";
+    $nextUri = "<a href=\"" . request_uri() . "/../.." . "/laptop/000000001\">";
   }
   else {
     $nextIdFull = sprintf("%09d", intval(intval($laptopId)+1));
     $nextUri = "<a href=\"" . request_uri() . "/../.." . "/laptop/" . $nextIdFull . "\">";
   }
   if(intval($laptopId) == 1) {
-    $prevUri = "";
+    $prevIdFull = sprintf("%09d", intval(intval($numDoojects)));
+    $prevUri = "<a href=\"" . request_uri() . "/../.." . "/laptop/" . $prevIdFull . "\">";
   }
   else {
     $prevIdFull = sprintf("%09d", intval(intval($laptopId)-1));

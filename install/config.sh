@@ -8,4 +8,4 @@ $cwd/config/mysql_labdoo.sh
 $cwd/config/labdoo.sh en
 $cwd/config/drupalpass.sh
 
-$cwd/config/mysqld.sh stop
+#$cwd/config/mysqld.sh stop

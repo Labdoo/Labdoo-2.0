@@ -1,0 +1,8 @@
+name = Labdoo Actions Module 
+description = Implements various mechanisms to help display the activities taking place within the Labdoo system. 
+core = 7.x
+package = Labdoo 
+dependencies[] = features 
+dependencies[] = labdoo_objects 
+dependencies[] = labdoo_lib 
+dependencies[] = views_slideshow
