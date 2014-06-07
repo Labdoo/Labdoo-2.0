@@ -8,8 +8,6 @@ MAIL='contact@labdoo.org'
 read -p "Enter the email address [$MAIL]: " input
 MAIL=${input:-$MAIL}
 
-drush sqlq "update users set mail='$MAIL' where uid=1"
-
 echo "
 ===> Please enter new password for the 'admin' user account in Drupal.
 "
@@ -20,6 +18,7 @@ echo
 
 $(dirname $0)/mysqld.sh start
 drush @lbd user-password admin --password="$passwd"
+drush sqlq "update users set mail='$MAIL' where uid=1"
 
 ### drush may create css/js files with wrong(root) permissions
 rm -rf /var/www/lbd/sites/default/files/css/

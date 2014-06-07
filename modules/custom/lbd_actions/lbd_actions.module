@@ -1,0 +1,198 @@
+<?php
+
+/**
+ * @defgroup labdooaction LabdooAction: Module implementing Labdoo's Action System
+ *
+ * Implements visualization mechanisms to help display the activities taking place within the Labdoo system. 
+ *
+ */
+
+
+/**
+ * @file
+ * Main module file for the Labdoo Action module 
+ *
+ * @ingroup labdooaction
+ *
+ */
+
+
+/**
+ * Checks if a new activity being created in a given city
+ * should be streamed in the action feed or not.
+ * If the city of the new action is the same as the city of 
+ * the last action, then do not stream it.
+ *
+ * @param string $newCity
+ *   The name of the city where the new activity is created
+ *
+ * @return boolean
+ *   TRUE if it must be streamed, FALSE otherwise
+ *
+ */
+function _must_be_streamed($newCity) {
+
+  $query = "SELECT city FROM location WHERE 
+              lid=(SELECT lid FROM location_instance WHERE 
+                nid=(SELECT nid FROM node WHERE type='action' and 
+                  nid=(SELECT max(nid) FROM node WHERE type='action')))";
+  $lastCity = db_query($query)->fetchField();
+  if($newCity != $lastCity)
+    $streamIt = TRUE;
+  else
+    $streamIt = FALSE;
+  return $streamIt;
+}
+
+
+/**
+ * Creates an action node. Usually this function is invoked upon
+ * creating one of the Labdoo objects.
+ *
+ * @param string $title
+ *   The title of the action in plain text
+ * @param string $body
+ *   The body of the action in full html format
+ * @param array $location
+ *   The location of the action
+ * @param boolean $streamIt
+ *   Whether this action should be streamed in the action feed or not
+ *
+ */
+function _create_activity_node($title, $body, $location, $streamIt)
+{
+  $node = new stdClass();
+  $node->type = 'action';
+  node_object_prepare($node);
+  
+  $node->title = $title;
+  $node->language = LANGUAGE_NONE;
+
+  $node->locations[0]['city'] = $location['city'];
+  $node->locations[0]['country'] = $location['country'];
+  if(array_key_exists('latitude', $location))
+    $node->locations[0]['latitude'] = $location['latitude'];
+  if(array_key_exists('longitude', $location))
+    $node->locations[0]['longitude'] = $location['longitude'];
+  $node->locations[0]['inhibit_geocode'] = TRUE;
+
+  $node->body[$node->language][0]['value']   = $body;
+  $node->body[$node->language][0]['summary'] = '';
+  $node->body[$node->language][0]['format']  = 'full_html';
+
+  if($streamIt)
+    $node->field_stream_it['und'][0]['value'] = 1;
+  else
+    $node->field_stream_it['und'][0]['value'] = 0;
+
+  node_save($node);
+}
+
+
+/*
+ * Implementation of hook_node_insert
+ *
+ */
+function lbd_actions_node_insert($node) {
+
+  if($node->type != 'laptop' && $node->type != 'edoovillage' && $node->type != 'hub' && $node->type != 'dootrip') 
+    return;
+
+  if($node->type == 'dootrip')
+    $location = $node->field_origin_of_the_trip['und'][0];
+  else 
+    $location = $node->locations[0];
+
+  // Compute location where the action takes place
+  $thisCountry = labdoo_country_code2name($location['country']);
+  $thisCity = $location['city'];
+
+  if($node->type == 'laptop') {
+    $title = "Laptop " . $node->title . " was tagged in " . $thisCity . ", " . $thisCountry; 
+    $body = '<p><a href="/node/' . $node->nid . '">' . $title .
+            '<img alt="" src="/profiles/labdoo/files/pictures/laptop-simple.png" style="width: 20px; height: 21px;" /></a></p>';
+  }
+  else if($node->type == 'edoovillage') {
+    $title = "Edoovillage was created in " . $thisCity . ", " . $thisCountry; 
+    $body = '<p><a href="/node/' . $node->nid . '">' . $title .
+            '<img alt="" src="/profiles/labdoo/files/pictures/edoovillage.png" style="width: 30px; height: 28px;" /></a></p>';
+  }
+  else if($node->type == 'hub') {
+    $title = "Hub was created in " . $thisCity . ", " . $thisCountry; 
+    $body = '<p><a href="/node/' . $node->nid . '">' . $title .
+            '<img alt="" src="/profiles/labdoo/files/pictures/hub.png" style="width: 34px; height: 28px;" /></a></p>';
+  }
+  else if($node->type == 'dootrip') {
+    $titleSplit = explode("- ", $node->title);
+    $title = $titleSplit[1] . " was created";
+    $body = '<p><a href="/node/' . $node->nid . '">' . $title .
+            '<img alt="" src="/profiles/labdoo/files/pictures/dootrip.png" style="width: 34px; height: 26px;" /></a></p>';
+  }
+
+  $streamIt = _must_be_streamed($thisCity); 
+  _create_activity_node($title, $body, $location, $streamIt);
+  return;
+}
+
+
+/**
+ * Implementation of hook_node_update
+ *
+ */
+function lbd_actions_node_update($node) {
+
+  if($node->type != 'laptop')
+    return;
+
+  if(!property_exists($node, 'original'))
+    return;
+
+  $newStatus = $node->field_status['und'][0]['value'];
+  $previousStatus =  $node->original->field_status['und'][0]['value'];
+  if($previousStatus == $newStatus)
+    return;
+
+  if($newStatus == "S4" || $newStatus == "T1") {
+    // Take the location from the edoovillage since the dooject
+    // location may still not be updated at the time this hook is called
+    $edoovillageId = $node->field_edoovillage_destination['und'][0]['target_id'];
+    $edoovillageNode = node_load($edoovillageId);
+    $thisCountryCode = $edoovillageNode->locations[0]['country'];
+    $thisCountry = labdoo_country_code2name($thisCountryCode);
+    $thisCity = $edoovillageNode->locations[0]['city'];
+    $thisLatitude = $edoovillageNode->locations[0]['latitude'];
+    $thisLongitude = $edoovillageNode->locations[0]['longitude'];
+
+    $location = array();
+    $location['city'] = $thisCity;
+    $location['country'] = $thisCountryCode;
+    $location['latitude'] = $thisLatitude;
+    $location['longitude'] = $thisLongitude;
+  }
+  else 
+    $location = $node->locations[0]; 
+
+  if($newStatus == "S4") {
+    // Deployed
+    $title = "Laptop " . $node->title . " was delivered to an edoovillage in " . $thisCity . ", " . $thisCountry; 
+  }
+  else if($newStatus == "T1") {
+    // Moving towards an edoovillage
+    $title = "Laptop " . $node->title . " has started its journey to an edoovillage in " . $thisCity . ", " . $thisCountry; 
+  }
+  else if($newStatus == "S6") {
+    $title = "Laptop " . $node->title . " has been recycled"; 
+    // Recycled
+  }  
+  else // don't create any activity
+    return;
+    
+  $body = '<p><a href="/node/' . $node->nid . '">' . $title .
+          '<img alt="" src="/profiles/labdoo/files/pictures/laptop-simple.png" style="width: 20px; height: 21px;" /></a></p>';
+
+  $streamIt = _must_be_streamed($thisCity); 
+
+  _create_activity_node($title, $body, $location, $streamIt);
+  return;
+}
+
