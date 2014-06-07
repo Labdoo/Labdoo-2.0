@@ -27,7 +27,7 @@ function lbd_blocks_views_api() {
 function lbd_blocks_node_info() {
   $items = array(
     'labdoo_action' => array(
-      'name' => t('Action'),
+      'name' => t('Action (obsolete)'),
       'base' => 'node_content',
       'description' => t('Actions are tasks carried out within the Labdoo aid network that contribute towards the mission of bringing education to children. Nodes of this type are automatically created.'),
       'has_title' => '1',

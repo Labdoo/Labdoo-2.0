@@ -14,7 +14,7 @@ drush @lbd $enOrDis -y labdoo_lib lbd_content_types labdoo_objects lbd_communica
 # FIXME: Somehow labdoo_lib needs a reinstall (so that the nodes created by labdoo_lib.install are correct) 
 # Remember to enable back labdoo_lib and all the libraries that depend on it
 drush @lbd dis -y labdoo_lib
-drush @lbd en -y labdoo_lib lbd_communicate
+drush @lbd en -y labdoo_lib lbd_communicate lbd_actions lbd_blocks
 
 # install smtp
 $cwd/gmailsmtp.sh
