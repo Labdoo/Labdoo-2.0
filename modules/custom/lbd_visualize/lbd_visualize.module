@@ -336,7 +336,10 @@ function lbd_display_dashboard_hubs($country = NULL) {
     $objects[$objectNid]['remainingShared'] = $remainingShared = $neededShared - $inTransit - $delivered; 
 
     // Extract %completed field 
-    $objects[$objectNid]['pcompleted'] = floor(($needed - $remaining) / $needed * 100.00); 
+    if($needed != 0)
+        $objects[$objectNid]['pcompleted'] = floor(($needed - $remaining) / $needed * 100.00); 
+    else
+        $objects[$objectNid]['pcompleted'] = 0;
 
     // Get the country
     $country_names = location_get_iso3166_list();

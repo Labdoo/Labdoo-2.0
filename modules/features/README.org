@@ -38,8 +38,8 @@
   First of all, we can get a list of all the so called /features
   components/:
   #+BEGIN_EXAMPLE
-  drush @dev help features-components
-  drush @dev features-components '%:%' > features-components.txt
+  drush @lbd help features-components
+  drush @lbd features-components '%:%' > features-components.txt
   #+END_EXAMPLE
   These are all the possible chunks of configuration that can be saved
   in a feature. All we have to do is to search and select the ones
@@ -81,7 +81,7 @@
   Now I can create a feature that includes these components with a
   command like this:
   #+BEGIN_EXAMPLE
-  drush @dev features-export \
+  drush @lbd features-export \
   --destination=profiles/btranslator/modules/features \
   btr_layout $(cat layout_components)
   #+END_EXAMPLE
@@ -104,7 +104,7 @@
   ### However some features need manual customization
   ### after being created (for example btr_layout).
 
-  drush="drush --yes @dev"
+  drush="drush --yes @lbd"
   destination="profiles/btranslator/modules/features"
 
   function create_feature
@@ -322,8 +322,8 @@
   which keeps the values of these variables and can restore them.  It
   works like this:
   #+BEGIN_EXAMPLE
-  features/save-private-vars.sh @dev
-  drush @dev php-script restore-private-vars.php
+  features/save-private-vars.sh @lbd
+  drush @lbd php-script restore-private-vars.php
   #+END_EXAMPLE
 
   The file ~private-vars.txt~ looks like this:

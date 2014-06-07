@@ -78,6 +78,7 @@ dependencies[] = node_view_permissions
 dependencies[] = r4032login 
 dependencies[] = ip_geoloc 
 dependencies[] = views_slideshow
+dependencies[] = views_slideshow_cycle
 ;dependencies[] = node_clone
 
 ;--------------------

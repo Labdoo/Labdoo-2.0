@@ -20,11 +20,13 @@
     tail -f nohup.out
     #+END_EXAMPLE
 
-  + Configure it: =chroot lbd/ /tmp/install/config.sh=
+  + Configure it: =chroot lbd/ /tmp/install/config.sh= (See next section for sample values when running this command)
 
-  + It is advisable to reboot the host after the installation: =reboot=
-
-  + Start services: =service chroot-lbd start=
+  + That's it, you are now ready to open your browser and access your local Labdoo installation. 
+  
+  + IF you need to stop Labdoo you can do: =service chroot-lbd stop=
+  
+  + If you need to start Labdoo you can do: =service chroot-lbd start=
 
   + If this is a local copy (installed on a local machine), then add
     the domain name =dev.labdoo.org= on ~/etc/hosts~:
@@ -35,6 +37,39 @@
     the browser location (not =https://127.0.0.1= or
     =https://localhost=).
 
+* Configuration parameters when installing Labdoo
+
+  When running the command =chroot lbd/ /tmp/install/config.sh=, you will be asked
+  to enter several configuration parameters. You can choose your options here,
+  but here are the recommended values to enter if you are a Labdoo developer.
+
+    #+BEGIN_EXAMPLE
+    Enter the domain [www.labdoo-dev.org]: [press ENTER here to select the default]
+    Enter root password [89a67fb3a0]: [use a simple password, for instance, "grassroots"]
+    Please enter new password for the MySQL 'lbd' account.
+    Enter password [057e80488289da38]: [use a simple password, for instance, "grassroots"]
+    Enter the gmail address [MyEmailAddress@gmail.com]: [enter "dev-user@labdoo.org"]
+    Enter the gmail password: [you need to enter "grassroots" here]
+    Please enter the email address of the 'admin' user account in Drupal: [enter "dev-user@labdoo.org"]
+    Please enter new password for the 'admin' user account in Drupal.
+    Enter the password: [enter "grassroots" here]
+    #+END_EXAMPLE
+
+  dev-user@labdoo.org is a special Labdoo email account used for development. You can access
+  this account by going to the Labdoo email URL mail.labdoo.org and use the password "grassroots".
+
+  Finally, make sure to include the following lines in your /etc/hosts file (outside the chroot):
+
+    #+BEGIN_EXAMPLE
+    127.0.0.1       www.labdoo-dev.org localhost
+    127.0.0.1       labdoo-dev.org localhost
+    #+END_EXAMPLE
+
+  After using the above configuration parameters, you can now access your Labdoo installation
+  by opening your web browser and opening the URL https://www.labdoo-dev.org/. Please use https
+  protocol (instead of http) since currently the theme only works properly on https. (Notice
+  that you will need to confirm the security exception on your browser the first time you
+  access https://www.labdoo-dev.org/)
 
 * Documentation
 

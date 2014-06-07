@@ -54,6 +54,38 @@ function lbd_blocks_default_fe_block_settings() {
     'visibility' => '2',
   );
 
+  $export['system-main'] = array(
+    'cache' => -1,
+    'custom' => '0',
+    'delta' => 'main',
+    'module' => 'system',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => 'content',
+        'status' => '1',
+        'theme' => 'bartik',
+        'weight' => '0',
+      ),
+      'bootstrap1' => array(
+        'region' => 'content',
+        'status' => '1',
+        'theme' => 'bootstrap1',
+        'weight' => '0',
+      ),
+      'seven' => array(
+        'region' => 'content',
+        'status' => '1',
+        'theme' => 'seven',
+        'weight' => '0',
+      ),
+    ),
+    'title' => '',
+    'visibility' => '0',
+  );
+
   $export['views-actions-block'] = array(
     'cache' => -1,
     'custom' => '0',
@@ -70,8 +102,8 @@ function lbd_blocks_default_fe_block_settings() {
         'weight' => '0',
       ),
       'bootstrap1' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'header',
+        'status' => '1',
         'theme' => 'bootstrap1',
         'weight' => '0',
       ),

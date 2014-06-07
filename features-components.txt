@@ -1,0 +1,774 @@
+ Available sources                                                                                        
+ variable:additional_settings__active_tab_action                     Provided by: lbd_content_types       
+ variable:additional_settings__active_tab_labdoo_action              Provided by: lbd_blocks              
+ variable:additional_settings__active_tab_private_page               Provided by: lbd_content_types       
+ variable:admin_theme                                                                                     
+ variable:book_allowed_types                                                                              
+ variable:book_child_type                                                                                 
+ variable:boost_comment_end_application/rss                                                               
+ variable:boost_comment_end_application/rss+xml                                                           
+ variable:boost_comment_end_application/xml                                                               
+ variable:boost_comment_end_text/html                                                                     
+ variable:boost_comment_end_text/javascript                                                               
+ variable:boost_comment_end_text/xml                                                                      
+ variable:boost_comment_start_application/rss                                                             
+ variable:boost_comment_start_application/rss+xml                                                         
+ variable:boost_comment_start_application/xml                                                             
+ variable:boost_comment_start_text/html                                                                   
+ variable:boost_comment_start_text/javascript                                                             
+ variable:boost_comment_start_text/xml                                                                    
+ variable:boost_enabled_application/rss                                                                   
+ variable:boost_enabled_application/rss+xml                                                               
+ variable:boost_enabled_application/xml                                                                   
+ variable:boost_enabled_text/html                                                                         
+ variable:boost_enabled_text/javascript                                                                   
+ variable:boost_enabled_text/xml                                                                          
+ variable:boost_extension_application/rss                                                                 
+ variable:boost_extension_application/rss+xml                                                             
+ variable:boost_extension_application/xml                                                                 
+ variable:boost_extension_text/html                                                                       
+ variable:boost_extension_text/javascript                                                                 
+ variable:boost_extension_text/xml                                                                        
+ variable:boost_gzip_application/rss                                                                      
+ variable:boost_gzip_application/rss+xml                                                                  
+ variable:boost_gzip_application/xml                                                                      
+ variable:boost_gzip_text/html                                                                            
+ variable:boost_gzip_text/javascript                                                                      
+ variable:boost_gzip_text/xml                                                                             
+ variable:boost_lifetime_max_application/rss                                                              
+ variable:boost_lifetime_max_application/rss+xml                                                          
+ variable:boost_lifetime_max_application/xml                                                              
+ variable:boost_lifetime_max_text/html                                                                    
+ variable:boost_lifetime_max_text/javascript                                                              
+ variable:boost_lifetime_max_text/xml                                                                     
+ variable:boost_lifetime_min_application/rss                                                              
+ variable:boost_lifetime_min_application/rss+xml                                                          
+ variable:boost_lifetime_min_application/xml                                                              
+ variable:boost_lifetime_min_text/html                                                                    
+ variable:boost_lifetime_min_text/javascript                                                              
+ variable:boost_lifetime_min_text/xml                                                                     
+ variable:clean_url                                                                                       
+ variable:comment_action                                             Provided by: lbd_content_types       
+ variable:comment_anonymous_action                                   Provided by: lbd_content_types       
+ variable:comment_anonymous_dootrip                                  Provided by: labdoo_objects          
+ variable:comment_anonymous_edoovillage                              Provided by: labdoo_objects          
+ variable:comment_anonymous_hub                                      Provided by: labdoo_objects          
+ variable:comment_anonymous_labdoo_action                            Provided by: lbd_blocks              
+ variable:comment_anonymous_laptop                                   Provided by: labdoo_objects          
+ variable:comment_anonymous_private_page                             Provided by: lbd_content_types       
+ variable:comment_default_mode_action                                Provided by: lbd_content_types       
+ variable:comment_default_mode_dootrip                               Provided by: labdoo_objects          
+ variable:comment_default_mode_edoovillage                           Provided by: labdoo_objects          
+ variable:comment_default_mode_hub                                   Provided by: labdoo_objects          
+ variable:comment_default_mode_labdoo_action                         Provided by: lbd_blocks              
+ variable:comment_default_mode_laptop                                Provided by: labdoo_objects          
+ variable:comment_default_mode_private_page                          Provided by: lbd_content_types       
+ variable:comment_default_per_page_action                            Provided by: lbd_content_types       
+ variable:comment_default_per_page_dootrip                           Provided by: labdoo_objects          
+ variable:comment_default_per_page_edoovillage                       Provided by: labdoo_objects          
+ variable:comment_default_per_page_hub                               Provided by: labdoo_objects          
+ variable:comment_default_per_page_labdoo_action                     Provided by: lbd_blocks              
+ variable:comment_default_per_page_laptop                            Provided by: labdoo_objects          
+ variable:comment_default_per_page_private_page                      Provided by: lbd_content_types       
+ variable:comment_dootrip                                            Provided by: labdoo_objects          
+ variable:comment_edoovillage                                        Provided by: labdoo_objects          
+ variable:comment_form_location_action                               Provided by: lbd_content_types       
+ variable:comment_form_location_dootrip                              Provided by: labdoo_objects          
+ variable:comment_form_location_edoovillage                          Provided by: labdoo_objects          
+ variable:comment_form_location_hub                                  Provided by: labdoo_objects          
+ variable:comment_form_location_labdoo_action                        Provided by: lbd_blocks              
+ variable:comment_form_location_laptop                               Provided by: labdoo_objects          
+ variable:comment_form_location_private_page                         Provided by: lbd_content_types       
+ variable:comment_hub                                                Provided by: labdoo_objects          
+ variable:comment_labdoo_action                                      Provided by: lbd_blocks              
+ variable:comment_laptop                                             Provided by: labdoo_objects          
+ variable:comment_page                                               Provided by: lbd_layout              
+ variable:comment_preview_action                                     Provided by: lbd_content_types       
+ variable:comment_preview_dootrip                                    Provided by: labdoo_objects          
+ variable:comment_preview_edoovillage                                Provided by: labdoo_objects          
+ variable:comment_preview_hub                                        Provided by: labdoo_objects          
+ variable:comment_preview_labdoo_action                              Provided by: lbd_blocks              
+ variable:comment_preview_laptop                                     Provided by: labdoo_objects          
+ variable:comment_preview_private_page                               Provided by: lbd_content_types       
+ variable:comment_private_page                                       Provided by: lbd_content_types       
+ variable:comment_subject_field_action                               Provided by: lbd_content_types       
+ variable:comment_subject_field_dootrip                              Provided by: labdoo_objects          
+ variable:comment_subject_field_edoovillage                          Provided by: labdoo_objects          
+ variable:comment_subject_field_hub                                  Provided by: labdoo_objects          
+ variable:comment_subject_field_labdoo_action                        Provided by: lbd_blocks              
+ variable:comment_subject_field_laptop                               Provided by: labdoo_objects          
+ variable:comment_subject_field_private_page                         Provided by: lbd_content_types       
+ variable:context_block_rebuild_needed                                                                    
+ variable:cron_key                                                                                        
+ variable:cron_last                                                                                       
+ variable:css_js_query_string                                                                             
+ variable:ctools_last_cron                                                                                
+ variable:date_api_version                                                                                
+ variable:date_default_timezone                                                                           
+ variable:diff_enable_revisions_page_node_action                     Provided by: lbd_content_types       
+ variable:diff_enable_revisions_page_node_dootrip                    Provided by: labdoo_objects          
+ variable:diff_enable_revisions_page_node_edoovillage                Provided by: labdoo_objects          
+ variable:diff_enable_revisions_page_node_hub                        Provided by: labdoo_objects          
+ variable:diff_enable_revisions_page_node_labdoo_action              Provided by: lbd_blocks              
+ variable:diff_enable_revisions_page_node_laptop                     Provided by: labdoo_objects          
+ variable:diff_enable_revisions_page_node_private_page               Provided by: lbd_content_types       
+ variable:diff_show_preview_changes_node_action                      Provided by: lbd_content_types       
+ variable:diff_show_preview_changes_node_labdoo_action               Provided by: lbd_blocks              
+ variable:diff_show_preview_changes_node_private_page                Provided by: lbd_content_types       
+ variable:diff_view_mode_preview_node_action                         Provided by: lbd_content_types       
+ variable:diff_view_mode_preview_node_labdoo_action                  Provided by: lbd_blocks              
+ variable:diff_view_mode_preview_node_private_page                   Provided by: lbd_content_types       
+ variable:drupal_http_request_fails                                                                       
+ variable:drupal_private_key                                                                              
+ variable:entityreference:base-tables                                                                     
+ variable:features_codecache                                                                              
+ variable:features_ignored_orphans                                                                        
+ variable:features_semaphore                                                                              
+ variable:field_bundle_settings_comment__comment_node_labdoo_action  Provided by: lbd_blocks              
+ variable:field_bundle_settings_node__action                         Provided by: lbd_content_types       
+ variable:field_bundle_settings_node__dootrip                        Provided by: labdoo_objects          
+ variable:field_bundle_settings_node__edoovillage                    Provided by: labdoo_objects          
+ variable:field_bundle_settings_node__hub                            Provided by: labdoo_objects          
+ variable:field_bundle_settings_node__labdoo_action                  Provided by: lbd_blocks              
+ variable:field_bundle_settings_node__laptop                         Provided by: labdoo_objects          
+ variable:file_temporary_path                                                                             
+ variable:filter_fallback_format                                                                          
+ variable:hybridauth_debug                                           Provided by: lbd_hybridauth          
+ variable:hybridauth_destination                                     Provided by: lbd_hybridauth          
+ variable:hybridauth_disable_username_change                         Provided by: lbd_hybridauth          
+ variable:hybridauth_display_name                                    Provided by: lbd_hybridauth          
+ variable:hybridauth_duplicate_emails                                Provided by: lbd_hybridauth          
+ variable:hybridauth_email_verification                              Provided by: lbd_hybridauth          
+ variable:hybridauth_forms                                           Provided by: lbd_hybridauth          
+ variable:hybridauth_override_realname                               Provided by: lbd_hybridauth          
+ variable:hybridauth_pictures                                        Provided by: lbd_hybridauth          
+ variable:hybridauth_provider_Facebook_display                       Provided by: lbd_hybridauth          
+ variable:hybridauth_provider_Facebook_enabled                       Provided by: lbd_hybridauth          
+ variable:hybridauth_provider_Facebook_scope                         Provided by: lbd_hybridauth          
+ variable:hybridauth_provider_Facebook_weight                        Provided by: lbd_hybridauth          
+ variable:hybridauth_provider_Facebook_window_height                 Provided by: lbd_hybridauth          
+ variable:hybridauth_provider_Facebook_window_type                   Provided by: lbd_hybridauth          
+ variable:hybridauth_provider_Facebook_window_width                  Provided by: lbd_hybridauth          
+ variable:hybridauth_provider_GitHub_enabled                         Provided by: lbd_hybridauth          
+ variable:hybridauth_provider_GitHub_weight                          Provided by: lbd_hybridauth          
+ variable:hybridauth_provider_GitHub_window_height                   Provided by: lbd_hybridauth          
+ variable:hybridauth_provider_GitHub_window_type                     Provided by: lbd_hybridauth          
+ variable:hybridauth_provider_GitHub_window_width                    Provided by: lbd_hybridauth          
+ variable:hybridauth_provider_Google_enabled                         Provided by: lbd_hybridauth          
+ variable:hybridauth_provider_Google_scope                           Provided by: lbd_hybridauth          
+ variable:hybridauth_provider_Google_weight                          Provided by: lbd_hybridauth          
+ variable:hybridauth_provider_Google_window_height                   Provided by: lbd_hybridauth          
+ variable:hybridauth_provider_Google_window_type                     Provided by: lbd_hybridauth          
+ variable:hybridauth_provider_Google_window_width                    Provided by: lbd_hybridauth          
+ variable:hybridauth_provider_LinkedIn_enabled                       Provided by: lbd_hybridauth          
+ variable:hybridauth_provider_LinkedIn_weight                        Provided by: lbd_hybridauth          
+ variable:hybridauth_provider_LinkedIn_window_height                 Provided by: lbd_hybridauth          
+ variable:hybridauth_provider_LinkedIn_window_type                   Provided by: lbd_hybridauth          
+ variable:hybridauth_provider_LinkedIn_window_width                  Provided by: lbd_hybridauth          
+ variable:hybridauth_provider_Twitter_enabled                        Provided by: lbd_hybridauth          
+ variable:hybridauth_provider_Twitter_weight                         Provided by: lbd_hybridauth          
+ variable:hybridauth_provider_Twitter_window_height                  Provided by: lbd_hybridauth          
+ variable:hybridauth_provider_Twitter_window_type                    Provided by: lbd_hybridauth          
+ variable:hybridauth_provider_Twitter_window_width                   Provided by: lbd_hybridauth          
+ variable:hybridauth_register                                        Provided by: lbd_hybridauth          
+ variable:hybridauth_registration_password                           Provided by: lbd_hybridauth          
+ variable:hybridauth_registration_username_change                    Provided by: lbd_hybridauth          
+ variable:hybridauth_remove_password_fields                          Provided by: lbd_hybridauth          
+ variable:hybridauth_required_fields                                 Provided by: lbd_hybridauth          
+ variable:hybridauth_username                                        Provided by: lbd_hybridauth          
+ variable:hybridauth_widget_icon_pack                                Provided by: lbd_hybridauth          
+ variable:hybridauth_widget_link_text                                Provided by: lbd_hybridauth          
+ variable:hybridauth_widget_link_title                               Provided by: lbd_hybridauth          
+ variable:hybridauth_widget_title                                    Provided by: lbd_hybridauth          
+ variable:hybridauth_widget_type                                     Provided by: lbd_hybridauth          
+ variable:hybridauth_widget_use_overlay                              Provided by: lbd_hybridauth          
+ variable:hybridauth_widget_weight                                   Provided by: lbd_hybridauth          
+ variable:install_profile                                                                                 
+ variable:install_task                                                                                    
+ variable:install_time                                                                                    
+ variable:jquery_update_compression_type                                                                  
+ variable:jquery_update_jquery_cdn                                                                        
+ variable:jquery_update_jquery_version                                                                    
+ variable:language_content_type_action                               Provided by: lbd_content_types       
+ variable:language_content_type_dootrip                              Provided by: labdoo_objects          
+ variable:language_content_type_edoovillage                          Provided by: labdoo_objects          
+ variable:language_content_type_hub                                  Provided by: labdoo_objects          
+ variable:language_content_type_labdoo_action                        Provided by: lbd_blocks              
+ variable:language_content_type_laptop                               Provided by: labdoo_objects          
+ variable:language_content_type_private_page                         Provided by: lbd_content_types       
+ variable:language_negotiation_language                                                                   
+ variable:language_negotiation_language_content                                                           
+ variable:language_negotiation_language_url                                                               
+ variable:language_types                                                                                  
+ variable:location_defaultnum_action                                 Provided by: lbd_content_types       
+ variable:location_defaultnum_edoovillage                            Provided by: labdoo_objects          
+ variable:location_defaultnum_hub                                    Provided by: labdoo_objects          
+ variable:location_defaultnum_labdoo_action                          Provided by: lbd_blocks              
+ variable:location_defaultnum_laptop                                 Provided by: labdoo_objects          
+ variable:location_defaultnum_private_page                           Provided by: lbd_content_types       
+ variable:location_maxnum_action                                     Provided by: lbd_content_types       
+ variable:location_maxnum_dootrip                                    Provided by: labdoo_objects          
+ variable:location_maxnum_edoovillage                                Provided by: labdoo_objects          
+ variable:location_maxnum_hub                                        Provided by: labdoo_objects          
+ variable:location_maxnum_labdoo_action                              Provided by: lbd_blocks              
+ variable:location_maxnum_laptop                                     Provided by: labdoo_objects          
+ variable:location_maxnum_private_page                               Provided by: lbd_content_types       
+ variable:location_settings_node_action                              Provided by: lbd_content_types       
+ variable:location_settings_node_dootrip                             Provided by: labdoo_objects          
+ variable:location_settings_node_edoovillage                         Provided by: labdoo_objects          
+ variable:location_settings_node_hub                                 Provided by: labdoo_objects          
+ variable:location_settings_node_labdoo_action                       Provided by: lbd_blocks              
+ variable:location_settings_node_laptop                              Provided by: labdoo_objects          
+ variable:location_settings_node_private_page                        Provided by: lbd_content_types       
+ variable:mail_system                                                                                     
+ variable:mailsystem_theme                                                                                
+ variable:mass_contact_default_sender_email                                                               
+ variable:menu_expanded                                                                                   
+ variable:menu_masks                                                                                      
+ variable:menu_options_action                                        Provided by: lbd_content_types       
+ variable:menu_options_dootrip                                       Provided by: labdoo_objects          
+ variable:menu_options_edoovillage                                   Provided by: labdoo_objects          
+ variable:menu_options_hub                                           Provided by: labdoo_objects          
+ variable:menu_options_labdoo_action                                 Provided by: lbd_blocks              
+ variable:menu_options_laptop                                        Provided by: labdoo_objects          
+ variable:menu_options_private_page                                  Provided by: lbd_content_types       
+ variable:menu_parent_action                                         Provided by: lbd_content_types       
+ variable:menu_parent_dootrip                                        Provided by: labdoo_objects          
+ variable:menu_parent_edoovillage                                    Provided by: labdoo_objects          
+ variable:menu_parent_hub                                            Provided by: labdoo_objects          
+ variable:menu_parent_labdoo_action                                  Provided by: lbd_blocks              
+ variable:menu_parent_laptop                                         Provided by: labdoo_objects          
+ variable:menu_parent_private_page                                   Provided by: lbd_content_types       
+ variable:mimemail_key                                                                                    
+ variable:mimemail_mail                                                                                   
+ variable:node_admin_theme                                                                                
+ variable:node_cron_last                                                                                  
+ variable:node_options_action                                        Provided by: lbd_content_types       
+ variable:node_options_book                                          Provided by: lbd_layout              
+ variable:node_options_dootrip                                       Provided by: labdoo_objects          
+ variable:node_options_edoovillage                                   Provided by: labdoo_objects          
+ variable:node_options_hub                                           Provided by: labdoo_objects          
+ variable:node_options_labdoo_action                                 Provided by: lbd_blocks              
+ variable:node_options_laptop                                        Provided by: labdoo_objects          
+ variable:node_options_page                                          Provided by: lbd_layout              
+ variable:node_options_private_page                                  Provided by: lbd_content_types       
+ variable:node_preview_action                                        Provided by: lbd_content_types       
+ variable:node_preview_dootrip                                       Provided by: labdoo_objects          
+ variable:node_preview_edoovillage                                   Provided by: labdoo_objects          
+ variable:node_preview_hub                                           Provided by: labdoo_objects          
+ variable:node_preview_labdoo_action                                 Provided by: lbd_blocks              
+ variable:node_preview_laptop                                        Provided by: labdoo_objects          
+ variable:node_preview_private_page                                  Provided by: lbd_content_types       
+ variable:node_submitted_action                                      Provided by: lbd_content_types       
+ variable:node_submitted_dootrip                                     Provided by: labdoo_objects          
+ variable:node_submitted_edoovillage                                 Provided by: labdoo_objects          
+ variable:node_submitted_hub                                         Provided by: labdoo_objects          
+ variable:node_submitted_labdoo_action                               Provided by: lbd_blocks              
+ variable:node_submitted_laptop                                      Provided by: labdoo_objects          
+ variable:node_submitted_page                                        Provided by: lbd_layout              
+ variable:node_submitted_private_page                                Provided by: lbd_content_types       
+ variable:node_view_permissions_private_page                         Provided by: lbd_content_types       
+ variable:path_alias_whitelist                                                                            
+ variable:pathauto_blog_pattern                                                                           
+ variable:pathauto_forum_pattern                                                                          
+ variable:pathauto_node_pattern                                                                           
+ variable:pathauto_punctuation_hyphen                                                                     
+ variable:pathauto_taxonomy_term_pattern                                                                  
+ variable:pathauto_user_pattern                                                                           
+ variable:phpmailer_test                                                                                  
+ variable:reroute_email_address                                                                           
+ variable:rules_event_whitelist                                                                           
+ variable:save_continue_private_page                                 Provided by: lbd_content_types       
+ variable:simplenews_from_address                                                                         
+ variable:simplenews_test_address                                                                         
+ variable:site_403                                                                                        
+ variable:site_default_country                                                                            
+ variable:site_mail                                                                                       
+ variable:site_name                                                                                       
+ variable:smtp_allowhtml                                                                                  
+ variable:smtp_always_replyto                                                                             
+ variable:smtp_debug                                                                                      
+ variable:smtp_from                                                                                       
+ variable:smtp_fromname                                                                                   
+ variable:smtp_hide_password                                                                              
+ variable:smtp_host                                                                                       
+ variable:smtp_hostbackup                                                                                 
+ variable:smtp_keepalive                                                                                  
+ variable:smtp_on                                                                                         
+ variable:smtp_password                                                                                   
+ variable:smtp_port                                                                                       
+ variable:smtp_protocol                                                                                   
+ variable:smtp_username                                                                                   
+ variable:theme_bootstrap1_settings                                  Provided by: lbd_layout              
+ variable:theme_default                                              Provided by: lbd_layout              
+ variable:update_last_check                                                                               
+ variable:update_notify_emails                                                                            
+ variable:user_admin_role                                                                                 
+ variable:user_email_verification                                                                         
+ variable:user_picture_dimensions                                                                         
+ variable:user_picture_file_size                                                                          
+ variable:user_picture_style                                                                              
+ variable:user_pictures                                                                                   
+ variable:user_register                                                                                   
+ variable:xautoload_cache_prefix                                                                          
+ context:admin                                                       Provided by: lbd_layout              
+ context:frontpage                                                   Provided by: lbd_layout              
+ context:page                                                        Provided by: lbd_layout              
+ context:sitewide                                                    Provided by: lbd_layout              
+ fe_block_settings:block-dooject_header                              Provided by: labdoo_objects          
+ fe_block_settings:block-block_geolocation_map_node                  Provided by: lbd_blocks              
+ fe_block_settings:blog-recent                                                                            
+ fe_block_settings:book-navigation                                                                        
+ fe_block_settings:boost-status                                                                           
+ fe_block_settings:boxes-boxes_add__simple                                                                
+ fe_block_settings:comment-recent                                                                         
+ fe_block_settings:context_ui-devel                                                                       
+ fe_block_settings:context_ui-editor                                                                      
+ fe_block_settings:devel-execute_php                                                                      
+ fe_block_settings:devel-switch_user                                                                      
+ fe_block_settings:diff-inline                                                                            
+ fe_block_settings:hybridauth-hybridauth                             Provided by: lbd_hybridauth          
+ fe_block_settings:ip_geoloc-address_lookup                                                               
+ fe_block_settings:ip_geoloc-current_visitor_map                                                          
+ fe_block_settings:ip_geoloc-geocode_address                                                              
+ fe_block_settings:ip_geoloc-recent_visitors_map                                                          
+ fe_block_settings:locale-language                                                                        
+ fe_block_settings:menu-devel                                                                             
+ fe_block_settings:node-recent                                                                            
+ fe_block_settings:node-syndicate                                                                         
+ fe_block_settings:search-form                                                                            
+ fe_block_settings:system-help                                                                            
+ fe_block_settings:system-main                                       Provided by: lbd_blocks              
+ fe_block_settings:system-main-menu                                                                       
+ fe_block_settings:system-management                                                                      
+ fe_block_settings:system-navigation                                                                      
+ fe_block_settings:system-powered-by                                                                      
+ fe_block_settings:system-user-menu                                                                       
+ fe_block_settings:user-login                                                                             
+ fe_block_settings:user-new                                                                               
+ fe_block_settings:user-online                                                                            
+ fe_block_settings:views-actions-block                               Provided by: lbd_blocks              
+ fe_block_boxes:block_geolocation_map_node                           Provided by: lbd_blocks              
+ fe_block_boxes:dooject_header                                       Provided by: labdoo_objects          
+ field:node-blog-body                                                                                     
+ field:node-book-body                                                Provided by: lbd_layout              
+ field:node-page-body                                                Provided by: lbd_layout              
+ field:node-article-body                                             Provided by: lbd_layout              
+ field:node-article-field_tags                                       Provided by: lbd_layout              
+ field:node-article-field_image                                      Provided by: lbd_layout              
+ field:node-action-body                                              Provided by: lbd_content_types       
+ field:node-action-field_stream_it                                   Provided by: lbd_content_types       
+ field:node-private_page-body                                        Provided by: lbd_content_types       
+ field:node-labdoo_action-body                                       Provided by: lbd_blocks              
+ field:node-labdoo_action-field_stream_it                            Provided by: lbd_blocks              
+ field:node-dootrip-field_arrival_date                               Provided by: labdoo_objects          
+ field:node-dootrip-field_comments                                   Provided by: labdoo_objects          
+ field:node-dootrip-field_departure_date                             Provided by: labdoo_objects          
+ field:node-dootrip-field_destination_of_the_trip                    Provided by: labdoo_objects          
+ field:node-dootrip-field_dootrip_capacity                           Provided by: labdoo_objects          
+ field:node-dootrip-field_dootripper_s_                              Provided by: labdoo_objects          
+ field:node-dootrip-field_laptops                                    Provided by: labdoo_objects          
+ field:node-dootrip-field_number_of_days_after                       Provided by: labdoo_objects          
+ field:node-dootrip-field_number_of_days_before                      Provided by: labdoo_objects          
+ field:node-dootrip-field_origin_of_the_trip                         Provided by: labdoo_objects          
+ field:node-dootrip-field_status_dootrip                             Provided by: labdoo_objects          
+ field:node-edoovillage-field_additional_files                       Provided by: labdoo_objects          
+ field:node-edoovillage-field_edoovillage_status                     Provided by: labdoo_objects          
+ field:node-edoovillage-field_hub                                    Provided by: labdoo_objects          
+ field:node-edoovillage-field_internet_connection_type               Provided by: labdoo_objects          
+ field:node-edoovillage-field_local_language_s_                      Provided by: labdoo_objects          
+ field:node-edoovillage-field_number_of_laptops_needed               Provided by: labdoo_objects          
+ field:node-edoovillage-field_number_of_students                     Provided by: labdoo_objects          
+ field:node-edoovillage-field_number_of_teachers                     Provided by: labdoo_objects          
+ field:node-edoovillage-field_on_site_point_of_contact               Provided by: labdoo_objects          
+ field:node-edoovillage-field_project_application                    Provided by: labdoo_objects          
+ field:node-edoovillage-field_project_description                    Provided by: labdoo_objects          
+ field:node-edoovillage-field_project_manager_s_                     Provided by: labdoo_objects          
+ field:node-edoovillage-field_project_summary                        Provided by: labdoo_objects          
+ field:node-edoovillage-field_socket_type                            Provided by: labdoo_objects          
+ field:node-edoovillage-field_socket_voltage                         Provided by: labdoo_objects          
+ field:node-hub-field_branches_information                           Provided by: labdoo_objects          
+ field:node-hub-field_hub_manager_s_                                 Provided by: labdoo_objects          
+ field:node-laptop-field_additional_editors                          Provided by: labdoo_objects          
+ field:node-laptop-field_additional_followers                        Provided by: labdoo_objects          
+ field:node-laptop-field_additional_notes                            Provided by: labdoo_objects          
+ field:node-laptop-field_additional_notification_em                  Provided by: labdoo_objects          
+ field:node-laptop-field_cpu                                         Provided by: labdoo_objects          
+ field:node-laptop-field_cpu_type                                    Provided by: labdoo_objects          
+ field:node-laptop-field_current_operating_system                    Provided by: labdoo_objects          
+ field:node-laptop-field_device_type                                 Provided by: labdoo_objects          
+ field:node-laptop-field_dootrips                                    Provided by: labdoo_objects          
+ field:node-laptop-field_edoovillage_destination                     Provided by: labdoo_objects          
+ field:node-laptop-field_hard_drive                                  Provided by: labdoo_objects          
+ field:node-laptop-field_hub_laptop                                  Provided by: labdoo_objects          
+ field:node-laptop-field_manager                                     Provided by: labdoo_objects          
+ field:node-laptop-field_memory                                      Provided by: labdoo_objects          
+ field:node-laptop-field_model                                       Provided by: labdoo_objects          
+ field:node-laptop-field_picture                                     Provided by: labdoo_objects          
+ field:node-laptop-field_serial_number                               Provided by: labdoo_objects          
+ field:node-laptop-field_status                                      Provided by: labdoo_objects          
+ field:node-laptop-field_tagger                                      Provided by: labdoo_objects          
+ field:comment-comment_node_blog-comment_body                                                             
+ field:comment-comment_node_book-comment_body                                                             
+ field:comment-comment_node_page-comment_body                                                             
+ field:comment-comment_node_article-comment_body                                                          
+ field:comment-comment_node_dootrip-comment_body                                                          
+ field:comment-comment_node_edoovillage-comment_body                                                      
+ field:comment-comment_node_hub-comment_body                                                              
+ field:comment-comment_node_laptop-comment_body                                                           
+ field:comment-comment_node_labdoo_action-comment_body               Provided by: lbd_blocks              
+ field:comment-comment_node_action-comment_body                      Provided by: lbd_content_types       
+ field:comment-comment_node_private_page-comment_body                Provided by: lbd_content_types       
+ filter:filtered_html                                                                                     
+ filter:full_html                                                                                         
+ filter:plain_text                                                                                        
+ filter:php_code                                                                                          
+ image:thumbnail                                                                                          
+ image:medium                                                                                             
+ image:large                                                                                              
+ menu_custom:devel                                                                                        
+ menu_custom:main-menu                                               Provided by: lbd_layout              
+ menu_custom:management                                                                                   
+ menu_custom:navigation                                                                                   
+ menu_custom:user-menu                                                                                    
+ menu_links:main-menu:<front>                                        Provided by: lbd_layout              
+ menu_links:main-menu:actions                                                                             
+ menu_links:navigation:actions                                                                            
+ menu_links:navigation:blog                                                                               
+ menu_links:navigation:book                                                                               
+ menu_links:navigation:filter/tips                                                                        
+ menu_links:navigation:search                                                                             
+ menu_links:user-menu:user                                                                                
+ menu_links:user-menu:user/login                                                                          
+ node:action                                                         Provided by: lbd_content_types       
+ node:labdoo_action                                                  Provided by: lbd_blocks              
+ node:article                                                        Provided by: lbd_layout              
+ node:page                                                           Provided by: lbd_layout              
+ node:blog                                                                                                
+ node:book                                                           Provided by: lbd_layout              
+ node:dootrip                                                        Provided by: labdoo_objects          
+ node:edoovillage                                                    Provided by: labdoo_objects          
+ node:hub                                                            Provided by: labdoo_objects          
+ node:laptop                                                         Provided by: labdoo_objects          
+ node:private_page                                                   Provided by: lbd_content_types       
+ node_export_features:05ebbdbb-b531-40dc-80dd-c3fd71b0395c                                                
+ node_export_features:50608add-c1bd-4241-93f9-4bea8e3ae340                                                
+ node_export_features:fd76e3d6-5662-44a5-8bc8-f468563a7f5b                                                
+ node_export_features:f0f31e01-2034-44dd-900a-358890f48d3f                                                
+ node_export_features:306ab56a-ad3b-48dc-a312-4544a78419ea                                                
+ node_export_features:7a393b75-aa4d-4b74-ab80-2c03cb5b5938                                                
+ node_export_features:c76e228e-ffcd-4c10-87ca-5a2811fca6ba                                                
+ node_export_features:f98d466f-33a2-456e-9728-545c94dd4abf                                                
+ node_export_features:37c79eb9-c64a-4a10-8c39-307d079fd2b6                                                
+ node_export_features:d4288550-d879-410c-8136-b3be8d3fa477                                                
+ node_export_features:625afdc3-a9ca-4486-a0ec-23f901359060                                                
+ node_export_features:efb33a8d-c877-439e-8fe8-8974da6b3ebd                                                
+ node_export_features:207f6ce3-1494-4668-8351-16216a35e64b                                                
+ node_export_features:e4e258a8-c37a-4aae-bc2a-35c49c1584fb                                                
+ node_export_features:a802f6b2-4858-40ea-9436-6ead231316da                                                
+ node_export_features:2809d7d2-d3ea-4e7d-9c90-a8790db79e6c                                                
+ node_export_features:6fd7b523-4dec-44b5-86d7-ad1c73f49f10           Provided by: lbd_sample_edoovillages 
+ node_export_features:8077150b-db8c-4f9f-973f-3be15cecadb1           Provided by: lbd_sample_edoovillages 
+ node_export_features:3cfc1145-61cd-4d23-8f07-f21775e02a47           Provided by: lbd_sample_edoovillages 
+ node_export_features:f386fece-46c5-4fd2-9834-495555544768           Provided by: lbd_sample_hubs         
+ node_export_features:6d539cc3-cd14-4ef3-983f-91708487c84c           Provided by: lbd_sample_hubs         
+ node_export_features:0a939d6a-e73a-4512-8c84-18fbfcbdea3f                                                
+ node_export_features:0fc3e1c8-89c2-4458-be22-b93e667c8c24           Provided by: lbd_sample_doojects     
+ node_export_features:173ab486-cb15-4821-8ad2-49dbc53bff6b           Provided by: lbd_sample_doojects     
+ node_export_features:207f13f5-f8d0-4bc3-8c7d-2345350cb83c           Provided by: lbd_sample_doojects     
+ node_export_features:46ab1575-ec18-43d1-95b8-a453dd9e1b49           Provided by: lbd_sample_doojects     
+ node_export_features:5a5f37e9-f38d-47ed-867b-27230b2f529b           Provided by: lbd_sample_doojects     
+ node_export_features:91463088-e14d-4f45-ae0b-7dc2053edec9           Provided by: lbd_sample_doojects     
+ node_export_features:ac35cf38-2dd9-4693-83e6-a5e85bb91aea           Provided by: lbd_sample_doojects     
+ node_export_features:d376a428-b350-4211-9cca-178a07d7e444           Provided by: lbd_sample_doojects     
+ node_export_features:dfb07b8c-813d-4afa-8907-ffdb3606b1bf           Provided by: lbd_sample_doojects     
+ node_export_features:e79cf53b-5ec6-4843-9e01-88f05879096a           Provided by: lbd_sample_doojects     
+ node_export_features:dc7fe634-ed62-4ae1-a05e-487665a278f3                                                
+ node_export_features:5265c57b-1423-4d55-99d9-ec159c59da2c                                                
+ node_export_features:7b64f46f-a81f-46e8-8e5a-73aa288a0cc9                                                
+ node_export_features:b30bd03f-b96d-40e1-863a-8bac6fd31aae                                                
+ node_export_features:fef15fad-b928-42f2-9f7f-bebb30b28b5c                                                
+ node_export_features:7ef397f4-b3ce-45bd-b188-c008509b37a9                                                
+ taxonomy:tags                                                       Provided by: lbd_layout              
+ user_role:administrator                                                                                  
+ user_permission:administer news feeds                                                                    
+ user_permission:access news feeds                                                                        
+ user_permission:administer blocks                                                                        
+ user_permission:administer book outlines                                                                 
+ user_permission:create new books                                                                         
+ user_permission:add content to books                                                                     
+ user_permission:access printer-friendly version                                                          
+ user_permission:boost flush pages                                                                        
+ user_permission:edit boxes                                                                               
+ user_permission:administer boxes                                                                         
+ user_permission:administer comments                                                                      
+ user_permission:access comments                                                                          
+ user_permission:post comments                                                                            
+ user_permission:skip comment approval                                                                    
+ user_permission:edit own comments                                                                        
+ user_permission:administer dependencies                                                                  
+ user_permission:administer contact forms                                                                 
+ user_permission:access site-wide contact form                                                            
+ user_permission:access user contact forms                                                                
+ user_permission:administer contexts                                                                      
+ user_permission:context ajax block access                                                                
+ user_permission:access dashboard                                                                         
+ user_permission:access devel information                                                                 
+ user_permission:execute php code                                                                         
+ user_permission:switch users                                                                             
+ user_permission:administer features                                                                      
+ user_permission:manage features                                                                          
+ user_permission:administer fieldgroups                                                                   
+ user_permission:administer filters                                                                       
+ user_permission:use text format filtered_html                                                            
+ user_permission:use text format full_html                                                                
+ user_permission:use text format php_code                                                                 
+ user_permission:use hybridauth                                      Provided by: lbd_hybridauth          
+ user_permission:administer image styles                                                                  
+ user_permission:administer lightbox2                                                                     
+ user_permission:download original image                                                                  
+ user_permission:administer languages                                                                     
+ user_permission:translate interface                                                                      
+ user_permission:use on-page translation                                                                  
+ user_permission:submit translations to localization server                                               
+ user_permission:view location directory                                                                  
+ user_permission:view node location table                                                                 
+ user_permission:view user location table                                                                 
+ user_permission:submit latitude/longitude                                                                
+ user_permission:administer mailsystem                                                                    
+ user_permission:administer menu                                                                          
+ user_permission:edit mimemail user settings                                                              
+ user_permission:send arbitrary files                                                                     
+ user_permission:administer module filter                                                                 
+ user_permission:bypass node access                                                                       
+ user_permission:administer content types                                                                 
+ user_permission:administer nodes                                                                         
+ user_permission:access content overview                                                                  
+ user_permission:access content                                                                           
+ user_permission:view own unpublished content                                                             
+ user_permission:view revisions                                                                           
+ user_permission:revert revisions                                                                         
+ user_permission:delete revisions                                                                         
+ user_permission:create blog content                                                                      
+ user_permission:edit own blog content                                                                    
+ user_permission:edit any blog content                                                                    
+ user_permission:delete own blog content                                                                  
+ user_permission:delete any blog content                                                                  
+ user_permission:create dootrip content                                                                   
+ user_permission:edit own dootrip content                                                                 
+ user_permission:edit any dootrip content                                                                 
+ user_permission:delete own dootrip content                                                               
+ user_permission:delete any dootrip content                                                               
+ user_permission:create edoovillage content                                                               
+ user_permission:edit own edoovillage content                                                             
+ user_permission:edit any edoovillage content                                                             
+ user_permission:delete own edoovillage content                                                           
+ user_permission:delete any edoovillage content                                                           
+ user_permission:create hub content                                                                       
+ user_permission:edit own hub content                                                                     
+ user_permission:edit any hub content                                                                     
+ user_permission:delete own hub content                                                                   
+ user_permission:delete any hub content                                                                   
+ user_permission:create laptop content                               Provided by: labdoo_objects          
+ user_permission:edit own laptop content                             Provided by: labdoo_objects          
+ user_permission:edit any laptop content                                                                  
+ user_permission:delete own laptop content                                                                
+ user_permission:delete any laptop content                                                                
+ user_permission:create action content                                                                    
+ user_permission:edit own action content                                                                  
+ user_permission:edit any action content                                                                  
+ user_permission:delete own action content                                                                
+ user_permission:delete any action content                                                                
+ user_permission:create private_page content                                                              
+ user_permission:edit own private_page content                                                            
+ user_permission:edit any private_page content                                                            
+ user_permission:delete own private_page content                                                          
+ user_permission:delete any private_page content                                                          
+ user_permission:create article content                                                                   
+ user_permission:edit own article content                                                                 
+ user_permission:edit any article content                                                                 
+ user_permission:delete own article content                                                               
+ user_permission:delete any article content                                                               
+ user_permission:create book content                                                                      
+ user_permission:edit own book content                                                                    
+ user_permission:edit any book content                                                                    
+ user_permission:delete own book content                                                                  
+ user_permission:delete any book content                                                                  
+ user_permission:create page content                                                                      
+ user_permission:edit own page content                                                                    
+ user_permission:edit any page content                                                                    
+ user_permission:delete own page content                                                                  
+ user_permission:delete any page content                                                                  
+ user_permission:create labdoo_action content                                                             
+ user_permission:edit own labdoo_action content                                                           
+ user_permission:edit any labdoo_action content                                                           
+ user_permission:delete own labdoo_action content                                                         
+ user_permission:delete any labdoo_action content                                                         
+ user_permission:export nodes                                                                             
+ user_permission:export own nodes                                                                         
+ user_permission:use PHP to import nodes                                                                  
+ user_permission:view own private_page content                                                            
+ user_permission:view any private_page content                       Provided by: lbd_content_types       
+ user_permission:use PHP for settings                                                                     
+ user_permission:administer phpmailer settings                                                            
+ user_permission:administer url aliases                                                                   
+ user_permission:create url aliases                                                                       
+ user_permission:administer pathauto                                                                      
+ user_permission:notify of path changes                                                                   
+ user_permission:administer reroute email                                                                 
+ user_permission:administer rules                                                                         
+ user_permission:bypass rules access                                                                      
+ user_permission:access rules debug                                                                       
+ user_permission:administer smtp module                                                                   
+ user_permission:administer search                                                                        
+ user_permission:search content                                      Provided by: lbd_layout              
+ user_permission:use advanced search                                 Provided by: lbd_layout              
+ user_permission:administer modules                                                                       
+ user_permission:administer site configuration                                                            
+ user_permission:administer themes                                                                        
+ user_permission:administer software updates                                                              
+ user_permission:administer actions                                                                       
+ user_permission:access administration pages                                                              
+ user_permission:access site in maintenance mode                                                          
+ user_permission:view the administration theme                                                            
+ user_permission:access site reports                                                                      
+ user_permission:block IP addresses                                                                       
+ user_permission:administer taxonomy                                                                      
+ user_permission:edit terms in 1                                                                          
+ user_permission:delete terms in 1                                                                        
+ user_permission:administer unit tests                                                                    
+ user_permission:access toolbar                                                                           
+ user_permission:administer uuid                                                                          
+ user_permission:administer permissions                                                                   
+ user_permission:administer users                                                                         
+ user_permission:access user profiles                                Provided by: labdoo_objects          
+ user_permission:change own username                                                                      
+ user_permission:cancel account                                                                           
+ user_permission:select account cancellation method                                                       
+ user_permission:administer user locations                                                                
+ user_permission:view own user location                                                                   
+ user_permission:view all user locations                                                                  
+ user_permission:set own user location                                                                    
+ user_permission:administer views                                                                         
+ user_permission:access all views                                                                         
+ field_group:group_additional_information|node|laptop|default        Provided by: labdoo_objects          
+ field_group:group_additional_information|node|laptop|form           Provided by: labdoo_objects          
+ field_group:group_basic_information|node|laptop|default             Provided by: labdoo_objects          
+ field_group:group_basic_information|node|laptop|form                Provided by: labdoo_objects          
+ field_group:group_laptop_data|node|laptop|form                      Provided by: labdoo_objects          
+ field_group:group_laptop_information|node|laptop|default            Provided by: labdoo_objects          
+ views_view:actions                                                  Provided by: lbd_blocks              
+ views_view:archive                                                                                       
+ views_view:backlinks                                                                                     
+ views_view:frontpage                                                                                     
+ views_view:glossary                                                                                      
+ views_view:map_leaflet_centered_on_visitor_location                                                      
+ views_view:map_leaflet_of_visitor_locations                                                              
+ views_view:map_ol_centered_on_visitor_location                                                           
+ views_view:order_locations                                                                               
+ views_view:comments_recent                                                                               
+ views_view:taxonomy_term                                                                                 
+ views_view:tracker                                                                                       
+ views_view:visitor_log_lite                                                                              
+ views_view:visitor_log                                                                                   
+ views_view:location_directory                                                                            
+ views_view:location_table                                                                                
+ views_view:rules_scheduler                                                                               
+ views_view:user_location_table                                                                           
+ dependencies:aggregator                                                                                  
+ dependencies:block                                                                                       
+ dependencies:blog                                                                                        
+ dependencies:book                                                                                        
+ dependencies:boost                                                                                       
+ dependencies:boxes                                                                                       
+ dependencies:color                                                                                       
+ dependencies:comment                                                                                     
+ dependencies:conditional_fields                                                                          
+ dependencies:contact                                                                                     
+ dependencies:context                                                                                     
+ dependencies:context_ui                                                                                  
+ dependencies:ctools                                                                                      
+ dependencies:dashboard                                                                                   
+ dependencies:date                                                                                        
+ dependencies:date_api                                                                                    
+ dependencies:delete_all                                                                                  
+ dependencies:devel                                                                                       
+ dependencies:diff                                                                                        
+ dependencies:edit_profile                                                                                
+ dependencies:email                                                                                       
+ dependencies:entity                                                                                      
+ dependencies:entity_token                                                                                
+ dependencies:entityreference                                                                             
+ dependencies:fe_block                                                                                    
+ dependencies:features                                                                                    
+ dependencies:field_group                                                                                 
+ dependencies:field_ui                                                                                    
+ dependencies:file                                                                                        
+ dependencies:hybridauth                                                                                  
+ dependencies:image                                                                                       
+ dependencies:ip_geoloc                                                                                   
+ dependencies:jquery_update                                                                               
+ dependencies:l10n_client                                                                                 
+ dependencies:l10n_update                                                                                 
+ dependencies:labdoo_lib                                                                                  
+ dependencies:labdoo_objects                                                                              
+ dependencies:lbd_actions                                                                                 
+ dependencies:lbd_blocks                                                                                  
+ dependencies:lbd_communicate                                                                             
+ dependencies:lbd_content_types                                                                           
+ dependencies:lbd_hybridauth                                                                              
+ dependencies:lbd_layout                                                                                  
+ dependencies:lbd_sample_doojects                                                                         
+ dependencies:lbd_sample_edoovillages                                                                     
+ dependencies:lbd_sample_hubs                                                                             
+ dependencies:lbd_visualize                                                                               
+ dependencies:libraries                                                                                   
+ dependencies:lightbox2                                                                                   
+ dependencies:list                                                                                        
+ dependencies:locale                                                                                      
+ dependencies:location                                                                                    
+ dependencies:location_cck                                                                                
+ dependencies:location_node                                                                               
+ dependencies:location_search                                                                             
+ dependencies:location_user                                                                               
+ dependencies:mailsystem                                                                                  
+ dependencies:menu                                                                                        
+ dependencies:mimemail                                                                                    
+ dependencies:mimemail_action                                                                             
+ dependencies:mimemail_compress                                                                           
+ dependencies:module_filter                                                                               
+ dependencies:node_export                                                                                 
+ dependencies:node_export_features                                                                        
+ dependencies:node_view_permissions                                                                       
+ dependencies:number                                                                                      
+ dependencies:options                                                                                     
+ dependencies:path                                                                                        
+ dependencies:pathauto                                                                                    
+ dependencies:php                                                                                         
+ dependencies:phpmailer                                                                                   
+ dependencies:r4032login                                                                                  
+ dependencies:rdf                                                                                         
+ dependencies:reroute_email                                                                               
+ dependencies:rules                                                                                       
+ dependencies:rules_admin                                                                                 
+ dependencies:rules_scheduler                                                                             
+ dependencies:search                                                                                      
+ dependencies:simpletest                                                                                  
+ dependencies:simpletest_clone                                                                            
+ dependencies:smtp                                                                                        
+ dependencies:strongarm                                                                                   
+ dependencies:subpathauto                                                                                 
+ dependencies:syslog                                                                                      
+ dependencies:taxonomy                                                                                    
+ dependencies:token                                                                                       
+ dependencies:toolbar                                                                                     
+ dependencies:trigger                                                                                     
+ dependencies:update                                                                                      
+ dependencies:uuid                                                                                        
+ dependencies:views                                                                                       
+ dependencies:views_slideshow                                                                             
+ dependencies:views_slideshow_cycle                                                                       
+ dependencies:views_ui                                                                                    
+ dependencies:xautoload                                                                                   
+ conditional_fields:node:laptop                                      Provided by: labdoo_objects          
+
