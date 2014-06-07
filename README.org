@@ -22,9 +22,11 @@
 
   + Configure it: =chroot lbd/ /tmp/install/config.sh=
 
-  + It is advisable to reboot the host after the installation: =reboot=
-
-  + Start services: =service chroot-lbd start=
+  + That's it, you are now ready to open your browser and access your local Labdoo installation. 
+  
+  + IF you need to stop Labdoo you can do: =service chroot-lbd stop=
+  
+  + If you need to start Labdoo you can do: =service chroot-lbd start=
 
   + If this is a local copy (installed on a local machine), then add
     the domain name =dev.labdoo.org= on ~/etc/hosts~:
