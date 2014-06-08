@@ -37,20 +37,26 @@
     the browser location (not =https://127.0.0.1= or
     =https://localhost=).
 
-* Configuration parameters when installing Labdoo
+* Configuration parameters 
 
   When running the command =chroot lbd/ /tmp/install/config.sh=, you will be asked
   to enter several configuration parameters. You can choose your options here,
   but here are the recommended values to enter if you are a Labdoo developer.
 
     #+BEGIN_EXAMPLE
-    Enter the domain [www.labdoo-dev.org]: [press ENTER here to select the default]
-    Enter root password [89a67fb3a0]: [use a simple password, for instance, "grassroots"]
+    Enter the domain [www.labdoo-dev.org]: 
+    [press ENTER here to select the default]
+    Enter root password [89a67fb3a0]: 
+    [use a simple password, for instance, "grassroots"]
     Please enter new password for the MySQL 'lbd' account.
-    Enter password [057e80488289da38]: [use a simple password, for instance, "grassroots"]
-    Enter the gmail address [MyEmailAddress@gmail.com]: [enter "dev-user@labdoo.org"]
-    Enter the gmail password: [you need to enter "grassroots" here]
-    Please enter the email address of the 'admin' user account in Drupal: [enter "dev-user@labdoo.org"]
+    Enter password [057e80488289da38]: 
+    [use a simple password, for instance, "grassroots"]
+    Enter the gmail address [MyEmailAddress@gmail.com]: 
+    [enter "dev-user@labdoo.org"]
+    Enter the gmail password: 
+    [you need to enter "grassroots" here]
+    Please enter the email address of the 'admin' user account in Drupal: 
+    [enter "dev-user@labdoo.org"]
     Please enter new password for the 'admin' user account in Drupal.
     Enter the password: [enter "grassroots" here]
     #+END_EXAMPLE
