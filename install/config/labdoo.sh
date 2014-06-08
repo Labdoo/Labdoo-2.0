@@ -24,7 +24,3 @@ $cwd/gmailsmtp.sh
 #       since they need to send out notification emails
 drush @lbd $enOrDis -y lbd_sample_doojects lbd_sample_edoovillages lbd_sample_hub 
 
-# FIXME: for some reason module labdoo actions needs to be reinstalled to be properly activated
-drush @lbd dis -y lbd_actions
-drush @lbd en -y lbd_actions lbd_blocks lbd_layout
-
