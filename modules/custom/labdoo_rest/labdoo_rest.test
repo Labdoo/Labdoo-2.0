@@ -1,0 +1,401 @@
+<?php
+//require_once drupal_get_path('module', 'laptop') . '/laptop.class.inc';
+
+//TODO refactor implementation in order to work with and independent configured
+// laptop
+
+class LabdooClassTestCase extends DrupalWebTestCase {
+  public static function getInfo() {
+    return array(
+        'name' => 'Labdoo REST test case',
+        'description' => "Test SQL  operations: Review functions with SQL queries. ",
+        'group' => 'Labdoo'
+        );
+  }
+
+  /**
+  * Method to set up a test
+  */
+  function setUp() {
+    $this->setup = TRUE;
+  }
+  /**
+  * Method to tear down a test
+  */
+  function tearDown()
+  {
+    $this->laptop=NULL;
+  }
+
+
+  /* Support function to test class methods  */
+  /**
+  * Method to delete a node 
+  * @param string id to delete
+  */
+  function _deleteLaptop($nid) {
+    node_delete($nid);
+  }
+  /**
+  *  Method to create an array with necessary node laptop information
+  *  @param name node to create
+  */
+  public function _createNodeLaptop($name)
+  {
+    $info['field_device_type'] = "Laptop";
+    $info['field_serial_number'] = "11111";
+    $info['field_edoovillage_destination'] = "1";
+    $info['field_model'] = "test laptop";
+    $info['field_manager'] = "1";
+    $info['field_status'] = "S0";
+    $info['field_tagger'] = "1";
+    $info['field_additional_editors'] = "1";
+    $info['field_cpu'] = 2;
+    $info['field_cpu_type'] = "intel core";
+    $info['vid'] = 5579;
+    $info['uid'] = 1;
+    $info['title'] =  $name;
+    return $info;
+ }
+
+  /*
+  Create and set up a laptop
+  * @return string laptop identifier. 
+  */
+  public function setUpLaptop () {
+    $info['field_device_type'] = "Laptop";
+    $info['field_serial_number'] = "11111";
+    $info['field_edoovillage_destination'] = "1";
+    $info['field_model'] = "test laptop";
+    $info['field_manager'] = "1";
+    $info['field_status'] = "S0";
+    $info['field_tagger'] = "1";
+    $info['field_additional_editors'] = "1";
+    $info['field_cpu'] = 2;
+    $info['field_cpu_type'] = "intel core";
+    $info['vid'] = 5579;
+    $info['uid'] = 1;
+    $info['title'] = "Example for Laptop";
+
+    $laptop = new laptop();
+    $laptop->setNode($info);
+    $laptop->save();
+    return $laptop->getNid();
+  }
+
+  /** Method to test login and logout operation */
+     public function testLoginLogout () {
+     $request_url_login = 'http://dev.labdoo.org/api/blog/user/login.xml'; // .xml asks for xml data in response
+     $request_url_logout = 'http://dev.labdoo.org/api/blog/user/logout.xml';
+     //$request_url_login = 'http://localhost:8888/api/blog/user/login.xml'; // .xml asks for xml data in response
+     //$request_url_logout = 'http://localhost:8888/api/blog/user/logout.xml';
+     /*$post_data = array(
+     'username' => 'admin',
+     'password' => 'bKWL9GvZSV',
+     ); */
+     $post_data = array(
+     'username' => 'admin',
+     'password' => 'admin',
+     );
+     $response = $this->_login($request_url_login,$post_data);
+     print print_r("Received token: \n");
+     print print_r($response)."\n";
+     $response = $this->_logout($request_url_logout);
+     }
+ 
+
+  /** Test to create a new user */
+  public function testRegisterNewUser ()  {
+    $request_url_login = 'http://localhost:8888/api/blog/user/login.xml'; // .xml asks for xml data in response
+    $request_url_logout = 'http://localhost:8888/api/blog/user/logout.xml';
+    $request_url_register = "http://localhost:8888/api/blog/user";
+    $post_data = array(
+    'username' => 'admin',
+    'password' => 'bKWL9GvZSV',
+    );
+    $data = array('name'=>'testuser','pass'=>'passuser','mail'=>'user@mail.com');
+  //Log in admin
+  $response = $this->_login($request_url_login,$post_data);
+  // Trying to register user
+  $this->_loadPage($request_url_register,$data,"POST");
+  response = $this->_logout($request_url_logout);
+  }
+  //TODO try to do independent tests and review errors.
+
+  /** Test to get information form a created user. **/
+   public function testGetUserInformation ()  {
+     $request_url_login = 'http://localhost:8888/api/blog/user/login.xml'; // .xml asks for xml data in response
+     $request_url_logout = 'http://localhost:8888/api/blog/user/logout.xml';
+     $request_url_getinfo = 'http://localhost:8888/api/blog/user/2.xml';
+     $post_data = array(
+     'username' => 'admin',
+     'password' => 'bKWL9GvZSV',
+     );
+  //Log in admin
+  $response = $this->_login($request_url_login,$post_data);
+  // Trying to register user
+  $this->_loadPage($request_url_getinfo,NULL,"GET");
+  $response = $this->_logout($request_url_logout);
+  }
+  
+  /** Test REST operation to create a new laptop **/
+ public function testRestCreateLaptop() {
+
+     $request_url_login = 'http://dev.labdoo.org/api/blog/user/login.xml'; // .xml asks for xml data in response
+     $request_url_logout = 'http://dev.labdoo.org/api/blog/user/logout.xml';
+    //$request_url_login = 'http://localhost:8888/api/blog/user/login.xml'; // .xml asks for xml data in response
+    //$request_url_logout = 'http://localhost:8888/api/blog/user/logout.xml';
+    // $request_url_create_laptop = "http://localhost:8888/api/blog/laptop";
+    $request_url_create_laptop = "http://dev.labdoo.org/api/blog/laptop";
+    $post_data = array(
+        'username' => 'admin',
+        //'password' => 'bKWL9GvZSV',
+        'password' => 'admin',
+        );
+    $data =  $this->_createNodeLaptop("test1");
+    //Log in admin
+    $response = $this->_login($request_url_login,$post_data);
+    // Trying to register user
+    $response = $this->_loadPage($request_url_create_laptop,$data,"POST");
+    print "-----------------------------------";
+    print "CREATE RESPONSE: ";
+    var_dump($response);
+    $xml = new SimpleXMLElement($response);
+    //$this->_deleteLaptop($xml->id);
+    print "-----------------------------------";
+    $response = $this->_logout($request_url_logout);
+ } 
+
+    /** Test REST operation to delete a laptop **/
+     public function testRestDeleteLaptop() {
+        $request_url_login = 'http://localhost:8888/api/blog/user/login.xml'; // .xml asks for xml data in response
+        $request_url_logout = 'http://localhost:8888/api/blog/user/logout.xml';
+        $post_data = array(
+         'username' => 'admin',
+         'password' => 'bKWL9GvZSV',
+          );
+
+      $id = $this->setUpLaptop();
+      $request_url_delete_laptop = "http://localhost:8888/api/blog/laptop/".$id;
+      //Log in admin
+      $response = $this->_login($request_url_login,$post_data);
+      // Trying to register user
+      $this->_loadPage($request_url_delete_laptop,null,"DELETE");
+     }
+
+    /** Test REST operation to get laptop information **/
+    public function testRestGetLaptop () {
+        $request_url_login = 'http://localhost:8888/api/blog/user/login.xml'; // .xml asks for xml data in response
+        $request_url_logout = 'http://localhost:8888/api/blog/user/logout.xml';
+        $post_data = array(
+         'username' => 'admin',
+         'password' => 'bKWL9GvZSV',
+          );
+      //TODO Pending to change!
+      //$id = $this->setUpLaptop();
+      //$id = 169;
+      $request_url_get_laptop = "http://localhost:8888/api/blog/laptop/172";
+      //Log in admin
+      $response = $this->_login($request_url_login,$post_data);
+      // Trying to register user
+      $this->_loadPage($request_url_get_laptop,null,"GET");
+      $response = $this->_logout($request_url_logout);
+    }
+
+    /** REST operation to list laptops **/
+     public function testListLaptops () {
+        $request_url_login = 'http://localhost:8888/api/blog/user/login.xml'; // .xml asks for xml data in response
+        $request_url_logout = 'http://localhost:8888/api/blog/user/logout.xml';
+        $post_data = array(
+         'username' => 'admin',
+         'password' => 'bKWL9GvZSV',
+          );
+        $request_url_get_laptop = "http://localhost:8888/api/blog/laptop/";
+        //Log in admin
+        $response = $this->_login($request_url_login,$post_data);
+        // Trying to register user
+        $this->_loadPage($request_url_get_laptop,null,"GET");
+        $response = $this->_logout($request_url_logout);
+  }
+ 
+ /** REST operation to update laptop **/
+ public function testRestUpdateLaptop() {
+    $request_url_login = 'http://localhost:8888/api/blog/user/login.xml'; // .xml asks for xml data in response
+    $request_url_logout = 'http://localhost:8888/api/blog/user/logout.xml';
+    $request_url_update_laptop = "http://localhost:8888/api/blog/laptop/172";
+    $post_data = array(
+        'username' => 'admin',
+        'password' => 'bKWL9GvZSV',
+        );
+    $data =  $this->_createNodeLaptop("test2");
+    //Log in admin
+    $response = $this->_login($request_url_login,$post_data);
+    // Trying to register user
+    $response = $this->_loadPage($request_url_update_laptop,$data,"PUT");
+    print "-----------------------------------";
+    print "CREATE RESPONSE: ";
+    var_dump($response);
+    print "-----------------------------------";
+    $response = $this->_logout($request_url_logout);
+ }
+
+  /** Login function.
+  * @param string service_url Url to do login 
+  * @param array post_data login information
+  *
+  **/
+  public function _login($service_url,$post_data)
+  {
+
+    $post_data = http_build_query($post_data, '', '&'); // Format post data as application/x-www-form-urlencoded
+    // set up the request
+    $curl = curl_init($service_url);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);  // have curl_exec return a string
+    curl_setopt($curl, CURLOPT_POST, true);             // do a POST
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $post_data); // POST this data
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, FALSE);
+    // make the request
+    curl_setopt($curl, CURLOPT_VERBOSE, true); // output to command line
+    $response = curl_exec($curl);
+    curl_close($curl);
+    print "-----------------------------------\n";
+    print "RESPONSE:\n";
+    var_dump($response);
+    // parse the response
+    $xml = new SimpleXMLElement($response);
+
+    //Getting session cookie
+    $session_cookie = $xml->session_name .'='. $xml->sessid;
+    print "-----------------------------------\n";
+    print "SESSION_COOKIE: $session_cookie\n";
+    file_put_contents('session_cookie.txt', $session_cookie);
+
+    //Getting token csrf
+    $csrf = $xml->token;
+    print "-----------------------------------\n";
+    print "TOKEN: $csrf \n";
+    file_put_contents('csrf_token.txt',$csrf);
+    return $csrf;
+  }
+
+
+
+
+  /** Logout function.
+  * @param string service_url URL to do logout 
+  */
+  public function _logout($service_url)
+  {
+
+    $session_cookie = file_get_contents('session_cookie.txt');
+    // set up the request
+    $curl = curl_init($service_url);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);  // have curl_exec return a string
+    curl_setopt($curl, CURLOPT_COOKIE, "$session_cookie"); // use the previously saved session
+    curl_setopt($curl, CURLOPT_POST, true);             // do a POST
+    curl_setopt($curl, CURLOPT_POSTFIELDS, ""); // POST this data
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, FALSE);
+    // make the request
+    curl_setopt($curl, CURLOPT_VERBOSE, true); // output to command line
+
+    $csrf_token = file_get_contents('csrf_token.txt');
+    curl_setopt($curl,CURLOPT_HTTPHEADER,array(
+          'X-CSRF-Token: ' . $csrf_token
+          ));
+
+    $response = curl_exec($curl);
+    curl_close($curl);
+    print "-----------------------------------\n";
+    print "RESPONSE:\n";
+    var_dump($response);
+
+  }
+
+
+  /**Function to load a pae
+  * @param string service_url URL to load page
+  * @return Loaded page.
+ */
+  public function _loadPage($url, $data, $type) {
+
+    $session_cookie = file_get_contents('session_cookie.txt');
+    // set up the request
+    $curl = curl_init($url);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);  // have curl_exec return a string
+    curl_setopt($curl, CURLOPT_COOKIE, "$session_cookie"); // use the previously saved session
+
+
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, FALSE);
+
+
+    if ($type == "POST") {
+      if ($data != NULL) {
+        $queryData = http_build_query($data);
+      } else {
+        $queryData = array();
+      }
+      curl_setopt($curl, CURLOPT_POSTFIELDS, $queryData); // Set POST data
+      curl_setopt($curl, CURLOPT_POST,TRUE);
+      curl_setopt($curl, CURLOPT_HTTPGET, FALSE);
+    } else if ($type == "PUT" ){  
+      if ($data != NULL) {
+        $queryData = http_build_query($data);
+      } else {
+        $queryData = array();
+      }
+      curl_setopt($curl, CURLOPT_POSTFIELDS, $queryData); // Set POST data
+      curl_setopt($curl, CURLOPT_CUSTOMREQUEST,"PUT");
+      curl_setopt($curl, CURLOPT_HTTPGET, FALSE);
+    } else if ($type == "GET")  {
+      curl_setopt($curl, CURLOPT_POST, FALSE);
+      curl_setopt($curl, CURLOPT_HTTPGET, TRUE);
+    }
+
+    curl_setopt($curl, CURLOPT_CUSTOMREQUEST, $type); 
+    curl_setopt($curl, CURLOPT_HEADER, FALSE); // Ask to not return Header
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+
+    // make the request
+    curl_setopt($curl, CURLOPT_VERBOSE, true); // output to command line
+
+    $csrf_token = file_get_contents('csrf_token.txt');
+    curl_setopt($curl,CURLOPT_HTTPHEADER,array(
+          'X-CSRF-Token: ' . $csrf_token
+          ));
+
+    $response = curl_exec($curl);
+    $http_code = curl_getinfo($curl,CURLINFO_HTTP_CODE);
+
+    curl_close($curl);
+    print "-----------------------------------\n";
+    print "RESPONSE:\n";
+    var_dump($response);
+
+    $http_message = null;
+    /* Parse response */
+    if ($http_code == 200 && $type != "PUT") {
+      // Convert json response as array
+      // var_dump($response);
+
+      $http_message = new SimpleXMLElement($response);
+      $session_cookie = $http_message->session_name .'='.$http_message->sessid;
+      file_put_contents('session_cookie.txt',$session_cookie);
+      if ($http_message->sessid!="") {
+        print "Login successful, session $http_message->sessid <br />";
+      } else {
+        print "Login appears to have failed";
+      }
+    }
+    else {
+      // Get error msg
+      print "code message : ".$http_code."\n";
+      print "http message : ".$http_message."\n";
+      $http_message = curl_error($curl);
+    }
+    return $http_message;
+  }
+
+}

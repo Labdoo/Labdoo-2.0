@@ -1,0 +1,142 @@
+<?php
+
+/**
+ * @defgroup labdoorest LabdooRest: Service definition of REST API Labdoo. 
+ *
+ */
+
+
+/**
+ * @file
+ * Main file for the REST Labdoo module
+ *
+ * @ingroup labdoorest
+ */
+
+require_once drupal_get_path('module', 'labdoo_rest') . '/laptop.class.inc';
+
+/**
+ * Implementation of hook_services_resources() for the REST module service.
+*/
+function labdoo_rest_services_resources() {
+  return array(
+      'laptop' => array(
+        'retrieve' => array(
+          'help' => 'Retrieves a laptop',
+          'file' => array('file' => 'inc', 'module' => 'labdoo_rest'),
+          'callback' => '_laptop_retrieve',
+          'access callback' => '_laptop_access_mock',
+          'access arguments' => array('view'),
+          'access arguments append' => TRUE,
+          'args' => array(
+            array(
+              'name' => 'id',
+              'type' => 'int',
+              'description' => 'The id of the note to get',
+              'source' => array('path' => '0'),
+              'optional' => FALSE,
+              ),
+            ),
+          ),
+        'create' => array(
+          'help' => 'Creates a laptop',
+          'file' => array('file' => 'inc', 'module' => 'labdoo_rest'),
+          'callback' => '_laptop_create',
+          'access_callback' => '_laptop_access_mock',
+          'access arguments' => array('note resource create'),
+          'access arguments append' => FALSE,
+          'args' => array(
+            array(
+              'name' => 'data',
+              'type' => 'array',
+              'description' => 'The laptop object',
+              'source' => 'data',
+              'optional' => FALSE,
+              ),
+            ),
+          ),
+        'update' => array(
+            'help' => 'Updates a laptop',
+            'file' => array('file' => 'inc', 'module' => 'labdoo_rest'),
+            'callback' => '_laptop_update',
+            'access callback' => '_laptop_access_mock',
+            'access arguments' => array('update'),
+            'access arguments append' => TRUE,
+            'args' => array(
+              array(
+                'name' => 'id',
+                'type' => 'int',
+                'description' => 'The id of the node to update',
+                'source' => array('path' => '0'),
+                'optional' => FALSE,
+                ),
+              array(
+                'name' => 'data',
+                'type' => 'struct',
+                'description' => 'The note data object',
+                'source' => 'data',
+                'optional' => FALSE,
+                ),
+              ),
+            ),
+            'delete' => array(
+                'help' => 'Deletes a laptop',
+                'file' => array('file' => 'inc', 'module' => 'labdoo_rest'),
+                'callback' => '_laptop_delete',
+                'access callback' => '_laptop_access_mock',
+                'access arguments' => array('delete'),
+                'access arguments append' => TRUE,
+                'args' => array(
+                  array(
+                    'name' => 'id',
+                    'type' => 'int',
+                    'description' => 'The id of the note to delete',
+                    'source' => array('path' => '0'),
+                    'optional' => FALSE,
+                    ),
+                  ),
+                ),
+            'index' => array(
+                'help' => 'Retrieves a listing of laptop',
+                'file' => array('file' => 'inc', 'module' => 'labdoo_rest'),
+                'callback' => '_laptop_index',
+                'access callback' => '_laptop_access_mock',
+                'access arguments' => array('access content'),
+                'access arguments append' => FALSE,
+                'args' => array(
+                  array(
+                    'name' => 'page',
+                    'type' => 'int',
+                    'description' => '',
+                    'source' => array(
+                      'param' => 'page',
+                      ),
+                    'optional' => TRUE,
+                    'default value' => 0,
+                    ),
+                  array(
+                    'name' => 'parameters',
+                    'type' => 'array',
+                    'description' => '',
+                    'source' => 'param',
+                    'optional' => TRUE,
+                    'default value' => array(),
+                    ),
+                  ),
+                ),
+              ),
+            );
+
+}
+
+/*
+Function to implement access policies for the Labdoo rest module. the current implementation always returns true, and this
+access management is implemented via Rest we
+*/
+ function _laptop_access_mock($op, $args) {
+    return true;
+  }
+
+}
+
+  
