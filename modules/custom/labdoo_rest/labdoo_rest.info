@@ -1,9 +1,0 @@
-name = Labdoo rest
-description = Module to implement Service
-package = Labdoo
-core = 7.x
-files[] = laptop.class.inc
-files[] = labdoo_rest.inc
-files[] = labdoo_rest_mock.inc
-files[] = labdoo_rest.module
-files[] = labdoo_rest.test
