@@ -22,20 +22,20 @@
 
   + Configure it: =chroot lbd/ /tmp/install/config.sh= (See next section for sample values when running this command)
 
-  + That's it, you are now ready to open your browser and access your local Labdoo installation. 
+  + If this is a local copy (installed on a local machine), then add
+    the domain name =www.labdoo-dev.org= on ~/etc/hosts~ (or the domain name that you entered when running =chroot lbd/ /tmp/install/config.sh=):
+    #+BEGIN_EXAMPLE
+    127.0.0.1       www.labdoo-dev.org  localhost
+    #+END_EXAMPLE
+    This way the Labdoo social network can be accessed by typing =https://www.labdoo-dev.org= on
+    the browser location (instead of =https://127.0.0.1= or
+    =https://localhost=).
+
+  + And that's it! you are now ready to open your browser and access your local Labdoo installation. 
   
-  + IF you need to stop Labdoo you can do: =service chroot-lbd stop=
+  + If you need to stop Labdoo you can do: =service chroot-lbd stop=
   
   + If you need to start Labdoo you can do: =service chroot-lbd start=
-
-  + If this is a local copy (installed on a local machine), then add
-    the domain name =dev.labdoo.org= on ~/etc/hosts~:
-    #+BEGIN_EXAMPLE
-    127.0.0.1       dev.labdoo.org  localhost
-    #+END_EXAMPLE
-    This way it can be accessed by typing =https://dev.labdoo.org= on
-    the browser location (not =https://127.0.0.1= or
-    =https://localhost=).
 
 * Configuration parameters 
 
