@@ -79,6 +79,11 @@ dependencies[] = r4032login
 dependencies[] = ip_geoloc 
 dependencies[] = views_slideshow
 dependencies[] = views_slideshow_cycle
+dependencies[] = gmap
+dependencies[] = gmap_location
+dependencies[] = views_autocomplete_filters
+dependencies[] = views_dependent_filters
+
 ;dependencies[] = node_clone
 
 ;--------------------

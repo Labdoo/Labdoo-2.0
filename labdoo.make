@@ -56,6 +56,9 @@ projects[node_view_permissions][version] = "1.3"
 projects[r4032login][version] = "1.7"
 projects[ip_geoloc][version] = "1.25"
 projects[views_slideshow][version] = "3.1"
+projects[gmap][version] = "2.9"
+projects[views_autocomplete_filters][version] = "1.1"
+projects[views_dependent_filters][version] = "1.1"
 ;projects[node_clone][version] = "1.0-rc2"
 
 ;--------------------
@@ -77,7 +80,7 @@ projects[hybridauth][version] = "2.8"
 ;--------------------
 ; Drupal Localization
 ;--------------------
-projects[l10n_update][version] = "1.0-beta3"
+projects[l10n_update][version] = "1.0"
 projects[l10n_client][version] = "1.3"
 
 ;--------------------

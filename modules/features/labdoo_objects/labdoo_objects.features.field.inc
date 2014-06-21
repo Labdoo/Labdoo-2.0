@@ -3174,7 +3174,7 @@ function labdoo_objects_field_default_fields() {
         'handler_settings' => array(
           'behaviors' => array(
             'views-select-list' => array(
-              'status' => 0,
+              'status' => 1,
             ),
           ),
           'sort' => array(
@@ -3221,11 +3221,7 @@ function labdoo_objects_field_default_fields() {
       'widget' => array(
         'active' => 1,
         'module' => 'options',
-        'settings' => array(
-          'match_operator' => 'CONTAINS',
-          'path' => '',
-          'size' => '60',
-        ),
+        'settings' => array(),
         'type' => 'options_select',
         'weight' => '6',
       ),
