@@ -24,3 +24,5 @@ $cwd/gmailsmtp.sh
 #       since they need to send out notification emails
 drush @lbd $enOrDis -y lbd_sample_doojects lbd_sample_edoovillages lbd_sample_hub 
 
+drush @lbd $enOrDis -y lbd_gmap
+
