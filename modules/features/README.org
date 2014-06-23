@@ -18,29 +18,31 @@
      very easily by installing the feature.  But sites that do not
      want to use it just don't install that feature.
 
-  For more details about features (and their features) you can read
-  these blogs:
+  For more details about features you can read these blogs:
   + http://scotthadfield.ca/2011/09/21/features-part-2-managing-your-feature
   + http://scotthadfield.ca/2011/09/30/features-part-3-re-usable-features
 
 
 * Creating features
 
-  Features can be created and managed through UI. However I find the
-  UI for creating features not suitable (tedious, sluggish,
+  Features can be created and managed through UI. However the
+  UI for creating features is often found not suitable (tedious, sluggish,
   unreliable), at least when creating features for a Drupal
   profile. Fortunately they can also be fully managed from the command
   line (with *drush*):
+
   #+BEGIN_EXAMPLE
   drush help --filter=features
   #+END_EXAMPLE
 
   First of all, we can get a list of all the so called /features
-  components/:
+  components currently found in our Drupal site/:
+
   #+BEGIN_EXAMPLE
   drush @lbd help features-components
   drush @lbd features-components '%:%' > features-components.txt
   #+END_EXAMPLE
+
   These are all the possible chunks of configuration that can be saved
   in a feature. All we have to do is to search and select the ones
   that are relevant for the feature that we want to build and then
@@ -48,9 +50,9 @@
   generate the code (Drupal API) that is necessary to apply these
   configurations.
 
-  For example, these are the components that I have selected for the
-  /layout/ feature (which is supposed to re-construct automatically
-  the layout and look of a freshly installed B-Translator site):
+  For example, let's assume that these are the components that we select 
+  for a new feature which we decide to call /lbd_sample_feature/: 
+
   #+BEGIN_EXAMPLE
   variable:theme_bootstrap1_settings
   variable:theme_default
@@ -75,63 +77,23 @@
   menu_links:navig-menu:node/1
   menu_links:navig-menu:contact
   #+END_EXAMPLE
-  These include the theme, blocks layout, the front page view, and the
-  menus.
 
-  Now I can create a feature that includes these components with a
+  These components include the theme, blocks layout, the front page view, and the
+  menus.  Assume that we store the above lines into a file called sample_feature_components.
+
+  Now we can create a feature that includes these components with a
   command like this:
-  #+BEGIN_EXAMPLE
-  drush @lbd features-export \
-  --destination=profiles/btranslator/modules/features \
-  btr_layout $(cat layout_components)
-  #+END_EXAMPLE
-  It creates a feature on the directory:
-  ~/var/www/btr_dev/profiles/btranslator/modules/features/btr_layout/~
 
-  Other features that I have created are: /btr_disqus/,
-  /btr_invite/, /btr_sharethis/,
-  /btr_captcha/, /btr_drupalchat/,
-  /btr_janrain/, /btr_simplenews/,
-  /btr_mass_contact/, /btr_googleanalytics/, etc.  In
-  order to recreate them easily, the script =create-features.sh= can
+  #+BEGIN_EXAMPLE
+  drush @lbd features-export --destination=profiles/labdoo/modules/features lbd_sample_feature $(cat sample_feature_components)
+  #+END_EXAMPLE
+
+  The above command creates a feature in the directory:
+  ~/var/www/lbd/profiles/labdoo/modules/features/lbd_sample_feature/~
+
+  In order to recreate them easily, the script =create-features.sh= can
   be used. It will create a feature for each list of components that
   is on the directory ~components/~.
-
-  The file ~create-features.sh~ has a content like this:
-  #+BEGIN_EXAMPLE
-  #!/bin/bash
-  ### Create all the features.
-  ### However some features need manual customization
-  ### after being created (for example btr_layout).
-
-  drush="drush --yes @lbd"
-  destination="profiles/btranslator/modules/features"
-
-  function create_feature
-  {
-      components=$1
-      feature_name="btr_$(basename $components)"
-
-
-      xargs --delimiter=$'\n' --arg-file=$components \
-	  $drush features-export --destination=$destination $feature_name
-  }
-
-  ### go to the directory of the script
-  cd $(dirname $0)
-
-  ### clear cache etc.
-  $drush cc all
-  rm -f components/*~
-
-  ### create a feature for each file in 'components/'
-  for components in $(ls components/*)
-  do
-      echo "===> $components"
-      create_feature $components
-  done
-  #+END_EXAMPLE
-
 
 * Customizing features manually
 
@@ -139,24 +101,28 @@
   generated automatically by the command =features-export=). So, we
   can further customize it manually if needed. And sometimes there is
   the need for manual customization because the automatic generation
-  cannot get always everything right. In the case of the layout
-  feature I added the file ~btr_layout.install~, which uses
-  *hook_enable()* to make further customizations after the feature is
-  installed.
+  cannot get always everything right. 
+
+  For instance, in the case of the /lbd_sample_feature/, let's assume
+  that we need further customization to do certain things that the
+  automatically generated feature cannot do. We can for instance add
+  a ~lbd_sample_feature.install~ file and use *hook_enable()* to make 
+  further customizations after the feature is installed.
+
   #+BEGIN_EXAMPLE
   <?php
 
   /**
    * Implements hook_enable().
    */
-  function btr_layout_enable() {
-    _btr_layout_create_aliases();
-    _btr_layout_add_login_link();
-    _btr_layout_block_settings();
+  function lbd_sample_feature_enable() {
+    _lbd_sample_feature_create_aliases();
+    _lbd_sample_feature_add_login_link();
+    _lbd_sample_feature_block_settings();
   }
 
 
-  function _btr_layout_create_aliases() {
+  function _lbd_sample_feature_create_aliases() {
     $aliases = array(
       'udhezuesi' => 'Udhëzuesi i Përkthyesit',
       'about' => 'About',
@@ -173,7 +139,7 @@
     }
   }
 
-  function _btr_layout_add_login_link() {
+  function _lbd_sample_feature_add_login_link() {
     $query = "DELETE FROM {menu_links}
 	      WHERE menu_name='user-menu'
 		AND link_path='user/login'
@@ -190,7 +156,7 @@
     menu_link_save($login);
   }
 
-  function _btr_layout_block_settings() {
+  function _lbd_sample_feature_block_settings() {
     // set the title of the menu block as Navigation
     db_query("UPDATE {block} SET title='Navigation'
 	      WHERE theme='bootstrap1' AND delta='navig-menu'");
@@ -205,10 +171,10 @@
   }
   #+END_EXAMPLE
 
-  It creates aliases, which cannot be handled properly by the
-  /features/. It creates a /Login/ menu link, which is not handled
+  As an example, the above creates aliases, which cannot be handled properly by the
+  /features/, it creates a /Login/ menu link, which is not handled
   propperly by the /features/ (although in general menu links can be
-  handled quite well by the features). It also sets the correct
+  handled quite well by the features), and it also sets the correct
   settings for the blocks in a simple way, although there are other
   ways to handle them by the /features/.
 
@@ -216,7 +182,7 @@
 * Making features configurable
 
   Some of the features are required and will be automatically
-  installed when the (btranslator) profile is installed, and some
+  installed when the profile is installed, and some
   others are optional and can be installed later by the site
   administrator, if they wish. Most of these features are closely
   related to some contrib modules and basically just save
