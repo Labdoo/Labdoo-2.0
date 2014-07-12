@@ -270,6 +270,18 @@ function lbd_blocks_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Global inventory';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Type */
   $handler->display->display_options['arguments']['type']['id'] = 'type';
@@ -358,7 +370,6 @@ function lbd_blocks_views_default_views() {
   $handler->display->display_options['filters']['distance']['expose']['operator'] = 'distance_op';
   $handler->display->display_options['filters']['distance']['expose']['identifier'] = 'distance';
   $handler->display->display_options['filters']['distance']['expose']['required'] = TRUE;
-  $handler->display->display_options['filters']['distance']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['distance']['expose']['remember_roles'] = array(
     2 => '2',
     1 => '1',
@@ -419,28 +430,21 @@ function lbd_blocks_views_default_views() {
     1 => 0,
     3 => 0,
   );
-  /* Filter criterion: Content: Title */
-  $handler->display->display_options['filters']['title_1']['id'] = 'title_1';
-  $handler->display->display_options['filters']['title_1']['table'] = 'node';
-  $handler->display->display_options['filters']['title_1']['field'] = 'title';
-  $handler->display->display_options['filters']['title_1']['operator'] = 'contains';
-  $handler->display->display_options['filters']['title_1']['group'] = 1;
-  $handler->display->display_options['filters']['title_1']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['title_1']['expose']['operator_id'] = 'title_1_op';
-  $handler->display->display_options['filters']['title_1']['expose']['label'] = 'Search';
-  $handler->display->display_options['filters']['title_1']['expose']['operator'] = 'title_1_op';
-  $handler->display->display_options['filters']['title_1']['expose']['identifier'] = 'title_1';
-  $handler->display->display_options['filters']['title_1']['expose']['remember_roles'] = array(
+  /* Filter criterion: Search: Search Terms */
+  $handler->display->display_options['filters']['keys']['id'] = 'keys';
+  $handler->display->display_options['filters']['keys']['table'] = 'search_index';
+  $handler->display->display_options['filters']['keys']['field'] = 'keys';
+  $handler->display->display_options['filters']['keys']['group'] = 1;
+  $handler->display->display_options['filters']['keys']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['keys']['expose']['operator_id'] = 'keys_op';
+  $handler->display->display_options['filters']['keys']['expose']['label'] = 'Search';
+  $handler->display->display_options['filters']['keys']['expose']['operator'] = 'keys_op';
+  $handler->display->display_options['filters']['keys']['expose']['identifier'] = 'keys';
+  $handler->display->display_options['filters']['keys']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
   );
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_field'] = 'title';
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_dependent'] = 0;
   $handler->display->display_options['path'] = 'map';
 
   /* Display: Page */
@@ -667,6 +671,7 @@ function lbd_blocks_views_default_views() {
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
+  $handler->display->display_options['filters']['type']['expose']['required'] = TRUE;
   $handler->display->display_options['filters']['type']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
     2 => '2',
@@ -674,46 +679,11 @@ function lbd_blocks_views_default_views() {
     3 => 0,
   );
   $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
-  /* Filter criterion: Location: Distance / Proximity */
-  $handler->display->display_options['filters']['distance']['id'] = 'distance';
-  $handler->display->display_options['filters']['distance']['table'] = 'location';
-  $handler->display->display_options['filters']['distance']['field'] = 'distance';
-  $handler->display->display_options['filters']['distance']['value'] = array(
-    'latitude' => '',
-    'longitude' => '',
-    'postal_code' => '',
-    'country' => '',
-    'php_code' => '',
-    'nid_arg' => '',
-    'nid_loc_field' => 'node',
-    'uid_arg' => '',
-    'search_distance' => '100',
-    'search_units' => 'km',
-  );
-  $handler->display->display_options['filters']['distance']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['distance']['expose']['operator_id'] = 'distance_op';
-  $handler->display->display_options['filters']['distance']['expose']['label'] = 'Distance / Proximity';
-  $handler->display->display_options['filters']['distance']['expose']['use_operator'] = TRUE;
-  $handler->display->display_options['filters']['distance']['expose']['operator'] = 'distance_op';
-  $handler->display->display_options['filters']['distance']['expose']['identifier'] = 'distance';
-  $handler->display->display_options['filters']['distance']['expose']['required'] = TRUE;
-  $handler->display->display_options['filters']['distance']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['distance']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => '1',
-    3 => 0,
-  );
-  $handler->display->display_options['filters']['distance']['expose']['gmap_macro'] = array(
-    'default' => '[gmap ]',
-  );
-  $handler->display->display_options['filters']['distance']['expose']['user_location_choose'] = array(
-    'default' => FALSE,
-  );
-  $handler->display->display_options['filters']['distance']['origin'] = 'static';
   /* Filter criterion: Location: Country */
   $handler->display->display_options['filters']['country']['id'] = 'country';
   $handler->display->display_options['filters']['country']['table'] = 'location';
   $handler->display->display_options['filters']['country']['field'] = 'country';
+  $handler->display->display_options['filters']['country']['group'] = 1;
   $handler->display->display_options['filters']['country']['exposed'] = TRUE;
   $handler->display->display_options['filters']['country']['expose']['operator_id'] = 'country_op';
   $handler->display->display_options['filters']['country']['expose']['label'] = 'Country';
@@ -729,6 +699,7 @@ function lbd_blocks_views_default_views() {
   $handler->display->display_options['filters']['field_status_value']['id'] = 'field_status_value';
   $handler->display->display_options['filters']['field_status_value']['table'] = 'field_data_field_status';
   $handler->display->display_options['filters']['field_status_value']['field'] = 'field_status_value';
+  $handler->display->display_options['filters']['field_status_value']['group'] = 1;
   $handler->display->display_options['filters']['field_status_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_status_value']['expose']['operator_id'] = 'field_status_value_op';
   $handler->display->display_options['filters']['field_status_value']['expose']['label'] = 'Status';
@@ -744,6 +715,7 @@ function lbd_blocks_views_default_views() {
   $handler->display->display_options['filters']['field_hub_laptop_target_id']['id'] = 'field_hub_laptop_target_id';
   $handler->display->display_options['filters']['field_hub_laptop_target_id']['table'] = 'field_data_field_hub_laptop';
   $handler->display->display_options['filters']['field_hub_laptop_target_id']['field'] = 'field_hub_laptop_target_id';
+  $handler->display->display_options['filters']['field_hub_laptop_target_id']['group'] = 1;
   $handler->display->display_options['filters']['field_hub_laptop_target_id']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_hub_laptop_target_id']['expose']['operator_id'] = 'field_hub_laptop_target_id_op';
   $handler->display->display_options['filters']['field_hub_laptop_target_id']['expose']['label'] = 'Hub';
@@ -760,6 +732,7 @@ function lbd_blocks_views_default_views() {
   $handler->display->display_options['filters']['title']['table'] = 'node';
   $handler->display->display_options['filters']['title']['field'] = 'title';
   $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['group'] = 1;
   $handler->display->display_options['filters']['title']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['label'] = 'Search';
@@ -776,6 +749,55 @@ function lbd_blocks_views_default_views() {
   $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Location: Distance / Proximity */
+  $handler->display->display_options['filters']['distance']['id'] = 'distance';
+  $handler->display->display_options['filters']['distance']['table'] = 'location';
+  $handler->display->display_options['filters']['distance']['field'] = 'distance';
+  $handler->display->display_options['filters']['distance']['value'] = array(
+    'latitude' => '',
+    'longitude' => '',
+    'postal_code' => '',
+    'country' => '',
+    'php_code' => '',
+    'nid_arg' => '',
+    'nid_loc_field' => 'node',
+    'uid_arg' => '',
+    'search_distance' => '100',
+    'search_units' => 'km',
+  );
+  $handler->display->display_options['filters']['distance']['group'] = 1;
+  $handler->display->display_options['filters']['distance']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['distance']['expose']['operator_id'] = 'distance_op';
+  $handler->display->display_options['filters']['distance']['expose']['label'] = 'Distance / Proximity';
+  $handler->display->display_options['filters']['distance']['expose']['operator'] = 'distance_op';
+  $handler->display->display_options['filters']['distance']['expose']['identifier'] = 'distance';
+  $handler->display->display_options['filters']['distance']['expose']['required'] = TRUE;
+  $handler->display->display_options['filters']['distance']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => '1',
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['distance']['expose']['gmap_macro'] = array(
+    'default' => '[gmap ]',
+  );
+  $handler->display->display_options['filters']['distance']['expose']['user_location_choose'] = array(
+    'default' => FALSE,
+  );
+  $handler->display->display_options['filters']['distance']['origin'] = 'static';
+  /* Filter criterion: Search: Search Terms */
+  $handler->display->display_options['filters']['keys']['id'] = 'keys';
+  $handler->display->display_options['filters']['keys']['table'] = 'search_index';
+  $handler->display->display_options['filters']['keys']['field'] = 'keys';
+  $handler->display->display_options['filters']['keys']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['keys']['expose']['operator_id'] = 'keys_op';
+  $handler->display->display_options['filters']['keys']['expose']['label'] = 'Search';
+  $handler->display->display_options['filters']['keys']['expose']['operator'] = 'keys_op';
+  $handler->display->display_options['filters']['keys']['expose']['identifier'] = 'keys';
+  $handler->display->display_options['filters']['keys']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
   $handler->display->display_options['displays'] = array(
     'page' => 'page',
     'default' => 0,
