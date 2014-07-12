@@ -41,7 +41,7 @@ function lbd_blocks_default_fe_block_settings() {
         'region' => 'content',
         'status' => '1',
         'theme' => 'bootstrap1',
-        'weight' => '0',
+        'weight' => '-17',
       ),
       'seven' => array(
         'region' => '',
@@ -73,7 +73,7 @@ function lbd_blocks_default_fe_block_settings() {
         'region' => 'content',
         'status' => '1',
         'theme' => 'bootstrap1',
-        'weight' => '0',
+        'weight' => '-16',
       ),
       'seven' => array(
         'region' => 'content',
@@ -105,7 +105,7 @@ function lbd_blocks_default_fe_block_settings() {
         'region' => 'header',
         'status' => '1',
         'theme' => 'bootstrap1',
-        'weight' => '0',
+        'weight' => '-17',
       ),
       'seven' => array(
         'region' => '',

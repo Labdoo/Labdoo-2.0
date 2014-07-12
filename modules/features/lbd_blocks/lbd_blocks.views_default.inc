@@ -270,10 +270,6 @@ function lbd_blocks_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Global inventory';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Entity Reference: Referenced Entity */
-  $handler->display->display_options['relationships']['field_hub_laptop_target_id']['id'] = 'field_hub_laptop_target_id';
-  $handler->display->display_options['relationships']['field_hub_laptop_target_id']['table'] = 'field_data_field_hub_laptop';
-  $handler->display->display_options['relationships']['field_hub_laptop_target_id']['field'] = 'field_hub_laptop_target_id';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Type */
   $handler->display->display_options['arguments']['type']['id'] = 'type';
@@ -407,29 +403,6 @@ function lbd_blocks_views_default_views() {
     1 => 0,
     3 => 0,
   );
-  /* Filter criterion: Content: Title */
-  $handler->display->display_options['filters']['title']['id'] = 'title';
-  $handler->display->display_options['filters']['title']['table'] = 'node';
-  $handler->display->display_options['filters']['title']['field'] = 'title';
-  $handler->display->display_options['filters']['title']['relationship'] = 'field_hub_laptop_target_id';
-  $handler->display->display_options['filters']['title']['operator'] = 'contains';
-  $handler->display->display_options['filters']['title']['group'] = 1;
-  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['label'] = 'Hub';
-  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
-  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-  );
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
   /* Filter criterion: Content: Source group (field_hub_laptop) */
   $handler->display->display_options['filters']['field_hub_laptop_target_id']['id'] = 'field_hub_laptop_target_id';
   $handler->display->display_options['filters']['field_hub_laptop_target_id']['table'] = 'field_data_field_hub_laptop';
@@ -582,7 +555,15 @@ function lbd_blocks_views_default_views() {
   $handler = $view->new_display('attachment', 'Attachment', 'attachment_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Attachment';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
@@ -660,14 +641,6 @@ function lbd_blocks_views_default_views() {
   $handler->display->display_options['fields']['changed']['label'] = 'Last updated';
   $handler->display->display_options['fields']['changed']['date_format'] = 'long';
   $handler->display->display_options['fields']['changed']['second_date_format'] = 'long';
-  /* Field: Content: Source group */
-  $handler->display->display_options['fields']['field_hub_laptop']['id'] = 'field_hub_laptop';
-  $handler->display->display_options['fields']['field_hub_laptop']['table'] = 'field_data_field_hub_laptop';
-  $handler->display->display_options['fields']['field_hub_laptop']['field'] = 'field_hub_laptop';
-  $handler->display->display_options['fields']['field_hub_laptop']['label'] = 'Hub';
-  $handler->display->display_options['fields']['field_hub_laptop']['settings'] = array(
-    'link' => 0,
-  );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -683,10 +656,10 @@ function lbd_blocks_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'action' => 'action',
+    'laptop' => 'laptop',
     'dootrip' => 'dootrip',
     'edoovillage' => 'edoovillage',
     'hub' => 'hub',
-    'laptop' => 'laptop',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
   $handler->display->display_options['filters']['type']['exposed'] = TRUE;
@@ -694,11 +667,13 @@ function lbd_blocks_views_default_views() {
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
+  $handler->display->display_options['filters']['type']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
   );
+  $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
   /* Filter criterion: Location: Distance / Proximity */
   $handler->display->display_options['filters']['distance']['id'] = 'distance';
   $handler->display->display_options['filters']['distance']['table'] = 'location';
@@ -735,6 +710,72 @@ function lbd_blocks_views_default_views() {
     'default' => FALSE,
   );
   $handler->display->display_options['filters']['distance']['origin'] = 'static';
+  /* Filter criterion: Location: Country */
+  $handler->display->display_options['filters']['country']['id'] = 'country';
+  $handler->display->display_options['filters']['country']['table'] = 'location';
+  $handler->display->display_options['filters']['country']['field'] = 'country';
+  $handler->display->display_options['filters']['country']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['country']['expose']['operator_id'] = 'country_op';
+  $handler->display->display_options['filters']['country']['expose']['label'] = 'Country';
+  $handler->display->display_options['filters']['country']['expose']['operator'] = 'country_op';
+  $handler->display->display_options['filters']['country']['expose']['identifier'] = 'country';
+  $handler->display->display_options['filters']['country']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['country']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
+  /* Filter criterion: Content: Status (field_status) */
+  $handler->display->display_options['filters']['field_status_value']['id'] = 'field_status_value';
+  $handler->display->display_options['filters']['field_status_value']['table'] = 'field_data_field_status';
+  $handler->display->display_options['filters']['field_status_value']['field'] = 'field_status_value';
+  $handler->display->display_options['filters']['field_status_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_status_value']['expose']['operator_id'] = 'field_status_value_op';
+  $handler->display->display_options['filters']['field_status_value']['expose']['label'] = 'Status';
+  $handler->display->display_options['filters']['field_status_value']['expose']['operator'] = 'field_status_value_op';
+  $handler->display->display_options['filters']['field_status_value']['expose']['identifier'] = 'field_status_value';
+  $handler->display->display_options['filters']['field_status_value']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_status_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
+  /* Filter criterion: Content: Source group (field_hub_laptop) */
+  $handler->display->display_options['filters']['field_hub_laptop_target_id']['id'] = 'field_hub_laptop_target_id';
+  $handler->display->display_options['filters']['field_hub_laptop_target_id']['table'] = 'field_data_field_hub_laptop';
+  $handler->display->display_options['filters']['field_hub_laptop_target_id']['field'] = 'field_hub_laptop_target_id';
+  $handler->display->display_options['filters']['field_hub_laptop_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_hub_laptop_target_id']['expose']['operator_id'] = 'field_hub_laptop_target_id_op';
+  $handler->display->display_options['filters']['field_hub_laptop_target_id']['expose']['label'] = 'Hub';
+  $handler->display->display_options['filters']['field_hub_laptop_target_id']['expose']['operator'] = 'field_hub_laptop_target_id_op';
+  $handler->display->display_options['filters']['field_hub_laptop_target_id']['expose']['identifier'] = 'field_hub_laptop_target_id';
+  $handler->display->display_options['filters']['field_hub_laptop_target_id']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_hub_laptop_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Search';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
   $handler->display->display_options['displays'] = array(
     'page' => 'page',
     'default' => 0,
@@ -742,6 +783,8 @@ function lbd_blocks_views_default_views() {
   );
   $handler->display->display_options['attachment_position'] = 'after';
   $handler->display->display_options['inherit_exposed_filters'] = TRUE;
+  $handler->display->display_options['inherit_pager'] = TRUE;
+  $handler->display->display_options['render_pager'] = TRUE;
 
   /* Display: Test */
   $handler = $view->new_display('page', 'Test', 'page_2');
@@ -813,7 +856,6 @@ function lbd_blocks_views_default_views() {
     t('[gmap ]'),
     t('Page'),
     t('Global inventory'),
-    t('Content entity referenced from field_hub_laptop'),
     t('All'),
     t('Country'),
     t('Dooject status'),
@@ -826,6 +868,7 @@ function lbd_blocks_views_default_views() {
     t('City'),
     t('Created on'),
     t('Last updated'),
+    t('Status'),
     t('Test'),
     t('test'),
     t('Title'),
