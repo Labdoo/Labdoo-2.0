@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * @file
+ * Installation file for the Labdoo Manus module
+ *
+ * @ingroup labdoomenu
+ */
+
+
+/**
+ * Implements hook_enable
+ *
+ */
+function lbd_menus_enable()
+{
+  make_main_menu();
+}
+
+
+/**
+ * Implements hook_disable
+ *
+ */
+function lbd_menus_disable()
+{
+  clean_main_menu();
+}
+
+  

@@ -1,0 +1,218 @@
+<?php
+
+/**
+ * @defgroup labdoomenu LabdooMenu Labdoo Menus 
+ *
+ * This module implements all the Labdoo menus
+ *
+ */
+
+
+/**
+ * @file
+ * Main module file for the Labdoo Menus module 
+ *
+ * @ingroup labdoomenu
+ *
+ */
+
+
+/**
+ *
+ * Creates the main menu
+ *
+ */
+function make_main_menu() {
+
+  /*
+   * Global inventory menu
+   */
+  $item = array(
+            'link_path' => 'map',
+            'link_title' => 'Global inventory',
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -60,
+            'language' => 'en',
+            'plid' => 0, 
+            'module' => 'menu',
+          );
+  $inventoryMlid = menu_link_save($item);
+  drupal_set_message("mlid = " . $inventoryMlid);
+
+  /*
+   * Doojects menu item
+   */
+  $item = array(
+            'link_path' => 'node/3',
+            'link_title' => 'Doojects',
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -50,
+            'language' => 'en',
+            'plid' => 0, 
+            'module' => 'menu',
+          );
+  $doojectMlid = menu_link_save($item);
+  drupal_set_message("mlid = " . $doojectMlid);
+
+  $item = array(
+            'link_path' => 'node/add/laptop',
+            'link_title' => 'Tag',
+            'menu_name' => 'main-menu',
+            'weight' => -40,
+            'language' => 'en',
+            'plid' => $doojectMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+  drupal_set_message("mlid = " . $mlid);
+
+  $item = array(
+            'link_path' => 'node/3',
+            'link_title' => 'View',
+            'menu_name' => 'main-menu',
+            'weight' => -50,
+            'language' => 'en',
+            'plid' => $doojectMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+  drupal_set_message("mlid = " . $mlid);
+
+  /*
+   * Edoovillages menu item
+   */
+  $item = array(
+            'link_path' => 'node/4',
+            'link_title' => 'Edoovillages',
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -40,
+            'language' => 'en',
+            'plid' => 0, 
+            'module' => 'menu',
+          );
+  $edoovillageMlid = menu_link_save($item);
+  drupal_set_message("mlid = " . $doojectMlid);
+
+  $item = array(
+            'link_path' => 'node/add/edoovillage',
+            'link_title' => 'Create',
+            'menu_name' => 'main-menu',
+            'weight' => -40,
+            'language' => 'en',
+            'plid' => $edoovillageMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+  drupal_set_message("mlid = " . $mlid);
+
+  $item = array(
+            'link_path' => 'node/4',
+            'link_title' => 'View',
+            'menu_name' => 'main-menu',
+            'weight' => -50,
+            'language' => 'en',
+            'plid' => $edoovillageMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+  drupal_set_message("mlid = " . $mlid);
+
+  /*
+   * Hubs menu item
+   */
+  $item = array(
+            'link_path' => 'node/5',
+            'link_title' => 'Hubs',
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -30,
+            'language' => 'en',
+            'plid' => 0, 
+            'module' => 'menu',
+          );
+  $hubMlid = menu_link_save($item);
+  drupal_set_message("mlid = " . $doojectMlid);
+
+  $item = array(
+            'link_path' => 'node/add/hub',
+            'link_title' => 'Create',
+            'menu_name' => 'main-menu',
+            'weight' => -40,
+            'language' => 'en',
+            'plid' => $hubMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+  drupal_set_message("mlid = " . $mlid);
+
+  $item = array(
+            'link_path' => 'node/5',
+            'link_title' => 'View',
+            'menu_name' => 'main-menu',
+            'weight' => -50,
+            'language' => 'en',
+            'plid' => $hubMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+  drupal_set_message("mlid = " . $mlid);
+
+  /*
+   * Dootrips menu item
+   */
+  $item = array(
+            'link_path' => 'node/5',
+            'link_title' => 'Dootrips',
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -20,
+            'language' => 'en',
+            'plid' => 0, 
+            'module' => 'menu',
+          );
+  $dootripMlid = menu_link_save($item);
+  drupal_set_message("mlid = " . $doojectMlid);
+
+  $item = array(
+            'link_path' => 'node/add/dootrip',
+            'link_title' => 'Create',
+            'menu_name' => 'main-menu',
+            'weight' => -40,
+            'language' => 'en',
+            'plid' => $dootripMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+  drupal_set_message("mlid = " . $mlid);
+
+  $item = array(
+            'link_path' => 'node/5',
+            'link_title' => 'View',
+            'menu_name' => 'main-menu',
+            'weight' => -50,
+            'language' => 'en',
+            'plid' => $dootripMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+  drupal_set_message("mlid = " . $mlid);
+
+  return;
+}
+
+
+/**
+ *
+ * Creates the main menu
+ *
+ */
+function clean_main_menu() {
+  menu_delete_links("main-menu");
+  drupal_set_message("main-menu was cleaned up");
+  return;
+}
+
+

@@ -1,0 +1,4 @@
+name = Labdoo Blocks and Views Module 
+description = Implements all the Labdoo blocks and views 
+core = 7.x
+package = Labdoo 

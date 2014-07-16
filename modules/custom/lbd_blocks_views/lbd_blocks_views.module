@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @defgroup labdooblocksview LabdooBlocksView Labdoo Blocks and Views 
+ *
+ * This module implements all the Labdoo blocks and views 
+ *
+ */
+
+
+/**
+ * @file
+ * Main module file for the Labdoo Blocks and Views module 
+ *
+ * @ingroup labdooblocksview
+ *
+ */
+
+
+/**
+ * Implementation of hook_views_api
+ */
+function lbd_blocks_views_views_api() {
+  return array(
+    'api' => 3.0,
+  );
+} 
+
+
+/**
+ * Implementation of hook_views_default_views
+ */
+function lbd_blocks_views_views_default_views() {
+
+  include 'lbd_blocks_views_global_inventory.inc';
+
+  $views[$view->name] = $view;
+  return $views;
+}
+

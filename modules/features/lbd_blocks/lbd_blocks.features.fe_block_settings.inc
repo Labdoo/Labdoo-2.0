@@ -102,8 +102,8 @@ function lbd_blocks_default_fe_block_settings() {
         'weight' => '0',
       ),
       'bootstrap1' => array(
-        'region' => 'header',
-        'status' => '1',
+        'region' => '',
+        'status' => 0,
         'theme' => 'bootstrap1',
         'weight' => '-17',
       ),
