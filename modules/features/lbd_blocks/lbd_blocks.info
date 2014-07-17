@@ -43,4 +43,3 @@ features[variable][] = menu_parent_labdoo_action
 features[variable][] = node_options_labdoo_action
 features[variable][] = node_preview_labdoo_action
 features[variable][] = node_submitted_labdoo_action
-features[views_view][] = actions

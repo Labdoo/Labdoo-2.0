@@ -32,9 +32,14 @@ function lbd_blocks_views_views_api() {
  */
 function lbd_blocks_views_views_default_views() {
 
+  // Global inventory view
   include 'lbd_blocks_views_global_inventory.inc';
-
   $views[$view->name] = $view;
+
+  // Actions feed view
+  include 'lbd_blocks_views_actions.inc';
+  $views[$view->name] = $view;
+
   return $views;
 }
 

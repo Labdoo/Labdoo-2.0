@@ -24,24 +24,6 @@ function lbd_layout_menu_default_menu_links() {
     'expanded' => '0',
     'weight' => '-50',
   );
-  // Exported menu link: main-menu:actions
-  $menu_links['main-menu:actions'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'actions',
-    'router_path' => 'actions',
-    'link_title' => 'Actions',
-    'options' => array(
-      'attributes' => array(
-        'title' => 'Actions taking place within the Labdoo humanitarian network',
-      ),
-    ),
-    'module' => 'menu',
-    'hidden' => '0',
-    'external' => '0',
-    'has_children' => '0',
-    'expanded' => '0',
-    'weight' => '0',
-  );
   // Exported menu link: main-menu:node/3
   $menu_links['main-menu:node/3'] = array(
     'menu_name' => 'main-menu',
@@ -56,7 +38,7 @@ function lbd_layout_menu_default_menu_links() {
     'module' => 'menu',
     'hidden' => '0',
     'external' => '0',
-    'has_children' => '1',
+    'has_children' => '0',
     'expanded' => '1',
     'weight' => '0',
   );
@@ -78,32 +60,11 @@ function lbd_layout_menu_default_menu_links() {
     'expanded' => '1',
     'weight' => '0',
   );
-  // Exported menu link: main-menu:node/add/laptop
-  $menu_links['main-menu:node/add/laptop'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'node/add/laptop',
-    'router_path' => 'node/add/laptop',
-    'link_title' => 'Tag',
-    'options' => array(
-      'attributes' => array(
-        'title' => 'Tag a dooject',
-      ),
-    ),
-    'module' => 'menu',
-    'hidden' => '0',
-    'external' => '0',
-    'has_children' => '0',
-    'expanded' => '0',
-    'weight' => '-50',
-    'parent_path' => 'node/3',
-  );
   // Translatables
   // Included for use with string extractors like potx.
-  t('Actions');
   t('Doojects');
   t('Edoovillages');
   t('Home');
-  t('Tag');
 
 
   return $menu_links;

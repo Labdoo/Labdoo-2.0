@@ -86,37 +86,5 @@ function lbd_blocks_default_fe_block_settings() {
     'visibility' => '0',
   );
 
-  $export['views-actions-block'] = array(
-    'cache' => -1,
-    'custom' => '0',
-    'delta' => 'actions-block',
-    'module' => 'views',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => '0',
-      ),
-      'bootstrap1' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap1',
-        'weight' => '-17',
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => '0',
-      ),
-    ),
-    'title' => '',
-    'visibility' => '0',
-  );
-
   return $export;
 }

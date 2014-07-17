@@ -38,7 +38,6 @@ function make_main_menu() {
             'module' => 'menu',
           );
   $inventoryMlid = menu_link_save($item);
-  drupal_set_message("mlid = " . $inventoryMlid);
 
   /*
    * Doojects menu item
@@ -53,8 +52,8 @@ function make_main_menu() {
             'plid' => 0, 
             'module' => 'menu',
           );
+  $item['options']['attributes']['title'] = t('A dooject is a device that can be used for education (laptop, tablet, smartphone, etc.)');
   $doojectMlid = menu_link_save($item);
-  drupal_set_message("mlid = " . $doojectMlid);
 
   $item = array(
             'link_path' => 'node/add/laptop',
@@ -66,7 +65,6 @@ function make_main_menu() {
             'module' => 'menu',
           );
   $mlid = menu_link_save($item);
-  drupal_set_message("mlid = " . $mlid);
 
   $item = array(
             'link_path' => 'node/3',
@@ -78,7 +76,6 @@ function make_main_menu() {
             'module' => 'menu',
           );
   $mlid = menu_link_save($item);
-  drupal_set_message("mlid = " . $mlid);
 
   /*
    * Edoovillages menu item
@@ -93,8 +90,8 @@ function make_main_menu() {
             'plid' => 0, 
             'module' => 'menu',
           );
+  $item['options']['attributes']['title'] = t('An edoovillage is an education center where doojects are deployed');
   $edoovillageMlid = menu_link_save($item);
-  drupal_set_message("mlid = " . $doojectMlid);
 
   $item = array(
             'link_path' => 'node/add/edoovillage',
@@ -106,7 +103,6 @@ function make_main_menu() {
             'module' => 'menu',
           );
   $mlid = menu_link_save($item);
-  drupal_set_message("mlid = " . $mlid);
 
   $item = array(
             'link_path' => 'node/4',
@@ -118,7 +114,6 @@ function make_main_menu() {
             'module' => 'menu',
           );
   $mlid = menu_link_save($item);
-  drupal_set_message("mlid = " . $mlid);
 
   /*
    * Hubs menu item
@@ -133,8 +128,8 @@ function make_main_menu() {
             'plid' => 0, 
             'module' => 'menu',
           );
+  $item['options']['attributes']['title'] = t('A hub is a group of labdooers united to help bring doojects to edoovillages');
   $hubMlid = menu_link_save($item);
-  drupal_set_message("mlid = " . $doojectMlid);
 
   $item = array(
             'link_path' => 'node/add/hub',
@@ -146,7 +141,6 @@ function make_main_menu() {
             'module' => 'menu',
           );
   $mlid = menu_link_save($item);
-  drupal_set_message("mlid = " . $mlid);
 
   $item = array(
             'link_path' => 'node/5',
@@ -158,7 +152,6 @@ function make_main_menu() {
             'module' => 'menu',
           );
   $mlid = menu_link_save($item);
-  drupal_set_message("mlid = " . $mlid);
 
   /*
    * Dootrips menu item
@@ -173,8 +166,8 @@ function make_main_menu() {
             'plid' => 0, 
             'module' => 'menu',
           );
+  $item['options']['attributes']['title'] = t('A dootrip is a CO2-neutral route donated by travelers to bring doojects to edoovillages');
   $dootripMlid = menu_link_save($item);
-  drupal_set_message("mlid = " . $doojectMlid);
 
   $item = array(
             'link_path' => 'node/add/dootrip',
@@ -186,7 +179,6 @@ function make_main_menu() {
             'module' => 'menu',
           );
   $mlid = menu_link_save($item);
-  drupal_set_message("mlid = " . $mlid);
 
   $item = array(
             'link_path' => 'node/5',
@@ -198,7 +190,6 @@ function make_main_menu() {
             'module' => 'menu',
           );
   $mlid = menu_link_save($item);
-  drupal_set_message("mlid = " . $mlid);
 
   return;
 }
@@ -211,8 +202,6 @@ function make_main_menu() {
  */
 function clean_main_menu() {
   menu_delete_links("main-menu");
-  drupal_set_message("main-menu was cleaned up");
   return;
 }
-
 
