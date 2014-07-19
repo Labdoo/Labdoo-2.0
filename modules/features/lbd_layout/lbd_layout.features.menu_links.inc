@@ -24,48 +24,10 @@ function lbd_layout_menu_default_menu_links() {
     'expanded' => '0',
     'weight' => '-50',
   );
-  // Exported menu link: main-menu:node/3
-  $menu_links['main-menu:node/3'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'node/3',
-    'router_path' => 'node/%',
-    'link_title' => 'Doojects',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-    ),
-    'module' => 'menu',
-    'hidden' => '0',
-    'external' => '0',
-    'has_children' => '0',
-    'expanded' => '1',
-    'weight' => '0',
-  );
-  // Exported menu link: main-menu:node/4
-  $menu_links['main-menu:node/4'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'node/4',
-    'router_path' => 'node/%',
-    'link_title' => 'Edoovillages',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-    ),
-    'module' => 'menu',
-    'hidden' => '0',
-    'external' => '0',
-    'has_children' => '1',
-    'expanded' => '1',
-    'weight' => '0',
-  );
+
   // Translatables
   // Included for use with string extractors like potx.
-  t('Doojects');
-  t('Edoovillages');
   t('Home');
-
 
   return $menu_links;
 }

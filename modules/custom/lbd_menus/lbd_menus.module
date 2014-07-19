@@ -24,17 +24,44 @@
  */
 function make_main_menu() {
 
+  // Delete first any initial menus
+  menu_delete_links("main-menu");
+
   /*
-   * Global inventory menu
+   * Explore menu item
    */
   $item = array(
-            'link_path' => 'map',
-            'link_title' => 'Global inventory',
+            'link_path' => 'actions',
+            'link_title' => 'Explore',
             'menu_name' => 'main-menu',
             'expanded' => TRUE,
             'weight' => -60,
             'language' => 'en',
             'plid' => 0, 
+            'module' => 'menu',
+          );
+  $exploreMlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'actions',
+            'link_title' => 'Actions',
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -50,
+            'language' => 'en',
+            'plid' => $exploreMlid, 
+            'module' => 'menu',
+          );
+  $inventoryMlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'map',
+            'link_title' => 'Global inventory',
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -40,
+            'language' => 'en',
+            'plid' => $exploreMlid, 
             'module' => 'menu',
           );
   $inventoryMlid = menu_link_save($item);

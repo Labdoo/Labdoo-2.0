@@ -188,11 +188,9 @@ function labdoo_render_map_geolocate_node() {
     $map_options = '{"mapTypeId":"roadmap", "zoom":2}';
   }
 
-  print ip_geoloc_output_map_multi_location($locations, $div_id, $map_options, $map_style, 
+  return ip_geoloc_output_map_multi_location($locations, $div_id, $map_options, $map_style, 
                                             $marker_color, $visitor_marker, 
                                             $center_option, $center_latlng, FALSE);
-
-  return;
 }
 
 

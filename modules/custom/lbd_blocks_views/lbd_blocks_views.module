@@ -43,3 +43,50 @@ function lbd_blocks_views_views_default_views() {
   return $views;
 }
 
+
+/**
+ * Implementation of hook_block_info 
+ */
+function lbd_blocks_views_block_info() {
+
+  // Geolocation map for nodes
+  $blocks['block_geolocation_map_node'] = array(
+    'info' => "Geolocation map for nodes",
+    'status' => 1,
+    'visibility' => BLOCK_VISIBILITY_PHP,
+    'pages' => "
+<?php
+  \$match = FALSE;
+  \$types = array('laptop' => 1,'dootrip' => 1,'hub' => 1, 'edoovillage' => 1) ;
+
+  if ((arg(0) == 'node') && is_numeric(arg(1))) {
+    \$node = node_load(arg(1));
+    \$match = isset(\$types[\$node->type]);
+  }
+
+  return \$match;
+?>
+               ",
+    'region' => "content",
+  );
+
+  return $blocks;
+}
+
+
+/**
+ * Implementation of hook_block_view 
+ */
+function lbd_blocks_views_block_view($delta = '') {
+
+  // Geolocation map for nodes
+  switch ($delta) {
+    case 'block_geolocation_map_node':
+      $block['subject'] = "<none>";
+      $block['content'] = labdoo_render_map_geolocate_node();
+      break;
+  }
+
+  return $block;
+}
+

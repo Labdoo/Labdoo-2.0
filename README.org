@@ -20,7 +20,10 @@
     tail -f nohup.out
     #+END_EXAMPLE
 
-  + Configure it: =chroot lbd/ /tmp/install/config.sh= (See next section for sample values when running this command)
+  + Configure it (See next section for sample values when running the following command): 
+    #+BEGIN_EXAMPLE
+    chroot lbd/ /tmp/install/config.sh 
+    #+END_EXAMPLE
 
   + That's it, you are now ready to open your browser and access your local Labdoo installation. 
   
