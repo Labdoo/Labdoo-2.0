@@ -12,7 +12,7 @@ drush @lbd $enOrDis -y labdoo_lib lbd_content_types labdoo_objects lbd_communica
                        lbd_visualize lbd_dootrip lbd_actions 
 
 # FIXME: Somehow labdoo_lib needs a reinstall (so that the nodes created by labdoo_lib.install are correct) 
-# Remember to enable back labdoo_lib and all the libraries that depend on it
+# Remember to enable back labdoo_lib and all the libraries installed so far that depend on it
 drush @lbd dis -y labdoo_lib
 drush @lbd en -y labdoo_lib lbd_communicate lbd_actions lbd_dootrip
 
@@ -26,5 +26,14 @@ drush @lbd $enOrDis -y lbd_sample_doojects lbd_sample_edoovillages lbd_sample_hu
 
 drush @lbd $enOrDis -y lbd_gmap
 
-# Finally, clear the cache
+drush @lbd $enOrDis -y lbd_blocks_views
+
+# Somehow after installing blocks and views a refresh of the cache is needed
+# so that the various views and blocks are correctly enabled
 drush @lbd cc all
+
+drush @lbd $enOrDis -y lbd_menus 
+
+# Finally, clear the cache to get things to a proper initial state
+drush @lbd cc all
+

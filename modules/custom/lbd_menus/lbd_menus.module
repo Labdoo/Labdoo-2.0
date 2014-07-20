@@ -184,7 +184,7 @@ function make_main_menu() {
    * Dootrips menu item
    */
   $item = array(
-            'link_path' => 'node/5',
+            'link_path' => 'node/6',
             'link_title' => 'Dootrips',
             'menu_name' => 'main-menu',
             'expanded' => TRUE,
@@ -208,7 +208,7 @@ function make_main_menu() {
   $mlid = menu_link_save($item);
 
   $item = array(
-            'link_path' => 'node/5',
+            'link_path' => 'node/6',
             'link_title' => 'View',
             'menu_name' => 'main-menu',
             'weight' => -50,
