@@ -18,7 +18,7 @@ echo
 
 $(dirname $0)/mysqld.sh start
 drush @lbd user-password admin --password="$passwd"
-drush sqlq "update users set mail='$MAIL' where uid=1"
+drush @lbd sqlq "update users set mail='$MAIL' where uid=1"
 
 ### drush may create css/js files with wrong(root) permissions
 rm -rf /var/www/lbd/sites/default/files/css/

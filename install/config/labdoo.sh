@@ -25,6 +25,10 @@ $cwd/gmailsmtp.sh
 drush @lbd $enOrDis -y lbd_sample_doojects lbd_sample_edoovillages lbd_sample_hub 
 
 drush @lbd $enOrDis -y lbd_gmap
+echo "
+===> Enabled gmap module. If markers don't show up, please refresh their cache by going to admin/config/services/gmap and clicking on \"Regenerate\"
+"
+
 
 drush @lbd $enOrDis -y lbd_blocks_views
 
