@@ -157,7 +157,7 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
   }
 
   print_dashboard_switcher();
-  print_dashboard_objects('laptop', $objects, $metrics);
+  print_dashboard_objects('laptop', 'doojects', $objects, $metrics);
 
 }
 
@@ -278,7 +278,7 @@ function lbd_display_dashboard_edoovillages($hubId = NULL, $country = NULL) {
   $metrics[10] = array('label' => 'Open', 'field' => 'open', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
 
   print_dashboard_switcher();
-  print_dashboard_objects('laptop', $objects, $metrics);
+  print_dashboard_objects('edoovillage', 'edoovillages', $objects, $metrics);
 
 }
 
@@ -370,7 +370,7 @@ function lbd_display_dashboard_hubs($country = NULL) {
     $objects[0]['remainingShared'] = ""; 
     $objects[0]['pcompleted'] = 0;
     $objects[0]['country'] = "";
-    $objects[0]['link'] = "No edoovillages in this view"; 
+    $objects[0]['link'] = "No hubs in this view"; 
 
   }
 
@@ -385,7 +385,103 @@ function lbd_display_dashboard_hubs($country = NULL) {
   $metrics[8] = array('label' => 'Remaining', 'field' => 'remainingShared', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
 
   print_dashboard_switcher();
-  print_dashboard_objects('laptop', $objects, $metrics);
+  print_dashboard_objects('hub', 'hubs', $objects, $metrics);
+
+}
+
+
+/**
+ * Displays a dashboard of dootrips
+ * 
+ * @param country Country where the dootrips are terminated or NULL for all countries 
+ *
+ * @return A dashboard of the dootrips 
+ *
+ */
+function lbd_display_dashboard_dootrips($country = NULL) {
+
+  // Fetch all objects
+  if($country != NULL)
+  {
+    $query = "SELECT entity_id FROM field_data_field_destination_of_the_trip 
+              WHERE field_destination_of_the_trip_lid IN (SELECT lid FROM location WHERE country=:co)";
+    $result = db_query($query, array(':co' => $country));
+  } 
+  else {
+    $query = "SELECT entity_id FROM field_data_field_destination_of_the_trip";
+    $result = db_query($query);
+  }
+
+  $objects = array();
+  foreach($result as $item) {
+
+    $objectNid = $item->entity_id;
+    $node = node_load($item->entity_id);
+
+    // Extract title (mandatory field)
+    $objects[$objectNid]['title'] = $node->title; 
+
+    // Extract capacity field (mandatory field)
+    $objects[$objectNid]['capacity'] = $node->field_dootrip_capacity['und'][0]['value'];
+
+    // Extract number of dootrips field (mandatory field)
+    $objects[$objectNid]['numberDootrips'] = 1;
+
+    // Extract status field (mandatory field)
+    $statusLabels = list_allowed_values(field_info_field("field_status_dootrip"));
+    $objects[$objectNid]['status'] = $statusLabels[$node->field_status_dootrip['und'][0]['value']];
+
+    // Extract completed field (mandatory field)
+    if($node->field_status_dootrip['und'][0]['value'] == "DS1")
+      $objects[$objectNid]['completed'] = $objects[$objectNid]['capacity'];
+    else
+      $objects[$objectNid]['completed'] = 0;
+
+    // Get the source country
+    $location = $node->field_origin_of_the_trip['und'][0];
+    $country_names = location_get_iso3166_list();
+    $objects[$objectNid]['srcCountry'] = $location['country'];
+    if(array_key_exists($location['country'], $country_names))
+        $objects[$objectNid]['srcCountry'] = $country_names[$location['country']];
+
+    // Get the destination country
+    $location = $node->field_destination_of_the_trip['und'][0];
+    $country_names = location_get_iso3166_list();
+    $objects[$objectNid]['dstCountry'] = $location['country'];
+    if(array_key_exists($location['country'], $country_names))
+        $objects[$objectNid]['dstCountry'] = $country_names[$location['country']];
+        
+    // Calculate the link to the object
+    global $language;
+    if ($language->language != "en")
+      $urlPrefix = "/" . $language->language;
+    else
+      $urlPrefix = "";
+    $objects[$objectNid]['link'] = "<!--$node->title (comment added to help alphabetically order this column)-->" . 
+                                   "<a href='$urlPrefix/node/$objectNid'>$node->title</a>";
+  }
+
+  if(empty($objects)) {
+    $objects[0]['title'] = ""; 
+    $objects[0]['capacity'] = "";
+    $objects[0]['numberDootrips'] = "";
+    $objects[0]['status'] = "";
+    $objects[0]['completed'] = "";
+    $objects[0]['srcCountry'] = "";
+    $objects[0]['dstCountry'] = "";
+    $objects[0]['link'] = "No dootrips in this view"; 
+  }
+
+  $metrics[0] = array('label' => 'Dootrip', 'field' => 'link', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[1] = array('label' => 'Doojects capacity', 'field' => 'capacity', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
+  $metrics[2] = array('label' => 'Status', 'field' => 'status', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+  $metrics[3] = array('label' => 'Source country', 'field' => 'srcCountry', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+  $metrics[4] = array('label' => 'Destination country', 'field' => 'dstCountry', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+  $metrics[5] = array('label' => 'Total number of dootrips', 'field' => 'numberDootrips', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[6] = array('label' => 'Doojects transported', 'field' => 'completed', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
+
+  print_dashboard_switcher();
+  print_dashboard_objects('dootrip', 'dootrips', $objects, $metrics);
 
 }
 
@@ -409,18 +505,28 @@ function print_dashboard_switcher()
       $url1 = "Doojects";
       $url2 = "Edoovillages";
       $url3 = "Hubs";
+      $url4 = "Dootrips";
       break;
 
     case "content/hubs-dashboard":
       $url1 = "Hubs";
       $url2 = "Edoovillages";
       $url3 = "Doojects";
+      $url4 = "Dootrips";
       break;
 
     case "content/edoovillages-dashboard":
       $url1 = "Edoovillages";
       $url2 = "Doojects";
       $url3 = "Hubs";
+      $url4 = "Dootrips";
+      break;
+
+    case "content/dootrips-dashboard":
+      $url1 = "Dootrips";
+      $url2 = "Doojects";
+      $url3 = "Hubs";
+      $url4 = "Edoovillages";
       break;
 
   }
@@ -431,6 +537,7 @@ function print_dashboard_switcher()
            <option value='$lang/content/$url1-dashboard'>$url1</option>
            <option value='$lang/content/$url2-dashboard'>$url2</option>
            <option value='$lang/content/$url3-dashboard'>$url3</option>
+           <option value='$lang/content/$url4-dashboard'>$url4</option>
            </select>
            </form>";
 
@@ -446,7 +553,7 @@ function print_dashboard_switcher()
  * Examples of objects are: doojects, hubs, edoovillages. 
  *
  */
-function print_dashboard_objects($objectsType, $objects, $metrics)
+function print_dashboard_objects($objectsType, $objectsName, $objects, $metrics)
 {
 
   $lastElement = sizeof($metrics)+1;
@@ -621,12 +728,16 @@ var initState = {
 
  ");
 
-  foreach($metrics as $index => $metric) 
+  $columnsCounter = 0;
+  foreach($metrics as $index => $metric) { 
     if($metric['menu'] == "yes") {
       print("columnsTable.addRow([$index, data.getColumnLabel($index)]);");
-      print("initState.selectedValues.push(data.getColumnLabel($index));");
+      if($columnsCounter < 4)
+        print("initState.selectedValues.push(data.getColumnLabel($index));");
+      $columnsCounter++;
+    }
   }
-  
+   
   print("
 
 /*
@@ -687,15 +798,16 @@ var dataMap = new google.visualization.DataTable();
 dataMap.addColumn('number', 'LATITUDE', 'Latitude');
 dataMap.addColumn('number', 'LONGITUDE', 'Longitude');
 dataMap.addColumn('string', 'DESCRIPTION', 'Description');
-dataMap.addColumn('number', 'Number of Doojects', 'Number of Doojects');
+dataMap.addColumn('number', 'Number of "); print($objectsName . "', 'Number of Doojects');
 
 var rows = [
 
 ");
 
   $objectsGeoCount = labdoo_getnum_objects_by_city($objectsType);
-  foreach ($objectsGeoCount as $item)
+  foreach ($objectsGeoCount as $item) {
     print("[" . $item['lat']. ", " . $item['lon'] . ", \"" . $item['city'] . ", " . $item['country'] . "\", ". $item['count'] ."],");
+  }
 
   print("
 

@@ -188,11 +188,9 @@ function labdoo_render_map_geolocate_node() {
     $map_options = '{"mapTypeId":"roadmap", "zoom":2}';
   }
 
-  print ip_geoloc_output_map_multi_location($locations, $div_id, $map_options, $map_style, 
+  return ip_geoloc_output_map_multi_location($locations, $div_id, $map_options, $map_style, 
                                             $marker_color, $visitor_marker, 
                                             $center_option, $center_latlng, FALSE);
-
-  return;
 }
 
 
@@ -360,6 +358,24 @@ function labdoo_lib_node_presave($node) {
     }
     $dootripTitle = _generate_dootrip_title($node, $dootripId);
     $node->title = $dootripTitle;
+    /*
+     * Update GPS coordinates
+     */
+    $location = $node->field_origin_of_the_trip['und'][0]; 
+    $ret = labdoo_lookup_coordinates($location['country'], 
+                                     $location['city'], 
+                                     $node->field_origin_of_the_trip['und'][0]['latitude'], 
+                                     $node->field_origin_of_the_trip['und'][0]['longitude']);
+    if($ret == 0) // If successful, do not let the system attempt to geolocate it anymore
+      $node->field_origin_of_the_trip['und'][0]['inhibit_geocode'] = TRUE;
+
+    $location = $node->field_destination_of_the_trip['und'][0]; 
+    $ret = labdoo_lookup_coordinates($location['country'], 
+                                     $location['city'], 
+                                     $node->field_destination_of_the_trip['und'][0]['latitude'], 
+                                     $node->field_destination_of_the_trip['und'][0]['longitude']);
+    if($ret == 0) 
+      $node->field_destination_of_the_trip['und'][0]['inhibit_geocode'] = TRUE;
   }
 
   return;
@@ -445,9 +461,46 @@ function lbd_get_total_num_objects($objectType) {
 }
 
 
+/*
+ * update_city
+ *
+ */
+function update_city($lid, &$objectsCount) {  
+
+  $country_names = location_get_iso3166_list();
+
+  $query = "SELECT city, country FROM location WHERE lid=$lid";
+  $city = db_query($query)->fetchObject()->city;
+  $country = db_query($query)->fetchObject()->country;
+  $query = "SELECT latitude, longitude FROM location WHERE lid=$lid";
+  $lat = db_query($query)->fetchObject()->latitude;
+  $lon = db_query($query)->fetchObject()->longitude;
+  if($lat == 0 and $lon == 0)
+    labdoo_lookup_coordinates($country, $city, $lat, $lon);
+
+  if(array_key_exists($country, $country_names))
+    $countryExt = $country_names[$country];
+  else 
+    $countryExt = $country;
+
+  if(!isset($objectsCount[strtoupper($city)]))
+  {
+    $objectsCount[strtoupper($city)]['count'] = 0;
+    $objectsCount[strtoupper($city)]['lat'] = $lat;
+    $objectsCount[strtoupper($city)]['lon'] = $lon;
+    $objectsCount[strtoupper($city)]['country'] = $countryExt;
+  }
+
+  $objectsCount[strtoupper($city)]['count']++;
+  $objectsCount[strtoupper($city)]['city'] = $city;
+  return;
+}
+
+
 /** 
  * Calculates the number of objects for each city
  * 
+ * @param type The type of objects 
  * @return An array indexed by the name of the city in capital letters
  * and with various fields: 
  *
@@ -459,42 +512,29 @@ function lbd_get_total_num_objects($objectType) {
  */ 
 function labdoo_getnum_objects_by_city($type) {
 
-  $country_names = location_get_iso3166_list();
-
-//  $query = "SELECT nid, vid FROM node object WHERE (type='$type' AND vid=(SELECT MAX(vid) FROM node WHERE nid=object.nid))";
+  $objectsCount = array();
   $query = "SELECT nid, vid FROM node WHERE type='$type'";
-  $doojects = db_query($query);
+  $objects = db_query($query);
 
-  foreach($doojects as $dooject) {
-
-    $query = "SELECT lid FROM location_instance WHERE nid=$dooject->nid AND vid=$dooject->vid";
-    $loc = db_query($query)->fetchField();
-    $query = "SELECT city, country FROM location WHERE lid=$loc";
-    $city = db_query($query)->fetchObject()->city;
-    $country = db_query($query)->fetchObject()->country;
-    $query = "SELECT latitude, longitude FROM location WHERE lid=$loc";
-    $lat = db_query($query)->fetchObject()->latitude;
-    $lon = db_query($query)->fetchObject()->longitude;
-
-    if(array_key_exists($country, $country_names))
-        $countryExt = $country_names[$country];
-    else 
-        $countryExt = $country;
-
-    if(!isset($doojectsCount[strtoupper($city)]))
-    {
-      $doojectsCount[strtoupper($city)]['count'] = 0;
-      $doojectsCount[strtoupper($city)]['lat'] = $lat;
-      $doojectsCount[strtoupper($city)]['lon'] = $lon;
-      $doojectsCount[strtoupper($city)]['country'] = $countryExt;
+  foreach($objects as $object) {
+    if($type == "dootrip") {
+      $query = "SELECT field_origin_of_the_trip_lid AS lid FROM field_data_field_origin_of_the_trip 
+                WHERE entity_id=$object->nid";
+      $lid = db_query($query)->fetchField();
+      update_city($lid, $objectsCount);
+      $query = "SELECT field_destination_of_the_trip_lid AS lid FROM field_data_field_destination_of_the_trip 
+                WHERE entity_id=$object->nid";
+      $lid = db_query($query)->fetchField();
+      update_city($lid, $objectsCount);
     }
-
-    $doojectsCount[strtoupper($city)]['count']++;
-    $doojectsCount[strtoupper($city)]['city'] = $city;
-
+    else {
+      $query = "SELECT lid FROM location_instance WHERE nid=$object->nid AND vid=$object->vid";
+      $lid = db_query($query)->fetchField();
+      update_city($lid, $objectsCount);
+    }
   } 
 
-  return $doojectsCount;
+  return $objectsCount;
 }
 
 /**

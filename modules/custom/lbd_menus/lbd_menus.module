@@ -1,0 +1,234 @@
+<?php
+
+/**
+ * @defgroup labdoomenu LabdooMenu Labdoo Menus 
+ *
+ * This module implements all the Labdoo menus
+ *
+ */
+
+
+/**
+ * @file
+ * Main module file for the Labdoo Menus module 
+ *
+ * @ingroup labdoomenu
+ *
+ */
+
+
+/**
+ *
+ * Creates the main menu
+ *
+ */
+function make_main_menu() {
+
+  // Delete first any initial menus
+  menu_delete_links("main-menu");
+
+  /*
+   * Explore menu item
+   */
+  $item = array(
+            'link_path' => 'actions',
+            'link_title' => 'Explore',
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -60,
+            'language' => 'en',
+            'plid' => 0, 
+            'module' => 'menu',
+          );
+  $exploreMlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'actions',
+            'link_title' => 'Actions',
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -50,
+            'language' => 'en',
+            'plid' => $exploreMlid, 
+            'module' => 'menu',
+          );
+  $inventoryMlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'map',
+            'link_title' => 'Global inventory',
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -40,
+            'language' => 'en',
+            'plid' => $exploreMlid, 
+            'module' => 'menu',
+          );
+  $inventoryMlid = menu_link_save($item);
+
+  /*
+   * Doojects menu item
+   */
+  $item = array(
+            'link_path' => 'node/3',
+            'link_title' => 'Doojects',
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -50,
+            'language' => 'en',
+            'plid' => 0, 
+            'module' => 'menu',
+          );
+  $item['options']['attributes']['title'] = t('A dooject is a device that can be used for education (laptop, tablet, smartphone, etc.)');
+  $doojectMlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'node/add/laptop',
+            'link_title' => 'Tag',
+            'menu_name' => 'main-menu',
+            'weight' => -40,
+            'language' => 'en',
+            'plid' => $doojectMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'node/3',
+            'link_title' => 'View',
+            'menu_name' => 'main-menu',
+            'weight' => -50,
+            'language' => 'en',
+            'plid' => $doojectMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  /*
+   * Edoovillages menu item
+   */
+  $item = array(
+            'link_path' => 'node/4',
+            'link_title' => 'Edoovillages',
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -40,
+            'language' => 'en',
+            'plid' => 0, 
+            'module' => 'menu',
+          );
+  $item['options']['attributes']['title'] = t('An edoovillage is an education center where doojects are deployed');
+  $edoovillageMlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'node/add/edoovillage',
+            'link_title' => 'Create',
+            'menu_name' => 'main-menu',
+            'weight' => -40,
+            'language' => 'en',
+            'plid' => $edoovillageMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'node/4',
+            'link_title' => 'View',
+            'menu_name' => 'main-menu',
+            'weight' => -50,
+            'language' => 'en',
+            'plid' => $edoovillageMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  /*
+   * Hubs menu item
+   */
+  $item = array(
+            'link_path' => 'node/5',
+            'link_title' => 'Hubs',
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -30,
+            'language' => 'en',
+            'plid' => 0, 
+            'module' => 'menu',
+          );
+  $item['options']['attributes']['title'] = t('A hub is a group of labdooers united to help bring doojects to edoovillages');
+  $hubMlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'node/add/hub',
+            'link_title' => 'Create',
+            'menu_name' => 'main-menu',
+            'weight' => -40,
+            'language' => 'en',
+            'plid' => $hubMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'node/5',
+            'link_title' => 'View',
+            'menu_name' => 'main-menu',
+            'weight' => -50,
+            'language' => 'en',
+            'plid' => $hubMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  /*
+   * Dootrips menu item
+   */
+  $item = array(
+            'link_path' => 'node/6',
+            'link_title' => 'Dootrips',
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -20,
+            'language' => 'en',
+            'plid' => 0, 
+            'module' => 'menu',
+          );
+  $item['options']['attributes']['title'] = t('A dootrip is a CO2-neutral route donated by travelers to bring doojects to edoovillages');
+  $dootripMlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'node/add/dootrip',
+            'link_title' => 'Create',
+            'menu_name' => 'main-menu',
+            'weight' => -40,
+            'language' => 'en',
+            'plid' => $dootripMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'node/6',
+            'link_title' => 'View',
+            'menu_name' => 'main-menu',
+            'weight' => -50,
+            'language' => 'en',
+            'plid' => $dootripMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  return;
+}
+
+
+/**
+ *
+ * Creates the main menu
+ *
+ */
+function clean_main_menu() {
+  menu_delete_links("main-menu");
+  return;
+}
+

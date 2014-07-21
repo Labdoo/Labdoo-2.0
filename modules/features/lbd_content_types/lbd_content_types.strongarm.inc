@@ -14,7 +14,7 @@ function lbd_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_action';
-  $strongarm->value = 'edit-location-settings';
+  $strongarm->value = 'edit-comment';
   $export['additional_settings__active_tab_action'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -28,7 +28,7 @@ function lbd_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_action';
-  $strongarm->value = '2';
+  $strongarm->value = '1';
   $export['comment_action'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -49,7 +49,7 @@ function lbd_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_mode_action';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['comment_default_mode_action'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -77,7 +77,7 @@ function lbd_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_form_location_action';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['comment_form_location_action'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -91,7 +91,7 @@ function lbd_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_action';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['comment_preview_action'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -112,7 +112,7 @@ function lbd_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_subject_field_action';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['comment_subject_field_action'] = $strongarm;
 
   $strongarm = new stdClass();

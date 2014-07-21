@@ -26,6 +26,9 @@ function lbd_visualize_create_node($function, $title, $path)
     case "lbd_display_dashboard_hubs":
       $functionExt = $function . "(\$country)";
       break;
+    case "lbd_display_dashboard_dootrips":
+      $functionExt = $function . "(\$country)";
+      break;
 
   }
  
@@ -81,6 +84,7 @@ function lbd_visualize_enable()
   lbd_visualize_create_node("lbd_display_dashboard_doojects", "Doojects Dashboard", "content/doojects-dashboard"); 
   lbd_visualize_create_node("lbd_display_dashboard_edoovillages", "Edoovillages Dashboard", "content/edoovillages-dashboard"); 
   lbd_visualize_create_node("lbd_display_dashboard_hubs", "Hubs Dashboard", "content/hubs-dashboard"); 
+  lbd_visualize_create_node("lbd_display_dashboard_dootrips", "Dootrips Dashboard", "content/dootrips-dashboard"); 
   drupal_set_message("lbd_visualize enabled correctly");
 }
 

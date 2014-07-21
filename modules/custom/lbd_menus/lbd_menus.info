@@ -1,0 +1,5 @@
+name = Labdoo Menus Module 
+description = Implements all the Labdoo menus 
+core = 7.x
+package = Labdoo 
+dependencies[] = lbd_blocks_views 
