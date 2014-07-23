@@ -22,7 +22,7 @@ $cwd/gmailsmtp.sh
 # Some sample nodes for development (disable this for production)
 # Note: these modules need to be installed after smtp is installed
 #       since they need to send out notification emails
-drush @lbd $enOrDis -y lbd_sample_doojects lbd_sample_edoovillages lbd_sample_hub lbd_sample_dootrips 
+drush @lbd $enOrDis -y lbd_sample_doojects lbd_sample_edoovillages lbd_sample_hubs lbd_sample_dootrips 
 
 drush @lbd $enOrDis -y lbd_gmap
 echo "
