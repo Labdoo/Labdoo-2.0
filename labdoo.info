@@ -83,6 +83,7 @@ dependencies[] = gmap
 dependencies[] = gmap_location
 dependencies[] = views_autocomplete_filters
 dependencies[] = views_dependent_filters
+dependencies[] = simplenews
 
 ;dependencies[] = node_clone
 

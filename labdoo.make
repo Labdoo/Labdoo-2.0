@@ -59,6 +59,7 @@ projects[views_slideshow][version] = "3.1"
 projects[gmap][version] = "2.9"
 projects[views_autocomplete_filters][version] = "1.1"
 projects[views_dependent_filters][version] = "1.1"
+projects[simplenews][version] = "1.1"
 ;projects[node_clone][version] = "1.0-rc2"
 
 ;--------------------
@@ -90,7 +91,6 @@ projects[mailsystem][version] = "2.34"
 projects[phpmailer][version] = "3.x-dev"
 projects[mimemail][version] = "1.0-beta1"
 projects[reroute_email][version] = "1.1"
-projects[simplenews][version] = "1.0"
 projects[mass_contact][version] = "1.0-beta3"
 projects[smtp][version] = "1.0"
 

@@ -38,6 +38,8 @@ drush @lbd cc all
 
 drush @lbd $enOrDis -y lbd_menus 
 
+drush @lbd $enOrDis -y lbd_roles
+
 # Finally, clear the cache to get things to a proper initial state
 drush @lbd cc all
 

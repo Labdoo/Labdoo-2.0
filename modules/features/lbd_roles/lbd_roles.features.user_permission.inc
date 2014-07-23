@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * lbd_simplenews.features.user_permission.inc
+ * lbd_roles.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function lbd_simplenews_user_default_permissions() {
+function lbd_roles_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: administer newsletters.
@@ -15,6 +15,7 @@ function lbd_simplenews_user_default_permissions() {
     'name' => 'administer newsletters',
     'roles' => array(
       0 => 'administrator',
+      1 => 'newsletter manager',
     ),
     'module' => 'simplenews',
   );
@@ -33,6 +34,7 @@ function lbd_simplenews_user_default_permissions() {
     'name' => 'administer simplenews subscriptions',
     'roles' => array(
       0 => 'administrator',
+      1 => 'newsletter manager',
     ),
     'module' => 'simplenews',
   );
@@ -41,8 +43,7 @@ function lbd_simplenews_user_default_permissions() {
   $permissions['create simplenews content'] = array(
     'name' => 'create simplenews content',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'translator',
+      0 => 'newsletter manager',
     ),
     'module' => 'node',
   );
@@ -50,9 +51,7 @@ function lbd_simplenews_user_default_permissions() {
   // Exported permission: delete any simplenews content.
   $permissions['delete any simplenews content'] = array(
     'name' => 'delete any simplenews content',
-    'roles' => array(
-      0 => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -60,27 +59,15 @@ function lbd_simplenews_user_default_permissions() {
   $permissions['delete own simplenews content'] = array(
     'name' => 'delete own simplenews content',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'translator',
+      0 => 'newsletter manager',
     ),
     'module' => 'node',
-  );
-
-  // Exported permission: delete terms in newsletter.
-  $permissions['delete terms in newsletter'] = array(
-    'name' => 'delete terms in newsletter',
-    'roles' => array(
-      0 => 'administrator',
-    ),
-    'module' => 'taxonomy',
   );
 
   // Exported permission: edit any simplenews content.
   $permissions['edit any simplenews content'] = array(
     'name' => 'edit any simplenews content',
-    'roles' => array(
-      0 => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -88,19 +75,9 @@ function lbd_simplenews_user_default_permissions() {
   $permissions['edit own simplenews content'] = array(
     'name' => 'edit own simplenews content',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'translator',
+      0 => 'newsletter manager',
     ),
     'module' => 'node',
-  );
-
-  // Exported permission: edit terms in newsletter.
-  $permissions['edit terms in newsletter'] = array(
-    'name' => 'edit terms in newsletter',
-    'roles' => array(
-      0 => 'administrator',
-    ),
-    'module' => 'taxonomy',
   );
 
   // Exported permission: send newsletter.
@@ -108,6 +85,7 @@ function lbd_simplenews_user_default_permissions() {
     'name' => 'send newsletter',
     'roles' => array(
       0 => 'administrator',
+      1 => 'newsletter manager',
     ),
     'module' => 'simplenews',
   );
