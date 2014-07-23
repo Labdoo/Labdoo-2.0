@@ -17,6 +17,12 @@
  */
 
 
+/*
+ * ==========
+ * VIEWS CODE
+ * ==========
+ */
+
 /**
  * Implementation of hook_views_api
  */
@@ -40,9 +46,19 @@ function lbd_blocks_views_views_default_views() {
   include 'lbd_blocks_views_actions.inc';
   $views[$view->name] = $view;
 
+  // Newsletters view
+  include 'lbd_blocks_views_newsletters.inc';
+  $views[$view->name] = $view;
+
   return $views;
 }
 
+
+/*
+ * ==========
+ * BLOCKS CODE
+ * ==========
+ */
 
 /**
  * Implementation of hook_block_info 

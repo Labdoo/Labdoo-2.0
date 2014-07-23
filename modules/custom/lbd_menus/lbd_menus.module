@@ -52,7 +52,7 @@ function make_main_menu() {
             'plid' => $exploreMlid, 
             'module' => 'menu',
           );
-  $inventoryMlid = menu_link_save($item);
+  $mlid = menu_link_save($item);
 
   $item = array(
             'link_path' => 'map',
@@ -64,7 +64,19 @@ function make_main_menu() {
             'plid' => $exploreMlid, 
             'module' => 'menu',
           );
-  $inventoryMlid = menu_link_save($item);
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'newsletters',
+            'link_title' => 'Newsletters',
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -30,
+            'language' => 'en',
+            'plid' => $exploreMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
 
   /*
    * Doojects menu item
@@ -214,6 +226,44 @@ function make_main_menu() {
             'weight' => -50,
             'language' => 'en',
             'plid' => $dootripMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  /*
+   * Newsletter menu item
+   */
+  $item = array(
+            'link_path' => 'node/add/simplenews',
+            'link_title' => 'Newsletters',
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -10,
+            'language' => 'en',
+            'plid' => 0, 
+            'module' => 'menu',
+          );
+  $item['options']['attributes']['title'] = t('To help bring awareness and outreach your local community, you can create your own newsletter');
+  $newsletterMlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'node/add/simplenews',
+            'link_title' => 'Create an issue',
+            'menu_name' => 'main-menu',
+            'weight' => -40,
+            'language' => 'en',
+            'plid' => $newsletterMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'admin/config/services/simplenews',
+            'link_title' => 'Manage',
+            'menu_name' => 'main-menu',
+            'weight' => -30,
+            'language' => 'en',
+            'plid' => $newsletterMlid, 
             'module' => 'menu',
           );
   $mlid = menu_link_save($item);
