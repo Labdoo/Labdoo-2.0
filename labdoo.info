@@ -93,7 +93,7 @@ dependencies[] = media_internet
 dependencies[] = file_entity 
 dependencies[] = media 
 dependencies[] = multiform 
-;dependencies[] = colorbox 
+dependencies[] = colorbox 
 ;dependencies[] = plupload 
 ;dependencies[] = media_gallery 
 
