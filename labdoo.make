@@ -75,7 +75,7 @@ libraries[colorbox][download][url] = "https://github.com/jackmoore/colorbox/arch
 ;libraries[plupload][directory_name] = "plupload"
 ;libraries[plupload][download][type] = "get"
 ;libraries[plupload][download][url] = "https://github.com/moxiecode/plupload/archive/v1.5.8.zip"
-;projects[media_gallery][version] = "1.0-beta8"
+projects[media_gallery][version] = "1.0-beta8"
 
 ;--------------------
 ; Performance
