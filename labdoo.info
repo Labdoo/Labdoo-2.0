@@ -94,8 +94,8 @@ dependencies[] = file_entity
 dependencies[] = media 
 dependencies[] = multiform 
 dependencies[] = colorbox 
-;dependencies[] = plupload 
-dependencies[] = media_gallery 
+dependencies[] = plupload 
+;dependencies[] = media_gallery 
 
 ;--------------------
 ; Drupal Localization

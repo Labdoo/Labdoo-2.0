@@ -71,11 +71,11 @@ projects[colorbox][version] = "2.7"
 libraries[colorbox][directory_name] = "colorbox"
 libraries[colorbox][download][type] = "get"
 libraries[colorbox][download][url] = "https://github.com/jackmoore/colorbox/archive/1.3.21.zip"
-;projects[plupload][version] = "1.6"
-;libraries[plupload][directory_name] = "plupload"
-;libraries[plupload][download][type] = "get"
-;libraries[plupload][download][url] = "https://github.com/moxiecode/plupload/archive/v1.5.8.zip"
-projects[media_gallery][version] = "1.0-beta8"
+projects[plupload][version] = "1.6"
+libraries[plupload][directory_name] = "plupload"
+libraries[plupload][download][type] = "get"
+libraries[plupload][download][url] = "https://github.com/moxiecode/plupload/archive/v1.5.8.zip"
+;projects[media_gallery][version] = "1.0-beta8"
 
 ;--------------------
 ; Performance

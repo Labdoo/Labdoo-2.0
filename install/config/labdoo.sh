@@ -36,6 +36,13 @@ drush @lbd $enOrDis -y lbd_blocks_views
 # so that the various views and blocks are correctly enabled
 drush @lbd cc all
 
+# TODO: this is a contributed module, so it should go under labdoo.{make,info}
+#       but doing so breaks the building process; likely because it is in 
+#       beta stage; once this module is out of beta, try to enable it from
+#       labdoo.{make,info}
+drush @lbd dl media_gallery-1.0-beta8
+drush @lbd en -y media_gallery
+
 drush @lbd $enOrDis -y lbd_menus 
 
 drush @lbd $enOrDis -y lbd_roles
