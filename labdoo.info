@@ -84,8 +84,18 @@ dependencies[] = gmap_location
 dependencies[] = views_autocomplete_filters
 dependencies[] = views_dependent_filters
 dependencies[] = simplenews
-
 ;dependencies[] = node_clone
+
+;--------------------
+; Photo albums
+;--------------------
+dependencies[] = media_internet
+dependencies[] = file_entity 
+dependencies[] = media 
+dependencies[] = multiform 
+dependencies[] = colorbox 
+dependencies[] = plupload 
+dependencies[] = media_gallery 
 
 ;--------------------
 ; Drupal Localization
