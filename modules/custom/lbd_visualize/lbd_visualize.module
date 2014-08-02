@@ -34,39 +34,62 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
 
   $possibleStates = array('S0', 'S1', 'S2',  'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S9', 'T1', 'T2');
 
+  $numberOfQueries = 1;
+  $queryAll = "(SELECT entity_id FROM field_data_field_tagger)";
+  $query = "SELECT t.entity_id FROM (" . $queryAll;
+  $placeHolders = array();
+
   if($userId != NULL)
   {
-    $query = "SELECT entity_id FROM field_data_field_tagger WHERE (field_tagger_target_id=:nid)";
-    $result = db_query($query, array(':nid' => $userId));
+    $queryUser = "(SELECT tUser.entity_id FROM 
+                   (SELECT entity_id FROM field_data_field_tagger WHERE (field_tagger_target_id=:uid) 
+                    UNION
+                    SELECT entity_id FROM field_data_field_manager WHERE (field_manager_target_id=:uid)
+                    UNION
+                    SELECT entity_id FROM field_data_field_additional_editors WHERE (field_additional_editors_target_id=:uid) 
+                    UNION
+                    SELECT entity_id FROM field_data_field_additional_followers WHERE (field_additional_followers_target_id=:uid)
+                   )
+                  AS tUser)";
+    $query = $query . " UNION ALL " . $queryUser;
+    $placeHolders[':uid'] = $userId; 
+    $numberOfQueries++;
   }
-  else if($hubId != NULL) 
+  if($hubId != NULL) 
   {
-    $query = "SELECT entity_id FROM field_data_field_hub_laptop WHERE (field_hub_laptop_target_id=:nid)";
-    $result = db_query($query, array(':nid' => $hubId));
+    $queryHub = "(SELECT entity_id FROM field_data_field_hub_laptop WHERE (field_hub_laptop_target_id=:hid))";
+    $query = $query . " UNION ALL " . $queryHub;
+    $placeHolders[':hid'] = $hubId; 
+    $numberOfQueries++;
   }
-  else if($edoovillageId != NULL)
+  if($edoovillageId != NULL)
   {
-    $query = "SELECT entity_id FROM field_data_field_edoovillage_destination WHERE (field_edoovillage_destination_target_id=:nid)";
-    $result = db_query($query, array(':nid' => $edoovillageId));
+    $queryEdoovillage = "(SELECT entity_id FROM field_data_field_edoovillage_destination WHERE (field_edoovillage_destination_target_id=:eid))";
+    $query = $query . " UNION ALL " . $queryEdoovillage;
+    $placeHolders[':eid'] = $edoovillageId; 
+    $numberOfQueries++;
   }
-  else if($country != NULL)
+  if($country != NULL)
   {
-    $query = "SELECT nid as entity_id FROM location_instance 
-              WHERE lid IN (SELECT lid FROM location WHERE country=:co) 
-              AND nid IN (SELECT entity_id FROM field_data_field_tagger)";
-    $result = db_query($query, array(':co' => $country));
+    $queryCountry = "(SELECT nid AS entity_id FROM location_instance 
+                      WHERE lid IN (SELECT lid FROM location WHERE country=:co) 
+                      AND nid IN (SELECT entity_id FROM field_data_field_tagger))";
+    $query = $query . " UNION ALL " . $queryCountry;
+    $placeHolders[':co'] = $country; 
+    $numberOfQueries++;
   } 
-  else
-  {
-    // Fetch all objects
-    $query = "SELECT entity_id FROM field_data_field_tagger";
-    $result = db_query($query);
-  }
+
+  $query = $query . ") AS t GROUP BY entity_id HAVING count(*) >= " . $numberOfQueries;
+
+  $result = db_query($query, $placeHolders);
 
   $objects = array();
+  $selectedNids = array();
+
   foreach($result as $item) {
 
     $objectNid = $item->entity_id;
+    array_push($selectedNids, $objectNid);
 
     $node = node_load($item->entity_id);
 
@@ -157,7 +180,7 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
   }
 
   print_dashboard_switcher();
-  print_dashboard_objects('laptop', 'doojects', $objects, $metrics);
+  print_dashboard_objects('laptop', 'doojects', $objects, $metrics, $selectedNids);
 
 }
 
@@ -171,33 +194,69 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
  * @return A dashboard of the edoovillages 
  *
  */
-function lbd_display_dashboard_edoovillages($hubId = NULL, $country = NULL) {
+function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $country = NULL) {
+
+  $numberOfQueries = 1;
+  $queryAll = "(SELECT entity_id FROM field_data_field_edoovillage_status)";
+  $query = "SELECT t.entity_id FROM (" . $queryAll;
+  $placeHolders = array();
 
   if($hubId != NULL) 
   {
-    $query = "SELECT entity_id FROM field_data_field_hub WHERE (field_hub_target_id=:nid)";
-    $result = db_query($query, array(':nid' => $hubId));
+    $queryHub = "(SELECT entity_id FROM field_data_field_hub WHERE (field_hub_target_id=:hid))";
+    $query = $query . " UNION ALL " . $queryUser;
+    $placeHolders[':hid'] = $hubId;
+    $numberOfQueries++;
   }
-  else if($country != NULL)
+  if($country != NULL)
   {
-    $query = "SELECT nid as entity_id FROM location_instance 
-              WHERE lid IN (SELECT lid FROM location WHERE country=:co) 
-              AND nid IN (SELECT entity_id FROM field_data_field_edoovillage_status)";
-    $result = db_query($query, array(':co' => $country));
+    $queryCountry = "(SELECT nid AS entity_id FROM location_instance 
+                      WHERE lid IN (SELECT lid FROM location WHERE country=:co) 
+                      AND nid IN (SELECT entity_id FROM field_data_field_edoovillage_status))";
+    $query = $query . " UNION ALL " . $queryCountry;
+    $placeHolders[':co'] = $country;
+    $numberOfQueries++;
   } 
-  else
+  if($userId != NULL)
   {
-    // Fetch all objects
-    $query = "SELECT entity_id FROM field_data_field_edoovillage_status";
-    $result = db_query($query);
+    # First select: query to find all edoovillages connected to a user via a dooject
+    # Second select: query to find all edoovillages connected to a user via a dootrip
+    $queryUser = "(SELECT tUser.entity_id FROM 
+                   ((SELECT DISTINCT field_edoovillage_destination_target_id AS entity_id FROM field_data_field_edoovillage_destination WHERE 
+                     (entity_id IN (SELECT entity_id FROM field_data_field_manager WHERE field_manager_target_id=:uid) OR 
+                      entity_id IN (SELECT entity_id FROM field_data_field_tagger WHERE field_tagger_target_id=:uid) OR 
+                      entity_id IN (SELECT entity_id FROM field_data_field_additional_followers WHERE field_additional_followers_target_id=:uid) OR 
+                      entity_id IN (SELECT entity_id FROM field_data_field_additional_editors WHERE field_additional_editors_target_id=:uid)))
+                    UNION
+                    (SELECT DISTINCT field_edoovillage_destination_target_id AS entity_id FROM field_data_field_edoovillage_destination WHERE 
+                      entity_id IN (SELECT field_laptops_target_id FROM field_data_field_laptops WHERE 
+                      entity_id IN (SELECT entity_id FROM field_data_field_dootripper_s_ WHERE field_dootripper_s__target_id=:uid)))
+                    UNION
+                    (SELECT DISTINCT entity_id FROM field_data_field_project_manager_s_ WHERE field_project_manager_s__target_id=:uid))
+                    AS tUser)";
+    $query = $query . " UNION ALL " . $queryUser;
+    $placeHolders[':uid'] = $userId;
+    $numberOfQueries++;
   }
 
+  $query = $query . ") AS t GROUP BY entity_id HAVING count(*) >= " . $numberOfQueries;
+  $result = db_query($query, $placeHolders);
+
   $objects = array();
+  $selectedNids = array();
+
   foreach($result as $item) {
 
     $objectNid = $item->entity_id;
+    array_push($selectedNids, $objectNid);
 
     $node = node_load($item->entity_id);
+
+    # TODO: By construction this check is not necessary, but in development
+    # mode sometimes entity_id fields can be linked to the wrong
+    # node type. For lack of a better solution, we add the check.
+    if($node->type != "edoovillage")
+      continue;
 
     // Extract title (mandatory field)
     $objects[$objectNid]['title'] = $node->title; 
@@ -278,7 +337,7 @@ function lbd_display_dashboard_edoovillages($hubId = NULL, $country = NULL) {
   $metrics[10] = array('label' => 'Open', 'field' => 'open', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
 
   print_dashboard_switcher();
-  print_dashboard_objects('edoovillage', 'edoovillages', $objects, $metrics);
+  print_dashboard_objects('edoovillage', 'edoovillages', $objects, $metrics, $selectedNids);
 
 }
 
@@ -291,25 +350,55 @@ function lbd_display_dashboard_edoovillages($hubId = NULL, $country = NULL) {
  * @return A dashboard of the edoovillages 
  *
  */
-function lbd_display_dashboard_hubs($country = NULL) {
+function lbd_display_dashboard_hubs($userId = NULL, $country = NULL) {
+
+  $numberOfQueries = 1;
+  $queryAll = "(SELECT entity_id FROM field_data_field_hub_manager_s_)";
+  $query = "SELECT t.entity_id FROM (" . $queryAll;
+  $placeHolders = array();
 
   // Fetch all objects
   if($country != NULL)
   {
-    $query = "SELECT nid as entity_id FROM location_instance 
-              WHERE lid IN (SELECT lid FROM location WHERE country=:co) 
-              AND nid IN (SELECT entity_id FROM field_data_field_hub_manager_s_)";
-    $result = db_query($query, array(':co' => $country));
+    $queryCountry = "(SELECT nid AS entity_id FROM location_instance 
+                      WHERE lid IN (SELECT lid FROM location WHERE country=:co) 
+                      AND nid IN (SELECT entity_id FROM field_data_field_hub_manager_s_))";
+    $query = $query . " UNION ALL " . $queryCountry;
+    $placeHolders[':co'] = $country;
+    $numberOfQueries++;
   } 
-  else {
-    $query = "SELECT entity_id FROM field_data_field_hub_manager_s_";
-    $result = db_query($query);
+  if($userId != NULL)
+  {
+    # First select: query to find all hubs connected to a user via a dooject
+    # Second select: query to find all hubs connected to a user via a dootrip
+    $queryUser = "(SELECT tUser.entity_id FROM 
+                   ((SELECT DISTINCT field_hub_laptop_target_id AS entity_id FROM field_data_field_hub_laptop WHERE 
+                     (entity_id IN (SELECT entity_id FROM field_data_field_manager WHERE field_manager_target_id=:uid) OR 
+                      entity_id IN (SELECT entity_id FROM field_data_field_tagger WHERE field_tagger_target_id=:uid) OR 
+                      entity_id IN (SELECT entity_id FROM field_data_field_additional_followers WHERE field_additional_followers_target_id=:uid) OR 
+                      entity_id IN (SELECT entity_id FROM field_data_field_additional_editors WHERE field_additional_editors_target_id=:uid)))
+                    UNION
+                    (SELECT DISTINCT field_hub_laptop_target_id AS entity_id FROM field_data_field_hub_laptop WHERE 
+                      entity_id IN (SELECT field_laptops_target_id FROM field_data_field_laptops WHERE 
+                      entity_id IN (SELECT entity_id FROM field_data_field_dootripper_s_ WHERE field_dootripper_s__target_id=:uid)))
+                    UNION
+                    (SELECT DISTINCT entity_id FROM field_data_field_hub_manager_s_ WHERE field_hub_manager_s__target_id=:uid))
+                    AS tUser)";
+    $query = $query . " UNION ALL " . $queryUser;
+    $placeHolders[':uid'] = $userId;
+    $numberOfQueries++;
   }
 
+  $query = $query . ") AS t GROUP BY entity_id HAVING count(*) >= " . $numberOfQueries;
+  $result = db_query($query, $placeHolders);
+
   $objects = array();
+  $selectedNids = array();
+
   foreach($result as $item) {
 
     $objectNid = $item->entity_id;
+    array_push($selectedNids, $objectNid);
 
     $node = node_load($item->entity_id);
 
@@ -385,7 +474,7 @@ function lbd_display_dashboard_hubs($country = NULL) {
   $metrics[8] = array('label' => 'Remaining', 'field' => 'remainingShared', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
 
   print_dashboard_switcher();
-  print_dashboard_objects('hub', 'hubs', $objects, $metrics);
+  print_dashboard_objects('hub', 'hubs', $objects, $metrics, $selectedNids);
 
 }
 
@@ -398,24 +487,45 @@ function lbd_display_dashboard_hubs($country = NULL) {
  * @return A dashboard of the dootrips 
  *
  */
-function lbd_display_dashboard_dootrips($country = NULL) {
+function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL) {
+
+  $numberOfQueries = 1;
+  $queryAll = "(SELECT entity_id FROM field_data_field_destination_of_the_trip)";
+  $query = "SELECT t.entity_id FROM (" . $queryAll;
+  $placeHolders = array();
 
   // Fetch all objects
   if($country != NULL)
   {
-    $query = "SELECT entity_id FROM field_data_field_destination_of_the_trip 
-              WHERE field_destination_of_the_trip_lid IN (SELECT lid FROM location WHERE country=:co)";
-    $result = db_query($query, array(':co' => $country));
+    $queryCountry = "(SELECT tUser.entity_id FROM
+                      ((SELECT entity_id FROM field_data_field_destination_of_the_trip 
+                        WHERE field_destination_of_the_trip_lid IN (SELECT lid FROM location WHERE country=:co))
+                       UNION
+                       (SELECT entity_id FROM field_data_field_origin_of_the_trip 
+                        WHERE field_origin_of_the_trip_lid IN (SELECT lid FROM location WHERE country=:co)))
+                     AS tUser)";
+    $query = $query . " UNION ALL " . $queryCountry;
+    $placeHolders[':co'] = $country;
+    $numberOfQueries++;
   } 
-  else {
-    $query = "SELECT entity_id FROM field_data_field_destination_of_the_trip";
-    $result = db_query($query);
+  if($userId != NULL)
+  {
+    $queryUser = "(SELECT entity_id FROM field_data_field_dootripper_s_ WHERE (field_dootripper_s__target_id=:uid))";
+    $query = $query . " UNION ALL " . $queryUser;
+    $placeHolders[':uid'] = $userId; 
+    $numberOfQueries++;
   }
 
-  $objects = array();
-  foreach($result as $item) {
+  $query = $query . ") AS t GROUP BY entity_id HAVING count(*) >= " . $numberOfQueries++;
+  $result = db_query($query, $placeHolders);
 
+  $objects = array();
+  $selectedNids = array();
+
+  foreach($result as $item) {
     $objectNid = $item->entity_id;
+    array_push($selectedNids, $objectNid);
+
     $node = node_load($item->entity_id);
 
     // Extract title (mandatory field)
@@ -463,10 +573,10 @@ function lbd_display_dashboard_dootrips($country = NULL) {
 
   if(empty($objects)) {
     $objects[0]['title'] = ""; 
-    $objects[0]['capacity'] = "";
+    $objects[0]['capacity'] = 0;
     $objects[0]['numberDootrips'] = "";
     $objects[0]['status'] = "";
-    $objects[0]['completed'] = "";
+    $objects[0]['completed'] = 0;
     $objects[0]['srcCountry'] = "";
     $objects[0]['dstCountry'] = "";
     $objects[0]['link'] = "No dootrips in this view"; 
@@ -481,7 +591,7 @@ function lbd_display_dashboard_dootrips($country = NULL) {
   $metrics[6] = array('label' => 'Doojects transported', 'field' => 'completed', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
 
   print_dashboard_switcher();
-  print_dashboard_objects('dootrip', 'dootrips', $objects, $metrics);
+  print_dashboard_objects('dootrip', 'dootrips', $objects, $metrics, $selectedNids);
 
 }
 
@@ -553,7 +663,7 @@ function print_dashboard_switcher()
  * Examples of objects are: doojects, hubs, edoovillages. 
  *
  */
-function print_dashboard_objects($objectsType, $objectsName, $objects, $metrics)
+function print_dashboard_objects($objectsType, $objectsName, $objects, $metrics, $nodeIds)
 {
 
   $lastElement = sizeof($metrics)+1;
@@ -804,7 +914,7 @@ var rows = [
 
 ");
 
-  $objectsGeoCount = labdoo_getnum_objects_by_city($objectsType);
+  $objectsGeoCount = labdoo_getnum_objects_by_city($objectsType, $nodeIds);
   foreach ($objectsGeoCount as $item) {
     print("[" . $item['lat']. ", " . $item['lon'] . ", \"" . $item['city'] . ", " . $item['country'] . "\", ". $item['count'] ."],");
   }
