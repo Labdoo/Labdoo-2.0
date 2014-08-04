@@ -272,6 +272,57 @@ function make_main_menu() {
 }
 
 
+/*
+ * Implements dynamic menu items.
+ *
+ * Examples of dynamic parameters:
+ *   - Links that depend on the user id
+ *   - Visibility that depends on the user's role
+ *
+ */
+function lbd_menus_menu() {
+
+  $menu['myDootrips'] = array
+  (
+    'title' => 'My dootrips',
+    'page callback' => _menu_item_redirect_my_dootrips,
+    'page arguments' => array('content/dootrips-dashboard'),
+    'access callback' => user_is_logged_in,
+    'type' => MENU_NORMAL_ITEM,
+    'menu_name' => 'main-menu',
+  );
+
+  return $menu;
+}
+
+
+/*
+ * Callback function to redirect dynamic menu items
+ *
+ */ 
+function _menu_item_redirect_my_dootrips($url) {
+  global $user; 
+  drupal_goto($url, array('query' => array('u' => $user->uid)));
+  return;
+}
+
+
+/*
+ * Implements hook_menu_link_alter
+ * Used to connect dynamic menu items with their proper 
+ * parent menu item
+ *
+ */
+function lbd_menus_menu_link_alter(&$item) {
+  
+  if ($item['page callback'] == '_menu_item_redirect_my_dootrips,') {
+    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='node/6' AND link_title='Dootrips' AND menu_name='main-menu'")->fetchField();
+    $item['plid'] = $plid;
+  }
+  return;
+}
+
+
 /**
  *
  * Creates the main menu
