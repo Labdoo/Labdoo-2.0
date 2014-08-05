@@ -282,27 +282,71 @@ function make_main_menu() {
  */
 function lbd_menus_menu() {
 
-  $menu['myDootrips'] = array
+ $menus['myDoojects'] = array
   (
-    'title' => 'My dootrips',
-    'page callback' => _menu_item_redirect_my_dootrips,
-    'page arguments' => array('content/dootrips-dashboard'),
+    'title' => 'My doojects',
+    'page callback' => _menu_item_redirect_my_doojects,
     'access callback' => user_is_logged_in,
     'type' => MENU_NORMAL_ITEM,
     'menu_name' => 'main-menu',
   );
 
-  return $menu;
+  $menus['myEdoovillages'] = array
+  (
+    'title' => 'My edoovillages',
+    'page callback' => _menu_item_redirect_my_edoovillages,
+    'access callback' => user_is_logged_in,
+    'type' => MENU_NORMAL_ITEM,
+    'menu_name' => 'main-menu',
+  );
+
+  $menus['myHubs'] = array
+  (
+    'title' => 'My hubs',
+    'page callback' => _menu_item_redirect_my_hubs,
+    'access callback' => user_is_logged_in,
+    'type' => MENU_NORMAL_ITEM,
+    'menu_name' => 'main-menu',
+  );
+
+  $menus['myDootrips'] = array
+  (
+    'title' => 'My dootrips',
+    'page callback' => _menu_item_redirect_my_dootrips,
+    'access callback' => user_is_logged_in,
+    'type' => MENU_NORMAL_ITEM,
+    'menu_name' => 'main-menu',
+  );
+
+  return $menus;
 }
 
 
 /*
- * Callback function to redirect dynamic menu items
+ * Callback functions to redirect dynamic menu items
  *
  */ 
-function _menu_item_redirect_my_dootrips($url) {
+function _menu_item_redirect_my_doojects() {
   global $user; 
-  drupal_goto($url, array('query' => array('u' => $user->uid)));
+  drupal_goto('content/doojects-dashboard', array('query' => array('u' => $user->uid)));
+  return;
+}
+
+function _menu_item_redirect_my_edoovillages() {
+  global $user; 
+  drupal_goto('content/edoovillages-dashboard', array('query' => array('u' => $user->uid)));
+  return;
+}
+
+function _menu_item_redirect_my_hubs() {
+  global $user; 
+  drupal_goto('content/hubs-dashboard', array('query' => array('u' => $user->uid)));
+  return;
+}
+
+function _menu_item_redirect_my_dootrips() {
+  global $user; 
+  drupal_goto('content/dootrips-dashboard', array('query' => array('u' => $user->uid)));
   return;
 }
 
@@ -315,10 +359,26 @@ function _menu_item_redirect_my_dootrips($url) {
  */
 function lbd_menus_menu_link_alter(&$item) {
   
-  if ($item['page callback'] == '_menu_item_redirect_my_dootrips,') {
+ if ($item['page callback'] == '_menu_item_redirect_my_doojects') {
+    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='node/3' AND link_title='Doojects' AND menu_name='main-menu'")->fetchField();
+    $item['plid'] = $plid;
+  }
+
+  if ($item['page callback'] == '_menu_item_redirect_my_edoovillages') {
+    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='node/4' AND link_title='Edoovillages' AND menu_name='main-menu'")->fetchField();
+    $item['plid'] = $plid;
+  }
+
+  if ($item['page callback'] == '_menu_item_redirect_my_hubs') {
+    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='node/5' AND link_title='Hubs' AND menu_name='main-menu'")->fetchField();
+    $item['plid'] = $plid;
+  }
+
+  if ($item['page callback'] == '_menu_item_redirect_my_dootrips') {
     $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='node/6' AND link_title='Dootrips' AND menu_name='main-menu'")->fetchField();
     $item['plid'] = $plid;
   }
+
   return;
 }
 
