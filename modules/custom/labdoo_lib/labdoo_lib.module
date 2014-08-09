@@ -960,3 +960,23 @@ function labdoo_follow_dooject($doojectId = NULL, $userId = NULL, $follow = NULL
   return;
 }
 
+
+/**
+ * Get the value of an entity field of type node.
+ * If there are multiple values, get just the first one. 
+ *
+ * @param node $node
+ *   The node where the entity field is contained
+ * @param string $field 
+ *   The entity field name 
+ *
+ */
+function labdoo_lib_get_entity_node($node, $field) {
+  $field_items = field_get_items('node', $node, $field);
+  if(!$field_items)
+    return;
+  if(!array_key_exists(0, $field_items))
+    return NULL;
+  return($field_items[0]['target_id']);
+}
+

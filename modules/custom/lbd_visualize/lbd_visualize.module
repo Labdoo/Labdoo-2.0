@@ -18,6 +18,20 @@
  *
  */
 
+/* 
+ * Structure of the code in this file: 
+ *
+ *  lbd_display_dashboard_doojects     |=> Functions that select from the database the
+ *  lbd_display_dashboard_edoovillages |   objects that must be displayed. They end up
+ *  lbd_display_dashboard_hubs         |   calling print_dashboard_switcher and 
+ *  lbd_display_dashboard_dootrips     |   print_dashboard_objects to display the results. 
+ *
+ *  print_dashboard_switcher           |=> Displays a switcher to select type of object
+ *  print_dashboard_objects            |=> Prints the actual dashboard
+ *
+ *  The four lbd_display_* functions (one for each Labdoo object) take (among others)
+ *  the user ID as argument, allowing them to generate "myObject" type of dashboards. 
+ */
 
 /**
  * Displays a dashboard of doojects

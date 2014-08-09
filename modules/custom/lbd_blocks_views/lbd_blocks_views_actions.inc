@@ -65,6 +65,43 @@ $handler->display->display_options['filters']['type']['value'] = array(
 
 /* Display: Page */
 $handler = $view->new_display('page', 'Page', 'page');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['title'] = 'Global Actions Feed';
+$handler->display->display_options['defaults']['relationships'] = FALSE;
+$handler->display->display_options['defaults']['arguments'] = FALSE;
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Filter criterion: Content: Published */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filter criterion: Content: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'action' => 'action',
+);
+$handler->display->display_options['filters']['type']['group'] = 1;
+/* Filter criterion: Content: Type (field_action_type) */
+$handler->display->display_options['filters']['field_action_type_value']['id'] = 'field_action_type_value';
+$handler->display->display_options['filters']['field_action_type_value']['table'] = 'field_data_field_action_type';
+$handler->display->display_options['filters']['field_action_type_value']['field'] = 'field_action_type_value';
+$handler->display->display_options['filters']['field_action_type_value']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_action_type_value']['expose']['operator_id'] = 'field_action_type_value_op';
+$handler->display->display_options['filters']['field_action_type_value']['expose']['label'] = 'Actions related to:';
+$handler->display->display_options['filters']['field_action_type_value']['expose']['operator'] = 'field_action_type_value_op';
+$handler->display->display_options['filters']['field_action_type_value']['expose']['identifier'] = 'field_action_type_value';
+$handler->display->display_options['filters']['field_action_type_value']['expose']['multiple'] = TRUE;
+$handler->display->display_options['filters']['field_action_type_value']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+  4 => 0,
+);
 $handler->display->display_options['path'] = 'actions';
 
 /* Display: Block */
@@ -121,6 +158,68 @@ $handler->display->display_options['fields']['body']['table'] = 'field_data_body
 $handler->display->display_options['fields']['body']['field'] = 'body';
 $handler->display->display_options['fields']['body']['label'] = '';
 $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+
+/* Display: Page */
+$handler = $view->new_display('page', 'Page', 'page_1');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['title'] = 'My Actions';
+$handler->display->display_options['defaults']['empty'] = FALSE;
+/* No results behavior: Global: Unfiltered text */
+$handler->display->display_options['empty']['area_text_custom']['id'] = 'area_text_custom';
+$handler->display->display_options['empty']['area_text_custom']['table'] = 'views';
+$handler->display->display_options['empty']['area_text_custom']['field'] = 'area_text_custom';
+$handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
+$handler->display->display_options['empty']['area_text_custom']['content'] = 'You have performed no actions yet. Tag a dooject, register a dootrip, create an edoovillage or a hub to initiate your first actions.';
+$handler->display->display_options['defaults']['relationships'] = FALSE;
+/* Relationship: Entity Reference: Referenced Entity */
+$handler->display->display_options['relationships']['field_labdooer_action_target_id']['id'] = 'field_labdooer_action_target_id';
+$handler->display->display_options['relationships']['field_labdooer_action_target_id']['table'] = 'field_data_field_labdooer_action';
+$handler->display->display_options['relationships']['field_labdooer_action_target_id']['field'] = 'field_labdooer_action_target_id';
+$handler->display->display_options['defaults']['arguments'] = FALSE;
+/* Contextual filter: User: Uid */
+$handler->display->display_options['arguments']['uid']['id'] = 'uid';
+$handler->display->display_options['arguments']['uid']['table'] = 'users';
+$handler->display->display_options['arguments']['uid']['field'] = 'uid';
+$handler->display->display_options['arguments']['uid']['relationship'] = 'field_labdooer_action_target_id';
+$handler->display->display_options['arguments']['uid']['default_action'] = 'default';
+$handler->display->display_options['arguments']['uid']['default_argument_type'] = 'current_user';
+$handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
+$handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+$handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Filter criterion: Content: Published */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filter criterion: Content: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'action' => 'action',
+);
+$handler->display->display_options['filters']['type']['group'] = 1;
+/* Filter criterion: Content: Type (field_action_type) */
+$handler->display->display_options['filters']['field_action_type_value']['id'] = 'field_action_type_value';
+$handler->display->display_options['filters']['field_action_type_value']['table'] = 'field_data_field_action_type';
+$handler->display->display_options['filters']['field_action_type_value']['field'] = 'field_action_type_value';
+$handler->display->display_options['filters']['field_action_type_value']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_action_type_value']['expose']['operator_id'] = 'field_action_type_value_op';
+$handler->display->display_options['filters']['field_action_type_value']['expose']['label'] = 'Actions related to:';
+$handler->display->display_options['filters']['field_action_type_value']['expose']['operator'] = 'field_action_type_value_op';
+$handler->display->display_options['filters']['field_action_type_value']['expose']['identifier'] = 'field_action_type_value';
+$handler->display->display_options['filters']['field_action_type_value']['expose']['multiple'] = TRUE;
+$handler->display->display_options['filters']['field_action_type_value']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+  4 => 0,
+);
+$handler->display->display_options['path'] = 'myactions';
 $translatables['actions'] = array(
   t('Master'),
   t('Actions Feed'),
@@ -140,6 +239,12 @@ $translatables['actions'] = array(
   t('City'),
   t('Country'),
   t('Page'),
+  t('Global Actions Feed'),
+  t('Actions related to:'),
   t('Block'),
+  t('My Actions'),
+  t('You have performed no actions yet. Tag a dooject, register a dootrip, create an edoovillage or a hub to initiate your first actions.'),
+  t('User entity referenced from field_labdooer_action'),
+  t('All'),
 );
 

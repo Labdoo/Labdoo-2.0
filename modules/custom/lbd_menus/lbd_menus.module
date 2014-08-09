@@ -318,6 +318,15 @@ function lbd_menus_menu() {
     'menu_name' => 'main-menu',
   );
 
+  $menus['myActionsList'] = array
+  (
+    'title' => 'My actions',
+    'page callback' => _menu_item_redirect_my_actions,
+    'access callback' => user_is_logged_in,
+    'type' => MENU_NORMAL_ITEM,
+    'menu_name' => 'main-menu',
+  );
+
   return $menus;
 }
 
@@ -350,6 +359,11 @@ function _menu_item_redirect_my_dootrips() {
   return;
 }
 
+function _menu_item_redirect_my_actions() {
+  drupal_goto('myActions');
+  return;
+}
+
 
 /*
  * Implements hook_menu_link_alter
@@ -376,6 +390,11 @@ function lbd_menus_menu_link_alter(&$item) {
 
   if ($item['page callback'] == '_menu_item_redirect_my_dootrips') {
     $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='node/6' AND link_title='Dootrips' AND menu_name='main-menu'")->fetchField();
+    $item['plid'] = $plid;
+  }
+
+  if ($item['page callback'] == '_menu_item_redirect_my_actions') {
+    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='actions' AND link_title='Explore' AND menu_name='main-menu'")->fetchField();
     $item['plid'] = $plid;
   }
 

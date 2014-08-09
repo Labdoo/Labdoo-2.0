@@ -90,7 +90,8 @@ function lbd_communicate_mail_send($email_params) {
   $result = drupal_mail($module, $key, $to, $language, $email_params, $from, $send);
 
   if ($result['result'] == TRUE) {
-    drupal_set_message(t('An automatic email has been sent out to the user(s) connected with this event.'));
+// Commenting this out to avoid being too pedantic 
+//    drupal_set_message(t('An automatic email has been sent out to the user(s) connected with this event.'));
   }
   else {
     drupal_set_message(t('There was a problem sending an automatic message, please contant Labdoo at ' . variable_get('site_mail', 'contact@labdoo.org')), 'error');
