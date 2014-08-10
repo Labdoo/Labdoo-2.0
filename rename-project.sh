@@ -63,3 +63,4 @@ rename_all_files $from_prefix $to_prefix
 replace_in_all_files $from_project $to_project
 replace_in_all_files ${from_project^} ${to_project^}
 replace_in_all_files $from_prefix $to_prefix
+

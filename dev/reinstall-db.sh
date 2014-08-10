@@ -53,8 +53,8 @@ drush site-install --verbose --yes labdoo \
       --account-name="$account_name" --account-pass="$account_pass" --account-mail="$account_mail"
 
 ### install features modules
-drush --yes pm-enable lbd_layout
-drush --yes features-revert lbd_layout
+# drush --yes pm-enable lbd_layout
+# drush --yes features-revert lbd_layout
 
 drush --yes pm-enable lbd_hybridauth
 drush --yes features-revert lbd_hybridauth
@@ -74,11 +74,6 @@ drush --yes features-revert labdoo_objects
 #drush vset recaptcha_private_key 6LenROISAAAAAM-bbCjtdRMbNN02w368ScK3ShK0
 #drush vset recaptcha_public_key 6LenROISAAAAAH9roYsyHLzGaDQr76lhDZcm92gG
 
-#drush --yes pm-enable lbd_invite
-#drush --yes pm-enable lbd_permissions
-
-#drush --yes pm-enable lbd_simplenews
-#drush --yes pm-enable lbd_mass_contact
 #drush --yes pm-enable lbd_googleanalytics
 #drush --yes pm-enable lbd_drupalchat
 #drush --yes pm-enable lbd_janrain

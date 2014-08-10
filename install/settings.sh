@@ -6,7 +6,7 @@ suite='trusty'
 apt_mirror='http://archive.ubuntu.com/ubuntu'
 
 ### Git branch that will be used.
-git_branch='master'
+git_branch='openatrium'
 
 ### Domain of the website.
 domain='www.labdoo-dev.org'
