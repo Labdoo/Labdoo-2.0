@@ -285,8 +285,8 @@ function lbd_menus_menu() {
  $menus['myDoojects'] = array
   (
     'title' => 'My doojects',
-    'page callback' => _menu_item_redirect_my_doojects,
-    'access callback' => user_is_logged_in,
+    'page callback' => '_menu_item_redirect_my_doojects',
+    'access callback' => 'user_is_logged_in',
     'type' => MENU_NORMAL_ITEM,
     'menu_name' => 'main-menu',
   );
@@ -294,8 +294,8 @@ function lbd_menus_menu() {
   $menus['myEdoovillages'] = array
   (
     'title' => 'My edoovillages',
-    'page callback' => _menu_item_redirect_my_edoovillages,
-    'access callback' => user_is_logged_in,
+    'page callback' => '_menu_item_redirect_my_edoovillages',
+    'access callback' => 'user_is_logged_in',
     'type' => MENU_NORMAL_ITEM,
     'menu_name' => 'main-menu',
   );
@@ -303,8 +303,8 @@ function lbd_menus_menu() {
   $menus['myHubs'] = array
   (
     'title' => 'My hubs',
-    'page callback' => _menu_item_redirect_my_hubs,
-    'access callback' => user_is_logged_in,
+    'page callback' => '_menu_item_redirect_my_hubs',
+    'access callback' => 'user_is_logged_in',
     'type' => MENU_NORMAL_ITEM,
     'menu_name' => 'main-menu',
   );
@@ -312,8 +312,8 @@ function lbd_menus_menu() {
   $menus['myDootrips'] = array
   (
     'title' => 'My dootrips',
-    'page callback' => _menu_item_redirect_my_dootrips,
-    'access callback' => user_is_logged_in,
+    'page callback' => '_menu_item_redirect_my_dootrips',
+    'access callback' => 'user_is_logged_in',
     'type' => MENU_NORMAL_ITEM,
     'menu_name' => 'main-menu',
   );
@@ -321,8 +321,8 @@ function lbd_menus_menu() {
   $menus['myActionsList'] = array
   (
     'title' => 'My actions',
-    'page callback' => _menu_item_redirect_my_actions,
-    'access callback' => user_is_logged_in,
+    'page callback' => '_menu_item_redirect_my_actions',
+    'access callback' => 'user_is_logged_in',
     'type' => MENU_NORMAL_ITEM,
     'menu_name' => 'main-menu',
   );

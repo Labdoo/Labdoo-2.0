@@ -169,7 +169,7 @@ $handler->display->display_options['empty']['area_text_custom']['id'] = 'area_te
 $handler->display->display_options['empty']['area_text_custom']['table'] = 'views';
 $handler->display->display_options['empty']['area_text_custom']['field'] = 'area_text_custom';
 $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
-$handler->display->display_options['empty']['area_text_custom']['content'] = 'You have performed no actions yet. Tag a dooject, register a dootrip, create an edoovillage or a hub to initiate your first actions.';
+$handler->display->display_options['empty']['area_text_custom']['content'] = 'No actions.';
 $handler->display->display_options['defaults']['relationships'] = FALSE;
 /* Relationship: Entity Reference: Referenced Entity */
 $handler->display->display_options['relationships']['field_labdooer_action_target_id']['id'] = 'field_labdooer_action_target_id';
@@ -243,7 +243,7 @@ $translatables['actions'] = array(
   t('Actions related to:'),
   t('Block'),
   t('My Actions'),
-  t('You have performed no actions yet. Tag a dooject, register a dootrip, create an edoovillage or a hub to initiate your first actions.'),
+  t('No actions.'),
   t('User entity referenced from field_labdooer_action'),
   t('All'),
 );

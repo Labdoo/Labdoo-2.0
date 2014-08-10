@@ -90,6 +90,16 @@ function lbd_roles_user_default_permissions() {
     'module' => 'simplenews',
   );
 
+  // Exported permission: submit latitude/longitude.
+  $permissions['submit latitude/longitude'] = array(
+    'name' => 'submit latitude/longitude',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'authenticated user',
+    ),
+    'module' => 'location',
+  );
+
   // Exported permission: subscribe to newsletters.
   $permissions['subscribe to newsletters'] = array(
     'name' => 'subscribe to newsletters',
