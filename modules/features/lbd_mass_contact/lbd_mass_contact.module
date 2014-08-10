@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the lbd_mass_contact feature.
- */
-
-include_once 'lbd_mass_contact.features.inc';
