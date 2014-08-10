@@ -21,6 +21,7 @@ dependencies[] = location_user
 dependencies[] = node
 dependencies[] = number
 dependencies[] = strongarm
+dependencies[] = lbd_roles
 features[conditional_fields][] = node:laptop
 features[ctools][] = field_group:field_group:1
 features[ctools][] = strongarm:strongarm:1
