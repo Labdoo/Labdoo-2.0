@@ -5,25 +5,27 @@ arch='i386'
 suite='trusty'
 apt_mirror='http://archive.ubuntu.com/ubuntu'
 
-### Git branche that will be used.
-lbd_git_branch='master'
+### Git branch that will be used.
+lbd_git_branch='trusty'
 
 ### Domain of the website.
-lbd_domain='example.org'
+lbd_domain='www.labdoo-dev.org'
 
 ### Drupal 'admin' password.
-lbd_admin_passwd='admin'
+lbd_admin_passwd='grassroots'
 
 ### Emails from the server are sent through the SMTP
 ### of a GMAIL account. Give the full email
 ### of the gmail account, and the password.
-gmail_account='MyEmailAddress@gmail.com'
-gmail_passwd=
+gmail_account='dev-user@labdoo.org'
+gmail_passwd='grassroots'
 
 ### Mysql passwords. Leave it as 'random'
 ### to generate a new one randomly
-mysql_passwd_root='random'
-mysql_passwd_lbd='random'
+#mysql_passwd_root='random'
+#mysql_passwd_lbd='random'
+mysql_passwd_root='grassroots'
+mysql_passwd_lbd='grassroots'
 
 ### Install also extra things that are useful for development.
 development='true'
