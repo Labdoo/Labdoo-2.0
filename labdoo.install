@@ -25,6 +25,9 @@ function labdoo_install() {
   variable_set('user_register', USER_REGISTER_VISITORS);
   variable_set('user_email_verification', TRUE);
 
+  // location settings
+  variable_set('location_usegmap', TRUE); 
+
   _labdoo_install_mailsystem();
   _labdoo_install_actions();
 }

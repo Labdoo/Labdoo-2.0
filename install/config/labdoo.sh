@@ -8,6 +8,9 @@ cwd=$(dirname $0)
 enOrDis=$1
 
 $(dirname $0)/mysqld.sh start
+
+drush @lbd $enOrDis -y lbd_roles
+
 drush @lbd $enOrDis -y labdoo_lib lbd_content_types labdoo_objects lbd_communicate\
                        lbd_visualize lbd_dootrip lbd_actions 
 
@@ -37,8 +40,6 @@ drush @lbd $enOrDis -y lbd_blocks_views
 drush @lbd cc all
 
 drush @lbd $enOrDis -y lbd_menus 
-
-drush @lbd $enOrDis -y lbd_roles
 
 # Finally, clear the cache to get things to a proper initial state
 drush @lbd cc all
