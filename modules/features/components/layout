@@ -1,9 +1,0 @@
-context
-views_view:front_page
-variable:site_frontpage
-menu_links:main-menu:<front>
-variable:theme_bootstrap1_settings
-variable:theme_default
-variable:jquery_update_compression_type
-variable:jquery_update_jquery_cdn
-variable:jquery_update_jquery_version
