@@ -10,12 +10,7 @@
  * Perform actions to set up the site for this profile.
  */
 function labdoo_install() {
-  include_once DRUPAL_ROOT . '/profiles/standard/standard.install';
-  standard_install();
-
-  // Apply all the features.
-  features_rebuild();
-  features_revert();
+  node_access_rebuild();
 
   // General settings
   variable_set('site_frontpage', 'actions'); 
@@ -27,8 +22,16 @@ function labdoo_install() {
   // location settings
   variable_set('location_usegmap', TRUE); 
 
+  _labdoo_set_up_theme();
   _labdoo_install_mailsystem();
   _labdoo_install_user_restrictions();
+}
+
+function _labdoo_set_up_theme() {
+  $theme = 'oa_radix';
+  theme_enable(array($theme));
+  variable_set('theme_default', $theme);
+  theme_disable(array('responsive_bartik', 'bartik'));
 }
 
 function _labdoo_install_mailsystem()

@@ -15,6 +15,10 @@ drush make --prepare-install --force-complete \
 cd $drupal_dir/profiles/labdoo/
 cp -a libraries/bootstrap themes/contrib/bootstrap/
 
+### copy libraries from the profile openatrium
+cd $drupal_dir/profiles/
+cp -a openatrium/libraries/* labdoo/libraries/
+
 ### Replace the profile labdoo with a version
 ### that is a git clone, so that any updates
 ### can be retrieved easily (without having to
