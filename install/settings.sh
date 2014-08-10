@@ -6,7 +6,7 @@ suite='trusty'
 apt_mirror='http://archive.ubuntu.com/ubuntu'
 
 ### Git branch that will be used.
-lbd_git_branch='trusty'
+lbd_git_branch='master'
 
 ### Domain of the website.
 lbd_domain='www.labdoo-dev.org'
