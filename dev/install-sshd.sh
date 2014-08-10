@@ -9,7 +9,7 @@ aptitude -y install ssh
 sed -i /etc/ssh/sshd_config -e '/^Port/c Port 2201'
 
 ### restart the service
-service ssh restart
+/etc/init.d/ssh restart
 
 ### generate public/private keys
 mkdir ~/.ssh

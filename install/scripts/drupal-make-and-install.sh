@@ -1,22 +1,33 @@
 #!/bin/bash -x
 
-#makefile="https://raw.github.com/Labdoo/Labdoo-2.0/master/build-labdoo.make"
-makefile=/tmp/build-labdoo.make
-
-### Add branch and revision to the makefile to ensure we are checking out the right code base
-sed -i '/projects\[labdoo\]\[download\]\[branch\]/d' $makefile
-sed -i '/projects\[labdoo\]\[download\]\[revision\]/d' $makefile
-echo "projects[labdoo][download][branch] = $labdoo_branch" >> $makefile 
-echo "projects[labdoo][download][revision] = $labdoo_revision" >> $makefile
+### make sure that we have the right git branch on the make file
+makefile="$code_dir/labdoo/build-labdoo.make"
+sed -i $makefile \
+    -e "/labdoo..download..branch/ c projects[labdoo][download][branch] = $lbd_git_branch"
 
 ### retrieve all the projects/modules and build the application directory
 rm -rf $drupal_dir
 drush make --prepare-install --force-complete \
            --contrib-destination=profiles/labdoo \
            $makefile $drupal_dir
-cp -a $drupal_dir/profiles/labdoo/{libraries/bootstrap,themes/contrib/bootstrap/}
-cp -a $drupal_dir/profiles/labdoo/{libraries/hybridauth-2.1.2/hybridauth,libraries/}
-cp $drupal_dir/profiles/labdoo/libraries/hybridauth-additional-providers-1.8/hybridauth-github/Providers/GitHub.php $drupal_dir/profiles/labdoo/libraries/hybridauth/Hybrid/Providers/
+
+### fix some things on the application directory
+cd $drupal_dir/profiles/labdoo/
+cp -a libraries/bootstrap themes/contrib/bootstrap/
+
+### Replace the profile labdoo with a version
+### that is a git clone, so that any updates
+### can be retrieved easily (without having to
+### reinstall the whole application).
+cd $drupal_dir/profiles/
+mv labdoo labdoo-bak
+cp -a $code_dir/labdoo .
+### copy contrib libraries and modules
+cp -a labdoo-bak/libraries/ labdoo/
+cp -a labdoo-bak/modules/contrib/ labdoo/modules/
+cp -a labdoo-bak/themes/contrib/ labdoo/themes/
+### cleanup
+rm -rf labdoo-bak/
 
 ### create the downloads dir
 mkdir -p /var/www/downloads/

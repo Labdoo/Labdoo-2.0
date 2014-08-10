@@ -2,85 +2,98 @@
 ### Create a local clone of the main drupal
 ### application (/var/www/lbd).
 
-if [ $# -ne 1 ]
+if [ $# -ne 2 ]
 then
-    echo " * Usage: $0 variant
+    echo " * Usage: $0 src dst
 
-      Creates a local clone of the main drupal application.
-      <variant> can be something like 'dev', 'test', '01', etc.
-      It will create a new application with root
-      /var/www/lbd_<variant> and with DB named
-      lbd_<variant>
+      Makes a clone from /var/www/<src> to /var/www/<dst>
+      The database <src> will also be cloned to <dst>.
+      <dst> can be something like 'lbd_dev', 'lbd_test', 'lbd_01', etc.
 
-      Caution: The root directory and the DB will be erased,
-      if they exist.
+      Note: Using something like 'lbd-dev' is not suitable
+      for the name of the database.
+
+      Caution: The root directory and the DB of the destination
+      will be erased, if they exist.
 "
     exit 1
 fi
-var=$1
-root_dir=/var/www/lbd_$var
-db_name=lbd_$var
+src=$1
+dst=$2
+src_dir=/var/www/$src
+dst_dir=/var/www/$dst
 
 ### copy the root directory
-rm -rf $root_dir
-cp -a /var/www/lbd $root_dir
+rm -rf $dst_dir
+cp -a $src_dir $dst_dir
 
 ### modify settings.php
-domain=$(cat /etc/hostname)
-sed -i $root_dir/sites/default/settings.php \
-    -e "/^\\\$databases = array/,+10  s/'database' => .*/'database' => '$db_name',/" \
-    -e "/^\\\$base_url/c \$base_url = \"https://$var.$domain\";" \
-    -e "/^\\\$conf\['memcache_key_prefix'\]/c \$conf['memcache_key_prefix'] = 'lbd_$var';"
+domain=$(grep ' localhost' /etc/hosts | head -n 1 | cut -d' ' -f2)
+sub=${dst#*_}
+hostname=$sub.$domain
+sed -i $dst_dir/sites/default/settings.php \
+    -e "/^\\\$databases = array/,+10  s/'database' => .*/'database' => '$dst',/" \
+    -e "/^\\\$base_url/c \$base_url = \"https://$hostname\";" \
+    -e "/^\\\$conf\['memcache_key_prefix'\]/c \$conf['memcache_key_prefix'] = '$dst';"
+
+### add to /etc/hosts
+sed -i /etc/hosts -e "/^127.0.0.1 $hostname/d"
+echo "127.0.0.1 $hostname" >> /etc/hosts
 
 ### create a drush alias
-sed -i /etc/drush/local.aliases.drushrc.php \
-    -e "/^\\\$aliases\['$var'\] = /,+5 d"
-cat <<EOF >> /etc/drush/local.aliases.drushrc.php
-\$aliases['$var'] = array (
+sed -i /etc/drush/local_lbd.aliases.drushrc.php \
+    -e "/^\\\$aliases\['$dst'\] = /,+5 d"
+cat <<EOF >> /etc/drush/local_lbd.aliases.drushrc.php
+\$aliases['$dst'] = array (
   'parent' => '@lbd',
-  'root' => '/var/www/lbd_$var',
-  'uri' => 'http://$var.example.org',
+  'root' => '$dst_dir',
+  'uri' => 'http://$hostname',
 );
 
 EOF
 
 ### create a new database
 mysql --defaults-file=/etc/mysql/debian.cnf -e "
-    DROP DATABASE IF EXISTS $db_name;
-    CREATE DATABASE $db_name;
-    GRANT ALL ON $db_name.* TO lbd@localhost;
+    DROP DATABASE IF EXISTS $dst;
+    CREATE DATABASE $dst;
+    GRANT ALL ON $dst.* TO lbd@localhost;
 "
 
 ### copy the database
-drush sql-sync @lbd @$var
+drush --yes sql-sync @$src @$dst
 
 ### clear the cache
-drush @$var cc all
+drush @$dst cc all
 
 ### copy and modify the configuration of nginx
-rm -f /etc/nginx/sites-{available,enabled}/$var
-cp /etc/nginx/sites-available/{default,$var}
-sed -i /etc/nginx/sites-available/$var \
+rm -f /etc/nginx/sites-{available,enabled}/$dst
+cp /etc/nginx/sites-available/{$src,$dst}
+sed -i /etc/nginx/sites-available/$dst \
     -e "s/443 default ssl/443 ssl/" \
-    -e "s/server_name \(.*\);/server_name $var.\\1;/" \
-    -e "s/lbd/lbd_$var/g"
-ln -s /etc/nginx/sites-{available,enabled}/$var
+    -e "s/server_name .*;/server_name $hostname;/" \
+    -e "s#$src_dir#$dst_dir#g"
+ln -s /etc/nginx/sites-{available,enabled}/$dst
 
 ### copy and modify the configuration of apache2
-rm -f /etc/apache2/sites-{available,enabled}/$var{,-ssl}
-cp /etc/apache2/sites-available/{default,$var}
-cp /etc/apache2/sites-available/{default-ssl,$var-ssl}
-sed -i /etc/apache2/sites-available/$var \
-    -e "s/ServerName \(.*\)/ServerName $var.\\1/" \
-    -e "s/lbd/lbd_$var/g"
-sed -i /etc/apache2/sites-available/$var-ssl \
-    -e "s/ServerName \(.*\)/ServerName $var.\\1/" \
-    -e "s/lbd/lbd_$var/g"
-a2ensite $var $var-ssl
+rm -f /etc/apache2/sites-{available,enabled}/$dst{,-ssl}.conf
+cp /etc/apache2/sites-available/{$src,$dst}.conf
+cp /etc/apache2/sites-available/{$src-ssl,$dst-ssl}.conf
+sed -i /etc/apache2/sites-available/$dst.conf \
+    -e "s#ServerName .*#ServerName $hostname#" \
+    -e "s#RedirectPermanent .*#RedirectPermanent / https://$hostname/#" \
+    -e "s#$src_dir#$dst_dir#g"
+sed -i /etc/apache2/sites-available/$dst-ssl.conf \
+    -e "s#ServerName .*#ServerName $hostname#" \
+    -e "s#$src_dir#$dst_dir#g"
+a2ensite $dst $dst-ssl
+
+### fix permissions
+chown www-data: -R $dst_dir/sites/default/files/*
+chown root: $dst_dir/sites/default/files/.htaccess
 
 ### restart services
-#for SRV in php5-fpm memcached mysql nginx
-for SRV in mysql apache2
+#for service in php5-fpm memcached mysql nginx
+for service in mysql apache2
 do
-    service $SRV restart
+    /etc/init.d/$service restart
 done

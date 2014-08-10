@@ -12,7 +12,7 @@ cat <<EOF > restore-private-vars.php
 <?php
 /**
  * Backup of sensitive/private variables, that are specific
- * only for this instance of B-Translator. This file should
+ * only for this instance of Labdoo. This file should
  * never be made public.
  */
 

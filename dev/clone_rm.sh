@@ -3,38 +3,41 @@
 
 if [ $# -ne 1 ]
 then
-    echo " * Usage: $0 variant
+    echo " * Usage: $0 target
 
-   Deletes the application with root /var/www/lbd_<variant>
-   and with DB named lbd_<variant>
-   <variant> is something like 'dev', 'test', '01', etc.
+   Deletes the application with root /var/www/<target>
+   and with DB named <target>.
 "
     exit 1
 fi
-var=$1
-root_dir=/var/www/lbd_$var
-db_name=lbd_$var
+target=$1
 
 ### remove the root directory
-rm -rf $root_dir
+rm -rf /var/www/$target
 
 ### delete the drush alias
-sed -i /etc/drush/local.aliases.drushrc.php \
-    -e "/^\\\$aliases\['$var'\] = /,+5 d"
+sed -i /etc/drush/local_lbd.aliases.drushrc.php \
+    -e "/^\\\$aliases\['$target'\] = /,+5 d"
 
 ### drop the database
 mysql --defaults-file=/etc/mysql/debian.cnf \
-      -e "DROP DATABASE IF EXISTS $db_name;"
+      -e "DROP DATABASE IF EXISTS $target;"
 
 ### remove the configuration of nginx
-rm -f /etc/nginx/sites-{available,enabled}/$var
+rm -f /etc/nginx/sites-{available,enabled}/$target
 
 ### remove the configuration of apache2
-rm -f /etc/apache2/sites-{available,enabled}/$var{,-ssl}
+rm -f /etc/apache2/sites-{available,enabled}/$target{,-ssl}.conf
+
+### remove from /etc/hosts
+domain=$(grep ' localhost' /etc/hosts | head -n 1 | cut -d' ' -f2)
+sub=${target#*_}
+hostname=$sub.$domain
+sed -i /etc/hosts -e "/^127.0.0.1 $hostname/d"
 
 ### restart services
-#for SRV in php5-fpm memcached mysql nginx
-for SRV in mysql apache2
+#for service in php5-fpm memcached mysql nginx
+for service in mysql apache2
 do
-    service $SRV restart
+    /etc/init.d/$service restart
 done

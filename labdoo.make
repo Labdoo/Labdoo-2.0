@@ -1,119 +1,141 @@
-; Include Build Kit install profile makefile via URL
-includes[] = http://drupalcode.org/project/buildkit.git/blob_plain/refs/heads/7.x-2.x:/drupal-org.make
+api = 2
+core = 7.x
 
+;--------------------
 ; Specify defaults
-defaults[projects][subdir] = "contrib"
-defaults[libraries][type] = "library"
-
-;--------------------
-; Additional Themes
 ;--------------------
 
-projects[bootstrap][version] = "2.2"
-projects[bartik_fb][version] = "1.x-dev"
+defaults[projects][subdir] = contrib
 
 ;--------------------
-; Additional Contrib
+; Bootstrap Theme
 ;--------------------
 
-projects[libraries][version] = "2.1"
-projects[module_filter][version] = "1.8"
-projects[profiler_builder][version] = "1.0-rc3"
-projects[google_analytics][version] = "1.3"
-projects[token][version] = "1.5"
-projects[edit_profile][version] = "1.0-beta2"
-;projects[examples][version] = "1.x-dev"
-projects[entity][version] = "1.2"
-projects[rules][version] = "2.6"
-projects[homebox][version] = "2.0-beta6"
-projects[simpletest_clone][version] = "1.0-beta3"
-projects[captcha][version] = "1.0"
-projects[recaptcha][version] = "1.10"
-projects[honeypot][version] = "1.15"
-projects[features_extra][version] = "1.0-beta1"
-projects[uuid][version] = "1.0-alpha5"
-projects[node_export][version] = "3.0"
-projects[configuration][version] = "2.0-alpha2"
-projects[xautoload][version] = "2.7"
-projects[jquery_update][version] = "2.3"
-projects[boxes][version] = "1.1"
-projects[delete_all][version] = "1.1"
-projects[drush_language][version] = "1.2"
-projects[pathauto][version] = "1.2"
-projects[subpathauto][version] = "1.3"
-projects[services][version] = "3.5"
-projects[services][patch][] = "https://drupal.org/files/fix_controller_settings-1154420-51.patch"
-projects[entityreference][version] = "1.1"
-projects[oauth2_server][version] = "1.0-rc3"
-projects[field_group][version] = "1.3"
-projects[date][version] = "2.6"
-projects[location][version] = "3.1"
-projects[nodeaccess_userreference][version] = "3.10"
-projects[email][version] = "1.2"
-projects[conditional_fields][version] = "3.0-alpha1"
-projects[lightbox2][version] = "1.0-beta1"
-projects[node_view_permissions][version] = "1.3"
-projects[r4032login][version] = "1.7"
-projects[ip_geoloc][version] = "1.25"
-projects[views_slideshow][version] = "3.1"
-projects[gmap][version] = "2.9"
-projects[views_autocomplete_filters][version] = "1.1"
-projects[views_dependent_filters][version] = "1.1"
-projects[simplenews][version] = "1.1"
-;projects[node_clone][version] = "1.0-rc2"
+projects[bootstrap] = 2.2
+projects[jquery_update] = 2.4
+
+libraries[bootstrap][directory_name] = bootstrap
+libraries[bootstrap][download][type] = get
+libraries[bootstrap][download][url] = https://github.com/twbs/bootstrap/archive/v3.0.0.zip
 
 ;--------------------
-; Performance
-;--------------------
-projects[boost][version] = "1.0-beta2"
-projects[memcache][version] = "1.0"
-
-;--------------------
-; Community and Social
-;--------------------
-projects[drupalchat][version] = "1.0-beta15"
-projects[disqus][version] = "1.9"
-projects[disqus][patch][] = "http://drupal.org/files/disqus-https.patch"
-projects[sharethis][version] = "2.5"
-projects[invite][version] = "2.1-beta2"
-projects[hybridauth][version] = "2.8"
-
-;--------------------
-; Drupal Localization
-;--------------------
-projects[l10n_update][version] = "1.0"
-projects[l10n_client][version] = "1.3"
-
-;--------------------
-; Mail Related
-;--------------------
-projects[mailsystem][version] = "2.34"
-projects[phpmailer][version] = "3.x-dev"
-projects[mimemail][version] = "1.0-beta1"
-projects[reroute_email][version] = "1.1"
-projects[mass_contact][version] = "1.0-beta3"
-projects[smtp][version] = "1.0"
-
-;--------------------
-; Libraries
+; Contrib
 ;--------------------
 
-libraries[phpmailer][directory_name] = "phpmailer"
-libraries[phpmailer][download][type] = "get"
-libraries[phpmailer][download][url] = "https://github.com/PHPMailer/PHPMailer/archive/v5.2.6.zip"
+;;; Development
+projects[devel] = 1.5
+;projects[coder] = 1.2
+projects[diff] = 3.2
 
-libraries[oauth2-server-php][directory_name] = "oauth2-server-php"
-libraries[oauth2-server-php][download][type] = "git"
-libraries[oauth2-server-php][download][url] = "https://github.com/bshaffer/oauth2-server-php.git"
+;;; Extensions
+projects[ctools] = 1.4
+projects[libraries] = 2.2
+projects[entity] = 1.5
+projects[xautoload] = 4.5
+projects[token] = 1.5
+projects[rules] = 2.7
+projects[pathauto] = 1.2
+projects[subpathauto] = 1.3
 
-libraries[bootstrap][directory_name] = "bootstrap"
-libraries[bootstrap][download][type] = "get"
-libraries[bootstrap][download][url] = "https://github.com/twbs/bootstrap/archive/v3.0.0.zip"
+;;; User interface
+projects[context] = 3.2
+projects[views] = 3.8
+projects[homebox] = 2.0-beta7
+projects[boxes] = 1.2
+projects[edit_profile] = 1.0-beta2
 
-libraries[hybridauth][directory_name] = "hybridauth-2.1.2"
-libraries[hybridauth][download][type] = "get"
-libraries[hybridauth][download][url] = "http://sourceforge.net/projects/hybridauth/files/hybridauth-2.1.2.zip"
+projects[wysiwyg] = 2.2
 
-libraries[hybridauth-additional-providers][directory_name] = "hybridauth-additional-providers-1.8"
-libraries[hybridauth-additional-providers][download][type] = "get"
-libraries[hybridauth-additional-providers][download][url] = "http://sourceforge.net/projects/hybridauth/files/hybridauth-additional-providers-1.8.zip"
+libraries[tinymce][directory_name] = tinymce
+libraries[tinymce][download][type] = get
+libraries[tinymce][download][url] = http://github.com/downloads/tinymce/tinymce/tinymce_3.5.7.zip
+
+;;; Security
+projects[captcha] = 1.1
+projects[recaptcha] = 1.11
+projects[honeypot] = 1.17
+projects[user_restrictions] = 1.0
+
+;;; Features
+projects[features] = 1.0
+projects[strongarm] = 2.0
+projects[features_extra] = 1.0-beta1
+projects[node_export] = 3.0
+projects[uuid] = 1.0-alpha5
+;projects[menu_import] = 1.6
+
+projects[defaultconfig][version] = 1.x-dev
+projects[defaultconfig][patch][1900574] = https://www.drupal.org/files/issues/1900574.defaultconfig.undefinedindex_13.patch
+
+;;; Admin Utils
+projects[module_filter] = 1.8
+projects[drush_language] = 1.2
+projects[delete_all] = 1.1
+projects[l10n_update] = 1.0
+
+;;; Performance
+projects[boost] = 1.0
+projects[memcache] = 1.2
+
+;;; Services and Social
+projects[google_analytics] = 2.0
+projects[drupalchat] = 1.2
+projects[fb] = 3.4
+projects[invite] = 2.1-beta2
+projects[simplenews] = 1.1
+projects[mass_contact] = 1.0
+projects[sharethis] = 2.5
+projects[disqus] = 1.9
+projects[disqus][patch][] = http://drupal.org/files/disqus-https.patch
+
+;;; Extra
+projects[entityreference] = 1.1
+projects[field_group] = 1.3
+projects[date] = 2.6
+projects[location] = 3.1
+projects[nodeaccess_userreference] = 3.10
+projects[email] = 1.2
+projects[conditional_fields] = 3.0-alpha1
+projects[lightbox2] = 1.0-beta1
+projects[node_view_permissions] = 1.3
+projects[r4032login] = 1.7
+projects[ip_geoloc] = 1.25
+projects[views_slideshow] = 3.1
+projects[gmap] = 2.9
+projects[views_autocomplete_filters] = 1.1
+projects[views_dependent_filters] = 1.1
+
+
+;--------------------
+; Sending Emails
+;--------------------
+
+projects[mailsystem] = 2.34
+projects[mimemail] = 1.0-beta3
+projects[reroute_email] = 1.1
+projects[smtp] = 1.0
+
+;projects[phpmailer] = 3.x-dev
+projects[phpmailer][download][revision] = 8f7c632
+projects[phpmailer][download][branch] = 7.x-3.x
+
+libraries[phpmailer][directory_name] = phpmailer
+libraries[phpmailer][download][type] = get
+libraries[phpmailer][download][url] = https://github.com/PHPMailer/PHPMailer/archive/v5.2.6.zip
+
+;--------------------
+; HybridAuth
+;--------------------
+
+projects[hybridauth] = 2.9
+
+libraries[hybridauth][directory_name] = hybridauth
+libraries[hybridauth][download][type] = get
+libraries[hybridauth][download][url] = https://github.com/hybridauth/hybridauth/archive/v2.2.1.tar.gz
+
+;--------------------
+; Web Services
+;--------------------
+
+projects[oauth2_loginprovider] = 1.x-dev
+

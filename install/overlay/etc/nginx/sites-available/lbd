@@ -8,8 +8,8 @@ server {
 	server_name example.org;
 	root /var/www/lbd;
 
-	access_log /var/log/nginx/labdoo.access.log;
- 	error_log  /var/log/nginx/labdoo.error.log info;
+	access_log /var/log/nginx/lbd.access.log;
+ 	error_log  /var/log/nginx/lbd.error.log info;
 
 	location /downloads {
 		root /var/www/;
@@ -87,7 +87,7 @@ server {
 		include fastcgi_params;
 		# Intercepting errors will cause PHP errors to appear in Nginx logs
 		fastcgi_intercept_errors on;
-		fastcgi_pass unix:/var/run/php5-fpm.sock;
+		fastcgi_pass unix:/run/php5-fpm.sock;
 	}
 
 	# The ImageCache module builds an image 'on the fly' which means that
@@ -121,7 +121,7 @@ server {
                location ~ ^/phpmyadmin/(.+\.php)$ {
                        try_files $uri =404;
                        root /usr/share/;
-                       fastcgi_pass unix:/var/run/php5-fpm.sock;
+                       fastcgi_pass unix:/run/php5-fpm.sock;
                        fastcgi_index index.php;
                        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
                        include /etc/nginx/fastcgi_params;

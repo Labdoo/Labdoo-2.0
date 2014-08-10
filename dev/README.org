@@ -91,7 +91,7 @@ Development Setup of Labdoo
   #+END_EXAMPLE
 
   It creates a new application with root */var/www/lbd_dev/* and with
-  DB named *lbd_dev*. It also creates the drush alias *@dev*, and
+  DB named *lbd_dev*. It also creates the drush alias *@lbd_dev*, and
   modifies the configuration of the webserver so that the cloned
   application can be accessed at *dev.labdoo.org*.
 
@@ -114,7 +114,7 @@ Development Setup of Labdoo
   chroot /var/chroot/lbd/
   cd /var/www/
   drush @lbd php-script lbd/profiles/labdoo/dev/config.php dev1
-  drush @dev php-script lbd/profiles/labdoo/dev/config.php dev2
+  drush @lbd_dev php-script lbd/profiles/labdoo/dev/config.php dev2
   #+END_EXAMPLE
 
   It will set site_name to 'Labdoo (dev1)', will make site email
@@ -141,17 +141,17 @@ Development Setup of Labdoo
   ln -s lbd_dev/profiles/labdoo/ Labdoo
 
   Labdoo/dev/snapshot.sh make @lbd
-  Labdoo/dev/snapshot.sh make @dev
+  Labdoo/dev/snapshot.sh make @lbd_dev
   #+END_EXAMPLE
   These will create the files ~snapshot-lbd-20130602.tgz~ and
   ~snapshot-lbd_dev-20130602.tgz~. They can be restored like this:
   #+BEGIN_EXAMPLE
   Labdoo/dev/snapshot.sh restore @lbd --file=snapshot-lbd-20130602.tgz
   Labdoo/dev/snapshot.sh restore @lbd --file=snapshot-lbd_dev-20130602.tgz
-  Labdoo/dev/snapshot.sh restore @dev --file=snapshot-lbd-20130602.tgz
-  Labdoo/dev/snapshot.sh restore @dev --file=snapshot-lbd_dev-20130602.tgz
+  Labdoo/dev/snapshot.sh restore @lbd_dev --file=snapshot-lbd-20130602.tgz
+  Labdoo/dev/snapshot.sh restore @lbd_dev --file=snapshot-lbd_dev-20130602.tgz
   #+END_EXAMPLE
-  As you may notice, a snapshot of @dev can also be restored on the
+  As you may notice, a snapshot of @lbd_dev can also be restored on the
   main application, and the other way around.
 
   However, in many cases a backup/restore of the database is all that
@@ -159,13 +159,13 @@ Development Setup of Labdoo
   sql-dump* and *drush sql-query* like this:
   #+BEGIN_EXAMPLE
   drush sql-dump @lbd > lbd.sql
-  drush sql-dump @dev > lbd_dev.sql
+  drush sql-dump @lbd_dev > lbd_dev.sql
 
   drush @lbd sql-query --file=$(pwd)/lbd.sql
   drush @lbd sql-query --file=$(pwd)/lbd_dev.sql
 
-  drush @dev sql-query --file=$(pwd)/lbd.sql
-  drush @dev sql-query --file=$(pwd)/lbd_dev.sql
+  drush @lbd_dev sql-query --file=$(pwd)/lbd.sql
+  drush @lbd_dev sql-query --file=$(pwd)/lbd_dev.sql
   #+END_EXAMPLE
 
 
@@ -189,7 +189,7 @@ Development Setup of Labdoo
 
   The copy of the application on =/var/www/lbd_dev/profiles/labdoo/=
   (as well as the one on =/var/www/lbd/profiles/labdoo/=) are actually
-  clones of the git repository at https://github.com/Labdoo/Labdoo-2.0
+  clones of the git repository at https://github.com/dashohoxha/dbox
   so we can *pull* from it and *push* to it. Pulling (to get
   up-to-date) can be done by everybody, however pushing requires a
   username and password (the ones that are used to access the account
@@ -236,11 +236,11 @@ Development Setup of Labdoo
 * Making a local git clone of the dev application
 
   Sometimes it is not easy or suitable to test modifications on the
-  *@dev* application (~/var/www/lbd_dev~). For example this is the
+  *@lbd_dev* application (~/var/www/lbd_dev~). For example this is the
   case when I have to test install/uninstall, enable/disable modules,
   features, etc. In this case I test them on the main application
   instance (~/var/www/lbd~). Since both applications are clones of the
-  [[https://github.com/Labdoo/Labdoo-2.0][GitHub repository]] it is easy to push commits from /lbd_dev/ to
+  [[https://github.com/dashohoxha/dbox][GitHub repository]] it is easy to push commits from /lbd_dev/ to
   /github/ and to pull them from /github/ to /lbd/.
 
   However, sometimes it is better to test modifications and make sure
@@ -355,12 +355,12 @@ Development Setup of Labdoo
   #+BEGIN_EXAMPLE
   drush rsync @live @test
   drush sql-sync @live @test
-  drush rsync @live @dev
-  drush sql-sync @live @dev
+  drush rsync @live @lbd_dev
+  drush sql-sync @live @lbd_dev
   #+END_EXAMPLE
 
   *Note:* Synchronizing this way from *@test* to *@live* or from
-  *@dev* to *@live*, usually is a HUGE mistake, but the /simulate/
+  *@lbd_dev* to *@live*, usually is a HUGE mistake, but the /simulate/
   option on the config file will make sure that it fails.
 
   For drush commands to work remotely, *ssh* daemon has to be running
