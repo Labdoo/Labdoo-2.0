@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Install functions for the profile Labdoo.
+ * Install functions for the profile labdoo.
  */
 
 /**
@@ -10,16 +10,12 @@
  * Perform actions to set up the site for this profile.
  */
 function labdoo_install() {
-
   include_once DRUPAL_ROOT . '/profiles/standard/standard.install';
   standard_install();
 
-  // enable themes and set the default theme
-  theme_enable(array('bootstrap1'));
-  variable_set('theme_default', 'bootstrap1');
-  variable_set('jquery_update_compression_type', 'min');
-  variable_set('jquery_update_jquery_cdn', 'google');
-  variable_set('jquery_update_jquery_version', '1.8');
+  // Apply all the features.
+  features_rebuild();
+  features_revert();
 
   // user settings
   variable_set('user_register', USER_REGISTER_VISITORS);
@@ -29,7 +25,7 @@ function labdoo_install() {
   variable_set('location_usegmap', TRUE); 
 
   _labdoo_install_mailsystem();
-  _labdoo_install_actions();
+  _labdoo_install_user_restrictions();
 }
 
 function _labdoo_install_mailsystem()
@@ -42,37 +38,13 @@ function _labdoo_install_mailsystem()
   variable_set('mail_system', $mail_system);
 }
 
-function _labdoo_install_actions()
-{
-  $site_mail = variable_get('site_mail');
-
-  // create actions
-  $action_id_1 = actions_save(
-    'system_send_email_action',
-    'system',
-    array(
-      'recipient' => $site_mail,
-      'subject' => '[labdoo] New user: [user:name]',
-      'message' => 'New user: [user:name]',
-    ),
-    t('Send e-mail to admin when a new user is registered')
-  );
-  $action_id_2 = actions_save(
-    'system_send_email_action',
-    'system',
-    array(
-      'recipient' => $site_mail,
-      'subject' => '[labdoo] [user:name] has modified his account',
-      'message' => 'The user [user:name] has modified his account.',
-    ),
-    t('Send e-mail to admin when user modifies his account')
-  );
-
-  // assign actions to triggers
-  db_insert('trigger_assignments')
-    ->fields(array('hook', 'aid', 'weight'))
-    ->values(array('hook' => 'user_insert', 'aid' => $action_id_1, 'weight' => 0))
-    ->values(array('hook' => 'user_update', 'aid' => $action_id_2, 'weight' => 0))
+function _labdoo_install_user_restrictions() {
+  db_insert('user_restrictions')
+    ->fields(array(
+      'mask' => '%@netcourrier.com',
+      'type' => 'mail',
+      'status' => 0,  // deny
+      ))
     ->execute();
 }
 

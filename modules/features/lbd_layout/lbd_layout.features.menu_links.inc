@@ -18,16 +18,16 @@ function lbd_layout_menu_default_menu_links() {
     'link_title' => 'Home',
     'options' => array(),
     'module' => 'menu',
-    'hidden' => '0',
+    'hidden' => '1',
     'external' => '1',
     'has_children' => '0',
     'expanded' => '0',
     'weight' => '-50',
   );
-
   // Translatables
   // Included for use with string extractors like potx.
   t('Home');
+
 
   return $menu_links;
 }

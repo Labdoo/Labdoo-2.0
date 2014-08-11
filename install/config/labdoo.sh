@@ -19,8 +19,8 @@ drush @lbd $enOrDis -y labdoo_lib lbd_content_types labdoo_objects lbd_communica
 drush @lbd dis -y labdoo_lib
 drush @lbd en -y labdoo_lib lbd_communicate lbd_actions lbd_dootrip
 
-# install smtp
-$cwd/gmailsmtp.sh
+# # install smtp
+# $cwd/gmailsmtp.sh
 
 # Some sample nodes for development (disable this for production)
 # Note: these modules need to be installed after smtp is installed

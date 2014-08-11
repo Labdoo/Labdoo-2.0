@@ -14,7 +14,7 @@ function lbd_captcha_menu() {
     'description'      => 'Private reCaptca settings.',
     'page callback'    => 'drupal_get_form',
     'page arguments'   => array('lbd_captcha_config'),
-    'access arguments' => array('btranslator-admin'),
+    'access callback'  => TRUE,
   );
 
   return $items;

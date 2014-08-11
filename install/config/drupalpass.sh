@@ -1,25 +1,22 @@
 #!/bin/bash
-### Set the admin password and email address of Drupal.
+### Set the admin password of Drupal.
 
-echo "
-===> Please enter the email address of the 'admin' user account in Drupal"
+### get a password for the Drupal user 'admin'
+if [ -z "${lbd_admin_passwd+xxx}" -o "$lbd_admin_passwd" = '' ]
+then
+    base_url=$(drush @lbd eval 'print $GLOBALS["base_url"]')
+    echo
+    echo "===> Password for Drupal 'admin' on $base_url."
+    echo
+    stty -echo
+    read -p "Enter the password: " lbd_admin_passwd
+    stty echo
+    echo
+fi
 
-MAIL='contact@labdoo.org'
-read -p "Enter the email address [$MAIL]: " input
-MAIL=${input:-$MAIL}
-
-echo "
-===> Please enter new password for the 'admin' user account in Drupal.
-"
-stty -echo
-read -p "Enter the password: " passwd
-stty echo
-echo
-
+### set the password
 $(dirname $0)/mysqld.sh start
-drush @lbd user-password admin --password="$passwd"
-drush @lbd sqlq "update users set mail='$MAIL' where uid=1"
+drush @lbd user-password admin --password="$lbd_admin_passwd"
 
 ### drush may create css/js files with wrong(root) permissions
-rm -rf /var/www/lbd/sites/default/files/css/
-rm -rf /var/www/lbd/sites/default/files/js/
+chown www-data: -R /var/www/lbd*/sites/default/files/{css,js}

@@ -18,8 +18,8 @@ $aliases['lbd'] = array (
   ),
 );
 
-$aliases['dev'] = array (
-  'parent' => '@main',
-  'root' => '/var/www/lbd_dev',
-  'uri' => 'http://dev.example.org',
-);
+// $aliases['lbd_dev'] = array (
+//   'parent' => '@lbd',
+//   'root' => '/var/www/lbd_dev',
+//   'uri' => 'http://dev.example.org',
+// );

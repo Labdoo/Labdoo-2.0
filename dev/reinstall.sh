@@ -2,17 +2,31 @@
 ### Reinstall labdoo from scratch.
 ### Useful for testing installation scripts.
 
+### get config settings from a file
+if [ "$1" = '' ]
+then
+    echo "Usage: $0 settings.sh"
+    exit 1
+fi
+settings=$1
+set -a
+source  $settings
+set +a
+
+### backup
+rm -rf /var/www/lbd-bak
+mv /var/www/{lbd,lbd-bak}
+
+### reinstall
 export drupal_dir=/var/www/lbd
 export drush="drush --root=$drupal_dir"
+export code_dir=/var/www/code
+cd $code_dir/labdoo/install/scripts/
+./drupal-make-and-install.sh
+./drupal-config.sh
 
-mv $drupal_dir $drupal_dir-bak
+### configure
+$code_dir/labdoo/install/config.sh
 
-cd $(dirname $0)
-cd ../install/install-scripts/
-
-./20-make-and-install-labdoo.sh
-./30-git-clone-labdoo.sh
-./40-configure-labdoo.sh
-
-../config.sh
-
+### restart mysql
+/etc/init.d/mysql restart

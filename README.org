@@ -14,10 +14,17 @@
     git clone https://github.com/Labdoo/Labdoo-2.0.git Labdoo
     #+END_EXAMPLE
 
-  + Install Labdoo inside a chroot system:
+  + Modify and customize the settings:
     #+BEGIN_EXAMPLE
-    nohup nice Labdoo/install/install.sh lbd &
+    cp Labdoo/install/settings.sh Labdoo/cfg.sh
+    vim Labdoo/cfg.sh
+    #+END_EXAMPLE
+
+  + Install the project inside a chroot system:
+    #+BEGIN_EXAMPLE
+    nohup nice Labdoo/install/chroot.sh Labdoo/cfg.sh &
     tail -f nohup.out
+    less -r nohup.out
     #+END_EXAMPLE
 
   + Configure it (See next section for sample values when running the following command): 

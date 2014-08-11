@@ -1,5 +1,14 @@
 #!/bin/bash -x
 
+### prevent robots from crawling translations
+sed -i $drupal_dir/robots.txt \
+    -e '/# Labdoo/,$ d'
+cat <<EOF >> $drupal_dir/robots.txt
+# Labdoo
+Disallow: /translations/
+Disallow: /?q=translations/
+EOF
+
 # Protect Drupal settings from prying eyes
 drupal_settings=$drupal_dir/sites/default/settings.php
 chown root:www-data $drupal_settings
@@ -57,42 +66,26 @@ comment memcache config */
 
 EOF
 
-### install features modules
+### install additional features
 ### $drush is an alias for 'drush --root=/var/www/lbd'
 $drush --yes pm-enable lbd_layout
 $drush --yes features-revert lbd_layout
 
-$drush --yes pm-enable lbd_hybridauth
-$drush --yes features-revert lbd_hybridauth
+$drush --yes pm-enable lbd_content
 
-$drush --yes pm-enable labdoo_objects
-$drush --yes features-revert labdoo_objects
-
-#$drush --yes pm-enable lbd_misc
-#$drush --yes features-revert lbd_misc
-
-#$drush --yes pm-enable lbd_disqus
-#$drush --yes pm-enable lbd_content
-#$drush --yes pm-enable lbd_sharethis
-
-#$drush --yes pm-enable lbd_captcha
-#$drush --yes features-revert lbd_captcha
-#$drush vset recaptcha_private_key 6LenROISAAAAAM-bbCjtdRMbNN02w368ScK3ShK0
-#$drush vset recaptcha_public_key 6LenROISAAAAAH9roYsyHLzGaDQr76lhDZcm92gG
+$drush --yes pm-enable lbd_captcha
+$drush --yes features-revert lbd_captcha
 
 #$drush --yes pm-enable lbd_invite
-#$drush --yes pm-enable lbd_permissions
-
 #$drush --yes pm-enable lbd_simplenews
 #$drush --yes pm-enable lbd_mass_contact
 #$drush --yes pm-enable lbd_googleanalytics
-#$drush --yes pm-enable lbd_drupalchat
 
-### update to the latest version of core and modules
-$drush --yes pm-update
 
 ### install also multi-language support
-$drush --yes pm-enable l10n_client l10n_update
+$drush --yes pm-enable l10n_update
 mkdir -p $drupal_dir/sites/all/translations
 chown -R www-data: $drupal_dir/sites/all/translations
-$drush --yes l10n-update
+
+### update to the latest version of core and modules
+#$drush --yes pm-update

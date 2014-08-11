@@ -16,16 +16,11 @@ files[] = labdoo.profile
 dependencies[] = book
 dependencies[] = contact
 dependencies[] = blog
-dependencies[] = field
-dependencies[] = field_sql_storage
-dependencies[] = field_ui
-dependencies[] = file
 dependencies[] = menu
 dependencies[] = path
 dependencies[] = taxonomy
 dependencies[] = block
 dependencies[] = aggregator
-dependencies[] = comment
 dependencies[] = dashboard
 dependencies[] = filter
 dependencies[] = image
@@ -39,44 +34,41 @@ dependencies[] = update
 dependencies[] = user
 dependencies[] = syslog
 dependencies[] = rdf
-dependencies[] = list
-dependencies[] = number
-dependencies[] = options
-dependencies[] = text
-dependencies[] = php
+dependencies[] = comment
 
 ;--------------------
 ; Contrib
 ;--------------------
-dependencies[] = context
-dependencies[] = context_ui
+
+;;; Development
+dependencies[] = reroute_email
+dependencies[] = devel
+dependencies[] = diff
+;dependencies[] = coder
+
+;;; Extensions
 dependencies[] = ctools
-dependencies[] = strongarm
-dependencies[] = views
-dependencies[] = views_ui
-dependencies[] = edit_profile
+dependencies[] = libraries
+dependencies[] = entity
+dependencies[] = xautoload
 dependencies[] = token
-dependencies[] = color
-dependencies[] = simpletest_clone
 dependencies[] = rules_scheduler
 dependencies[] = rules_admin
-dependencies[] = features
-dependencies[] = diff
-dependencies[] = fe_block
-dependencies[] = boxes
-dependencies[] = uuid
-dependencies[] = node_export
-dependencies[] = node_export_features
-dependencies[] = xautoload
-dependencies[] = jquery_update
-dependencies[] = delete_all
-dependencies[] = entity
 dependencies[] = pathauto
 dependencies[] = subpathauto
-dependencies[] = lightbox2 
+dependencies[] = lightbox2
+
+;;; User Interface
+dependencies[] = context
+dependencies[] = context_ui
+dependencies[] = views
+dependencies[] = views_ui
+dependencies[] = boxes
+dependencies[] = edit_profile
+dependencies[] = color
 dependencies[] = node_view_permissions 
 dependencies[] = r4032login 
-dependencies[] = ip_geoloc 
+dependencies[] = ip_geoloc
 dependencies[] = views_slideshow
 dependencies[] = views_slideshow_cycle
 dependencies[] = gmap
@@ -85,46 +77,30 @@ dependencies[] = views_autocomplete_filters
 dependencies[] = views_dependent_filters
 dependencies[] = simplenews
 
-;dependencies[] = node_clone
+;;; Features
+dependencies[] = strongarm
+dependencies[] = features
+dependencies[] = fe_block
+dependencies[] = uuid
+dependencies[] = node_export
+dependencies[] = node_export_features
+
+;;; Admin Utils
+dependencies[] = module_filter
+dependencies[] = l10n_update
+dependencies[] = user_restrictions
+
+;;; Performance
+dependencies[] = boost
+;dependencies[] = memcache
 
 ;--------------------
-; Drupal Localization
+; Sending Emails
 ;--------------------
-;dependencies[] = l10n_update
-;dependencies[] = l10n_client
 
-;--------------------
-; Contrib Mail
-;--------------------
 dependencies[] = mailsystem
 dependencies[] = phpmailer
 dependencies[] = mimemail
 dependencies[] = mimemail_action
 dependencies[] = mimemail_compress
 dependencies[] = smtp
-
-;--------------------
-; Labdoo
-;--------------------
-;dependencies[] = lbd_content_types 
-;dependencies[] = labdoo_lib
-;dependencies[] = lbd_communicate 
-;dependencies[] = lbd_visualize 
-
-;--------------------
-; Other
-;--------------------
-dependencies[] = libraries
-dependencies[] = module_filter
-
-;--------------------
-; Development
-;--------------------
-dependencies[] = reroute_email
-dependencies[] = devel
-
-;--------------------
-; Performance and scalability
-;--------------------
-dependencies[] = boost
-dependencies[] = memcache

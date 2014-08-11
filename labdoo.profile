@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Installation steps for the profile Labdoo.
+ * Installation steps for the profile labdoo.
  */
 
 /**
@@ -21,7 +21,8 @@ function labdoo_install_tasks($install_state) {
   // Add our custom CSS file for the installation process
   drupal_add_css(drupal_get_path('profile', 'labdoo') . '/labdoo.css');
 
-  require_once(drupal_get_path('module', 'phpmailer') . '/phpmailer.admin.inc');
+  module_load_include('inc', 'phpmailer', 'phpmailer.admin');
+  //module_load_include('inc', 'labdoo', 'labdoo.admin');
 
   $tasks = array(
     'labdoo_mail_config' => array(
@@ -41,23 +42,4 @@ function labdoo_install_tasks($install_state) {
   );
 
   return $tasks;
-}
-
-
-/**
- * General configuration settings for Labdoo.
- *
- * @return
- *   An array containing form items to place on the module settings page.
- */
-function labdoo_config() {
-
-  $form['config'] = array(
-    '#type'  => 'fieldset',
-    '#title' => t('Labdoo configuration options'),
-  );
-
-  // . . . . .
-
-  return system_settings_form($form);
 }
