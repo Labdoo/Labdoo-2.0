@@ -304,14 +304,51 @@ function labdoo_objects_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__hub';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'print' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'email_plain' => array(
+        'custom_settings' => FALSE,
+      ),
+      'email_html' => array(
+        'custom_settings' => FALSE,
+      ),
+      'email_textalt' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
         ),
         'path' => array(
-          'weight' => '30',
+          'weight' => '1',
+        ),
+        'locations' => array(
+          'weight' => '4',
         ),
       ),
       'display' => array(),
@@ -539,7 +576,7 @@ function labdoo_objects_strongarm() {
       'collapsed' => 0,
       'fields' => array(
         'name' => array(
-          'collect' => '0',
+          'collect' => '1',
           'default' => '',
           'weight' => '-100',
         ),
@@ -631,7 +668,7 @@ function labdoo_objects_strongarm() {
           'weight' => '-99',
         ),
         'additional' => array(
-          'collect' => '1',
+          'collect' => '0',
           'default' => '',
           'weight' => '-98',
         ),
@@ -647,7 +684,7 @@ function labdoo_objects_strongarm() {
         ),
         'province' => array(
           'collect' => '1',
-          'widget' => 'autocomplete',
+          'widget' => 'select',
           'default' => '',
           'weight' => '-95',
         ),

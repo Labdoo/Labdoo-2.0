@@ -2202,7 +2202,7 @@ function labdoo_objects_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 1,
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -2226,7 +2226,7 @@ function labdoo_objects_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '32',
+        'weight' => '3',
       ),
     ),
   );
@@ -2285,7 +2285,7 @@ function labdoo_objects_field_default_fields() {
             'link' => FALSE,
           ),
           'type' => 'entityreference_label',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -2310,7 +2310,7 @@ function labdoo_objects_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '31',
+        'weight' => '2',
       ),
     ),
   );

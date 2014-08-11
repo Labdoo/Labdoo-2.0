@@ -46,9 +46,11 @@ function _must_be_streamed($newCity) {
 
 
 /**
- * Creates an action node. Usually this function is invoked upon
+ * Creates an action node. Usually this subroutine is invoked upon
  * creating one of the Labdoo objects.
  *
+ * @param string $actionType
+ *   The type of action, one of: {Dooject, Dootrip, Edoovillage, Hub}
  * @param string $title
  *   The title of the action in plain text
  * @param string $body
@@ -59,11 +61,14 @@ function _must_be_streamed($newCity) {
  *   Whether this action should be streamed in the action feed or not
  *
  */
-function _create_activity_node($title, $body, $location, $streamIt)
+function _create_activity_node($actionType, $title, $body, $location, $streamIt, $hubId=NULL, $edoovillageId=NULL)
 {
+  global $user; 
   $node = new stdClass();
   $node->type = 'action';
   node_object_prepare($node);
+
+  $node->field_action_type['und'][0]['value'] = $actionType;
   
   $node->title = $title;
   $node->language = LANGUAGE_NONE;
@@ -85,6 +90,25 @@ function _create_activity_node($title, $body, $location, $streamIt)
   else
     $node->field_stream_it['und'][0]['value'] = 0;
 
+  $node->field_labdooer_action[$node->language][] = array(
+    'target_id' => $user->uid,
+    'target_type' => 'user',
+  );
+
+  if($hubId != NULL) {
+    $node->field_hub_action[$node->language][] = array(
+      'target_id' => $hubId,
+      'target_type' => 'node',
+    );
+  }
+
+  if($edoovillageId != NULL) {
+    $node->field_edoovillage_action[$node->language][] = array(
+      'target_id' => $edoovillageId,
+      'target_type' => 'node',
+    );
+  }
+
   node_save($node);
 }
 
@@ -94,6 +118,27 @@ function _create_activity_node($title, $body, $location, $streamIt)
  *
  */
 function lbd_actions_node_insert($node) {
+  _generate_labdoo_action($node);
+  return;
+}
+
+
+/*
+ * Implementation of hook_node_update
+ *
+ */
+function lbd_actions_node_update($node) {
+  _generate_labdoo_action($node);
+  return;
+}
+
+
+/*
+ * _generate_labdoo_action 
+ *
+ */
+function _generate_labdoo_action($node) {
+  $hubId = $edoovillageId = NULL;
 
   if($node->type != 'laptop' && $node->type != 'edoovillage' && $node->type != 'hub' && $node->type != 'dootrip') 
     return;
@@ -108,91 +153,107 @@ function lbd_actions_node_insert($node) {
   $thisCity = $location['city'];
 
   if($node->type == 'laptop') {
-    $title = "Laptop " . $node->title . " was tagged in " . $thisCity . ", " . $thisCountry; 
-    $body = '<p><a href="/node/' . $node->nid . '">' . $title .
-            '<img alt="" src="/profiles/labdoo/files/pictures/laptop-simple.png" style="width: 20px; height: 21px;" /></a></p>';
+
+    $actionType = "Dooject";
+    $hubId = labdoo_lib_get_entity_node($node, 'field_hub_laptop');
+    $edoovillageId = labdoo_lib_get_entity_node($node, 'field_edoovillage_destination');
+
+    if(!property_exists($node, 'original')) { // Dooject created 
+      $title = "Laptop " . $node->title . " was tagged in " . $thisCity . ", " . $thisCountry; 
+      $body = '<p><a href="/node/' . $node->nid . '">' . $title . "  " .
+              '<img alt="" src="/profiles/labdoo/files/pictures/laptop-simple.png" style="width: 20px; height: 21px;" /></a></p>';
+    }
+    else { // Dooject updated
+      $newStatus = $node->field_status['und'][0]['value'];
+      $previousStatus =  $node->original->field_status['und'][0]['value'];
+      if($previousStatus == $newStatus)
+        return;
+      if($newStatus == "S4" || $newStatus == "T1") {
+        // Take the location from the edoovillage since the dooject
+        // location may still not be updated at the time this hook is called
+        $edoovillageNode = node_load($edoovillageId);
+        $thisCountryCode = $edoovillageNode->locations[0]['country'];
+        $thisCountry = labdoo_country_code2name($thisCountryCode);
+        $thisCity = $edoovillageNode->locations[0]['city'];
+        $thisLatitude = $edoovillageNode->locations[0]['latitude'];
+        $thisLongitude = $edoovillageNode->locations[0]['longitude'];
+
+        $location = array();
+        $location['city'] = $thisCity;
+        $location['country'] = $thisCountryCode;
+        $location['latitude'] = $thisLatitude;
+        $location['longitude'] = $thisLongitude;
+      }
+
+      if(($previousStatus == "S0" or $previousStatus == "S1") and ($newStatus == "S2" or $newStatus == "S3")) { 
+        $title = "Laptop " . $node->title . " was sanitized in " . $thisCity . ", " . $thisCountry; 
+        $body = '<p><a href="/node/' . $node->nid . '">' . $title . "  " .
+                '<img alt="" src="/profiles/labdoo/files/pictures/laptop-sanitized.png" style="width: 31px; height: 21px;" /></a></p>';
+      }
+      else if($newStatus == "S4") {
+        $title = "Laptop " . $node->title . " was delivered to an edoovillage in " . $thisCity . ", " . $thisCountry; 
+        $body = '<p><a href="/node/' . $node->nid . '">' . $title . "  " .
+                '<img alt="" src="/profiles/labdoo/files/pictures/laptop-delivered.png" style="width: 31px; height: 21px;" /></a></p>';
+      }
+      else if($newStatus == "T1") { 
+        $title = "Laptop " . $node->title . " has started its journey to an edoovillage in " . $thisCity . ", " . $thisCountry; 
+        $body = '<p><a href="/node/' . $node->nid . '">' . $title . "  " .
+                '<img alt="" src="/profiles/labdoo/files/pictures/laptop-dootripped.png" style="width: 36px; height: 21px;" /></a></p>';
+      }
+      else if($newStatus == "S6") { 
+        $title = "Laptop " . $node->title . " has been recycled"; 
+        $body = '<p><a href="/node/' . $node->nid . '">' . $title . "  " .
+                '<img alt="" src="/profiles/labdoo/files/pictures/laptop-recycled.png" style="width: 27px; height: 27px;" /></a></p>';
+      }
+      else // don't create any activity
+        return;
+    }
   }
   else if($node->type == 'edoovillage') {
+    if(property_exists($node, 'original')) 
+      return;
+    $actionType = "Edoovillage";
+    $hubId = labdoo_lib_get_entity_node($node, 'field_hub');
+    $edoovillageId = $node->nid;
     $title = "Edoovillage was created in " . $thisCity . ", " . $thisCountry; 
-    $body = '<p><a href="/node/' . $node->nid . '">' . $title .
+    $body = '<p><a href="/node/' . $node->nid . '">' . $title . "  " .
             '<img alt="" src="/profiles/labdoo/files/pictures/edoovillage.png" style="width: 30px; height: 28px;" /></a></p>';
   }
   else if($node->type == 'hub') {
+    if(property_exists($node, 'original')) 
+      return;
+    $actionType = "Hub";
+    $hubId = $node->nid; 
     $title = "Hub was created in " . $thisCity . ", " . $thisCountry; 
-    $body = '<p><a href="/node/' . $node->nid . '">' . $title .
+    $body = '<p><a href="/node/' . $node->nid . '">' . $title . "  " .
             '<img alt="" src="/profiles/labdoo/files/pictures/hub.png" style="width: 34px; height: 28px;" /></a></p>';
   }
   else if($node->type == 'dootrip') {
+    $actionType = "Dootrip";
+    $doojectId = labdoo_lib_get_entity_node($node, 'field_laptops');
     $titleSplit = explode("- ", $node->title);
-    $title = $titleSplit[1] . " was created";
-    $body = '<p><a href="/node/' . $node->nid . '">' . $title .
+    if(property_exists($node, 'original')) { // Dootrip is updated 
+      // This dootrip already exists. Only report new activity if 
+      // doojects have been added to it.
+      $prevDoojectId = labdoo_lib_get_entity_node($node->original, 'field_laptops');
+      if($prevDoojectId != NULL or $doojectId == NULL) 
+        return;
+      $title = $titleSplit[1] . " was updated";
+    }
+    else { // Dootrips is created
+      $title = $titleSplit[1] . " was created";
+    }
+    if($doojectId != NULL) {
+      $doojectNode = node_load($doojectId);
+      $hubId = labdoo_lib_get_entity_node($doojectNode, 'field_hub_laptop');
+      $edoovillageId = labdoo_lib_get_entity_node($doojectNode, 'field_edoovillage_destination');
+    }
+    $body = '<p><a href="/node/' . $node->nid . '">' . $title . "  " .
             '<img alt="" src="/profiles/labdoo/files/pictures/dootrip.png" style="width: 34px; height: 26px;" /></a></p>';
   }
 
   $streamIt = _must_be_streamed($thisCity); 
-  _create_activity_node($title, $body, $location, $streamIt);
-  return;
-}
-
-
-/**
- * Implementation of hook_node_update
- *
- */
-function lbd_actions_node_update($node) {
-
-  if($node->type != 'laptop')
-    return;
-
-  if(!property_exists($node, 'original'))
-    return;
-
-  $newStatus = $node->field_status['und'][0]['value'];
-  $previousStatus =  $node->original->field_status['und'][0]['value'];
-  if($previousStatus == $newStatus)
-    return;
-
-  if($newStatus == "S4" || $newStatus == "T1") {
-    // Take the location from the edoovillage since the dooject
-    // location may still not be updated at the time this hook is called
-    $edoovillageId = $node->field_edoovillage_destination['und'][0]['target_id'];
-    $edoovillageNode = node_load($edoovillageId);
-    $thisCountryCode = $edoovillageNode->locations[0]['country'];
-    $thisCountry = labdoo_country_code2name($thisCountryCode);
-    $thisCity = $edoovillageNode->locations[0]['city'];
-    $thisLatitude = $edoovillageNode->locations[0]['latitude'];
-    $thisLongitude = $edoovillageNode->locations[0]['longitude'];
-
-    $location = array();
-    $location['city'] = $thisCity;
-    $location['country'] = $thisCountryCode;
-    $location['latitude'] = $thisLatitude;
-    $location['longitude'] = $thisLongitude;
-  }
-  else 
-    $location = $node->locations[0]; 
-
-  if($newStatus == "S4") {
-    // Deployed
-    $title = "Laptop " . $node->title . " was delivered to an edoovillage in " . $thisCity . ", " . $thisCountry; 
-  }
-  else if($newStatus == "T1") {
-    // Moving towards an edoovillage
-    $title = "Laptop " . $node->title . " has started its journey to an edoovillage in " . $thisCity . ", " . $thisCountry; 
-  }
-  else if($newStatus == "S6") {
-    $title = "Laptop " . $node->title . " has been recycled"; 
-    // Recycled
-  }  
-  else // don't create any activity
-    return;
-    
-  $body = '<p><a href="/node/' . $node->nid . '">' . $title .
-          '<img alt="" src="/profiles/labdoo/files/pictures/laptop-simple.png" style="width: 20px; height: 21px;" /></a></p>';
-
-  $streamIt = _must_be_streamed($thisCity); 
-
-  _create_activity_node($title, $body, $location, $streamIt);
+  _create_activity_node($actionType, $title, $body, $location, $streamIt, $hubId, $edoovillageId);
   return;
 }
 

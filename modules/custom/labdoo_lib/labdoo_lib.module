@@ -501,6 +501,7 @@ function update_city($lid, &$objectsCount) {
  * Calculates the number of objects for each city
  * 
  * @param type The type of objects 
+ * @param selectedNids If not NULL, an array of node IDs that are to be used 
  * @return An array indexed by the name of the city in capital letters
  * and with various fields: 
  *
@@ -510,13 +511,15 @@ function update_city($lid, &$objectsCount) {
  * 'country': The country of the city 
  *  
  */ 
-function labdoo_getnum_objects_by_city($type) {
+function labdoo_getnum_objects_by_city($type, $selectedNids = NULL) {
 
   $objectsCount = array();
   $query = "SELECT nid, vid FROM node WHERE type='$type'";
   $objects = db_query($query);
 
   foreach($objects as $object) {
+    if(is_array($selectedNids) and !in_array($object->nid, $selectedNids))
+      continue; 
     if($type == "dootrip") {
       $query = "SELECT field_origin_of_the_trip_lid AS lid FROM field_data_field_origin_of_the_trip 
                 WHERE entity_id=$object->nid";
@@ -955,5 +958,25 @@ function labdoo_follow_dooject($doojectId = NULL, $userId = NULL, $follow = NULL
   $wDoojectNode->save();
 
   return;
+}
+
+
+/**
+ * Get the value of an entity field of type node.
+ * If there are multiple values, get just the first one. 
+ *
+ * @param node $node
+ *   The node where the entity field is contained
+ * @param string $field 
+ *   The entity field name 
+ *
+ */
+function labdoo_lib_get_entity_node($node, $field) {
+  $field_items = field_get_items('node', $node, $field);
+  if(!$field_items)
+    return;
+  if(!array_key_exists(0, $field_items))
+    return NULL;
+  return($field_items[0]['target_id']);
 }
 

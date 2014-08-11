@@ -21,13 +21,13 @@ function lbd_visualize_create_node($function, $title, $path)
       $functionExt = $function . "(\$user, \$hub, \$edoovillage, \$country)";
       break;
     case "lbd_display_dashboard_edoovillages":
-      $functionExt = $function . "(\$hub, \$country)";
+      $functionExt = $function . "(\$user, \$hub, \$country)";
       break;
     case "lbd_display_dashboard_hubs":
-      $functionExt = $function . "(\$country)";
+      $functionExt = $function . "(\$user, \$country)";
       break;
     case "lbd_display_dashboard_dootrips":
-      $functionExt = $function . "(\$country)";
+      $functionExt = $function . "(\$user, \$country)";
       break;
 
   }
