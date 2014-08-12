@@ -27,55 +27,29 @@
     less -r nohup.out
     #+END_EXAMPLE
 
-  + Configure it (See next section for sample values when running the following command): 
-    #+BEGIN_EXAMPLE
-    chroot lbd/ /tmp/install/config.sh 
-    #+END_EXAMPLE
+    The above process can take a few tens of minutes, depending on bandwidth and your computer speed.
 
-  + And that's it! you are now ready to open your browser and access your local Labdoo installation. 
-  
-  + If you need to stop Labdoo you can do: =service chroot-lbd stop=
-  
-  + If you need to start Labdoo you can do: =service chroot-lbd start=
-
-* Configuration parameters 
-
-  When running the command =chroot lbd/ /tmp/install/config.sh=, you will be asked
-  to enter several configuration parameters. You can choose your options here,
-  but here are the recommended values to enter if you are a Labdoo developer.
-
-    #+BEGIN_EXAMPLE
-    Enter the domain [www.labdoo-dev.org]: 
-    [press ENTER here to select the default]
-    Enter root password [89a67fb3a0]: 
-    [use a simple password, for instance, "grassroots"]
-    Please enter new password for the MySQL 'lbd' account.
-    Enter password [057e80488289da38]: 
-    [use a simple password, for instance, "grassroots"]
-    Enter the gmail address [MyEmailAddress@gmail.com]: 
-    [enter "dev-user@labdoo.org"]
-    Enter the gmail password: 
-    [you need to enter "grassroots" here]
-    Please enter the email address of the 'admin' user account in Drupal: 
-    [enter "dev-user@labdoo.org"]
-    Please enter new password for the 'admin' user account in Drupal.
-    Enter the password: [enter "grassroots" here]
-    #+END_EXAMPLE
-
-  dev-user@labdoo.org is a special Labdoo email account used for development. You can access
-  this account by going to the Labdoo email URL mail.labdoo.org and use the password "grassroots".
-
-  Finally, make sure to include the following lines in your /etc/hosts file (outside the chroot):
+  + Make sure to include the following lines in your /etc/hosts file (outside the chroot):
 
     #+BEGIN_EXAMPLE
     127.0.0.1       www.labdoo-dev.org localhost
     #+END_EXAMPLE
 
-  After using the above configuration parameters, you can now access your Labdoo installation
+  + Start the Labdoo social network: 
+    #+BEGIN_EXAMPLE
+    service chroot-lbd start
+    chroot lbd/ /tmp/install/config.sh 
+    #+END_EXAMPLE
+
+  + And that's it! You can now access your Labdoo installation
   by opening your web browser and opening the URL https://www.labdoo-dev.org/. Please use https
   protocol (instead of http) since currently the theme only works properly on https. (Notice
   that you will need to confirm the security exception on your browser the first time you
   access https://www.labdoo-dev.org/)
+
+  + If you need to stop Labdoo you can do: =service chroot-lbd stop=
+  
+  + If you need to start again Labdoo you can do: =service chroot-lbd start=
 
 * Documentation
 

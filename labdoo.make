@@ -90,15 +90,15 @@ projects[disqus][patch][] = http://drupal.org/files/disqus-https.patch
 
 ;;; Extra
 projects[entityreference] = 1.1
-projects[field_group] = 1.3
-projects[date] = 2.6
-projects[location] = 3.1
+projects[field_group] = 1.4
+projects[date] = 2.8
+projects[location] = 3.3
 projects[nodeaccess_userreference] = 3.10
-projects[email] = 1.2
+projects[email] = 1.3
 projects[conditional_fields] = 3.0-alpha1
 projects[lightbox2] = 1.0-beta1
-projects[node_view_permissions] = 1.3
-projects[r4032login] = 1.7
+projects[node_view_permissions] = 1.5
+projects[r4032login] = 1.8
 projects[ip_geoloc] = 1.25
 projects[views_slideshow] = 3.1
 projects[gmap] = 2.9
