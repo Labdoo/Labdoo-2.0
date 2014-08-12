@@ -151,6 +151,8 @@ function labdoo_render_map_geolocate_node() {
 
   if($node->type != 'dootrip') {
     $locations = array();
+    $locations[0] = new stdClass();
+
     $locations[0]->latitude = $node->locations[0]['latitude'];
     $locations[0]->longitude = $node->locations[0]['longitude']; 
     if($node->type == 'laptop') {
@@ -978,5 +980,25 @@ function labdoo_lib_get_entity_node($node, $field) {
   if(!array_key_exists(0, $field_items))
     return NULL;
   return($field_items[0]['target_id']);
+}
+
+
+/*
+ * Prints an array in a user friendly way
+ * using drupal_set_message
+ *
+ * @param array $array An input array
+ *
+ */
+function labdoo_lib_print_array($array) {
+  foreach($array as $key => $value) {
+    drupal_set_message("key: " . $key);
+    if(is_string($value))
+      drupal_set_message("value: " . $value);
+    else
+      drupal_set_message("value: is not a string");
+    if(is_array($value))
+      labdoo_lib_print_array($value);
+  }
 }
 

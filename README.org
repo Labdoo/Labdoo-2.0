@@ -11,18 +11,18 @@
     #+BEGIN_EXAMPLE
     mkdir /var/chroot
     cd /var/chroot/
-    git clone https://github.com/Labdoo/Labdoo-2.0.git Labdoo
+    git clone https://github.com/Labdoo/Labdoo-2.0.git labdoo
     #+END_EXAMPLE
 
   + Modify and customize the settings:
     #+BEGIN_EXAMPLE
-    cp Labdoo/install/settings.sh Labdoo/cfg.sh
-    vim Labdoo/cfg.sh
+    cp labdoo/install/settings.sh labdoo/cfg.sh
+    vim labdoo/cfg.sh # Make any necessary changes
     #+END_EXAMPLE
 
   + Install the project inside a chroot system:
     #+BEGIN_EXAMPLE
-    nohup nice Labdoo/install/chroot.sh Labdoo/cfg.sh &
+    nohup nice labdoo/install/chroot.sh labdoo/cfg.sh &
     tail -f nohup.out
     less -r nohup.out
     #+END_EXAMPLE
