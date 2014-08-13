@@ -38,14 +38,13 @@
   + Start the Labdoo social network: 
     #+BEGIN_EXAMPLE
     service chroot-lbd start
-    chroot lbd/ /tmp/install/config.sh 
     #+END_EXAMPLE
 
   + And that's it! You can now access your Labdoo installation
-  by opening your web browser and opening the URL https://www.labdoo-dev.org/. Please use https
-  protocol (instead of http) since currently the theme only works properly on https. (Notice
-  that you will need to confirm the security exception on your browser the first time you
-  access https://www.labdoo-dev.org/)
+    by opening your web browser and opening the URL https://www.labdoo-dev.org/. Please use https
+    protocol (instead of http) since currently the theme only works properly on https. (Notice
+    that you will need to confirm the security exception on your browser the first time you
+    access https://www.labdoo-dev.org/)
 
   + If you need to stop Labdoo you can do: =service chroot-lbd stop=
   
