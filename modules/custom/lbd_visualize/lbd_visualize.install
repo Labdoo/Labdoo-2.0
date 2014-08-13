@@ -56,6 +56,7 @@ if(!empty(\$_GET['c'])) \$country = \$_GET['c'];
   $node->body[$node->language][0]['value']   = $body_text;
   $node->body[$node->language][0]['summary'] = '';
   $node->body[$node->language][0]['format']  = 'php_code';
+  $node->comment = 0;
   
   $node->path = array('alias' => $path);
 
