@@ -38,8 +38,8 @@
   First of all, we can get a list of all the so called /features
   components/:
   #+BEGIN_EXAMPLE
-  drush @lbd_dev help features-components
-  drush @lbd_dev features-components '%:%' > features-components.txt
+  drush @lbd help features-components
+  drush @lbd features-components '%:%' > features-components.txt
   #+END_EXAMPLE
   These are all the possible chunks of configuration that can be saved
   in a feature. All we have to do is to search and select the ones
@@ -81,12 +81,12 @@
   Now I can create a feature that includes these components with a
   command like this:
   #+BEGIN_EXAMPLE
-  drush @lbd_dev features-export \
+  drush @lbd features-export \
   --destination=profiles/labdoo/modules/features \
   lbd_layout $(cat layout_components)
   #+END_EXAMPLE
   It creates a feature on the directory:
-  ~/var/www/lbd_dev/profiles/labdoo/modules/features/lbd_layout/~
+  ~/var/www/lbd/profiles/labdoo/modules/features/lbd_layout/~
 
   Other features that I have created are: /lbd_disqus/,
   /lbd_invite/, /lbd_sharethis/,
@@ -104,7 +104,7 @@
   ### However some features need manual customization
   ### after being created (for example lbd_layout).
 
-  drush="drush --yes @lbd_dev"
+  drush="drush --yes @lbd"
   destination="profiles/labdoo/modules/features"
 
   function create_feature
@@ -322,8 +322,8 @@
   which keeps the values of these variables and can restore them.  It
   works like this:
   #+BEGIN_EXAMPLE
-  features/save-private-vars.sh @lbd_dev
-  drush @lbd_dev php-script restore-private-vars.php
+  features/save-private-vars.sh @lbd
+  drush @lbd php-script restore-private-vars.php
   #+END_EXAMPLE
 
   The file ~private-vars.txt~ looks like this:

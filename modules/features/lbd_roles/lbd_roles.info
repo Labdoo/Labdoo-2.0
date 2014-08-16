@@ -22,3 +22,4 @@ features[user_permission][] = subscribe to newsletters
 features[user_role][] = edoovillage manager
 features[user_role][] = hub manager
 features[user_role][] = newsletter manager
+features[user_role][] = superhub manager
