@@ -971,10 +971,12 @@ function labdoo_follow_dooject($doojectId = NULL, $userId = NULL, $follow = NULL
  *   The node where the entity field is contained
  * @param string $field 
  *   The entity field name 
+ * @param string $type
+ *   The type of node, it must be one of {'user', 'node'}
  *
  */
-function labdoo_lib_get_entity_node($node, $field) {
-  $field_items = field_get_items('node', $node, $field);
+function labdoo_lib_get_entity($node, $field, $type) {
+  $field_items = field_get_items($type, $node, $field);
   if(!$field_items)
     return;
   if(!array_key_exists(0, $field_items))
@@ -990,15 +992,15 @@ function labdoo_lib_get_entity_node($node, $field) {
  * @param array $array An input array
  *
  */
-function labdoo_lib_print_array($array) {
+function labdoo_lib_print_array($array, $prefix = "") {
   foreach($array as $key => $value) {
-    drupal_set_message("key: " . $key);
+    drupal_set_message($prefix . " key: " . $key);
     if(is_string($value))
-      drupal_set_message("value: " . $value);
+      drupal_set_message($prefix . " value: " . $value);
     else
-      drupal_set_message("value: is not a string");
+      drupal_set_message($prefix . " value: is not a string");
     if(is_array($value))
-      labdoo_lib_print_array($value);
+      labdoo_lib_print_array($value, $prefix . "---|");
   }
 }
 
