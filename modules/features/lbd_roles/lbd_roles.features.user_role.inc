@@ -28,5 +28,11 @@ function lbd_roles_user_default_roles() {
     'weight' => '3',
   );
 
+  // Exported role: superhub manager.
+  $roles['superhub manager'] = array(
+    'name' => 'superhub manager',
+    'weight' => '6',
+  );
+
   return $roles;
 }
