@@ -104,7 +104,7 @@ dependencies[] = smtp
 ;dependencies[] = labdoo_lib
 ;dependencies[] = lbd_communicate 
 ;dependencies[] = lbd_visualize 
-
+;dependencies[] = lbd_labdoo_rest
 ;--------------------
 ; Other
 ;--------------------
