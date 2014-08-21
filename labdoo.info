@@ -35,6 +35,7 @@ dependencies[] = user
 dependencies[] = syslog
 dependencies[] = rdf
 dependencies[] = comment
+dependencies[] = field_ui
 
 ;--------------------
 ; Contrib

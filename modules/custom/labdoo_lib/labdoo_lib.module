@@ -197,6 +197,178 @@ function labdoo_render_map_geolocate_node() {
 
 
 /**
+ * Renders a dooject's header
+ *
+ * @param nodeId The ID of the dooject 
+ *
+ */
+function labdoo_render_dooject_header() {
+  $htmlCode = "";
+
+  if ((arg(0) != 'node') || !is_numeric(arg(1))) 
+    return;
+
+  $nodeObj = node_load(arg(1));
+  $nodeId = $nodeObj->nid;
+
+  // Accept only certain types of content types
+  $types = array('laptop' => 1) ;
+  if(!isset($types[$nodeObj->type]))
+    return;
+
+  $laptopId = $nodeObj->title;
+
+  $query = "SELECT field_edoovillage_destination_target_id 
+            FROM field_data_field_edoovillage_destination WHERE entity_id=$nodeId";
+  $edoovillageId = db_query($query)->fetchField();
+
+  $numDoojects = lbd_get_total_num_objects("laptop");
+
+  if(intval($laptopId) == $numDoojects) {
+    $nextUri = "<a href=\"" . request_uri() . "/../.." . "/laptop/000000001\">";
+  }
+  else {
+    $nextIdFull = sprintf("%09d", intval(intval($laptopId)+1));
+    $nextUri = "<a href=\"" . request_uri() . "/../.." . "/laptop/" . $nextIdFull . "\">";
+  }
+  if(intval($laptopId) == 1) {
+    $prevIdFull = sprintf("%09d", intval(intval($numDoojects)));
+    $prevUri = "<a href=\"" . request_uri() . "/../.." . "/laptop/" . $prevIdFull . "\">";
+  }
+  else {
+    $prevIdFull = sprintf("%09d", intval(intval($laptopId)-1));
+    $prevUri = "<a href=\"" . request_uri() . "/../.." . "/laptop/" . $prevIdFull . "\">";
+  }
+
+  $tagsUri = "/content/tag-one-laptop?id=" . $laptopId;
+
+  // Table header
+  $htmlCode = $htmlCode . '<table border="0" cellpadding="1" cellspacing="1" style="width: 850px;"><tbody><tr><td>';
+
+  // Left arrow
+  $htmlCode = $htmlCode . '<p class="small rteleft" style="font-family: monospace;">' . $prevUri .
+                          '<img alt="" src="/profiles/labdoo/files/pictures/arrow_left.png" style="width: 40px; height: 49px; "/> 
+                           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>';
+
+  // Next cell
+  $htmlCode = $htmlCode . '</td><td>'; 
+
+  // Tagging howto (lightbox)
+  $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " 
+                           align="middle"><a href="/profiles/labdoo/files/pictures/tagging-flow.png" 
+                           rel="lightbox" style="line-height: 10px; color: rgb(17, 85, 119);"><img alt="image labdoo" rel="lightbox" 
+                           src="/profiles/labdoo/files/pictures/tagging-flow.png" style="border-style: solid; color: rgb(51, 51, 51); 
+                           width: 151px; height: 100px;" /></a></p>'; 
+  
+  // Button for tagging 
+  $htmlCode = $htmlCode . '<p><input type="button" value="Print tags for this dooject"onclick="window.open(\''.$tagsUri.'\', 
+                           \'windowpopup\', \'resizable=yes,menubar=1,status=no,width=700,height=700\');"/>';
+
+  // Next cell
+  $htmlCode = $htmlCode . '</td><td>';
+
+  // Photo album icon and button
+  if($edoovillageId) {
+    $albumUri = request_uri() . "/../../node/" . $edoovillageId;
+    $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="middle">
+                             <img alt="" src="/profiles/labdoo/files/pictures/photo-album-icon.jpg" style="width: 122px; height: 100px; "/></a>';
+    $htmlCode = $htmlCode . '<p><input type="button" value="Go to photo album"onclick="window.open(\''.$albumUri.'\', \'target=_self\');"/>';
+  }
+
+  // Next cell
+  $htmlCode = $htmlCode . '</td><td>';
+
+  // Follow dooject button
+  if (user_is_logged_in()) {
+    global $user;
+    $userId = $user->uid; 
+    $userObj = user_load($userId);
+    if(labdoo_is_dooject_followed($nodeObj, $userObj)) { 
+      $followDoojectUrl = request_uri() . "/../../content/follow-dooject?d=$nodeId&u=$userId&f=0";
+      $followMsg = "Unfollow this dooject";
+    }
+    else {
+      $followDoojectUrl = request_uri() . "/../../content/follow-dooject?d=$nodeId&u=$userId&f=1";
+      $followMsg = "Follow this dooject";
+    }
+  }
+  else {
+    $followDoojectUrl = request_uri() . "/../../content/follow-dooject?d=$nodeId&f=1";
+    $followMsg = "Follow this dooject";
+  }
+  
+  $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="middle">
+           <img alt="" src="/profiles/labdoo/files/pictures/laptop.png" style="width: 102px; height: 100px; "/>&nbsp;&nbsp; </a>'; 
+  $htmlCode = $htmlCode . '<p><input type="button" value="' . $followMsg . '" onclick="window.open(\''.$followDoojectUrl.'\', 
+           \'windowpopup\', \'resizable=yes,menubar=1,status=no,width=700,height=700\');setTimeout(\'history.go(0);\',2000);"/>';
+
+  // Next cell
+  $htmlCode = $htmlCode . '</td><td>';
+
+  // Print right arrow
+  $htmlCode = $htmlCode . '<p class="small rteright" style="font-family: monospace;">'.$nextUri.'&nbsp; &nbsp; &nbsp; 
+                           &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<img alt="" src="/profiles/labdoo/files/pictures/arrow_right.png" 
+                           style="width: 40px; height: 49px; "/> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>';
+
+  // Table ending
+  $htmlCode = $htmlCode . '</td></tr></tbody></table>';
+
+  return($htmlCode);
+}
+
+
+/**
+ * Renders an edoovillage header
+ *
+ */
+function labdoo_render_edoovillage_header() {
+
+  $htmlCode = "";
+
+  if ((arg(0) != 'node') || !is_numeric(arg(1))) 
+    return;
+
+  $nodeObj = node_load(arg(1));
+  $nodeId = $nodeObj->nid;
+
+  // Accept only edoovillages 
+  $types = array('edoovillage' => 1) ;
+  if(!isset($types[$nodeObj->type]))
+    return;
+
+  // Table header
+  $htmlCode = $htmlCode . '<table border="0" cellpadding="1" cellspacing="1" style="width: 850px;"><tbody><tr><td>';
+
+  // Photo album icon and button
+  $albumUri = request_uri() . "/../../node/" . $nodeId;
+  $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="middle">
+                           <img alt="" src="/profiles/labdoo/files/pictures/photo-album-icon.jpg" style="width: 122px; height: 100px; "/></a>';
+  $htmlCode = $htmlCode . '<p align="middle"><input type="button" value="Go to photo album"onclick="window.open(\''.$albumUri.'\', \'target=_self\');"/>';
+
+  // Next cell
+  $htmlCode = $htmlCode . '</td><td>';
+
+  // Semaphore
+  $semaphorePic = 'semaphore-red.png';
+  $semaphoreState = field_get_items('node', $nodeObj, 'field_semaphore');
+  if($semaphoreState[0]['value'] == 'yellow')
+    $semaphorePic = 'semaphore-yellow.png';
+  else if($semaphoreState[0]['value'] == 'green')
+    $semaphorePic = 'semaphore-green.png';
+  $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="middle">
+                           <img alt="" src="/profiles/labdoo/files/pictures/' . $semaphorePic . '" style="width: 400px; height: 120px; "/></a>';
+
+  // Next cell
+  $htmlCode = $htmlCode . '</td><td>';
+
+  // Table ending
+  $htmlCode = $htmlCode . '</td></tr></tbody></table>';
+
+  return($htmlCode);
+}
+
+
+/**
  * Generates a comma-separated list of emails that need
  * to be notified upon a change of status of a dooject
  *
@@ -649,118 +821,6 @@ function lbd_nodeid2title($nodeId)
 {
     $title = db_query("SELECT title FROM node WHERE nid = :nid ", array(':nid' => $nodeId))->fetchField();
     return $title; 
-}
-
-
-/**
- * Prints the header of a dooject
- *
- * @param nodeId The ID of the dooject 
- *
- */
-function lbd_print_dooject_header($nodeId)
-{
-  $nodeObj = node_load($nodeId);
-  if($nodeObj == FALSE)
-    return;
-  $laptopId = $nodeObj->title;
-
-  $query = "SELECT field_edoovillage_destination_target_id 
-            FROM field_data_field_edoovillage_destination WHERE entity_id=$nodeId";
-  $edoovillageId = db_query($query)->fetchField();
-
-  $numDoojects = lbd_get_total_num_objects("laptop");
-
-  if(intval($laptopId) == $numDoojects) {
-    $nextUri = "<a href=\"" . request_uri() . "/../.." . "/laptop/000000001\">";
-  }
-  else {
-    $nextIdFull = sprintf("%09d", intval(intval($laptopId)+1));
-    $nextUri = "<a href=\"" . request_uri() . "/../.." . "/laptop/" . $nextIdFull . "\">";
-  }
-  if(intval($laptopId) == 1) {
-    $prevIdFull = sprintf("%09d", intval(intval($numDoojects)));
-    $prevUri = "<a href=\"" . request_uri() . "/../.." . "/laptop/" . $prevIdFull . "\">";
-  }
-  else {
-    $prevIdFull = sprintf("%09d", intval(intval($laptopId)-1));
-    $prevUri = "<a href=\"" . request_uri() . "/../.." . "/laptop/" . $prevIdFull . "\">";
-  }
-
-  $tagsUri = "/content/tag-one-laptop?id=" . $laptopId;
-
-  // Table header
-  print('<table border="0" cellpadding="1" cellspacing="1" style="width: 850px;"><tbody><tr><td>');
-
-  // Left arrow
-  print(t('<p class="small rteleft" style="font-family: monospace;">'
-        .$prevUri.
-        '<img alt="" src="/profiles/labdoo/files/pictures/arrow_left.png" style="width: 40px; height: 49px; "/> 
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>'));
-
-  // Next cell
-  print('</td><td>');
-
-  // Tagging howto (lightbox)
-  print(t('<p class="small" style="font-family: monospace; " align="middle"><a href="/profiles/labdoo/files/pictures/tagging-flow.png" 
-        rel="lightbox" style="line-height: 10px; color: rgb(17, 85, 119);"><img alt="image labdoo" rel="lightbox" 
-        src="/profiles/labdoo/files/pictures/tagging-flow.png" style="border-style: solid; color: rgb(51, 51, 51); 
-        width: 151px; height: 100px;" /></a></p>'));
-  
-  // Button for tagging 
-  print(t('<p><input type="button" value="Print tags for this dooject"onclick="window.open(\''.$tagsUri.'\', 
-        \'windowpopup\', \'resizable=yes,menubar=1,status=no,width=700,height=700\');"/>'));
-
-  // Next cell
-  print('</td><td>');
-
-  // Photo album icon and button
-  if($edoovillageId) {
-    $albumUri = request_uri() . "/../../node/" . $edoovillageId;
-    print(t('<p class="small" style="font-family: monospace; " align="middle">
-          <img alt="" src="/profiles/labdoo/files/pictures/photo-album-icon.jpg" style="width: 122px; height: 100px; "/></a>'));
-    print(t('<p><input type="button" value="Go to photo album"onclick="window.open(\''.$albumUri.'\', \'target=_self\');"/>'));
-  }
-
-  // Next cell
-  print('</td><td>');
-
-  // Follow dooject button
-  if (user_is_logged_in()) {
-    global $user;
-    $userId = $user->uid; 
-    $userObj = user_load($userId);
-    if(labdoo_is_dooject_followed($nodeObj, $userObj)) { 
-      $followDoojectUrl = request_uri() . "/../../content/follow-dooject?d=$nodeId&u=$userId&f=0";
-      $followMsg = "Unfollow this dooject";
-    }
-    else {
-      $followDoojectUrl = request_uri() . "/../../content/follow-dooject?d=$nodeId&u=$userId&f=1";
-      $followMsg = "Follow this dooject";
-    }
-  }
-  else {
-    $followDoojectUrl = request_uri() . "/../../content/follow-dooject?d=$nodeId&f=1";
-    $followMsg = "Follow this dooject";
-  }
-  
-  print(t('<p class="small" style="font-family: monospace; " align="middle">
-           <img alt="" src="/profiles/labdoo/files/pictures/laptop.png" style="width: 102px; height: 100px; "/>&nbsp;&nbsp; </a>'));
-  print(t('<p><input type="button" value="' . $followMsg . '" onclick="window.open(\''.$followDoojectUrl.'\', 
-           \'windowpopup\', \'resizable=yes,menubar=1,status=no,width=700,height=700\');setTimeout(\'history.go(0);\',2000);"/>'));
-
-  // Next cell
-  print('</td><td>');
-
-  // Print right arrow
-  print(t('<p class="small rteright" style="font-family: monospace;">'.$nextUri.'&nbsp; &nbsp; &nbsp; 
-           &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<img alt="" src="/profiles/labdoo/files/pictures/arrow_right.png" 
-           style="width: 40px; height: 49px; "/> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>'));
-
-  // Table ending
-  print(t('</td></tr></tbody></table>'));
-
-  return;
 }
 
 

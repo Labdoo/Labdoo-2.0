@@ -1170,7 +1170,7 @@ function labdoo_objects_field_default_fields() {
           'module' => 'file',
           'settings' => array(),
           'type' => 'file_default',
-          'weight' => 15,
+          'weight' => '14',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1239,7 +1239,7 @@ function labdoo_objects_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 10,
+          'weight' => '8',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1260,7 +1260,7 @@ function labdoo_objects_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '12',
+        'weight' => '11',
       ),
     ),
   );
@@ -1321,7 +1321,7 @@ function labdoo_objects_field_default_fields() {
             'link' => FALSE,
           ),
           'type' => 'entityreference_label',
-          'weight' => 2,
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1342,7 +1342,7 @@ function labdoo_objects_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '8',
+        'weight' => '7',
       ),
     ),
   );
@@ -1386,7 +1386,7 @@ function labdoo_objects_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 14,
+          'weight' => '13',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1452,7 +1452,7 @@ function labdoo_objects_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 12,
+          'weight' => '11',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1513,7 +1513,7 @@ function labdoo_objects_field_default_fields() {
             'thousand_separator' => ' ',
           ),
           'type' => 'number_integer',
-          'weight' => 11,
+          'weight' => '10',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1575,7 +1575,7 @@ function labdoo_objects_field_default_fields() {
             'thousand_separator' => ' ',
           ),
           'type' => 'number_integer',
-          'weight' => 6,
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1637,7 +1637,7 @@ function labdoo_objects_field_default_fields() {
             'thousand_separator' => ' ',
           ),
           'type' => 'number_integer',
-          'weight' => 5,
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1705,7 +1705,7 @@ function labdoo_objects_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 7,
+          'weight' => '5',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1729,7 +1729,7 @@ function labdoo_objects_field_default_fields() {
           'rows' => '4',
         ),
         'type' => 'text_textarea',
-        'weight' => '10',
+        'weight' => '9',
       ),
     ),
   );
@@ -1775,7 +1775,7 @@ function labdoo_objects_field_default_fields() {
           'module' => 'file',
           'settings' => array(),
           'type' => 'file_default',
-          'weight' => 9,
+          'weight' => '7',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1802,7 +1802,7 @@ function labdoo_objects_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
-        'weight' => '11',
+        'weight' => '10',
       ),
     ),
   );
@@ -1845,7 +1845,7 @@ function labdoo_objects_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 8,
+          'weight' => '6',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1928,7 +1928,7 @@ function labdoo_objects_field_default_fields() {
             'link' => FALSE,
           ),
           'type' => 'entityreference_label',
-          'weight' => 3,
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1953,7 +1953,7 @@ function labdoo_objects_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '9',
+        'weight' => '8',
       ),
     ),
   );
@@ -1998,7 +1998,7 @@ function labdoo_objects_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 4,
+          'weight' => '2',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -2023,6 +2023,70 @@ function labdoo_objects_field_default_fields() {
         ),
         'type' => 'text_textfield',
         'weight' => '2',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-edoovillage-field_semaphore'.
+  $fields['node-edoovillage-field_semaphore'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_semaphore',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          'red' => 'Red: pictures about the project have not been uploaded yet',
+          'yellow' => 'Yellow: first laptops can be sent',
+          'green' => 'Green: the rest of the laptops can be sent',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'edoovillage',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => '9',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_semaphore',
+      'label' => 'Semaphore',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
+        'weight' => '12',
       ),
     ),
   );
@@ -2075,7 +2139,7 @@ function labdoo_objects_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 16,
+          'weight' => '15',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -2138,7 +2202,7 @@ function labdoo_objects_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 13,
+          'weight' => '12',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -3800,6 +3864,7 @@ function labdoo_objects_field_default_fields() {
   t('Project brief description');
   t('Project description');
   t('Project manager(s)');
+  t('Semaphore');
   t('Serial number');
   t('Socket type');
   t('Socket voltage');
