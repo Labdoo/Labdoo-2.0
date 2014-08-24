@@ -193,7 +193,7 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
 
   }
 
-  print_dashboard_switcher();
+  print_dashboard_switcher($userId);
   print_dashboard_objects('laptop', 'doojects', $objects, $metrics, $selectedNids);
 
 }
@@ -351,7 +351,7 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
   $metrics[9] = array('label' => 'Completed', 'field' => 'completed', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
   $metrics[10] = array('label' => 'Open', 'field' => 'open', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
 
-  print_dashboard_switcher();
+  print_dashboard_switcher($userId);
   print_dashboard_objects('edoovillage', 'edoovillages', $objects, $metrics, $selectedNids);
 
 }
@@ -489,7 +489,7 @@ function lbd_display_dashboard_hubs($userId = NULL, $country = NULL) {
   $metrics[7] = array('label' => 'Delivered', 'field' => 'delivered', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
   $metrics[8] = array('label' => 'Remaining', 'field' => 'remainingShared', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
 
-  print_dashboard_switcher();
+  print_dashboard_switcher($userId);
   print_dashboard_objects('hub', 'hubs', $objects, $metrics, $selectedNids);
 
 }
@@ -606,7 +606,7 @@ function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL) {
   $metrics[5] = array('label' => 'Total number of dootrips', 'field' => 'numberDootrips', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
   $metrics[6] = array('label' => 'Doojects transported', 'field' => 'completed', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
 
-  print_dashboard_switcher();
+  print_dashboard_switcher($userId);
   print_dashboard_objects('dootrip', 'dootrips', $objects, $metrics, $selectedNids);
 
 }
@@ -616,9 +616,10 @@ function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL) {
  * print_dashboard_switcher
  *
  */
-function print_dashboard_switcher()
+function print_dashboard_switcher($userId = NULL)
 {
   global $language;
+  global $user;
 
   if ($language->language != 'en')
     $lang = '/' . $language->language;
@@ -657,13 +658,24 @@ function print_dashboard_switcher()
 
   }
 
-  $code = "<p><strong><span style='color:#ff3300;'>Labdoo Metrics | Select dashboard:</span></strong></p>
+  // If $userId is equal to the user currently
+  // logged in, this is a "myObjects" type of dashboard
+  if($userId != NULL and $userId == $user->uid) {
+    $urlParameters = "?u=" . $userId;
+    $determinant = "My";
+  }
+  else {
+    $urlParameters = "";
+    $determinant = "";
+  }
+
+  $code = "<p><strong><span style='color:#ff3300;'>$determinant Labdoo Metrics | Select dashboard:</span></strong></p>
            <form>
            <select name='URL' onchange='window.location.href=this.form.URL.options[this.form.URL.selectedIndex].value'>
-           <option value='$lang/content/$url1-dashboard'>$url1</option>
-           <option value='$lang/content/$url2-dashboard'>$url2</option>
-           <option value='$lang/content/$url3-dashboard'>$url3</option>
-           <option value='$lang/content/$url4-dashboard'>$url4</option>
+           <option value='$lang/content/$url1-dashboard$urlParameters'>$url1</option>
+           <option value='$lang/content/$url2-dashboard$urlParameters'>$url2</option>
+           <option value='$lang/content/$url3-dashboard$urlParameters'>$url3</option>
+           <option value='$lang/content/$url4-dashboard$urlParameters'>$url4</option>
            </select>
            </form>";
 
