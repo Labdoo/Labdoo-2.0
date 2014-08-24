@@ -273,16 +273,21 @@ function make_main_menu() {
 
 
 /*
- * Implements dynamic menu items.
- *
- * Examples of dynamic parameters:
- *   - Links that depend on the user id
- *   - Visibility that depends on the user's role
+ * Implements hook_menu
  *
  */
 function lbd_menus_menu() {
 
- $menus['myDoojects'] = array
+  /*
+   * Dynamic menu items go here.
+   *
+   * Examples of dynamic parameters:
+   *   - Links that depend on the user id
+   *   - Visibility that depends on the user's role
+   *
+   */
+
+  $menus['myDoojects'] = array
   (
     'title' => 'My doojects',
     'page callback' => '_menu_item_redirect_my_doojects',
@@ -327,6 +332,16 @@ function lbd_menus_menu() {
     'menu_name' => 'main-menu',
   );
 
+  /*
+   * URL redirects go here
+   */
+ $menus['content/dashboard-slider'] = array
+  (
+    'title' => 'My dashboard',
+    'page callback' => '_menu_item_redirect_my_dashboard',
+    'access callback' => TRUE,
+  );
+
   return $menus;
 }
 
@@ -361,6 +376,21 @@ function _menu_item_redirect_my_dootrips() {
 
 function _menu_item_redirect_my_actions() {
   drupal_goto('myActions');
+  return;
+}
+
+
+/*
+ * Callback functions to redirect certain URLs.
+ *
+ */ 
+function _menu_item_redirect_my_dashboard() {
+  /*
+   * Callback function used to preserve compatibility
+   * with the dashboard URL in Labdoo 1.0 
+   */
+  global $user; 
+  drupal_goto('');
   return;
 }
 

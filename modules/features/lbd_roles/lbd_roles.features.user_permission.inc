@@ -10,6 +10,16 @@
 function lbd_roles_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: access user contact forms.
+  $permissions['access user contact forms'] = array(
+    'name' => 'access user contact forms',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'authenticated user',
+    ),
+    'module' => 'contact',
+  );
+
   // Exported permission: administer newsletters.
   $permissions['administer newsletters'] = array(
     'name' => 'administer newsletters',

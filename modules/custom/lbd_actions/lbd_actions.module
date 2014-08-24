@@ -17,6 +17,169 @@
  */
 
 
+/*
+ * Users contributions can be modeled wth a graph of relationships connecting users and Labdoo ojects.
+ * A user may contribute to one Labdoo object directly or indirectly.
+ *   Example of direct contribution:
+ *     A user tags a dooject: user <--> dooject
+ *   Example of indirect contribution:
+ *     A user is related to a dootrip via a dooject if that user has contributed to a dooject
+ *     which is associated to the dootrip: users <--> dooject <--> dootrip
+ *
+ * The following functions help identify potential contribution relationships between a user
+ * and each of the Labdoo objects.
+ *
+ */
+
+/**
+ * Checks if a user is contributing to a given dooject.
+ *
+ * @param integer $userId The ID of the user
+ * @param node $node The dooject's node
+ *
+ * @return string
+ *   Returns one of the following values indicating the way in which a 
+ *   user contributes to the dooject:
+ *     'manager' if the user is a manager of the dooject
+ *     'tagger' if the user is a tagger of the dooject 
+ *     'dootrip' if the user contributes via a dootrip
+ *     'none' if the user does not contribute
+ *
+ */
+function lbd_actions_user_contributes_dooject($userId, $node) {
+  $nid = $node->nid;
+
+  $contributerId = labdoo_lib_get_entity($node, 'field_manager', 'node');
+  if($userId == $contributerId) 
+    return "manager";
+
+  $contributerId = labdoo_lib_get_entity($node, 'field_tagger', 'node');
+  if($userId == $contributerId) 
+    return "tagger";
+
+  $query = "SELECT entity_id FROM field_data_field_dootrips WHERE (field_dootrips_target_id IN 
+            (SELECT entity_id FROM field_data_field_dootripper_s_ WHERE field_dootripper_s__target_id=:uid)) 
+            AND (entity_id=:nid)";
+  $result = db_query($query, array(':uid' => $userId, ':nid' => $nid))->fetchField();
+  if($result == $nid)
+    return 'dootrip';
+
+  return 'none';
+}
+
+
+/**
+ * Checks if a user is contributing to a given dootrip.
+ *
+ * @param integer $userId The ID of the user
+ * @param node $node The dootrip's node
+ *
+ * @return string
+ *   Returns one of the following values indicating the way in which a 
+ *   user contributes to the dootrip:
+ *     'dootripper' if the user is the actual dootripper
+ *     'dooject' if the user contributes via a dooject
+ *     'none' if the user does not contribute
+ *
+ */
+function lbd_actions_user_contributes_dootrip($userId, $node) {
+  $nid = $node->nid;
+
+  $query = "SELECT entity_id FROM field_data_field_dootripper_s_ WHERE (field_dootripper_s__target_id=:uid AND entity_id=:nid)";
+  $result = db_query($query, array(':uid' => $userId, ':nid' => $nid))->fetchField();
+  if($result == $nid)
+    return 'dootripper';
+  $query = "SELECT entity_id FROM field_data_field_laptops WHERE (field_laptops_target_id IN 
+            (SELECT entity_id FROM field_data_field_tagger WHERE field_tagger_target_id=:uid) OR field_laptops_target_id IN 
+            (SELECT entity_id FROM field_data_field_manager WHERE field_manager_target_id=:uid)) 
+            AND (entity_id=:nid)";
+   $result = db_query($query, array(':uid' => $userId, ':nid' => $nid))->fetchField();
+  if($result == $nid)
+    return 'dooject';
+  return 'none';
+}
+
+
+/**
+ * Checks if a user is contributing to a given edoovillage. 
+ *
+ * @param integer $userId The ID of the user
+ * @param node $node The edoovillage's node 
+ *
+ * @return string
+ *   Returns one of the following values indicating the way in which a 
+ *   user contributes to the edoovillage:
+ *     'dooject' if the user contributes via a dooject
+ *     'dootrip' if the user contributes via a dootrip
+ *     'manager' if the user is a manager of this edoovillage
+ *     'none' if the user does not contribute
+ *
+ */
+function lbd_actions_user_contributes_edoovillage($userId, $node) {
+  $nid = $node->nid;
+
+  $query = "SELECT entity_id FROM field_data_field_project_manager_s_ WHERE (field_project_manager_s__target_id=:uid AND entity_id=:nid)";
+  $result = db_query($query, array(':uid' => $userId, ':nid' => $nid))->fetchField();
+  if($result == $nid)
+    return 'manager';
+  $query = "SELECT field_edoovillage_destination_target_id AS entity_id FROM field_data_field_edoovillage_destination WHERE 
+            (entity_id IN (SELECT entity_id FROM field_data_field_manager WHERE field_manager_target_id=:uid) OR 
+             entity_id IN (SELECT entity_id FROM field_data_field_tagger WHERE field_tagger_target_id=:uid)) AND
+            (field_edoovillage_destination_target_id=:nid)"; 
+  $result = db_query($query, array(':uid' => $userId, ':nid' => $nid))->fetchField();
+  if($result == $nid)
+    return 'dooject';
+  $query = "SELECT field_edoovillage_destination_target_id AS entity_id FROM field_data_field_edoovillage_destination WHERE 
+            (entity_id IN (SELECT field_laptops_target_id FROM field_data_field_laptops WHERE 
+             entity_id IN (SELECT entity_id FROM field_data_field_dootripper_s_ WHERE field_dootripper_s__target_id=:uid))) AND
+            (field_edoovillage_destination_target_id=:nid)"; 
+  $result = db_query($query, array(':uid' => $userId, ':nid' => $nid))->fetchField();
+  if($result == $nid)
+    return 'dootrip';
+  return 'none';
+}
+
+
+/**
+ * Checks if a user is contributing to a given hub.
+ *
+ * @param integer $userId The ID of the user
+ * @param node $node The hub's node
+ *
+ * @return string
+ *   Returns one of the following values indicating the way in which a 
+ *   user contributes to the hub:
+ *     'dooject' if the user contributes via a dooject
+ *     'dootrip' if the user contributes via a dootrip
+ *     'manager' if the user is a manager of this hub
+ *     'none' if the user does not contribute
+ *
+ */
+function lbd_actions_user_contributes_hub($userId, $node) {
+  $nid = $node->nid;
+
+  $query = "SELECT entity_id FROM field_data_field_hub_manager_s_ WHERE (field_hub_manager_s__target_id=:uid AND entity_id=:nid)";
+  $result = db_query($query, array(':uid' => $userId, ':nid' => $nid))->fetchField();
+  if($result == $nid)
+    return 'manager';
+  $query = "SELECT field_hub_laptop_target_id AS entity_id FROM field_data_field_hub_laptop WHERE 
+            (entity_id IN (SELECT entity_id FROM field_data_field_manager WHERE field_manager_target_id=:uid) OR 
+             entity_id IN (SELECT entity_id FROM field_data_field_tagger WHERE field_tagger_target_id=:uid)) AND
+            (field_hub_laptop_target_id=:nid)"; 
+  $result = db_query($query, array(':uid' => $userId, ':nid' => $nid))->fetchField();
+  if($result == $nid)
+    return 'dooject';
+  $query = "SELECT field_hub_laptop_target_id AS entity_id FROM field_data_field_hub_laptop WHERE 
+            (entity_id IN (SELECT field_laptops_target_id FROM field_data_field_laptops WHERE 
+             entity_id IN (SELECT entity_id FROM field_data_field_dootripper_s_ WHERE field_dootripper_s__target_id=:uid))) AND
+            (field_hub_laptop_target_id=:nid)"; 
+  $result = db_query($query, array(':uid' => $userId, ':nid' => $nid))->fetchField();
+  if($result == $nid)
+    return 'dootrip';
+  return 'none';
+}
+
+
 /**
  * Checks if a new activity being created in a given city
  * should be streamed in the action feed or not.
@@ -155,8 +318,8 @@ function _generate_labdoo_action($node) {
   if($node->type == 'laptop') {
 
     $actionType = "Dooject";
-    $hubId = labdoo_lib_get_entity_node($node, 'field_hub_laptop');
-    $edoovillageId = labdoo_lib_get_entity_node($node, 'field_edoovillage_destination');
+    $hubId = labdoo_lib_get_entity($node, 'field_hub_laptop', 'node');
+    $edoovillageId = labdoo_lib_get_entity($node, 'field_edoovillage_destination', 'node');
 
     if(!property_exists($node, 'original')) { // Dooject created 
       $title = "Laptop " . $node->title . " was tagged in " . $thisCity . ", " . $thisCountry; 
@@ -213,7 +376,7 @@ function _generate_labdoo_action($node) {
     if(property_exists($node, 'original')) 
       return;
     $actionType = "Edoovillage";
-    $hubId = labdoo_lib_get_entity_node($node, 'field_hub');
+    $hubId = labdoo_lib_get_entity($node, 'field_hub', 'node');
     $edoovillageId = $node->nid;
     $title = "Edoovillage was created in " . $thisCity . ", " . $thisCountry; 
     $body = '<p><a href="/node/' . $node->nid . '">' . $title . "  " .
@@ -230,12 +393,12 @@ function _generate_labdoo_action($node) {
   }
   else if($node->type == 'dootrip') {
     $actionType = "Dootrip";
-    $doojectId = labdoo_lib_get_entity_node($node, 'field_laptops');
+    $doojectId = labdoo_lib_get_entity($node, 'field_laptops', 'node');
     $titleSplit = explode("- ", $node->title);
     if(property_exists($node, 'original')) { // Dootrip is updated 
       // This dootrip already exists. Only report new activity if 
       // doojects have been added to it.
-      $prevDoojectId = labdoo_lib_get_entity_node($node->original, 'field_laptops');
+      $prevDoojectId = labdoo_lib_get_entity($node->original, 'field_laptops', 'node');
       if($prevDoojectId != NULL or $doojectId == NULL) 
         return;
       $title = $titleSplit[1] . " was updated";
@@ -245,8 +408,8 @@ function _generate_labdoo_action($node) {
     }
     if($doojectId != NULL) {
       $doojectNode = node_load($doojectId);
-      $hubId = labdoo_lib_get_entity_node($doojectNode, 'field_hub_laptop');
-      $edoovillageId = labdoo_lib_get_entity_node($doojectNode, 'field_edoovillage_destination');
+      $hubId = labdoo_lib_get_entity($doojectNode, 'field_hub_laptop', 'node');
+      $edoovillageId = labdoo_lib_get_entity($doojectNode, 'field_edoovillage_destination', 'node');
     }
     $body = '<p><a href="/node/' . $node->nid . '">' . $title . "  " .
             '<img alt="" src="/profiles/labdoo/files/pictures/dootrip.png" style="width: 34px; height: 26px;" /></a></p>';
@@ -254,6 +417,108 @@ function _generate_labdoo_action($node) {
 
   $streamIt = _must_be_streamed($thisCity); 
   _create_activity_node($actionType, $title, $body, $location, $streamIt, $hubId, $edoovillageId);
+  return;
+}
+
+
+/*
+ * Implementation of hook_node_view
+ *
+ */
+function lbd_actions_node_view($node, $view_mode) {
+  global $user;
+
+  /*
+   * Upon viewing a node, if the user is logged in, find out if the user
+   * has made a contribution to that node's object and if so,
+   * let the user know. This helps users know that they are related
+   * to the object they are currently using and provides a small explanation
+   * of how that relation occurred.
+   * Users could be related to an object through several paths (e.g., a user
+   * may have contributed to an edoovillage by tagging a dooject delivered to
+   * that edoovillage, by dootripping a dooject to that edoovillage, etc.).
+   * In that case, keep it simple and just present the first relation found.
+   */
+
+  if (!user_is_logged_in()) 
+    return;
+
+  $userId = $user->uid;
+
+  if($node->type == 'laptop') {
+
+    $reason = lbd_actions_user_contributes_dooject($userId, $node);
+
+    if($reason == "manager") {
+      drupal_set_message(t("You are this dooject's manager."));
+      return;
+    }
+    else if($reason == "tagger") {
+      drupal_set_message(t("You have contributed to this dooject by tagging it."));
+      return;
+    }
+    else if($reason == "dootrip") {
+      drupal_set_message(t("You have contributed to this dooject by providing a dootrip."));
+      return;
+    }
+    return;
+
+  }
+  else if($node->type == 'dootrip') {
+
+    $reason = lbd_actions_user_contributes_dootrip($userId, $node);
+
+    if($reason == "dootripper") {
+      drupal_set_message(t("You are a traveler in this dootrip."));
+      return;
+    }
+    else if($reason == "dooject") {
+      drupal_set_message(t("You have contributed to a dooject that is transported by this dootrip."));
+      return;
+    }
+
+    return;
+
+  }
+  else if($node->type == 'edoovillage') {
+
+    $reason = lbd_actions_user_contributes_edoovillage($userId, $node);
+
+    if($reason == "manager") {
+      drupal_set_message(t("You are a manager of this edoovillage."));
+      return;
+    }
+    else if($reason == "dooject") {
+      drupal_set_message(t("You have contributed to this edoovillage with at least one dooject."));
+      return;
+    }
+    else if($reason == "dootrip") {
+      drupal_set_message(t("You have contributed to this edoovillage by at least providing one dootrip."));
+      return;
+    }
+    return;
+
+  }
+  else if($node->type == 'hub') {
+
+    $reason = lbd_actions_user_contributes_hub($userId, $node);
+
+    if($reason == "manager") {
+      drupal_set_message(t("You are a manager of this hub."));
+      return;
+    }
+    else if($reason == "dooject") {
+      drupal_set_message(t("You have contributed to this hub with at least one dooject."));
+      return;
+    }
+    else if($reason == "dootrip") {
+      drupal_set_message(t("You have contributed to this hub by at least providing one dootrip."));
+      return;
+    }
+    return;
+
+  }
+
   return;
 }
 

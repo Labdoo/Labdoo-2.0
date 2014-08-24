@@ -235,6 +235,7 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
   {
     # First select: query to find all edoovillages connected to a user via a dooject
     # Second select: query to find all edoovillages connected to a user via a dootrip
+    # Third select: query to find all edoovillages that the user is managing
     $queryUser = "(SELECT tUser.entity_id FROM 
                    ((SELECT DISTINCT field_edoovillage_destination_target_id AS entity_id FROM field_data_field_edoovillage_destination WHERE 
                      (entity_id IN (SELECT entity_id FROM field_data_field_manager WHERE field_manager_target_id=:uid) OR 
@@ -385,6 +386,7 @@ function lbd_display_dashboard_hubs($userId = NULL, $country = NULL) {
   {
     # First select: query to find all hubs connected to a user via a dooject
     # Second select: query to find all hubs connected to a user via a dootrip
+    # Third select: query to find all hubs that the user is managing
     $queryUser = "(SELECT tUser.entity_id FROM 
                    ((SELECT DISTINCT field_hub_laptop_target_id AS entity_id FROM field_data_field_hub_laptop WHERE 
                      (entity_id IN (SELECT entity_id FROM field_data_field_manager WHERE field_manager_target_id=:uid) OR 
