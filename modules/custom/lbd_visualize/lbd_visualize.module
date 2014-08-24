@@ -122,7 +122,7 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
     // Extract Status Field (mandatory field)
     $objects[$objectNid]['status'] = $objectstatus = $node->field_status['und'][0]['value'];
 
-    // Extract Notes Field (optional field)
+    // Extract Notes Field (optional field) -- only included so it can be free-text searched
     if(!empty($node->field_additional_notes)) 
       $objects[$objectNid]['notes'] = $node->field_additional_notes['und'][0]['value']; 
     else
@@ -145,11 +145,15 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
       foreach($node->field_additional_notification_em['und'] as $item)
         $objects[$objectNid]['emails'] = $objects[$objectNid]['emails'] . " " . $item['email'];
 
-    // Get the country
+    // Get the country (mandatory field)
     $country_names = location_get_iso3166_list();
     $objects[$objectNid]['country'] = $node->location['country'];
     if(array_key_exists($node->location['country'], $country_names))
         $objects[$objectNid]['country'] = $country_names[$node->location['country']];
+
+    // Get the serial number (mandatory field)
+    $serialNumberField = field_get_items('node', $node, 'field_serial_number');
+    $objects[$objectNid]['serialNumber'] = $serialNumberField[0]['value'];
         
     // Calculate the link to the object 
     global $language;
@@ -171,14 +175,15 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
   $metrics[2] = array('label' => 'Hub', 'field' => 'hub', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
   $metrics[3] = array('label' => 'Edoovillage', 'field' => 'edoovillage', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
   $metrics[4] = array('label' => 'Country', 'field' => 'country', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
-  $metrics[5] = array('label' => 'S0 - tagged', 'field' => 'S0', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[6] = array('label' => 'S1 - donated', 'field' => 'S1', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[7] = array('label' => 'S2 - sanitized', 'field' => 'S2', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[8] = array('label' => 'S3 - assigned', 'field' => 'S3', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[9] = array('label' => 'T1 - in transit', 'field' => 'T1', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[10] = array('label' => 'S4 - deployed', 'field' => 'S4', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[11] = array('label' => 'S5 - needs recycle', 'field' => 'S5', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[12] = array('label' => 'S6 - recycled', 'field' => 'S6', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[5] = array('label' => 'Serial number', 'field' => 'serialNumber', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[6] = array('label' => 'S0 - tagged', 'field' => 'S0', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[7] = array('label' => 'S1 - donated', 'field' => 'S1', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[8] = array('label' => 'S2 - sanitized', 'field' => 'S2', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[9] = array('label' => 'S3 - assigned', 'field' => 'S3', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[10] = array('label' => 'T1 - in transit', 'field' => 'T1', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[11] = array('label' => 'S4 - deployed', 'field' => 'S4', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[12] = array('label' => 'S5 - needs recycle', 'field' => 'S5', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[13] = array('label' => 'S6 - recycled', 'field' => 'S6', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
 
   if(empty($objects)) {
 
@@ -186,6 +191,7 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
     $objects[0]['hub'] = "";
     $objects[0]['status'] = "";
     $objects[0]['country'] = "";
+    $objects[0]['serialNumber'] = ""; 
     $objects[0]['link'] = "No doojects in this view"; 
     $objects[0]['completed'] = $objects[0]['open'] = 0; 
     foreach($possibleStates as $thisState)

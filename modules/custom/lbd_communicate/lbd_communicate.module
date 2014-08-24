@@ -100,139 +100,217 @@ function lbd_communicate_mail_send($email_params) {
 }
 
 
-/**
- * Implementation of hook_node_presave
- *
- * Use this hook for node update scenarios, not for node create
- * scenarios, since for this latter case, the $node->nid will not be there yet.
+/*
+ * _email_laptop_event
  *
  */
-function lbd_communicate_node_presave($node) {
+function _email_laptop_event($node) {
+  global $base_url;
   global $user;
 
-  if($node->type == 'laptop') {
+  if(property_exists($node, 'original'))
+    $previousStatus =  $node->original->field_status['und'][0]['value'];
+  else
+    $previousStatus = "WAS_CREATED";
 
-    // For type laptop, we handle here both node creation and node update,
-    // instead of implementing node creation in hook_node_insert. That's because
-    // we do not really need $node->nid for this case since we identify the
-    // laptop node using its Labdoo 9-digit ID (e.g., to generate URL)
+  $newStatus = $node->field_status['und'][0]['value'];
 
-    if(property_exists($node, 'original'))
-      $previousStatus =  $node->original->field_status['und'][0]['value'];
-    else
-      $previousStatus = "WAS_CREATED";
+  if($previousStatus == $newStatus) 
+    return;
 
-    $newStatus = $node->field_status['und'][0]['value'];
+  $edoovillageNid = 0;  // An arbitrary initial value
+  $langCode = user_preferred_language($user)->language;
+  $laptopId = $node->title; 
 
-    if($previousStatus == $newStatus) 
-      return;
-
-    $edoovillageNid = 0;  // An arbitrary initial value
-    $langCode = user_preferred_language($user)->language;
-    $laptopId = $node->title; 
-
-    /*
-     * Send out notification email 
-     */
-    if($previousStatus == "WAS_CREATED" && $newStatus != "S4") {
-      $email_params['type'] = "LAPTOP_ADDED";        
-      $subjectFileName = dirname(__FILE__) . "/laptop_tagged_subject-" . $langCode . ".email";
-      $bodyFileName = dirname(__FILE__) . "/laptop_tagged_body-" . $langCode . ".email";
-      // This is a new object, so the title (i.e., the Labdoo ID) has not 
-      // being set yet.  Hence, we need to manually calculate the laptopId.
-      $numLaptops = lbd_get_total_num_objects("laptop"); 
-      $laptopId = sprintf("%09d", $numLaptops + 1);
-    }
-    else if($newStatus == "S4") {
-      $email_params['type'] = "LAPTOP_DELIVERED";
-      $subjectFileName = dirname(__FILE__) . "/laptop_delivered_subject-" . $langCode . ".email";
-      $bodyFileName = dirname(__FILE__) . "/laptop_delivered_body-" . $langCode . ".email";
-      $edoovillageNid = $node->field_edoovillage_destination['und'][0]['target_id'];
-    }
-    else {
-      $email_params['type'] = "LAPTOP_UPDATED";
-      $subjectFileName = dirname(__FILE__) . "/laptop_updated_subject-" . $langCode . ".email";
-      $bodyFileName = dirname(__FILE__) . "/laptop_updated_body-" . $langCode . ".email";
-    }
-
-    $emailsList = $user->mail;
-    $emailsList = $emailsList . ", " . labdoo_dooject_extract_emails($node);    
-    $email_params['to'] = $emailsList; 
-
-    $subjectTemplate = file_get_contents($subjectFileName);
-    $bodyTemplate = file_get_contents($bodyFileName);
-
-    $statusLabels = list_allowed_values(field_info_field("field_status"));
-
-    $subject = str_replace("[ID]", $laptopId, $subjectTemplate);
-    $body = str_replace("[ID]", $laptopId, $bodyTemplate);
-    $body = str_replace("[STATUS]", $statusLabels[$newStatus], $body);
-    $body = str_replace("[LAPTOP_URL]", url('content/'. $laptopId, array('absolute' => TRUE)), $body);
-    $body = str_replace("[EDOOVILLAGE_URL]", url('node/'. $edoovillageNid, array('absolute' => TRUE)), $body);
-    $body = str_replace("[CONTACT_EMAIL]", variable_get('site_mail', ''), $body);
-
-    $email_params['subject'] = $subject;
-    $email_params['body'] = $body;
-
-    lbd_communicate_mail_send($email_params);
+  /*
+   * Send out notification email 
+   */
+  if($previousStatus == "WAS_CREATED" && $newStatus != "S4") {
+    $email_params['type'] = "LAPTOP_ADDED";        
+    $subjectFileName = dirname(__FILE__) . "/laptop_tagged_subject-" . $langCode . ".email";
+    $bodyFileName = dirname(__FILE__) . "/laptop_tagged_body-" . $langCode . ".email";
+    // This is a new object, so the title (i.e., the Labdoo ID) has not 
+    // being set yet.  Hence, we need to manually calculate the laptopId.
+    $numLaptops = lbd_get_total_num_objects("laptop"); 
+    $laptopId = sprintf("%09d", $numLaptops + 1);
+  }
+  else if($newStatus == "S4") {
+    $email_params['type'] = "LAPTOP_DELIVERED";
+    $subjectFileName = dirname(__FILE__) . "/laptop_delivered_subject-" . $langCode . ".email";
+    $bodyFileName = dirname(__FILE__) . "/laptop_delivered_body-" . $langCode . ".email";
+    $edoovillageNid = $node->field_edoovillage_destination['und'][0]['target_id'];
+  }
+  else {
+    $email_params['type'] = "LAPTOP_UPDATED";
+    $subjectFileName = dirname(__FILE__) . "/laptop_updated_subject-" . $langCode . ".email";
+    $bodyFileName = dirname(__FILE__) . "/laptop_updated_body-" . $langCode . ".email";
   }
 
-  if($node->type == 'dootrip') {
+  $emailsList = $user->mail;
+  $emailsList = $emailsList . ", " . labdoo_dooject_extract_emails($node);    
+  $email_params['to'] = $emailsList; 
 
-    $langCode = user_preferred_language($user)->language;
+  $subjectTemplate = file_get_contents($subjectFileName);
+  $bodyTemplate = file_get_contents($bodyFileName);
+
+  $statusLabels = list_allowed_values(field_info_field("field_status"));
+
+  $subject = str_replace("[ID]", $laptopId, $subjectTemplate);
+  $body = str_replace("[ID]", $laptopId, $bodyTemplate);
+  $body = str_replace("[STATUS]", $statusLabels[$newStatus], $body);
+  $body = str_replace("[LAPTOP_URL]", url('content/'. $laptopId, array('absolute' => TRUE)), $body);
+  $body = str_replace("[EDOOVILLAGE_URL]", url('node/'. $edoovillageNid, array('absolute' => TRUE)), $body);
+  $body = str_replace("[CONTACT_EMAIL]", variable_get('site_mail', ''), $body);
+  $body = str_replace("[DASHBOARD_URL]", $base_url . '/content/dashboard-slider', $body);
+
+  $email_params['subject'] = $subject;
+  $email_params['body'] = $body;
+
+  lbd_communicate_mail_send($email_params);
+  return;
+}
+
+
+/*
+ * _email_dootrip_event
+ *
+ */
+function _email_dootrip_event($node, $eventType) {
+  global $user;
+  global $base_url;
+
+  $langCode = user_preferred_language($user)->language;
+
+  if(!property_exists($node, 'original')) {  // Dootrip was created
+    if($eventType == 'presave')
+      return; // dootrip creation is handled by event 'insert'
+    $email_params['type'] = "DOOTRIP_ADDED";
+    $subjectFileName = dirname(__FILE__) . "/dootrip_added_subject-" . $langCode . ".email";
+    $bodyFileName = dirname(__FILE__) . "/dootrip_added_body-" . $langCode . ".email";
+  }
+  else {  // Dootrip was updated
+    // There is no need to check if $eventType == 'insert' because if we are
+    // here, then $eventyType must be equal to 'presave'
     $wasChanged = FALSE;
-
-    if(!property_exists($node, 'original')) 
-      return; // let hook_node_insert handle the node creation case
-
     $wNodeNew = entity_metadata_wrapper('node', $node);
     $wNodeOrig = entity_metadata_wrapper('node', $node->original);
-
     $doojectListNew = $wNodeNew->field_laptops->value();
     $doojectListOrig = $wNodeOrig->field_laptops->value();
     if($doojectListNew != $doojectListOrig) 
       $wasChanged = TRUE;
-
-    $userListNew = $wNodeNew->field_dootripper_s_->value();
-    $userListOrig = $wNodeOrig->field_dootripper_s_->value();
-    if($userListNew != $userListOrig) 
-      $wasChanged = TRUE;
-
-    if($wasChanged == FALSE) {
-      return;
+    else {
+      $userListNew = $wNodeNew->field_dootripper_s_->value();
+      $userListOrig = $wNodeOrig->field_dootripper_s_->value();
+      if($userListNew != $userListOrig) 
+        $wasChanged = TRUE;
+      else {
+        $destinationNew = field_get_items('node', $node, 'field_destination_of_the_trip');
+        $destinationOrig = field_get_items('node', $node->original, 'field_destination_of_the_trip');
+        if($destinationNew[0]['country'] != $destinationOrig[0]['country'])
+          $wasChanged = TRUE;
+        else {
+          $originNew = field_get_items('node', $node, 'field_origin_of_the_trip');
+          $originOrig = field_get_items('node', $node->original, 'field_origin_of_the_trip');
+          if($originNew[0]['country'] != $originOrig[0]['country'])
+            $wasChanged = TRUE;
+        }
+      }
     }
-
+    if($wasChanged == FALSE) 
+      return;
     $email_params['type'] = "DOOTRIP_UPDATED"; 
     $subjectFileName = dirname(__FILE__) . "/dootrip_updated_subject-" . $langCode . ".email";
     $bodyFileName = dirname(__FILE__) . "/dootrip_updated_body-" . $langCode . ".email";
+  }
 
-    /*
-     * Send out notification email 
-     */
-    $dootripTitle = $node->title; 
-    $emailsList = $user->mail;
-    $emailsList = $emailsList . ", " . labdoo_dootrip_extract_emails($node);    
+  /*
+   * Send out notification email to dootripper 
+   */
+  $dootripTitle = $node->title; 
+  $emailsList = $user->mail;
+  $emailsList = $emailsList . ", " . labdoo_dootrip_extract_emails($node);    
+  $email_params['to'] = $emailsList; 
+  $dootripNid = $node->nid;
+
+  $subjectTemplate = file_get_contents($subjectFileName);
+  $bodyTemplate = file_get_contents($bodyFileName);
+
+  $subject = str_replace("[DOOTRIP_TITLE]", $dootripTitle, $subjectTemplate);
+  // Remove preceeding integer ID from dootrip title to make it more clear
+  $subject = preg_replace('/^\[Labdoo\] [0-9]+ /', '[Labdoo] ', trim($subject));
+  $subject = preg_replace('/^\[Labdoo\] - /', '[Labdoo] ', trim($subject));
+
+  $body = str_replace("[DOOTRIP_URL]", $base_url . '/node/' . $dootripNid, $bodyTemplate);
+  $body = str_replace("[CONTACT_EMAIL]", variable_get('site_mail', ''), $body);
+  $body = str_replace("[DASHBOARD_URL]", $base_url . '/content/dashboard-slider', $body);
+
+  $email_params['subject'] = $subject;
+  $email_params['body'] = $body;
+
+  lbd_communicate_mail_send($email_params);
+
+  /*
+   * Send out notification email to those hubs and edoovillages managers 
+   * who have projects in the dootrip's destination country.
+   * Do not need to update the field 'type' since its value does not change.
+   */
+  $subjectFileName = dirname(__FILE__) . "/dootrip_announce_subject-" . $langCode . ".email";
+  $subjectTemplate = file_get_contents($subjectFileName);
+  $subject = $subjectTemplate;
+  $bodyFileName = dirname(__FILE__) . "/dootrip_announce_body-" . $langCode . ".email";
+  $bodyTemplate = file_get_contents($bodyFileName);
+  $body = str_replace("[DOOTRIP_URL]", $base_url . '/node/' . $dootripNid, $bodyTemplate);
+  $body = str_replace("[CONTACT_EMAIL]", variable_get('site_mail', ''), $body);
+  $body = str_replace("[DASHBOARD_URL]", $base_url . '/content/dashboard-slider', $body);
+
+  $email_params['subject'] = $subject;
+  $email_params['body'] = $body;
+
+  $destinationField = field_get_items('node', $node, 'field_destination_of_the_trip');
+  $country = $destinationField[0]['country']; 
+    
+  // Select hubs which manage an edoovillage in the same destination country as this
+  // dootrip. The edoovillages must be in "open" state.
+  $query = "SELECT DISTINCT field_hub_target_id FROM field_data_field_hub WHERE (entity_id IN 
+             (SELECT nid FROM location_instance WHERE lid IN 
+               (SELECT lid FROM location WHERE country=:co)) AND entity_id IN
+             (SELECT entity_id FROM field_data_field_edoovillage_status WHERE field_edoovillage_status_value='open'))";
+  $result = db_query($query, array(':co' => $country)); 
+
+  foreach($result as $item) {
+    $emailsList = "";
+    $hubNode = node_load($item->field_hub_target_id);
+    foreach($hubNode->field_hub_manager_s_['und'] as $element) {
+      $userObj = user_load($element['target_id']);
+      $emailsList = $emailsList . ", " . $userObj->mail;
+    }
     $email_params['to'] = $emailsList; 
-    $dootripNid = $node->nid;
-
-    $subjectTemplate = file_get_contents($subjectFileName);
-    $bodyTemplate = file_get_contents($bodyFileName);
-
-    $statusLabels = list_allowed_values(field_info_field("field_status"));
-
-    $subject = str_replace("[DOOTRIP_TITLE]", $dootripTitle, $subjectTemplate);
-    // Remove preceeding integer ID from dootrip title to make it more clear
-    $subject = preg_replace('/^[0-9]+ /', '', trim($subject));
-    $subject = preg_replace('/^- /', '', trim($subject));
-
-    $body = str_replace("[DOOTRIP_URL]", url('node/'. $dootripNid, array('absolute' => TRUE)), $bodyTemplate);
-    $body = str_replace("[CONTACT_EMAIL]", variable_get('site_mail', ''), $body);
-
-    $email_params['subject'] = $subject;
-    $email_params['body'] = $body;
-
     lbd_communicate_mail_send($email_params);
   }
+
+  return;
+}
+
+
+/**
+ * Implementation of hook_node_presave
+ *
+ * When called on a node creation, $node->nid is not initialized. 
+ * For type laptop,  we do not really need $node->nid since we identify the
+ * laptop node using its Labdoo 9-digit ID (e.g., to generate URL), so hook
+ * presave can be used for both node creation and node update events.
+ * For type dootrip, we do need to use $node->nid, so we can only use this
+ * hook for node update and we need to let hook_node_insert handle the node
+ * creation case.
+ *
+ */
+function lbd_communicate_node_presave($node) {
+
+  if($node->type == 'laptop') 
+    _email_laptop_event($node);
+
+  if($node->type == 'dootrip') 
+    _email_dootrip_event($node, 'presave');
 
   return;
 }
@@ -241,51 +319,18 @@ function lbd_communicate_node_presave($node) {
 /**
  * Implementation of hook_node_insert
  *
- * Use this hook for node create
- * scenarios, to ensure that the field $node->nid is present. 
+ * For node creation, use this hook instead of hook_node_presave 
+ * to ensure that $node->nid is initialized
  *
  */
 function lbd_communicate_node_insert($node) {
-  global $user;
 
-  if($node->type == 'dootrip') {
-
-    $langCode = user_preferred_language($user)->language;
-
-    $email_params['type'] = "DOOTRIP_ADDED"; 
-    $subjectFileName = dirname(__FILE__) . "/dootrip_added_subject-" . $langCode . ".email";
-    $bodyFileName = dirname(__FILE__) . "/dootrip_added_body-" . $langCode . ".email";
-
-    /*
-     * Send out notification email 
-     */
-    $dootripTitle = $node->title; 
-    $emailsList = $user->mail;
-    $emailsList = $emailsList . ", " . labdoo_dootrip_extract_emails($node);    
-    $email_params['to'] = $emailsList; 
-    $dootripNid = $node->nid;
-
-    $subjectTemplate = file_get_contents($subjectFileName);
-    $bodyTemplate = file_get_contents($bodyFileName);
-
-    $statusLabels = list_allowed_values(field_info_field("field_status"));
-
-    $subject = str_replace("[DOOTRIP_TITLE]", $dootripTitle, $subjectTemplate);
-    // Remover preceeding integer ID from dootrip title to make it more clear
-    $subject = preg_replace('/^[0-9]+ /', '', trim($subject));
-    $subject = preg_replace('/^- /', '', trim($subject));
-
-    $body = str_replace("[DOOTRIP_URL]", url('node/'. $dootripNid, array('absolute' => TRUE)), $bodyTemplate);
-    $body = str_replace("[CONTACT_EMAIL]", variable_get('site_mail', ''), $body);
-
-    $email_params['subject'] = $subject;
-    $email_params['body'] = $body;
-
-    lbd_communicate_mail_send($email_params);
-  }
+  if($node->type == 'dootrip') 
+    _email_dootrip_event($node, 'insert');
 
   return;
 }
+
 
 
 /**
@@ -293,6 +338,7 @@ function lbd_communicate_node_insert($node) {
  *
  */
 function lbd_communicate_user_insert(&$edit, $account, $category) {
+  global $base_url;
   global $user;
 
   $langCode = user_preferred_language($user)->language;
@@ -308,6 +354,7 @@ function lbd_communicate_user_insert(&$edit, $account, $category) {
 
   $subject = $subjectTemplate;
   $body = str_replace("[LABDOOUSER]", $edit['name'], $bodyTemplate);
+  $body = str_replace("[DASHBOARD_URL]", $base_url . '/content/dashboard-slider', $body);
 
   $email_params['subject'] = $subject;
   $email_params['body'] = $body;
@@ -346,6 +393,7 @@ function lbd_communicate_mail_alter(&$message) {
  */
 function lbd_communicate_cron() {
   $DOOTRIP_EMAIL_NOTIFICATION_PERIOD = 30; // in days
+  global $base_url;
 
   /*
    * Check for dootrips which have expired
@@ -410,14 +458,12 @@ function lbd_communicate_cron() {
     $subjectTemplate = file_get_contents($subjectFileName);
     $bodyTemplate = file_get_contents($bodyFileName);
 
-    $statusLabels = list_allowed_values(field_info_field("field_status"));
-
     $subject = str_replace("[DOOTRIP_TITLE]", $dootripTitle, $subjectTemplate);
-    // Remover preceeding integer ID from dootrip title to make it more clear
+    // Remove preceeding integer ID from dootrip title to make it more clear
     $subject = preg_replace('/^[0-9]+ /', '', trim($subject));
     $subject = preg_replace('/^- /', '', trim($subject));
 
-    $body = str_replace("[DOOTRIP_URL]", url('node/'. $dootripNid, array('absolute' => TRUE)), $bodyTemplate);
+    $body = str_replace("[DOOTRIP_URL]", $base_url . '/node/' . $dootripNid, $bodyTemplate);
     $body = str_replace("[CONTACT_EMAIL]", variable_get('site_mail', ''), $body);
 
     $email_params['subject'] = $subject;
