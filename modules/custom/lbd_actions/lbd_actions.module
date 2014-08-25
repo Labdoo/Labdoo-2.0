@@ -49,11 +49,11 @@
 function lbd_actions_user_contributes_dooject($userId, $node) {
   $nid = $node->nid;
 
-  $contributerId = labdoo_lib_get_entity($node, 'field_manager', 'node');
+  $contributerId = labdoo_lib_get_field($node, 'field_manager', 'node', 'target_id');
   if($userId == $contributerId) 
     return "manager";
 
-  $contributerId = labdoo_lib_get_entity($node, 'field_tagger', 'node');
+  $contributerId = labdoo_lib_get_field($node, 'field_tagger', 'node', 'target_id');
   if($userId == $contributerId) 
     return "tagger";
 
@@ -318,8 +318,8 @@ function _generate_labdoo_action($node) {
   if($node->type == 'laptop') {
 
     $actionType = "Dooject";
-    $hubId = labdoo_lib_get_entity($node, 'field_hub_laptop', 'node');
-    $edoovillageId = labdoo_lib_get_entity($node, 'field_edoovillage_destination', 'node');
+    $hubId = labdoo_lib_get_field($node, 'field_hub_laptop', 'node', 'target_id');
+    $edoovillageId = labdoo_lib_get_field($node, 'field_edoovillage_destination', 'node', 'target_id');
 
     if(!property_exists($node, 'original')) { // Dooject created 
       $title = "Laptop " . $node->title . " was tagged in " . $thisCity . ", " . $thisCountry; 
@@ -376,7 +376,7 @@ function _generate_labdoo_action($node) {
     if(property_exists($node, 'original')) 
       return;
     $actionType = "Edoovillage";
-    $hubId = labdoo_lib_get_entity($node, 'field_hub', 'node');
+    $hubId = labdoo_lib_get_field($node, 'field_hub', 'node', 'target_id');
     $edoovillageId = $node->nid;
     $title = "Edoovillage was created in " . $thisCity . ", " . $thisCountry; 
     $body = '<p><a href="/node/' . $node->nid . '">' . $title . "  " .
@@ -393,12 +393,12 @@ function _generate_labdoo_action($node) {
   }
   else if($node->type == 'dootrip') {
     $actionType = "Dootrip";
-    $doojectId = labdoo_lib_get_entity($node, 'field_laptops', 'node');
+    $doojectId = labdoo_lib_get_field($node, 'field_laptops', 'node', 'target_id');
     $titleSplit = explode("- ", $node->title);
     if(property_exists($node, 'original')) { // Dootrip is updated 
       // This dootrip already exists. Only report new activity if 
       // doojects have been added to it.
-      $prevDoojectId = labdoo_lib_get_entity($node->original, 'field_laptops', 'node');
+      $prevDoojectId = labdoo_lib_get_field($node->original, 'field_laptops', 'node', 'target_id');
       if($prevDoojectId != NULL or $doojectId == NULL) 
         return;
       $title = $titleSplit[1] . " was updated";
@@ -408,8 +408,8 @@ function _generate_labdoo_action($node) {
     }
     if($doojectId != NULL) {
       $doojectNode = node_load($doojectId);
-      $hubId = labdoo_lib_get_entity($doojectNode, 'field_hub_laptop', 'node');
-      $edoovillageId = labdoo_lib_get_entity($doojectNode, 'field_edoovillage_destination', 'node');
+      $hubId = labdoo_lib_get_field($doojectNode, 'field_hub_laptop', 'node', 'target_id');
+      $edoovillageId = labdoo_lib_get_field($doojectNode, 'field_edoovillage_destination', 'node', 'target_id');
     }
     $body = '<p><a href="/node/' . $node->nid . '">' . $title . "  " .
             '<img alt="" src="/profiles/labdoo/files/pictures/dootrip.png" style="width: 34px; height: 26px;" /></a></p>';

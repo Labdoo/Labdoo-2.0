@@ -204,14 +204,14 @@ function _email_dootrip_event($node, $eventType) {
       if($userListNew != $userListOrig) 
         $wasChanged = TRUE;
       else {
-        $destinationNew = field_get_items('node', $node, 'field_destination_of_the_trip');
-        $destinationOrig = field_get_items('node', $node->original, 'field_destination_of_the_trip');
-        if($destinationNew[0]['country'] != $destinationOrig[0]['country'])
+        $destinationNew = labdoo_lib_get_field($node, 'field_destination_of_the_trip', 'node', 'country');
+        $destinationOrig = labdoo_lib_get_field($node->original, 'field_destination_of_the_trip', 'node', 'country');
+        if($destinationNew != $destinationOrig)
           $wasChanged = TRUE;
         else {
-          $originNew = field_get_items('node', $node, 'field_origin_of_the_trip');
-          $originOrig = field_get_items('node', $node->original, 'field_origin_of_the_trip');
-          if($originNew[0]['country'] != $originOrig[0]['country'])
+          $originNew = labdoo_lib_get_field($node, 'field_origin_of_the_trip', 'node', 'country');
+          $originOrig = labdoo_lib_get_field($node->original, 'field_origin_of_the_trip', 'node', 'country');
+          if($originNew != $originOrig)
             $wasChanged = TRUE;
         }
       }
@@ -266,8 +266,7 @@ function _email_dootrip_event($node, $eventType) {
   $email_params['subject'] = $subject;
   $email_params['body'] = $body;
 
-  $destinationField = field_get_items('node', $node, 'field_destination_of_the_trip');
-  $country = $destinationField[0]['country']; 
+  $country = labdoo_lib_get_field($node, 'field_destination_of_the_trip', 'node', 'country');
     
   // Select hubs which manage an edoovillage in the same destination country as this
   // dootrip. The edoovillages must be in "open" state.

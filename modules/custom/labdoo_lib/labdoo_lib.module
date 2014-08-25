@@ -350,10 +350,10 @@ function labdoo_render_edoovillage_header() {
 
   // Semaphore
   $semaphorePic = 'semaphore-red.png';
-  $semaphoreState = field_get_items('node', $nodeObj, 'field_semaphore');
-  if($semaphoreState[0]['value'] == 'yellow')
+  $semaphoreState = labdoo_lib_get_field($nodeObj, 'field_semaphore', 'node', 'value'); 
+  if($semaphoreState == 'yellow')
     $semaphorePic = 'semaphore-yellow.png';
-  else if($semaphoreState[0]['value'] == 'green')
+  else if($semaphoreState == 'green')
     $semaphorePic = 'semaphore-green.png';
   $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="middle">
                            <img alt="" src="/profiles/labdoo/files/pictures/' . $semaphorePic . '" style="width: 400px; height: 120px; "/></a>';
@@ -1024,8 +1024,9 @@ function labdoo_follow_dooject($doojectId = NULL, $userId = NULL, $follow = NULL
 
 
 /**
- * Get the value of an entity field of type node.
+ * Get the value of a node field.
  * If there are multiple values, get just the first one. 
+ * Field must have the key $key.
  *
  * @param node $node
  *   The node where the entity field is contained
@@ -1033,15 +1034,17 @@ function labdoo_follow_dooject($doojectId = NULL, $userId = NULL, $follow = NULL
  *   The entity field name 
  * @param string $type
  *   The type of node, it must be one of {'user', 'node'}
+ * @param string $key
+ *   The key to retrieve
  *
  */
-function labdoo_lib_get_entity($node, $field, $type) {
+function labdoo_lib_get_field($node, $field, $type, $key) {
   $field_items = field_get_items($type, $node, $field);
   if(!$field_items)
     return;
   if(!array_key_exists(0, $field_items))
     return NULL;
-  return($field_items[0]['target_id']);
+  return($field_items[0][$key]);
 }
 
 

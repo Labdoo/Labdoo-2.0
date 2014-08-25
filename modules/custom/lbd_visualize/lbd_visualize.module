@@ -152,8 +152,7 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
         $objects[$objectNid]['country'] = $country_names[$node->location['country']];
 
     // Get the serial number (mandatory field)
-    $serialNumberField = field_get_items('node', $node, 'field_serial_number');
-    $objects[$objectNid]['serialNumber'] = $serialNumberField[0]['value'];
+    $objects[$objectNid]['serialNumber'] = labdoo_lib_get_field($node, 'field_serial_number', 'node', 'value'); 
         
     // Calculate the link to the object 
     global $language;
