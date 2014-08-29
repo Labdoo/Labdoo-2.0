@@ -322,6 +322,7 @@ function labdoo_render_dooject_header() {
  *
  */
 function labdoo_render_edoovillage_header() {
+  global $user;
 
   $htmlCode = "";
 
@@ -348,13 +349,17 @@ function labdoo_render_edoovillage_header() {
   // Next cell
   $htmlCode = $htmlCode . '</td><td>';
 
+  $langCode = user_preferred_language($user)->language;
+  if(!file_exists(dirname(__FILE__) . "/laptop_tagged_subject-" . $langCode . ".email"))
+    $langCode = 'en';
+
   // Semaphore
-  $semaphorePic = 'semaphore-red.png';
+  $semaphorePic = 'semaphore-red-' . $langCode . '.png';
   $semaphoreState = labdoo_lib_get_field($nodeObj, 'field_semaphore', 'node', 'value'); 
   if($semaphoreState == 'yellow')
-    $semaphorePic = 'semaphore-yellow.png';
+    $semaphorePic = 'semaphore-yellow-' . $langCode . '.png';
   else if($semaphoreState == 'green')
-    $semaphorePic = 'semaphore-green.png';
+    $semaphorePic = 'semaphore-green-' . $langCode . '.png';
   $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="middle">
                            <img alt="" src="/profiles/labdoo/files/pictures/' . $semaphorePic . '" style="width: 400px; height: 120px; "/></a>';
 

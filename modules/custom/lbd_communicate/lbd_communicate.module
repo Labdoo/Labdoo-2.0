@@ -119,8 +119,10 @@ function _email_laptop_event($node) {
     return;
 
   $edoovillageNid = 0;  // An arbitrary initial value
-  $langCode = user_preferred_language($user)->language;
   $laptopId = $node->title; 
+  $langCode = user_preferred_language($user)->language;
+  if(!file_exists(dirname(__FILE__) . "/laptop_tagged_subject-" . $langCode . ".email")) 
+    $langCode = 'en';
 
   /*
    * Send out notification email 
@@ -180,6 +182,8 @@ function _email_dootrip_event($node, $eventType) {
   global $base_url;
 
   $langCode = user_preferred_language($user)->language;
+  if(!file_exists(dirname(__FILE__) . "/dootrip_added_subject-" . $langCode . ".email")) 
+    $langCode = 'en';
 
   if(!property_exists($node, 'original')) {  // Dootrip was created
     if($eventType == 'presave')
@@ -341,6 +345,8 @@ function lbd_communicate_user_insert(&$edit, $account, $category) {
   global $user;
 
   $langCode = user_preferred_language($user)->language;
+  if(!file_exists(dirname(__FILE__) . "/user_created_subject-" . $langCode . ".email")) 
+    $langCode = 'en';
 
   $email_params['type'] = "USER_CREATED";        
   $email_params['to'] = $edit['mail']; 
@@ -440,6 +446,8 @@ function lbd_communicate_cron() {
     }
 
     $langCode = user_preferred_language($user)->language;
+    if(!file_exists(dirname(__FILE__) . "/dootrip_expired_subject-" . $langCode . ".email")) 
+      $langCode = 'en';
 
     $email_params['type'] = "DOOTRIP_EXPIRED"; 
     $subjectFileName = dirname(__FILE__) . "/dootrip_expired_subject-" . $langCode . ".email";
