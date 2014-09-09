@@ -10,7 +10,7 @@ export drupal_dir=/var/www/lbd
 export drush="drush --root=$drupal_dir"
 
 ### go to the directory of scripts
-cd $code_dir/labdoo/install/scripts/
+cd $code_dir/install/scripts/
 
 ### additional packages and software
 ./packages-and-software.sh
@@ -25,4 +25,4 @@ cd $code_dir/labdoo/install/scripts/
 ./system-config.sh
 
 ### labdoo configuration
-$code_dir/labdoo/install/config.sh
+$code_dir/install/config.sh

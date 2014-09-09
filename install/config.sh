@@ -9,7 +9,7 @@ then
     set +a
 fi
 
-lbd=/var/www/code/labdoo/install
+lbd=/usr/local/src/labdoo/install
 
 $lbd/config/domain.sh
 $lbd/config/mysql_passwords.sh

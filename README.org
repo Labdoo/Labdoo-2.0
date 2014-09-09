@@ -22,7 +22,7 @@
 
   + Install the project inside a chroot system:
     #+BEGIN_EXAMPLE
-    time nohup nice labdoo/install/chroot.sh labdoo/cfg.sh &
+    nohup time nice labdoo/install/chroot.sh labdoo/cfg.sh &
     tail -f nohup.out
     less -r nohup.out
     #+END_EXAMPLE
@@ -49,6 +49,17 @@
   + If you need to stop Labdoo you can do: =service chroot-lbd stop=
   
   + If you need to start again Labdoo you can do: =service chroot-lbd start=
+
+* Installation in a docker container
+
+  This is almost the same as the installation above, except that instead of ~install/chroot.sh~
+  you call ~install/docker.sh~:
+  #+BEGIN_EXAMPLE
+  nohup time nice labdoo/install/docker.sh labdoo/cfg.sh &
+  #+END_EXAMPLE
+
+  Then to stop and start Labdoo you do: =docker.io stop lbd= and =docker.io start lbd=.
+
 
 * Documentation
 

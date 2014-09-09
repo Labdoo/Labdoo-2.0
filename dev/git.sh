@@ -7,7 +7,7 @@
 options=${@:-status --short}
 gitrepos="
     /var/www/lbd*/profiles/labdoo
-    /var/www/code/*
+    /usr/local/src/labdoo
 "
 for repo in $gitrepos
 do

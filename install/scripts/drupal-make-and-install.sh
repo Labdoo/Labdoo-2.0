@@ -1,7 +1,7 @@
 #!/bin/bash -x
 
 ### make sure that we have the right git branch on the make file
-makefile="$code_dir/labdoo/build-labdoo.make"
+makefile="$code_dir/build-labdoo.make"
 sed -i $makefile \
     -e "/labdoo..download..branch/ c projects[labdoo][download][branch] = $lbd_git_branch"
 
@@ -21,7 +21,7 @@ cp -a libraries/bootstrap themes/contrib/bootstrap/
 ### reinstall the whole application).
 cd $drupal_dir/profiles/
 mv labdoo labdoo-bak
-cp -a $code_dir/labdoo .
+cp -a $code_dir .
 ### copy contrib libraries and modules
 cp -a labdoo-bak/libraries/ labdoo/
 cp -a labdoo-bak/modules/contrib/ labdoo/modules/

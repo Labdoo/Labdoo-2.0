@@ -1,10 +1,12 @@
-#!/bin/bash
+#!/bin/bash -x
 ### Install a new chrooted server from scratch, with debootstrap.
+
+source_dir=$(dirname $(dirname $0))
 
 function usage {
     echo "
-Usage: $0 [OPTIONS] <settings> [options]
-Install Labdoo inside a chroot in the target directory.
+Usage: $0 <settings> [options]
+Install $source_dir inside a chroot in another directory.
 
     <settings>    file of installation/configuration settings
     --target=D    target dir where the system will be installed
@@ -54,17 +56,11 @@ then
     usage
 fi
 
-### check that the code of labdoo does exist
-if ! test -d labdoo
-then
-    echo "Fatal error: 'labdoo' does not exist."
-    exit 1
-fi
-
 ### make sure that we are using the right version of install scripts
-cd labdoo/
+current_dir=$(pwd)
+cd $source_dir/
 git checkout $lbd_git_branch && git pull origin $lbd_git_branch
-cd ..
+cd $current_dir
 
 ### install debootstrap dchroot
 apt-get install -y debootstrap dchroot
@@ -84,31 +80,19 @@ mount -o bind /proc $target/proc
 chroot $target apt-get update
 chroot $target apt-get -y install ubuntu-minimal
 
-### display the name of the chroot on the prompt
-echo $target > $target/etc/debian_chroot
-
 ### copy the local git repository to the target dir
-export code_dir=/var/www/code
+source=$(basename $source_dir)
+export code_dir=/usr/local/src/$source
 chroot $target mkdir -p $code_dir
-cp -a labdoo $target/$code_dir
-
-### stop any services that may get into the way
-### of installing services inside the chroot
-for service in apache2 nginx mysql
-do
-    if test -f /etc/init.d/$service
-    then
-        /etc/init.d/$service stop
-    fi
-done
+cp -a $source_dir $(dirname $target/$code_dir)
 
 ### run install/config scripts
-chroot $target $code_dir/labdoo/install/install-and-config.sh
+chroot $target $code_dir/install/install-and-config.sh
 
 ### create an init script
-template_init=labdoo/install/init.sh
+template_init=$source_dir/install/init.sh
 init_script="/etc/init.d/chroot-$target"
-chroot_dir="$(pwd)/$target"
+chroot_dir="$current_dir/$target"
 sed -e "/^CHROOT=/c CHROOT='$chroot_dir'" $template_init > $init_script
 chmod +x $init_script
 

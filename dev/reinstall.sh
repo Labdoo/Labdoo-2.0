@@ -20,13 +20,13 @@ mv /var/www/{lbd,lbd-bak}
 ### reinstall
 export drupal_dir=/var/www/lbd
 export drush="drush --root=$drupal_dir"
-export code_dir=/var/www/code
-cd $code_dir/labdoo/install/scripts/
+export code_dir=/usr/local/src/labdoo
+cd $code_dir/install/scripts/
 ./drupal-make-and-install.sh
 ./drupal-config.sh
 
 ### configure
-$code_dir/labdoo/install/config.sh
+$code_dir/install/config.sh
 
 ### restart mysql
 /etc/init.d/mysql restart
