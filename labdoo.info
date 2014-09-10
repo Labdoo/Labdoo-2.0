@@ -44,31 +44,31 @@ dependencies[] = field_ui
 ;--------------------
 
 ;;; Extensions
-dependencies[] = xautoload
-dependencies[] = rules_scheduler
-dependencies[] = rules_admin
+; dependencies[] = xautoload
+; dependencies[] = rules_scheduler
+; dependencies[] = rules_admin
 ; dependencies[] = pathauto
 ; dependencies[] = subpathauto
-dependencies[] = lightbox2
+; dependencies[] = lightbox2
 
 ;;; User Interface
 ; dependencies[] = context
 ; dependencies[] = context_ui
-dependencies[] = views
-dependencies[] = views_ui
+; dependencies[] = views
+; dependencies[] = views_ui
 ; dependencies[] = boxes
-dependencies[] = edit_profile
-dependencies[] = color
-dependencies[] = node_view_permissions 
-dependencies[] = r4032login 
-dependencies[] = ip_geoloc
-dependencies[] = views_slideshow
-dependencies[] = views_slideshow_cycle
-dependencies[] = gmap
-dependencies[] = gmap_location
-dependencies[] = views_autocomplete_filters
-dependencies[] = views_dependent_filters
-dependencies[] = simplenews
+; dependencies[] = edit_profile
+; dependencies[] = color
+; dependencies[] = node_view_permissions 
+; dependencies[] = r4032login 
+; dependencies[] = ip_geoloc
+; dependencies[] = views_slideshow
+; dependencies[] = views_slideshow_cycle
+; dependencies[] = gmap
+; dependencies[] = gmap_location
+; dependencies[] = views_autocomplete_filters
+; dependencies[] = views_dependent_filters
+; dependencies[] = simplenews
 
 ;;; Features
 dependencies[] = fe_block

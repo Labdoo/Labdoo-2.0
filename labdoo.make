@@ -4,6 +4,17 @@ core = 7.x
 defaults[projects][subdir] = contrib
 
 ;--------------------
+; Bootstrap Theme
+;--------------------
+
+projects[bootstrap] = 2.2
+projects[jquery_update] = 2.4
+
+libraries[bootstrap][directory_name] = bootstrap
+libraries[bootstrap][download][type] = get
+libraries[bootstrap][download][url] = https://github.com/twbs/bootstrap/archive/v3.0.0.zip
+
+;--------------------
 ; Contrib
 ;--------------------
 
@@ -15,7 +26,7 @@ projects[rules] = 2.7
 ; projects[context] = 3.2
 ; projects[homebox] = 2.0-beta7
 ; projects[boxes] = 1.2
-projects[edit_profile] = 1.0-beta2
+; projects[edit_profile] = 1.0-beta2
 
 projects[wysiwyg] = 2.2
 
@@ -50,23 +61,23 @@ projects[] = delete_all
 projects[] = menu_import
 
 ;;; Performance
-projects[boost] = 1.0
-projects[memcache] = 1.2
+projects[] = boost
+projects[] = memcache
 
-;;; Services and Social
-projects[google_analytics] = 2.0
-projects[drupalchat] = 1.2
-projects[fb] = 3.4
-projects[invite] = 2.1-beta2
-projects[simplenews] = 1.1
-projects[mass_contact] = 1.0
-projects[sharethis] = 2.5
-projects[disqus] = 1.9
-projects[disqus][patch][] = http://drupal.org/files/disqus-https.patch
+; ;;; Services and Social
+; projects[google_analytics] = 2.0
+; projects[drupalchat] = 1.2
+; projects[fb] = 3.4
+; projects[invite] = 2.1-beta2
+; projects[simplenews] = 1.1
+; projects[mass_contact] = 1.0
+; projects[sharethis] = 2.5
+; projects[disqus] = 1.9
+; projects[disqus][patch][] = http://drupal.org/files/disqus-https.patch
 
 ;;; Extra
 projects[entityreference] = 1.1
-projects[field_group] = 1.4
+; projects[field_group] = 1.4
 projects[date] = 2.8
 projects[location] = 3.3
 projects[nodeaccess_userreference] = 3.10
@@ -80,9 +91,6 @@ projects[views_slideshow] = 3.1
 projects[gmap] = 2.9
 projects[views_autocomplete_filters] = 1.1
 projects[views_dependent_filters] = 1.1
-
-projects[] = boost
-projects[] = memcache
 
 ;--------------------
 ; Sending Emails
