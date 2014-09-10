@@ -43,18 +43,18 @@ dependencies[] = field_ui
 ;--------------------
 
 ;;; Extensions
-dependencies[] = xautoload
-dependencies[] = rules_scheduler
-dependencies[] = rules_admin
+; dependencies[] = xautoload
+; dependencies[] = rules_scheduler
+; dependencies[] = rules_admin
 ; dependencies[] = pathauto
 ; dependencies[] = subpathauto
-dependencies[] = lightbox2
+; dependencies[] = lightbox2
 
 ;;; User Interface
 ; dependencies[] = context
 ; dependencies[] = context_ui
-dependencies[] = views
-dependencies[] = views_ui
+; dependencies[] = views
+; dependencies[] = views_ui
 ; dependencies[] = boxes
 dependencies[] = edit_profile
 dependencies[] = color
