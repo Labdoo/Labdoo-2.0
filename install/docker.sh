@@ -81,12 +81,12 @@ docker=docker.io
 test "$(which $docker)" || apt-get install -y $docker
 
 ### get the code_dir
-source=$(basename $source_dir)
-code_dir=/usr/local/src/$source
-echo code_dir=/usr/local/src/$source >> $options
+project=$(basename $(ls $source_dir/*.info | sed -e 's/\.info$//'))
+code_dir=/usr/local/src/$project
+echo code_dir=/usr/local/src/$project >> $options
 
 ### run the install script on the image ubuntu:14.04
-container=$source
+container=$project
 test "$($docker ps | grep -w $target)" && $docker stop $target
 test "$($docker ps -a | grep -w $target)" && $docker rm $target
 test "$($docker ps | grep -w $container)" && $docker stop $container

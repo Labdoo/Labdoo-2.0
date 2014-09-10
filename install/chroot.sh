@@ -81,10 +81,11 @@ chroot $target apt-get update
 chroot $target apt-get -y install ubuntu-minimal
 
 ### copy the local git repository to the target dir
-source=$(basename $source_dir)
-export code_dir=/usr/local/src/$source
-chroot $target mkdir -p $code_dir
-cp -a $source_dir $(dirname $target/$code_dir)
+project=$(basename $(ls $source_dir/*.info | sed -e 's/\.info$//'))
+export code_dir=/usr/local/src/$project
+mkdir -p $target/usr/local/src/
+cp -a $source_dir $target/usr/local/src/
+mv $target/usr/local/src/{$(basename $source_dir),$project}
 
 ### run install/config scripts
 chroot $target $code_dir/install/install-and-config.sh
