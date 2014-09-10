@@ -46,16 +46,16 @@ dependencies[] = field_ui
 dependencies[] = xautoload
 dependencies[] = rules_scheduler
 dependencies[] = rules_admin
-dependencies[] = pathauto
-dependencies[] = subpathauto
+; dependencies[] = pathauto
+; dependencies[] = subpathauto
 dependencies[] = lightbox2
 
 ;;; User Interface
-dependencies[] = context
-dependencies[] = context_ui
+; dependencies[] = context
+; dependencies[] = context_ui
 dependencies[] = views
 dependencies[] = views_ui
-dependencies[] = boxes
+; dependencies[] = boxes
 dependencies[] = edit_profile
 dependencies[] = color
 dependencies[] = node_view_permissions 
@@ -71,13 +71,6 @@ dependencies[] = simplenews
 dependencies[] = variable
 dependencies[] = lang_dropdown 
 dependencies[] = logintoboggan 
-
-; ;;; User Interface
-; dependencies[] = context
-; dependencies[] = context_ui
-; dependencies[] = boxes
-; dependencies[] = edit_profile
-; dependencies[] = color
 
 ;;; Features
 dependencies[] = fe_block
