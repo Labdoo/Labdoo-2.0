@@ -4,12 +4,15 @@
 
 ### install sshd
 aptitude -y install ssh
+mkdir -p /var/run/sshd/
 
 ### change the port to 2201
 sed -i /etc/ssh/sshd_config -e '/^Port/c Port 2201'
 
-### restart the service
-/etc/init.d/ssh restart
+### enable and start the service
+mv /etc/supervisor/conf.d/sshd.conf{.disabled,}
+supervisorctl reload
+supervisorctl start sshd
 
 ### generate public/private keys
 mkdir ~/.ssh

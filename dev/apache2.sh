@@ -1,39 +1,50 @@
 #!/bin/bash
-### Sometimes it may be more suitable for the development
-### to use Apache2 instead of NGINX etc.
+### Switch between apache2 and (nginx + php5-fpm + memcached).
 
 case $1 in
-    start)
-	/etc/init.d/nginx stop
-	/etc/init.d/php5-fpm stop
+    en | enable )
+        supervisorctl stop nginx
+        supervisorctl stop php5-fpm
 
-	drush @local_lbd -y dis memcache
-	/etc/init.d/memcached stop
-	for file in $(ls /var/www/lbd*/sites/default/settings.php)
-	do
-	    sed -i $file -e "/comment memcache config/ d"
-	    sed -i $file \
-		-e "/Adds memcache as a cache backend/a /* comment memcache config" \
-		-e "/'memcache_key_prefix'/a comment memcache config */"
-	done
+        drush @local_lbd -y dis memcache
+        supervisorctl stop memcached
+        for file in $(ls /var/www/lbd*/sites/default/settings.php)
+        do
+            sed -i $file -e "/comment memcache config/ d"
+            sed -i $file \
+                -e "/Adds memcache as a cache backend/a /* comment memcache config" \
+                -e "/'memcache_key_prefix'/a comment memcache config */"
+        done
 
-	/etc/init.d/apache2 start
-	;;
+        mv /etc/supervisor/conf.d/nginx.conf{,.disabled}
+        mv /etc/supervisor/conf.d/php5-fpm.conf{,.disabled}
+        mv /etc/supervisor/conf.d/memcached.conf{,.disabled}
+        mv /etc/supervisor/conf.d/apache2.conf{.disabled,}
+        supervisorctl reload
 
-    stop)
-	/etc/init.d/apache2 stop
+        supervisorctl start apache2
+        ;;
 
-	for file in $(ls /var/www/lbd*/sites/default/settings.php)
-	do
-	    sed -i $file -e "/comment memcache config/ d"
-	done
-	/etc/init.d/memcached start
-	drush @local_lbd -y en memcache
+    dis | disable )
+        supervisorctl stop apache2
 
-	/etc/init.d/php5-fpm start
-	/etc/init.d/nginx start
-	;;
+        mv /etc/supervisor/conf.d/apache2.conf{,.disabled}
+        mv /etc/supervisor/conf.d/nginx.conf{.disabled,}
+        mv /etc/supervisor/conf.d/php5-fpm.conf{.disabled,}
+        mv /etc/supervisor/conf.d/memcached.conf{.disabled,}
+        supervisorctl reload
+
+        for file in $(ls /var/www/lbd*/sites/default/settings.php)
+        do
+            sed -i $file -e "/comment memcache config/ d"
+        done
+        supervisorctl start memcached
+        drush @local_lbd -y en memcache
+
+        supervisorctl start php5-fpm
+        supervisorctl start nginx
+        ;;
     *)
-	echo " * Usage: $0 {start|stop}"
-	;;
+        echo " * Usage: $0 {enable | disable}"
+        ;;
 esac
