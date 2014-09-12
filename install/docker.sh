@@ -105,7 +105,7 @@ $docker rm $container
 ### run the new image and create a container
 $docker run --name=$target -d \
     -p 80:80 -p 443:443 -p 2201:2201 \
-    $image /usr/bin/supervisord -c /etc/supervisord.conf
+    $image /usr/bin/supervisord -c /etc/supervisor/supervisord.conf --nodaemon
     # -p $sshd_port:$sshd_port -p $httpd_port:$httpd_port \
 
 ### start the container on boot

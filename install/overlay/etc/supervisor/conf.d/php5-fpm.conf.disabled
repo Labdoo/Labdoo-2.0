@@ -1,0 +1,5 @@
+[program:php5-fpm]
+command=/usr/sbin/php5-fpm -F -y /etc/php5/fpm/php-fpm.conf
+stdout_logfile=/var/log/supervisor/%(program_name)s.log
+stderr_logfile=/var/log/supervisor/%(program_name)s.log
+autorestart=true

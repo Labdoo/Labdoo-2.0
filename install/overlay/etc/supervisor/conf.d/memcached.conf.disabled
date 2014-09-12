@@ -1,0 +1,5 @@
+[program:memcached]
+command=/usr/bin/memcached -m 64 -u nobody -s /var/run/memcached/memcached.sock -a 0766
+stdout_logfile=/var/log/supervisor/%(program_name)s.log
+stderr_logfile=/var/log/supervisor/%(program_name)s.log
+autorestart=true

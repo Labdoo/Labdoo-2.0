@@ -12,12 +12,12 @@ case "$1" in
         chroot $CHROOT/ mount -a
 
         # start the services inside the CHROOT
-        chroot $CHROOT/ /usr/bin/supervisord -c /etc/supervisord.conf
+        chroot $CHROOT/ /etc/init.d/supervisor start
         ;;
 
     stop)
         # stop the services inside the CHROOT
-        chroot $CHROOT/ killall supervisord
+        chroot $CHROOT/ /etc/init.d/supervisor stop
         sleep 2
 
         # kill any remaining processes that are still running on CHROOT
