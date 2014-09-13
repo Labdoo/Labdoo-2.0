@@ -6,13 +6,13 @@ suite='trusty'
 apt_mirror='http://archive.ubuntu.com/ubuntu'
 
 ### Git branch that will be used.
-lbd_git_branch='master'
+git_branch='master'
 
 ### Domain of the website.
-lbd_domain='www.labdoo-dev.org'
+domain='www.labdoo-dev.org'
 
 ### Drupal 'admin' password.
-lbd_admin_passwd='grassroots'
+admin_passwd='grassroots'
 
 ### Emails from the server are sent through the SMTP
 ### of a GMAIL account. Give the full email
