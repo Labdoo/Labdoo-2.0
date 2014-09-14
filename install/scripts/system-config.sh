@@ -91,6 +91,6 @@ echo 'php_admin_value[max_execution_time] = 90' >> /etc/php5/fpm/pool.d/www.conf
 ### generates the file /etc/defaults/locale
 update-locale
 
-### replace nginx with apache2 (which is better for development)
+### enable apache2 as a webserver
 dev_scripts="$drupal_dir/profiles/labdoo/dev"
-$dev_scripts/apache2.sh start
+$dev_scripts/webserver.sh apache2
