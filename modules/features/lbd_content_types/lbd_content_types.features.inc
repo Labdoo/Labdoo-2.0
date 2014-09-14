@@ -35,6 +35,14 @@ function lbd_content_types_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'slider_page' => array(
+      'name' => t('Slider page'),
+      'base' => 'node_content',
+      'description' => t('Page to be used in a views slideshow'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
   );
   return $items;
 }
