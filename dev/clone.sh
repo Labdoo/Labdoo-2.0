@@ -94,5 +94,8 @@ chown root: $dst_dir/sites/default/files/.htaccess
 ### restart services
 for service in php5-fpm memcached mysql nginx apache2
 do
-    supervisorctl restart $service
+    if test -f /etc/supervisor/conf.d/$service.conf
+    then
+        supervisorctl restart $service
+    fi
 done

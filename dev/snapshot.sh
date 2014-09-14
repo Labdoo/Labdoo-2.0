@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 ### Make a backup of the current state of the
 ### application (filesystem, database, etc.)
 ### Restore a previous backup/snapshot.
@@ -77,14 +77,14 @@ case $action in
 
         umount $drupal_dir/cache
         mv $drupal_dir $drupal_dir-del
-        mv $snapshot/labdoo* $drupal_dir
+        mv $snapshot/lbd* $drupal_dir
         mount -a
 
         profile_dir=$drupal_dir/profiles/labdoo
         mv $profile_dir $profile_dir-old
         cp -a $drupal_dir-del/profiles/labdoo $profile_dir
 
-        for subdir in libraries modules/{contrib,libraries} themes/contrib
+        for subdir in libraries modules/contrib themes/contrib
         do
             rm -rf $profile_dir/$subdir
             cp -a $profile_dir-old/$subdir $profile_dir/$subdir

@@ -39,9 +39,9 @@ function enable_email_rerouting() {
 
 function create_test_users() {
   $new_user = array(
-    'name' => 'user1',
-    'mail' => preg_replace('/@gmail.com/', '+user1@gmail.com', $site_mail),
-    'pass' => 'user1',
+    'name' => 'user0',
+    'mail' => preg_replace('/@gmail.com/', '+user0@gmail.com', $site_mail),
+    'pass' => 'user0',
     'status' => 1,
     'init' => 'email address',
     'roles' => array(

@@ -39,5 +39,8 @@ sed -i /etc/hosts -e "/^127.0.0.1 $hostname/d"
 #for service in php5-fpm memcached mysql nginx
 for service in php5-fpm memcached mysql nginx apache2
 do
-    supervisorctl restart $service
+    if test -f /etc/supervisor/conf.d/$service.conf
+    then
+        supervisorctl restart $service
+    fi
 done
