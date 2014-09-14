@@ -10,9 +10,9 @@
 
 /**
  *
- * Creates nodes to hold the various dashboards
+ * Creates nodes to hold the various objects dashboards
  */
-function lbd_visualize_create_node($function, $title, $path)
+function _create_objects_dashboard($function, $title, $path)
 {
 
   switch($function) {
@@ -32,7 +32,7 @@ function lbd_visualize_create_node($function, $title, $path)
 
   }
  
-  $body_text = "
+  $body_code = "
 <?php 
 
 \$edoovillage = \$hub = \$user = \$country = NULL;
@@ -53,7 +53,7 @@ if(!empty(\$_GET['c'])) \$country = \$_GET['c'];
   $node->title = $title;
   $node->language = LANGUAGE_NONE;
 
-  $node->body[$node->language][0]['value']   = $body_text;
+  $node->body[$node->language][0]['value']   = $body_code;
   $node->body[$node->language][0]['summary'] = '';
   $node->body[$node->language][0]['format']  = 'php_code';
   $node->comment = 0;
@@ -66,9 +66,91 @@ if(!empty(\$_GET['c'])) \$country = \$_GET['c'];
 
 /**
  *
+ * Creates a slider pages to compose slider dashboards
+ */
+function _create_slider($function, $title, $path, $type, $tab, $tabWidth)
+{
+
+  if($type == "edoovillage") {
+
+    $functionExt = $function . "(\$edoovillage)";
+
+    $body_code = "
+<?php 
+
+print(\"<br>\"); // Add a blank space to let this page breathe
+
+\$edoovillage = NULL;
+if(!empty(\$_GET['e'])) \$edoovillage = \$_GET['e'];
+
+" . $functionExt . "; 
+
+?>
+    ";
+
+  }
+  else if ($type == "hub") {
+
+    $functionExt = $function . "(\$hub)";
+
+    $body_code = "
+<?php 
+
+print(\"<br>\"); // Add a blank space to let this page breathe
+
+\$hub = NULL;
+if(!empty(\$_GET['h'])) \$hub = \$_GET['h'];
+
+" . $functionExt . "; 
+
+?>
+    ";
+
+  }
+
+  $tab_code = "
+<?php 
+
+global \$user;
+
+// FIXME: should this be user_preferred_language?
+// FIXME: check path of __FILE__ is correct
+\$langCode = user_preferred_language(\$user)->language;
+if(!file_exists(dirname(__FILE__) . '/../../../files/pictures/" . $tab . "-' . \$langCode . '.png'))
+  \$langCode = 'en';
+
+print('&nbsp;<img src=\"/profiles/labdoo/files/pictures/" . $tab . "-' . \$langCode . '.png\" style=\"width: " . $tabWidth . "px; height: 30px; \"/>&nbsp;');
+
+?>
+  ";
+
+  $node = new stdClass();
+  $node->type = 'slider_page';
+  node_object_prepare($node);
+  
+  $node->title = $title;
+  $node->language = LANGUAGE_NONE;
+
+  $node->body[$node->language][0]['value']   = $body_code;
+  $node->body[$node->language][0]['summary'] = '';
+  $node->body[$node->language][0]['format']  = 'php_code';
+  $node->field_type[$node->language][0]['value']   = $type;
+  $node->field_slider_tab[$node->language][0]['value']   = $tab_code;
+//  $node->field_slider_tab[$node->language][0]['value']['default_value']   = 'asdf';
+  $node->field_slider_tab[$node->language][0]['format']  = 'php_code';
+  $node->comment = 0;
+  
+  $node->path = array('alias' => $path);
+
+  node_save($node);
+}
+
+
+/**
+ *
  * Deletes the nodes that were holding the various dashboards
  */
-function lbd_visualize_delete_node($dashboardPath)
+function _delete_dashboard_node($dashboardPath)
 {
   $path = drupal_lookup_path("source", $dashboardPath); 
   $node = menu_get_object("node", 1, $path);
@@ -82,10 +164,21 @@ function lbd_visualize_delete_node($dashboardPath)
  */
 function lbd_visualize_enable()
 {
-  lbd_visualize_create_node("lbd_display_dashboard_doojects", "Doojects Dashboard", "content/doojects-dashboard"); 
-  lbd_visualize_create_node("lbd_display_dashboard_edoovillages", "Edoovillages Dashboard", "content/edoovillages-dashboard"); 
-  lbd_visualize_create_node("lbd_display_dashboard_hubs", "Hubs Dashboard", "content/hubs-dashboard"); 
-  lbd_visualize_create_node("lbd_display_dashboard_dootrips", "Dootrips Dashboard", "content/dootrips-dashboard"); 
+  _create_objects_dashboard("lbd_display_dashboard_doojects", "Doojects Dashboard", "content/doojects-dashboard"); 
+  _create_objects_dashboard("lbd_display_dashboard_edoovillages", "Edoovillages Dashboard", "content/edoovillages-dashboard"); 
+  _create_objects_dashboard("lbd_display_dashboard_hubs", "Hubs Dashboard", "content/hubs-dashboard"); 
+  _create_objects_dashboard("lbd_display_dashboard_dootrips", "Dootrips Dashboard", "content/dootrips-dashboard"); 
+
+  _create_slider("lbd_display_slider_edoovilage_data", "Data", "content/edoovillage-data", "edoovillage", "dashboard-tabs-data", 57);
+  _create_slider("lbd_display_slider_edoovilage_doojects", "Doojects", "content/edoovillage-doojects", "edoovillage", "dashboard-tabs-doojects", 98);
+  _create_slider("lbd_display_slider_edoovilage_metrics", "Metrics", "content/edoovillage-metrics", "edoovillage", "dashboard-tabs-metrics", 86);
+  _create_slider("lbd_display_slider_edoovilage_gics", "GICs (Global Inventory Checks)", "content/edoovillage-gics", "edoovillage", "dashboard-tabs-gics", 63);
+
+  _create_slider("lbd_display_slider_hub_data", "Data", "content/hub-data", "hub", "dashboard-tabs-data", 57);
+  _create_slider("lbd_display_slider_hub_edoovillages", "Edoovillages", "content/hub-edoovillages", "hub", "dashboard-tabs-edoovillages", 114);
+  _create_slider("lbd_display_slider_hub_doojects", "Doojects", "content/hub-doojects", "hub", "dashboard-tabs-doojects", 98);
+  _create_slider("lbd_display_slider_hub_metrics", "Metrics", "content/hub-metrics", "hub", "dashboard-tabs-metrics", 86);
+
   drupal_set_message("lbd_visualize enabled correctly");
 }
 
@@ -96,9 +189,13 @@ function lbd_visualize_enable()
  */
 function lbd_visualize_disable()
 {
-  lbd_visualize_delete_node("content/edoovillages-dashboard");
-  lbd_visualize_delete_node("content/hubs-dashboard");
-  lbd_visualize_delete_node("content/doojects-dashboard");
+  _delete_dashboard_node("content/doojects-dashboard");
+  _delete_dashboard_node("content/edoovillages-dashboard");
+  _delete_dashboard_node("content/hubs-dashboard");
+  _delete_dashboard_node("content/dootrips-dashboard");
+
+  _delete_dashboard_node("content/edoovillage-data");
+
   drupal_set_message("lbd_visualize disabled correctly");
 }
 

@@ -55,3 +55,19 @@ h2 {
 h2.block-title {
     color: #009900;
 }
+
+/**
+ * Make a field-based pager of a slideshows view 
+ * horizontal (default is arranged vertically)
+ *
+ */
+.views-slideshow-pager-field-item {
+  float: left;
+  pading: 5px;
+}
+
+
+#dashboard_slider_body
+{
+  height: 2000px;
+}

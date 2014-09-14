@@ -2802,7 +2802,11 @@ function labdoo_objects_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'laptop',
-      'default_value' => NULL,
+      'default_value' => array(
+        0 => array(
+          'value' => '1',
+        ),
+      ),
       'deleted' => '0',
       'description' => '',
       'display' => array(

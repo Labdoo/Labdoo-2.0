@@ -1,0 +1,243 @@
+<?php
+
+/**
+ * @defgroup labdoogics LabdooGics: Module implementing Labdoo's Global Inventory Checks (GICs) 
+ *
+ * This module implements the set of forms and subroutines needed for the Global Inventory Checks (GICs) 
+ *
+ */
+
+
+/**
+ * @file
+ * Main module file for the Labdoo GICs module 
+ *
+ * @ingroup labdoogics
+ *
+ */
+
+
+/**
+ *
+ * gic_table - Defines GIC table form
+ *
+ */
+function gic_table() {
+  global $user;
+  $form = array();
+  $cantSubmit = TRUE;
+  $gicIsEmpty = TRUE;
+
+  $uriPieces = explode("?e=", request_uri());
+  $edoovillageId = $uriPieces[1];
+
+  //
+  // Do some sanity checks first
+  //
+  if(!is_numeric($edoovillageId))
+    return $form;
+  $loadedNode = node_load($edoovillageId);
+  if($loadedNode == FALSE)
+    return $form;
+  if($loadedNode->type != "edoovillage")
+    return $form;
+
+  if (in_array('admin', array_values($user->roles)) || 
+      in_array('Edoovillage Administrator', array_values($user->roles))) 
+    $cantSubmit = FALSE;
+
+  $query = 'SELECT entity_id FROM field_data_field_edoovillage_destination WHERE field_edoovillage_destination_target_id=:eid';
+  $result = db_query($query, array(':eid' => $edoovillageId));
+
+  if(!empty($result))
+      $gicIsEmpty = FALSE;
+
+  if($gicIsEmpty == TRUE) {
+    $form['container'] = array(
+      '#type'             => 'fieldset',
+      '#title'            => "<strong>" .t('Global Inventory Checks (GICs)'). "</strong>",
+      '#description'      => t('No laptops currently deployed in this project.')
+    );
+    return $form;
+  }
+  else {
+    $form['container'] = array(
+      '#type'             => 'fieldset',
+      '#title'            => "<strong>" .t('Global Inventory Checks (GICs)'). "</strong>",
+      '#description'      => t('GICs allow Edoovillage managers to track and update the status of laptops assigned to a specific edoovillage. Among other benefits, GICs provide a way to mark deployed laptops that no longer work.  This is an important function as part of Labdoo\'s circle of life because once a laptop is marked as "broken", the Labdoo system can initiate the process of "rescuing" such laptop by activating a new dootrip, helping minimize electronic waste and the impact to the planet.  This page is enabled to users who manage an edoovillage.  Email Labdoo at contact@labdoo.org if you need to have your permissions upgraded.')
+    );
+  }
+
+  return $form;
+
+  $query = 'SELECT nid, field_status_value, field_destination_project_nid, vid FROM content_type_laptop WHERE field_destination_project_nid='.$edoovillageId.' ORDER BY nid ASC';
+  $result =  db_query($query);
+  while ($row = db_fetch_object($result)) {
+    if ((strpos($row->field_status_value, "S3") == FALSE) && (strpos($row->field_status_value, "S4") == FALSE) &&
+        (strpos($row->field_status_value, "T1") == FALSE) && (strpos($row->field_status_value, "S9") == FALSE))
+      continue;
+    $result_scan =  db_query($query);
+    $not_the_latest = FALSE;
+    while ($row_scan = db_fetch_object($result_scan)) {
+      if (($row_scan->nid == $row->nid) && ($row_scan->vid > $row->vid))
+        $not_the_latest = TRUE;
+    }
+    if ($not_the_latest)
+      continue;
+
+    // Check that the latest version of this node
+    // is still assigned to this project
+    $not_in_this_project = FALSE;    
+    $query2 = 'SELECT nid, vid FROM content_type_laptop WHERE nid='.$row->nid;
+    $result2 = db_query($query2);
+    while ($row2 = db_fetch_object($result2)) { 
+      if($row2->vid > $row->vid)
+        $not_in_this_project = TRUE;
+    }
+    if($not_in_this_project)
+      continue;
+
+    $nodeid="{$row->nid}";
+    $status="{$row->field_status_value}";
+    $node = node_load($nodeid);
+
+    if(strpos($row->field_status_value, "S3") == TRUE)
+      $defaultvalue = 0;
+    else if(strpos($row->field_status_value, "T1") == TRUE)
+      $defaultvalue = 1;
+    else if(strpos($row->field_status_value, "S4") == TRUE)
+      $defaultvalue = 2;
+    else if(strpos($row->field_status_value, "S9") == TRUE)
+      $defaultvalue = 3;
+
+    $form['container'][$nodeid] = array (
+      '#type'      => 'select',
+      '#disabled'  => $cantSubmit,
+      '#title'     => t('Laptop ID <a href="/laptop/@id"  target="_blank">@id</a>', array('@id' => $node->title)),
+      '#options'   => array('0' => t('(S3) Laptop has been assigned to this edoovillage'), '1' => t('(T1) Laptop is being dootripped to this edoovillage'), '2' => t('(S4) Laptop is installed in this edoovillage and is working OK'), '3' => t('(S9) Laptop is installed in this edoovillage but it stopped working, it needs a dootrip to be rescued') ),
+      '#default_value'  => variable_get($nodeid, $defaultvalue),
+    );
+  }
+
+  $form['container']['submit'] = array (
+    '#type'             => 'submit',
+    '#disabled'         => $cantSubmit,
+    '#value'            => t('Update GIC table'),
+    '#executes_submit_callback' => TRUE,
+  );
+  return $form;
+}
+
+
+/**
+ *
+ * gic_table_submit - Defines the submit function for the GIC table form
+ *
+ */
+function gic_table_submit($form, &$form_state) {
+  global $user;
+  $create_gic_node = FALSE;
+  $body = '<p><span style="color:#ff6600;"><strong>GIC Snapshot:</strong></span></p>';
+  $uri_pieces = explode("?edoovillage=", request_uri());  
+  $nodeid_edoovillage=$uri_pieces[1];
+
+  $query = 'SELECT nid, field_status_value, field_destination_project_nid, vid FROM content_type_laptop WHERE field_destination_project_nid='.$nodeid_edoovillage;
+  $result =  db_query($query);
+
+  while ($row = db_fetch_object($result)) {
+    if ((strpos($row->field_status_value, "S3") == FALSE) && (strpos($row->field_status_value, "S4") == FALSE) &&
+        (strpos($row->field_status_value, "T1") == FALSE) && (strpos($row->field_status_value, "S9") == FALSE))
+      continue;
+    $result_scan =  db_query($query);
+    $not_the_latest = FALSE;
+    while ($row_scan = db_fetch_object($result_scan)) {
+      if (($row_scan->nid == $row->nid) && ($row_scan->vid > $row->vid))
+        $not_the_latest = TRUE;
+    }
+    if ($not_the_latest)
+      continue;
+    $nodeid="{$row->nid}";
+    $status="{$row->field_status_value}";
+    $node = node_load($nodeid);
+    $record_changed = FALSE;
+    if($form['container'][$nodeid]['#value'] == 0)
+    {
+      if((strpos($row->field_status_value, "S3") == FALSE))
+      {
+        $node->field_status[0]['value'] = t('Assigned to an edoovillage, waiting to be shipped (S3)');
+        drupal_set_message(t('New status for laptop @lid: @new.', array('@lid' => $node->title, '@new' => $node->field_status[0]['value'])));
+        $record_changed = TRUE;
+      }
+    }
+    else if($form['container'][$nodeid]['#value'] == 1)
+    {
+      if((strpos($row->field_status_value, "T1") == FALSE))
+      {
+        $node->field_status[0]['value'] = t('In transit going to an edoovillage (T1)');
+        drupal_set_message(t('New status for laptop @lid: @new.', array('@lid' => $node->title, '@new' => $node->field_status[0]['value'])));
+        $record_changed = TRUE;
+      }
+    }
+    else if($form['container'][$nodeid]['#value'] == 2)
+    {
+      if((strpos($row->field_status_value, "S4") == FALSE))
+      {
+        $node->field_status[0]['value'] = t('Deployed and being used (S4)');
+        drupal_set_message(t('New status for laptop @lid: @new.', array('@lid' => $node->title, '@new' => $node->field_status[0]['value'])));
+        $record_changed = TRUE;
+      }
+    }
+    else if($form['container'][$nodeid]['#value'] == 3)
+    {
+      if((strpos($row->field_status_value, "S9") == FALSE))
+      {
+        $node->field_status[0]['value'] = t('Deployed but not working (S9)');
+        drupal_set_message(t('New status for laptop @lid: @new.', array('@lid' => $node->title, '@new' => $node->field_status[0]['value'])));
+        $record_changed = TRUE;
+      }
+    }
+ 
+    if($record_changed == TRUE)
+    {
+      node_save($node);
+
+      $edoovillage = $node->field_destination_project;
+      $create_gic_node = TRUE;
+
+      $body = $body.'Laptop ID: <a href="/laptop/'.$node->title.'"  target="_blank">'.$node->title.'</a> | Status: '.$node->field_status[0]["value"].' (record was changed)<br>';
+
+    }
+    else
+    {
+      $body = $body.'Laptop ID: <a href="/laptop/'.$node->title.'"  target="_blank">'.$node->title.'</a> | Status: '.$node->field_status[0]["value"].'<br>';
+    }
+  }
+
+  if($create_gic_node)
+  {
+    $gicnode = new StdClass();
+    $gicnode->type = 'gic';
+    $gicnode->title = 'GIC'; 
+    $gicnode->body = $body;
+    $gicnode->field_gic_edoovillage = $edoovillage;
+    $gicnode->field_gic_date[0]['value'] = date("F j, Y, g:i a"); 
+    $gicnode->created = time();
+    $gicnode->changed = $gicnode->created;
+    $gicnode->status = 1;
+    $gicnode->promote = 0;
+    $gicnode->sticky = 0;
+    $gicnode->format = 2;
+    $gicnode->uid = $user->uid;
+    node_save($gicnode);
+  }
+
+  drupal_set_message(t('Your GIC table has been submitted successfully, thanks.'));
+  $form_state['redirect'] = array(
+                                  'content/edoovillage-dashboard',
+                                  array(
+                                        'edoovillage' => $nodeid_edoovillage,
+                                       ),
+                                 );
+  return;
+}
+
