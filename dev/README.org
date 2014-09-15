@@ -2,62 +2,157 @@
 #+OPTIONS:  num:nil toc:t ^:nil f:nil TeX:nil LaTeX:nil
 #+STYLE: <link href="css/org.css" rel="stylesheet" type="text/css"/>
 
-Development Setup of Labdoo
+Development Tools, Tips and Tricks
 
 * Installation
 
-  Installation for development is the same as the installation for a
-  production server, inside a chroot. The steps are like this:
+  If you need to install frequently (for example for testing), a
+  script like this can be useful:
   #+BEGIN_EXAMPLE
-  mkdir /var/chroot
-  cd /var/chroot/
-  git clone https://github.com/Labdoo/Labdoo-2.0.git Labdoo
-  nohup nice Labdoo/install/install.sh lbd &
-  tail -f nohup.out
-  chroot lbd/ /tmp/install/config.sh
-  chroot lbd/ rm -rf /tmp/install
-  reboot  ## it is advisable to reboot the host after this installation
+  #!/bin/bash -x
+
+  source=dbox
+  installer=chroot
+  git_branch=master
+  nohup_out="nohup-$source-$git_branch-$installer.out"
+
+  rm -f $nohup_out
+  nohup time nice $source/install/{$installer.sh,settings.sh} cfg.sh \
+      --git_branch=$git_branch --reboot=true > $nohup_out &
+  sleep 1
+  tail -f $nohup_out
   #+END_EXAMPLE
 
+  The file ~cfg.sh~ overrides the default config settings (for example
+  passwords):
+  #+BEGIN_EXAMPLE
+  apt_mirror='http://us-east-1.ec2.archive.ubuntu.com/ubuntu/'
+  gmail_account='test@example.org'
+  gmail_passwd=3omRoxtho
+  development='true'
+  #+END_EXAMPLE
 
-* Changing the webserver
+  You can also override configuration settings from the command line.
 
-  The webserver that is used for production is NGINX because it is
-  more responsive in high load, has build in cache, etc. The
-  configuration of NGINX is also tweaked for production (has DoS
-  protection, short timeout, etc.) For development Apache2 can be more
-  suitable. It can be started and stopped like this:
+  *Note:* The order of giving the settings is important. The last one
+  overrides the previous settings.
+
+
+* How to access the shell
+
+  When things are still in development and testing we need to access
+  the shell of the installed system in order to check log files,
+  debug, play with changing configurations, etc.
+
+  When the installation is done on a chroot directory, then you simply
+  switch to it with the command =chroot=:
   #+BEGIN_EXAMPLE
   chroot /var/chroot/lbd/
-  /var/www/lbd/profiles/labdoo/dev/apache2.sh start
-  /var/www/lbd/profiles/labdoo/dev/apache2.sh stop
   #+END_EXAMPLE
 
-  *Important:* When /apache2/ is started, the services /nginx/,
-  /memcached/ and /php5-fpm/ are stopped. Don't forget to modify the
-  init script ~/etc/init.d/chroot-lbd~ like this:
+  When the installation is done in a docker container, you have to install
+  first the commands =nsenter= and =docker-enter= like this:
   #+BEGIN_EXAMPLE
-  #CHROOT_SERVICES="cron php5-fpm memcached mysql nginx"
-  CHROOT_SERVICES="cron mysql apache2"
+  docker run -v /usr/local/bin:/target jpetazzo/nsenter
   #+END_EXAMPLE
-  The script =apache2.sh= cannot make this modification automatically
-  because it runs inside the chroot, and the init script is outside
-  the chroot (on the host system). So it has to be done manually.
 
-  I also add something like this on */etc/hosts*, so that I can access
-  it on the browser with a domain name:
+  Then you can access the shell of a running container like this:
   #+BEGIN_EXAMPLE
-  127.0.0.1  labdoo.org dev.labdoo.org
+  docker-enter lbd
   #+END_EXAMPLE
-  This modification has to be done manually as well.
+
+  See also this article:
+  http://blog.docker.com/2014/06/why-you-dont-need-to-run-sshd-in-docker/
+
+
+* Install sshd
+
+  In order to access the server remotely through drush, ssh-client,
+  etc. you can install *sshd* with the script ~dev/install-sshd.sh~,
+  like this:
+  #+BEGIN_EXAMPLE
+  chroot /var/chroot/lbd/
+  cd /usr/local/src/labdoo/
+  dev/install-sshd.sh
+  #+END_EXAMPLE
+
+  By default it will install and run a sshd that listens on the port *2201*,
+  but you can also give it the port number as an argument:
+  #+BEGIN_EXAMPLE
+  dev/install-sshd.sh 2211
+  #+END_EXAMPLE
+
+
+* Change the webserver
+
+  There are two webservers installed, apache2 and nginx (with php5-fpm
+  and memcached). For development Apache2 can be more suitable, while
+  for production NGINX is supposed to be more responsive in high load.
+  It also has built-in cache and its configuration is tweaked for DoS
+  protection, short timeout, etc.
+
+  We can choose one of them like this:
+  #+BEGIN_EXAMPLE
+  chroot /var/chroot/lbd/
+  cd /usr/local/src/labdoo/
+  dev/webserver.sh apache2
+  dev/webserver.sh nginx
+  #+END_EXAMPLE
+
+
+* Making clones of the application
+
+  Clones of the main site can be used for development and testing. 
+
+  Inside the chroot you can make a clone for development like this:
+  #+BEGIN_EXAMPLE
+  chroot /var/chroot/lbd/
+  cd /usr/local/src/labdoo/
+  dev/clone.sh lbd lbd_dev1
+  dev/clone.sh lbd_dev1 lbd_test1
+  #+END_EXAMPLE
+
+  It creates a new application with root */var/www/lbd_dev1/* and with
+  DB named *lbd_dev1*. It also creates the drush alias *@lbd_dev1*,
+  and modifies the configuration of the webserver so that the cloned
+  application can be accessed at *dev1.labdoo.org*.
+
+  *Caution:* The root directory and the DB of the clone will be
+  erased, if they exist.
+
+  Other clones like this can be created for testing etc. To cleanup
+  (remove/erase) a clone, you can use *clone_rm.sh* like this:
+  #+BEGIN_EXAMPLE
+  chroot /var/chroot/lbd/
+  cd /usr/local/src/labdoo/
+  dev/clone_rm.sh lbd_dev1
+  dev/clone_rm.sh lbd_test1
+  #+END_EXAMPLE
+
+  By the way, you can also modify a little bit the configuration of a
+  development copy of the application (in order to help us not confuse
+  a development copy with a live or testing one), with the script
+  =dev/config.php=:
+  #+BEGIN_EXAMPLE
+  chroot /var/chroot/lbd/
+  cd /usr/local/src/labdoo/
+  drush @lbd_dev php-script dev/config.php dev2
+  #+END_EXAMPLE
+
+  It will set site_name to 'Labdoo (dev1)', will make site email
+  something like 'user+dev1@gmail.com', will enable email re-routing,
+  display the /devel/ menu on the footer region, etc. Sometimes it may
+  be useful.
 
 
 * Re-installing the application
 
-  It can be done with the script =dev/install.sh=:
+  It can be done with the script =dev/reinstall.sh=:
   #+BEGIN_EXAMPLE
   chroot /var/chroot/lbd/
-  /var/www/lbd/profiles/labdoo/dev/reinstall.sh
+  cd /usr/local/src/labdoo/
+  nohup nice dev/reinstall.sh settings.sh &
+  tail -f nohup.out
   #+END_EXAMPLE
   It will rebuild the Drupal directory with *drush make* and install
   the labdoo profile with *drush site-install*, and then do all the
@@ -67,60 +162,19 @@ Development Setup of Labdoo
   want to test the installation profile and the installation scripts.
 
   Another kind of re-installation, which touches only the database of
-  Drupal (lbd) and nothing else, can be done with the script
-  =dev/install.sh=:
+  Drupal and nothing else, can be done with the script
+  =dev/reinstall-db.sh=:
   #+BEGIN_EXAMPLE
   chroot /var/chroot/lbd/
-  /var/www/lbd/profiles/labdoo/dev/reinstall-db.sh
+  cd /usr/local/src/labdoo/
+  nohup nice dev/reinstall-db.sh @lbd_dev &
+  tail -f nohup.out
   #+END_EXAMPLE
 
-  It is useful for testing the features. Usually, when features are
-  un-installed, things are not undone properly. In order to leave out
-  a feature, it should not be installed since the beginning. So, it is
-  important to test different combinations of them to see which one
-  works better for us.
+  It is useful for testing the installation of custom modules, feature
+  modules, etc. The argument *@lbd_dev* is the alias of the site that
+  should be reinstalled.
 
-
-* Making a clone for development
-
-  Inside the chroot I make a clone for development like this:
-  #+BEGIN_EXAMPLE
-  chroot /var/chroot/lbd/
-  cd /var/www/lbd/profiles/labdoo/
-  dev/clone.sh dev
-  #+END_EXAMPLE
-
-  It creates a new application with root */var/www/lbd_dev/* and with
-  DB named *lbd_dev*. It also creates the drush alias *@lbd_dev*, and
-  modifies the configuration of the webserver so that the cloned
-  application can be accessed at *dev.labdoo.org*.
-
-  *Caution:* The root directory and the DB of the clone will be
-  erased, if they exist.
-
-  Other clones like this can be created for testing etc. To cleanup
-  (remove/erase) a clone, we can use *clone_rm.sh* like this:
-  #+BEGIN_EXAMPLE
-  chroot /var/chroot/lbd/
-  cd /var/www/lbd/profiles/labdoo/
-  dev/clone_rm.sh dev
-  #+END_EXAMPLE
-
-  By the way, we can also modify a little bit the configuration of a
-  development copy of the application (in order to help us not confuse
-  a development copy with a live or testing one), with the script
-  =dev/config.php=:
-  #+BEGIN_EXAMPLE
-  chroot /var/chroot/lbd/
-  cd /var/www/
-  drush @lbd php-script lbd/profiles/labdoo/dev/config.php dev1
-  drush @lbd_dev php-script lbd/profiles/labdoo/dev/config.php dev2
-  #+END_EXAMPLE
-
-  It will set site_name to 'Labdoo (dev1)', will make site email
-  something like 'user+dev1@gmail.com', will enable email re-routing,
-  display the /devel/ menu on the footer region, etc. It is not
-  required, but sometimes may be useful.
 
 * Making a backup of the application
 
@@ -137,21 +191,19 @@ Development Setup of Labdoo
   done like this:
   #+BEGIN_EXAMPLE
   chroot /var/chroot/lbd/
-  cd /var/www/
-  ln -s lbd_dev/profiles/labdoo/ Labdoo
-
-  Labdoo/dev/snapshot.sh make @lbd
-  Labdoo/dev/snapshot.sh make @lbd_dev
+  cd /usr/local/src/labdoo/
+  dev/snapshot.sh make @lbd
+  dev/snapshot.sh make @lbd_dev
   #+END_EXAMPLE
-  These will create the files ~snapshot-lbd-20130602.tgz~ and
-  ~snapshot-lbd_dev-20130602.tgz~. They can be restored like this:
+  These will create the files ~snapshot-lbd-20140914.tgz~ and
+  ~snapshot-lbd_dev-20140914.tgz~. They can be restored like this:
   #+BEGIN_EXAMPLE
-  Labdoo/dev/snapshot.sh restore @lbd --file=snapshot-lbd-20130602.tgz
-  Labdoo/dev/snapshot.sh restore @lbd --file=snapshot-lbd_dev-20130602.tgz
-  Labdoo/dev/snapshot.sh restore @lbd_dev --file=snapshot-lbd-20130602.tgz
-  Labdoo/dev/snapshot.sh restore @lbd_dev --file=snapshot-lbd_dev-20130602.tgz
+  dev/snapshot.sh restore @lbd --file=snapshot-lbd-20140914.tgz
+  dev/snapshot.sh restore @lbd --file=snapshot-lbd_dev-20140914.tgz
+  dev/snapshot.sh restore @lbd_dev --file=snapshot-lbd-20140914.tgz
+  dev/snapshot.sh restore @lbd_dev --file=snapshot-lbd_dev-20140914.tgz
   #+END_EXAMPLE
-  As you may notice, a snapshot of @lbd_dev can also be restored on the
+  As you may notice, a snapshot of *@lbd_dev* can also be restored on the
   main application, and the other way around.
 
   However, in many cases a backup/restore of the database is all that
@@ -172,33 +224,32 @@ Development Setup of Labdoo
 * Accessing the code of the application from outside chroot
 
   In order to access easily the code of the application from outside
-  chroot, I create a symbolic link like this:
+  chroot, you can create a symbolic link like this:
   #+BEGIN_EXAMPLE
   cd /var/chroot/
   ln -s lbd/var/www/lbd_dev/profiles/labdoo/ \
-        dev
+        lbd_dev
   #+END_EXAMPLE
 
-  Now I can go to */var/chroot/dev/* and start /emacs/ or any other
-  tools. This way I don't have to install /emacs/ or any other
+  Now you can go to */var/chroot/dev/* and start /emacs/ or any other
+  tools. This way you don't have to install /emacs/ or any other
   development tools inside the /chroot/ and can use the best of
-  development tools that my host environment can offer me.
+  development tools that your host system can offer.
 
 
-* Pushing commits to github
+* Pushing commits
 
   The copy of the application on =/var/www/lbd_dev/profiles/labdoo/=
   (as well as the one on =/var/www/lbd/profiles/labdoo/=) are actually
-  clones of the git repository at https://github.com/dashohoxha/dbox
-  so we can *pull* from it and *push* to it. Pulling (to get
-  up-to-date) can be done by everybody, however pushing requires a
-  username and password (the ones that are used to access the account
-  at GitHub).
+  clones of the git repository of the project on GitHub, so we can
+  *pull* from it and *push* to it. Pulling (to get up-to-date) can be
+  done by everybody, however pushing requires a username and password
+  (the ones that are used to access the account at GitHub).
 
 
 * The commit workflow
 
-  For small or straight-forward changes I can also work directly on
+  For small or straight-forward changes you can also work directly on
   the *master* branch, then *commit*, and then *push* to github.
 
   However I usually use a bit more complicated workflow. First I
@@ -207,7 +258,7 @@ Development Setup of Labdoo
   commit(s) to github.
   #+BEGIN_EXAMPLE
   git checkout -d dev     ### create a branch and switch to it
-  [work-commit-work-comit]
+  [work...commit...work...comit]
   git checkout master     ### switch back to master
   git pull                ### get any latest commits from github
   git merge dev [--squash]
@@ -231,60 +282,16 @@ Development Setup of Labdoo
   (uncommitted). Then I can redo the commits on a cleaner or more
   logical way. Afterwards the *dev* branch will be deleted and the old
   commits will be lost.
-
-
-* Making a local git clone of the dev application
-
-  Sometimes it is not easy or suitable to test modifications on the
-  *@lbd_dev* application (~/var/www/lbd_dev~). For example this is the
-  case when I have to test install/uninstall, enable/disable modules,
-  features, etc. In this case I test them on the main application
-  instance (~/var/www/lbd~). Since both applications are clones of the
-  [[https://github.com/dashohoxha/dbox][GitHub repository]] it is easy to push commits from /lbd_dev/ to
-  /github/ and to pull them from /github/ to /lbd/.
-
-  However, sometimes it is better to test modifications and make sure
-  that they work, before pushing them to /github/. This can be done if
-  the code on /lbd/ is a git clone of the code on /lbd_dev/ (instead
-  of being a clone from /github/).
-
-  The script =dev/git-clone-dev.sh= makes just this. It replaces the
-  code of /lbd/ with a git clone of the *dev branch* from
-  /lbd_dev/. Then the workflow is like this:
-  1. Work and commit on the branch *dev* of *lbd_dev*
-  2. Pull on *lbd* and test.
-  3. Repeat steps *1* and *2* until the modification that we are
-     making is OK.
-  4. Push changes upwards to github, like this:
-     #+BEGIN_EXAMPLE
-     cd /var/www/lbd_dev/profiles/labdoo
-     git checkout master
-     git merge dev [--squash]
-     git push
-     git branch -D dev
-     git checkout -b dev
-     #+END_EXAMPLE
-     So, after merging to *master* and pushing to /github/, we delete
-     the branch *dev* and create a new one.
-  5. Make a git pull on *lbd* and sync it with *lbd_dev*
-     #+BEGIN_EXAMPLE
-     cd /var/www/lbd/profiles/labdoo
-     git pull
-     #+END_EXAMPLE
-
+  
 
 * Working with a dev-test-live workflow
 
-  All the work that is described on the sections above is about
-  development and local testing that is done on a working copy
-  (sandbox) of a /chroot/ installation. This is usually installed on
-  my personal machine (that I use for development).
-
-  At some point, all the modifications have to be transferred to a
-  public server, where the application is in "production", performing
-  "live". On that public server there is the same /chroot/ environment
-  as in the development server. The synchronization of the application
-  can be done via git push and pull.
+  At some point, all the modifications on the local copy of the
+  application (sandbox) have to be transferred to a public server,
+  where the application is in "production", performing "live". On that
+  public server there is the same /chroot/ environment as in the
+  development server. The synchronization of the application can be
+  done via git push and pull.
 
   However *drush rsync* and *drush sql-sync* offer another option for
   synchronization. For more details see:
@@ -348,7 +355,7 @@ Development Setup of Labdoo
   things, before applying them to the real live application. In my
   case it is placed on a different server, however it can also be
   placed on the same server as the live application (just make a clone
-  of the main application with =dev/clone.sh test=).
+  of the main application with =dev/clone.sh lbd lbd_test=).
 
   When everything is set up correctly, the synchronization can be done
   as simply as this:
