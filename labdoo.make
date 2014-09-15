@@ -21,14 +21,8 @@ libraries[bootstrap][download][url] = https://github.com/twbs/bootstrap/archive/
 ;;; Extensions
 projects[xautoload] = 4.5
 projects[rules] = 2.7
-
-; ;;; User interface
-; projects[context] = 3.2
-; projects[homebox] = 2.0-beta7
-; projects[boxes] = 1.2
-; projects[edit_profile] = 1.0-beta2
-
 projects[wysiwyg] = 2.2
+projects[simplenews] = 1.1
 
 libraries[tinymce][directory_name] = tinymce
 libraries[tinymce][download][type] = get
@@ -63,17 +57,6 @@ projects[] = menu_import
 ;;; Performance
 projects[] = boost
 projects[] = memcache
-
-; ;;; Services and Social
-; projects[google_analytics] = 2.0
-; projects[drupalchat] = 1.2
-; projects[fb] = 3.4
-; projects[invite] = 2.1-beta2
-; projects[simplenews] = 1.1
-; projects[mass_contact] = 1.0
-; projects[sharethis] = 2.5
-; projects[disqus] = 1.9
-; projects[disqus][patch][] = http://drupal.org/files/disqus-https.patch
 
 ;;; Extra
 projects[entityreference] = 1.1
