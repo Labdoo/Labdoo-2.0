@@ -33,12 +33,12 @@
 ++ apt_mirror=http://us-east-1.ec2.archive.ubuntu.com/ubuntu/
 + for opt in '"$@"'
 + case $opt in
-+ optvalue=master
++ optvalue=openatrium
 + optname=--git_branch
 + optname=git_branch
-+ eval export git_branch=master
-++ export git_branch=master
-++ git_branch=master
++ eval export git_branch=openatrium
+++ export git_branch=openatrium
+++ git_branch=openatrium
 + for opt in '"$@"'
 + case $opt in
 + optvalue=true
@@ -51,12 +51,12 @@
 ++ pwd
 + current_dir=/var/chroot
 + cd Labdoo-2.0/
-+ git checkout master
-Already on 'master'
-Your branch is up-to-date with 'origin/master'.
-+ git pull origin master
++ git checkout openatrium
+Switched to branch 'openatrium'
+Your branch is up-to-date with 'origin/openatrium'.
++ git pull origin openatrium
 From https://github.com/Labdoo/Labdoo-2.0
- * branch            master     -> FETCH_HEAD
+ * branch            openatrium -> FETCH_HEAD
 Already up-to-date.
 + cd /var/chroot
 + apt-get install -y debootstrap dchroot
@@ -618,40 +618,40 @@ I: Base system installed successfully.
 + cp /etc/resolv.conf lbd/etc/resolv.conf
 + mount -o bind /proc lbd/proc
 + chroot lbd apt-get update
-Ign http://security.ubuntu.com trusty-security InRelease
-Get:1 http://security.ubuntu.com trusty-security Release.gpg [933 B]
-Get:2 http://security.ubuntu.com trusty-security Release [59.7 kB]
-Get:3 http://security.ubuntu.com trusty-security/main i386 Packages [134 kB]
 Ign http://us-east-1.ec2.archive.ubuntu.com trusty InRelease
 Ign http://us-east-1.ec2.archive.ubuntu.com trusty-updates InRelease
-Get:4 http://security.ubuntu.com trusty-security/restricted i386 Packages [14 B]
-Get:5 http://security.ubuntu.com trusty-security/universe i386 Packages [47.2 kB]
-Get:6 http://security.ubuntu.com trusty-security/multiverse i386 Packages [1398 B]
-Get:7 http://security.ubuntu.com trusty-security/main Translation-en [68.0 kB]
 Hit http://us-east-1.ec2.archive.ubuntu.com trusty Release.gpg
-Get:8 http://security.ubuntu.com trusty-security/multiverse Translation-en [587 B]
-Get:9 http://security.ubuntu.com trusty-security/restricted Translation-en [14 B]
-Get:10 http://security.ubuntu.com trusty-security/universe Translation-en [27.0 kB]
-Get:11 http://us-east-1.ec2.archive.ubuntu.com trusty-updates Release.gpg [933 B]
+Ign http://security.ubuntu.com trusty-security InRelease
+Get:1 http://us-east-1.ec2.archive.ubuntu.com trusty-updates Release.gpg [933 B]
+Get:2 http://security.ubuntu.com trusty-security Release.gpg [933 B]
 Hit http://us-east-1.ec2.archive.ubuntu.com trusty Release
-Get:12 http://us-east-1.ec2.archive.ubuntu.com trusty-updates Release [59.7 kB]
+Get:3 http://security.ubuntu.com trusty-security Release [59.7 kB]
+Get:4 http://us-east-1.ec2.archive.ubuntu.com trusty-updates Release [59.7 kB]
+Get:5 http://security.ubuntu.com trusty-security/main i386 Packages [134 kB]
 Hit http://us-east-1.ec2.archive.ubuntu.com trusty/main i386 Packages
-Get:13 http://us-east-1.ec2.archive.ubuntu.com trusty/restricted i386 Packages [13.4 kB]
-Get:14 http://us-east-1.ec2.archive.ubuntu.com trusty/universe i386 Packages [5866 kB]
+Get:6 http://us-east-1.ec2.archive.ubuntu.com trusty/restricted i386 Packages [13.4 kB]
+Get:7 http://us-east-1.ec2.archive.ubuntu.com trusty/universe i386 Packages [5866 kB]
+Get:8 http://security.ubuntu.com trusty-security/restricted i386 Packages [14 B]
+Get:9 http://security.ubuntu.com trusty-security/universe i386 Packages [47.2 kB]
+Get:10 http://security.ubuntu.com trusty-security/multiverse i386 Packages [1398 B]
+Get:11 http://security.ubuntu.com trusty-security/main Translation-en [68.0 kB]
+Get:12 http://security.ubuntu.com trusty-security/multiverse Translation-en [587 B]
+Get:13 http://security.ubuntu.com trusty-security/restricted Translation-en [14 B]
+Get:14 http://security.ubuntu.com trusty-security/universe Translation-en [27.0 kB]
 Get:15 http://us-east-1.ec2.archive.ubuntu.com trusty/multiverse i386 Packages [134 kB]
 Get:16 http://us-east-1.ec2.archive.ubuntu.com trusty/main Translation-en [762 kB]
 Get:17 http://us-east-1.ec2.archive.ubuntu.com trusty/multiverse Translation-en [102 kB]
 Get:18 http://us-east-1.ec2.archive.ubuntu.com trusty/restricted Translation-en [3457 B]
 Get:19 http://us-east-1.ec2.archive.ubuntu.com trusty/universe Translation-en [4089 kB]
-Get:20 http://us-east-1.ec2.archive.ubuntu.com trusty-updates/main i386 Packages [313 kB]
+Get:20 http://us-east-1.ec2.archive.ubuntu.com trusty-updates/main i386 Packages [314 kB]
 Get:21 http://us-east-1.ec2.archive.ubuntu.com trusty-updates/restricted i386 Packages [5820 B]
 Get:22 http://us-east-1.ec2.archive.ubuntu.com trusty-updates/universe i386 Packages [202 kB]
 Get:23 http://us-east-1.ec2.archive.ubuntu.com trusty-updates/multiverse i386 Packages [9545 B]
-Get:24 http://us-east-1.ec2.archive.ubuntu.com trusty-updates/main Translation-en [142 kB]
+Get:24 http://us-east-1.ec2.archive.ubuntu.com trusty-updates/main Translation-en [143 kB]
 Get:25 http://us-east-1.ec2.archive.ubuntu.com trusty-updates/multiverse Translation-en [4719 B]
 Get:26 http://us-east-1.ec2.archive.ubuntu.com trusty-updates/restricted Translation-en [1736 B]
 Get:27 http://us-east-1.ec2.archive.ubuntu.com trusty-updates/universe Translation-en [101 kB]
-Fetched 12.1 MB in 1min 30s (134 kB/s)
+Fetched 12.2 MB in 13s (909 kB/s)
 Reading package lists...
 + chroot lbd apt-get -y install ubuntu-minimal
 Reading package lists...
@@ -783,7 +783,7 @@ perl: warning: Please check that your locale settings:
     are supported and installed on your system.
 perl: warning: Falling back to the standard locale ("C").
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 17.4 MB in 22s (768 kB/s)
+Fetched 17.4 MB in 19s (909 kB/s)
 Selecting previously unselected package cron.
 (Reading database ... 7396 files and directories currently installed.)
 Preparing to unpack .../cron_3.0pl1-124ubuntu2_i386.deb ...
@@ -1179,15 +1179,22 @@ Processing triggers for libc-bin (2.19-0ubuntu6) ...
 + ./packages-and-software.sh
 + apt-get update
 Ign http://security.ubuntu.com trusty-security InRelease
+Hit http://security.ubuntu.com trusty-security Release.gpg
+Hit http://security.ubuntu.com trusty-security Release
+Hit http://security.ubuntu.com trusty-security/main i386 Packages
+Hit http://security.ubuntu.com trusty-security/restricted i386 Packages
+Hit http://security.ubuntu.com trusty-security/universe i386 Packages
 Ign http://us-east-1.ec2.archive.ubuntu.com trusty InRelease
-Get:1 http://security.ubuntu.com trusty-security Release.gpg [933 B]
+Hit http://security.ubuntu.com trusty-security/multiverse i386 Packages
+Hit http://security.ubuntu.com trusty-security/main Translation-en
+Hit http://security.ubuntu.com trusty-security/multiverse Translation-en
+Hit http://security.ubuntu.com trusty-security/restricted Translation-en
 Ign http://us-east-1.ec2.archive.ubuntu.com trusty-updates InRelease
-Get:2 http://security.ubuntu.com trusty-security Release [59.7 kB]
+Hit http://security.ubuntu.com trusty-security/universe Translation-en
 Hit http://us-east-1.ec2.archive.ubuntu.com trusty Release.gpg
-Get:3 http://us-east-1.ec2.archive.ubuntu.com trusty-updates Release.gpg [933 B]
+Hit http://us-east-1.ec2.archive.ubuntu.com trusty-updates Release.gpg
 Hit http://us-east-1.ec2.archive.ubuntu.com trusty Release
-Get:4 http://us-east-1.ec2.archive.ubuntu.com trusty-updates Release [59.7 kB]
-Get:5 http://security.ubuntu.com trusty-security/main i386 Packages [134 kB]
+Hit http://us-east-1.ec2.archive.ubuntu.com trusty-updates Release
 Hit http://us-east-1.ec2.archive.ubuntu.com trusty/main i386 Packages
 Hit http://us-east-1.ec2.archive.ubuntu.com trusty/restricted i386 Packages
 Hit http://us-east-1.ec2.archive.ubuntu.com trusty/universe i386 Packages
@@ -1196,22 +1203,14 @@ Hit http://us-east-1.ec2.archive.ubuntu.com trusty/main Translation-en
 Hit http://us-east-1.ec2.archive.ubuntu.com trusty/multiverse Translation-en
 Hit http://us-east-1.ec2.archive.ubuntu.com trusty/restricted Translation-en
 Hit http://us-east-1.ec2.archive.ubuntu.com trusty/universe Translation-en
-Get:6 http://security.ubuntu.com trusty-security/restricted i386 Packages [14 B]
-Get:7 http://us-east-1.ec2.archive.ubuntu.com trusty-updates/main i386 Packages [313 kB]
-Get:8 http://security.ubuntu.com trusty-security/universe i386 Packages [47.2 kB]
-Get:9 http://security.ubuntu.com trusty-security/multiverse i386 Packages [1398 B]
-Hit http://security.ubuntu.com trusty-security/main Translation-en
-Hit http://security.ubuntu.com trusty-security/multiverse Translation-en
-Hit http://security.ubuntu.com trusty-security/restricted Translation-en
-Hit http://security.ubuntu.com trusty-security/universe Translation-en
-Get:10 http://us-east-1.ec2.archive.ubuntu.com trusty-updates/restricted i386 Packages [5820 B]
-Get:11 http://us-east-1.ec2.archive.ubuntu.com trusty-updates/universe i386 Packages [202 kB]
-Get:12 http://us-east-1.ec2.archive.ubuntu.com trusty-updates/multiverse i386 Packages [9545 B]
+Hit http://us-east-1.ec2.archive.ubuntu.com trusty-updates/main i386 Packages
+Hit http://us-east-1.ec2.archive.ubuntu.com trusty-updates/restricted i386 Packages
+Hit http://us-east-1.ec2.archive.ubuntu.com trusty-updates/universe i386 Packages
+Hit http://us-east-1.ec2.archive.ubuntu.com trusty-updates/multiverse i386 Packages
 Hit http://us-east-1.ec2.archive.ubuntu.com trusty-updates/main Translation-en
 Hit http://us-east-1.ec2.archive.ubuntu.com trusty-updates/multiverse Translation-en
 Hit http://us-east-1.ec2.archive.ubuntu.com trusty-updates/restricted Translation-en
 Hit http://us-east-1.ec2.archive.ubuntu.com trusty-updates/universe Translation-en
-Fetched 834 kB in 9s (90.0 kB/s)
 Reading package lists...
 + apt-get -y upgrade
 Reading package lists...
@@ -1269,7 +1268,7 @@ locale: Cannot set LC_MESSAGES to default locale: No such file or directory
 locale: Cannot set LC_ALL to default locale: No such file or directory
 Extracting templates from packages: 96%Extracting templates from packages: 100%
 Preconfiguring packages ...
-Fetched 15.1 MB in 17s (854 kB/s)
+Fetched 15.1 MB in 2s (7278 kB/s)
 (Reading database ... 11512 files and directories currently installed.)
 Preparing to unpack .../base-files_7.2ubuntu5.1_i386.deb ...
 Unpacking base-files (7.2ubuntu5.1) over (7.2ubuntu5) ...
@@ -1297,8 +1296,8 @@ Unpacking tzdata (2014e-0ubuntu0.14.04) over (2014b-1) ...
 Setting up tzdata (2014e-0ubuntu0.14.04) ...
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Mon Sep 15 12:47:36 UTC 2014.
-Universal Time is now:  Mon Sep 15 12:47:36 UTC 2014.
+Local time is now:      Mon Sep 15 14:49:39 UTC 2014.
+Universal Time is now:  Mon Sep 15 14:49:39 UTC 2014.
 Run 'dpkg-reconfigure tzdata' if you wish to change it.
 
 (Reading database ... 11512 files and directories currently installed.)
@@ -1397,7 +1396,7 @@ Setting up libcgmanager0:i386 (0.24-0ubuntu7) ...
 Setting up libudev1:i386 (204-5ubuntu20.6) ...
 Setting up udev (204-5ubuntu20.6) ...
 udev stop/waiting
-udev start/running, process 15709
+udev start/running, process 14543
 Removing 'diversion of /bin/udevadm to /bin/udevadm.upgrade by fake-udev'
 update-initramfs: deferring update (trigger activated)
 Setting up ifupdown (0.7.47.2ubuntu4.1) ...
@@ -1436,7 +1435,7 @@ perl: warning: Falling back to the standard locale ("C").
 locale: Cannot set LC_CTYPE to default locale: No such file or directory
 locale: Cannot set LC_MESSAGES to default locale: No such file or directory
 locale: Cannot set LC_ALL to default locale: No such file or directory
-Fetched 459 kB in 0s (2218 kB/s)
+Fetched 459 kB in 0s (1694 kB/s)
 Selecting previously unselected package language-pack-en-base.
 (Reading database ... 11512 files and directories currently installed.)
 Preparing to unpack .../language-pack-en-base_1%3a14.04+20140707_all.deb ...
@@ -1543,7 +1542,7 @@ Get:40 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/universe python-me
 Get:41 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/universe supervisor all 3.0b2-1 [314 kB]
 Extracting templates from packages: 73%Extracting templates from packages: 100%
 Preconfiguring packages ...
-Fetched 17.3 MB in 12s (1,345 kB/s)
+Fetched 17.3 MB in 2s (7,832 kB/s)
 Selecting previously unselected package libboost-iostreams1.54.0:i386.
 (Reading database ... 12130 files and directories currently installed.)
 Preparing to unpack .../libboost-iostreams1.54.0_1.54.0-4ubuntu3.1_i386.deb ...
@@ -1724,7 +1723,7 @@ Setting up xz-utils (5.1.1alpha+20120614-2ubuntu2) ...
 update-alternatives: using /usr/bin/xz to provide /usr/bin/lzma (lzma) in auto mode
 Setting up python-meld3 (0.6.10-1) ...
 Setting up supervisor (3.0b2-1) ...
-Starting supervisor:  ERROR.
+Starting supervisor: supervisord.
 Setting up tasksel-data (2.88ubuntu15) ...
 Setting up tasksel (2.88ubuntu15) ...
 Processing triggers for libc-bin (2.19-0ubuntu6.3) ...
@@ -1828,134 +1827,134 @@ The following NEW packages will be installed:
 0 upgraded, 186 newly installed, 0 to remove and 0 not upgraded.
 Need to get 75.3 MB of archives.
 After this operation, 360 MB of additional disk space will be used.
-Get:1 http://security.ubuntu.com/ubuntu/ trusty-security/main libcurl3-gnutls i386 7.35.0-1ubuntu2.1 [166 kB]
-Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libroken18-heimdal i386 1.6~git20131207+dfsg-1ubuntu1 [40.9 kB]
-Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libasn1-8-heimdal i386 1.6~git20131207+dfsg-1ubuntu1 [169 kB]
-Get:4 http://security.ubuntu.com/ubuntu/ trusty-security/main libcurl3 i386 7.35.0-1ubuntu2.1 [174 kB]
-Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libasprintf0c2 i386 0.18.3.1-1ubuntu3 [6,682 B]
-Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libkrb5support0 i386 1.12+dfsg-2ubuntu4.2 [30.1 kB]
-Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libk5crypto3 i386 1.12+dfsg-2ubuntu4.2 [77.7 kB]
-Get:8 http://security.ubuntu.com/ubuntu/ trusty-security/main curl i386 7.35.0-1ubuntu2.1 [123 kB]
-Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libkeyutils1 i386 1.5.6-1 [7,266 B]
-Get:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libkrb5-3 i386 1.12+dfsg-2ubuntu4.2 [260 kB]
-Get:11 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libgssapi-krb5-2 i386 1.12+dfsg-2ubuntu4.2 [111 kB]
-Get:12 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libidn11 i386 1.28-1ubuntu2 [92.3 kB]
-Get:13 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libhcrypto4-heimdal i386 1.6~git20131207+dfsg-1ubuntu1 [82.3 kB]
-Get:14 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libheimbase1-heimdal i386 1.6~git20131207+dfsg-1ubuntu1 [28.9 kB]
-Get:15 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libwind0-heimdal i386 1.6~git20131207+dfsg-1ubuntu1 [48.2 kB]
-Get:16 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libhx509-5-heimdal i386 1.6~git20131207+dfsg-1ubuntu1 [103 kB]
-Get:17 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libkrb5-26-heimdal i386 1.6~git20131207+dfsg-1ubuntu1 [198 kB]
-Get:18 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libheimntlm0-heimdal i386 1.6~git20131207+dfsg-1ubuntu1 [15.5 kB]
-Get:19 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libgssapi3-heimdal i386 1.6~git20131207+dfsg-1ubuntu1 [89.5 kB]
-Get:20 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libsasl2-modules-db i386 2.1.25.dfsg1-17build1 [14.7 kB]
-Get:21 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libsasl2-2 i386 2.1.25.dfsg1-17build1 [55.0 kB]
-Get:22 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libldap-2.4-2 i386 2.4.31-1+nmu2ubuntu8 [150 kB]
-Get:23 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main librtmp0 i386 2.4+20121230.gitdf6c518-1 [57.2 kB]
-Get:24 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libedit2 i386 3.1-20130712-2 [84.5 kB]
-Get:25 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libglib2.0-0 i386 2.40.0-2 [1,031 kB]
-Get:26 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libpipeline1 i386 1.3.0-1 [23.5 kB]
-Get:27 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libxau6 i386 1:1.0.8-1 [8,352 B]
-Get:28 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libxdmcp6 i386 1:1.1.1-1 [13.1 kB]
-Get:29 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libxcb1 i386 1.10-2ubuntu1 [40.6 kB]
-Get:30 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libx11-data all 2:1.6.2-1ubuntu2 [111 kB]
-Get:31 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libx11-6 i386 2:1.6.2-1ubuntu2 [557 kB]
-Get:32 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libxext6 i386 2:1.3.2-1 [33.9 kB]
-Get:33 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libxml2 i386 2.9.1+dfsg1-3ubuntu4.3 [555 kB]
-Get:34 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libxmuu1 i386 2:1.1.1-1 [11.1 kB]
-Get:35 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main groff-base i386 1.22.2-5 [1,030 kB]
-Get:36 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main bsdmainutils i386 9.0.5ubuntu1 [197 kB]
-Get:37 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main man-db i386 2.6.7.1-1 [851 kB]
-Get:38 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main sgml-base all 1.26+nmu4ubuntu1 [12.5 kB]
-Get:39 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libsigsegv2 i386 2.10-2 [14.8 kB]
-Get:40 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main gawk i386 1:4.0.1+dfsg-2.1ubuntu2 [730 kB]
-Get:41 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libaio1 i386 0.3.109-4 [6,578 B]
-Get:42 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libapr1 i386 1.5.0-1 [88.8 kB]
-Get:43 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libaprutil1 i386 1.5.3-1 [76.6 kB]
-Get:44 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libasan0 i386 4.8.2-19ubuntu1 [64.1 kB]
-Get:45 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libatomic1 i386 4.8.2-19ubuntu1 [8,258 B]
-Get:46 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libgmp10 i386 2:5.1.3+dfsg-1ubuntu1 [230 kB]
-Get:47 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libisl10 i386 0.12.2-1 [430 kB]
-Get:48 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libcloog-isl4 i386 0.18.2-1 [57.6 kB]
-Get:49 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libcroco3 i386 0.6.8-2ubuntu1 [81.1 kB]
-Get:50 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libevent-2.0-5 i386 2.0.21-stable-1ubuntu1 [121 kB]
-Get:51 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main fonts-dejavu-core all 2.34-1ubuntu1 [1,024 kB]
-Get:52 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main fontconfig-config all 2.11.0-0ubuntu4.1 [47.4 kB]
-Get:53 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libfreetype6 i386 2.5.2-1ubuntu2.2 [300 kB]
-Get:54 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libfontconfig1 i386 2.11.0-0ubuntu4.1 [124 kB]
-Get:55 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libjpeg-turbo8 i386 1.3.0-0ubuntu2 [107 kB]
-Get:56 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libjpeg8 i386 8c-2ubuntu8 [2,188 B]
-Get:57 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libjbig0 i386 2.0-2ubuntu4.1 [25.1 kB]
-Get:58 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libtiff5 i386 4.0.3-7ubuntu0.1 [142 kB]
-Get:59 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libvpx1 i386 1.3.0-2 [518 kB]
-Get:60 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libxpm4 i386 1:3.5.10-1 [38.2 kB]
-Get:61 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libgd3 i386 2.1.0-3 [142 kB]
-Get:62 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libunistring0 i386 0.9.3-5ubuntu3 [272 kB]
-Get:63 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libgettextpo0 i386 0.18.3.1-1ubuntu3 [104 kB]
-Get:64 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libgomp1 i386 4.8.2-19ubuntu1 [24.9 kB]
-Get:65 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libitm1 i386 4.8.2-19ubuntu1 [28.5 kB]
-Get:66 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libltdl7 i386 2.4.2-1.7ubuntu1 [35.2 kB]
-Get:67 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libmemcached10 i386 1.0.8-1ubuntu2 [83.6 kB]
-Get:68 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libmpfr4 i386 3.1.2-1 [197 kB]
-Get:69 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main mysql-common all 5.5.38-0ubuntu0.14.04.1 [14.1 kB]
-Get:70 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libmysqlclient18 i386 5.5.38-0ubuntu0.14.04.1 [592 kB]
-Get:71 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libquadmath0 i386 4.8.2-19ubuntu1 [187 kB]
-Get:72 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libwrap0 i386 7.6.q-25 [45.8 kB]
-Get:73 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libyaml-0-2 i386 0.1.4-3ubuntu3 [46.4 kB]
-Get:74 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libdbi-perl i386 1.630-1 [881 kB]
-Get:75 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libdbd-mysql-perl i386 4.025-1 [99.6 kB]
-Get:76 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libterm-readkey-perl i386 2.31-1 [27.2 kB]
-Get:77 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main mysql-client-core-5.5 i386 5.5.38-0ubuntu0.14.04.1 [702 kB]
-Get:78 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main mysql-client-5.5 i386 5.5.38-0ubuntu0.14.04.1 [1,433 kB]
-Get:79 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main mysql-server-core-5.5 i386 5.5.38-0ubuntu0.14.04.1 [3,135 kB]
-Get:80 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main mysql-server-5.5 i386 5.5.38-0ubuntu0.14.04.1 [2,082 kB]
-Get:81 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main lsof i386 4.86+dfsg-1ubuntu2 [250 kB]
-Get:82 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main php5-json i386 1.3.2-2build1 [34.2 kB]
-Get:83 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main php5-common i386 5.5.9+dfsg-1ubuntu4.4 [441 kB]
-Get:84 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main php5-curl i386 5.5.9+dfsg-1ubuntu4.4 [26.6 kB]
-Get:85 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main php5-gd i386 5.5.9+dfsg-1ubuntu4.4 [26.2 kB]
-Get:86 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main php5-mysql i386 5.5.9+dfsg-1ubuntu4.4 [59.5 kB]
-Get:87 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main php5-cli i386 5.5.9+dfsg-1ubuntu4.4 [2,155 kB]
-Get:88 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main php5-readline i386 5.5.9+dfsg-1ubuntu4.4 [11.7 kB]
-Get:89 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libmpc3 i386 1.0.1-1ubuntu1 [38.0 kB]
-Get:90 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main openssl i386 1.0.1f-1ubuntu2.5 [479 kB]
-Get:91 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main ca-certificates all 20130906ubuntu2 [175 kB]
-Get:92 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main gettext-base i386 0.18.3.1-1ubuntu3 [47.9 kB]
-Get:93 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main krb5-locales all 1.12+dfsg-2ubuntu4.2 [12.6 kB]
-Get:94 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libglib2.0-data all 2.40.0-2 [116 kB]
-Get:95 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libsasl2-modules i386 2.1.25.dfsg1-17build1 [59.3 kB]
-Get:96 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main manpages all 3.54-1ubuntu1 [627 kB]
-Get:97 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main openssh-client i386 1:6.6p1-2ubuntu2 [578 kB]
-Get:98 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main rsync i386 3.1.0-2ubuntu0.1 [273 kB]
-Get:99 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main shared-mime-info i386 1.2-0ubuntu3 [414 kB]
-Get:100 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main wget i386 1.15-1ubuntu1 [268 kB]
-Get:101 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main xauth i386 1:1.0.7-1ubuntu1 [24.7 kB]
-Get:102 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main xml-core all 0.13+nmu2 [23.3 kB]
-Get:103 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libaprutil1-dbd-sqlite3 i386 1.5.3-1 [10.3 kB]
-Get:104 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libaprutil1-ldap i386 1.5.3-1 [8,552 B]
-Get:105 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main apache2-bin i386 2.4.7-1ubuntu4.1 [821 kB]
-Get:106 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main apache2-data all 2.4.7-1ubuntu4.1 [160 kB]
-Get:107 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main apache2 i386 2.4.7-1ubuntu4.1 [87.6 kB]
-Get:108 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main m4 i386 1.4.17-2ubuntu1 [191 kB]
-Get:109 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main autoconf all 2.69-6 [322 kB]
-Get:110 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main autotools-dev all 20130810.1 [44.3 kB]
-Get:111 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main automake all 1:1.14.1-2ubuntu1 [510 kB]
-Get:112 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main binutils i386 2.24-5ubuntu3 [2,112 kB]
-Get:113 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libc-dev-bin i386 2.19-0ubuntu6.3 [63.4 kB]
-Get:114 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main linux-libc-dev i386 3.13.0-35.62 [793 kB]
-Get:115 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libc6-dev i386 2.19-0ubuntu6.3 [1,555 kB]
-Get:116 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main cpp-4.8 i386 4.8.2-19ubuntu1 [4,448 kB]
-Get:117 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main cpp i386 4:4.8.2-1ubuntu6 [27.4 kB]
-Get:118 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libgcc-4.8-dev i386 4.8.2-19ubuntu1 [1,736 kB]
-Get:119 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main gcc-4.8 i386 4.8.2-19ubuntu1 [4,884 kB]
-Get:120 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main gcc i386 4:4.8.2-1ubuntu6 [5,096 B]
-Get:121 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libstdc++-4.8-dev i386 4.8.2-19ubuntu1 [1,058 kB]
-Get:122 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main g++-4.8 i386 4.8.2-19ubuntu1 [7,023 kB]
-Get:123 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main g++ i386 4:4.8.2-1ubuntu6 [1,500 B]
-Get:124 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main make i386 3.81-8.2ubuntu3 [115 kB]
-Get:125 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libdpkg-perl all 1.17.5ubuntu5.3 [179 kB]
-Get:126 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main patch i386 2.7.1-4ubuntu1 [89.1 kB]
-Get:127 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main dpkg-dev all 1.17.5ubuntu5.3 [726 kB]
-Get:128 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main build-essential i386 11.6ubuntu6 [4,824 B]
+Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libroken18-heimdal i386 1.6~git20131207+dfsg-1ubuntu1 [40.9 kB]
+Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libasn1-8-heimdal i386 1.6~git20131207+dfsg-1ubuntu1 [169 kB]
+Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libasprintf0c2 i386 0.18.3.1-1ubuntu3 [6,682 B]
+Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libkrb5support0 i386 1.12+dfsg-2ubuntu4.2 [30.1 kB]
+Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libk5crypto3 i386 1.12+dfsg-2ubuntu4.2 [77.7 kB]
+Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libkeyutils1 i386 1.5.6-1 [7,266 B]
+Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libkrb5-3 i386 1.12+dfsg-2ubuntu4.2 [260 kB]
+Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libgssapi-krb5-2 i386 1.12+dfsg-2ubuntu4.2 [111 kB]
+Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libidn11 i386 1.28-1ubuntu2 [92.3 kB]
+Get:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libhcrypto4-heimdal i386 1.6~git20131207+dfsg-1ubuntu1 [82.3 kB]
+Get:11 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libheimbase1-heimdal i386 1.6~git20131207+dfsg-1ubuntu1 [28.9 kB]
+Get:12 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libwind0-heimdal i386 1.6~git20131207+dfsg-1ubuntu1 [48.2 kB]
+Get:13 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libhx509-5-heimdal i386 1.6~git20131207+dfsg-1ubuntu1 [103 kB]
+Get:14 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libkrb5-26-heimdal i386 1.6~git20131207+dfsg-1ubuntu1 [198 kB]
+Get:15 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libheimntlm0-heimdal i386 1.6~git20131207+dfsg-1ubuntu1 [15.5 kB]
+Get:16 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libgssapi3-heimdal i386 1.6~git20131207+dfsg-1ubuntu1 [89.5 kB]
+Get:17 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libsasl2-modules-db i386 2.1.25.dfsg1-17build1 [14.7 kB]
+Get:18 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libsasl2-2 i386 2.1.25.dfsg1-17build1 [55.0 kB]
+Get:19 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libldap-2.4-2 i386 2.4.31-1+nmu2ubuntu8 [150 kB]
+Get:20 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main librtmp0 i386 2.4+20121230.gitdf6c518-1 [57.2 kB]
+Get:21 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libcurl3-gnutls i386 7.35.0-1ubuntu2.1 [166 kB]
+Get:22 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libedit2 i386 3.1-20130712-2 [84.5 kB]
+Get:23 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libglib2.0-0 i386 2.40.0-2 [1,031 kB]
+Get:24 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libpipeline1 i386 1.3.0-1 [23.5 kB]
+Get:25 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libxau6 i386 1:1.0.8-1 [8,352 B]
+Get:26 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libxdmcp6 i386 1:1.1.1-1 [13.1 kB]
+Get:27 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libxcb1 i386 1.10-2ubuntu1 [40.6 kB]
+Get:28 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libx11-data all 2:1.6.2-1ubuntu2 [111 kB]
+Get:29 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libx11-6 i386 2:1.6.2-1ubuntu2 [557 kB]
+Get:30 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libxext6 i386 2:1.3.2-1 [33.9 kB]
+Get:31 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libxml2 i386 2.9.1+dfsg1-3ubuntu4.3 [555 kB]
+Get:32 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libxmuu1 i386 2:1.1.1-1 [11.1 kB]
+Get:33 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main groff-base i386 1.22.2-5 [1,030 kB]
+Get:34 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main bsdmainutils i386 9.0.5ubuntu1 [197 kB]
+Get:35 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main man-db i386 2.6.7.1-1 [851 kB]
+Get:36 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main sgml-base all 1.26+nmu4ubuntu1 [12.5 kB]
+Get:37 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libsigsegv2 i386 2.10-2 [14.8 kB]
+Get:38 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main gawk i386 1:4.0.1+dfsg-2.1ubuntu2 [730 kB]
+Get:39 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libaio1 i386 0.3.109-4 [6,578 B]
+Get:40 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libapr1 i386 1.5.0-1 [88.8 kB]
+Get:41 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libaprutil1 i386 1.5.3-1 [76.6 kB]
+Get:42 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libasan0 i386 4.8.2-19ubuntu1 [64.1 kB]
+Get:43 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libatomic1 i386 4.8.2-19ubuntu1 [8,258 B]
+Get:44 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libgmp10 i386 2:5.1.3+dfsg-1ubuntu1 [230 kB]
+Get:45 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libisl10 i386 0.12.2-1 [430 kB]
+Get:46 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libcloog-isl4 i386 0.18.2-1 [57.6 kB]
+Get:47 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libcroco3 i386 0.6.8-2ubuntu1 [81.1 kB]
+Get:48 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libcurl3 i386 7.35.0-1ubuntu2.1 [174 kB]
+Get:49 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libevent-2.0-5 i386 2.0.21-stable-1ubuntu1 [121 kB]
+Get:50 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main fonts-dejavu-core all 2.34-1ubuntu1 [1,024 kB]
+Get:51 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main fontconfig-config all 2.11.0-0ubuntu4.1 [47.4 kB]
+Get:52 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libfreetype6 i386 2.5.2-1ubuntu2.2 [300 kB]
+Get:53 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libfontconfig1 i386 2.11.0-0ubuntu4.1 [124 kB]
+Get:54 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libjpeg-turbo8 i386 1.3.0-0ubuntu2 [107 kB]
+Get:55 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libjpeg8 i386 8c-2ubuntu8 [2,188 B]
+Get:56 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libjbig0 i386 2.0-2ubuntu4.1 [25.1 kB]
+Get:57 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libtiff5 i386 4.0.3-7ubuntu0.1 [142 kB]
+Get:58 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libvpx1 i386 1.3.0-2 [518 kB]
+Get:59 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libxpm4 i386 1:3.5.10-1 [38.2 kB]
+Get:60 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libgd3 i386 2.1.0-3 [142 kB]
+Get:61 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libunistring0 i386 0.9.3-5ubuntu3 [272 kB]
+Get:62 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libgettextpo0 i386 0.18.3.1-1ubuntu3 [104 kB]
+Get:63 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libgomp1 i386 4.8.2-19ubuntu1 [24.9 kB]
+Get:64 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libitm1 i386 4.8.2-19ubuntu1 [28.5 kB]
+Get:65 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libltdl7 i386 2.4.2-1.7ubuntu1 [35.2 kB]
+Get:66 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libmemcached10 i386 1.0.8-1ubuntu2 [83.6 kB]
+Get:67 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libmpfr4 i386 3.1.2-1 [197 kB]
+Get:68 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main mysql-common all 5.5.38-0ubuntu0.14.04.1 [14.1 kB]
+Get:69 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libmysqlclient18 i386 5.5.38-0ubuntu0.14.04.1 [592 kB]
+Get:70 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libquadmath0 i386 4.8.2-19ubuntu1 [187 kB]
+Get:71 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libwrap0 i386 7.6.q-25 [45.8 kB]
+Get:72 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libyaml-0-2 i386 0.1.4-3ubuntu3 [46.4 kB]
+Get:73 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libdbi-perl i386 1.630-1 [881 kB]
+Get:74 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libdbd-mysql-perl i386 4.025-1 [99.6 kB]
+Get:75 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libterm-readkey-perl i386 2.31-1 [27.2 kB]
+Get:76 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main mysql-client-core-5.5 i386 5.5.38-0ubuntu0.14.04.1 [702 kB]
+Get:77 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main mysql-client-5.5 i386 5.5.38-0ubuntu0.14.04.1 [1,433 kB]
+Get:78 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main mysql-server-core-5.5 i386 5.5.38-0ubuntu0.14.04.1 [3,135 kB]
+Get:79 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main mysql-server-5.5 i386 5.5.38-0ubuntu0.14.04.1 [2,082 kB]
+Get:80 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main lsof i386 4.86+dfsg-1ubuntu2 [250 kB]
+Get:81 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main php5-json i386 1.3.2-2build1 [34.2 kB]
+Get:82 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main php5-common i386 5.5.9+dfsg-1ubuntu4.4 [441 kB]
+Get:83 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main php5-curl i386 5.5.9+dfsg-1ubuntu4.4 [26.6 kB]
+Get:84 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main php5-gd i386 5.5.9+dfsg-1ubuntu4.4 [26.2 kB]
+Get:85 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main php5-mysql i386 5.5.9+dfsg-1ubuntu4.4 [59.5 kB]
+Get:86 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main php5-cli i386 5.5.9+dfsg-1ubuntu4.4 [2,155 kB]
+Get:87 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main php5-readline i386 5.5.9+dfsg-1ubuntu4.4 [11.7 kB]
+Get:88 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libmpc3 i386 1.0.1-1ubuntu1 [38.0 kB]
+Get:89 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main openssl i386 1.0.1f-1ubuntu2.5 [479 kB]
+Get:90 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main ca-certificates all 20130906ubuntu2 [175 kB]
+Get:91 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main gettext-base i386 0.18.3.1-1ubuntu3 [47.9 kB]
+Get:92 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main krb5-locales all 1.12+dfsg-2ubuntu4.2 [12.6 kB]
+Get:93 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libglib2.0-data all 2.40.0-2 [116 kB]
+Get:94 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libsasl2-modules i386 2.1.25.dfsg1-17build1 [59.3 kB]
+Get:95 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main manpages all 3.54-1ubuntu1 [627 kB]
+Get:96 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main openssh-client i386 1:6.6p1-2ubuntu2 [578 kB]
+Get:97 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main rsync i386 3.1.0-2ubuntu0.1 [273 kB]
+Get:98 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main shared-mime-info i386 1.2-0ubuntu3 [414 kB]
+Get:99 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main wget i386 1.15-1ubuntu1 [268 kB]
+Get:100 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main xauth i386 1:1.0.7-1ubuntu1 [24.7 kB]
+Get:101 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main xml-core all 0.13+nmu2 [23.3 kB]
+Get:102 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libaprutil1-dbd-sqlite3 i386 1.5.3-1 [10.3 kB]
+Get:103 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libaprutil1-ldap i386 1.5.3-1 [8,552 B]
+Get:104 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main apache2-bin i386 2.4.7-1ubuntu4.1 [821 kB]
+Get:105 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main apache2-data all 2.4.7-1ubuntu4.1 [160 kB]
+Get:106 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main apache2 i386 2.4.7-1ubuntu4.1 [87.6 kB]
+Get:107 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main m4 i386 1.4.17-2ubuntu1 [191 kB]
+Get:108 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main autoconf all 2.69-6 [322 kB]
+Get:109 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main autotools-dev all 20130810.1 [44.3 kB]
+Get:110 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main automake all 1:1.14.1-2ubuntu1 [510 kB]
+Get:111 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main binutils i386 2.24-5ubuntu3 [2,112 kB]
+Get:112 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libc-dev-bin i386 2.19-0ubuntu6.3 [63.4 kB]
+Get:113 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main linux-libc-dev i386 3.13.0-35.62 [793 kB]
+Get:114 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libc6-dev i386 2.19-0ubuntu6.3 [1,555 kB]
+Get:115 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main cpp-4.8 i386 4.8.2-19ubuntu1 [4,448 kB]
+Get:116 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main cpp i386 4:4.8.2-1ubuntu6 [27.4 kB]
+Get:117 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libgcc-4.8-dev i386 4.8.2-19ubuntu1 [1,736 kB]
+Get:118 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main gcc-4.8 i386 4.8.2-19ubuntu1 [4,884 kB]
+Get:119 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main gcc i386 4:4.8.2-1ubuntu6 [5,096 B]
+Get:120 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libstdc++-4.8-dev i386 4.8.2-19ubuntu1 [1,058 kB]
+Get:121 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main g++-4.8 i386 4.8.2-19ubuntu1 [7,023 kB]
+Get:122 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main g++ i386 4:4.8.2-1ubuntu6 [1,500 B]
+Get:123 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main make i386 3.81-8.2ubuntu3 [115 kB]
+Get:124 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main libdpkg-perl all 1.17.5ubuntu5.3 [179 kB]
+Get:125 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main patch i386 2.7.1-4ubuntu1 [89.1 kB]
+Get:126 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main dpkg-dev all 1.17.5ubuntu5.3 [726 kB]
+Get:127 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main build-essential i386 11.6ubuntu6 [4,824 B]
+Get:128 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main curl i386 7.35.0-1ubuntu2.1 [123 kB]
 Get:129 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main dbconfig-common all 1.8.47+nmu1 [468 kB]
 Get:130 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty-updates/main gettext i386 0.18.3.1-1ubuntu3 [814 kB]
 Get:131 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main intltool-debian all 0.35.0+20060710.1 [31.6 kB]
@@ -2016,7 +2015,7 @@ Get:185 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main pkg-php-tool
 Get:186 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/universe ssmtp i386 2.64-7 [45.0 kB]
 Extracting templates from packages: 16%Extracting templates from packages: 32%Extracting templates from packages: 48%Extracting templates from packages: 64%Extracting templates from packages: 80%Extracting templates from packages: 96%Extracting templates from packages: 100%
 Preconfiguring packages ...
-Fetched 75.3 MB in 1min 57s (639 kB/s)
+Fetched 75.3 MB in 38s (1,952 kB/s)
 Selecting previously unselected package libroken18-heimdal:i386.
 (Reading database ... 16122 files and directories currently installed.)
 Preparing to unpack .../libroken18-heimdal_1.6~git20131207+dfsg-1ubuntu1_i386.deb ...
@@ -2922,7 +2921,7 @@ After this operation, 13.9 MB of additional disk space will be used.
 Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main libdate-manip-perl all 6.42-1 [913 kB]
 Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main logwatch all 7.4.0+svn20130529rev144-1ubuntu1 [468 kB]
 Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main screen i386 4.1.0~20120320gitdb59704-9 [628 kB]
-Fetched 2,009 kB in 2s (853 kB/s)
+Fetched 2,009 kB in 0s (3,331 kB/s)
 Selecting previously unselected package libdate-manip-perl.
 (Reading database ... 31197 files and directories currently installed.)
 Preparing to unpack .../libdate-manip-perl_6.42-1_all.deb ...
@@ -2957,7 +2956,7 @@ Need to get 892 kB of archives.
 After this operation, 3,591 kB of additional disk space will be used.
 Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main ruby1.9.1-dev i386 1.9.3.484-2ubuntu1 [887 kB]
 Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main ruby-dev all 1:1.9.3.4 [4,660 B]
-Fetched 892 kB in 1s (706 kB/s)
+Fetched 892 kB in 1s (548 kB/s)
 Selecting previously unselected package ruby1.9.1-dev.
 (Reading database ... 32652 files and directories currently installed.)
 Preparing to unpack .../ruby1.9.1-dev_1.9.3.484-2ubuntu1_i386.deb ...
@@ -3081,7 +3080,7 @@ Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main geoip-database
 Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main nginx-common all 1.4.6-1ubuntu3 [18.1 kB]
 Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/universe nginx-full i386 1.4.6-1ubuntu3 [340 kB]
 Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ trusty/main nginx all 1.4.6-1ubuntu3 [5,586 B]
-Fetched 3,970 kB in 6s (624 kB/s)
+Fetched 3,970 kB in 4s (836 kB/s)
 Selecting previously unselected package libgeoip1:i386.
 (Reading database ... 32697 files and directories currently installed.)
 Preparing to unpack .../libgeoip1_1.6.0-1_i386.deb ...
@@ -3150,7 +3149,7 @@ Configuring for:
 PHP Api Version:         20121113
 Zend Module Api No:      20121212
 Zend Extension Api No:   220121212
-building in /tmp/pear/temp/pear-build-rootMDC4DN/uploadprogress-1.0.3.1
+building in /tmp/pear/temp/pear-build-root9yiFmh/uploadprogress-1.0.3.1
 running: /tmp/pear/temp/uploadprogress/configure
 checking for grep that handles long lines and -e... /bin/grep
 checking for egrep... /bin/grep -E
@@ -3241,8 +3240,8 @@ configure: creating ./config.status
 config.status: creating config.h
 config.status: executing libtool commands
 running: make
-/bin/bash /tmp/pear/temp/pear-build-rootMDC4DN/uploadprogress-1.0.3.1/libtool --mode=compile cc  -I. -I/tmp/pear/temp/uploadprogress -DPHP_ATOM_INC -I/tmp/pear/temp/pear-build-rootMDC4DN/uploadprogress-1.0.3.1/include -I/tmp/pear/temp/pear-build-rootMDC4DN/uploadprogress-1.0.3.1/main -I/tmp/pear/temp/uploadprogress -I/usr/include/php5 -I/usr/include/php5/main -I/usr/include/php5/TSRM -I/usr/include/php5/Zend -I/usr/include/php5/ext -I/usr/include/php5/ext/date/lib -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64  -DHAVE_CONFIG_H  -g -O2   -c /tmp/pear/temp/uploadprogress/uploadprogress.c -o uploadprogress.lo
-libtool: compile:  cc -I. -I/tmp/pear/temp/uploadprogress -DPHP_ATOM_INC -I/tmp/pear/temp/pear-build-rootMDC4DN/uploadprogress-1.0.3.1/include -I/tmp/pear/temp/pear-build-rootMDC4DN/uploadprogress-1.0.3.1/main -I/tmp/pear/temp/uploadprogress -I/usr/include/php5 -I/usr/include/php5/main -I/usr/include/php5/TSRM -I/usr/include/php5/Zend -I/usr/include/php5/ext -I/usr/include/php5/ext/date/lib -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H -g -O2 -c /tmp/pear/temp/uploadprogress/uploadprogress.c  -fPIC -DPIC -o .libs/uploadprogress.o
+/bin/bash /tmp/pear/temp/pear-build-root9yiFmh/uploadprogress-1.0.3.1/libtool --mode=compile cc  -I. -I/tmp/pear/temp/uploadprogress -DPHP_ATOM_INC -I/tmp/pear/temp/pear-build-root9yiFmh/uploadprogress-1.0.3.1/include -I/tmp/pear/temp/pear-build-root9yiFmh/uploadprogress-1.0.3.1/main -I/tmp/pear/temp/uploadprogress -I/usr/include/php5 -I/usr/include/php5/main -I/usr/include/php5/TSRM -I/usr/include/php5/Zend -I/usr/include/php5/ext -I/usr/include/php5/ext/date/lib -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64  -DHAVE_CONFIG_H  -g -O2   -c /tmp/pear/temp/uploadprogress/uploadprogress.c -o uploadprogress.lo
+libtool: compile:  cc -I. -I/tmp/pear/temp/uploadprogress -DPHP_ATOM_INC -I/tmp/pear/temp/pear-build-root9yiFmh/uploadprogress-1.0.3.1/include -I/tmp/pear/temp/pear-build-root9yiFmh/uploadprogress-1.0.3.1/main -I/tmp/pear/temp/uploadprogress -I/usr/include/php5 -I/usr/include/php5/main -I/usr/include/php5/TSRM -I/usr/include/php5/Zend -I/usr/include/php5/ext -I/usr/include/php5/ext/date/lib -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H -g -O2 -c /tmp/pear/temp/uploadprogress/uploadprogress.c  -fPIC -DPIC -o .libs/uploadprogress.o
 /tmp/pear/temp/uploadprogress/uploadprogress.c: In function 'uploadprogress_php_rfc1867_file':
 /tmp/pear/temp/uploadprogress/uploadprogress.c:222:17: warning: format '%d' expects argument of type 'int', but argument 6 has type 'time_t' [-Wformat=]
                  progress->est_sec );
@@ -3250,16 +3249,16 @@ libtool: compile:  cc -I. -I/tmp/pear/temp/uploadprogress -DPHP_ATOM_INC -I/tmp/
 /tmp/pear/temp/uploadprogress/uploadprogress.c:222:17: warning: format '%d' expects argument of type 'int', but argument 7 has type 'time_t' [-Wformat=]
 /tmp/pear/temp/uploadprogress/uploadprogress.c:222:17: warning: format '%d' expects argument of type 'int', but argument 10 has type 'long unsigned int' [-Wformat=]
 /tmp/pear/temp/uploadprogress/uploadprogress.c:222:17: warning: format '%d' expects argument of type 'int', but argument 11 has type 'long unsigned int' [-Wformat=]
-/bin/bash /tmp/pear/temp/pear-build-rootMDC4DN/uploadprogress-1.0.3.1/libtool --mode=link cc -DPHP_ATOM_INC -I/tmp/pear/temp/pear-build-rootMDC4DN/uploadprogress-1.0.3.1/include -I/tmp/pear/temp/pear-build-rootMDC4DN/uploadprogress-1.0.3.1/main -I/tmp/pear/temp/uploadprogress -I/usr/include/php5 -I/usr/include/php5/main -I/usr/include/php5/TSRM -I/usr/include/php5/Zend -I/usr/include/php5/ext -I/usr/include/php5/ext/date/lib -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64  -DHAVE_CONFIG_H  -g -O2   -o uploadprogress.la -export-dynamic -avoid-version -prefer-pic -module -rpath /tmp/pear/temp/pear-build-rootMDC4DN/uploadprogress-1.0.3.1/modules  uploadprogress.lo
+/bin/bash /tmp/pear/temp/pear-build-root9yiFmh/uploadprogress-1.0.3.1/libtool --mode=link cc -DPHP_ATOM_INC -I/tmp/pear/temp/pear-build-root9yiFmh/uploadprogress-1.0.3.1/include -I/tmp/pear/temp/pear-build-root9yiFmh/uploadprogress-1.0.3.1/main -I/tmp/pear/temp/uploadprogress -I/usr/include/php5 -I/usr/include/php5/main -I/usr/include/php5/TSRM -I/usr/include/php5/Zend -I/usr/include/php5/ext -I/usr/include/php5/ext/date/lib -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64  -DHAVE_CONFIG_H  -g -O2   -o uploadprogress.la -export-dynamic -avoid-version -prefer-pic -module -rpath /tmp/pear/temp/pear-build-root9yiFmh/uploadprogress-1.0.3.1/modules  uploadprogress.lo
 libtool: link: cc -shared  -fPIC -DPIC  .libs/uploadprogress.o    -O2   -Wl,-soname -Wl,uploadprogress.so -o .libs/uploadprogress.so
 libtool: link: ( cd ".libs" && rm -f "uploadprogress.la" && ln -s "../uploadprogress.la" "uploadprogress.la" )
-/bin/bash /tmp/pear/temp/pear-build-rootMDC4DN/uploadprogress-1.0.3.1/libtool --mode=install cp ./uploadprogress.la /tmp/pear/temp/pear-build-rootMDC4DN/uploadprogress-1.0.3.1/modules
-libtool: install: cp ./.libs/uploadprogress.so /tmp/pear/temp/pear-build-rootMDC4DN/uploadprogress-1.0.3.1/modules/uploadprogress.so
-libtool: install: cp ./.libs/uploadprogress.lai /tmp/pear/temp/pear-build-rootMDC4DN/uploadprogress-1.0.3.1/modules/uploadprogress.la
-libtool: finish: PATH="/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/sbin" ldconfig -n /tmp/pear/temp/pear-build-rootMDC4DN/uploadprogress-1.0.3.1/modules
+/bin/bash /tmp/pear/temp/pear-build-root9yiFmh/uploadprogress-1.0.3.1/libtool --mode=install cp ./uploadprogress.la /tmp/pear/temp/pear-build-root9yiFmh/uploadprogress-1.0.3.1/modules
+libtool: install: cp ./.libs/uploadprogress.so /tmp/pear/temp/pear-build-root9yiFmh/uploadprogress-1.0.3.1/modules/uploadprogress.so
+libtool: install: cp ./.libs/uploadprogress.lai /tmp/pear/temp/pear-build-root9yiFmh/uploadprogress-1.0.3.1/modules/uploadprogress.la
+libtool: finish: PATH="/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/sbin" ldconfig -n /tmp/pear/temp/pear-build-root9yiFmh/uploadprogress-1.0.3.1/modules
 ----------------------------------------------------------------------
 Libraries have been installed in:
-   /tmp/pear/temp/pear-build-rootMDC4DN/uploadprogress-1.0.3.1/modules
+   /tmp/pear/temp/pear-build-root9yiFmh/uploadprogress-1.0.3.1/modules
 
 If you ever happen to want to link against installed libraries
 in a given directory, LIBDIR, you must either use libtool, and
@@ -3279,15 +3278,15 @@ more information, such as the ld(1) and ld.so(8) manual pages.
 Build complete.
 Don't forget to run 'make test'.
 
-running: make INSTALL_ROOT="/tmp/pear/temp/pear-build-rootMDC4DN/install-uploadprogress-1.0.3.1" install
-Installing shared extensions:     /tmp/pear/temp/pear-build-rootMDC4DN/install-uploadprogress-1.0.3.1/usr/lib/php5/20121212+lfs/
-running: find "/tmp/pear/temp/pear-build-rootMDC4DN/install-uploadprogress-1.0.3.1" | xargs ls -dils
-319572  4 drwxr-xr-x 3 root root  4096 Sep 15 13:31 /tmp/pear/temp/pear-build-rootMDC4DN/install-uploadprogress-1.0.3.1
-319576  4 drwxr-xr-x 3 root root  4096 Sep 15 13:31 /tmp/pear/temp/pear-build-rootMDC4DN/install-uploadprogress-1.0.3.1/usr
-319577  4 drwxr-xr-x 3 root root  4096 Sep 15 13:31 /tmp/pear/temp/pear-build-rootMDC4DN/install-uploadprogress-1.0.3.1/usr/lib
-319578  4 drwxr-xr-x 3 root root  4096 Sep 15 13:31 /tmp/pear/temp/pear-build-rootMDC4DN/install-uploadprogress-1.0.3.1/usr/lib/php5
-319579  4 drwxr-xr-x 2 root root  4096 Sep 15 13:31 /tmp/pear/temp/pear-build-rootMDC4DN/install-uploadprogress-1.0.3.1/usr/lib/php5/20121212+lfs
-315943 52 -rwxr-xr-x 1 root root 49512 Sep 15 13:31 /tmp/pear/temp/pear-build-rootMDC4DN/install-uploadprogress-1.0.3.1/usr/lib/php5/20121212+lfs/uploadprogress.so
+running: make INSTALL_ROOT="/tmp/pear/temp/pear-build-root9yiFmh/install-uploadprogress-1.0.3.1" install
+Installing shared extensions:     /tmp/pear/temp/pear-build-root9yiFmh/install-uploadprogress-1.0.3.1/usr/lib/php5/20121212+lfs/
+running: find "/tmp/pear/temp/pear-build-root9yiFmh/install-uploadprogress-1.0.3.1" | xargs ls -dils
+311692  4 drwxr-xr-x 3 root root  4096 Sep 15 14:56 /tmp/pear/temp/pear-build-root9yiFmh/install-uploadprogress-1.0.3.1
+311696  4 drwxr-xr-x 3 root root  4096 Sep 15 14:56 /tmp/pear/temp/pear-build-root9yiFmh/install-uploadprogress-1.0.3.1/usr
+311697  4 drwxr-xr-x 3 root root  4096 Sep 15 14:56 /tmp/pear/temp/pear-build-root9yiFmh/install-uploadprogress-1.0.3.1/usr/lib
+311698  4 drwxr-xr-x 3 root root  4096 Sep 15 14:56 /tmp/pear/temp/pear-build-root9yiFmh/install-uploadprogress-1.0.3.1/usr/lib/php5
+311699  4 drwxr-xr-x 2 root root  4096 Sep 15 14:56 /tmp/pear/temp/pear-build-root9yiFmh/install-uploadprogress-1.0.3.1/usr/lib/php5/20121212+lfs
+311114 52 -rwxr-xr-x 1 root root 49512 Sep 15 14:56 /tmp/pear/temp/pear-build-root9yiFmh/install-uploadprogress-1.0.3.1/usr/lib/php5/20121212+lfs/uploadprogress.so
 
 Build process completed successfully
 Installing '/usr/lib/php5/20121212+lfs/uploadprogress.so'
@@ -3302,7 +3301,7 @@ Discovery of channel "pear.drush.org" succeeded
 + pear install pear.drush.org/drush-6.2.0.0
 downloading drush-6.2.0.0.tgz ...
 Starting to download drush-6.2.0.0.tgz (505,989 bytes)
-.....................................................................................................done: 505,989 bytes
+.................done: 505,989 bytes
 could not extract the package.xml file from "/build/buildd/php5-5.5.9+dfsg/pear-build-download/drush-6.2.0.0.tgz"
 Download of "drush/drush" succeeded, but it is not a valid package archive
 Error: cannot download "drush/drush"
@@ -3313,45 +3312,414 @@ install failed
 upgrade ok: channel://pear.drush.org/drush-6.2.0.0
 + ./drupal-make-and-install.sh
 + makefile=/usr/local/src/labdoo/build-labdoo.make
-+ sed -i /usr/local/src/labdoo/build-labdoo.make -e '/labdoo..download..branch/ c projects[labdoo][download][branch] = master'
++ sed -i /usr/local/src/labdoo/build-labdoo.make -e '/labdoo..download..branch/ c projects[labdoo][download][branch] = openatrium'
 + rm -rf /var/www/lbd
 + drush make --prepare-install --force-complete --contrib-destination=profiles/labdoo /usr/local/src/labdoo/build-labdoo.make /var/www/lbd
 Beginning to build /usr/local/src/labdoo/build-labdoo.make.          [1;32;40m[1m[ok][0m
 drupal-7.31 downloaded.                                              [1;32;40m[1m[ok][0m
 drupal patched with 1356276-make-D7-21.patch.                        [1;32;40m[1m[ok][0m
+drupal patched with                                                  [1;32;40m[1m[ok][0m
+d7_move_access_to_join_condition-1349080-89.patch.
+drupal patched with 911354-drupal-profile-85.patch.                  [1;32;40m[1m[ok][0m
+drupal patched with 1093420-22.patch.                                [1;32;40m[1m[ok][0m
+drupal patched with drupal-menu_always_load_objects-1697570-5.patch. [1;32;40m[1m[ok][0m
+drupal patched with 995156-5_portable_taxonomy_permissions.patch.    [1;32;40m[1m[ok][0m
 drupal patched with install_profile_requirements_on_install.patch.   [1;32;40m[1m[ok][0m
 drupal patched with                                                  [1;32;40m[1m[ok][0m
 drupal-7.x-allow_profile_change_sys_req-1772316-21.patch.
 drupal patched with 1664602-1.patch.                                 [1;32;40m[1m[ok][0m
-drupal patched with 995156-5_portable_taxonomy_permissions.patch.    [1;32;40m[1m[ok][0m
 Generated PATCHES.txt file for drupal                                [1;32;40m[1m[ok][0m
+openatrium cloned from http://git.drupal.org/project/openatrium.git. [1;32;40m[1m[ok][0m
+Checked out branch 7.x-2.x.                                          [1;32;40m[1m[ok][0m
+Found makefile: drupal-org.make                                      [1;32;40m[1m[ok][0m
+Project oa_core contains 36 modules: oa_dashboard, oa_widgets, oa_access, oa_buttons, oa_permissions, oa_htmlmail, oa_users, oa_date, bootstrap_pane_styles, oa_teams, oa_tour_defaults, oa_news, oa_archive, oa_search, oa_clone, oa_layouts, oa_admin, oa_messages_digest, oa_tour, oa_adminrole, oa_panopoly_users, oa_config, oa_styles, oa_appearance, oa_domains, oa_sections, oa_diff, oa_sandbox, oa_section_context, oa_river, oa_home, oa_variables, oa_update, oa_favorites, oa_messages, oa_core.
+oa_core-7.x-2.21 downloaded.                                         [1;32;40m[1m[ok][0m
+Found makefile: oa_core.make                                         [1;32;40m[1m[ok][0m
+features-7.x-2.2 downloaded.                                         [1;32;40m[1m[ok][0m
+Project views contains 2 modules: views_ui, views.
+views-7.x-3.8 downloaded.                                            [1;32;40m[1m[ok][0m
+views patched with views-exposed-sorts-2037469-1.patch.              [1;32;40m[1m[ok][0m
+views patched with 1979926-views-reset_fetch_data-2.patch.           [1;32;40m[1m[ok][0m
+views patched with                                                   [1;32;40m[1m[ok][0m
+1735096-views-mltiple-instance-exposed-form-8.patch.
+Generated PATCHES.txt file for views                                 [1;32;40m[1m[ok][0m
+Project ctools contains 10 modules: stylizer, page_manager, ctools_plugin_example, ctools_access_ruleset, bulk_export, ctools_ajax_sample, ctools_custom_content, views_content, term_depth, ctools.
+ctools-7.x-1.4 downloaded.                                           [1;32;40m[1m[ok][0m
+ctools patched with ctools-icon-text-renderer-2280875-5.patch.       [1;32;40m[1m[ok][0m
+ctools patched with fix-autocomplete-581670.patch.                   [1;32;40m[1m[ok][0m
+ctools patched with 1910608-views_content-ajax-13.patch.             [1;32;40m[1m[ok][0m
+ctools patched with                                                  [1;32;40m[1m[ok][0m
+ctools-views_content-exposed_form_override-1901106-24.patch.
+ctools patched with 2023705-ctools-autosubmit-2_0.patch.             [1;32;40m[1m[ok][0m
+ctools patched with ctools-n2195471-1.patch.                         [1;32;40m[1m[ok][0m
+Generated PATCHES.txt file for ctools                                [1;32;40m[1m[ok][0m
+Project entity contains 2 modules: entity_token, entity.
+entity-7.x-1.5 downloaded.                                           [1;32;40m[1m[ok][0m
+entity patched with                                                  [1;32;40m[1m[ok][0m
+entity-translatable_fields_not_overriding_und_with_empty_values-1782134-5.patch.
+Generated PATCHES.txt file for entity                                [1;32;40m[1m[ok][0m
+panelizer cloned from http://git.drupal.org/project/panelizer.git.   [1;32;40m[1m[ok][0m
+Checked out revision 66d184.                                         [1;32;40m[1m[ok][0m
+panelizer patched with 1982654-panelizer-dontaskmethatagain-2.patch. [1;32;40m[1m[ok][0m
+Generated PATCHES.txt file for panelizer                             [1;32;40m[1m[ok][0m
+token-7.x-1.5 downloaded.                                            [1;32;40m[1m[ok][0m
+token patched with 1999298-disable-test-warnings.patch.              [1;32;40m[1m[ok][0m
+Generated PATCHES.txt file for token                                 [1;32;40m[1m[ok][0m
+field_group-7.x-1.4 downloaded.                                      [1;32;40m[1m[ok][0m
+features_override-7.x-2.0-rc2 downloaded.                            [1;32;40m[1m[ok][0m
+diff-7.x-3.2 downloaded.                                             [1;32;40m[1m[ok][0m
+message cloned from http://git.drupal.org/project/message.git.       [1;32;40m[1m[ok][0m
+Checked out revision 3bbdd5e.                                        [1;32;40m[1m[ok][0m
+message patched with message-token_replace-2046591-1.patch.          [1;32;40m[1m[ok][0m
+message patched with message.target_bundles.2040735-3.patch.         [1;32;40m[1m[ok][0m
+Generated PATCHES.txt file for message                               [1;32;40m[1m[ok][0m
+Project message_notify contains 2 modules: message_notify_example, message_notify.
+message_notify-7.x-2.5 downloaded.                                   [1;32;40m[1m[ok][0m
+Project message_subscribe contains 3 modules: message_subscribe_email, message_subscribe_ui, message_subscribe.
+message_subscribe-7.x-1.0-rc1 downloaded.                            [1;32;40m[1m[ok][0m
+message_subscribe patched with                                       [1;32;40m[1m[ok][0m
+message_subscribe_empty_array_2094129_1.patch.
+Generated PATCHES.txt file for message_subscribe                     [1;32;40m[1m[ok][0m
+message_digest-7.x-1.0 downloaded.                                   [1;32;40m[1m[ok][0m
+flag cloned from http://git.drupal.org/project/flag.git.             [1;32;40m[1m[ok][0m
+Checked out revision b8d94e.                                         [1;32;40m[1m[ok][0m
+flag patched with 471212-14-flag-all-bundles.patch.                  [1;32;40m[1m[ok][0m
+flag patched with flag-default-flags-alter-hook-2027091-03.patch.    [1;32;40m[1m[ok][0m
+Generated PATCHES.txt file for flag                                  [1;32;40m[1m[ok][0m
+trash_flag-7.x-1.0-beta4 downloaded.                                 [1;32;40m[1m[ok][0m
+mimemail cloned from http://git.drupal.org/project/mimemail.git.     [1;32;40m[1m[ok][0m
+Checked out revision e742766.                                        [1;32;40m[1m[ok][0m
+mailsystem-7.x-2.34 downloaded.                                      [1;32;40m[1m[ok][0m
+htmlmail-7.x-2.65 downloaded.                                        [1;32;40m[1m[ok][0m
+realname-7.x-1.1 downloaded.                                         [1;32;40m[1m[ok][0m
+Project advagg contains 8 modules: advagg_js_cdn, advagg_js_compress, advagg_css_compress, advagg_validator, advagg_mod, advagg_bundler, advagg_css_cdn, advagg.
+advagg-7.x-2.6 downloaded.                                           [1;32;40m[1m[ok][0m
+chosen cloned from http://git.drupal.org/project/chosen.git.         [1;32;40m[1m[ok][0m
+Checked out revision c48c8a.                                         [1;32;40m[1m[ok][0m
+feeds cloned from http://git.drupal.org/project/feeds.git.           [1;32;40m[1m[ok][0m
+Checked out revision a8468a.                                         [1;32;40m[1m[ok][0m
+feeds patched with 2223853-fix_installing_taxonomy_module-7_0.patch. [1;32;40m[1m[ok][0m
+Generated PATCHES.txt file for feeds                                 [1;32;40m[1m[ok][0m
+Project job_scheduler contains 2 modules: job_scheduler_trigger, job_scheduler.
+job_scheduler-7.x-2.0-alpha3 downloaded.                             [1;32;40m[1m[ok][0m
+command_buttons-7.x-1.2 downloaded.                                  [1;32;40m[1m[ok][0m
+contextual_tabs-7.x-1.0-beta2 downloaded.                            [1;32;40m[1m[ok][0m
+panels_customerror-7.x-1.0 downloaded.                               [1;32;40m[1m[ok][0m
+conditional_fields cloned from                                       [1;32;40m[1m[ok][0m
+http://git.drupal.org/project/conditional_fields.git.
+Checked out revision cd29b00.                                        [1;32;40m[1m[ok][0m
+conditional_fields patched with                                      [1;32;40m[1m[ok][0m
+conditional_fields-typo-in-if-condition-1982276-1.patch.
+conditional_fields patched with conditional_fields-export-0.patch.   [1;32;40m[1m[ok][0m
+conditional_fields patched with                                      [1;32;40m[1m[ok][0m
+1916988-conditional-fields-alter-3.patch.
+Generated PATCHES.txt file for conditional_fields                    [1;32;40m[1m[ok][0m
+reference_option_limit cloned from                                   [1;32;40m[1m[ok][0m
+http://git.drupal.org/project/reference_option_limit.git.
+Checked out revision 0ea5303.                                        [1;32;40m[1m[ok][0m
+reference_option_limit patched with                                  [1;32;40m[1m[ok][0m
+1986532_reference_option_limit_og-5.patch.
+reference_option_limit patched with                                  [1;32;40m[1m[ok][0m
+1986526_reference_option_limit_12.patch.
+Generated PATCHES.txt file for reference_option_limit                [1;32;40m[1m[ok][0m
+views_load_more cloned from                                          [1;32;40m[1m[ok][0m
+http://git.drupal.org/project/views_load_more.git.
+Checked out revision 28de384.                                        [1;32;40m[1m[ok][0m
+jquery_update-7.x-2.4 downloaded.                                    [1;32;40m[1m[ok][0m
+colorizer-7.x-1.3 downloaded.                                        [1;32;40m[1m[ok][0m
+oa_responsive_regions-7.x-1.0-beta1 downloaded.                      [1;32;40m[1m[ok][0m
+date_facets cloned from                                              [1;32;40m[1m[ok][0m
+http://git.drupal.org/project/date_facets.git.
+Checked out revision a7a35f8.                                        [1;32;40m[1m[ok][0m
+Project node_clone contains a module named clone.
+node_clone-7.x-1.0-rc2 downloaded.                                   [1;32;40m[1m[ok][0m
+Project og contains 7 modules: og_ui, og_register, og_access, og_context, og_example, og_field_access, og.
+og-7.x-2.7 downloaded.                                               [1;32;40m[1m[ok][0m
+og_vocab-7.x-1.2 downloaded.                                         [1;32;40m[1m[ok][0m
+og_vocab patched with 2039009-allow-shared-vocabularies-13.patch.    [1;32;40m[1m[ok][0m
+Generated PATCHES.txt file for og_vocab                              [1;32;40m[1m[ok][0m
+og_session_context-7.x-1.0-beta1 downloaded.                         [1;32;40m[1m[ok][0m
+og_menu_single-7.x-1.0-beta1 downloaded.                             [1;32;40m[1m[ok][0m
+Project variable contains 7 modules: variable_store, variable_advanced, variable_views, variable_realm, variable_admin, variable_example, variable.
+variable-7.x-2.3 downloaded.                                         [1;32;40m[1m[ok][0m
+og_variables-7.x-1.0-beta1 downloaded.                               [1;32;40m[1m[ok][0m
+bootstrap_tour-7.x-1.0-beta9 downloaded.                             [1;32;40m[1m[ok][0m
+conditional_styles-7.x-2.2 downloaded.                               [1;32;40m[1m[ok][0m
+chosen downloaded from                                               [1;32;40m[1m[ok][0m
+https://github.com/harvesthq/chosen/releases/download/1.0.0/chosen_v1.0.0.zip.
+simplepie downloaded from                                            [1;32;40m[1m[ok][0m
+http://simplepie.org/downloads/simplepie_1.3.1.compiled.php.
+oa_discussion-7.x-2.20 downloaded.                                   [1;32;40m[1m[ok][0m
+oa_wiki-7.x-2.20 downloaded.                                         [1;32;40m[1m[ok][0m
+Found makefile: oa_wiki.make                                         [1;32;40m[1m[ok][0m
+dhtml_menu cloned from http://git.drupal.org/project/dhtml_menu.git. [1;32;40m[1m[ok][0m
+Checked out revision d1ad7e8.                                        [1;32;40m[1m[ok][0m
+dhtml_menu patched with 1985486-dhtml_theme_inc_file_include.patch.  [1;32;40m[1m[ok][0m
+Generated PATCHES.txt file for dhtml_menu                            [1;32;40m[1m[ok][0m
+Project oa_events contains 2 modules: fullcalendar_create, oa_events.
+oa_events-7.x-2.21 downloaded.                                       [1;32;40m[1m[ok][0m
+Found makefile: oa_events.make                                       [1;32;40m[1m[ok][0m
+fullcalendar cloned from                                             [1;32;40m[1m[ok][0m
+http://git.drupal.org/project/fullcalendar.git.
+Checked out revision e416e7.                                         [1;32;40m[1m[ok][0m
+fullcalendar patched with                                            [1;32;40m[1m[ok][0m
+fullcalendar-legend-entityreference_taxonomy-2044391-1.patch.
+Generated PATCHES.txt file for fullcalendar                          [1;32;40m[1m[ok][0m
+Found makefile: fullcalendar.make                                    [1;32;40m[1m[ok][0m
+DOWNLOAD_ERROR: Unable to download fullcalendar from                 [1;33;40m[1m[warning][0m
+http://arshaw.com/fullcalendar/downloads/fullcalendar-1.6.0.zip. --
+build forced
+colors-7.x-1.0-rc1 downloaded.                                       [1;32;40m[1m[ok][0m
+colors patched with og-7.x-2.x_0.patch.                              [1;32;40m[1m[ok][0m
+colors patched with colors-entityreference_taxonomy-2044395-1.patch. [1;32;40m[1m[ok][0m
+Generated PATCHES.txt file for colors                                [1;32;40m[1m[ok][0m
+date_ical cloned from http://git.drupal.org/project/date_ical.git.   [1;32;40m[1m[ok][0m
+Checked out revision 7afb13.                                         [1;32;40m[1m[ok][0m
+date_ical patched with date_ical-irule-array-2206109-6.patch.        [1;32;40m[1m[ok][0m
+Generated PATCHES.txt file for date_ical                             [1;32;40m[1m[ok][0m
+Found makefile: date_ical.make                                       [1;32;40m[1m[ok][0m
+iCalcreator cloned from git://github.com/iCalcreator/iCalcreator.git.[1;32;40m[1m[ok][0m
+geophp-7.x-1.7 downloaded.                                           [1;32;40m[1m[ok][0m
+Project geofield contains 2 modules: geofield_map, geofield.
+geofield-7.x-2.1 downloaded.                                         [1;32;40m[1m[ok][0m
+geocoder cloned from http://git.drupal.org/project/geocoder.git.     [1;32;40m[1m[ok][0m
+Checked out revision c1a79d.                                         [1;32;40m[1m[ok][0m
+DOWNLOAD_ERROR: Unable to download fullcalendar from                 [1;33;40m[1m[warning][0m
+http://arshaw.com/fullcalendar/downloads/fullcalendar-1.6.4.zip. --
+build forced
+oa_events_import-7.x-2.20 downloaded.                                [1;32;40m[1m[ok][0m
+Found makefile: oa_events_import.make                                [1;32;40m[1m[ok][0m
+iCalcreator downloaded from                                          [1;32;40m[1m[ok][0m
+http://sourceforge.net/projects/icalcreator/files/icalcreator/2.18/iCalcreator-2.18.zip/download.
+Project oa_worktracker contains 2 modules: oa_worktracker_duedate, oa_worktracker.
+oa_worktracker-7.x-2.0-beta15 downloaded.                            [1;32;40m[1m[ok][0m
+oa_worktracker patched with 2335741-oa_worktracker-app-4.patch.      [1;32;40m[1m[ok][0m
+Generated PATCHES.txt file for oa_worktracker                        [1;32;40m[1m[ok][0m
+Found makefile: oa_worktracker.make                                  [1;32;40m[1m[ok][0m
+comment_alter cloned from                                            [1;32;40m[1m[ok][0m
+http://git.drupal.org/project/comment_alter.git.
+Checked out revision a25dfa0.                                        [1;32;40m[1m[ok][0m
+options_element-7.x-1.9 downloaded.                                  [1;32;40m[1m[ok][0m
+oa_contextual_tabs-7.x-2.21 downloaded.                              [1;32;40m[1m[ok][0m
+oa_notifications-7.x-2.20 downloaded.                                [1;32;40m[1m[ok][0m
+oa_media-7.x-2.20 downloaded.                                        [1;32;40m[1m[ok][0m
+Found makefile: oa_media.make                                        [1;32;40m[1m[ok][0m
+colorbox-7.x-2.4 downloaded.                                         [1;32;40m[1m[ok][0m
+media_colorbox cloned from                                           [1;32;40m[1m[ok][0m
+http://git.drupal.org/project/media_colorbox.git.
+Checked out revision d01819.                                         [1;32;40m[1m[ok][0m
+media_colorbox patched with                                          [1;32;40m[1m[ok][0m
+media_colorbox_private-file-permission-2087565-1.patch.
+Generated PATCHES.txt file for media_colorbox                        [1;32;40m[1m[ok][0m
+colorbox downloaded from                                             [1;32;40m[1m[ok][0m
+https://github.com/jackmoore/colorbox/archive/1.x.zip.
+oa_subspaces-7.x-2.21 downloaded.                                    [1;32;40m[1m[ok][0m
+Found makefile: oa_subspaces.make                                    [1;32;40m[1m[ok][0m
+og_subgroups cloned from                                             [1;32;40m[1m[ok][0m
+http://git.drupal.org/project/og_subgroups.git.
+Checked out revision fd8bee.                                         [1;32;40m[1m[ok][0m
+Project oa_radix contains 2 themes: default, oa_radix.
+oa_radix-7.x-2.21 downloaded.                                        [1;32;40m[1m[ok][0m
+Found makefile: oa_radix.make                                        [1;32;40m[1m[ok][0m
+radix cloned from http://git.drupal.org/project/radix.git.           [1;32;40m[1m[ok][0m
+Checked out revision 6208a6c.                                        [1;32;40m[1m[ok][0m
+radix patched with radix-screen-css-2194335-13_0.patch.              [1;32;40m[1m[ok][0m
+Generated PATCHES.txt file for radix                                 [1;32;40m[1m[ok][0m
+markdown-7.x-1.1 downloaded.                                         [1;32;40m[1m[ok][0m
+Project google_analytics contains a module named googleanalytics.
+google_analytics-7.x-1.3 downloaded.                                 [1;32;40m[1m[ok][0m
+panopoly_core-7.x-1.10 downloaded.                                   [1;32;40m[1m[ok][0m
+panopoly_core patched with 2303783-panopoly_core-apps-3.patch.       [1;32;40m[1m[ok][0m
+Generated PATCHES.txt file for panopoly_core                         [1;32;40m[1m[ok][0m
+Found makefile: panopoly_core.make                                   [1;32;40m[1m[ok][0m
+ Install location /tmp/make_tmp_1410792991_5416fe1f9f7c0/__build__/profiles/openatrium/modules/contrib/ctools already exists. Do you want to overwrite it? (y/n): y
+Project ctools contains 10 modules: stylizer, page_manager, ctools_plugin_example, ctools_access_ruleset, bulk_export, ctools_ajax_sample, ctools_custom_content, views_content, term_depth, ctools.
+ctools-7.x-1.4 downloaded.                                           [1;32;40m[1m[ok][0m
+ctools patched with ctools-icon-text-renderer-2280875-5.patch.       [1;32;40m[1m[ok][0m
+ctools patched with fix-autocomplete-581670.patch.                   [1;32;40m[1m[ok][0m
+ctools patched with ctools-views-pane-more-link-2312505-1.patch.     [1;32;40m[1m[ok][0m
+Generated PATCHES.txt file for ctools                                [1;32;40m[1m[ok][0m
+ Project panels contains 5 modules: i18n_panels, panels_node, panels_mini, panels_ipe, panels.
+panels-7.x-3.4 downloaded.                                           [1;32;40m[1m[ok][0m
+panels patched with panels-icon-text-renderer-2283719-1.patch.       [1;32;40m[1m[ok][0m
+panels patched with panels-ipe-keyboard-focus-2280797-2.patch.       [1;32;40m[1m[ok][0m
+Generated PATCHES.txt file for panels                                [1;32;40m[1m[ok][0m
+panels_breadcrumbs-7.x-2.1 downloaded.                               [1;32;40m[1m[ok][0m
+Install location /tmp/make_tmp_1410792991_5416fe1f9f7c0/__build__/profiles/openatrium/modules/contrib/panelizer already exists. Do you want to overwrite it? (y/n): y
+panelizer-7.x-3.1 downloaded.                                        [1;32;40m[1m[ok][0m
+fieldable_panels_panes-7.x-1.5 downloaded.                           [1;32;40m[1m[ok][0m
+fieldable_panels_panes patched with                                  [1;32;40m[1m[ok][0m
+fieldable_panels_panes-n2283263-5.patch.
+Generated PATCHES.txt file for fieldable_panels_panes                [1;32;40m[1m[ok][0m
+pm_existing_pages-7.x-1.4 downloaded.                                [1;32;40m[1m[ok][0m
+fape-7.x-1.2 downloaded.                                             [1;32;40m[1m[ok][0m
+Install location /tmp/make_tmp_1410792991_5416fe1f9f7c0/__build__/profiles/openatrium/modules/contrib/views already exists. Do you want to overwrite it? (y/n): y
+Project views contains 2 modules: views_ui, views.
+views-7.x-3.8 downloaded.                                            [1;32;40m[1m[ok][0m
+views patched with views-exposed-sorts-2037469-1.patch.              [1;32;40m[1m[ok][0m
+Generated PATCHES.txt file for views                                 [1;32;40m[1m[ok][0m
+views_autocomplete_filters-7.x-1.1 downloaded.                       [1;32;40m[1m[ok][0m
+views_autocomplete_filters patched with                              [1;32;40m[1m[ok][0m
+ViewsAutocompleteFilters-no_results_on_some_environments-2277453-1.patch.
+Generated PATCHES.txt file for views_autocomplete_filters            [1;32;40m[1m[ok][0m
+Project views_bulk_operations contains 2 modules: views_bulk_operations, actions_permissions.
+views_bulk_operations-7.x-3.2 downloaded.                            [1;32;40m[1m[ok][0m
+pathauto-7.x-1.2 downloaded.                                         [1;32;40m[1m[ok][0m
+pathauto patched with                                                [1;32;40m[1m[ok][0m
+pathauto-persist-936222-195-pathauto-state.patch.
+Generated PATCHES.txt file for pathauto                              [1;32;40m[1m[ok][0m
+Install location /tmp/make_tmp_1410792991_5416fe1f9f7c0/__build__/profiles/openatrium/modules/contrib/token already exists. Do you want to overwrite it? (y/n): y
+token-7.x-1.5 downloaded.                                            [1;32;40m[1m[ok][0m
+Install location /tmp/make_tmp_1410792991_5416fe1f9f7c0/__build__/profiles/openatrium/modules/contrib/entity already exists. Do you want to overwrite it? (y/n): y
+Project entity contains 2 modules: entity_token, entity.
+entity-7.x-1.5 downloaded.                                           [1;32;40m[1m[ok][0m
+libraries-7.x-2.2 downloaded.                                        [1;32;40m[1m[ok][0m
+transliteration-7.x-3.2 downloaded.                                  [1;32;40m[1m[ok][0m
+Project date contains 11 modules: date_repeat, date_all_day, date_repeat_field, date_views, date_popup, date_context, date_migrate_example, date_migrate, date_api, date_tools, date.
+date-7.x-2.8 downloaded.                                             [1;32;40m[1m[ok][0m
+Project entityreference contains 2 modules: entityreference_behavior_example, entityreference.
+entityreference-7.x-1.1 downloaded.                                  [1;32;40m[1m[ok][0m
+Install location /tmp/make_tmp_1410792991_5416fe1f9f7c0/__build__/profiles/openatrium/modules/contrib/field_group already exists. Do you want to overwrite it? (y/n): y
+field_group-7.x-1.4 downloaded.                                      [1;32;40m[1m[ok][0m
+link-7.x-1.2 downloaded.                                             [1;32;40m[1m[ok][0m
+apps-7.x-1.0-beta16 downloaded.                                      [1;32;40m[1m[ok][0m
+Install location /tmp/make_tmp_1410792991_5416fe1f9f7c0/__build__/profiles/openatrium/modules/contrib/features already exists. Do you want to overwrite it? (y/n): y
+features-7.x-2.0 downloaded.                                         [1;32;40m[1m[ok][0m
+strongarm-7.x-2.0 downloaded.                                        [1;32;40m[1m[ok][0m
+defaultconfig-7.x-1.0-alpha9 downloaded.                             [1;32;40m[1m[ok][0m
+defaultconfig patched with                                           [1;32;40m[1m[ok][0m
+default_config_delete_only_if_overriden.patch.
+defaultconfig patched with defaultconfig_include_features_file.patch.[1;32;40m[1m[ok][0m
+defaultconfig patched with                                           [1;32;40m[1m[ok][0m
+defaultconfig-rebuild-filters-2008178-4_0.patch.
+defaultconfig patched with fix-defaultconfig_rebuild_all.patch.      [1;32;40m[1m[ok][0m
+Generated PATCHES.txt file for defaultconfig                         [1;32;40m[1m[ok][0m
+defaultcontent-7.x-1.0-alpha9 downloaded.                            [1;32;40m[1m[ok][0m
+defaultcontent patched with 1754428-allow-node-export-alter.patch.   [1;32;40m[1m[ok][0m
+defaultcontent patched with                                          [1;32;40m[1m[ok][0m
+1757782-cannot-import-menu-hierarchy-8.patch.
+Generated PATCHES.txt file for defaultcontent                        [1;32;40m[1m[ok][0m
+Project migrate contains 5 modules: migrate_example_oracle, migrate_example, migrate_example_baseball, migrate_ui, migrate.
+migrate-7.x-2.5 downloaded.                                          [1;32;40m[1m[ok][0m
+ Project migrate_extras contains 4 modules: migrate_extras_pathauto, migrate_extras_media, migrate_extras_profile2, migrate_extras.
+migrate_extras-7.x-2.5 downloaded.                                   [1;32;40m[1m[ok][0m
+Project devel contains 3 modules: devel_generate, devel_node_access, devel.
+devel-7.x-1.5 downloaded.                                            [1;32;40m[1m[ok][0m
+Project uuid contains 5 modules: uuid_services, uuid_path, uuid_default_entities_example, uuid_services_example, uuid.
+uuid-7.x-1.0-alpha5 downloaded.                                      [1;32;40m[1m[ok][0m
+panopoly_images-7.x-1.10 downloaded.                                 [1;32;40m[1m[ok][0m
+Found makefile: panopoly_images.make                                 [1;32;40m[1m[ok][0m
+manualcrop cloned from http://git.drupal.org/project/manualcrop.git. [1;32;40m[1m[ok][0m
+Checked out revision 7237972.                                        [1;32;40m[1m[ok][0m
+manualcrop patched with                                              [1;32;40m[1m[ok][0m
+manualcrop-file_entity-settings-1665130-13.patch.
+manualcrop patched with manualcrop-two-crop-tools-2237835.patch.     [1;32;40m[1m[ok][0m
+manualcrop patched with manualcrop-make-file-2248587.patch.          [1;32;40m[1m[ok][0m
+Generated PATCHES.txt file for manualcrop                            [1;32;40m[1m[ok][0m
+Found makefile: manualcrop.make                                      [1;32;40m[1m[ok][0m
+jquery.imagesloaded downloaded from                                  [1;32;40m[1m[ok][0m
+https://github.com/desandro/imagesloaded/archive/v2.1.2.tar.gz.
+jquery.imgareaselect downloaded from                                 [1;32;40m[1m[ok][0m
+http://odyniec.net/projects/imgareaselect/jquery.imgareaselect-0.9.10.zip.
+panopoly_theme-7.x-1.10 downloaded.                                  [1;32;40m[1m[ok][0m
+Found makefile: panopoly_theme.make                                  [1;32;40m[1m[ok][0m
+respondjs-7.x-1.2 downloaded.                                        [1;32;40m[1m[ok][0m
+responsive_bartik-7.x-1.0-rc1 downloaded.                            [1;32;40m[1m[ok][0m
+respondjs downloaded from                                            [1;32;40m[1m[ok][0m
+https://github.com/scottjehl/Respond/tarball/master.
+panopoly_magic-7.x-1.10 downloaded.                                  [1;32;40m[1m[ok][0m
+panopoly_widgets-7.x-1.10 downloaded.                                [1;32;40m[1m[ok][0m
+Found makefile: panopoly_widgets.make                                [1;32;40m[1m[ok][0m
+tablefield-7.x-2.2 downloaded.                                       [1;32;40m[1m[ok][0m
+tablefield patched with tablefield_event_click_conflict.patch.       [1;32;40m[1m[ok][0m
+Generated PATCHES.txt file for tablefield                            [1;32;40m[1m[ok][0m
+simple_gmap-7.x-1.2 downloaded.                                      [1;32;40m[1m[ok][0m
+Project menu_block contains 2 modules: menu_block_export, menu_block.
+menu_block-7.x-2.4 downloaded.                                       [1;32;40m[1m[ok][0m
+file_entity cloned from                                              [1;32;40m[1m[ok][0m
+http://git.drupal.org/project/file_entity.git.
+Checked out revision 20f3070.                                        [1;32;40m[1m[ok][0m
+media cloned from http://git.drupal.org/project/media.git.           [1;32;40m[1m[ok][0m
+Checked out revision 6382429.                                        [1;32;40m[1m[ok][0m
+media patched with media-restore-edit-button-2192981-13.patch.       [1;32;40m[1m[ok][0m
+media patched with media-wysiwyg-alt-title-handling-2126697-27.patch.[1;32;40m[1m[ok][0m
+media patched with media-alt-title-double-encoded-2308487-1.patch.   [1;32;40m[1m[ok][0m
+Generated PATCHES.txt file for media                                 [1;32;40m[1m[ok][0m
+media_youtube cloned from                                            [1;32;40m[1m[ok][0m
+http://git.drupal.org/project/media_youtube.git.
+Checked out revision d0377b3.                                        [1;32;40m[1m[ok][0m
+media_vimeo-7.x-2.0-rc1 downloaded.                                  [1;32;40m[1m[ok][0m
+panopoly_admin-7.x-1.10 downloaded.                                  [1;32;40m[1m[ok][0m
+Found makefile: panopoly_admin.make                                  [1;32;40m[1m[ok][0m
+backports-7.x-1.0-alpha1 downloaded.                                 [1;32;40m[1m[ok][0m
+module_filter-7.x-1.8 downloaded.                                    [1;32;40m[1m[ok][0m
+simplified_menu_admin-7.x-1.0-beta2 downloaded.                      [1;32;40m[1m[ok][0m
+date_popup_authored cloned from                                      [1;32;40m[1m[ok][0m
+http://git.drupal.org/project/date_popup_authored.git.
+Checked out revision baf315c.                                        [1;32;40m[1m[ok][0m
+admin_views-7.x-1.3 downloaded.                                      [1;32;40m[1m[ok][0m
+save_draft-7.x-1.4 downloaded.                                       [1;32;40m[1m[ok][0m
+admin-7.x-2.0-beta3 downloaded.                                      [1;32;40m[1m[ok][0m
+admin patched with 1334804-admin-jquery-updated-6.patch.             [1;32;40m[1m[ok][0m
+Generated PATCHES.txt file for admin                                 [1;32;40m[1m[ok][0m
+navbar cloned from http://git.drupal.org/project/navbar.git.         [1;32;40m[1m[ok][0m
+Checked out revision 455f81d.                                        [1;32;40m[1m[ok][0m
+navbar patched with navbar-conflict-1757466-14.patch.                [1;32;40m[1m[ok][0m
+navbar patched with z-index-heart-cools-2050559-1.patch.             [1;32;40m[1m[ok][0m
+Generated PATCHES.txt file for navbar                                [1;32;40m[1m[ok][0m
+breakpoints-7.x-1.2 downloaded.                                      [1;32;40m[1m[ok][0m
+Project admin_menu contains 3 modules: admin_devel, admin_menu_toolbar, admin_menu.
+admin_menu-7.x-3.0-rc4 downloaded.                                   [1;32;40m[1m[ok][0m
+Install location /tmp/make_tmp_1410792991_5416fe1f9f7c0/__build__/profiles/openatrium/modules/contrib/jquery_update already exists. Do you want to overwrite it? (y/n): y
+jquery_update-7.x-2.3 downloaded.                                    [1;32;40m[1m[ok][0m
+backbone downloaded from                                             [1;32;40m[1m[ok][0m
+https://github.com/jashkenas/backbone/archive/1.0.0.tar.gz.
+underscore downloaded from                                           [1;32;40m[1m[ok][0m
+https://github.com/jashkenas/underscore/archive/1.5.2.zip.
+panopoly_users-7.x-1.10 downloaded.                                  [1;32;40m[1m[ok][0m
+Found makefile: panopoly_users.make                                  [1;32;40m[1m[ok][0m
+user_picture_field-7.x-1.0-rc1 downloaded.                           [1;32;40m[1m[ok][0m
+panopoly_pages-7.x-1.10 downloaded.                                  [1;32;40m[1m[ok][0m
+panopoly_wysiwyg-7.x-1.10 downloaded.                                [1;32;40m[1m[ok][0m
+Found makefile: panopoly_wysiwyg.make                                [1;32;40m[1m[ok][0m
+wysiwyg-7.x-2.2 downloaded.                                          [1;32;40m[1m[ok][0m
+wysiwyg patched with wysiwyg-table-format.patch.                     [1;32;40m[1m[ok][0m
+wysiwyg patched with                                                 [1;32;40m[1m[ok][0m
+wysiwyg-arbitrary_image_paths_markitup-1786732-3.patch.
+wysiwyg patched with wysiwyg-1802394-4.patch.                        [1;32;40m[1m[ok][0m
+Generated PATCHES.txt file for wysiwyg                               [1;32;40m[1m[ok][0m
+wysiwyg_filter-7.x-1.6-rc2 downloaded.                               [1;32;40m[1m[ok][0m
+linkit-7.x-2.6 downloaded.                                           [1;32;40m[1m[ok][0m
+image_resize_filter-7.x-1.14 downloaded.                             [1;32;40m[1m[ok][0m
+caption_filter cloned from                                           [1;32;40m[1m[ok][0m
+http://git.drupal.org/project/caption_filter.git.
+Checked out revision b8097ee.                                        [1;32;40m[1m[ok][0m
+tinymce downloaded from                                              [1;32;40m[1m[ok][0m
+http://download.moxiecode.com/tinymce/tinymce_3.5.8.zip.
+tinymce patched with 1561882-cirkuit-theme-tinymce-3.5.8.patch.      [1;32;40m[1m[ok][0m
+Generated PATCHES.txt file for tinymce                               [1;32;40m[1m[ok][0m
+markitup downloaded from                                             [1;32;40m[1m[ok][0m
+https://github.com/markitup/1.x/tarball/master.
+markitup patched with 1715642-adding-html-set-markitup-editor.patch. [1;32;40m[1m[ok][0m
+Generated PATCHES.txt file for markitup                              [1;32;40m[1m[ok][0m
+panopoly_search-7.x-1.10 downloaded.                                 [1;32;40m[1m[ok][0m
+Found makefile: panopoly_search.make                                 [1;32;40m[1m[ok][0m
+Project facetapi contains 2 modules: current_search, facetapi.
+facetapi-7.x-1.3 downloaded.                                         [1;32;40m[1m[ok][0m
+Project search_api contains 3 modules: search_api_facetapi, search_api_views, search_api.
+search_api-7.x-1.7 downloaded.                                       [1;32;40m[1m[ok][0m
+search_api_solr-7.x-1.1 downloaded.                                  [1;32;40m[1m[ok][0m
+search_api_db-7.x-1.0-rc2 downloaded.                                [1;32;40m[1m[ok][0m
+SolrPhpClient downloaded from                                        [1;32;40m[1m[ok][0m
+http://solr-php-client.googlecode.com/files/SolrPhpClient.r60.2011-05-04.zip.
 labdoo cloned from /usr/local/src/labdoo.                            [1;32;40m[1m[ok][0m
-Checked out branch master.                                           [1;32;40m[1m[ok][0m
+Checked out branch openatrium.                                       [1;32;40m[1m[ok][0m
 Found makefile: labdoo.make                                          [1;32;40m[1m[ok][0m
 bootstrap-7.x-2.2 downloaded.                                        [1;32;40m[1m[ok][0m
 jquery_update-7.x-2.4 downloaded.                                    [1;32;40m[1m[ok][0m
-Project devel contains 3 modules: devel_generate, devel_node_access, devel.
-devel-7.x-1.5 downloaded.                                            [1;32;40m[1m[ok][0m
-diff-7.x-3.2 downloaded.                                             [1;32;40m[1m[ok][0m
-Project ctools contains 10 modules: stylizer, page_manager, ctools_plugin_example, ctools_access_ruleset, bulk_export, ctools_ajax_sample, ctools_custom_content, views_content, term_depth, ctools.
-ctools-7.x-1.4 downloaded.                                           [1;32;40m[1m[ok][0m
-libraries-7.x-2.2 downloaded.                                        [1;32;40m[1m[ok][0m
-Project entity contains 2 modules: entity_token, entity.
-entity-7.x-1.5 downloaded.                                           [1;32;40m[1m[ok][0m
 xautoload-7.x-4.5 downloaded.                                        [1;32;40m[1m[ok][0m
-token-7.x-1.5 downloaded.                                            [1;32;40m[1m[ok][0m
 Project rules contains 4 modules: rules_admin, rules_scheduler, rules_i18n, rules.
 rules-7.x-2.7 downloaded.                                            [1;32;40m[1m[ok][0m
-pathauto-7.x-1.2 downloaded.                                         [1;32;40m[1m[ok][0m
-subpathauto-7.x-1.3 downloaded.                                      [1;32;40m[1m[ok][0m
-Project context contains 3 modules: context_ui, context_layouts, context.
-context-7.x-3.2 downloaded.                                          [1;32;40m[1m[ok][0m
-Project views contains 2 modules: views_ui, views.
-views-7.x-3.8 downloaded.                                            [1;32;40m[1m[ok][0m
-Project homebox contains 3 modules: homebox_example, homebox_og, homebox.
-homebox-7.x-2.0-beta7 downloaded.                                    [1;32;40m[1m[ok][0m
-boxes-7.x-1.2 downloaded.                                            [1;32;40m[1m[ok][0m
-edit_profile-7.x-1.0-beta2 downloaded.                               [1;32;40m[1m[ok][0m
 wysiwyg-7.x-2.2 downloaded.                                          [1;32;40m[1m[ok][0m
 Project captcha contains 2 modules: image_captcha, captcha.
 captcha-7.x-1.1 downloaded.                                          [1;32;40m[1m[ok][0m
@@ -3360,45 +3728,22 @@ recaptcha-7.x-1.11 downloaded.                                       [1;32;40m
 honeypot-7.x-1.17 downloaded.                                        [1;32;40m[1m[ok][0m
 Project user_restrictions contains 2 modules: user_restrictions, user_restrictions_ui.
 user_restrictions-7.x-1.0 downloaded.                                [1;32;40m[1m[ok][0m
-features-7.x-1.0 downloaded.                                         [1;32;40m[1m[ok][0m
-strongarm-7.x-2.0 downloaded.                                        [1;32;40m[1m[ok][0m
 Project features_extra contains 3 modules: fe_block, fe_profile, fe_nodequeue.
 features_extra-7.x-1.0-beta1 downloaded.                             [1;32;40m[1m[ok][0m
-Project node_export contains 5 modules: node_export_dependency, node_export_features, node_export_relation, node_export_feeds, node_export.
+ Project node_export contains 5 modules: node_export_dependency, node_export_features, node_export_relation, node_export_feeds, node_export.
 node_export-7.x-3.0 downloaded.                                      [1;32;40m[1m[ok][0m
-Project uuid contains 5 modules: uuid_services, uuid_path, uuid_default_entities_example, uuid_services_example, uuid.
-uuid-7.x-1.0-alpha5 downloaded.                                      [1;32;40m[1m[ok][0m
-defaultconfig-7.x-1.x-dev downloaded.                                [1;32;40m[1m[ok][0m
+defaultconfig-7.x-1.0-alpha9 downloaded.                             [1;32;40m[1m[ok][0m
+defaultconfig patched with                                           [1;32;40m[1m[ok][0m
+default_config_delete_only_if_overriden.patch.
+defaultconfig patched with defaultconfig_include_features_file.patch.[1;32;40m[1m[ok][0m
+defaultconfig patched with                                           [1;32;40m[1m[ok][0m
+defaultconfig-rebuild-filters-2008178-4_0.patch.
+defaultconfig patched with fix-defaultconfig_rebuild_all.patch.      [1;32;40m[1m[ok][0m
 defaultconfig patched with                                           [1;32;40m[1m[ok][0m
 1900574.defaultconfig.undefinedindex_13.patch.
 Generated PATCHES.txt file for defaultconfig                         [1;32;40m[1m[ok][0m
-module_filter-7.x-1.8 downloaded.                                    [1;32;40m[1m[ok][0m
-Project drush_language contains 0 modules: .
-drush_language-7.x-1.2 downloaded.                                   [1;32;40m[1m[ok][0m
-delete_all-7.x-1.1 downloaded.                                       [1;32;40m[1m[ok][0m
-l10n_update-7.x-1.0 downloaded.                                      [1;32;40m[1m[ok][0m
-Project boost contains 2 modules: boost_crawler, boost.
-boost-7.x-1.0 downloaded.                                            [1;32;40m[1m[ok][0m
- Project memcache contains 2 modules: memcache_admin, memcache.
-memcache-7.x-1.2 downloaded.                                         [1;32;40m[1m[ok][0m
-Project google_analytics contains a module named googleanalytics.
-google_analytics-7.x-2.0 downloaded.                                 [1;32;40m[1m[ok][0m
-Project drupalchat contains 3 modules: drupalchat_nodejs, drupalchat_notifications, drupalchat.
-drupalchat-7.x-1.2 downloaded.                                       [1;32;40m[1m[ok][0m
-Project fb contains 19 modules: fb_views, fb_permission, fb_example, fb_test, fb_rules, fb_invite, fb_user_app, fb_friend, fb_registration, fb_graph, fb_app, fb_canvas, fb, fb_devel, fb_user, fb_tab, fb_stream, fb_connect, fb_form.
-fb-7.x-3.4 downloaded.                                               [1;32;40m[1m[ok][0m
-Project invite contains 3 modules: invite_cancel_account, invite_stats, invite.
-invite-7.x-2.1-beta2 downloaded.                                     [1;32;40m[1m[ok][0m
-Project simplenews contains 2 modules: simplenews_rules, simplenews.
-simplenews-7.x-1.1 downloaded.                                       [1;32;40m[1m[ok][0m
-mass_contact-7.x-1.0 downloaded.                                     [1;32;40m[1m[ok][0m
-sharethis-7.x-2.5 downloaded.                                        [1;32;40m[1m[ok][0m
-disqus-7.x-1.10 downloaded.                                          [1;32;40m[1m[ok][0m
-PATCH_ERROR: Unable to patch disqus with disqus-https.patch. -- build[1;33;40m[1m[warning][0m
-forced
 Project entityreference contains 2 modules: entityreference_behavior_example, entityreference.
 entityreference-7.x-1.1 downloaded.                                  [1;32;40m[1m[ok][0m
-field_group-7.x-1.4 downloaded.                                      [1;32;40m[1m[ok][0m
 Project date contains 11 modules: date_repeat, date_all_day, date_repeat_field, date_views, date_popup, date_context, date_migrate_example, date_migrate, date_api, date_tools, date.
 date-7.x-2.8 downloaded.                                             [1;32;40m[1m[ok][0m
 Project location contains 12 modules: location_fax, location_search, location_addanother, location_generate, location_cck, location_taxonomy, location_phone, location_email, location_entity, location, location_user, location_node.
@@ -3409,7 +3754,7 @@ conditional_fields-7.x-3.0-alpha1 downloaded.                        [1;32;40m
 lightbox2-7.x-1.0-beta1 downloaded.                                  [1;32;40m[1m[ok][0m
 node_view_permissions-7.x-1.5 downloaded.                            [1;32;40m[1m[ok][0m
 r4032login-7.x-1.8 downloaded.                                       [1;32;40m[1m[ok][0m
-Project ip_geoloc contains 2 modules: ip_geoloc_generator, ip_geoloc.
+ Project ip_geoloc contains 2 modules: ip_geoloc_generator, ip_geoloc.
 ip_geoloc-7.x-1.25 downloaded.                                       [1;32;40m[1m[ok][0m
 Project views_slideshow contains 2 modules: views_slideshow_cycle, views_slideshow.
 views_slideshow-7.x-3.1 downloaded.                                  [1;32;40m[1m[ok][0m
@@ -3422,9 +3767,6 @@ Project gmap contains 8 modules: gmap_test, gmap_test_extended, location_gmap_fi
 gmap-7.x-2.9 downloaded.                                             [1;32;40m[1m[ok][0m
 views_autocomplete_filters-7.x-1.1 downloaded.                       [1;32;40m[1m[ok][0m
 views_dependent_filters-7.x-1.1 downloaded.                          [1;32;40m[1m[ok][0m
-mailsystem-7.x-2.34 downloaded.                                      [1;32;40m[1m[ok][0m
-Project mimemail contains 3 modules: mimemail_compress, mimemail_action, mimemail.
-mimemail-7.x-1.0-beta3 downloaded.                                   [1;32;40m[1m[ok][0m
 reroute_email-7.x-1.1 downloaded.                                    [1;32;40m[1m[ok][0m
 smtp-7.x-1.0 downloaded.                                             [1;32;40m[1m[ok][0m
 phpmailer cloned from http://git.drupal.org/project/phpmailer.git.   [1;32;40m[1m[ok][0m
@@ -3433,6 +3775,10 @@ Project hybridauth contains 3 modules: hybridauth_bonus, hybridauth_ulogin, hybr
 hybridauth-7.x-2.9 downloaded.                                       [1;32;40m[1m[ok][0m
 oauth2_loginprovider-7.x-1.x-dev downloaded.                         [1;32;40m[1m[ok][0m
 Found makefile: oauth2_loginprovider.make                            [1;32;40m[1m[ok][0m
+libraries-7.x-2.2 downloaded.                                        [1;32;40m[1m[ok][0m
+features-7.x-2.0 downloaded.                                         [1;32;40m[1m[ok][0m
+Project entity contains 2 modules: entity_token, entity.
+entity-7.x-1.5 downloaded.                                           [1;32;40m[1m[ok][0m
 Project services contains 4 modules: services_oauth, xmlrpc_server, rest_server, services.
 services-7.x-3.7 downloaded.                                         [1;32;40m[1m[ok][0m
 Found makefile: services.make                                        [1;32;40m[1m[ok][0m
@@ -3441,6 +3787,17 @@ https://raw2.github.com/mustangostang/spyc/master/Spyc.php.
 oauth2_server-7.x-1.1 downloaded.                                    [1;32;40m[1m[ok][0m
 oauth2-server-php downloaded from                                    [1;32;40m[1m[ok][0m
 https://github.com/bshaffer/oauth2-server-php/archive/v1.4.tar.gz.
+l10n_update-7.x-1.0 downloaded.                                      [1;32;40m[1m[ok][0m
+Project drush_language contains 0 modules: .
+drush_language-7.x-1.2 downloaded.                                   [1;32;40m[1m[ok][0m
+Project drush_remake contains 0 modules: .
+drush_remake-7.x-5.2 downloaded.                                     [1;32;40m[1m[ok][0m
+delete_all-7.x-1.1 downloaded.                                       [1;32;40m[1m[ok][0m
+menu_import-7.x-1.6 downloaded.                                      [1;32;40m[1m[ok][0m
+Project boost contains 2 modules: boost_crawler, boost.
+boost-7.x-1.0 downloaded.                                            [1;32;40m[1m[ok][0m
+Project memcache contains 2 modules: memcache_admin, memcache.
+memcache-7.x-1.2 downloaded.                                         [1;32;40m[1m[ok][0m
 bootstrap downloaded from                                            [1;32;40m[1m[ok][0m
 https://github.com/twbs/bootstrap/archive/v3.0.0.zip.
 tinymce downloaded from                                              [1;32;40m[1m[ok][0m
@@ -3452,6 +3809,8 @@ https://github.com/hybridauth/hybridauth/archive/v2.2.1.tar.gz.
 + cd /var/www/lbd/profiles/labdoo/
 + cp -a libraries/bootstrap themes/contrib/bootstrap/
 + cd /var/www/lbd/profiles/
++ cp -a openatrium/libraries/backbone openatrium/libraries/chosen openatrium/libraries/colorbox openatrium/libraries/fullcalendar openatrium/libraries/iCalcreator openatrium/libraries/jquery.imagesloaded openatrium/libraries/jquery.imgareaselect openatrium/libraries/markitup openatrium/libraries/respondjs openatrium/libraries/simplepie openatrium/libraries/SolrPhpClient openatrium/libraries/tinymce openatrium/libraries/underscore labdoo/libraries/
++ cd /var/www/lbd/profiles/
 + mv labdoo labdoo-bak
 + cp -a /usr/local/src/labdoo .
 + cp -a labdoo-bak/libraries/ labdoo/
@@ -3461,6 +3820,7 @@ https://github.com/hybridauth/hybridauth/archive/v2.2.1.tar.gz.
 + mkdir -p /var/www/downloads/
 + chown www-data /var/www/downloads/
 ++ ps ax
+++ grep '[m]ysqld'
 + test -z ''
 + sleep 5
 + nohup mysqld --user mysql
@@ -3496,6 +3856,11 @@ No tables to drop.                                                   [1;32;40m
 Starting Drupal installation. This takes a few seconds ...           [1;32;40m[1m[ok][0m
 WD system: user module installed.                                         [info]
 WD system: user module enabled.                                           [info]
+WD php: Notice: Undefined index: quickstart in                          [notice]
+install_from_db_form_submit() (line 120 of
+/var/www/lbd/profiles/openatrium/install_from_db/install_from_db.profile).
+WD install: Performing standard Drupal install.                           [info]
+Standard Drupal install
 WD system: field_sql_storage module installed.                            [info]
 WD system: field_sql_storage module enabled.                              [info]
 WD system: field module installed.                                        [info]
@@ -3506,8 +3871,24 @@ WD system: filter module installed.                                       [info]
 WD system: filter module enabled.                                         [info]
 WD system: node module installed.                                         [info]
 WD system: node module enabled.                                           [info]
+WD system: ctools module installed.                                       [info]
+WD system: ctools module enabled.                                         [info]
+WD system: views module installed.                                        [info]
+WD system: views module enabled.                                          [info]
+WD system: entity module installed.                                       [info]
+WD system: entity module enabled.                                         [info]
+WD system: views_bulk_operations module installed.                        [info]
+WD system: views_bulk_operations module enabled.                          [info]
+WD system: admin_views module installed.                                  [info]
+WD system: admin_views module enabled.                                    [info]
 WD system: aggregator module installed.                                   [info]
 WD system: aggregator module enabled.                                     [info]
+WD system: update module installed.                                       [info]
+WD system: update module enabled.                                         [info]
+WD system: apps module installed.                                         [info]
+WD system: apps module enabled.                                           [info]
+WD system: backports module installed.                                    [info]
+WD system: backports module enabled.                                      [info]
 WD system: block module installed.                                        [info]
 WD system: block module enabled.                                          [info]
 WD system: blog module installed.                                         [info]
@@ -3516,68 +3897,149 @@ WD system: book module installed.                                         [info]
 WD system: book module enabled.                                           [info]
 WD system: boost module installed.                                        [info]
 WD system: boost module enabled.                                          [info]
-WD system: ctools module installed.                                       [info]
-WD system: ctools module enabled.                                         [info]
-WD system: boxes module installed.                                        [info]
-WD system: boxes module enabled.                                          [info]
-WD system: color module installed.                                        [info]
-WD system: color module enabled.                                          [info]
-WD system: comment module installed.                                      [info]
-WD system: comment module enabled.                                        [info]
-WD system: contact module installed.                                      [info]
-WD system: contact module enabled.                                        [info]
-WD system: context module installed.                                      [info]
-WD system: context module enabled.                                        [info]
-WD system: context_ui module installed.                                   [info]
-WD system: context_ui module enabled.                                     [info]
-WD system: dashboard module installed.                                    [info]
-WD system: dashboard module enabled.                                      [info]
+WD system: jquery_update module installed.                                [info]
+WD system: jquery_update module enabled.                                  [info]
+WD system: bootstrap_tour module installed.                               [info]
+WD system: bootstrap_tour module enabled.                                 [info]
+WD system: breakpoints module installed.                                  [info]
+WD system: breakpoints module enabled.                                    [info]
+WD system: caption_filter module installed.                               [info]
+WD system: caption_filter module enabled.                                 [info]
+WD system: chosen module installed.                                       [info]
+WD system: chosen module enabled.                                         [info]
+WD system: clone module installed.                                        [info]
+WD system: clone module enabled.                                          [info]
+WD system: libraries module installed.                                    [info]
+WD system: libraries module enabled.                                      [info]
+WD system: colorbox module installed.                                     [info]
+WD system: colorbox module enabled.                                       [info]
+WD system: colorizer module installed.                                    [info]
+WD system: colorizer module enabled.                                      [info]
+WD system: colors module installed.                                       [info]
+WD system: colors module enabled.                                         [info]
+WD system: conditional_fields module installed.                           [info]
+WD system: conditional_fields module enabled.                             [info]
+WD system: entityreference module installed.                              [info]
+WD system: entityreference module enabled.                                [info]
 WD system: features module installed.                                     [info]
 WD system: features module enabled.                                       [info]
-WD system: views module installed.                                        [info]
-WD system: views module enabled.                                          [info]
-WD system: devel module installed.                                        [info]
-WD system: devel module enabled.                                          [info]
-WD system: menu module installed.                                         [info]
-WD system: menu module enabled.                                           [info]
+WD system: field_group module installed.                                  [info]
+WD system: field_group module enabled.                                    [info]
+WD system: panels module installed.                                       [info]
+WD system: panels module enabled.                                         [info]
+WD system: fieldable_panels_panes module installed.                       [info]
+WD system: fieldable_panels_panes module enabled.                         [info]
+WD system: link module installed.                                         [info]
+WD system: link module enabled.                                           [info]
+WD system: options module installed.                                      [info]
+WD system: options module enabled.                                        [info]
+WD system: list module installed.                                         [info]
+WD system: list module enabled.                                           [info]
+WD system: command_buttons module installed.                              [info]
+WD system: command_buttons module enabled.                                [info]
+WD features: Reverting command_buttons / field_instance.                [notice]
+WD features: Revert completed for command_buttons / field_instance.     [notice]
+WD features: Reverting command_buttons / field_base.                    [notice]
+WD features: Revert completed for command_buttons / field_base.         [notice]
+WD features: Rebuilding command_buttons / field_base.                   [notice]
+WD features: Rebuild completed for command_buttons / field_base.        [notice]
+WD features: Rebuilding command_buttons / field_instance.               [notice]
+WD features: Rebuild completed for command_buttons / field_instance.    [notice]
+WD features: Rebuilding command_buttons / conditional_fields.           [notice]
+WD features: Rebuild completed for command_buttons /                    [notice]
+conditional_fields.
+WD system: comment module installed.                                      [info]
+WD system: comment module enabled.                                        [info]
 WD system: diff module installed.                                         [info]
 WD system: diff module enabled.                                           [info]
-WD system: edit_profile module installed.                                 [info]
-WD system: edit_profile module enabled.                                   [info]
-WD system: entity module installed.                                       [info]
-WD system: entity module enabled.                                         [info]
+WD system: comment_alter module installed.                                [info]
+WD system: comment_alter module enabled.                                  [info]
+WD system: contact module installed.                                      [info]
+WD system: contact module enabled.                                        [info]
+WD system: contextual_tabs module installed.                              [info]
+WD system: contextual_tabs module enabled.                                [info]
+WD system: page_manager module installed.                                 [info]
+WD system: page_manager module enabled.                                   [info]
+WD system: facetapi module installed.                                     [info]
+WD system: facetapi module enabled.                                       [info]
+WD system: dashboard module installed.                                    [info]
+WD system: dashboard module enabled.                                      [info]
+WD system: date_api module installed.                                     [info]
+WD system: date_api module enabled.                                       [info]
+WD system: date module installed.                                         [info]
+WD system: date module enabled.                                           [info]
+WD system: date_all_day module installed.                                 [info]
+WD system: date_all_day module enabled.                                   [info]
+WD system: date_views module installed.                                   [info]
+WD system: date_views module enabled.                                     [info]
+WD system: date_ical module installed.                                    [info]
+WD system: date_ical module enabled.                                      [info]
+WD system: date_repeat module installed.                                  [info]
+WD system: date_repeat module enabled.                                    [info]
+WD system: date_repeat_field module installed.                            [info]
+WD system: date_repeat_field module enabled.                              [info]
+WD system: date_popup module installed.                                   [info]
+WD system: date_popup module enabled.                                     [info]
+WD system: date_popup_authored module installed.                          [info]
+WD system: date_popup_authored module enabled.                            [info]
+WD system: defaultconfig module installed.                                [info]
+WD system: defaultconfig module enabled.                                  [info]
+WD system: menu module installed.                                         [info]
+WD system: menu module enabled.                                           [info]
+WD system: dhtml_menu module installed.                                   [info]
+WD system: dhtml_menu module enabled.                                     [info]
 WD system: entity_token module installed.                                 [info]
 WD system: entity_token module enabled.                                   [info]
-WD system: rules module installed.                                        [info]
-WD system: rules module enabled.                                          [info]
+WD system: job_scheduler module installed.                                [info]
+WD system: job_scheduler module enabled.                                  [info]
+WD system: feeds module installed.                                        [info]
+WD system: feeds module enabled.                                          [info]
+WD system: fape module installed.                                         [info]
+WD system: fape module enabled.                                           [info]
 WD system: fe_block module installed.                                     [info]
 WD system: fe_block module enabled.                                       [info]
+WD system: features_override module installed.                            [info]
+WD system: features_override module enabled.                              [info]
 WD system: file module installed.                                         [info]
 WD system: file module enabled.                                           [info]
 WD system: image module installed.                                        [info]
 WD system: image module enabled.                                          [info]
 WD system: strongarm module installed.                                    [info]
 WD system: strongarm module enabled.                                      [info]
-WD system: options module installed.                                      [info]
-WD system: options module enabled.                                        [info]
 WD system: taxonomy module installed.                                     [info]
 WD system: taxonomy module enabled.                                       [info]
 WD system: field_ui module installed.                                     [info]
 WD system: field_ui module enabled.                                       [info]
-WD system: gmap module installed.                                         [info]
-WD system: gmap module enabled.                                           [info]
-WD system: location module installed.                                     [info]
-WD system: location module enabled.                                       [info]
-WD system: gmap_location module installed.                                [info]
-WD system: gmap_location module enabled.                                  [info]
-WD system: libraries module installed.                                    [info]
-WD system: libraries module enabled.                                      [info]
+WD system: file_entity module installed.                                  [info]
+WD system: file_entity module enabled.                                    [info]
+WD system: flag module installed.                                         [info]
+WD system: flag module enabled.                                           [info]
+WD system: fullcalendar module installed.                                 [info]
+WD system: fullcalendar module enabled.                                   [info]
+WD system: fullcalendar_colors module installed.                          [info]
+WD system: fullcalendar_colors module enabled.                            [info]
+WD system: fullcalendar_create module installed.                          [info]
+WD system: fullcalendar_create module enabled.                            [info]
+WD system: fullcalendar_legend module installed.                          [info]
+WD system: fullcalendar_legend module enabled.                            [info]
+WD system: fullcalendar_options module installed.                         [info]
+WD system: fullcalendar_options module enabled.                           [info]
+WD system: geophp module installed.                                       [info]
+WD system: geophp module enabled.                                         [info]
+WD system: geocoder module installed.                                     [info]
+WD system: geocoder module enabled.                                       [info]
+WD system: geofield module installed.                                     [info]
+WD system: geofield module enabled.                                       [info]
+WD system: geofield_map module installed.                                 [info]
+WD system: geofield_map module enabled.                                   [info]
 WD system: views_ui module installed.                                     [info]
 WD system: views_ui module enabled.                                       [info]
-WD system: token module installed.                                        [info]
-WD system: token module enabled.                                          [info]
-WD system: ip_geoloc module installed.                                    [info]
-WD system: ip_geoloc module enabled.                                      [info]
+WD system: mailsystem module installed.                                   [info]
+WD system: mailsystem module enabled.                                     [info]
+WD system: htmlmail module installed.                                     [info]
+WD system: htmlmail module enabled.                                       [info]
+WD system: image_resize_filter module installed.                          [info]
+WD system: image_resize_filter module enabled.                            [info]
 WD system: locale module installed.                                       [info]
 WD system: locale module enabled.                                         [info]
 WD system: l10n_update module installed.                                  [info]
@@ -3600,54 +4062,26 @@ WD actions: Action 'Remove content from front page' added.              [notice]
 WD actions: Action 'Save content' added.                                [notice]
 WD actions: Action 'Ban IP address of current user' added.              [notice]
 WD actions: Action 'Block current user' added.                          [notice]
+WD actions: Action 'Create an archive of selected files' added.         [notice]
+WD actions: Action 'Pass ids as arguments to a page' added.             [notice]
+WD actions: Action 'Remove from book' added.                            [notice]
+WD actions: Action 'Delete item' added.                                 [notice]
+WD actions: Action 'Delete revision' added.                             [notice]
+WD actions: Action 'Modify entity values' added.                        [notice]
 WD system: trigger module installed.                                      [info]
 WD system: trigger module enabled.                                        [info]
-WD system: update module installed.                                       [info]
-WD system: update module enabled.                                         [info]
 WD system: syslog module installed.                                       [info]
 WD system: syslog module enabled.                                         [info]
 WD system: rdf module installed.                                          [info]
 WD system: rdf module enabled.                                            [info]
-WD system: reroute_email module installed.                                [info]
-WD system: reroute_email module enabled.                                  [info]
-WD system: xautoload module installed.                                    [info]
-WD system: xautoload module enabled.                                      [info]
-WD system: rules_scheduler module installed.                              [info]
-WD system: rules_scheduler module enabled.                                [info]
-WD system: rules_admin module installed.                                  [info]
-WD system: rules_admin module enabled.                                    [info]
-WD system: pathauto module installed.                                     [info]
-WD system: pathauto module enabled.                                       [info]
-WD system: subpathauto module installed.                                  [info]
-WD system: subpathauto module enabled.                                    [info]
-WD system: lightbox2 module installed.                                    [info]
-WD system: lightbox2 module enabled.                                      [info]
-WD system: node_view_permissions module installed.                        [info]
-WD system: node_view_permissions module enabled.                          [info]
-WD system: r4032login module installed.                                   [info]
-WD system: r4032login module enabled.                                     [info]
-WD system: views_slideshow module installed.                              [info]
-WD system: views_slideshow module enabled.                                [info]
-WD system: views_slideshow_cycle module installed.                        [info]
-WD system: views_slideshow_cycle module enabled.                          [info]
-WD system: views_autocomplete_filters module installed.                   [info]
-WD system: views_autocomplete_filters module enabled.                     [info]
-WD system: views_dependent_filters module installed.                      [info]
-WD system: views_dependent_filters module enabled.                        [info]
-WD system: simplenews module installed.                                   [info]
-WD system: simplenews module enabled.                                     [info]
 WD system: uuid module installed.                                         [info]
 WD system: uuid module enabled.                                           [info]
 WD system: node_export module installed.                                  [info]
 WD system: node_export module enabled.                                    [info]
 WD system: node_export_features module installed.                         [info]
 WD system: node_export_features module enabled.                           [info]
-WD system: module_filter module installed.                                [info]
-WD system: module_filter module enabled.                                  [info]
 WD system: user_restrictions module installed.                            [info]
 WD system: user_restrictions module enabled.                              [info]
-WD system: mailsystem module installed.                                   [info]
-WD system: mailsystem module enabled.                                     [info]
 WD system: phpmailer module installed.                                    [info]
 WD system: phpmailer module enabled.                                      [info]
 WD system: mimemail module installed.                                     [info]
@@ -3658,30 +4092,642 @@ WD system: mimemail_compress module installed.                            [info]
 WD system: mimemail_compress module enabled.                              [info]
 WD system: smtp module installed.                                         [info]
 WD system: smtp module enabled.                                           [info]
+WD system: panelizer module installed.                                    [info]
+WD system: panelizer module enabled.                                      [info]
+WD system: panels_breadcrumbs module installed.                           [info]
+WD system: panels_breadcrumbs module enabled.                             [info]
+WD system: panels_ipe module installed.                                   [info]
+WD system: panels_ipe module enabled.                                     [info]
+WD system: token module installed.                                        [info]
+WD system: token module enabled.                                          [info]
+WD system: pathauto module installed.                                     [info]
+WD system: pathauto module enabled.                                       [info]
+WD system: pm_existing_pages module installed.                            [info]
+WD system: pm_existing_pages module enabled.                              [info]
+WD system: transliteration module installed.                              [info]
+WD system: transliteration module enabled.                                [info]
+WD system: views_autocomplete_filters module installed.                   [info]
+WD system: views_autocomplete_filters module enabled.                     [info]
+WD system: views_content module installed.                                [info]
+WD system: views_content module enabled.                                  [info]
+WD system: panopoly_core module installed.                                [info]
+WD system: panopoly_core module enabled.                                  [info]
+WD defaultconfig: Rebuilding user_default_roles for panopoly_core.      [notice]
+WD defaultconfig: Rebuilding strongarm for panopoly_core.               [notice]
+WD defaultconfig: Rebuilding user_default_permissions for               [notice]
+panopoly_core.
+WD features: Rebuilding panopoly_core / variable.                       [notice]
+WD features: Rebuild completed for panopoly_core / variable.            [notice]
+WD features: Rebuilding panopoly_core / defaultconfig.                  [notice]
+WD features: Rebuild completed for panopoly_core / defaultconfig.       [notice]
+WD features: Rebuilding panopoly_core / field_base.                     [notice]
+WD features: Rebuild completed for panopoly_core / field_base.          [notice]
+WD features: Rebuilding panopoly_core / field_instance.                 [notice]
+WD features: Rebuild completed for panopoly_core / field_instance.      [notice]
+WD features: Rebuilding panopoly_core / taxonomy.                       [notice]
+WD features: Rebuild completed for panopoly_core / taxonomy.            [notice]
+WD system: manualcrop module installed.                                   [info]
+WD system: manualcrop module enabled.                                     [info]
+WD system: media module installed.                                        [info]
+WD system: media module enabled.                                          [info]
+WD system: panopoly_images module installed.                              [info]
+WD system: panopoly_images module enabled.                                [info]
+WD defaultconfig: Rebuilding strongarm for panopoly_images.             [notice]
+WD features: Rebuilding panopoly_images / defaultconfig.                [notice]
+WD features: Rebuild completed for panopoly_images / defaultconfig.     [notice]
+WD system: panopoly_theme module installed.                               [info]
+WD system: panopoly_theme module enabled.                                 [info]
+WD system: panopoly_magic module installed.                               [info]
+WD system: panopoly_magic module enabled.                                 [info]
+WD system: media_internet module installed.                               [info]
+WD system: media_internet module enabled.                                 [info]
+WD system: media_vimeo module installed.                                  [info]
+WD system: media_vimeo module enabled.                                    [info]
+WD system: media_youtube module installed.                                [info]
+WD system: media_youtube module enabled.                                  [info]
+WD system: menu_block module installed.                                   [info]
+WD system: menu_block module enabled.                                     [info]
+WD system: number module installed.                                       [info]
+WD system: number module enabled.                                         [info]
+WD system: simple_gmap module installed.                                  [info]
+WD system: simple_gmap module enabled.                                    [info]
+WD system: tablefield module installed.                                   [info]
+WD system: tablefield module enabled.                                     [info]
+WD system: panopoly_widgets module installed.                             [info]
+WD system: panopoly_widgets module enabled.                               [info]
+WD defaultconfig: Rebuilding user_default_permissions for               [notice]
+panopoly_widgets.
+WD features: Rebuilding panopoly_widgets / defaultconfig.               [notice]
+WD features: Rebuild completed for panopoly_widgets / defaultconfig.    [notice]
+WD features: Rebuilding panopoly_widgets / field_base.                  [notice]
+WD features: Rebuild completed for panopoly_widgets / field_base.       [notice]
+WD features: Rebuilding panopoly_widgets / field_instance.              [notice]
+WD features: Rebuild completed for panopoly_widgets / field_instance.   [notice]
+WD system: panopoly_admin module installed.                               [info]
+WD system: panopoly_admin module enabled.                                 [info]
+WD defaultconfig: Rebuilding strongarm for panopoly_admin.              [notice]
+WD defaultconfig: Rebuilding user_default_permissions for               [notice]
+panopoly_admin.
+WD features: Rebuilding panopoly_admin / variable.                      [notice]
+WD features: Rebuild completed for panopoly_admin / variable.           [notice]
+WD features: Rebuilding panopoly_admin / defaultconfig.                 [notice]
+WD features: Rebuild completed for panopoly_admin / defaultconfig.      [notice]
+WD system: user_picture_field module installed.                           [info]
+WD system: user_picture_field module enabled.                             [info]
+WD system: panopoly_users module installed.                               [info]
+WD system: panopoly_users module enabled.                                 [info]
+WD defaultconfig: Rebuilding strongarm for panopoly_users.              [notice]
+WD defaultconfig: Rebuilding user_default_permissions for               [notice]
+panopoly_users.
+WD features: Rebuilding panopoly_users / variable.                      [notice]
+WD features: Rebuild completed for panopoly_users / variable.           [notice]
+WD features: Rebuilding panopoly_users / defaultconfig.                 [notice]
+WD features: Rebuild completed for panopoly_users / defaultconfig.      [notice]
+WD features: Rebuilding panopoly_users / field_base.                    [notice]
+WD features: Rebuild completed for panopoly_users / field_base.         [notice]
+WD features: Rebuilding panopoly_users / field_instance.                [notice]
+WD features: Rebuild completed for panopoly_users / field_instance.     [notice]
+WD system: panopoly_pages module installed.                               [info]
+WD system: panopoly_pages module enabled.                                 [info]
+WD defaultconfig: Rebuilding user_default_permissions for               [notice]
+panopoly_pages.
+WD features: Rebuilding panopoly_pages / variable.                      [notice]
+WD features: Rebuild completed for panopoly_pages / variable.           [notice]
+WD features: Rebuilding panopoly_pages / defaultconfig.                 [notice]
+WD features: Rebuild completed for panopoly_pages / defaultconfig.      [notice]
+WD features: Rebuilding panopoly_pages / field_base.                    [notice]
+WD features: Rebuild completed for panopoly_pages / field_base.         [notice]
+WD features: Rebuilding panopoly_pages / field_instance.                [notice]
+WD features: Rebuild completed for panopoly_pages / field_instance.     [notice]
+WD features: Reverting panopoly_pages / defaultconfig.                  [notice]
+WD features: Revert completed for panopoly_pages / defaultconfig.       [notice]
+WD features: Reverting panopoly_pages / field_base.                     [notice]
+WD features: Revert completed for panopoly_pages / field_base.          [notice]
+WD features: Reverting panopoly_pages / field_instance.                 [notice]
+WD features: Revert completed for panopoly_pages / field_instance.      [notice]
+WD features: Reverting panopoly_pages / node.                           [notice]
+WD features: Revert completed for panopoly_pages / node.                [notice]
+WD features: Reverting panopoly_pages / panelizer_defaults.             [notice]
+WD features: Revert completed for panopoly_pages /                      [notice]
+panelizer_defaults.
+WD features: Reverting panopoly_pages / variable.                       [notice]
+WD features: Revert completed for panopoly_pages / variable.            [notice]
+WD system: search_api module installed.                                   [info]
+WD system: search_api module enabled.                                     [info]
+WD system: search_api_db module installed.                                [info]
+WD system: search_api_db module enabled.                                  [info]
+WD system: search_api_facetapi module installed.                          [info]
+WD system: search_api_facetapi module enabled.                            [info]
+WD system: search_api_solr module installed.                              [info]
+WD system: search_api_solr module enabled.                                [info]
+WD system: search_api_views module installed.                             [info]
+WD system: search_api_views module enabled.                               [info]
+WD system: panopoly_search module installed.                              [info]
+WD system: panopoly_search module enabled.                                [info]
+WD features: Rebuilding panopoly_search / variable.                     [notice]
+WD features: Rebuild completed for panopoly_search / variable.          [notice]
+WD system: linkit module installed.                                       [info]
+WD system: linkit module enabled.                                         [info]
+WD system: media_wysiwyg module installed.                                [info]
+WD system: media_wysiwyg module enabled.                                  [info]
+WD system: wysiwyg module installed.                                      [info]
+WD system: wysiwyg module enabled.                                        [info]
+WD system: wysiwyg_filter module installed.                               [info]
+WD system: wysiwyg_filter module enabled.                                 [info]
+WD system: panopoly_wysiwyg module installed.                             [info]
+WD system: panopoly_wysiwyg module enabled.                               [info]
+WD defaultconfig: Rebuilding user_default_permissions for               [notice]
+panopoly_wysiwyg.
+WD features: Rebuilding panopoly_wysiwyg / variable.                    [notice]
+WD features: Rebuild completed for panopoly_wysiwyg / variable.         [notice]
+WD features: Rebuilding panopoly_wysiwyg / defaultconfig.               [notice]
+WD features: Rebuild completed for panopoly_wysiwyg / defaultconfig.    [notice]
+WD features: Rebuilding panopoly_wysiwyg / filter.                      [notice]
+WD features: Rebuild completed for panopoly_wysiwyg / filter.           [notice]
+WD features: Rebuilding panopoly_wysiwyg / wysiwyg.                     [notice]
+WD features: Rebuild completed for panopoly_wysiwyg / wysiwyg.          [notice]
+WD system: navbar module installed.                                       [info]
+WD system: navbar module enabled.                                         [info]
+WD system: simplified_menu_admin module installed.                        [info]
+WD system: simplified_menu_admin module enabled.                          [info]
+WD system: save_draft module installed.                                   [info]
+WD system: save_draft module enabled.                                     [info]
+WD system: module_filter module installed.                                [info]
+WD system: module_filter module enabled.                                  [info]
+WD system: message module installed.                                      [info]
+WD system: message module enabled.                                        [info]
+WD system: message_notify module installed.                               [info]
+WD system: message_notify module enabled.                                 [info]
+WD system: message_subscribe module installed.                            [info]
+WD system: message_subscribe module enabled.                              [info]
+WD system: message_digest module installed.                               [info]
+WD system: message_digest module enabled.                                 [info]
+WD system: realname module installed.                                     [info]
+WD system: realname module enabled.                                       [info]
+WD system: panels_mini module installed.                                  [info]
+WD system: panels_mini module enabled.                                    [info]
+WD system: og module installed.                                           [info]
+WD system: og module enabled.                                             [info]
+WD system: og_context module installed.                                   [info]
+WD system: og_context module enabled.                                     [info]
+WD system: trash_flag module installed.                                   [info]
+WD system: trash_flag module enabled.                                     [info]
+WD system: og_access module installed.                                    [info]
+WD system: og_access module enabled.                                      [info]
+WD system: og_register module installed.                                  [info]
+WD system: og_register module enabled.                                    [info]
+WD system: og_ui module installed.                                        [info]
+WD system: og_ui module enabled.                                          [info]
+WD system: og_subgroups module installed.                                 [info]
+WD system: og_subgroups module enabled.                                   [info]
+WD system: og_menu_single module installed.                               [info]
+WD system: og_menu_single module enabled.                                 [info]
+WD system: og_session_context module installed.                           [info]
+WD system: og_session_context module enabled.                             [info]
+WD system: og_vocab module installed.                                     [info]
+WD system: og_vocab module enabled.                                       [info]
+WD system: views_load_more module installed.                              [info]
+WD system: views_load_more module enabled.                                [info]
+WD system: oa_core module installed.                                      [info]
+WD system: oa_core module enabled.                                        [info]
+WD features: Rebuilding oa_core / variable.                             [notice]
+WD features: Rebuild completed for oa_core / variable.                  [notice]
+WD features: Rebuilding oa_core / field_base.                           [notice]
+WD features: Rebuild completed for oa_core / field_base.                [notice]
+WD features: Rebuilding oa_core / field_instance.                       [notice]
+WD features: Rebuild completed for oa_core / field_instance.            [notice]
+WD features: Rebuilding oa_core / filter.                               [notice]
+WD features: Rebuild completed for oa_core / filter.                    [notice]
+WD features: Rebuilding oa_core / taxonomy.                             [notice]
+WD features: Rebuild completed for oa_core / taxonomy.                  [notice]
+WD system: oa_date module installed.                                      [info]
+WD system: oa_date module enabled.                                        [info]
+WD system: oa_diff module installed.                                      [info]
+WD system: oa_diff module enabled.                                        [info]
+WD system: oa_dashboard module installed.                                 [info]
+WD system: oa_dashboard module enabled.                                   [info]
+WD system: oa_notifications module installed.                             [info]
+WD system: oa_notifications module enabled.                               [info]
+WD system: oa_section_context module installed.                           [info]
+WD system: oa_section_context module enabled.                             [info]
+WD system: oa_config module installed.                                    [info]
+WD system: oa_config module enabled.                                      [info]
+WD features: Rebuilding oa_config / variable.                           [notice]
+WD features: Rebuild completed for oa_config / variable.                [notice]
+WD features: Rebuilding oa_config / features_override_items.            [notice]
+WD features: Rebuild completed for oa_config /                          [notice]
+features_override_items.
+WD features: Rebuilding oa_config / features_overrides.                 [notice]
+WD features: Rebuild completed for oa_config / features_overrides.      [notice]
+WD system: oa_teams module installed.                                     [info]
+WD system: oa_teams module enabled.                                       [info]
+WD features: Rebuilding oa_teams / variable.                            [notice]
+WD features: Rebuild completed for oa_teams / variable.                 [notice]
+WD features: Rebuilding oa_teams / field_base.                          [notice]
+WD features: Rebuild completed for oa_teams / field_base.               [notice]
+WD features: Rebuilding oa_teams / field_instance.                      [notice]
+WD features: Rebuild completed for oa_teams / field_instance.           [notice]
+WD system: reference_option_limit module installed.                       [info]
+WD system: reference_option_limit module enabled.                         [info]
+WD system: oa_sections module installed.                                  [info]
+WD system: oa_sections module enabled.                                    [info]
+WD features: Rebuilding oa_sections / variable.                         [notice]
+WD features: Rebuild completed for oa_sections / variable.              [notice]
+WD features: Rebuilding oa_sections / field_base.                       [notice]
+WD features: Rebuild completed for oa_sections / field_base.            [notice]
+WD features: Rebuilding oa_sections / field_instance.                   [notice]
+WD features: Rebuild completed for oa_sections / field_instance.        [notice]
+WD features: Rebuilding oa_sections / taxonomy.                         [notice]
+WD features: Rebuild completed for oa_sections / taxonomy.              [notice]
+WD system: oa_widgets module installed.                                   [info]
+WD system: oa_widgets module enabled.                                     [info]
+WD system: oa_subspaces module installed.                                 [info]
+WD system: oa_subspaces module enabled.                                   [info]
+WD features: Rebuilding oa_subspaces / variable.                        [notice]
+WD features: Rebuild completed for oa_subspaces / variable.             [notice]
+WD features: Rebuilding oa_subspaces / field_base.                      [notice]
+WD features: Rebuild completed for oa_subspaces / field_base.           [notice]
+WD features: Rebuilding oa_subspaces / field_instance.                  [notice]
+WD features: Rebuild completed for oa_subspaces / field_instance.       [notice]
+WD system: oa_messages module installed.                                  [info]
+WD system: oa_messages module enabled.                                    [info]
+WD features: Rebuilding oa_messages / variable.                         [notice]
+WD features: Rebuild completed for oa_messages / variable.              [notice]
+WD features: Rebuilding oa_messages / field_base.                       [notice]
+WD features: Rebuild completed for oa_messages / field_base.            [notice]
+WD features: Rebuilding oa_messages / field_instance.                   [notice]
+WD features: Rebuild completed for oa_messages / field_instance.        [notice]
+WD system: oa_messages_digest module installed.                           [info]
+WD system: oa_messages_digest module enabled.                             [info]
+WD system: oa_sandbox module installed.                                   [info]
+WD system: oa_sandbox module enabled.                                     [info]
+WD system: oa_layouts module installed.                                   [info]
+WD system: oa_layouts module enabled.                                     [info]
+WD features: Rebuilding oa_layouts / variable.                          [notice]
+WD features: Rebuild completed for oa_layouts / variable.               [notice]
+WD features: Rebuilding oa_layouts / menu_custom.                       [notice]
+WD features: Rebuild completed for oa_layouts / menu_custom.            [notice]
+WD system: oa_news module installed.                                      [info]
+WD system: oa_news module enabled.                                        [info]
+WD system: oa_favorites module installed.                                 [info]
+WD system: oa_favorites module enabled.                                   [info]
+WD system: oa_river module installed.                                     [info]
+WD system: oa_river module enabled.                                       [info]
+WD system: oa_users module installed.                                     [info]
+WD system: oa_users module enabled.                                       [info]
+WD features: Rebuilding oa_users / variable.                            [notice]
+WD features: Rebuild completed for oa_users / variable.                 [notice]
+WD features: Rebuilding oa_users / field_base.                          [notice]
+WD features: Rebuild completed for oa_users / field_base.               [notice]
+WD features: Rebuilding oa_users / field_instance.                      [notice]
+WD features: Rebuild completed for oa_users / field_instance.           [notice]
+WD system: oa_panopoly_users module installed.                            [info]
+WD system: oa_panopoly_users module enabled.                              [info]
+WD features: Rebuilding oa_panopoly_users / variable.                   [notice]
+WD features: Rebuild completed for oa_panopoly_users / variable.        [notice]
+WD features: Rebuilding oa_panopoly_users / features_override_items.    [notice]
+WD features: Rebuild completed for oa_panopoly_users /                  [notice]
+features_override_items.
+WD features: Rebuilding oa_panopoly_users / features_overrides.         [notice]
+WD features: Rebuild completed for oa_panopoly_users /                  [notice]
+features_overrides.
+WD system: oa_styles module installed.                                    [info]
+WD system: oa_styles module enabled.                                      [info]
+WD system: media_colorbox module installed.                               [info]
+WD system: media_colorbox module enabled.                                 [info]
+WD system: oa_media module installed.                                     [info]
+WD system: oa_media module enabled.                                       [info]
+WD features: Rebuilding oa_media / variable.                            [notice]
+WD features: Rebuild completed for oa_media / variable.                 [notice]
+WD features: Rebuilding oa_media / features_override_items.             [notice]
+WD features: Rebuild completed for oa_media /                           [notice]
+features_override_items.
+WD features: Rebuilding oa_media / features_overrides.                  [notice]
+WD features: Rebuild completed for oa_media / features_overrides.       [notice]
+WD features: Rebuilding oa_media / field_base.                          [notice]
+WD features: Rebuild completed for oa_media / field_base.               [notice]
+WD features: Rebuilding oa_media / field_instance.                      [notice]
+WD features: Rebuild completed for oa_media / field_instance.           [notice]
+WD system: oa_appearance module installed.                                [info]
+WD system: oa_appearance module enabled.                                  [info]
+WD features: Rebuilding oa_appearance / field_base.                     [notice]
+WD features: Rebuild completed for oa_appearance / field_base.          [notice]
+WD features: Rebuilding oa_appearance / field_instance.                 [notice]
+WD features: Rebuild completed for oa_appearance / field_instance.      [notice]
+WD system: oa_buttons module installed.                                   [info]
+WD system: oa_buttons module enabled.                                     [info]
+WD features: Reverting oa_buttons / field_base.                         [notice]
+WD features: Revert completed for oa_buttons / field_base.              [notice]
+WD features: Reverting oa_buttons / field_instance.                     [notice]
+WD features: Revert completed for oa_buttons / field_instance.          [notice]
+WD features: Rebuilding oa_buttons / field_base.                        [notice]
+WD features: Rebuild completed for oa_buttons / field_base.             [notice]
+WD features: Rebuilding oa_buttons / field_instance.                    [notice]
+WD features: Rebuild completed for oa_buttons / field_instance.         [notice]
+WD features: Rebuilding oa_buttons / conditional_fields.                [notice]
+WD features: Rebuild completed for oa_buttons / conditional_fields.     [notice]
+WD system: oa_discussion module installed.                                [info]
+WD system: oa_discussion module enabled.                                  [info]
+WD features: Rebuilding oa_discussion / variable.                       [notice]
+WD features: Rebuild completed for oa_discussion / variable.            [notice]
+WD features: Rebuilding oa_discussion / field_base.                     [notice]
+WD features: Rebuild completed for oa_discussion / field_base.          [notice]
+WD features: Rebuilding oa_discussion / field_instance.                 [notice]
+WD features: Rebuild completed for oa_discussion / field_instance.      [notice]
+WD features: Rebuilding oa_discussion / og_features_permission.         [notice]
+WD features: Rebuild completed for oa_discussion /                      [notice]
+og_features_permission.
+WD system: oa_wiki module installed.                                      [info]
+WD system: oa_wiki module enabled.                                        [info]
+WD features: Rebuilding oa_wiki / variable.                             [notice]
+WD features: Rebuild completed for oa_wiki / variable.                  [notice]
+WD features: Rebuilding oa_wiki / field_instance.                       [notice]
+WD features: Rebuild completed for oa_wiki / field_instance.            [notice]
+WD features: Rebuilding oa_wiki / og_features_permission.               [notice]
+WD features: Rebuild completed for oa_wiki / og_features_permission.    [notice]
+WD system: variable module installed.                                     [info]
+WD system: variable module enabled.                                       [info]
+WD system: variable_store module installed.                               [info]
+WD system: variable_store module enabled.                                 [info]
+WD system: variable_realm module installed.                               [info]
+WD system: variable_realm module enabled.                                 [info]
+WD system: og_variables module installed.                                 [info]
+WD system: og_variables module enabled.                                   [info]
+WD system: oa_permissions module installed.                               [info]
+WD system: oa_permissions module enabled.                                 [info]
+WD features: Rebuilding oa_permissions / variable.                      [notice]
+WD features: Rebuild completed for oa_permissions / variable.           [notice]
+WD features: Rebuilding oa_permissions / og_features_permission.        [notice]
+WD features: Rebuild completed for oa_permissions /                     [notice]
+og_features_permission.
+WD features: Rebuilding oa_permissions / user_permission.               [notice]
+WD features: Rebuild completed for oa_permissions / user_permission.    [notice]
+WD system: oa_admin module installed.                                     [info]
+WD system: oa_admin module enabled.                                       [info]
+WD php: Notice: Undefined index: user in                                [notice]
+page_manager_search_build_subtask() (line 216 of
+/var/www/lbd/profiles/openatrium/modules/contrib/ctools/page_manager/plugins/tasks/search.inc).
+WD php: Notice: Undefined index: user in                                [notice]
+page_manager_search_build_subtask() (line 216 of
+/var/www/lbd/profiles/openatrium/modules/contrib/ctools/page_manager/plugins/tasks/search.inc).
+WD system: oa_search module installed.                                    [info]
+WD system: oa_search module enabled.                                      [info]
+WD features: Rebuilding oa_search / variable.                           [notice]
+WD features: Rebuild completed for oa_search / variable.                [notice]
+WD features: Rebuilding oa_search / features_override_items.            [notice]
+WD features: Rebuild completed for oa_search /                          [notice]
+features_override_items.
+WD features: Rebuilding oa_search / features_overrides.                 [notice]
+WD features: Rebuild completed for oa_search / features_overrides.      [notice]
+WD system: oa_variables module installed.                                 [info]
+WD system: oa_variables module enabled.                                   [info]
+WD features: Rebuilding oa_variables / variable.                        [notice]
+WD features: Rebuild completed for oa_variables / variable.             [notice]
+WD system: oa_tour module installed.                                      [info]
+WD system: oa_tour module enabled.                                        [info]
+WD system: oa_tour_defaults module installed.                             [info]
+WD system: oa_tour_defaults module enabled.                               [info]
+WD system: oa_contextual_tabs module installed.                           [info]
+WD system: oa_contextual_tabs module enabled.                             [info]
+WD features: Rebuilding oa_contextual_tabs / variable.                  [notice]
+WD features: Rebuild completed for oa_contextual_tabs / variable.       [notice]
+WD system: oa_responsive_regions module installed.                        [info]
+WD system: oa_responsive_regions module enabled.                          [info]
+WD system: oa_update module installed.                                    [info]
+WD system: oa_update module enabled.                                      [info]
+WD system: oa_events module installed.                                    [info]
+WD system: oa_events module enabled.                                      [info]
+WD features: Rebuilding oa_events / variable.                           [notice]
+WD features: Rebuild completed for oa_events / variable.                [notice]
+WD features: Rebuilding oa_events / field_base.                         [notice]
+WD features: Rebuild completed for oa_events / field_base.              [notice]
+WD features: Rebuilding oa_events / field_instance.                     [notice]
+WD features: Rebuild completed for oa_events / field_instance.          [notice]
+WD features: Rebuilding oa_events / og_features_permission.             [notice]
+WD features: Rebuild completed for oa_events /                          [notice]
+og_features_permission.
+WD system: oa_events_import module installed.                             [info]
+WD system: oa_events_import module enabled.                               [info]
+WD features: Rebuilding oa_events_import / variable.                    [notice]
+WD features: Rebuild completed for oa_events_import / variable.         [notice]
+WD features: Rebuilding oa_events_import / field_instance.              [notice]
+WD features: Rebuild completed for oa_events_import / field_instance.   [notice]
+WD system: oa_clone module installed.                                     [info]
+WD system: oa_clone module enabled.                                       [info]
+WD features: Rebuilding oa_clone / variable.                            [notice]
+WD features: Rebuild completed for oa_clone / variable.                 [notice]
+WD features: Rebuilding oa_clone / field_base.                          [notice]
+WD features: Rebuild completed for oa_clone / field_base.               [notice]
+WD features: Rebuilding oa_clone / field_instance.                      [notice]
+WD features: Rebuild completed for oa_clone / field_instance.           [notice]
+WD features: Rebuilding oa_clone / conditional_fields.                  [notice]
+WD features: Rebuild completed for oa_clone / conditional_fields.       [notice]
+WD system: options_element module installed.                              [info]
+WD system: options_element module enabled.                                [info]
+WD system: oa_worktracker module installed.                               [info]
+WD system: oa_worktracker module enabled.                                 [info]
+WD defaultconfig: Rebuilding user_default_permissions for               [notice]
+oa_worktracker.
+WD features: Reverting oa_worktracker / message_type.                   [notice]
+WD features: Revert completed for oa_worktracker / message_type.        [notice]
+WD features: Reverting oa_worktracker / field_base.                     [notice]
+WD features: Revert completed for oa_worktracker / field_base.          [notice]
+WD features: Reverting oa_worktracker / variable.                       [notice]
+WD features: Revert completed for oa_worktracker / variable.            [notice]
+WD features: Reverting oa_worktracker / og_features_permission.         [notice]
+WD features: Revert completed for oa_worktracker /                      [notice]
+og_features_permission.
+WD features: Reverting oa_worktracker / user_permission.                [notice]
+WD features: Revert completed for oa_worktracker / user_permission.     [notice]
+WD features: Rebuilding oa_worktracker / variable.                      [notice]
+WD features: Rebuild completed for oa_worktracker / variable.           [notice]
+WD features: Rebuilding oa_worktracker / defaultconfig.                 [notice]
+WD features: Rebuild completed for oa_worktracker / defaultconfig.      [notice]
+WD features: Rebuilding oa_worktracker / features_overrides.            [notice]
+WD features: Rebuild completed for oa_worktracker /                     [notice]
+features_overrides.
+WD features: Rebuilding oa_worktracker / field_base.                    [notice]
+WD features: Rebuild completed for oa_worktracker / field_base.         [notice]
+WD features: Rebuilding oa_worktracker / field_instance.                [notice]
+WD features: Rebuild completed for oa_worktracker / field_instance.     [notice]
+WD features: Rebuilding oa_worktracker / og_features_permission.        [notice]
+WD features: Rebuild completed for oa_worktracker /                     [notice]
+og_features_permission.
+WD system: oa_home module installed.                                      [info]
+WD system: oa_home module enabled.                                        [info]
+WD features: Rebuilding oa_home / variable.                             [notice]
+WD features: Rebuild completed for oa_home / variable.                  [notice]
+WD system: oa_htmlmail module installed.                                  [info]
+WD system: oa_htmlmail module enabled.                                    [info]
+WD system: panels_customerror module installed.                           [info]
+WD system: panels_customerror module enabled.                             [info]
+WD features: Rebuilding panels_customerror / variable.                  [notice]
+WD features: Rebuild completed for panels_customerror / variable.       [notice]
 WD system: labdoo module installed.                                       [info]
 WD system: labdoo module enabled.                                         [info]
+WD actions: Action 'Remove from group' added.                           [notice]
+WD actions: Action 'Update real name' added.                            [notice]
 WD actions: Action 'Update node alias' added.                           [notice]
 WD actions: Action 'Update taxonomy term alias' added.                  [notice]
 WD actions: Action 'Update user alias' added.                           [notice]
+WD actions: Action 'Update file alias' added.                           [notice]
 WD boost: Flushed all files (0) from static page cache.                 [notice]
+WD file: The file public://colorizer was not deleted, because it does   [notice]
+not exist.
+WD features: Rebuilding panopoly_search / variable.                     [notice]
+WD features: Rebuild completed for panopoly_search / variable.          [notice]
+WD features: Rebuilding panopoly_wysiwyg / filter.                      [notice]
+WD features: Rebuild completed for panopoly_wysiwyg / filter.           [notice]
+WD features: Rebuilding oa_variables / variable.                        [notice]
+WD features: Rebuild completed for oa_variables / variable.             [notice]
+WD features: Rebuilding oa_worktracker / dependencies.                  [notice]
+WD features: Rebuild completed for oa_worktracker / dependencies.       [notice]
 WD user: Session opened for admin.                                      [notice]
 WD phpmailer: SMTP configuration changed.                               [notice]
+WD features: Reverting oa_core / field_base.                            [notice]
+WD features: Revert completed for oa_core / field_base.                 [notice]
+WD features: Reverting oa_sections / field_base.                        [notice]
+WD features: Revert completed for oa_sections / field_base.             [notice]
+WD features: Reverting oa_sections / field_instance.                    [notice]
+WD features: Revert completed for oa_sections / field_instance.         [notice]
+WD features: Reverting oa_users / field_instance.                       [notice]
+WD features: Revert completed for oa_users / field_instance.            [notice]
+WD features: Reverting command_buttons / field_base.                    [notice]
+WD features: Revert completed for command_buttons / field_base.         [notice]
+WD features: Reverting panopoly_core / taxonomy.                        [notice]
+WD features: Revert completed for panopoly_core / taxonomy.             [notice]
+WD features: Reverting panopoly_core / views_view.                      [notice]
+WD features: Revert completed for panopoly_core / views_view.           [notice]
+WD features: Reverting panopoly_users / page_manager_handlers.          [notice]
+WD features: Revert completed for panopoly_users /                      [notice]
+page_manager_handlers.
+WD features: Reverting panopoly_users / panelizer_defaults.             [notice]
+WD features: Revert completed for panopoly_users /                      [notice]
+panelizer_defaults.
+WD features: Reverting panopoly_search / search_api_index.              [notice]
+WD features: Revert completed for panopoly_search / search_api_index.   [notice]
+WD features: Reverting panopoly_search / search_api_server.             [notice]
+WD search_api_solr: SearchApiException while deleting an index's     [31;40m[1m[error][0m
+data: "0" Status: Request failed: Connection refused in
+SearchApiSolrConnection->checkResponse() (line 548 of
+/var/www/lbd/profiles/openatrium/modules/contrib/search_api_solr/includes/solr_connection.inc).
+WD search_api_solr: SearchApiException while deleting an index's     [31;40m[1m[error][0m
+data: "0" Status: Request failed: Connection refused in
+SearchApiSolrConnection->checkResponse() (line 548 of
+/var/www/lbd/profiles/openatrium/modules/contrib/search_api_solr/includes/solr_connection.inc).
+WD features: Revert completed for panopoly_search /                     [notice]
+search_api_server.
+WD features: Reverting panopoly_wysiwyg / wysiwyg.                      [notice]
+WD features: Revert completed for panopoly_wysiwyg / wysiwyg.           [notice]
+WD features: Reverting trash_flag / views_view.                         [notice]
+WD features: Revert completed for trash_flag / views_view.              [notice]
+WD features: Reverting oa_core / taxonomy.                              [notice]
+WD features: Revert completed for oa_core / taxonomy.                   [notice]
+WD features: Reverting oa_core / views_view.                            [notice]
+WD features: Revert completed for oa_core / views_view.                 [notice]
+WD features: Reverting oa_config / features_overrides.                  [notice]
+WD features: Revert completed for oa_config / features_overrides.       [notice]
+WD features: Reverting oa_teams / field_base.                           [notice]
+WD features: Revert completed for oa_teams / field_base.                [notice]
+WD features: Reverting oa_teams / views_view.                           [notice]
+WD features: Revert completed for oa_teams / views_view.                [notice]
+WD features: Reverting oa_sections / taxonomy.                          [notice]
+WD features: Revert completed for oa_sections / taxonomy.               [notice]
+WD features: Reverting oa_sections / views_view.                        [notice]
+WD features: Revert completed for oa_sections / views_view.             [notice]
+WD features: Reverting oa_subspaces / field_base.                       [notice]
+WD features: Revert completed for oa_subspaces / field_base.            [notice]
+WD features: Reverting oa_messages / field_base.                        [notice]
+WD features: Revert completed for oa_messages / field_base.             [notice]
+WD features: Reverting oa_messages / message_type.                      [notice]
+WD features: Revert completed for oa_messages / message_type.           [notice]
+WD features: Reverting oa_news / views_view.                            [notice]
+WD features: Revert completed for oa_news / views_view.                 [notice]
+WD features: Reverting oa_river / views_view.                           [notice]
+WD features: Revert completed for oa_river / views_view.                [notice]
+WD features: Reverting oa_users / field_base.                           [notice]
+WD features: Revert completed for oa_users / field_base.                [notice]
+WD features: Reverting oa_media / features_overrides.                   [notice]
+WD features: Revert completed for oa_media / features_overrides.        [notice]
+WD features: Reverting oa_discussion / field_base.                      [notice]
+WD features: Revert completed for oa_discussion / field_base.           [notice]
+WD features: Reverting oa_discussion / message_type.                    [notice]
+WD features: Revert completed for oa_discussion / message_type.         [notice]
+WD features: Reverting oa_discussion / og_features_permission.          [notice]
+WD features: Revert completed for oa_discussion /                       [notice]
+og_features_permission.
+WD features: Reverting oa_search / features_overrides.                  [notice]
+WD features: Revert completed for oa_search / features_overrides.       [notice]
+WD features: Reverting oa_search / search_api_index.                    [notice]
+WD features: Revert completed for oa_search / search_api_index.         [notice]
+WD features: Reverting oa_events / message_type.                        [notice]
+WD features: Revert completed for oa_events / message_type.             [notice]
+WD features: Reverting oa_events / og_features_permission.              [notice]
+WD features: Revert completed for oa_events / og_features_permission.   [notice]
+WD features: Reverting oa_events / views_view.                          [notice]
+WD features: Revert completed for oa_events / views_view.               [notice]
+WD features: Reverting oa_events_import / views_view.                   [notice]
+WD features: Revert completed for oa_events_import / views_view.        [notice]
+WD features: Reverting oa_clone / field_base.                           [notice]
+WD features: Revert completed for oa_clone / field_base.                [notice]
+WD features: Reverting oa_worktracker / features_overrides.             [notice]
+WD features: Revert completed for oa_worktracker /                      [notice]
+features_overrides.
+WD features: Reverting oa_worktracker / field_base.                     [notice]
+WD features: Revert completed for oa_worktracker / field_base.          [notice]
+WD features: Reverting oa_worktracker / message_type.                   [notice]
+WD features: Revert completed for oa_worktracker / message_type.        [notice]
+WD features: Reverting oa_worktracker / og_features_permission.         [notice]
+WD features: Revert completed for oa_worktracker /                      [notice]
+og_features_permission.
+WD features: Reverting oa_worktracker / views_view.                     [notice]
+WD features: Revert completed for oa_worktracker / views_view.          [notice]
+WD features: Reverting oa_worktracker / dependencies.                   [notice]
+WD features: Revert completed for oa_worktracker / dependencies.        [notice]
+WD features: Reverting oa_home / variable.                              [notice]
+WD features: Revert completed for oa_home / variable.                   [notice]
+WD features: Reverting oa_search / search_api_index.                    [notice]
+WD features: Revert completed for oa_search / search_api_index.         [notice]
 WD boost: Flushed all files (0) from static page cache.                 [notice]
-sendmail: Cannot open mail:25
-WD mail: Error sending e-mail (from "Labdoo"  to "admin" ).          [31;40m[1m[error][0m
-WD cron: Cron run completed.                                            [notice]
+WD file: The file public://colorizer was not deleted, because it does   [notice]
+not exist.
+WD features: Rebuilding oa_worktracker / dependencies.                  [notice]
+WD features: Rebuild completed for oa_worktracker / dependencies.       [notice]
 Installation complete.  User name: admin  User password: admin       [1;32;40m[1m[ok][0m
-Unable to send e-mail. Contact the site administrator if the problem [31;40m[1m[error][0m
-persists.
-IP Geolocation Views & Maps is now enabled. Please note that some of [1;32;40m[1m[status][0m
-the canned Views that come with this module require the Views PHP
-module. The "Refine your location" block requires Geocoder. Modules
-Session Cache API and High-performance JS Callback Handler are
-optional and recommended.
+Undefined index: quickstart in install_from_db_form_submit() (line      [notice]
+120 of
+/var/www/lbd/profiles/openatrium/install_from_db/install_from_db.profile).
+Undefined index: user in page_manager_search_build_subtask() (line      [notice]
+216 of
+/var/www/lbd/profiles/openatrium/modules/contrib/ctools/page_manager/plugins/tasks/search.inc).
+Undefined index: user in page_manager_search_build_subtask() (line      [notice]
+216 of
+/var/www/lbd/profiles/openatrium/modules/contrib/ctools/page_manager/plugins/tasks/search.inc).
+DHTML Menu offers a wide range of customization options. If you wish [1;33;40m[1m[warning][0m
+to change them, please visit the configuration page.
+The image resize filter has been installed. Before this does         [1;33;40m[1m[warning][0m
+anything, the image resize filter needs to be added to one or more
+text formats. Visit the text format administration to set up this
+filter.
+PHPMailer is currently disabled.                                     [1;33;40m[1m[warning][0m
+The following views were using the index Database Node Index:        [1;33;40m[1m[warning][0m
+panopoly_database_search. You should disable or delete them.
+The following views were using the index Solr Node Index:            [1;33;40m[1m[warning][0m
+panopoly_search. You should disable or delete them.
+The following views were using the index Solr User Index:            [1;33;40m[1m[warning][0m
+oa_user_solr_search. You should disable or delete them.
+The following views were using the index User Index: oa_user_search. [1;33;40m[1m[warning][0m
+You should disable or delete them.
+The following views were using the index Solr User Index:            [1;33;40m[1m[warning][0m
+oa_user_solr_search. You should disable or delete them.
+The following views were using the index User Index: oa_user_search. [1;33;40m[1m[warning][0m
+You should disable or delete them.
 PHPMailer has been installed, but is currently disabled. Configure it[1;32;40m[1m[status][0m
 now.
+To use menu blocks, find the "Add menu block" link on the administer [1;32;40m[1m[status][0m
+blocks page.
+Content permissions have been rebuilt.                               [1;32;40m[1m[status][0m
 The configuration options have been saved.                           [1;32;40m[1m[status][0m
-PHPMailer is currently disabled.                                     [1;33;40m[1m[warning][0m
 Command dispatch complete                                               [notice]
 + mkdir -p sites/default/files/
 + chown -R www-data: sites/default/files/
@@ -3696,22 +4742,6 @@ Command dispatch complete                                               [notice]
 + cat
 + cat
 + cat
-+ drush --root=/var/www/lbd --yes pm-enable lbd_layout
-The following extensions will be enabled: lbd_layout, jquery_update
-Do you really want to continue? (y/n): y
-jquery_update was enabled successfully.                              [1;32;40m[1m[ok][0m
-lbd_layout was enabled successfully.                                 [1;32;40m[1m[ok][0m
-+ drush --root=/var/www/lbd --yes features-revert lbd_layout
-Do you really want to revert variable? (y/n): y
-Reverted variable.                                                   [1;32;40m[1m[ok][0m
-+ drush --root=/var/www/lbd --yes pm-enable lbd_content
-The following extensions will be enabled: lbd_content
-Do you really want to continue? (y/n): y
-lbd_content was enabled successfully.                                [1;32;40m[1m[ok][0m
-Imported node 1: Privacy Policy                                      [1;32;40m[1m[status][0m
-Imported node 2: Terms of Service                                    [1;32;40m[1m[status][0m
-2 of 2 nodes were imported.  Some values may have been reset         [1;32;40m[1m[status][0m
-depending on Node export's configuration.
 + drush --root=/var/www/lbd --yes pm-enable lbd_captcha
 The following extensions will be enabled: lbd_captcha, recaptcha_mailhide, recaptcha, honeypot, captcha
 Do you really want to continue? (y/n): y
@@ -3842,18 +4872,21 @@ You are about to execute 'php-script /usr/local/src/labdoo/install/config/gmails
   @local_lbd.lbd
 Continue?  (y/n): y
 chown: cannot access ‘/var/www/lbd*/sites/default/files/css’: No such file or directory
-chown: cannot access ‘/var/www/lbd*/sites/default/files/js’: No such file or directory
-The following extensions will be enabled: lbd_roles
+The following projects have unmet dependencies:                      [1;32;40m[1m[ok][0m
+lbd_roles requires simplenews
+Project simplenews (7.x-1.1) downloaded to                           [1;32;40m[1m[success][0m
+sites/all/modules/simplenews.
+Project simplenews contains 2 modules: simplenews_rules, simplenews.
+The following extensions will be enabled: lbd_roles, simplenews, location
 Do you really want to continue? (y/n): y
 lbd_roles was enabled successfully.                                  [1;32;40m[1m[ok][0m
-The following extensions will be enabled: labdoo_lib, lbd_content_types, labdoo_objects, lbd_communicate, lbd_visualize, lbd_dootrip, lbd_actions, list, entityreference, php, number, location_user, location_search, location_node, location_cck, field_group, email, date_api, date, conditional_fields
+location was enabled successfully.                                   [1;32;40m[1m[ok][0m
+location defines the following permissions: view location directory, view node location table, view user location table, submit latitude/longitude
+simplenews was enabled successfully.                                 [1;32;40m[1m[ok][0m
+simplenews defines the following permissions: administer newsletters, administer simplenews subscriptions, administer simplenews settings, send newsletter, subscribe to newsletters
+The following extensions will be enabled: labdoo_lib, lbd_content_types, labdoo_objects, lbd_communicate, lbd_visualize, lbd_dootrip, lbd_actions, r4032login, node_view_permissions, lightbox2, php, location_user, location_search, location_node, location_cck, email, views_slideshow
 Do you really want to continue? (y/n): y
-conditional_fields was enabled successfully.                         [1;32;40m[1m[ok][0m
-conditional_fields defines the following permissions: administer dependencies
-date was enabled successfully.                                       [1;32;40m[1m[ok][0m
-date_api was enabled successfully.                                   [1;32;40m[1m[ok][0m
 email was enabled successfully.                                      [1;32;40m[1m[ok][0m
-entityreference was enabled successfully.                            [1;32;40m[1m[ok][0m
 labdoo_lib was enabled successfully.                                 [1;32;40m[1m[ok][0m
 labdoo_objects was enabled successfully.                             [1;32;40m[1m[ok][0m
 lbd_actions was enabled successfully.                                [1;32;40m[1m[ok][0m
@@ -3861,26 +4894,24 @@ lbd_communicate was enabled successfully.                            [1;32;40m
 lbd_content_types was enabled successfully.                          [1;32;40m[1m[ok][0m
 lbd_dootrip was enabled successfully.                                [1;32;40m[1m[ok][0m
 lbd_visualize was enabled successfully.                              [1;32;40m[1m[ok][0m
-list was enabled successfully.                                       [1;32;40m[1m[ok][0m
+lightbox2 was enabled successfully.                                  [1;32;40m[1m[ok][0m
+lightbox2 defines the following permissions: administer lightbox2, download original image
 location_cck was enabled successfully.                               [1;32;40m[1m[ok][0m
 location_node was enabled successfully.                              [1;32;40m[1m[ok][0m
 location_search was enabled successfully.                            [1;32;40m[1m[ok][0m
 location_user was enabled successfully.                              [1;32;40m[1m[ok][0m
 location_user defines the following permissions: administer user locations, view own user location, view all user locations, set own user location
-number was enabled successfully.                                     [1;32;40m[1m[ok][0m
+node_view_permissions was enabled successfully.                      [1;32;40m[1m[ok][0m
+node_view_permissions defines the following permissions: view own private_page content, view any private_page content
 php was enabled successfully.                                        [1;32;40m[1m[ok][0m
 php defines the following permissions: use PHP for settings
-field_group was enabled successfully.                                [1;32;40m[1m[ok][0m
-field_group defines the following permissions: administer fieldgroups
-The Date API requires that you set up the site timezone and first day[1;33;40m[1m[warning][0m
-of week settings and the date format settings to function correctly.
+r4032login was enabled successfully.                                 [1;32;40m[1m[ok][0m
+views_slideshow was enabled successfully.                            [1;32;40m[1m[ok][0m
 A PHP code text format has been created.                             [1;32;40m[1m[status][0m
 labdoo_lib enabled correctly                                         [1;32;40m[1m[status][0m
 lbd_visualize enabled correctly                                      [1;32;40m[1m[status][0m
 The following extensions will be disabled: labdoo_lib, lbd_actions, lbd_communicate, lbd_dootrip
 Do you really want to continue? (y/n): y
-array_flip(): Can only flip STRING and INTEGER values! entity.inc:173[1;33;40m[1m[warning][0m
-array_flip(): Can only flip STRING and INTEGER values! entity.inc:350[1;33;40m[1m[warning][0m
 labdoo_lib was disabled successfully.                                [1;32;40m[1m[ok][0m
 lbd_actions was disabled successfully.                               [1;32;40m[1m[ok][0m
 lbd_communicate was disabled successfully.                           [1;32;40m[1m[ok][0m
@@ -3903,41 +4934,50 @@ lbd_sample_edoovillages was enabled successfully.                    [1;32;40m
 lbd_sample_hubs was enabled successfully.                            [1;32;40m[1m[ok][0m
 There was a problem sending an automatic message, please contant     [31;40m[1m[error][0m
 Labdoo at dev-user@labdoo.org
-Imported node 11: Nigeria, Ndoni: To bring laptops and Internet to   [1;32;40m[1m[status][0m
+Imported node 9: Nigeria, Ndoni: To bring laptops and Internet to    [1;32;40m[1m[status][0m
 Saint Agnes School in Ndoni
-Imported node 13: Kenya, Nairobi: Laptops will be used to access     [1;32;40m[1m[status][0m
+Imported node 11: Kenya, Nairobi: Laptops will be used to access     [1;32;40m[1m[status][0m
 electronic resources and e-books to help lower costs
-Imported node 15: Kenya, Nairobi: Library project                    [1;32;40m[1m[status][0m
+Imported node 13: Kenya, Nairobi: Library project                    [1;32;40m[1m[status][0m
 3 of 3 nodes were imported.  Some values may have been reset         [1;32;40m[1m[status][0m
 depending on Node export's configuration.
-Imported node 17: Labdoo Hub Barcelona                               [1;32;40m[1m[status][0m
-Imported node 19: Grassroots                                         [1;32;40m[1m[status][0m
+Imported node 15: Labdoo Hub Barcelona                               [1;32;40m[1m[status][0m
+Imported node 17: Grassroots                                         [1;32;40m[1m[status][0m
 2 of 2 nodes were imported.  Some values may have been reset         [1;32;40m[1m[status][0m
 depending on Node export's configuration.
-Imported node 21: 000000001                                          [1;32;40m[1m[status][0m
-Imported node 23: 000000002                                          [1;32;40m[1m[status][0m
-Imported node 25: 000000003                                          [1;32;40m[1m[status][0m
-Imported node 27: 000000004                                          [1;32;40m[1m[status][0m
-Imported node 29: 000000005                                          [1;32;40m[1m[status][0m
-Imported node 31: 000000006                                          [1;32;40m[1m[status][0m
-Imported node 33: 000000007                                          [1;32;40m[1m[status][0m
-Imported node 35: 000000008                                          [1;32;40m[1m[status][0m
-Imported node 37: 000000009                                          [1;32;40m[1m[status][0m
-Imported node 39: 000000010                                          [1;32;40m[1m[status][0m
+Imported node 19: 000000001                                          [1;32;40m[1m[status][0m
+Imported node 21: 000000002                                          [1;32;40m[1m[status][0m
+Imported node 23: 000000003                                          [1;32;40m[1m[status][0m
+Imported node 25: 000000004                                          [1;32;40m[1m[status][0m
+Imported node 27: 000000005                                          [1;32;40m[1m[status][0m
+Imported node 29: 000000006                                          [1;32;40m[1m[status][0m
+Imported node 31: 000000007                                          [1;32;40m[1m[status][0m
+Imported node 33: 000000008                                          [1;32;40m[1m[status][0m
+Imported node 35: 000000009                                          [1;32;40m[1m[status][0m
+Imported node 37: 000000010                                          [1;32;40m[1m[status][0m
 10 of 10 nodes were imported.  Some values may have been reset       [1;32;40m[1m[status][0m
 depending on Node export's configuration.
-Imported node 41: 1 - Dootrip from London (United Kingdom) to Arusha [1;32;40m[1m[status][0m
+Imported node 39: 1 - Dootrip from London (United Kingdom) to Arusha [1;32;40m[1m[status][0m
 (Tanzania)
-Imported node 43: 2 - Dootrip from New York (United States) to       [1;32;40m[1m[status][0m
+Imported node 41: 2 - Dootrip from New York (United States) to       [1;32;40m[1m[status][0m
 Nairobi (Kenya)
-Imported node 45: Dootrip from New York (United States) to Bangkok   [1;32;40m[1m[status][0m
+Imported node 43: Dootrip from New York (United States) to Bangkok   [1;32;40m[1m[status][0m
 (Thailand) was created
-Imported node 46: 3 - Dootrip from Barcelona (Spain) to Buenos Aires [1;32;40m[1m[status][0m
+Imported node 44: 3 - Dootrip from Barcelona (Spain) to Buenos Aires [1;32;40m[1m[status][0m
 (Argentina)
 4 of 4 nodes were imported.  Some values may have been reset         [1;32;40m[1m[status][0m
 depending on Node export's configuration.
-The following extensions will be enabled: lbd_gmap
+WD filter: Missing text format: filtered_html.                       [31;40m[1m[error][0m
+WD filter: Missing text format: filtered_html.                       [31;40m[1m[error][0m
+WD filter: Missing text format: filtered_html.                       [31;40m[1m[error][0m
+WD filter: Missing text format: filtered_html.                       [31;40m[1m[error][0m
+WD filter: Missing text format: filtered_html.                       [31;40m[1m[error][0m
+WD filter: Missing text format: filtered_html.                       [31;40m[1m[error][0m
+The following extensions will be enabled: lbd_gmap, gmap, gmap_location
 Do you really want to continue? (y/n): y
+gmap was enabled successfully.                                       [1;32;40m[1m[ok][0m
+gmap_location was enabled successfully.                              [1;32;40m[1m[ok][0m
+gmap_location defines the following permissions: view node map, view user map, view user location details
 lbd_gmap was enabled successfully.                                   [1;32;40m[1m[ok][0m
 
 ===> Enabled gmap module. If markers don't show up, please refresh their cache by going to admin/config/services/gmap and clicking on "Regenerate"
@@ -3950,8 +4990,6 @@ The following extensions will be enabled: lbd_menus
 Do you really want to continue? (y/n): y
 lbd_menus was enabled successfully.                                  [1;32;40m[1m[ok][0m
 'all' cache was cleared.                                             [1;32;40m[1m[success][0m
-chown: cannot access ‘/var/www/lbd*/sites/default/files/css’: No such file or directory
-chown: cannot access ‘/var/www/lbd*/sites/default/files/js’: No such file or directory
 + /usr/local/src/labdoo/dev/clone.sh lbd lbd_dev
 
 You will destroy data in lbd_dev and replace with data from lbd.
@@ -3969,8 +5007,6 @@ mysql: started
 apache2: ERROR (not running)
 apache2: started
 + drush @lbd_dev user-create user1 --password=pass1 --mail=user1@example.org
-chown: cannot access ‘/var/www/lbd*/sites/default/files/css’: No such file or directory
-chown: cannot access ‘/var/www/lbd*/sites/default/files/js’: No such file or directory
 + template_init=Labdoo-2.0/install/init.sh
 + init_script=/etc/init.d/chroot-lbd
 + chroot_dir=/var/chroot/lbd
@@ -4004,11 +5040,12 @@ update-rc.d: see <http://wiki.debian.org/LSBInitScripts>
    /etc/rc5.d/K80chroot-lbd -> ../init.d/chroot-lbd
 + /etc/init.d/chroot-lbd stop
 Stopping supervisor: supervisord.
-ls: cannot access /proc/16740/root: No such file or directory
+ls: cannot access /proc/22135/root: No such file or directory
+ls: cannot access /proc/22137/root: No such file or directory
 umount: /var/chroot/lbd/dev/pts: not mounted
 umount: /var/chroot/lbd/sys: not mounted
 umount: /var/chroot/lbd/dev: not mounted
 + test true = true
 + reboot
-3074.42user 1104.77system 1:46:54elapsed 65%CPU (0avgtext+0avgdata 61612maxresident)k
-732288inputs+4023056outputs (2762major+11697384minor)pagefaults 0swaps
+3132.56user 316.63system 1:30:24elapsed 63%CPU (0avgtext+0avgdata 122268maxresident)k
+1199472inputs+4735152outputs (9940major+14154150minor)pagefaults 0swaps
