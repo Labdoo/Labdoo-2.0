@@ -25,14 +25,8 @@ libraries[bootstrap][download][url] = https://github.com/twbs/bootstrap/archive/
 ;;; Extensions
 projects[xautoload] = 4.5
 projects[rules] = 2.7
-
-; ;;; User interface
-; projects[context] = 3.2
-; projects[homebox] = 2.0-beta7
-; projects[boxes] = 1.2
-; projects[edit_profile] = 1.0-beta2
-
 projects[wysiwyg] = 2.2
+projects[simplenews] = 1.1
 
 libraries[tinymce][directory_name] = tinymce
 libraries[tinymce][download][type] = get
