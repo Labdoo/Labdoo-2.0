@@ -74,6 +74,14 @@ print("<br>");
 
 ?>';
 $handler->display->display_options['header']['area']['format'] = 'php_code';
+/* No results behavior: Global: Text area */
+$handler->display->display_options['empty']['area']['id'] = 'area';
+$handler->display->display_options['empty']['area']['table'] = 'views';
+$handler->display->display_options['empty']['area']['field'] = 'area';
+$handler->display->display_options['empty']['area']['label'] = 'Slider dashboard - no results';
+$handler->display->display_options['empty']['area']['empty'] = TRUE;
+$handler->display->display_options['empty']['area']['content'] = 'There are no results to show';
+$handler->display->display_options['empty']['area']['format'] = 'filtered_html';
 /* Field: Content: Tab */
 $handler->display->display_options['fields']['field_slider_tab']['id'] = 'field_slider_tab';
 $handler->display->display_options['fields']['field_slider_tab']['table'] = 'field_data_field_slider_tab';
@@ -246,6 +254,15 @@ $handler->display->display_options['defaults']['style_options'] = FALSE;
 $handler->display->display_options['defaults']['row_plugin'] = FALSE;
 $handler->display->display_options['defaults']['row_options'] = FALSE;
 $handler->display->display_options['defaults']['header'] = FALSE;
+$handler->display->display_options['defaults']['empty'] = FALSE;
+/* No results behavior: Global: Text area */
+$handler->display->display_options['empty']['area']['id'] = 'area';
+$handler->display->display_options['empty']['area']['table'] = 'views';
+$handler->display->display_options['empty']['area']['field'] = 'area';
+$handler->display->display_options['empty']['area']['label'] = 'Slider dashboard - no results';
+$handler->display->display_options['empty']['area']['empty'] = TRUE;
+$handler->display->display_options['empty']['area']['content'] = 'There are no results to show ';
+$handler->display->display_options['empty']['area']['format'] = 'filtered_html';
 $handler->display->display_options['defaults']['fields'] = FALSE;
 /* Field: Content: Title */
 $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -278,17 +295,17 @@ $handler->display->display_options['sorts']['created']['table'] = 'node';
 $handler->display->display_options['sorts']['created']['field'] = 'created';
 $handler->display->display_options['sorts']['created']['order'] = 'DESC';
 $handler->display->display_options['defaults']['arguments'] = FALSE;
-/* Contextual filter: Content: Edoovillage destination (field_edoovillage_destination) */
-$handler->display->display_options['arguments']['field_edoovillage_destination_target_id']['id'] = 'field_edoovillage_destination_target_id';
-$handler->display->display_options['arguments']['field_edoovillage_destination_target_id']['table'] = 'field_data_field_edoovillage_destination';
-$handler->display->display_options['arguments']['field_edoovillage_destination_target_id']['field'] = 'field_edoovillage_destination_target_id';
-$handler->display->display_options['arguments']['field_edoovillage_destination_target_id']['default_action'] = 'default';
-$handler->display->display_options['arguments']['field_edoovillage_destination_target_id']['default_argument_type'] = 'php';
-$handler->display->display_options['arguments']['field_edoovillage_destination_target_id']['default_argument_options']['code'] = 'if(!empty($_GET[\'h\']))
+/* Contextual filter: Content: Source group (field_hub_laptop) */
+$handler->display->display_options['arguments']['field_hub_laptop_target_id']['id'] = 'field_hub_laptop_target_id';
+$handler->display->display_options['arguments']['field_hub_laptop_target_id']['table'] = 'field_data_field_hub_laptop';
+$handler->display->display_options['arguments']['field_hub_laptop_target_id']['field'] = 'field_hub_laptop_target_id';
+$handler->display->display_options['arguments']['field_hub_laptop_target_id']['default_action'] = 'default';
+$handler->display->display_options['arguments']['field_hub_laptop_target_id']['default_argument_type'] = 'php';
+$handler->display->display_options['arguments']['field_hub_laptop_target_id']['default_argument_options']['code'] = 'if(!empty($_GET[\'h\']))
   return($_GET[\'h\']);';
-$handler->display->display_options['arguments']['field_edoovillage_destination_target_id']['summary']['number_of_records'] = '0';
-$handler->display->display_options['arguments']['field_edoovillage_destination_target_id']['summary']['format'] = 'default_summary';
-$handler->display->display_options['arguments']['field_edoovillage_destination_target_id']['summary_options']['items_per_page'] = '25';
+$handler->display->display_options['arguments']['field_hub_laptop_target_id']['summary']['number_of_records'] = '0';
+$handler->display->display_options['arguments']['field_hub_laptop_target_id']['summary']['format'] = 'default_summary';
+$handler->display->display_options['arguments']['field_hub_laptop_target_id']['summary_options']['items_per_page'] = '25';
 $handler->display->display_options['defaults']['filter_groups'] = FALSE;
 $handler->display->display_options['defaults']['filters'] = FALSE;
 /* Filter criterion: Content: Published */
@@ -548,6 +565,8 @@ print(labdoo_render_edoovillage_header(11));
 print("<br>");
 
 ?>'),
+  t('Slider dashboard - no results'),
+  t('There are no results to show'),
   t('<div id="slider_edoovillage_body">
 [body]
 </div>'),
@@ -566,6 +585,7 @@ print("<br>");
   t('‹ previous'),
   t('next ›'),
   t('last »'),
+  t('There are no results to show '),
   t('Dooject ID'),
   t('Country'),
   t('Status'),
