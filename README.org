@@ -61,6 +61,16 @@
   Then to stop and start Labdoo you do: =docker.io stop lbd= and =docker.io start lbd=.
 
 
+** Building with docker
+
+   Another way is to use the command =docker build= to build an image
+   and then =docker run= to create a container from this image:
+   #+BEGIN_EXAMPLE
+   vim labdoo/install/settings.sh
+   docker.io build --tag=labdoo labdoo/
+   docker.io run -d --name=lbd --hostname=example.org -p 80:80 -p 443:443 labdoo
+   #+END_EXAMPLE
+
 * Documentation
 
   - Internal doc files:

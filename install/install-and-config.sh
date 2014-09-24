@@ -5,10 +5,6 @@ sed -i /etc/hosts \
     -e "/^127.0.0.1/c 127.0.0.1 example.org localhost"
 hostname example.org
 
-### export drupal_dir
-export drupal_dir=/var/www/lbd
-export drush="drush --root=$drupal_dir"
-
 ### go to the directory of scripts
 cd $code_dir/install/scripts/
 
@@ -16,6 +12,8 @@ cd $code_dir/install/scripts/
 ./packages-and-software.sh
 
 ### make and install the drupal profile 'labdoo'
+export drupal_dir=/var/www/lbd
+export drush="drush --root=$drupal_dir"
 ./drupal-make-and-install.sh
 
 ### additional configurations related to drupal
