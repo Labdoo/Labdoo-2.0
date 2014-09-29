@@ -12,7 +12,7 @@ $(dirname $0)/mysqld.sh start
 drush @lbd $enOrDis -y lbd_roles
 
 drush @lbd $enOrDis -y labdoo_lib lbd_content_types labdoo_objects lbd_communicate\
-                       lbd_visualize lbd_dootrip lbd_actions 
+                       lbd_dootrip lbd_actions 
 
 # FIXME: Somehow labdoo_lib needs a reinstall (so that the nodes created by labdoo_lib.install are correct) 
 # Remember to enable back labdoo_lib and all the libraries installed so far that depend on it
@@ -40,6 +40,8 @@ drush @lbd $enOrDis -y lbd_blocks_views
 drush @lbd cc all
 
 drush @lbd $enOrDis -y lbd_menus 
+
+drush @lbd $enOrDis -y lbd_visualize
 
 # Finally, clear the cache to get things to a proper initial state
 drush @lbd cc all

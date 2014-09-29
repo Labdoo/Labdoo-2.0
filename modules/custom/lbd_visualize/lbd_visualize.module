@@ -40,11 +40,12 @@
  * @param hubId Identifier of a hub or NULL for all hubs 
  * @param edoovillageId Identifier of the edoovillage or NULL for all edoovillages
  * @param country Country in which the doojects reside or NULL for all countries 
+ * @param switcher If TRUE, display the switcher; otherwise, don't display it
  *
  * @return A dashboard of the doojects 
  *
  */
-function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovillageId = NULL, $country = NULL) {
+function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovillageId = NULL, $country = NULL, $switcher = TRUE) {
 
   $possibleStates = array('S0', 'S1', 'S2',  'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S9', 'T1', 'T2');
 
@@ -198,7 +199,8 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
 
   }
 
-  print_dashboard_switcher($userId);
+  if($switcher)
+    print_dashboard_switcher($userId);
   print_dashboard_objects('laptop', 'doojects', $objects, $metrics, $selectedNids);
 
 }
@@ -207,13 +209,15 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
 /**
  * Displays a dashboard of edoovillages
  * 
+ * @param userId Identifier of the user or NULL for all users
  * @param hubId Identifier of a hub or NULL for all hubs 
  * @param country Country in which the edoovillages reside or NULL for all countries 
+ * @param switcher If TRUE, display the switcher; otherwise, don't display it
  *
  * @return A dashboard of the edoovillages 
  *
  */
-function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $country = NULL) {
+function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $country = NULL, $switcher = TRUE) {
 
   $numberOfQueries = 1;
   $queryAll = "(SELECT entity_id FROM field_data_field_edoovillage_status)";
@@ -223,7 +227,7 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
   if($hubId != NULL) 
   {
     $queryHub = "(SELECT entity_id FROM field_data_field_hub WHERE (field_hub_target_id=:hid))";
-    $query = $query . " UNION ALL " . $queryUser;
+    $query = $query . " UNION ALL " . $queryHub;
     $placeHolders[':hid'] = $hubId;
     $numberOfQueries++;
   }
@@ -356,7 +360,8 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
   $metrics[9] = array('label' => 'Completed', 'field' => 'completed', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
   $metrics[10] = array('label' => 'Open', 'field' => 'open', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
 
-  print_dashboard_switcher($userId);
+  if($switcher)
+    print_dashboard_switcher($userId);
   print_dashboard_objects('edoovillage', 'edoovillages', $objects, $metrics, $selectedNids);
 
 }
@@ -365,12 +370,14 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
 /**
  * Displays a dashboard of hubs
  * 
+ * @param userId Identifier of the user or NULL for all users
  * @param country Country in which the hubs reside or NULL for all countries 
+ * @param switcher If TRUE, display the switcher; otherwise, don't display it
  *
  * @return A dashboard of the edoovillages 
  *
  */
-function lbd_display_dashboard_hubs($userId = NULL, $country = NULL) {
+function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher = TRUE) {
 
   $numberOfQueries = 1;
   $queryAll = "(SELECT entity_id FROM field_data_field_hub_manager_s_)";
@@ -494,7 +501,8 @@ function lbd_display_dashboard_hubs($userId = NULL, $country = NULL) {
   $metrics[7] = array('label' => 'Delivered', 'field' => 'delivered', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
   $metrics[8] = array('label' => 'Remaining', 'field' => 'remainingShared', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
 
-  print_dashboard_switcher($userId);
+  if($switcher)
+    print_dashboard_switcher($userId);
   print_dashboard_objects('hub', 'hubs', $objects, $metrics, $selectedNids);
 
 }
@@ -503,12 +511,14 @@ function lbd_display_dashboard_hubs($userId = NULL, $country = NULL) {
 /**
  * Displays a dashboard of dootrips
  * 
+ * @param userId Identifier of the user or NULL for all users
  * @param country Country where the dootrips are terminated or NULL for all countries 
+ * @param switcher If TRUE, display the switcher; otherwise, don't display it
  *
  * @return A dashboard of the dootrips 
  *
  */
-function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL) {
+function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL, $switcher = TRUE) {
 
   $numberOfQueries = 1;
   $queryAll = "(SELECT entity_id FROM field_data_field_destination_of_the_trip)";
@@ -611,7 +621,8 @@ function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL) {
   $metrics[5] = array('label' => 'Total number of dootrips', 'field' => 'numberDootrips', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
   $metrics[6] = array('label' => 'Doojects transported', 'field' => 'completed', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
 
-  print_dashboard_switcher($userId);
+  if($switcher)
+    print_dashboard_switcher($userId);
   print_dashboard_objects('dootrip', 'dootrips', $objects, $metrics, $selectedNids);
 
 }
@@ -819,7 +830,7 @@ var table = new google.visualization.ChartWrapper({
                 'allowHtml': true, 
                 'showRowNumber': true,
                 'page': 'enable',
-                'pageSize' : 50,
+                'pageSize' : 25,
                 'sortColumn' : 0,
                 'sortAscending' : false
               },
@@ -975,6 +986,9 @@ geomap.draw(dataMap, options);
  */
 var columnChart = new google.visualization.ChartWrapper({
                     'chartType': 'ColumnChart',
+                    'options': {
+                      'colors': ['#0099C6', '#3366CC', '#66AA00', '#109618', '#FF9900', '#E67300', '#DC3912', 'gray'],
+                    },
                     'containerId': 'chartColumns',
                     'dataTable' : google.visualization.data.group(data, [$lastElement],
                     [
@@ -1146,5 +1160,199 @@ google.setOnLoadCallback(drawVisualization);
 
 ");
 
+}
+
+
+/**
+ * Displays the edoovillage data slider
+ * 
+ * @param edoovillageId Identifier of the edoovillage 
+ *
+ * @return The edoovillage data slider 
+ *
+ */
+function lbd_display_slider_edoovilage_data($edoovillageId = NULL) {
+
+  if($edoovillageId == NULL) 
+    return;
+  $loadedNode = node_load($edoovillageId);
+  if($loadedNode == FALSE)
+    return;
+  if($loadedNode->type != "edoovillage")
+    return;
+
+  $viewedNode = node_view($loadedNode);
+  print(labdoo_render_map_geolocate_node($edoovillageId, True, "map-slider-edoovilage-data"));
+  print(drupal_render($viewedNode));
+
+  return;
+}
+
+
+/**
+
+ * Displays the edoovillage "check doojects" slider
+ * 
+ * @param edoovillageId Identifier of the edoovillage 
+ *
+ * @return The edoovillage "check doojects" slider 
+ *
+ */
+function lbd_display_slider_edoovilage_doojects($edoovillageId = NULL) {
+
+  if($edoovillageId == NULL) 
+    return;
+  $loadedNode = node_load($edoovillageId);
+  if($loadedNode == FALSE)
+    return;
+  if($loadedNode->type != "edoovillage")
+    return;
+
+  $block = module_invoke('views', 'block_view', 'slider_dashboard-block_edoovillage_doojects');
+  print($block["content"]["#markup"]);
+
+  return;
+}
+
+
+/**
+ * Displays the edoovillage metrics slider
+ * 
+ * @param edoovillageId Identifier of the edoovillage 
+ *
+ * @return The edoovillage metrics slider 
+ *
+ */
+function lbd_display_slider_edoovilage_metrics($edoovillageId) {
+
+  if($edoovillageId == NULL) 
+    return;
+  $loadedNode = node_load($edoovillageId);
+  if($loadedNode == FALSE)
+    return;
+  if($loadedNode->type != "edoovillage")
+    return;
+
+  lbd_display_dashboard_doojects(NULL, NULL, $edoovillageId, NULL, FALSE); 
+
+  return;
+}
+
+
+/**
+ * Displays the edoovillage GICs slider
+ * 
+ * @param edoovillageId Identifier of the edoovillage 
+ *
+ * @return The edoovillage GICs slider 
+ *
+ */
+function lbd_display_slider_edoovilage_gics($edoovillageId) {
+
+  return;
+}
+
+
+/**
+ * Displays the hub data slider
+ * 
+ * @param hubId Identifier of the hub
+ *
+ * @return The hub data slider 
+ *
+ */
+function lbd_display_slider_hub_data($hubId) {
+
+  if($hubId == NULL) 
+    return;
+  $loadedNode = node_load($hubId);
+  if($loadedNode == FALSE)
+    return;
+  if($loadedNode->type != "hub")
+    return;
+
+  $viewedNode = node_view($loadedNode);
+  print(labdoo_render_map_geolocate_node($hubId, False, "map-slider-hub-data"));
+  print(drupal_render($viewedNode));
+
+  return;
+}
+
+
+/**
+ * Displays the hub edoovillages slider
+ * 
+ * @param hubId Identifier of the hub
+ *
+ * @return The hub edoovillages slider 
+ *
+ */
+function lbd_display_slider_hub_edoovillages($hubId) {
+
+  if($hubId == NULL) 
+    return;
+  $loadedNode = node_load($hubId);
+  if($loadedNode == FALSE)
+    return;
+  if($loadedNode->type != "hub")
+    return;
+
+  $block = module_invoke('views', 'block_view', 'slider_dashboard-block_hub_edoovillages');
+  // The following line of code should be a "print render ($block);" statement.
+  // However, doing so generates a bunch of unharming PHP warnings. It is difficult
+  //  to debug that as it could come from any 3rd party module. Instead, to avoid
+  // the warnings (which also consume unnecessary cycles), since we just need
+  // the first part of the array, we just generate our own print statement.
+  print($block["content"]["#markup"]);
+
+  return;
+}
+
+
+/**
+ * Displays the hub doojects slider
+ * 
+ * @param hubId Identifier of the hub
+ *
+ * @return The hub doojects slider 
+ *
+ */
+function lbd_display_slider_hub_doojects($hubId) {
+
+  if($hubId == NULL) 
+    return;
+  $loadedNode = node_load($hubId);
+  if($loadedNode == FALSE)
+    return;
+  if($loadedNode->type != "hub")
+    return;
+
+  $block = module_invoke('views', 'block_view', 'slider_dashboard-block_hub_doojects');
+  print($block["content"]["#markup"]);
+
+  return;
+}
+
+
+/**
+ * Displays the hub metrics slider
+ * 
+ * @param hubId Identifier of the hub
+ *
+ * @return The hub metrics slider 
+ *
+ */
+function lbd_display_slider_hub_metrics($hubId) {
+
+  if($hubId == NULL) 
+    return;
+  $loadedNode = node_load($hubId);
+  if($loadedNode == FALSE)
+    return;
+  if($loadedNode->type != "hub")
+    return;
+
+  lbd_display_dashboard_edoovillages(NULL, $hubId, NULL, FALSE);
+  return;
 }
 

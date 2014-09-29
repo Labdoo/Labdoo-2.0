@@ -46,6 +46,10 @@ function lbd_blocks_views_views_default_views() {
   include 'lbd_blocks_views_actions.inc';
   $views[$view->name] = $view;
 
+  // Slider dashboard view
+  include 'lbd_blocks_views_slider_dashboard.inc';
+  $views[$view->name] = $view;
+
   // Newsletters view
   include 'lbd_blocks_views_newsletters.inc';
   $views[$view->name] = $view;

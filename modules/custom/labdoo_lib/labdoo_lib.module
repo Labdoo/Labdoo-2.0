@@ -127,22 +127,32 @@ function labdoo_lookup_coordinates($country, $city, &$lat, &$lon) {
 /**
  * Renders a map geolocating the node where this function is invoked from
  *
+ * @param int $nodeId The identifier of a node
+ * @param boolean $displayDoojects If true, display doojects associated with node
+ * @param string $divId The identifier of the div tag
+ *
+ * @return map Returns a map that can be rendered 
+ *
  */
-function labdoo_render_map_geolocate_node() {
+function labdoo_render_map_geolocate_node($nodeId = NULL, $displayDoojects = False, $divId = "map-geolocate-node") {
 
-  // Make sure this is called from a valid node
-  if ((arg(0) != 'node') || !is_numeric(arg(1))) 
+  if($nodeId == NULL) {
+    // Make sure this is called from a valid node
+    if ((arg(0) != 'node') || !is_numeric(arg(1))) 
+      return;
+    $nodeId = arg(1);
+  }
+
+  $node = node_load($nodeId);
+  if($node == FALSE)
     return;
-
-  $node = node_load(arg(1));
 
   // Accept only certain types of content types
   $types = array('laptop' => 1,'dootrip' => 1,'hub' => 1, 'edoovillage' => 1) ;
   if(!isset($types[$node->type]))
     return;
 
-  $div_id = 'map-geolocate-node'; 
-  $map_style = 'height:200px;'; 
+  $map_style = 'height:200px; width:1170px'; 
   $map_options = '{"mapTypeId":"roadmap", "zoom":10}';
   $marker_color = NULL; 
   $visitor_marker = FALSE;
@@ -151,10 +161,11 @@ function labdoo_render_map_geolocate_node() {
 
   if($node->type != 'dootrip') {
     $locations = array();
-    $locations[0] = new stdClass();
 
+    $locations[0] = new stdClass();
     $locations[0]->latitude = $node->locations[0]['latitude'];
     $locations[0]->longitude = $node->locations[0]['longitude']; 
+
     if($node->type == 'laptop') {
       $locations[0]->balloon_text = "Dooject ID: $node->title";
     }
@@ -167,6 +178,25 @@ function labdoo_render_map_geolocate_node() {
       $nodeCity = $node->locations[0]['city'];
       $nodeCountry = labdoo_country_code2name($node->locations[0]['country']);
       $locations[0]->balloon_text = "Hub: $nodeCity, $nodeCountry";
+    }
+
+    if($node->type == 'edoovillage' && $displayDoojects) {
+      $query = "SELECT entity_id FROM field_data_field_edoovillage_destination WHERE (field_edoovillage_destination_target_id=:eid)";
+      $placeHolders[':eid'] = $nodeId; 
+      $result = db_query($query, $placeHolders);
+      $i = 1;
+      foreach($result as $item) {
+        $nodeDooject = node_load($item->entity_id);
+        $locations[$i] = new stdClass();
+        $doojectLat = $nodeDooject->locations[0]['latitude'];
+        $doojectLat = strval(floatval($doojectLat)+rand(-500,500)/10000000);
+        $locations[$i]->latitude = $doojectLat;
+        $doojectLon = $nodeDooject->locations[0]['longitude'];
+        $doojectLon = strval(floatval($doojectLon)+rand(-500,500)/10000000);
+        $locations[$i]->longitude = $doojectLon;
+        $locations[$i]->balloon_text = "Dooject ID: $nodeDooject->title";
+        $i = $i + 1;
+      }
     }
   }
   else { // It's a dootrip
@@ -186,13 +216,13 @@ function labdoo_render_map_geolocate_node() {
       return;
     $locations[1]->balloon_text = "Dootrip destination: " . str_replace('%20', ' ', $dstCity) . ", $dstCountryLong";
 
-    $map_style = 'height:400px;'; 
+    $map_style = 'height:400px; width:1170px'; 
     $map_options = '{"mapTypeId":"roadmap", "zoom":2}';
   }
 
-  return ip_geoloc_output_map_multi_location($locations, $div_id, $map_options, $map_style, 
-                                            $marker_color, $visitor_marker, 
-                                            $center_option, $center_latlng, FALSE);
+  return ip_geoloc_output_map_multi_location($locations, $divId, $map_options, $map_style, 
+                                             $marker_color, $visitor_marker, 
+                                             $center_option, $center_latlng, FALSE);
 }
 
 
@@ -321,16 +351,20 @@ function labdoo_render_dooject_header() {
  * Renders an edoovillage header
  *
  */
-function labdoo_render_edoovillage_header() {
+function labdoo_render_edoovillage_header($nodeId = NULL) {
   global $user;
 
-  $htmlCode = "";
+  if($nodeId == NULL) {
+    if ((arg(0) != 'node') || !is_numeric(arg(1))) 
+      return;
+    $nodeId = arg(1);
+  }
 
-  if ((arg(0) != 'node') || !is_numeric(arg(1))) 
+  $nodeObj = node_load($nodeId);
+  if($nodeObj == FALSE)
     return;
 
-  $nodeObj = node_load(arg(1));
-  $nodeId = $nodeObj->nid;
+  $htmlCode = "";
 
   // Accept only edoovillages 
   $types = array('edoovillage' => 1) ;
@@ -349,8 +383,9 @@ function labdoo_render_edoovillage_header() {
   // Next cell
   $htmlCode = $htmlCode . '</td><td>';
 
+  // FIXME: should this be user_preferred_language?
   $langCode = user_preferred_language($user)->language;
-  if(!file_exists(dirname(__FILE__) . "/laptop_tagged_subject-" . $langCode . ".email"))
+  if(!file_exists(dirname(__FILE__) . "/../../../files/pictures/semaphore-red-" . $langCode . ".png"))
     $langCode = 'en';
 
   // Semaphore
@@ -929,6 +964,9 @@ ID: '.$laptopid.'
  *
  * @param doojectObject The dooject object 
  * @param userObject The user object 
+ *
+ * @return boolean Returns true if the dooject is followed by the user, false otherwise
+ *
  */
 function labdoo_is_dooject_followed($doojectObject, $userObject) {
 
