@@ -117,6 +117,8 @@ function labdoo_lookup_coordinates($country, $city, &$lat, &$lon) {
       return -1;
     }
     $mapQueryDecoded = drupal_json_decode($mapQuery->data);
+    if(!isset($mapQueryDecoded['results'][0]))
+      return 0;
     $coordinates = $mapQueryDecoded['results'][0]['geometry']['location'];
     $lat = $coordinates['lat'];
     $lon = $coordinates['lng']; 
@@ -505,9 +507,11 @@ function labdoo_lib_node_update($node) {
       //      just like we are doing with other fields.
       //      For now we leave it here as an example of an alternative technique.
       register_shutdown_function('_update_dooject_location_from_edoovillage', $node);
-      drupal_set_message(t('The location of this dooject has been automatically assigned to the location of its edoovillage.'));
+      if($oldNode)
+        drupal_set_message(t('The location of dooject ' . $oldNode->title . ' has been automatically assigned to the location of its edoovillage.'));
+      else
+        drupal_set_message(t('The location of this dooject has been automatically assigned to the location of its edoovillage.'));
     }
-
   }
 
   return;

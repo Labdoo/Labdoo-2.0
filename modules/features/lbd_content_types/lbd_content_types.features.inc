@@ -27,6 +27,14 @@ function lbd_content_types_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'gic' => array(
+      'name' => t('GIC'),
+      'base' => 'node_content',
+      'description' => t('GIC nodes are created every time someone submits a GIC table. GIC nodes are snapshots of these GIC table submissions that are used to track changes in an edoovillage\'s inventory.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'private_page' => array(
       'name' => t('Private page'),
       'base' => 'node_content',

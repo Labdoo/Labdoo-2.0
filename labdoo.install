@@ -17,9 +17,6 @@ function labdoo_install() {
   features_rebuild();
   features_revert();
 
-  // General settings
-  variable_set('site_frontpage', 'actions'); 
-
   // user settings
   variable_set('user_register', USER_REGISTER_VISITORS);
   variable_set('user_email_verification', FALSE);

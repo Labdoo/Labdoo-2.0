@@ -231,10 +231,9 @@ function _create_activity_node($actionType, $title, $body, $location, $streamIt,
   $node->type = 'action';
   node_object_prepare($node);
 
-  $node->field_action_type['und'][0]['value'] = $actionType;
-  
   $node->title = $title;
   $node->language = LANGUAGE_NONE;
+  $node->field_action_type[$node->language][0]['value'] = $actionType;
 
   $node->locations[0]['city'] = $location['city'];
   $node->locations[0]['country'] = $location['country'];
@@ -249,9 +248,9 @@ function _create_activity_node($actionType, $title, $body, $location, $streamIt,
   $node->body[$node->language][0]['format']  = 'full_html';
 
   if($streamIt)
-    $node->field_stream_it['und'][0]['value'] = 1;
+    $node->field_stream_it[$node->language][0]['value'] = 1;
   else
-    $node->field_stream_it['und'][0]['value'] = 0;
+    $node->field_stream_it[$node->language][0]['value'] = 0;
 
   $node->field_labdooer_action[$node->language][] = array(
     'target_id' => $user->uid,
