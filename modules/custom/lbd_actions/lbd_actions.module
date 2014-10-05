@@ -231,10 +231,9 @@ function _create_activity_node($actionType, $title, $body, $location, $streamIt,
   $node->type = 'action';
   node_object_prepare($node);
 
-  $node->field_action_type['und'][0]['value'] = $actionType;
-  
   $node->title = $title;
   $node->language = LANGUAGE_NONE;
+  $node->field_action_type[$node->language][0]['value'] = $actionType;
 
   $node->locations[0]['city'] = $location['city'];
   $node->locations[0]['country'] = $location['country'];
@@ -249,9 +248,9 @@ function _create_activity_node($actionType, $title, $body, $location, $streamIt,
   $node->body[$node->language][0]['format']  = 'full_html';
 
   if($streamIt)
-    $node->field_stream_it['und'][0]['value'] = 1;
+    $node->field_stream_it[$node->language][0]['value'] = 1;
   else
-    $node->field_stream_it['und'][0]['value'] = 0;
+    $node->field_stream_it[$node->language][0]['value'] = 0;
 
   $node->field_labdooer_action[$node->language][] = array(
     'target_id' => $user->uid,
@@ -450,15 +449,15 @@ function lbd_actions_node_view($node, $view_mode) {
     $reason = lbd_actions_user_contributes_dooject($userId, $node);
 
     if($reason == "manager") {
-      drupal_set_message(t("You are this dooject's manager."));
+      drupal_set_message(t("You are this dooject's manager."), 'status', FALSE);
       return;
     }
     else if($reason == "tagger") {
-      drupal_set_message(t("You have contributed to this dooject by tagging it."));
+      drupal_set_message(t("You have contributed to this dooject by tagging it."), 'status', FALSE);
       return;
     }
     else if($reason == "dootrip") {
-      drupal_set_message(t("You have contributed to this dooject by providing a dootrip."));
+      drupal_set_message(t("You have contributed to this dooject by providing a dootrip.", 'status', FALSE));
       return;
     }
     return;
@@ -469,11 +468,11 @@ function lbd_actions_node_view($node, $view_mode) {
     $reason = lbd_actions_user_contributes_dootrip($userId, $node);
 
     if($reason == "dootripper") {
-      drupal_set_message(t("You are a traveler in this dootrip."));
+      drupal_set_message(t("You are a traveler in this dootrip."), 'status', FALSE);
       return;
     }
     else if($reason == "dooject") {
-      drupal_set_message(t("You have contributed to a dooject that is transported by this dootrip."));
+      drupal_set_message(t("You have contributed to a dooject that is transported by this dootrip."), 'status', FALSE);
       return;
     }
 
@@ -485,15 +484,15 @@ function lbd_actions_node_view($node, $view_mode) {
     $reason = lbd_actions_user_contributes_edoovillage($userId, $node);
 
     if($reason == "manager") {
-      drupal_set_message(t("You are a manager of this edoovillage."));
+      drupal_set_message(t("You are a manager of this edoovillage."), 'status', FALSE);
       return;
     }
     else if($reason == "dooject") {
-      drupal_set_message(t("You have contributed to this edoovillage with at least one dooject."));
+      drupal_set_message(t("You have contributed to this edoovillage with at least one dooject."), 'status', FALSE);
       return;
     }
     else if($reason == "dootrip") {
-      drupal_set_message(t("You have contributed to this edoovillage by at least providing one dootrip."));
+      drupal_set_message(t("You have contributed to this edoovillage by at least providing one dootrip."), 'status', FALSE);
       return;
     }
     return;
@@ -504,15 +503,15 @@ function lbd_actions_node_view($node, $view_mode) {
     $reason = lbd_actions_user_contributes_hub($userId, $node);
 
     if($reason == "manager") {
-      drupal_set_message(t("You are a manager of this hub."));
+      drupal_set_message(t("You are a manager of this hub."), 'status', FALSE);
       return;
     }
     else if($reason == "dooject") {
-      drupal_set_message(t("You have contributed to this hub with at least one dooject."));
+      drupal_set_message(t("You have contributed to this hub with at least one dooject.", 'status', FALSE));
       return;
     }
     else if($reason == "dootrip") {
-      drupal_set_message(t("You have contributed to this hub by at least providing one dootrip."));
+      drupal_set_message(t("You have contributed to this hub by at least providing one dootrip."), 'status', FALSE);
       return;
     }
     return;

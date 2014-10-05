@@ -1249,6 +1249,17 @@ function lbd_display_slider_edoovilage_metrics($edoovillageId) {
  */
 function lbd_display_slider_edoovilage_gics($edoovillageId) {
 
+  if($edoovillageId == NULL) 
+    return;
+  $loadedNode = node_load($edoovillageId);
+  if($loadedNode == FALSE)
+    return;
+  if($loadedNode->type != "edoovillage")
+    return;
+
+  $formGics = drupal_get_form('gic_table', $edoovillageId); 
+  print(drupal_render($formGics)); 
+
   return;
 }
 

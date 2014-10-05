@@ -102,8 +102,13 @@ function lbd_delete_follow_dooject_node()
  */
 function labdoo_lib_enable()
 {
+  // Create some initial basic nodes
   lbd_create_tag_dooject_node(); 
   lbd_create_follow_dooject_node();
+
+  // Set some initial basic variables
+  variable_set('site_frontpage', 'actions'); 
+
   drupal_set_message("labdoo_lib enabled correctly");
 }
 

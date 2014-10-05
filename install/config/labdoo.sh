@@ -40,8 +40,8 @@ drush @lbd $enOrDis -y lbd_blocks_views
 drush @lbd cc all
 
 drush @lbd $enOrDis -y lbd_menus 
-
 drush @lbd $enOrDis -y lbd_visualize
+drush @lbd $enOrDis -y lbd_gics
 
 # Finally, clear the cache to get things to a proper initial state
 drush @lbd cc all
