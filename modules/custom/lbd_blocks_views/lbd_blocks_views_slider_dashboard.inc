@@ -148,6 +148,11 @@ $handler->display->display_options['fields']['body']['alter']['text'] = '<div id
 [body]
 </div>';
 $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+$handler->display->display_options['defaults']['sorts'] = FALSE;
+/* Sort criterion: Content: Weight (field_slider_weight) */
+$handler->display->display_options['sorts']['field_slider_weight_value']['id'] = 'field_slider_weight_value';
+$handler->display->display_options['sorts']['field_slider_weight_value']['table'] = 'field_data_field_slider_weight';
+$handler->display->display_options['sorts']['field_slider_weight_value']['field'] = 'field_slider_weight_value';
 $handler->display->display_options['path'] = 'edoovillage';
 
 /* Display: Page - Hub */
@@ -173,6 +178,11 @@ $handler->display->display_options['fields']['body']['alter']['text'] = '<div id
 [body]
 </div>';
 $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+$handler->display->display_options['defaults']['sorts'] = FALSE;
+/* Sort criterion: Content: Weight (field_slider_weight) */
+$handler->display->display_options['sorts']['field_slider_weight_value']['id'] = 'field_slider_weight_value';
+$handler->display->display_options['sorts']['field_slider_weight_value']['table'] = 'field_data_field_slider_weight';
+$handler->display->display_options['sorts']['field_slider_weight_value']['field'] = 'field_slider_weight_value';
 $handler->display->display_options['defaults']['filter_groups'] = FALSE;
 $handler->display->display_options['defaults']['filters'] = FALSE;
 /* Filter criterion: Content: Published */
