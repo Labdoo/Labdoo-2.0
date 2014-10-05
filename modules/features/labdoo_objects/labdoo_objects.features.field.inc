@@ -3515,7 +3515,7 @@ function labdoo_objects_field_default_fields() {
   $fields['node-laptop-field_picture'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '3',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_picture',
@@ -3544,7 +3544,7 @@ function labdoo_objects_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'laptop',
       'deleted' => '0',
-      'description' => 'Upload here a picture of the laptop. A picture is a helpful way for donors to ensure that they are looking at the correct laptop. Please do not use pictures that you may find on the Internet, as they may be copyrighted.  Instead, please take a picture with your own camera.',
+      'description' => 'Upload here a picture of the laptop. A picture is a helpful way for donors to ensure that they are looking at the correct laptop. Please do not use pictures that you may find on the Internet, as they may be copyrighted.  Instead, please take a picture with your own camera. Once the laptop reaches a school, you can also upload another picture with the students using it.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -3878,7 +3878,7 @@ function labdoo_objects_field_default_fields() {
   t('The user currently managing this laptop. ');
   t('The user who tagged this laptop.');
   t('This field is updated automatically once dootrips are assigned to this dooject. You can also optionally set this field manually adding dootrips by typing their name.');
-  t('Upload here a picture of the laptop. A picture is a helpful way for donors to ensure that they are looking at the correct laptop. Please do not use pictures that you may find on the Internet, as they may be copyrighted.  Instead, please take a picture with your own camera.');
+  t('Upload here a picture of the laptop. A picture is a helpful way for donors to ensure that they are looking at the correct laptop. Please do not use pictures that you may find on the Internet, as they may be copyrighted.  Instead, please take a picture with your own camera. Once the laptop reaches a school, you can also upload another picture with the students using it.');
   t('User(s) who will be part of this dootrip.');
   t('Write here the serial number of the laptop. Usually the serial number can be found in the back of the laptop, search for keywords such as "Serial Number" or "S/N", or if you see a bar code with a number under it, use this number. If the laptop has no sticker with the serial number, then write in this field the words "Unknown".');
 
