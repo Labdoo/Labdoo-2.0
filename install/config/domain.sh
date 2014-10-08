@@ -22,8 +22,9 @@ then
 fi
 
 echo $domain > /etc/hostname
-sed -i /etc/hosts \
-    -e "/ localhost/c 127.0.0.1 $domain localhost"
+sed -i /etc/hosts.conf \
+    -e "1c 127.0.0.1 $domain"
+/etc/hosts_update.sh
 
 ### change config files
 for file in $(ls /etc/nginx/sites-available/lbd*)
