@@ -30,10 +30,11 @@ rm -f /etc/nginx/sites-{available,enabled}/$target
 rm -f /etc/apache2/sites-{available,enabled}/$target{,-ssl}.conf
 
 ### remove from /etc/hosts
-domain=$(grep ' localhost' /etc/hosts | head -n 1 | cut -d' ' -f2)
+domain=$(head -n 1 /etc/hosts.conf | cut -d' ' -f2)
 sub=${target#*_}
 hostname=$sub.$domain
 sed -i /etc/hosts -e "/^127.0.0.1 $hostname/d"
+sed -i /etc/hosts.conf -e "/^127.0.0.1 $hostname/d"
 
 ### restart services
 #for service in php5-fpm memcached mysql nginx
