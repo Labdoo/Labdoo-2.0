@@ -80,8 +80,6 @@ projects[memcache] = 1.2
 ;;; Services and Social
 projects[google_analytics] = 2.0
 projects[drupalchat] = 1.2
-projects[fb] = 3.4
-projects[invite] = 2.1-beta2
 projects[simplenews] = 1.1
 projects[mass_contact] = 1.0
 projects[sharethis] = 2.5
