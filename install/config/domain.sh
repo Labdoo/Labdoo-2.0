@@ -22,22 +22,27 @@ then
 fi
 
 echo $domain > /etc/hostname
+old_domain=$(head -n 1 /etc/hosts.conf | cut -d' ' -f2)
 sed -i /etc/hosts.conf \
-    -e "1c 127.0.0.1 $domain"
+    -e "s/$old_domain/$domain/g"
 /etc/hosts_update.sh
 
 ### change config files
 for file in $(ls /etc/nginx/sites-available/lbd*)
 do
-    sed -i $file -e "s/server_name .*\$/server_name $domain;/"
+    sed -i $file -e "/server_name/ s/$old_domain/$domain/"
 done
 for file in $(ls /etc/apache2/sites-available/lbd*)
 do
     sed -i $file \
-        -e "s#ServerName .*\$#ServerName $domain#" \
-        -e "s#RedirectPermanent .*\$#RedirectPermanent / https://$domain/#"
+        -e "/ServerName/ s/$old_domain/$domain/" \
+        -e "/RedirectPermanent/ s/$old_domain/$domain/"
 done
 for file in $(ls /var/www/lbd*/sites/default/settings.php)
 do
-    sed -i $file -e "/^\\\$base_url/c \$base_url = \"https://$domain\";"
+    sed -i $file -e "/^\\\$base_url/ s/$old_domain/$domain/"
 done
+
+### update uri on drush aliases
+sed -i /etc/drush/local_lbd.aliases.drushrc.php \
+    -e "/'uri'/ s/$old_domain/$domain/"
