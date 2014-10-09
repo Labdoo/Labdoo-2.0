@@ -1172,6 +1172,7 @@ google.setOnLoadCallback(drawVisualization);
  *
  */
 function lbd_display_slider_edoovilage_data($edoovillageId = NULL) {
+  global $user;
 
   if($edoovillageId == NULL) 
     return;
@@ -1180,6 +1181,11 @@ function lbd_display_slider_edoovilage_data($edoovillageId = NULL) {
     return;
   if($loadedNode->type != "edoovillage")
     return;
+
+  // Check to see if the user has edit rights 
+  $userRoles = array_values($user->roles);
+  if (in_array('administrator', $userRoles) || in_array('edoovillage manager', $userRoles)) 
+    print('<p><a href="/node/'.$edoovillageId . '/edit"><strong><span style="color:#ff0000;">'.t("Edit this edoovillage").'</span></strong></a></p>');
 
   $viewedNode = node_view($loadedNode);
   print(labdoo_render_map_geolocate_node($edoovillageId, True, "map-slider-edoovilage-data"));
@@ -1273,6 +1279,7 @@ function lbd_display_slider_edoovilage_gics($edoovillageId) {
  *
  */
 function lbd_display_slider_hub_data($hubId) {
+  global $user;
 
   if($hubId == NULL) 
     return;
@@ -1281,6 +1288,11 @@ function lbd_display_slider_hub_data($hubId) {
     return;
   if($loadedNode->type != "hub")
     return;
+
+  // Check to see if the user has edit rights 
+  $userRoles = array_values($user->roles);
+  if (in_array('administrator', $userRoles) || in_array('hub manager', $userRoles)) 
+    print('<p><a href="/node/'.$hubId . '/edit"><strong><span style="color:#ff0000;">'.t("Edit this hub").'</span></strong></a></p>');
 
   $viewedNode = node_view($loadedNode);
   print(labdoo_render_map_geolocate_node($hubId, False, "map-slider-hub-data"));

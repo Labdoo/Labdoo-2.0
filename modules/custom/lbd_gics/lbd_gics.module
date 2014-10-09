@@ -65,7 +65,7 @@ function gic_table($form, &$form_state, $edoovillageId) {
   // Check if the user has the right to submit this GIC
   //
   $userRoles = array_values($user->roles);
-  if (in_array('admin', $userRoles) || 
+  if (in_array('administrator', $userRoles) || 
       in_array('edoovillage manager', $userRoles) ||
       in_array('hub manager', $userRoles)) 
     $cantSubmit = FALSE;
