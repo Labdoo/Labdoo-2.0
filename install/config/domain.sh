@@ -14,20 +14,24 @@ It will modify the files:
  5) /var/www/lbd*/sites/default/settings.php
 "
 
+### get the current domain
+old_domain=$(head -n 1 /etc/hosts.conf | cut -d' ' -f2)
+old_domain=${old_domain:-example.org}
+
+### get the new domain
 if [ -z "${domain+xxx}" -o "$domain" = '' ]
 then
-    domain='example.org'
-    read -p "Enter the domain name for labdoo [$domain]: " input
-    domain=${input:-$domain}
+    read -p "Enter the domain name for labdoo [$old_domain]: " input
+    domain=${input:-$old_domain}
 fi
 
+### update /etc/hostname and /etc/hosts
 echo $domain > /etc/hostname
-old_domain=$(head -n 1 /etc/hosts.conf | cut -d' ' -f2)
 sed -i /etc/hosts.conf \
     -e "s/$old_domain/$domain/g"
 /etc/hosts_update.sh
 
-### change config files
+### update config files
 for file in $(ls /etc/nginx/sites-available/lbd*)
 do
     sed -i $file -e "/server_name/ s/$old_domain/$domain/"
