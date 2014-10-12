@@ -1,10 +1,4 @@
 
-### Default settings for building the chroot.
-target='lbd'
-arch='i386'
-suite='trusty'
-apt_mirror='http://archive.ubuntu.com/ubuntu'
-
 ### Git branch that will be used.
 git_branch='master'
 
@@ -29,10 +23,3 @@ mysql_passwd_lbd='grassroots'
 
 ### Install also extra things that are useful for development.
 development='true'
-
-### A reboot is needed after installation/configuration.
-### If you want to do it automatically, set it to 'true'.
-reboot='false'
-
-### Start chroot service automatically on reboot.
-start_on_boot='false'

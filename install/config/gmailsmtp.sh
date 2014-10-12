@@ -12,7 +12,14 @@ if [ -z "${gmail_account+xxx}" -o "$gmail_account" = '' ]
 then
     gmail_account='MyEmailAddress@gmail.com'
     read -p "Enter the gmail address [$gmail_account]: " input
-    gmail_account=${input:-$gmail_account}
+    gmail_account=$input
+fi
+
+if [ "$gmail_account" = '' ]
+then
+    echo "Skipping configuration of gmail account."
+    echo -e "You can do it later by calling:\n    $0"
+    exit 0
 fi
 
 if [ -z "${gmail_passwd+xxx}" -o "$gmail_passwd" = '' ]
@@ -45,6 +52,3 @@ echo "Modifying drupal variables that are used for sending email..."
 $(dirname $0)/mysqld.sh start
 drush --yes @local_lbd php-script $(dirname $0)/gmailsmtp.php  \
     "$gmail_account" "$gmail_passwd"
-
-### drush may create css/js files with wrong(root) permissions
-chown www-data: -R /var/www/lbd*/sites/default/files/{css,js}

@@ -9,11 +9,7 @@ mkdir -p /var/run/sshd/
 ### change the port
 port=${1:-2201}
 sed -i /etc/ssh/sshd_config -e "/^Port/c Port $port"
-
-### enable and start the service
-mv /etc/supervisor/conf.d/sshd.conf{.disabled,}
-supervisorctl reload
-supervisorctl start sshd
+/etc/init.d/ssh restart
 
 ### generate public/private keys
 mkdir ~/.ssh

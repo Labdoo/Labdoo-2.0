@@ -29,4 +29,4 @@ cd $code_dir/install/scripts/
 $code_dir/install/config.sh
 
 ### restart mysql
-supervisorctl restart mysql
+/etc/init.d/mysql restart
