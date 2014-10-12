@@ -71,7 +71,6 @@ projects[defaultconfig][patch][1900574] = https://www.drupal.org/files/issues/19
 projects[module_filter] = 1.8
 projects[drush_language] = 1.2
 projects[delete_all] = 1.1
-projects[l10n_update] = 1.0
 
 ;;; Performance
 projects[boost] = 1.0
@@ -102,6 +101,16 @@ projects[views_slideshow] = 3.1
 projects[gmap] = 2.9
 projects[views_autocomplete_filters] = 1.1
 projects[views_dependent_filters] = 1.1
+
+
+;-------------------
+; Translations
+;-------------------
+
+projects[l10n_update] = 1.0
+projects[i18n] = 1.11
+projects[i18nviews] = 3.x-dev
+projects[transliteration] = 3.2
 
 
 ;--------------------

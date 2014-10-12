@@ -678,14 +678,14 @@ function print_dashboard_switcher($userId = NULL)
   // logged in, this is a "myObjects" type of dashboard
   if($userId != NULL and $userId == $user->uid) {
     $urlParameters = "?u=" . $userId;
-    $determinant = "My";
+    $dashboardTitle = t('My Labdoo Metrics | Select dashboard:');
   }
   else {
     $urlParameters = "";
-    $determinant = "";
+    $dashboardTitle = t('Labdoo Metrics | Select dashboard:');
   }
 
-  $code = "<p><strong><span style='color:#ff3300;'>$determinant Labdoo Metrics | Select dashboard:</span></strong></p>
+  $code = "<p><strong><span style='color:#ff3300;'>$dashboardTitle</span></strong></p>
            <form>
            <select name='URL' onchange='window.location.href=this.form.URL.options[this.form.URL.selectedIndex].value'>
            <option value='$lang/content/$url1-dashboard$urlParameters'>$url1</option>

@@ -88,12 +88,31 @@ dependencies[] = node_export_features
 
 ;;; Admin Utils
 dependencies[] = module_filter
-dependencies[] = l10n_update
 dependencies[] = user_restrictions
 
 ;;; Performance
 dependencies[] = boost
 ;dependencies[] = memcache
+
+;--------------------
+; Translations
+;--------------------
+
+dependencies[] = l10n_update
+dependencies[] = i18n 
+dependencies[] = i18n_block 
+dependencies[] = i18n_contact
+dependencies[] = i18n_menu
+dependencies[] = i18n_node
+dependencies[] = i18n_select
+dependencies[] = i18n_string
+dependencies[] = i18n_sync
+dependencies[] = i18n_taxonomy
+dependencies[] = i18n_translation
+dependencies[] = i18n_field
+dependencies[] = i18nviews
+dependencies[] = transliteration
+
 
 ;--------------------
 ; Sending Emails
