@@ -58,7 +58,7 @@ Development Tools, Tips and Tricks
 
   We can choose one of them like this:
   #+BEGIN_EXAMPLE
-  chroot /var/chroot/lbd/
+  docker-enter lbd
   cd /usr/local/src/labdoo/
   dev/webserver.sh apache2
   dev/webserver.sh nginx
@@ -71,7 +71,7 @@ Development Tools, Tips and Tricks
 
   Inside the container you can make a clone for development like this:
   #+BEGIN_EXAMPLE
-  chroot /var/chroot/lbd/
+  docker-enter lbd
   cd /usr/local/src/labdoo/
   dev/clone.sh lbd lbd_dev1
   dev/clone.sh lbd_dev1 lbd_test1
@@ -88,7 +88,7 @@ Development Tools, Tips and Tricks
   Other clones like this can be created for testing etc. To cleanup
   (remove/erase) a clone, you can use *clone_rm.sh* like this:
   #+BEGIN_EXAMPLE
-  chroot /var/chroot/lbd/
+  docker-enter lbd
   cd /usr/local/src/labdoo/
   dev/clone_rm.sh lbd_dev1
   dev/clone_rm.sh lbd_test1
@@ -99,7 +99,7 @@ Development Tools, Tips and Tricks
   a development copy with a live or testing one), with the script
   =dev/config.php=:
   #+BEGIN_EXAMPLE
-  chroot /var/chroot/lbd/
+  docker-enter lbd
   cd /usr/local/src/labdoo/
   drush @lbd_dev php-script dev/config.php dev2
   #+END_EXAMPLE
@@ -114,7 +114,7 @@ Development Tools, Tips and Tricks
 
   It can be done with the script =dev/reinstall.sh=:
   #+BEGIN_EXAMPLE
-  chroot /var/chroot/lbd/
+  docker-enter lbd
   cd /usr/local/src/labdoo/
   nohup nice dev/reinstall.sh settings.sh &
   tail -f nohup.out
@@ -130,7 +130,7 @@ Development Tools, Tips and Tricks
   Drupal and nothing else, can be done with the script
   =dev/reinstall-db.sh=:
   #+BEGIN_EXAMPLE
-  chroot /var/chroot/lbd/
+  docker-enter lbd
   cd /usr/local/src/labdoo/
   nohup nice dev/reinstall-db.sh @lbd_dev &
   tail -f nohup.out
@@ -155,7 +155,7 @@ Development Tools, Tips and Tricks
   the code (the whole Drupal directory) and the database. It can be
   done like this:
   #+BEGIN_EXAMPLE
-  chroot /var/chroot/lbd/
+  docker-enter lbd
   cd /usr/local/src/labdoo/
   dev/snapshot.sh make @lbd
   dev/snapshot.sh make @lbd_dev
@@ -234,7 +234,7 @@ Development Tools, Tips and Tricks
 
   Now we can go to the directory *lbd_dev/* and start /emacs/ or any
   other tools. This way we don't have to install /emacs/ or any other
-  development tools inside the /chroot/ and we can use the best of
+  development tools inside the container and we can use the best of
   development tools that the host system can offer.
 
 
@@ -290,7 +290,7 @@ Development Tools, Tips and Tricks
   At some point, all the modifications on the local copy of the
   application (sandbox) have to be transferred to a public server,
   where the application is in "production", performing "live". On that
-  public server there is the same /chroot/ environment as in the
+  public server there is the same docker container as in the
   development server. The synchronization of the application can be
   done via git push and pull.
 
@@ -372,8 +372,8 @@ Development Tools, Tips and Tricks
   option on the config file will make sure that it fails.
 
   For drush commands to work remotely, *ssh* daemon has to be running
-  on the remote server, inside the chroot environment. By default it
-  is not installed, but it can be installed with the script
+  on the remote server, inside the docker container. By default it is
+  not installed, but it can be installed with the script
   *dev/install-sshd.sh*. This script will also take care to change the
   ssh port to *2201*, in order to avoid any conflicts with any
   existing daemon on the host environment, and also for increased
