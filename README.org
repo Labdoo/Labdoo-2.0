@@ -112,6 +112,42 @@
    docker.io run -d --name=lbd --hostname=example.org -p 80:80 -p 443:443 labdoo
    #+END_EXAMPLE
 
+  Installation is done inside a Docker container.
+
+  + Modify and customize the settings:
+    #+BEGIN_EXAMPLE
+    cp myproject/install/settings.sh cfg.sh
+    vim myproject/cfg.sh
+    #+END_EXAMPLE
+
+  + Build a Docker image:
+    #+BEGIN_EXAMPLE
+    myproject/docker-build.sh cfg.sh --git_branch=master
+    less -r nohup-myproject-master.out
+    #+END_EXAMPLE
+    This will create a docker image, named =myproject:master= with a
+    minimal ubuntu system and everything that is needed for the normal
+    work of the system.
+
+  + Create a Docker container like this:
+    #+BEGIN_EXAMPLE
+    docker images
+    docker run -d --name=myproject --hostname=myproject.org \
+	       -p 80:80 -p 443:443 myproject:master
+    #+END_EXAMPLE
+    Then you can stop and start the container with =docker stop myproject=
+    and =docker start myproject=.
+
+  If it is installed on a local machine (for testing or development),
+  add the domain name =myproject.org= on ~/etc/hosts~:
+  #+BEGIN_EXAMPLE
+  127.0.0.1 myproject.org
+  #+END_EXAMPLE
+  This way it can be accessed by typing =https://myproject.org=
+  on the browser location (not =https://127.0.0.1= or
+  =https://localhost=).
+
+
 * Documentation
 
   + [[https://github.com/Labdoo/Labdoo-2.0/blob/master/README.org][README.org]] (this file)
