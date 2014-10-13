@@ -9,7 +9,7 @@ set +a
 ### go to the directory of scripts
 cd $code_dir/install/scripts/
 
-### make and install the drupal profile 'labdoo'
+### make and install the drupal profile
 export DEBIAN_FRONTEND=noninteractive
 export drupal_dir=/var/www/lbd
 export drush="drush --root=$drupal_dir"

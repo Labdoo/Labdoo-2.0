@@ -117,7 +117,7 @@
   + Modify and customize the settings:
     #+BEGIN_EXAMPLE
     cp myproject/install/settings.sh cfg.sh
-    vim myproject/cfg.sh
+    vim cfg.sh
     #+END_EXAMPLE
 
   + Build a Docker image:
