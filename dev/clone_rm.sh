@@ -33,8 +33,8 @@ rm -f /etc/apache2/sites-{available,enabled}/$target{,-ssl}.conf
 domain=$(head -n 1 /etc/hosts.conf | cut -d' ' -f2)
 sub=${target#*_}
 hostname=$sub.$domain
-sed -i /etc/hosts -e "/^127.0.0.1 $hostname/d"
 sed -i /etc/hosts.conf -e "/^127.0.0.1 $hostname/d"
+/etc/hosts_update.sh
 
 ### restart services
 /etc/init.d/mysql restart
