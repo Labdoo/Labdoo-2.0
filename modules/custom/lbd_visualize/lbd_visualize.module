@@ -112,38 +112,38 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
     $objects[$objectNid]['ID'] = $node->title; 
 
     // Extract Hub Field (mandatory field)
-    $objects[$objectNid]['hub'] = lbd_nodeid2title($node->field_hub_laptop['und'][0]['target_id']);
+    $objects[$objectNid]['hub'] = lbd_nodeid2title(labdoo_lib_get_field($node, 'field_hub_laptop', 'node', 'target_id'));
 
     // Extract Edoovillage Field (optional field)
     if(!empty($node->field_edoovillage_destination)) 
-      $objects[$objectNid]['edoovillage'] = lbd_nodeid2title($node->field_edoovillage_destination['und'][0]['target_id']);
+      $objects[$objectNid]['edoovillage'] = lbd_nodeid2title(labdoo_lib_get_field($node, 'field_edoovillage_destination', 'node', 'target_id'));
     else
       $objects[$objectNid]['edoovillage'] = "Not assigned";
 
     // Extract Status Field (mandatory field)
-    $objects[$objectNid]['status'] = $objectstatus = $node->field_status['und'][0]['value'];
+    $objects[$objectNid]['status'] = $objectstatus = labdoo_lib_get_field($node, 'field_status', 'node', 'value');
 
     // Extract Notes Field (optional field) -- only included so it can be free-text searched
     if(!empty($node->field_additional_notes)) 
-      $objects[$objectNid]['notes'] = $node->field_additional_notes['und'][0]['value']; 
+      $objects[$objectNid]['notes'] = labdoo_lib_get_field($node, 'field_additional_notes', 'node', 'value'); 
     else
       $objects[$objectNid]['notes'] = "";
 
     // Extract Model Field (mandatory field)
-    $objects[$objectNid]['model'] = $node->field_model['und'][0]['value'];
+    $objects[$objectNid]['model'] = labdoo_lib_get_field($node, 'field_model', 'node', 'value');
 
     // Extract Tagger Field (mandatory field)
-    $query = "SELECT name FROM users WHERE uid = " . $node->field_tagger['und'][0]['target_id'];
+    $query = "SELECT name FROM users WHERE uid = " . labdoo_lib_get_field($node, 'field_tagger', 'node', 'target_id');
     $objects[$objectNid]['tagger'] = db_query($query)->fetchField(); 
 
     // Extract Manager Field (mandatory field)
-    $query = "SELECT name FROM users WHERE uid = " . $node->field_manager['und'][0]['target_id'];
+    $query = "SELECT name FROM users WHERE uid = " . labdoo_lib_get_field($node, 'field_manager', 'node', 'target_id');
     $objects[$objectNid]['manager'] = db_query($query)->fetchField(); 
 
     // Extract email list field (optional field)
     $objects[$objectNid]['emails'] = "";
     if(!empty($node->field_additional_notification_em)) 
-      foreach($node->field_additional_notification_em['und'] as $item)
+      foreach(field_get_items('node', $node, 'field_additional_notification_em') as $item)
         $objects[$objectNid]['emails'] = $objects[$objectNid]['emails'] . " " . $item['email'];
 
     // Get the country (mandatory field)
@@ -287,11 +287,11 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
 
     // Extract hubs (mandatory field)
     $objects[$objectNid]['hub'] = "";
-    foreach($node->field_hub['und'] as $item)
+    foreach(field_get_items('node', $node, 'field_hub') as $item)
       $objects[$objectNid]['hub'] = $objects[$objectNid]['hub'] . " " . lbd_nodeid2title($item['target_id']);
 
     // Extract needed field (mandatory field)
-    $objects[$objectNid]['needed'] = $needed = $node->field_number_of_laptops_needed['und'][0]['value'];
+    $objects[$objectNid]['needed'] = $needed = labdoo_lib_get_field($node, 'field_number_of_laptops_needed', 'node', 'value');
 
     // Extract intransit field 
     $objects[$objectNid]['intransit'] = $inTransit = labdoo_getnum_doojects($objectNid, NULL, "T1") +
@@ -307,7 +307,7 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
     $objects[$objectNid]['pcompleted'] = floor(($needed - $remaining) / $needed * 100.00); 
 
     // Extract status field (mandatory field)
-    $objects[$objectNid]['status'] = $objectstatus = $node->field_edoovillage_status['und'][0]['value']; 
+    $objects[$objectNid]['status'] = $objectstatus = labdoo_lib_get_field($node, 'field_edoovillage_status', 'node', 'value'); 
 
     // Get the country
     $country_names = location_get_iso3166_list();
@@ -563,30 +563,32 @@ function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL, $switch
     $objects[$objectNid]['title'] = $node->title; 
 
     // Extract capacity field (mandatory field)
-    $objects[$objectNid]['capacity'] = $node->field_dootrip_capacity['und'][0]['value'];
+    $objects[$objectNid]['capacity'] = labdoo_lib_get_field($node, 'field_dootrip_capacity', 'node', 'value');
 
     // Extract number of dootrips field (mandatory field)
     $objects[$objectNid]['numberDootrips'] = 1;
 
     // Extract status field (mandatory field)
     $statusLabels = list_allowed_values(field_info_field("field_status_dootrip"));
-    $objects[$objectNid]['status'] = $statusLabels[$node->field_status_dootrip['und'][0]['value']];
+    $objects[$objectNid]['status'] = $statusLabels[labdoo_lib_get_field($node, 'field_status_dootrip', 'node', 'value')];
 
     // Extract completed field (mandatory field)
-    if($node->field_status_dootrip['und'][0]['value'] == "DS1")
+    if(labdoo_lib_get_field($node, 'field_status_dootrip', 'node', 'value') == "DS1")
       $objects[$objectNid]['completed'] = $objects[$objectNid]['capacity'];
     else
       $objects[$objectNid]['completed'] = 0;
 
     // Get the source country
-    $location = $node->field_origin_of_the_trip['und'][0];
+    $allLocations = field_get_items('node', $node, 'field_origin_of_the_trip');
+    $location = $allLocations[0];
     $country_names = location_get_iso3166_list();
     $objects[$objectNid]['srcCountry'] = $location['country'];
     if(array_key_exists($location['country'], $country_names))
         $objects[$objectNid]['srcCountry'] = $country_names[$location['country']];
 
     // Get the destination country
-    $location = $node->field_destination_of_the_trip['und'][0];
+    $allLocations = field_get_items('node', $node, 'field_destination_of_the_trip');
+    $location = $allLocations[0];
     $country_names = location_get_iso3166_list();
     $objects[$objectNid]['dstCountry'] = $location['country'];
     if(array_key_exists($location['country'], $country_names))

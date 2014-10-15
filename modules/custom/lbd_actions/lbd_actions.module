@@ -305,8 +305,10 @@ function _generate_labdoo_action($node) {
   if($node->type != 'laptop' && $node->type != 'edoovillage' && $node->type != 'hub' && $node->type != 'dootrip') 
     return;
 
-  if($node->type == 'dootrip')
-    $location = $node->field_origin_of_the_trip['und'][0];
+  if($node->type == 'dootrip') {
+    $allLocations = field_get_items('node', $node, 'field_origin_of_the_trip');
+    $location = $allLocations[0];
+  }
   else 
     $location = $node->locations[0];
 
@@ -326,8 +328,8 @@ function _generate_labdoo_action($node) {
               '<img alt="" src="/profiles/labdoo/files/pictures/laptop-simple.png" style="width: 20px; height: 21px;" /></a></p>';
     }
     else { // Dooject updated
-      $newStatus = $node->field_status['und'][0]['value'];
-      $previousStatus =  $node->original->field_status['und'][0]['value'];
+      $newStatus = labdoo_lib_get_field($node, 'field_status', 'node', 'value'); 
+      $previousStatus = labdoo_lib_get_field($node->original, 'field_status', 'node', 'value');
       if($previousStatus == $newStatus)
         return;
       if($newStatus == "S4" || $newStatus == "T1") {

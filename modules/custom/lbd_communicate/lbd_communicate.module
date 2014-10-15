@@ -109,11 +109,11 @@ function _email_laptop_event($node) {
   global $user;
 
   if(property_exists($node, 'original'))
-    $previousStatus =  $node->original->field_status['und'][0]['value'];
+    $previousStatus = labdoo_lib_get_field($node->original, 'field_status', 'node', 'value');
   else
     $previousStatus = "WAS_CREATED";
 
-  $newStatus = $node->field_status['und'][0]['value'];
+  $newStatus = labdoo_lib_get_field($node, 'field_status', 'node', 'value'); 
 
   if($previousStatus == $newStatus) 
     return;
@@ -140,7 +140,7 @@ function _email_laptop_event($node) {
     $email_params['type'] = "LAPTOP_DELIVERED";
     $subjectFileName = dirname(__FILE__) . "/laptop_delivered_subject-" . $langCode . ".email";
     $bodyFileName = dirname(__FILE__) . "/laptop_delivered_body-" . $langCode . ".email";
-    $edoovillageNid = $node->field_edoovillage_destination['und'][0]['target_id'];
+    $edoovillageNid = labdoo_lib_get_field($node, 'field_edoovillage_destination', 'node', 'target_id');
   }
   else {
     $email_params['type'] = "LAPTOP_UPDATED";
@@ -283,7 +283,7 @@ function _email_dootrip_event($node, $eventType) {
   foreach($result as $item) {
     $emailsList = "";
     $hubNode = node_load($item->field_hub_target_id);
-    foreach($hubNode->field_hub_manager_s_['und'] as $element) {
+    foreach(field_get_items('node', $hubNode, 'field_hub_manager_s_') as $element) {
       $userObj = user_load($element['target_id']);
       $emailsList = $emailsList . ", " . $userObj->mail;
     }
@@ -440,7 +440,7 @@ function lbd_communicate_cron() {
 
     // Load the dootrip node and one of its dootriper users (an arbitrary dootripper will do it)
     $node = node_load($dootrip->entity_id);
-    foreach($node->field_dootripper_s_['und'] as $element) { 
+    foreach(field_get_items('node', $node, 'field_dootripper_s_') as $element) {
       $user = user_load($element['target_id']);
       break;
     }

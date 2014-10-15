@@ -46,12 +46,12 @@ function labdoo_country_code2name($countryCode) {
  */
 function _generate_dootrip_title($node, $dootripId) {
 
-  $srcCity = $node->field_origin_of_the_trip['und'][0]['city'];
-  $srcCountry = $node->field_origin_of_the_trip['und'][0]['country'];
+  $srcCity = labdoo_lib_get_field($node, 'field_origin_of_the_trip', 'node', 'city'); 
+  $srcCountry = labdoo_lib_get_field($node, 'field_origin_of_the_trip', 'node', 'country'); 
   $srcCountry = labdoo_country_code2name($srcCountry);
 
-  $dstCity = $node->field_destination_of_the_trip['und'][0]['city'];
-  $dstCountry = $node->field_destination_of_the_trip['und'][0]['country'];
+  $dstCity = labdoo_lib_get_field($node, 'field_destination_of_the_trip', 'node', 'city'); 
+  $dstCountry = labdoo_lib_get_field($node, 'field_destination_of_the_trip', 'node', 'country'); 
   $dstCountry = labdoo_country_code2name($dstCountry);
 
   $newTitle = $dootripId . " - Dootrip from " . $srcCity . " (" . $srcCountry . ") to " . $dstCity . " (" . $dstCountry . ")";
@@ -202,13 +202,14 @@ function labdoo_render_map_geolocate_node($nodeId = NULL, $displayDoojects = Fal
     }
   }
   else { // It's a dootrip
-    $srcCity = $node->field_origin_of_the_trip['und'][0]['city'];
+    $srcCity = labdoo_lib_get_field($node, 'field_origin_of_the_trip', 'node', 'city'); 
     $srcCity = preg_replace('/\s+/', '%20', $srcCity);
-    $srcCountry = $node->field_origin_of_the_trip['und'][0]['country'];
+    $srcCountry = labdoo_lib_get_field($node, 'field_origin_of_the_trip', 'node', 'country'); 
     $srcCountryLong = labdoo_country_code2name($srcCountry);
-    $dstCity = $node->field_destination_of_the_trip['und'][0]['city'];
+
+    $dstCity = labdoo_lib_get_field($node, 'field_destination_of_the_trip', 'node', 'city'); 
     $dstCity = preg_replace('/\s+/', '%20', $dstCity);
-    $dstCountry = $node->field_destination_of_the_trip['und'][0]['country'];
+    $dstCountry = labdoo_lib_get_field($node, 'field_destination_of_the_trip', 'node', 'country'); 
     $dstCountryLong = labdoo_country_code2name($dstCountry);
 
     if(labdoo_lookup_coordinates($srcCountry, $srcCity, $locations[0]->latitude, $locations[0]->longitude) < 0) 
@@ -420,30 +421,26 @@ function labdoo_render_edoovillage_header($nodeId = NULL) {
 function labdoo_dooject_extract_emails($node) {
     $emailsList = "";
 
-    foreach($node->field_tagger['und'] as $element) {
+    foreach(field_get_items('node', $node, 'field_tagger') as $element) {
       $userObj = user_load($element['target_id']);
       $emailsList = $emailsList . ", " . $userObj->mail;
     }
 
-    foreach($node->field_manager['und'] as $element) {
+    foreach(field_get_items('node', $node, 'field_manager') as $element) {
       $userObj = user_load($element['target_id']);
       $emailsList = $emailsList . ", " . $userObj->mail;
     }
  
     if($node->field_additional_followers) {
-      if(array_key_exists('und', $node->field_additional_followers)) {
-        foreach($node->field_additional_followers['und'] as $element) {
-          $userObj = user_load($element['target_id']);
-          $emailsList = $emailsList . ", " . $userObj->mail;
-        }
+      foreach(field_get_items('node', $node, 'field_additional_followers') as $element) {
+        $userObj = user_load($element['target_id']);
+        $emailsList = $emailsList . ", " . $userObj->mail;
       }
     }
 
     if($node->field_additional_notification_em) {
-      if(array_key_exists('und', $node->field_additional_notification_em)) {
-        foreach($node->field_additional_notification_em['und'] as $element) {
-          $emailsList = $emailsList . ", " . $element["email"];
-        }
+      foreach(field_get_items('node', $node, 'field_additional_notification_em') as $element) {
+        $emailsList = $emailsList . ", " . $element["email"];
       }
     }
 
@@ -451,7 +448,7 @@ function labdoo_dooject_extract_emails($node) {
 
     if($emailsList[0] == ",")
       $emailsList = substr($emailsList, 2);
- 
+
     return $emailsList; 
 }
 
@@ -467,7 +464,7 @@ function labdoo_dooject_extract_emails($node) {
 function labdoo_dootrip_extract_emails($node) {
     $emailsList = "";
 
-    foreach($node->field_dootripper_s_['und'] as $element) {
+    foreach(field_get_items('node', $node, 'field_dootripper_s_') as $element) {
       $userObj = user_load($element['target_id']);
       $emailsList = $emailsList . ", " . $userObj->mail;
     }
@@ -494,10 +491,10 @@ function labdoo_lib_node_update($node) {
      * to match that of its assigned edoovillage for states
      * T1 or S4.
      */
-    $doojectStatus = $node->field_status['und'][0]['value'];
+    $doojectStatus = labdoo_lib_get_field($node, 'field_status', 'node', 'value'); 
     $oldNode = node_load($node->nid);
     if($oldNode)
-      $oldDoojectStatus = $oldNode->field_status['und'][0]['value'];
+      $oldDoojectStatus = labdoo_lib_get_field($oldNode, 'field_status', 'node', 'value'); 
     else // This is a newly inserted node
       $oldDoojectStatus = "-1";  // Any non-status string will do it
     if($doojectStatus != $oldDoojectStatus && ($doojectStatus == "T1" || $doojectStatus == "S4")) {
@@ -561,7 +558,7 @@ function labdoo_lib_node_presave($node) {
      */
     $nodeCountry = labdoo_country_code2name($node->locations[0]['country']);
     $nodeCity = $node->locations[0]['city'];
-    $node->title = $nodeCountry . ", " . $nodeCity . ": " . $node->field_project_summary['und'][0]['value'];
+    $node->title = $nodeCountry . ", " . $nodeCity . ": " . labdoo_lib_get_field($node, 'field_project_summary', 'node', 'value');
   }
 
   if($node->type == 'dootrip') {
@@ -579,7 +576,8 @@ function labdoo_lib_node_presave($node) {
     /*
      * Update GPS coordinates
      */
-    $location = $node->field_origin_of_the_trip['und'][0]; 
+    $allLocations = field_get_items('node', $node, 'field_origin_of_the_trip');
+    $location = $allLocations[0];
     $ret = labdoo_lookup_coordinates($location['country'], 
                                      $location['city'], 
                                      $node->field_origin_of_the_trip['und'][0]['latitude'], 
@@ -587,7 +585,8 @@ function labdoo_lib_node_presave($node) {
     if($ret == 0) // If successful, do not let the system attempt to geolocate it anymore
       $node->field_origin_of_the_trip['und'][0]['inhibit_geocode'] = TRUE;
 
-    $location = $node->field_destination_of_the_trip['und'][0]; 
+    $allLocations = field_get_items('node', $node, 'field_destination_of_the_trip');
+    $location = $allLocations[0];
     $ret = labdoo_lookup_coordinates($location['country'], 
                                      $location['city'], 
                                      $node->field_destination_of_the_trip['und'][0]['latitude'], 
