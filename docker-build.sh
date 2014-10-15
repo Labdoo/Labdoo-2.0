@@ -39,14 +39,20 @@ echo "### End: $project_dir/install/settings" >> $options
 for opt in "$@"
 do
     case $opt in
-	--git_branch=*)  git_branch=${opt#*=} ;;
 	-h|--help)       usage ;;
+
+	--git_branch=*)
+            git_branch=${opt#*=} 
+	    echo git_branch="$git_branch" >> $options
+            ;;
+
         --*=*)
 	    optvalue=${opt#*=}
 	    optname=${opt%%=*}
 	    optname=${optname:2}
 	    echo $optname="$optvalue" >> $options
 	    ;;
+
 	*)
 	    if [ ${opt:0:1} = '-' ]; then usage; fi
 
@@ -56,9 +62,10 @@ do
 		echo "File '$settings' does not exist."
 		exit 1
 	    fi
-	    echo "### Start: $settings" >> $options
+	    echo "### ----- Start: $settings" >> $options
 	    cat $settings >> $options
-	    echo "### End: $settings" >> $options
+	    echo "### ----- End: $settings" >> $options
+            echo
 	    ;;
     esac
 done
