@@ -31,42 +31,45 @@ cat <<EOF > $options
 EOF
 
 ### save the default settings
-echo "### Start: $project_dir/install/settings.sh" >> $options
+source $project_dir/install/settings.sh
+echo "### ----- Start: $project_dir/install/settings.sh" >> $options
 cat $project_dir/install/settings.sh >> $options
-echo "### End: $project_dir/install/settings" >> $options
+echo "### ----- End: $project_dir/install/settings" >> $options
 
 ### get command line options and save them to options.sh
 for opt in "$@"
 do
     case $opt in
-	-h|--help)       usage ;;
+        -h|--help)       usage ;;
 
-	--git_branch=*)
+        --git_branch=*)
             git_branch=${opt#*=} 
-	    echo git_branch="$git_branch" >> $options
+            echo git_branch="$git_branch" >> $options
             ;;
 
         --*=*)
-	    optvalue=${opt#*=}
-	    optname=${opt%%=*}
-	    optname=${optname:2}
-	    echo $optname="$optvalue" >> $options
-	    ;;
+            optvalue=${opt#*=}
+            optname=${opt%%=*}
+            optname=${optname:2}
+            eval $optname="$optvalue"
+            echo $optname="$optvalue" >> $options
+            ;;
 
-	*)
-	    if [ ${opt:0:1} = '-' ]; then usage; fi
+        *)
+            if [ ${opt:0:1} = '-' ]; then usage; fi
 
-	    settings=$opt
-	    if ! test -f "$settings"
+            settings=$opt
+            if ! test -f "$settings"
             then
-		echo "File '$settings' does not exist."
-		exit 1
-	    fi
-	    echo "### ----- Start: $settings" >> $options
-	    cat $settings >> $options
-	    echo "### ----- End: $settings" >> $options
+                echo "File '$settings' does not exist."
+                exit 1
+            fi
+            source $settings
+            echo "### ----- Start: $settings" >> $options
+            cat $settings >> $options
+            echo "### ----- End: $settings" >> $options
             echo
-	    ;;
+            ;;
     esac
 done
 
