@@ -13,7 +13,7 @@ projects[bootstrap] = 2.2
 projects[jquery_update] = 2.6
 libraries[bootstrap][directory_name] = bootstrap
 libraries[bootstrap][download][type] = get
-libraries[bootstrap][download][url] = https://github.com/twbs/bootstrap/archive/v3.0.0.zip
+libraries[bootstrap][download][url] = https://github.com/twbs/bootstrap/archive/v3.2.0.zip
 
 ;--------------------
 ; Development
@@ -130,7 +130,7 @@ projects[phpmailer][download][revision] = 8f7c632
 projects[phpmailer][download][branch] = 7.x-3.x
 libraries[phpmailer][directory_name] = phpmailer
 libraries[phpmailer][download][type] = get
-libraries[phpmailer][download][url] = https://github.com/PHPMailer/PHPMailer/archive/v5.2.6.zip
+libraries[phpmailer][download][url] = https://github.com/PHPMailer/PHPMailer/archive/v5.2.9.zip
 
 ;--------------------
 ; HybridAuth
