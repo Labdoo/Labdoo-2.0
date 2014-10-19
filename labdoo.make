@@ -101,7 +101,7 @@ projects[views_slideshow] = 3.1
 projects[gmap] = 2.9
 projects[views_autocomplete_filters] = 1.1
 projects[views_dependent_filters] = 1.1
-
+projects[variable] = 2.5 
 
 ;-------------------
 ; Translations
