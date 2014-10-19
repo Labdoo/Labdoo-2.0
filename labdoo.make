@@ -38,7 +38,7 @@ projects[pathauto] = 1.2
 projects[subpathauto] = 1.3
 
 ;;; User interface
-projects[context] = 3.2
+projects[context] = 3.3
 projects[views] = 3.8
 projects[homebox] = 2.0-beta7
 projects[boxes] = 1.2
@@ -61,7 +61,7 @@ projects[features] = 1.0
 projects[strongarm] = 2.0
 projects[features_extra] = 1.0-beta1
 projects[node_export] = 3.0
-projects[uuid] = 1.0-alpha5
+projects[uuid] = 1.0-alpha6
 ;projects[menu_import] = 1.6
 
 projects[defaultconfig][version] = 1.x-dev
@@ -89,7 +89,7 @@ projects[disqus][patch][] = http://drupal.org/files/disqus-https.patch
 projects[entityreference] = 1.1
 projects[field_group] = 1.4
 projects[date] = 2.8
-projects[location] = 3.3
+projects[location] = 3.4
 projects[nodeaccess_userreference] = 3.10
 projects[email] = 1.3
 projects[conditional_fields] = 3.0-alpha1
