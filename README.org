@@ -14,19 +14,16 @@
     git clone https://github.com/Labdoo/Labdoo-2.0.git labdoo
     #+END_EXAMPLE
 
-  + Modify and customize the settings. If you intend to build the master branch, do the following:
+  + If you intend to build the master branch, skip the following step:
     #+BEGIN_EXAMPLE
-    cp labdoo/install/settings.sh labdoo/cfg.sh
-    vim labdoo/cfg.sh # Make any necessary changes
-    #+END_EXAMPLE
-
-  + Otherwise, if you intend to build a branch different than the master branch, do the following
-    (the extra step to check out first the non-master branch is needed currently):
-    #+BEGIN_EXAMPLE
-    cp labdoo/install/settings.sh labdoo/cfg.sh
     cd labdoo/
     git checkout $NAME_OF_THE_BRANCH
     cd ../
+    #+END_EXAMPLE
+
+  + Modify and customize the settings:
+    #+BEGIN_EXAMPLE
+    cp labdoo/install/settings.sh labdoo/cfg.sh
     vim labdoo/cfg.sh # Make any necessary changes
     #+END_EXAMPLE
 

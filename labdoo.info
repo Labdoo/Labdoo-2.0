@@ -78,6 +78,7 @@ dependencies[] = views_autocomplete_filters
 dependencies[] = views_dependent_filters
 dependencies[] = simplenews
 dependencies[] = variable
+dependencies[] = lang_dropdown 
 
 ;;; Features
 dependencies[] = strongarm
