@@ -19,6 +19,7 @@ chmod +x /bin/hub
 ### see also: http://xmodulo.com/2013/12/access-twitter-command-line-linux.html
 apt-get -y install ruby-dev
 gem install t
+useradd --system --create-home twitter
 
 ### phpmyadmin will install apache2 and start it
 ### so we should stop it
