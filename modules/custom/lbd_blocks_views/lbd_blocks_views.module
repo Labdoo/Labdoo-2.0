@@ -204,6 +204,7 @@ function lbd_blocks_views_block_view($delta = '') {
     case 'block_link_actions_feed':
       $blockActions = module_invoke('views', 'block_view', 'actions-block');
       $block['subject'] = "<none>";
+      $block['title'] = t("Mini-missions");
       $block['content'] = drupal_render($blockActions["content"]);
       break;
 

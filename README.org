@@ -34,7 +34,7 @@
     less -r nohup.out
     #+END_EXAMPLE
 
-    The above process can take a few tens of minutes, depending on bandwidth and your computer speed.
+    The above process can take some time, depending on bandwidth and your computer speed.
     On an Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz with 1GB of RAM it takes 9 minutes and 41 seconds:
 
     #+BEGIN_EXAMPLE
