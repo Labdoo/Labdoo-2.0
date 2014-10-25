@@ -54,6 +54,7 @@ h2 {
 }
 h2.block-title {
     color: #009900;
+    font-size: small;
 }
 
 /**
@@ -66,8 +67,14 @@ h2.block-title {
   pading: 5px;
 }
 
-
 #dashboard_slider_body
 {
   height: 2000px;
+}
+
+.actions-feed-time
+{
+  font-size: small;
+  font-style: normal;
+  color: #666666;
 }

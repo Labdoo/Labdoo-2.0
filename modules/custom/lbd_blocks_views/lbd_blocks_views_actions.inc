@@ -107,9 +107,17 @@ $handler->display->display_options['path'] = 'actions';
 /* Display: Block */
 $handler = $view->new_display('block', 'Block', 'block');
 $handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['title'] = 'Mini-missions';
+$handler->display->display_options['defaults']['use_more'] = FALSE;
+$handler->display->display_options['defaults']['use_more_always'] = FALSE;
+$handler->display->display_options['defaults']['use_more_always'] = FALSE;
+$handler->display->display_options['use_more_always'] = FALSE;
+$handler->display->display_options['defaults']['use_more_text'] = FALSE;
+$handler->display->display_options['use_more_text'] = 'next';
 $handler->display->display_options['defaults']['pager'] = FALSE;
 $handler->display->display_options['pager']['type'] = 'some';
-$handler->display->display_options['pager']['options']['items_per_page'] = '5';
+$handler->display->display_options['pager']['options']['items_per_page'] = '6';
+$handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['defaults']['style_plugin'] = FALSE;
 $handler->display->display_options['style_plugin'] = 'slideshow';
 $handler->display->display_options['style_options']['slideshow_type'] = 'views_slideshow_cycle';
@@ -137,9 +145,9 @@ $handler->display->display_options['style_options']['widgets']['bottom']['views_
 $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
 $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
 $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_slide_counter']['weight'] = '1';
-$handler->display->display_options['style_options']['views_slideshow_cycle']['effect'] = 'scrollLeft';
+$handler->display->display_options['style_options']['views_slideshow_cycle']['transition_advanced'] = 1;
 $handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';
-$handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '700';
+$handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '1200';
 $handler->display->display_options['style_options']['views_slideshow_cycle']['delay'] = '0';
 $handler->display->display_options['style_options']['views_slideshow_cycle']['start_paused'] = 0;
 $handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
@@ -152,6 +160,15 @@ $handler->display->display_options['defaults']['row_plugin'] = FALSE;
 $handler->display->display_options['row_plugin'] = 'fields';
 $handler->display->display_options['defaults']['row_options'] = FALSE;
 $handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Content: Post date */
+$handler->display->display_options['fields']['created']['id'] = 'created';
+$handler->display->display_options['fields']['created']['table'] = 'node';
+$handler->display->display_options['fields']['created']['field'] = 'created';
+$handler->display->display_options['fields']['created']['label'] = '';
+$handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['created']['element_wrapper_class'] = 'actions-feed-time';
+$handler->display->display_options['fields']['created']['date_format'] = 'time ago';
+$handler->display->display_options['fields']['created']['second_date_format'] = 'long';
 /* Field: Content: Body */
 $handler->display->display_options['fields']['body']['id'] = 'body';
 $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -220,31 +237,4 @@ $handler->display->display_options['filters']['field_action_type_value']['expose
   4 => 0,
 );
 $handler->display->display_options['path'] = 'myactions';
-$translatables['actions'] = array(
-  t('Master'),
-  t('Actions Feed'),
-  t('more'),
-  t('Apply'),
-  t('Reset'),
-  t('Sort by'),
-  t('Asc'),
-  t('Desc'),
-  t('Items per page'),
-  t('- All -'),
-  t('Offset'),
-  t('« first'),
-  t('‹ previous'),
-  t('next ›'),
-  t('last »'),
-  t('City'),
-  t('Country'),
-  t('Page'),
-  t('Global Actions Feed'),
-  t('Actions related to:'),
-  t('Block'),
-  t('My Actions'),
-  t('No actions.'),
-  t('User entity referenced from field_labdooer_action'),
-  t('All'),
-);
 

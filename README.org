@@ -14,6 +14,13 @@
     git clone https://github.com/Labdoo/Labdoo-2.0.git labdoo
     #+END_EXAMPLE
 
+  + If you intend to build the master branch, skip the following step:
+    #+BEGIN_EXAMPLE
+    cd labdoo/
+    git checkout $NAME_OF_THE_BRANCH
+    cd ../
+    #+END_EXAMPLE
+
   + Modify and customize the settings:
     #+BEGIN_EXAMPLE
     cp labdoo/install/settings.sh labdoo/cfg.sh
@@ -22,12 +29,19 @@
 
   + Install the project inside a chroot system:
     #+BEGIN_EXAMPLE
-    nohup time nice labdoo/install/chroot.sh labdoo/cfg.sh &
+    time nohup time nice labdoo/install/chroot.sh labdoo/cfg.sh &
     tail -f nohup.out
     less -r nohup.out
     #+END_EXAMPLE
 
     The above process can take a few tens of minutes, depending on bandwidth and your computer speed.
+    On an Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz with 1GB of RAM it takes 9 minutes and 41 seconds:
+
+    #+BEGIN_EXAMPLE
+    real 9m41.223s
+    user 3m38.554s
+    sys 0m36.375s 
+    #+END_EXAMPLE
 
   + Make sure to include the following lines in your /etc/hosts file (outside the chroot):
 
