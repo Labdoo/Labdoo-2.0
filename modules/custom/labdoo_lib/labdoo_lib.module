@@ -154,7 +154,7 @@ function labdoo_render_map_geolocate_node($nodeId = NULL, $displayDoojects = Fal
   if(!isset($types[$node->type]))
     return;
 
-  $map_style = 'height:200px; width:1170px'; 
+  $map_style = 'height:200px; width:870px'; 
   $map_options = '{"mapTypeId":"roadmap", "zoom":10}';
   $marker_color = NULL; 
   $visitor_marker = FALSE;
@@ -219,7 +219,7 @@ function labdoo_render_map_geolocate_node($nodeId = NULL, $displayDoojects = Fal
       return;
     $locations[1]->balloon_text = "Dootrip destination: " . str_replace('%20', ' ', $dstCity) . ", $dstCountryLong";
 
-    $map_style = 'height:400px; width:1170px'; 
+    $map_style = 'height:400px; width:870px'; 
     $map_options = '{"mapTypeId":"roadmap", "zoom":2}';
   }
 

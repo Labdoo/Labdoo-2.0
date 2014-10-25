@@ -93,7 +93,7 @@ function lbd_blocks_views_block_info() {
 
   // Dooject header
   $blocks['block_dooject_header'] = array(
-    'info' => "The header of a dooject (2)",
+    'info' => "The header of a dooject",
     'status' => 1,
     'visibility' => BLOCK_VISIBILITY_PHP,
     'weight' => -100,
@@ -143,6 +143,14 @@ function lbd_blocks_views_block_info() {
     'weight' => -50,
     'pages' => "
 <?php
+  \$path = drupal_get_path_alias(current_path());
+  if(strpos(\$path, \"content/tag-one-dooject\") !== FALSE)
+      return FALSE;
+  \$views_page = views_get_page_view();
+  if (is_object(\$views_page)) {
+    if(\$views_page->name == \"global_inventory\")
+      return FALSE; 
+  }
   return TRUE;
 ?>
                ",
@@ -157,6 +165,14 @@ function lbd_blocks_views_block_info() {
     'weight' => -60,
     'pages' => "
 <?php
+  \$path = drupal_get_path_alias(current_path());
+  if(strpos(\$path, \"content/tag-one-dooject\") !== FALSE)
+      return FALSE;
+  \$views_page = views_get_page_view();
+  if (is_object(\$views_page)) {
+    if(\$views_page->name == \"global_inventory\")
+      return FALSE; 
+  }
   return TRUE;
 ?>
                ",
