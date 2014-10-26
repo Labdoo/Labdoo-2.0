@@ -194,19 +194,25 @@ function lbd_blocks_views_block_view($delta = '') {
     // Geolocation map for nodes
     case 'block_geolocation_map_node':
       $block['subject'] = "<none>";
-      $block['content'] = labdoo_render_map_geolocate_node();
+      $block['content'] = array(
+             '#markup' => labdoo_render_map_geolocate_node(),
+      );
       break;
 
     // Dooject header
     case 'block_dooject_header':
       $block['subject'] = "<none>";
-      $block['content'] = labdoo_render_dooject_header();
+      $block['content'] = array(
+             '#markup' => labdoo_render_dooject_header(),
+      );
       break;
 
     // Edoovillage header
     case 'block_edoovillage_header':
       $block['subject'] = "<none>";
-      $block['content'] = labdoo_render_edoovillage_header();
+      $block['content'] = array(
+             '#markup' => labdoo_render_edoovillage_header(),
+      );
       break;
 
     // Language switch

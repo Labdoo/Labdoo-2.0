@@ -404,6 +404,12 @@ function labdoo_render_edoovillage_header($nodeId = NULL) {
   // Next cell
   $htmlCode = $htmlCode . '</td><td>';
 
+  // Edoovillage stats 
+  $htmlCode = $htmlCode . lbd_display_dooject_column_chart($nodeId, "edoovillage");  
+
+  // Next cell
+  $htmlCode = $htmlCode . '</td><td>';
+
   // Table ending
   $htmlCode = $htmlCode . '</td></tr></tbody></table>';
 
@@ -827,9 +833,15 @@ function labdoo_get_demand($edoovillageId, $hubId, $doAverage) {
 
 
 /** 
- *
  * Calculates the number of doojects assigned 
- * to a hub in a give state
+ * to an edoovillage or a hub in a given state
+ *
+ * @param integer $edoovillageId The ID of an edoovillage 
+ * @param integer $hubId The ID of a hub 
+ * @param string $status The status of the laptops
+ *
+ * @return The number of doojects in the status $status that
+ * are assigned to the given edoovillage or hub
  * 
  */ 
 function labdoo_getnum_doojects($edoovillageId, $hubId, $status) {
