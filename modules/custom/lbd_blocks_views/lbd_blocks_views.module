@@ -121,15 +121,29 @@ function lbd_blocks_views_block_info() {
     'weight' => -100,
     'pages' => "
 <?php
-  \$match = FALSE;
-  \$types = array('edoovillage' => 1) ;
+  \$path = drupal_get_path_alias(current_path());
+  if(strpos(\$path, \"edoovillage?e=\") != FALSE)
+    return TRUE;
+  else
+    return FALSE;
+?>
+               ",
+    'region' => "content",
+  );
 
-  if ((arg(0) == 'node') && is_numeric(arg(1))) {
-    \$node = node_load(arg(1));
-    \$match = isset(\$types[\$node->type]);
-  }
-
-  return \$match;
+  // Hub header
+  $blocks['block_hub_header'] = array(
+    'info' => "The header of a hub",
+    'status' => 1,
+    'visibility' => BLOCK_VISIBILITY_PHP,
+    'weight' => -100,
+    'pages' => "
+<?php
+  \$path = drupal_get_path_alias(current_path());
+  if(strpos(\$path, \"hub?h=\") != FALSE)
+    return TRUE;
+  else
+    return FALSE;
 ?>
                ",
     'region' => "content",
@@ -209,9 +223,25 @@ function lbd_blocks_views_block_view($delta = '') {
 
     // Edoovillage header
     case 'block_edoovillage_header':
+      if(!empty($_GET['e'])) 
+        $blockContent = labdoo_render_edoovillage_hub_header($_GET['e'], "edoovillage");
+      else
+        $blockContent = "";
       $block['subject'] = "<none>";
       $block['content'] = array(
-             '#markup' => labdoo_render_edoovillage_header(),
+             '#markup' => $blockContent,
+      );
+      break;
+
+    // Hub header
+    case 'block_hub_header':
+      if(!empty($_GET['h'])) 
+        $blockContent = labdoo_render_edoovillage_hub_header($_GET['h'], "hub");
+      else
+        $blockContent = "";
+      $block['subject'] = "<none>";
+      $block['content'] = array(
+             '#markup' => $blockContent,
       );
       break;
 

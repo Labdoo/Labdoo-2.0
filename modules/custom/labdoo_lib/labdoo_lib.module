@@ -350,11 +350,16 @@ function labdoo_render_dooject_header() {
 }
 
 
-/**
- * Renders an edoovillage header
+/*
+ * Displays the header of an edoovillage or a hub.
+ *
+ * @param integer $nodeId The node identifier of a hub or an edoovillage.
+ * @param string $type Determines the type of node corresponding to $nodeId. Can be either "edoovillage" or "hub".
+ *
+ * @return The renderable header code 
  *
  */
-function labdoo_render_edoovillage_header($nodeId = NULL) {
+function labdoo_render_edoovillage_hub_header($nodeId = NULL, $type) {
   global $user;
 
   if($nodeId == NULL) {
@@ -369,8 +374,8 @@ function labdoo_render_edoovillage_header($nodeId = NULL) {
 
   $htmlCode = "";
 
-  // Accept only edoovillages 
-  $types = array('edoovillage' => 1) ;
+  // Accept only edoovillages and hubs 
+  $types = array('hub' => 1, 'edoovillage' => 1);
   if(!isset($types[$nodeObj->type]))
     return;
 
@@ -378,34 +383,35 @@ function labdoo_render_edoovillage_header($nodeId = NULL) {
   $htmlCode = $htmlCode . '<table border="0" cellpadding="1" cellspacing="1" style="width: 850px;"><tbody><tr><td>';
 
   // Photo album icon and button
-  $albumUri = request_uri() . "/../../node/" . $nodeId;
+  $albumUri = request_uri(); // TODO -- point to the right album once photo albums is implemented
   $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="middle">
                            <img alt="" src="/profiles/labdoo/files/pictures/photo-album-icon.jpg" style="width: 122px; height: 100px; "/></a>';
   $htmlCode = $htmlCode . '<p align="middle"><input type="button" value="Go to photo album"onclick="window.open(\''.$albumUri.'\', \'target=_self\');"/>';
 
+  if($type = "edoovillage") {
   // Next cell
-  $htmlCode = $htmlCode . '</td><td>';
+    $htmlCode = $htmlCode . '</td><td>';
 
-  // FIXME: should this be user_preferred_language?
-  $langCode = user_preferred_language($user)->language;
-  if(!file_exists(dirname(__FILE__) . "/../../../files/pictures/semaphore-red-" . $langCode . ".png"))
-    $langCode = 'en';
+    // FIXME: should this be user_preferred_language?
+    $langCode = user_preferred_language($user)->language;
+    if(!file_exists(dirname(__FILE__) . "/../../../files/pictures/semaphore-red-" . $langCode . ".png"))
+      $langCode = 'en';
 
-  // Semaphore
-  $semaphorePic = 'semaphore-red-' . $langCode . '.png';
-  $semaphoreState = labdoo_lib_get_field($nodeObj, 'field_semaphore', 'node', 'value'); 
-  if($semaphoreState == 'yellow')
-    $semaphorePic = 'semaphore-yellow-' . $langCode . '.png';
-  else if($semaphoreState == 'green')
-    $semaphorePic = 'semaphore-green-' . $langCode . '.png';
-  $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="middle">
-                           <img alt="" src="/profiles/labdoo/files/pictures/' . $semaphorePic . '" style="width: 400px; height: 120px; "/></a>';
-
+    // Semaphore
+    $semaphorePic = 'semaphore-red-' . $langCode . '.png';
+    $semaphoreState = labdoo_lib_get_field($nodeObj, 'field_semaphore', 'node', 'value'); 
+    if($semaphoreState == 'yellow')
+      $semaphorePic = 'semaphore-yellow-' . $langCode . '.png';
+    else if($semaphoreState == 'green')
+      $semaphorePic = 'semaphore-green-' . $langCode . '.png';
+    $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="middle">
+                             <img alt="" src="/profiles/labdoo/files/pictures/' . $semaphorePic . '" style="width: 400px; height: 120px; "/></a>';
+  }
   // Next cell
   $htmlCode = $htmlCode . '</td><td>';
 
   // Edoovillage stats 
-  $htmlCode = $htmlCode . lbd_display_dooject_column_chart($nodeId, "edoovillage");  
+  $htmlCode = $htmlCode . lbd_display_dooject_column_chart($nodeId, $type);  
 
   // Next cell
   $htmlCode = $htmlCode . '</td><td>';
