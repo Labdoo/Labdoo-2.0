@@ -404,8 +404,8 @@ function labdoo_render_edoovillage_hub_header($nodeId = NULL, $type) {
       $semaphorePic = 'semaphore-yellow-' . $langCode . '.png';
     else if($semaphoreState == 'green')
       $semaphorePic = 'semaphore-green-' . $langCode . '.png';
-    $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="middle">
-                             <img alt="" src="/profiles/labdoo/files/pictures/' . $semaphorePic . '" style="width: 400px; height: 120px; "/></a>';
+    $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="right">
+                             <img alt="" src="/profiles/labdoo/files/pictures/' . $semaphorePic . '" style="width: 280px; height: 85px; "/></a>';
   }
   // Next cell
   $htmlCode = $htmlCode . '</td><td>';

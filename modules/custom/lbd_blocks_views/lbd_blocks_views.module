@@ -116,13 +116,14 @@ function lbd_blocks_views_block_info() {
   // Edoovillage header
   $blocks['block_edoovillage_header'] = array(
     'info' => "The header of an edoovillage",
+    'cache' => DRUPAL_NO_CACHE,
     'status' => 1,
     'visibility' => BLOCK_VISIBILITY_PHP,
     'weight' => -100,
     'pages' => "
 <?php
   \$path = drupal_get_path_alias(current_path());
-  if(strpos(\$path, \"edoovillage?e=\") != FALSE)
+  if(\$path == \"edoovillage\")
     return TRUE;
   else
     return FALSE;
@@ -134,13 +135,14 @@ function lbd_blocks_views_block_info() {
   // Hub header
   $blocks['block_hub_header'] = array(
     'info' => "The header of a hub",
+    'cache' => DRUPAL_NO_CACHE,
     'status' => 1,
     'visibility' => BLOCK_VISIBILITY_PHP,
     'weight' => -100,
     'pages' => "
 <?php
   \$path = drupal_get_path_alias(current_path());
-  if(strpos(\$path, \"hub?h=\") != FALSE)
+  if(\$path == \"hub\")
     return TRUE;
   else
     return FALSE;
@@ -265,3 +267,31 @@ function lbd_blocks_views_block_view($delta = '') {
   return $block;
 }
 
+
+/*
+ * Implementation of hook_views_pre_render 
+ *
+ */
+function lbd_blocks_views_views_pre_render(&$view) {
+  if ($view->name == 'slider_dashboard' && $view->current_display == 'page') {
+    if(!empty($_GET['e'])) {
+      $node = node_load($_GET['e']); 
+      if($node) {
+        $view->build_info['title'] = $node->title;
+        return;
+      }
+      $view->build_info['title'] = "Page not found: please select a valid edoovillage";
+    }
+  }
+  if ($view->name == 'slider_dashboard' && $view->current_display == 'page_1') {
+    if(!empty($_GET['h'])) {
+      $node = node_load($_GET['h']); 
+      if($node) {
+        $view->build_info['title'] = $node->title;
+        return;
+      }
+      $view->build_info['title'] = "Page not found: please select a valid hub";
+    }
+  }
+  return;
+}

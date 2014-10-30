@@ -1435,7 +1435,7 @@ function lbd_display_dooject_column_chart($objectNid, $type)
   }
 </script>
 <body>
-  <div id="chart_div_pie_project" style="align: left; width: 500px; height: 250px;"></div>
+  <div id="chart_div_pie_project" style="align: left; width: 450px; height: 225px;"></div>
 </body>
 ';
 
