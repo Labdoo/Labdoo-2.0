@@ -78,3 +78,7 @@ h2.block-title {
   font-style: normal;
   color: #666666;
 }
+
+body {
+  line-height: 1.5em;
+}

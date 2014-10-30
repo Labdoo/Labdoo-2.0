@@ -388,7 +388,7 @@ function labdoo_render_edoovillage_hub_header($nodeId = NULL, $type) {
                            <img alt="" src="/profiles/labdoo/files/pictures/photo-album-icon.jpg" style="width: 122px; height: 100px; "/></a>';
   $htmlCode = $htmlCode . '<p align="middle"><input type="button" value="Go to photo album"onclick="window.open(\''.$albumUri.'\', \'target=_self\');"/>';
 
-  if($type = "edoovillage") {
+  if($type == "edoovillage") {
   // Next cell
     $htmlCode = $htmlCode . '</td><td>';
 
