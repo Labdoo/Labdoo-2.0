@@ -129,7 +129,7 @@ function lbd_gmap_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'gmap_marker_file';
-  $strongarm->value = '1';
+  $strongarm->value = '2';
   $export['gmap_marker_file'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -157,16 +157,18 @@ function lbd_gmap_strongarm() {
   $strongarm->name = 'gmap_node_markers';
   $strongarm->value = array(
     'blog' => 'drupal',
-    'dootrip' => 'small green',
-    'edoovillage' => 'small blue',
-    'hub' => 'small gray',
-    'laptop' => 'small orange',
-    'labdoo_action' => 'drupal',
-    'action' => 'small brown',
+    'dootrip' => 'green',
+    'edoovillage' => 'blue',
+    'hub' => 'orange',
+    'laptop' => 'orange',
+    'action' => 'blue',
+    'gic' => 'drupal',
     'private_page' => 'drupal',
+    'slider_page' => 'drupal',
     'article' => 'drupal',
     'book' => 'drupal',
     'page' => 'drupal',
+    'simplenews' => 'drupal',
   );
   $export['gmap_node_markers'] = $strongarm;
 
@@ -175,8 +177,12 @@ function lbd_gmap_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'gmap_role_markers';
   $strongarm->value = array(
-    2 => 'drupal',
-    3 => 'drupal',
+    2 => 'green',
+    3 => 'green',
+    6 => 'green',
+    5 => 'orange',
+    4 => 'orange',
+    7 => 'orange',
   );
   $export['gmap_role_markers'] = $strongarm;
 

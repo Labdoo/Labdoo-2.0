@@ -16,6 +16,8 @@ function lbd_gmap_default_fe_block_settings() {
     'cache' => -1,
     'custom' => '0',
     'delta' => '0',
+    'i18n_block_language' => array(),
+    'i18n_mode' => '0',
     'module' => 'gmap_location',
     'node_types' => array(),
     'pages' => '',
@@ -25,12 +27,6 @@ function lbd_gmap_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'bartik',
-        'weight' => '0',
-      ),
-      'bootstrap1' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap1',
         'weight' => '0',
       ),
       'seven' => array(
@@ -48,6 +44,8 @@ function lbd_gmap_default_fe_block_settings() {
     'cache' => -1,
     'custom' => '0',
     'delta' => '1',
+    'i18n_block_language' => array(),
+    'i18n_mode' => '0',
     'module' => 'gmap_location',
     'node_types' => array(),
     'pages' => '',
@@ -57,12 +55,6 @@ function lbd_gmap_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'bartik',
-        'weight' => '0',
-      ),
-      'bootstrap1' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap1',
         'weight' => '0',
       ),
       'seven' => array(
