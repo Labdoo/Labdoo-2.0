@@ -34,6 +34,7 @@ echo "
 
 
 drush @lbd $enOrDis -y lbd_blocks_views
+drush @lbd $enOrDis -y lbd_users
 
 # Somehow after installing blocks and views a refresh of the cache is needed
 # so that the various views and blocks are correctly enabled
