@@ -44,7 +44,7 @@ class LabdooClassTestCase extends DrupalWebTestCase {
     $info['field_additional_editors'] = "1";
     $info['field_cpu'] = 2;
     $info['field_cpu_type'] = "intel core";
-    $info['vid'] = 5581;
+    $info['vid'] = 5580;
     $info['uid'] = 1;
     $info['title'] =  $name;
     return $info;
@@ -62,7 +62,7 @@ class LabdooClassTestCase extends DrupalWebTestCase {
     $info['field_additional_editors'] = "1";
     $info['field_cpu'] = 2;
     $info['field_cpu_type'] = "intel core";
-    $info['vid'] = 5562;
+    $info['vid'] = 5578;
     $info['uid'] = 1;
     $info['title'] = "Example for Laptop";
 
@@ -79,8 +79,8 @@ class LabdooClassTestCase extends DrupalWebTestCase {
    $this->_deleteLaptop($id);
   }
 */
- /* 
-     public function testLoginLogout () {
+/*  
+ public function testLoginLogout () {
      $request_url_login = 'http://www.labdoo-dev.org/rest/user/login.xml'; // .xml asks for xml data in response
      $request_url_logout = 'http://www.labdoo-dev.org/rest/user/logout.xml';
      $post_data = array(
@@ -91,13 +91,14 @@ class LabdooClassTestCase extends DrupalWebTestCase {
      print print_r("Received token: \n");
      print print_r($response)."\n";
      $response = $this->_logout($request_url_logout);
-     }
+ }
  */
 
   /**
     Test to create a new user.
    */
-/*  public function testRegisterNewUser ()  {
+/*  
+public function testRegisterNewUser ()  {
 
      $request_url_login = 'http://www.labdoo-dev.org/rest/user/login.xml'; // .xml asks for xml data in response
      $request_url_logout = 'http://www.labdoo-dev.org/rest/user/logout.xml';
@@ -106,24 +107,27 @@ class LabdooClassTestCase extends DrupalWebTestCase {
     'name' => 'admin',
     'pass' => 'admin',
     );
-    $data = array('name'=>'testuser','pass'=>'passuser','mail'=>'user@mail.com');
+    $data = array('name'=>'testuser3','pass'=>'passuser3','mail'=>'use33@mail.com');
   //Log in admin
   $response = $this->_login($request_url_login,$post_data);
   // Trying to register user
+  print "********************************Before load page";
   $this->_loadPage($request_url_register,$data,"POST");
+  print "********************************After load page";
   $response = $this->_logout($request_url_logout);
   }
-  */ 
+ 
+*/
 
   //TODO try to do independent tests and review errors.
 
   /**
     Test to get information form a created user.
    **/
-/*   public function testGetUserInformation ()  {
-     $request_url_login = 'http://127.0.0.1/rest/user/login.xml'; // .xml asks for xml data in response
-     $request_url_logout = 'http://127.0.0.1/rest/user/logout.xml';
-     $request_url_getinfo = 'http://127.0.0.1/rest/user/8.xml';
+ /*  public function testGetUserInformation ()  {
+     $request_url_login = 'http://www.labdoo-dev.org/rest/user/login.xml'; // .xml asks for xml data in response
+     $request_url_logout = 'http://www.labdoo-dev.org/rest/user/logout.xml';
+     $request_url_getinfo = 'http://www.labdoo-dev.org/rest/user/6.xml';
      $post_data = array(
      'name' => 'admin',
      'pass' => 'admin',
@@ -133,9 +137,10 @@ class LabdooClassTestCase extends DrupalWebTestCase {
   // Trying to register user
   $this->_loadPage($request_url_getinfo,NULL,"GET");
   $response = $this->_logout($request_url_logout);
-  }
+ }
 */
-/*
+
+
  public function testRestCreateLaptop() {
     $request_url_login = 'http://127.0.0.1/rest/user/login.xml'; // .xml asks for xml data in response
     $request_url_logout = 'http://127.0.0.1/rest/user/logout.xml';
@@ -144,63 +149,23 @@ class LabdooClassTestCase extends DrupalWebTestCase {
         'name' => 'admin',
         'pass' => 'admin',
         );
-    $data =  $this->_createNodeLaptop("test1");
     //Log in admin
-    $response = $this->_login($request_url_login,$post_data);
-    // Trying to register user
-    $response = $this->_loadPage($request_url_create_laptop,$data,"POST");
-    print "-----------------------------------";
-    print "CREATE RESPONSE: ";
-    var_dump($response);
-    $xml = new SimpleXMLElement($response);
-    //$this->_deleteLaptop($xml->id);
-    print "-----------------------------------";
-    $response = $this->_logout($request_url_logout);
- }*/
-
+   $response = $this->_login($request_url_login,$post_data);
+   
+   $data=$this->_createNodeLaptop("test2");
+   $response = $this->_loadPage($request_url_create_laptop,$data,"POST");
+   $id_to_save = $response->id;
  
-/*
-  public function testRestDeleteLaptop() {
-        $request_url_login = 'http://127.0.0.1/rest/user/login.xml'; // .xml asks for xml data in response
-        $request_url_logout = 'http://127.0.0.1/rest/user/logout.xml';
-        $post_data = array(
-         'name' => 'admin',
-         'pass' => 'admin',
-          );
+   $request_url_get_laptop = "http://127.0.0.1/rest/dooject/".$id_to_save;
+   $response = $this->_login($request_url_login,$post_data);
+   $this->_loadPage($request_url_get_laptop,null,"GET");
 
-      //$id = $this->setUpLaptop();
-      //$id=35;
-	$id=40;
-      $request_url_delete_laptop = "http://127.0.0.1/rest/dooject/".$id;
-      //Log in admin
-      $response = $this->_login($request_url_login,$post_data);
-      // Trying to register user
-      $this->_loadPage($request_url_delete_laptop,null,"DELETE");
-     }
+   $request_url_delete_laptop = "http://127.0.0.1/rest/dooject/".$id_to_save;
+   $response = $this->_login($request_url_login,$post_data);
+   $this->_loadPage($request_url_delete_laptop,null,"DELETE");
+ }
 
-*/
 
- 
-
-     public function testRestGetLaptop () {
-        $request_url_login = 'http://127.0.0.1/rest/user/login.xml'; // .xml asks for xml data in response
-        $request_url_logout = 'http://127.0.0.1/rest/user/logout.xml';
-        $post_data = array(
-         'name' => 'admin',
-         'pass' => 'admin',
-          );
-      //TODO Pending to change!
-      //$id = $this->setUpLaptop();
-      $id = 42;
-      $request_url_get_laptop = "http://127.0.0.1/rest/dooject/".$id;
-      //Log in admin
-      $response = $this->_login($request_url_login,$post_data);
-      // Trying to register user
-      $this->_loadPage($request_url_get_laptop,null,"GET");
-      $response = $this->_logout($request_url_logout);
-      }
-
-/*
      public function testListLaptops () {
         $request_url_login = 'http://127.0.0.1/rest/user/login.xml'; // .xml asks for xml data in response
         $request_url_logout = 'http://127.0.0.1/rest/user/logout.xml';
@@ -215,7 +180,8 @@ class LabdooClassTestCase extends DrupalWebTestCase {
         $this->_loadPage($request_url_get_laptop,null,"GET");
         $response = $this->_logout($request_url_logout);
   }
-*/
+
+
 /*
  public function testRestUpdateLaptop() {
     $request_url_login = 'http://127.0.0.1/rest/user/login.xml'; // .xml asks for xml data in response
@@ -309,6 +275,7 @@ class LabdooClassTestCase extends DrupalWebTestCase {
 
     $session_cookie = file_get_contents('session_cookie.txt');
     // set up the request
+    print "URL = ".$url;
     $curl = curl_init($url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);  // have curl_exec return a string
     curl_setopt($curl, CURLOPT_COOKIE, "$session_cookie"); // use the previously saved session

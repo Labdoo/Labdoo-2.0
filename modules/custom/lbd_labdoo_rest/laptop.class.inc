@@ -193,7 +193,7 @@ class laptop {
   public static function node_list_by_uid($uid) {
 	    watchdog('debug','Laptop.class.inc: Listing node by uid '.$uid."\n");
 	try {
-		$result = db_query('SELECT node.nid,node.vid,node.title FROM node AS node WHERE node.uid=:uid AND node.type="laptop"',array(':uid' => $uid));
+		$result = db_query('SELECT node.nid,node.vid,node.title FROM node AS node WHERE node.uid=:uid AND node.type=\'laptop\'',array(':uid' => $uid));
 	} catch (Exception $e) {
 	    watchdog('debug','Laptop.class.inc: Caught exception: '.$e->getMessage()."\n");
 	}
