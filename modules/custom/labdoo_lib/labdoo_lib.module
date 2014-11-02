@@ -93,6 +93,8 @@ function _update_dooject_location_from_edoovillage($node) {
 /**
  * Attempts to estimate latitude and longitude from the names of the city and country
  * by querying an Internet service. Therefore, requires connectivity to the Internet.
+ * To avoid all same [country, city] queries be mapped onto the same point, a small 
+ * random value is added to both latitude and longitude.
  *
  * @param string $country
  *   Country code (e.g. us, de, ...)
@@ -107,7 +109,6 @@ function _update_dooject_location_from_edoovillage($node) {
  *
  */
 function labdoo_lookup_coordinates($country, $city, &$lat, &$lon) {
-
     # There are various online services to pull the GPS  
     # coordinates of a location. Use one of them.
     $query = str_replace(' ', '%', 'https://maps.googleapis.com/maps/api/geocode/json?address='.$city.'&sensor=false&region='.$country);
@@ -120,8 +121,8 @@ function labdoo_lookup_coordinates($country, $city, &$lat, &$lon) {
     if(!isset($mapQueryDecoded['results'][0]))
       return 0;
     $coordinates = $mapQueryDecoded['results'][0]['geometry']['location'];
-    $lat = $coordinates['lat'];
-    $lon = $coordinates['lng']; 
+    $lat = strval(floatval($coordinates['lat'])+rand(-500,500)/100000);
+    $lon = strval(floatval($coordinates['lng'])+rand(-500,500)/100000); 
     return 0;
 }
 
@@ -350,7 +351,7 @@ function labdoo_render_dooject_header() {
 }
 
 
-/*
+/**
  * Displays the header of an edoovillage or a hub.
  *
  * @param integer $nodeId The node identifier of a hub or an edoovillage.
@@ -690,7 +691,7 @@ function lbd_get_total_num_objects($objectType) {
 }
 
 
-/*
+/**
  * update_city
  *
  */
@@ -885,7 +886,7 @@ function lbd_nodeid2title($nodeId)
 }
 
 
-/*
+/**
  * lbd_generate_qrcode
  *
  * @param tag dooject identifier
@@ -1112,11 +1113,12 @@ function labdoo_lib_get_field($node, $field, $type, $key) {
 }
 
 
-/*
+/**
  * Prints an array in a user friendly way
  * using drupal_set_message
  *
  * @param array $array An input array
+ * @param string $prefix A prefix to add before the printing of each element of the array
  *
  */
 function labdoo_lib_print_array($array, $prefix = "") {
@@ -1129,5 +1131,45 @@ function labdoo_lib_print_array($array, $prefix = "") {
     if(is_array($value))
       labdoo_lib_print_array($value, $prefix . "---|");
   }
+}
+
+
+/**
+ * Implements hook_user_view().
+ *
+ */
+function labdoo_lib_user_view($account, $view_mode, $langcode) {
+  // Set the page title of the user profile page 
+  // to the user's full name.
+  $wrapper = entity_metadata_wrapper('user', $account);
+  drupal_set_title($wrapper->field_user_name->value());
+
+  return;
+}
+
+
+/**
+ * Implements hook_email_registration_name
+ *
+ */
+function labdoo_lib_email_registration_name($edit, $account) {
+  // Set the user ID value to something more user friendly
+  return('userid' . $account->uid);
+}
+
+
+/**
+ * Implements hook_user_presave
+ *
+ */
+function labdoo_lib_user_presave(&$edit, &$account, $category) {
+  /*
+   * When creating or updating a user, geolocate its position so that
+   * it can be displayed on the user maps
+   */
+  $location = $edit['locations'][0]; 
+  $ret = labdoo_lookup_coordinates($location['country'], $location['city'], $edit['locations'][0]['latitude'], $edit['locations'][0]['longitude']);
+  if($ret == 0) // If successful, do not let the system attempt to geolocate it anymore
+      $edit['locations'][0]['inhibit_geocode'] = TRUE;
 }
 
