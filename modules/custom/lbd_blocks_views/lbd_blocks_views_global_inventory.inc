@@ -1,7 +1,7 @@
 <?php
 
 $view = new view();
-$view->name = 'global_inventory';
+$view->name = 'GlobalInventory';
 $view->description = '';
 $view->tag = 'default';
 $view->base_table = 'node';
@@ -12,7 +12,7 @@ $view->disabled = FALSE; /* Edit this to true to make a default view disabled in
 
 /* Display: Master */
 $handler = $view->new_display('default', 'Master', 'default');
-$handler->display->display_options['title'] = 'Dootrips';
+$handler->display->display_options['title'] = 'Inventories';
 $handler->display->display_options['use_ajax'] = TRUE;
 $handler->display->display_options['use_more_always'] = FALSE;
 $handler->display->display_options['access']['type'] = 'perm';
@@ -58,23 +58,6 @@ $handler->display->display_options['filters']['status']['field'] = 'status';
 $handler->display->display_options['filters']['status']['value'] = 1;
 $handler->display->display_options['filters']['status']['group'] = 1;
 $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-/* Filter criterion: Content: Type */
-$handler->display->display_options['filters']['type']['id'] = 'type';
-$handler->display->display_options['filters']['type']['table'] = 'node';
-$handler->display->display_options['filters']['type']['field'] = 'type';
-$handler->display->display_options['filters']['type']['value'] = array(
-  'action' => 'action',
-  'dootrip' => 'dootrip',
-  'edoovillage' => 'edoovillage',
-  'hub' => 'hub',
-  'laptop' => 'laptop',
-);
-$handler->display->display_options['filters']['type']['group'] = 1;
-$handler->display->display_options['filters']['type']['exposed'] = TRUE;
-$handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
-$handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
-$handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
-$handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
 /* Filter criterion: Location: Distance / Proximity */
 $handler->display->display_options['filters']['distance']['id'] = 'distance';
 $handler->display->display_options['filters']['distance']['table'] = 'location';
@@ -91,6 +74,7 @@ $handler->display->display_options['filters']['distance']['value'] = array(
   'search_distance' => '100',
   'search_units' => 'km',
 );
+$handler->display->display_options['filters']['distance']['group'] = 1;
 $handler->display->display_options['filters']['distance']['exposed'] = TRUE;
 $handler->display->display_options['filters']['distance']['expose']['operator_id'] = 'distance_op';
 $handler->display->display_options['filters']['distance']['expose']['label'] = 'Distance / Proximity';
@@ -111,8 +95,8 @@ $handler->display->display_options['filters']['distance']['expose']['user_locati
 );
 $handler->display->display_options['filters']['distance']['origin'] = 'static';
 
-/* Display: Page */
-$handler = $view->new_display('page', 'Page', 'page');
+/* Display: Global */
+$handler = $view->new_display('page', 'Global', 'page');
 $handler->display->display_options['defaults']['title'] = FALSE;
 $handler->display->display_options['title'] = 'Global inventory';
 $handler->display->display_options['defaults']['relationships'] = FALSE;
@@ -128,6 +112,14 @@ $handler->display->display_options['fields']['title']['field'] = 'title';
 $handler->display->display_options['fields']['title']['label'] = '';
 $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
 $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Field: Location: City */
+$handler->display->display_options['fields']['city']['id'] = 'city';
+$handler->display->display_options['fields']['city']['table'] = 'location';
+$handler->display->display_options['fields']['city']['field'] = 'city';
+/* Field: Location: Country */
+$handler->display->display_options['fields']['country']['id'] = 'country';
+$handler->display->display_options['fields']['country']['table'] = 'location';
+$handler->display->display_options['fields']['country']['field'] = 'country';
 $handler->display->display_options['defaults']['arguments'] = FALSE;
 /* Contextual filter: Content: Type */
 $handler->display->display_options['arguments']['type']['id'] = 'type';
@@ -292,8 +284,10 @@ $handler->display->display_options['filters']['keys']['expose']['remember_roles'
 );
 $handler->display->display_options['path'] = 'map';
 
-/* Display: Page */
-$handler = $view->new_display('page', 'Page', 'page_1');
+/* Display: Dootrips */
+$handler = $view->new_display('page', 'Dootrips', 'page_1');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['title'] = 'Dootrips';
 $handler->display->display_options['defaults']['style_plugin'] = FALSE;
 $handler->display->display_options['style_plugin'] = 'gmap';
 $handler->display->display_options['style_options']['macro'] = '[gmap width=1175px | height=600px | zoom=2]';
@@ -317,6 +311,7 @@ $handler->display->display_options['row_options']['inline'] = array(
   'title' => 'title',
 );
 $handler->display->display_options['defaults']['row_options'] = FALSE;
+$handler->display->display_options['defaults']['relationships'] = FALSE;
 $handler->display->display_options['defaults']['fields'] = FALSE;
 /* Field: Content: Title */
 $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -325,16 +320,41 @@ $handler->display->display_options['fields']['title']['field'] = 'title';
 $handler->display->display_options['fields']['title']['label'] = '';
 $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
 $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Field: Content: Origin of the trip */
+$handler->display->display_options['fields']['field_origin_of_the_trip']['id'] = 'field_origin_of_the_trip';
+$handler->display->display_options['fields']['field_origin_of_the_trip']['table'] = 'field_data_field_origin_of_the_trip';
+$handler->display->display_options['fields']['field_origin_of_the_trip']['field'] = 'field_origin_of_the_trip';
+/* Field: Content: Arrival date */
+$handler->display->display_options['fields']['field_arrival_date']['id'] = 'field_arrival_date';
+$handler->display->display_options['fields']['field_arrival_date']['table'] = 'field_data_field_arrival_date';
+$handler->display->display_options['fields']['field_arrival_date']['field'] = 'field_arrival_date';
+$handler->display->display_options['fields']['field_arrival_date']['settings'] = array(
+  'format_type' => 'short',
+  'fromto' => 'both',
+  'multiple_number' => '',
+  'multiple_from' => '',
+  'multiple_to' => '',
+);
 /* Field: Content: Destination of the trip */
 $handler->display->display_options['fields']['field_destination_of_the_trip']['id'] = 'field_destination_of_the_trip';
 $handler->display->display_options['fields']['field_destination_of_the_trip']['table'] = 'field_data_field_destination_of_the_trip';
 $handler->display->display_options['fields']['field_destination_of_the_trip']['field'] = 'field_destination_of_the_trip';
 $handler->display->display_options['fields']['field_destination_of_the_trip']['label'] = 'Destination';
-/* Field: Content: Origin of the trip */
-$handler->display->display_options['fields']['field_origin_of_the_trip']['id'] = 'field_origin_of_the_trip';
-$handler->display->display_options['fields']['field_origin_of_the_trip']['table'] = 'field_data_field_origin_of_the_trip';
-$handler->display->display_options['fields']['field_origin_of_the_trip']['field'] = 'field_origin_of_the_trip';
-$handler->display->display_options['fields']['field_origin_of_the_trip']['label'] = 'Origin';
+/* Field: Content: Departure date */
+$handler->display->display_options['fields']['field_departure_date']['id'] = 'field_departure_date';
+$handler->display->display_options['fields']['field_departure_date']['table'] = 'field_data_field_departure_date';
+$handler->display->display_options['fields']['field_departure_date']['field'] = 'field_departure_date';
+$handler->display->display_options['fields']['field_departure_date']['settings'] = array(
+  'format_type' => 'short',
+  'fromto' => 'both',
+  'multiple_number' => '',
+  'multiple_from' => '',
+  'multiple_to' => '',
+);
+/* Field: Content: Status */
+$handler->display->display_options['fields']['field_status_dootrip']['id'] = 'field_status_dootrip';
+$handler->display->display_options['fields']['field_status_dootrip']['table'] = 'field_data_field_status_dootrip';
+$handler->display->display_options['fields']['field_status_dootrip']['field'] = 'field_status_dootrip';
 $handler->display->display_options['defaults']['filter_groups'] = FALSE;
 $handler->display->display_options['defaults']['filters'] = FALSE;
 /* Filter criterion: Content: Published */
@@ -379,6 +399,7 @@ $handler->display->display_options['filters']['distance']['value'] = array(
   'search_distance' => '100',
   'search_units' => 'km',
 );
+$handler->display->display_options['filters']['distance']['group'] = 1;
 $handler->display->display_options['filters']['distance']['exposed'] = TRUE;
 $handler->display->display_options['filters']['distance']['expose']['operator_id'] = 'distance_op';
 $handler->display->display_options['filters']['distance']['expose']['label'] = 'Distance / Proximity';
@@ -398,10 +419,29 @@ $handler->display->display_options['filters']['distance']['expose']['user_locati
   'default' => FALSE,
 );
 $handler->display->display_options['filters']['distance']['origin'] = 'static';
+/* Filter criterion: Content: Status (field_status_dootrip) */
+$handler->display->display_options['filters']['field_status_dootrip_value']['id'] = 'field_status_dootrip_value';
+$handler->display->display_options['filters']['field_status_dootrip_value']['table'] = 'field_data_field_status_dootrip';
+$handler->display->display_options['filters']['field_status_dootrip_value']['field'] = 'field_status_dootrip_value';
+$handler->display->display_options['filters']['field_status_dootrip_value']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_status_dootrip_value']['expose']['operator_id'] = 'field_status_dootrip_value_op';
+$handler->display->display_options['filters']['field_status_dootrip_value']['expose']['label'] = 'Status';
+$handler->display->display_options['filters']['field_status_dootrip_value']['expose']['operator'] = 'field_status_dootrip_value_op';
+$handler->display->display_options['filters']['field_status_dootrip_value']['expose']['identifier'] = 'field_status_dootrip_value';
+$handler->display->display_options['filters']['field_status_dootrip_value']['expose']['multiple'] = TRUE;
+$handler->display->display_options['filters']['field_status_dootrip_value']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+  6 => 0,
+  5 => 0,
+  4 => 0,
+  7 => 0,
+);
 $handler->display->display_options['path'] = 'dootrips';
 
-/* Display: Attachment */
-$handler = $view->new_display('attachment', 'Attachment', 'attachment_1');
+/* Display: Attachment - Global */
+$handler = $view->new_display('attachment', 'Attachment - Global', 'attachment_1');
 $handler->display->display_options['defaults']['title'] = FALSE;
 $handler->display->display_options['title'] = 'Attachment';
 $handler->display->display_options['defaults']['use_more'] = FALSE;
@@ -653,26 +693,77 @@ $handler->display->display_options['inherit_exposed_filters'] = TRUE;
 $handler->display->display_options['inherit_pager'] = TRUE;
 $handler->display->display_options['render_pager'] = TRUE;
 
-/* Display: Test */
-$handler = $view->new_display('page', 'Test', 'page_2');
+/* Display: Attachment - Dootrip */
+$handler = $view->new_display('attachment', 'Attachment - Dootrip', 'attachment_2');
 $handler->display->display_options['defaults']['title'] = FALSE;
-$handler->display->display_options['title'] = 'test';
-$handler->display->display_options['defaults']['use_ajax'] = FALSE;
+$handler->display->display_options['title'] = 'Attachment';
+$handler->display->display_options['defaults']['use_more'] = FALSE;
+$handler->display->display_options['use_more'] = TRUE;
+$handler->display->display_options['defaults']['use_more_always'] = FALSE;
+$handler->display->display_options['defaults']['use_more_always'] = FALSE;
+$handler->display->display_options['use_more_always'] = FALSE;
+$handler->display->display_options['defaults']['use_more_text'] = FALSE;
+$handler->display->display_options['defaults']['link_display'] = FALSE;
+$handler->display->display_options['link_display'] = 'page_1';
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['pager']['options']['items_per_page'] = '10';
+$handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['defaults']['style_plugin'] = FALSE;
 $handler->display->display_options['style_plugin'] = 'table';
 $handler->display->display_options['style_options']['columns'] = array(
   'title' => 'title',
+  'field_origin_of_the_trip' => 'field_origin_of_the_trip',
+  'field_departure_date' => 'field_departure_date',
+  'field_destination_of_the_trip' => 'field_destination_of_the_trip',
+  'field_arrival_date' => 'field_arrival_date',
+  'field_status_dootrip' => 'field_status_dootrip',
 );
-$handler->display->display_options['style_options']['default'] = '-1';
+$handler->display->display_options['style_options']['default'] = 'title';
 $handler->display->display_options['style_options']['info'] = array(
   'title' => array(
-    'sortable' => 0,
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_origin_of_the_trip' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_departure_date' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_destination_of_the_trip' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_arrival_date' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_status_dootrip' => array(
+    'sortable' => 1,
     'default_sort_order' => 'asc',
     'align' => '',
     'separator' => '',
     'empty_column' => 0,
   ),
 );
+$handler->display->display_options['style_options']['sticky'] = TRUE;
 $handler->display->display_options['defaults']['style_options'] = FALSE;
 $handler->display->display_options['defaults']['row_plugin'] = FALSE;
 $handler->display->display_options['defaults']['row_options'] = FALSE;
@@ -681,63 +772,140 @@ $handler->display->display_options['defaults']['fields'] = FALSE;
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
 $handler->display->display_options['fields']['title']['field'] = 'title';
-$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['label'] = 'Name';
 $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
 $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Field: Content: Origin of the trip */
+$handler->display->display_options['fields']['field_origin_of_the_trip']['id'] = 'field_origin_of_the_trip';
+$handler->display->display_options['fields']['field_origin_of_the_trip']['table'] = 'field_data_field_origin_of_the_trip';
+$handler->display->display_options['fields']['field_origin_of_the_trip']['field'] = 'field_origin_of_the_trip';
+$handler->display->display_options['fields']['field_origin_of_the_trip']['label'] = 'Origin';
+/* Field: Content: Departure date */
+$handler->display->display_options['fields']['field_departure_date']['id'] = 'field_departure_date';
+$handler->display->display_options['fields']['field_departure_date']['table'] = 'field_data_field_departure_date';
+$handler->display->display_options['fields']['field_departure_date']['field'] = 'field_departure_date';
+$handler->display->display_options['fields']['field_departure_date']['settings'] = array(
+  'format_type' => 'long',
+  'fromto' => 'both',
+  'multiple_number' => '',
+  'multiple_from' => '',
+  'multiple_to' => '',
+);
+/* Field: Content: Destination of the trip */
+$handler->display->display_options['fields']['field_destination_of_the_trip']['id'] = 'field_destination_of_the_trip';
+$handler->display->display_options['fields']['field_destination_of_the_trip']['table'] = 'field_data_field_destination_of_the_trip';
+$handler->display->display_options['fields']['field_destination_of_the_trip']['field'] = 'field_destination_of_the_trip';
+$handler->display->display_options['fields']['field_destination_of_the_trip']['label'] = 'Destination';
+/* Field: Content: Arrival date */
+$handler->display->display_options['fields']['field_arrival_date']['id'] = 'field_arrival_date';
+$handler->display->display_options['fields']['field_arrival_date']['table'] = 'field_data_field_arrival_date';
+$handler->display->display_options['fields']['field_arrival_date']['field'] = 'field_arrival_date';
+$handler->display->display_options['fields']['field_arrival_date']['settings'] = array(
+  'format_type' => 'long',
+  'fromto' => 'both',
+  'multiple_number' => '',
+  'multiple_from' => '',
+  'multiple_to' => '',
+);
+/* Field: Content: Status */
+$handler->display->display_options['fields']['field_status_dootrip']['id'] = 'field_status_dootrip';
+$handler->display->display_options['fields']['field_status_dootrip']['table'] = 'field_data_field_status_dootrip';
+$handler->display->display_options['fields']['field_status_dootrip']['field'] = 'field_status_dootrip';
 $handler->display->display_options['defaults']['filter_groups'] = FALSE;
 $handler->display->display_options['defaults']['filters'] = FALSE;
-/* Filter criterion: Content: Title */
-$handler->display->display_options['filters']['title']['id'] = 'title';
-$handler->display->display_options['filters']['title']['table'] = 'node';
-$handler->display->display_options['filters']['title']['field'] = 'title';
-$handler->display->display_options['filters']['title']['operator'] = 'contains';
-$handler->display->display_options['filters']['title']['exposed'] = TRUE;
-$handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-$handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
-$handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
-$handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
-$handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+/* Filter criterion: Content: Published */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filter criterion: Content: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'dootrip' => 'dootrip',
+);
+$handler->display->display_options['filters']['type']['group'] = 1;
+$handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
+$handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
+$handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
+$handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
+$handler->display->display_options['filters']['type']['expose']['required'] = TRUE;
+$handler->display->display_options['filters']['type']['expose']['multiple'] = TRUE;
+$handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
   2 => '2',
   1 => 0,
   3 => 0,
 );
-$handler->display->display_options['filters']['title']['expose']['autocomplete_filter'] = 1;
-$handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
-$handler->display->display_options['filters']['title']['expose']['autocomplete_min_chars'] = '0';
-$handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title';
-$handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
-$handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
-$handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
-$handler->display->display_options['path'] = 'test';
-$translatables['global_inventory'] = array(
-  t('Master'),
-  t('Dootrips'),
-  t('more'),
-  t('Apply'),
-  t('Reset'),
-  t('Sort by'),
-  t('Asc'),
-  t('Desc'),
-  t('Type'),
-  t('Distance / Proximity'),
-  t('[gmap ]'),
-  t('Page'),
-  t('Global inventory'),
-  t('All'),
-  t('Country'),
-  t('Dooject status'),
-  t('Hub'),
-  t('Search'),
-  t('Destination'),
-  t('Origin'),
-  t('Attachment'),
-  t('Name'),
-  t('City'),
-  t('Created on'),
-  t('Last updated'),
-  t('Status'),
-  t('Test'),
-  t('test'),
-  t('Title'),
+$handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
+/* Filter criterion: Location: Distance / Proximity */
+$handler->display->display_options['filters']['distance']['id'] = 'distance';
+$handler->display->display_options['filters']['distance']['table'] = 'location';
+$handler->display->display_options['filters']['distance']['field'] = 'distance';
+$handler->display->display_options['filters']['distance']['operator'] = 'dist';
+$handler->display->display_options['filters']['distance']['value'] = array(
+  'latitude' => '',
+  'longitude' => '',
+  'postal_code' => '',
+  'country' => '',
+  'php_code' => '',
+  'nid_arg' => '',
+  'nid_loc_field' => 'node',
+  'uid_arg' => '',
+  'search_distance' => '100',
+  'search_units' => 'km',
 );
+$handler->display->display_options['filters']['distance']['exposed'] = TRUE;
+$handler->display->display_options['filters']['distance']['expose']['operator_id'] = 'distance_op';
+$handler->display->display_options['filters']['distance']['expose']['label'] = 'Distance / Proximity';
+$handler->display->display_options['filters']['distance']['expose']['operator'] = 'distance_op';
+$handler->display->display_options['filters']['distance']['expose']['identifier'] = 'distance';
+$handler->display->display_options['filters']['distance']['expose']['remember'] = TRUE;
+$handler->display->display_options['filters']['distance']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+  6 => 0,
+  5 => 0,
+  4 => 0,
+  7 => 0,
+);
+$handler->display->display_options['filters']['distance']['expose']['gmap_macro'] = array(
+  'default' => '[gmap ]',
+);
+$handler->display->display_options['filters']['distance']['expose']['user_location_choose'] = array(
+  'default' => FALSE,
+);
+$handler->display->display_options['filters']['distance']['origin'] = 'static';
+/* Filter criterion: Content: Status (field_status_dootrip) */
+$handler->display->display_options['filters']['field_status_dootrip_value']['id'] = 'field_status_dootrip_value';
+$handler->display->display_options['filters']['field_status_dootrip_value']['table'] = 'field_data_field_status_dootrip';
+$handler->display->display_options['filters']['field_status_dootrip_value']['field'] = 'field_status_dootrip_value';
+$handler->display->display_options['filters']['field_status_dootrip_value']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_status_dootrip_value']['expose']['operator_id'] = 'field_status_dootrip_value_op';
+$handler->display->display_options['filters']['field_status_dootrip_value']['expose']['label'] = 'Status';
+$handler->display->display_options['filters']['field_status_dootrip_value']['expose']['operator'] = 'field_status_dootrip_value_op';
+$handler->display->display_options['filters']['field_status_dootrip_value']['expose']['identifier'] = 'field_status_dootrip_value';
+$handler->display->display_options['filters']['field_status_dootrip_value']['expose']['multiple'] = TRUE;
+$handler->display->display_options['filters']['field_status_dootrip_value']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+  6 => 0,
+  5 => 0,
+  4 => 0,
+  7 => 0,
+);
+$handler->display->display_options['displays'] = array(
+  'page_1' => 'page_1',
+  'default' => 0,
+  'page' => 0,
+);
+$handler->display->display_options['attachment_position'] = 'after';
+$handler->display->display_options['inherit_exposed_filters'] = TRUE;
+$handler->display->display_options['inherit_pager'] = TRUE;
+$handler->display->display_options['render_pager'] = TRUE;
+
 

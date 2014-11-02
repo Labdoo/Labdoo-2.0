@@ -42,6 +42,10 @@ function lbd_blocks_views_views_default_views() {
   include 'lbd_blocks_views_global_inventory.inc';
   $views[$view->name] = $view;
 
+  // Global inventory view
+  include 'lbd_blocks_views_labdooers.inc';
+  $views[$view->name] = $view;
+
   // Actions feed view
   include 'lbd_blocks_views_actions.inc';
   $views[$view->name] = $view;
@@ -164,8 +168,7 @@ function lbd_blocks_views_block_info() {
       return FALSE;
   \$views_page = views_get_page_view();
   if (is_object(\$views_page)) {
-    if(\$views_page->name == \"global_inventory\")
-      return FALSE; 
+    return FALSE; 
   }
   return TRUE;
 ?>
@@ -186,8 +189,7 @@ function lbd_blocks_views_block_info() {
       return FALSE;
   \$views_page = views_get_page_view();
   if (is_object(\$views_page)) {
-    if(\$views_page->name == \"global_inventory\")
-      return FALSE; 
+    return FALSE; 
   }
   return TRUE;
 ?>
