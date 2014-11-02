@@ -145,5 +145,6 @@ libraries[hybridauth][download][url] = https://github.com/hybridauth/hybridauth/
 ; Web Services
 ;--------------------
 
+projects[services][version] = "3.7"
 projects[oauth2_loginprovider] = 1.x-dev
 

@@ -1,0 +1,12 @@
+name = Labdoo rest
+description = Module to implement Service
+package = Labdoo
+core = 7.x
+dependencies[] = services
+dependencies[] = rest_server
+dependencies[] = xmlrpc_server
+files[] = laptop.class.inc
+files[] = lbd_labdoo_rest.inc
+files[] = lbd_labdoo_rest_mock.inc
+files[] = lbd_labdoo_rest.module
+files[] = lbd_labdoo_rest.test

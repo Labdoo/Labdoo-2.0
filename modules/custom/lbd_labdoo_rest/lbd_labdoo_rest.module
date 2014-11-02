@@ -1,0 +1,135 @@
+<?php
+
+require_once drupal_get_path('module', 'lbd_labdoo_rest') . '/laptop.class.inc';
+/**
+ * @defgroup labdoorest LabdooRest: Module implementing Labdoo's Rest System
+ *
+ * This module implements the Labdoo Rest System
+ *
+ */
+
+
+/**
+ * @file
+ * Main module file for the Labdoo Rest module 
+ *
+ * @ingroup labdoorest
+ *
+*/
+function lbd_labdoo_rest_services_resources() {
+  return array(
+      'dooject' => array(
+        'retrieve' => array(
+          'help' => 'Retrieves a dooject',
+          'file' => array('file' => 'inc', 'module' => 'lbd_labdoo_rest'),
+          'callback' => '_laptop_retrieve',
+          'access callback' => '_dooject_access_mock',
+          'access arguments' => array('view'),
+          'access arguments append' => TRUE,
+          'args' => array(
+            array(
+              'name' => 'id',
+              'type' => 'int',
+              'description' => 'The id of the dooject to get',
+              'source' => array('path' => '0'),
+              'optional' => FALSE,
+              ),
+            ),
+          ),
+        'create' => array(
+          'help' => 'Creates a dooject',
+          'file' => array('file' => 'inc', 'module' => 'lbd_labdoo_rest'),
+          'callback' => '_laptop_create',
+          'access_callback' => '_dooject_access_mock',
+          'access arguments' => array('dooject resource create'),
+          'access arguments append' => FALSE,
+          'args' => array(
+            array(
+              'name' => 'data',
+              'type' => 'array',
+              'description' => 'The dooject object',
+              'source' => 'data',
+              'optional' => FALSE,
+              ),
+            ),
+          ),
+        'update' => array(
+            'help' => 'Updates a dooject',
+            'file' => array('file' => 'inc', 'module' => 'lbd_labdoo_rest'),
+            'callback' => '_laptop_update',
+            'access callback' => '_dooject_access_mock',
+            'access arguments' => array('update'),
+            'access arguments append' => TRUE,
+            'args' => array(
+              array(
+                'name' => 'id',
+                'type' => 'int',
+                'description' => 'The id of the dooject to update',
+                'source' => array('path' => '0'),
+                'optional' => FALSE,
+                ),
+              array(
+                'name' => 'data',
+                'type' => 'struct',
+                'description' => 'The dooject data object',
+                'source' => 'data',
+                'optional' => FALSE,
+                ),
+              ),
+            ),
+            'delete' => array(
+                'help' => 'Deletes a dooject',
+                'file' => array('file' => 'inc', 'module' => 'lbd_labdoo_rest'),
+                'callback' => '_laptop_delete',
+                'access callback' => '_dooject_access_mock',
+                'access arguments' => array('delete'),
+                'access arguments append' => TRUE,
+                'args' => array(
+                  array(
+                    'name' => 'id',
+                    'type' => 'int',
+                    'description' => 'The id dooject  to delete',
+                    'source' => array('path' => '0'),
+                    'optional' => FALSE,
+                    ),
+                  ),
+                ),
+            'index' => array(
+                'help' => 'Retrieves a list of doojects',
+                'file' => array('file' => 'inc', 'module' => 'lbd_labdoo_rest'),
+                'callback' => '_laptop_index',
+                'access callback' => '_dooject_access_mock',
+                'access arguments' => array('access content'),
+                'access arguments append' => FALSE,
+                'args' => array(
+                  array(
+                    'name' => 'page',
+                    'type' => 'int',
+                    'description' => '',
+                    'source' => array(
+                      'param' => 'page',
+                      ),
+                    'optional' => TRUE,
+                    'default value' => 0,
+                    ),
+                  array(
+                    'name' => 'parameters',
+                    'type' => 'array',
+                    'description' => '',
+                    'source' => 'param',
+                    'optional' => TRUE,
+                    'default value' => array(),
+                    ),
+                  ),
+                ),
+                ),
+                );
+
+}
+
+  function _dooject_access_mock($op, $args) {
+    return true;
+  }
+
+
+  
