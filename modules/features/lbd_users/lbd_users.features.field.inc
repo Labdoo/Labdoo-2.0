@@ -111,7 +111,7 @@ function lbd_users_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 2,
+          'weight' => '2',
         ),
       ),
       'entity_type' => 'user',
@@ -167,7 +167,7 @@ function lbd_users_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Your first and last name',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -192,7 +192,7 @@ function lbd_users_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '0',
+        'weight' => 0,
       ),
     ),
   );
@@ -202,6 +202,7 @@ function lbd_users_field_default_fields() {
   t('About me');
   t('Name');
   t('Skills');
+  t('Your first and last name');
 
   return $fields;
 }
