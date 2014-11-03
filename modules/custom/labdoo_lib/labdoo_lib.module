@@ -1149,16 +1149,6 @@ function labdoo_lib_user_view($account, $view_mode, $langcode) {
 
 
 /**
- * Implements hook_email_registration_name
- *
- */
-function labdoo_lib_email_registration_name($edit, $account) {
-  // Set the user ID value to something more user friendly
-  return('userid' . $account->uid);
-}
-
-
-/**
  * Implements hook_user_presave
  *
  */

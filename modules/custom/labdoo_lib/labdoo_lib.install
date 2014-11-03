@@ -108,6 +108,7 @@ function labdoo_lib_enable()
 
   // Set some initial basic variables
   variable_set('site_frontpage', 'actions'); 
+  variable_set('logintoboggan_login_with_email', 1);
 
   drupal_set_message("labdoo_lib enabled correctly");
 }
