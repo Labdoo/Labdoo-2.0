@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the lbd_users feature.
+ */
+
+include_once 'lbd_users.features.inc';

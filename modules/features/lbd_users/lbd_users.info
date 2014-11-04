@@ -1,0 +1,16 @@
+name = lbd_users
+core = 7.x
+package = Features
+php = 5.2.4
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = field_sql_storage
+dependencies[] = strongarm
+dependencies[] = text
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:1
+features[field][] = user-user-field_about_me
+features[field][] = user-user-field_skills
+features[field][] = user-user-field_user_name
+features[variable][] = field_bundle_settings_user__user
+features[variable][] = location_settings_user

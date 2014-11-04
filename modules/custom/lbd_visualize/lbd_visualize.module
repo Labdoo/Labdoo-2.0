@@ -19,7 +19,7 @@
  */
 
 /* 
- * Structure of the code in this file: 
+ * Structure of the following code: 
  *
  *  lbd_display_dashboard_doojects     |=> Functions that select from the database the
  *  lbd_display_dashboard_edoovillages |   objects that must be displayed. They end up
@@ -1379,5 +1379,66 @@ function lbd_display_slider_hub_metrics($hubId) {
 
   lbd_display_dashboard_edoovillages(NULL, $hubId, NULL, FALSE);
   return;
+}
+
+
+/*
+ * Displays progress columns chars for edoovillages and hubs.
+ *
+ * @param integer $objectNid The node identifier of a hub or an edoovillage.
+ * @param string $type Determines the type of node corresponding to $objectNid. Can be either "edoovillage" or "hub".
+ *
+ * @return Code that generates the progress column char of the given object. 
+ *
+ */
+function lbd_display_dooject_column_chart($objectNid, $type)
+{
+  $htmlCode = "";
+
+  if($type == "edoovillage") {
+    $numNeeded   = labdoo_get_demand($objectNid, NULL, FALSE);
+    $numTransit  = labdoo_getnum_doojects($objectNid, NULL, "T1") + labdoo_getnum_doojects(NULL, $objectNid, "S3");
+    $numDeployed = labdoo_getnum_doojects($objectNid, NULL, "S4"); 
+    $numRecycled = labdoo_getnum_doojects($objectNid, NULL, "S6");
+  }
+  else if ($type == "hub") {
+    $numNeeded   = labdoo_get_demand(NULL, $objectNid, FALSE);
+    $numTransit  = labdoo_getnum_doojects(NULL, $objectNid, "T1") + labdoo_getnum_doojects(NULL, $objectNid, "S3");
+    $numDeployed = labdoo_getnum_doojects(NULL, $objectNid, "S4"); 
+    $numRecycled = labdoo_getnum_doojects(NULL, $objectNid, "S6");
+  }
+  else {
+    return;
+  }
+
+  $htmlCode = '
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+  google.load("visualization", "1", {packages:["corechart"], callback: drawChart});
+  function drawChart() {
+  var data_pie_project = google.visualization.arrayToDataTable([
+    ["Project", "Laptops needed", "Laptops in transit", "Laptops delivered (working)", "Laptops delivered (need recycle)"],
+';
+
+  $htmlCode = $htmlCode . '
+    ["Edoovillage", '.$numNeeded.', '.$numTransit.', '.$numDeployed.', '.$numRecycled.'],
+  ]);
+
+  var options_pie_project = {
+    seriesType: "bars",
+    colors: ["red", "green", "gray", "orange"],
+  };
+
+  var chart_pie_project = new google.visualization.ComboChart(document.getElementById("chart_div_pie_project"));
+  chart_pie_project.draw(data_pie_project, options_pie_project);
+
+  }
+</script>
+<body>
+  <div id="chart_div_pie_project" style="align: left; width: 450px; height: 225px;"></div>
+</body>
+';
+
+  return $htmlCode;
 }
 

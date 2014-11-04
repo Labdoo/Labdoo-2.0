@@ -78,3 +78,17 @@ h2.block-title {
   font-style: normal;
   color: #666666;
 }
+
+body {
+  line-height: 1.5em;
+}
+
+.map-link{
+  display:none;
+}
+
+.gmap-popup {
+  min-width:204px;
+  min-height:80px;
+}
+

@@ -63,17 +63,6 @@ $handler->display->display_options['style_options']['views_slideshow_cycle']['wa
 $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartype'] = 0;
 $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartypenobg'] = 0;
 $handler->display->display_options['row_plugin'] = 'fields';
-/* Header: Global: Text area */
-$handler->display->display_options['header']['area']['id'] = 'area';
-$handler->display->display_options['header']['area']['table'] = 'views';
-$handler->display->display_options['header']['area']['field'] = 'area';
-$handler->display->display_options['header']['area']['content'] = '<?php
-
-print(labdoo_render_edoovillage_header(11));
-print("<br>");
-
-?>';
-$handler->display->display_options['header']['area']['format'] = 'php_code';
 /* No results behavior: Global: Text area */
 $handler->display->display_options['empty']['area']['id'] = 'area';
 $handler->display->display_options['empty']['area']['table'] = 'views';
@@ -130,6 +119,7 @@ $handler->display->display_options['filters']['field_type_value']['group'] = 1;
 
 /* Display: Page - Edoovillage */
 $handler = $view->new_display('page', 'Page - Edoovillage', 'page');
+$handler->display->display_options['defaults']['header'] = FALSE;
 $handler->display->display_options['defaults']['fields'] = FALSE;
 /* Field: Content: Tab */
 $handler->display->display_options['fields']['field_slider_tab']['id'] = 'field_slider_tab';
@@ -159,7 +149,6 @@ $handler->display->display_options['path'] = 'edoovillage';
 $handler = $view->new_display('page', 'Page - Hub', 'page_1');
 $handler->display->display_options['defaults']['title'] = FALSE;
 $handler->display->display_options['title'] = 'Hub';
-$handler->display->display_options['defaults']['header'] = FALSE;
 $handler->display->display_options['defaults']['fields'] = FALSE;
 /* Field: Content: Tab */
 $handler->display->display_options['fields']['field_slider_tab']['id'] = 'field_slider_tab';
@@ -560,50 +549,6 @@ $handler->display->display_options['filters']['type']['value'] = array(
   'laptop' => 'laptop',
 );
 $handler->display->display_options['filters']['type']['group'] = 1;
-$translatables['slider_dashboard'] = array(
-  t('Master'),
-  t('Edoovillage'),
-  t('more'),
-  t('Apply'),
-  t('Reset'),
-  t('Sort by'),
-  t('Asc'),
-  t('Desc'),
-  t('<?php
 
-print(labdoo_render_edoovillage_header(11));
-print("<br>");
 
-?>'),
-  t('Slider dashboard - no results'),
-  t('There are no results to show'),
-  t('<div id="slider_edoovillage_body">
-[body]
-</div>'),
-  t('Page - Edoovillage'),
-  t('<div id="dashboard_slider_body">
-[body]
-</div>'),
-  t('Page - Hub'),
-  t('Hub'),
-  t('Block - Hub Doojects'),
-  t('Doojects'),
-  t('Items per page'),
-  t('- All -'),
-  t('Offset'),
-  t('« first'),
-  t('‹ previous'),
-  t('next ›'),
-  t('last »'),
-  t('There are no results to show '),
-  t('Dooject ID'),
-  t('Country'),
-  t('Status'),
-  t('Last updated'),
-  t('All'),
-  t('Block - Hub Edoovillages'),
-  t('Edoovillages'),
-  t('City'),
-  t('Block - Edovillage Doojects'),
-);
 
