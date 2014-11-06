@@ -52,6 +52,7 @@ h2 {
     font-size: large;
     font-family: 'comic sans ms', sans-serif;
 }
+
 h2.block-title {
     color: #009900;
     font-size: small;
@@ -91,4 +92,9 @@ body {
   min-width:204px;
   min-height:80px;
 }
+
+h3 {
+  font-size: 14px;
+}
+
 

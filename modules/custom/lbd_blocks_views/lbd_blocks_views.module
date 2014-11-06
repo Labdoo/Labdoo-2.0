@@ -276,24 +276,24 @@ function lbd_blocks_views_block_view($delta = '') {
  */
 function lbd_blocks_views_views_pre_render(&$view) {
   if ($view->name == 'slider_dashboard' && $view->current_display == 'page') {
-    if(!empty($_GET['e'])) {
+    if(!empty($_GET['e'] && is_numeric($_GET['e']))) {
       $node = node_load($_GET['e']); 
-      if($node) {
+      if($node && $node->type == "edoovillage") {
         $view->build_info['title'] = $node->title;
         return;
       }
-      $view->build_info['title'] = "Page not found: please select a valid edoovillage";
     }
+    $view->build_info['title'] = "Page not found: please select a valid edoovillage";
   }
   if ($view->name == 'slider_dashboard' && $view->current_display == 'page_1') {
-    if(!empty($_GET['h'])) {
+    if(!empty($_GET['h'] && is_numeric($_GET['h']))) {
       $node = node_load($_GET['h']); 
-      if($node) {
+      if($node && $node->type == "hub") {
         $view->build_info['title'] = $node->title;
         return;
       }
-      $view->build_info['title'] = "Page not found: please select a valid hub";
     }
+    $view->build_info['title'] = "Page not found: please select a valid hub";
   }
   return;
 }

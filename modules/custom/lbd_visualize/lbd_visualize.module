@@ -1176,7 +1176,7 @@ google.setOnLoadCallback(drawVisualization);
 function lbd_display_slider_edoovilage_data($edoovillageId = NULL) {
   global $user;
 
-  if($edoovillageId == NULL) 
+  if($edoovillageId == NULL || !is_numeric($edoovillageId)) 
     return;
   $loadedNode = node_load($edoovillageId);
   if($loadedNode == FALSE)
@@ -1208,7 +1208,7 @@ function lbd_display_slider_edoovilage_data($edoovillageId = NULL) {
  */
 function lbd_display_slider_edoovilage_doojects($edoovillageId = NULL) {
 
-  if($edoovillageId == NULL) 
+  if($edoovillageId == NULL || !is_numeric($edoovillageId)) 
     return;
   $loadedNode = node_load($edoovillageId);
   if($loadedNode == FALSE)
@@ -1233,7 +1233,7 @@ function lbd_display_slider_edoovilage_doojects($edoovillageId = NULL) {
  */
 function lbd_display_slider_edoovilage_metrics($edoovillageId) {
 
-  if($edoovillageId == NULL) 
+  if($edoovillageId == NULL || !is_numeric($edoovillageId)) 
     return;
   $loadedNode = node_load($edoovillageId);
   if($loadedNode == FALSE)
@@ -1257,7 +1257,7 @@ function lbd_display_slider_edoovilage_metrics($edoovillageId) {
  */
 function lbd_display_slider_edoovilage_gics($edoovillageId) {
 
-  if($edoovillageId == NULL) 
+  if($edoovillageId == NULL || !is_numeric($edoovillageId)) 
     return;
   $loadedNode = node_load($edoovillageId);
   if($loadedNode == FALSE)
@@ -1283,7 +1283,7 @@ function lbd_display_slider_edoovilage_gics($edoovillageId) {
 function lbd_display_slider_hub_data($hubId) {
   global $user;
 
-  if($hubId == NULL) 
+  if($hubId == NULL || !is_numeric($hubId)) 
     return;
   $loadedNode = node_load($hubId);
   if($loadedNode == FALSE)
@@ -1314,7 +1314,7 @@ function lbd_display_slider_hub_data($hubId) {
  */
 function lbd_display_slider_hub_edoovillages($hubId) {
 
-  if($hubId == NULL) 
+  if($hubId == NULL || !is_numeric($hubId)) 
     return;
   $loadedNode = node_load($hubId);
   if($loadedNode == FALSE)
@@ -1344,7 +1344,7 @@ function lbd_display_slider_hub_edoovillages($hubId) {
  */
 function lbd_display_slider_hub_doojects($hubId) {
 
-  if($hubId == NULL) 
+  if($hubId == NULL || !is_numeric($hubId)) 
     return;
   $loadedNode = node_load($hubId);
   if($loadedNode == FALSE)
@@ -1369,7 +1369,7 @@ function lbd_display_slider_hub_doojects($hubId) {
  */
 function lbd_display_slider_hub_metrics($hubId) {
 
-  if($hubId == NULL) 
+  if($hubId == NULL || !is_numeric($hubId)) 
     return;
   $loadedNode = node_load($hubId);
   if($loadedNode == FALSE)

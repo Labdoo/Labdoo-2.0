@@ -369,6 +369,14 @@ function labdoo_render_edoovillage_hub_header($nodeId = NULL, $type) {
     $nodeId = arg(1);
   }
 
+  // FIXME: this is a bit strange behavior. We should not need to check whether is numeric
+  // because node_load should return false if it is not (although i have not checked
+  // the internal code for node_load). However, if the user feeds a value like '8a',
+  // where '8' is a valide node ID, the node_load actually ends up loading node '8'.
+  // So this next clause ensures that this cannot happen.
+  if(!is_numeric($nodeId))
+    return;
+
   $nodeObj = node_load($nodeId);
   if($nodeObj == FALSE)
     return;
