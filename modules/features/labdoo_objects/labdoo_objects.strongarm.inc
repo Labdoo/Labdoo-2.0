@@ -432,6 +432,9 @@ function labdoo_objects_strongarm() {
         'path' => array(
           'weight' => '2',
         ),
+        'locations' => array(
+          'weight' => '10',
+        ),
       ),
       'display' => array(),
     ),

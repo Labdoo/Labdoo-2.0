@@ -2706,6 +2706,68 @@ function labdoo_objects_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-laptop-field_amp_hours'.
+  $fields['node-laptop-field_amp_hours'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_amp_hours',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'number',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'number_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'laptop',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'number',
+          'settings' => array(
+            'decimal_separator' => '.',
+            'prefix_suffix' => TRUE,
+            'scale' => 0,
+            'thousand_separator' => ' ',
+          ),
+          'type' => 'number_integer',
+          'weight' => 19,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_amp_hours',
+      'label' => 'Amp hours',
+      'required' => 0,
+      'settings' => array(
+        'max' => '',
+        'min' => '0',
+        'prefix' => '',
+        'suffix' => 'mAh',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'number',
+        'settings' => array(),
+        'type' => 'number',
+        'weight' => '20',
+      ),
+    ),
+  );
+
   // Exported field: 'node-laptop-field_cpu'.
   $fields['node-laptop-field_cpu'] = array(
     'field_config' => array(
@@ -3818,6 +3880,68 @@ function labdoo_objects_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-laptop-field_volts'.
+  $fields['node-laptop-field_volts'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_volts',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'number',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'number_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'laptop',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'number',
+          'settings' => array(
+            'decimal_separator' => '.',
+            'prefix_suffix' => TRUE,
+            'scale' => 0,
+            'thousand_separator' => ' ',
+          ),
+          'type' => 'number_integer',
+          'weight' => 20,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_volts',
+      'label' => 'Volts',
+      'required' => 0,
+      'settings' => array(
+        'max' => '',
+        'min' => '0',
+        'prefix' => '',
+        'suffix' => 'V',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'number',
+        'settings' => array(),
+        'type' => 'number',
+        'weight' => '18',
+      ),
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Add here any observations you would like to make. For instance you can add notes such as the quality of the laptop or if something is broken, a reminder, or a note on who donated the laptop.');
@@ -3829,6 +3953,7 @@ function labdoo_objects_field_default_fields() {
   t('Additional followers');
   t('Additional notes');
   t('Additional notification emails');
+  t('Amp hours');
   t('Arrival date');
   t('Branches information');
   t('Brand name and model of the laptop');
@@ -3880,6 +4005,7 @@ function labdoo_objects_field_default_fields() {
   t('This field is updated automatically once dootrips are assigned to this dooject. You can also optionally set this field manually adding dootrips by typing their name.');
   t('Upload here a picture of the laptop. A picture is a helpful way for donors to ensure that they are looking at the correct laptop. Please do not use pictures that you may find on the Internet, as they may be copyrighted.  Instead, please take a picture with your own camera. Once the laptop reaches a school, you can also upload another picture with the students using it.');
   t('User(s) who will be part of this dootrip.');
+  t('Volts');
   t('Write here the serial number of the laptop. Usually the serial number can be found in the back of the laptop, search for keywords such as "Serial Number" or "S/N", or if you see a bar code with a number under it, use this number. If the laptop has no sticker with the serial number, then write in this field the words "Unknown".');
 
   return $fields;
