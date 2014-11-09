@@ -1,36 +1,38 @@
-* Introduction
+** Introduction
 
 This document describes the steps needed to translate the Labdoo.org social network system.
 
-* Steps to translate Labdoo.org
+** Steps to translate Labdoo.org
 
-+ Translation of email (.email) files
+*** Translation of email (.email) files
 
-  1. Go to https://github.com/Labdoo/Labdoo-2.0/tree/master/translations/templates/email-files 
++ Go to https://github.com/Labdoo/Labdoo-2.0/tree/master/translations/templates/labdoo-translation-email-files.tar.gz
 
-  2. For each file in this folder, right click on the file and click on 'Save link as' to download the file into your local computer.
++ Right click on the button "Raw", select the option 'Save link as' and download the file into your local computer.
 
-  3. Open the downloaded file using a text editor and translate it to your language. 
++ Unzip the file using your favorite unzip application. This will extract various files.
 
-  4. Save the file using the same file name but changing the suffix to reflect the language you are translating to. For instance, if you are translating to Japanese the file 'dootrip_added_body-en.email', rename the translated file to 'dootrip_added_body-japanese.email'. 
++ For each file extracted, open it using a text editor and translate it to your language. 
 
-  5. Repeat the steps above for all files found in the email-files folder.
++ Save the file using the same file name but changing its suffix to reflect the language you are translating to. For instance, if you are translating to Japanese the file 'dootrip_added_body-en.email', rename the translated file to 'dootrip_added_body-japanese.email'. 
 
-+ Translation of portable object (.po) files
++ Repeat the steps above for all extracted files.
 
-  1. Go to https://github.com/Labdoo/Labdoo-2.0/tree/master/translations/templates/po-files
+*** Translation of portable object (.po) files
 
-  2. For each file in this folder, right click on the file and click on "Save link as" to download the file into your local computer.
++ Go to https://github.com/Labdoo/Labdoo-2.0/tree/master/translations/templates/labdoo-translation-po-files.tar.gz
 
-  3. Open the downloaded file using a text editor and translate it to your language. To translate the field, search for all occurrances of the keyword 'msgstr ""' and include into the quote "" the translation of the English words found in the field 'msgid'.
++ Right click on the button "Raw", select the option 'Save link as' and download the file into your local computer.
 
-  4. Save the file using the same file name but changing the suffix to reflect the language you are translating to. For instance, if you are translating to Japanese the file 'fields-en.po', rename the translated file to 'fields-japanese.po'. 
++ Unzip the file using your favorite unzip application. This will extract various files.
 
-  5. Repeat steps above for all files found in the po-files folder.
++ For each file extracted, open it using a text editor. To translate the file, search for all occurrences of the keyword 'msgstr ""' and include into the quote "" the translation of the English words found in the field 'msgid'.
 
++ Save the file using the same file name but changing its suffix to reflect the language you are translating to. For instance, if you are translating to Japanese the file 'fields-en.po', rename the translated file to 'fields-japanese.po'. 
 
-+ Where to send the translated files
++ Repeat the steps above for all extracted files.
 
-  Once you are done with your translations, send the translated files to the email address project-labdoo@labdoo.org using as subject 'Labdoo.org translation files'.
+*** Where to send the translated files
 
++ Once you are done with your translations, send the translated files to the email address project-labdoo@labdoo.org using as subject 'Labdoo.org translation files'.
 
