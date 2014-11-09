@@ -1022,7 +1022,7 @@ columnChart.draw();
  * Updates the table based on user's input
  */
 function updateColumnChart() {
-  // group the data of the filtered table and set the result in the pie chart.
+  // group the data of the filtered table and set the result in the column chart.
   columnChart.setDataTable(google.visualization.data.group(
     // get the filtered results
     table.getDataTable(),
@@ -1039,7 +1039,7 @@ function updateColumnChart() {
 
 ]));
 
-  // redraw the pie chart to reflect changes
+  // redraw the column chart to reflect changes
   columnChart.draw();
 }
 
@@ -1427,7 +1427,7 @@ function lbd_display_dooject_column_chart($objectNid, $type)
 <script type="text/javascript">
   google.load("visualization", "1.1", {packages:["corechart"], callback: drawChart});
   function drawChart() {
-  var data_pie_project = google.visualization.arrayToDataTable([
+  var data_column_chart_project = google.visualization.arrayToDataTable([
     ["Project", "Laptops needed", "Laptops in transit", "Laptops delivered (working)", "Laptops delivered (need recycle)"],
 ';
 
@@ -1435,18 +1435,18 @@ function lbd_display_dooject_column_chart($objectNid, $type)
     ["Edoovillage", '.$numNeeded.', '.$numTransit.', '.$numDeployed.', '.$numRecycled.'],
   ]);
 
-  var options_pie_project = {
+  var options_column_chart_project = {
     seriesType: "bars",
     colors: ["red", "green", "gray", "orange"],
   };
 
-  var chart_pie_project = new google.visualization.ComboChart(document.getElementById("chart_div_pie_project"));
-  chart_pie_project.draw(data_pie_project, options_pie_project);
+  var chart_column_chart_project = new google.visualization.ComboChart(document.getElementById("chart_div_column_chart_project"));
+  chart_column_chart_project.draw(data_column_chart_project, options_column_chart_project);
 
   }
 </script>
 <body>
-  <div id="chart_div_pie_project" style="align: left; width: 450px; height: 225px;"></div>
+  <div id="chart_div_column_chart_project" style="align: left; width: 450px; height: 225px;"></div>
 </body>
 ';
 

@@ -13,7 +13,6 @@ files[] = labdoo.profile
 ;--------------------
 ; Core
 ;--------------------
-dependencies[] = book
 dependencies[] = contact
 dependencies[] = blog
 dependencies[] = menu
