@@ -1,12 +1,12 @@
 ** Introduction
 
-This document describes the steps needed to translate the Labdoo.org social network system.
+This document describes the steps needed to translate the Labdoo.org social network platform.
 
 ** Steps to translate Labdoo.org
 
 *** Translation of email (.email) files
 
-+ Go to https://github.com/Labdoo/Labdoo-2.0/tree/master/translations/templates/labdoo-translation-email-files.tar.gz
++ Go to https://github.com/Labdoo/Labdoo-2.0/tree/master/translations/templates/labdoo-translation-email-files.tar
 
 + Right click on the button "Raw", select the option 'Save link as' and download the file into your local computer.
 
@@ -20,7 +20,7 @@ This document describes the steps needed to translate the Labdoo.org social netw
 
 *** Translation of portable object (.po) files
 
-+ Go to https://github.com/Labdoo/Labdoo-2.0/tree/master/translations/templates/labdoo-translation-po-files.tar.gz
++ Go to https://github.com/Labdoo/Labdoo-2.0/tree/master/translations/templates/labdoo-translation-po-files.tar
 
 + Right click on the button "Raw", select the option 'Save link as' and download the file into your local computer.
 
