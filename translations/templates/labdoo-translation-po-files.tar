@@ -559,7 +559,7 @@ msgstr ""
 #: field:field_serial_number:laptop:description
 msgctxt "field_serial_number:laptop:description"
 msgid ""
-"Write here the serial number of the laptop. Usually the serial number "
+"Write here the serial number of the laptop. Usually the it "
 "can be found in the back of the laptop, search for keywords such as "
 "\"Serial Number\" or \"S/N\", or if you see a bar code with a number "
 "under it, use this number. If the laptop has no sticker with the "
