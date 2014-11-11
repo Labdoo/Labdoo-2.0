@@ -2994,7 +2994,7 @@ function labdoo_objects_field_default_fields() {
           'blackberry' => 'BlackBerry',
           'desktop' => 'Desktop',
           'ebook' => 'eBook',
-          'googlePhone' => 'Google phone',
+          'googlePhone' => 'Android phone',
           'iphone' => 'iPhone',
           'internetTable' => 'Internet tablet',
           'ipad' => 'iPad',
