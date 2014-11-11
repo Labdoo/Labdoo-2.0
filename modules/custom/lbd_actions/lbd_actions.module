@@ -509,7 +509,7 @@ function lbd_actions_node_view($node, $view_mode) {
       return;
     }
     else if($reason == "dooject") {
-      drupal_set_message(t("You have contributed to this hub with at least one dooject.", 'status', FALSE));
+      drupal_set_message(t("You have contributed to this hub with at least one dooject."), 'status', FALSE);
       return;
     }
     else if($reason == "dootrip") {
