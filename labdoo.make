@@ -86,7 +86,7 @@ projects[legal] = 1.5
 ; Performance
 ;--------------------
 projects[boost] = 1.0
-projects[memcache] = 1.2
+projects[memcache] = 1.3
 
 ;--------------------
 ; Services and social
