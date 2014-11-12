@@ -1,10 +1,6 @@
 api = 2
 core = 7.x
 
-;--------------------
-; Specify defaults
-;--------------------
-
 defaults[projects][subdir] = contrib
 
 ;--------------------
@@ -52,27 +48,21 @@ projects[defaultconfig][patch][1900574] = https://drupal.org/files/issues/190057
 
 
 ;;; Admin Utils
+projects[] = l10n_update
 projects[] = drush_language
 projects[] = drush_remake
 projects[] = delete_all
 projects[] = menu_import
 
-; ;;; Services and Social
-; projects[google_analytics] = 2.0
-; projects[drupalchat] = 1.2
-; projects[fb] = 3.4
-; projects[invite] = 2.1-beta2
-projects[simplenews] = 1.1
-; projects[mass_contact] = 1.0
-; projects[sharethis] = 2.5
-; projects[disqus] = 1.9
-; projects[disqus][patch][] = http://drupal.org/files/disqus-https.patch
+;;; Performance
+projects[] = boost
+projects[] = memcache
 
 ;;; Extra
 projects[entityreference] = 1.1
-projects[field_group] = 1.4
+; projects[field_group] = 1.4
 projects[date] = 2.8
-projects[location] = 3.4
+projects[location] = 3.3
 projects[nodeaccess_userreference] = 3.10
 projects[email] = 1.3
 projects[conditional_fields] = 3.0-alpha1
@@ -84,24 +74,6 @@ projects[views_slideshow] = 3.1
 projects[gmap] = 2.9
 projects[views_autocomplete_filters] = 1.1
 projects[views_dependent_filters] = 1.1
-projects[variable] = 2.5 
-projects[lang_dropdown] = 2.5 
-projects[logintoboggan] = 1.4 
-
-;-------------------
-; Translations
-;-------------------
-
-projects[] = l10n_update
-projects[i18n] = 1.11
-projects[i18nviews] = 3.x-dev
-projects[transliteration] = 3.2
-
-;------------------
-; Performance
-;------------------
-projects[] = boost
-projects[] = memcache
 
 ;--------------------
 ; Sending Emails
@@ -134,6 +106,5 @@ libraries[hybridauth][download][url] = https://github.com/hybridauth/hybridauth/
 ; Web Services
 ;--------------------
 
-projects[services][version] = "3.7"
 projects[oauth2_loginprovider] = 1.x-dev
 

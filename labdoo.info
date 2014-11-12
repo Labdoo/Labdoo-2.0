@@ -15,6 +15,7 @@ files[] = labdoo.profile
 ;--------------------
 ; Core
 ;--------------------
+dependencies[] = book
 dependencies[] = contact
 dependencies[] = blog
 dependencies[] = menu
@@ -42,67 +43,18 @@ dependencies[] = field_ui
 ; Contrib
 ;--------------------
 
-;;; Extensions
-; dependencies[] = xautoload
-; dependencies[] = rules_scheduler
-; dependencies[] = rules_admin
-; dependencies[] = pathauto
-; dependencies[] = subpathauto
-; dependencies[] = lightbox2
-
-;;; User Interface
-; dependencies[] = context
-; dependencies[] = context_ui
-; dependencies[] = views
-; dependencies[] = views_ui
-; dependencies[] = boxes
-dependencies[] = edit_profile
-dependencies[] = color
-dependencies[] = node_view_permissions 
-dependencies[] = r4032login 
-dependencies[] = ip_geoloc
-dependencies[] = views_slideshow
-dependencies[] = views_slideshow_cycle
-dependencies[] = gmap
-dependencies[] = gmap_location
-dependencies[] = views_autocomplete_filters
-dependencies[] = views_dependent_filters
-dependencies[] = simplenews
-dependencies[] = variable
-dependencies[] = lang_dropdown 
-dependencies[] = logintoboggan 
-
 ;;; Features
 dependencies[] = fe_block
 dependencies[] = node_export
 dependencies[] = node_export_features
 
 ;;; Admin Utils
+dependencies[] = l10n_update
 dependencies[] = user_restrictions
 
 ;;; Performance
 dependencies[] = boost
 ;dependencies[] = memcache
-
-;--------------------
-; Translations
-;--------------------
-
-dependencies[] = l10n_update
-dependencies[] = i18n 
-dependencies[] = i18n_block 
-dependencies[] = i18n_contact
-dependencies[] = i18n_menu
-dependencies[] = i18n_node
-dependencies[] = i18n_select
-dependencies[] = i18n_string
-dependencies[] = i18n_sync
-dependencies[] = i18n_taxonomy
-dependencies[] = i18n_translation
-dependencies[] = i18n_field
-dependencies[] = i18nviews
-dependencies[] = transliteration
-
 
 ;--------------------
 ; Sending Emails
