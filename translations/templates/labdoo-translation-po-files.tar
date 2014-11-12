@@ -50,7 +50,7 @@ msgstr ""
 
 #: field:field_dootripper_s_:dootrip:description
 msgctxt "field_dootripper_s_:dootrip:description"
-msgid "User(s) who will be part of this dootrip."
+msgid "User(s) who will be part of this dootrip"
 msgstr ""
 
 #: field:field_laptops:dootrip:label
@@ -157,7 +157,7 @@ msgstr ""
 
 #: field:field_number_of_laptops_needed:edoovillage:label
 msgctxt "field_number_of_laptops_needed:edoovillage:label"
-msgid "Number of laptops needed"
+msgid "Number of doojects needed"
 msgstr ""
 
 #: field:field_number_of_students:edoovillage:label
@@ -207,12 +207,12 @@ msgstr ""
 
 #: field:field_semaphore:#allowed_values:yellow
 msgctxt "field_semaphore:#allowed_values:yellow"
-msgid "Yellow: first laptops can be sent"
+msgid "Yellow: first doojects can be sent"
 msgstr ""
 
 #: field:field_semaphore:#allowed_values:green
 msgctxt "field_semaphore:#allowed_values:green"
-msgid "Green: the rest of the laptops can be sent"
+msgid "Green: the rest of the doojects can be sent"
 msgstr ""
 
 #: field:field_semaphore:edoovillage:label
@@ -322,7 +322,7 @@ msgstr ""
 
 #: field:field_additional_editors:laptop:description
 msgctxt "field_additional_editors:laptop:description"
-msgid "Add users who need to have permission to edit this dooject."
+msgid "Add users who need to have permission to edit this dooject"
 msgstr ""
 
 #: field:field_additional_followers:laptop:label
@@ -332,7 +332,7 @@ msgstr ""
 
 #: field:field_additional_followers:laptop:description
 msgctxt "field_additional_followers:laptop:description"
-msgid "Add users who want to follow this dooject."
+msgid "Add users who want to follow this dooject"
 msgstr ""
 
 #: field:field_additional_notes:laptop:label
@@ -517,7 +517,7 @@ msgstr ""
 
 #: field:field_manager:laptop:description
 msgctxt "field_manager:laptop:description"
-msgid "The user currently managing this laptop. "
+msgid "The user currently managing this dooject"
 msgstr ""
 
 #: field:field_memory:laptop:label
@@ -532,7 +532,7 @@ msgstr ""
 
 #: field:field_model:laptop:description
 msgctxt "field_model:laptop:description"
-msgid "Brand name and model of the laptop"
+msgid "Brand name and model of the dooject"
 msgstr ""
 
 #: field:field_picture:laptop:label
@@ -643,7 +643,7 @@ msgstr ""
 
 #: field:field_tagger:laptop:description
 msgctxt "field_tagger:laptop:description"
-msgid "The user who tagged this laptop."
+msgid "The user who tagged this dooject"
 msgstr ""
 
 #: field:field_volts:laptop:label
