@@ -49,6 +49,5 @@ done
 
 ### modify drupal variables that are used for sending email
 echo "Modifying drupal variables that are used for sending email..."
-$(dirname $0)/mysqld.sh start
 drush --yes @local_lbd php-script $(dirname $0)/gmailsmtp.php  \
     "$gmail_account" "$gmail_passwd"

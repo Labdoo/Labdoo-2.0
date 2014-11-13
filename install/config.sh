@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 ### get config settings from a file
 if [ "$1" != '' ]
@@ -10,6 +10,8 @@ then
 fi
 
 lbd=/usr/local/src/labdoo/install
+
+test -d /var/www/lbd_dev && $lbd/../dev/clone_rm.sh lbd_dev
 
 $lbd/config/domain.sh
 $lbd/config/mysql_passwords.sh
@@ -25,6 +27,4 @@ then
 fi
 
 ### drush may create some css/js files with wrong permissions
-chown www-data: -R /var/www/lbd*/sites/default/files/{css,js}
-
-$lbd/config/mysqld.sh stop
+$lbd/config/fix_file_permissions.sh

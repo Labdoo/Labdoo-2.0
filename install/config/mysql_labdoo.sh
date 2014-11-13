@@ -12,7 +12,7 @@ then
 elif [ -z "${mysql_passwd_lbd+xxx}" -o "$mysql_passwd_lbd" = '' ]
 then
     echo
-    echo " ===> Please enter new password for the MySQL 'lbd' account. "
+    echo "===> Please enter new password for the MySQL 'lbd' account. "
     echo
     mysql_passwd_lbd=$(mcookie | head -c 16)
     stty -echo
