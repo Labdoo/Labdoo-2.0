@@ -895,6 +895,21 @@ function lbd_nodeid2title($nodeId)
 
 
 /**
+ * Returns the node id of given a laptop identifier
+ *
+ * @param laptopId The ID of a laptop
+ *
+ * @return The node ID 
+ * 
+ */
+function lbd_laptopid2nodeid($laptopId)
+{
+    $nodeId = db_query("SELECT nid FROM node WHERE title =:tit", array(':tit' => $laptopId))->fetchField();
+    return $nodeId;
+}
+
+
+/**
  * lbd_generate_qrcode
  *
  * @param tag dooject identifier
@@ -915,65 +930,73 @@ function lbd_generate_qrcode($tag, $widthHeight ='60', $EC_level='L', $margin='0
 
 /**
  * Prints the labels of a dooject
- *
+ *                                 
  * @param laptopid The ID of the dooject 
  *
  */
 function lbd_print_dooject_labels($laptopid = NULL) {
 
-  if(($laptopid == NULL) || 
-     (!is_numeric($laptopid)) || 
-     (intval($laptopid) < 1) || 
-     (intval($laptopid) > lbd_get_total_num_objects("laptop")) || 
-     (strlen($laptopid) != 9))
-  {
-    print(t('<p><strong>Wrong Identifier. &nbsp;
-            Please use a <span style="color:#ff0000;">9 digit</span> number to correctly display the tags.</strong></p> 
-            <p><a href="http://www.labdoo.org">Back to Labdoo.org</a></p>'));
-    return;
+  $nodeId = lbd_laptopid2nodeid($laptopid);
+  if($nodeId == "" || (($nodeLoaded = node_load($nodeId)) == FALSE)) {
+    print(t('<p>Wrong Identifier. Please use a valid <span style="color:#ff0000;">9 digit</span> number to correctly display tags.</p>'));
+    return; 
   }
+    
+  // If the Wh field is present, the print it in the label
+  $volts = labdoo_lib_get_field($nodeLoaded, 'field_volts', 'node', 'value');
+  $ampHours = labdoo_lib_get_field($nodeLoaded, 'field_amp_hours', 'node', 'value');
+
+  $adjustedWidth = "120px";
+  $wattageHour = "";
+
+  if($volts != "" && $ampHours != "") {
+    $Wh = round($volts * $ampHours / 1000, 1); 
+    $adjustedWidth = "220px";
+    $wattageHour = " | Wh=" . $Wh;
+  }
+  
+  print(
+    t('Print and attach these three labels to: (1) the device, (2) the power adaptor and (3)
+       inside the battery compartment of the device. You can omit the third tag if the device has no battery
+       compartment. Check this <a href="http://www.labdoo.org/sites/default/files/tagging-flow.png" target="_blank">drawing</a> if in doubt.')
+  );
 
   print('
-
-Print and attach these three labels to: (1) the device, (2) the power adaptor and <br>(3)
-inside the battery compartment of the device. You can omit the third tag if the<br> device has no battery
-compartment.
-Check this <a href="http://www.labdoo.org/sites/default/files/tagging-flow.png" target="_blank">drawing</a> if in doubt.
 <br>
 <br>
 
-<table border="0" cellpadding="1" cellspacing="1" style="width: 580px;">
+<table border="0" cellpadding="1" cellspacing="1" style="width: 780px;">
         <tbody>
                 <tr>
-                        <td style="width: 120px;">
+                        <td style="width: ' . $adjustedWidth . ';">
 <p><strong style="color: rgb(0, 0, 0); font-family: monospace; line-height: 2px; font-size: 11px;">
-Device tag<br>www.<span style="color: rgb(255, 0, 0);">lab</span><span style="color: rgb(0, 102, 255);">d</span><span style="color: rgb(102, 204, 51);">oo</span>.org<br>
+Device tag&nbsp; &nbsp;' . $wattageHour . '<br>www.<span style="color: rgb(255, 0, 0);">lab</span><span style="color: rgb(0, 102, 255);">d</span><span style="color: rgb(102, 204, 51);">oo</span>.org<br>
 ID: '.$laptopid.'
 </strong></p>
                         </td>
-                        <td style="width: 120px;">
+                        <td style="width: 100px;">
   ');
   lbd_generate_qrcode($laptopid);
   print('
                         </td>
-                        <td style="width: 120px;">
+                        <td style="width: ' . $adjustedWidth . ';">
 <p><strong style="color: rgb(0, 0, 0); font-family: monospace; line-height: 2px; font-size: 11px;">
-Power adap. tag<br>www.<span style="color: rgb(255, 0, 0);">lab</span><span style="color: rgb(0, 102, 255);">d</span><span style="color: rgb(102, 204, 51);">oo</span>.org<br>
+Power adap. tag' . $wattageHour . '<br>www.<span style="color: rgb(255, 0, 0);">lab</span><span style="color: rgb(0, 102, 255);">d</span><span style="color: rgb(102, 204, 51);">oo</span>.org<br>
 ID: '.$laptopid.'
 </strong></p>
                         </td>
-                        <td style="width: 120px;">
+                        <td style="width: 100px;">
   ');
   lbd_generate_qrcode($laptopid);
   print('
                         </td>
-                        <td style="width: 120px;">
+                        <td style="width: ' . $adjustedWidth . ';">
 <p><strong style="color: rgb(0, 0, 0); font-family: monospace; line-height: 2px; font-size: 11px;">
-Batt. comp. tag<br>www.<span style="color: rgb(255, 0, 0);">lab</span><span style="color: rgb(0, 102, 255);">d</span><span style="color: rgb(102, 204, 51);">oo</span>.org<br>
+Batt. comp. tag' . $wattageHour . '<br>www.<span style="color: rgb(255, 0, 0);">lab</span><span style="color: rgb(0, 102, 255);">d</span><span style="color: rgb(102, 204, 51);">oo</span>.org<br>
 ID: '.$laptopid.'
 </strong></p>
                         </td>
-                        <td style="width: 120px;">
+                        <td style="width: 100px;">
   ');
   lbd_generate_qrcode($laptopid);
   print('

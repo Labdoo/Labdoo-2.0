@@ -2738,7 +2738,7 @@ function labdoo_objects_field_default_fields() {
             'thousand_separator' => ' ',
           ),
           'type' => 'number_integer',
-          'weight' => 19,
+          'weight' => '17',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -2763,7 +2763,7 @@ function labdoo_objects_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '20',
+        'weight' => '19',
       ),
     ),
   );
@@ -3892,9 +3892,11 @@ function labdoo_objects_field_default_fields() {
       'indexes' => array(),
       'locked' => '0',
       'module' => 'number',
-      'settings' => array(),
+      'settings' => array(
+        'decimal_separator' => '.',
+      ),
       'translatable' => '0',
-      'type' => 'number_integer',
+      'type' => 'number_float',
     ),
     'field_instance' => array(
       'bundle' => 'laptop',
@@ -3908,11 +3910,11 @@ function labdoo_objects_field_default_fields() {
           'settings' => array(
             'decimal_separator' => '.',
             'prefix_suffix' => TRUE,
-            'scale' => 0,
+            'scale' => 2,
             'thousand_separator' => ' ',
           ),
-          'type' => 'number_integer',
-          'weight' => 20,
+          'type' => 'number_decimal',
+          'weight' => '16',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -3981,8 +3983,8 @@ function labdoo_objects_field_default_fields() {
   t('Number of cores (CPU type)');
   t('Number of days you can store the dooject after the arrival date');
   t('Number of days you can store the dooject before the departure date');
-  t('Number of doojects you can carry');
   t('Number of doojects needed');
+  t('Number of doojects you can carry');
   t('Number of students');
   t('Number of teachers');
   t('On-site point of contact');
