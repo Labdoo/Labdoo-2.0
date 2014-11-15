@@ -946,7 +946,7 @@ function lbd_print_dooject_labels($laptopid = NULL) {
   $volts = labdoo_lib_get_field($nodeLoaded, 'field_volts', 'node', 'value');
   $ampHours = labdoo_lib_get_field($nodeLoaded, 'field_amp_hours', 'node', 'value');
 
-  $adjustedWidth = "100px";
+  $adjustedWidth = 110;
   $wattageHour = "Not available";
 
   if($volts != "" && $ampHours != "") {
@@ -967,7 +967,7 @@ function lbd_print_dooject_labels($laptopid = NULL) {
 <table border="0" cellpadding="1" cellspacing="1" style="width: 780px;">
         <tbody>
                 <tr>
-                        <td style="width: ' . ($adjustedWidth) . 'px;">
+                        <td style="width: ' . $adjustedWidth . 'px;">
 <p><strong style="color: rgb(0, 0, 0); font-family: monospace; line-height: 2px; font-size: 11px;">
 Device tag<br>www.<span style="color: rgb(255, 0, 0);">lab</span><span style="color: rgb(0, 102, 255);">d</span><span style="color: rgb(102, 204, 51);">oo</span>.org<br>
 ID: '.$laptopid.'
