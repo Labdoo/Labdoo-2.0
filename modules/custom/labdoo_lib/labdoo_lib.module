@@ -1001,7 +1001,7 @@ ID: '.$laptopid.'
   print('
                         </td>
                         <td style="width: 150px;">
-<p><strong style="color: rgb(0, 0, 0); font-family: monospace; line-height: 2px; font-size: 11px;">Battery watt-hours:<br>' . $wattageHour . '<br></strong></p>
+<p><strong style="color: rgb(0, 0, 0); font-family: monospace; line-height: 2px; font-size: 11px;">Battery<br>watt-hours:<br>' . $wattageHour . '<br></strong></p>
                         </td>
                 </tr>
         </tbody>
