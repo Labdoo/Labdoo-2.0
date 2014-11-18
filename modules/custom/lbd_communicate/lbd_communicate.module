@@ -344,9 +344,13 @@ function lbd_communicate_node_insert($node) {
  */
 function lbd_communicate_user_insert(&$edit, $account, $category) {
   global $base_url;
-  global $user;
+  global $language;
 
-  $langCode = user_preferred_language($user)->language;
+  // The user is being created here, so at this point the global $user is not
+  // set up yet. Instead, pull the language directly from the page language,
+  // which is what is used to define the initial default language of the
+  // new user. 
+  $langCode = $language->language;
   if(!file_exists(PATH_EMAIL_TEMPLATE . "user_created_subject-" . $langCode . ".email")) 
     $langCode = 'en';
 
