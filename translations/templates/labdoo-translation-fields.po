@@ -1,0 +1,770 @@
+# Translation of Labdoo
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2014-11-09 03:53+0000\n"
+"PO-Revision-Date: 2014-11-09 03:53+0000\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n>1);\n"
+
+#: field:field_simplenews_term:simplenews:label
+msgctxt "field_simplenews_term:simplenews:label"
+msgid "Newsletter category"
+msgstr ""
+
+#: field:field_arrival_date:dootrip:label
+msgctxt "field_arrival_date:dootrip:label"
+msgid "Arrival date"
+msgstr ""
+
+#: field:field_comments:dootrip:label
+msgctxt "field_comments:dootrip:label"
+msgid "Comments"
+msgstr ""
+
+#: field:field_departure_date:dootrip:label
+msgctxt "field_departure_date:dootrip:label"
+msgid "Departure date"
+msgstr ""
+
+#: field:field_destination_of_the_trip:dootrip:label
+msgctxt "field_destination_of_the_trip:dootrip:label"
+msgid "Destination of the trip"
+msgstr ""
+
+#: field:field_dootrip_capacity:dootrip:label
+msgctxt "field_dootrip_capacity:dootrip:label"
+msgid "Number of doojects you can carry"
+msgstr ""
+
+#: field:field_dootripper_s_:dootrip:label
+msgctxt "field_dootripper_s_:dootrip:label"
+msgid "Dootripper(s)"
+msgstr ""
+
+#: field:field_dootripper_s_:dootrip:description
+msgctxt "field_dootripper_s_:dootrip:description"
+msgid "User(s) who will be part of this dootrip"
+msgstr ""
+
+#: field:field_laptops:dootrip:label
+msgctxt "field_laptops:dootrip:label"
+msgid "Dooject identifiers"
+msgstr ""
+
+#: field:field_laptops:dootrip:description
+msgctxt "field_laptops:dootrip:description"
+msgid ""
+"Once you know the dooject(s) that you will be carrying with this "
+"dootrip, enter their Labdoo identifier here."
+msgstr ""
+
+#: field:field_number_of_days_after:dootrip:label
+msgctxt "field_number_of_days_after:dootrip:label"
+msgid "Number of days you can store the dooject after the arrival date"
+msgstr ""
+
+#: field:field_number_of_days_before:dootrip:label
+msgctxt "field_number_of_days_before:dootrip:label"
+msgid "Number of days you can store the dooject before the departure date"
+msgstr ""
+
+#: field:field_origin_of_the_trip:dootrip:label
+msgctxt "field_origin_of_the_trip:dootrip:label"
+msgid "Origin of the trip"
+msgstr ""
+
+#: field:field_status_dootrip:#allowed_values:DS0
+msgctxt "field_status_dootrip:#allowed_values:DS0"
+msgid "Pending"
+msgstr ""
+
+#: field:field_status_dootrip:#allowed_values:DS1
+msgctxt "field_status_dootrip:#allowed_values:DS1"
+msgid "Completed"
+msgstr ""
+
+#: field:field_status_dootrip:#allowed_values:DS2
+msgctxt "field_status_dootrip:#allowed_values:DS2"
+msgid "Cancelled"
+msgstr ""
+
+#: field:field_status_dootrip:dootrip:label
+msgctxt "field_status_dootrip:dootrip:label"
+msgid "Status"
+msgstr ""
+
+#: field:field_additional_files:edoovillage:label
+msgctxt "field_additional_files:edoovillage:label"
+msgid "Additional files"
+msgstr ""
+
+#: field:field_edoovillage_status:#allowed_values:open
+msgctxt "field_edoovillage_status:#allowed_values:open"
+msgid "Open"
+msgstr ""
+
+#: field:field_edoovillage_status:#allowed_values:completed
+msgctxt "field_edoovillage_status:#allowed_values:completed"
+msgid "Completed"
+msgstr ""
+
+#: field:field_edoovillage_status:edoovillage:label
+msgctxt "field_edoovillage_status:edoovillage:label"
+msgid "Status"
+msgstr ""
+
+#: field:field_hub:edoovillage:label
+msgctxt "field_hub:edoovillage:label"
+msgid "Coordinating hub(s)"
+msgstr ""
+
+#: field:field_internet_connection_type:#allowed_values:none
+msgctxt "field_internet_connection_type:#allowed_values:none"
+msgid "None"
+msgstr ""
+
+#: field:field_internet_connection_type:#allowed_values:wired
+msgctxt "field_internet_connection_type:#allowed_values:wired"
+msgid "Wired"
+msgstr ""
+
+#: field:field_internet_connection_type:#allowed_values:wireless
+msgctxt "field_internet_connection_type:#allowed_values:wireless"
+msgid "Wireless"
+msgstr ""
+
+#: field:field_internet_connection_type:#allowed_values:wiredOrWireless
+msgctxt "field_internet_connection_type:#allowed_values:wiredOrWireless"
+msgid "Wired or Wireless"
+msgstr ""
+
+#: field:field_internet_connection_type:edoovillage:label
+msgctxt "field_internet_connection_type:edoovillage:label"
+msgid "Internet connection type"
+msgstr ""
+
+#: field:field_local_language_s_:edoovillage:label
+msgctxt "field_local_language_s_:edoovillage:label"
+msgid "Local language(s)"
+msgstr ""
+
+#: field:field_number_of_laptops_needed:edoovillage:label
+msgctxt "field_number_of_laptops_needed:edoovillage:label"
+msgid "Number of doojects needed"
+msgstr ""
+
+#: field:field_number_of_students:edoovillage:label
+msgctxt "field_number_of_students:edoovillage:label"
+msgid "Number of students"
+msgstr ""
+
+#: field:field_number_of_teachers:edoovillage:label
+msgctxt "field_number_of_teachers:edoovillage:label"
+msgid "Number of teachers"
+msgstr ""
+
+#: field:field_on_site_point_of_contact:edoovillage:label
+msgctxt "field_on_site_point_of_contact:edoovillage:label"
+msgid "On-site point of contact"
+msgstr ""
+
+#: field:field_on_site_point_of_contact:edoovillage:description
+msgctxt "field_on_site_point_of_contact:edoovillage:description"
+msgid "Email address, phone number, website, etc."
+msgstr ""
+
+#: field:field_project_application:edoovillage:label
+msgctxt "field_project_application:edoovillage:label"
+msgid "Project application"
+msgstr ""
+
+#: field:field_project_description:edoovillage:label
+msgctxt "field_project_description:edoovillage:label"
+msgid "Project description"
+msgstr ""
+
+#: field:field_project_manager_s_:edoovillage:label
+msgctxt "field_project_manager_s_:edoovillage:label"
+msgid "Project manager(s)"
+msgstr ""
+
+#: field:field_project_summary:edoovillage:label
+msgctxt "field_project_summary:edoovillage:label"
+msgid "Project brief description"
+msgstr ""
+
+#: field:field_semaphore:#allowed_values:red
+msgctxt "field_semaphore:#allowed_values:red"
+msgid "Red: pictures about the project have not been uploaded yet"
+msgstr ""
+
+#: field:field_semaphore:#allowed_values:yellow
+msgctxt "field_semaphore:#allowed_values:yellow"
+msgid "Yellow: first doojects can be sent"
+msgstr ""
+
+#: field:field_semaphore:#allowed_values:green
+msgctxt "field_semaphore:#allowed_values:green"
+msgid "Green: the rest of the doojects can be sent"
+msgstr ""
+
+#: field:field_semaphore:edoovillage:label
+msgctxt "field_semaphore:edoovillage:label"
+msgid "Semaphore"
+msgstr ""
+
+#: field:field_socket_type:#allowed_values:A
+msgctxt "field_socket_type:#allowed_values:A"
+msgid "A"
+msgstr ""
+
+#: field:field_socket_type:#allowed_values:B
+msgctxt "field_socket_type:#allowed_values:B"
+msgid "B"
+msgstr ""
+
+#: field:field_socket_type:#allowed_values:C
+msgctxt "field_socket_type:#allowed_values:C"
+msgid "C"
+msgstr ""
+
+#: field:field_socket_type:#allowed_values:D
+msgctxt "field_socket_type:#allowed_values:D"
+msgid "D"
+msgstr ""
+
+#: field:field_socket_type:#allowed_values:E
+msgctxt "field_socket_type:#allowed_values:E"
+msgid "E"
+msgstr ""
+
+#: field:field_socket_type:#allowed_values:F
+msgctxt "field_socket_type:#allowed_values:F"
+msgid "F"
+msgstr ""
+
+#: field:field_socket_type:#allowed_values:G
+msgctxt "field_socket_type:#allowed_values:G"
+msgid "G"
+msgstr ""
+
+#: field:field_socket_type:#allowed_values:H
+msgctxt "field_socket_type:#allowed_values:H"
+msgid "H"
+msgstr ""
+
+#: field:field_socket_type:#allowed_values:I
+msgctxt "field_socket_type:#allowed_values:I"
+msgid "I"
+msgstr ""
+
+#: field:field_socket_type:#allowed_values:J
+msgctxt "field_socket_type:#allowed_values:J"
+msgid "J"
+msgstr ""
+
+#: field:field_socket_type:#allowed_values:K
+msgctxt "field_socket_type:#allowed_values:K"
+msgid "K"
+msgstr ""
+
+#: field:field_socket_type:#allowed_values:L
+msgctxt "field_socket_type:#allowed_values:L"
+msgid "L"
+msgstr ""
+
+#: field:field_socket_type:#allowed_values:M
+msgctxt "field_socket_type:#allowed_values:M"
+msgid "M"
+msgstr ""
+
+#: field:field_socket_type:edoovillage:label
+msgctxt "field_socket_type:edoovillage:label"
+msgid "Socket type"
+msgstr ""
+
+#: field:field_socket_voltage:#allowed_values:220
+msgctxt "field_socket_voltage:#allowed_values:220"
+msgid "220-240 Volts"
+msgstr ""
+
+#: field:field_socket_voltage:#allowed_values:120
+msgctxt "field_socket_voltage:#allowed_values:120"
+msgid "100-127 Volts"
+msgstr ""
+
+#: field:field_socket_voltage:edoovillage:label
+msgctxt "field_socket_voltage:edoovillage:label"
+msgid "Socket voltage"
+msgstr ""
+
+#: field:field_branches_information:hub:label
+msgctxt "field_branches_information:hub:label"
+msgid "Branches information"
+msgstr ""
+
+#: field:field_hub_manager_s_:hub:label
+msgctxt "field_hub_manager_s_:hub:label"
+msgid "Hub manager(s)"
+msgstr ""
+
+#: field:field_additional_editors:laptop:label
+msgctxt "field_additional_editors:laptop:label"
+msgid "Additional editors"
+msgstr ""
+
+#: field:field_additional_editors:laptop:description
+msgctxt "field_additional_editors:laptop:description"
+msgid "Add users who need to have permission to edit this dooject"
+msgstr ""
+
+#: field:field_additional_followers:laptop:label
+msgctxt "field_additional_followers:laptop:label"
+msgid "Additional followers"
+msgstr ""
+
+#: field:field_additional_followers:laptop:description
+msgctxt "field_additional_followers:laptop:description"
+msgid "Add users who want to follow this dooject"
+msgstr ""
+
+#: field:field_additional_notes:laptop:label
+msgctxt "field_additional_notes:laptop:label"
+msgid "Additional notes"
+msgstr ""
+
+#: field:field_additional_notes:laptop:description
+msgctxt "field_additional_notes:laptop:description"
+msgid ""
+"Add here any observations you would like to make. For instance you can "
+"add notes such as the quality of the laptop or if something is broken, "
+"a reminder, or a note on who donated the laptop."
+msgstr ""
+
+#: field:field_additional_notification_em:laptop:label
+msgctxt "field_additional_notification_em:laptop:label"
+msgid "Additional notification emails"
+msgstr ""
+
+#: field:field_additional_notification_em:laptop:description
+msgctxt "field_additional_notification_em:laptop:description"
+msgid ""
+"Add here the email address(es) of additional people that you would "
+"like to be notified whenever this laptop changes its status."
+msgstr ""
+
+#: field:field_amp_hours:laptop:label
+msgctxt "field_amp_hours:laptop:label"
+msgid "Amp hours"
+msgstr ""
+
+#: field:field_cpu:laptop:label
+msgctxt "field_cpu:laptop:label"
+msgid "CPU speed (Example: 1200 MHz)"
+msgstr ""
+
+#: field:field_cpu_type:#allowed_values:1
+msgctxt "field_cpu_type:#allowed_values:1"
+msgid "1 (Single core)"
+msgstr ""
+
+#: field:field_cpu_type:#allowed_values:2
+msgctxt "field_cpu_type:#allowed_values:2"
+msgid "2 (Duo core)"
+msgstr ""
+
+#: field:field_cpu_type:#allowed_values:3
+msgctxt "field_cpu_type:#allowed_values:3"
+msgid "3"
+msgstr ""
+
+#: field:field_cpu_type:#allowed_values:4
+msgctxt "field_cpu_type:#allowed_values:4"
+msgid "4"
+msgstr ""
+
+#: field:field_cpu_type:#allowed_values:5
+msgctxt "field_cpu_type:#allowed_values:5"
+msgid "5"
+msgstr ""
+
+#: field:field_cpu_type:#allowed_values:6
+msgctxt "field_cpu_type:#allowed_values:6"
+msgid "6"
+msgstr ""
+
+#: field:field_cpu_type:#allowed_values:7
+msgctxt "field_cpu_type:#allowed_values:7"
+msgid "7"
+msgstr ""
+
+#: field:field_cpu_type:#allowed_values:8
+msgctxt "field_cpu_type:#allowed_values:8"
+msgid "8"
+msgstr ""
+
+#: field:field_cpu_type:laptop:label
+msgctxt "field_cpu_type:laptop:label"
+msgid "Number of cores (CPU type)"
+msgstr ""
+
+#: field:field_current_operating_system:laptop:label
+msgctxt "field_current_operating_system:laptop:label"
+msgid "Current operating system"
+msgstr ""
+
+#: field:field_current_operating_system:laptop:description
+msgctxt "field_current_operating_system:laptop:description"
+msgid "Example: Ubuntu 12.04, Mac OS X, Windows 7, etc."
+msgstr ""
+
+#: field:field_device_type:#allowed_values:laptop
+msgctxt "field_device_type:#allowed_values:laptop"
+msgid "Laptop"
+msgstr ""
+
+#: field:field_device_type:#allowed_values:blackberry
+msgctxt "field_device_type:#allowed_values:blackberry"
+msgid "BlackBerry"
+msgstr ""
+
+#: field:field_device_type:#allowed_values:desktop
+msgctxt "field_device_type:#allowed_values:desktop"
+msgid "Desktop"
+msgstr ""
+
+#: field:field_device_type:#allowed_values:ebook
+msgctxt "field_device_type:#allowed_values:ebook"
+msgid "eBook"
+msgstr ""
+
+#: field:field_device_type:#allowed_values:googlePhone
+msgctxt "field_device_type:#allowed_values:googlePhone"
+msgid "Android phone"
+msgstr ""
+
+#: field:field_device_type:#allowed_values:iphone
+msgctxt "field_device_type:#allowed_values:iphone"
+msgid "iPhone"
+msgstr ""
+
+#: field:field_device_type:#allowed_values:internetTable
+msgctxt "field_device_type:#allowed_values:internetTable"
+msgid "Internet tablet"
+msgstr ""
+
+#: field:field_device_type:#allowed_values:ipad
+msgctxt "field_device_type:#allowed_values:ipad"
+msgid "iPad"
+msgstr ""
+
+#: field:field_device_type:#allowed_values:smartphone
+msgctxt "field_device_type:#allowed_values:smartphone"
+msgid "SmartPhone"
+msgstr ""
+
+#: field:field_device_type:laptop:label
+msgctxt "field_device_type:laptop:label"
+msgid "Device type"
+msgstr ""
+
+#: field:field_dootrips:laptop:label
+msgctxt "field_dootrips:laptop:label"
+msgid "Dootrips assigned to this dooject"
+msgstr ""
+
+#: field:field_dootrips:laptop:description
+msgctxt "field_dootrips:laptop:description"
+msgid ""
+"This field is updated automatically once dootrips are assigned to this "
+"dooject. You can also optionally set this field manually adding "
+"dootrips by typing their name."
+msgstr ""
+
+#: field:field_edoovillage_destination:laptop:label
+msgctxt "field_edoovillage_destination:laptop:label"
+msgid "Edoovillage destination"
+msgstr ""
+
+#: field:field_hard_drive:laptop:label
+msgctxt "field_hard_drive:laptop:label"
+msgid "Hard drive"
+msgstr ""
+
+#: field:field_hub_laptop:laptop:label
+msgctxt "field_hub_laptop:laptop:label"
+msgid "Source group"
+msgstr ""
+
+#: field:field_hub_laptop:laptop:description
+msgctxt "field_hub_laptop:laptop:description"
+msgid ""
+"If you are an individual tagger, select here the group \"Grassroots\". "
+"If you belong to a hub, select the name of your hub."
+msgstr ""
+
+#: field:field_manager:laptop:label
+msgctxt "field_manager:laptop:label"
+msgid "Manager"
+msgstr ""
+
+#: field:field_manager:laptop:description
+msgctxt "field_manager:laptop:description"
+msgid "The user currently managing this dooject"
+msgstr ""
+
+#: field:field_memory:laptop:label
+msgctxt "field_memory:laptop:label"
+msgid "Memory"
+msgstr ""
+
+#: field:field_model:laptop:label
+msgctxt "field_model:laptop:label"
+msgid "Model"
+msgstr ""
+
+#: field:field_model:laptop:description
+msgctxt "field_model:laptop:description"
+msgid "Brand name and model of the dooject"
+msgstr ""
+
+#: field:field_picture:laptop:label
+msgctxt "field_picture:laptop:label"
+msgid "Picture"
+msgstr ""
+
+#: field:field_picture:laptop:description
+msgctxt "field_picture:laptop:description"
+msgid ""
+"Upload here a picture of the laptop. A picture is a helpful way for "
+"donors to ensure that they are looking at the correct laptop. Please "
+"do not use pictures that you may find on the Internet, as they may be "
+"copyrighted.  Instead, please take a picture with your own camera. "
+"Once the laptop reaches a school, you can also upload another picture "
+"with the students using it."
+msgstr ""
+
+#: field:field_serial_number:laptop:label
+msgctxt "field_serial_number:laptop:label"
+msgid "Serial number"
+msgstr ""
+
+#: field:field_serial_number:laptop:description
+msgctxt "field_serial_number:laptop:description"
+msgid ""
+"Write here the serial number of the laptop. Usually the serial number "
+"can be found in the back of the laptop, search for keywords such as "
+"\"Serial Number\" or \"S/N\", or if you see a bar code with a number "
+"under it, use this number. If the laptop has no sticker with the "
+"serial number, then write in this field the words \"Unknown\"."
+msgstr ""
+
+#: field:field_status:#allowed_values:S0
+msgctxt "field_status:#allowed_values:S0"
+msgid "[S0] Tagged with a Labdoo ID"
+msgstr ""
+
+#: field:field_status:#allowed_values:S1
+msgctxt "field_status:#allowed_values:S1"
+msgid "[S1] Donated, waiting to pass quality assurance"
+msgstr ""
+
+#: field:field_status:#allowed_values:S2
+msgctxt "field_status:#allowed_values:S2"
+msgid "[S2] Passed quality assurance"
+msgstr ""
+
+#: field:field_status:#allowed_values:S3
+msgctxt "field_status:#allowed_values:S3"
+msgid "[S3] Assigned to an edoovillage, waiting to be shipped"
+msgstr ""
+
+#: field:field_status:#allowed_values:S4
+msgctxt "field_status:#allowed_values:S4"
+msgid "[S4] Deployed and being used"
+msgstr ""
+
+#: field:field_status:#allowed_values:S5
+msgctxt "field_status:#allowed_values:S5"
+msgid "[S5] Waiting to be recycled"
+msgstr ""
+
+#: field:field_status:#allowed_values:S6
+msgctxt "field_status:#allowed_values:S6"
+msgid "[S6] Recycled"
+msgstr ""
+
+#: field:field_status:#allowed_values:S7
+msgctxt "field_status:#allowed_values:S7"
+msgid "[S7] (Library) Checked out"
+msgstr ""
+
+#: field:field_status:#allowed_values:S8
+msgctxt "field_status:#allowed_values:S8"
+msgid "[S8] (Library) Available"
+msgstr ""
+
+#: field:field_status:#allowed_values:S9
+msgctxt "field_status:#allowed_values:S9"
+msgid "[S9] Deployed but not working"
+msgstr ""
+
+#: field:field_status:#allowed_values:T1
+msgctxt "field_status:#allowed_values:T1"
+msgid "[T1] In transit going to an edoovillage"
+msgstr ""
+
+#: field:field_status:#allowed_values:T2
+msgctxt "field_status:#allowed_values:T2"
+msgid "[T2] In transit going to a recycling factory"
+msgstr ""
+
+#: field:field_status:#allowed_values:L1
+msgctxt "field_status:#allowed_values:L1"
+msgid "[L1] Laptop was lost"
+msgstr ""
+
+#: field:field_status:laptop:label
+msgctxt "field_status:laptop:label"
+msgid "Status"
+msgstr ""
+
+#: field:field_tagger:laptop:label
+msgctxt "field_tagger:laptop:label"
+msgid "Tagger"
+msgstr ""
+
+#: field:field_tagger:laptop:description
+msgctxt "field_tagger:laptop:description"
+msgid "The user who tagged this dooject"
+msgstr ""
+
+#: field:field_volts:laptop:label
+msgctxt "field_volts:laptop:label"
+msgid "Volts"
+msgstr ""
+
+#: field:body:action:label
+msgctxt "body:action:label"
+msgid "Body"
+msgstr ""
+
+#: field:field_action_type:#allowed_values:Dooject
+msgctxt "field_action_type:#allowed_values:Dooject"
+msgid "Doojects"
+msgstr ""
+
+#: field:field_action_type:#allowed_values:Dootrip
+msgctxt "field_action_type:#allowed_values:Dootrip"
+msgid "Dootrips"
+msgstr ""
+
+#: field:field_action_type:#allowed_values:Edoovillage
+msgctxt "field_action_type:#allowed_values:Edoovillage"
+msgid "Edoovillages"
+msgstr ""
+
+#: field:field_action_type:#allowed_values:Hub
+msgctxt "field_action_type:#allowed_values:Hub"
+msgid "Hubs"
+msgstr ""
+
+#: field:field_action_type:action:label
+msgctxt "field_action_type:action:label"
+msgid "Type"
+msgstr ""
+
+#: field:field_edoovillage_action:action:label
+msgctxt "field_edoovillage_action:action:label"
+msgid "Edoovillage"
+msgstr ""
+
+#: field:field_hub_action:action:label
+msgctxt "field_hub_action:action:label"
+msgid "Hub"
+msgstr ""
+
+#: field:field_labdooer_action:action:label
+msgctxt "field_labdooer_action:action:label"
+msgid "Labdooer"
+msgstr ""
+
+#: field:field_stream_it:action:label
+msgctxt "field_stream_it:action:label"
+msgid "Stream it"
+msgstr ""
+
+#: field:body:gic:label
+msgctxt "body:gic:label"
+msgid "Body"
+msgstr ""
+
+#: field:field_gic_date:gic:label
+msgctxt "field_gic_date:gic:label"
+msgid "Date"
+msgstr ""
+
+#: field:field_gic_edoovillage:gic:label
+msgctxt "field_gic_edoovillage:gic:label"
+msgid "Edoovillage"
+msgstr ""
+
+#: field:body:private_page:label
+msgctxt "body:private_page:label"
+msgid "Body"
+msgstr ""
+
+#: field:body:slider_page:label
+msgctxt "body:slider_page:label"
+msgid "Body"
+msgstr ""
+
+#: field:field_slider_tab:slider_page:label
+msgctxt "field_slider_tab:slider_page:label"
+msgid "Tab"
+msgstr ""
+
+#: field:field_slider_weight:slider_page:label
+msgctxt "field_slider_weight:slider_page:label"
+msgid "Weight"
+msgstr ""
+
+#: field:field_type:#allowed_values:edoovillage
+msgctxt "field_type:#allowed_values:edoovillage"
+msgid "Edoovillage"
+msgstr ""
+
+#: field:field_type:#allowed_values:hub
+msgctxt "field_type:#allowed_values:hub"
+msgid "Hub"
+msgstr ""
+
+#: field:field_type:slider_page:label
+msgctxt "field_type:slider_page:label"
+msgid "Type"
+msgstr ""
+
+#: field:field_about_me:user:label
+msgctxt "field_about_me:user:label"
+msgid "About me"
+msgstr ""
+
+#: field:field_skills:user:label
+msgctxt "field_skills:user:label"
+msgid "Skills"
+msgstr ""
+
+#: field:field_user_name:user:label
+msgctxt "field_user_name:user:label"
+msgid "Name"
+msgstr ""
+
+#: field:field_user_name:user:description
+msgctxt "field_user_name:user:description"
+msgid "Your first and last name"
+msgstr ""
