@@ -103,6 +103,7 @@ projects[views_autocomplete_filters] = 1.1
 projects[views_dependent_filters] = 1.1
 projects[variable] = 2.5 
 projects[lang_dropdown] = 2.5 
+projects[logintoboggan] = 1.4 
 
 ;-------------------
 ; Translations
@@ -145,5 +146,6 @@ libraries[hybridauth][download][url] = https://github.com/hybridauth/hybridauth/
 ; Web Services
 ;--------------------
 
+projects[services][version] = "3.7"
 projects[oauth2_loginprovider] = 1.x-dev
 

@@ -108,53 +108,58 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
 
     $node = node_load($item->entity_id);
 
-    // Extract Labdoo ID (mandatory field)
+    // Extract Labdoo ID 
     $objects[$objectNid]['ID'] = $node->title; 
 
-    // Extract Hub Field (mandatory field)
+    // Extract Hub Field 
     $objects[$objectNid]['hub'] = lbd_nodeid2title(labdoo_lib_get_field($node, 'field_hub_laptop', 'node', 'target_id'));
 
-    // Extract Edoovillage Field (optional field)
+    // Extract Edoovillage Field 
     if(!empty($node->field_edoovillage_destination)) 
       $objects[$objectNid]['edoovillage'] = lbd_nodeid2title(labdoo_lib_get_field($node, 'field_edoovillage_destination', 'node', 'target_id'));
     else
       $objects[$objectNid]['edoovillage'] = "Not assigned";
 
-    // Extract Status Field (mandatory field)
+    // Extract Status Field 
     $objects[$objectNid]['status'] = $objectstatus = labdoo_lib_get_field($node, 'field_status', 'node', 'value');
 
-    // Extract Notes Field (optional field) -- only included so it can be free-text searched
+    // Extract Notes Field 
     if(!empty($node->field_additional_notes)) 
       $objects[$objectNid]['notes'] = labdoo_lib_get_field($node, 'field_additional_notes', 'node', 'value'); 
     else
       $objects[$objectNid]['notes'] = "";
 
-    // Extract Model Field (mandatory field)
-    $objects[$objectNid]['model'] = labdoo_lib_get_field($node, 'field_model', 'node', 'value');
-
-    // Extract Tagger Field (mandatory field)
+    // Extract Tagger Field 
     $query = "SELECT name FROM users WHERE uid = " . labdoo_lib_get_field($node, 'field_tagger', 'node', 'target_id');
     $objects[$objectNid]['tagger'] = db_query($query)->fetchField(); 
 
-    // Extract Manager Field (mandatory field)
+    // Extract Manager Field 
     $query = "SELECT name FROM users WHERE uid = " . labdoo_lib_get_field($node, 'field_manager', 'node', 'target_id');
     $objects[$objectNid]['manager'] = db_query($query)->fetchField(); 
 
-    // Extract email list field (optional field)
+    // Extract email list field 
     $objects[$objectNid]['emails'] = "";
     if(!empty($node->field_additional_notification_em)) 
       foreach(field_get_items('node', $node, 'field_additional_notification_em') as $item)
         $objects[$objectNid]['emails'] = $objects[$objectNid]['emails'] . " " . $item['email'];
 
-    // Get the country (mandatory field)
+    // Extract the country 
     $country_names = location_get_iso3166_list();
     $objects[$objectNid]['country'] = $node->location['country'];
     if(array_key_exists($node->location['country'], $country_names))
         $objects[$objectNid]['country'] = $country_names[$node->location['country']];
 
-    // Get the serial number (mandatory field)
+    // Extract the serial number 
     $objects[$objectNid]['serialNumber'] = labdoo_lib_get_field($node, 'field_serial_number', 'node', 'value'); 
-        
+
+    // Extract Model Field 
+    $objects[$objectNid]['model'] = labdoo_lib_get_field($node, 'field_model', 'node', 'value');
+
+    // Extract Watt-hours
+    $volts = labdoo_lib_get_field($node, 'field_volts', 'node', 'value');
+    $mAh = labdoo_lib_get_field($node, 'field_amp_hours', 'node', 'value');
+    $objects[$objectNid]['Wh'] = $volts * $mAh / 1000; 
+
     // Calculate the link to the object 
     global $language;
     if ($language->language != "en")
@@ -176,14 +181,17 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
   $metrics[3] = array('label' => 'Edoovillage', 'field' => 'edoovillage', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
   $metrics[4] = array('label' => 'Country', 'field' => 'country', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
   $metrics[5] = array('label' => 'Serial number', 'field' => 'serialNumber', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[6] = array('label' => 'S0 - tagged', 'field' => 'S0', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[7] = array('label' => 'S1 - donated', 'field' => 'S1', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[8] = array('label' => 'S2 - sanitized', 'field' => 'S2', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[9] = array('label' => 'S3 - assigned', 'field' => 'S3', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[10] = array('label' => 'T1 - in transit', 'field' => 'T1', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[11] = array('label' => 'S4 - deployed', 'field' => 'S4', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[12] = array('label' => 'S5 - needs recycle', 'field' => 'S5', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[13] = array('label' => 'S6 - recycled', 'field' => 'S6', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[6] = array('label' => 'Model', 'field' => 'model', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[7] = array('label' => 'Wh', 'field' => 'Wh', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[8] = array('label' => 'Notes', 'field' => 'notes', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[9] = array('label' => 'S0 - tagged', 'field' => 'S0', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[10] = array('label' => 'S1 - donated', 'field' => 'S1', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[11] = array('label' => 'S2 - sanitized', 'field' => 'S2', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[12] = array('label' => 'S3 - assigned', 'field' => 'S3', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[13] = array('label' => 'T1 - in transit', 'field' => 'T1', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[14] = array('label' => 'S4 - deployed', 'field' => 'S4', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[15] = array('label' => 'S5 - needs recycle', 'field' => 'S5', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[16] = array('label' => 'S6 - recycled', 'field' => 'S6', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
 
   if(empty($objects)) {
 
@@ -192,6 +200,9 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
     $objects[0]['status'] = "";
     $objects[0]['country'] = "";
     $objects[0]['serialNumber'] = ""; 
+    $objects[0]['model'] = ""; 
+    $objects[0]['Wh'] = ""; 
+    $objects[0]['notes'] = ""; 
     $objects[0]['link'] = "No doojects in this view"; 
     $objects[0]['completed'] = $objects[0]['open'] = 0; 
     foreach($possibleStates as $thisState)
@@ -282,15 +293,15 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
     if($node->type != "edoovillage")
       continue;
 
-    // Extract title (mandatory field)
+    // Extract title 
     $objects[$objectNid]['title'] = $node->title; 
 
-    // Extract hubs (mandatory field)
+    // Extract hubs 
     $objects[$objectNid]['hub'] = "";
     foreach(field_get_items('node', $node, 'field_hub') as $item)
       $objects[$objectNid]['hub'] = $objects[$objectNid]['hub'] . " " . lbd_nodeid2title($item['target_id']);
 
-    // Extract needed field (mandatory field)
+    // Extract needed field 
     $objects[$objectNid]['needed'] = $needed = labdoo_lib_get_field($node, 'field_number_of_laptops_needed', 'node', 'value');
 
     // Extract intransit field 
@@ -306,7 +317,7 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
     // Extract %completed field 
     $objects[$objectNid]['pcompleted'] = floor(($needed - $remaining) / $needed * 100.00); 
 
-    // Extract status field (mandatory field)
+    // Extract status field 
     $objects[$objectNid]['status'] = $objectstatus = labdoo_lib_get_field($node, 'field_edoovillage_status', 'node', 'value'); 
 
     // Get the country
@@ -430,10 +441,10 @@ function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher =
 
     $node = node_load($item->entity_id);
 
-    // Extract title (mandatory field)
+    // Extract title 
     $objects[$objectNid]['title'] = $node->title; 
 
-    // Extract needed field (mandatory field)
+    // Extract needed field 
     $objects[$objectNid]['needed'] = $needed = labdoo_get_demand(NULL, $objectNid, FALSE);
 
     // Extract intransit field 
@@ -446,7 +457,7 @@ function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher =
     // Extract remaining field 
     $objects[$objectNid]['remaining'] = $remaining = $needed - $inTransit - $delivered; 
 
-    // Extract needed field (mandatory field)
+    // Extract needed field 
     $objects[$objectNid]['neededShared'] = $neededShared = floor(labdoo_get_demand(NULL, $objectNid, TRUE));
 
     // Extract remaining field 
@@ -559,20 +570,20 @@ function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL, $switch
 
     $node = node_load($item->entity_id);
 
-    // Extract title (mandatory field)
+    // Extract title 
     $objects[$objectNid]['title'] = $node->title; 
 
-    // Extract capacity field (mandatory field)
+    // Extract capacity field 
     $objects[$objectNid]['capacity'] = labdoo_lib_get_field($node, 'field_dootrip_capacity', 'node', 'value');
 
-    // Extract number of dootrips field (mandatory field)
+    // Extract number of dootrips field 
     $objects[$objectNid]['numberDootrips'] = 1;
 
-    // Extract status field (mandatory field)
+    // Extract status field 
     $statusLabels = list_allowed_values(field_info_field("field_status_dootrip"));
     $objects[$objectNid]['status'] = $statusLabels[labdoo_lib_get_field($node, 'field_status_dootrip', 'node', 'value')];
 
-    // Extract completed field (mandatory field)
+    // Extract completed field 
     if(labdoo_lib_get_field($node, 'field_status_dootrip', 'node', 'value') == "DS1")
       $objects[$objectNid]['completed'] = $objects[$objectNid]['capacity'];
     else
@@ -1011,7 +1022,7 @@ columnChart.draw();
  * Updates the table based on user's input
  */
 function updateColumnChart() {
-  // group the data of the filtered table and set the result in the pie chart.
+  // group the data of the filtered table and set the result in the column chart.
   columnChart.setDataTable(google.visualization.data.group(
     // get the filtered results
     table.getDataTable(),
@@ -1028,7 +1039,7 @@ function updateColumnChart() {
 
 ]));
 
-  // redraw the pie chart to reflect changes
+  // redraw the column chart to reflect changes
   columnChart.draw();
 }
 
@@ -1059,7 +1070,7 @@ var runOnce = google.visualization.events.addListener(table, 'ready', function (
       tmpStr = tempData.getColumnLabel(i).replace(/\"/g, '\"\"');
       tmpArr.push('\"' + tmpStr + '\"');
     }
-    csvData.push(tmpArr.join(';'));
+    csvData.push(tmpArr.join('\t'));
     for (var i = 0; i < tempData.getNumberOfRows(); i++) {
       tmpArr = [];
       for (var j = 0; j < $numTableColumns; j++) {
@@ -1080,7 +1091,7 @@ var runOnce = google.visualization.events.addListener(table, 'ready', function (
             // should never trigger
         }
       }
-      csvData.push(tmpArr.join(';'));
+      csvData.push(tmpArr.join('\t'));
     }
     var output = csvData.join('\\n');
     var uri = 'data:text/csv;charset=UTF-8,' + encodeURIComponent(output);
@@ -1152,7 +1163,7 @@ google.setOnLoadCallback(drawVisualization);
         </tr>
         <tr style='vertical-align: top'>
           <td colspan='3'; style='width: 780px'>
-            <input type='button' id='dashboardToCSV' value='Click to download data' />
+            <input type='button' id='dashboardToCSV' value='Download' />
           </td>
         </tr>
       </table>
@@ -1176,7 +1187,7 @@ google.setOnLoadCallback(drawVisualization);
 function lbd_display_slider_edoovilage_data($edoovillageId = NULL) {
   global $user;
 
-  if($edoovillageId == NULL) 
+  if($edoovillageId == NULL || !is_numeric($edoovillageId)) 
     return;
   $loadedNode = node_load($edoovillageId);
   if($loadedNode == FALSE)
@@ -1208,7 +1219,7 @@ function lbd_display_slider_edoovilage_data($edoovillageId = NULL) {
  */
 function lbd_display_slider_edoovilage_doojects($edoovillageId = NULL) {
 
-  if($edoovillageId == NULL) 
+  if($edoovillageId == NULL || !is_numeric($edoovillageId)) 
     return;
   $loadedNode = node_load($edoovillageId);
   if($loadedNode == FALSE)
@@ -1233,7 +1244,7 @@ function lbd_display_slider_edoovilage_doojects($edoovillageId = NULL) {
  */
 function lbd_display_slider_edoovilage_metrics($edoovillageId) {
 
-  if($edoovillageId == NULL) 
+  if($edoovillageId == NULL || !is_numeric($edoovillageId)) 
     return;
   $loadedNode = node_load($edoovillageId);
   if($loadedNode == FALSE)
@@ -1257,7 +1268,7 @@ function lbd_display_slider_edoovilage_metrics($edoovillageId) {
  */
 function lbd_display_slider_edoovilage_gics($edoovillageId) {
 
-  if($edoovillageId == NULL) 
+  if($edoovillageId == NULL || !is_numeric($edoovillageId)) 
     return;
   $loadedNode = node_load($edoovillageId);
   if($loadedNode == FALSE)
@@ -1283,7 +1294,7 @@ function lbd_display_slider_edoovilage_gics($edoovillageId) {
 function lbd_display_slider_hub_data($hubId) {
   global $user;
 
-  if($hubId == NULL) 
+  if($hubId == NULL || !is_numeric($hubId)) 
     return;
   $loadedNode = node_load($hubId);
   if($loadedNode == FALSE)
@@ -1314,7 +1325,7 @@ function lbd_display_slider_hub_data($hubId) {
  */
 function lbd_display_slider_hub_edoovillages($hubId) {
 
-  if($hubId == NULL) 
+  if($hubId == NULL || !is_numeric($hubId)) 
     return;
   $loadedNode = node_load($hubId);
   if($loadedNode == FALSE)
@@ -1344,7 +1355,7 @@ function lbd_display_slider_hub_edoovillages($hubId) {
  */
 function lbd_display_slider_hub_doojects($hubId) {
 
-  if($hubId == NULL) 
+  if($hubId == NULL || !is_numeric($hubId)) 
     return;
   $loadedNode = node_load($hubId);
   if($loadedNode == FALSE)
@@ -1369,7 +1380,7 @@ function lbd_display_slider_hub_doojects($hubId) {
  */
 function lbd_display_slider_hub_metrics($hubId) {
 
-  if($hubId == NULL) 
+  if($hubId == NULL || !is_numeric($hubId)) 
     return;
   $loadedNode = node_load($hubId);
   if($loadedNode == FALSE)
@@ -1414,9 +1425,9 @@ function lbd_display_dooject_column_chart($objectNid, $type)
   $htmlCode = '
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">
-  google.load("visualization", "1", {packages:["corechart"], callback: drawChart});
+  google.load("visualization", "1.1", {packages:["corechart"], callback: drawChart});
   function drawChart() {
-  var data_pie_project = google.visualization.arrayToDataTable([
+  var data_column_chart_project = google.visualization.arrayToDataTable([
     ["Project", "Laptops needed", "Laptops in transit", "Laptops delivered (working)", "Laptops delivered (need recycle)"],
 ';
 
@@ -1424,18 +1435,18 @@ function lbd_display_dooject_column_chart($objectNid, $type)
     ["Edoovillage", '.$numNeeded.', '.$numTransit.', '.$numDeployed.', '.$numRecycled.'],
   ]);
 
-  var options_pie_project = {
+  var options_column_chart_project = {
     seriesType: "bars",
     colors: ["red", "green", "gray", "orange"],
   };
 
-  var chart_pie_project = new google.visualization.ComboChart(document.getElementById("chart_div_pie_project"));
-  chart_pie_project.draw(data_pie_project, options_pie_project);
+  var chart_column_chart_project = new google.visualization.ComboChart(document.getElementById("chart_div_column_chart_project"));
+  chart_column_chart_project.draw(data_column_chart_project, options_column_chart_project);
 
   }
 </script>
 <body>
-  <div id="chart_div_pie_project" style="align: left; width: 500px; height: 250px;"></div>
+  <div id="chart_div_column_chart_project" style="align: left; width: 450px; height: 225px;"></div>
 </body>
 ';
 

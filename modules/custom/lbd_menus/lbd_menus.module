@@ -37,6 +37,7 @@ function make_main_menu() {
             'expanded' => TRUE,
             'weight' => -60,
             'language' => 'en',
+            'customized' => 1,
             'plid' => 0, 
             'module' => 'menu',
           );
@@ -49,6 +50,7 @@ function make_main_menu() {
             'expanded' => TRUE,
             'weight' => -50,
             'language' => 'en',
+            'customized' => 1,
             'plid' => $exploreMlid, 
             'module' => 'menu',
           );
@@ -61,7 +63,34 @@ function make_main_menu() {
             'expanded' => TRUE,
             'weight' => -40,
             'language' => 'en',
+            'customized' => 1,
             'plid' => $exploreMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'dootrips',
+            'link_title' => 'Dootrips inventory',
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -38,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => $exploreMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'labdooers',
+            'link_title' => 'Labdooers',
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -35,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => $exploreMlid,
             'module' => 'menu',
           );
   $mlid = menu_link_save($item);
@@ -73,6 +102,7 @@ function make_main_menu() {
             'expanded' => TRUE,
             'weight' => -30,
             'language' => 'en',
+            'customized' => 1,
             'plid' => $exploreMlid, 
             'module' => 'menu',
           );
@@ -88,6 +118,7 @@ function make_main_menu() {
             'expanded' => TRUE,
             'weight' => -50,
             'language' => 'en',
+            'customized' => 1,
             'plid' => 0, 
             'module' => 'menu',
           );
@@ -100,6 +131,7 @@ function make_main_menu() {
             'menu_name' => 'main-menu',
             'weight' => -40,
             'language' => 'en',
+            'customized' => 1,
             'plid' => $doojectMlid, 
             'module' => 'menu',
           );
@@ -111,6 +143,7 @@ function make_main_menu() {
             'menu_name' => 'main-menu',
             'weight' => -50,
             'language' => 'en',
+            'customized' => 1,
             'plid' => $doojectMlid, 
             'module' => 'menu',
           );
@@ -126,6 +159,7 @@ function make_main_menu() {
             'expanded' => TRUE,
             'weight' => -30,
             'language' => 'en',
+            'customized' => 1,
             'plid' => 0, 
             'module' => 'menu',
           );
@@ -138,6 +172,7 @@ function make_main_menu() {
             'menu_name' => 'main-menu',
             'weight' => -40,
             'language' => 'en',
+            'customized' => 1,
             'plid' => $edoovillageMlid, 
             'module' => 'menu',
           );
@@ -149,6 +184,7 @@ function make_main_menu() {
             'menu_name' => 'main-menu',
             'weight' => -50,
             'language' => 'en',
+            'customized' => 1,
             'plid' => $edoovillageMlid, 
             'module' => 'menu',
           );
@@ -164,6 +200,7 @@ function make_main_menu() {
             'expanded' => TRUE,
             'weight' => -20,
             'language' => 'en',
+            'customized' => 1,
             'plid' => 0, 
             'module' => 'menu',
           );
@@ -176,6 +213,7 @@ function make_main_menu() {
             'menu_name' => 'main-menu',
             'weight' => -40,
             'language' => 'en',
+            'customized' => 1,
             'plid' => $hubMlid, 
             'module' => 'menu',
           );
@@ -187,6 +225,7 @@ function make_main_menu() {
             'menu_name' => 'main-menu',
             'weight' => -50,
             'language' => 'en',
+            'customized' => 1,
             'plid' => $hubMlid, 
             'module' => 'menu',
           );
@@ -202,6 +241,7 @@ function make_main_menu() {
             'expanded' => TRUE,
             'weight' => -40,
             'language' => 'en',
+            'customized' => 1,
             'plid' => 0, 
             'module' => 'menu',
           );
@@ -214,6 +254,7 @@ function make_main_menu() {
             'menu_name' => 'main-menu',
             'weight' => -40,
             'language' => 'en',
+            'customized' => 1,
             'plid' => $dootripMlid, 
             'module' => 'menu',
           );
@@ -225,6 +266,7 @@ function make_main_menu() {
             'menu_name' => 'main-menu',
             'weight' => -50,
             'language' => 'en',
+            'customized' => 1,
             'plid' => $dootripMlid, 
             'module' => 'menu',
           );
@@ -240,6 +282,7 @@ function make_main_menu() {
             'expanded' => TRUE,
             'weight' => -10,
             'language' => 'en',
+            'customized' => 1,
             'plid' => 0, 
             'module' => 'menu',
           );
@@ -252,6 +295,7 @@ function make_main_menu() {
             'menu_name' => 'main-menu',
             'weight' => -40,
             'language' => 'en',
+            'customized' => 1,
             'plid' => $newsletterMlid, 
             'module' => 'menu',
           );
@@ -263,6 +307,7 @@ function make_main_menu() {
             'menu_name' => 'main-menu',
             'weight' => -30,
             'language' => 'en',
+            'customized' => 1,
             'plid' => $newsletterMlid, 
             'module' => 'menu',
           );
@@ -402,8 +447,11 @@ function _menu_item_redirect_my_dashboard() {
  *
  */
 function lbd_menus_menu_link_alter(&$item) {
+
+  if(!array_key_exists('page callback', $item))
+    return;
   
- if ($item['page callback'] == '_menu_item_redirect_my_doojects') {
+  if ($item['page callback'] == '_menu_item_redirect_my_doojects') {
     $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='node/44' AND link_title='Doojects' AND menu_name='main-menu'")->fetchField();
     $item['plid'] = $plid;
   }

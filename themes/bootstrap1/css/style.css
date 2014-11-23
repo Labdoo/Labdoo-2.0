@@ -52,6 +52,7 @@ h2 {
     font-size: large;
     font-family: 'comic sans ms', sans-serif;
 }
+
 h2.block-title {
     color: #009900;
     font-size: 16px;
@@ -78,3 +79,22 @@ h2.block-title {
   font-style: normal;
   color: #666666;
 }
+
+body {
+  line-height: 1.5em;
+}
+
+.map-link{
+  display:none;
+}
+
+.gmap-popup {
+  min-width:204px;
+  min-height:80px;
+}
+
+h3 {
+  font-size: 14px;
+}
+
+

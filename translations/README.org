@@ -1,0 +1,38 @@
+** Introduction
+
+This document describes the steps needed to translate the Labdoo.org social network platform.
+
+** Steps to translate Labdoo.org
+
+*** Translation of email (.email) files
+
++ Go to https://github.com/Labdoo/Labdoo-2.0/tree/master/translations/templates/labdoo-translation-email-files.tar
+
++ Right click on the button "Raw", select the option 'Save link as' and download the file into your local computer.
+
++ Unzip the file using your favorite unzip application. This will extract various files.
+
++ For each file extracted, open it using a text editor and translate it to your language. 
+
++ Save the file using the same file name but changing its suffix to reflect the language you are translating to. For instance, if you are translating to Japanese the file 'dootrip_added_body-en.email', rename the translated file to 'dootrip_added_body-japanese.email'. 
+
++ Repeat the steps above for all extracted files.
+
+*** Translation of portable object (.po) files
+
++ Go to https://github.com/Labdoo/Labdoo-2.0/tree/master/translations/templates/labdoo-translation-po-files.tar
+
++ Right click on the button "Raw", select the option 'Save link as' and download the file into your local computer.
+
++ Unzip the file using your favorite unzip application. This will extract various files.
+
++ For each file extracted, open it using a text editor. To translate the file, search for all occurrences of the keyword 'msgstr ""' and include into the quote "" the translation of the English words found in the field 'msgid'.
+
++ Save the file using the same file name but changing its suffix to reflect the language you are translating to. For instance, if you are translating to Japanese the file 'fields-en.po', rename the translated file to 'fields-japanese.po'. 
+
++ Repeat the steps above for all extracted files.
+
+*** Where to send the translated files
+
++ Once you are done with your translations, send the translated files to the email address project-labdoo@labdoo.org using as subject 'Labdoo.org translation files'.
+

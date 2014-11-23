@@ -93,6 +93,8 @@ function _update_dooject_location_from_edoovillage($node) {
 /**
  * Attempts to estimate latitude and longitude from the names of the city and country
  * by querying an Internet service. Therefore, requires connectivity to the Internet.
+ * To avoid all same [country, city] queries be mapped onto the same point, a small 
+ * random value is added to both latitude and longitude.
  *
  * @param string $country
  *   Country code (e.g. us, de, ...)
@@ -107,7 +109,6 @@ function _update_dooject_location_from_edoovillage($node) {
  *
  */
 function labdoo_lookup_coordinates($country, $city, &$lat, &$lon) {
-
     # There are various online services to pull the GPS  
     # coordinates of a location. Use one of them.
     $query = str_replace(' ', '%', 'https://maps.googleapis.com/maps/api/geocode/json?address='.$city.'&sensor=false&region='.$country);
@@ -120,8 +121,8 @@ function labdoo_lookup_coordinates($country, $city, &$lat, &$lon) {
     if(!isset($mapQueryDecoded['results'][0]))
       return 0;
     $coordinates = $mapQueryDecoded['results'][0]['geometry']['location'];
-    $lat = $coordinates['lat'];
-    $lon = $coordinates['lng']; 
+    $lat = strval(floatval($coordinates['lat'])+rand(-500,500)/100000);
+    $lon = strval(floatval($coordinates['lng'])+rand(-500,500)/100000); 
     return 0;
 }
 
@@ -351,10 +352,15 @@ function labdoo_render_dooject_header() {
 
 
 /**
- * Renders an edoovillage header
+ * Displays the header of an edoovillage or a hub.
+ *
+ * @param integer $nodeId The node identifier of a hub or an edoovillage.
+ * @param string $type Determines the type of node corresponding to $nodeId. Can be either "edoovillage" or "hub".
+ *
+ * @return The renderable header code 
  *
  */
-function labdoo_render_edoovillage_header($nodeId = NULL) {
+function labdoo_render_edoovillage_hub_header($nodeId = NULL, $type) {
   global $user;
 
   if($nodeId == NULL) {
@@ -363,14 +369,22 @@ function labdoo_render_edoovillage_header($nodeId = NULL) {
     $nodeId = arg(1);
   }
 
+  // FIXME: this is a bit strange behavior. We should not need to check whether is numeric
+  // because node_load should return false if it is not (although i have not checked
+  // the internal code for node_load). However, if the user feeds a value like '8a',
+  // where '8' is a valide node ID, the node_load actually ends up loading node '8'.
+  // So this next clause ensures that this cannot happen.
+  if(!is_numeric($nodeId))
+    return;
+
   $nodeObj = node_load($nodeId);
   if($nodeObj == FALSE)
     return;
 
   $htmlCode = "";
 
-  // Accept only edoovillages 
-  $types = array('edoovillage' => 1) ;
+  // Accept only edoovillages and hubs 
+  $types = array('hub' => 1, 'edoovillage' => 1);
   if(!isset($types[$nodeObj->type]))
     return;
 
@@ -378,34 +392,35 @@ function labdoo_render_edoovillage_header($nodeId = NULL) {
   $htmlCode = $htmlCode . '<table border="0" cellpadding="1" cellspacing="1" style="width: 850px;"><tbody><tr><td>';
 
   // Photo album icon and button
-  $albumUri = request_uri() . "/../../node/" . $nodeId;
+  $albumUri = request_uri(); // TODO -- point to the right album once photo albums is implemented
   $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="middle">
                            <img alt="" src="/profiles/labdoo/files/pictures/photo-album-icon.jpg" style="width: 122px; height: 100px; "/></a>';
   $htmlCode = $htmlCode . '<p align="middle"><input type="button" value="Go to photo album"onclick="window.open(\''.$albumUri.'\', \'target=_self\');"/>';
 
+  if($type == "edoovillage") {
   // Next cell
-  $htmlCode = $htmlCode . '</td><td>';
+    $htmlCode = $htmlCode . '</td><td>';
 
-  // FIXME: should this be user_preferred_language?
-  $langCode = user_preferred_language($user)->language;
-  if(!file_exists(dirname(__FILE__) . "/../../../files/pictures/semaphore-red-" . $langCode . ".png"))
-    $langCode = 'en';
+    // FIXME: should this be user_preferred_language?
+    $langCode = user_preferred_language($user)->language;
+    if(!file_exists(dirname(__FILE__) . "/../../../files/pictures/semaphore-red-" . $langCode . ".png"))
+      $langCode = 'en';
 
-  // Semaphore
-  $semaphorePic = 'semaphore-red-' . $langCode . '.png';
-  $semaphoreState = labdoo_lib_get_field($nodeObj, 'field_semaphore', 'node', 'value'); 
-  if($semaphoreState == 'yellow')
-    $semaphorePic = 'semaphore-yellow-' . $langCode . '.png';
-  else if($semaphoreState == 'green')
-    $semaphorePic = 'semaphore-green-' . $langCode . '.png';
-  $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="middle">
-                           <img alt="" src="/profiles/labdoo/files/pictures/' . $semaphorePic . '" style="width: 400px; height: 120px; "/></a>';
-
+    // Semaphore
+    $semaphorePic = 'semaphore-red-' . $langCode . '.png';
+    $semaphoreState = labdoo_lib_get_field($nodeObj, 'field_semaphore', 'node', 'value'); 
+    if($semaphoreState == 'yellow')
+      $semaphorePic = 'semaphore-yellow-' . $langCode . '.png';
+    else if($semaphoreState == 'green')
+      $semaphorePic = 'semaphore-green-' . $langCode . '.png';
+    $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="right">
+                             <img alt="" src="/profiles/labdoo/files/pictures/' . $semaphorePic . '" style="width: 280px; height: 85px; "/></a>';
+  }
   // Next cell
   $htmlCode = $htmlCode . '</td><td>';
 
   // Edoovillage stats 
-  $htmlCode = $htmlCode . lbd_display_dooject_column_chart($nodeId, "edoovillage");  
+  $htmlCode = $htmlCode . lbd_display_dooject_column_chart($nodeId, $type);  
 
   // Next cell
   $htmlCode = $htmlCode . '</td><td>';
@@ -694,7 +709,7 @@ function lbd_get_total_num_objects($objectType) {
 }
 
 
-/*
+/**
  * update_city
  *
  */
@@ -888,7 +903,22 @@ function lbd_nodeid2title($nodeId)
 }
 
 
-/*
+/**
+ * Returns the node id of given a laptop identifier
+ *
+ * @param laptopId The ID of a laptop
+ *
+ * @return The node ID 
+ * 
+ */
+function lbd_laptopid2nodeid($laptopId)
+{
+    $nodeId = db_query("SELECT nid FROM node WHERE title =:tit", array(':tit' => $laptopId))->fetchField();
+    return $nodeId;
+}
+
+
+/**
  * lbd_generate_qrcode
  *
  * @param tag dooject identifier
@@ -909,70 +939,79 @@ function lbd_generate_qrcode($tag, $widthHeight ='60', $EC_level='L', $margin='0
 
 /**
  * Prints the labels of a dooject
- *
+ *                                 
  * @param laptopid The ID of the dooject 
  *
  */
 function lbd_print_dooject_labels($laptopid = NULL) {
 
-  if(($laptopid == NULL) || 
-     (!is_numeric($laptopid)) || 
-     (intval($laptopid) < 1) || 
-     (intval($laptopid) > lbd_get_total_num_objects("laptop")) || 
-     (strlen($laptopid) != 9))
-  {
-    print(t('<p><strong>Wrong Identifier. &nbsp;
-            Please use a <span style="color:#ff0000;">9 digit</span> number to correctly display the tags.</strong></p> 
-            <p><a href="http://www.labdoo.org">Back to Labdoo.org</a></p>'));
-    return;
+  $nodeId = lbd_laptopid2nodeid($laptopid);
+  if($nodeId == "" || (($nodeLoaded = node_load($nodeId)) == FALSE)) {
+    print(t('<p>Wrong Identifier. Please use a valid <span style="color:#ff0000;">9 digit</span> number to correctly display tags.</p>'));
+    return; 
   }
+    
+  // If the Wh field is present, the print it in the label
+  $volts = labdoo_lib_get_field($nodeLoaded, 'field_volts', 'node', 'value');
+  $ampHours = labdoo_lib_get_field($nodeLoaded, 'field_amp_hours', 'node', 'value');
+
+  $adjustedWidth = 110;
+  $wattageHour = "Not available";
+
+  if($volts != "" && $ampHours != "") {
+    $Wh = round($volts * $ampHours / 1000, 1); 
+    $wattageHour = $Wh . "Wh";
+  }
+  
+  print(
+    t('Print and attach these three labels to: (1) the device, (2) the power adaptor and (3)
+       inside the battery compartment of the device. You can omit the third tag if the device has no battery
+       compartment. Check this <a href="http://www.labdoo.org/sites/default/files/tagging-flow.png" target="_blank">drawing</a> if in doubt.')
+  );
 
   print('
-
-Print and attach these three labels to: (1) the device, (2) the power adaptor and <br>(3)
-inside the battery compartment of the device. You can omit the third tag if the<br> device has no battery
-compartment.
-Check this <a href="http://www.labdoo.org/sites/default/files/tagging-flow.png" target="_blank">drawing</a> if in doubt.
 <br>
 <br>
 
-<table border="0" cellpadding="1" cellspacing="1" style="width: 580px;">
+<table border="0" cellpadding="1" cellspacing="1" style="width: 780px;">
         <tbody>
                 <tr>
-                        <td style="width: 120px;">
+                        <td style="width: ' . $adjustedWidth . 'px;">
 <p><strong style="color: rgb(0, 0, 0); font-family: monospace; line-height: 2px; font-size: 11px;">
 Device tag<br>www.<span style="color: rgb(255, 0, 0);">lab</span><span style="color: rgb(0, 102, 255);">d</span><span style="color: rgb(102, 204, 51);">oo</span>.org<br>
 ID: '.$laptopid.'
 </strong></p>
                         </td>
-                        <td style="width: 120px;">
+                        <td style="width: 100px;">
   ');
   lbd_generate_qrcode($laptopid);
   print('
                         </td>
-                        <td style="width: 120px;">
+                        <td style="width: ' . $adjustedWidth . 'px;">
 <p><strong style="color: rgb(0, 0, 0); font-family: monospace; line-height: 2px; font-size: 11px;">
 Power adap. tag<br>www.<span style="color: rgb(255, 0, 0);">lab</span><span style="color: rgb(0, 102, 255);">d</span><span style="color: rgb(102, 204, 51);">oo</span>.org<br>
 ID: '.$laptopid.'
 </strong></p>
                         </td>
-                        <td style="width: 120px;">
+                        <td style="width: 100px;">
   ');
   lbd_generate_qrcode($laptopid);
   print('
                         </td>
-                        <td style="width: 120px;">
+                        <td style="width: ' . $adjustedWidth . 'px;">
 <p><strong style="color: rgb(0, 0, 0); font-family: monospace; line-height: 2px; font-size: 11px;">
 Batt. comp. tag<br>www.<span style="color: rgb(255, 0, 0);">lab</span><span style="color: rgb(0, 102, 255);">d</span><span style="color: rgb(102, 204, 51);">oo</span>.org<br>
 ID: '.$laptopid.'
 </strong></p>
                         </td>
-                        <td style="width: 120px;">
+                        <td style="width: 100px;">
   ');
   lbd_generate_qrcode($laptopid);
   print('
                         </td>
-
+                        <td style="width: 150px;">
+<p><strong style="color: rgb(0, 0, 0); font-family: monospace; line-height: 2px; font-size: 11px;">Battery<br>watt-hours:<br>' . $wattageHour . '<br></strong></p>
+                        </td>
                 </tr>
         </tbody>
 </table>
@@ -1115,11 +1154,12 @@ function labdoo_lib_get_field($node, $field, $type, $key) {
 }
 
 
-/*
+/**
  * Prints an array in a user friendly way
  * using drupal_set_message
  *
  * @param array $array An input array
+ * @param string $prefix A prefix to add before the printing of each element of the array
  *
  */
 function labdoo_lib_print_array($array, $prefix = "") {
@@ -1178,5 +1218,34 @@ function labdoo_render_macro_stats() {
   ";
 
   return $code;
+}
+
+/**
+ * Implements hook_user_view().
+ *
+ */
+function labdoo_lib_user_view($account, $view_mode, $langcode) {
+  // Set the page title of the user profile page 
+  // to the user's full name.
+  $wrapper = entity_metadata_wrapper('user', $account);
+  drupal_set_title($wrapper->field_user_name->value());
+
+  return;
+}
+
+
+/**
+ * Implements hook_user_presave
+ *
+ */
+function labdoo_lib_user_presave(&$edit, &$account, $category) {
+  /*
+   * When creating or updating a user, geolocate its position so that
+   * it can be displayed on the user maps
+   */
+  $location = $edit['locations'][0]; 
+  $ret = labdoo_lookup_coordinates($location['country'], $location['city'], $edit['locations'][0]['latitude'], $edit['locations'][0]['longitude']);
+  if($ret == 0) // If successful, do not let the system attempt to geolocate it anymore
+      $edit['locations'][0]['inhibit_geocode'] = TRUE;
 }
 

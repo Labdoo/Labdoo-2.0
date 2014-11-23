@@ -2,6 +2,7 @@ name = lbd_gmap
 description = Feature module that configures all the Labdoo standard gmap settings (color of markers, default map size, etc.)
 core = 7.x
 package = Features
+php = 5.2.4
 dependencies[] = ctools
 dependencies[] = fe_block
 dependencies[] = gmap_location

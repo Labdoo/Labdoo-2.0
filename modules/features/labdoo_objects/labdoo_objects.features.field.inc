@@ -584,7 +584,7 @@ function labdoo_objects_field_default_fields() {
       'bundle' => 'dootrip',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'User(s) who will be part of this dootrip.',
+      'description' => 'User(s) who will be part of this dootrip',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -1524,7 +1524,7 @@ function labdoo_objects_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_number_of_laptops_needed',
-      'label' => 'Number of laptops needed',
+      'label' => 'Number of doojects needed',
       'required' => 1,
       'settings' => array(
         'max' => '',
@@ -2046,8 +2046,8 @@ function labdoo_objects_field_default_fields() {
       'settings' => array(
         'allowed_values' => array(
           'red' => 'Red: pictures about the project have not been uploaded yet',
-          'yellow' => 'Yellow: first laptops can be sent',
-          'green' => 'Green: the rest of the laptops can be sent',
+          'yellow' => 'Yellow: first doojects can be sent',
+          'green' => 'Green: the rest of the doojects can be sent',
         ),
         'allowed_values_function' => '',
       ),
@@ -2424,7 +2424,7 @@ function labdoo_objects_field_default_fields() {
       'bundle' => 'laptop',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Add users who need to have permission to edit this dooject.',
+      'description' => 'Add users who need to have permission to edit this dooject',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -2545,7 +2545,7 @@ function labdoo_objects_field_default_fields() {
       'bundle' => 'laptop',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Add users who want to follow this dooject.',
+      'description' => 'Add users who want to follow this dooject',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -2702,6 +2702,68 @@ function labdoo_objects_field_default_fields() {
         ),
         'type' => 'email_textfield',
         'weight' => '10',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-laptop-field_amp_hours'.
+  $fields['node-laptop-field_amp_hours'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_amp_hours',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'number',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'number_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'laptop',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'number',
+          'settings' => array(
+            'decimal_separator' => '.',
+            'prefix_suffix' => TRUE,
+            'scale' => 0,
+            'thousand_separator' => ' ',
+          ),
+          'type' => 'number_integer',
+          'weight' => '17',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_amp_hours',
+      'label' => 'Amp hours',
+      'required' => 0,
+      'settings' => array(
+        'max' => '',
+        'min' => '0',
+        'prefix' => '',
+        'suffix' => 'mAh',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'number',
+        'settings' => array(),
+        'type' => 'number',
+        'weight' => '19',
       ),
     ),
   );
@@ -2932,7 +2994,7 @@ function labdoo_objects_field_default_fields() {
           'blackberry' => 'BlackBerry',
           'desktop' => 'Desktop',
           'ebook' => 'eBook',
-          'googlePhone' => 'Google phone',
+          'googlePhone' => 'Android phone',
           'iphone' => 'iPhone',
           'internetTable' => 'Internet tablet',
           'ipad' => 'iPad',
@@ -3341,7 +3403,7 @@ function labdoo_objects_field_default_fields() {
       'bundle' => 'laptop',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'The user currently managing this laptop. ',
+      'description' => 'The user currently managing this dooject',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -3475,7 +3537,7 @@ function labdoo_objects_field_default_fields() {
       'bundle' => 'laptop',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Brand name and model of the laptop',
+      'description' => 'Brand name and model of the dooject',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -3544,7 +3606,7 @@ function labdoo_objects_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'laptop',
       'deleted' => '0',
-      'description' => 'Upload here a picture of the laptop. A picture is a helpful way for donors to ensure that they are looking at the correct laptop. Please do not use pictures that you may find on the Internet, as they may be copyrighted.  Instead, please take a picture with your own camera. Once the laptop reaches a school, you can also upload another picture with the students using it.',
+      'description' => 'Upload here a picture of the dooject. A picture is a helpful way for donors to ensure that they are looking at the correct dooject. Please do not use pictures that you may find on the Internet, as they may be copyrighted.  Instead, please take a picture with your own camera. Once the dooject reaches a school, you can also upload another picture with the students using it.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -3624,7 +3686,7 @@ function labdoo_objects_field_default_fields() {
       'bundle' => 'laptop',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Write here the serial number of the laptop. Usually the serial number can be found in the back of the laptop, search for keywords such as "Serial Number" or "S/N", or if you see a bar code with a number under it, use this number. If the laptop has no sticker with the serial number, then write in this field the words "Unknown".',
+      'description' => 'Write here the serial number of the dooject. Usually the serial number can be found in the back of the dooject, search for keywords such as "Serial Number" or "S/N", or if you see a bar code with a number under it, use this number. If the dooject has no sticker with the serial number, then write in this field the words "Unknown".',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -3690,7 +3752,7 @@ function labdoo_objects_field_default_fields() {
           'S9' => '[S9] Deployed but not working',
           'T1' => '[T1] In transit going to an edoovillage',
           'T2' => '[T2] In transit going to a recycling factory',
-          'L1' => '[L1] Laptop was lost',
+          'L1' => '[L1] Dooject was lost',
         ),
         'allowed_values_function' => '',
       ),
@@ -3779,7 +3841,7 @@ function labdoo_objects_field_default_fields() {
       'bundle' => 'laptop',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'The user who tagged this laptop.',
+      'description' => 'The user who tagged this dooject',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -3818,20 +3880,85 @@ function labdoo_objects_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-laptop-field_volts'.
+  $fields['node-laptop-field_volts'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_volts',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'number',
+      'settings' => array(
+        'decimal_separator' => '.',
+      ),
+      'translatable' => '0',
+      'type' => 'number_float',
+    ),
+    'field_instance' => array(
+      'bundle' => 'laptop',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'number',
+          'settings' => array(
+            'decimal_separator' => '.',
+            'prefix_suffix' => TRUE,
+            'scale' => 2,
+            'thousand_separator' => ' ',
+          ),
+          'type' => 'number_decimal',
+          'weight' => '16',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_volts',
+      'label' => 'Volts',
+      'required' => 0,
+      'settings' => array(
+        'max' => '',
+        'min' => '0',
+        'prefix' => '',
+        'suffix' => 'V',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'number',
+        'settings' => array(),
+        'type' => 'number',
+        'weight' => '18',
+      ),
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Add here any observations you would like to make. For instance you can add notes such as the quality of the laptop or if something is broken, a reminder, or a note on who donated the laptop.');
   t('Add here the email address(es) of additional people that you would like to be notified whenever this laptop changes its status.');
-  t('Add users who need to have permission to edit this dooject.');
-  t('Add users who want to follow this dooject.');
+  t('Add users who need to have permission to edit this dooject');
+  t('Add users who want to follow this dooject');
   t('Additional editors');
   t('Additional files');
   t('Additional followers');
   t('Additional notes');
   t('Additional notification emails');
+  t('Amp hours');
   t('Arrival date');
   t('Branches information');
-  t('Brand name and model of the laptop');
+  t('Brand name and model of the dooject');
   t('CPU speed (Example: 1200 MHz)');
   t('Comments');
   t('Coordinating hub(s)');
@@ -3856,8 +3983,8 @@ function labdoo_objects_field_default_fields() {
   t('Number of cores (CPU type)');
   t('Number of days you can store the dooject after the arrival date');
   t('Number of days you can store the dooject before the departure date');
+  t('Number of doojects needed');
   t('Number of doojects you can carry');
-  t('Number of laptops needed');
   t('Number of students');
   t('Number of teachers');
   t('On-site point of contact');
@@ -3875,12 +4002,13 @@ function labdoo_objects_field_default_fields() {
   t('Source group');
   t('Status');
   t('Tagger');
-  t('The user currently managing this laptop. ');
-  t('The user who tagged this laptop.');
+  t('The user currently managing this dooject');
+  t('The user who tagged this dooject');
   t('This field is updated automatically once dootrips are assigned to this dooject. You can also optionally set this field manually adding dootrips by typing their name.');
-  t('Upload here a picture of the laptop. A picture is a helpful way for donors to ensure that they are looking at the correct laptop. Please do not use pictures that you may find on the Internet, as they may be copyrighted.  Instead, please take a picture with your own camera. Once the laptop reaches a school, you can also upload another picture with the students using it.');
-  t('User(s) who will be part of this dootrip.');
-  t('Write here the serial number of the laptop. Usually the serial number can be found in the back of the laptop, search for keywords such as "Serial Number" or "S/N", or if you see a bar code with a number under it, use this number. If the laptop has no sticker with the serial number, then write in this field the words "Unknown".');
+  t('Upload here a picture of the dooject. A picture is a helpful way for donors to ensure that they are looking at the correct dooject. Please do not use pictures that you may find on the Internet, as they may be copyrighted.  Instead, please take a picture with your own camera. Once the dooject reaches a school, you can also upload another picture with the students using it.');
+  t('User(s) who will be part of this dootrip');
+  t('Volts');
+  t('Write here the serial number of the dooject. Usually the serial number can be found in the back of the dooject, search for keywords such as "Serial Number" or "S/N", or if you see a bar code with a number under it, use this number. If the dooject has no sticker with the serial number, then write in this field the words "Unknown".');
 
   return $fields;
 }

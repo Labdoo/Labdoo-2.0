@@ -13,7 +13,6 @@ files[] = labdoo.profile
 ;--------------------
 ; Core
 ;--------------------
-dependencies[] = book
 dependencies[] = contact
 dependencies[] = blog
 dependencies[] = menu
@@ -79,6 +78,7 @@ dependencies[] = views_dependent_filters
 dependencies[] = simplenews
 dependencies[] = variable
 dependencies[] = lang_dropdown 
+dependencies[] = logintoboggan 
 
 ;;; Features
 dependencies[] = strongarm

@@ -1,0 +1,21 @@
+Brief description for the installation.
+
+1.-Enable these modules to add the REST service functionality:
+
+Labdoo rest. It is the Labdoo rest service module
+Services, Chaos tools, REST Server, Libraries, System, XMLRPC Server. Its dependencies.
+
+
+NOTE: Please, check which Labdoo framework is using Services 3.7+ 
+
+2.-Configure your service in: structure -> services and create a new endpoint (it was tested with a named "labdoo" endpoint")
+
+3.- Go to the "Export" tab and fill up with the text from the document service.export in the path:
+
+var/www/lbd/profiles/labdoo/modules/custom/lbd_labdoo_rest (in chroot mode)
+
+It should be work fine!!
+
+
+
+

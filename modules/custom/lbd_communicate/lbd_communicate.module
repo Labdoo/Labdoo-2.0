@@ -16,6 +16,7 @@
  *
  */
 
+
 /**
  * Implements hook_mail().
  *
@@ -100,6 +101,20 @@ function lbd_communicate_mail_send($email_params) {
 }
 
 
+/**
+ * Given a language code, it returns the path where the email translations
+ * for that language are to be found.
+ *
+ * @param string $langCode Language code
+ *
+ * @return Full path to email translation files folder
+ *
+ */
+function _path_to_email_template($langCode) {
+  return dirname(__FILE__) . '/../../../translations/email-files/' . $langCode . '/';
+}
+
+
 /*
  * _email_laptop_event
  *
@@ -121,7 +136,7 @@ function _email_laptop_event($node) {
   $edoovillageNid = 0;  // An arbitrary initial value
   $laptopId = $node->title; 
   $langCode = user_preferred_language($user)->language;
-  if(!file_exists(dirname(__FILE__) . "/laptop_tagged_subject-" . $langCode . ".email")) 
+  if(!file_exists(_path_to_email_template($langCode) . "laptop_tagged_subject-" . $langCode . ".email")) 
     $langCode = 'en';
 
   /*
@@ -129,8 +144,8 @@ function _email_laptop_event($node) {
    */
   if($previousStatus == "WAS_CREATED" && $newStatus != "S4") {
     $email_params['type'] = "LAPTOP_ADDED";        
-    $subjectFileName = dirname(__FILE__) . "/laptop_tagged_subject-" . $langCode . ".email";
-    $bodyFileName = dirname(__FILE__) . "/laptop_tagged_body-" . $langCode . ".email";
+    $subjectFileName = _path_to_email_template($langCode) . "laptop_tagged_subject-" . $langCode . ".email";
+    $bodyFileName = _path_to_email_template($langCode) . "laptop_tagged_body-" . $langCode . ".email";
     // This is a new object, so the title (i.e., the Labdoo ID) has not 
     // being set yet.  Hence, we need to manually calculate the laptopId.
     $numLaptops = lbd_get_total_num_objects("laptop"); 
@@ -138,14 +153,14 @@ function _email_laptop_event($node) {
   }
   else if($newStatus == "S4") {
     $email_params['type'] = "LAPTOP_DELIVERED";
-    $subjectFileName = dirname(__FILE__) . "/laptop_delivered_subject-" . $langCode . ".email";
-    $bodyFileName = dirname(__FILE__) . "/laptop_delivered_body-" . $langCode . ".email";
+    $subjectFileName = _path_to_email_template($langCode) . "laptop_delivered_subject-" . $langCode . ".email";
+    $bodyFileName = _path_to_email_template($langCode) . "laptop_delivered_body-" . $langCode . ".email";
     $edoovillageNid = labdoo_lib_get_field($node, 'field_edoovillage_destination', 'node', 'target_id');
   }
   else {
     $email_params['type'] = "LAPTOP_UPDATED";
-    $subjectFileName = dirname(__FILE__) . "/laptop_updated_subject-" . $langCode . ".email";
-    $bodyFileName = dirname(__FILE__) . "/laptop_updated_body-" . $langCode . ".email";
+    $subjectFileName = _path_to_email_template($langCode) . "laptop_updated_subject-" . $langCode . ".email";
+    $bodyFileName = _path_to_email_template($langCode) . "laptop_updated_body-" . $langCode . ".email";
   }
 
   $emailsList = $user->mail;
@@ -182,15 +197,15 @@ function _email_dootrip_event($node, $eventType) {
   global $base_url;
 
   $langCode = user_preferred_language($user)->language;
-  if(!file_exists(dirname(__FILE__) . "/dootrip_added_subject-" . $langCode . ".email")) 
+  if(!file_exists(_path_to_email_template($langCode) . "dootrip_added_subject-" . $langCode . ".email")) 
     $langCode = 'en';
 
   if(!property_exists($node, 'original')) {  // Dootrip was created
     if($eventType == 'presave')
       return; // dootrip creation is handled by event 'insert'
     $email_params['type'] = "DOOTRIP_ADDED";
-    $subjectFileName = dirname(__FILE__) . "/dootrip_added_subject-" . $langCode . ".email";
-    $bodyFileName = dirname(__FILE__) . "/dootrip_added_body-" . $langCode . ".email";
+    $subjectFileName = _path_to_email_template($langCode) . "dootrip_added_subject-" . $langCode . ".email";
+    $bodyFileName = _path_to_email_template($langCode) . "dootrip_added_body-" . $langCode . ".email";
   }
   else {  // Dootrip was updated
     // There is no need to check if $eventType == 'insert' because if we are
@@ -223,8 +238,8 @@ function _email_dootrip_event($node, $eventType) {
     if($wasChanged == FALSE) 
       return;
     $email_params['type'] = "DOOTRIP_UPDATED"; 
-    $subjectFileName = dirname(__FILE__) . "/dootrip_updated_subject-" . $langCode . ".email";
-    $bodyFileName = dirname(__FILE__) . "/dootrip_updated_body-" . $langCode . ".email";
+    $subjectFileName = _path_to_email_template($langCode) . "dootrip_updated_subject-" . $langCode . ".email";
+    $bodyFileName = _path_to_email_template($langCode) . "dootrip_updated_body-" . $langCode . ".email";
   }
 
   /*
@@ -258,10 +273,10 @@ function _email_dootrip_event($node, $eventType) {
    * who have projects in the dootrip's destination country.
    * Do not need to update the field 'type' since its value does not change.
    */
-  $subjectFileName = dirname(__FILE__) . "/dootrip_announce_subject-" . $langCode . ".email";
+  $subjectFileName = _path_to_email_template($langCode) . "dootrip_announce_subject-" . $langCode . ".email";
   $subjectTemplate = file_get_contents($subjectFileName);
   $subject = $subjectTemplate;
-  $bodyFileName = dirname(__FILE__) . "/dootrip_announce_body-" . $langCode . ".email";
+  $bodyFileName = _path_to_email_template($langCode) . "dootrip_announce_body-" . $langCode . ".email";
   $bodyTemplate = file_get_contents($bodyFileName);
   $body = str_replace("[DOOTRIP_URL]", $base_url . '/node/' . $dootripNid, $bodyTemplate);
   $body = str_replace("[CONTACT_EMAIL]", variable_get('site_mail', ''), $body);
@@ -342,17 +357,21 @@ function lbd_communicate_node_insert($node) {
  */
 function lbd_communicate_user_insert(&$edit, $account, $category) {
   global $base_url;
-  global $user;
+  global $language;
 
-  $langCode = user_preferred_language($user)->language;
-  if(!file_exists(dirname(__FILE__) . "/user_created_subject-" . $langCode . ".email")) 
+  // The user is being created here, so at this point the global $user is not
+  // set up yet. Instead, pull the language directly from the page language,
+  // which is what is used to define the initial default language of the
+  // new user. 
+  $langCode = $language->language;
+  if(!file_exists(_path_to_email_template($langCode) . "user_created_subject-" . $langCode . ".email")) 
     $langCode = 'en';
 
   $email_params['type'] = "USER_CREATED";        
   $email_params['to'] = $edit['mail']; 
 
-  $subjectFileName = dirname(__FILE__) . "/user_created_subject-" . $langCode . ".email";
-  $bodyFileName = dirname(__FILE__) . "/user_created_body-" . $langCode . ".email";
+  $subjectFileName = _path_to_email_template($langCode) . "user_created_subject-" . $langCode . ".email";
+  $bodyFileName = _path_to_email_template($langCode) . "user_created_body-" . $langCode . ".email";
 
   $subjectTemplate = file_get_contents($subjectFileName);
   $bodyTemplate = file_get_contents($bodyFileName);
@@ -446,12 +465,12 @@ function lbd_communicate_cron() {
     }
 
     $langCode = user_preferred_language($user)->language;
-    if(!file_exists(dirname(__FILE__) . "/dootrip_expired_subject-" . $langCode . ".email")) 
+    if(!file_exists(_path_to_email_template($langCode) . "dootrip_expired_subject-" . $langCode . ".email")) 
       $langCode = 'en';
 
     $email_params['type'] = "DOOTRIP_EXPIRED"; 
-    $subjectFileName = dirname(__FILE__) . "/dootrip_expired_subject-" . $langCode . ".email";
-    $bodyFileName = dirname(__FILE__) . "/dootrip_expired_body-" . $langCode . ".email";
+    $subjectFileName = _path_to_email_template($langCode) . "dootrip_expired_subject-" . $langCode . ".email";
+    $bodyFileName = _path_to_email_template($langCode) . "dootrip_expired_body-" . $langCode . ".email";
 
     /*
      * Send out notification email 

@@ -81,6 +81,15 @@ function lbd_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: edit mimemail user settings.
+  $permissions['edit mimemail user settings'] = array(
+    'name' => 'edit mimemail user settings',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'mimemail',
+  );
+
   // Exported permission: edit own simplenews content.
   $permissions['edit own simplenews content'] = array(
     'name' => 'edit own simplenews content',
@@ -98,6 +107,16 @@ function lbd_roles_user_default_permissions() {
       1 => 'newsletter manager',
     ),
     'module' => 'simplenews',
+  );
+
+  // Exported permission: set own user location.
+  $permissions['set own user location'] = array(
+    'name' => 'set own user location',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'authenticated user',
+    ),
+    'module' => 'location_user',
   );
 
   // Exported permission: submit latitude/longitude.
@@ -119,6 +138,26 @@ function lbd_roles_user_default_permissions() {
       2 => 'authenticated user',
     ),
     'module' => 'simplenews',
+  );
+
+  // Exported permission: view all user locations.
+  $permissions['view all user locations'] = array(
+    'name' => 'view all user locations',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'authenticated user',
+    ),
+    'module' => 'location_user',
+  );
+
+  // Exported permission: view own user location.
+  $permissions['view own user location'] = array(
+    'name' => 'view own user location',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'authenticated user',
+    ),
+    'module' => 'location_user',
   );
 
   return $permissions;
