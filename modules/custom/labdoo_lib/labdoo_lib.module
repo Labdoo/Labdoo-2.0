@@ -274,7 +274,7 @@ function labdoo_render_dooject_header() {
     $prevUri = "<a href=\"" . request_uri() . "/../.." . "/laptop/" . $prevIdFull . "\">";
   }
 
-  $tagsUri = "/content/tag-one-laptop?id=" . $laptopId;
+  $tagsUri = "/content/tag-one-dooject?id=" . $laptopId;
 
   // Table header
   $htmlCode = $htmlCode . '<table border="0" cellpadding="1" cellspacing="1" style="width: 850px;"><tbody><tr><td>';
@@ -685,17 +685,27 @@ function labdoo_lib_form_node_form_alter(&$form, &$form_state, $form_id) {
 
 
 /** 
- * Calculates the total number of doojects 
+ * Calculates the total number of objects 
  * 
+ * @param string $objectType Object type, can be one of: {'laptop', 'dootrip', 'edoovillage', 'hub', 'student', 'country'}
  * @return The total number of doojects in the Labdoo inventory 
  *  
  */
 function lbd_get_total_num_objects($objectType) {
 
-  $query = "SELECT COUNT(*) FROM node WHERE type='$objectType'";
-  $numDoojects = db_query($query)->fetchField();
+  if($objectType == 'student') {
+    $query = "SELECT SUM(field_number_of_students_value) FROM field_data_field_number_of_students";
+  }
+  else if($objectType == 'country') {
+    $query = "SELECT COUNT(*) FROM ( SELECT DISTINCT country FROM location ) AS countries";
+  }
+  else {
+    $query = "SELECT COUNT(*) FROM node WHERE type='$objectType'";
+  }
 
-  return($numDoojects);
+  $num = db_query($query)->fetchField();
+
+  return($num);
 }
 
 
@@ -779,8 +789,7 @@ function labdoo_getnum_objects_by_city($type, $selectedNids = NULL) {
 }
 
 /**
- * Calculates the total number of doojects
- * in demand from the list of edoovillages
+ * Calculates the total number of doojects in demand 
  *
  * @param edoovillageId node ID of the edoovillage we want to find the demand for 
  * @param hubId node ID of the hub we want to find the demand for 
@@ -1165,6 +1174,51 @@ function labdoo_lib_print_array($array, $prefix = "") {
   }
 }
 
+
+/**
+ * Renders the macro statistics 
+ *
+ * @return Code rendering the macro statistics
+ *
+ */
+function labdoo_render_macro_stats() {
+  $numLaptopsNeeded = labdoo_get_demand(NULL, NULL, FALSE); 
+  $numLaptopsDelivered = labdoo_getnum_doojects(NULL, NULL, 'S4');
+  $numLaptopsTransit = labdoo_getnum_doojects(NULL, NULL, 'T1') + labdoo_getnum_doojects(NULL, NULL, 'S3'); 
+  $numLaptopsTagged = lbd_get_total_num_objects('laptop'); 
+  $numHubs = lbd_get_total_num_objects('hub');
+  $numEdoovillages = lbd_get_total_num_objects('edoovillage');
+  $numStudents = lbd_get_total_num_objects('student');
+  $numCountries = lbd_get_total_num_objects('country');;
+
+  $code = "
+<span style=\"font-size: 24px; align: left; line-height: 10px; \">$numLaptopsTagged</span><br>
+<span style=\"font-size: 14px; align: left; line-height: 10px; \">" . t('Doojects tagged') . "</span><br>
+<span style=\"font-size: 14px; align: left; line-height: 2px; \"></span><br>
+<span style=\"font-size: 24px; align: left; line-height: 10px; \">$numLaptopsTransit</span><br>
+<span style=\"font-size: 14px; align: left; line-height: 10px; \">" . t('Doojects in transit') . "</span><br>
+<span style=\"font-size: 14px; align: left; line-height: 2px; \"></span><br>
+<span style=\"font-size: 24px; align: left; line-height: 10px; \">$numLaptopsDelivered</span><br>
+<span style=\"font-size: 14px; align: left; line-height: 10px; \">" . t('Doojects delivered') . "</span><br>
+<span style=\"font-size: 14px; align: left; line-height: 2px; \"></span><br>
+<span style=\"font-size: 24px; align: left; line-height: 10px; \">$numLaptopsNeeded</span><br>
+<span style=\"font-size: 14px; align: left; line-height: 10px; \">" . t('Doojects needed') . "</span><br>
+<span style=\"font-size: 14px; align: left; line-height: 2px; \"></span><br>
+<span style=\"font-size: 24px; align: left; line-height: 10px; \">$numHubs</span><br>
+<span style=\"font-size: 14px; align: left; line-height: 10px; \">" . t('Hubs') . "</span><br>
+<span style=\"font-size: 14px; align: left; line-height: 2px; \"></span><br>
+<span style=\"font-size: 24px; align: left; line-height: 10px; \">$numEdoovillages</span><br>
+<span style=\"font-size: 14px; align: left; line-height: 10px; \">" . t('Edoovillages') . "</span><br>
+<span style=\"font-size: 14px; align: left; line-height: 2px; \"></span><br>
+<span style=\"font-size: 24px; align: left; line-height: 10px; \">$numStudents</span><br>
+<span style=\"font-size: 14px; align: left; line-height: 10px; \">" . t('Students') . "</span><br>
+<span style=\"font-size: 14px; align: left; line-height: 2px; \"></span><br>
+<span style=\"font-size: 24px; align: left; line-height: 10px; \">$numCountries</span><br>
+<span style=\"font-size: 14px; align: left; line-height: 10px; \">" . t('Countries') . "</span><br>
+  ";
+
+  return $code;
+}
 
 /**
  * Implements hook_user_view().

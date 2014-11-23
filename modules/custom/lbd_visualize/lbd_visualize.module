@@ -1408,7 +1408,7 @@ function lbd_display_dooject_column_chart($objectNid, $type)
 
   if($type == "edoovillage") {
     $numNeeded   = labdoo_get_demand($objectNid, NULL, FALSE);
-    $numTransit  = labdoo_getnum_doojects($objectNid, NULL, "T1") + labdoo_getnum_doojects(NULL, $objectNid, "S3");
+    $numTransit  = labdoo_getnum_doojects($objectNid, NULL, "T1") + labdoo_getnum_doojects($objectNid, NULL, "S3");
     $numDeployed = labdoo_getnum_doojects($objectNid, NULL, "S4"); 
     $numRecycled = labdoo_getnum_doojects($objectNid, NULL, "S6");
   }

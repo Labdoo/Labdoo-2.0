@@ -155,6 +155,28 @@ function lbd_blocks_views_block_info() {
     'region' => "content",
   );
 
+  // Macro statistics block
+  $blocks['block_macro_statistics'] = array(
+    'info' => "Macro statistics block",
+    'status' => 1,
+    'visibility' => BLOCK_VISIBILITY_PHP,
+    'weight' => -100,
+    'pages' => "
+<?php
+  \$path = drupal_get_path_alias(current_path());
+  if(strpos(\$path, \"content/tag-one-dooject\") !== FALSE)
+      return FALSE;
+  \$views_page = views_get_page_view();
+  if (is_object(\$views_page)) {
+    if(\$views_page->name == \"global_inventory\")
+      return FALSE; 
+  }
+  return TRUE;
+?>
+               ",
+    'region' => "sidebar_second",
+  );
+
   // Block linking to the language switcher dropdown block
   $blocks['block_link_language_switch'] = array(
     'info' => "Language switch (link to language switcher dropdown block)",
@@ -249,6 +271,15 @@ function lbd_blocks_views_block_view($delta = '') {
       );
       break;
 
+    // Macro statistics 
+    case 'block_macro_statistics':
+      $block['subject'] = "<none>";
+      $block['title'] = t("Global progress");
+      $block['content'] = array(
+             '#markup' => labdoo_render_macro_stats(),
+      );
+      break;
+
     // Language switch
     case 'block_link_language_switch':
       $blockLanguage = module_invoke('lang_dropdown', 'block_view', 'language');
@@ -260,7 +291,7 @@ function lbd_blocks_views_block_view($delta = '') {
     case 'block_link_actions_feed':
       $blockActions = module_invoke('views', 'block_view', 'actions-block');
       $block['subject'] = "<none>";
-      $block['title'] = t("Mini-missions");
+      $block['title'] = t("Current mini-missions");
       $block['content'] = drupal_render($blockActions["content"]);
       break;
 
