@@ -28,7 +28,7 @@ function lbd_create_tag_dooject_node()
   $node->body[$node->language][0]['summary'] = '';
   $node->body[$node->language][0]['format']  = 'php_code';
   
-  $node->path = array('alias' => "content/tag-one-laptop");
+  $node->path = array('alias' => "content/tag-one-dooject");
 
   node_save($node);
 }
@@ -78,7 +78,7 @@ labdoo_follow_dooject(\$dooject, \$usr, \$follow);
  */
 function lbd_delete_tag_dooject_node()
 {
-  $path = drupal_lookup_path("source", "content/tag-one-laptop"); 
+  $path = drupal_lookup_path("source", "content/tag-one-dooject"); 
   $node = menu_get_object("node", 1, $path);
   node_delete($node->nid);
 }
