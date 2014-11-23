@@ -1192,29 +1192,22 @@ function labdoo_render_macro_stats() {
   $numCountries = lbd_get_total_num_objects('country');;
 
   $code = "
-<span style=\"font-size: 24px; align: left; line-height: 10px; \">$numLaptopsTagged</span><br>
-<span style=\"font-size: 14px; align: left; line-height: 10px; \">" . t('Doojects tagged') . "</span><br>
-<span style=\"font-size: 14px; align: left; line-height: 2px; \"></span><br>
-<span style=\"font-size: 24px; align: left; line-height: 10px; \">$numLaptopsTransit</span><br>
-<span style=\"font-size: 14px; align: left; line-height: 10px; \">" . t('Doojects in transit') . "</span><br>
-<span style=\"font-size: 14px; align: left; line-height: 2px; \"></span><br>
-<span style=\"font-size: 24px; align: left; line-height: 10px; \">$numLaptopsDelivered</span><br>
-<span style=\"font-size: 14px; align: left; line-height: 10px; \">" . t('Doojects delivered') . "</span><br>
-<span style=\"font-size: 14px; align: left; line-height: 2px; \"></span><br>
-<span style=\"font-size: 24px; align: left; line-height: 10px; \">$numLaptopsNeeded</span><br>
-<span style=\"font-size: 14px; align: left; line-height: 10px; \">" . t('Doojects needed') . "</span><br>
-<span style=\"font-size: 14px; align: left; line-height: 2px; \"></span><br>
-<span style=\"font-size: 24px; align: left; line-height: 10px; \">$numHubs</span><br>
-<span style=\"font-size: 14px; align: left; line-height: 10px; \">" . t('Hubs') . "</span><br>
-<span style=\"font-size: 14px; align: left; line-height: 2px; \"></span><br>
-<span style=\"font-size: 24px; align: left; line-height: 10px; \">$numEdoovillages</span><br>
-<span style=\"font-size: 14px; align: left; line-height: 10px; \">" . t('Edoovillages') . "</span><br>
-<span style=\"font-size: 14px; align: left; line-height: 2px; \"></span><br>
-<span style=\"font-size: 24px; align: left; line-height: 10px; \">$numStudents</span><br>
-<span style=\"font-size: 14px; align: left; line-height: 10px; \">" . t('Students') . "</span><br>
-<span style=\"font-size: 14px; align: left; line-height: 2px; \"></span><br>
-<span style=\"font-size: 24px; align: left; line-height: 10px; \">$numCountries</span><br>
-<span style=\"font-size: 14px; align: left; line-height: 10px; \">" . t('Countries') . "</span><br>
+<span style=\"font-size: 24px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsTagged</span>
+<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Doojects tagged') . "</span><br>
+<span style=\"font-size: 24px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsTransit</span>
+<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Doojects in transit') . "</span><br>
+<span style=\"font-size: 24px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsDelivered</span>
+<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Doojects delivered') . "</span><br>
+<span style=\"font-size: 24px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsNeeded</span>
+<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Doojects needed') . "</span><br>
+<span style=\"font-size: 24px; align: left; line-height: 30px; color: #ff0000\">$numHubs</span>
+<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Hubs') . "</span><br>
+<span style=\"font-size: 24px; align: left; line-height: 30px; color: #ff0000\">$numEdoovillages</span>
+<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Edoovillages') . "</span><br>
+<span style=\"font-size: 24px; align: left; line-height: 30px; color: #ff0000\">$numStudents</span>
+<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Students') . "</span><br>
+<span style=\"font-size: 24px; align: left; line-height: 30px; color: #ff0000\">$numCountries</span>
+<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Countries') . "</span><br>
   ";
 
   return $code;
@@ -1247,5 +1240,26 @@ function labdoo_lib_user_presave(&$edit, &$account, $category) {
   $ret = labdoo_lookup_coordinates($location['country'], $location['city'], $edit['locations'][0]['latitude'], $edit['locations'][0]['longitude']);
   if($ret == 0) // If successful, do not let the system attempt to geolocate it anymore
       $edit['locations'][0]['inhibit_geocode'] = TRUE;
+}
+
+
+/**
+ * Implements the visibility filter for the blocks in the sidebar_second region
+ *
+ * @return TRUE if the block is to be displayed, FALSE otherwise
+ *
+ */
+function labdoo_block_filter_sidebar_second() {
+  $path = drupal_get_path_alias(current_path());
+  if(strpos($path, "content/tag-one-dooject") !== FALSE)
+      return FALSE;
+  if(strpos($path, "content/follow-dooject") !== FALSE)
+      return FALSE;
+  $views_page = views_get_page_view();
+  if (is_object($views_page)) {
+    if($views_page->name == "global_inventory")
+      return FALSE; 
+  } 
+  return TRUE;
 }
 

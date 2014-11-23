@@ -59,7 +59,7 @@ labdoo_follow_dooject(\$dooject, \$usr, \$follow);
   $node->type = 'private_page';
   node_object_prepare($node);
   
-  $node->title = "Follow A Dooject";
+  $node->title = "Follow a dooject";
   $node->language = LANGUAGE_NONE;
 
   $node->body[$node->language][0]['value']   = $bodyText;

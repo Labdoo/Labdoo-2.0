@@ -161,19 +161,7 @@ function lbd_blocks_views_block_info() {
     'status' => 1,
     'visibility' => BLOCK_VISIBILITY_PHP,
     'weight' => -100,
-    'pages' => "
-<?php
-  \$path = drupal_get_path_alias(current_path());
-  if(strpos(\$path, \"content/tag-one-dooject\") !== FALSE)
-      return FALSE;
-  \$views_page = views_get_page_view();
-  if (is_object(\$views_page)) {
-    if(\$views_page->name == \"global_inventory\")
-      return FALSE; 
-  }
-  return TRUE;
-?>
-               ",
+    'pages' => "<?php return labdoo_block_filter_sidebar_second(); ?>",
     'region' => "sidebar_second",
   );
 
@@ -183,18 +171,7 @@ function lbd_blocks_views_block_info() {
     'status' => 1,
     'visibility' => BLOCK_VISIBILITY_PHP,
     'weight' => -50,
-    'pages' => "
-<?php
-  \$path = drupal_get_path_alias(current_path());
-  if(strpos(\$path, \"content/tag-one-dooject\") !== FALSE)
-      return FALSE;
-  \$views_page = views_get_page_view();
-  if (is_object(\$views_page)) {
-    return FALSE; 
-  }
-  return TRUE;
-?>
-               ",
+    'pages' => "<?php return labdoo_block_filter_sidebar_second(); ?>",
     'region' => "sidebar_second",
   );
 
@@ -204,18 +181,7 @@ function lbd_blocks_views_block_info() {
     'status' => 1,
     'visibility' => BLOCK_VISIBILITY_PHP,
     'weight' => -60,
-    'pages' => "
-<?php
-  \$path = drupal_get_path_alias(current_path());
-  if(strpos(\$path, \"content/tag-one-dooject\") !== FALSE)
-      return FALSE;
-  \$views_page = views_get_page_view();
-  if (is_object(\$views_page)) {
-    return FALSE; 
-  }
-  return TRUE;
-?>
-               ",
+    'pages' => "<?php return labdoo_block_filter_sidebar_second(); ?>",
     'region' => "sidebar_second",
   );
 
