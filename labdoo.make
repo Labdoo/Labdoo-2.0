@@ -1,6 +1,10 @@
 api = 2
 core = 7.x
 
+;--------------------
+; Specify defaults
+;--------------------
+
 defaults[projects][subdir] = contrib
 
 ;--------------------
@@ -21,8 +25,12 @@ libraries[bootstrap][download][url] = https://github.com/twbs/bootstrap/archive/
 ;;; Extensions
 projects[xautoload] = 4.5
 projects[rules] = 2.7
+projects[pathauto] = 1.2
+projects[subpathauto] = 1.3
+
+;;; User interface
+projects[edit_profile] = 1.0-beta2
 projects[wysiwyg] = 2.2
-projects[simplenews] = 1.1
 
 libraries[tinymce][directory_name] = tinymce
 libraries[tinymce][download][type] = get
@@ -58,11 +66,17 @@ projects[] = menu_import
 projects[] = boost
 projects[] = memcache
 
+;;; Services and Social
+projects[simplenews] = 1.1
+;projects[drupalchat] = 1.2
+;projects[sharethis] = 2.5
+
 ;;; Extra
+
 projects[entityreference] = 1.1
 ; projects[field_group] = 1.4
 projects[date] = 2.8
-projects[location] = 3.3
+projects[location] = 3.4
 projects[nodeaccess_userreference] = 3.10
 projects[email] = 1.3
 projects[conditional_fields] = 3.0-alpha1
@@ -74,6 +88,19 @@ projects[views_slideshow] = 3.1
 projects[gmap] = 2.9
 projects[views_autocomplete_filters] = 1.1
 projects[views_dependent_filters] = 1.1
+projects[variable] = 2.5 
+projects[lang_dropdown] = 2.5 
+projects[logintoboggan] = 1.4 
+
+;-------------------
+; Translations
+;-------------------
+
+projects[l10n_update] = 1.0
+projects[i18n] = 1.11
+projects[i18nviews] = 3.x-dev
+projects[transliteration] = 3.2
+
 
 ;--------------------
 ; Sending Emails
@@ -106,5 +133,6 @@ libraries[hybridauth][download][url] = https://github.com/hybridauth/hybridauth/
 ; Web Services
 ;--------------------
 
+projects[services][version] = "3.7"
 projects[oauth2_loginprovider] = 1.x-dev
 
