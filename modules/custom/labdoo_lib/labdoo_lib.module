@@ -1255,9 +1255,13 @@ function labdoo_block_filter_sidebar_second() {
       return FALSE;
   if(strpos($path, "content/follow-dooject") !== FALSE)
       return FALSE;
+  if(strpos($path, "user/login") !== FALSE)
+      return FALSE;
   $views_page = views_get_page_view();
   if (is_object($views_page)) {
-    if($views_page->name == "global_inventory")
+    if($views_page->name == "GlobalInventory")
+      return FALSE; 
+    if($views_page->name == "labdooers")
       return FALSE; 
   } 
   return TRUE;
