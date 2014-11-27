@@ -22,7 +22,6 @@ libraries[bootstrap][download][url] = https://github.com/twbs/bootstrap/archive/
 projects[xautoload] = 4.5
 projects[rules] = 2.7
 projects[wysiwyg] = 2.2
-projects[simplenews] = 1.1
 
 libraries[tinymce][directory_name] = tinymce
 libraries[tinymce][download][type] = get
@@ -48,7 +47,6 @@ projects[defaultconfig][patch][1900574] = https://drupal.org/files/issues/190057
 
 
 ;;; Admin Utils
-projects[] = l10n_update
 projects[] = drush_language
 projects[] = drush_remake
 projects[] = delete_all
@@ -57,6 +55,16 @@ projects[] = menu_import
 ;;; Performance
 projects[] = boost
 projects[] = memcache
+
+;;; Services and Social
+;projects[google_analytics] = 2.0
+;projects[drupalchat] = 1.2
+projects[simplenews] = 1.1
+;projects[mass_contact] = 1.0
+;projects[sharethis] = 2.5
+;projects[disqus] = 1.9
+;projects[disqus][patch][] = http://drupal.org/files/disqus-https.patch
+
 
 ;;; Extra
 projects[entityreference] = 1.1
@@ -77,6 +85,16 @@ projects[views_dependent_filters] = 1.1
 projects[variable] = 2.5 
 projects[lang_dropdown] = 2.5 
 projects[logintoboggan] = 1.4 
+
+;-------------------
+; Translations
+;-------------------
+
+projects[l10n_update] = 1.0
+projects[i18n] = 1.11
+projects[i18nviews] = 3.x-dev
+projects[transliteration] = 3.2
+
 
 
 ;--------------------
