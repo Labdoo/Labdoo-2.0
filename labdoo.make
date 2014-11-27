@@ -62,7 +62,7 @@ projects[] = memcache
 projects[entityreference] = 1.1
 ; projects[field_group] = 1.4
 projects[date] = 2.8
-projects[location] = 3.3
+projects[location] = 3.4
 projects[nodeaccess_userreference] = 3.10
 projects[email] = 1.3
 projects[conditional_fields] = 3.0-alpha1
@@ -74,6 +74,10 @@ projects[views_slideshow] = 3.1
 projects[gmap] = 2.9
 projects[views_autocomplete_filters] = 1.1
 projects[views_dependent_filters] = 1.1
+projects[variable] = 2.5 
+projects[lang_dropdown] = 2.5 
+projects[logintoboggan] = 1.4 
+
 
 ;--------------------
 ; Sending Emails

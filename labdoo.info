@@ -43,6 +43,10 @@ dependencies[] = field_ui
 ; Contrib
 ;--------------------
 
+dependencies[] = variable
+dependencies[] = lang_dropdown 
+dependencies[] = logintoboggan 
+
 ;;; Features
 dependencies[] = fe_block
 dependencies[] = node_export
