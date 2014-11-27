@@ -15,6 +15,7 @@ files[] = labdoo.profile
 ;--------------------
 ; Core
 ;--------------------
+dependencies[] = book
 dependencies[] = contact
 dependencies[] = blog
 dependencies[] = menu
@@ -43,8 +44,6 @@ dependencies[] = field_ui
 ;--------------------
 
 ;;; Features
-dependencies[] = strongarm
-dependencies[] = features
 dependencies[] = fe_block
 dependencies[] = node_export
 dependencies[] = node_export_features

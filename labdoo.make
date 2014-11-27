@@ -35,8 +35,6 @@ projects[honeypot] = 1.17
 projects[user_restrictions] = 1.0
 
 ;;; Features
-projects[features] = 1.0
-projects[strongarm] = 2.0
 projects[features_extra] = 1.0-beta1
 projects[node_export] = 3.0
 
