@@ -47,6 +47,7 @@ projects[defaultconfig][patch][1900574] = https://drupal.org/files/issues/190057
 
 
 ;;; Admin Utils
+projects[] = l10n_update
 projects[] = drush_language
 projects[] = drush_remake
 projects[] = delete_all
@@ -85,16 +86,6 @@ projects[views_dependent_filters] = 1.1
 projects[variable] = 2.5 
 projects[lang_dropdown] = 2.5 
 projects[logintoboggan] = 1.4 
-
-;-------------------
-; Translations
-;-------------------
-
-projects[l10n_update] = 1.0
-projects[i18n] = 1.11
-projects[i18nviews] = 3.x-dev
-projects[transliteration] = 3.2
-
 
 
 ;--------------------
