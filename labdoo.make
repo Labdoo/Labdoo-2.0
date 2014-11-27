@@ -25,11 +25,11 @@ libraries[bootstrap][download][url] = https://github.com/twbs/bootstrap/archive/
 ;;; Extensions
 projects[xautoload] = 4.5
 projects[rules] = 2.7
-projects[pathauto] = 1.2
-projects[subpathauto] = 1.3
+;projects[pathauto] = 1.2
+;projects[subpathauto] = 1.3
 
 ;;; User interface
-projects[edit_profile] = 1.0-beta2
+;projects[edit_profile] = 1.0-beta2
 projects[wysiwyg] = 2.2
 
 libraries[tinymce][directory_name] = tinymce
@@ -100,10 +100,10 @@ projects[logintoboggan] = 1.4
 ; Translations
 ;-------------------
 
-projects[l10n_update] = 1.0
-projects[i18n] = 1.11
-projects[i18nviews] = 3.x-dev
-projects[transliteration] = 3.2
+;projects[l10n_update] = 1.0
+;projects[i18n] = 1.11
+;projects[i18nviews] = 3.x-dev
+;projects[transliteration] = 3.2
 
 
 ;--------------------
