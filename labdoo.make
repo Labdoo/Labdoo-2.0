@@ -28,7 +28,7 @@ projects[devel] = 1.5
 projects[diff] = 3.2
 
 ;;; Extensions
-projects[ctools] = 1.4
+projects[ctools] = 1.5
 projects[libraries] = 2.2
 projects[entity] = 1.5
 projects[xautoload] = 4.5
@@ -89,14 +89,14 @@ projects[disqus][patch][] = http://drupal.org/files/disqus-https.patch
 projects[entityreference] = 1.1
 projects[field_group] = 1.4
 projects[date] = 2.8
-projects[location] = 3.4
+projects[location] = 3.5
 projects[nodeaccess_userreference] = 3.10
 projects[email] = 1.3
 projects[conditional_fields] = 3.0-alpha1
 projects[lightbox2] = 1.0-beta1
 projects[node_view_permissions] = 1.5
 projects[r4032login] = 1.8
-projects[ip_geoloc] = 1.25
+projects[ip_geoloc] = 1.26
 projects[views_slideshow] = 3.1
 projects[gmap] = 2.9
 projects[views_autocomplete_filters] = 1.1
@@ -109,7 +109,7 @@ projects[logintoboggan] = 1.4
 ; Translations
 ;-------------------
 
-projects[l10n_update] = 1.0
+projects[l10n_update] = 1.1
 projects[i18n] = 1.11
 projects[i18nviews] = 3.x-dev
 projects[transliteration] = 3.2
@@ -121,7 +121,7 @@ projects[transliteration] = 3.2
 
 projects[mailsystem] = 2.34
 projects[mimemail] = 1.0-beta3
-projects[reroute_email] = 1.1
+projects[reroute_email] = 1.2
 projects[smtp] = 1.0
 
 ;projects[phpmailer] = 3.x-dev
