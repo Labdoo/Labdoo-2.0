@@ -38,7 +38,7 @@ function lbd_content_types_node_info() {
     'private_page' => array(
       'name' => t('Private page'),
       'base' => 'node_content',
-      'description' => t('Pages that can only be accessed by registered users'),
+      'description' => t('Pages that can only be accessed by registered users.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
@@ -46,7 +46,23 @@ function lbd_content_types_node_info() {
     'slider_page' => array(
       'name' => t('Slider page'),
       'base' => 'node_content',
-      'description' => t('Page to be used in a views slideshow'),
+      'description' => t('Page to be used in a views slideshow.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'team' => array(
+      'name' => t('Team'),
+      'base' => 'node_content',
+      'description' => t('A team is a group of Labdooers organized around one subject topic to share ideas, thoughts, content, etc.'),
+      'has_title' => '1',
+      'title_label' => t('Team Name'),
+      'help' => '',
+    ),
+    'team_page' => array(
+      'name' => t('Team page'),
+      'base' => 'node_content',
+      'description' => t('A team page is a piece of content shared by labdooers within one team.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

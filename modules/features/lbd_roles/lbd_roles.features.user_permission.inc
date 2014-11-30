@@ -58,10 +58,47 @@ function lbd_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: create team content.
+  $permissions['create team content'] = array(
+    'name' => 'create team content',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'team manager',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: create team_page content.
+  $permissions['create team_page content'] = array(
+    'name' => 'create team_page content',
+    'roles' => array(
+      0 => 'authenticated user',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: delete any simplenews content.
   $permissions['delete any simplenews content'] = array(
     'name' => 'delete any simplenews content',
     'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete any team content.
+  $permissions['delete any team content'] = array(
+    'name' => 'delete any team content',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete any team_page content.
+  $permissions['delete any team_page content'] = array(
+    'name' => 'delete any team_page content',
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'node',
   );
 
@@ -74,10 +111,47 @@ function lbd_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: delete own team content.
+  $permissions['delete own team content'] = array(
+    'name' => 'delete own team content',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'team manager',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete own team_page content.
+  $permissions['delete own team_page content'] = array(
+    'name' => 'delete own team_page content',
+    'roles' => array(
+      0 => 'authenticated user',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: edit any simplenews content.
   $permissions['edit any simplenews content'] = array(
     'name' => 'edit any simplenews content',
     'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit any team content.
+  $permissions['edit any team content'] = array(
+    'name' => 'edit any team content',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit any team_page content.
+  $permissions['edit any team_page content'] = array(
+    'name' => 'edit any team_page content',
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'node',
   );
 
@@ -95,6 +169,25 @@ function lbd_roles_user_default_permissions() {
     'name' => 'edit own simplenews content',
     'roles' => array(
       0 => 'newsletter manager',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit own team content.
+  $permissions['edit own team content'] = array(
+    'name' => 'edit own team content',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'team manager',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit own team_page content.
+  $permissions['edit own team_page content'] = array(
+    'name' => 'edit own team_page content',
+    'roles' => array(
+      0 => 'authenticated user',
     ),
     'module' => 'node',
   );
