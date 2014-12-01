@@ -155,14 +155,24 @@ function lbd_blocks_views_block_info() {
     'region' => "content",
   );
 
-  // Macro statistics block
-  $blocks['block_macro_statistics'] = array(
-    'info' => "Macro statistics block",
+  // Macro statistics block (vertical)
+  $blocks['block_macro_statistics_vertical'] = array(
+    'info' => "Macro statistics block (vertical)",
     'status' => 1,
     'visibility' => BLOCK_VISIBILITY_PHP,
     'weight' => -100,
     'pages' => "<?php return labdoo_block_filter_sidebar_second(); ?>",
     'region' => "sidebar_second",
+  );
+
+  // Macro statistics block (horizontal)
+  $blocks['block_macro_statistics_horiz'] = array(
+    'info' => "Macro statistics block (horizontal)",
+    'status' => 1,
+    'visibility' => BLOCK_VISIBILITY_PHP,
+    'weight' => -100,
+    'pages' => "<?php return labdoo_block_filter_header(); ?>",
+    'region' => "header",
   );
 
   // Block linking to the language switcher dropdown block
@@ -237,12 +247,21 @@ function lbd_blocks_views_block_view($delta = '') {
       );
       break;
 
-    // Macro statistics 
-    case 'block_macro_statistics':
+    // Macro statistics (vertical) 
+    case 'block_macro_statistics_vertical':
       $block['subject'] = "<none>";
       $block['title'] = t("Global progress");
       $block['content'] = array(
-             '#markup' => labdoo_render_macro_stats(),
+             '#markup' => labdoo_render_macro_stats("vertical"),
+      );
+      break;
+
+    // Macro statistics (horizontal)
+    case 'block_macro_statistics_horiz':
+      $block['subject'] = "<none>";
+//      $block['title'] = t("Global progress");
+      $block['content'] = array(
+             '#markup' => labdoo_render_macro_stats("horizontal"),
       );
       break;
 

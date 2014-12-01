@@ -33,7 +33,9 @@ function lbd_teams_features_og_features_default_permissions() {
 
   // Exported og permission: 'node:team:create team_page content'
   $permissions['node:team:create team_page content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:team:delete any team_page content'
@@ -43,7 +45,9 @@ function lbd_teams_features_og_features_default_permissions() {
 
   // Exported og permission: 'node:team:delete own team_page content'
   $permissions['node:team:delete own team_page content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:team:manage members'
@@ -76,7 +80,9 @@ function lbd_teams_features_og_features_default_permissions() {
 
   // Exported og permission: 'node:team:subscribe without approval'
   $permissions['node:team:subscribe without approval'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'non-member' => 'non-member',
+    ),
   );
 
   // Exported og permission: 'node:team:unsubscribe'
@@ -100,7 +106,9 @@ function lbd_teams_features_og_features_default_permissions() {
 
   // Exported og permission: 'node:team:update own team_page content'
   $permissions['node:team:update own team_page content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   return $permissions;

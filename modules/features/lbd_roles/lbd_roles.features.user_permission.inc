@@ -71,9 +71,7 @@ function lbd_roles_user_default_permissions() {
   // Exported permission: create team_page content.
   $permissions['create team_page content'] = array(
     'name' => 'create team_page content',
-    'roles' => array(
-      0 => 'authenticated user',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -124,9 +122,7 @@ function lbd_roles_user_default_permissions() {
   // Exported permission: delete own team_page content.
   $permissions['delete own team_page content'] = array(
     'name' => 'delete own team_page content',
-    'roles' => array(
-      0 => 'authenticated user',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -186,9 +182,7 @@ function lbd_roles_user_default_permissions() {
   // Exported permission: edit own team_page content.
   $permissions['edit own team_page content'] = array(
     'name' => 'edit own team_page content',
-    'roles' => array(
-      0 => 'authenticated user',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 

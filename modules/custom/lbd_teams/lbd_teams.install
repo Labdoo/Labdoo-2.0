@@ -1,0 +1,94 @@
+<?php
+
+/**
+ * @file
+ * Installation file for the Labdoo Teams module
+ *
+ * @ingroup labdooteam 
+ */
+
+
+/**
+ *
+ * Creates the Labdoo teams 
+ */
+function _create_lbd_teams()
+{
+
+  // Coffee Shop 
+  $bodyText = t("Discuss in the coffee shop your ideas and share your experiences with other Labdooers.");
+
+  $node = new stdClass();
+  $node->type = 'team';
+  node_object_prepare($node);
+  
+  $node->title = "Coffee Shop";
+  $node->language = LANGUAGE_NONE;
+
+  $node->body[$node->language][0]['value']   = $bodyText;
+  $node->body[$node->language][0]['summary'] = '';
+  $node->body[$node->language][0]['format']  = 'filtered_html';
+  
+  $node->path = array('alias' => "content/team-coffee-shop");
+
+  node_save($node);
+
+  // Global 
+  $bodyText = t("Make global announcements and discuss topics that are of interest to the global Labdoo community.");
+
+  $node = new stdClass();
+  $node->type = 'team';
+  node_object_prepare($node);
+  
+  $node->title = "Labdoo Global";
+  $node->language = LANGUAGE_NONE;
+
+  $node->body[$node->language][0]['value']   = $bodyText;
+  $node->body[$node->language][0]['summary'] = '';
+  $node->body[$node->language][0]['format']  = 'filtered_html';
+  
+  $node->path = array('alias' => "content/team-labdoo-global");
+
+  node_save($node);
+
+  return;
+}
+
+
+/**
+ * Deletes the Labdoo teams
+ *
+ */
+function _delete_lbd_teams()
+{
+  $path = drupal_lookup_path("source", "content/team-coffee-shop"); 
+  $node = menu_get_object("node", 1, $path);
+  node_delete($node->nid);
+
+  $path = drupal_lookup_path("source", "content/team-labdoo-global"); 
+  $node = menu_get_object("node", 1, $path);
+  node_delete($node->nid);
+
+  return;
+}
+
+
+/**
+ * Implements hook_enable
+ *
+ */
+function lbd_teams_enable()
+{
+  _create_lbd_teams(); 
+}
+
+
+/**
+ * Implements hook_disable
+ *
+ */
+function lbd_teams_disable()
+{
+  _delete_lbd_teams();
+}
+

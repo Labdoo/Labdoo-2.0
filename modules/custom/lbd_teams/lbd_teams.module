@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @defgroup labdooteam labdooTeam: Implementation of Labdoo Teams
+ *
+ * This module implements Labdoo Teams based on Organic Groups and other basic building blocks
+ *
+ */
+
+
+/**
+ * @file
+ * Main file for the Labdoo Team module
+ *
+ * @ingroup labdooteam 
+ */
+
+
+/*
+ * ==========
+ * VIEWS CODE
+ * ==========
+ */
+
+/**
+ * Implementation of hook_views_api
+ */
+function lbd_teams_views_api() {
+  return array(
+    'api' => 3.0,
+  );
+} 
+
+
+/**
+ * Implementation of hook_views_default_views
+ */
+function lbd_teams_views_default_views() {
+
+  // Teams view
+  include 'lbd_teams_views_teams.inc';
+  $views[$view->name] = $view;
+
+  return $views;
+}
+

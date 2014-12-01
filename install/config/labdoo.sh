@@ -32,17 +32,19 @@ echo "
 ===> Enabled gmap module. If markers don't show up, please refresh their cache by going to admin/config/services/gmap and clicking on \"Regenerate\"
 "
 
-
 drush @lbd $enOrDis -y lbd_blocks_views
 drush @lbd $enOrDis -y lbd_users
 
-# Somehow after installing blocks and views a refresh of the cache is needed
+# After installing blocks and views a refresh of the cache is needed
 # so that the various views and blocks are correctly enabled
 drush @lbd cc all
 
 drush @lbd $enOrDis -y lbd_menus 
 drush @lbd $enOrDis -y lbd_visualize
 drush @lbd $enOrDis -y lbd_gics
+
+# Enable Labdoo teams features
+drush @lbd $enOrDis -y lbd_teams_features
 
 # Finally, clear the cache to get things to a proper initial state
 drush @lbd cc all
