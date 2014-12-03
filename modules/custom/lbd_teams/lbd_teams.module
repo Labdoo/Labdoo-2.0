@@ -41,6 +41,10 @@ function lbd_teams_views_default_views() {
   include 'lbd_teams_views_teams.inc';
   $views[$view->name] = $view;
 
+  // Team content
+  include 'lbd_teams_views_team_content.inc';
+  $views[$view->name] = $view;
+
   return $views;
 }
 

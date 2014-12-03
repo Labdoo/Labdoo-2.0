@@ -1449,11 +1449,11 @@ print $user->uid;
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'hidden',
+          'label' => 'inline',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -1467,7 +1467,7 @@ print $user->uid;
       ),
       'entity_type' => 'node',
       'field_name' => 'body',
-      'label' => 'Description',
+      'label' => 'Team\'s topic',
       'required' => 1,
       'settings' => array(
         'display_summary' => 1,
@@ -1524,13 +1524,13 @@ print $user->uid;
       'description' => 'Determine if this is an OG group.',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'og_ui',
           'settings' => array(
-            'field_name' => FALSE,
+            'field_name' => '0',
           ),
           'type' => 'og_group_subscribe',
-          'weight' => 1,
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1612,7 +1612,7 @@ print $user->uid;
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 1,
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -1675,8 +1675,14 @@ print $user->uid;
             'og_behavior' => array(
               'status' => TRUE,
             ),
+            'views-select-list' => array(
+              'status' => 0,
+            ),
           ),
           'membership_type' => 'og_membership_type_default',
+          'sort' => array(
+            'type' => 'none',
+          ),
           'target_bundles' => array(),
         ),
         'handler_submit' => 'Change handler',
@@ -1693,11 +1699,11 @@ print $user->uid;
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'inline',
           'module' => 'og_ui',
           'settings' => array(),
           'type' => 'og_list_default',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1708,11 +1714,12 @@ print $user->uid;
       ),
       'entity_type' => 'node',
       'field_name' => 'og_group_ref',
-      'label' => 'Groups audience',
-      'required' => FALSE,
+      'label' => 'Team(s)',
+      'required' => 0,
       'settings' => array(
         'behaviors' => array(
           'og_widget' => array(
+            'access_override' => 0,
             'admin' => array(
               'widget_type' => 'entityreference_autocomplete',
             ),
@@ -1737,6 +1744,7 @@ print $user->uid;
         ),
       ),
       'widget' => array(
+        'active' => 0,
         'module' => 'og',
         'settings' => array(),
         'type' => 'og_complex',
@@ -1750,15 +1758,15 @@ print $user->uid;
   t('Body');
   t('Comment');
   t('Date');
-  t('Description');
   t('Determine if this is an OG group.');
   t('Edoovillage');
-  t('Groups audience');
   t('Hub');
   t('Labdooer');
   t('Stream it');
   t('Tab');
   t('Team');
+  t('Team\'s topic');
+  t('Team(s)');
   t('Type');
   t('Weight');
 
