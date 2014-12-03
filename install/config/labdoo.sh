@@ -45,6 +45,7 @@ drush @lbd $enOrDis -y lbd_gics
 
 # Enable Labdoo teams features
 drush @lbd $enOrDis -y lbd_teams_features
+drush @lbd $enOrDis -y lbd_teams
 
 # Finally, clear the cache to get things to a proper initial state
 drush @lbd cc all
