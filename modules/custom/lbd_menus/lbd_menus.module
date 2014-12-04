@@ -273,6 +273,35 @@ function make_main_menu() {
   $mlid = menu_link_save($item);
 
   /*
+   * Teams menu item
+   */
+  $item = array(
+            'link_path' => 'teams',
+            'link_title' => t('Teams'),
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -15,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => 0, 
+            'module' => 'menu',
+          );
+  $teamsMlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'teams',
+            'link_title' => t('All teams'),
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -50,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => $teamsMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  /*
    * Newsletter menu item
    */
   $item = array(
