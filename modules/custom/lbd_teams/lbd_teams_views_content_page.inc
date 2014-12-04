@@ -2,10 +2,10 @@
 
 $view = new view();
 $view->name = 'teams_all_user_team_content';
-$view->description = 'Show the content from all the teams the current user belongs to';
-$view->tag = 'og';
+$view->description = 'Show teams content as pages';
+$view->tag = 'Teams (OG)';
 $view->base_table = 'node';
-$view->human_name = 'Teams - all user team content';
+$view->human_name = 'Team Page Content';
 $view->core = 7;
 $view->api_version = '3.0';
 $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -92,8 +92,8 @@ $handler->display->display_options['filters']['group_type']['value'] = array(
   'node' => 'node',
 );
 
-/* Display: Page */
-$handler = $view->new_display('page', 'Page', 'page_1');
+/* Display: User teams wall */
+$handler = $view->new_display('page', 'User teams wall', 'page_1');
 $handler->display->display_options['defaults']['access'] = FALSE;
 $handler->display->display_options['access']['type'] = 'role';
 $handler->display->display_options['access']['role'] = array(
@@ -141,4 +141,11 @@ $handler->display->display_options['fields']['field_comments']['alter']['max_len
 $handler->display->display_options['fields']['field_comments']['alter']['trim'] = TRUE;
 $handler->display->display_options['fields']['field_comments']['element_label_colon'] = FALSE;
 $handler->display->display_options['path'] = 'my-teams-activities';
+
+/* Display: Teams wall */
+$handler = $view->new_display('page', 'Teams wall', 'page_2');
+$handler->display->display_options['defaults']['access'] = FALSE;
+$handler->display->display_options['access']['type'] = 'none';
+$handler->display->display_options['defaults']['arguments'] = FALSE;
+$handler->display->display_options['path'] = 'teams-activities';
 

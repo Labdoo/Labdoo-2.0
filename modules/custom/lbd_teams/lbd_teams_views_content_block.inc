@@ -2,10 +2,10 @@
 
 $view = new view();
 $view->name = 'team_content';
-$view->description = 'Show all content (nodes) of a group.';
-$view->tag = 'og';
+$view->description = 'Show teams content as blocks';
+$view->tag = 'Teams (OG)';
 $view->base_table = 'node';
-$view->human_name = 'Team content';
+$view->human_name = 'Team Block Content';
 $view->core = 0;
 $view->api_version = '3.0';
 $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */

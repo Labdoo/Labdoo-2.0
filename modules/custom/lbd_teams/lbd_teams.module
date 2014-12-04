@@ -42,11 +42,11 @@ function lbd_teams_views_default_views() {
   $views[$view->name] = $view;
 
   // Team content
-  include 'lbd_teams_views_team_content.inc';
+  include 'lbd_teams_views_content_block.inc';
   $views[$view->name] = $view;
 
   // All user's team content
-  include 'lbd_teams_views_all_user_teams_content.inc';
+  include 'lbd_teams_views_content_page.inc';
   $views[$view->name] = $view;
 
   return $views;

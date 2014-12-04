@@ -3,9 +3,9 @@
 $view = new view();
 $view->name = 'labdoo_team';
 $view->description = 'A listing of all teams.';
-$view->tag = 'OG Extras';
+$view->tag = 'Teams (OG)';
 $view->base_table = 'node';
-$view->human_name = 'Labdoo team';
+$view->human_name = 'Labdoo Teams';
 $view->core = 7;
 $view->api_version = '3.0';
 $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
