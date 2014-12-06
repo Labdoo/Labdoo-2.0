@@ -1482,7 +1482,99 @@ print $user->uid;
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => 31,
+        'weight' => '31',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-team-field_welcome_message'.
+  $fields['node-team-field_welcome_message'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_welcome_message',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'team',
+      'default_value' => array(
+        0 => array(
+          'value' => '<strong>About the [TEAM_NAME_HERE] team</strong>
+
+The intended topic of this team is to be [EXPLAIN_HERE].
+
+Here are a set of general guidelines to follow when participating in the [TEAM_NAME_HERE]:
+
+<ul> 
+<li>
+This team is open to any Labdoo user. To join, go to www.labdoo.org/teams and select to join this team.
+</li>
+<li>
+Please when exchanging your thoughts, be respectful with other Labdoo users. Remember that your comments can be read by many people.
+</li>
+<li>
+If you are in doubt on whether a certain topic can be of interest to this team, please check first the description of each team at www.labdoo.org/teams and make sure you pick the right place for your topic.
+</li>
+<li>
+Remember that in each team, you will be able to create forum entries, tasks, events and pages, depending on your user roles. If you go to each team wall, on your right side you will find a list of actions that you can do within that team.
+</li>
+</ul>
+',
+          'format' => 'filtered_html',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '2',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_welcome_message',
+      'label' => 'Welcome message',
+      'required' => 1,
+      'settings' => array(
+        'text_processing' => '1',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'rows' => '30',
+        ),
+        'type' => 'text_textarea',
+        'weight' => '32',
       ),
     ),
   );
@@ -1567,7 +1659,7 @@ print $user->uid;
           'og_hide' => 1,
         ),
         'type' => 'options_onoff',
-        'weight' => 0,
+        'weight' => '0',
       ),
     ),
   );
@@ -1769,6 +1861,7 @@ print $user->uid;
   t('Team(s)');
   t('Type');
   t('Weight');
+  t('Welcome message');
 
   return $fields;
 }
