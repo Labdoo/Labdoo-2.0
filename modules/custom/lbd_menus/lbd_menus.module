@@ -290,10 +290,36 @@ function make_main_menu() {
 
   $item = array(
             'link_path' => 'teams',
-            'link_title' => t('All teams'),
+            'link_title' => t('List of teams'),
             'menu_name' => 'main-menu',
             'expanded' => TRUE,
             'weight' => -50,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => $teamsMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'teams-activities',
+            'link_title' => t('Wall - all teams'),
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -40,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => $teamsMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'my-teams-activities',
+            'link_title' => t('Wall - my teams'),
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -30,
             'language' => 'en',
             'customized' => 1,
             'plid' => $teamsMlid, 
