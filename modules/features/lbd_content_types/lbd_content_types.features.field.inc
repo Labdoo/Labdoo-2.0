@@ -1787,6 +1787,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
     'field_instance' => array(
       'bundle' => 'team_page',
       'default_value' => NULL,
+      'default_value_function' => 'entityreference_prepopulate_field_default_value',
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -1819,6 +1820,17 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
               'widget_type' => 'options_select',
             ),
             'status' => TRUE,
+          ),
+          'prepopulate' => array(
+            'action' => 'hide',
+            'action_on_edit' => 1,
+            'fallback' => 'none',
+            'providers' => array(
+              'og_context' => 0,
+              'url' => 1,
+            ),
+            'skip_perm' => '0',
+            'status' => 1,
           ),
         ),
         'user_register_form' => FALSE,

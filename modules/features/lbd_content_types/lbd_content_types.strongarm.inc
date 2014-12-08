@@ -49,7 +49,7 @@ function lbd_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_team_page';
-  $strongarm->value = 'edit-comment';
+  $strongarm->value = 'edit-submission';
   $export['additional_settings__active_tab_team_page'] = $strongarm;
 
   $strongarm = new stdClass();

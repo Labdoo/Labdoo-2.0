@@ -60,9 +60,9 @@ function lbd_content_types_node_info() {
       'help' => '',
     ),
     'team_page' => array(
-      'name' => t('Team page'),
+      'name' => t('Team conversation'),
       'base' => 'node_content',
-      'description' => t('A team page is a piece of content shared by labdooers within one team.'),
+      'description' => t('Use team conversations to share your ideas or experiences with other Labdoo users within a given team.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
