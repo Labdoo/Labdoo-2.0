@@ -128,3 +128,34 @@ function lbd_dootrip_node_update($node) {
   return;
 }
 
+
+/**
+ * _calculate_dootrip_weight
+ *
+ * @param node $node
+ *   A dootrip node
+ * @return The weight of all the doojects associated with the dootrip, or zero if there are no assignments.
+ *
+ */
+function _calculate_dootrip_weight($node) {
+  $weight = 0;
+
+  $wNode = entity_metadata_wrapper('node', $node);
+  $doojectsList = $wNode->field_laptops->value();
+  if(!$doojectsList) {
+    return 0;
+  }
+
+  foreach($doojectsList as $doojectNode) {
+    $doojectLoaded = node_load($doojectNode->nid);
+    $wDoojectLoaded = entity_metadata_wrapper('node', $doojectLoaded);
+    $doojectWeight = $wDoojectLoaded->field_weight->value();
+    if(!$doojectWeight) {
+      continue;
+    }
+    $weight = $weight + $doojectWeight;
+  }
+
+  return $weight;
+}
+
