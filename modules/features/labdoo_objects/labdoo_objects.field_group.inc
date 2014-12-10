@@ -35,6 +35,7 @@ function labdoo_objects_field_group_info() {
       9 => 'field_memory',
       10 => 'field_tagger',
       11 => 'field_volts',
+      12 => 'field_dooject_weight',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -75,6 +76,7 @@ function labdoo_objects_field_group_info() {
       11 => 'field_picture',
       12 => 'field_tagger',
       13 => 'field_volts',
+      14 => 'field_dooject_weight',
     ),
     'format_type' => 'htab',
     'format_settings' => array(

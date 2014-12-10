@@ -132,7 +132,7 @@ function labdoo_objects_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '10',
+          'weight' => '11',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -156,7 +156,7 @@ function labdoo_objects_field_default_fields() {
           'rows' => '3',
         ),
         'type' => 'text_textarea',
-        'weight' => '12',
+        'weight' => '13',
       ),
     ),
   );
@@ -539,6 +539,74 @@ function labdoo_objects_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-dootrip-field_dootrip_weight'.
+  $fields['node-dootrip-field_dootrip_weight'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_dootrip_weight',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'computed_field',
+      'settings' => array(
+        'code' => 'drupal_page_is_cacheable(FALSE);
+$entity_field[0][\'value\'] = _calculate_dootrip_weight($entity);',
+        'database' => array(
+          'data_default' => '',
+          'data_index' => 0,
+          'data_length' => '32',
+          'data_not_NULL' => 0,
+          'data_precision' => '10',
+          'data_scale' => '2',
+          'data_size' => 'normal',
+          'data_type' => 'varchar',
+        ),
+        'display_format' => 'drupal_page_is_cacheable(FALSE);
+$display_output = $entity_field_item[\'value\'];',
+        'store' => 0,
+      ),
+      'translatable' => '0',
+      'type' => 'computed',
+    ),
+    'field_instance' => array(
+      'bundle' => 'dootrip',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'inline',
+          'module' => 'computed_field',
+          'settings' => array(),
+          'type' => 'computed_field_plain',
+          'weight' => '9',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_dootrip_weight',
+      'label' => 'Dooject\'s estimated total weight',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'computed_field',
+        'settings' => array(),
+        'type' => 'computed',
+        'weight' => '11',
+      ),
+    ),
+  );
+
   // Exported field: 'node-dootrip-field_dootripper_s_'.
   $fields['node-dootrip-field_dootripper_s_'] = array(
     'field_config' => array(
@@ -593,7 +661,7 @@ function labdoo_objects_field_default_fields() {
             'link' => 1,
           ),
           'type' => 'entityreference_label',
-          'weight' => '9',
+          'weight' => '10',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1124,7 +1192,7 @@ function labdoo_objects_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '11',
+        'weight' => '12',
       ),
     ),
   );
@@ -2554,7 +2622,7 @@ function labdoo_objects_field_default_fields() {
             'link' => 1,
           ),
           'type' => 'entityreference_label',
-          'weight' => '16',
+          'weight' => '17',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -2622,7 +2690,7 @@ function labdoo_objects_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '17',
+          'weight' => '18',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -2646,7 +2714,7 @@ function labdoo_objects_field_default_fields() {
           'rows' => '3',
         ),
         'type' => 'text_textarea',
-        'weight' => '17',
+        'weight' => '18',
       ),
     ),
   );
@@ -2738,7 +2806,7 @@ function labdoo_objects_field_default_fields() {
             'thousand_separator' => ' ',
           ),
           'type' => 'number_integer',
-          'weight' => '14',
+          'weight' => '15',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -2763,7 +2831,7 @@ function labdoo_objects_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '19',
+        'weight' => '20',
       ),
     ),
   );
@@ -2943,7 +3011,7 @@ function labdoo_objects_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '15',
+          'weight' => '16',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -2967,7 +3035,7 @@ function labdoo_objects_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '15',
+        'weight' => '16',
       ),
     ),
   );
@@ -3038,6 +3106,70 @@ function labdoo_objects_field_default_fields() {
         'settings' => array(),
         'type' => 'options_select',
         'weight' => '7',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-laptop-field_dooject_weight'.
+  $fields['node-laptop-field_dooject_weight'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_dooject_weight',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'number',
+      'settings' => array(
+        'decimal_separator' => '.',
+      ),
+      'translatable' => '0',
+      'type' => 'number_float',
+    ),
+    'field_instance' => array(
+      'bundle' => 'laptop',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'number',
+          'settings' => array(
+            'decimal_separator' => '.',
+            'prefix_suffix' => TRUE,
+            'scale' => 2,
+            'thousand_separator' => ' ',
+          ),
+          'type' => 'number_decimal',
+          'weight' => '13',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_dooject_weight',
+      'label' => 'Weight',
+      'required' => 0,
+      'settings' => array(
+        'max' => '',
+        'min' => '',
+        'prefix' => '',
+        'suffix' => 'Kgms',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'number',
+        'settings' => array(),
+        'type' => 'number',
+        'weight' => '15',
       ),
     ),
   );
@@ -3123,7 +3255,7 @@ function labdoo_objects_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '16',
+        'weight' => '17',
       ),
     ),
   );
@@ -3914,7 +4046,7 @@ function labdoo_objects_field_default_fields() {
             'thousand_separator' => ' ',
           ),
           'type' => 'number_decimal',
-          'weight' => '13',
+          'weight' => '14',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -3939,7 +4071,7 @@ function labdoo_objects_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '18',
+        'weight' => '19',
       ),
     ),
   );
@@ -3967,6 +4099,7 @@ function labdoo_objects_field_default_fields() {
   t('Destination of the trip');
   t('Device type');
   t('Dooject identifiers');
+  t('Dooject\'s estimated total weight');
   t('Dootripper(s)');
   t('Dootrips assigned to this dooject');
   t('Edoovillage destination');
@@ -4008,6 +4141,7 @@ function labdoo_objects_field_default_fields() {
   t('Upload here a picture of the dooject. A picture is a helpful way for donors to ensure that they are looking at the correct dooject. Please do not use pictures that you may find on the Internet, as they may be copyrighted.  Instead, please take a picture with your own camera. Once the dooject reaches a school, you can also upload another picture with the students using it.');
   t('User(s) who will be part of this dootrip');
   t('Volts');
+  t('Weight');
   t('Write here the serial number of the dooject. Usually the serial number can be found in the back of the dooject, search for keywords such as "Serial Number" or "S/N", or if you see a bar code with a number under it, use this number. If the dooject has no sticker with the serial number, then write in this field the words "Unknown".');
 
   return $fields;
