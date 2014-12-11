@@ -49,6 +49,15 @@ function lbd_roles_user_default_permissions() {
     'module' => 'simplenews',
   );
 
+  // Exported permission: create event content.
+  $permissions['create event content'] = array(
+    'name' => 'create event content',
+    'roles' => array(
+      0 => 'authenticated user',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: create simplenews content.
   $permissions['create simplenews content'] = array(
     'name' => 'create simplenews content',
@@ -71,6 +80,13 @@ function lbd_roles_user_default_permissions() {
   // Exported permission: create team_page content.
   $permissions['create team_page content'] = array(
     'name' => 'create team_page content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete any event content.
+  $permissions['delete any event content'] = array(
+    'name' => 'delete any event content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -100,6 +116,15 @@ function lbd_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: delete own event content.
+  $permissions['delete own event content'] = array(
+    'name' => 'delete own event content',
+    'roles' => array(
+      0 => 'authenticated user',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: delete own simplenews content.
   $permissions['delete own simplenews content'] = array(
     'name' => 'delete own simplenews content',
@@ -122,6 +147,13 @@ function lbd_roles_user_default_permissions() {
   // Exported permission: delete own team_page content.
   $permissions['delete own team_page content'] = array(
     'name' => 'delete own team_page content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit any event content.
+  $permissions['edit any event content'] = array(
+    'name' => 'edit any event content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -158,6 +190,15 @@ function lbd_roles_user_default_permissions() {
       0 => 'administrator',
     ),
     'module' => 'mimemail',
+  );
+
+  // Exported permission: edit own event content.
+  $permissions['edit own event content'] = array(
+    'name' => 'edit own event content',
+    'roles' => array(
+      0 => 'authenticated user',
+    ),
+    'module' => 'node',
   );
 
   // Exported permission: edit own simplenews content.
