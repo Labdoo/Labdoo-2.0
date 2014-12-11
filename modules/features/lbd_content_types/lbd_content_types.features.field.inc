@@ -937,7 +937,7 @@ function lbd_content_types_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -1010,14 +1010,14 @@ function lbd_content_types_field_default_fields() {
           'label' => 'above',
           'module' => 'date',
           'settings' => array(
-            'format_type' => 'long',
+            'format_type' => 'long_with_time_zone',
             'fromto' => 'both',
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => 1,
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'above',
