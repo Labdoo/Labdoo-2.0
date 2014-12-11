@@ -135,6 +135,7 @@ projects[og_extras] = 1.1
 projects[stringoverrides] = 1.8 
 projects[eva] = 1.2
 projects[entityreference_prepopulate] = 1.5
+projects[calendar] = 3.5
 
 ;--------------------
 ; Extensions and others
