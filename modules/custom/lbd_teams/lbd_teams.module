@@ -104,7 +104,7 @@ function render_calendar_switcher()
       $url3 = "Day";
   }
 
-  $switchTitle = t('Select view');
+  $switchTitle = t('Select calendar view');
 
   $code = "<p><strong><span style='color:#ff3300;'>$switchTitle</span></strong></p>
            <form>

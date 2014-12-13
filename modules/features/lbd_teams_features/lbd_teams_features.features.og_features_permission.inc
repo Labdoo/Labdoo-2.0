@@ -31,6 +31,13 @@ function lbd_teams_features_og_features_default_permissions() {
     ),
   );
 
+  // Exported og permission: 'node:team:create event content'
+  $permissions['node:team:create event content'] = array(
+    'roles' => array(
+      'member' => 'member',
+    ),
+  );
+
   // Exported og permission: 'node:team:create team_page content'
   $permissions['node:team:create team_page content'] = array(
     'roles' => array(
@@ -38,9 +45,21 @@ function lbd_teams_features_og_features_default_permissions() {
     ),
   );
 
+  // Exported og permission: 'node:team:delete any event content'
+  $permissions['node:team:delete any event content'] = array(
+    'roles' => array(),
+  );
+
   // Exported og permission: 'node:team:delete any team_page content'
   $permissions['node:team:delete any team_page content'] = array(
     'roles' => array(),
+  );
+
+  // Exported og permission: 'node:team:delete own event content'
+  $permissions['node:team:delete own event content'] = array(
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:team:delete own team_page content'
@@ -92,6 +111,11 @@ function lbd_teams_features_og_features_default_permissions() {
     ),
   );
 
+  // Exported og permission: 'node:team:update any event content'
+  $permissions['node:team:update any event content'] = array(
+    'roles' => array(),
+  );
+
   // Exported og permission: 'node:team:update any team_page content'
   $permissions['node:team:update any team_page content'] = array(
     'roles' => array(),
@@ -101,6 +125,13 @@ function lbd_teams_features_og_features_default_permissions() {
   $permissions['node:team:update group'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:team:update own event content'
+  $permissions['node:team:update own event content'] = array(
+    'roles' => array(
+      'member' => 'member',
     ),
   );
 
