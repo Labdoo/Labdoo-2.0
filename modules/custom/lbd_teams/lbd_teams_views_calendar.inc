@@ -28,6 +28,18 @@ $handler->display->display_options['style_options']['multiday_theme'] = '1';
 $handler->display->display_options['style_options']['theme_style'] = '1';
 $handler->display->display_options['style_options']['max_items'] = '0';
 $handler->display->display_options['row_plugin'] = 'calendar_entity';
+/* Header: Global: Text area */
+$handler->display->display_options['header']['area']['id'] = 'area';
+$handler->display->display_options['header']['area']['table'] = 'views';
+$handler->display->display_options['header']['area']['field'] = 'area';
+$handler->display->display_options['header']['area']['content'] = '<?php    
+render_calendar_switcher();
+?>';
+$handler->display->display_options['header']['area']['format'] = 'php_code';
+/* Relationship: OG membership: Group Node from OG membership */
+$handler->display->display_options['relationships']['og_membership_related_node_group']['id'] = 'og_membership_related_node_group';
+$handler->display->display_options['relationships']['og_membership_related_node_group']['table'] = 'og_membership';
+$handler->display->display_options['relationships']['og_membership_related_node_group']['field'] = 'og_membership_related_node_group';
 /* Field: Content: Title */
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -86,6 +98,15 @@ $handler->display->display_options['row_plugin'] = 'calendar_entity';
 $handler->display->display_options['row_options']['colors']['legend'] = 'type';
 $handler->display->display_options['defaults']['row_options'] = FALSE;
 $handler->display->display_options['defaults']['arguments'] = FALSE;
+/* Contextual filter: OG membership: Group ID */
+$handler->display->display_options['arguments']['gid']['id'] = 'gid';
+$handler->display->display_options['arguments']['gid']['table'] = 'og_membership';
+$handler->display->display_options['arguments']['gid']['field'] = 'gid';
+$handler->display->display_options['arguments']['gid']['default_action'] = 'default';
+$handler->display->display_options['arguments']['gid']['default_argument_type'] = 'og_context';
+$handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+$handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+$handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
 /* Contextual filter: Date: Date (node) */
 $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
 $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
@@ -97,11 +118,12 @@ $handler->display->display_options['arguments']['date_argument']['add_delta'] = 
 $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
   'field_data_field_event_date.field_event_date_value' => 'field_data_field_event_date.field_event_date_value',
 );
-$handler->display->display_options['path'] = 'calendar-node-field-event-date/month';
-$handler->display->display_options['menu']['type'] = 'default tab';
-$handler->display->display_options['menu']['title'] = 'Month';
+$handler->display->display_options['path'] = 'node/%/calendar/month';
+$handler->display->display_options['menu']['type'] = 'tab';
+$handler->display->display_options['menu']['title'] = 'Calendar';
 $handler->display->display_options['menu']['weight'] = '0';
 $handler->display->display_options['menu']['context'] = 0;
+$handler->display->display_options['menu']['context_only_inline'] = 0;
 $handler->display->display_options['tab_options']['type'] = 'normal';
 $handler->display->display_options['tab_options']['title'] = 'Calendar';
 $handler->display->display_options['tab_options']['weight'] = '0';
@@ -126,6 +148,15 @@ $handler->display->display_options['defaults']['row_plugin'] = FALSE;
 $handler->display->display_options['row_plugin'] = 'calendar_entity';
 $handler->display->display_options['defaults']['row_options'] = FALSE;
 $handler->display->display_options['defaults']['arguments'] = FALSE;
+/* Contextual filter: OG membership: Group ID */
+$handler->display->display_options['arguments']['gid']['id'] = 'gid';
+$handler->display->display_options['arguments']['gid']['table'] = 'og_membership';
+$handler->display->display_options['arguments']['gid']['field'] = 'gid';
+$handler->display->display_options['arguments']['gid']['default_action'] = 'default';
+$handler->display->display_options['arguments']['gid']['default_argument_type'] = 'og_context';
+$handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+$handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+$handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
 /* Contextual filter: Date: Date (node) */
 $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
 $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
@@ -138,11 +169,12 @@ $handler->display->display_options['arguments']['date_argument']['add_delta'] = 
 $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
   'field_data_field_event_date.field_event_date_value' => 'field_data_field_event_date.field_event_date_value',
 );
-$handler->display->display_options['path'] = 'calendar-node-field-event-date/week';
-$handler->display->display_options['menu']['type'] = 'tab';
-$handler->display->display_options['menu']['title'] = 'Week';
+$handler->display->display_options['path'] = 'node/%/calendar/week';
+$handler->display->display_options['menu']['title'] = 'Calendar';
 $handler->display->display_options['menu']['weight'] = '2';
+$handler->display->display_options['menu']['name'] = 'devel';
 $handler->display->display_options['menu']['context'] = 0;
+$handler->display->display_options['menu']['context_only_inline'] = 0;
 
 /* Display: Day */
 $handler = $view->new_display('page', 'Day', 'page_3');
@@ -164,6 +196,15 @@ $handler->display->display_options['defaults']['row_plugin'] = FALSE;
 $handler->display->display_options['row_plugin'] = 'calendar_entity';
 $handler->display->display_options['defaults']['row_options'] = FALSE;
 $handler->display->display_options['defaults']['arguments'] = FALSE;
+/* Contextual filter: OG membership: Group ID */
+$handler->display->display_options['arguments']['gid']['id'] = 'gid';
+$handler->display->display_options['arguments']['gid']['table'] = 'og_membership';
+$handler->display->display_options['arguments']['gid']['field'] = 'gid';
+$handler->display->display_options['arguments']['gid']['default_action'] = 'default';
+$handler->display->display_options['arguments']['gid']['default_argument_type'] = 'og_context';
+$handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+$handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+$handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
 /* Contextual filter: Date: Date (node) */
 $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
 $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
@@ -175,11 +216,11 @@ $handler->display->display_options['arguments']['date_argument']['granularity'] 
 $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
   'field_data_field_event_date.field_event_date_value' => 'field_data_field_event_date.field_event_date_value',
 );
-$handler->display->display_options['path'] = 'calendar-node-field-event-date/day';
-$handler->display->display_options['menu']['type'] = 'tab';
+$handler->display->display_options['path'] = 'node/%/calendar/day';
 $handler->display->display_options['menu']['title'] = 'Day';
 $handler->display->display_options['menu']['weight'] = '3';
 $handler->display->display_options['menu']['context'] = 0;
+$handler->display->display_options['menu']['context_only_inline'] = 0;
 
 /* Display: Year */
 $handler = $view->new_display('page', 'Year', 'page');
@@ -228,6 +269,15 @@ $handler->display->display_options['fields']['field_event_date']['settings'] = a
 $handler->display->display_options['fields']['field_event_date']['group_rows'] = FALSE;
 $handler->display->display_options['fields']['field_event_date']['delta_offset'] = '0';
 $handler->display->display_options['defaults']['arguments'] = FALSE;
+/* Contextual filter: OG membership: Group ID */
+$handler->display->display_options['arguments']['gid']['id'] = 'gid';
+$handler->display->display_options['arguments']['gid']['table'] = 'og_membership';
+$handler->display->display_options['arguments']['gid']['field'] = 'gid';
+$handler->display->display_options['arguments']['gid']['default_action'] = 'default';
+$handler->display->display_options['arguments']['gid']['default_argument_type'] = 'og_context';
+$handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+$handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+$handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
 /* Contextual filter: Date: Date (node) */
 $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
 $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
@@ -240,11 +290,11 @@ $handler->display->display_options['arguments']['date_argument']['add_delta'] = 
 $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
   'field_data_field_event_date.field_event_date_value' => 'field_data_field_event_date.field_event_date_value',
 );
-$handler->display->display_options['path'] = 'calendar-node-field-event-date/year';
-$handler->display->display_options['menu']['type'] = 'tab';
+$handler->display->display_options['path'] = 'node/%/calendar/year';
 $handler->display->display_options['menu']['title'] = 'Year';
 $handler->display->display_options['menu']['weight'] = '4';
 $handler->display->display_options['menu']['context'] = 0;
+$handler->display->display_options['menu']['context_only_inline'] = 0;
 
 /* Display: Block */
 $handler = $view->new_display('block', 'Block', 'block_1');

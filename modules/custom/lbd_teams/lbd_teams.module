@@ -60,3 +60,65 @@ function lbd_teams_views_default_views() {
   return $views;
 }
 
+
+/**
+ * render_calendar_switcher 
+ *
+ */
+function render_calendar_switcher()
+{
+  global $language;
+
+  if ($language->language != 'en')
+    $lang = '/' . $language->language;
+  else
+    $lang = '';
+
+  $path = drupal_get_path_alias(current_path());
+    
+  if(stripos($path, "calendar/month")) {
+      $url0 = "Month";
+      $url1 = "Week";
+      $url2 = "Day";
+      $url3 = "Year";
+  }
+
+  if(stripos($path, "calendar/week")) {
+      $url0 = "Week";
+      $url1 = "Month";
+      $url2 = "Day";
+      $url3 = "Year";
+  }
+
+  if(stripos($path, "calendar/day")) {
+      $url0 = "Day";
+      $url1 = "Month";
+      $url2 = "Week";
+      $url3 = "Year";
+  }
+    
+  if(stripos($path, "calendar/year")) {
+      $url0 = "Year";
+      $url1 = "Month";
+      $url2 = "Week";
+      $url3 = "Day";
+  }
+
+  $switchTitle = t('Select view');
+
+  $code = "<p><strong><span style='color:#ff3300;'>$switchTitle</span></strong></p>
+           <form>
+           <select name='URL' onchange='window.location.href=this.form.URL.options[this.form.URL.selectedIndex].value'>
+           <option value='$lang/$path/../$url0'>$url0</option>
+           <option value='$lang/$path/../$url1'>$url1</option>
+           <option value='$lang/$path/../$url2'>$url2</option>
+           <option value='$lang/$path/../$url3'>$url3</option>
+           </select>
+           </form>";
+
+  print($code);
+  return;
+}
+
+
+

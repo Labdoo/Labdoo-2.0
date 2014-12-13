@@ -21,7 +21,7 @@ function lbd_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_event';
-  $strongarm->value = 'edit-diff';
+  $strongarm->value = 'edit-og';
   $export['additional_settings__active_tab_event'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -653,13 +653,13 @@ function lbd_content_types_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'locations' => array(
-          'weight' => '30',
+          'weight' => '3',
         ),
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
         ),
         'path' => array(
-          'weight' => '30',
+          'weight' => '2',
         ),
       ),
       'display' => array(),
