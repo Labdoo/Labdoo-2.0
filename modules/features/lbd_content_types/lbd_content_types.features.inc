@@ -28,7 +28,7 @@ function lbd_content_types_node_info() {
       'help' => '',
     ),
     'event' => array(
-      'name' => t('Event'),
+      'name' => t('Team event'),
       'base' => 'node_content',
       'description' => t('Create a new event (for instance, to set up a laptop sanitation workshop, to get together with your team members, etc.)'),
       'has_title' => '1',
@@ -71,6 +71,14 @@ function lbd_content_types_node_info() {
       'name' => t('Team conversation'),
       'base' => 'node_content',
       'description' => t('Use team conversations to share your ideas or experiences with other Labdoo users within a given team.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'team_task' => array(
+      'name' => t('Team task'),
+      'base' => 'node_content',
+      'description' => t('Define and manage tasks to be carried out (for instance, certain outreaching activity, a reminder to meet up for a laptop sanitation event, etc.)'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

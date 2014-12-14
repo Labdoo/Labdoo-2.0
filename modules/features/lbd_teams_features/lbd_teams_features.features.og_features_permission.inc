@@ -45,6 +45,13 @@ function lbd_teams_features_og_features_default_permissions() {
     ),
   );
 
+  // Exported og permission: 'node:team:create team_task content'
+  $permissions['node:team:create team_task content'] = array(
+    'roles' => array(
+      'member' => 'member',
+    ),
+  );
+
   // Exported og permission: 'node:team:delete any event content'
   $permissions['node:team:delete any event content'] = array(
     'roles' => array(),
@@ -52,6 +59,11 @@ function lbd_teams_features_og_features_default_permissions() {
 
   // Exported og permission: 'node:team:delete any team_page content'
   $permissions['node:team:delete any team_page content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:team:delete any team_task content'
+  $permissions['node:team:delete any team_task content'] = array(
     'roles' => array(),
   );
 
@@ -64,6 +76,13 @@ function lbd_teams_features_og_features_default_permissions() {
 
   // Exported og permission: 'node:team:delete own team_page content'
   $permissions['node:team:delete own team_page content'] = array(
+    'roles' => array(
+      'member' => 'member',
+    ),
+  );
+
+  // Exported og permission: 'node:team:delete own team_task content'
+  $permissions['node:team:delete own team_task content'] = array(
     'roles' => array(
       'member' => 'member',
     ),
@@ -121,6 +140,11 @@ function lbd_teams_features_og_features_default_permissions() {
     'roles' => array(),
   );
 
+  // Exported og permission: 'node:team:update any team_task content'
+  $permissions['node:team:update any team_task content'] = array(
+    'roles' => array(),
+  );
+
   // Exported og permission: 'node:team:update group'
   $permissions['node:team:update group'] = array(
     'roles' => array(
@@ -137,6 +161,13 @@ function lbd_teams_features_og_features_default_permissions() {
 
   // Exported og permission: 'node:team:update own team_page content'
   $permissions['node:team:update own team_page content'] = array(
+    'roles' => array(
+      'member' => 'member',
+    ),
+  );
+
+  // Exported og permission: 'node:team:update own team_task content'
+  $permissions['node:team:update own team_task content'] = array(
     'roles' => array(
       'member' => 'member',
     ),

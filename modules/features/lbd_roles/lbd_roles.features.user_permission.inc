@@ -52,9 +52,7 @@ function lbd_roles_user_default_permissions() {
   // Exported permission: create event content.
   $permissions['create event content'] = array(
     'name' => 'create event content',
-    'roles' => array(
-      0 => 'authenticated user',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -80,6 +78,13 @@ function lbd_roles_user_default_permissions() {
   // Exported permission: create team_page content.
   $permissions['create team_page content'] = array(
     'name' => 'create team_page content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: create team_task content.
+  $permissions['create team_task content'] = array(
+    'name' => 'create team_task content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -116,12 +121,17 @@ function lbd_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: delete any team_task content.
+  $permissions['delete any team_task content'] = array(
+    'name' => 'delete any team_task content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: delete own event content.
   $permissions['delete own event content'] = array(
     'name' => 'delete own event content',
-    'roles' => array(
-      0 => 'authenticated user',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -147,6 +157,13 @@ function lbd_roles_user_default_permissions() {
   // Exported permission: delete own team_page content.
   $permissions['delete own team_page content'] = array(
     'name' => 'delete own team_page content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete own team_task content.
+  $permissions['delete own team_task content'] = array(
+    'name' => 'delete own team_task content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -183,6 +200,13 @@ function lbd_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: edit any team_task content.
+  $permissions['edit any team_task content'] = array(
+    'name' => 'edit any team_task content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: edit mimemail user settings.
   $permissions['edit mimemail user settings'] = array(
     'name' => 'edit mimemail user settings',
@@ -195,9 +219,7 @@ function lbd_roles_user_default_permissions() {
   // Exported permission: edit own event content.
   $permissions['edit own event content'] = array(
     'name' => 'edit own event content',
-    'roles' => array(
-      0 => 'authenticated user',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -223,6 +245,13 @@ function lbd_roles_user_default_permissions() {
   // Exported permission: edit own team_page content.
   $permissions['edit own team_page content'] = array(
     'name' => 'edit own team_page content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit own team_task content.
+  $permissions['edit own team_task content'] = array(
+    'name' => 'edit own team_task content',
     'roles' => array(),
     'module' => 'node',
   );

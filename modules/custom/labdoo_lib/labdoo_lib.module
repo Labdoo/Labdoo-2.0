@@ -1321,7 +1321,7 @@ function labdoo_render_team_actions() {
   $code = "
 <p><a href='$lang/node/add/team-page?og_group_ref=$nodeid'>Start conversation</span></a></p>
 <p><a href='$lang/node/add/event?og_group_ref=$nodeid'>Create event</span></a></p>
-<p><a href='$lang/node/add/event?og_group_ref=$nodeid'>Create task</span></a></p>
+<p><a href='$lang/node/add/team-task?og_group_ref=$nodeid'>Create task</span></a></p>
   ";
 
   return $code;
