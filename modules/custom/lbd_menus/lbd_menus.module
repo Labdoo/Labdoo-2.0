@@ -403,6 +403,29 @@ function make_main_menu() {
           );
   $mlid = menu_link_save($item);
 
+  $item = array(
+            'link_path' => '<separator>',
+            'menu_name' => 'main-menu',
+            'weight' => -28,
+            'customized' => 1,
+            'plid' => $teamsMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'teams-dashboard',
+            'link_title' => t('Search inside teams'),
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -25,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => $teamsMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
   /*
    * Newsletter menu item
    */

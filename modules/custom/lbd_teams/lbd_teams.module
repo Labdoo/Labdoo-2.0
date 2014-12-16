@@ -57,6 +57,10 @@ function lbd_teams_views_default_views() {
   include 'lbd_teams_views_calendar.inc';
   $views[$view->name] = $view;
 
+  // Team dashboard
+  include 'lbd_teams_views_dashboard.inc';
+  $views[$view->name] = $view;
+
   return $views;
 }
 
