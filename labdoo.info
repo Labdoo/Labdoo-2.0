@@ -1,5 +1,5 @@
 name = Labdoo
-description = Drupal installation profile for Labdoo.
+description = Installation profile for Labdoo.
 version = 1.x
 core = 7.x
 exclusive = TRUE
@@ -7,12 +7,14 @@ exclusive = TRUE
 ;--------------------
 ; Files
 ;--------------------
+
 files[] = labdoo.install
 files[] = labdoo.profile
 
 ;--------------------
 ; Core
 ;--------------------
+
 dependencies[] = contact
 dependencies[] = blog
 dependencies[] = menu
@@ -79,8 +81,10 @@ dependencies[] = simplenews
 dependencies[] = variable
 dependencies[] = lang_dropdown 
 dependencies[] = logintoboggan 
+dependencies[] = special_menu_items 
+dependencies[] = computed_field 
 
-;;; Features
+;;; Features and exports/imports
 dependencies[] = strongarm
 dependencies[] = features
 dependencies[] = fe_block
@@ -96,10 +100,7 @@ dependencies[] = user_restrictions
 dependencies[] = boost
 ;dependencies[] = memcache
 
-;--------------------
-; Translations
-;--------------------
-
+;;; Translations
 dependencies[] = l10n_update
 dependencies[] = i18n 
 dependencies[] = i18n_block 
@@ -115,14 +116,22 @@ dependencies[] = i18n_field
 dependencies[] = i18nviews
 dependencies[] = transliteration
 
-
-;--------------------
-; Sending Emails
-;--------------------
-
+;;; Emails and messaging
 dependencies[] = mailsystem
 dependencies[] = phpmailer
 dependencies[] = mimemail
 dependencies[] = mimemail_action
 dependencies[] = mimemail_compress
 dependencies[] = smtp
+
+;;; Labdoo teams
+dependencies[] = og
+dependencies[] = og_ui
+dependencies[] = og_context 
+dependencies[] = og_register 
+dependencies[] = stringoverrides 
+dependencies[] = stringoverrides_migrate 
+dependencies[] = eva 
+dependencies[] = entityreference_prepopulate 
+dependencies[] = calendar
+

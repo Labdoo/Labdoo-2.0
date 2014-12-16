@@ -1,8 +1,8 @@
 <?php
 
 /*
- * This rule redirects an edoovillage's node to
- * its own dashboard
+ * This rule redirects edoovillage and hub nodes to
+ * their own dashboard
  * Note: to refresh rules, you need to run cron
  */
 function labdoo_lib_default_rules_configuration() {

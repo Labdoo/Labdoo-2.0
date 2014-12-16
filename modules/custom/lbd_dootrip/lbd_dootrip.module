@@ -128,3 +128,61 @@ function lbd_dootrip_node_update($node) {
   return;
 }
 
+
+/**
+ * _calculate_dootrip_weight
+ *
+ * @param node $node
+ *   A dootrip node
+ * @return A message indicating the weight of all the doojects associated with the dootrip
+ *
+ */
+function _calculate_dootrip_weight($node) {
+  $weight = 0;
+  $suffix = "";
+  $prefix = "";
+
+  $wNode = entity_metadata_wrapper('node', $node);
+  $doojectsList = $wNode->field_laptops->value();
+  if(!$doojectsList) {
+    return t("No doojects linked to this dootrip yet");
+  }
+
+  foreach($doojectsList as $doojectNode) {
+    $doojectLoaded = node_load($doojectNode->nid);
+    $wDoojectLoaded = entity_metadata_wrapper('node', $doojectLoaded);
+    $doojectWeight = $wDoojectLoaded->field_dooject_weight->value();
+    if(!$doojectWeight) {
+      $suffix = t("More than ");
+      $prefix = t(" (Please update the weight field in all the doojects for an accurate weight estimation)");
+      continue;
+    }
+    $weight = $weight + $doojectWeight;
+  }
+
+  if($weight == 0) 
+    return t("Please update the weight of each individual dooject");
+  else
+    return t($suffix . $weight . " Kgms" . $prefix);
+  return $weight;
+}
+
+
+/*
+ * Implementation of hook_node_view
+ *
+ */
+function lbd_dootrip_node_view($node, $view_mode) {
+
+  // The field 'field_dootrip_weight' is a computed type field
+  // that depends on values from other nodes' fields. Due to a limitation
+  // of the computed_field module, this type of depencies don't get
+  // correctly updated. To force an update, we clean the field cache 
+  // Note: instead of cleaning the cache (which slows performance), we opt
+  // for just resaving this node, which effectively forces the update.
+  if($node->type == 'dootrip') 
+    node_save($node);
+//    field_cache_clear();
+  return;
+}
+

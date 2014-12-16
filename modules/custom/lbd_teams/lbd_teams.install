@@ -1,0 +1,153 @@
+<?php
+
+/**
+ * @file
+ * Installation file for the Labdoo Teams module
+ *
+ * @ingroup labdooteam 
+ */
+
+define("WELCOME_MESSAGE_COFFEE_TEAM", 
+"
+<strong>About the Labdoo Coffee Shop Team</strong>
+
+The intended topic of this team is to be a general forum so that Labdooers can share ideas and experiences with each other.
+
+Here are a set of general guidelines to follow when participating in the Coffee Shop Team:
+
+<ul> 
+<li>
+This team is open to any Labdoo user. To join, go to www.labdoo.org/teams and select to join this team.
+</li>
+<li>
+Please when exchanging your thoughts, be respectful with other Labdoo users. Remember that your comments can be read by many people.
+</li>
+<li>
+If you are in doubt on whether a certain topic can be of interest to this team, please check first the description of each team at www.labdoo.org/teams and make sure you pick the right place for your topic.
+</li>
+<li>
+Remember that in each team, you will be able to create forum conversations, tasks, and events, depending on your user roles. If you go to each team wall, on your right side you will find a list of actions that you can do within that team.
+</li>
+</ul>
+");
+
+define("WELCOME_MESSAGE_GLOBAL_TEAM", 
+"
+<strong>About the Labdoo Global Team</strong>
+
+The intended topic of this team is to be a general forum so that Labdooers can make global announcements and discuss topics that are of interest to the global Labdoo community. 
+
+Here are a set of general guidelines to follow when participating in the Coffee Shop Team:
+
+<ul> 
+<li>
+This team is open to any Labdoo user. To join, go to www.labdoo.org/teams and select to join this team.
+</li>
+<li>
+Please when exchanging your thoughts, be respectful with other Labdoo users. Remember that your comments can be read by many people.
+</li>
+<li>
+If you are in doubt on whether a certain topic can be of interest to this team, please check first the description of each team at www.labdoo.org/teams and make sure you pick the right place for your topic.
+</li>
+<li>
+Remember that in each team, you will be able to create forum conversations, tasks, and events, depending on your user roles. If you go to each team wall, on your right side you will find a list of actions that you can do within that team.
+</li>
+</ul>
+");
+
+
+
+/**
+ *
+ * Creates the Labdoo teams 
+ */
+function _create_lbd_teams()
+{
+
+  // Coffee shop team 
+  $bodyText = t("Discuss in the coffee shop your ideas and share your experiences with other Labdooers.");
+  $welcomeMessage = WELCOME_MESSAGE_COFFEE_TEAM;
+
+  $node = new stdClass();
+  $node->type = 'team';
+  node_object_prepare($node);
+  
+  $node->title = "Coffee Shop";
+  $node->language = LANGUAGE_NONE;
+
+  $node->body[$node->language][0]['value']   = $bodyText;
+  $node->body[$node->language][0]['summary'] = '';
+  $node->body[$node->language][0]['format']  = 'filtered_html';
+
+  $node->field_welcome_message[$node->language][0]['value']   = $welcomeMessage;
+  $node->field_welcome_message[$node->language][0]['summary'] = '';
+  $node->field_welcome_message[$node->language][0]['format']  = 'filtered_html';
+  
+  $node->path = array('alias' => "content/team-coffee-shop");
+
+  node_save($node);
+
+  // Global team 
+  $bodyText = t("Make global announcements and discuss topics that are of interest to the global Labdoo community.");
+  $welcomeMessage = WELCOME_MESSAGE_GLOBAL_TEAM;
+
+  $node = new stdClass();
+  $node->type = 'team';
+  node_object_prepare($node);
+  
+  $node->title = "Labdoo Global";
+  $node->language = LANGUAGE_NONE;
+
+  $node->body[$node->language][0]['value']   = $bodyText;
+  $node->body[$node->language][0]['summary'] = '';
+  $node->body[$node->language][0]['format']  = 'filtered_html';
+
+  $node->field_welcome_message[$node->language][0]['value']   = $welcomeMessage;
+  $node->field_welcome_message[$node->language][0]['summary'] = '';
+  $node->field_welcome_message[$node->language][0]['format']  = 'filtered_html';
+  
+  $node->path = array('alias' => "content/team-labdoo-global");
+
+  node_save($node);
+
+  return;
+}
+
+
+/**
+ * Deletes the Labdoo teams
+ *
+ */
+function _delete_lbd_teams()
+{
+  $path = drupal_lookup_path("source", "content/team-coffee-shop"); 
+  $node = menu_get_object("node", 1, $path);
+  node_delete($node->nid);
+
+  $path = drupal_lookup_path("source", "content/team-labdoo-global"); 
+  $node = menu_get_object("node", 1, $path);
+  node_delete($node->nid);
+
+  return;
+}
+
+
+/**
+ * Implements hook_enable
+ *
+ */
+function lbd_teams_enable()
+{
+  _create_lbd_teams(); 
+}
+
+
+/**
+ * Implements hook_disable
+ *
+ */
+function lbd_teams_disable()
+{
+  _delete_lbd_teams();
+}
+

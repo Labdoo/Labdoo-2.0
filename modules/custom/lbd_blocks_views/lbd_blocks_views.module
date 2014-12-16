@@ -155,14 +155,24 @@ function lbd_blocks_views_block_info() {
     'region' => "content",
   );
 
-  // Macro statistics block
-  $blocks['block_macro_statistics'] = array(
-    'info' => "Macro statistics block",
+  // Macro statistics block (vertical)
+  $blocks['block_macro_statistics_vertical'] = array(
+    'info' => "Macro statistics block (vertical)",
     'status' => 1,
     'visibility' => BLOCK_VISIBILITY_PHP,
     'weight' => -100,
     'pages' => "<?php return labdoo_block_filter_sidebar_second(); ?>",
     'region' => "sidebar_second",
+  );
+
+  // Macro statistics block (horizontal)
+  $blocks['block_macro_statistics_horiz'] = array(
+    'info' => "Macro statistics block (horizontal)",
+    'status' => 1,
+    'visibility' => BLOCK_VISIBILITY_PHP,
+    'weight' => -100,
+    'pages' => "<?php return labdoo_block_filter_header(); ?>",
+    'region' => "header",
   );
 
   // Block linking to the language switcher dropdown block
@@ -182,6 +192,26 @@ function lbd_blocks_views_block_info() {
     'visibility' => BLOCK_VISIBILITY_PHP,
     'weight' => -60,
     'pages' => "<?php return labdoo_block_filter_sidebar_second(); ?>",
+    'region' => "sidebar_second",
+  );
+
+  // Block linking to the team's content block
+  $blocks['block_link_team_content'] = array(
+    'info' => "Team content (link to the team content block)",
+    'status' => 1,
+    'visibility' => BLOCK_VISIBILITY_NOTLISTED,
+    'weight' => 10,
+    'pages' => "",  // Page visibility gets handled by the block itself
+    'region' => "sidebar_second",
+  );
+
+  // Block linking to the team's content block
+  $blocks['block_team_actions'] = array(
+    'info' => "Team actions",
+    'status' => 1,
+    'visibility' => BLOCK_VISIBILITY_PHP,
+    'weight' => 0,
+    'pages' => "<?php return labdoo_block_filter_team_actions(); ?>",
     'region' => "sidebar_second",
   );
 
@@ -237,12 +267,21 @@ function lbd_blocks_views_block_view($delta = '') {
       );
       break;
 
-    // Macro statistics 
-    case 'block_macro_statistics':
+    // Macro statistics (vertical) 
+    case 'block_macro_statistics_vertical':
       $block['subject'] = "<none>";
       $block['title'] = t("Global progress");
       $block['content'] = array(
-             '#markup' => labdoo_render_macro_stats(),
+             '#markup' => labdoo_render_macro_stats("vertical"),
+      );
+      break;
+
+    // Macro statistics (horizontal)
+    case 'block_macro_statistics_horiz':
+      $block['subject'] = "<none>";
+//      $block['title'] = t("Global progress");
+      $block['content'] = array(
+             '#markup' => labdoo_render_macro_stats("horizontal"),
       );
       break;
 
@@ -259,6 +298,21 @@ function lbd_blocks_views_block_view($delta = '') {
       $block['subject'] = "<none>";
       $block['title'] = t("Current mini-missions");
       $block['content'] = drupal_render($blockActions["content"]);
+      break;
+
+    // Team content 
+    case 'block_link_team_content':
+      $blockTeamContent = module_invoke('views', 'block_view', 'team_content-block_1');
+      $block['subject'] = "<none>";
+      $block['title'] = t("Team's latest activities");
+      $block['content'] = drupal_render($blockTeamContent["content"]);
+      break;
+
+    // Team actions 
+    case 'block_team_actions':
+      $block['subject'] = "<none>";
+      $block['title'] = t("Available actions");
+      $block['content'] = labdoo_render_team_actions();
       break;
 
   }

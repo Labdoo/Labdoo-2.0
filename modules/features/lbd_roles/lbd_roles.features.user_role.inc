@@ -34,5 +34,11 @@ function lbd_roles_user_default_roles() {
     'weight' => '6',
   );
 
+  // Exported role: team manager.
+  $roles['team manager'] = array(
+    'name' => 'team manager',
+    'weight' => '7',
+  );
+
   return $roles;
 }

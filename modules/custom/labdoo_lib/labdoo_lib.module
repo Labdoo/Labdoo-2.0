@@ -1178,10 +1178,11 @@ function labdoo_lib_print_array($array, $prefix = "") {
 /**
  * Renders the macro statistics 
  *
+ * @param string $type Type of rendering, can be "horizontal" or "vertical"
  * @return Code rendering the macro statistics
  *
  */
-function labdoo_render_macro_stats() {
+function labdoo_render_macro_stats($type) {
   $numLaptopsNeeded = labdoo_get_demand(NULL, NULL, FALSE); 
   $numLaptopsDelivered = labdoo_getnum_doojects(NULL, NULL, 'S4');
   $numLaptopsTransit = labdoo_getnum_doojects(NULL, NULL, 'T1') + labdoo_getnum_doojects(NULL, NULL, 'S3'); 
@@ -1191,23 +1192,33 @@ function labdoo_render_macro_stats() {
   $numStudents = lbd_get_total_num_objects('student');
   $numCountries = lbd_get_total_num_objects('country');;
 
+  if($type == "vertical") {
+    $separator = "<br>";
+    $trailer = "<br>";
+  }
+  else {
+    $separator = "&nbsp; &nbsp;";
+    $trailer ="<br><br>";
+  }
+
   $code = "
 <span style=\"font-size: 24px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsTagged</span>
-<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Doojects tagged') . "</span><br>
+<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Doojects tagged') . "</span>$separator
 <span style=\"font-size: 24px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsTransit</span>
-<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Doojects in transit') . "</span><br>
+<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Doojects in transit') . "</span>$separator
 <span style=\"font-size: 24px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsDelivered</span>
-<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Doojects delivered') . "</span><br>
+<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Doojects delivered') . "</span>$separator
 <span style=\"font-size: 24px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsNeeded</span>
-<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Doojects needed') . "</span><br>
+<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Doojects needed') . "</span>$separator
 <span style=\"font-size: 24px; align: left; line-height: 30px; color: #ff0000\">$numHubs</span>
-<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Hubs') . "</span><br>
+<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Hubs') . "</span>$separator
 <span style=\"font-size: 24px; align: left; line-height: 30px; color: #ff0000\">$numEdoovillages</span>
-<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Edoovillages') . "</span><br>
+<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Edoovillages') . "</span>$separator
 <span style=\"font-size: 24px; align: left; line-height: 30px; color: #ff0000\">$numStudents</span>
-<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Students') . "</span><br>
+<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Students') . "</span>$separator
 <span style=\"font-size: 24px; align: left; line-height: 30px; color: #ff0000\">$numCountries</span>
-<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Countries') . "</span><br>
+<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Countries') . "</span>$separator
+$trailer
   ";
 
   return $code;
@@ -1251,19 +1262,92 @@ function labdoo_lib_user_presave(&$edit, &$account, $category) {
  */
 function labdoo_block_filter_sidebar_second() {
   $path = drupal_get_path_alias(current_path());
-  if(strpos($path, "content/tag-one-dooject") !== FALSE)
-      return FALSE;
-  if(strpos($path, "content/follow-dooject") !== FALSE)
-      return FALSE;
-  if(strpos($path, "user/login") !== FALSE)
-      return FALSE;
-  $views_page = views_get_page_view();
-  if (is_object($views_page)) {
-    if($views_page->name == "GlobalInventory")
-      return FALSE; 
-    if($views_page->name == "labdooers")
-      return FALSE; 
-  } 
+
+  if(strcmp($path, "actions") == 0)
+      return TRUE;
+
+  if(strcmp($path, "myActions") == 0)
+      return TRUE;
+
+  if(strcmp($path, "teams") == 0)
+      return TRUE;
+
+  return FALSE;
+}
+
+
+/**
+ * Implements the visibility filter for the blocks in the header region
+ *
+ * @return TRUE if the block is to be displayed, FALSE otherwise
+ *
+ */
+function labdoo_block_filter_header() {
+  $path = drupal_get_path_alias(current_path());
+
+  if(strcmp($path, "content/dootrips-dashboard") == 0)
+      return TRUE;
+
+  if(strcmp($path, "content/edoovillages-dashboard") == 0)
+      return TRUE;
+
+  if(strcmp($path, "content/hubs-dashboard") == 0)
+      return TRUE;
+
+  if(strcmp($path, "content/doojects-dashboard") == 0)
+      return TRUE;
+
+  return FALSE;
+}
+
+
+/**
+ * Renders the team actions block 
+ *
+ * @return Code rendering the team actions block
+ *
+ */
+function labdoo_render_team_actions() {
+  global $language;
+
+  // We know that this is a team page, get its node ID
+  $nodeid = arg(1);
+
+  if ($language->language != 'en')
+    $lang = '/' . $language->language;
+  else
+    $lang = '';
+
+  $code = "
+<p><a href='$lang/node/add/team-page?og_group_ref=$nodeid'>Start conversation</span></a></p>
+<p><a href='$lang/node/add/event?og_group_ref=$nodeid'>Create event</span></a></p>
+<p><a href='$lang/node/add/team-task?og_group_ref=$nodeid'>Create task</span></a></p>
+  ";
+
+  return $code;
+}
+
+
+/**
+ * Implements the visibility filter of the team actions block 
+ *
+ * @return TRUE if the block is to be displayed, FALSE otherwise
+ *
+ */
+function labdoo_block_filter_team_actions() {
+  global $user;
+
+  if (arg(0) != 'node' || !is_numeric(arg(1))) 
+    return FALSE;
+
+  $nodeid = arg(1);
+  $node = node_load($nodeid);
+  if($node->type != "team") 
+    return FALSE;
+
+  if(!og_is_member('node', $nodeid))
+    return FALSE;
+
   return TRUE;
 }
 

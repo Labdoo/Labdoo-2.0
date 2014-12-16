@@ -83,19 +83,6 @@ function make_main_menu() {
   $mlid = menu_link_save($item);
 
   $item = array(
-            'link_path' => 'labdooers',
-            'link_title' => 'Labdooers',
-            'menu_name' => 'main-menu',
-            'expanded' => TRUE,
-            'weight' => -35,
-            'language' => 'en',
-            'customized' => 1,
-            'plid' => $exploreMlid,
-            'module' => 'menu',
-          );
-  $mlid = menu_link_save($item);
-
-  $item = array(
             'link_path' => 'newsletters',
             'link_title' => 'Newsletters',
             'menu_name' => 'main-menu',
@@ -104,6 +91,29 @@ function make_main_menu() {
             'language' => 'en',
             'customized' => 1,
             'plid' => $exploreMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => '<separator>',
+            'menu_name' => 'main-menu',
+            'weight' => -28,
+            'customized' => 1,
+            'plid' => $exploreMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'labdooers',
+            'link_title' => 'Labdooers',
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -25,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => $exploreMlid,
             'module' => 'menu',
           );
   $mlid = menu_link_save($item);
@@ -143,6 +153,16 @@ function make_main_menu() {
             'menu_name' => 'main-menu',
             'weight' => -50,
             'language' => 'en',
+            'customized' => 1,
+            'plid' => $doojectMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => '<separator>',
+            'menu_name' => 'main-menu',
+            'weight' => -48,
             'customized' => 1,
             'plid' => $doojectMlid, 
             'module' => 'menu',
@@ -190,6 +210,17 @@ function make_main_menu() {
           );
   $mlid = menu_link_save($item);
 
+  $item = array(
+            'link_path' => '<separator>',
+            'menu_name' => 'main-menu',
+            'weight' => -48,
+            'customized' => 1,
+            'plid' => $edoovillageMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+
   /*
    * Hubs menu item
    */
@@ -231,6 +262,17 @@ function make_main_menu() {
           );
   $mlid = menu_link_save($item);
 
+  $item = array(
+            'link_path' => '<separator>',
+            'menu_name' => 'main-menu',
+            'weight' => -48,
+            'customized' => 1,
+            'plid' => $hubMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+
   /*
    * Dootrips menu item
    */
@@ -268,6 +310,95 @@ function make_main_menu() {
             'language' => 'en',
             'customized' => 1,
             'plid' => $dootripMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => '<separator>',
+            'menu_name' => 'main-menu',
+            'weight' => -48,
+            'customized' => 1,
+            'plid' => $dootripMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+
+  /*
+   * Teams menu item
+   */
+  $item = array(
+            'link_path' => 'teams',
+            'link_title' => t('Teams'),
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -15,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => 0, 
+            'module' => 'menu',
+          );
+  $teamsMlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'teams',
+            'link_title' => t('List all teams'),
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -50,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => $teamsMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => '<separator>',
+            'menu_name' => 'main-menu',
+            'weight' => -38,
+            'customized' => 1,
+            'plid' => $teamsMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'teams-activities',
+            'link_title' => t('Wall - all teams'),
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -40,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => $teamsMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'my-teams',
+            'link_title' => t('List my teams'),
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -35,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => $teamsMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'my-teams-activities',
+            'link_title' => t('Wall - my teams'),
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -30,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => $teamsMlid, 
             'module' => 'menu',
           );
   $mlid = menu_link_save($item);

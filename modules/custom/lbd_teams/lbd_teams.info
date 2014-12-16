@@ -1,0 +1,11 @@
+name = Labdoo Teams 
+description = Implements Labdoo Teams 
+core = 7.x
+package = Labdoo 
+dependencies[] = og 
+dependencies[] = og_ui 
+dependencies[] = og_context 
+dependencies[] = og_register 
+dependencies[] = stringoverrides 
+dependencies[] = stringoverrides_migrate 
+dependencies[] = eva 
