@@ -121,4 +121,25 @@ function render_calendar_switcher()
 }
 
 
+/**
+ * Implementation of hook_node_validate 
+ */
+function lbd_teams_node_validate($node, $form, &$form_state) {
 
+  if ($node->type == 'team_task') {
+    $items = field_get_items('node', $node, 'field_task_assigned_to');
+    $userId = $items[0]['target_id'];
+    if(!$userId)
+      return; // Let the general validation routine take care of this 
+    $items = field_get_items('node', $node, 'og_group_ref');
+    $groupId = $items[0]['target_id'];
+    if(!$groupId)
+      return; // Let the general validation routine take care of this 
+    $userNode = user_load($userId);
+    if (!og_is_member('node', $groupId, 'user', $userNode)) {
+      form_set_error('field_task_assigned_to', t("Please ensure that the user assigned to this task is a member of the task's team"));
+    }
+  }
+
+  return;
+}

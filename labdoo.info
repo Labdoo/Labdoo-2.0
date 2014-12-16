@@ -129,7 +129,6 @@ dependencies[] = og
 dependencies[] = og_ui
 dependencies[] = og_context 
 dependencies[] = og_register 
-dependencies[] = og_extras 
 dependencies[] = stringoverrides 
 dependencies[] = stringoverrides_migrate 
 dependencies[] = eva 

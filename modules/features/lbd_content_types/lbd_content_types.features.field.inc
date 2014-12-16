@@ -2299,11 +2299,11 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'hidden',
+          'label' => 'above',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '4',
+          'weight' => '5',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -2332,7 +2332,97 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '7',
+        'weight' => '8',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-team_task-field_task_assigned_to'.
+  $fields['node-team_task-field_task_assigned_to'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_task_assigned_to',
+      'foreign keys' => array(
+        'users' => array(
+          'columns' => array(
+            'target_id' => 'uid',
+          ),
+          'table' => 'users',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(),
+        ),
+        'target_type' => 'user',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'team_task',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'inline',
+          'module' => 'entityreference',
+          'settings' => array(
+            'link' => 1,
+          ),
+          'type' => 'entityreference_label',
+          'weight' => '1',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_task_assigned_to',
+      'label' => 'Assigned to',
+      'required' => 1,
+      'settings' => array(
+        'behaviors' => array(
+          'prepopulate' => array(
+            'status' => 0,
+          ),
+        ),
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'size' => '60',
+        ),
+        'type' => 'entityreference_autocomplete',
+        'weight' => '2',
       ),
     ),
   );
@@ -2366,16 +2456,20 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
     ),
     'field_instance' => array(
       'bundle' => 'team_task',
-      'default_value' => NULL,
+      'default_value' => array(
+        0 => array(
+          'value' => 'normal',
+        ),
+      ),
       'deleted' => '0',
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'inline',
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => '3',
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -2396,7 +2490,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '4',
+        'weight' => '5',
       ),
     ),
   );
@@ -2432,16 +2526,20 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
     ),
     'field_instance' => array(
       'bundle' => 'team_task',
-      'default_value' => NULL,
+      'default_value' => array(
+        0 => array(
+          'value' => 'open',
+        ),
+      ),
       'deleted' => '0',
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'inline',
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => '2',
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -2462,7 +2560,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '3',
+        'weight' => '4',
       ),
     ),
   );
@@ -2503,11 +2601,11 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'inline',
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => '1',
+          'weight' => '2',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -2528,7 +2626,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '2',
+        'weight' => '3',
       ),
     ),
   );
@@ -2657,6 +2755,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Assigned to');
   t('Body');
   t('Comment');
   t('Conversation');
