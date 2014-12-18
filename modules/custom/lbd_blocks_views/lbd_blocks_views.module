@@ -205,7 +205,7 @@ function lbd_blocks_views_block_info() {
     'region' => "sidebar_second",
   );
 
-  // Block linking to the team's content block
+  // Block linking to the team's actions block
   $blocks['block_team_actions'] = array(
     'info' => "Team actions",
     'status' => 1,
@@ -311,7 +311,7 @@ function lbd_blocks_views_block_view($delta = '') {
     // Team actions 
     case 'block_team_actions':
       $block['subject'] = "<none>";
-      $block['title'] = t("Available actions");
+//      $block['title'] = t("Available actions");
       $block['content'] = labdoo_render_team_actions();
       break;
 

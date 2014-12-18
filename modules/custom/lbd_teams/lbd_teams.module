@@ -147,3 +147,79 @@ function lbd_teams_node_validate($node, $form, &$form_state) {
 
   return;
 }
+
+
+/**
+ * Renders the team actions block 
+ *
+ * @return Code rendering the team actions block
+ *
+ */
+function labdoo_render_team_actions() {
+  global $language;
+
+  // There are two ways to get the group ID
+  if(!empty($_GET['og_group_ref'])) { 
+    $nodeid = $_GET['og_group_ref'];
+  }
+  else {
+    if (arg(0) != 'node' || !is_numeric(arg(1))) 
+      return "";
+    $nodeid = arg(1);
+    $node = node_load($nodeid);
+    if($node->type != "team") 
+      return "";
+  }
+
+  if ($language->language != 'en')
+    $lang = '/' . $language->language;
+  else
+    $lang = '';
+
+  $homePath = $lang . "/" . drupal_get_path_alias("node/$nodeid");
+
+  $code = "
+<p><strong><span style='color:#009900; font-size:16px;'>Team " . lbd_nodeid2title($nodeid) . "</span></strong></p>
+<img src='/profiles/labdoo/files/pictures/home.png' style='width: 20px; height: 21px;'/>&nbsp;
+<a href='$homePath'>" . t("Team's home page") . "</span></a></p>
+<img src='/profiles/labdoo/files/pictures/conversation.png' style='width: 20px; height: 21px;'/>&nbsp;
+<a href='$lang/node/add/team-page?og_group_ref=$nodeid'>" . t("Start conversation") . "</span></a></p>
+<img src='/profiles/labdoo/files/pictures/community.png' style='width: 20px; height: 21px;'/>&nbsp;
+<a href='$lang/node/add/event?og_group_ref=$nodeid'>" . t("Start event") . "</span></a></p>
+<img src='/profiles/labdoo/files/pictures/check.png' style='width: 20px; height: 21px;'/>&nbsp;
+<a href='$lang/node/add/team-task?og_group_ref=$nodeid'>" . t("Start task") . "</span></a></p>
+<img src='/profiles/labdoo/files/pictures/calendar_icon.png' style='width: 20px; height: 21px;'/>&nbsp;
+<a href='$lang/node/$nodeid/calendar/month'>" . t("View calendar") . "</span></a></p>
+<br>
+  ";
+
+  return $code;
+}
+
+
+/**
+ * Implements the visibility filter of the team actions block 
+ *
+ * @return TRUE if the block is to be displayed, FALSE otherwise
+ *
+ */
+function labdoo_block_filter_team_actions() {
+  global $user;
+
+  if(!empty($_GET['og_group_ref'])) 
+    $nodeid = $_GET['og_group_ref'];
+  else {
+    if (arg(0) != 'node' || !is_numeric(arg(1))) 
+      return FALSE;
+    $nodeid = arg(1);
+    $node = node_load($nodeid);
+    if($node->type != "team") 
+      return FALSE;
+  }
+
+  if(!og_is_member('node', $nodeid))
+    return FALSE;
+
+  return TRUE;
+}
+
