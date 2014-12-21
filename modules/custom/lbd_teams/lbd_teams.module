@@ -45,11 +45,15 @@ function lbd_teams_views_default_views() {
   include 'lbd_teams_views_user_teams.inc';
   $views[$view->name] = $view;
 
-  // Team content
-  include 'lbd_teams_views_content_block.inc';
+  // Team content in a block
+  include 'lbd_teams_views_team_content_block.inc';
   $views[$view->name] = $view;
 
-  // All user's team content
+  // Team content in a page 
+  include 'lbd_teams_views_team_content_page.inc';
+  $views[$view->name] = $view;
+
+  // All teams content in a page
   include 'lbd_teams_views_content_page.inc';
   $views[$view->name] = $view;
 
@@ -184,10 +188,12 @@ function labdoo_render_team_actions() {
 <a href='$homePath'>" . t("Team's home page") . "</span></a></p>
 <img src='/profiles/labdoo/files/pictures/conversation.png' style='width: 20px; height: 21px;'/>&nbsp;
 <a href='$lang/node/add/team-page?og_group_ref=$nodeid'>" . t("Start conversation") . "</span></a></p>
-<img src='/profiles/labdoo/files/pictures/community.png' style='width: 20px; height: 21px;'/>&nbsp;
-<a href='$lang/node/add/event?og_group_ref=$nodeid'>" . t("Start event") . "</span></a></p>
 <img src='/profiles/labdoo/files/pictures/check.png' style='width: 20px; height: 21px;'/>&nbsp;
 <a href='$lang/node/add/team-task?og_group_ref=$nodeid'>" . t("Start task") . "</span></a></p>
+<img src='/profiles/labdoo/files/pictures/community.png' style='width: 20px; height: 21px;'/>&nbsp;
+<a href='$lang/node/add/event?og_group_ref=$nodeid'>" . t("Start event") . "</span></a></p>
+<img src='/profiles/labdoo/files/pictures/wall.png' style='width: 20px; height: 21px;'/>&nbsp;
+<a href='$lang/node/$nodeid/activities'>" . t("View wall") . "</span></a></p>
 <img src='/profiles/labdoo/files/pictures/calendar_icon.png' style='width: 20px; height: 21px;'/>&nbsp;
 <a href='$lang/node/$nodeid/calendar/month'>" . t("View calendar") . "</span></a></p>
 <br>

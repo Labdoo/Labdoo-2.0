@@ -119,7 +119,6 @@ $handler->display->display_options['arguments']['date_argument']['date_fields'] 
   'field_data_field_event_date.field_event_date_value' => 'field_data_field_event_date.field_event_date_value',
 );
 $handler->display->display_options['path'] = 'node/%/calendar/month';
-$handler->display->display_options['menu']['type'] = 'tab';
 $handler->display->display_options['menu']['title'] = 'Calendar';
 $handler->display->display_options['menu']['weight'] = '0';
 $handler->display->display_options['menu']['context'] = 0;

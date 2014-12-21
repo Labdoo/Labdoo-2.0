@@ -1,11 +1,11 @@
 <?php
 
 $view = new view();
-$view->name = 'team_content';
-$view->description = 'Show teams content as blocks';
+$view->name = 'og_nodes';
+$view->description = 'Show all content (nodes) of a team';
 $view->tag = 'Teams (OG)';
 $view->base_table = 'node';
-$view->human_name = 'Team Block Content';
+$view->human_name = 'Team content';
 $view->core = 0;
 $view->api_version = '3.0';
 $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -25,7 +25,7 @@ $handler->display->display_options['row_plugin'] = 'node';
 $handler->display->display_options['empty']['area']['id'] = 'area';
 $handler->display->display_options['empty']['area']['table'] = 'views';
 $handler->display->display_options['empty']['area']['field'] = 'area';
-$handler->display->display_options['empty']['area']['content'] = 'There is no content in this group.';
+$handler->display->display_options['empty']['area']['content'] = 'There is no content in this team.';
 /* Relationship: OG membership: OG membership from Node */
 $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
 $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
@@ -61,19 +61,7 @@ $handler->display->display_options['filters']['group_type']['value'] = array(
   'node' => 'node',
 );
 
-/* Display: Block */
-$handler = $view->new_display('block', 'Block', 'block_1');
-$handler->display->display_options['defaults']['arguments'] = FALSE;
-/* Contextual filter: OG membership: Group ID */
-$handler->display->display_options['arguments']['gid']['id'] = 'gid';
-$handler->display->display_options['arguments']['gid']['table'] = 'og_membership';
-$handler->display->display_options['arguments']['gid']['field'] = 'gid';
-$handler->display->display_options['arguments']['gid']['relationship'] = 'og_membership_rel';
-$handler->display->display_options['arguments']['gid']['default_action'] = 'default';
-$handler->display->display_options['arguments']['gid']['default_argument_type'] = 'node';
-$handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
-$handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
-$handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
-$handler->display->display_options['arguments']['gid']['specify_validation'] = TRUE;
-$handler->display->display_options['arguments']['gid']['validate']['type'] = 'og';
+/* Display: Page */
+$handler = $view->new_display('page', 'Page', 'page_1');
+$handler->display->display_options['path'] = 'node/%/activities';
 
