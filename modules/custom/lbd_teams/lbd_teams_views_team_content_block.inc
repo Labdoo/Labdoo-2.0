@@ -25,7 +25,7 @@ $handler->display->display_options['row_plugin'] = 'node';
 $handler->display->display_options['empty']['area']['id'] = 'area';
 $handler->display->display_options['empty']['area']['table'] = 'views';
 $handler->display->display_options['empty']['area']['field'] = 'area';
-$handler->display->display_options['empty']['area']['content'] = 'There is no content in this group.';
+$handler->display->display_options['empty']['area']['content'] = 'There is no content in this team.';
 /* Relationship: OG membership: OG membership from Node */
 $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
 $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';

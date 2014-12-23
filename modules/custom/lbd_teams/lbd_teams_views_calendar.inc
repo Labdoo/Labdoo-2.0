@@ -82,8 +82,6 @@ $handler->display->display_options['filters']['status']['expose']['operator'] = 
 $handler = $view->new_display('page', 'Month', 'page_1');
 $handler->display->display_options['defaults']['pager'] = FALSE;
 $handler->display->display_options['pager']['type'] = 'date_views_pager';
-$handler->display->display_options['pager']['options']['date_id'] = 'month';
-$handler->display->display_options['pager']['options']['link_format'] = 'clean';
 $handler->display->display_options['defaults']['style_plugin'] = FALSE;
 $handler->display->display_options['style_plugin'] = 'calendar_style';
 $handler->display->display_options['style_options']['name_size'] = '3';
@@ -96,6 +94,28 @@ $handler->display->display_options['defaults']['style_options'] = FALSE;
 $handler->display->display_options['defaults']['row_plugin'] = FALSE;
 $handler->display->display_options['row_plugin'] = 'calendar_entity';
 $handler->display->display_options['row_options']['colors']['legend'] = 'type';
+$handler->display->display_options['row_options']['colors']['calendar_colors_type'] = array(
+  'action' => '#ffffff',
+  'article' => '#ffffff',
+  'page' => '#ffffff',
+  'blog' => '#ffffff',
+  'laptop' => '#ffffff',
+  'dootrip' => '#ffffff',
+  'edoovillage' => '#ffffff',
+  'gic' => '#ffffff',
+  'hub' => '#ffffff',
+  'private_page' => '#ffffff',
+  'simplenews' => '#ffffff',
+  'slider_page' => '#ffffff',
+  'team' => '#ffffff',
+  'team_page' => '#ffffff',
+  'event' => '#ffffff',
+  'team_task' => '#ffffff',
+);
+$handler->display->display_options['row_options']['colors']['calendar_colors_group'] = array(
+  56 => '#ffffff',
+  57 => '#ffffff',
+);
 $handler->display->display_options['defaults']['row_options'] = FALSE;
 $handler->display->display_options['defaults']['arguments'] = FALSE;
 /* Contextual filter: OG membership: Group ID */
@@ -119,7 +139,6 @@ $handler->display->display_options['arguments']['date_argument']['date_fields'] 
   'field_data_field_event_date.field_event_date_value' => 'field_data_field_event_date.field_event_date_value',
 );
 $handler->display->display_options['path'] = 'node/%/calendar/month';
-$handler->display->display_options['menu']['type'] = 'tab';
 $handler->display->display_options['menu']['title'] = 'Calendar';
 $handler->display->display_options['menu']['weight'] = '0';
 $handler->display->display_options['menu']['context'] = 0;

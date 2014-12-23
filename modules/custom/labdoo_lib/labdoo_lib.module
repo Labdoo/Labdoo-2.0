@@ -280,9 +280,9 @@ function labdoo_render_dooject_header() {
   $htmlCode = $htmlCode . '<table border="0" cellpadding="1" cellspacing="1" style="width: 850px;"><tbody><tr><td>';
 
   // Left arrow
-  $htmlCode = $htmlCode . '<p class="small rteleft" style="font-family: monospace;">' . $prevUri .
+  $htmlCode = $htmlCode . '<p class="small rteleft" style="font-family: monospace;" align="right">' . $prevUri .
                           '<img alt="" src="/profiles/labdoo/files/pictures/arrow_left.png" style="width: 40px; height: 49px; "/> 
-                           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>';
+                           </a>&nbsp; &nbsp; &nbsp; &nbsp;';
 
   // Next cell
   $htmlCode = $htmlCode . '</td><td>'; 
@@ -295,7 +295,7 @@ function labdoo_render_dooject_header() {
                            width: 151px; height: 100px;" /></a></p>'; 
   
   // Button for tagging 
-  $htmlCode = $htmlCode . '<p><input type="button" value="Print tags for this dooject"onclick="window.open(\''.$tagsUri.'\', 
+  $htmlCode = $htmlCode . '<p>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; <input type="button" value="Print tags for this dooject"onclick="window.open(\''.$tagsUri.'\', 
                            \'windowpopup\', \'resizable=yes,menubar=1,status=no,width=700,height=700\');"/>';
 
   // Next cell
@@ -333,16 +333,16 @@ function labdoo_render_dooject_header() {
   
   $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="middle">
            <img alt="" src="/profiles/labdoo/files/pictures/laptop.png" style="width: 102px; height: 100px; "/>&nbsp;&nbsp; </a>'; 
-  $htmlCode = $htmlCode . '<p><input type="button" value="' . $followMsg . '" onclick="window.open(\''.$followDoojectUrl.'\', 
+  $htmlCode = $htmlCode . '<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="button" value="' . $followMsg . '" onclick="window.open(\''.$followDoojectUrl.'\', 
            \'windowpopup\', \'resizable=yes,menubar=1,status=no,width=700,height=700\');setTimeout(\'history.go(0);\',2000);"/>';
 
   // Next cell
   $htmlCode = $htmlCode . '</td><td>';
 
   // Print right arrow
-  $htmlCode = $htmlCode . '<p class="small rteright" style="font-family: monospace;">'.$nextUri.'&nbsp; &nbsp; &nbsp; 
-                           &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<img alt="" src="/profiles/labdoo/files/pictures/arrow_right.png" 
-                           style="width: 40px; height: 49px; "/> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>';
+  $htmlCode = $htmlCode . '<p class="small rteright" style="font-family: monospace;">'.$nextUri.' 
+                           <img alt="" src="/profiles/labdoo/files/pictures/arrow_right.png" 
+                           style="width: 40px; height: 49px; "/></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;';
 
   // Table ending
   $htmlCode = $htmlCode . '</td></tr></tbody></table>';
@@ -1272,6 +1272,15 @@ function labdoo_block_filter_sidebar_second() {
   if(strcmp($path, "teams") == 0)
       return TRUE;
 
+  if(strcmp($path, "teams-activities") == 0)
+      return TRUE;
+
+  if(strcmp($path, "my-teams-activities") == 0)
+      return TRUE;
+
+  if(strcmp($path, "my-teams") == 0)
+      return TRUE;
+
   return FALSE;
 }
 
@@ -1301,53 +1310,4 @@ function labdoo_block_filter_header() {
 }
 
 
-/**
- * Renders the team actions block 
- *
- * @return Code rendering the team actions block
- *
- */
-function labdoo_render_team_actions() {
-  global $language;
-
-  // We know that this is a team page, get its node ID
-  $nodeid = arg(1);
-
-  if ($language->language != 'en')
-    $lang = '/' . $language->language;
-  else
-    $lang = '';
-
-  $code = "
-<p><a href='$lang/node/add/team-page?og_group_ref=$nodeid'>Start conversation</span></a></p>
-<p><a href='$lang/node/add/event?og_group_ref=$nodeid'>Create event</span></a></p>
-<p><a href='$lang/node/add/team-task?og_group_ref=$nodeid'>Create task</span></a></p>
-  ";
-
-  return $code;
-}
-
-
-/**
- * Implements the visibility filter of the team actions block 
- *
- * @return TRUE if the block is to be displayed, FALSE otherwise
- *
- */
-function labdoo_block_filter_team_actions() {
-  global $user;
-
-  if (arg(0) != 'node' || !is_numeric(arg(1))) 
-    return FALSE;
-
-  $nodeid = arg(1);
-  $node = node_load($nodeid);
-  if($node->type != "team") 
-    return FALSE;
-
-  if(!og_is_member('node', $nodeid))
-    return FALSE;
-
-  return TRUE;
-}
 

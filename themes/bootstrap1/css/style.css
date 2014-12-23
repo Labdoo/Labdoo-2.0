@@ -113,3 +113,28 @@ hr {
   margin: 5px 0;
 }
 
+.breadcrumb {
+  display: none;
+}
+
+.control-group.form-type-select.form-item-body-und-0-format.form-item { 
+  display: none; 
+}
+
+.control-group.form-type-select.form-item-comment-body-und-0-format.form-item { 
+  display: none; 
+}
+
+input[type="file"] { 
+  line-height: 0px;
+}
+
+.view .date-nav-wrapper .date-prev, .view .date-nav-wrapper .date-next {
+  background: none repeat scroll 0 0 #ffffff;
+  position:relative;
+  right:auto;
+  left:auto;
+}
+.view .date-nav-wrapper .pager {
+  float:right;
+}

@@ -83,6 +83,7 @@ dependencies[] = lang_dropdown
 dependencies[] = logintoboggan 
 dependencies[] = special_menu_items 
 dependencies[] = computed_field 
+dependencies[] = entityreference_filter 
 
 ;;; Features and exports/imports
 dependencies[] = strongarm
