@@ -238,3 +238,20 @@ function labdoo_block_filter_team_actions() {
   return TRUE;
 }
 
+
+/**
+ * Implementation of hook_node_presave
+ *
+ */
+function lbd_teams_node_presave($node) {
+
+  $groupId = lbd_teams_page_group_id();
+
+  if($groupId == NULL)
+    return FALSE;
+
+  $node->title = "[" . lbd_nodeid2title($groupId) . "]" . " " .  $node->title;
+
+  return;
+}
+

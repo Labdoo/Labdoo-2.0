@@ -259,23 +259,6 @@ $handler->display->display_options['defaults']['relationships'] = FALSE;
 $handler->display->display_options['relationships']['field_task_assigned_to_target_id']['id'] = 'field_task_assigned_to_target_id';
 $handler->display->display_options['relationships']['field_task_assigned_to_target_id']['table'] = 'field_data_field_task_assigned_to';
 $handler->display->display_options['relationships']['field_task_assigned_to_target_id']['field'] = 'field_task_assigned_to_target_id';
-/* Relationship: OG membership: OG membership from Node group */
-$handler->display->display_options['relationships']['og_membership_rel_group']['id'] = 'og_membership_rel_group';
-$handler->display->display_options['relationships']['og_membership_rel_group']['table'] = 'node';
-$handler->display->display_options['relationships']['og_membership_rel_group']['field'] = 'og_membership_rel_group';
-/* Relationship: OG membership: Group Node from OG membership */
-$handler->display->display_options['relationships']['og_membership_related_node_group']['id'] = 'og_membership_related_node_group';
-$handler->display->display_options['relationships']['og_membership_related_node_group']['table'] = 'og_membership';
-$handler->display->display_options['relationships']['og_membership_related_node_group']['field'] = 'og_membership_related_node_group';
-$handler->display->display_options['relationships']['og_membership_related_node_group']['relationship'] = 'og_membership_rel_group';
-/* Relationship: OG membership: OG membership from Node */
-$handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
-$handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
-$handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
-/* Relationship: OG membership: Node from OG membership */
-$handler->display->display_options['relationships']['og_membership_related_node']['id'] = 'og_membership_related_node';
-$handler->display->display_options['relationships']['og_membership_related_node']['table'] = 'og_membership';
-$handler->display->display_options['relationships']['og_membership_related_node']['field'] = 'og_membership_related_node';
 $handler->display->display_options['defaults']['arguments'] = FALSE;
 $handler->display->display_options['defaults']['filter_groups'] = FALSE;
 $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -471,8 +454,8 @@ $handler->display->display_options['filters']['og_group_ref_target_id']['table']
 $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
 $handler->display->display_options['filters']['og_group_ref_target_id']['relationship'] = 'og_membership_rel';
 $handler->display->display_options['filters']['og_group_ref_target_id']['value'] = array(
-  66 => '66',
-  67 => '67',
+  56 => '56',
+  57 => '57',
 );
 $handler->display->display_options['filters']['og_group_ref_target_id']['exposed'] = TRUE;
 $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['operator_id'] = 'og_group_ref_target_id_op';
@@ -491,5 +474,4 @@ $handler->display->display_options['filters']['og_group_ref_target_id']['expose'
   8 => 0,
 );
 $handler->display->display_options['path'] = 'teams-dashboard';
-
 

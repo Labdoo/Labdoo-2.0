@@ -280,9 +280,9 @@ function labdoo_render_dooject_header() {
   $htmlCode = $htmlCode . '<table border="0" cellpadding="1" cellspacing="1" style="width: 850px;"><tbody><tr><td>';
 
   // Left arrow
-  $htmlCode = $htmlCode . '<p class="small rteleft" style="font-family: monospace;">' . $prevUri .
+  $htmlCode = $htmlCode . '<p class="small rteleft" style="font-family: monospace;" align="right">' . $prevUri .
                           '<img alt="" src="/profiles/labdoo/files/pictures/arrow_left.png" style="width: 40px; height: 49px; "/> 
-                           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>';
+                           </a>&nbsp; &nbsp; &nbsp; &nbsp;';
 
   // Next cell
   $htmlCode = $htmlCode . '</td><td>'; 
@@ -295,7 +295,7 @@ function labdoo_render_dooject_header() {
                            width: 151px; height: 100px;" /></a></p>'; 
   
   // Button for tagging 
-  $htmlCode = $htmlCode . '<p><input type="button" value="Print tags for this dooject"onclick="window.open(\''.$tagsUri.'\', 
+  $htmlCode = $htmlCode . '<p>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; <input type="button" value="Print tags for this dooject"onclick="window.open(\''.$tagsUri.'\', 
                            \'windowpopup\', \'resizable=yes,menubar=1,status=no,width=700,height=700\');"/>';
 
   // Next cell
@@ -333,16 +333,16 @@ function labdoo_render_dooject_header() {
   
   $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="middle">
            <img alt="" src="/profiles/labdoo/files/pictures/laptop.png" style="width: 102px; height: 100px; "/>&nbsp;&nbsp; </a>'; 
-  $htmlCode = $htmlCode . '<p><input type="button" value="' . $followMsg . '" onclick="window.open(\''.$followDoojectUrl.'\', 
+  $htmlCode = $htmlCode . '<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="button" value="' . $followMsg . '" onclick="window.open(\''.$followDoojectUrl.'\', 
            \'windowpopup\', \'resizable=yes,menubar=1,status=no,width=700,height=700\');setTimeout(\'history.go(0);\',2000);"/>';
 
   // Next cell
   $htmlCode = $htmlCode . '</td><td>';
 
   // Print right arrow
-  $htmlCode = $htmlCode . '<p class="small rteright" style="font-family: monospace;">'.$nextUri.'&nbsp; &nbsp; &nbsp; 
-                           &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<img alt="" src="/profiles/labdoo/files/pictures/arrow_right.png" 
-                           style="width: 40px; height: 49px; "/> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>';
+  $htmlCode = $htmlCode . '<p class="small rteright" style="font-family: monospace;">'.$nextUri.' 
+                           <img alt="" src="/profiles/labdoo/files/pictures/arrow_right.png" 
+                           style="width: 40px; height: 49px; "/></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;';
 
   // Table ending
   $htmlCode = $htmlCode . '</td></tr></tbody></table>';
@@ -1270,6 +1270,15 @@ function labdoo_block_filter_sidebar_second() {
       return TRUE;
 
   if(strcmp($path, "teams") == 0)
+      return TRUE;
+
+  if(strcmp($path, "teams-activities") == 0)
+      return TRUE;
+
+  if(strcmp($path, "my-teams-activities") == 0)
+      return TRUE;
+
+  if(strcmp($path, "my-teams") == 0)
       return TRUE;
 
   return FALSE;

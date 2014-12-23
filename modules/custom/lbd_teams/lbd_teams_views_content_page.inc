@@ -12,6 +12,7 @@ $view->disabled = FALSE; /* Edit this to true to make a default view disabled in
 
 /* Display: Master */
 $handler = $view->new_display('default', 'Master', 'default');
+$handler->display->display_options['title'] = 'My teams activities';
 $handler->display->display_options['use_more_always'] = FALSE;
 $handler->display->display_options['access']['type'] = 'perm';
 $handler->display->display_options['access']['perm'] = 'create team_page content';
@@ -22,7 +23,7 @@ $handler->display->display_options['exposed_form']['type'] = 'basic';
 $handler->display->display_options['pager']['type'] = 'full';
 $handler->display->display_options['style_plugin'] = 'default';
 $handler->display->display_options['style_options']['grouping'] = 'title_1';
-$handler->display->display_options['row_plugin'] = 'fields';
+$handler->display->display_options['row_plugin'] = 'node';
 /* Relationship: OG membership: OG membership from Node */
 $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
 $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
@@ -144,6 +145,8 @@ $handler->display->display_options['path'] = 'my-teams-activities';
 
 /* Display: Teams wall */
 $handler = $view->new_display('page', 'Teams wall', 'page_2');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['title'] = 'All teams activities';
 $handler->display->display_options['defaults']['access'] = FALSE;
 $handler->display->display_options['access']['type'] = 'none';
 $handler->display->display_options['defaults']['arguments'] = FALSE;
