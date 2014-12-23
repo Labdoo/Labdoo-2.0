@@ -150,6 +150,32 @@ function lbd_teams_node_validate($node, $form, &$form_state) {
   }
 
   return;
+} 
+
+
+/**
+ * Returns the group ID of the page being displayed, if any
+ *
+ * @return The group ID or NULL if the page is not associated with any group ID 
+ *
+ */
+function lbd_teams_page_group_id() {
+
+  if(!empty($_GET['og_group_ref'])) 
+    $groupId = $_GET['og_group_ref'];
+  else {
+    if (arg(0) != 'node' || !is_numeric(arg(1))) 
+      return NULL;
+    $groupId = arg(1);
+    $node = node_load($groupId);
+    if($node->type != "team" and $node->type != "team_page" and $node->type != "event" and $node->type != "team_task") 
+      return NULL;
+    if($node->type != "team"){
+      $items = field_get_items('node', $node, 'og_group_ref');
+      $groupId = $items[0]['target_id'];
+    }
+  }
+  return $groupId;
 }
 
 
@@ -162,40 +188,29 @@ function lbd_teams_node_validate($node, $form, &$form_state) {
 function labdoo_render_team_actions() {
   global $language;
 
-  // There are two ways to get the group ID
-  if(!empty($_GET['og_group_ref'])) { 
-    $nodeid = $_GET['og_group_ref'];
-  }
-  else {
-    if (arg(0) != 'node' || !is_numeric(arg(1))) 
-      return "";
-    $nodeid = arg(1);
-    $node = node_load($nodeid);
-    if($node->type != "team") 
-      return "";
-  }
+  $groupId = lbd_teams_page_group_id();
 
   if ($language->language != 'en')
     $lang = '/' . $language->language;
   else
     $lang = '';
 
-  $homePath = $lang . "/" . drupal_get_path_alias("node/$nodeid");
+  $homePath = $lang . "/" . drupal_get_path_alias("node/$groupId");
 
   $code = "
-<p><strong><span style='color:#009900; font-size:16px;'>Team " . lbd_nodeid2title($nodeid) . "</span></strong></p>
+<p><strong><span style='color:#009900; font-size:16px;'>Team " . lbd_nodeid2title($groupId) . "</span></strong></p>
 <img src='/profiles/labdoo/files/pictures/home.png' style='width: 20px; height: 21px;'/>&nbsp;
 <a href='$homePath'>" . t("Team's home page") . "</span></a></p>
 <img src='/profiles/labdoo/files/pictures/conversation.png' style='width: 20px; height: 21px;'/>&nbsp;
-<a href='$lang/node/add/team-page?og_group_ref=$nodeid'>" . t("Start conversation") . "</span></a></p>
+<a href='$lang/node/add/team-page?og_group_ref=$groupId'>" . t("Start conversation") . "</span></a></p>
 <img src='/profiles/labdoo/files/pictures/check.png' style='width: 20px; height: 21px;'/>&nbsp;
-<a href='$lang/node/add/team-task?og_group_ref=$nodeid'>" . t("Start task") . "</span></a></p>
+<a href='$lang/node/add/team-task?og_group_ref=$groupId'>" . t("Start task") . "</span></a></p>
 <img src='/profiles/labdoo/files/pictures/community.png' style='width: 20px; height: 21px;'/>&nbsp;
-<a href='$lang/node/add/event?og_group_ref=$nodeid'>" . t("Start event") . "</span></a></p>
+<a href='$lang/node/add/event?og_group_ref=$groupId'>" . t("Start event") . "</span></a></p>
 <img src='/profiles/labdoo/files/pictures/wall.png' style='width: 20px; height: 21px;'/>&nbsp;
-<a href='$lang/node/$nodeid/activities'>" . t("View wall") . "</span></a></p>
+<a href='$lang/node/$groupId/activities'>" . t("View wall") . "</span></a></p>
 <img src='/profiles/labdoo/files/pictures/calendar_icon.png' style='width: 20px; height: 21px;'/>&nbsp;
-<a href='$lang/node/$nodeid/calendar/month'>" . t("View calendar") . "</span></a></p>
+<a href='$lang/node/$groupId/calendar/month'>" . t("View calendar") . "</span></a></p>
 <br>
   ";
 
@@ -212,18 +227,12 @@ function labdoo_render_team_actions() {
 function labdoo_block_filter_team_actions() {
   global $user;
 
-  if(!empty($_GET['og_group_ref'])) 
-    $nodeid = $_GET['og_group_ref'];
-  else {
-    if (arg(0) != 'node' || !is_numeric(arg(1))) 
-      return FALSE;
-    $nodeid = arg(1);
-    $node = node_load($nodeid);
-    if($node->type != "team") 
-      return FALSE;
-  }
+  $groupId = lbd_teams_page_group_id();
 
-  if(!og_is_member('node', $nodeid))
+  if($groupId == NULL)
+    return FALSE;
+
+  if(!og_is_member('node', $groupId))
     return FALSE;
 
   return TRUE;

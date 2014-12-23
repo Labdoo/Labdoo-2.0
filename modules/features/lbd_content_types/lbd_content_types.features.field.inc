@@ -1147,7 +1147,7 @@ function lbd_content_types_field_default_fields() {
               'status' => TRUE,
             ),
             'views-select-list' => array(
-              'status' => 0,
+              'status' => 1,
             ),
           ),
           'membership_type' => 'og_membership_type_default',
@@ -1203,7 +1203,7 @@ function lbd_content_types_field_default_fields() {
             'status' => TRUE,
           ),
           'prepopulate' => array(
-            'action' => 'none',
+            'action' => 'hide',
             'action_on_edit' => 1,
             'fallback' => 'none',
             'providers' => array(
@@ -2245,7 +2245,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
               'status' => TRUE,
             ),
             'views-select-list' => array(
-              'status' => 0,
+              'status' => 1,
             ),
           ),
           'membership_type' => 'og_membership_type_default',
@@ -2331,7 +2331,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
         'module' => 'og',
         'settings' => array(),
         'type' => 'og_complex',
-        'weight' => '0',
+        'weight' => 0,
       ),
     ),
   );
@@ -2808,7 +2808,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
               'status' => TRUE,
             ),
             'views-select-list' => array(
-              'status' => 0,
+              'status' => 1,
             ),
           ),
           'membership_type' => 'og_membership_type_default',

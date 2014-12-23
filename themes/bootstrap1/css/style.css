@@ -117,3 +117,15 @@ hr {
   display: none;
 }
 
+.control-group.form-type-select.form-item-body-und-0-format.form-item { 
+  display: none; 
+}
+
+.control-group.form-type-select.form-item-comment-body-und-0-format.form-item { 
+  display: none; 
+}
+
+input[type="file"] { 
+  line-height: 0px;
+}
+

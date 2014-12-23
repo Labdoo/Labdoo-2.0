@@ -37,6 +37,7 @@ libraries[tinymce][download][type] = get
 libraries[tinymce][download][url] = http://github.com/downloads/tinymce/tinymce/tinymce_3.5.7.zip
 projects[special_menu_items] = 2.0 
 projects[computed_field] = 1.0 
+projects[entityreference_filter] = 1.3 
 
 ;--------------------
 ; Security

@@ -1,7 +1,7 @@
 <?php
 
 $view = new view();
-$view->name = 'og_nodes';
+$view->name = 'team_nodes';
 $view->description = 'Show all content (nodes) of a team';
 $view->tag = 'Teams (OG)';
 $view->base_table = 'node';
