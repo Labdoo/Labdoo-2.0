@@ -1,0 +1,170 @@
+<?php
+
+/**
+ * @defgroup labdoowiki LabdooWiki: Module implementing Labdoo's wiki-type documentation system
+ *
+ * Implements supporting features for Labdoo's wiki. 
+ *
+ */
+
+
+/**
+ * @file
+ * Main module file for the Labdoo Wiki 
+ *
+ * @ingroup labdoowiki
+ *
+ */
+
+/**
+ * Implementation of hook_views_api
+ */
+function lbd_wiki_views_api() {
+  return array(
+    'api' => 3.0,
+  );
+} 
+
+
+/**
+ * Implementation of hook_views_default_views
+ */
+function lbd_wiki_views_default_views() {
+
+  // Teams view
+  include 'lbd_wiki_views_books_list.inc';
+  $views[$view->name] = $view;
+
+  return $views;
+}
+
+
+/**
+ * Implements hook_block_info().
+ *
+ */
+function lbd_wiki_block_info() {
+  $block['book_outline'] = array(
+    'info' => 'Book Outline',
+    'status' => 1,
+    'visibility' => BLOCK_VISIBILITY_PHP,
+    'weight' => -100,
+    'pages' => "<?php return _is_book_node() != NULL ?>", 
+    'region' => "sidebar_second",
+  );
+  return $block;
+}
+
+/**
+ * Implements hook_block_view().
+ *
+ */
+function lbd_wiki_block_view($delta = '') {
+  global $language;
+  global $user;
+
+  if($delta != 'book_outline')
+    return NULL;
+
+  $book = _is_book_node();
+  if(!$book)
+    return NULL;
+
+  $nodeId = arg(1);
+
+  if ($language->language != 'en')
+    $lang = '/' . $language->language;
+  else
+    $lang = '';
+
+  // Vars and params for the menu_build_tree() function.
+  $path = 'node/' . $book['bid'];
+  $parent = menu_link_get_preferred($path, $book['menu_name']);
+  $parameters = array(
+    'only_active_trail' => FALSE,
+    'min_depth' => $parent['depth'] + 0,
+    'max_depth' => 4,
+  );
+
+  // Build the tree and block title.
+  $children = menu_build_tree($parent['menu_name'], $parameters);
+  $userRoles = array_values($user->roles);
+  if(in_array('book writer', $userRoles) || in_array('administrator', $userRoles)) { 
+    $metadata = "href='$lang/admin/content/book/" . $book['bid'] . "'";
+    $code = "<a $metadata>" . t('[Reorder book hierarchy]') . "</span></a></p>";
+  }
+  else {
+    $code = "";
+  }
+
+  foreach($children as $child1) {
+    $code = $code . _process_child($child1, $nodeId, $lang);
+    foreach($child1['below'] as $child2) {
+      $code = $code . "&nbsp;&nbsp;" . _process_child($child2, $nodeId, $lang);
+      foreach($child2['below'] as $child3) {
+        $code = $code . "&nbsp;&nbsp;&nbsp;&nbsp;" . _process_child($child3, $nodeId, $lang);
+      }
+    }
+  }
+
+  $book_name = (book_toc($book['bid'], 1));
+
+  // Build and return the $block array.
+  $block['subject'] = '<none>'; // l($book_name[$book['p1']], 'node/' . $book['bid']);
+  $block['content'] = array('#markup' => $code);
+
+  return $block;
+}
+
+
+/**
+ *
+ * Generates renderable (table of content) code for each child.
+ *
+ * @param array $child
+ *   A book page child array
+ * @param integer $nodeId
+ *   The ID of the node currently being visited
+ *
+ */ 
+function _process_child($child, $nodeId, $lang) {
+  $path = $child['link']['link_path'];
+  $heading = $child['link']['link_title'];
+  $metadata = "href='$lang/$path'";
+  if($path == 'node/' . $nodeId)
+    $metadata = "style='background-color:#e6e6fa; color:#ff0000;'";
+  $code = "<a $metadata>" . $heading . "</span></a></p>";
+  return $code;
+}
+
+
+/**
+ * Checks to see if current node is part of a book.
+ *
+ * @return array
+ *   book portion of the node array if it is part of a book, FALSE if not
+ */
+function _is_book_node() {
+  $node = menu_get_object();
+  if ($node && isset($node->book)) {
+    return $node->book;
+  }
+  return FALSE;
+}
+
+
+/**
+ * Implements hook_menu_local_tasks_alter
+ *
+ */
+function lbd_wiki_menu_local_tasks_alter(&$data) {
+  // Hide Outline tab (reordering of book hierarchy is provided in the TOC block)
+  if(sizeof($data['tabs']) > 0) {
+    foreach ($data['tabs'][0]['output'] as $key => $value) {
+      if ($value['#link']['path'] == "node/%/outline") {
+        unset($data['tabs'][0]['output'][$key]);
+      }
+    }
+  }
+}
+

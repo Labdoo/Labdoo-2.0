@@ -161,3 +161,4 @@ projects[views_autocomplete_filters] = 1.1
 projects[views_dependent_filters] = 1.1
 projects[variable] = 2.5 
 projects[logintoboggan] = 1.4 
+

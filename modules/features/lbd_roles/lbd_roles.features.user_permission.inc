@@ -20,6 +20,26 @@ function lbd_roles_user_default_permissions() {
     'module' => 'contact',
   );
 
+  // Exported permission: add content to books.
+  $permissions['add content to books'] = array(
+    'name' => 'add content to books',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'book writer',
+    ),
+    'module' => 'book',
+  );
+
+  // Exported permission: administer book outlines.
+  $permissions['administer book outlines'] = array(
+    'name' => 'administer book outlines',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'book writer',
+    ),
+    'module' => 'book',
+  );
+
   // Exported permission: administer newsletters.
   $permissions['administer newsletters'] = array(
     'name' => 'administer newsletters',
@@ -49,11 +69,30 @@ function lbd_roles_user_default_permissions() {
     'module' => 'simplenews',
   );
 
+  // Exported permission: create book content.
+  $permissions['create book content'] = array(
+    'name' => 'create book content',
+    'roles' => array(
+      0 => 'book writer',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: create event content.
   $permissions['create event content'] = array(
     'name' => 'create event content',
     'roles' => array(),
     'module' => 'node',
+  );
+
+  // Exported permission: create new books.
+  $permissions['create new books'] = array(
+    'name' => 'create new books',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'book writer',
+    ),
+    'module' => 'book',
   );
 
   // Exported permission: create simplenews content.
@@ -85,6 +124,13 @@ function lbd_roles_user_default_permissions() {
   // Exported permission: create team_task content.
   $permissions['create team_task content'] = array(
     'name' => 'create team_task content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete any book content.
+  $permissions['delete any book content'] = array(
+    'name' => 'delete any book content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -128,6 +174,15 @@ function lbd_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: delete own book content.
+  $permissions['delete own book content'] = array(
+    'name' => 'delete own book content',
+    'roles' => array(
+      0 => 'book writer',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: delete own event content.
   $permissions['delete own event content'] = array(
     'name' => 'delete own event content',
@@ -165,6 +220,15 @@ function lbd_roles_user_default_permissions() {
   $permissions['delete own team_task content'] = array(
     'name' => 'delete own team_task content',
     'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit any book content.
+  $permissions['edit any book content'] = array(
+    'name' => 'edit any book content',
+    'roles' => array(
+      0 => 'book writer',
+    ),
     'module' => 'node',
   );
 
@@ -214,6 +278,15 @@ function lbd_roles_user_default_permissions() {
       0 => 'administrator',
     ),
     'module' => 'mimemail',
+  );
+
+  // Exported permission: edit own book content.
+  $permissions['edit own book content'] = array(
+    'name' => 'edit own book content',
+    'roles' => array(
+      0 => 'book writer',
+    ),
+    'module' => 'node',
   );
 
   // Exported permission: edit own event content.
