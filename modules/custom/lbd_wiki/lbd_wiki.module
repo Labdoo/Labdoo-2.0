@@ -1,0 +1,130 @@
+<?php
+
+/**
+ * @defgroup labdoowiki LabdooWiki: Module implementing Labdoo's wiki-type documentation system
+ *
+ * Implements supporting features for Labdoo's wiki. 
+ *
+ */
+
+
+/**
+ * @file
+ * Main module file for the Labdoo Wiki 
+ *
+ * @ingroup labdoowiki
+ *
+ */
+
+/**
+ * Implementation of hook_views_default_views
+ */
+function lbd_wiki_views_default_views() {
+
+  // Teams view
+  include 'lbd_wiki_views_books_list.inc';
+  $views[$view->name] = $view;
+
+  return $views;
+}
+
+
+/**
+ * Implements hook_block_info().
+ *
+ */
+function lbd_wiki_block_info() {
+  $block['book_outline'] = array(
+    'info' => 'Book Outline',
+    'status' => 1,
+    'visibility' => BLOCK_VISIBILITY_PHP,
+    'weight' => -100,
+    'pages' => "<?php return _is_book_node() != NULL ?>", 
+    'region' => "sidebar_second",
+  );
+  return $block;
+}
+
+/**
+ * Implements hook_block_view().
+ *
+ */
+function lbd_wiki_block_view($delta = '') {
+
+  if($delta != 'book_outline')
+    return NULL;
+
+  $book = _is_book_node();
+  if(!$book)
+    return NULL;
+
+  $nodeId = arg(1);
+
+  // Vars and params for the menu_build_tree() function.
+  $path = 'node/' . $book['bid'];
+  $parent = menu_link_get_preferred($path, $book['menu_name']);
+  $parameters = array(
+    'only_active_trail' => FALSE,
+    'min_depth' => $parent['depth'] + 1,
+    'max_depth' => 4,
+  );
+
+  // Build the tree and block title.
+  $children = menu_build_tree($parent['menu_name'], $parameters);
+  $code = "";
+
+  foreach($children as $child1) {
+    $code = $code . _process_child($child1, $nodeId);
+    foreach($child1['below'] as $child2) {
+      $code = $code . "&nbsp;&nbsp;" . _process_child($child2, $nodeId);
+      foreach($child2['below'] as $child3) {
+        $code = $code . "&nbsp;&nbsp;&nbsp;&nbsp;" . _process_child($child3, $nodeId);
+      }
+    }
+  }
+
+  $book_name = (book_toc($book['bid'], 1));
+
+  // Build and return the $block array.
+  $block['subject'] = l($book_name[$book['p1']], 'node/' . $book['bid']);
+  $block['content'] = array('#markup' => $code);
+
+  return $block;
+}
+
+
+/**
+ *
+ * Generates renderable (table of content) code for each child.
+ *
+ * @param array $child
+ *   A book page child array
+ * @param integer $nodeId
+ *   The ID of the node currently being visited
+ *
+ */ 
+function _process_child($child, $nodeId) {
+  $path = $child['link']['link_path'];
+  $heading = $child['link']['link_title'];
+  $metadata = "href='/$path'";
+  if($path == 'node/' . $nodeId)
+    $metadata = "style='background-color:#e6e6fa; color:#ff0000;'";
+  $code = "<a $metadata>" . $heading . "</span></a></p>";
+  return $code;
+}
+
+
+/**
+ * Checks to see if current node is part of a book.
+ *
+ * @return array
+ *   book portion of the node array if it is part of a book, FALSE if not
+ */
+function _is_book_node() {
+  $node = menu_get_object();
+  if ($node && isset($node->book)) {
+    return $node->book;
+  }
+  return FALSE;
+}
+

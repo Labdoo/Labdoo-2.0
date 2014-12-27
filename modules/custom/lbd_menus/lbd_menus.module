@@ -457,6 +457,58 @@ function make_main_menu() {
           );
   $mlid = menu_link_save($item);
 
+  /*
+   * Wiki menu item
+   */
+  $item = array(
+            'link_path' => 'wiki-index',
+            'link_title' => t('Wiki'),
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -10,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => 0, 
+            'module' => 'menu',
+          );
+  $wikiMlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'wiki-index',
+            'link_title' => t('Index'),
+            'menu_name' => 'main-menu',
+            'expanded' => true,
+            'weight' => -50,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => $wikiMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => '<separator>',
+            'menu_name' => 'main-menu',
+            'weight' => -48,
+            'customized' => 1,
+            'plid' => $wikiMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'node/add/book',
+            'link_title' => t('Add new content'),
+            'menu_name' => 'main-menu',
+            'expanded' => true,
+            'weight' => -40,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => $wikiMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
   return;
 }
 

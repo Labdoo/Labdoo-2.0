@@ -136,3 +136,6 @@ dependencies[] = eva
 dependencies[] = entityreference_prepopulate 
 dependencies[] = calendar
 
+;;; Wiki
+dependencies[] = book
+

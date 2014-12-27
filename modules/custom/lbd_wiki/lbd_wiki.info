@@ -1,0 +1,6 @@
+name = Labdoo Wiki
+description = "Provides support for the creation of wiki-type documents (known as books also)."
+package = Other 
+core = 7.x
+dependencies[] = book
+dependencies[] = block
