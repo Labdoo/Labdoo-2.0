@@ -10,6 +10,17 @@
 function lbd_roles_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: access printer-friendly version.
+  $permissions['access printer-friendly version'] = array(
+    'name' => 'access printer-friendly version',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
+    ),
+    'module' => 'book',
+  );
+
   // Exported permission: access user contact forms.
   $permissions['access user contact forms'] = array(
     'name' => 'access user contact forms',
