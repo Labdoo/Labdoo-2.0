@@ -115,6 +115,15 @@ function lbd_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: create superhub_page content.
+  $permissions['create superhub_page content'] = array(
+    'name' => 'create superhub_page content',
+    'roles' => array(
+      0 => 'superhub manager',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: create team content.
   $permissions['create team content'] = array(
     'name' => 'create team content',
@@ -156,6 +165,13 @@ function lbd_roles_user_default_permissions() {
   // Exported permission: delete any simplenews content.
   $permissions['delete any simplenews content'] = array(
     'name' => 'delete any simplenews content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete any superhub_page content.
+  $permissions['delete any superhub_page content'] = array(
+    'name' => 'delete any superhub_page content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -210,6 +226,15 @@ function lbd_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: delete own superhub_page content.
+  $permissions['delete own superhub_page content'] = array(
+    'name' => 'delete own superhub_page content',
+    'roles' => array(
+      0 => 'superhub manager',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: delete own team content.
   $permissions['delete own team content'] = array(
     'name' => 'delete own team content',
@@ -234,6 +259,15 @@ function lbd_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: delete revisions.
+  $permissions['delete revisions'] = array(
+    'name' => 'delete revisions',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: edit any book content.
   $permissions['edit any book content'] = array(
     'name' => 'edit any book content',
@@ -253,6 +287,13 @@ function lbd_roles_user_default_permissions() {
   // Exported permission: edit any simplenews content.
   $permissions['edit any simplenews content'] = array(
     'name' => 'edit any simplenews content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit any superhub_page content.
+  $permissions['edit any superhub_page content'] = array(
+    'name' => 'edit any superhub_page content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -316,6 +357,15 @@ function lbd_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: edit own superhub_page content.
+  $permissions['edit own superhub_page content'] = array(
+    'name' => 'edit own superhub_page content',
+    'roles' => array(
+      0 => 'superhub manager',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: edit own team content.
   $permissions['edit own team content'] = array(
     'name' => 'edit own team content',
@@ -337,6 +387,21 @@ function lbd_roles_user_default_permissions() {
   $permissions['edit own team_task content'] = array(
     'name' => 'edit own team_task content',
     'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: revert revisions.
+  $permissions['revert revisions'] = array(
+    'name' => 'revert revisions',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'book writer',
+      2 => 'edoovillage manager',
+      3 => 'hub manager',
+      4 => 'newsletter manager',
+      5 => 'superhub manager',
+      6 => 'team manager',
+    ),
     'module' => 'node',
   );
 
@@ -399,6 +464,17 @@ function lbd_roles_user_default_permissions() {
       1 => 'authenticated user',
     ),
     'module' => 'location_user',
+  );
+
+  // Exported permission: view revisions.
+  $permissions['view revisions'] = array(
+    'name' => 'view revisions',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
+    ),
+    'module' => 'node',
   );
 
   return $permissions;
