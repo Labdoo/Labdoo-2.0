@@ -60,6 +60,8 @@ function lbd_wiki_block_info() {
  *
  */
 function lbd_wiki_block_view($delta = '') {
+  global $language;
+  global $user;
 
   if($delta != 'book_outline')
     return NULL;
@@ -70,25 +72,37 @@ function lbd_wiki_block_view($delta = '') {
 
   $nodeId = arg(1);
 
+  if ($language->language != 'en')
+    $lang = '/' . $language->language;
+  else
+    $lang = '';
+
   // Vars and params for the menu_build_tree() function.
   $path = 'node/' . $book['bid'];
   $parent = menu_link_get_preferred($path, $book['menu_name']);
   $parameters = array(
     'only_active_trail' => FALSE,
-    'min_depth' => $parent['depth'] + 1,
+    'min_depth' => $parent['depth'] + 0,
     'max_depth' => 4,
   );
 
   // Build the tree and block title.
   $children = menu_build_tree($parent['menu_name'], $parameters);
-  $code = "";
+  $userRoles = array_values($user->roles);
+  if(in_array('book writer', $userRoles) || in_array('administrator', $userRoles)) { 
+    $metadata = "href='$lang/admin/content/book/" . $book['bid'] . "'";
+    $code = "<a $metadata>" . t('[Reorder book hierarchy]') . "</span></a></p>";
+  }
+  else {
+    $code = "";
+  }
 
   foreach($children as $child1) {
-    $code = $code . _process_child($child1, $nodeId);
+    $code = $code . _process_child($child1, $nodeId, $lang);
     foreach($child1['below'] as $child2) {
-      $code = $code . "&nbsp;&nbsp;" . _process_child($child2, $nodeId);
+      $code = $code . "&nbsp;&nbsp;" . _process_child($child2, $nodeId, $lang);
       foreach($child2['below'] as $child3) {
-        $code = $code . "&nbsp;&nbsp;&nbsp;&nbsp;" . _process_child($child3, $nodeId);
+        $code = $code . "&nbsp;&nbsp;&nbsp;&nbsp;" . _process_child($child3, $nodeId, $lang);
       }
     }
   }
@@ -96,7 +110,7 @@ function lbd_wiki_block_view($delta = '') {
   $book_name = (book_toc($book['bid'], 1));
 
   // Build and return the $block array.
-  $block['subject'] = l($book_name[$book['p1']], 'node/' . $book['bid']);
+  $block['subject'] = '<none>'; // l($book_name[$book['p1']], 'node/' . $book['bid']);
   $block['content'] = array('#markup' => $code);
 
   return $block;
@@ -113,10 +127,10 @@ function lbd_wiki_block_view($delta = '') {
  *   The ID of the node currently being visited
  *
  */ 
-function _process_child($child, $nodeId) {
+function _process_child($child, $nodeId, $lang) {
   $path = $child['link']['link_path'];
   $heading = $child['link']['link_title'];
-  $metadata = "href='/$path'";
+  $metadata = "href='$lang/$path'";
   if($path == 'node/' . $nodeId)
     $metadata = "style='background-color:#e6e6fa; color:#ff0000;'";
   $code = "<a $metadata>" . $heading . "</span></a></p>";
@@ -136,5 +150,21 @@ function _is_book_node() {
     return $node->book;
   }
   return FALSE;
+}
+
+
+/**
+ * Implements hook_menu_local_tasks_alter
+ *
+ */
+function lbd_wiki_menu_local_tasks_alter(&$data) {
+  // Hide Outline tab (reordering of book hierarchy is provided in the TOC block)
+  if(sizeof($data['tabs']) > 0) {
+    foreach ($data['tabs'][0]['output'] as $key => $value) {
+      if ($value['#link']['path'] == "node/%/outline") {
+        unset($data['tabs'][0]['output'][$key]);
+      }
+    }
+  }
 }
 
