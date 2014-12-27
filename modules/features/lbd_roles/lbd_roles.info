@@ -62,4 +62,4 @@ features[user_role][] = hub manager
 features[user_role][] = newsletter manager
 features[user_role][] = superhub manager
 features[user_role][] = team manager
-mtime = 1419446779
+mtime = 1419678894

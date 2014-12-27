@@ -17,6 +17,16 @@
  */
 
 /**
+ * Implementation of hook_views_api
+ */
+function lbd_wiki_views_api() {
+  return array(
+    'api' => 3.0,
+  );
+} 
+
+
+/**
  * Implementation of hook_views_default_views
  */
 function lbd_wiki_views_default_views() {

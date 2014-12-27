@@ -47,6 +47,9 @@ drush @lbd $enOrDis -y lbd_gics
 drush @lbd $enOrDis -y lbd_teams_features
 drush @lbd $enOrDis -y lbd_teams
 
+# Enable Wiki 
+drush @lbd $enOrDis -y lbd_wiki
+
 # Finally, clear the cache to get things to a proper initial state
 drush @lbd cc all
 
