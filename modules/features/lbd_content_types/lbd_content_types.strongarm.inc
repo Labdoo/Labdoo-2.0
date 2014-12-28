@@ -49,7 +49,7 @@ function lbd_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_superhub_page';
-  $strongarm->value = 'edit-diff';
+  $strongarm->value = 'edit-location-settings';
   $export['additional_settings__active_tab_superhub_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1101,6 +1101,13 @@ function lbd_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_extended_superhub_page';
+  $strongarm->value = 1;
+  $export['i18n_node_extended_superhub_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'i18n_node_extended_team';
   $strongarm->value = 1;
   $export['i18n_node_extended_team'] = $strongarm;
@@ -1146,6 +1153,13 @@ function lbd_content_types_strongarm() {
   $strongarm->name = 'i18n_node_options_slider_page';
   $strongarm->value = array();
   $export['i18n_node_options_slider_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_options_superhub_page';
+  $strongarm->value = array();
+  $export['i18n_node_options_superhub_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1326,7 +1340,7 @@ function lbd_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'location_defaultnum_superhub_page';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['location_defaultnum_superhub_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1389,7 +1403,7 @@ function lbd_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'location_maxnum_superhub_page';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['location_maxnum_superhub_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1830,8 +1844,8 @@ function lbd_content_types_strongarm() {
   $strongarm->value = array(
     'multiple' => array(
       'min' => '0',
-      'max' => '1',
-      'add' => '1',
+      'max' => '0',
+      'add' => '0',
     ),
     'form' => array(
       'weight' => '0',

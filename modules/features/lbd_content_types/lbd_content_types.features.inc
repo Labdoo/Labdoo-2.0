@@ -62,7 +62,7 @@ function lbd_content_types_node_info() {
     'superhub_page' => array(
       'name' => t('Superhub Page'),
       'base' => 'node_content',
-      'description' => t('Super hubs can create their own specific content pages using this content type.'),
+      'description' => t('Super hubs can create their own specific content pages using this type.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

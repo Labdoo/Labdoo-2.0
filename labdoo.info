@@ -84,6 +84,9 @@ dependencies[] = logintoboggan
 dependencies[] = special_menu_items 
 dependencies[] = computed_field 
 dependencies[] = entityreference_filter 
+dependencies[] = wysiwyg 
+dependencies[] = imce
+dependencies[] = imce_wysiwyg
 
 ;;; Features and exports/imports
 dependencies[] = strongarm

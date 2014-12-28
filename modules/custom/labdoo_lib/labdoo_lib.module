@@ -681,6 +681,24 @@ function labdoo_lib_form_node_form_alter(&$form, &$form_state, $form_id) {
     unset($form['title']);
   }
 
+  /*
+   * Node is a superhub page 
+   */
+  if($form_id == 'superhub_page_node_form') {
+
+    // Hide title
+    unset($form['title']);
+  }
+
+  /*
+   * Hide book form for all non-book types
+   */
+  if($form_id != 'book_node_form') {
+
+    // Hide book form 
+    unset($form['book']);
+  }
+
 }
 
 
@@ -1247,10 +1265,13 @@ function labdoo_lib_user_presave(&$edit, &$account, $category) {
    * When creating or updating a user, geolocate its position so that
    * it can be displayed on the user maps
    */
+  if(!isset($edit['locations']))
+    return;
   $location = $edit['locations'][0]; 
   $ret = labdoo_lookup_coordinates($location['country'], $location['city'], $edit['locations'][0]['latitude'], $edit['locations'][0]['longitude']);
   if($ret == 0) // If successful, do not let the system attempt to geolocate it anymore
-      $edit['locations'][0]['inhibit_geocode'] = TRUE;
+    $edit['locations'][0]['inhibit_geocode'] = TRUE;
+  return;
 }
 
 
@@ -1310,4 +1331,34 @@ function labdoo_block_filter_header() {
 }
 
 
+/**
+ * Implements hook_element_info_alter().
+ *
+ * Sets the text format processor to a custom callback function.
+ * This code is based on the Better Formats module.
+ *
+ */
+function labdoo_lib_element_info_alter(&$type) {
+  if (isset($type['text_format']['#process'])) {
+    foreach ($type['text_format']['#process'] as &$callback) {
+      if ($callback === 'filter_process_format') {
+        $callback = 'labdoo_lib_filter_process_format';
+      }
+    }
+  }
+}
+
+
+/**
+ * Callback for MODULENAME_element_info_alter().
+ *
+ */
+function labdoo_lib_filter_process_format($element) {
+  $element = filter_process_format($element);
+  // Change input format to "Filtered HTML" for body fields of article nodes
+  if (($element['#bundle'] == 'superhub_page' || $element['#bundle'] == 'simplenews') && $element['#field_name'] == 'body') {
+    $element['format']['format']['#default_value'] = 'full_html';
+  }
+  return $element;
+}
 
