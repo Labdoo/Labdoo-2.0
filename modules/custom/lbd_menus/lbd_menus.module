@@ -274,9 +274,21 @@ function make_main_menu() {
 
   $item = array(
             'link_path' => 'node/add/superhub-page',
-            'link_title' => 'Superhub page',
+            'link_title' => '[Superhub] Create page',
             'menu_name' => 'main-menu',
-            'weight' => -10,
+            'weight' => 10,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => $hubMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'superhub-pages',
+            'link_title' => '[Superhub] List pages',
+            'menu_name' => 'main-menu',
+            'weight' => 20,
             'language' => 'en',
             'customized' => 1,
             'plid' => $hubMlid, 
