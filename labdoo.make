@@ -38,6 +38,9 @@ libraries[tinymce][download][url] = http://github.com/downloads/tinymce/tinymce/
 projects[special_menu_items] = 2.0 
 projects[computed_field] = 1.0 
 projects[entityreference_filter] = 1.3 
+projects[imce] = 1.9
+projects[imce_wysiwyg] = 1.0
+projects[imce_mkdir] = 1.0 
 
 ;--------------------
 ; Security

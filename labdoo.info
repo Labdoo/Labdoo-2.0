@@ -60,7 +60,7 @@ dependencies[] = pathauto
 dependencies[] = subpathauto
 dependencies[] = lightbox2
 
-;;; User Interface
+;;; User interface
 dependencies[] = context
 dependencies[] = context_ui
 dependencies[] = views
@@ -84,6 +84,10 @@ dependencies[] = logintoboggan
 dependencies[] = special_menu_items 
 dependencies[] = computed_field 
 dependencies[] = entityreference_filter 
+dependencies[] = wysiwyg 
+dependencies[] = imce
+dependencies[] = imce_wysiwyg
+dependencies[] = imce_mkdir 
 
 ;;; Features and exports/imports
 dependencies[] = strongarm
