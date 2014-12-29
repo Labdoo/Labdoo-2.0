@@ -1355,6 +1355,9 @@ function labdoo_lib_element_info_alter(&$type) {
  */
 function labdoo_lib_filter_process_format($element) {
   $element = filter_process_format($element);
+  if(!isset($element['#bundle'])) {
+    return;
+  }
   // Change input format to "Filtered HTML" for body fields of article nodes
   if (($element['#bundle'] == 'superhub_page' || $element['#bundle'] == 'simplenews') && $element['#field_name'] == 'body') {
     $element['format']['format']['#default_value'] = 'full_html';

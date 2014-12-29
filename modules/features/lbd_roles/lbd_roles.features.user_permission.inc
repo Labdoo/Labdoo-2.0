@@ -446,6 +446,35 @@ function lbd_roles_user_default_permissions() {
     'module' => 'simplenews',
   );
 
+  // Exported permission: use text format filtered_html.
+  $permissions['use text format filtered_html'] = array(
+    'name' => 'use text format filtered_html',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
+    ),
+    'module' => 'filter',
+  );
+
+  // Exported permission: use text format full_html.
+  $permissions['use text format full_html'] = array(
+    'name' => 'use text format full_html',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'newsletter manager',
+      2 => 'superhub manager',
+    ),
+    'module' => 'filter',
+  );
+
+  // Exported permission: use text format php_code.
+  $permissions['use text format php_code'] = array(
+    'name' => 'use text format php_code',
+    'roles' => array(),
+    'module' => 'filter',
+  );
+
   // Exported permission: view all user locations.
   $permissions['view all user locations'] = array(
     'name' => 'view all user locations',

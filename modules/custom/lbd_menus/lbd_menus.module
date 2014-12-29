@@ -274,7 +274,7 @@ function make_main_menu() {
 
   $item = array(
             'link_path' => 'node/add/superhub-page',
-            'link_title' => 'Create superhub page',
+            'link_title' => 'Superhub page',
             'menu_name' => 'main-menu',
             'weight' => -10,
             'language' => 'en',
