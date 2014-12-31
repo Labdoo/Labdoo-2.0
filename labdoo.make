@@ -170,11 +170,11 @@ projects[logintoboggan] = 1.4
 projects[file_entity] = 2.0-beta1
 projects[node_gallery] = 1.0
 projects[color_box] = 2.8
-libraries[colorbox][directory_name] = colorbox 
-libraries[colorbox][download][type] = get
-libraries[colorbox][download][url] = https://github.com/jackmoore/colorbox/archive/1.x.zip 
+;libraries[colorbox][directory_name] = colorbox 
+;libraries[colorbox][download][type] = get
+;libraries[colorbox][download][url] = https://github.com/jackmoore/colorbox/archive/1.x.zip 
 projects[plupload] = 1.7
-libraries[plupload][directory_name] = plupload 
-libraries[plupload][download][type] = get
-libraries[plupload][download][url] = https://github.com/moxiecode/plupload/archive/v1.5.8.zip 
+;libraries[plupload][directory_name] = plupload 
+;libraries[plupload][download][type] = get
+;libraries[plupload][download][url] = https://github.com/moxiecode/plupload/archive/v1.5.8.zip 
 
