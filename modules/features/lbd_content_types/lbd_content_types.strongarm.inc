@@ -881,6 +881,30 @@ function lbd_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__node_gallery_item';
+  $strongarm->value = array(
+    'teaser' => array(
+      'custom_settings' => TRUE,
+    ),
+    'node_gallery_node_thumbnail' => array(
+      'custom_settings' => TRUE,
+    ),
+    'extra_fields' => array(
+      'display' => array(
+        'node_gallery_navigation' => array(
+          'node_gallery_node_thumbnail' => array(
+            'visible' => FALSE,
+            'weight' => 1,
+          ),
+        ),
+      ),
+    ),
+  );
+  $export['field_bundle_settings_node__node_gallery_item'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__slider_page';
   $strongarm->value = array(
     'view_modes' => array(),
@@ -2312,6 +2336,25 @@ function lbd_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_gallery_api_file_link_settings';
+  $strongarm->value = array(
+    'image' => array(
+      'node_gallery_file_thumbnail' => 'gallery_item',
+      'node_gallery_file_cover' => 'gallery',
+    ),
+  );
+  $export['node_gallery_api_file_link_settings'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_gallery_default_relationship_type_id';
+  $strongarm->value = '1';
+  $export['node_gallery_default_relationship_type_id'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_options_action';
   $strongarm->value = array(
     0 => 'status',
@@ -2479,6 +2522,13 @@ function lbd_content_types_strongarm() {
   $strongarm->name = 'node_submitted_gic';
   $strongarm->value = 0;
   $export['node_submitted_gic'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_node_gallery_item';
+  $strongarm->value = FALSE;
+  $export['node_submitted_node_gallery_item'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

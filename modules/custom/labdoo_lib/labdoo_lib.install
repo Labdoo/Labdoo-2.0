@@ -110,6 +110,9 @@ function labdoo_lib_enable()
   variable_set('site_frontpage', 'actions'); 
   variable_set('logintoboggan_login_with_email', 1);
 
+  // Photo albums
+  variable_set('colorbox_load', 1);
+
   drupal_set_message("labdoo_lib enabled correctly");
 }
 

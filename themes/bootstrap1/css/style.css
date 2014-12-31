@@ -135,6 +135,12 @@ input[type="file"] {
   right:auto;
   left:auto;
 }
+
 .view .date-nav-wrapper .pager {
   float:right;
 }
+
+.help-block {
+  margin: 10px 0 10px;
+}
+

@@ -290,7 +290,7 @@ function labdoo_render_dooject_header() {
   // Tagging howto (lightbox)
   $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " 
                            align="middle"><a href="/profiles/labdoo/files/pictures/tagging-flow.png" 
-                           rel="lightbox" style="line-height: 10px; color: rgb(17, 85, 119);"><img alt="image labdoo" rel="lightbox" 
+                           class="colorbox-load" style="line-height: 10px; color: rgb(17, 85, 119);"><img alt="image labdoo"  
                            src="/profiles/labdoo/files/pictures/tagging-flow.png" style="border-style: solid; color: rgb(51, 51, 51); 
                            width: 151px; height: 100px;" /></a></p>'; 
   
