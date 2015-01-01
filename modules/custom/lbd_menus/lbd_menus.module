@@ -122,7 +122,7 @@ function make_main_menu() {
    * Doojects menu item
    */
   $item = array(
-            'link_path' => 'node/44',
+            'link_path' => 'node/7',
             'link_title' => 'Doojects',
             'menu_name' => 'main-menu',
             'expanded' => TRUE,
@@ -148,7 +148,7 @@ function make_main_menu() {
   $mlid = menu_link_save($item);
 
   $item = array(
-            'link_path' => 'node/44',
+            'link_path' => 'node/7',
             'link_title' => 'View',
             'menu_name' => 'main-menu',
             'weight' => -50,
@@ -173,7 +173,7 @@ function make_main_menu() {
    * Edoovillages menu item
    */
   $item = array(
-            'link_path' => 'node/45',
+            'link_path' => 'node/8',
             'link_title' => 'Edoovillages',
             'menu_name' => 'main-menu',
             'expanded' => TRUE,
@@ -199,7 +199,7 @@ function make_main_menu() {
   $mlid = menu_link_save($item);
 
   $item = array(
-            'link_path' => 'node/45',
+            'link_path' => 'node/8',
             'link_title' => 'View',
             'menu_name' => 'main-menu',
             'weight' => -50,
@@ -225,7 +225,7 @@ function make_main_menu() {
    * Hubs menu item
    */
   $item = array(
-            'link_path' => 'node/46',
+            'link_path' => 'node/9',
             'link_title' => 'Hubs',
             'menu_name' => 'main-menu',
             'expanded' => TRUE,
@@ -251,7 +251,7 @@ function make_main_menu() {
   $mlid = menu_link_save($item);
 
   $item = array(
-            'link_path' => 'node/46',
+            'link_path' => 'node/9',
             'link_title' => 'View',
             'menu_name' => 'main-menu',
             'weight' => -50,
@@ -300,7 +300,7 @@ function make_main_menu() {
    * Dootrips menu item
    */
   $item = array(
-            'link_path' => 'node/47',
+            'link_path' => 'node/10',
             'link_title' => 'Dootrips',
             'menu_name' => 'main-menu',
             'expanded' => TRUE,
@@ -326,7 +326,7 @@ function make_main_menu() {
   $mlid = menu_link_save($item);
 
   $item = array(
-            'link_path' => 'node/47',
+            'link_path' => 'node/10',
             'link_title' => 'View',
             'menu_name' => 'main-menu',
             'weight' => -50,
@@ -671,22 +671,22 @@ function lbd_menus_menu_link_alter(&$item) {
     return;
   
   if ($item['page callback'] == '_menu_item_redirect_my_doojects') {
-    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='node/44' AND link_title='Doojects' AND menu_name='main-menu'")->fetchField();
+    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='node/7' AND link_title='Doojects' AND menu_name='main-menu'")->fetchField();
     $item['plid'] = $plid;
   }
 
   if ($item['page callback'] == '_menu_item_redirect_my_edoovillages') {
-    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='node/45' AND link_title='Edoovillages' AND menu_name='main-menu'")->fetchField();
+    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='node/8' AND link_title='Edoovillages' AND menu_name='main-menu'")->fetchField();
     $item['plid'] = $plid;
   }
 
   if ($item['page callback'] == '_menu_item_redirect_my_hubs') {
-    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='node/46' AND link_title='Hubs' AND menu_name='main-menu'")->fetchField();
+    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='node/9' AND link_title='Hubs' AND menu_name='main-menu'")->fetchField();
     $item['plid'] = $plid;
   }
 
   if ($item['page callback'] == '_menu_item_redirect_my_dootrips') {
-    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='node/47' AND link_title='Dootrips' AND menu_name='main-menu'")->fetchField();
+    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='node/10' AND link_title='Dootrips' AND menu_name='main-menu'")->fetchField();
     $item['plid'] = $plid;
   }
 
