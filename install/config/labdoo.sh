@@ -50,6 +50,12 @@ drush @lbd $enOrDis -y lbd_teams
 # Enable Wiki 
 drush @lbd $enOrDis -y lbd_wiki
 
-# Finally, clear the cache to get things to a proper initial state
+# Finally, clear once again the cache to get things to a proper initial state
 drush @lbd cc all
+
+# Remove for security reasons the examples folder in the plupload library
+rm /var/www/lbd/profiles/labdoo/libraries/plupload/examples -rf 
+
+# Install imagemagick (needed as a substitute to GD2 which has a bug on the image rotating feature)
+yum install imagemagick
 

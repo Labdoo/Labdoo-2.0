@@ -168,6 +168,8 @@ function lbd_teams_page_group_id() {
       return NULL;
     $groupId = arg(1);
     $node = node_load($groupId);
+    if(!$node)
+      return NULL;
     if($node->type != "team" and $node->type != "team_page" and $node->type != "event" and $node->type != "team_task") 
       return NULL;
     if($node->type != "team"){
