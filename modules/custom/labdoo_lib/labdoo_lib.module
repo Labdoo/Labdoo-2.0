@@ -877,6 +877,8 @@ function lbd_get_total_num_objects($objectType) {
   }
 
   $num = db_query($query)->fetchField();
+  if(!$num)
+    return 0;
 
   return($num);
 }

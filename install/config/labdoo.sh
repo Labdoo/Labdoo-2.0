@@ -58,5 +58,5 @@ drush @lbd cc all
 rm /var/www/lbd/profiles/labdoo/libraries/plupload/examples -rf 
 
 # Install imagemagick (needed as a substitute to GD2 which has a bug on the image rotating feature)
-yum install imagemagick
+apt-get install imagemagick
 

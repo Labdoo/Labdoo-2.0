@@ -25,7 +25,7 @@ projects[diff] = 3.2
 ;--------------------
 ; User interface
 ;--------------------
-projects[context] = 3.3
+projects[context] = 3.5
 projects[views] = 3.8
 projects[homebox] = 2.0-beta7
 projects[boxes] = 1.2
@@ -81,14 +81,14 @@ projects[google_analytics] = 2.0
 projects[drupalchat] = 1.2
 projects[simplenews] = 1.1
 projects[mass_contact] = 1.0
-projects[sharethis] = 2.5
+projects[sharethis] = 2.9
 projects[disqus] = 1.9
 projects[disqus][patch][] = http://drupal.org/files/disqus-https.patch
 
 ;-------------------
 ; Location and maps
 ;-------------------
-projects[location] = 3.5
+projects[location] = 3.6
 projects[gmap] = 2.9
 projects[ip_geoloc] = 1.26
 
