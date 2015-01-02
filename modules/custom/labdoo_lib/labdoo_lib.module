@@ -631,7 +631,9 @@ function _create_photo_album($node) {
   node_object_prepare($nodeAlbum);
   $nodeAlbum->title = $node->title . " - Photo Album";
   $nodeAlbum->language = LANGUAGE_NONE;
-  $nodeAlbum->locations = $node->locations;
+  ## Don't copy location, since the location is already tracked by the edoovillage.
+  ## This way we don't have to update this field when there is a change.
+#  $nodeAlbum->locations = $node->locations;
   $nodeAlbum->created = time();
   $nodeAlbum->changed = $nodeAlbum->created;
   $nodeAlbum->status = 1;
