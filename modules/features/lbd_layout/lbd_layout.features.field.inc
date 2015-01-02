@@ -52,6 +52,12 @@ function lbd_layout_field_default_fields() {
           'type' => 'text_default',
           'weight' => 0,
         ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'hidden',
           'module' => 'text',
@@ -127,6 +133,12 @@ function lbd_layout_field_default_fields() {
           ),
           'type' => 'image',
           'weight' => -1,
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -214,6 +226,12 @@ function lbd_layout_field_default_fields() {
           'type' => 'taxonomy_term_reference_link',
           'weight' => 10,
         ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'module' => 'taxonomy',
@@ -282,6 +300,12 @@ function lbd_layout_field_default_fields() {
           'settings' => array(),
           'type' => 'text_default',
           'weight' => '0',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -360,6 +384,12 @@ function lbd_layout_field_default_fields() {
           'type' => 'hidden',
           'weight' => '1',
         ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -424,6 +454,12 @@ function lbd_layout_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
+          'weight' => 0,
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
           'weight' => 0,
         ),
         'teaser' => array(

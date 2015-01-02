@@ -237,6 +237,7 @@ function labdoo_render_map_geolocate_node($nodeId = NULL, $displayDoojects = Fal
  *
  */
 function labdoo_render_dooject_header() {
+  global $language;
   $htmlCode = "";
 
   if ((arg(0) != 'node') || !is_numeric(arg(1))) 
@@ -249,6 +250,11 @@ function labdoo_render_dooject_header() {
   $types = array('laptop' => 1) ;
   if(!isset($types[$nodeObj->type]))
     return;
+
+  if ($language->language != 'en')
+    $langCode = '/' . $language->language;
+  else
+    $langCode = '';
 
   $laptopId = $nodeObj->title;
 
@@ -290,7 +296,7 @@ function labdoo_render_dooject_header() {
   // Tagging howto (lightbox)
   $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " 
                            align="middle"><a href="/profiles/labdoo/files/pictures/tagging-flow.png" 
-                           rel="lightbox" style="line-height: 10px; color: rgb(17, 85, 119);"><img alt="image labdoo" rel="lightbox" 
+                           class="colorbox-load" style="line-height: 10px; color: rgb(17, 85, 119);"><img alt="image labdoo"  
                            src="/profiles/labdoo/files/pictures/tagging-flow.png" style="border-style: solid; color: rgb(51, 51, 51); 
                            width: 151px; height: 100px;" /></a></p>'; 
   
@@ -303,10 +309,14 @@ function labdoo_render_dooject_header() {
 
   // Photo album icon and button
   if($edoovillageId) {
-    $albumUri = request_uri() . "/../../node/" . $edoovillageId;
+    $nodeEdoovillage = node_load($edoovillageId);
+    $wNode = entity_metadata_wrapper('node', $nodeEdoovillage);
+    $nodeAlbum = $wNode->field_edoovillage_photo_album->value();
+    $albumUri = drupal_get_path_alias("node/" .  $nodeAlbum->nid, $langCode);
+    $gotoMsg = t("Go to photo album");
     $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="middle">
                              <img alt="" src="/profiles/labdoo/files/pictures/photo-album-icon.jpg" style="width: 122px; height: 100px; "/></a>';
-    $htmlCode = $htmlCode . '<p><input type="button" value="Go to photo album"onclick="window.open(\''.$albumUri.'\', \'target=_self\');"/>';
+    $htmlCode = $htmlCode . '<p><input type="button" value="' . $gotoMsg . '" onclick="window.open(\'/'.$albumUri.'\');"/>';
   }
 
   // Next cell
@@ -361,7 +371,7 @@ function labdoo_render_dooject_header() {
  *
  */
 function labdoo_render_edoovillage_hub_header($nodeId = NULL, $type) {
-  global $user;
+  global $language;
 
   if($nodeId == NULL) {
     if ((arg(0) != 'node') || !is_numeric(arg(1))) 
@@ -381,6 +391,11 @@ function labdoo_render_edoovillage_hub_header($nodeId = NULL, $type) {
   if($nodeObj == FALSE)
     return;
 
+  if ($language->language != 'en')
+    $langCode = '/' . $language->language;
+  else
+    $langCode = '';
+
   $htmlCode = "";
 
   // Accept only edoovillages and hubs 
@@ -392,17 +407,24 @@ function labdoo_render_edoovillage_hub_header($nodeId = NULL, $type) {
   $htmlCode = $htmlCode . '<table border="0" cellpadding="1" cellspacing="1" style="width: 850px;"><tbody><tr><td>';
 
   // Photo album icon and button
-  $albumUri = request_uri(); // TODO -- point to the right album once photo albums is implemented
+  if($type == "edoovillage") 
+    $field_photo_album = 'field_edoovillage_photo_album';
+  else
+    $field_photo_album = 'field_hub_photo_album';
+
+  $wNode = entity_metadata_wrapper('node', $nodeObj);
+  $nodeAlbum = $wNode->$field_photo_album->value();
+  $albumUri = drupal_get_path_alias("node/" . $nodeAlbum->nid, $langCode);
+  $gotoMsg = t("Go to photo album");
+
   $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="middle">
                            <img alt="" src="/profiles/labdoo/files/pictures/photo-album-icon.jpg" style="width: 122px; height: 100px; "/></a>';
-  $htmlCode = $htmlCode . '<p align="middle"><input type="button" value="Go to photo album"onclick="window.open(\''.$albumUri.'\', \'target=_self\');"/>';
+  $htmlCode = $htmlCode . '<p align="middle"><input type="button" value="' . $gotoMsg . '" onclick="window.open(\''.$albumUri.'\', \'_self\');"/>';
 
   if($type == "edoovillage") {
-  // Next cell
+    // Next cell
     $htmlCode = $htmlCode . '</td><td>';
 
-    // FIXME: should this be user_preferred_language?
-    $langCode = user_preferred_language($user)->language;
     if(!file_exists(dirname(__FILE__) . "/../../../files/pictures/semaphore-red-" . $langCode . ".png"))
       $langCode = 'en';
 
@@ -424,6 +446,64 @@ function labdoo_render_edoovillage_hub_header($nodeId = NULL, $type) {
 
   // Next cell
   $htmlCode = $htmlCode . '</td><td>';
+
+  // Table ending
+  $htmlCode = $htmlCode . '</td></tr></tbody></table>';
+
+  return($htmlCode);
+}
+
+
+/**
+ * Displays the header of a photo album.
+ *
+ * @return The renderable header code 
+ *
+ */
+function labdoo_render_photo_album_header() {
+  global $language;
+  $htmlCode = "";
+
+  if ((arg(0) != 'node') || !is_numeric(arg(1))) 
+    return;
+
+  $nodeObj = node_load(arg(1));
+  $nodeId = $nodeObj->nid;
+
+  // Accept only certain types of content types
+  $types = array('node_gallery_gallery' => 1) ;
+  if(!isset($types[$nodeObj->type]))
+    return;
+
+  if ($language->language != 'en')
+    $langCode = '/' . $language->language;
+  else
+    $langCode = '';
+
+  // Table header
+  $htmlCode = $htmlCode . '<table border="0" cellpadding="1" cellspacing="1" style="width: 850px;"><tbody><tr><td>';
+
+  // Edoovillage or hub icon and button
+  $wNode = entity_metadata_wrapper('node', $nodeObj);
+  $gotoMsg = t("Go to edoovillage");
+  $parentNodeType = 'edoovillage';
+  $nodeAlbum = $wNode->field_photo_album_edoovillage->value();
+  if(!$nodeAlbum) {
+    $gotoMsg = t("Go to hub");
+    $parentNodeType = 'hub';
+    $nodeAlbum = $wNode->field_photo_album_hub->value();
+  }
+  $albumUri = drupal_get_path_alias("node/" .  $nodeAlbum->nid, $langCode);
+  $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="middle">
+                           <img alt="" src="/profiles/labdoo/files/pictures/photo-album-icon.jpg" style="width: 122px; height: 100px; "/></a>';
+  $htmlCode = $htmlCode . '<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="button" value="' 
+                        .  $gotoMsg . '" onclick="window.open(\'/'.$albumUri.'\', \'_self\');"/>';
+
+  // Next cell
+  $htmlCode = $htmlCode . '</td><td>';
+
+  // Edoovillage stats 
+  $htmlCode = $htmlCode . lbd_display_dooject_column_chart($nodeId, $parentNodeType);  
 
   // Table ending
   $htmlCode = $htmlCode . '</td></tr></tbody></table>';
@@ -537,6 +617,34 @@ function labdoo_lib_node_update($node) {
 
 
 /**
+ * Creates a photo album node
+ *
+ * @param node $node parent node (an edoovillage or a hub)
+ *
+ * @return The node id of the newly created photo album
+ *
+ */
+function _create_photo_album($node) {
+  global $user;
+  $nodeAlbum = new stdClass();
+  $nodeAlbum->type = 'node_gallery_gallery';
+  node_object_prepare($nodeAlbum);
+  $nodeAlbum->title = $node->title . " - Photo Album";
+  $nodeAlbum->language = LANGUAGE_NONE;
+  $nodeAlbum->locations = $node->locations;
+  $nodeAlbum->created = time();
+  $nodeAlbum->changed = $nodeAlbum->created;
+  $nodeAlbum->status = 1;
+  $nodeAlbum->promote = 0;
+  $nodeAlbum->sticky = 0;
+  $nodeAlbum->format = 2;
+  $nodeAlbum->uid = $user->uid;
+  node_save($nodeAlbum);
+  return($nodeAlbum->nid);
+}
+
+
+/**
  * Implementation of hook_node_presave
  *
  */
@@ -580,6 +688,22 @@ function labdoo_lib_node_presave($node) {
     $nodeCountry = labdoo_country_code2name($node->locations[0]['country']);
     $nodeCity = $node->locations[0]['city'];
     $node->title = $nodeCountry . ", " . $nodeCity . ": " . labdoo_lib_get_field($node, 'field_project_summary', 'node', 'value');
+
+    /*
+     * Create this edoovillage's photo album
+     */
+    $nodeAlbumNid = _create_photo_album($node);
+    $wNode = entity_metadata_wrapper('node', $node);
+    $wNode->field_edoovillage_photo_album->set($nodeAlbumNid);
+  }
+
+  if($node->type == 'hub') {
+    /*
+     * Create this hub's photo album
+     */
+    $nodeAlbumNid = _create_photo_album($node);
+    $wNode = entity_metadata_wrapper('node', $node);
+    $wNode->field_hub_photo_album->set($nodeAlbumNid);
   }
 
   if($node->type == 'dootrip') {
@@ -618,6 +742,37 @@ function labdoo_lib_node_presave($node) {
 
   return;
 }
+
+
+/**
+ * Implementation of hook_node_insert
+ *
+ */
+function labdoo_lib_node_insert($node) {
+
+  if($node->type == 'edoovillage') {
+    // Link this edoovillage's photo album back to the edoovillage itself
+    $wNode = entity_metadata_wrapper('node', $node);
+    $nodeAlbum = $wNode->field_edoovillage_photo_album->value();
+    $loadedNodeAlbum = node_load($nodeAlbum->nid);
+    $wNodeAlbum = entity_metadata_wrapper('node', $loadedNodeAlbum);
+    $wNodeAlbum->field_photo_album_edoovillage->set($node->nid);
+    $wNodeAlbum->save();
+  }
+
+  if($node->type == 'hub') {
+    // Link this hub's photo album back to the edoovillage itself
+    $wNode = entity_metadata_wrapper('node', $node);
+    $nodeAlbum = $wNode->field_hub_photo_album->value();
+    $loadedNodeAlbum = node_load($nodeAlbum->nid);
+    $wNodeAlbum = entity_metadata_wrapper('node', $loadedNodeAlbum);
+    $wNodeAlbum->field_photo_album_hub->set($node->nid);
+    $wNodeAlbum->save();
+  }
+
+  return;
+}
+
 
 
 /**
@@ -722,6 +877,8 @@ function lbd_get_total_num_objects($objectType) {
   }
 
   $num = db_query($query)->fetchField();
+  if(!$num)
+    return 0;
 
   return($num);
 }
@@ -869,6 +1026,8 @@ function labdoo_get_demand($edoovillageId, $hubId, $doAverage) {
   }
 
   $numLaptops = db_query($query)->fetchField();
+  if(!$numLaptops)
+    return 0;
 
   return $numLaptops;
 }

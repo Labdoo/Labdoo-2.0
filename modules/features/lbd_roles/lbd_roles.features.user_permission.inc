@@ -61,6 +61,16 @@ function lbd_roles_user_default_permissions() {
     'module' => 'simplenews',
   );
 
+  // Exported permission: administer node gallery.
+  $permissions['administer node gallery'] = array(
+    'name' => 'administer node gallery',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'authenticated user',
+    ),
+    'module' => 'node_gallery_api',
+  );
+
   // Exported permission: administer simplenews settings.
   $permissions['administer simplenews settings'] = array(
     'name' => 'administer simplenews settings',
@@ -104,6 +114,22 @@ function lbd_roles_user_default_permissions() {
       1 => 'book writer',
     ),
     'module' => 'book',
+  );
+
+  // Exported permission: create node_gallery_gallery content.
+  $permissions['create node_gallery_gallery content'] = array(
+    'name' => 'create node_gallery_gallery content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: create node_gallery_item content.
+  $permissions['create node_gallery_item content'] = array(
+    'name' => 'create node_gallery_item content',
+    'roles' => array(
+      0 => 'authenticated user',
+    ),
+    'module' => 'node',
   );
 
   // Exported permission: create simplenews content.
@@ -162,6 +188,24 @@ function lbd_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: delete any node_gallery_gallery content.
+  $permissions['delete any node_gallery_gallery content'] = array(
+    'name' => 'delete any node_gallery_gallery content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete any node_gallery_item content.
+  $permissions['delete any node_gallery_item content'] = array(
+    'name' => 'delete any node_gallery_item content',
+    'roles' => array(
+      0 => 'edoovillage manager',
+      1 => 'hub manager',
+      2 => 'superhub manager',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: delete any simplenews content.
   $permissions['delete any simplenews content'] = array(
     'name' => 'delete any simplenews content',
@@ -214,6 +258,22 @@ function lbd_roles_user_default_permissions() {
   $permissions['delete own event content'] = array(
     'name' => 'delete own event content',
     'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete own node_gallery_gallery content.
+  $permissions['delete own node_gallery_gallery content'] = array(
+    'name' => 'delete own node_gallery_gallery content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete own node_gallery_item content.
+  $permissions['delete own node_gallery_item content'] = array(
+    'name' => 'delete own node_gallery_item content',
+    'roles' => array(
+      0 => 'authenticated user',
+    ),
     'module' => 'node',
   );
 
@@ -284,6 +344,24 @@ function lbd_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: edit any node_gallery_gallery content.
+  $permissions['edit any node_gallery_gallery content'] = array(
+    'name' => 'edit any node_gallery_gallery content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit any node_gallery_item content.
+  $permissions['edit any node_gallery_item content'] = array(
+    'name' => 'edit any node_gallery_item content',
+    'roles' => array(
+      0 => 'edoovillage manager',
+      1 => 'hub manager',
+      2 => 'superhub manager',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: edit any simplenews content.
   $permissions['edit any simplenews content'] = array(
     'name' => 'edit any simplenews content',
@@ -345,6 +423,22 @@ function lbd_roles_user_default_permissions() {
   $permissions['edit own event content'] = array(
     'name' => 'edit own event content',
     'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit own node_gallery_gallery content.
+  $permissions['edit own node_gallery_gallery content'] = array(
+    'name' => 'edit own node_gallery_gallery content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit own node_gallery_item content.
+  $permissions['edit own node_gallery_item content'] = array(
+    'name' => 'edit own node_gallery_item content',
+    'roles' => array(
+      0 => 'authenticated user',
+    ),
     'module' => 'node',
   );
 

@@ -25,13 +25,12 @@ projects[diff] = 3.2
 ;--------------------
 ; User interface
 ;--------------------
-projects[context] = 3.3
+projects[context] = 3.5
 projects[views] = 3.8
 projects[homebox] = 2.0-beta7
 projects[boxes] = 1.2
 projects[edit_profile] = 1.0-beta2
 projects[wysiwyg] = 2.2
-projects[lightbox2] = 1.0-beta1
 libraries[tinymce][directory_name] = tinymce
 libraries[tinymce][download][type] = get
 libraries[tinymce][download][url] = http://github.com/downloads/tinymce/tinymce/tinymce_3.5.7.zip
@@ -82,14 +81,14 @@ projects[google_analytics] = 2.0
 projects[drupalchat] = 1.2
 projects[simplenews] = 1.1
 projects[mass_contact] = 1.0
-projects[sharethis] = 2.5
+projects[sharethis] = 2.9
 projects[disqus] = 1.9
 projects[disqus][patch][] = http://drupal.org/files/disqus-https.patch
 
 ;-------------------
 ; Location and maps
 ;-------------------
-projects[location] = 3.5
+projects[location] = 3.6
 projects[gmap] = 2.9
 projects[ip_geoloc] = 1.26
 
@@ -165,3 +164,17 @@ projects[views_dependent_filters] = 1.1
 projects[variable] = 2.5 
 projects[logintoboggan] = 1.4 
 
+;--------------------
+; Photo albums
+;--------------------
+projects[file_entity] = 2.0-beta1
+projects[node_gallery] = 1.0
+projects[colorbox] = 2.8
+libraries[colorbox][directory_name] = colorbox 
+libraries[colorbox][download][type] = get
+libraries[colorbox][download][url] = https://github.com/jackmoore/colorbox/archive/1.x.zip 
+projects[plupload] = 1.7
+libraries[plupload][directory_name] = plupload 
+libraries[plupload][download][type] = get
+libraries[plupload][download][url] = https://github.com/moxiecode/plupload/archive/v1.5.8.zip 
+projects[imagemagick] = 1.0 

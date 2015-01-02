@@ -58,7 +58,6 @@ dependencies[] = rules_scheduler
 dependencies[] = rules_admin
 dependencies[] = pathauto
 dependencies[] = subpathauto
-dependencies[] = lightbox2
 
 ;;; User interface
 dependencies[] = context
@@ -142,4 +141,12 @@ dependencies[] = calendar
 
 ;;; Wiki
 dependencies[] = book
+
+
+;;; Photo albums
+dependencies[] = file_entity
+dependencies[] = node_gallery 
+dependencies[] = plupload 
+dependencies[] = colorbox 
+dependencies[] = imagemagick 
 

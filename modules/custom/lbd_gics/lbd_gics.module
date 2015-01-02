@@ -76,13 +76,13 @@ function gic_table($form, &$form_state, $edoovillageId) {
   $query = 'SELECT entity_id FROM field_data_field_edoovillage_destination WHERE field_edoovillage_destination_target_id=:eid';
   $result = db_query($query, array(':eid' => $edoovillageId));
 
-  if(!empty($result))
-      $gicIsEmpty = FALSE;
+  if($result->rowCount() > 0)
+    $gicIsEmpty = FALSE;
 
   if($gicIsEmpty == TRUE) {
     $form['container'] = array(
       '#type'             => 'fieldset',
-      '#description'      => t('No laptops currently deployed in this project.')
+      '#description'      => t('No doojects currently deployed in this project.')
     );
     return $form;
   }

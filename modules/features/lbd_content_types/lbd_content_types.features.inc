@@ -9,9 +9,20 @@
  */
 function lbd_content_types_ctools_plugin_api() {
   list($module, $api) = func_get_args();
+  if ($module == "file_entity" && $api == "file_default_displays") {
+    return array("version" => "1");
+  }
+  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function lbd_content_types_views_api() {
+  return array("version" => "3.0");
 }
 
 /**
@@ -39,6 +50,22 @@ function lbd_content_types_node_info() {
       'name' => t('GIC'),
       'base' => 'node_content',
       'description' => t('GIC nodes are created every time someone submits a GIC table. GIC nodes are snapshots of these GIC table submissions that are used to track changes in an edoovillage\'s inventory.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'node_gallery_gallery' => array(
+      'name' => t('Gallery'),
+      'base' => 'node_content',
+      'description' => t('A gallery of nodes.'),
+      'has_title' => '1',
+      'title_label' => t('Gallery Name'),
+      'help' => '',
+    ),
+    'node_gallery_item' => array(
+      'name' => t('Gallery Item'),
+      'base' => 'node_content',
+      'description' => t('A gallery node item.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

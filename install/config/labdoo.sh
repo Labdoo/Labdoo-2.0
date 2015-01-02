@@ -25,7 +25,8 @@ drush @lbd en -y labdoo_lib lbd_communicate lbd_actions lbd_dootrip
 # Some sample nodes for development (disable this for production)
 # Note: these modules need to be installed after smtp is installed
 #       since they need to send out notification emails
-drush @lbd $enOrDis -y lbd_sample_doojects lbd_sample_edoovillages lbd_sample_hubs lbd_sample_dootrips 
+# [Disabled]
+#drush @lbd $enOrDis -y lbd_sample_doojects lbd_sample_edoovillages lbd_sample_hubs lbd_sample_dootrips 
 
 drush @lbd $enOrDis -y lbd_gmap
 echo "
@@ -50,6 +51,12 @@ drush @lbd $enOrDis -y lbd_teams
 # Enable Wiki 
 drush @lbd $enOrDis -y lbd_wiki
 
-# Finally, clear the cache to get things to a proper initial state
+# Finally, clear once again the cache to get things to a proper initial state
 drush @lbd cc all
+
+# Remove for security reasons the examples folder in the plupload library
+rm /var/www/lbd/profiles/labdoo/libraries/plupload/examples -rf 
+
+# Install imagemagick (needed as a substitute to GD2 which has a bug on the image rotating feature)
+apt-get install imagemagick
 

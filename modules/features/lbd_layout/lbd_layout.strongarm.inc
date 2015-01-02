@@ -549,7 +549,7 @@ function lbd_layout_strongarm() {
   $strongarm->name = 'theme_bootstrap1_settings';
   $strongarm->value = array(
     'toggle_logo' => 1,
-    'toggle_name' => 1,
+    'toggle_name' => 0,
     'toggle_slogan' => 0,
     'toggle_node_user_picture' => 1,
     'toggle_comment_user_picture' => 1,
@@ -558,9 +558,10 @@ function lbd_layout_strongarm() {
     'toggle_main_menu' => 1,
     'toggle_secondary_menu' => 1,
     'default_logo' => 0,
-    'logo_path' => 'profiles/labdoo/modules/features/lbd_layout/small_logo.png',
+    'logo_path' => 'profiles/labdoo/files/pictures/equation-2-alpha-smaller.png',
+    'logo_upload' => '',
     'default_favicon' => 0,
-    'favicon_path' => 'profiles/labdoo/modules/features/lbd_layout/favicon.png',
+    'favicon_path' => 'profiles/labdoo/files/pictures/favicon.png',
     'favicon_upload' => '',
     'bootstrap_rebuild_registry' => 0,
     'cdn_bootstrap' => 1,
