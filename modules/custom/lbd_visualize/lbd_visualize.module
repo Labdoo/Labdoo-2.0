@@ -166,8 +166,9 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
       $urlPrefix = "/" . $language->language;
     else
       $urlPrefix = "";
+    $urlPath = drupal_get_path_alias("node/" . $objectNid, $language->language); 
     $objects[$objectNid]['link'] = "<!--$node->title (comment added to help alphabetically order this column)-->" . 
-                                   "<a href='$urlPrefix/node/$objectNid'>$node->title</a>";
+                                   "<a href=/$urlPath>$node->title</a>";
 
     // Mark the state so we can perform counting operations
     foreach($possibleStates as $thisState)
@@ -326,14 +327,10 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
     if(array_key_exists($node->location['country'], $country_names))
         $objects[$objectNid]['country'] = $country_names[$node->location['country']];
         
-    // Calculate the link to the object
     global $language;
-    if ($language->language != "en")
-      $urlPrefix = "/" . $language->language;
-    else
-      $urlPrefix = "";
+    $urlPath = drupal_get_path_alias("node/" . $objectNid, $language->language);
     $objects[$objectNid]['link'] = "<!--$node->title (comment added to help alphabetically order this column)-->" . 
-                                   "<a href='$urlPrefix/node/$objectNid'>$node->title</a>";
+                                   "<a href=/$urlPath>$node->title</a>";
 
     // Mark the state so we can perform counting operations
     $possibleStates = array('completed', 'open');
@@ -475,14 +472,10 @@ function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher =
     if(array_key_exists($node->location['country'], $country_names))
         $objects[$objectNid]['country'] = $country_names[$node->location['country']];
         
-    // Calculate the link to the object
     global $language;
-    if ($language->language != "en")
-      $urlPrefix = "/" . $language->language;
-    else
-      $urlPrefix = "";
+    $urlPath = drupal_get_path_alias("node/" . $objectNid, $language->language);
     $objects[$objectNid]['link'] = "<!--$node->title (comment added to help alphabetically order this column)-->" . 
-                                   "<a href='$urlPrefix/node/$objectNid'>$node->title</a>";
+                                   "<a href=/$urlPath>$node->title</a>";
 
   }
 
@@ -605,14 +598,10 @@ function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL, $switch
     if(array_key_exists($location['country'], $country_names))
         $objects[$objectNid]['dstCountry'] = $country_names[$location['country']];
         
-    // Calculate the link to the object
     global $language;
-    if ($language->language != "en")
-      $urlPrefix = "/" . $language->language;
-    else
-      $urlPrefix = "";
+    $urlPath = drupal_get_path_alias("node/" . $objectNid, $language->language);
     $objects[$objectNid]['link'] = "<!--$node->title (comment added to help alphabetically order this column)-->" . 
-                                   "<a href='$urlPrefix/node/$objectNid'>$node->title</a>";
+                                   "<a href=/$urlPath>$node->title</a>";
   }
 
   if(empty($objects)) {

@@ -254,11 +254,6 @@ function labdoo_render_dooject_header() {
   if(drupal_get_path_alias(current_path()) == "node/" . $nodeId . "/edit")
     return;
 
-  if ($language->language != 'en')
-    $langCode = '/' . $language->language;
-  else
-    $langCode = '';
-
   $laptopId = $nodeObj->title;
 
   $query = "SELECT field_edoovillage_destination_target_id 
@@ -315,7 +310,7 @@ function labdoo_render_dooject_header() {
     $nodeEdoovillage = node_load($edoovillageId);
     $wNode = entity_metadata_wrapper('node', $nodeEdoovillage);
     $nodeAlbum = $wNode->field_edoovillage_photo_album->value();
-    $albumUri = drupal_get_path_alias("node/" .  $nodeAlbum->nid, $langCode);
+    $albumUri = drupal_get_path_alias("node/" .  $nodeAlbum->nid, $language->language);
     $gotoMsg = t("Go to photo album");
     $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="middle">
                              <img alt="" src="/profiles/labdoo/files/pictures/photo-album-icon.jpg" style="width: 122px; height: 100px; "/></a>';
@@ -394,11 +389,7 @@ function labdoo_render_edoovillage_hub_header($nodeId = NULL, $type) {
   if($nodeObj == FALSE)
     return;
 
-  if ($language->language != 'en')
-    $langCode = '/' . $language->language;
-  else
-    $langCode = '';
-
+  $langCode = $language->language;
   $htmlCode = "";
 
   // Accept only edoovillages and hubs 
@@ -478,11 +469,6 @@ function labdoo_render_photo_album_header() {
   if(!isset($types[$nodeObj->type]))
     return;
 
-  if ($language->language != 'en')
-    $langCode = '/' . $language->language;
-  else
-    $langCode = '';
-
   // Table header
   $htmlCode = $htmlCode . '<table border="0" cellpadding="1" cellspacing="1" style="width: 850px;"><tbody><tr><td>';
 
@@ -496,7 +482,7 @@ function labdoo_render_photo_album_header() {
     $parentNodeType = 'hub';
     $parentNode = $wNode->field_photo_album_hub->value();
   }
-  $albumUri = drupal_get_path_alias("node/" .  $parentNode->nid, $langCode);
+  $albumUri = drupal_get_path_alias("node/" .  $parentNode->nid, $language->language);
   $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="middle">
                            <img alt="" src="/profiles/labdoo/files/pictures/photo-album-icon.jpg" style="width: 122px; height: 100px; "/></a>';
   $htmlCode = $htmlCode . '<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="button" value="' 

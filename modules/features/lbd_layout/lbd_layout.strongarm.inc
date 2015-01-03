@@ -539,6 +539,542 @@ function lbd_layout_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_action_options';
+  $strongarm->value = array(
+    'full' => 0,
+    'teaser' => 0,
+    'rss' => 0,
+    'search_index' => 0,
+    'search_result' => 0,
+    'print' => 0,
+    'diff_standard' => 0,
+    'node_gallery_node_thumbnail' => 0,
+    'email_plain' => 0,
+    'email_html' => 0,
+    'email_textalt' => 0,
+    'token' => 0,
+  );
+  $export['sharethis_action_options'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_article_options';
+  $strongarm->value = array(
+    'full' => 0,
+    'teaser' => 0,
+    'rss' => 0,
+    'search_index' => 0,
+    'search_result' => 0,
+    'print' => 0,
+    'diff_standard' => 0,
+    'node_gallery_node_thumbnail' => 0,
+    'email_plain' => 0,
+    'email_html' => 0,
+    'email_textalt' => 0,
+    'token' => 0,
+  );
+  $export['sharethis_article_options'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_blog_options';
+  $strongarm->value = array(
+    'full' => 0,
+    'teaser' => 0,
+    'rss' => 0,
+    'search_index' => 0,
+    'search_result' => 0,
+    'print' => 0,
+    'diff_standard' => 0,
+    'node_gallery_node_thumbnail' => 0,
+    'email_plain' => 0,
+    'email_html' => 0,
+    'email_textalt' => 0,
+    'token' => 0,
+  );
+  $export['sharethis_blog_options'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_book_options';
+  $strongarm->value = array(
+    'full' => 0,
+    'teaser' => 0,
+    'rss' => 0,
+    'search_index' => 0,
+    'search_result' => 0,
+    'print' => 0,
+    'diff_standard' => 0,
+    'node_gallery_node_thumbnail' => 0,
+    'email_plain' => 0,
+    'email_html' => 0,
+    'email_textalt' => 0,
+    'token' => 0,
+  );
+  $export['sharethis_book_options'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_button_option';
+  $strongarm->value = 'stbc_button';
+  $export['sharethis_button_option'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_comments';
+  $strongarm->value = 0;
+  $export['sharethis_comments'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_dootrip_options';
+  $strongarm->value = array(
+    'full' => 0,
+    'teaser' => 0,
+    'rss' => 0,
+    'search_index' => 0,
+    'search_result' => 0,
+    'print' => 0,
+    'diff_standard' => 0,
+    'node_gallery_node_thumbnail' => 0,
+    'email_plain' => 0,
+    'email_html' => 0,
+    'email_textalt' => 0,
+    'token' => 0,
+  );
+  $export['sharethis_dootrip_options'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_edoovillage_options';
+  $strongarm->value = array(
+    'full' => 0,
+    'teaser' => 0,
+    'rss' => 0,
+    'search_index' => 0,
+    'search_result' => 0,
+    'print' => 0,
+    'diff_standard' => 0,
+    'node_gallery_node_thumbnail' => 0,
+    'email_plain' => 0,
+    'email_html' => 0,
+    'email_textalt' => 0,
+    'token' => 0,
+  );
+  $export['sharethis_edoovillage_options'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_event_options';
+  $strongarm->value = array(
+    'full' => 0,
+    'teaser' => 0,
+    'rss' => 0,
+    'search_index' => 0,
+    'search_result' => 0,
+    'print' => 0,
+    'diff_standard' => 0,
+    'node_gallery_node_thumbnail' => 0,
+    'email_plain' => 0,
+    'email_html' => 0,
+    'email_textalt' => 0,
+    'token' => 0,
+  );
+  $export['sharethis_event_options'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_gic_options';
+  $strongarm->value = array(
+    'full' => 0,
+    'teaser' => 0,
+    'rss' => 0,
+    'search_index' => 0,
+    'search_result' => 0,
+    'print' => 0,
+    'diff_standard' => 0,
+    'node_gallery_node_thumbnail' => 0,
+    'email_plain' => 0,
+    'email_html' => 0,
+    'email_textalt' => 0,
+    'token' => 0,
+  );
+  $export['sharethis_gic_options'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_hub_options';
+  $strongarm->value = array(
+    'full' => 0,
+    'teaser' => 0,
+    'rss' => 0,
+    'search_index' => 0,
+    'search_result' => 0,
+    'print' => 0,
+    'diff_standard' => 0,
+    'node_gallery_node_thumbnail' => 0,
+    'email_plain' => 0,
+    'email_html' => 0,
+    'email_textalt' => 0,
+    'token' => 0,
+  );
+  $export['sharethis_hub_options'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_laptop_options';
+  $strongarm->value = array(
+    'full' => 0,
+    'teaser' => 0,
+    'rss' => 0,
+    'search_index' => 0,
+    'search_result' => 0,
+    'print' => 0,
+    'diff_standard' => 0,
+    'node_gallery_node_thumbnail' => 0,
+    'email_plain' => 0,
+    'email_html' => 0,
+    'email_textalt' => 0,
+    'token' => 0,
+  );
+  $export['sharethis_laptop_options'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_late_load';
+  $strongarm->value = 0;
+  $export['sharethis_late_load'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_location';
+  $strongarm->value = 'content';
+  $export['sharethis_location'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_node_gallery_gallery_options';
+  $strongarm->value = array(
+    'full' => 0,
+    'teaser' => 0,
+    'rss' => 0,
+    'search_index' => 0,
+    'search_result' => 0,
+    'print' => 0,
+    'diff_standard' => 0,
+    'node_gallery_node_thumbnail' => 0,
+    'email_plain' => 0,
+    'email_html' => 0,
+    'email_textalt' => 0,
+    'token' => 0,
+  );
+  $export['sharethis_node_gallery_gallery_options'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_node_gallery_item_options';
+  $strongarm->value = array(
+    'full' => 0,
+    'teaser' => 0,
+    'rss' => 0,
+    'search_index' => 0,
+    'search_result' => 0,
+    'print' => 0,
+    'diff_standard' => 0,
+    'node_gallery_node_thumbnail' => 0,
+    'email_plain' => 0,
+    'email_html' => 0,
+    'email_textalt' => 0,
+    'token' => 0,
+  );
+  $export['sharethis_node_gallery_item_options'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_node_types';
+  $strongarm->value = array(
+    'action' => 0,
+    'article' => 0,
+    'page' => 0,
+    'blog' => 0,
+    'book' => 0,
+    'laptop' => 0,
+    'dootrip' => 0,
+    'edoovillage' => 0,
+    'gic' => 0,
+    'node_gallery_gallery' => 0,
+    'node_gallery_item' => 0,
+    'hub' => 0,
+    'private_page' => 0,
+    'simplenews' => 0,
+    'slider_page' => 0,
+    'superhub_page' => 0,
+    'team' => 0,
+    'team_page' => 0,
+    'event' => 0,
+    'team_task' => 0,
+  );
+  $export['sharethis_node_types'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_option_extras';
+  $strongarm->value = array(
+    'Google Plus One:plusone' => 'Google Plus One:plusone',
+    'Facebook Like:fblike' => 'Facebook Like:fblike',
+  );
+  $export['sharethis_option_extras'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_option_neworzero';
+  $strongarm->value = 0;
+  $export['sharethis_option_neworzero'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_option_onhover';
+  $strongarm->value = 1;
+  $export['sharethis_option_onhover'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_option_shorten';
+  $strongarm->value = 1;
+  $export['sharethis_option_shorten'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_page_options';
+  $strongarm->value = array(
+    'full' => 0,
+    'teaser' => 0,
+    'rss' => 0,
+    'search_index' => 0,
+    'search_result' => 0,
+    'print' => 0,
+    'diff_standard' => 0,
+    'node_gallery_node_thumbnail' => 0,
+    'email_plain' => 0,
+    'email_html' => 0,
+    'email_textalt' => 0,
+    'token' => 0,
+  );
+  $export['sharethis_page_options'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_private_page_options';
+  $strongarm->value = array(
+    'full' => 0,
+    'teaser' => 0,
+    'rss' => 0,
+    'search_index' => 0,
+    'search_result' => 0,
+    'print' => 0,
+    'diff_standard' => 0,
+    'node_gallery_node_thumbnail' => 0,
+    'email_plain' => 0,
+    'email_html' => 0,
+    'email_textalt' => 0,
+    'token' => 0,
+  );
+  $export['sharethis_private_page_options'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_publisherID';
+  $strongarm->value = 'dr-5c872a7f-5303-826f-67cf-5531f3a7436d';
+  $export['sharethis_publisherID'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_service_option';
+  $strongarm->value = '"Facebook:facebook","Tweet:twitter","LinkedIn:linkedin","Email:email","ShareThis:sharethis","Pinterest:pinterest"';
+  $export['sharethis_service_option'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_simplenews_options';
+  $strongarm->value = array(
+    'full' => 0,
+    'teaser' => 0,
+    'rss' => 0,
+    'search_index' => 0,
+    'search_result' => 0,
+    'print' => 0,
+    'diff_standard' => 0,
+    'node_gallery_node_thumbnail' => 0,
+    'email_plain' => 0,
+    'email_html' => 0,
+    'email_textalt' => 0,
+    'token' => 0,
+  );
+  $export['sharethis_simplenews_options'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_slider_page_options';
+  $strongarm->value = array(
+    'full' => 0,
+    'teaser' => 0,
+    'rss' => 0,
+    'search_index' => 0,
+    'search_result' => 0,
+    'print' => 0,
+    'diff_standard' => 0,
+    'node_gallery_node_thumbnail' => 0,
+    'email_plain' => 0,
+    'email_html' => 0,
+    'email_textalt' => 0,
+    'token' => 0,
+  );
+  $export['sharethis_slider_page_options'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_superhub_page_options';
+  $strongarm->value = array(
+    'full' => 0,
+    'teaser' => 0,
+    'rss' => 0,
+    'search_index' => 0,
+    'search_result' => 0,
+    'print' => 0,
+    'diff_standard' => 0,
+    'node_gallery_node_thumbnail' => 0,
+    'email_plain' => 0,
+    'email_html' => 0,
+    'email_textalt' => 0,
+    'token' => 0,
+  );
+  $export['sharethis_superhub_page_options'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_team_options';
+  $strongarm->value = array(
+    'full' => 0,
+    'teaser' => 0,
+    'rss' => 0,
+    'search_index' => 0,
+    'search_result' => 0,
+    'print' => 0,
+    'diff_standard' => 0,
+    'node_gallery_node_thumbnail' => 0,
+    'email_plain' => 0,
+    'email_html' => 0,
+    'email_textalt' => 0,
+    'token' => 0,
+  );
+  $export['sharethis_team_options'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_team_page_options';
+  $strongarm->value = array(
+    'full' => 0,
+    'teaser' => 0,
+    'rss' => 0,
+    'search_index' => 0,
+    'search_result' => 0,
+    'print' => 0,
+    'diff_standard' => 0,
+    'node_gallery_node_thumbnail' => 0,
+    'email_plain' => 0,
+    'email_html' => 0,
+    'email_textalt' => 0,
+    'token' => 0,
+  );
+  $export['sharethis_team_page_options'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_team_task_options';
+  $strongarm->value = array(
+    'full' => 0,
+    'teaser' => 0,
+    'rss' => 0,
+    'search_index' => 0,
+    'search_result' => 0,
+    'print' => 0,
+    'diff_standard' => 0,
+    'node_gallery_node_thumbnail' => 0,
+    'email_plain' => 0,
+    'email_html' => 0,
+    'email_textalt' => 0,
+    'token' => 0,
+  );
+  $export['sharethis_team_task_options'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_twitter_handle';
+  $strongarm->value = '';
+  $export['sharethis_twitter_handle'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_twitter_recommends';
+  $strongarm->value = '';
+  $export['sharethis_twitter_recommends'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_twitter_suffix';
+  $strongarm->value = '';
+  $export['sharethis_twitter_suffix'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_weight';
+  $strongarm->value = '10';
+  $export['sharethis_weight'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_widget_option';
+  $strongarm->value = 'st_multi';
+  $export['sharethis_widget_option'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'site_frontpage';
   $strongarm->value = 'actions';
   $export['site_frontpage'] = $strongarm;
