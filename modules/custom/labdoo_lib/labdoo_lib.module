@@ -490,13 +490,13 @@ function labdoo_render_photo_album_header() {
   $wNode = entity_metadata_wrapper('node', $nodeObj);
   $gotoMsg = t("Go to edoovillage");
   $parentNodeType = 'edoovillage';
-  $nodeAlbum = $wNode->field_photo_album_edoovillage->value();
-  if(!$nodeAlbum) {
+  $parentNode = $wNode->field_photo_album_edoovillage->value();
+  if(!$parentNode) {
     $gotoMsg = t("Go to hub");
     $parentNodeType = 'hub';
-    $nodeAlbum = $wNode->field_photo_album_hub->value();
+    $parentNode = $wNode->field_photo_album_hub->value();
   }
-  $albumUri = drupal_get_path_alias("node/" .  $nodeAlbum->nid, $langCode);
+  $albumUri = drupal_get_path_alias("node/" .  $parentNode->nid, $langCode);
   $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="middle">
                            <img alt="" src="/profiles/labdoo/files/pictures/photo-album-icon.jpg" style="width: 122px; height: 100px; "/></a>';
   $htmlCode = $htmlCode . '<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="button" value="' 
@@ -506,7 +506,7 @@ function labdoo_render_photo_album_header() {
   $htmlCode = $htmlCode . '</td><td>';
 
   // Edoovillage stats 
-  $htmlCode = $htmlCode . lbd_display_dooject_column_chart($nodeId, $parentNodeType);  
+  $htmlCode = $htmlCode . lbd_display_dooject_column_chart($parentNode->nid, $parentNodeType);  
 
   // Table ending
   $htmlCode = $htmlCode . '</td></tr></tbody></table>';

@@ -1,6 +1,7 @@
 name = lbd_sample_nodes
 core = 7.x
 package = Features
+php = 5.2.4
 dependencies[] = labdoo_objects
 dependencies[] = lbd_content_types
 dependencies[] = node_export_features
@@ -32,3 +33,4 @@ features[node_export_features][] = bb61b03e-05dc-4f36-a449-0f89574dff77
 features[node_export_features][] = c9074a6c-324d-4d9f-ac36-ecabe16a53c0
 features[node_export_features][] = e2138248-9b5f-49d3-8740-9426823cfd33
 features[node_export_features][] = f307200f-ca07-4467-83be-f71c343b8c0c
+mtime = 1420266441
