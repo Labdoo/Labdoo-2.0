@@ -96,9 +96,22 @@ function make_main_menu() {
   $mlid = menu_link_save($item);
 
   $item = array(
+            'link_path' => 'http://ftp.labdoo.org',
+            'link_title' => 'FTP resources',
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -28,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => $exploreMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
             'link_path' => '<separator>',
             'menu_name' => 'main-menu',
-            'weight' => -28,
+            'weight' => -25,
             'customized' => 1,
             'plid' => $exploreMlid, 
             'module' => 'menu',
@@ -110,7 +123,7 @@ function make_main_menu() {
             'link_title' => 'Labdooers',
             'menu_name' => 'main-menu',
             'expanded' => TRUE,
-            'weight' => -25,
+            'weight' => -20,
             'language' => 'en',
             'customized' => 1,
             'plid' => $exploreMlid,
