@@ -117,6 +117,9 @@ hr {
   display: none;
 }
 
+/* 
+ * Hide some of the various text format switches (plain text, simple html, full html, etc.)
+ */
 .control-group.form-type-select.form-item-body-und-0-format.form-item { 
   display: none; 
 }
@@ -137,6 +140,9 @@ input[type="file"] {
   line-height: 0px;
 }
 
+/*
+ * Tune the calendar next / prev buttons
+ */
 .view .date-nav-wrapper .date-prev, .view .date-nav-wrapper .date-next {
   background: none repeat scroll 0 0 #ffffff;
   position:relative;

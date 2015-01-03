@@ -251,6 +251,9 @@ function labdoo_render_dooject_header() {
   if(!isset($types[$nodeObj->type]))
     return;
 
+  if(drupal_get_path_alias(current_path()) == "node/" . $nodeId . "/edit")
+    return;
+
   if ($language->language != 'en')
     $langCode = '/' . $language->language;
   else
@@ -691,21 +694,35 @@ function labdoo_lib_node_presave($node) {
     $nodeCity = $node->locations[0]['city'];
     $node->title = $nodeCountry . ", " . $nodeCity . ": " . labdoo_lib_get_field($node, 'field_project_summary', 'node', 'value');
 
-    /*
-     * Create this edoovillage's photo album
-     */
-    $nodeAlbumNid = _create_photo_album($node);
     $wNode = entity_metadata_wrapper('node', $node);
-    $wNode->field_edoovillage_photo_album->set($nodeAlbumNid);
+    if(!property_exists($node, 'original')) {
+      // Create this edoovillage's photo album
+      $albumNid = _create_photo_album($node);
+      $wNode->field_edoovillage_photo_album->set($albumNid);
+    }
+    else {
+      // Just update the edoovillage's photo album title if there were any changes
+      $nodeAlbum = $wNode->field_edoovillage_photo_album->value();
+      $loadedNodeAlbum = node_load($nodeAlbum->nid);
+      $loadedNodeAlbum->title = $node->title . " - Photo Album";;
+      node_save($loadedNodeAlbum);
+    }
   }
 
   if($node->type == 'hub') {
-    /*
-     * Create this hub's photo album
-     */
-    $nodeAlbumNid = _create_photo_album($node);
     $wNode = entity_metadata_wrapper('node', $node);
-    $wNode->field_hub_photo_album->set($nodeAlbumNid);
+    if(!property_exists($node, 'original')) {
+      // Create this hub's photo album
+      $albumNid = _create_photo_album($node);
+      $wNode->field_hub_photo_album->set($albumNid);
+    }
+    else {
+      // Just update the hub's photo album title if there were any changes
+      $nodeAlbum = $wNode->field_hub_photo_album->value();
+      $loadedNodeAlbum = node_load($nodeAlbum->nid);
+      $loadedNodeAlbum->title = $node->title . " - Photo Album";;
+      node_save($loadedNodeAlbum);
+    }
   }
 
   if($node->type == 'dootrip') {
@@ -834,8 +851,17 @@ function labdoo_lib_form_node_form_alter(&$form, &$form_state, $form_id) {
    * Node is an edoovillage
    */
   if($form_id == 'edoovillage_node_form') {
-    // Hide title
+    // Hide title and photo album
     unset($form['title']);
+    $form['field_edoovillage_photo_album']['#access'] = FALSE;
+  }
+
+  /*
+   * Node is a hub
+   */
+  if($form_id == 'hub_node_form') {
+    // Hide photo album 
+    $form['field_hub_photo_album']['#access'] = FALSE;
   }
 
   /*
