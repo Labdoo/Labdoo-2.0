@@ -59,3 +59,8 @@ rm /var/www/lbd/profiles/labdoo/libraries/plupload/examples -rf
 
 # Install imagemagick (needed as a substitute to GD2 which has a bug on the image rotating feature)
 apt-get -y install imagemagick
+
+# Tunings for mysql and php
+sed -i "s|^max_allowed_packet.*=.*|max_allowed_packet = 64M|g" /etc/mysql/my.cnf
+sed -i "s|^memory_limit.*=.*|memory_limit = 400M|g" /etc/php5/apache2/php.ini
+

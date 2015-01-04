@@ -209,7 +209,9 @@ function lbd_roles_user_default_permissions() {
   // Exported permission: delete any simplenews content.
   $permissions['delete any simplenews content'] = array(
     'name' => 'delete any simplenews content',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'node',
   );
 

@@ -54,7 +54,7 @@ function _generate_dootrip_title($node, $dootripId) {
   $dstCountry = labdoo_lib_get_field($node, 'field_destination_of_the_trip', 'node', 'country'); 
   $dstCountry = labdoo_country_code2name($dstCountry);
 
-  $newTitle = $dootripId . " - Dootrip from " . $srcCity . " (" . $srcCountry . ") to " . $dstCity . " (" . $dstCountry . ")";
+  $newTitle = "Dootrip #" . $dootripId . " - from " . $srcCity . " (" . $srcCountry . ") to " . $dstCity . " (" . $dstCountry . ")";
 
   return $newTitle;
 }
@@ -718,8 +718,9 @@ function labdoo_lib_node_presave($node) {
     if(!property_exists($node, 'original'))
       $dootripId = lbd_get_total_num_objects("dootrip") + 1; 
     else {
-      $dootripIdExp = explode(' ', trim($node->title));
-      $dootripId = $dootripIdExp[0];
+      $dootripWords = explode(' ', trim($node->title));
+      $dootripNumber = explode('#', $dootripWords[1]);
+      $dootripId = $dootripNumber[1];
     }
     $dootripTitle = _generate_dootrip_title($node, $dootripId);
     $node->title = $dootripTitle;
