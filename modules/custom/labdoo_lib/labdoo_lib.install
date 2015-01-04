@@ -115,6 +115,9 @@ function labdoo_lib_enable()
   variable_set('image_toolkit', 'imagemagick');
   variable_set('imagemagick_convert', '/usr/bin/convert');
 
+  // Multi-language
+  variable_set('i18n_node_default_language_none', 1);
+
   drupal_set_message("labdoo_lib enabled correctly");
 }
 
