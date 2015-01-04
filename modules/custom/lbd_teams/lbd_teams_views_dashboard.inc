@@ -452,10 +452,9 @@ $handler->display->display_options['filters']['uid_1']['expose']['remember_roles
 $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
 $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
 $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
-$handler->display->display_options['filters']['og_group_ref_target_id']['relationship'] = 'og_membership_rel';
 $handler->display->display_options['filters']['og_group_ref_target_id']['value'] = array(
-  56 => '56',
-  57 => '57',
+  19 => '19',
+  20 => '20',
 );
 $handler->display->display_options['filters']['og_group_ref_target_id']['exposed'] = TRUE;
 $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['operator_id'] = 'og_group_ref_target_id_op';
@@ -467,11 +466,12 @@ $handler->display->display_options['filters']['og_group_ref_target_id']['expose'
   2 => '2',
   1 => 0,
   3 => 0,
+  7 => 0,
   6 => 0,
   5 => 0,
-  4 => 0,
-  7 => 0,
   8 => 0,
+  9 => 0,
+  4 => 0,
 );
 $handler->display->display_options['path'] = 'teams-dashboard';
 
