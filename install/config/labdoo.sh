@@ -22,12 +22,6 @@ drush @lbd en -y labdoo_lib lbd_communicate lbd_actions lbd_dootrip
 # # install smtp
 # $cwd/gmailsmtp.sh
 
-# Some sample nodes for development (disable this for production)
-# Note: these modules need to be installed after smtp is installed
-#       since they need to send out notification emails
-# [Disabled]
-#drush @lbd $enOrDis -y lbd_sample_doojects lbd_sample_edoovillages lbd_sample_hubs lbd_sample_dootrips 
-
 drush @lbd $enOrDis -y lbd_gmap
 echo "
 ===> Enabled gmap module. If markers don't show up, please refresh their cache by going to admin/config/services/gmap and clicking on \"Regenerate\"
@@ -59,6 +53,9 @@ rm /var/www/lbd/profiles/labdoo/libraries/plupload/examples -rf
 
 # Install imagemagick (needed as a substitute to GD2 which has a bug on the image rotating feature)
 apt-get -y install imagemagick
+
+# Add sample nodes (disabled this when building for production)
+drush @lbd $enOrDis -y lbd_sample_nodes
 
 # Tunings for mysql and php
 sed -i "s|^max_allowed_packet.*=.*|max_allowed_packet = 64M|g" /etc/mysql/my.cnf
