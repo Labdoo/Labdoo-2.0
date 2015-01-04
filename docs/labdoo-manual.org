@@ -24,7 +24,7 @@ This document provides a description of the features implemented by the Labdoo s
 
 * Feature Set
 
-** The five basic objects.
+** The five basic objects
 
 At its core, the Labdoo social network is based around five types of objects: labdooers, doojects, dootrips, edoovillages and hubs.
 
@@ -38,47 +38,47 @@ At its core, the Labdoo social network is based around five types of objects: la
 
 - Hubs: while everyone can participate (from home, from school, from work, etc.), labdooers find commonly useful to organize themselves locally as groups of volunteers. A hub is just that, a group of labdooers located in a given region that get together to carry out Labdoo tasks.
 
-** General layout: main navigation menu. 
+** The main navigation menu
 
-The main layout of the Labdoo system is controlled via the main navigation menu (MNN), located at the top of the page (in all the pages under www.labdoo.org). This allows users to quickly move to the various resources and tools. An important property of the MNN is that the availability of the various options depend on the role of the user. The more roles a user has, the more options he/she sees in the MNN.
+The main layout of the Labdoo system is controlled via the main navigation menu (MNM), located at the top of the page. The MNM is present in all the pages and allows users to quickly move to the various resources and tools. An important property of the MNM is that the availability of the various options depend on the role of the user. The more roles a user has, the more options he/she sees in the main navigation menu.
 
-Given their relevance, users can find on the main navigation menu bar of the Labdoo social network access to each of the five basic objects: doojects, dootrips, edoovillages, hubs and user account tabs.
+Given their relevance, users can find in the MNM access tabs to each of the five basic objects: doojects, dootrips, edoovillages, hubs and the user account tabs.
 
-** Types of user roles. 
+** Types of user roles
 
 A user can have one of the following roles:
 
-- Anonymous: corresponds to users who visit labdoo.org without logging into an account. These users can only do “view” type of activities.
+- Anonymous user: corresponds to users who visit labdoo.org without logging into an account. These users can only do “view” type of activities.
 
-- Authenticated: corresponds to the very basic labdoo user role. This is the role that a labdooer receives by default when registering for the first time to the system. This type of account allows users to perform some basic functions such as tagging laptops or registering a dootrip.
+- Authenticated user: corresponds to the very basic labdoo user role. This is the role that a labdooer receives by default when registering for the first time to the system. This type of account allows users to perform all the base functions such as tagging laptops or registering a dootrip.
 
-- Hub manager: provides functions to manage hubs.
+- Hub manager: provides additional functions to manage hubs.
 
-- Edoovillage manager: provides functions to manage edoovillages.
+- Edoovillage manager: provides additional functions to manage edoovillages.
 
-- Newsletter manager: provides functions to manage, edit, and publish newsletters issues.
+- Newsletter manager: provides additional functions to manage, edit, and publish newsletters issues.
 
-- Wiki writer: provides functions to write new wiki documents.
+- Wiki writer: provides additional functions to write new wiki documents.
 
-- Team manager: provides functions to help manage Labdoo teams.
+- Team manager: provides additional functions to manage Labdoo teams.
 
-- Superhub manager: provides functions to create new hubs and help manage larger Labdoo regions englobing multiple hubs.
+- Superhub manager: provides additional functions to create new hubs and help manage larger Labdoo regions englobing multiple hubs.
 
 ** Visualization dashboards
 
-The design of the Labdoo social network puts special emphasis in providing transparency as one of the key mechanism to ensure the health of the system. To enable transparency, a series of dashboards are implemented that allow users to quickly know the status of the various objects (doojects, dootrips, hubs, edoovillages, etc). These dashboards rely on a variety of mechanisms including geolocation maps, column charts, dynamically configurable tables, to name a few.
+The design of the Labdoo social network puts special emphasis to providing transparency as one of the key mechanisms to facilitate the health of the system. To enable transparency, a series of dashboards are implemented that allow users to quickly know the status of the various objects (doojects, dootrips, hubs, edoovillages, etc). These dashboards rely on a variety of mechanisms including geolocation maps, column charts, or dynamically configurable tables, to name a few.
 
 ** Labdoo Teams
 
-Labdoo provides a framework to help labdooers manage their own projects and activities in collaboration with other labdooers, we call this features "Labdoo teams". Each team organizes around a theme or topic, and users can join teams depending on their interests. Users with the "team manager" role can also create their own teams.
+Labdoo provides a framework to help labdooers manage their own projects and activities in collaboration with other labdooers. We call this feature "Labdoo teams". Each team organizes around a theme or topic, and users can join teams depending on their interests. Users with the "team manager" role can also create their own new teams and communities around them.
 
 Inside a team, Labdoo users can perform the following tasks:
 
 - Start a conversation.
 
-- Create a task to be performed some time in the future.
+- Create a task to be performed some time scheduled in the future.
 
-- Create an event in a calendar (a typical example of event is a laptop sanitation event).
+- Create an event in a calendar (e.g., a typical example of event is a laptop sanitation event).
 
 - View the wall of that team and engage in discussions.
 
@@ -86,7 +86,7 @@ Inside a team, Labdoo users can perform the following tasks:
 
 ** Translations
 
-TODO
+To facilitate equal opportunities of access to the Labdoo resources, an important aspect is the support for multi-languages. Labdoo has built-in technology to enable the rapid translation of its interface to a new language. An objective of the platform is to support as many languages as possible. For more information on how you can help translate Labdoo to your language, please read the document https://github.com/Labdoo/Labdoo-2.0/blob/master/translations/README.org.
 
 ** Activities feeds
 
