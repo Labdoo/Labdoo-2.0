@@ -510,27 +510,40 @@ function labdoo_render_photo_album_header() {
  */
 function labdoo_dooject_extract_emails($node) {
     $emailsList = "";
+    $emailSet = array();
 
     foreach(field_get_items('node', $node, 'field_tagger') as $element) {
       $userObj = user_load($element['target_id']);
+      if(in_array($userObj->mail, $emailSet))
+        continue;
       $emailsList = $emailsList . ", " . $userObj->mail;
+      array_push($emailSet, $userObj->mail);
     }
 
     foreach(field_get_items('node', $node, 'field_manager') as $element) {
       $userObj = user_load($element['target_id']);
+      if(in_array($userObj->mail, $emailSet))
+        continue;
       $emailsList = $emailsList . ", " . $userObj->mail;
+      array_push($emailSet, $userObj->mail);
     }
  
     if($node->field_additional_followers) {
       foreach(field_get_items('node', $node, 'field_additional_followers') as $element) {
         $userObj = user_load($element['target_id']);
+        if(in_array($userObj->mail, $emailSet))
+          continue;
         $emailsList = $emailsList . ", " . $userObj->mail;
+        array_push($emailSet, $userObj->mail);
       }
     }
 
     if($node->field_additional_notification_em) {
       foreach(field_get_items('node', $node, 'field_additional_notification_em') as $element) {
+        if(in_array($element["email"], $emailSet))
+          continue;
         $emailsList = $emailsList . ", " . $element["email"];
+        array_push($emailSet, $element["email"]);
       }
     }
 
@@ -538,7 +551,6 @@ function labdoo_dooject_extract_emails($node) {
 
     if($emailsList[0] == ",")
       $emailsList = substr($emailsList, 2);
-
     return $emailsList; 
 }
 
@@ -553,10 +565,14 @@ function labdoo_dooject_extract_emails($node) {
  */
 function labdoo_dootrip_extract_emails($node) {
     $emailsList = "";
+    $emailSet = array();
 
     foreach(field_get_items('node', $node, 'field_dootripper_s_') as $element) {
       $userObj = user_load($element['target_id']);
+      if(in_array($userObj->mail, $emailSet))
+        continue;
       $emailsList = $emailsList . ", " . $userObj->mail;
+      array_push($emailSet, $userObj->mail);
     }
 
     $emailsList = $emailsList . ", " . variable_get('site_mail', '');
@@ -1130,6 +1146,29 @@ function lbd_generate_qrcode($tag, $widthHeight ='60', $EC_level='L', $margin='0
 
 
 /**
+ * Returns the watt-hours of a dooject
+ *
+ * @param node $nodeLoaded The dooject node (loaded)
+ *
+ * @return The watt-hours
+ *
+ */
+function labdoo_lib_compute_watt_hours($nodeLoaded) {
+  // If the Wh field is present, then print it in the label
+  $volts = labdoo_lib_get_field($nodeLoaded, 'field_volts', 'node', 'value');
+  $ampHours = labdoo_lib_get_field($nodeLoaded, 'field_amp_hours', 'node', 'value');
+
+  $wattageHour = "Not available";
+
+  if($volts != "" && $ampHours != "") {
+    $Wh = round($volts * $ampHours / 1000, 1); 
+    $wattageHour = $Wh . "Wh";
+  }
+  return($wattageHour);
+}
+
+
+/**
  * Prints the labels of a dooject
  *                                 
  * @param laptopid The ID of the dooject 
@@ -1143,17 +1182,9 @@ function lbd_print_dooject_labels($laptopid = NULL) {
     return; 
   }
     
-  // If the Wh field is present, the print it in the label
-  $volts = labdoo_lib_get_field($nodeLoaded, 'field_volts', 'node', 'value');
-  $ampHours = labdoo_lib_get_field($nodeLoaded, 'field_amp_hours', 'node', 'value');
-
   $adjustedWidth = 110;
-  $wattageHour = "Not available";
-
-  if($volts != "" && $ampHours != "") {
-    $Wh = round($volts * $ampHours / 1000, 1); 
-    $wattageHour = $Wh . "Wh";
-  }
+  // If the Wh field is present, the print it in the label
+  $wattageHour = labdoo_lib_compute_watt_hours($nodeLoaded);
   
   print(
     t('Print and attach these three labels to: (1) the device, (2) the power adaptor and (3)
