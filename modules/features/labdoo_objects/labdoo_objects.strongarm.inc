@@ -444,6 +444,9 @@ function labdoo_objects_strongarm() {
       'email_textalt' => array(
         'custom_settings' => FALSE,
       ),
+      'node_gallery_node_thumbnail' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -454,10 +457,17 @@ function labdoo_objects_strongarm() {
           'weight' => '2',
         ),
         'locations' => array(
-          'weight' => '10',
+          'weight' => '11',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'sharethis' => array(
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__laptop'] = $strongarm;

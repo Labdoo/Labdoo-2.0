@@ -165,6 +165,14 @@ function lbd_wiki_menu_local_tasks_alter(&$data) {
         unset($data['tabs'][0]['output'][$key]);
       }
     }
+    if(sizeof($data['tabs'][0]['output']) == 1) {  // Hide the redundant View tab 
+      foreach ($data['tabs'][0]['output'] as $key => $value) {
+        if ($value['#link']['path'] == "node/%/view") {
+          unset($data['tabs'][0]['output'][$key]);
+        }
+      }
+    }
   }
+  return;
 }
 

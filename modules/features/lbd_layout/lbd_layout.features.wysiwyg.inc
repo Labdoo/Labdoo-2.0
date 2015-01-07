@@ -17,7 +17,7 @@ function lbd_layout_wysiwyg_default_profiles() {
     'settings' => array(
       'default' => 0,
       'user_choose' => 0,
-      'show_toggle' => 1,
+      'show_toggle' => 0,
       'theme' => 'advanced',
       'language' => 'en',
       'buttons' => array(
@@ -75,8 +75,8 @@ function lbd_layout_wysiwyg_default_profiles() {
       'verify_html' => 1,
       'preformatted' => 0,
       'convert_fonts_to_spans' => 1,
-      'remove_linebreaks' => 1,
-      'apply_source_formatting' => 0,
+      'remove_linebreaks' => 0,
+      'apply_source_formatting' => 1,
       'paste_auto_cleanup_on_paste' => 0,
       'block_formats' => 'p,address,pre,h2,h3,h4,h5,h6,div',
       'css_setting' => 'theme',
