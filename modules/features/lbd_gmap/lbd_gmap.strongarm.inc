@@ -22,10 +22,10 @@ function lbd_gmap_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'gmap_default';
   $strongarm->value = array(
-    'width' => '300px',
-    'height' => '200px',
+    'width' => '200px',
+    'height' => '150px',
     'latlong' => '40,0',
-    'zoom' => '3',
+    'zoom' => '0',
     'maxzoom' => '14',
     'styles' => array(
       'line_default' => array(
@@ -45,7 +45,7 @@ function lbd_gmap_strongarm() {
       'highlight_color' => 'ff0000',
     ),
     'controltype' => 'Small',
-    'pancontrol' => 1,
+    'pancontrol' => 0,
     'streetviewcontrol' => 0,
     'mtc' => 'standard',
     'maptype' => 'Map',
@@ -129,7 +129,7 @@ function lbd_gmap_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'gmap_marker_file';
-  $strongarm->value = '2';
+  $strongarm->value = '1';
   $export['gmap_marker_file'] = $strongarm;
 
   $strongarm = new stdClass();

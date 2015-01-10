@@ -22,7 +22,7 @@ $handler->display->display_options['exposed_form']['type'] = 'basic';
 $handler->display->display_options['pager']['type'] = 'some';
 $handler->display->display_options['pager']['options']['items_per_page'] = '10';
 $handler->display->display_options['style_plugin'] = 'gmap';
-$handler->display->display_options['style_options']['macro'] = '[gmap width=1175px | height=600px | zoom=2]';
+$handler->display->display_options['style_options']['macro'] = '[gmap width=1175px | height=600px | zoom=2 | type=Map]';
 $handler->display->display_options['style_options']['markers'] = 'userrole';
 $handler->display->display_options['style_options']['markertype'] = 'orange';
 $handler->display->display_options['style_options']['latfield'] = 'field_user_name';
@@ -100,10 +100,12 @@ $handler->display->display_options['filters']['distance_1']['expose']['remember_
   2 => '2',
   1 => 0,
   3 => 0,
+  7 => 0,
   6 => 0,
   5 => 0,
+  8 => 0,
+  9 => 0,
   4 => 0,
-  7 => 0,
 );
 $handler->display->display_options['filters']['distance_1']['expose']['gmap_macro'] = array(
   'default' => '[gmap ]',
@@ -111,10 +113,9 @@ $handler->display->display_options['filters']['distance_1']['expose']['gmap_macr
 $handler->display->display_options['filters']['distance_1']['expose']['user_location_choose'] = array(
   'default' => FALSE,
 );
-$handler->display->display_options['filters']['distance_1']['origin'] = 'static';
+$handler->display->display_options['filters']['distance_1']['origin'] = 'latlon_gmap';
 
 /* Display: Page */
 $handler = $view->new_display('page', 'Page', 'page');
 $handler->display->display_options['path'] = 'labdooers';
-
 

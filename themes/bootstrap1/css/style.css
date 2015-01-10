@@ -173,3 +173,11 @@ input[type="checkbox"] {
 .clearfix {
   margin-bottom: 10px;
 }
+
+.gmap-control.gmap-gmap.gmap.gmap-map.gmap-auto1map-gmap.gmap-processed {
+  margin-bottom:1em;
+} 
+
+.gmap-control.gmap-gmap.gmap.gmap-map.gmap-loc1-gmap.gmap-processed {
+  margin-bottom:1em;
+} 
