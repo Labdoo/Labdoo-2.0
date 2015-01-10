@@ -121,6 +121,20 @@ function labdoo_lib_enable()
   // Multi-language
   variable_set('i18n_node_default_language_none', 1);
 
+  // String overrides
+  $custom_strings = array(
+    ''=>array( //context is blank
+        'This action cannot be undone.' => ''// blanking the string hides it
+//      ,
+//      'Another old string.' => 'New String'
+    )
+  );
+  variable_set("locale_custom_strings_en",$custom_strings);   //note, this is only for english language
+  // Note: In order to ensure all languages are properly replaced, 
+  // the above needs to be complemented with a translation po file 
+  // which takes care of the strings replaced aboved in all the 
+  // supported languages.
+
   drupal_set_message("labdoo_lib enabled correctly");
 }
 
