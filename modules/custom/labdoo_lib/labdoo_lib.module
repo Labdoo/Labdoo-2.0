@@ -1570,3 +1570,17 @@ function labdoo_lib_filter_process_format($element) {
   return $element;
 }
 
+
+/**
+ * Returns the number of doojects assigned to a dootrip
+ *
+ * @param node $nodeLoaded The dootrip node (loaded)
+ *
+ * @return The number of doojects
+ *
+ */
+function labdoo_lib_compute_dootrip_load($nodeLoaded) {
+  $dootrippers = field_get_items('node', $nodeLoaded, 'field_laptops');
+  return(count($dootrippers));
+}
+

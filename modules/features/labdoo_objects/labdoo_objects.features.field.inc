@@ -57,7 +57,7 @@ function labdoo_objects_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '7',
+          'weight' => '8',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -95,7 +95,7 @@ function labdoo_objects_field_default_fields() {
           'year_range' => '-3:+3',
         ),
         'type' => 'date_select',
-        'weight' => '8',
+        'weight' => '9',
       ),
     ),
   );
@@ -138,7 +138,7 @@ function labdoo_objects_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '11',
+          'weight' => '13',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -168,7 +168,7 @@ function labdoo_objects_field_default_fields() {
           'rows' => '3',
         ),
         'type' => 'text_textarea',
-        'weight' => '13',
+        'weight' => '14',
       ),
     ),
   );
@@ -220,7 +220,7 @@ function labdoo_objects_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '6',
+          'weight' => '7',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -258,7 +258,7 @@ function labdoo_objects_field_default_fields() {
           'year_range' => '-3:+3',
         ),
         'type' => 'date_select',
-        'weight' => '5',
+        'weight' => '6',
       ),
     ),
   );
@@ -496,7 +496,7 @@ function labdoo_objects_field_default_fields() {
         'module' => 'location_cck',
         'settings' => array(),
         'type' => 'location',
-        'weight' => '7',
+        'weight' => '8',
       ),
     ),
   );
@@ -611,7 +611,7 @@ $display_output = $entity_field_item[\'value\'];',
           'module' => 'computed_field',
           'settings' => array(),
           'type' => 'computed_field_plain',
-          'weight' => '9',
+          'weight' => '10',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -638,7 +638,7 @@ $display_output = $entity_field_item[\'value\'];',
         'module' => 'computed_field',
         'settings' => array(),
         'type' => 'computed',
-        'weight' => '11',
+        'weight' => '12',
       ),
     ),
   );
@@ -671,7 +671,7 @@ $display_output = $entity_field_item[\'value\'];',
         'handler_settings' => array(
           'behaviors' => array(
             'views-select-list' => array(
-              'status' => 0,
+              'status' => 1,
             ),
           ),
           'sort' => array(
@@ -687,6 +687,7 @@ $display_output = $entity_field_item[\'value\'];',
     'field_instance' => array(
       'bundle' => 'dootrip',
       'default_value' => NULL,
+      'default_value_function' => '',
       'deleted' => '0',
       'description' => 'User(s) who will be part of this dootrip',
       'display' => array(
@@ -697,7 +698,7 @@ $display_output = $entity_field_item[\'value\'];',
             'link' => 1,
           ),
           'type' => 'entityreference_label',
-          'weight' => '10',
+          'weight' => '12',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -717,6 +718,11 @@ $display_output = $entity_field_item[\'value\'];',
       'label' => 'Dootripper(s)',
       'required' => 1,
       'settings' => array(
+        'behaviors' => array(
+          'prepopulate' => array(
+            'status' => 0,
+          ),
+        ),
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -789,7 +795,7 @@ $display_output = $entity_field_item[\'value\'];',
             'link' => 1,
           ),
           'type' => 'entityreference_label',
-          'weight' => '8',
+          'weight' => '9',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -820,7 +826,7 @@ $display_output = $entity_field_item[\'value\'];',
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '10',
+        'weight' => '11',
       ),
     ),
   );
@@ -888,7 +894,7 @@ $display_output = $entity_field_item[\'value\'];',
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '9',
+        'weight' => '10',
       ),
     ),
   );
@@ -956,7 +962,79 @@ $display_output = $entity_field_item[\'value\'];',
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '6',
+        'weight' => '7',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-dootrip-field_number_of_doojects_assigne'.
+  $fields['node-dootrip-field_number_of_doojects_assigne'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_number_of_doojects_assigne',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'computed_field',
+      'settings' => array(
+        'code' => '$entity_field[0][\'value\'] = labdoo_lib_compute_dootrip_load($entity);',
+        'database' => array(
+          'data_default' => '',
+          'data_index' => 0,
+          'data_length' => '32',
+          'data_not_NULL' => 0,
+          'data_precision' => '10',
+          'data_scale' => '2',
+          'data_size' => 'normal',
+          'data_type' => 'int',
+        ),
+        'display_format' => '$display_output = $entity_field_item[\'value\'];',
+        'store' => 1,
+      ),
+      'translatable' => '0',
+      'type' => 'computed',
+    ),
+    'field_instance' => array(
+      'bundle' => 'dootrip',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'inline',
+          'module' => 'computed_field',
+          'settings' => array(),
+          'type' => 'computed_field_plain',
+          'weight' => '6',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_number_of_doojects_assigne',
+      'label' => 'Number of doojects assigned',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'computed_field',
+        'settings' => array(),
+        'type' => 'computed',
+        'weight' => '4',
       ),
     ),
   );
@@ -1194,7 +1272,7 @@ $display_output = $entity_field_item[\'value\'];',
         'module' => 'location_cck',
         'settings' => array(),
         'type' => 'location',
-        'weight' => '4',
+        'weight' => '5',
       ),
     ),
   );
@@ -1264,7 +1342,7 @@ $display_output = $entity_field_item[\'value\'];',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '12',
+        'weight' => '13',
       ),
     ),
   );
@@ -2681,7 +2759,7 @@ $display_output = $entity_field_item[\'value\'];',
             'link' => 1,
           ),
           'type' => 'entityreference_label',
-          'weight' => '15',
+          'weight' => '16',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -2749,7 +2827,7 @@ $display_output = $entity_field_item[\'value\'];',
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '16',
+        'weight' => '17',
       ),
     ),
   );
@@ -2808,7 +2886,7 @@ $display_output = $entity_field_item[\'value\'];',
             'link' => 1,
           ),
           'type' => 'entityreference_label',
-          'weight' => '17',
+          'weight' => '18',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -2839,7 +2917,7 @@ $display_output = $entity_field_item[\'value\'];',
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '17',
+        'weight' => '18',
       ),
     ),
   );
@@ -2882,7 +2960,7 @@ $display_output = $entity_field_item[\'value\'];',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '18',
+          'weight' => '19',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -2912,7 +2990,7 @@ $display_output = $entity_field_item[\'value\'];',
           'rows' => '3',
         ),
         'type' => 'text_textarea',
-        'weight' => '19',
+        'weight' => '20',
       ),
     ),
   );
@@ -2940,11 +3018,10 @@ $display_output = $entity_field_item[\'value\'];',
       'description' => 'Add here the email address(es) of additional people that you would like to be notified whenever this laptop changes its status.',
       'display' => array(
         'default' => array(
-          'label' => 'inline',
-          'module' => 'email',
+          'label' => 'hidden',
           'settings' => array(),
-          'type' => 'email_default',
-          'weight' => '16',
+          'type' => 'hidden',
+          'weight' => '17',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -2973,7 +3050,7 @@ $display_output = $entity_field_item[\'value\'];',
           'size' => '60',
         ),
         'type' => 'email_textfield',
-        'weight' => '18',
+        'weight' => '19',
       ),
     ),
   );
@@ -3042,6 +3119,78 @@ $display_output = $entity_field_item[\'value\'];',
         'settings' => array(),
         'type' => 'number',
         'weight' => '14',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-laptop-field_battery_watt_hours'.
+  $fields['node-laptop-field_battery_watt_hours'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_battery_watt_hours',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'computed_field',
+      'settings' => array(
+        'code' => '$entity_field[0][\'value\'] = labdoo_lib_compute_watt_hours($entity);',
+        'database' => array(
+          'data_default' => '',
+          'data_index' => 0,
+          'data_length' => '32',
+          'data_not_NULL' => 0,
+          'data_precision' => '10',
+          'data_scale' => '2',
+          'data_size' => 'normal',
+          'data_type' => 'varchar',
+        ),
+        'display_format' => '$display_output = $entity_field_item[\'value\'];',
+        'store' => 1,
+      ),
+      'translatable' => '0',
+      'type' => 'computed',
+    ),
+    'field_instance' => array(
+      'bundle' => 'laptop',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'inline',
+          'module' => 'computed_field',
+          'settings' => array(),
+          'type' => 'computed_field_plain',
+          'weight' => '15',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_battery_watt_hours',
+      'label' => 'Watt-hours',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'computed_field',
+        'settings' => array(),
+        'type' => 'computed',
+        'weight' => '15',
       ),
     ),
   );
@@ -3287,14 +3436,15 @@ $display_output = $entity_field_item[\'value\'];',
       'settings' => array(
         'allowed_values' => array(
           'laptop' => 'Laptop',
-          'blackberry' => 'BlackBerry',
           'desktop' => 'Desktop',
+          'internetTable' => 'Internet tablet',
+          'androidTablet' => 'Android tablet',
+          'ipad' => 'iPad',
           'ebook' => 'eBook',
+          'smartphone' => 'SmartPhone',
           'googlePhone' => 'Android phone',
           'iphone' => 'iPhone',
-          'internetTable' => 'Internet tablet',
-          'ipad' => 'iPad',
-          'smartphone' => 'SmartPhone',
+          'blackberry' => 'BlackBerry',
         ),
         'allowed_values_function' => '',
       ),
@@ -3501,7 +3651,7 @@ $display_output = $entity_field_item[\'value\'];',
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '15',
+        'weight' => '16',
       ),
     ),
   );
@@ -4428,6 +4578,7 @@ $display_output = $entity_field_item[\'value\'];',
   t('Number of cores (CPU type)');
   t('Number of days you can store the dooject after the arrival date');
   t('Number of days you can store the dooject before the departure date');
+  t('Number of doojects assigned');
   t('Number of doojects needed');
   t('Number of doojects you can carry');
   t('Number of students');
@@ -4453,6 +4604,7 @@ $display_output = $entity_field_item[\'value\'];',
   t('Upload here a picture of the dooject. A picture is a helpful way for donors to ensure that they are looking at the correct dooject. Please do not use pictures that you may find on the Internet, as they may be copyrighted.  Instead, please take a picture with your own camera. Once the dooject reaches a school, you can also upload another picture with the students using it.');
   t('User(s) who will be part of this dootrip');
   t('Volts');
+  t('Watt-hours');
   t('Weight');
   t('Write here the serial number of the dooject. Usually the serial number can be found in the back of the dooject, search for keywords such as "Serial Number" or "S/N", or if you see a bar code with a number under it, use this number. If the dooject has no sticker with the serial number, then write in this field the words "Unknown".');
 

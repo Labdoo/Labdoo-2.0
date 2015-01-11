@@ -459,7 +459,7 @@ function lbd_actions_node_view($node, $view_mode) {
       return;
     }
     else if($reason == "dootrip") {
-      drupal_set_message(t("You have contributed to this dooject by providing a dootrip.", 'status', FALSE));
+      drupal_set_message(t("You have contributed to this dooject by providing a dootrip."), 'status', FALSE);
       return;
     }
     return;
