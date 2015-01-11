@@ -402,10 +402,10 @@ function _generate_labdoo_action($node) {
       $prevDoojectId = labdoo_lib_get_field($node->original, 'field_laptops', 'node', 'target_id');
       if($prevDoojectId != NULL or $doojectId == NULL) 
         return;
-      $title = $titleSplit[1] . " was updated";
+      $title = "Dootrip " . $titleSplit[1] . " was updated";
     }
     else { // Dootrips is created
-      $title = $titleSplit[1] . " was created";
+      $title = "Dootrip " . $titleSplit[1] . " was created";
     }
     if($doojectId != NULL) {
       $doojectNode = node_load($doojectId);

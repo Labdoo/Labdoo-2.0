@@ -35,18 +35,22 @@
  * @param string $dst_name
  *   A user friendly name for the destination field
  */
-function _update_linked_nodes($node, $src_field, $dst_field, $src_name, $dst_name) {
+function _update_linked_nodes($node, $src_field, $dst_field, $src_name, $dst_name, $new=FALSE) {
 
-  $wSrcNodeNew = entity_metadata_wrapper('node', $node);
-  $dstListNew = $wSrcNodeNew->$src_field->value();
+  // If this call comes from a node view path (see function lbd_dootrip_node_view),
+  // skip the rest of work.
+  if(array_key_exists('content', $node)) 
+    return;
 
-  $srcLoaded = node_load($node->nid);
-  if($srcLoaded) { // node already existed (this is not an insert operation)
-    $wSrcNodeOld = entity_metadata_wrapper('node', $srcLoaded);
-    $dstListOld = $wSrcNodeOld->$src_field->value();
+  $dstListNew = field_get_items('node', $node, $src_field);
+
+  if($new) {
+    $dstListOld = array();
   }
-  else
-    $dstListOld == array();
+  else {
+    $srcLoaded = node_load($node->nid);
+    $dstListOld = field_get_items('node', $srcLoaded, $src_field);
+  }
 
   if($dstListNew == $dstListOld)
     return; 
@@ -54,22 +58,15 @@ function _update_linked_nodes($node, $src_field, $dst_field, $src_name, $dst_nam
   // Try to add this source to the destinations:
   // For each dst added by the newly submitted form, if
   // this src is not assigned to such dst, then assign it.
-  foreach($dstListNew as $dstNode) {
-    $changed = FALSE; 
-
-    $dstLoaded = node_load($dstNode->nid);
+  foreach($dstListNew as $key => $dstNode) {
+    $dstLoaded = node_load($dstNode['target_id']);
     $wDstNode = entity_metadata_wrapper('node', $dstLoaded);
     $srcList = $wDstNode->$dst_field->value();
     if(!$srcList) 
       $srcList = array();
-
-    if(!$srcLoaded || !in_array($srcLoaded, $srcList)) {
-      drupal_set_message("The " . $src_name . " '" . $node->title . "'  was added to the " . $dst_name . " '" . $dstNode->title . "'");
+    if($new || !in_array($srcLoaded, $srcList)) {
+      drupal_set_message("The " . $src_name . " '" . $node->title . "'  was added to the " . $dst_name . " '" . $dstLoaded->title . "'", 'status', FALSE);
       $srcList[] = $node;
-      $changed = TRUE;
-    }
-
-    if($changed == TRUE) {  
       $wDstNode->$dst_field->set($srcList);
       $wDstNode->save();
     }
@@ -78,14 +75,13 @@ function _update_linked_nodes($node, $src_field, $dst_field, $src_name, $dst_nam
   // Try to remove this source from the destinations:
   // For each dst removed by the newly submitted form, if
   // this src is assigned to such dst, then unassign it.
-  if($srcLoaded) { 
-    foreach($dstListOld as $dstNode) {
-      $changed = FALSE;
+  if(!$new && !empty($dstListOld)) { 
+    foreach($dstListOld as $key => $dstNode) {
 
       if(in_array($dstNode, $dstListNew))
         continue;      
 
-      $dstLoaded = node_load($dstNode->nid);
+      $dstLoaded = node_load($dstNode['target_id']);
       $wDstNode = entity_metadata_wrapper('node', $dstLoaded);
       $srcList = $wDstNode->$dst_field->value();
       if(!$srcList)
@@ -94,14 +90,10 @@ function _update_linked_nodes($node, $src_field, $dst_field, $src_name, $dst_nam
       foreach($srcList as $key => $srcNode) {
         if($srcNode->nid == $srcLoaded->nid) {
           unset($srcList[$key]);
-          drupal_set_message("The " . $src_name . " '" . $node->title . "'  was removed from the " . $dst_name . " '" . $dstNode->title . "'");
-          $changed = TRUE;
+          drupal_set_message("The " . $src_name . " '" . $node->title . "'  was removed from the " . $dst_name . " '" . $dstLoaded->title . "'", 'status', FALSE);
+          $wDstNode->$dst_field->set($srcList);
+          $wDstNode->save();
         }
-      }
-
-      if($changed == TRUE) { 
-        $wDstNode->$dst_field->set($srcList);
-        $wDstNode->save();
       }
     }
   }
@@ -120,10 +112,26 @@ function _update_linked_nodes($node, $src_field, $dst_field, $src_name, $dst_nam
 function lbd_dootrip_node_update($node) {
 
   if($node->type == 'laptop') 
-    _update_linked_nodes($node, 'field_dootrips', 'field_laptops', 'dooject', 'dootrip'); 
+    _update_linked_nodes($node, 'field_dootrips', 'field_laptops', 'dooject', 'dootrip', FALSE); 
 
   if($node->type == 'dootrip') 
-    _update_linked_nodes($node, 'field_laptops', 'field_dootrips', 'dootrip', 'dooject'); 
+    _update_linked_nodes($node, 'field_laptops', 'field_dootrips', 'dootrip', 'dooject', FALSE); 
+
+  return;
+}
+
+
+/**
+ * Implementation of hook_node_insert
+ *
+ */
+function lbd_dootrip_node_insert($node) {
+
+  if($node->type == 'laptop') 
+    _update_linked_nodes($node, 'field_dootrips', 'field_laptops', 'dooject', 'dootrip', TRUE); 
+
+  if($node->type == 'dootrip') 
+    _update_linked_nodes($node, 'field_laptops', 'field_dootrips', 'dootrip', 'dooject', TRUE); 
 
   return;
 }

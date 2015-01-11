@@ -652,6 +652,29 @@ function _create_photo_album($node) {
 
 
 /**
+ * Allocate a new dooject ID
+ *
+ */
+function lbd_allocate_dooject_id() {
+
+  $query = "SELECT title FROM node WHERE type='laptop' ORDER BY title ASC";
+  $result = db_query($query);
+
+  // The following algorithm searches for any possible
+  // holes in the Labdoo ID space and if none, allocates the next 
+  // smallest ID
+  $potentialId = 1;
+  foreach($result as $item) {
+    $thisId = intval($item->title);
+    if($potentialId < $thisId)
+      break;
+    $potentialId++;
+  }
+  return($potentialId); 
+}
+
+
+/**
  * Implementation of hook_node_presave
  *
  */
@@ -661,13 +684,10 @@ function labdoo_lib_node_presave($node) {
     /*
      * Update the title and path alias
      */
-    // The ID of this new dooject is equal to the 
-    // current number of laptops in the database
-    // TODO: global lock for the counter
-    $numLaptops = lbd_get_total_num_objects("laptop") + 1; 
     // The Labdoo identifier of each
     // laptop is stored as the node's title
-    $node->title = sprintf("%09d", intval($numLaptops));
+    $laptopIdInt = lbd_allocate_dooject_id();
+    $node->title = sprintf("%09d", $laptopIdInt);
 
     // Add laptop path alias for 1.0 compatibility.
     // There are basically two ways to access a laptop:
