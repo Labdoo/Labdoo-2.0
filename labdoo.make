@@ -25,7 +25,7 @@ projects[diff] = 3.2
 ;--------------------
 ; User interface
 ;--------------------
-projects[context] = 3.5
+projects[context] = 3.6
 projects[views] = 3.8
 projects[homebox] = 2.0-beta7
 projects[boxes] = 1.2
@@ -108,7 +108,7 @@ projects[email] = 1.3
 projects[mailsystem] = 2.34
 projects[mimemail] = 1.0-beta3
 projects[reroute_email] = 1.2
-projects[smtp] = 1.0
+projects[smtp] = 1.2
 ;projects[phpmailer] = 3.x-dev
 projects[phpmailer][download][revision] = 8f7c632
 projects[phpmailer][download][branch] = 7.x-3.x
@@ -148,7 +148,7 @@ projects[libraries] = 2.2
 projects[entity] = 1.5
 projects[xautoload] = 4.5
 projects[token] = 1.5
-projects[rules] = 2.7
+projects[rules] = 2.8
 projects[pathauto] = 1.2
 projects[subpathauto] = 1.3
 projects[entityreference] = 1.1
@@ -168,7 +168,7 @@ projects[logintoboggan] = 1.4
 ; Photo albums
 ;--------------------
 projects[file_entity] = 2.0-beta1
-projects[node_gallery] = 1.0
+projects[node_gallery] = 1.1
 projects[colorbox] = 2.8
 libraries[colorbox][directory_name] = colorbox 
 libraries[colorbox][download][type] = get

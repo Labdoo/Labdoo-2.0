@@ -157,6 +157,8 @@ function _calculate_dootrip_weight($node) {
   }
 
   foreach($doojectsList as $doojectNode) {
+    if(!key_exists('nid', $doojectNode))
+      continue;
     $doojectLoaded = node_load($doojectNode->nid);
     $wDoojectLoaded = entity_metadata_wrapper('node', $doojectLoaded);
     $doojectWeight = $wDoojectLoaded->field_dooject_weight->value();
