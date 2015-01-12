@@ -246,8 +246,9 @@ function _email_dootrip_event($node, $eventType) {
    * Send out notification email to dootripper 
    */
   $dootripTitle = $node->title; 
-  $emailsList = $user->mail;
-  $emailsList = $emailsList . ", " . labdoo_dootrip_extract_emails($node);    
+  $emailsList = labdoo_dootrip_extract_emails($node);    
+  if(strpos($emailsList, $user->mail) == FALSE)
+    $emailsList = $emailsList . ", " . $user->mail;
   $email_params['to'] = $emailsList; 
   $dootripNid = $node->nid;
 
@@ -476,8 +477,9 @@ function lbd_communicate_cron() {
      * Send out notification email 
      */
     $dootripTitle = $node->title; 
-    $emailsList = $user->mail;
-    $emailsList = $emailsList . ", " . labdoo_dootrip_extract_emails($node);    
+    $emailsList = labdoo_dootrip_extract_emails($node);    
+    if(strpos($emailsList, $user->mail) == FALSE)
+      $emailsList = $emailsList . ", " . $user->mail;
     $email_params['to'] = $emailsList; 
     $dootripNid = $node->nid;
 

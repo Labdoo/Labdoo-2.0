@@ -10,6 +10,81 @@
 function labdoo_objects_field_default_fields() {
   $fields = array();
 
+  // Exported field: 'node-dootrip-field_additional_traveler_s_info'.
+  $fields['node-dootrip-field_additional_traveler_s_info'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_additional_traveler_s_info',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'dootrip',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Name of the person(s) or the NGO performing the dootrip if different than the dootrippers field',
+      'display' => array(
+        'default' => array(
+          'label' => 'inline',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '5',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_additional_traveler_s_info',
+      'label' => 'Additional traveler(s) information',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '11',
+      ),
+    ),
+  );
+
   // Exported field: 'node-dootrip-field_arrival_date'.
   $fields['node-dootrip-field_arrival_date'] = array(
     'field_config' => array(
@@ -57,7 +132,7 @@ function labdoo_objects_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '8',
+          'weight' => '3',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -95,7 +170,7 @@ function labdoo_objects_field_default_fields() {
           'year_range' => '-3:+3',
         ),
         'type' => 'date_select',
-        'weight' => '9',
+        'weight' => '8',
       ),
     ),
   );
@@ -168,7 +243,7 @@ function labdoo_objects_field_default_fields() {
           'rows' => '3',
         ),
         'type' => 'text_textarea',
-        'weight' => '14',
+        'weight' => '15',
       ),
     ),
   );
@@ -220,7 +295,7 @@ function labdoo_objects_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '7',
+          'weight' => '1',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -258,7 +333,7 @@ function labdoo_objects_field_default_fields() {
           'year_range' => '-3:+3',
         ),
         'type' => 'date_select',
-        'weight' => '6',
+        'weight' => '5',
       ),
     ),
   );
@@ -469,7 +544,7 @@ function labdoo_objects_field_default_fields() {
           'module' => 'location_cck',
           'settings' => array(),
           'type' => 'location_default',
-          'weight' => '1',
+          'weight' => '2',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -496,7 +571,7 @@ function labdoo_objects_field_default_fields() {
         'module' => 'location_cck',
         'settings' => array(),
         'type' => 'location',
-        'weight' => '8',
+        'weight' => '7',
       ),
     ),
   );
@@ -533,7 +608,7 @@ function labdoo_objects_field_default_fields() {
             'thousand_separator' => ' ',
           ),
           'type' => 'number_integer',
-          'weight' => '5',
+          'weight' => '9',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -564,7 +639,7 @@ function labdoo_objects_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '3',
+        'weight' => '2',
       ),
     ),
   );
@@ -611,7 +686,7 @@ $display_output = $entity_field_item[\'value\'];',
           'module' => 'computed_field',
           'settings' => array(),
           'type' => 'computed_field_plain',
-          'weight' => '10',
+          'weight' => '12',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -638,7 +713,7 @@ $display_output = $entity_field_item[\'value\'];',
         'module' => 'computed_field',
         'settings' => array(),
         'type' => 'computed',
-        'weight' => '12',
+        'weight' => '13',
       ),
     ),
   );
@@ -698,7 +773,7 @@ $display_output = $entity_field_item[\'value\'];',
             'link' => 1,
           ),
           'type' => 'entityreference_label',
-          'weight' => '12',
+          'weight' => '4',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -734,7 +809,7 @@ $display_output = $entity_field_item[\'value\'];',
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '2',
+        'weight' => '10',
       ),
     ),
   );
@@ -795,7 +870,7 @@ $display_output = $entity_field_item[\'value\'];',
             'link' => 1,
           ),
           'type' => 'entityreference_label',
-          'weight' => '9',
+          'weight' => '11',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -826,7 +901,7 @@ $display_output = $entity_field_item[\'value\'];',
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '11',
+        'weight' => '12',
       ),
     ),
   );
@@ -863,7 +938,7 @@ $display_output = $entity_field_item[\'value\'];',
             'thousand_separator' => ' ',
           ),
           'type' => 'number_integer',
-          'weight' => '3',
+          'weight' => '7',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -881,7 +956,7 @@ $display_output = $entity_field_item[\'value\'];',
       'entity_type' => 'node',
       'field_name' => 'field_number_of_days_after',
       'label' => 'Number of days you can store the dooject after the arrival date',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'max' => '',
         'min' => '0',
@@ -894,7 +969,7 @@ $display_output = $entity_field_item[\'value\'];',
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '10',
+        'weight' => '9',
       ),
     ),
   );
@@ -931,7 +1006,7 @@ $display_output = $entity_field_item[\'value\'];',
             'thousand_separator' => ' ',
           ),
           'type' => 'number_integer',
-          'weight' => '4',
+          'weight' => '8',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -949,7 +1024,7 @@ $display_output = $entity_field_item[\'value\'];',
       'entity_type' => 'node',
       'field_name' => 'field_number_of_days_before',
       'label' => 'Number of days you can store the dooject before the departure date',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'max' => '',
         'min' => '0',
@@ -962,7 +1037,7 @@ $display_output = $entity_field_item[\'value\'];',
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '7',
+        'weight' => '6',
       ),
     ),
   );
@@ -1007,7 +1082,7 @@ $display_output = $entity_field_item[\'value\'];',
           'module' => 'computed_field',
           'settings' => array(),
           'type' => 'computed_field_plain',
-          'weight' => '6',
+          'weight' => '10',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -1034,7 +1109,7 @@ $display_output = $entity_field_item[\'value\'];',
         'module' => 'computed_field',
         'settings' => array(),
         'type' => 'computed',
-        'weight' => '4',
+        'weight' => '3',
       ),
     ),
   );
@@ -1272,7 +1347,7 @@ $display_output = $entity_field_item[\'value\'];',
         'module' => 'location_cck',
         'settings' => array(),
         'type' => 'location',
-        'weight' => '5',
+        'weight' => '4',
       ),
     ),
   );
@@ -1315,7 +1390,7 @@ $display_output = $entity_field_item[\'value\'];',
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => '2',
+          'weight' => '6',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -1342,7 +1417,7 @@ $display_output = $entity_field_item[\'value\'];',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '13',
+        'weight' => '14',
       ),
     ),
   );
@@ -4549,6 +4624,7 @@ $display_output = $entity_field_item[\'value\'];',
   t('Additional followers');
   t('Additional notes');
   t('Additional notification emails');
+  t('Additional traveler(s) information');
   t('Amp hours');
   t('Arrival date');
   t('Branches information');
@@ -4575,6 +4651,7 @@ $display_output = $entity_field_item[\'value\'];',
   t('Manager');
   t('Memory');
   t('Model');
+  t('Name of the person(s) or the NGO performing the dootrip if different than the dootrippers field');
   t('Number of cores (CPU type)');
   t('Number of days you can store the dooject after the arrival date');
   t('Number of days you can store the dooject before the departure date');
