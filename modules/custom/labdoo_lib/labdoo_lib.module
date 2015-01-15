@@ -104,25 +104,36 @@ function _update_dooject_location_from_edoovillage($node) {
  *   Latitude returned as result
  * @param string $long
  *   Longitude returned as result 
+ * @param street $street
+ *   Street name
+ * @param string $state
+ *   State or province
+ * @param string $zip
+ *   Zip code
+ * @param integer $accuracy
+ *   Factor to help control the accuracy via the random number added to lat and lon 
  * @return integer 
  *   Returns -1 if it could not resolve the query, 0 otherwise.
  *
  */
-function labdoo_lookup_coordinates($country, $city, &$lat, &$lon) {
+function labdoo_lookup_coordinates($country, $city, &$lat, &$lon, $street="", $state="", $zip="", $accuracy=100) {
     # There are various online services to pull the GPS  
     # coordinates of a location. Use one of them.
-    $query = str_replace(' ', '%', 'https://maps.googleapis.com/maps/api/geocode/json?address='.$city.'&sensor=false&region='.$country);
+    $locationString = $street . "+" . $city . "+" . $zip . "+" . $country;
+    $query = str_replace(' ', '+', 'https://maps.googleapis.com/maps/api/geocode/json?address='.$locationString);
     $mapQuery = drupal_http_request($query);
     if(!property_exists($mapQuery, 'data')) {
       drupal_set_message('Could not resolve coordinates from the given city and country names.');
       return -1;
     }
     $mapQueryDecoded = drupal_json_decode($mapQuery->data);
-    if(!isset($mapQueryDecoded['results'][0]))
-      return 0;
+    if(!isset($mapQueryDecoded['results'][0])) {
+      drupal_set_message('Could not resolve coordinates from the given city and country names.');
+      return -1;
+    }
     $coordinates = $mapQueryDecoded['results'][0]['geometry']['location'];
-    $lat = strval(floatval($coordinates['lat'])+rand(-500,500)/100000);
-    $lon = strval(floatval($coordinates['lng'])+rand(-500,500)/100000); 
+    $lat = strval(floatval($coordinates['lat'])+rand(-1 * $accuracy, 1 * $accuracy)/100000);
+    $lon = strval(floatval($coordinates['lng'])+rand(-1 * $accuracy, 1 * $accuracy)/100000); 
     return 0;
 }
 
@@ -213,6 +224,7 @@ function labdoo_render_map_geolocate_node($nodeId = NULL, $displayDoojects = Fal
     $dstCountry = labdoo_lib_get_field($node, 'field_destination_of_the_trip', 'node', 'country'); 
     $dstCountryLong = labdoo_country_code2name($dstCountry);
 
+    // For dootrips, just make the resolution of the locations city wide (not street wide)
     if(labdoo_lookup_coordinates($srcCountry, $srcCity, $locations[0]->latitude, $locations[0]->longitude) < 0) 
       return;
     $locations[0]->balloon_text = "Dootrip origin: " . str_replace('%20', ' ', $srcCity) . ", $srcCountryLong";
@@ -702,9 +714,20 @@ function labdoo_lib_node_presave($node) {
     if(!array_key_exists('latitude', $location) || !array_key_exists('longitude', $location)) {
       // Attempt to find out the coordinates.
       // Latitude and longitude are passed as reference.
-      $ret = labdoo_lookup_coordinates($location['country'], $location['city'], $node->locations[0]['latitude'], $node->locations[0]['longitude']);
-      if($ret == 0) // If successful, do not let the system attempt to geolocate it anymore
+      $ret = labdoo_lookup_coordinates($location['country'], 
+                                       $location['city'], 
+                                       $node->locations[0]['latitude'], 
+                                       $node->locations[0]['longitude'],
+                                       $location['street'],
+                                       $location['province'],
+                                       $location['postal_code'],
+                                       10);
+      if($ret == 0) { // If successful, do not let the system attempt to geolocate it anymore
         $node->locations[0]['inhibit_geocode'] = TRUE;
+      }
+      else {
+        $node->locations[0]['inhibit_geocode'] = FALSE;
+      }
     }
   }
 
@@ -936,10 +959,10 @@ function lbd_get_total_num_objects($objectType) {
 
 
 /**
- * update_city
+ * _update_city
  *
  */
-function update_city($lid, &$objectsCount) {  
+function _update_city($lid, &$objectsCount) {  
 
   $country_names = location_get_iso3166_list();
 
@@ -998,16 +1021,16 @@ function labdoo_getnum_objects_by_city($type, $selectedNids = NULL) {
       $query = "SELECT field_origin_of_the_trip_lid AS lid FROM field_data_field_origin_of_the_trip 
                 WHERE entity_id=$object->nid";
       $lid = db_query($query)->fetchField();
-      update_city($lid, $objectsCount);
+      _update_city($lid, $objectsCount);
       $query = "SELECT field_destination_of_the_trip_lid AS lid FROM field_data_field_destination_of_the_trip 
                 WHERE entity_id=$object->nid";
       $lid = db_query($query)->fetchField();
-      update_city($lid, $objectsCount);
+      _update_city($lid, $objectsCount);
     }
     else {
       $query = "SELECT lid FROM location_instance WHERE nid=$object->nid AND vid=$object->vid";
       $lid = db_query($query)->fetchField();
-      update_city($lid, $objectsCount);
+      _update_city($lid, $objectsCount);
     }
   } 
 
@@ -1493,7 +1516,10 @@ function labdoo_lib_user_presave(&$edit, &$account, $category) {
   if(!isset($edit['locations']))
     return;
   $location = $edit['locations'][0]; 
-  $ret = labdoo_lookup_coordinates($location['country'], $location['city'], $edit['locations'][0]['latitude'], $edit['locations'][0]['longitude']);
+  $ret = labdoo_lookup_coordinates($location['country'],
+                                   $location['city'],
+                                   $edit['locations'][0]['latitude'],
+                                   $edit['locations'][0]['longitude']);
   if($ret == 0) // If successful, do not let the system attempt to geolocate it anymore
     $edit['locations'][0]['inhibit_geocode'] = TRUE;
   return;
