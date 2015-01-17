@@ -1463,7 +1463,7 @@ $display_output = $entity_field_item[\'value\'];',
           'module' => 'file',
           'settings' => array(),
           'type' => 'file_default',
-          'weight' => '14',
+          'weight' => '20',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -1496,7 +1496,163 @@ $display_output = $entity_field_item[\'value\'];',
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
-        'weight' => '17',
+        'weight' => '18',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-edoovillage-field_edoo_additional_followers'.
+  $fields['node-edoovillage-field_edoo_additional_followers'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_edoo_additional_followers',
+      'foreign keys' => array(
+        'users' => array(
+          'columns' => array(
+            'target_id' => 'uid',
+          ),
+          'table' => 'users',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(),
+        ),
+        'target_type' => 'user',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'edoovillage',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'inline',
+          'module' => 'entityreference',
+          'settings' => array(
+            'link' => 1,
+          ),
+          'type' => 'entityreference_label',
+          'weight' => '18',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_edoo_additional_followers',
+      'label' => 'Additional followers',
+      'required' => 0,
+      'settings' => array(
+        'behaviors' => array(
+          'prepopulate' => array(
+            'status' => 0,
+          ),
+        ),
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'size' => '60',
+        ),
+        'type' => 'entityreference_autocomplete',
+        'weight' => '19',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-edoovillage-field_edoo_additional_notif_em'.
+  $fields['node-edoovillage-field_edoo_additional_notif_em'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_edoo_additional_notif_em',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'email',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'email',
+    ),
+    'field_instance' => array(
+      'bundle' => 'edoovillage',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '19',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_edoo_additional_notif_em',
+      'label' => 'Additional notification emails',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'email',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'email_textfield',
+        'weight' => '20',
       ),
     ),
   );
@@ -1538,7 +1694,7 @@ $display_output = $entity_field_item[\'value\'];',
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => '8',
+          'weight' => '9',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -1658,6 +1814,79 @@ $display_output = $entity_field_item[\'value\'];',
     ),
   );
 
+  // Exported field: 'node-edoovillage-field_internet_additional_notes'.
+  $fields['node-edoovillage-field_internet_additional_notes'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_internet_additional_notes',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'edoovillage',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'inline',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '17',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_internet_additional_notes',
+      'label' => 'Internet additional notes',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'rows' => '1',
+        ),
+        'type' => 'text_textarea',
+        'weight' => '17',
+      ),
+    ),
+  );
+
   // Exported field: 'node-edoovillage-field_internet_connection_type'.
   $fields['node-edoovillage-field_internet_connection_type'] = array(
     'field_config' => array(
@@ -1697,7 +1926,7 @@ $display_output = $entity_field_item[\'value\'];',
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => '13',
+          'weight' => '16',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -1769,7 +1998,7 @@ $display_output = $entity_field_item[\'value\'];',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '11',
+          'weight' => '13',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -1836,7 +2065,7 @@ $display_output = $entity_field_item[\'value\'];',
             'thousand_separator' => ' ',
           ),
           'type' => 'number_integer',
-          'weight' => '10',
+          'weight' => '12',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -1904,7 +2133,7 @@ $display_output = $entity_field_item[\'value\'];',
             'thousand_separator' => ' ',
           ),
           'type' => 'number_integer',
-          'weight' => '4',
+          'weight' => '5',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -1972,7 +2201,7 @@ $display_output = $entity_field_item[\'value\'];',
             'thousand_separator' => ' ',
           ),
           'type' => 'number_integer',
-          'weight' => '3',
+          'weight' => '4',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -2046,7 +2275,7 @@ $display_output = $entity_field_item[\'value\'];',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '5',
+          'weight' => '6',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -2122,7 +2351,7 @@ $display_output = $entity_field_item[\'value\'];',
           'module' => 'file',
           'settings' => array(),
           'type' => 'file_default',
-          'weight' => '7',
+          'weight' => '8',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -2198,7 +2427,7 @@ $display_output = $entity_field_item[\'value\'];',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '6',
+          'weight' => '7',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -2436,7 +2665,7 @@ $display_output = $entity_field_item[\'value\'];',
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => '9',
+          'weight' => '10',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -2472,7 +2701,7 @@ $display_output = $entity_field_item[\'value\'];',
   $fields['node-edoovillage-field_socket_type'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_socket_type',
@@ -2542,7 +2771,7 @@ $display_output = $entity_field_item[\'value\'];',
         'active' => 1,
         'module' => 'options',
         'settings' => array(),
-        'type' => 'options_select',
+        'type' => 'options_buttons',
         'weight' => '15',
       ),
     ),
@@ -2585,7 +2814,7 @@ $display_output = $entity_field_item[\'value\'];',
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => '12',
+          'weight' => '14',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -4646,6 +4875,7 @@ $display_output = $entity_field_item[\'value\'];',
   t('Hard drive');
   t('Hub manager(s)');
   t('If you are an individual tagger, select here the group "Grassroots". If you belong to a hub, select the name of your hub.');
+  t('Internet additional notes');
   t('Internet connection type');
   t('Local language(s)');
   t('Manager');
