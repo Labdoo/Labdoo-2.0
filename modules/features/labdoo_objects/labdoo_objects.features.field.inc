@@ -2672,7 +2672,7 @@ $display_output = $entity_field_item[\'value\'];',
       ),
       'entity_type' => 'node',
       'field_name' => 'field_branches_information',
-      'label' => 'Branches information',
+      'label' => 'About this hub and branches',
       'required' => 0,
       'settings' => array(
         'text_processing' => '1',
@@ -4615,6 +4615,7 @@ $display_output = $entity_field_item[\'value\'];',
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('About this hub and branches');
   t('Add here any observations you would like to make. For instance you can add notes such as the quality of the laptop or if something is broken, a reminder, or a note on who donated the laptop.');
   t('Add here the email address(es) of additional people that you would like to be notified whenever this laptop changes its status.');
   t('Add users who need to have permission to edit this dooject');
@@ -4627,7 +4628,6 @@ $display_output = $entity_field_item[\'value\'];',
   t('Additional traveler(s) information');
   t('Amp hours');
   t('Arrival date');
-  t('Branches information');
   t('Brand name and model of the dooject');
   t('CPU speed (Example: 1200 MHz)');
   t('Comments');

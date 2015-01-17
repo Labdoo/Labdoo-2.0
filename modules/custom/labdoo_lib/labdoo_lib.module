@@ -192,8 +192,17 @@ function labdoo_render_map_geolocate_node($nodeId = NULL, $displayDoojects = Fal
       $nodeCity = $node->locations[0]['city'];
       $nodeCountry = labdoo_country_code2name($node->locations[0]['country']);
       $locations[0]->balloon_text = "Hub: $nodeCity, $nodeCountry";
+      // Geolocate the branches too
+      for($i = 1; $i < count($node->locations); $i++) {
+        $nodeCity = $node->locations[$i]['city'];
+        $nodeCountry = labdoo_country_code2name($node->locations[$i]['country']);
+        $locations[$i] = new stdClass();
+        $locations[$i]->latitude = $node->locations[$i]['latitude'];
+        $locations[$i]->longitude = $node->locations[$i]['longitude'];
+        $locations[$i]->balloon_text = "Hub branch: $nodeCity, $nodeCountry";
+      }
+      $map_options = '{"mapTypeId":"roadmap", "zoom":7}';
     }
-
     if($node->type == 'edoovillage' && $displayDoojects) {
       $query = "SELECT entity_id FROM field_data_field_edoovillage_destination WHERE (field_edoovillage_destination_target_id=:eid)";
       $placeHolders[':eid'] = $nodeId; 
@@ -214,6 +223,8 @@ function labdoo_render_map_geolocate_node($nodeId = NULL, $displayDoojects = Fal
     }
   }
   else { // It's a dootrip
+    // Dootrips are special in that they are geolocated via the fields origin and destination of the trip,
+    // rather than the standard location node fields.
     $srcCity = labdoo_lib_get_field($node, 'field_origin_of_the_trip', 'node', 'city'); 
     $srcCity = preg_replace('/\s+/', '%20', $srcCity);
     $srcCountry = labdoo_lib_get_field($node, 'field_origin_of_the_trip', 'node', 'country'); 

@@ -136,11 +136,22 @@ hr {
   display: none; 
 }
 
+/*
+ * Remove "Delete" and "Re geocode" check boxes from location fields in forms
+ */
 .form-type-checkbox.form-item-locations-0-delete-location.form-item {
   display: none;
 }
 
+.form-type-checkbox.form-item-locations-1-delete-location.form-item {
+  display: none;
+}
+
 .form-type-checkbox.form-item-locations-0-re-geocode-location.form-item {
+  display: none;
+}
+
+.form-type-checkbox.form-item-locations-1-re-geocode-location.form-item {
   display: none;
 }
 
