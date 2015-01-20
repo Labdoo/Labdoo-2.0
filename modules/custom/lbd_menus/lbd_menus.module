@@ -32,7 +32,7 @@ function make_main_menu() {
    */
   $item = array(
             'link_path' => 'actions',
-            'link_title' => 'Explore',
+            'link_title' => t('Explore'),
             'menu_name' => 'main-menu',
             'expanded' => TRUE,
             'weight' => -60,
@@ -45,7 +45,7 @@ function make_main_menu() {
 
   $item = array(
             'link_path' => 'actions',
-            'link_title' => 'Actions',
+            'link_title' => t('Actions'),
             'menu_name' => 'main-menu',
             'expanded' => TRUE,
             'weight' => -50,
@@ -58,7 +58,7 @@ function make_main_menu() {
 
   $item = array(
             'link_path' => 'map',
-            'link_title' => 'Global inventory',
+            'link_title' => t('Global inventory'),
             'menu_name' => 'main-menu',
             'expanded' => TRUE,
             'weight' => -40,
@@ -71,7 +71,7 @@ function make_main_menu() {
 
   $item = array(
             'link_path' => 'dootrips',
-            'link_title' => 'Dootrips inventory',
+            'link_title' => t('Dootrips inventory'),
             'menu_name' => 'main-menu',
             'expanded' => TRUE,
             'weight' => -38,
@@ -84,7 +84,7 @@ function make_main_menu() {
 
   $item = array(
             'link_path' => 'newsletters',
-            'link_title' => 'Newsletters',
+            'link_title' => t('Newsletters'),
             'menu_name' => 'main-menu',
             'expanded' => TRUE,
             'weight' => -30,
@@ -97,7 +97,7 @@ function make_main_menu() {
 
   $item = array(
             'link_path' => 'http://ftp.labdoo.org',
-            'link_title' => 'FTP resources',
+            'link_title' => t('FTP resources'),
             'menu_name' => 'main-menu',
             'expanded' => TRUE,
             'weight' => -28,
@@ -162,7 +162,7 @@ function make_main_menu() {
 
   $item = array(
             'link_path' => 'node/7',
-            'link_title' => 'View',
+            'link_title' => t('View'),
             'menu_name' => 'main-menu',
             'weight' => -50,
             'language' => 'en',
@@ -201,7 +201,7 @@ function make_main_menu() {
 
   $item = array(
             'link_path' => 'node/add/edoovillage',
-            'link_title' => 'Create',
+            'link_title' => t('Create'),
             'menu_name' => 'main-menu',
             'weight' => -40,
             'language' => 'en',
@@ -213,7 +213,7 @@ function make_main_menu() {
 
   $item = array(
             'link_path' => 'node/8',
-            'link_title' => 'View',
+            'link_title' => t('View'),
             'menu_name' => 'main-menu',
             'weight' => -50,
             'language' => 'en',
@@ -239,7 +239,7 @@ function make_main_menu() {
    */
   $item = array(
             'link_path' => 'node/9',
-            'link_title' => 'Hubs',
+            'link_title' => t('Hubs'),
             'menu_name' => 'main-menu',
             'expanded' => TRUE,
             'weight' => -20,
@@ -253,7 +253,7 @@ function make_main_menu() {
 
   $item = array(
             'link_path' => 'node/add/hub',
-            'link_title' => 'Create',
+            'link_title' => t('Create'),
             'menu_name' => 'main-menu',
             'weight' => -40,
             'language' => 'en',
@@ -265,7 +265,7 @@ function make_main_menu() {
 
   $item = array(
             'link_path' => 'node/9',
-            'link_title' => 'View',
+            'link_title' => t('View'),
             'menu_name' => 'main-menu',
             'weight' => -50,
             'language' => 'en',
@@ -287,7 +287,7 @@ function make_main_menu() {
 
   $item = array(
             'link_path' => 'node/add/superhub-page',
-            'link_title' => '[Superhub] Create page',
+            'link_title' => t('[Superhub] Create page'),
             'menu_name' => 'main-menu',
             'weight' => 10,
             'language' => 'en',
@@ -299,7 +299,7 @@ function make_main_menu() {
 
   $item = array(
             'link_path' => 'superhub-pages',
-            'link_title' => '[Superhub] List pages',
+            'link_title' => t('[Superhub] List pages'),
             'menu_name' => 'main-menu',
             'weight' => 20,
             'language' => 'en',
@@ -328,7 +328,7 @@ function make_main_menu() {
 
   $item = array(
             'link_path' => 'node/add/dootrip',
-            'link_title' => 'Create',
+            'link_title' => t('Create'),
             'menu_name' => 'main-menu',
             'weight' => -40,
             'language' => 'en',
@@ -340,7 +340,7 @@ function make_main_menu() {
 
   $item = array(
             'link_path' => 'node/10',
-            'link_title' => 'View',
+            'link_title' => t('View'),
             'menu_name' => 'main-menu',
             'weight' => -50,
             'language' => 'en',
@@ -469,7 +469,7 @@ function make_main_menu() {
    */
   $item = array(
             'link_path' => 'node/add/simplenews',
-            'link_title' => 'Newsletters',
+            'link_title' => t('Newsletters'),
             'menu_name' => 'main-menu',
             'expanded' => TRUE,
             'weight' => -10,
@@ -483,7 +483,7 @@ function make_main_menu() {
 
   $item = array(
             'link_path' => 'node/add/simplenews',
-            'link_title' => 'Create an issue',
+            'link_title' => t('Create an issue'),
             'menu_name' => 'main-menu',
             'weight' => -40,
             'language' => 'en',
@@ -495,7 +495,7 @@ function make_main_menu() {
 
   $item = array(
             'link_path' => 'admin/config/services/simplenews',
-            'link_title' => 'Manage',
+            'link_title' => t('Manage'),
             'menu_name' => 'main-menu',
             'weight' => -30,
             'language' => 'en',
