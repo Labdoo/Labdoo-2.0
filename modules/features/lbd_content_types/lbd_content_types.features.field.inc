@@ -1274,7 +1274,7 @@ function lbd_content_types_field_default_fields() {
           'size' => '100',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '19',
+        'weight' => '22',
       ),
     ),
   );
@@ -2935,7 +2935,13 @@ print $user->uid;
     ),
     'field_instance' => array(
       'bundle' => 'team',
-      'default_value' => NULL,
+      'default_value' => array(
+        0 => array(
+          'summary' => '',
+          'value' => '[Add here one sentence description of the team\'s topic]',
+          'format' => 'filtered_html',
+        ),
+      ),
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -2975,7 +2981,7 @@ print $user->uid;
         'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'rows' => '20',
+          'rows' => '1',
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',

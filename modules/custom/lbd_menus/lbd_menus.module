@@ -440,6 +440,18 @@ function make_main_menu() {
   $mlid = menu_link_save($item);
 
   $item = array(
+            'link_path' => 'node/add/team',
+            'link_title' => t('Create a team'),
+            'menu_name' => 'main-menu',
+            'weight' => -29,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => $teamsMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
             'link_path' => 'teams-dashboard',
             'link_title' => t('Search inside teams'),
             'menu_name' => 'main-menu',

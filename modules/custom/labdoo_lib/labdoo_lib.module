@@ -570,33 +570,35 @@ function labdoo_dooject_extract_emails($node) {
       }
     }
 
-    if($node->field_edoovillage_destination) {
-      foreach(field_get_items('node', $node, 'field_edoovillage_destination') as $element) {
-        $edoovillageNode = node_load($element['target_id']);
-        if($edoovillageNode->field_project_manager_s_) {
-          foreach(field_get_items('node', $edoovillageNode, 'field_project_manager_s_') as $element2) {
-            $userObj = user_load($element2['target_id']);
-            if(in_array($userObj->mail, $emailSet))
-              continue;
-            $emailsList = $emailsList . ", " . $userObj->mail;
-            array_push($emailSet, $userObj->mail);
+    if(property_exists($node, 'field_edoovillage_destination')) {
+      if($node->field_edoovillage_destination) {
+        foreach(field_get_items('node', $node, 'field_edoovillage_destination') as $element) {
+          $edoovillageNode = node_load($element['target_id']);
+          if($edoovillageNode->field_project_manager_s_) {
+            foreach(field_get_items('node', $edoovillageNode, 'field_project_manager_s_') as $element2) {
+              $userObj = user_load($element2['target_id']);
+              if(in_array($userObj->mail, $emailSet))
+                continue;
+              $emailsList = $emailsList . ", " . $userObj->mail;
+              array_push($emailSet, $userObj->mail);
+            }
           }
-        }
-        if($edoovillageNode->field_edoo_additional_followers) {
-          foreach(field_get_items('node', $edoovillageNode, 'field_edoo_additional_followers') as $element2) {
-            $userObj = user_load($element2['target_id']);
-            if(in_array($userObj->mail, $emailSet))
-              continue;
-            $emailsList = $emailsList . ", " . $userObj->mail;
-            array_push($emailSet, $userObj->mail);
+          if($edoovillageNode->field_edoo_additional_followers) {
+            foreach(field_get_items('node', $edoovillageNode, 'field_edoo_additional_followers') as $element2) {
+              $userObj = user_load($element2['target_id']);
+              if(in_array($userObj->mail, $emailSet))
+                continue;
+              $emailsList = $emailsList . ", " . $userObj->mail;
+              array_push($emailSet, $userObj->mail);
+            }
           }
-        }
-        if($edoovillageNode->field_edoo_additional_notif_em) {
-          foreach(field_get_items('node', $edoovillageNode, 'field_edoo_additional_notif_em') as $element2) {
-            if(in_array($element2["email"], $emailSet))
-              continue;
-            $emailsList = $emailsList . ", " . $element2["email"];
-            array_push($emailSet, $element2["email"]);
+          if($edoovillageNode->field_edoo_additional_notif_em) {
+            foreach(field_get_items('node', $edoovillageNode, 'field_edoo_additional_notif_em') as $element2) {
+              if(in_array($element2["email"], $emailSet))
+                continue;
+              $emailsList = $emailsList . ", " . $element2["email"];
+              array_push($emailSet, $element2["email"]);
+            }
           }
         }
       }
