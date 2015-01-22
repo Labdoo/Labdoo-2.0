@@ -899,6 +899,41 @@ function labdoo_lib_node_insert($node) {
 }
 
 
+/**
+ * Implementation of hook_node_delete
+ *
+ */
+function labdoo_lib_node_delete($node) {
+
+  if($node->type == 'edoovillage') {
+    // Delete photo album associated with edoovillage
+    $wNode = entity_metadata_wrapper('node', $node);
+    $nodeAlbum = $wNode->field_edoovillage_photo_album->value();
+    node_delete($nodeAlbum->nid);
+    // Delete action associated with edoovillage
+    $query = "SELECT entity_id FROM field_data_field_action_type WHERE (field_action_type_value='Edoovillage' AND
+              entity_id IN 
+              (SELECT entity_id FROM field_data_field_edoovillage_action WHERE field_edoovillage_action_target_id=$node->nid))"; 
+    $actionNodeId = db_query($query)->fetchField();
+    node_delete($actionNodeId);
+  }
+
+  if($node->type == 'hub') {
+    // Delete photo album associated with hub
+    $wNode = entity_metadata_wrapper('node', $node);
+    $nodeAlbum = $wNode->field_hub_photo_album->value();
+    node_delete($nodeAlbum->nid);
+    // Delete action associated with hub 
+    $query = "SELECT entity_id FROM field_data_field_action_type WHERE (field_action_type_value='Hub' AND
+              entity_id IN 
+              (SELECT entity_id FROM field_data_field_hub_action WHERE field_hub_action_target_id=$node->nid))"; 
+    $actionNodeId = db_query($query)->fetchField();
+    node_delete($actionNodeId);
+  }
+
+  return;
+}
+
 
 /**
  * Implementation of hook_form_node_form_alter

@@ -324,6 +324,7 @@ function _generate_labdoo_action($node) {
 
     if(!property_exists($node, 'original')) { // Dooject created 
       $title = "Laptop " . $node->title . " was tagged in " . $thisCity . ", " . $thisCountry; 
+      // Note: we can't use drupal_get_path_alias here because the node has not been fully created yet
       $body = '<p><a href="/node/' . $node->nid . '">' . $title . "<br>" .
               '<img src="/profiles/labdoo/files/pictures/laptop-simple.png" style="width: 20px; height: 21px;" /></a></p>';
     }

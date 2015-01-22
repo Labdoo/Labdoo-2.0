@@ -81,21 +81,29 @@ function labdoo_objects_user_default_permissions() {
   // Exported permission: delete own dootrip content.
   $permissions['delete own dootrip content'] = array(
     'name' => 'delete own dootrip content',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'authenticated user',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: delete own edoovillage content.
   $permissions['delete own edoovillage content'] = array(
     'name' => 'delete own edoovillage content',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'edoovillage manager',
+      1 => 'hub manager',
+      2 => 'superhub manager',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: delete own hub content.
   $permissions['delete own hub content'] = array(
     'name' => 'delete own hub content',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'superhub manager',
+    ),
     'module' => 'node',
   );
 
