@@ -48,7 +48,7 @@ dependencies[] = devel
 dependencies[] = diff
 ;dependencies[] = coder
 
-;;; Extensions
+;;; Extensions and others
 dependencies[] = ctools
 dependencies[] = libraries
 dependencies[] = entity
@@ -58,6 +58,7 @@ dependencies[] = rules_scheduler
 dependencies[] = rules_admin
 dependencies[] = pathauto
 dependencies[] = subpathauto
+dependencies[] = node_clone 
 
 ;;; User interface
 dependencies[] = context
