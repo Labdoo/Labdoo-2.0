@@ -163,7 +163,11 @@ projects[views_autocomplete_filters] = 1.1
 projects[views_dependent_filters] = 1.1
 projects[variable] = 2.5 
 projects[logintoboggan] = 1.4 
-projects[node_clone] = 1.0-rc2 
+; The clone module has some md5 issues, see https://www.drupal.org/node/2381107
+; To avoid breaking the installation, we specify a revision
+projects[node_clone][subdir] = "contrib"
+projects[node_clone][version] = "1.x-dev"
+projects[node_clone][download][revision] = "7b04f48ddc8b5d1c8c8a5ae2a687854909018494"
 
 ;--------------------
 ; Photo albums
