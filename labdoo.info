@@ -58,7 +58,6 @@ dependencies[] = rules_scheduler
 dependencies[] = rules_admin
 dependencies[] = pathauto
 dependencies[] = subpathauto
-dependencies[] = node_clone 
 
 ;;; User interface
 dependencies[] = context
