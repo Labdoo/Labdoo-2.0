@@ -353,7 +353,7 @@ function labdoo_objects_strongarm() {
           'weight' => '1',
         ),
         'locations' => array(
-          'weight' => '21',
+          'weight' => '22',
         ),
       ),
       'display' => array(
@@ -407,6 +407,9 @@ function labdoo_objects_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'node_gallery_node_thumbnail' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -420,7 +423,14 @@ function labdoo_objects_strongarm() {
           'weight' => '4',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'sharethis' => array(
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__hub'] = $strongarm;
