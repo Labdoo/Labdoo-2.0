@@ -1,5 +1,8 @@
 #!/bin/bash -x
 
+# This file enables Labdoo specific modules. All other modules should be
+# installed via the labdoo.make file.
+
 cwd=$(dirname $0)
 
 ### Configure the Labdoo modules
@@ -8,6 +11,11 @@ cwd=$(dirname $0)
 enOrDis=$1
 
 $(dirname $0)/mysqld.sh start
+
+# Module nodeaccess_userreference breaks when built using
+# Drush make, so enable it from here. (It's required by
+# the other modules, so enable it first.)
+drush @lbd $enOrDis -y nodeaccess_userreference
 
 drush @lbd $enOrDis -y lbd_roles
 

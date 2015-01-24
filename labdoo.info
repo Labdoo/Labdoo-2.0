@@ -87,7 +87,6 @@ dependencies[] = wysiwyg
 dependencies[] = imce
 dependencies[] = imce_wysiwyg
 dependencies[] = imce_mkdir 
-dependencies[] = nodeaccess_userreference 
 
 ;;; Features and exports/imports
 dependencies[] = strongarm
