@@ -576,6 +576,148 @@ function labdoo_objects_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-dootrip-field_dootrip_additional_editors'.
+  $fields['node-dootrip-field_dootrip_additional_editors'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_dootrip_additional_editors',
+      'foreign keys' => array(
+        'users' => array(
+          'columns' => array(
+            'target_id' => 'uid',
+          ),
+          'table' => 'users',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(),
+        ),
+        'target_type' => 'user',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'dootrip',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '14',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_dootrip_additional_editors',
+      'label' => 'Additional editors',
+      'required' => 0,
+      'settings' => array(
+        'behaviors' => array(
+          'prepopulate' => array(
+            'status' => 0,
+          ),
+        ),
+        'nodeaccess_userreference' => array(
+          'all' => array(
+            'view' => 0,
+          ),
+          'all_published' => '0',
+          'author' => array(
+            'delete' => 0,
+            'update' => 0,
+            'view' => 0,
+          ),
+          'author_published' => '0',
+          'create' => array(
+            'action' => 0,
+            'article' => 0,
+            'blog' => 0,
+            'book' => 0,
+            'dootrip' => 0,
+            'edoovillage' => 0,
+            'event' => 0,
+            'gic' => 0,
+            'hub' => 0,
+            'laptop' => 0,
+            'node_gallery_gallery' => 0,
+            'node_gallery_item' => 0,
+            'page' => 0,
+            'private_page' => 0,
+            'simplenews' => 0,
+            'slider_page' => 0,
+            'superhub_page' => 0,
+            'team' => 0,
+            'team_page' => 0,
+            'team_task' => 0,
+          ),
+          'priority' => '0',
+          'referenced' => array(
+            'delete' => 0,
+            'deny_delete' => 0,
+            'deny_update' => 0,
+            'deny_view' => 0,
+            'update' => 'update',
+            'view' => 'view',
+          ),
+          'referenced_published' => '0',
+          'unused' => '0',
+          'views' => array(
+            'view' => '',
+            'view_args' => '',
+          ),
+        ),
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'size' => '60',
+        ),
+        'type' => 'entityreference_autocomplete',
+        'weight' => '17',
+      ),
+    ),
+  );
+
   // Exported field: 'node-dootrip-field_dootrip_capacity'.
   $fields['node-dootrip-field_dootrip_capacity'] = array(
     'field_config' => array(
@@ -1496,7 +1638,222 @@ $display_output = $entity_field_item[\'value\'];',
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
-        'weight' => '18',
+        'weight' => '19',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-edoovillage-field_doojects_additional_notes'.
+  $fields['node-edoovillage-field_doojects_additional_notes'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_doojects_additional_notes',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'edoovillage',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '13',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_doojects_additional_notes',
+      'label' => 'Doojects additional notes',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'rows' => '1',
+        ),
+        'type' => 'text_textarea',
+        'weight' => '7',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-edoovillage-field_edoo_additional_editors'.
+  $fields['node-edoovillage-field_edoo_additional_editors'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_edoo_additional_editors',
+      'foreign keys' => array(
+        'users' => array(
+          'columns' => array(
+            'target_id' => 'uid',
+          ),
+          'table' => 'users',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(),
+        ),
+        'target_type' => 'user',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'edoovillage',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '21',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_edoo_additional_editors',
+      'label' => 'Additional editors',
+      'required' => 0,
+      'settings' => array(
+        'behaviors' => array(
+          'prepopulate' => array(
+            'status' => 0,
+          ),
+        ),
+        'nodeaccess_userreference' => array(
+          'all' => array(
+            'view' => 0,
+          ),
+          'all_published' => '0',
+          'author' => array(
+            'delete' => 0,
+            'update' => 0,
+            'view' => 0,
+          ),
+          'author_published' => '0',
+          'create' => array(
+            'action' => 0,
+            'article' => 0,
+            'blog' => 0,
+            'book' => 0,
+            'dootrip' => 0,
+            'edoovillage' => 0,
+            'event' => 0,
+            'gic' => 0,
+            'hub' => 0,
+            'laptop' => 0,
+            'node_gallery_gallery' => 0,
+            'node_gallery_item' => 0,
+            'page' => 0,
+            'private_page' => 0,
+            'simplenews' => 0,
+            'slider_page' => 0,
+            'superhub_page' => 0,
+            'team' => 0,
+            'team_page' => 0,
+            'team_task' => 0,
+          ),
+          'priority' => '0',
+          'referenced' => array(
+            'delete' => 0,
+            'deny_delete' => 0,
+            'deny_update' => 0,
+            'deny_view' => 0,
+            'update' => 'update',
+            'view' => 'view',
+          ),
+          'referenced_published' => '0',
+          'unused' => '0',
+          'views' => array(
+            'view' => '',
+            'view_args' => '',
+          ),
+        ),
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'size' => '60',
+        ),
+        'type' => 'entityreference_autocomplete',
+        'weight' => '24',
       ),
     ),
   );
@@ -1550,13 +1907,10 @@ $display_output = $entity_field_item[\'value\'];',
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'inline',
-          'module' => 'entityreference',
-          'settings' => array(
-            'link' => 1,
-          ),
-          'type' => 'entityreference_label',
-          'weight' => '18',
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '19',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -1592,7 +1946,7 @@ $display_output = $entity_field_item[\'value\'];',
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '19',
+        'weight' => '20',
       ),
     ),
   );
@@ -1623,7 +1977,7 @@ $display_output = $entity_field_item[\'value\'];',
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '19',
+          'weight' => '22',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -1652,7 +2006,7 @@ $display_output = $entity_field_item[\'value\'];',
           'size' => '60',
         ),
         'type' => 'email_textfield',
-        'weight' => '20',
+        'weight' => '21',
       ),
     ),
   );
@@ -1721,7 +2075,7 @@ $display_output = $entity_field_item[\'value\'];',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '11',
+        'weight' => '12',
       ),
     ),
   );
@@ -1809,7 +2163,7 @@ $display_output = $entity_field_item[\'value\'];',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '7',
+        'weight' => '8',
       ),
     ),
   );
@@ -1852,7 +2206,7 @@ $display_output = $entity_field_item[\'value\'];',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '17',
+          'weight' => '18',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -1882,7 +2236,7 @@ $display_output = $entity_field_item[\'value\'];',
           'rows' => '1',
         ),
         'type' => 'text_textarea',
-        'weight' => '17',
+        'weight' => '18',
       ),
     ),
   );
@@ -1926,7 +2280,7 @@ $display_output = $entity_field_item[\'value\'];',
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => '16',
+          'weight' => '17',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -1953,7 +2307,7 @@ $display_output = $entity_field_item[\'value\'];',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '16',
+        'weight' => '17',
       ),
     ),
   );
@@ -1998,7 +2352,7 @@ $display_output = $entity_field_item[\'value\'];',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '13',
+          'weight' => '14',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -2028,7 +2382,7 @@ $display_output = $entity_field_item[\'value\'];',
           'size' => '100',
         ),
         'type' => 'text_textfield',
-        'weight' => '13',
+        'weight' => '14',
       ),
     ),
   );
@@ -2305,7 +2659,7 @@ $display_output = $entity_field_item[\'value\'];',
           'rows' => '4',
         ),
         'type' => 'text_textarea',
-        'weight' => '9',
+        'weight' => '10',
       ),
     ),
   );
@@ -2384,7 +2738,7 @@ $display_output = $entity_field_item[\'value\'];',
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
-        'weight' => '10',
+        'weight' => '11',
       ),
     ),
   );
@@ -2547,7 +2901,7 @@ $display_output = $entity_field_item[\'value\'];',
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '8',
+        'weight' => '9',
       ),
     ),
   );
@@ -2692,7 +3046,7 @@ $display_output = $entity_field_item[\'value\'];',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '12',
+        'weight' => '13',
       ),
     ),
   );
@@ -2745,7 +3099,7 @@ $display_output = $entity_field_item[\'value\'];',
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => '15',
+          'weight' => '16',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -2772,7 +3126,7 @@ $display_output = $entity_field_item[\'value\'];',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '15',
+        'weight' => '16',
       ),
     ),
   );
@@ -2814,7 +3168,7 @@ $display_output = $entity_field_item[\'value\'];',
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => '14',
+          'weight' => '15',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -2841,7 +3195,7 @@ $display_output = $entity_field_item[\'value\'];',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '14',
+        'weight' => '15',
       ),
     ),
   );
@@ -2915,6 +3269,148 @@ $display_output = $entity_field_item[\'value\'];',
         ),
         'type' => 'text_textarea',
         'weight' => '3',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-hub-field_hub_additional_editors'.
+  $fields['node-hub-field_hub_additional_editors'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_hub_additional_editors',
+      'foreign keys' => array(
+        'users' => array(
+          'columns' => array(
+            'target_id' => 'uid',
+          ),
+          'table' => 'users',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(),
+        ),
+        'target_type' => 'user',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'hub',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '3',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_hub_additional_editors',
+      'label' => 'Additional editors',
+      'required' => 0,
+      'settings' => array(
+        'behaviors' => array(
+          'prepopulate' => array(
+            'status' => 0,
+          ),
+        ),
+        'nodeaccess_userreference' => array(
+          'all' => array(
+            'view' => 0,
+          ),
+          'all_published' => '0',
+          'author' => array(
+            'delete' => 0,
+            'update' => 0,
+            'view' => 0,
+          ),
+          'author_published' => '0',
+          'create' => array(
+            'action' => 0,
+            'article' => 0,
+            'blog' => 0,
+            'book' => 0,
+            'dootrip' => 0,
+            'edoovillage' => 0,
+            'event' => 0,
+            'gic' => 0,
+            'hub' => 0,
+            'laptop' => 0,
+            'node_gallery_gallery' => 0,
+            'node_gallery_item' => 0,
+            'page' => 0,
+            'private_page' => 0,
+            'simplenews' => 0,
+            'slider_page' => 0,
+            'superhub_page' => 0,
+            'team' => 0,
+            'team_page' => 0,
+            'team_task' => 0,
+          ),
+          'priority' => '0',
+          'referenced' => array(
+            'delete' => 0,
+            'deny_delete' => 0,
+            'deny_update' => 0,
+            'deny_view' => 0,
+            'update' => 'update',
+            'view' => 'view',
+          ),
+          'referenced_published' => '0',
+          'unused' => '0',
+          'views' => array(
+            'view' => '',
+            'view_args' => '',
+          ),
+        ),
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'size' => '60',
+        ),
+        'type' => 'entityreference_autocomplete',
+        'weight' => '6',
       ),
     ),
   );
@@ -3053,16 +3549,14 @@ $display_output = $entity_field_item[\'value\'];',
     'field_instance' => array(
       'bundle' => 'laptop',
       'default_value' => NULL,
+      'default_value_function' => '',
       'deleted' => '0',
       'description' => 'Add users who need to have permission to edit this dooject',
       'display' => array(
         'default' => array(
-          'label' => 'inline',
-          'module' => 'entityreference',
-          'settings' => array(
-            'link' => 1,
-          ),
-          'type' => 'entityreference_label',
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
           'weight' => '16',
         ),
         'node_gallery_node_thumbnail' => array(
@@ -3083,6 +3577,11 @@ $display_output = $entity_field_item[\'value\'];',
       'label' => 'Additional editors',
       'required' => 0,
       'settings' => array(
+        'behaviors' => array(
+          'prepopulate' => array(
+            'status' => 0,
+          ),
+        ),
         'nodeaccess_userreference' => array(
           'all' => array(
             'view' => 0,
@@ -3095,14 +3594,26 @@ $display_output = $entity_field_item[\'value\'];',
           ),
           'author_published' => '0',
           'create' => array(
+            'action' => 0,
             'article' => 0,
             'blog' => 0,
             'book' => 0,
             'dootrip' => 0,
             'edoovillage' => 0,
+            'event' => 0,
+            'gic' => 0,
             'hub' => 0,
             'laptop' => 0,
+            'node_gallery_gallery' => 0,
+            'node_gallery_item' => 0,
             'page' => 0,
+            'private_page' => 0,
+            'simplenews' => 0,
+            'slider_page' => 0,
+            'superhub_page' => 0,
+            'team' => 0,
+            'team_page' => 0,
+            'team_task' => 0,
           ),
           'priority' => '0',
           'referenced' => array(
@@ -3111,7 +3622,7 @@ $display_output = $entity_field_item[\'value\'];',
             'deny_update' => 0,
             'deny_view' => 0,
             'update' => 'update',
-            'view' => 0,
+            'view' => 'view',
           ),
           'referenced_published' => '0',
           'unused' => '0',
@@ -3180,16 +3691,14 @@ $display_output = $entity_field_item[\'value\'];',
     'field_instance' => array(
       'bundle' => 'laptop',
       'default_value' => NULL,
+      'default_value_function' => '',
       'deleted' => '0',
       'description' => 'Add users who want to follow this dooject',
       'display' => array(
         'default' => array(
-          'label' => 'inline',
-          'module' => 'entityreference',
-          'settings' => array(
-            'link' => 1,
-          ),
-          'type' => 'entityreference_label',
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
           'weight' => '18',
         ),
         'node_gallery_node_thumbnail' => array(
@@ -3210,6 +3719,60 @@ $display_output = $entity_field_item[\'value\'];',
       'label' => 'Additional followers',
       'required' => 0,
       'settings' => array(
+        'behaviors' => array(
+          'prepopulate' => array(
+            'status' => 0,
+          ),
+        ),
+        'nodeaccess_userreference' => array(
+          'all' => array(
+            'view' => 0,
+          ),
+          'all_published' => '0',
+          'author' => array(
+            'delete' => 0,
+            'update' => 0,
+            'view' => 0,
+          ),
+          'author_published' => '0',
+          'create' => array(
+            'action' => 0,
+            'article' => 0,
+            'blog' => 0,
+            'book' => 0,
+            'dootrip' => 0,
+            'edoovillage' => 0,
+            'event' => 0,
+            'gic' => 0,
+            'hub' => 0,
+            'laptop' => 0,
+            'node_gallery_gallery' => 0,
+            'node_gallery_item' => 0,
+            'page' => 0,
+            'private_page' => 0,
+            'simplenews' => 0,
+            'slider_page' => 0,
+            'superhub_page' => 0,
+            'team' => 0,
+            'team_page' => 0,
+            'team_task' => 0,
+          ),
+          'priority' => '0',
+          'referenced' => array(
+            'delete' => 0,
+            'deny_delete' => 0,
+            'deny_update' => 0,
+            'deny_view' => 0,
+            'update' => 0,
+            'view' => 0,
+          ),
+          'referenced_published' => '0',
+          'unused' => '0',
+          'views' => array(
+            'view' => '',
+            'view_args' => '',
+          ),
+        ),
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -4867,6 +5430,7 @@ $display_output = $entity_field_item[\'value\'];',
   t('Device type');
   t('Dooject identifiers');
   t('Dooject\'s estimated total weight');
+  t('Doojects additional notes');
   t('Dootripper(s)');
   t('Dootrips assigned to this dooject');
   t('Edoovillage destination');

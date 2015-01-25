@@ -268,7 +268,9 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
                       entity_id IN (SELECT field_laptops_target_id FROM field_data_field_laptops WHERE 
                       entity_id IN (SELECT entity_id FROM field_data_field_dootripper_s_ WHERE field_dootripper_s__target_id=:uid)))
                     UNION
-                    (SELECT DISTINCT entity_id FROM field_data_field_project_manager_s_ WHERE field_project_manager_s__target_id=:uid))
+                    (SELECT DISTINCT entity_id FROM field_data_field_project_manager_s_ WHERE field_project_manager_s__target_id=:uid)
+                    UNION
+                    (SELECT DISTINCT entity_id FROM field_data_field_edoo_additional_editors WHERE field_edoo_additional_editors_target_id=:uid))
                     AS tUser)";
     $query = $query . " UNION ALL " . $queryUser;
     $placeHolders[':uid'] = $userId;
@@ -418,7 +420,9 @@ function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher =
                       entity_id IN (SELECT field_laptops_target_id FROM field_data_field_laptops WHERE 
                       entity_id IN (SELECT entity_id FROM field_data_field_dootripper_s_ WHERE field_dootripper_s__target_id=:uid)))
                     UNION
-                    (SELECT DISTINCT entity_id FROM field_data_field_hub_manager_s_ WHERE field_hub_manager_s__target_id=:uid))
+                    (SELECT DISTINCT entity_id FROM field_data_field_hub_manager_s_ WHERE field_hub_manager_s__target_id=:uid)
+                    UNION
+                    (SELECT DISTINCT entity_id FROM field_data_field_hub_additional_editors WHERE field_hub_additional_editors_target_id=:uid))
                     AS tUser)";
     $query = $query . " UNION ALL " . $queryUser;
     $placeHolders[':uid'] = $userId;
@@ -545,7 +549,11 @@ function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL, $switch
   } 
   if($userId != NULL)
   {
-    $queryUser = "(SELECT entity_id FROM field_data_field_dootripper_s_ WHERE (field_dootripper_s__target_id=:uid))";
+    $queryUser = "(SELECT tUser.entity_id FROM
+                  (SELECT entity_id FROM field_data_field_dootripper_s_ WHERE (field_dootripper_s__target_id=:uid)
+                   UNION
+                  (SELECT DISTINCT entity_id FROM field_data_field_dootrip_additional_editors WHERE field_dootrip_additional_editors_target_id=:uid))
+                  AS tUser)";
     $query = $query . " UNION ALL " . $queryUser;
     $placeHolders[':uid'] = $userId; 
     $numberOfQueries++;
@@ -1186,7 +1194,7 @@ function lbd_display_slider_edoovilage_data($edoovillageId = NULL) {
 
   // Check to see if the user has edit rights 
   $userRoles = array_values($user->roles);
-  if (in_array('administrator', $userRoles) || in_array('edoovillage manager', $userRoles)) 
+  if(node_access("update", $loadedNode, $user) === TRUE) 
     print('<p><a href="/node/'.$edoovillageId . '/edit"><strong><span style="color:#ff0000;">'.t("Edit this edoovillage").'</span></strong></a></p>');
 
   $viewedNode = node_view($loadedNode);
@@ -1293,7 +1301,7 @@ function lbd_display_slider_hub_data($hubId) {
 
   // Check to see if the user has edit rights 
   $userRoles = array_values($user->roles);
-  if (in_array('administrator', $userRoles) || in_array('hub manager', $userRoles)) 
+  if(node_access("update", $loadedNode, $user) === TRUE) 
     print('<p><a href="/node/'.$hubId . '/edit"><strong><span style="color:#ff0000;">'.t("Edit this hub").'</span></strong></a></p>');
 
   $viewedNode = node_view($loadedNode);

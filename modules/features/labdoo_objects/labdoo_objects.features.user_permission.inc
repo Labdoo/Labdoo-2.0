@@ -117,18 +117,14 @@ function labdoo_objects_user_default_permissions() {
   // Exported permission: edit any edoovillage content.
   $permissions['edit any edoovillage content'] = array(
     'name' => 'edit any edoovillage content',
-    'roles' => array(
-      0 => 'edoovillage manager',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: edit any hub content.
   $permissions['edit any hub content'] = array(
     'name' => 'edit any hub content',
-    'roles' => array(
-      0 => 'hub manager',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
