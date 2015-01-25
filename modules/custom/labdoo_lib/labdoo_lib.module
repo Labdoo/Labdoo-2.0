@@ -354,12 +354,12 @@ function labdoo_render_dooject_header() {
     }
     else {
       $followDoojectUrl = request_uri() . "/../../content/follow-dooject?d=$nodeId&u=$userId&f=1";
-      $followMsg = "Follow this dooject";
+      $followMsg = t("Follow this dooject");
     }
   }
   else {
     $followDoojectUrl = request_uri() . "/../../content/follow-dooject?d=$nodeId&f=1";
-    $followMsg = "Follow this dooject";
+    $followMsg = t("Follow this dooject");
   }
   
   $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="middle">

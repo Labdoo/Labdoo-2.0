@@ -76,6 +76,9 @@ drush @lbd $enOrDis -y clone
 drush @lbd dl node_clone_tab
 drush @lbd $enOrDis -y node_clone_tab
 
+# Rebuild permissions again after all labdoo content types have been created
+drush php-eval 'node_access_rebuild();'
+
 # Tunings for mysql and php
 sed -i "s|^max_allowed_packet.*=.*|max_allowed_packet = 64M|g" /etc/mysql/my.cnf
 sed -i "s|^memory_limit.*=.*|memory_limit = 400M|g" /etc/php5/apache2/php.ini

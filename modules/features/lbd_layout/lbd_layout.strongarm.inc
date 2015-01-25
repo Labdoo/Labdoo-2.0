@@ -20,6 +20,202 @@ function lbd_layout_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'clone_menu_links';
+  $strongarm->value = '0';
+  $export['clone_menu_links'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_method';
+  $strongarm->value = 'prepopulate';
+  $export['clone_method'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_nodes_without_confirm';
+  $strongarm->value = '0';
+  $export['clone_nodes_without_confirm'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_omitted';
+  $strongarm->value = array(
+    'action' => 'action',
+    'article' => 'article',
+    'page' => 'page',
+    'blog' => 'blog',
+    'book' => 'book',
+    'edoovillage' => 'edoovillage',
+    'gic' => 'gic',
+    'node_gallery_gallery' => 'node_gallery_gallery',
+    'node_gallery_item' => 'node_gallery_item',
+    'hub' => 'hub',
+    'private_page' => 'private_page',
+    'simplenews' => 'simplenews',
+    'slider_page' => 'slider_page',
+    'superhub_page' => 'superhub_page',
+    'team' => 'team',
+    'team_page' => 'team_page',
+    'event' => 'event',
+    'team_task' => 'team_task',
+    'laptop' => 0,
+    'dootrip' => 0,
+  );
+  $export['clone_omitted'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_action';
+  $strongarm->value = 0;
+  $export['clone_reset_action'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_article';
+  $strongarm->value = 0;
+  $export['clone_reset_article'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_blog';
+  $strongarm->value = 0;
+  $export['clone_reset_blog'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_book';
+  $strongarm->value = 0;
+  $export['clone_reset_book'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_dootrip';
+  $strongarm->value = 0;
+  $export['clone_reset_dootrip'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_edoovillage';
+  $strongarm->value = 0;
+  $export['clone_reset_edoovillage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_event';
+  $strongarm->value = 0;
+  $export['clone_reset_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_gic';
+  $strongarm->value = 0;
+  $export['clone_reset_gic'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_hub';
+  $strongarm->value = 0;
+  $export['clone_reset_hub'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_laptop';
+  $strongarm->value = 0;
+  $export['clone_reset_laptop'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_node_gallery_gallery';
+  $strongarm->value = 0;
+  $export['clone_reset_node_gallery_gallery'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_node_gallery_item';
+  $strongarm->value = 0;
+  $export['clone_reset_node_gallery_item'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_page';
+  $strongarm->value = 0;
+  $export['clone_reset_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_private_page';
+  $strongarm->value = 0;
+  $export['clone_reset_private_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_simplenews';
+  $strongarm->value = 0;
+  $export['clone_reset_simplenews'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_slider_page';
+  $strongarm->value = 0;
+  $export['clone_reset_slider_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_superhub_page';
+  $strongarm->value = 0;
+  $export['clone_reset_superhub_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_team';
+  $strongarm->value = 0;
+  $export['clone_reset_team'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_team_page';
+  $strongarm->value = 0;
+  $export['clone_reset_team_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_team_task';
+  $strongarm->value = 0;
+  $export['clone_reset_team_task'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_use_node_type_name';
+  $strongarm->value = 0;
+  $export['clone_use_node_type_name'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_article';
   $strongarm->value = 0;
   $export['comment_anonymous_article'] = $strongarm;

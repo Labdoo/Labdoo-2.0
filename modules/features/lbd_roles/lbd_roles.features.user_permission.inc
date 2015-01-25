@@ -90,6 +90,25 @@ function lbd_roles_user_default_permissions() {
     'module' => 'simplenews',
   );
 
+  // Exported permission: clone node.
+  $permissions['clone node'] = array(
+    'name' => 'clone node',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'clone',
+  );
+
+  // Exported permission: clone own nodes.
+  $permissions['clone own nodes'] = array(
+    'name' => 'clone own nodes',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'authenticated user',
+    ),
+    'module' => 'clone',
+  );
+
   // Exported permission: create book content.
   $permissions['create book content'] = array(
     'name' => 'create book content',
