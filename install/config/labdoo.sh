@@ -16,6 +16,8 @@ $(dirname $0)/mysqld.sh start
 # Drush make, so enable it from here. (It's required by
 # the other modules, so enable it first.)
 drush @lbd $enOrDis -y nodeaccess_userreference
+# Rebuild permissions after installing nodeaccess_userreference
+drush php-eval 'node_access_rebuild();'
 
 drush @lbd $enOrDis -y lbd_roles
 
