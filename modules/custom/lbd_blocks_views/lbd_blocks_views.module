@@ -88,10 +88,11 @@ function lbd_blocks_views_block_info() {
   \$match = FALSE;
   \$types = array('laptop' => 1,'dootrip' => 1,'hub' => 1, 'edoovillage' => 1) ;
 
+  if(arg(2) != "") //  Display only in node view mode
+    return FALSE;
+
   if ((arg(0) == 'node') && is_numeric(arg(1))) {
     \$node = node_load(arg(1));
-    if(!node_is_page(\$node)) // Display only in node view mode
-      return FALSE;
     \$match = isset(\$types[\$node->type]);
   }
 
@@ -112,10 +113,11 @@ function lbd_blocks_views_block_info() {
   \$match = FALSE;
   \$types = array('laptop' => 1) ;
 
+  if(arg(2) != "") //  Display only in node view mode
+    return FALSE;
+
   if ((arg(0) == 'node') && is_numeric(arg(1))) {
     \$node = node_load(arg(1));
-    if(!node_is_page(\$node)) // Display only in node view mode
-      return FALSE;
     \$match = isset(\$types[\$node->type]);
   }
 

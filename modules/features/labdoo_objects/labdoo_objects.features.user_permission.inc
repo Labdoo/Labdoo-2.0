@@ -78,6 +78,13 @@ function labdoo_objects_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: delete any laptop content.
+  $permissions['delete any laptop content'] = array(
+    'name' => 'delete any laptop content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: delete own dootrip content.
   $permissions['delete own dootrip content'] = array(
     'name' => 'delete own dootrip content',
@@ -107,6 +114,15 @@ function labdoo_objects_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: delete own laptop content.
+  $permissions['delete own laptop content'] = array(
+    'name' => 'delete own laptop content',
+    'roles' => array(
+      0 => 'authenticated user',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: edit any dootrip content.
   $permissions['edit any dootrip content'] = array(
     'name' => 'edit any dootrip content',
@@ -124,6 +140,13 @@ function labdoo_objects_user_default_permissions() {
   // Exported permission: edit any hub content.
   $permissions['edit any hub content'] = array(
     'name' => 'edit any hub content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit any laptop content.
+  $permissions['edit any laptop content'] = array(
+    'name' => 'edit any laptop content',
     'roles' => array(),
     'module' => 'node',
   );
