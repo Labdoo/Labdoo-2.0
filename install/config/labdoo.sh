@@ -12,12 +12,21 @@ enOrDis=$1
 
 $(dirname $0)/mysqld.sh start
 
+# Install clone module. This is a contribued module, and so it should be installed
+# using the drush makefile. However, the installation of this module via the makefile
+# is broken because the module namespace is "node_clone" but the module is named "clone".
+# See https://www.drupal.org/node/1325940
+drush @lbd dl node_clone
+drush @lbd $enOrDis -y clone
+drush @lbd dl node_clone_tab
+drush @lbd $enOrDis -y node_clone_tab
+
 # Module nodeaccess_userreference breaks when built using
 # Drush make, so enable it from here. (It's required by
 # the other modules, so enable it first.)
 drush @lbd $enOrDis -y nodeaccess_userreference
 # Rebuild permissions after installing nodeaccess_userreference
-drush php-eval 'node_access_rebuild();'
+drush @lbd php-eval 'node_access_rebuild();'
 
 drush @lbd $enOrDis -y lbd_roles
 
@@ -67,17 +76,8 @@ apt-get -y install imagemagick
 # Add sample nodes (disabled this when building for production)
 drush @lbd $enOrDis -y lbd_sample_nodes
 
-# Install clone module. This is a contribued module, and so it should be installed
-# using the drush makefile. However, the installation of this module via the makefile
-# is broken because the module namespace is "node_clone" but the module is named "clone"/
-# See https://www.drupal.org/node/1325940
-drush @lbd dl node_clone
-drush @lbd $enOrDis -y clone
-drush @lbd dl node_clone_tab
-drush @lbd $enOrDis -y node_clone_tab
-
 # Rebuild permissions again after all labdoo content types have been created
-drush php-eval 'node_access_rebuild();'
+#drush @lbd php-eval 'node_access_rebuild();'
 
 # Tunings for mysql and php
 sed -i "s|^max_allowed_packet.*=.*|max_allowed_packet = 64M|g" /etc/mysql/my.cnf
