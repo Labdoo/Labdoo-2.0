@@ -88,7 +88,7 @@ function lbd_blocks_views_block_info() {
   \$match = FALSE;
   \$types = array('laptop' => 1,'dootrip' => 1,'hub' => 1, 'edoovillage' => 1) ;
 
-  if(arg(2) != "") //  Display only in node view mode
+  if(arg(2) != \"\") //  Display only in node view mode
     return FALSE;
 
   if ((arg(0) == 'node') && is_numeric(arg(1))) {
@@ -113,7 +113,7 @@ function lbd_blocks_views_block_info() {
   \$match = FALSE;
   \$types = array('laptop' => 1) ;
 
-  if(arg(2) != "") //  Display only in node view mode
+  if(arg(2) != \"\") //  Display only in node view mode
     return FALSE;
 
   if ((arg(0) == 'node') && is_numeric(arg(1))) {
