@@ -495,8 +495,8 @@ function lbd_layout_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => '',
-          1 => '',
+          0 => 'No',
+          1 => 'Yes',
         ),
         'allowed_values_function' => '',
       ),
@@ -507,11 +507,11 @@ function lbd_layout_field_default_fields() {
       'bundle' => 'book',
       'default_value' => array(
         0 => array(
-          'value' => 0,
+          'value' => '0',
         ),
       ),
       'deleted' => '0',
-      'description' => 'Check this box if this is the first page (the front page) of the book.',
+      'description' => 'Check this box if this is the first page of the book.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -542,10 +542,8 @@ function lbd_layout_field_default_fields() {
       'widget' => array(
         'active' => 1,
         'module' => 'options',
-        'settings' => array(
-          'display_label' => 0,
-        ),
-        'type' => 'options_onoff',
+        'settings' => array(),
+        'type' => 'options_buttons',
         'weight' => '2',
       ),
     ),
@@ -724,7 +722,7 @@ function lbd_layout_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
-  t('Check this box if this is the first page (the front page) of the book.');
+  t('Check this box if this is the first page of the book.');
   t('Comment');
   t('Enter a comma-separated list of words to describe your content.');
   t('If this book is a translation from another one, please set this field to point to the original book.');
