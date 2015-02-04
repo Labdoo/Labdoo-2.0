@@ -17,7 +17,7 @@
  * because in Labdoo, we only keep in the git repo this type of content
  * types. The rest of the content types are kept in the SQL database and managed
  * using the migration module. However, this utility can be extended
- * to support other types of content types using the same basic framework.
+ * to support other content types using the same basic framework.
  *
  * Supported version: D7.
  *
@@ -57,6 +57,8 @@ function normalize_string($str = '')
  *   The file descriptor of the lec file
  * @param string $fieldName 
  *   The field name
+ * @param string $fieldType 
+ *   The field type 
  * @param string $fieldValue 
  *   The field value
  *
@@ -110,8 +112,6 @@ function _write_trailer($fd, $nodeType) {
  *   The type of nodes to be exported
  * @param array $fields 
  *   List of fields in the nodes
- * @param array $arrayFields
- *   List of array fields in the nodes
  *
  */
 function _export_nodes($nodeType, $fields) {
