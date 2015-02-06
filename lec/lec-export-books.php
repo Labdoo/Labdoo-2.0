@@ -17,9 +17,11 @@ $fields[2]['name'] = 'field_reference_book';
 $fields[2]['type'] = 'target_id';
 $fields[3]['name'] = 'body';
 $fields[3]['type'] = 'value';
-$fields[4]['name'] = 'book';
-$fields[4]['type'] = 'book_array';
-$fields[4]['keys'] = array('bid', 'plid');
+$fields[4]['name'] = 'body';
+$fields[4]['type'] = 'format';
+$fields[5]['name'] = 'book';
+$fields[5]['type'] = 'book_array';
+$fields[5]['keys'] = array('bid', 'plid', 'mlid');
 
 _export_nodes('book', $fields);
 

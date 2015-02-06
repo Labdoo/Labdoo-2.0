@@ -100,7 +100,7 @@ $handler->display->display_options['filters']['field_reference_book_target_id'][
 $handler->display->display_options['filters']['field_reference_book_target_id']['field'] = 'field_reference_book_target_id';
 $handler->display->display_options['filters']['field_reference_book_target_id']['exposed'] = TRUE;
 $handler->display->display_options['filters']['field_reference_book_target_id']['expose']['operator_id'] = 'field_reference_book_target_id_op';
-$handler->display->display_options['filters']['field_reference_book_target_id']['expose']['label'] = 'Original book (field_reference_book)';
+$handler->display->display_options['filters']['field_reference_book_target_id']['expose']['label'] = 'Original wiki book';
 $handler->display->display_options['filters']['field_reference_book_target_id']['expose']['operator'] = 'field_reference_book_target_id_op';
 $handler->display->display_options['filters']['field_reference_book_target_id']['expose']['identifier'] = 'field_reference_book_target_id';
 $handler->display->display_options['filters']['field_reference_book_target_id']['expose']['remember_roles'] = array(
@@ -163,4 +163,11 @@ $handler->display->display_options['filters']['depth']['table'] = 'book_menu_lin
 $handler->display->display_options['filters']['depth']['field'] = 'depth';
 $handler->display->display_options['filters']['depth']['value']['value'] = '1';
 $handler->display->display_options['filters']['depth']['group'] = 1;
+/* Filter criterion: Content: Is a translation of another wiki book or is the original? (field_is_first_page) */
+$handler->display->display_options['filters']['field_is_first_page_value']['id'] = 'field_is_first_page_value';
+$handler->display->display_options['filters']['field_is_first_page_value']['table'] = 'field_data_field_is_first_page';
+$handler->display->display_options['filters']['field_is_first_page_value']['field'] = 'field_is_first_page_value';
+$handler->display->display_options['filters']['field_is_first_page_value']['value'] = array(
+  1 => '1',
+);
 

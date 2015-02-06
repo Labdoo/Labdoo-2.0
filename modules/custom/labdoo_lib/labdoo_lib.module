@@ -91,6 +91,20 @@ function _update_dooject_location_from_edoovillage($node) {
 
 
 /**
+ * Updates the original book reference in a book node, it should
+ * only be invoked if field_is_first_page is set to TRUE
+ *
+ * @param node Node id of the book
+ *
+ */
+function _update_book_reference($node) {
+  $nodeLoaded = node_load($node->nid);
+  $nodeLoaded->field_reference_book[$nodeLoaded->language][0]['target_id'] = $node->nid;
+  node_save($nodeLoaded);
+}
+
+
+/**
  * Attempts to estimate latitude and longitude from the names of the city and country
  * by querying an Internet service. Therefore, requires connectivity to the Internet.
  * To avoid all same [country, city] queries be mapped onto the same point, a small 
@@ -865,6 +879,12 @@ function labdoo_lib_node_presave($node) {
       $node->field_destination_of_the_trip['und'][0]['inhibit_geocode'] = TRUE;
   }
 
+  if(property_exists($node, 'original') && $node->type == 'book') {
+    if($node->field_is_first_page[$node->language][0]['value'] == 1)  {
+      $node->field_reference_book[$node->language][0]['target_id'] = $node->nid;
+    }
+  }
+
   return;
 }
 
@@ -894,6 +914,14 @@ function labdoo_lib_node_insert($node) {
     $wNodeAlbum->field_photo_album_hub->set($node->nid);
     $wNodeAlbum->save();
   }
+
+  if($node->type == 'book') {
+    if($node->field_is_first_page[$node->language][0]['value'] == 1)  {
+      // This book is newly created, we still don't know its nid,
+      // so use register_shutdown_function to update its book reference
+      register_shutdown_function('_update_book_reference', $node);
+    }
+  } 
 
   return;
 }

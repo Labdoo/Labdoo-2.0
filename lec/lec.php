@@ -151,7 +151,15 @@ function _export_nodes($nodeType, $fields) {
       default:
         if($nodeLoaded->$fieldName) {
           foreach(field_get_items('node', $nodeLoaded, $fieldName) as $element) {
-            _write_field($fileDesc, $fieldName, $fieldType, $element[$fieldType]);
+            if($fieldName == 'body' && $fieldType == 'value') {
+              // Body's can have tags that interfere with the xml format. 
+              // Apply a transformation.
+              $fieldValue = str_replace("<img", "#lecLeftBracket#img", $element[$fieldType]);
+            }
+            else {
+              $fieldValue = $element[$fieldType];
+            }
+            _write_field($fileDesc, $fieldName, $fieldType, $fieldValue);
           }
         }
         break;
@@ -174,7 +182,7 @@ function _export_nodes($nodeType, $fields) {
  */
 function _import_nodes($nodeType, $fields) {
   static $lec_nid_mappings  = array(); // Mapping from a node's old nid to its new nid
-  static $lec_mlid_mappings = array(); // Mapping from a node's old nid to its new mlid
+  static $lec_mlid_mappings = array(); // Mapping from a node's old mnid to its new mlid
   static $lec_nodes_pending = array(); // List of nids of pending nodes (nodes that can't be 
                                        // processed until their parent nodes have been processed) 
 
@@ -192,6 +200,7 @@ function _import_nodes($nodeType, $fields) {
       $lecNode = simplexml_load_file($exportPath . $fileName) or die("Unable to parse file " . $fileName . "\n");
       $origNodeId = $lecNode->nid->value->__toString();
       $origNodePlid = $lecNode->plid->value->__toString();
+      $origNodeMlid = $lecNode->mlid->value->__toString();
 
       // Don't process this node if it was already processed
       if(array_key_exists($origNodeId, $lec_nid_mappings))
@@ -229,7 +238,16 @@ function _import_nodes($nodeType, $fields) {
         $fieldType = $field['type'];
         if($fieldType != 'book_array') {
           foreach($lecNode->{$fieldName} as $element) {
-            $node->{$fieldName}[$node->language][0][$fieldType] = $element->value->__tostring();
+            if($element->type->__tostring() != $fieldType)
+              continue;
+            if($fieldName == 'body' && $fieldType == 'value') {
+              // Undo any body tags transformationos
+              $fieldValue = str_replace("#lecLeftBracket#", "<", $element->value->__tostring());
+            }
+            else {
+              $fieldValue = $element->value->__tostring();
+            }
+            $node->{$fieldName}[$node->language][0][$fieldType] = $fieldValue; 
           }
         }
         else {
@@ -250,10 +268,8 @@ function _import_nodes($nodeType, $fields) {
             // It's not the first page of the book, so all entity 
             // references must be properly mapped overwritting their
             // current value.
-            $node->field_reference_book[$node->language][0][target_id] = 
-                    $lec_nid_mappings[$node->field_reference_book[$node->language][0][target_id]]; 
             $node->book['bid'] = $lec_nid_mappings[$node->book['bid']];
-            $node->book['plid'] = $lec_mlid_mappings[$node->book['bid']];
+            $node->book['plid'] = $lec_mlid_mappings[$node->book['plid']];
           }
           else {
             $node->book['bid'] = 'new';
@@ -280,16 +296,16 @@ function _import_nodes($nodeType, $fields) {
        */
       switch($nodeType) {
         case 'book':
-          $lec_mlid_mappings[$origNodeId] = $node->book['mlid']; 
+          $lec_mlid_mappings[$origNodeMlid] = $node->book['mlid']; 
           // Resave parent nodes assigning their own nid to their field field_reference_book
           if($lecNode->field_is_first_page->value->__toString() == '1') {
-            $node->field_reference_book[$node->language][0][target_id] = $node->nid;
-            node_save($node);
+            $node->field_reference_book[$node->language][0]['target_id'] = $node->nid;
           }
           break;
         default:
           break;
       }
+      node_save($node);
     }
   } while(!empty($lec_nodes_pending));
 
