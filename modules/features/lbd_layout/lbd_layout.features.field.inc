@@ -495,8 +495,8 @@ function lbd_layout_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'No',
-          1 => 'Yes',
+          0 => 'It\'s a translation',
+          1 => 'It\'s the original',
         ),
         'allowed_values_function' => '',
       ),
@@ -507,11 +507,11 @@ function lbd_layout_field_default_fields() {
       'bundle' => 'book',
       'default_value' => array(
         0 => array(
-          'value' => '0',
+          'value' => '1',
         ),
       ),
       'deleted' => '0',
-      'description' => 'Check this box if this is the first page of the book.',
+      'description' => '',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -534,7 +534,7 @@ function lbd_layout_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_is_first_page',
-      'label' => 'Is first page',
+      'label' => 'Is a translation of another wiki book or is the original?',
       'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -596,7 +596,7 @@ function lbd_layout_field_default_fields() {
       'default_value' => NULL,
       'default_value_function' => '',
       'deleted' => '0',
-      'description' => 'If this book is a translation from another one, please set this field to point to the original book.',
+      'description' => '',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -620,7 +620,7 @@ function lbd_layout_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_reference_book',
       'label' => 'Original book',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
         'behaviors' => array(
           'prepopulate' => array(
@@ -721,12 +721,10 @@ function lbd_layout_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
-  t('Check this box if this is the first page of the book.');
   t('Comment');
   t('Enter a comma-separated list of words to describe your content.');
-  t('If this book is a translation from another one, please set this field to point to the original book.');
   t('Image');
-  t('Is first page');
+  t('Is a translation of another wiki book or is the original?');
   t('Language');
   t('Original book');
   t('Tags');

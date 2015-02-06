@@ -139,10 +139,10 @@ function lbd_layout_conditional_fields_default_fields() {
       ),
       'selector' => '',
       'values_set' => '1',
-      'value_form' => '1',
+      'value_form' => '0',
       'value' => array(
         0 => array(
-          'value' => 1,
+          'value' => '0',
         ),
       ),
       'values' => array(),
