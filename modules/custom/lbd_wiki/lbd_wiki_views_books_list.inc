@@ -94,8 +94,80 @@ $handler->display->display_options['filters']['field_book_language_value']['expo
   8 => 0,
   9 => 0,
 );
+/* Filter criterion: Content: Original book (field_reference_book) */
+$handler->display->display_options['filters']['field_reference_book_target_id']['id'] = 'field_reference_book_target_id';
+$handler->display->display_options['filters']['field_reference_book_target_id']['table'] = 'field_data_field_reference_book';
+$handler->display->display_options['filters']['field_reference_book_target_id']['field'] = 'field_reference_book_target_id';
+$handler->display->display_options['filters']['field_reference_book_target_id']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_reference_book_target_id']['expose']['operator_id'] = 'field_reference_book_target_id_op';
+$handler->display->display_options['filters']['field_reference_book_target_id']['expose']['label'] = 'Original wiki book';
+$handler->display->display_options['filters']['field_reference_book_target_id']['expose']['operator'] = 'field_reference_book_target_id_op';
+$handler->display->display_options['filters']['field_reference_book_target_id']['expose']['identifier'] = 'field_reference_book_target_id';
+$handler->display->display_options['filters']['field_reference_book_target_id']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+  7 => 0,
+  6 => 0,
+  5 => 0,
+  8 => 0,
+  9 => 0,
+  4 => 0,
+);
 
 /* Display: Page */
 $handler = $view->new_display('page', 'Page', 'page');
 $handler->display->display_options['path'] = 'wiki-index';
+
+/* Display: Entity Reference */
+$handler = $view->new_display('entityreference', 'Entity Reference', 'entityreference_1');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['defaults']['style_plugin'] = FALSE;
+$handler->display->display_options['style_plugin'] = 'entityreference_style';
+$handler->display->display_options['style_options']['search_fields'] = array(
+  'title' => 'title',
+);
+$handler->display->display_options['defaults']['style_options'] = FALSE;
+$handler->display->display_options['defaults']['row_plugin'] = FALSE;
+$handler->display->display_options['row_plugin'] = 'entityreference_fields';
+$handler->display->display_options['defaults']['row_options'] = FALSE;
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Content: Title */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Filter criterion: Content: Published */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filter criterion: Content: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'book' => 'book',
+);
+$handler->display->display_options['filters']['type']['group'] = 1;
+/* Filter criterion: Book: Depth */
+$handler->display->display_options['filters']['depth']['id'] = 'depth';
+$handler->display->display_options['filters']['depth']['table'] = 'book_menu_links';
+$handler->display->display_options['filters']['depth']['field'] = 'depth';
+$handler->display->display_options['filters']['depth']['value']['value'] = '1';
+$handler->display->display_options['filters']['depth']['group'] = 1;
+/* Filter criterion: Content: Is a translation of another wiki book or is the original? (field_is_first_page) */
+$handler->display->display_options['filters']['field_is_first_page_value']['id'] = 'field_is_first_page_value';
+$handler->display->display_options['filters']['field_is_first_page_value']['table'] = 'field_data_field_is_first_page';
+$handler->display->display_options['filters']['field_is_first_page_value']['field'] = 'field_is_first_page_value';
+$handler->display->display_options['filters']['field_is_first_page_value']['value'] = array(
+  1 => '1',
+);
 

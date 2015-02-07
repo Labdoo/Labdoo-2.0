@@ -10,23 +10,23 @@
 function lbd_layout_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: main-menu:<front>
-  $menu_links['main-menu:<front>'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'Home',
+  // Exported menu link: navigation:book
+  $menu_links['navigation:book'] = array(
+    'menu_name' => 'navigation',
+    'link_path' => 'book',
+    'router_path' => 'book',
+    'link_title' => 'Books',
     'options' => array(),
-    'module' => 'menu',
+    'module' => 'system',
     'hidden' => '1',
-    'external' => '1',
+    'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
-    'weight' => '-50',
+    'weight' => '0',
   );
   // Translatables
   // Included for use with string extractors like potx.
-  t('Home');
+  t('Books');
 
 
   return $menu_links;

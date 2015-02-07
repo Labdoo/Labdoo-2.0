@@ -78,7 +78,7 @@ projects[memcache] = 1.2
 ; Services and social
 ;--------------------
 projects[google_analytics] = 2.0
-projects[drupalchat] = 1.2
+projects[drupalchat] = 1.4
 projects[simplenews] = 1.1
 projects[mass_contact] = 1.0
 projects[sharethis] = 2.9

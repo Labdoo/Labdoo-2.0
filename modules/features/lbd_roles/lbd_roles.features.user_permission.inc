@@ -572,6 +572,18 @@ function lbd_roles_user_default_permissions() {
     'module' => 'filter',
   );
 
+  // Exported permission: use text format filtered_html_advanced.
+  $permissions['use text format filtered_html_advanced'] = array(
+    'name' => 'use text format filtered_html_advanced',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'book writer',
+      2 => 'newsletter manager',
+      3 => 'superhub manager',
+    ),
+    'module' => 'filter',
+  );
+
   // Exported permission: use text format full_html.
   $permissions['use text format full_html'] = array(
     'name' => 'use text format full_html',
