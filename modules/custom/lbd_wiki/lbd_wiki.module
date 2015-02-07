@@ -176,3 +176,15 @@ function lbd_wiki_menu_local_tasks_alter(&$data) {
   return;
 }
 
+
+/**
+ * Implements hook_form_FORM_ID_alter
+ *
+ */
+function lbd_wiki_form_node_form_alter(&$form, &$form_state) {
+  if (book_type_is_allowed($form['#node']->type)) {
+    // Remove the "none" option.
+    unset($form['book']['bid']['#options'][0]);
+  }
+}
+

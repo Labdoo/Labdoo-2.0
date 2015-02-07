@@ -182,9 +182,8 @@ function _export_nodes($nodeType, $fields) {
  */
 function _import_nodes($nodeType, $fields) {
   static $lec_nid_mappings  = array(); // Mapping from a node's old nid to its new nid
-  static $lec_mlid_mappings = array(); // Mapping from a node's old mnid to its new mlid
+  static $lec_mlid_mappings = array(); // Mapping from a node's old mlid to its new mlid
   static $lec_nodes_pending = array(); // List of nids of pending nodes (nodes that can't be 
-                                       // processed until their parent nodes have been processed) 
 
   $lbdRootPath = DRUPAL_ROOT . "/" . drupal_get_path('profile', 'labdoo');
   $exportPath = $lbdRootPath . "/" . "content/$nodeType" . "/";
@@ -216,8 +215,8 @@ function _import_nodes($nodeType, $fields) {
           ($lecNode->field_reference_book->value->__toString() != $origNodeId) &&
           (!array_key_exists($lecNode->field_reference_book->value->__toString(), $lec_nid_mappings))) 
          ||
-         (($lecNode->field_is_first_page->value->__toString() != '1') &&
-          (!array_key_exists($lecNode->bid->value->__toString(), $lec_nid_mappings)))) 
+         (($lecNode->plid->value->__toString() != 0) &&
+          (!array_key_exists($lecNode->plid->value->__toString(), $lec_mlid_mappings)))) 
       {
         $lec_nodes_pending[] = $origNodeId;
         continue;
@@ -264,7 +263,11 @@ function _import_nodes($nodeType, $fields) {
        */
       switch($nodeType) {
         case 'book':
-          if($lecNode->field_is_first_page->value->__toString() != '1') {
+          if($lecNode->field_reference_book->value->__toString() != $origNodeId) {
+            $node->field_reference_book[$node->language][0]['target_id'] = 
+                $lec_nid_mappings[$node->field_reference_book[$node->language][0]['target_id']];
+          }
+          if($lecNode->plid->value->__toString() != '0') {
             // It's not the first page of the book, so all entity 
             // references must be properly mapped overwritting their
             // current value.
@@ -297,15 +300,12 @@ function _import_nodes($nodeType, $fields) {
       switch($nodeType) {
         case 'book':
           $lec_mlid_mappings[$origNodeMlid] = $node->book['mlid']; 
-          // Resave parent nodes assigning their own nid to their field field_reference_book
-          if($lecNode->field_is_first_page->value->__toString() == '1') {
-            $node->field_reference_book[$node->language][0]['target_id'] = $node->nid;
-          }
           break;
         default:
           break;
       }
-      node_save($node);
+      if(($keyPending = array_search($origNodeId, $lec_nodes_pending)) !== false)
+        unset($lec_nodes_pending[$keyPending]);
     }
   } while(!empty($lec_nodes_pending));
 

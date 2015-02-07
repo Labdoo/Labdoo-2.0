@@ -534,7 +534,7 @@ function lbd_layout_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_is_first_page',
-      'label' => 'Is a translation of another wiki book or is the original?',
+      'label' => 'Is this wiki page a translation of another wiki page or is this the original?',
       'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -724,7 +724,7 @@ function lbd_layout_field_default_fields() {
   t('Comment');
   t('Enter a comma-separated list of words to describe your content.');
   t('Image');
-  t('Is a translation of another wiki book or is the original?');
+  t('Is this wiki page a translation of another wiki page or is this the original?');
   t('Language');
   t('Original book');
   t('Tags');
