@@ -21,7 +21,7 @@ $fields[4]['name'] = 'body';
 $fields[4]['type'] = 'format';
 $fields[5]['name'] = 'book';
 $fields[5]['type'] = 'book_array';
-$fields[5]['keys'] = array('bid', 'plid', 'mlid');
+$fields[5]['keys'] = array('bid', 'plid', 'mlid', 'weight');
 
 _export_nodes('book', $fields);
 

@@ -240,12 +240,15 @@ function _import_nodes($nodeType, $fields) {
             if($element->type->__tostring() != $fieldType)
               continue;
             if($fieldName == 'body' && $fieldType == 'value') {
-              // Undo any body tags transformationos
-              $fieldValue = str_replace("#lecLeftBracket#", "<", $element->value->__tostring());
+              // Undo any body tags transformations
+              $fieldValue = str_replace("#lecLeftBracket#", "<", $element->value->asXML());
             }
             else {
-              $fieldValue = $element->value->__tostring();
+              $fieldValue = $element->value->asXML();
             }
+            // Strip the field name tag
+            $fieldValue = str_replace("<value>", "", $fieldValue); 
+            $fieldValue = str_replace("</value>", "", $fieldValue); 
             $node->{$fieldName}[$node->language][0][$fieldType] = $fieldValue; 
           }
         }

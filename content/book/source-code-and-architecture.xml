@@ -1,0 +1,50 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>124</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Source Code and Architecture</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>124</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>The Labdoo social network is implemented mostly in PhP code. The source code is freely and openly available under the GPLv3 License. That means that you can freely download the code, install it in your laptop, modify it and contribute your improvements back to the community. The code is available as a git repository from the following link: https://github.com/Labdoo/Labdoo-2.0. 
+
+The current version of the Labdoo platform is based on Drupal,  a free and open-source content-management framework distributed under the GNU General Public License. Its main features are implemented using standalone modules. This helps to keep the project modular, facilitating the process of managing, maintaining and collaboratively developing the platform.
+
+The Labdoo source code is developed by software engineers who contribute their time out of goodwill and as a contribution to the social cause promoted by the project. The development team can be contacted at development@labdoo.org.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>117</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>787</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>794</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-15</value>
+</weight>
+</book>

@@ -1,0 +1,66 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>123</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Labdoo teams</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>123</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Labdoo provides a framework to help labdooers manage their own projects and activities in collaboration with other labdooers. We call this feature "Labdoo teams". Each team organizes around a theme or topic, and users can join teams depending on their interests. Users with the "team manager" role can also create their own new teams and communities around them.
+
+Inside a team, Labdoo users can perform the following tasks:
+
+<ul>
+<li>
+Start a conversation.
+</li>
+<li>
+Create a task to be performed some time scheduled in the future.
+</li>
+<li>
+Create an event in a calendar (e.g., a typical example of event is a laptop sanitation event).
+</li>
+<li>
+View the wall of that team and engage in discussions.
+</li>
+<li>
+View the calendar of events in that team.
+</li>
+</ul></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>117</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>787</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>793</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-10</value>
+</weight>
+</book>
