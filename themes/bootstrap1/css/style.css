@@ -140,6 +140,14 @@ hr {
   display: none; 
 }
 
+.control-group.form-type-select.form-item-book-weight.form-item {
+  display: none;
+}
+
+#edit-book-pick-book.btn.form-submit {
+  display: none;
+}
+
 /*
  * Remove "Delete" and "Re geocode" check boxes from location fields in forms
  */

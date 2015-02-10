@@ -1,0 +1,76 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>139</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Special HTML tags</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>139</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>While the page <a href="/filter/tips">"Compose tips"</a> (a link to this page is provided at the bottom of the "body" field in the wiki form) provides a detail description of each of the HTML tags supported by the Labdoo wiki system, in this section we provide additional information for some of the tags that are a bit more advanced.
+
+<strong>Inserting images</strong>
+
+As explained in the <a href="/filter/tips">"Compose tips"</a>, you can insert an image using the &lt;img&gt; tag. For instance, the following tag:
+
+<code>&lt;img src="/profiles/labdoo/files/pictures/laptop.png" height="50" width="50"&gt;</code>
+
+Generates this image:
+
+#lecLeftBracket#img src="/profiles/labdoo/files/pictures/laptop.png" height="50" width="50">
+
+To upload the actual image, follow the next steps:
+
+<ul>
+<li>
+Click on "My account" to go to your account.
+</li>
+<li>
+Click on the "File browser" tab. (If you don't see this tab, it's because you don't have enough permissions. Send an email to contact@labdoo.org to get your permissions upgraded.)
+</li>
+<li>
+You will see a file system directory tree. Select in it the folder where you want to upload your image. You can also create a new directory by clicking on the "Directory" tab. 
+</li>
+<li>
+Click on "Upload" to complete the uploading of your image.
+</li>
+<li>
+Double click on the image you just uploaded. This will take you to the new image page. You can now copy the URL of this image page from your browser. Use this URL in the "src=" field of your &lt;img&gt; tag.
+</li>
+</ul></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>126</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>805</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>809</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-13</value>
+</weight>
+</book>

@@ -19,7 +19,7 @@
  * using the migration module. However, this utility can be extended
  * to support other content types using the same basic framework.
  *
- * Supported version: D7.
+ * Supported version(s): D7.
  *
  */
 
@@ -218,7 +218,7 @@ function _import_nodes($nodeType, $fields) {
          (($lecNode->plid->value->__toString() != 0) &&
           (!array_key_exists($lecNode->plid->value->__toString(), $lec_mlid_mappings)))) 
       {
-        $lec_nodes_pending[] = $origNodeId;
+        $lec_nodes_pending[$origNodeId] = 1;
         continue;
       }
 
@@ -307,8 +307,8 @@ function _import_nodes($nodeType, $fields) {
         default:
           break;
       }
-      if(($keyPending = array_search($origNodeId, $lec_nodes_pending)) !== false)
-        unset($lec_nodes_pending[$keyPending]);
+      if(array_key_exists($origNodeId, $lec_nodes_pending))
+        unset($lec_nodes_pending[$origNodeId]);
     }
   } while(!empty($lec_nodes_pending));
 

@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>118</value>
+<value>127</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>118</value>
+<value>127</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -32,15 +32,15 @@ Given their relevance, users can find in the MNM access tabs for each of the fiv
 </body>
 <bid>
 <type>book_array</type>
-<value>117</value>
+<value>126</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>787</value>
+<value>796</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>788</value>
+<value>797</value>
 </mlid>
 <weight>
 <type>book_array</type>
