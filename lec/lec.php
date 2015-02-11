@@ -127,6 +127,9 @@ function _export_nodes($nodeType, $fields) {
     $nodeFileName = $exportPath . $nodeAlias . ".xml"; 
     $nodeLoaded = node_load($node->nid);
 
+    if($nodeLoaded->status != NODE_PUBLISHED)
+      continue;
+
     $fileDesc = fopen($nodeFileName, "w") or die("Unable to open file " . $nodeFileName . "\n");
 
     _write_header($fileDesc, $nodeType);
@@ -151,14 +154,7 @@ function _export_nodes($nodeType, $fields) {
       default:
         if($nodeLoaded->$fieldName) {
           foreach(field_get_items('node', $nodeLoaded, $fieldName) as $element) {
-            if($fieldName == 'body' && $fieldType == 'value') {
-              // Body's can have tags that interfere with the xml format. 
-              // Apply a transformation.
-              $fieldValue = str_replace("<img", "#lecLeftBracket#img", $element[$fieldType]);
-            }
-            else {
-              $fieldValue = $element[$fieldType];
-            }
+            $fieldValue = $element[$fieldType];
             _write_field($fileDesc, $fieldName, $fieldType, $fieldValue);
           }
         }
@@ -239,13 +235,7 @@ function _import_nodes($nodeType, $fields) {
           foreach($lecNode->{$fieldName} as $element) {
             if($element->type->__tostring() != $fieldType)
               continue;
-            if($fieldName == 'body' && $fieldType == 'value') {
-              // Undo any body tags transformations
-              $fieldValue = str_replace("#lecLeftBracket#", "<", $element->value->asXML());
-            }
-            else {
-              $fieldValue = $element->value->asXML();
-            }
+            $fieldValue = $element->value->asXML();
             // Strip the field name tag
             $fieldValue = str_replace("<value>", "", $fieldValue); 
             $fieldValue = str_replace("</value>", "", $fieldValue); 

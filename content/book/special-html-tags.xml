@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>139</value>
+<value>378</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,21 +17,21 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>139</value>
+<value>378</value>
 </field_reference_book>
 <body>
 <type>value</type>
-<value>While the page <a href="/filter/tips">"Compose tips"</a> (a link to this page is provided at the bottom of the "body" field in the wiki form) provides a detail description of each of the HTML tags supported by the Labdoo wiki system, in this section we provide additional information for some of the tags that are a bit more advanced.
+<value>The body section of a wiki page allows writers to use a simplified form of HTML tags to help them format their content. While the page <a href="/filter/tips">'Compose tips'</a> (a link to this page is provided at the bottom of the "body" field in the wiki form) provides a detail description of each of the HTML tags supported by the Labdoo wiki system, in this section we provide additional information for some of the tags that are a bit more advanced. 
 
 <strong>Inserting images</strong>
 
-As explained in the <a href="/filter/tips">"Compose tips"</a>, you can insert an image using the &lt;img&gt; tag. For instance, the following tag:
+As explained in the <a href="/filter/tips">'Compose tips'</a>, you can insert an image using the &lt;img&gt; tag. For instance, the following tag:
 
 <code>&lt;img src="/profiles/labdoo/files/pictures/laptop.png" height="50" width="50"&gt;</code>
 
-Generates this image:
+generates this image:
 
-#lecLeftBracket#img src="/profiles/labdoo/files/pictures/laptop.png" height="50" width="50">
+<img src="/profiles/labdoo/files/pictures/laptop.png" height="50" width="50"/>
 
 To upload the actual image, follow the next steps:
 
@@ -43,15 +43,38 @@ Click on "My account" to go to your account.
 Click on the "File browser" tab. (If you don't see this tab, it's because you don't have enough permissions. Send an email to contact@labdoo.org to get your permissions upgraded.)
 </li>
 <li>
-You will see a file system directory tree. Select in it the folder where you want to upload your image. You can also create a new directory by clicking on the "Directory" tab. 
+You will see a file system directory tree. Next, make sure to select the folder 'content', as this is the folder used to upload images for wiki content. Please notice that if you select a folder outside 'content', your image may not correctly display in future releases of the Labdoo platform. As an option, you can also create a new directory inside 'content' by clicking on the "Directory" tab and select that new folder as the place where you upload your image.
 </li>
 <li>
 Click on "Upload" to complete the uploading of your image.
 </li>
 <li>
-Double click on the image you just uploaded. This will take you to the new image page. You can now copy the URL of this image page from your browser. Use this URL in the "src=" field of your &lt;img&gt; tag.
+Double click on the image you just uploaded. This will take you to the new image page on a new browser page. You can now copy the URL of this image page from your browser. Use this URL in the "src=" field of your &lt;img&gt; tag.
 </li>
-</ul></value>
+</ul>
+
+<strong> Formatting figures in your wiki page </strong>
+
+If you want to insert an image into your text, please follow the following format:
+
+- Add a &lt;hr&gt; tag before and after your image to display a separating line.
+- Add a 'Figure' capture inside &lt;em&gt; tags on top of the image.
+
+Here is an example:
+
+<code>&lt;hr&gt;&lt;/hr&gt;
+&lt;em&gt; Figure. This is the Labdoo logo.&lt;/em&gt;
+&lt;img src="/profiles/labdoo/files/pictures/laptop.png" height="50" width="50"&gt;
+&lt;hr&gt;&lt;/hr&gt;
+</code>
+
+Which is displayed as follows:
+
+<hr/>
+<em> Figure. This is the Labdoo logo.</em>
+<img src="/profiles/labdoo/files/pictures/laptop.png" height="50" width="50"/>
+<hr/>
+</value>
 </body>
 <body>
 <type>format</type>
@@ -59,15 +82,15 @@ Double click on the image you just uploaded. This will take you to the new image
 </body>
 <bid>
 <type>book_array</type>
-<value>126</value>
+<value>369</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>805</value>
+<value>1046</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>809</value>
+<value>1048</value>
 </mlid>
 <weight>
 <type>book_array</type>

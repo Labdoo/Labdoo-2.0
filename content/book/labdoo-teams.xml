@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>132</value>
+<value>375</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>132</value>
+<value>375</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -41,7 +41,12 @@ View the wall of that team and engage in discussions.
 <li>
 View the calendar of events in that team.
 </li>
-</ul></value>
+</ul>
+<hr/>
+<em>Figure. The teams page allows you to manage your own project activities and collaborate with other labdoers.</em>
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/teams.png"/>
+<hr/>
+</value>
 </body>
 <body>
 <type>format</type>
@@ -49,15 +54,15 @@ View the calendar of events in that team.
 </body>
 <bid>
 <type>book_array</type>
-<value>126</value>
+<value>369</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>796</value>
+<value>1039</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>802</value>
+<value>1045</value>
 </mlid>
 <weight>
 <type>book_array</type>

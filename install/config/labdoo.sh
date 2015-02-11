@@ -83,3 +83,7 @@ drush @lbd $enOrDis -y lbd_sample_nodes
 sed -i "s|^max_allowed_packet.*=.*|max_allowed_packet = 64M|g" /etc/mysql/my.cnf
 sed -i "s|^memory_limit.*=.*|memory_limit = 400M|g" /etc/php5/apache2/php.ini
 
+# Copy files over to /var/www/lbd/sites/default/files and run lec to generate wiki content
+cp -r $(dirname $0)/../../content/files/* $(dirname $0)/../../../../sites/default/files/
+drush @lbd php-script $(dirname $0)/../../lec/lec-export-books.php
+

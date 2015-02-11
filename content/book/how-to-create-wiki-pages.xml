@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>137</value>
+<value>382</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>126</value>
+<value>369</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -37,13 +37,13 @@ In the wiki form, fill in the following sections:
 <strong>Language.</strong> Choose the language you are using to write this wiki page.
 </li>
 <li>
-<strong>Is this page part of an original book.</strong> In this field, if you are translating a page from another original wiki page, select "It's a translation". Otherwise, select "It's the original". If you select "It's a translation", a new field will pop up asking which book is the original. In this case, select the book you are making a translation of.
+<strong>Is this page part of an original book.</strong> In this field, if you are translating a page from another original wiki page, select "It's a translation". Otherwise, select "It's the original". If you select "It's a translation", a new field will pop up asking for the original book. In this field, select the book you are translating the wiki page from.
 </li>
 <li>
 <strong>Body.</strong> Write here the actual body of your wiki page. The wiki system supports a simplified set of HTML tags  which allows writers to format their text (e.g., bold, italic, bullet points, etc.). For a description of these metatags, see the section <a href="/content/special-html-tags">Special HTML tags</a>.
 </li>
 <li>
-<strong>Book outline.</strong> Under the "Book" field, if this is a new book, select "create a new book". Otherwise, if your new page corresponds to a section or chapter of a book, select the book it belongs to from the list. In this latter case, set also the "Parent item" field to the existing parent section to which you want to attach the new page as a child page. 
+<strong>Book outline.</strong> Under the "Book" field, if this is a new book, select "create a new book". Otherwise, if your new page corresponds to a section or chapter of a book, select the book it belongs to from the list. In this latter case, in the field "Parent item" select the existing parent section to which you want to attach the new page as a child page. 
 </li>
 </ul>
 </value>
@@ -54,15 +54,15 @@ In the wiki form, fill in the following sections:
 </body>
 <bid>
 <type>book_array</type>
-<value>126</value>
+<value>369</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>805</value>
+<value>1046</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>807</value>
+<value>1052</value>
 </mlid>
 <weight>
 <type>book_array</type>
