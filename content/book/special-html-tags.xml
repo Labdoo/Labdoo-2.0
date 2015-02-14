@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>407</value>
+<value>138</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>407</value>
+<value>138</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -57,8 +57,14 @@ Double click on the image you just uploaded. This will take you to the new image
 
 If you want to insert an image into your text, please follow the following format:
 
-- Add a &lt;hr&gt; tag before and after your image to display a separating line.
-- Add a 'Figure' capture inside &lt;em&gt; tags on top of the image.
+<ul>
+<li>
+Add a &lt;hr&gt; tag before and after your image to display a separating line.
+</li>
+<li>
+Add a 'Figure' capture inside &lt;em&gt; tags on top of the image.
+</li>
+</ul>
 
 Here is an example:
 
@@ -76,8 +82,12 @@ Which is displayed as follows:
 <hr/>
 
 <strong>Inserting videos</strong>
-TODO
-</value>
+
+You may insert videos using the following simple tag:
+
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/video-filter.png"/>
+
+For a good description on how to insert videos please directly refer to the <a href="/filter/tips">'Compose tips'</a> page under the 'Video Filter' section.</value>
 </body>
 <body>
 <type>format</type>
@@ -85,15 +95,15 @@ TODO
 </body>
 <bid>
 <type>book_array</type>
-<value>398</value>
+<value>129</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>1075</value>
+<value>806</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>1077</value>
+<value>808</value>
 </mlid>
 <weight>
 <type>book_array</type>
