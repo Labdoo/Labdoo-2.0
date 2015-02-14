@@ -87,6 +87,7 @@ dependencies[] = wysiwyg
 dependencies[] = imce
 dependencies[] = imce_wysiwyg
 dependencies[] = imce_mkdir 
+dependencies[] = video_filter 
 
 ;;; Features and exports/imports
 dependencies[] = strongarm

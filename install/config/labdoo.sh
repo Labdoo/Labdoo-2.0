@@ -4,6 +4,7 @@
 # installed via the labdoo.make file.
 
 cwd=$(dirname $0)
+rootpath=$(drush @lbd php-eval 'print DRUPAL_ROOT')
 
 ### Configure the Labdoo modules
 
@@ -84,6 +85,7 @@ sed -i "s|^max_allowed_packet.*=.*|max_allowed_packet = 64M|g" /etc/mysql/my.cnf
 sed -i "s|^memory_limit.*=.*|memory_limit = 400M|g" /etc/php5/apache2/php.ini
 
 # Copy files over to /var/www/lbd/sites/default/files and run lec to generate wiki content
-cp -r $(dirname $0)/../../content/files/* $(dirname $0)/../../../../sites/default/files/
-drush @lbd php-script $(dirname $0)/../../lec/lec-export-books.php
+cp -r $rootpath/profiles/labdoo/content/files/* $rootpath/sites/default/files/
+chown -R www-data:www-data $rootpath/profiles/labdoo/content/files/ 
+drush @lbd php-script $rootpath/profiles/labdoo/lec/lec-import-books.php
 
