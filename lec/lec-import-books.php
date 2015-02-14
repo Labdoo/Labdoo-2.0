@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Import a book from XML LEC format into the Labdoo database.
+ * Import all books from XML LEC format into the Labdoo database.
  *
  * See lec.php for more information about LEC.
  *

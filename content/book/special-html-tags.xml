@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>378</value>
+<value>407</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>378</value>
+<value>407</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -74,6 +74,9 @@ Which is displayed as follows:
 <em> Figure. This is the Labdoo logo.</em>
 <img src="/profiles/labdoo/files/pictures/laptop.png" height="50" width="50"/>
 <hr/>
+
+<strong>Inserting videos</strong>
+TODO
 </value>
 </body>
 <body>
@@ -82,15 +85,15 @@ Which is displayed as follows:
 </body>
 <bid>
 <type>book_array</type>
-<value>369</value>
+<value>398</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>1046</value>
+<value>1075</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>1048</value>
+<value>1077</value>
 </mlid>
 <weight>
 <type>book_array</type>

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Export all books from the Labdoo database to XML LEC format.
+ * Check that all books are correctly formatted.
  *
  * See lec.php for more information about LEC.
  *
@@ -23,7 +23,7 @@ $fields[5]['name'] = 'book';
 $fields[5]['type'] = 'book_array';
 $fields[5]['keys'] = array('bid', 'plid', 'mlid', 'weight');
 
-_export_nodes('book', $fields);
+_import_nodes('book', $fields, TRUE);
 
 ?>
 

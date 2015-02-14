@@ -176,7 +176,7 @@ function _export_nodes($nodeType, $fields) {
  * Import all nodes of a given type from a lec file
  *
  */
-function _import_nodes($nodeType, $fields) {
+function _import_nodes($nodeType, $fields, $isCheck = FALSE) {
   static $lec_nid_mappings  = array(); // Mapping from a node's old nid to its new nid
   static $lec_mlid_mappings = array(); // Mapping from a node's old mlid to its new mlid
   static $lec_nodes_pending = array(); // List of nids of pending nodes (nodes that can't be 
@@ -185,6 +185,20 @@ function _import_nodes($nodeType, $fields) {
   $exportPath = $lbdRootPath . "/" . "content/$nodeType" . "/";
 
   $fileNamesList = scandir($exportPath);
+
+  // First do a pass on all xml files to ensure that they are properly format.
+  // If only one of them fails, it is best to not do any of them at all, to avoid
+  // getting the wiki system into an inconsistent state.
+  foreach($fileNamesList as $fileName) { 
+    if($fileName == "." or $fileName == "..")
+      continue;
+    print "Checking " . $fileName . "... ";
+    $lecNode = simplexml_load_file($exportPath . $fileName) or die("Unable to parse file " . $fileName . "\n");
+    print "Ok\n";
+  }
+
+  if($isCheck)
+    return;
 
   do {
     foreach($fileNamesList as $fileName) {

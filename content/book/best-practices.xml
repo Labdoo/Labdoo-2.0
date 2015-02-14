@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>381</value>
+<value>411</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,13 +17,16 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>381</value>
+<value>411</value>
 </field_reference_book>
 <body>
 <type>value</type>
 <value>While there is quite a bit of flexibility when writing your own wiki books, it is important to follow certain best practice rules to ensure that the content provided within the Labdoo platform is of good quality. As a wiki writer, please follow the next recommendations:
 
 <ul>
+<li>
+<strong>Ensure HTML tags are correctly written.</strong> To begin with, we start with an important best practice. Please if you use HTML tags to format your wiki pages, ensure that they are correctly written. All tags need to have an open clause and a closing clause. For instance: <code>&lt;em&gt;text here&lt;/em&gt;</code>. If your tag does not include any object inside (such as the new line tag <code>&lt;br&gt;</code> or the horizontal line tag <code>&lt;hr&gt;</code>), then you have two options: you can use either <code>&lt;br&gt;&lt;/br&gt;</code> (without any object between the clauses) or the more compact version <code>&lt;br/&gt;</code>. This first best practice is specially important because the Labdoos system provides automatic back ups of all the wiki content and if this tags are not correctly set up in this way, the backup process can break requiring manual fixing of the html tags.
+</li>
 <li>
 <strong>If in doubt, follow this wiki book as an example.</strong> The wiki book you are reading right now, is made using the same system that you use to write your own. Therefore, if in doubt on how to write a certain page, please come to this guide and check how it was written. As a book writer, you have enough user permissions to click on the "Edit" tab found on the top of each of the pages in this book (make sure you are logged in to see the "Edit" tab), which will allow you to see how each field was filled in. 
 </li>
@@ -36,7 +39,6 @@
 <li>
 <strong>Spell check and proof read your text.</strong> Please ensure that there are no spelling and grammar errors in your text, and make sure you proof read it multiple times. It is very recommended that you have some one else read the text and help you correct it, if possible someone who is good at spelling and grammar. For instance, try to have in your team or community a volunteer that can help you with this task.
 </li>
-CONTINUEHERE: (1) metatags always of the form XXX (2) add a section on translations
 </ul></value>
 </body>
 <body>
@@ -45,18 +47,18 @@ CONTINUEHERE: (1) metatags always of the form XXX (2) add a section on translati
 </body>
 <bid>
 <type>book_array</type>
-<value>369</value>
+<value>398</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>1046</value>
+<value>1075</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>1051</value>
+<value>1081</value>
 </mlid>
 <weight>
 <type>book_array</type>
-<value>-12</value>
+<value>-11</value>
 </weight>
 </book>
