@@ -1,0 +1,89 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>84</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Labdoo logos</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>84</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>If you are carrying out your own outreaching campaign, you may want to use the Labdoo logos to create your own awareness material (flyers, announcements, etc.). You can download all the Labdoo logos from this page. Pick the one most appropriate to the message you want to convey.
+
+Note: all the Labdoo content (inluding the following logos) can be freely downloaded as long as you make a fair usage of it. All content is released under the Creative Commons License (CC BY-SA 3.0): http://creativecommons.org/licenses/by-sa/3.0/
+
+<hr></hr>
+<em>Labdoo logo:  classic</em>
+<img src="/sites/default/files/content/labdoo-toolkit/logo.png" width="300"/>
+<hr></hr>
+
+<hr></hr>
+<em>Labdoo logo:  classic (alpha)</em>
+<img src="/sites/default/files/content/labdoo-toolkit/logo-alpha.png" width="300"/>
+<hr></hr>
+
+<hr></hr>
+<em>Labdoo logo:  word</em>
+<img src="/sites/default/files/content/labdoo-toolkit/logo-2.png" width="500"/>
+<hr></hr>
+
+<hr></hr>
+<em>Labdoo logo:  word (alpha)</em>
+<img src="/sites/default/files/content/labdoo-toolkit/logo-2-alpha.png" width="500"/>
+<hr></hr>
+
+<hr></hr>
+<em>Labdoo logo:  education 1</em>
+<img src="/sites/default/files/content/labdoo-toolkit/labdoo-logos-education-1.png" width="500"/>
+<hr></hr>
+
+<hr></hr>
+<em>Labdoo logo:  education 2</em>
+<img src="/sites/default/files/content/labdoo-toolkit/labdoo-logos-education-2.png" width="500"/>
+<hr></hr>
+
+<hr></hr>
+<em>Labdoo logo:  steps 1</em>
+<img src="/sites/default/files/content/labdoo-toolkit/labdoo-steps-1.png" width="500"/>
+<hr></hr>
+
+<hr></hr>
+<em>Labdoo logo:  steps 2</em>
+<img src="/sites/default/files/content/labdoo-toolkit/labdoo-steps-2.png" width="500"/>
+<hr></hr>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>81</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>751</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>753</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-14</value>
+</weight>
+</book>

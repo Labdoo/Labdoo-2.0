@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>138</value>
+<value>75</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>138</value>
+<value>75</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -70,7 +70,7 @@ Here is an example:
 
 <code>&lt;hr&gt;&lt;/hr&gt;
 &lt;em&gt; Figure. This is the Labdoo logo.&lt;/em&gt;
-&lt;img src="/profiles/labdoo/files/pictures/laptop.png" height="50" width="50"&gt;
+&lt;img src="/profiles/labdoo/files/pictures/laptop.png" height="50" width="50"/&gt;
 &lt;hr&gt;&lt;/hr&gt;
 </code>
 
@@ -95,15 +95,15 @@ For a good description on how to insert videos please directly refer to the <a h
 </body>
 <bid>
 <type>book_array</type>
-<value>129</value>
+<value>66</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>806</value>
+<value>743</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>808</value>
+<value>745</value>
 </mlid>
 <weight>
 <type>book_array</type>

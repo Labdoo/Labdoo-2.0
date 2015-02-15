@@ -1,11 +1,11 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>73</value>
+<value>81</value>
 </nid>
 <title>
 <type>node_title</type>
-<value>Labdoo Wiki</value>
+<value>Labdoo Toolkit</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -17,11 +17,11 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>73</value>
+<value>81</value>
 </field_reference_book>
 <body>
 <type>value</type>
-<value>The Labdoo platform allows users to create their own wiki pages. To do so, your user will need to have the role of "wiki/book writer". If you don't have this role assigned and would like to write wiki pages, please email contact@labdoo.org.</value>
+<value>The Labdoo Toolkit provides a set of tools to allow labdooers carry out their mini-missions. These tools include items such as the 'Dooject Sanitation Manual', flyers to run your own local awareness campaigns, or the Labdoo logos that you can use to compose your own outreaching material, among many other items.</value>
 </body>
 <body>
 <type>format</type>
@@ -29,18 +29,18 @@
 </body>
 <bid>
 <type>book_array</type>
-<value>66</value>
+<value>81</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>736</value>
+<value>0</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>743</value>
+<value>751</value>
 </mlid>
 <weight>
 <type>book_array</type>
-<value>-8</value>
+<value>0</value>
 </weight>
 </book>

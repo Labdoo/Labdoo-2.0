@@ -86,6 +86,6 @@ sed -i "s|^memory_limit.*=.*|memory_limit = 400M|g" /etc/php5/apache2/php.ini
 
 # Copy files over to /var/www/lbd/sites/default/files and run lec to generate wiki content
 cp -r $rootpath/profiles/labdoo/content/files/* $rootpath/sites/default/files/
-chown -R www-data:www-data $rootpath/profiles/labdoo/content/files/ 
+chown -R www-data:www-data $rootpath/sites/default/files/ 
 drush @lbd php-script $rootpath/profiles/labdoo/lec/lec-import-books.php
 
