@@ -382,7 +382,7 @@ function labdoo_objects_field_default_fields() {
                 'weight' => '-98',
               ),
               'city' => array(
-                'collect' => '2',
+                'collect' => '1',
                 'default' => '',
                 'weight' => '-97',
               ),
@@ -449,7 +449,7 @@ function labdoo_objects_field_default_fields() {
                 'additional' => array(
                   'collect' => '0',
                   'default' => '',
-                  'weight' => '6',
+                  'weight' => '-98',
                 ),
                 'city' => array(
                   '#parents' => array(
@@ -459,7 +459,7 @@ function labdoo_objects_field_default_fields() {
                   ),
                   'collect' => 1,
                   'default' => '',
-                  'weight' => '8',
+                  'weight' => '-97',
                 ),
                 'country' => array(
                   '#parents' => array(
@@ -469,7 +469,7 @@ function labdoo_objects_field_default_fields() {
                   ),
                   'collect' => 1,
                   'default' => 'us',
-                  'weight' => '14',
+                  'weight' => '-96',
                 ),
                 'delete_location' => array(
                   'default' => FALSE,
@@ -488,7 +488,7 @@ function labdoo_objects_field_default_fields() {
                   'collect' => '0',
                   'default' => FALSE,
                   'nodiff' => TRUE,
-                  'weight' => '20',
+                  'weight' => '-93',
                 ),
                 'longitude' => array(
                   'default' => 0,
@@ -496,7 +496,7 @@ function labdoo_objects_field_default_fields() {
                 'name' => array(
                   'collect' => '0',
                   'default' => '',
-                  'weight' => '2',
+                  'weight' => '-100',
                 ),
                 'postal_code' => array(
                   '#parents' => array(
@@ -506,7 +506,7 @@ function labdoo_objects_field_default_fields() {
                   ),
                   'collect' => '1',
                   'default' => '',
-                  'weight' => '12',
+                  'weight' => '-94',
                 ),
                 'province' => array(
                   '#parents' => array(
@@ -516,8 +516,12 @@ function labdoo_objects_field_default_fields() {
                   ),
                   'collect' => '1',
                   'default' => '',
-                  'weight' => '10',
+                  'weight' => '-95',
                   'widget' => 'select',
+                ),
+                're_geocode_location' => array(
+                  'default' => FALSE,
+                  'nodiff' => TRUE,
                 ),
                 'source' => array(
                   'default' => 0,
@@ -525,7 +529,7 @@ function labdoo_objects_field_default_fields() {
                 'street' => array(
                   'collect' => '0',
                   'default' => '',
-                  'weight' => '4',
+                  'weight' => '-99',
                 ),
               ),
             ),
@@ -1300,7 +1304,7 @@ $display_output = $entity_field_item[\'value\'];',
                 'weight' => '-98',
               ),
               'city' => array(
-                'collect' => '2',
+                'collect' => '1',
                 'default' => '',
                 'weight' => '-97',
               ),
@@ -1367,7 +1371,7 @@ $display_output = $entity_field_item[\'value\'];',
                 'additional' => array(
                   'collect' => '0',
                   'default' => '',
-                  'weight' => '6',
+                  'weight' => '-98',
                 ),
                 'city' => array(
                   '#parents' => array(
@@ -1377,7 +1381,7 @@ $display_output = $entity_field_item[\'value\'];',
                   ),
                   'collect' => 1,
                   'default' => '',
-                  'weight' => '8',
+                  'weight' => '-97',
                 ),
                 'country' => array(
                   '#parents' => array(
@@ -1387,7 +1391,7 @@ $display_output = $entity_field_item[\'value\'];',
                   ),
                   'collect' => 1,
                   'default' => 'us',
-                  'weight' => '14',
+                  'weight' => '-96',
                 ),
                 'delete_location' => array(
                   'default' => FALSE,
@@ -1406,7 +1410,7 @@ $display_output = $entity_field_item[\'value\'];',
                   'collect' => '0',
                   'default' => FALSE,
                   'nodiff' => TRUE,
-                  'weight' => '20',
+                  'weight' => '-93',
                 ),
                 'longitude' => array(
                   'default' => 0,
@@ -1414,7 +1418,7 @@ $display_output = $entity_field_item[\'value\'];',
                 'name' => array(
                   'collect' => '0',
                   'default' => '',
-                  'weight' => '2',
+                  'weight' => '-100',
                 ),
                 'postal_code' => array(
                   '#parents' => array(
@@ -1424,7 +1428,7 @@ $display_output = $entity_field_item[\'value\'];',
                   ),
                   'collect' => '1',
                   'default' => '',
-                  'weight' => '12',
+                  'weight' => '-94',
                 ),
                 'province' => array(
                   '#parents' => array(
@@ -1434,8 +1438,12 @@ $display_output = $entity_field_item[\'value\'];',
                   ),
                   'collect' => '1',
                   'default' => '',
-                  'weight' => '10',
+                  'weight' => '-95',
                   'widget' => 'select',
+                ),
+                're_geocode_location' => array(
+                  'default' => FALSE,
+                  'nodiff' => TRUE,
                 ),
                 'source' => array(
                   'default' => 0,
@@ -1443,7 +1451,7 @@ $display_output = $entity_field_item[\'value\'];',
                 'street' => array(
                   'collect' => '0',
                   'default' => '',
-                  'weight' => '4',
+                  'weight' => '-99',
                 ),
               ),
             ),
