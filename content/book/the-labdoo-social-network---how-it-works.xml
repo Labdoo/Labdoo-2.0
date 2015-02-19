@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>68</value>
+<value>129</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>68</value>
+<value>129</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -47,7 +47,7 @@ This document provides a description of the features implemented by the Labdoo s
 </body>
 <bid>
 <type>book_array</type>
-<value>68</value>
+<value>129</value>
 </bid>
 <plid>
 <type>book_array</type>
@@ -55,7 +55,7 @@ This document provides a description of the features implemented by the Labdoo s
 </plid>
 <mlid>
 <type>book_array</type>
-<value>738</value>
+<value>793</value>
 </mlid>
 <weight>
 <type>book_array</type>

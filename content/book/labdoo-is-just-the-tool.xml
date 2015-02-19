@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>90</value>
+<value>123</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,11 +17,11 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>90</value>
+<value>123</value>
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Labdoo only provides a free tool: the tool is the humanitarian social network and the toolkit found in it that allows everyone to carry out his or her own mini-mission.  The tool is provided “as is”,  which means that people developing it cannot be liable for how the tool is used.  This concept is similar to other well known projects such as the GNU Project.
+<value>Labdoo only provides an open and free tool: the tool is the humanitarian social network and the toolkit found in it that allows everyone to carry out his or her own mini-mission.  The tool is provided “as is”,  which means that people developing it cannot be liable for how the tool is used.  This concept is similar to other well known projects such as the GNU Project.
 
 The source code that runs the Labdoo social network is fully and freely available from the following github repo: https://github.com/labdoo
 </value>
@@ -32,18 +32,18 @@ The source code that runs the Labdoo social network is fully and freely availabl
 </body>
 <bid>
 <type>book_array</type>
-<value>87</value>
+<value>133</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>754</value>
+<value>796</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>757</value>
+<value>817</value>
 </mlid>
 <weight>
 <type>book_array</type>
-<value>0</value>
+<value>-13</value>
 </weight>
 </book>
