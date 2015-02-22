@@ -42,6 +42,7 @@ projects[imce_wysiwyg] = 1.0
 projects[imce_mkdir] = 1.0 
 projects[video_filter] = 3.1 
 projects[video_filter][patch][] = https://www.drupal.org/files/issues/video_filter-https-support-786774-28.patch 
+projects[views_tree] = 2.0
 
 ;--------------------
 ; Security

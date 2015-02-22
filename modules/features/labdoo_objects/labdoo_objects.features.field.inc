@@ -3246,7 +3246,7 @@ $display_output = $entity_field_item[\'value\'];',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '1',
+          'weight' => '3',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -3263,7 +3263,7 @@ $display_output = $entity_field_item[\'value\'];',
       ),
       'entity_type' => 'node',
       'field_name' => 'field_branches_information',
-      'label' => 'About this hub and branches',
+      'label' => 'About this hub',
       'required' => 0,
       'settings' => array(
         'text_processing' => '1',
@@ -3276,7 +3276,7 @@ $display_output = $entity_field_item[\'value\'];',
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '3',
+        'weight' => '6',
       ),
     ),
   );
@@ -3333,7 +3333,7 @@ $display_output = $entity_field_item[\'value\'];',
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '3',
+          'weight' => '7',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -3418,7 +3418,7 @@ $display_output = $entity_field_item[\'value\'];',
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '6',
+        'weight' => '9',
       ),
     ),
   );
@@ -3509,6 +3509,241 @@ $display_output = $entity_field_item[\'value\'];',
         ),
         'type' => 'entityreference_autocomplete',
         'weight' => '2',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-hub-field_is_this_hub_a_branch_of_an'.
+  $fields['node-hub-field_is_this_hub_a_branch_of_an'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_is_this_hub_a_branch_of_an',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'No',
+          1 => 'Yes',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'hub',
+      'default_value' => array(
+        0 => array(
+          'value' => '0',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'inline',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '6',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_is_this_hub_a_branch_of_an',
+      'label' => 'Is this hub a branch of another parent hub?',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '3',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-hub-field_parent_hub'.
+  $fields['node-hub-field_parent_hub'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_parent_hub',
+      'foreign keys' => array(
+        'node' => array(
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(
+            'hub' => 'hub',
+          ),
+        ),
+        'target_type' => 'node',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'hub',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'inline',
+          'module' => 'entityreference',
+          'settings' => array(
+            'link' => 1,
+          ),
+          'type' => 'entityreference_label',
+          'weight' => '1',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_parent_hub',
+      'label' => 'Parent hub',
+      'required' => 0,
+      'settings' => array(
+        'behaviors' => array(
+          'prepopulate' => array(
+            'status' => 0,
+          ),
+        ),
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
+        'weight' => '4',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-hub-field_types_of_mini_missions'.
+  $fields['node-hub-field_types_of_mini_missions'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_types_of_mini_missions',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          'HUBTYPE0' => 'Unused doojects can be dropped in this hub',
+          'HUBTYPE1' => 'Sanitized doojects can be picked up in this hub',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'hub',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => '2',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_types_of_mini_missions',
+      'label' => 'Hub type',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '5',
       ),
     ),
   );
@@ -5418,7 +5653,7 @@ $display_output = $entity_field_item[\'value\'];',
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('About this hub and branches');
+  t('About this hub');
   t('Add here any observations you would like to make. For instance you can add notes such as the quality of the laptop or if something is broken, a reminder, or a note on who donated the laptop.');
   t('Add here the email address(es) of additional people that you would like to be notified whenever this laptop changes its status.');
   t('Add users who need to have permission to edit this dooject');
@@ -5449,9 +5684,11 @@ $display_output = $entity_field_item[\'value\'];',
   t('Example: Ubuntu 12.04, Mac OS X, Windows 7, etc.');
   t('Hard drive');
   t('Hub manager(s)');
+  t('Hub type');
   t('If you are an individual tagger, select here the group "Grassroots". If you belong to a hub, select the name of your hub.');
   t('Internet additional notes');
   t('Internet connection type');
+  t('Is this hub a branch of another parent hub?');
   t('Local language(s)');
   t('Manager');
   t('Memory');
@@ -5468,6 +5705,7 @@ $display_output = $entity_field_item[\'value\'];',
   t('On-site point of contact');
   t('Once you know the dooject(s) that you will be carrying with this dootrip, enter their Labdoo identifier here.');
   t('Origin of the trip');
+  t('Parent hub');
   t('Picture');
   t('Project application');
   t('Project brief description');

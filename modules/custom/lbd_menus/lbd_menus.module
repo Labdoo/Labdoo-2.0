@@ -83,6 +83,19 @@ function make_main_menu() {
   $mlid = menu_link_save($item);
 
   $item = array(
+            'link_path' => 'hubs',
+            'link_title' => t('Hubs (tree view)'),
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -35,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => $exploreMlid,
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
             'link_path' => 'newsletters',
             'link_title' => t('Newsletters'),
             'menu_name' => 'main-menu',
