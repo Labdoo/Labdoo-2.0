@@ -10,7 +10,7 @@ defaults[projects][subdir] = contrib
 ; Bootstrap Theme
 ;--------------------
 projects[bootstrap] = 2.2
-projects[jquery_update] = 2.4
+projects[jquery_update] = 2.5
 libraries[bootstrap][directory_name] = bootstrap
 libraries[bootstrap][download][type] = get
 libraries[bootstrap][download][url] = https://github.com/twbs/bootstrap/archive/v3.0.0.zip
@@ -26,7 +26,7 @@ projects[diff] = 3.2
 ; User interface
 ;--------------------
 projects[context] = 3.6
-projects[views] = 3.8
+projects[views] = 3.10
 projects[homebox] = 2.0-beta7
 projects[boxes] = 1.2
 projects[edit_profile] = 1.0-beta2
@@ -36,7 +36,7 @@ libraries[tinymce][download][type] = get
 libraries[tinymce][download][url] = http://github.com/downloads/tinymce/tinymce/tinymce_3.5.7.zip
 projects[special_menu_items] = 2.0 
 projects[computed_field] = 1.0 
-projects[entityreference_filter] = 1.3 
+projects[entityreference_filter] = 1.4 
 projects[imce] = 1.9
 projects[imce_wysiwyg] = 1.0
 projects[imce_mkdir] = 1.0 
@@ -84,7 +84,7 @@ projects[google_analytics] = 2.0
 projects[drupalchat] = 1.4
 projects[simplenews] = 1.1
 projects[mass_contact] = 1.0
-projects[sharethis] = 2.9
+projects[sharethis] = 2.10
 projects[disqus] = 1.9
 projects[disqus][patch][] = http://drupal.org/files/disqus-https.patch
 
@@ -99,7 +99,7 @@ projects[ip_geoloc] = 1.26
 ; Translations and language
 ;-------------------
 projects[l10n_update] = 1.1
-projects[i18n] = 1.11
+projects[i18n] = 1.12
 projects[i18nviews] = 3.x-dev
 projects[transliteration] = 3.2
 projects[lang_dropdown] = 2.5 
@@ -146,7 +146,7 @@ projects[calendar] = 3.5
 ;--------------------
 ; Extensions and others
 ;--------------------
-projects[ctools] = 1.5
+projects[ctools] = 1.6
 projects[libraries] = 2.2
 projects[entity] = 1.5
 projects[xautoload] = 4.5
