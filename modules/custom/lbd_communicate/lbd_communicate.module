@@ -417,12 +417,14 @@ function lbd_communicate_mail_alter(&$message) {
  *
  */
 function lbd_communicate_cron() {
-  $DOOTRIP_EMAIL_NOTIFICATION_PERIOD = 30; // in days
   global $base_url;
+  $DOOTRIP_EMAIL_EXPIRED_PERIOD = 432000; // In seconds (5 days after expiration, send notification)
+  $DOOTRIP_EMAIL_EXPIRED_REPETITIONS = 3; // Send three more notifications in the same interval (i.e., 5, 10, 15 days)
+  $cron_last = variable_get('cron_last');
 
   /*
    * Check for dootrips which have expired
-   * and whose status has not been updated and
+   * and whose status have not been updated and
    * send an email reminder to their users to do
    * the update.
    */
@@ -432,31 +434,36 @@ function lbd_communicate_cron() {
 
   foreach($dootrips as $dootrip) {
 
-    $dateSplit = explode("-", $dootrip->field_arrival_date_value);
-    $dateSplit = $dateSplit[2];
-    $dateSplit = explode("T", $dateSplit);
-    $dayArrived = $dateSplit[0];
+    // Note: both DateObject and date_now will be based on user time zone if available or site timezone otherwise.
+    // Since this is run inside cron, it will be based on the site's timezone.
+    $fieldDate = new DateObject($dootrip->field_arrival_date_value, date_default_timezone(), DATE_FORMAT_ISO);
+    $nowDate = date_now();
+    $timePastSinceDootrip = $fieldDate->difference($nowDate, 'seconds');
+    $timePastSinceCron = time() - $cron_last;
+    $timePastSinceLastCheck = $cron_last;
 
-    $dateSplit = explode("-", $now);
-    $dateSplit = $dateSplit[2];
-    $dateSplit = explode("T", $dateSplit);
-    $today = $dateSplit[0];
+    $doNotification = FALSE;
+    for($i = 1; $i <= $DOOTRIP_EMAIL_EXPIRED_REPETITIONS; $i++) {
+      // Don't notify unless $i * $DOOTRIP_EMAIL_EXPIRED_PERIOD seconds have passed.
+      if($timePastSinceDootrip < ($i * $DOOTRIP_EMAIL_EXPIRED_PERIOD)) 
+        continue;
+      // If the following condition is true, it means a previous instance of cron
+      // has already taken care of it, so no need to re-notify.
+      if(($i * $DOOTRIP_EMAIL_EXPIRED_PERIOD) < ($timePastSinceDootrip - $timePastSinceCron))
+        continue;
+      $doNotification = TRUE;
+    } 
 
-    $numberDaysPassed = $today - $dayArrived;
-
-    // Send an email reminder only every $DOOTRIP_EMAIL_NOTIFICATION_PERIOD days
-    // after the dootrip has expired 
-    if(($numberDaysPassed + 30) % $DOOTRIP_EMAIL_NOTIFICATION_PERIOD) 
+    if(!$doNotification)
       continue;
 
-    // If the dootrip has already been updated, no need to send notification reminder
+    // If the dootrip has already been updated, no need to send the notification reminder
     $query = "SELECT field_status_dootrip_value FROM field_data_field_status_dootrip WHERE entity_id=" . $dootrip->entity_id;
     $status = db_query($query)->fetchField();
     if($status != "DS0")
       continue;
       
-    // If we are here, the status has not been updated and $DOOTRIP_EMAIL_NOTIFICATION_PERIOD 
-    // days have passed since last reminder. Send another reminder.
+    // If we are here, it's because We concluded we need to send a notification reminder
 
     // Load the dootrip node and one of its dootriper users (an arbitrary dootripper will do it)
     $node = node_load($dootrip->entity_id);
