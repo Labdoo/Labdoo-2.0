@@ -3513,78 +3513,6 @@ $display_output = $entity_field_item[\'value\'];',
     ),
   );
 
-  // Exported field: 'node-hub-field_is_this_hub_a_branch_of_an'.
-  $fields['node-hub-field_is_this_hub_a_branch_of_an'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_is_this_hub_a_branch_of_an',
-      'foreign keys' => array(),
-      'indexes' => array(
-        'value' => array(
-          0 => 'value',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'list',
-      'settings' => array(
-        'allowed_values' => array(
-          0 => 'No',
-          1 => 'Yes',
-        ),
-        'allowed_values_function' => '',
-      ),
-      'translatable' => '0',
-      'type' => 'list_boolean',
-    ),
-    'field_instance' => array(
-      'bundle' => 'hub',
-      'default_value' => array(
-        0 => array(
-          'value' => '0',
-        ),
-      ),
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'inline',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '6',
-        ),
-        'node_gallery_node_thumbnail' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_is_this_hub_a_branch_of_an',
-      'label' => 'Is this hub a branch of another parent hub?',
-      'required' => 1,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_buttons',
-        'weight' => '3',
-      ),
-    ),
-  );
-
   // Exported field: 'node-hub-field_parent_hub'.
   $fields['node-hub-field_parent_hub'] = array(
     'field_config' => array(
@@ -3633,7 +3561,7 @@ $display_output = $entity_field_item[\'value\'];',
       'default_value' => NULL,
       'default_value_function' => '',
       'deleted' => '0',
-      'description' => '',
+      'description' => 'If this hub has a parent hub, please select it from the following list.',
       'display' => array(
         'default' => array(
           'label' => 'inline',
@@ -5685,10 +5613,10 @@ $display_output = $entity_field_item[\'value\'];',
   t('Hard drive');
   t('Hub manager(s)');
   t('Hub type');
+  t('If this hub has a parent hub, please select it from the following list.');
   t('If you are an individual tagger, select here the group "Grassroots". If you belong to a hub, select the name of your hub.');
   t('Internet additional notes');
   t('Internet connection type');
-  t('Is this hub a branch of another parent hub?');
   t('Local language(s)');
   t('Manager');
   t('Memory');
