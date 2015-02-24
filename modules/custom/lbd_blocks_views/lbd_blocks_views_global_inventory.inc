@@ -908,4 +908,97 @@ $handler->display->display_options['inherit_exposed_filters'] = TRUE;
 $handler->display->display_options['inherit_pager'] = TRUE;
 $handler->display->display_options['render_pager'] = TRUE;
 
+/* Display: Hubs */
+$handler = $view->new_display('page', 'Hubs', 'page_2');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['title'] = 'Hubs';
+$handler->display->display_options['defaults']['use_ajax'] = FALSE;
+$handler->display->display_options['defaults']['style_plugin'] = FALSE;
+$handler->display->display_options['style_plugin'] = 'tree';
+$handler->display->display_options['style_options']['main_field'] = 'nid';
+$handler->display->display_options['style_options']['parent_field'] = 'field_parent_hub';
+$handler->display->display_options['defaults']['style_options'] = FALSE;
+$handler->display->display_options['defaults']['row_plugin'] = FALSE;
+$handler->display->display_options['row_plugin'] = 'fields';
+$handler->display->display_options['row_options']['inline'] = array(
+  'title' => 'title',
+  'country' => 'country',
+  'field_types_of_mini_missions' => 'field_types_of_mini_missions',
+  'city' => 'city',
+);
+$handler->display->display_options['row_options']['separator'] = '|';
+$handler->display->display_options['defaults']['row_options'] = FALSE;
+$handler->display->display_options['defaults']['header'] = FALSE;
+$handler->display->display_options['defaults']['footer'] = FALSE;
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Content: Title */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Field: Content: Parent hub */
+$handler->display->display_options['fields']['field_parent_hub']['id'] = 'field_parent_hub';
+$handler->display->display_options['fields']['field_parent_hub']['table'] = 'field_data_field_parent_hub';
+$handler->display->display_options['fields']['field_parent_hub']['field'] = 'field_parent_hub';
+$handler->display->display_options['fields']['field_parent_hub']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_parent_hub']['settings'] = array(
+  'link' => 0,
+);
+/* Field: Content: Nid */
+$handler->display->display_options['fields']['nid']['id'] = 'nid';
+$handler->display->display_options['fields']['nid']['table'] = 'node';
+$handler->display->display_options['fields']['nid']['field'] = 'nid';
+$handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+/* Field: Location: Country */
+$handler->display->display_options['fields']['country']['id'] = 'country';
+$handler->display->display_options['fields']['country']['table'] = 'location';
+$handler->display->display_options['fields']['country']['field'] = 'country';
+/* Field: Location: City */
+$handler->display->display_options['fields']['city']['id'] = 'city';
+$handler->display->display_options['fields']['city']['table'] = 'location';
+$handler->display->display_options['fields']['city']['field'] = 'city';
+/* Field: Content: Hub type */
+$handler->display->display_options['fields']['field_types_of_mini_missions']['id'] = 'field_types_of_mini_missions';
+$handler->display->display_options['fields']['field_types_of_mini_missions']['table'] = 'field_data_field_types_of_mini_missions';
+$handler->display->display_options['fields']['field_types_of_mini_missions']['field'] = 'field_types_of_mini_missions';
+$handler->display->display_options['fields']['field_types_of_mini_missions']['delta_offset'] = '0';
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Filter criterion: Content: Published */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filter criterion: Content: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'hub' => 'hub',
+);
+/* Filter criterion: Location: Country */
+$handler->display->display_options['filters']['country']['id'] = 'country';
+$handler->display->display_options['filters']['country']['table'] = 'location';
+$handler->display->display_options['filters']['country']['field'] = 'country';
+$handler->display->display_options['filters']['country']['exposed'] = TRUE;
+$handler->display->display_options['filters']['country']['expose']['operator_id'] = 'country_op';
+$handler->display->display_options['filters']['country']['expose']['label'] = 'Country';
+$handler->display->display_options['filters']['country']['expose']['operator'] = 'country_op';
+$handler->display->display_options['filters']['country']['expose']['identifier'] = 'country';
+$handler->display->display_options['filters']['country']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+  7 => 0,
+  6 => 0,
+  5 => 0,
+  8 => 0,
+  9 => 0,
+  4 => 0,
+);
+$handler->display->display_options['path'] = 'hubs';
 
