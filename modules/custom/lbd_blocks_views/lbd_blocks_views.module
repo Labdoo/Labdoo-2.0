@@ -250,6 +250,16 @@ function lbd_blocks_views_block_info() {
     'region' => "sidebar_second",
   );
 
+  // Block linking to the team's actions block
+  $blocks['block_footer'] = array(
+    'info' => "Labdoo footer",
+    'status' => 1,
+    'visibility' => BLOCK_VISIBILITY_NOTLISTED,
+    'weight' => 0,
+    'pages' => "",
+    'region' => "footer",
+  );
+
   return $blocks;
 }
 
@@ -356,6 +366,14 @@ function lbd_blocks_views_block_view($delta = '') {
       $block['subject'] = "<none>";
 //      $block['title'] = t("Available actions");
       $block['content'] = labdoo_render_team_actions();
+      break;
+
+    // The Labdoo footer 
+    case 'block_footer':
+      $block['subject'] = "<none>";
+      $block['content'] = array(
+             '#markup' => labdoo_render_footer(),
+      );
       break;
 
   }

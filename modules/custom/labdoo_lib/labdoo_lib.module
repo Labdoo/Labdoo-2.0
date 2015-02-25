@@ -1613,6 +1613,53 @@ $trailer
   return $code;
 }
 
+
+/**
+ * Renders the Labdoo footer block 
+ *
+ */
+function labdoo_render_footer() {
+
+  $code = ' 
+<table align="center"> 
+<tr>
+<td width="200">
+<a href="/" color="red">About Labdoo</a>
+</td>
+<td width="100">
+<a href="/">Glits</a>
+</td>
+<td width="200">
+<a href="/">Development Team</a>
+</td>
+<td width="200">
+<img src="/profiles/labdoo/files/pictures/creative-commons.png" width="70">
+</td>
+</tr>
+<tr>
+<td>
+<a href="/">Values and Philosophy</a>
+</td>
+<td>
+<a href="/">FAQ</a>
+</td>
+<td>
+<a href="/">Terms and Conditions</a>
+</td>
+<td width="200">
+<a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons</a>
+</td>
+</tr>
+</table>
+<br/><br/>
+<img src="/profiles/labdoo/files/pictures/footer-acts.png">
+';
+
+
+  return $code;
+}
+
+
 /**
  * Implements hook_user_view().
  *
