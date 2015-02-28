@@ -1193,7 +1193,6 @@ function lbd_display_slider_edoovilage_data($edoovillageId = NULL) {
     return;
 
   // Check to see if the user has edit rights 
-  $userRoles = array_values($user->roles);
   if(node_access("update", $loadedNode, $user) === TRUE) 
     print('<p><a href="/node/'.$edoovillageId . '/edit"><strong><span style="color:#ff0000;">'.t("Edit this edoovillage").'</span></strong></a></p>');
 
@@ -1300,7 +1299,6 @@ function lbd_display_slider_hub_data($hubId) {
     return;
 
   // Check to see if the user has edit rights 
-  $userRoles = array_values($user->roles);
   if(node_access("update", $loadedNode, $user) === TRUE) 
     print('<p><a href="/node/'.$hubId . '/edit"><strong><span style="color:#ff0000;">'.t("Edit this hub").'</span></strong></a></p>');
 

@@ -1800,3 +1800,443 @@ function labdoo_lib_compute_dootrip_load($nodeLoaded) {
   return(count($dootrippers));
 }
 
+
+/*
+ * hook_menu
+ *
+ */
+function labdoo_lib_menu() {
+
+  $items['user/%user/metrics'] = array(
+    'access callback' => TRUE,
+    'access arguments' => array(1),
+    'page callback' => '_labdoo_lib_user_metrics',
+    'page arguments' => array(1),
+    'title' => t('Metrics'),
+    'weight' => 5,
+    'type' => MENU_LOCAL_TASK,
+  );
+
+  $items['user/%user/roles'] = array(
+    'access callback' => TRUE,
+    'access arguments' => array(1),
+    'page callback' => '_labdoo_lib_user_roles',
+    'page arguments' => array(1),
+    'title' => t('My roles'),
+    'weight' => 5,
+    'type' => MENU_LOCAL_TASK,
+  );
+
+  return $items;
+}
+
+
+function _labdoo_lib_user_num_doojects($userId) {
+  $numberOfQueries = 1;
+  $queryAll = "(SELECT entity_id FROM field_data_field_tagger)";
+  $query = "SELECT t.entity_id FROM (" . $queryAll;
+  $placeHolders = array();
+
+  $queryUser = "(SELECT tUser.entity_id FROM 
+                 (SELECT entity_id FROM field_data_field_tagger WHERE (field_tagger_target_id=:uid) 
+                  UNION
+                  SELECT entity_id FROM field_data_field_manager WHERE (field_manager_target_id=:uid)
+                  UNION
+                  SELECT entity_id FROM field_data_field_additional_editors WHERE (field_additional_editors_target_id=:uid) 
+                  UNION
+                  SELECT entity_id FROM field_data_field_additional_followers WHERE (field_additional_followers_target_id=:uid)
+                 )
+                AS tUser)";
+  $query = $query . " UNION ALL " . $queryUser;
+  $placeHolders[':uid'] = $userId;
+  $numberOfQueries++;
+
+  $query = $query . ") AS t GROUP BY entity_id HAVING count(*) >= " . $numberOfQueries;
+  $result = db_query($query, $placeHolders);
+  $num = $result->rowCount();
+
+  return($num);
+}
+
+
+function _labdoo_lib_user_num_dootrips($userId) {
+  $numberOfQueries = 1;
+  $queryAll = "(SELECT entity_id FROM field_data_field_destination_of_the_trip)";
+  $query = "SELECT t.entity_id FROM (" . $queryAll;
+  $placeHolders = array();
+
+  $queryUser = "(SELECT tUser.entity_id FROM
+                (SELECT entity_id FROM field_data_field_dootripper_s_ WHERE (field_dootripper_s__target_id=:uid)
+                 UNION
+                (SELECT DISTINCT entity_id FROM field_data_field_dootrip_additional_editors WHERE field_dootrip_additional_editors_target_id=:uid))
+                AS tUser)";
+
+  $query = $query . " UNION ALL " . $queryUser;
+  $placeHolders[':uid'] = $userId;
+  $numberOfQueries++;
+
+  $query = $query . ") AS t GROUP BY entity_id HAVING count(*) >= " . $numberOfQueries;
+  $result = db_query($query, $placeHolders);
+  $num = $result->rowCount();
+
+  return($num);
+}
+
+
+function _labdoo_lib_user_num_edoovillages($userId) {
+  $numberOfQueries = 1;
+  $queryAll = "(SELECT entity_id FROM field_data_field_edoovillage_status)";
+  $query = "SELECT t.entity_id FROM (" . $queryAll;
+  $placeHolders = array();
+
+  $queryUser = "(SELECT tUser.entity_id FROM 
+                 ((SELECT DISTINCT field_edoovillage_destination_target_id AS entity_id FROM field_data_field_edoovillage_destination WHERE 
+                   (entity_id IN (SELECT entity_id FROM field_data_field_manager WHERE field_manager_target_id=:uid) OR 
+                    entity_id IN (SELECT entity_id FROM field_data_field_tagger WHERE field_tagger_target_id=:uid) OR 
+                    entity_id IN (SELECT entity_id FROM field_data_field_additional_followers WHERE field_additional_followers_target_id=:uid) OR 
+                    entity_id IN (SELECT entity_id FROM field_data_field_additional_editors WHERE field_additional_editors_target_id=:uid)))
+                  UNION
+                  (SELECT DISTINCT field_edoovillage_destination_target_id AS entity_id FROM field_data_field_edoovillage_destination WHERE 
+                    entity_id IN (SELECT field_laptops_target_id FROM field_data_field_laptops WHERE 
+                    entity_id IN (SELECT entity_id FROM field_data_field_dootripper_s_ WHERE field_dootripper_s__target_id=:uid)))
+                  UNION
+                  (SELECT DISTINCT entity_id FROM field_data_field_project_manager_s_ WHERE field_project_manager_s__target_id=:uid)
+                  UNION
+                  (SELECT DISTINCT entity_id FROM field_data_field_edoo_additional_editors WHERE field_edoo_additional_editors_target_id=:uid))
+                  AS tUser)";
+
+  $query = $query . " UNION ALL " . $queryUser;
+  $placeHolders[':uid'] = $userId;
+  $numberOfQueries++;
+
+  $query = $query . ") AS t GROUP BY entity_id HAVING count(*) >= " . $numberOfQueries;
+  $result = db_query($query, $placeHolders);
+  $num = $result->rowCount();
+
+  return($num);
+}
+
+
+function _labdoo_lib_user_num_hubs($userId) {
+  $numberOfQueries = 1;
+  $queryAll = "(SELECT entity_id FROM field_data_field_hub_manager_s_)";
+  $query = "SELECT t.entity_id FROM (" . $queryAll;
+  $placeHolders = array();
+
+  $queryUser = "(SELECT tUser.entity_id FROM 
+                 ((SELECT DISTINCT field_hub_laptop_target_id AS entity_id FROM field_data_field_hub_laptop WHERE 
+                   (entity_id IN (SELECT entity_id FROM field_data_field_manager WHERE field_manager_target_id=:uid) OR 
+                    entity_id IN (SELECT entity_id FROM field_data_field_tagger WHERE field_tagger_target_id=:uid) OR 
+                    entity_id IN (SELECT entity_id FROM field_data_field_additional_followers WHERE field_additional_followers_target_id=:uid) OR 
+                    entity_id IN (SELECT entity_id FROM field_data_field_additional_editors WHERE field_additional_editors_target_id=:uid)))
+                  UNION
+                  (SELECT DISTINCT field_hub_laptop_target_id AS entity_id FROM field_data_field_hub_laptop WHERE 
+                    entity_id IN (SELECT field_laptops_target_id FROM field_data_field_laptops WHERE 
+                    entity_id IN (SELECT entity_id FROM field_data_field_dootripper_s_ WHERE field_dootripper_s__target_id=:uid)))
+                  UNION
+                  (SELECT DISTINCT entity_id FROM field_data_field_hub_manager_s_ WHERE field_hub_manager_s__target_id=:uid)
+                  UNION
+                  (SELECT DISTINCT entity_id FROM field_data_field_hub_additional_editors WHERE field_hub_additional_editors_target_id=:uid))
+                  AS tUser)";
+
+  $query = $query . " UNION ALL " . $queryUser;
+  $placeHolders[':uid'] = $userId;
+  $numberOfQueries++;
+
+  $query = $query . ") AS t GROUP BY entity_id HAVING count(*) >= " . $numberOfQueries;
+  $result = db_query($query, $placeHolders);
+  $num = $result->rowCount();
+
+  return($num);
+}
+
+
+function _labdoo_lib_user_num_wikis($userId) {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node');
+  $query->propertyCondition('type', 'book');
+  $query->propertyCondition('uid', $userId);
+  $result = $query->count()->execute();
+
+  return($result);
+}
+
+
+function _labdoo_lib_user_metrics($account = NULL) {
+  global $user;
+  $userId = $user->uid;
+
+  $labelDoojects = t('Doojects*: ');
+  $labelDootrips = t('Dootrips*: ');
+  $labelEdoovillages = t('Edoovillages: ');
+  $labelHubs = t('Hubs: ');
+  $labelWiki = t('Wiki articles: ');
+
+  $labelCarbon = t('Carbon emissions (kg): ');
+  $labelTrees = t('Trees: ');
+  $labelWater = t('Water (Liter): ');
+  $labelGasLiters = t('Liters of gas: ');
+  $labelPlasticBottles = t('Plastic bottles: ');
+  $labelAluminumCans = t('Aluminum cans: ');
+  $labelGold = t('Gold (gr): ');
+  $labelSilver = t('Silver (gr): ');
+  $labelPalladium = t('Palladium (gr): ');
+  $labelCopper = t('Copper (kg): ');
+  $labelCobalt = t('Cobalt (kg): ');
+  $labelChemical = t('Chemical substances (kg): ');
+
+  $textLegend = t('(*) doojects and dootrips that you have participated with.<br>
+                   (**) measured based on number of doojects that you have participated with.');
+
+  // Compute metrics 
+  $numDoojects = _labdoo_lib_user_num_doojects($userId); 
+  $numDootrips = _labdoo_lib_user_num_dootrips($userId); 
+  $numEdoovillages = _labdoo_lib_user_num_edoovillages($userId); 
+  $numHubs = _labdoo_lib_user_num_hubs($userId); 
+  $numWikis = _labdoo_lib_user_num_wikis($userId); 
+
+  // Compute carbon footprint (constants are taken from the Labdoo carbon footprint calculator)
+  $footprintCarbon = $numDoojects * 41;
+  $footprintTrees = $numDoojects * 2;
+  $footprintGas = $numDoojects * 26.5;
+  $footprintPlastic = $numDoojects * 59;
+  $footprintWater = $numDoojects * 1500;
+  $footprintAluminum = $numDoojects * 270;
+  $footprintGold = $numDoojects * 0.22;
+  $footprintSilver = $numDoojects * 0.44;
+  $footprintPalladium = $numDoojects * 0.08;
+  $footprintCopper = $numDoojects * 0.3;
+  $footprintCobalt = $numDoojects * 0.065;
+  $footprintChemical = $numDoojects * 22;
+
+  $code = "
+<strong>My contributions</strong>
+<hr/>
+<table> 
+<tr>
+<td width='180'>
+$labelDoojects
+</td>
+<td>
+$numDoojects
+</td>
+</tr>
+<tr>
+<td width='180'>
+$labelDootrips
+</td>
+<td>
+$numDootrips
+</td>
+</tr>
+<tr>
+<td width='180'>
+$labelEdoovillages
+</td>
+<td>
+$numEdoovillages
+</td>
+</tr>
+<tr>
+<td width='180'>
+$labelHubs
+</td>
+<td>
+$numHubs
+</td>
+</tr>
+<tr>
+<td width='180'>
+$labelWiki
+</td>
+<td>
+$numWikis
+</td>
+</tr>
+</table>
+<hr/>
+<br>
+<strong>My carbon footprint savings**</strong>
+<hr/>
+<table> 
+<tr>
+<td width='180'>
+$labelCarbon
+</td>
+<td>
+$footprintCarbon
+</td>
+</tr>
+<tr>
+<td width='180'>
+$labelTrees
+</td>
+<td>
+$footprintTrees
+</td>
+</tr>
+<tr>
+<td width='180'>
+$labelWater
+</td>
+<td>
+$footprintWater
+</td>
+</tr>
+<tr>
+<td width='180'>
+$labelGasLiters
+</td>
+<td>
+$footprintGas
+</td>
+</tr>
+<tr>
+<td width='180'>
+$labelPlasticBottles
+</td>
+<td>
+$footprintPlastic
+</td>
+</tr>
+<tr>
+<td width='180'>
+$labelAluminumCans
+</td>
+<td>
+$footprintAluminum
+</td>
+</tr>
+<tr>
+<td width='180'>
+$labelGold
+</td>
+<td>
+$footprintGold
+</td>
+</tr>
+<tr>
+<td width='180'>
+$labelSilver
+</td>
+<td>
+$footprintSilver
+</td>
+</tr>
+<tr>
+<td width='180'>
+$labelPalladium
+</td>
+<td>
+$footprintPalladium
+</td>
+</tr>
+<tr>
+<td width='180'>
+$labelCopper
+</td>
+<td>
+$footprintCopper
+</td>
+</tr>
+<tr>
+<td width='180'>
+$labelCobalt
+</td>
+<td>
+$footprintCobalt
+</td>
+</tr>
+<tr>
+<td width='180'>
+$labelChemical
+</td>
+<td>
+$footprintChemical
+</td>
+</tr>
+</table>
+<hr/>
+<br>
+$textLegend
+";
+
+  return $code; 
+}
+
+
+function _labdoo_lib_user_roles($account = NULL) {
+  global $user;
+  $userRoles = array_values($user->roles);
+  $rolesMapping = array(
+    t('labdooer') => t('Provides the base functionality to carry out Labdoo mini-missions.'),
+    t('newsletter manager') => t('Manage, create and publish newsletters to help bring awareness about your Labdoo activities.'),
+    t('hub manager') => t('Manage a hub, organize hub inventory, upload pictures to your hub album.'),
+    t('edoovillage manager') => t('Create and manage edoovillages, upload pictures to your edoovillages albums.'),
+    t('superhub manager') => t('Create hubs and help manage Labdoo operations at a larger regional scale.'),
+    t('team manager') => t('Create new teams, manage memberships and all team related activities.'),
+    t('book writer') => t('Create and edit new wiki articles and books.'),
+    t('administrator') => t('All access rights.'),
+  );
+
+  $allRoles = array_keys($rolesMapping);
+  $potentialRoles = array_diff($allRoles, $userRoles);
+
+  $code = "
+<strong>My current roles</strong>
+<hr/>
+<table>";
+
+  foreach($userRoles as $role) {
+    if($role == 'authenticated user')
+      $role = 'labdooer';
+    $code = $code . "
+<tr>
+<td width='180'>
+" . ucfirst($role) . "
+</td>
+<td>
+" . $rolesMapping[$role] . "
+</td>
+</tr>";
+  }
+
+  if(empty($potentialRoles))
+    $starReference = "";
+  else
+    $starReference = "*";
+
+  $code = $code . "
+</table><hr/><br>";
+
+  $code = $code . "
+<strong>Available extra roles$starReference</strong>
+<hr/>
+<table>";
+
+  if(empty($potentialRoles))
+    $code = $code . "You are assigned all possible roles.";
+
+  foreach($potentialRoles as $role) {
+    if($role == 'labdooer')
+      continue; // the base role is always assigned to a user
+    $code = $code . "
+<tr>
+<td width='180'>
+" . ucfirst($role) . "
+</td>
+<td>
+" . $rolesMapping[$role] . "
+</td>
+</tr>";
+  }
+
+  $code = $code . "
+</table><hr/>";
+
+  if(!empty($potentialRoles))
+    $code = $code . t('(*) If you want to assign extra roles to your user account, please email contact@labdoo.org.');
+
+  return $code;
+}
+
