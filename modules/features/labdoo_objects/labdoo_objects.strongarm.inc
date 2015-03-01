@@ -420,13 +420,13 @@ function labdoo_objects_strongarm() {
           'weight' => '1',
         ),
         'locations' => array(
-          'weight' => '7',
+          'weight' => '4',
         ),
       ),
       'display' => array(
         'sharethis' => array(
           'default' => array(
-            'weight' => '5',
+            'weight' => '10',
             'visible' => TRUE,
           ),
         ),
