@@ -684,22 +684,14 @@ function labdoo_lib_node_update($node) {
      * T1 or S4.
      */
     $doojectStatus = labdoo_lib_get_field($node, 'field_status', 'node', 'value'); 
-    $oldNode = node_load($node->nid);
-    if($oldNode)
-      $oldDoojectStatus = labdoo_lib_get_field($oldNode, 'field_status', 'node', 'value'); 
-    else // This is a newly inserted node
-      $oldDoojectStatus = "-1";  // Any non-status string will do it
-    if($doojectStatus != $oldDoojectStatus && ($doojectStatus == "T1" || $doojectStatus == "S4")) {
+    if(($doojectStatus == "T1" || $doojectStatus == "S4")) {
       // Use a PHP shutdown callback (invoked upon exiting the PHP thread)
       // to ensure the node has been stored in the database prior to updating the location.
-      // FIX: this can also be probably done using hook_node_presave
+      // FIX: this can also be done using hook_node_presave
       //      just like we are doing with other fields.
       //      For now we leave it here as an example of an alternative technique.
       register_shutdown_function('_update_dooject_location_from_edoovillage', $node);
-      if($oldNode)
-        drupal_set_message(t('The location of dooject ' . $oldNode->title . ' has been automatically assigned to the location of its edoovillage.'));
-      else
-        drupal_set_message(t('The location of this dooject has been automatically assigned to the location of its edoovillage.'));
+      drupal_set_message(t('The location of this dooject has been automatically assigned to the location of its edoovillage.'));
     }
   }
 
