@@ -41,6 +41,13 @@ function lbd_roles_user_default_permissions() {
     'module' => 'book',
   );
 
+  // Exported permission: admin node search exlusions.
+  $permissions['admin node search exlusions'] = array(
+    'name' => 'admin node search exlusions',
+    'roles' => array(),
+    'module' => 'search_config',
+  );
+
   // Exported permission: administer book outlines.
   $permissions['administer book outlines'] = array(
     'name' => 'administer book outlines',
@@ -69,6 +76,15 @@ function lbd_roles_user_default_permissions() {
       1 => 'authenticated user',
     ),
     'module' => 'node_gallery_api',
+  );
+
+  // Exported permission: administer search.
+  $permissions['administer search'] = array(
+    'name' => 'administer search',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'search',
   );
 
   // Exported permission: administer simplenews settings.
@@ -520,6 +536,159 @@ function lbd_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: search action content.
+  $permissions['search action content'] = array(
+    'name' => 'search action content',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'authenticated user',
+    ),
+    'module' => 'search_config',
+  );
+
+  // Exported permission: search all content.
+  $permissions['search all content'] = array(
+    'name' => 'search all content',
+    'roles' => array(),
+    'module' => 'search_config',
+  );
+
+  // Exported permission: search all excluded entities.
+  $permissions['search all excluded entities'] = array(
+    'name' => 'search all excluded entities',
+    'roles' => array(),
+    'module' => 'search_config',
+  );
+
+  // Exported permission: search article content.
+  $permissions['search article content'] = array(
+    'name' => 'search article content',
+    'roles' => array(),
+    'module' => 'search_config',
+  );
+
+  // Exported permission: search blog content.
+  $permissions['search blog content'] = array(
+    'name' => 'search blog content',
+    'roles' => array(),
+    'module' => 'search_config',
+  );
+
+  // Exported permission: search book content.
+  $permissions['search book content'] = array(
+    'name' => 'search book content',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'authenticated user',
+    ),
+    'module' => 'search_config',
+  );
+
+  // Exported permission: search content.
+  $permissions['search content'] = array(
+    'name' => 'search content',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'authenticated user',
+    ),
+    'module' => 'search',
+  );
+
+  // Exported permission: search dootrip content.
+  $permissions['search dootrip content'] = array(
+    'name' => 'search dootrip content',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'authenticated user',
+    ),
+    'module' => 'search_config',
+  );
+
+  // Exported permission: search edoovillage content.
+  $permissions['search edoovillage content'] = array(
+    'name' => 'search edoovillage content',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'authenticated user',
+    ),
+    'module' => 'search_config',
+  );
+
+  // Exported permission: search gic content.
+  $permissions['search gic content'] = array(
+    'name' => 'search gic content',
+    'roles' => array(),
+    'module' => 'search_config',
+  );
+
+  // Exported permission: search hub content.
+  $permissions['search hub content'] = array(
+    'name' => 'search hub content',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'authenticated user',
+    ),
+    'module' => 'search_config',
+  );
+
+  // Exported permission: search laptop content.
+  $permissions['search laptop content'] = array(
+    'name' => 'search laptop content',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'authenticated user',
+    ),
+    'module' => 'search_config',
+  );
+
+  // Exported permission: search node_gallery_gallery content.
+  $permissions['search node_gallery_gallery content'] = array(
+    'name' => 'search node_gallery_gallery content',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'authenticated user',
+    ),
+    'module' => 'search_config',
+  );
+
+  // Exported permission: search node_gallery_item content.
+  $permissions['search node_gallery_item content'] = array(
+    'name' => 'search node_gallery_item content',
+    'roles' => array(),
+    'module' => 'search_config',
+  );
+
+  // Exported permission: search page content.
+  $permissions['search page content'] = array(
+    'name' => 'search page content',
+    'roles' => array(),
+    'module' => 'search_config',
+  );
+
+  // Exported permission: search private_page content.
+  $permissions['search private_page content'] = array(
+    'name' => 'search private_page content',
+    'roles' => array(),
+    'module' => 'search_config',
+  );
+
+  // Exported permission: search simplenews content.
+  $permissions['search simplenews content'] = array(
+    'name' => 'search simplenews content',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'authenticated user',
+    ),
+    'module' => 'search_config',
+  );
+
+  // Exported permission: search slider_page content.
+  $permissions['search slider_page content'] = array(
+    'name' => 'search slider_page content',
+    'roles' => array(),
+    'module' => 'search_config',
+  );
+
   // Exported permission: send newsletter.
   $permissions['send newsletter'] = array(
     'name' => 'send newsletter',
@@ -559,6 +728,16 @@ function lbd_roles_user_default_permissions() {
       2 => 'authenticated user',
     ),
     'module' => 'simplenews',
+  );
+
+  // Exported permission: use advanced search.
+  $permissions['use advanced search'] = array(
+    'name' => 'use advanced search',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'authenticated user',
+    ),
+    'module' => 'search',
   );
 
   // Exported permission: use text format filtered_html.

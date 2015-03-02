@@ -115,6 +115,9 @@ function labdoo_lib_enable()
   variable_set('image_toolkit', 'imagemagick');
   variable_set('imagemagick_convert', '/usr/bin/convert');
 
+  // search
+  variable_set(search_active_modules, array('node'));
+
   // Newsletter
   variable_set('simplenews_test_address_override', 1);
 

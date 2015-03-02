@@ -1543,16 +1543,9 @@ function labdoo_lib_get_field($node, $field, $type, $key) {
  * @param string $prefix A prefix to add before the printing of each element of the array
  *
  */
-function labdoo_lib_print_array($array, $prefix = "") {
-  foreach($array as $key => $value) {
-    drupal_set_message($prefix . " key: " . $key);
-    if(is_string($value))
-      drupal_set_message($prefix . " value: " . $value);
-    else
-      drupal_set_message($prefix . " value: is not a string");
-    if(is_array($value))
-      labdoo_lib_print_array($value, $prefix . "---|");
-  }
+function labdoo_lib_print_array($array) {
+  print '<pre>'; print_r($array);  print '</pre>';
+  return;
 }
 
 

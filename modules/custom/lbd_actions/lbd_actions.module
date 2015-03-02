@@ -430,6 +430,13 @@ function _generate_labdoo_action($node) {
 function lbd_actions_node_view($node, $view_mode) {
   global $user;
 
+  // This is ugly, but the search page loads the nodes themselves,
+  // and we don't want to display all the messages emitted 
+  // by this call.
+  $pageUri = request_uri();
+  if(strpos($pageUri, "/search/node/") !== false)
+    return;
+
   /*
    * Upon viewing a node, if the user is logged in, find out if the user
    * has made a contribution to that node's object and if so,

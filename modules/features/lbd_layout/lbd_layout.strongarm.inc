@@ -379,6 +379,143 @@ function lbd_layout_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'content_node_search_config';
+  $strongarm->value = array(
+    'forms' => array(
+      'toggle_forms' => 0,
+      'move_keyword_search' => 0,
+      'advanced_populate' => 0,
+      'remove_containing_wrapper' => 'default',
+      'advanced_expand' => 'default',
+    ),
+    'fields' => array(
+      'containing_any' => array(
+        'remove' => 0,
+        'roles' => array(
+          1 => 0,
+          2 => 0,
+          3 => 0,
+          7 => 0,
+          6 => 0,
+          5 => 0,
+          8 => 0,
+          9 => 0,
+          4 => 0,
+          10 => 0,
+        ),
+      ),
+      'containing_phrase' => array(
+        'remove' => 0,
+        'roles' => array(
+          1 => 0,
+          2 => 0,
+          3 => 0,
+          7 => 0,
+          6 => 0,
+          5 => 0,
+          8 => 0,
+          9 => 0,
+          4 => 0,
+          10 => 0,
+        ),
+      ),
+      'containing_none' => array(
+        'remove' => 0,
+        'roles' => array(
+          1 => 0,
+          2 => 0,
+          3 => 0,
+          7 => 0,
+          6 => 0,
+          5 => 0,
+          8 => 0,
+          9 => 0,
+          4 => 0,
+          10 => 0,
+        ),
+      ),
+      'types' => array(
+        'remove' => 0,
+        'roles' => array(
+          1 => 0,
+          2 => 0,
+          3 => 0,
+          7 => 0,
+          6 => 0,
+          5 => 0,
+          8 => 0,
+          9 => 0,
+          4 => 0,
+          10 => 0,
+        ),
+        'filter' => array(
+          'article' => 'article',
+          'page' => 'page',
+          'blog' => 'blog',
+          'gic' => 'gic',
+          'node_gallery_item' => 'node_gallery_item',
+          'private_page' => 'private_page',
+          'simplenews' => 'simplenews',
+          'slider_page' => 'slider_page',
+          'superhub_page' => 'superhub_page',
+          'team' => 'team',
+          'action' => 0,
+          'book' => 0,
+          'laptop' => 0,
+          'dootrip' => 0,
+          'edoovillage' => 0,
+          'node_gallery_gallery' => 0,
+          'hub' => 0,
+          'team_page' => 0,
+          'event' => 0,
+          'team_task' => 0,
+        ),
+        'groupings' => array(),
+      ),
+      'category' => array(
+        'remove' => 0,
+        'roles' => array(
+          0 => 0,
+          1 => 0,
+          2 => 0,
+          3 => 0,
+          7 => 0,
+          6 => 0,
+          5 => 0,
+          8 => 0,
+          9 => 0,
+          4 => 0,
+          10 => 0,
+        ),
+      ),
+      'language' => array(
+        'remove' => 0,
+        'roles' => array(
+          1 => 0,
+          2 => 0,
+          3 => 0,
+          7 => 0,
+          6 => 0,
+          5 => 0,
+          8 => 0,
+          9 => 0,
+          4 => 0,
+          10 => 0,
+        ),
+      ),
+    ),
+    'results' => array(
+      'limit' => '10',
+    ),
+    'restrictions' => array(
+      'admin_bypass' => 0,
+    ),
+  );
+  $export['content_node_search_config'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__book';
   $strongarm->value = array(
     'view_modes' => array(
@@ -768,6 +905,198 @@ function lbd_layout_strongarm() {
   $strongarm->name = 'node_submitted_page';
   $strongarm->value = FALSE;
   $export['node_submitted_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'search_active_modules';
+  $strongarm->value = array(
+    'node' => 'node',
+    'file_entity' => 0,
+    'location_search' => 0,
+    'user' => 0,
+  );
+  $export['search_active_modules'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'search_config';
+  $strongarm->value = array(
+    'forms' => array(
+      'toggle_forms' => 0,
+      'move_keyword_search' => 0,
+      'advanced_populate' => 0,
+      'remove_containing_wrapper' => 'default',
+      'advanced_expand' => 'default',
+    ),
+    'fields' => array(
+      'containing_any' => array(
+        'remove' => 0,
+        'roles' => array(
+          1 => 0,
+          2 => 0,
+          3 => 0,
+          7 => 0,
+          6 => 0,
+          5 => 0,
+          8 => 0,
+          9 => 0,
+          4 => 0,
+          10 => 0,
+        ),
+      ),
+      'containing_phrase' => array(
+        'remove' => 0,
+        'roles' => array(
+          1 => 0,
+          2 => 0,
+          3 => 0,
+          7 => 0,
+          6 => 0,
+          5 => 0,
+          8 => 0,
+          9 => 0,
+          4 => 0,
+          10 => 0,
+        ),
+      ),
+      'containing_none' => array(
+        'remove' => 0,
+        'roles' => array(
+          1 => 0,
+          2 => 0,
+          3 => 0,
+          7 => 0,
+          6 => 0,
+          5 => 0,
+          8 => 0,
+          9 => 0,
+          4 => 0,
+          10 => 0,
+        ),
+      ),
+      'types' => array(
+        'remove' => 0,
+        'roles' => array(
+          1 => 0,
+          2 => 0,
+          3 => 0,
+          7 => 0,
+          6 => 0,
+          5 => 0,
+          8 => 0,
+          9 => 0,
+          4 => 0,
+          10 => 0,
+        ),
+        'filter' => array(
+          'article' => 'article',
+          'page' => 'page',
+          'blog' => 'blog',
+          'gic' => 'gic',
+          'node_gallery_item' => 'node_gallery_item',
+          'private_page' => 'private_page',
+          'simplenews' => 'simplenews',
+          'slider_page' => 'slider_page',
+          'superhub_page' => 'superhub_page',
+          'team' => 'team',
+          'action' => 0,
+          'book' => 0,
+          'laptop' => 0,
+          'dootrip' => 0,
+          'edoovillage' => 0,
+          'node_gallery_gallery' => 0,
+          'hub' => 0,
+          'team_page' => 0,
+          'event' => 0,
+          'team_task' => 0,
+        ),
+        'groupings' => array(),
+      ),
+      'category' => array(
+        'remove' => 0,
+        'roles' => array(
+          0 => 0,
+          1 => 0,
+          2 => 0,
+          3 => 0,
+          7 => 0,
+          6 => 0,
+          5 => 0,
+          8 => 0,
+          9 => 0,
+          4 => 0,
+          10 => 0,
+        ),
+      ),
+      'language' => array(
+        'remove' => 0,
+        'roles' => array(
+          1 => 0,
+          2 => 0,
+          3 => 0,
+          7 => 0,
+          6 => 0,
+          5 => 0,
+          8 => 0,
+          9 => 0,
+          4 => 0,
+          10 => 0,
+        ),
+      ),
+    ),
+    'results' => array(
+      'limit' => '10',
+    ),
+    'restrictions' => array(
+      'admin_bypass' => 0,
+    ),
+  );
+  $export['search_config'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'search_config_string_overrides';
+  $strongarm->value = array(
+    'labels' => array(
+      'basic' => '',
+      'basic_with_keys' => '',
+      'basic_submit' => '',
+      'advanced_fieldset' => '',
+      'advanced_fieldset_with_keys' => '',
+      'advanced_any' => '',
+      'advanced_phrase' => '',
+      'advanced_none' => '',
+      'advanced_type' => '',
+      'advanced_language' => '',
+      'advanced_submit' => '',
+    ),
+    'title_display' => array(
+      'basic' => 'default',
+      'advanced_any' => 'default',
+      'advanced_phrase' => 'default',
+      'advanced_none' => 'default',
+      'advanced_type' => 'default',
+      'advanced_language' => 'default',
+    ),
+  );
+  $export['search_config_string_overrides'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'search_cron_limit';
+  $strongarm->value = '100';
+  $export['search_cron_limit'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'search_default_module';
+  $strongarm->value = 'node';
+  $export['search_default_module'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1345,6 +1674,13 @@ function lbd_layout_strongarm() {
   $strongarm->name = 'theme_default';
   $strongarm->value = 'bootstrap1';
   $export['theme_default'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'transliteration_search';
+  $strongarm->value = 1;
+  $export['transliteration_search'] = $strongarm;
 
   return $export;
 }
