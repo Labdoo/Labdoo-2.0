@@ -90,6 +90,7 @@ dependencies[] = imce_mkdir
 dependencies[] = video_filter 
 dependencies[] = views_tree 
 dependencies[] = countries 
+dependencies[] = search_config 
 
 ;;; Features and exports/imports
 dependencies[] = strongarm
