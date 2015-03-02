@@ -727,8 +727,6 @@ function print_dashboard_objects($objectsType, $objectsName, $objects, $metrics,
     if($metric['menu'] == 'yes')
       $numTableColumns = $numTableColumns + 1;
 
-  file_put_contents("/tmp/file3", $numTableColumns);
-
   print("
 
 <html xmlns='http://www.w3.org/1999/xhtml'>
