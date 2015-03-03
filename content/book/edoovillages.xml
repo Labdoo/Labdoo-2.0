@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>138</value>
+<value>90</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>138</value>
+<value>90</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -47,7 +47,7 @@ When an edoovillage is created, the recipients receive a kit containing at least
 An edoovillage dashboard from where the inventory of contributed devices can be managed and tracked. 
 </li>
 <li>
-An entry in the list of Labdoo edoovillages.
+An entry in the list of Labdoo edoovillages to help it gain visibility.
 </li>
 <li>
 A web album inside the edoovillage space where pictures of the edoovillages activities can be uploaded.
@@ -62,15 +62,15 @@ To help reduce electronic waste, a main obligation of the laptop recipients is t
 </body>
 <bid>
 <type>book_array</type>
-<value>133</value>
+<value>72</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>818</value>
+<value>781</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>801</value>
+<value>785</value>
 </mlid>
 <weight>
 <type>book_array</type>

@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>145</value>
+<value>84</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>145</value>
+<value>84</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -95,15 +95,15 @@ For a good description on how to insert videos please directly refer to the <a h
 </body>
 <bid>
 <type>book_array</type>
-<value>129</value>
+<value>69</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>806</value>
+<value>776</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>808</value>
+<value>779</value>
 </mlid>
 <weight>
 <type>book_array</type>

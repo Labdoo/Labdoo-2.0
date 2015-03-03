@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>139</value>
+<value>77</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,11 +17,11 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>139</value>
+<value>77</value>
 </field_reference_book>
 <body>
 <type>value</type>
-<value>The mechanism to deliver Labdoo's mission is via the creation of a humanitarian social network.  This social network provides the following functions:
+<value>The mechanism to deliver Labdoo's mission is via the creation of a humanitarian social network.  The Labdoo social network provides the following functions:
 <ul>
 <li>
 It provides an efficient way to organize information: identification of sources of demand, supply, laptops, dootrips, QA resources, etc.
@@ -30,7 +30,7 @@ It provides an efficient way to organize information: identification of sources 
 It provides a way to break down a very large mission (solving the digital divide) into a very large number of very small tasks (tagging, sanitizing, storage, dootrip, etc.).  Each of these tasks becomes so small that its cost is negligible.
 </li>
 <li>
-It provides a way for everyone to be part of the solution (community building).  Every person can have his/her own mini-mission.
+It provides a way for everyone to be part of the solution (community building).  Every person, team or community can carry out their own mini-missions.
 </li>
 <li>
 Since all the information and activities are openly available through the humanitarian social network, it provides transparency.
@@ -38,6 +38,8 @@ Since all the information and activities are openly available through the humani
 <li>
 As a flat humanitarian project, it helps to break barriers and stereotypes between the beneficiaries and the benefactors.  For instance, in the Labdoo network, aid can originate from the developing world and be received by the developed world. 
 </li>
+<li>
+Since the system relies on global collaboration and technology to efficiently coordinate activities, it requires no funding to sustain itself. This makes the Labdoo social system immune against global economic crisis ensuring that those most in need continue to receive education regardless of the macro-economic environment.</li>
 <li>
 It is fun.
 </li>
@@ -50,15 +52,15 @@ It is fun.
 </body>
 <bid>
 <type>book_array</type>
-<value>133</value>
+<value>72</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>796</value>
+<value>767</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>802</value>
+<value>772</value>
 </mlid>
 <weight>
 <type>book_array</type>

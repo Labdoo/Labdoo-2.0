@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>126</value>
+<value>82</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>126</value>
+<value>82</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -51,15 +51,15 @@ It allows for exploring new and more sustainable ways to organize global communi
 </body>
 <bid>
 <type>book_array</type>
-<value>133</value>
+<value>72</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>796</value>
+<value>767</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>816</value>
+<value>777</value>
 </mlid>
 <weight>
 <type>book_array</type>
