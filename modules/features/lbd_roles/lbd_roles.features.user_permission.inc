@@ -73,7 +73,6 @@ function lbd_roles_user_default_permissions() {
     'name' => 'administer node gallery',
     'roles' => array(
       0 => 'administrator',
-      1 => 'authenticated user',
     ),
     'module' => 'node_gallery_api',
   );
@@ -162,7 +161,10 @@ function lbd_roles_user_default_permissions() {
   $permissions['create node_gallery_item content'] = array(
     'name' => 'create node_gallery_item content',
     'roles' => array(
-      0 => 'authenticated user',
+      0 => 'administrator',
+      1 => 'edoovillage manager',
+      2 => 'hub manager',
+      3 => 'superhub manager',
     ),
     'module' => 'node',
   );
@@ -234,9 +236,10 @@ function lbd_roles_user_default_permissions() {
   $permissions['delete any node_gallery_item content'] = array(
     'name' => 'delete any node_gallery_item content',
     'roles' => array(
-      0 => 'edoovillage manager',
-      1 => 'hub manager',
-      2 => 'superhub manager',
+      0 => 'administrator',
+      1 => 'edoovillage manager',
+      2 => 'hub manager',
+      3 => 'superhub manager',
     ),
     'module' => 'node',
   );
@@ -309,7 +312,10 @@ function lbd_roles_user_default_permissions() {
   $permissions['delete own node_gallery_item content'] = array(
     'name' => 'delete own node_gallery_item content',
     'roles' => array(
-      0 => 'authenticated user',
+      0 => 'administrator',
+      1 => 'edoovillage manager',
+      2 => 'hub manager',
+      3 => 'superhub manager',
     ),
     'module' => 'node',
   );
@@ -392,9 +398,10 @@ function lbd_roles_user_default_permissions() {
   $permissions['edit any node_gallery_item content'] = array(
     'name' => 'edit any node_gallery_item content',
     'roles' => array(
-      0 => 'edoovillage manager',
-      1 => 'hub manager',
-      2 => 'superhub manager',
+      0 => 'administrator',
+      1 => 'edoovillage manager',
+      2 => 'hub manager',
+      3 => 'superhub manager',
     ),
     'module' => 'node',
   );
@@ -474,7 +481,10 @@ function lbd_roles_user_default_permissions() {
   $permissions['edit own node_gallery_item content'] = array(
     'name' => 'edit own node_gallery_item content',
     'roles' => array(
-      0 => 'authenticated user',
+      0 => 'administrator',
+      1 => 'edoovillage manager',
+      2 => 'hub manager',
+      3 => 'superhub manager',
     ),
     'module' => 'node',
   );
@@ -728,6 +738,18 @@ function lbd_roles_user_default_permissions() {
       2 => 'authenticated user',
     ),
     'module' => 'simplenews',
+  );
+
+  // Exported permission: upload to all galleries.
+  $permissions['upload to all galleries'] = array(
+    'name' => 'upload to all galleries',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'edoovillage manager',
+      2 => 'hub manager',
+      3 => 'superhub manager',
+    ),
+    'module' => 'node_gallery_api',
   );
 
   // Exported permission: use advanced search.
