@@ -98,11 +98,11 @@ function lbd_wiki_block_view($delta = '') {
   }
 
   foreach($children as $child1) {
-    $code = $code . _process_child($child1, $nodeId, $lang);
+    $code = $code . _process_child($child1, $nodeId);
     foreach($child1['below'] as $child2) {
-      $code = $code . "&nbsp;&nbsp;" . _process_child($child2, $nodeId, $lang);
+      $code = $code . "&nbsp;&nbsp;" . _process_child($child2, $nodeId);
       foreach($child2['below'] as $child3) {
-        $code = $code . "&nbsp;&nbsp;&nbsp;&nbsp;" . _process_child($child3, $nodeId, $lang);
+        $code = $code . "&nbsp;&nbsp;&nbsp;&nbsp;" . _process_child($child3, $nodeId);
       }
     }
   }
@@ -127,10 +127,12 @@ function lbd_wiki_block_view($delta = '') {
  *   The ID of the node currently being visited
  *
  */ 
-function _process_child($child, $nodeId, $lang) {
+function _process_child($child, $nodeId) {
+  global $language;
   $path = $child['link']['link_path'];
   $heading = $child['link']['link_title'];
-  $metadata = "href='$lang/$path'";
+  $nicePath = drupal_get_path_alias($path, $language->language);
+  $metadata = "href='/$nicePath'";
   if($path == 'node/' . $nodeId)
     $metadata = "style='background-color:#e6e6fa; color:#ff0000;'";
   $code = "<a $metadata>" . $heading . "</span></a></p>";
