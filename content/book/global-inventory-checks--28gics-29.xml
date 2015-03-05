@@ -1,0 +1,71 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>97</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Global Inventory Checks (GICs)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>97</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>At Labdoo, we all like the joy of seeing our laptops loaded with education software deployed in schools around the globe. But it is also very important that all the devices we deploy can eventually find their way to a recycling factory.  The risk of not doing so is the generation of electronic waste in places that don't have the means to recycle technology, which is a potential problem that could defeat the good intentions of our efforts.  The bias "deploy versus clean up" goes very similar to the dynamics we often see in a friends party: we all enjoy more preparing and being part of a party than to clean up the dishes after the party is over. Yet we cannot stress enough the importance of having the capability and will to recycle all electronic devices to help preserve our planet.
+
+To help eliminate potential electronic waste, Labdoo incorporates a tool called <em>Global Inventory Check</em> or <em>GIC</em> (pronounced as in "jeek(s)").  The GIC mechanism works as follows:
+
+<ul>
+<li>
+<strong>Accessing GIC Tables</strong>. Each edoovillage project has a table (called the GIC table), in which each row corresponds to a dooject assigned to that specific edoovillage.  The table has two columns: one is for the Labdoo identifier of each dooject and another one is used to reflect its current status.  This table is used to provide an easy way to update the status of all doojects assigned to an edoovillage.  
+<hr/>
+<em> Figure. GIC tables are found by clicking on the GIC tab of each edoovillage page.</em>
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/gics.png" width="700"/>
+</li>
+<li>
+<strong>Updating GIC Tables</strong>. Every 6 months (in January and in July), Labdoo issues a "call for GIC updates" and each project manager will need to do a quick inventory check of the doojects in his/her edoovillage and update the GIC table according to the latest status of the devices. If a deployed dooject stops working, its corresponding entry in the GIC table must be marked with the status "[S9] Deployed but not working". 
+<hr/>
+<em> Figure. If you find that a deployed dooject stopped working, mark it with the status "[S9] Deployed but not working"</em>
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/gics-update.png" width="320"/>
+</li>
+<li>
+<strong>Feedback communication</strong>. In order to update the GIC table, edoovillage managers need to be in communication with the corresponding point of contacts in the edoovillage site (the teachers, IT personnel or persons in general who are in charge of maintaining the deployed doojects.) Through this communication, feedback can be collected to detect when a dooject that stops working needs to be rescued.
+</li>
+<li>
+<strong>Rescuing doojects</strong>. Once a dooject is marked with the status "[S9] Deployed but not working", edoovillage managers and labdooers in charge of supporting the edoovillage need to activate a dootrip to rescue the broken dooject and bring it back either to a hub where it can be fixed or to a proper recycling location if it cannot be repaired. If you or someone knows how to fix the dooject, there is no need to bring it back to a hub, you can go ahead and fix it too.
+</li>
+</ul>
+
+A final comment about GICs is that besides using them to help you track broken deployed doojects, they can generally be used to quickly update all the doojects assigned to an edoovillage in one shot. Often, updating the status of a dooject (e.g. from status T1 to status S4) needs to be done on several doojects that are all associated with the same edoovillage. The GIC table shows you in one page all these doojects, allowing you to change their status at once in just a few clicks.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>69</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>764</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>791</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-7</value>
+</weight>
+</book>
