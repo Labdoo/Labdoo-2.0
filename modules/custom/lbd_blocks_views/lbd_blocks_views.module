@@ -215,7 +215,7 @@ function lbd_blocks_views_block_info() {
     'info' => "Language switch (link to language switcher dropdown block)",
     'status' => 1,
     'visibility' => BLOCK_VISIBILITY_PHP,
-    'weight' => -50,
+    'weight' => -120,
     'pages' => "<?php return labdoo_block_filter_sidebar_second(); ?>",
     'region' => "sidebar_second",
   );
@@ -265,7 +265,17 @@ function lbd_blocks_views_block_info() {
     'info' => "Search (link to the search block)",
     'status' => 1,
     'visibility' => BLOCK_VISIBILITY_PHP,
-    'weight' => -50,
+    'weight' => -110,
+    'pages' => "<?php return labdoo_block_filter_sidebar_second(); ?>",
+    'region' => "sidebar_second",
+  );
+
+  // Syndicate block 
+  $blocks['block_lbd_syndicate'] = array(
+    'info' => "Labdoo's syndicate (RSS feed)",
+    'status' => 1,
+    'visibility' => BLOCK_VISIBILITY_PHP,
+    'weight' => 0,
     'pages' => "<?php return labdoo_block_filter_sidebar_second(); ?>",
     'region' => "sidebar_second",
   );
@@ -378,11 +388,17 @@ function lbd_blocks_views_block_view($delta = '') {
       $block['content'] = labdoo_render_team_actions();
       break;
 
-    // Language switch
+    // Link to search block 
     case 'block_link_search':
-      $blockLanguage = module_invoke('search', 'block_view', 'form');
+      $blockSearch = module_invoke('search', 'block_view', 'form');
       $block['subject'] = "<none>";
-      $block['content'] = drupal_render($blockLanguage["content"]);
+      $block['content'] = drupal_render($blockSearch["content"]);
+      break;
+
+    // Syndicate  
+    case 'block_lbd_syndicate':
+      $block['subject'] = "<none>";
+      $block['content'] = "<a href='/rss.xml'><img src='/misc/feed.png'></a>";
       break;
 
     // The Labdoo footer 
