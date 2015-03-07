@@ -1028,11 +1028,11 @@ function labdoo_lib_form_node_form_alter(&$form, &$form_state, $form_id) {
   /*
    * Node is a superhub page 
    */
-  if($form_id == 'superhub_page_node_form') {
-
+//  if($form_id == 'superhub_page_node_form') {
+//
     // Hide title
-    unset($form['title']);
-  }
+//    unset($form['title']);
+//  }
 
   /*
    * Hide book form for all non-book types
@@ -1602,6 +1602,8 @@ $trailer
 /**
  * Renders the Labdoo footer block 
  *
+ * @return The code to render
+ *
  */
 function labdoo_render_footer() {
 
@@ -1640,9 +1642,28 @@ function labdoo_render_footer() {
 <img src="/profiles/labdoo/files/pictures/footer-acts.png">
 ';
 
-
   return $code;
 }
+
+
+/**
+ * Renders the superhub menu block 
+ *
+ * @return The code to render
+ *
+ */
+function labdoo_render_superhub_menu() {
+  // If we are here, we passed the filter (labdoo_block_filter_superhub_menu)
+  // so that we are in a superhub page. Load it's associated menu block and return its body code.
+  $query = "SELECT entity_id FROM field_data_field_linked_pages WHERE field_linked_pages_target_id=" . arg(1);
+  $menuBlockId = db_query($query)->fetchField();
+  if($menuBlockId == "")
+    return "";
+  $node = node_load($menuBlockId);
+  $code = labdoo_lib_get_field($node, 'body', 'node', 'value');
+  return $code;
+}
+
 
 
 /**
@@ -1734,6 +1755,41 @@ function labdoo_block_filter_header() {
       return TRUE;
 
   return FALSE;
+}
+
+
+/**
+ * Implements the visibility filter for the superhub menu block
+ *
+ * @return TRUE if the block is to be displayed, FALSE otherwise
+ *
+ */
+function labdoo_block_filter_superhub_menu() {
+  $types = array('superhub_page' => 1) ;
+
+  /*
+   * Check that this is a superhub page
+   */
+  if(arg(2) != "") //  Display only in node view mode
+    return FALSE;
+
+  if((arg(0) != 'node'))
+    return FALSE;
+
+  if(!is_numeric(arg(1)))
+    return FALSE;
+
+  $node = node_load(arg(1));
+  if(!isset($types[$node->type]))
+    return FALSE;
+
+  /*
+   * Check that it is of type page
+   */
+  if(labdoo_lib_get_field($node, 'field_superhub_page_type', 'node', 'value') != 'page')
+    return FALSE;
+
+  return TRUE;
 }
 
 

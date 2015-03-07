@@ -250,16 +250,6 @@ function lbd_blocks_views_block_info() {
     'region' => "sidebar_second",
   );
 
-  // Block linking to the team's actions block
-  $blocks['block_footer'] = array(
-    'info' => "Labdoo footer",
-    'status' => 1,
-    'visibility' => BLOCK_VISIBILITY_NOTLISTED,
-    'weight' => 0,
-    'pages' => "",
-    'region' => "footer",
-  );
-
   // Block linking to the search block 
   $blocks['block_link_search'] = array(
     'info' => "Search (link to the search block)",
@@ -278,6 +268,26 @@ function lbd_blocks_views_block_info() {
     'weight' => 0,
     'pages' => "<?php return labdoo_block_filter_sidebar_second(); ?>",
     'region' => "sidebar_second",
+  );
+
+  // Superhub menu block 
+  $blocks['block_superhub_menu'] = array(
+    'info' => "The superhub menu block",
+    'status' => 1,
+    'visibility' => BLOCK_VISIBILITY_PHP,
+    'weight' => 0,
+    'pages' => "<?php return labdoo_block_filter_superhub_menu(); ?>",
+    'region' => "sidebar_second",
+  );
+
+  // Labdoo footer block
+  $blocks['block_footer'] = array(
+    'info' => "Labdoo footer",
+    'status' => 1,
+    'visibility' => BLOCK_VISIBILITY_NOTLISTED,
+    'weight' => 0,
+    'pages' => "",
+    'region' => "footer",
   );
 
   return $blocks;
@@ -399,6 +409,12 @@ function lbd_blocks_views_block_view($delta = '') {
     case 'block_lbd_syndicate':
       $block['subject'] = "<none>";
       $block['content'] = "<a href='/rss.xml'><img src='/misc/feed.png'></a>";
+      break;
+
+    // Superhub page menu 
+    case 'block_superhub_menu':
+      $block['subject'] = "<none>";
+      $block['content'] = labdoo_render_superhub_menu();
       break;
 
     // The Labdoo footer 

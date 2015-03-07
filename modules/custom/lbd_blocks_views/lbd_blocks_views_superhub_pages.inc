@@ -81,5 +81,27 @@ $handler->display->display_options['filters']['uid']['expose']['remember_roles']
 
 /* Display: Page */
 $handler = $view->new_display('page', 'Page', 'page');
+$handler->display->display_options['defaults']['style_plugin'] = FALSE;
+$handler->display->display_options['style_plugin'] = 'default';
+$handler->display->display_options['defaults']['style_options'] = FALSE;
+$handler->display->display_options['defaults']['row_plugin'] = FALSE;
+$handler->display->display_options['row_plugin'] = 'fields';
+$handler->display->display_options['row_options']['inline'] = array(
+  'title' => 'title',
+  'field_superhub_page_type' => 'field_superhub_page_type',
+);
+$handler->display->display_options['row_options']['separator'] = ' | ';
+$handler->display->display_options['defaults']['row_options'] = FALSE;
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Content: Title */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+/* Field: Content: Type */
+$handler->display->display_options['fields']['field_superhub_page_type']['id'] = 'field_superhub_page_type';
+$handler->display->display_options['fields']['field_superhub_page_type']['table'] = 'field_data_field_superhub_page_type';
+$handler->display->display_options['fields']['field_superhub_page_type']['field'] = 'field_superhub_page_type';
 $handler->display->display_options['path'] = 'superhub-pages';
 
