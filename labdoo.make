@@ -69,7 +69,7 @@ projects[defaultconfig][patch][1900574] = https://www.drupal.org/files/issues/19
 ;--------------------
 ; Admin utils
 ;--------------------
-projects[module_filter] = 1.8
+projects[module_filter] = 2.0 
 projects[drush_language] = 1.2
 projects[delete_all] = 1.1
 projects[publishcontent] = 1.3
@@ -153,7 +153,7 @@ projects[calendar] = 3.5
 ;--------------------
 projects[ctools] = 1.6
 projects[libraries] = 2.2
-projects[entity] = 1.5
+projects[entity] = 1.6
 projects[xautoload] = 4.5
 projects[token] = 1.5
 projects[rules] = 2.8
