@@ -83,7 +83,7 @@ function lbd_wiki_block_view($delta = '') {
   $parameters = array(
     'only_active_trail' => FALSE,
     'min_depth' => $parent['depth'] + 0,
-    'max_depth' => 4,
+    'max_depth' => 5,
   );
 
   // Build the tree and block title.
@@ -98,11 +98,17 @@ function lbd_wiki_block_view($delta = '') {
   }
 
   foreach($children as $child1) {
-    $code = $code . _process_child($child1, $nodeId);
+    $code = $code . _process_child($child1, $nodeId, 0);
     foreach($child1['below'] as $child2) {
-      $code = $code . "&nbsp;&nbsp;" . _process_child($child2, $nodeId);
+      $code = $code . _process_child($child2, $nodeId, 1);
       foreach($child2['below'] as $child3) {
-        $code = $code . "&nbsp;&nbsp;&nbsp;&nbsp;" . _process_child($child3, $nodeId);
+        $code = $code . _process_child($child3, $nodeId, 2);
+        foreach($child3['below'] as $child4) {
+          $code = $code . _process_child($child4, $nodeId, 3);
+          foreach($child4['below'] as $child5) {
+            $code = $code . _process_child($child5, $nodeId, 4);
+          }
+        }
       }
     }
   }
@@ -127,14 +133,17 @@ function lbd_wiki_block_view($delta = '') {
  *   The ID of the node currently being visited
  *
  */ 
-function _process_child($child, $nodeId) {
+function _process_child($child, $nodeId, $level) {
   global $language;
+  $paddingLeft = $level * 10;
   $path = $child['link']['link_path'];
   $heading = $child['link']['link_title'];
   $nicePath = drupal_get_path_alias($path, $language->language);
   $metadata = "href='/$nicePath'";
   if($path == 'node/' . $nodeId)
-    $metadata = "style='background-color:#e6e6fa; color:#ff0000;'";
+    $metadata = "style='padding-left: " . $paddingLeft . "px;  display:block; background-color:#e6e6fa; color:#ff0000;'";
+  else
+    $metadata = "href='/$nicePath' style='padding-left: " . $paddingLeft . "px;  display:block'";
   $code = "<a $metadata>" . $heading . "</span></a></p>";
   return $code;
 }
