@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>90</value>
+<value>138</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>90</value>
+<value>138</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -38,7 +38,7 @@ Working with schools simplifies also the coordination of dootrips, as many trave
 </li>
 </ul>
 
-In order to create a new edoovillage, the potential recipients will need to fill in the <a href="/content/labdoo-laptop-request-form">“Labdoo laptop request form”</a>.
+In order to create a new edoovillage, the potential recipients will need to fill in the “Labdoo laptop request form” XXX.
 
 When an edoovillage is created, the recipients receive a kit containing at least:
 
@@ -47,13 +47,13 @@ When an edoovillage is created, the recipients receive a kit containing at least
 An edoovillage dashboard from where the inventory of contributed devices can be managed and tracked. 
 </li>
 <li>
-An entry in the list of Labdoo edoovillages to help it gain visibility.
+An entry in the list of Labdoo edoovillages.
 </li>
 <li>
 A web album inside the edoovillage space where pictures of the edoovillages activities can be uploaded.
 </li>
 </ul>
-To help reduce electronic waste, a main obligation of the laptop recipients is to report back to Labdoo.org every six months the list of laptops under their inventory and their status (working or not working) and facilitate the process of recycling the laptops once they no longer work through the Labdoo's social network-based recycling mechanism.  This reporting processes are referred as <a href="/content/global-inventory-checks">Global Inventory Checks (GICs)</a>.
+To help reduce electronic waste, a main obligation of the laptop recipients is to report back to Labdoo.org every six months the list of laptops under their inventory and their status (working or not working) and facilitate the process of recycling the laptops once they no longer work through the Labdoo's social network-based recycling mechanism.  This reporting processes are referred as Global Inventory Checks (GICs) XXX.
 </value>
 </body>
 <body>
@@ -62,15 +62,15 @@ To help reduce electronic waste, a main obligation of the laptop recipients is t
 </body>
 <bid>
 <type>book_array</type>
-<value>72</value>
+<value>133</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>781</value>
+<value>818</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>785</value>
+<value>801</value>
 </mlid>
 <weight>
 <type>book_array</type>

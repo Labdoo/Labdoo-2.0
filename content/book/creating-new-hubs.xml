@@ -1,0 +1,64 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>179</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Creating New Hubs</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>179</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Labdoo users who have the "superhub" role assigned are allowed to create new Labdoo hubs. (For information on what a hub is, please refer to the <a href='/content/hubs'>Hubs Section</a> in the 'Values and Principles' wiki book.) The process of creating a new Labdoo hub is as follows:
+
+<ul>
+<li>
+<strong>Intial contact.</strong> The group soliciting to create a hub contacts Labdoo. This can be done through different ways, including getting in touch with an existing neighbor hub or by directly emailing contact@labdoo.org. Such request is propagated to the Labdoo superhub in charge of the region where the new hub is to be created.
+</li>
+<li>
+<strong>Explaining what a Labdoo hub is. </strong>The superhub explains the potential hub manager candidates how a Labdoo hub works. It is recommended to do such communication using a phone call (can be a regular or Internet-based phone call) to ensure a proper conversation.
+</li>
+<li>
+<strong>Creation of Labdoo user accounts. </strong>Once decided that the hub is to be created, if the candidates don't have a Labdo user account yet, they need to create one for each of the users that will be managing the hub by going to https://www.labdoo.org/user/register.
+</li>
+<li>
+<strong>Creation of the hub</strong>. The superhub creates the new hub by going to the <a href="/node/add/hub">create hub page</a> (this page is available only to users who have superhub rights and it can be found under the 'Hub' tab in the <a href="/content/main-navigation-menu-mnm">'Main Navigation Menu'</a>) and filling in all the necessary information. The superhub assigns the new user accounts created in the previous step to the field "Hub manager(s)" and assigns to each of these users the role of 'hub manager'.
+</li>
+</ul>
+
+After the above steps, the new hub managers can start their hub activities as described in the <a href="/content/managing-hubs">Hubs Section</a> of this wiki book.
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>129</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>903</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>904</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-15</value>
+</weight>
+</book>

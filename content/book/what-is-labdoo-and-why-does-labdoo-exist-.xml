@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>74</value>
+<value>135</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,31 +17,28 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>74</value>
+<value>135</value>
 </field_reference_book>
 <body>
 <type>value</type>
 <value>Labdoo is a collaborative humanitarian social network which is designed to help bring laptops and educational devices to schools in need without incurring any economic or environmental costs.
 
-In the world, those who have access to free sources of education (FSE) are the rare exception.  As much as 5 billion people (5 out of 7 persons in the world) don't have access to FSE. This is a problem at least for two reasons:
+In the world, those who have access to free sources of education (FSE) are the rare exception.  This is a problem because:
 
 <ol>
 <li>
-It leads to an ever increasing inequality gap between those who have access to FSE and those who don't.  
+It leads to inequalities between those who have access to FSE and those who don't.  
 </li>
 <li>
-The potential talent of most of the children in the world and the global benefits that would arise from it are lost.
+The potential talent of most of the children in the world and the societal benefits that would arise from it are lost.
 </li>
 </ol>
 
 This reality is commonly known as the <em>'digital divide'</em>.
 
-A laptop allows schools to gain access to FSE, helping to unlock the skills and potential capabilities of children and students. This can be achieved via online education content or, in those places where Internet is not available yet, via offline education software that comes installed in the laptops.
+A laptop allows schools to gain access to FSE, helping to unlock the skills and potential capabilities of children and students. This can be achieved via offline education software that comes installed in the laptops or via online education content. 
 
-Labdoo exists as 'a tool' to help sustainably coordinate the mobilization of unused educational devices to bring them to needy schools using global collaboration and without incurring any economic or environmental cost. It is designed so that everyone who has an unused laptop (at home, in the school/university, at work or anywhere) can participate. 
-
-Imagine if all of us part of the 2 billion people who do have access to education spend just one hour of our time helping bring our unused laptops and tablets to needy children around the world in a globally coordinated way. That's all it takes to enable universal access to free sources of education, it is in the hands of our generation, and it can be done while preserving Planet Earth too.
-</value>
+Labdoo exists as 'a tool' to help sustainably coordinate the mobilization of unused educational devices and to bring them to needy schools using global collaboration, without incurring any economic cost and without damaging the Planet.</value>
 </body>
 <body>
 <type>format</type>
@@ -49,15 +46,15 @@ Imagine if all of us part of the 2 billion people who do have access to educatio
 </body>
 <bid>
 <type>book_array</type>
-<value>72</value>
+<value>133</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>767</value>
+<value>796</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>769</value>
+<value>798</value>
 </mlid>
 <weight>
 <type>book_array</type>

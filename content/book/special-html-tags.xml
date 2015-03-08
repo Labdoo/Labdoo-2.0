@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>84</value>
+<value>145</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>84</value>
+<value>145</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -68,10 +68,10 @@ Add a 'Figure' capture inside &lt;em&gt; tags on top of the image.
 
 Here is an example:
 
-<code>&lt;hr&gt;&lt;/hr&gt;
+<code>&lt;hr/&gt;
 &lt;em&gt; Figure. This is the Labdoo logo.&lt;/em&gt;
 &lt;img src="/profiles/labdoo/files/pictures/laptop.png" height="50" width="50"/&gt;
-&lt;hr&gt;&lt;/hr&gt;
+&lt;hr/&gt;
 </code>
 
 Which is displayed as follows:
@@ -95,15 +95,15 @@ For a good description on how to insert videos please directly refer to the <a h
 </body>
 <bid>
 <type>book_array</type>
-<value>69</value>
+<value>129</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>776</value>
+<value>806</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>779</value>
+<value>808</value>
 </mlid>
 <weight>
 <type>book_array</type>
