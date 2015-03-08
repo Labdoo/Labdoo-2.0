@@ -105,6 +105,35 @@ function lbd_roles_user_default_permissions() {
     'module' => 'simplenews',
   );
 
+  // Exported permission: assign book writer role.
+  $permissions['assign book writer role'] = array(
+    'name' => 'assign book writer role',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'role_delegation',
+  );
+
+  // Exported permission: assign edoovillage manager role.
+  $permissions['assign edoovillage manager role'] = array(
+    'name' => 'assign edoovillage manager role',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'superhub manager',
+    ),
+    'module' => 'role_delegation',
+  );
+
+  // Exported permission: assign hub manager role.
+  $permissions['assign hub manager role'] = array(
+    'name' => 'assign hub manager role',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'superhub manager',
+    ),
+    'module' => 'role_delegation',
+  );
+
   // Exported permission: clone node.
   $permissions['clone node'] = array(
     'name' => 'clone node',
@@ -531,6 +560,33 @@ function lbd_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: publish any book content.
+  $permissions['publish any book content'] = array(
+    'name' => 'publish any book content',
+    'roles' => array(
+      0 => 'book writer',
+    ),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: publish editable book content.
+  $permissions['publish editable book content'] = array(
+    'name' => 'publish editable book content',
+    'roles' => array(
+      0 => 'book writer',
+    ),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: publish own book content.
+  $permissions['publish own book content'] = array(
+    'name' => 'publish own book content',
+    'roles' => array(
+      0 => 'book writer',
+    ),
+    'module' => 'publishcontent',
+  );
+
   // Exported permission: revert revisions.
   $permissions['revert revisions'] = array(
     'name' => 'revert revisions',
@@ -740,6 +796,33 @@ function lbd_roles_user_default_permissions() {
     'module' => 'simplenews',
   );
 
+  // Exported permission: unpublish any book content.
+  $permissions['unpublish any book content'] = array(
+    'name' => 'unpublish any book content',
+    'roles' => array(
+      0 => 'book writer',
+    ),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: unpublish editable book content.
+  $permissions['unpublish editable book content'] = array(
+    'name' => 'unpublish editable book content',
+    'roles' => array(
+      0 => 'book writer',
+    ),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: unpublish own book content.
+  $permissions['unpublish own book content'] = array(
+    'name' => 'unpublish own book content',
+    'roles' => array(
+      0 => 'book writer',
+    ),
+    'module' => 'publishcontent',
+  );
+
   // Exported permission: upload to all galleries.
   $permissions['upload to all galleries'] = array(
     'name' => 'upload to all galleries',
@@ -809,6 +892,16 @@ function lbd_roles_user_default_permissions() {
       1 => 'authenticated user',
     ),
     'module' => 'location_user',
+  );
+
+  // Exported permission: view any unpublished book content.
+  $permissions['view any unpublished book content'] = array(
+    'name' => 'view any unpublished book content',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'book writer',
+    ),
+    'module' => 'view_unpublished',
   );
 
   // Exported permission: view own user location.

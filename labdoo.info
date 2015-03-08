@@ -103,6 +103,9 @@ dependencies[] = node_export_features
 ;;; Admin Utils
 dependencies[] = module_filter
 dependencies[] = user_restrictions
+dependencies[] = publishcontent 
+dependencies[] = view_unpublished 
+dependencies[] = role_delegation 
 
 ;;; Performance
 dependencies[] = boost

@@ -72,6 +72,9 @@ projects[defaultconfig][patch][1900574] = https://www.drupal.org/files/issues/19
 projects[module_filter] = 1.8
 projects[drush_language] = 1.2
 projects[delete_all] = 1.1
+projects[publishcontent] = 1.3
+projects[view_unpublished] = 1.2
+projects[role_delegation] = 1.1 
 
 ;--------------------
 ; Performance
