@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>180</value>
+<value>91</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>180</value>
+<value>91</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -27,11 +27,11 @@ To create a superhub page, follow the next steps (you will need to have the supe
 
 <ol>
 <li>
-Go to the main navigation menu and click on 'Hubs', then on "[Superhub] Create page".
+Go to the main navigation menu and click on 'Hubs', then on "[Superhub] Create content".
 <br/>
 <hr/>
 <em> Figure. This is the Labdoo logo.</em>
-<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/super-hub-mnm.png" width='500' />
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/super-hub-mnm.png" width="500"/>
 <hr/>
 </li>
 <br/>
@@ -77,15 +77,15 @@ If you also want to create a 'URL redirect' of your pages (for instance, if you 
 </body>
 <bid>
 <type>book_array</type>
-<value>129</value>
+<value>69</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>903</value>
+<value>783</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>905</value>
+<value>788</value>
 </mlid>
 <weight>
 <type>book_array</type>

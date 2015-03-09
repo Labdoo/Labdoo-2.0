@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>132</value>
+<value>71</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -59,15 +59,15 @@ As mentioned above, when you create your user for the first time, you are assign
 </body>
 <bid>
 <type>book_array</type>
-<value>129</value>
+<value>69</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>793</value>
+<value>766</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>795</value>
+<value>768</value>
 </mlid>
 <weight>
 <type>book_array</type>

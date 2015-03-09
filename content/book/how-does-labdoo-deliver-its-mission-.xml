@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>139</value>
+<value>77</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -50,15 +50,15 @@ It is fun.
 </body>
 <bid>
 <type>book_array</type>
-<value>133</value>
+<value>72</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>796</value>
+<value>769</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>802</value>
+<value>774</value>
 </mlid>
 <weight>
 <type>book_array</type>

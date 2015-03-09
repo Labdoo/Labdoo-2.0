@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>128</value>
+<value>68</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -44,15 +44,15 @@ Labdoo Team
 </body>
 <bid>
 <type>book_array</type>
-<value>122</value>
+<value>64</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>788</value>
+<value>761</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>792</value>
+<value>765</value>
 </mlid>
 <weight>
 <type>book_array</type>

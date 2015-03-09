@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>122</value>
+<value>64</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -38,7 +38,7 @@ They avoid labdooers having to re-write over and over emails that are identical 
 </body>
 <bid>
 <type>book_array</type>
-<value>122</value>
+<value>64</value>
 </bid>
 <plid>
 <type>book_array</type>
@@ -46,7 +46,7 @@ They avoid labdooers having to re-write over and over emails that are identical 
 </plid>
 <mlid>
 <type>book_array</type>
-<value>788</value>
+<value>761</value>
 </mlid>
 <weight>
 <type>book_array</type>

@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>150</value>
+<value>90</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -58,15 +58,15 @@ Select also the 'Parent item' appropriately.
 </body>
 <bid>
 <type>book_array</type>
-<value>129</value>
+<value>69</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>806</value>
+<value>778</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>813</value>
+<value>787</value>
 </mlid>
 <weight>
 <type>book_array</type>

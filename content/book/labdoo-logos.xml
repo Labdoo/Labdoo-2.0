@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>141</value>
+<value>79</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -72,15 +72,15 @@ Note: all the Labdoo content (inluding the following logos) can be freely downlo
 </body>
 <bid>
 <type>book_array</type>
-<value>124</value>
+<value>65</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>789</value>
+<value>762</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>804</value>
+<value>776</value>
 </mlid>
 <weight>
 <type>book_array</type>

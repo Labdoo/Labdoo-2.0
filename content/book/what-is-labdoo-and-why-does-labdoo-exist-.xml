@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>135</value>
+<value>74</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -46,15 +46,15 @@ Labdoo exists as 'a tool' to help sustainably coordinate the mobilization of unu
 </body>
 <bid>
 <type>book_array</type>
-<value>133</value>
+<value>72</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>796</value>
+<value>769</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>798</value>
+<value>771</value>
 </mlid>
 <weight>
 <type>book_array</type>

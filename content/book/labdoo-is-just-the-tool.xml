@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>123</value>
+<value>78</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -32,15 +32,15 @@ The source code that runs the Labdoo social network is fully and freely availabl
 </body>
 <bid>
 <type>book_array</type>
-<value>133</value>
+<value>72</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>796</value>
+<value>769</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>817</value>
+<value>775</value>
 </mlid>
 <weight>
 <type>book_array</type>

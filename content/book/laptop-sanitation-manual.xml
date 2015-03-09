@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>125</value>
+<value>66</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -163,15 +163,15 @@ If you are not traveling, then get in touch with one of the Labdoo hubs (for ins
 </body>
 <bid>
 <type>book_array</type>
-<value>124</value>
+<value>65</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>789</value>
+<value>762</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>790</value>
+<value>763</value>
 </mlid>
 <weight>
 <type>book_array</type>

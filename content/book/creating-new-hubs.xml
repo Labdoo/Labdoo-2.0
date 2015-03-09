@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>179</value>
+<value>93</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,24 +17,31 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>179</value>
+<value>93</value>
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Labdoo users who have the "superhub" role assigned are allowed to create new Labdoo hubs. (For information on what a hub is, please refer to the <a href='/content/hubs'>Hubs Section</a> in the 'Values and Principles' wiki book.) The process of creating a new Labdoo hub is as follows:
+<value>Labdoo users who have the "superhub" role assigned are allowed to create new Labdoo hubs. (For information on what a hub is, please refer to the <a href="/content/hubs">Hubs Section</a> in the 'Values and Principles' wiki book.) The process of creating a new Labdoo hub is as follows:
 
 <ul>
 <li>
 <strong>Intial contact.</strong> The group soliciting to create a hub contacts Labdoo. This can be done through different ways, including getting in touch with an existing neighbor hub or by directly emailing contact@labdoo.org. Such request is propagated to the Labdoo superhub in charge of the region where the new hub is to be created.
 </li>
 <li>
-<strong>Explaining what a Labdoo hub is. </strong>The superhub explains the potential hub manager candidates how a Labdoo hub works. It is recommended to do such communication using a phone call (can be a regular or Internet-based phone call) to ensure a proper conversation.
+<strong>Explaining what a Labdoo hub is.</strong> The superhub explains the potential hub manager candidates how a Labdoo hub works. It is recommended to do such communication using a phone call (can be a regular or Internet-based phone call) to ensure a proper conversation.
 </li>
 <li>
-<strong>Creation of Labdoo user accounts. </strong>Once decided that the hub is to be created, if the candidates don't have a Labdo user account yet, they need to create one for each of the users that will be managing the hub by going to https://www.labdoo.org/user/register.
+<strong>Creation of Labdoo user accounts.</strong> Once decided that the hub is to be created, if the candidates don't have a Labdo user account yet, they need to create one for each of the users that will be managing the hub by going to https://www.labdoo.org/user/register.
 </li>
 <li>
-<strong>Creation of the hub</strong>. The superhub creates the new hub by going to the <a href="/node/add/hub">create hub page</a> (this page is available only to users who have superhub rights and it can be found under the 'Hub' tab in the <a href="/content/main-navigation-menu-mnm">'Main Navigation Menu'</a>) and filling in all the necessary information. The superhub assigns the new user accounts created in the previous step to the field "Hub manager(s)" and assigns to each of these users the role of 'hub manager'.
+<strong>Creation of the hub.</strong> The superhub creates the new hub by going to the <a href="/node/add/hub">create hub page</a> (this page is available only to users who have superhub rights and it can be found under the 'Hub' tab in the <a href="/content/main-navigation-menu-mnm">'Main Navigation Menu'</a>) and filling in all the necessary information. Make sure to include all the users in charge of managing the new hub in the field ''Hub manager(s)' in this form.
+</li>
+<li>
+<strong>Assigning roles.</strong> In the last step, the users in charge of managing the hub need to be given the additional role of 'hub manager'. To do this, go to each user page <code>https://www.labdoo-dev.org/users/USERNAME</code> (where USERNAME is the username of the user), click on the tab 'Roles', and activate the checkbox 'hub manager' as illustrated in the next figure.
+<hr/>
+<em> Figure. To assign the 'hub manager' role, go to that user's page, click on 'Roles' and select the appropriate checkbox.</em>
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/assign-role.png"/>
+<hr/>
 </li>
 </ul>
 
@@ -47,15 +54,15 @@ After the above steps, the new hub managers can start their hub activities as de
 </body>
 <bid>
 <type>book_array</type>
-<value>129</value>
+<value>69</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>903</value>
+<value>783</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>904</value>
+<value>790</value>
 </mlid>
 <weight>
 <type>book_array</type>

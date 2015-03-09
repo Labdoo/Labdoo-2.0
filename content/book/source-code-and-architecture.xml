@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>144</value>
+<value>84</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -33,15 +33,15 @@ The Labdoo source code is developed by software engineers who contribute their t
 </body>
 <bid>
 <type>book_array</type>
-<value>129</value>
+<value>69</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>793</value>
+<value>766</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>807</value>
+<value>781</value>
 </mlid>
 <weight>
 <type>book_array</type>

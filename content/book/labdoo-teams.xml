@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>142</value>
+<value>80</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -54,15 +54,15 @@ View the calendar of events in that team.
 </body>
 <bid>
 <type>book_array</type>
-<value>129</value>
+<value>69</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>793</value>
+<value>766</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>805</value>
+<value>777</value>
 </mlid>
 <weight>
 <type>book_array</type>

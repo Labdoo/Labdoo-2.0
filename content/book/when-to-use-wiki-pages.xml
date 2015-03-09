@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>149</value>
+<value>89</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -45,15 +45,15 @@ Translations of any existing wiki pages. One of the goals of Labdoo is to be as 
 </body>
 <bid>
 <type>book_array</type>
-<value>129</value>
+<value>69</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>806</value>
+<value>778</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>812</value>
+<value>786</value>
 </mlid>
 <weight>
 <type>book_array</type>
