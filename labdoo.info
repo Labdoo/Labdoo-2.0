@@ -105,6 +105,7 @@ dependencies[] = module_filter
 dependencies[] = user_restrictions
 dependencies[] = publishcontent 
 dependencies[] = view_unpublished 
+dependencies[] = menu_view_unpublished 
 dependencies[] = role_delegation 
 
 ;;; Performance

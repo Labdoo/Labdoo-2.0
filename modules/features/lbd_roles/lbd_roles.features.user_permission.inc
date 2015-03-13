@@ -560,6 +560,16 @@ function lbd_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: menu view unpublished.
+  $permissions['menu view unpublished'] = array(
+    'name' => 'menu view unpublished',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'book writer',
+    ),
+    'module' => 'menu_view_unpublished',
+  );
+
   // Exported permission: publish any book content.
   $permissions['publish any book content'] = array(
     'name' => 'publish any book content',
