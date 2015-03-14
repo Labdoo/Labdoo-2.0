@@ -1729,6 +1729,29 @@ function labdoo_block_filter_sidebar_second() {
   if(strcmp($path, "my-teams") == 0)
       return TRUE;
 
+  if(strcmp($path, "wiki-index") == 0)
+      return TRUE;
+
+  return FALSE;
+}
+
+
+/**
+ * Implements the visibility filter for the language switch block
+ *    
+ * @return TRUE if the block is to be displayed, FALSE otherwise
+ *    
+ */
+function labdoo_block_filter_language_switch() {
+
+  // Show up the switch whenever the right column (sidebar_second)
+  // is displayed and also on top of the TOC block for wiki pages.
+  if(labdoo_block_filter_sidebar_second())
+    return TRUE;
+
+  if(lbd_wiki_is_book_node())
+    return TRUE;
+
   return FALSE;
 }
 

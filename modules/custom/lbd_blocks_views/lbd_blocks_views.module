@@ -216,7 +216,7 @@ function lbd_blocks_views_block_info() {
     'status' => 1,
     'visibility' => BLOCK_VISIBILITY_PHP,
     'weight' => -120,
-    'pages' => "<?php return labdoo_block_filter_sidebar_second(); ?>",
+    'pages' => "<?php return labdoo_block_filter_language_switch(); ?>",
     'region' => "sidebar_second",
   );
 

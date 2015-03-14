@@ -158,7 +158,6 @@ function make_main_menu() {
             'plid' => 0, 
             'module' => 'menu',
           );
-  $item['options']['attributes']['title'] = t('A dooject is a device that can be used for education (laptop, tablet, smartphone, etc.)');
   $doojectMlid = menu_link_save($item);
 
   $item = array(
@@ -209,7 +208,6 @@ function make_main_menu() {
             'plid' => 0, 
             'module' => 'menu',
           );
-  $item['options']['attributes']['title'] = t('An edoovillage is an education center where doojects are deployed');
   $edoovillageMlid = menu_link_save($item);
 
   $item = array(
@@ -261,7 +259,6 @@ function make_main_menu() {
             'plid' => 0, 
             'module' => 'menu',
           );
-  $item['options']['attributes']['title'] = t('A hub is a group of labdooers united to help bring doojects to edoovillages');
   $hubMlid = menu_link_save($item);
 
   $item = array(
@@ -336,7 +333,6 @@ function make_main_menu() {
             'plid' => 0, 
             'module' => 'menu',
           );
-  $item['options']['attributes']['title'] = t('A dootrip is a CO2-neutral route donated by travelers to bring doojects to edoovillages');
   $dootripMlid = menu_link_save($item);
 
   $item = array(
@@ -491,7 +487,6 @@ function make_main_menu() {
             'plid' => 0, 
             'module' => 'menu',
           );
-  $item['options']['attributes']['title'] = t('To help bring awareness and outreach your local community, you can create your own newsletter');
   $newsletterMlid = menu_link_save($item);
 
   $item = array(
@@ -637,7 +632,7 @@ function lbd_menus_menu() {
   /*
    * URL redirects go here
    */
- $menus['content/dashboard-slider'] = array
+  $menus['content/dashboard-slider'] = array
   (
     'title' => 'My dashboard',
     'page callback' => '_menu_item_redirect_my_dashboard',
