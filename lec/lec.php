@@ -215,14 +215,16 @@ function _import_nodes($nodeType, $fields, $isCheck = FALSE) {
       if(array_key_exists($origNodeId, $lec_nid_mappings))
         continue;
 
-      // If the node with ID field_reference_book has not been 
-      // created yet and is different than this node nid or
+      // field_is_first_page: is "1" if this page is the original translation; "0" if it is a translation of another page.
+      // field_reference_book: this field is set to the node ID of the original translation book when field_is_first_page is "0".
+
+      // If this page is a translation of another page and the original page
+      // has not been created yet or
       // if this is not the parent page of a book and
       // the parent node has not been created yet,
       // then put this node in the list of pending nodes i
       // to be created later once all of its parents are created.
-      if((($lecNode->field_reference_book) &&  
-          ($lecNode->field_reference_book->value->__toString() != $origNodeId) &&
+      if((($lecNode->field_is_first_page->value->__toString() != "1") &&  
           (!array_key_exists($lecNode->field_reference_book->value->__toString(), $lec_nid_mappings))) 
          ||
          (($lecNode->plid->value->__toString() != 0) &&
