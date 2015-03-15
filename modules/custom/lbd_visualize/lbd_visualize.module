@@ -995,7 +995,7 @@ geomap.draw(dataMap, options);
 var columnChart = new google.visualization.ChartWrapper({
                     'chartType': 'ColumnChart',
                     'options': {
-                      'colors': ['#0099C6', '#3366CC', '#66AA00', '#109618', '#FF9900', '#E67300', '#DC3912', 'gray'],
+                      'colors': ['#a5682a', '#DC3912', '#109618', '#005e7a', '#5a5a5a', '#ff8000', '#E67300', 'gray'],
                     },
                     'containerId': 'chartColumns',
                     'dataTable' : google.visualization.data.group(data, [$lastElement],

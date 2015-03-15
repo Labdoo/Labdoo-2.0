@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>96</value>
+<value>97</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>96</value>
+<value>97</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -51,11 +51,11 @@ If a hub becomes inactive for at least six months or if it acts against the Labd
 </bid>
 <plid>
 <type>book_array</type>
-<value>785</value>
+<value>786</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>793</value>
+<value>794</value>
 </mlid>
 <weight>
 <type>book_array</type>

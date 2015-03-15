@@ -255,7 +255,7 @@ function lbd_blocks_views_block_info() {
     'info' => "Search (link to the search block)",
     'status' => 1,
     'visibility' => BLOCK_VISIBILITY_PHP,
-    'weight' => -110,
+    'weight' => -10,
     'pages' => "<?php return labdoo_block_filter_sidebar_second(); ?>",
     'region' => "sidebar_second",
   );
@@ -284,9 +284,9 @@ function lbd_blocks_views_block_info() {
   $blocks['block_footer'] = array(
     'info' => "Labdoo footer",
     'status' => 1,
-    'visibility' => BLOCK_VISIBILITY_NOTLISTED,
+    'visibility' => BLOCK_VISIBILITY_PHP,
     'weight' => 0,
-    'pages' => "",
+    'pages' => "<?php return labdoo_block_filter_footer(); ?>",
     'region' => "footer",
   );
 

@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>82</value>
+<value>83</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>82</value>
+<value>83</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -76,7 +76,7 @@ As a hub you can choose to do any of the following activities.  A best practice 
 </plid>
 <mlid>
 <type>book_array</type>
-<value>779</value>
+<value>780</value>
 </mlid>
 <weight>
 <type>book_array</type>

@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>91</value>
+<value>92</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>91</value>
+<value>92</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -81,11 +81,11 @@ If you also want to create a 'URL redirect' of your pages (for instance, if you 
 </bid>
 <plid>
 <type>book_array</type>
-<value>783</value>
+<value>784</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>788</value>
+<value>789</value>
 </mlid>
 <weight>
 <type>book_array</type>

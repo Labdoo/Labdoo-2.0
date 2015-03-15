@@ -1567,15 +1567,21 @@ function labdoo_render_macro_stats($type) {
   $numCountries = lbd_get_total_num_objects('country');;
 
   if($type == "vertical") {
+    $header = "";
     $separator = "<br>";
     $trailer = "<br>";
   }
   else {
+    $blockLanguage = module_invoke('lang_dropdown', 'block_view', 'language');
+    $languageSwitchCode = render($blockLanguage["content"]); 
+    $languageSwitchCode = str_replace("<form ", "<form style='height:10px' ", $languageSwitchCode);
+    $header = "<table><tr><td style='width:990px'>";
     $separator = "&nbsp; &nbsp;";
-    $trailer ="<br><br>";
+    $trailer ="</td><td>$languageSwitchCode</td></tr></table><br>";
   }
 
-  $code = "
+  $code = $header;
+  $code = $code . "
 <span style=\"font-size: 24px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsTagged</span>
 <span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Doojects tagged') . "</span>$separator
 <span style=\"font-size: 24px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsTransit</span>
@@ -1732,6 +1738,9 @@ function labdoo_block_filter_sidebar_second() {
   if(strcmp($path, "wiki-index") == 0)
       return TRUE;
 
+  if(strcmp($path, "newsletters") == 0)
+      return TRUE;
+
   return FALSE;
 }
 
@@ -1777,7 +1786,44 @@ function labdoo_block_filter_header() {
   if(strcmp($path, "content/doojects-dashboard") == 0)
       return TRUE;
 
+  if(strcmp($path, "map") == 0)
+      return TRUE;
+
+  if(strcmp($path, "dootrips") == 0)
+      return TRUE;
+
+  if(strcmp($path, "labdooers") == 0)
+      return TRUE;
+
+  if(strcmp($path, "hubs") == 0)
+      return TRUE;
+
+  if(strcmp($path, "teams-dashboard") == 0)
+      return TRUE;
+
+  if(0 === strpos($path, 'node/add/'))
+      return TRUE;
+
   return FALSE;
+}
+
+
+/**
+ * Implements the visibility filter for the Labdoo footer block 
+ *
+ * @return TRUE if the block is to be displayed, FALSE otherwise
+ *
+ */
+function labdoo_block_filter_footer() {
+  $path = drupal_get_path_alias(current_path());
+
+  if(strcmp($path, "content/follow-dooject") == 0)
+      return FALSE;
+
+  if(strcmp($path, "content/tag-one-dooject") == 0)
+      return FALSE;
+
+  return TRUE;
 }
 
 
@@ -2302,5 +2348,37 @@ function _labdoo_lib_user_roles($account = NULL) {
     $code = $code . t('(*) If you want to assign extra roles to your user account, please email contact@labdoo.org.');
 
   return $code;
+}
+
+
+/**
+ * Implements hook_user_login
+ *
+ */
+function labdoo_lib_user_login(&$edit, $account)
+{
+  // retrieve user language
+  $user_language = $account->language;
+
+  // don't do anything if no language is defined
+  if (!$user_language) {
+    return;
+  }
+
+  // verify if language exists
+  $languages = language_list();
+  if (!isset($languages[$user_language])) {
+    return;
+  }
+
+  // verify if language is enabled
+  if (!$languages[$user_language]->enabled) {
+    return;
+  }
+
+  // redirect to preferred language homepage
+  drupal_goto('<front>', array(
+    'language' => $languages[$user_language],
+  ));
 }
 

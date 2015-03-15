@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>95</value>
+<value>96</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -58,11 +58,11 @@ In the wiki form, fill in the following sections:
 </bid>
 <plid>
 <type>book_array</type>
-<value>778</value>
+<value>779</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>792</value>
+<value>793</value>
 </mlid>
 <weight>
 <type>book_array</type>

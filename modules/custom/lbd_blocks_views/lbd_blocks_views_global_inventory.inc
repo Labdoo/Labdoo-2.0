@@ -99,6 +99,7 @@ $handler->display->display_options['filters']['distance']['origin'] = 'static';
 $handler = $view->new_display('page', 'Global', 'page');
 $handler->display->display_options['defaults']['title'] = FALSE;
 $handler->display->display_options['title'] = 'Global inventory';
+$handler->display->display_options['defaults']['use_ajax'] = FALSE;
 $handler->display->display_options['defaults']['relationships'] = FALSE;
 $handler->display->display_options['defaults']['fields'] = FALSE;
 /* Field: Content: Type */
@@ -288,6 +289,7 @@ $handler->display->display_options['path'] = 'map';
 $handler = $view->new_display('page', 'Dootrips', 'page_1');
 $handler->display->display_options['defaults']['title'] = FALSE;
 $handler->display->display_options['title'] = 'Dootrips';
+$handler->display->display_options['defaults']['use_ajax'] = FALSE;
 $handler->display->display_options['defaults']['style_plugin'] = FALSE;
 $handler->display->display_options['style_plugin'] = 'gmap';
 $handler->display->display_options['style_options']['macro'] = '[gmap width=1175px | height=600px | zoom=2]';
