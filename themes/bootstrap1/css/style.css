@@ -18,7 +18,7 @@
  * Set the font of the site title (Labdoo).
  */
 a.brand {
-    font-family: 'comic sans ms', sans-serif;
+    font-family: 'PT sans', sans-serif;
 }
 
 /**
@@ -29,7 +29,7 @@ a.brand {
     text-align: center;
     font-size: x-large;
     font-weight: bold;
-    font-family: 'comic sans ms', sans-serif;
+    font-family: 'PT sans', sans-serif;
     margin-bottom: 25px;
 }
 
@@ -38,7 +38,7 @@ a.brand {
  */
 h1.page-header {
     font-size: x-large;
-    font-family: 'comic sans ms', sans-serif;
+    font-family: 'PT sans', sans-serif;
     color: #ff0000;
     padding-bottom: 5px;
     margin-bottom: 20px;
@@ -50,7 +50,7 @@ h1.page-header {
  */
 h2 {
     font-size: 14px;
-    font-family: 'comic sans ms', sans-serif;
+    font-family: 'PT sans', sans-serif;
 }
 
 h2.block-title {

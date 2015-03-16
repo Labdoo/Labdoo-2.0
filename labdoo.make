@@ -172,6 +172,10 @@ projects[views_autocomplete_filters] = 1.1
 projects[views_dependent_filters] = 1.1
 projects[variable] = 2.5 
 projects[logintoboggan] = 1.4 
+projects[flexslider] = 2.0-alpha3
+libraries[flexslider][directory_name] = flexslider 
+libraries[flexslider][download][type] = get
+libraries[flexslider][download][url] = https://github.com/woothemes/FlexSlider/archive/version/2.4.0.zip 
 
 ;--------------------
 ; Photo albums
