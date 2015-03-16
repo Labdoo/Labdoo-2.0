@@ -1626,7 +1626,7 @@ function labdoo_render_footer() {
 <a href="/">Development Team</a>
 </td>
 <td width="200">
-<img src="/profiles/labdoo/files/pictures/creative-commons.png" width="70">
+<img src="/profiles/labdoo/files/pictures/equation-2-alpha-smaller.png" width="70">
 </td>
 </tr>
 <tr>
@@ -1800,6 +1800,15 @@ function labdoo_block_filter_header() {
 
   if(strcmp($path, "teams-dashboard") == 0)
       return TRUE;
+
+  if(strcmp($path, "edoovillage") == 0)
+      return TRUE;
+
+  if(strcmp($path, "hub") == 0)
+      return TRUE;
+
+  if(labdoo_lib_node_is_type(array('laptop', 'dootrip')))
+    return TRUE;
 
   if(0 === strpos($path, 'node/add/'))
       return TRUE;
@@ -2380,5 +2389,39 @@ function labdoo_lib_user_login(&$edit, $account)
   drupal_goto('<front>', array(
     'language' => $languages[$user_language],
   ));
+}
+
+
+/**
+ * Returns TRUE if current node is of a certain type; FALSE otherwise
+ *
+ * @param array $typesList An array of content types
+ * @param boolean $onlyView Return FALSE if node is not in view mode
+ *
+ * @return TRUE if the node is of a type in $typesList or FALSE if otherwise
+ *
+ */
+function labdoo_lib_node_is_type($typesList, $onlyView = True) {
+  // TODO: this function provides an abstraction method to generally
+  // check if a node is of a certain type. It was implemented after
+  // noticing that this type of check is needed in numerous places
+  // accross the code, and so there are still a good number of places
+  // where instead of calling this function, the following code can
+  // be found in line. Need to go through the code and substitute 
+  // the code in such places with a call to this method.
+  if($onlyView && arg(2) != "") //  Display only in node view mode
+    return FALSE;
+
+  if((arg(0) != 'node'))
+    return FALSE;
+
+  if(!is_numeric(arg(1)))
+    return FALSE;
+
+  $node = node_load(arg(1));
+  if(!in_array($node->type, $typesList))
+    return FALSE;
+
+  return TRUE;
 }
 

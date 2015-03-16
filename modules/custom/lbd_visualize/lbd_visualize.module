@@ -46,6 +46,9 @@
  *
  */
 function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovillageId = NULL, $country = NULL, $switcher = TRUE) {
+  global $language;
+  $defaultLanguage = language_default();
+  $defaultLanguageCode = $defaultLanguage->language;
 
   $possibleStates = array('S0', 'S1', 'S2',  'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S9', 'T1', 'T2');
 
@@ -161,12 +164,9 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
     $objects[$objectNid]['Wh'] = $volts * $mAh / 1000; 
 
     // Calculate the link to the object 
-    global $language;
-    if ($language->language != "en")
-      $urlPrefix = "/" . $language->language;
-    else
-      $urlPrefix = "";
     $urlPath = drupal_get_path_alias("node/" . $objectNid, $language->language); 
+    if($language->language != $defaultLanguageCode)
+      $urlPath = $language->language . "/" . $urlPath;
     $objects[$objectNid]['link'] = "<!--$node->title (comment added to help alphabetically order this column)-->" . 
                                    "<a href=/$urlPath>$node->title</a>";
 
@@ -230,6 +230,9 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
  *
  */
 function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $country = NULL, $switcher = TRUE) {
+  global $language;
+  $defaultLanguage = language_default();
+  $defaultLanguageCode = $defaultLanguage->language;
 
   $numberOfQueries = 1;
   $queryAll = "(SELECT entity_id FROM field_data_field_edoovillage_status)";
@@ -329,8 +332,9 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
     if(array_key_exists($node->location['country'], $country_names))
         $objects[$objectNid]['country'] = $country_names[$node->location['country']];
         
-    global $language;
     $urlPath = drupal_get_path_alias("node/" . $objectNid, $language->language);
+    if($language->language != $defaultLanguageCode)
+      $urlPath = $language->language . "/" . $urlPath;
     $objects[$objectNid]['link'] = "<!--$node->title (comment added to help alphabetically order this column)-->" . 
                                    "<a href=/$urlPath>$node->title</a>";
 
@@ -388,6 +392,9 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
  *
  */
 function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher = TRUE) {
+  global $language;
+  $defaultLanguage = language_default();
+  $defaultLanguageCode = $defaultLanguage->language;
 
   $numberOfQueries = 1;
   $queryAll = "(SELECT entity_id FROM field_data_field_hub_manager_s_)";
@@ -476,8 +483,9 @@ function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher =
     if(array_key_exists($node->location['country'], $country_names))
         $objects[$objectNid]['country'] = $country_names[$node->location['country']];
         
-    global $language;
     $urlPath = drupal_get_path_alias("node/" . $objectNid, $language->language);
+    if($language->language != $defaultLanguageCode)
+      $urlPath = $language->language . "/" . $urlPath;
     $objects[$objectNid]['link'] = "<!--$node->title (comment added to help alphabetically order this column)-->" . 
                                    "<a href=/$urlPath>$node->title</a>";
 
@@ -527,6 +535,9 @@ function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher =
  *
  */
 function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL, $switcher = TRUE) {
+  global $language;
+  $defaultLanguage = language_default();
+  $defaultLanguageCode = $defaultLanguage->language;
 
   $numberOfQueries = 1;
   $queryAll = "(SELECT entity_id FROM field_data_field_destination_of_the_trip)";
@@ -606,8 +617,9 @@ function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL, $switch
     if(array_key_exists($location['country'], $country_names))
         $objects[$objectNid]['dstCountry'] = $country_names[$location['country']];
         
-    global $language;
     $urlPath = drupal_get_path_alias("node/" . $objectNid, $language->language);
+    if($language->language != $defaultLanguageCode)
+      $urlPath = $language->language . "/" . $urlPath;
     $objects[$objectNid]['link'] = "<!--$node->title (comment added to help alphabetically order this column)-->" . 
                                    "<a href=/$urlPath>$node->title</a>";
   }
@@ -1192,7 +1204,7 @@ function lbd_display_slider_edoovilage_data($edoovillageId = NULL) {
 
   // Check to see if the user has edit rights 
   if(node_access("update", $loadedNode, $user) === TRUE) 
-    print('<p><a href="/node/'.$edoovillageId . '/edit"><strong><span style="color:#ff0000;">'.t("Edit this edoovillage").'</span></strong></a></p>');
+    print('<p><a href="node/'.$edoovillageId . '/edit"><strong><span style="color:#ff0000;">'.t("Edit this edoovillage").'</span></strong></a></p>');
 
   $viewedNode = node_view($loadedNode);
   print(labdoo_render_map_geolocate_node($edoovillageId, True, "map-slider-edoovilage-data"));
@@ -1298,7 +1310,7 @@ function lbd_display_slider_hub_data($hubId) {
 
   // Check to see if the user has edit rights 
   if(node_access("update", $loadedNode, $user) === TRUE) 
-    print('<p><a href="/node/'.$hubId . '/edit"><strong><span style="color:#ff0000;">'.t("Edit this hub").'</span></strong></a></p>');
+    print('<p><a href="node/'.$hubId . '/edit"><strong><span style="color:#ff0000;">'.t("Edit this hub").'</span></strong></a></p>');
 
   $viewedNode = node_view($loadedNode);
   print(labdoo_render_map_geolocate_node($hubId, False, "map-slider-hub-data"));
