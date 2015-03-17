@@ -617,7 +617,8 @@ function lbd_roles_user_default_permissions() {
     'name' => 'search action content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'authenticated user',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
     ),
     'module' => 'search_config',
   );
@@ -655,7 +656,8 @@ function lbd_roles_user_default_permissions() {
     'name' => 'search book content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'authenticated user',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
     ),
     'module' => 'search_config',
   );
@@ -665,7 +667,8 @@ function lbd_roles_user_default_permissions() {
     'name' => 'search content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'authenticated user',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
     ),
     'module' => 'search',
   );
@@ -675,7 +678,8 @@ function lbd_roles_user_default_permissions() {
     'name' => 'search dootrip content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'authenticated user',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
     ),
     'module' => 'search_config',
   );
@@ -685,7 +689,8 @@ function lbd_roles_user_default_permissions() {
     'name' => 'search edoovillage content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'authenticated user',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
     ),
     'module' => 'search_config',
   );
@@ -702,7 +707,8 @@ function lbd_roles_user_default_permissions() {
     'name' => 'search hub content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'authenticated user',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
     ),
     'module' => 'search_config',
   );
@@ -712,7 +718,8 @@ function lbd_roles_user_default_permissions() {
     'name' => 'search laptop content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'authenticated user',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
     ),
     'module' => 'search_config',
   );
@@ -722,7 +729,8 @@ function lbd_roles_user_default_permissions() {
     'name' => 'search node_gallery_gallery content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'authenticated user',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
     ),
     'module' => 'search_config',
   );
@@ -753,7 +761,8 @@ function lbd_roles_user_default_permissions() {
     'name' => 'search simplenews content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'authenticated user',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
     ),
     'module' => 'search_config',
   );
@@ -850,7 +859,8 @@ function lbd_roles_user_default_permissions() {
     'name' => 'use advanced search',
     'roles' => array(
       0 => 'administrator',
-      1 => 'authenticated user',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
     ),
     'module' => 'search',
   );
