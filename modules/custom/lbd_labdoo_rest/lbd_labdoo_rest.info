@@ -1,5 +1,5 @@
 name = Labdoo rest
-description = Module to implement Service
+description = Implements the Labdoo REST API
 package = Labdoo
 core = 7.x
 dependencies[] = services

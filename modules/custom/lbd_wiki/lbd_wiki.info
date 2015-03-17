@@ -1,5 +1,5 @@
 name = Labdoo Wiki
-description = "Provides support for the creation of wiki-type documents (known as books also)."
+description = "Implements the Labdoo wiki system"
 core = 7.x
 package = Labdoo 
 dependencies[] = book
