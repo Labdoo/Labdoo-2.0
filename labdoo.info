@@ -59,6 +59,7 @@ dependencies[] = rules_admin
 dependencies[] = pathauto
 dependencies[] = subpathauto
 dependencies[] = flexslider 
+dependencies[] = flexslider_views  
 
 ;;; User interface
 dependencies[] = context
