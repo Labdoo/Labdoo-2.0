@@ -1556,7 +1556,7 @@ function labdoo_lib_print_array($array) {
  * @return Code rendering the macro statistics
  *
  */
-function labdoo_render_macro_stats($type) {
+function labdoo_render_macro_stats($type, $addTitle=False) {
   $numLaptopsNeeded = labdoo_get_demand(NULL, NULL, FALSE); 
   $numLaptopsDelivered = labdoo_getnum_doojects(NULL, NULL, 'S4');
   $numLaptopsTransit = labdoo_getnum_doojects(NULL, NULL, 'T1') + labdoo_getnum_doojects(NULL, NULL, 'S3'); 
@@ -1575,13 +1575,17 @@ function labdoo_render_macro_stats($type) {
     $blockLanguage = module_invoke('lang_dropdown', 'block_view', 'language');
     $languageSwitchCode = render($blockLanguage["content"]); 
     $languageSwitchCode = str_replace("<form ", "<form style='height:10px' ", $languageSwitchCode);
-    $header = "<table><tr><td style='width:990px'>";
+    $header = "<table><tr><td style='width:1090px'>";
     $separator = "&nbsp; &nbsp;";
     $trailer ="</td><td>$languageSwitchCode</td></tr></table><br>";
   }
 
+  $statsTitle = "";
+  if($addTitle)
+    $statsTitle = t("Global Progress: ");
+
   $code = $header;
-  $code = $code . "
+  $code = $code . $statsTitle . "
 <span style=\"font-size: 24px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsTagged</span>
 <span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Doojects tagged') . "</span>$separator
 <span style=\"font-size: 24px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsTransit</span>
@@ -1936,7 +1940,7 @@ function labdoo_lib_menu() {
     'type' => MENU_LOCAL_TASK,
   );
 
-  $items['user/%user/roles'] = array(
+  $items['user/%user/myRoles'] = array(
     'access callback' => TRUE,
     'access arguments' => array(1),
     'page callback' => '_labdoo_lib_user_roles',

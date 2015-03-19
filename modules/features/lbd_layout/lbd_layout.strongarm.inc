@@ -911,10 +911,7 @@ function lbd_layout_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'search_active_modules';
   $strongarm->value = array(
-    'node' => 'node',
-    'file_entity' => 0,
-    'location_search' => 0,
-    'user' => 0,
+    0 => 'node',
   );
   $export['search_active_modules'] = $strongarm;
 

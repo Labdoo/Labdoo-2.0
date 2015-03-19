@@ -54,6 +54,10 @@ function lbd_blocks_views_views_default_views() {
   include 'lbd_blocks_views_slider_dashboard.inc';
   $views[$view->name] = $view;
 
+  // FlexSlider view
+  include 'lbd_blocks_views_flexslider.inc';
+  $views[$view->name] = $view;
+
   // Newsletters view
   include 'lbd_blocks_views_newsletters.inc';
   $views[$view->name] = $view;

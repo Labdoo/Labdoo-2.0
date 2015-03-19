@@ -175,7 +175,7 @@ function lbd_layout_field_default_fields() {
       'locked' => '0',
       'module' => 'image',
       'settings' => array(
-        'default_image' => FALSE,
+        'default_image' => 0,
         'uri_scheme' => 'public',
       ),
       'translatable' => '0',
