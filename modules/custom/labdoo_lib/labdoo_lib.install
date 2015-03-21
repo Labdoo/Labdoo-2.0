@@ -152,7 +152,7 @@ function lbd_delete_follow_dooject_node()
 function labdoo_lib_enable()
 {
   // Create some initial basic nodes
-  lbd_create_from_page_node();
+  lbd_create_front_page_node();
   lbd_create_tag_dooject_node(); 
   lbd_create_follow_dooject_node();
 
