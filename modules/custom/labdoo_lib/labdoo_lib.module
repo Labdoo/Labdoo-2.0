@@ -54,7 +54,15 @@ function _generate_dootrip_title($node, $dootripId) {
   $dstCountry = labdoo_lib_get_field($node, 'field_destination_of_the_trip', 'node', 'country'); 
   $dstCountry = labdoo_country_code2name($dstCountry);
 
-  $newTitle = "Dootrip #" . $dootripId . " - from " . $srcCity . " (" . $srcCountry . ") to " . $dstCity . " (" . $dstCountry . ")";
+  if($srcCity) 
+    $srcLocation = $srcCity . " (" . $srcCountry . ")";
+  else
+    $srcLocation = $srcCountry;
+  if($dstCity)
+    $dstLocation = $dstCity . " (" . $dstCountry . ")";
+  else
+    $dstLocation = $dstCountry;
+  $newTitle = "Dootrip #" . $dootripId . " - from " . $srcLocation . " to " . $dstLocation;
 
   return $newTitle;
 }
@@ -137,12 +145,12 @@ function labdoo_lookup_coordinates($country, $city, &$lat, &$lon, $street="", $s
     $query = str_replace(' ', '+', 'https://maps.googleapis.com/maps/api/geocode/json?address='.$locationString);
     $mapQuery = drupal_http_request($query);
     if(!property_exists($mapQuery, 'data')) {
-      drupal_set_message('Could not resolve coordinates from the given city and country names.');
+      drupal_set_message(t('Could not resolve coordinates from the given city and country names.'), 'warning', FALSE);
       return -1;
     }
     $mapQueryDecoded = drupal_json_decode($mapQuery->data);
     if(!isset($mapQueryDecoded['results'][0])) {
-      drupal_set_message('Could not resolve coordinates from the given city and country names.');
+      drupal_set_message(t('Could not resolve coordinates from the given city and country names.'), 'warning', FALSE);
       return -1;
     }
     $coordinates = $mapQueryDecoded['results'][0]['geometry']['location'];
