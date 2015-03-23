@@ -1,11 +1,11 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>77</value>
+<value>124</value>
 </nid>
 <title>
 <type>node_title</type>
-<value>WORK IN PROGRESS</value>
+<value>Labdoo in a Nutshell</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -17,22 +17,22 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>77</value>
+<value>124</value>
 </field_reference_book>
 <bid>
 <type>book_array</type>
-<value>71</value>
+<value>124</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>778</value>
+<value>0</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>784</value>
+<value>809</value>
 </mlid>
 <weight>
 <type>book_array</type>
-<value>-7</value>
+<value>0</value>
 </weight>
 </book>
