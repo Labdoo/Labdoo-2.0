@@ -25,6 +25,11 @@ print(\"<br><br>\");
 print(labdoo_render_macro_stats('horizontal', \$addTitle=True));
 print(\$blockFeed['content']['#markup']);
 print(\$blockFlexSlide['content']['#markup']);
+print(\"<p align='center'>\");
+if(!user_is_logged_in())
+  print(\"<a href='../user/login'><img src='/profiles/labdoo/files/pictures/button-join-labdoo.png' width='200'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>\");
+print(\"<a href='/content/labdoo-nutshell'><img src='/profiles/labdoo/files/pictures/button-learn-how-it-works.png' width='300'></a>\");
+print(\"</p>\");
 ?>
   ";
 

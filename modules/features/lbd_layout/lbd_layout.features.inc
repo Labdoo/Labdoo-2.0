@@ -55,7 +55,7 @@ function lbd_layout_image_default_styles() {
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => '800',
-          'height' => '250',
+          'height' => '300',
         ),
         'weight' => '1',
       ),

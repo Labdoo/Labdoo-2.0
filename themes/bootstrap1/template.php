@@ -16,6 +16,6 @@ function bootstrap1_preprocess_page(&$vars) {
     $vars['title'] = '';
   }
   // Hide front page title
-  if($vars['node']->title == 'Front Page')
+  if(!empty($vars['node']) && $vars['node']->title == 'Front Page')
     $vars['title'] = '';
 }
