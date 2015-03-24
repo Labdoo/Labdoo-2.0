@@ -152,12 +152,12 @@ projects[calendar] = 3.5
 ;--------------------
 ; Extensions and others
 ;--------------------
-projects[ctools] = 1.6
+projects[ctools] = 1.7
 projects[libraries] = 2.2
 projects[entity] = 1.6
 projects[xautoload] = 4.5
 projects[token] = 1.6
-projects[rules] = 2.8
+projects[rules] = 2.9
 projects[pathauto] = 1.2
 projects[subpathauto] = 1.3
 projects[entityreference] = 1.1
@@ -168,7 +168,7 @@ projects[conditional_fields] = 3.0-alpha1
 projects[node_view_permissions] = 1.5
 projects[r4032login] = 1.8
 projects[views_slideshow] = 3.1
-projects[views_autocomplete_filters] = 1.1
+projects[views_autocomplete_filters] = 1.2
 projects[views_dependent_filters] = 1.1
 projects[variable] = 2.5 
 projects[logintoboggan] = 1.4 
