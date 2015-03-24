@@ -27,7 +27,7 @@ print(\$blockFeed['content']['#markup']);
 print(\$blockFlexSlide['content']['#markup']);
 print(\"<p align='center'>\");
 if(!user_is_logged_in())
-  print(\"<a href='../user/login'><img src='/profiles/labdoo/files/pictures/button-join-labdoo.png' width='200'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>\");
+  print(\"<a href='../user/login'><img src='/profiles/labdoo/files/pictures/button-join-labdoo.png' width='200'></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\");
 print(\"<a href='/content/labdoo-nutshell'><img src='/profiles/labdoo/files/pictures/button-learn-how-it-works.png' width='300'></a>\");
 print(\"</p>\");
 ?>
@@ -37,7 +37,7 @@ print(\"</p>\");
   $node->type = 'page';
   node_object_prepare($node);
   
-  $node->title = "";
+  $node->title = "Front Page";
   $node->language = LANGUAGE_NONE;
 
   $node->body[$node->language][0]['value']   = $bodyText;
@@ -162,7 +162,7 @@ function labdoo_lib_enable()
   lbd_create_follow_dooject_node();
 
   // Set some initial basic variables
-  variable_set('site_frontpage', 'actions'); 
+  variable_set('site_frontpage', 'content/front-page'); 
   variable_set('logintoboggan_login_with_email', 1);
 
   // Photo albums
