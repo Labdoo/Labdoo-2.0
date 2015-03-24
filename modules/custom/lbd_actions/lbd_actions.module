@@ -324,9 +324,12 @@ function _generate_labdoo_action($node) {
 
     if(!property_exists($node, 'original')) { // Dooject created 
       $title = "Laptop " . $node->title . " was tagged in " . $thisCity . ", " . $thisCountry; 
-      // Note: we can't use drupal_get_path_alias here because the node has not been fully created yet
-      $body = '<p><a href="/node/' . $node->nid . '">' . $title . "<br>" .
-              '<img src="/profiles/labdoo/files/pictures/laptop-simple.png" style="width: 20px; height: 21px;" /></a></p>';
+      // Note: We can't use drupal_get_path_alias here because the node has not been fully created yet.
+      //       We play a small trick however to ensure that the language prefix is present:
+      //         - By omitting the first slash / in the URL, we are generating a URL of the form
+      //           $languageCode/content/node/$nodeId
+      //         - By adding ".." in front of the URL, the final URL becomes: $languageCode/content/../node/$nodeId
+      $body = '<table><tr><td nowrap><a href="../node/' . $node->nid . '">' . $title . '...</a><img src="/profiles/labdoo/files/pictures/laptop-simple.png" width="20"></a></td></tr></table>';
     }
     else { // Dooject updated
       $newStatus = labdoo_lib_get_field($node, 'field_status', 'node', 'value'); 
@@ -352,23 +355,19 @@ function _generate_labdoo_action($node) {
 
       if(($previousStatus == "S0" or $previousStatus == "S1") and ($newStatus == "S2" or $newStatus == "S3")) { 
         $title = "Laptop " . $node->title . " was sanitized in " . $thisCity . ", " . $thisCountry; 
-        $body = '<p><a href="/node/' . $node->nid . '">' . $title . "<br>" .
-                '<img src="/profiles/labdoo/files/pictures/laptop-sanitized.png" style="width: 31px; height: 21px;" /></a></p>';
+        $body = '<table><tr><td nowrap><a href="../node/' . $node->nid . '">' . $title . '...</a><img src="/profiles/labdoo/files/pictures/laptop-sanitized.png" width="31"></a></td></tr></table>';
       }
       else if($newStatus == "S4") {
         $title = "Laptop " . $node->title . " was delivered to an edoovillage in " . $thisCity . ", " . $thisCountry; 
-        $body = '<p><a href="/node/' . $node->nid . '">' . $title . "<br>" .
-                '<img src="/profiles/labdoo/files/pictures/laptop-delivered.png" style="width: 31px; height: 21px;" /></a></p>';
+        $body = '<table><tr><td nowrap><a href="../node/' . $node->nid . '">' . $title . '...</a><img src="/profiles/labdoo/files/pictures/laptop-delivered.png" width="31"></a></td></tr></table>';
       }
       else if($newStatus == "T1") { 
         $title = "Laptop " . $node->title . " has started its journey to an edoovillage in " . $thisCity . ", " . $thisCountry; 
-        $body = '<p><a href="/node/' . $node->nid . '">' . $title . "<br>" .
-                '<img src="/profiles/labdoo/files/pictures/laptop-dootripped.png" style="width: 36px; height: 21px;" /></a></p>';
+        $body = '<table><tr><td nowrap><a href="../node/' . $node->nid . '">' . $title . '...</a><img src="/profiles/labdoo/files/pictures/laptop-dootripped.png" width="34"></a></td></tr></table>';
       }
       else if($newStatus == "S6") { 
         $title = "Laptop " . $node->title . " has been recycled"; 
-        $body = '<p><a href="/node/' . $node->nid . '">' . $title . "<br>" .
-                '<img src="/profiles/labdoo/files/pictures/laptop-recycled.png" style="width: 27px; height: 27px;" /></a></p>';
+        $body = '<table><tr><td nowrap><a href="../node/' . $node->nid . '">' . $title . '...</a><img src="/profiles/labdoo/files/pictures/laptop-recycled.png" width="27"></a></td></tr></table>';
       }
       else // don't create any activity
         return;
@@ -381,8 +380,7 @@ function _generate_labdoo_action($node) {
     $hubId = labdoo_lib_get_field($node, 'field_hub', 'node', 'target_id');
     $edoovillageId = $node->nid;
     $title = "Edoovillage was created in " . $thisCity . ", " . $thisCountry; 
-    $body = '<p><a href="/node/' . $node->nid . '">' . $title . "<br>" .
-            '<img src="/profiles/labdoo/files/pictures/edoovillage.png" style="width: 30px; height: 28px;" /></a></p>';
+    $body = '<table><tr><td nowrap><a href="../node/' . $node->nid . '">' . $title . '...</a><img src="/profiles/labdoo/files/pictures/edoovillage.png" width="30"></a></td></tr></table>';
   }
   else if($node->type == 'hub') {
     if(property_exists($node, 'original')) 
@@ -390,8 +388,7 @@ function _generate_labdoo_action($node) {
     $actionType = "Hub";
     $hubId = $node->nid; 
     $title = "Hub was created in " . $thisCity . ", " . $thisCountry; 
-    $body = '<p><a href="/node/' . $node->nid . '">' . $title . "<br>" .
-            '<img src="/profiles/labdoo/files/pictures/hub.png" style="width: 34px; height: 28px;" /></a></p>';
+    $body = '<table><tr><td nowrap><a href="../node/' . $node->nid . '">' . $title . '...</a><img src="/profiles/labdoo/files/pictures/hub.png" width="30"></a></td></tr></table>';
   }
   else if($node->type == 'dootrip') {
     $actionType = "Dootrip";
@@ -413,8 +410,7 @@ function _generate_labdoo_action($node) {
       $hubId = labdoo_lib_get_field($doojectNode, 'field_hub_laptop', 'node', 'target_id');
       $edoovillageId = labdoo_lib_get_field($doojectNode, 'field_edoovillage_destination', 'node', 'target_id');
     }
-    $body = '<p><a href="/node/' . $node->nid . '">' . $title . "<br>" .
-            '<img src="/profiles/labdoo/files/pictures/dootrip.png" style="width: 34px; height: 26px;" /></a></p>';
+    $body = '<table><tr><td nowrap><a href="../node/' . $node->nid . '">' . $title . '...</a><img src="/profiles/labdoo/files/pictures/dootrip.png" width="30"></a></td></tr></table>';
   }
 
   $streamIt = _must_be_streamed($thisCity); 

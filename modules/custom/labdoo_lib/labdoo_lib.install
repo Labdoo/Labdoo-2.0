@@ -10,6 +10,48 @@
 
 /**
  *
+ * Creates the Labdoo front page
+ */
+function lbd_create_front_page_node()
+{
+
+  $bodyText = "
+<?php 
+print(\"<img src='/profiles/labdoo/files/pictures/labdoo-header.png' width='1500'>\");
+print(\"<img src='/profiles/labdoo/files/pictures/labdoo-slogan.png' width='600'>\");
+\$blockFeed = module_invoke('views', 'block_view', 'actions-block');
+\$blockFlexSlide = module_invoke('views', 'block_view', 'labdoo_slideshow-block');
+print(\"<br><br>\");
+print(labdoo_render_macro_stats('horizontal', \$addTitle=True));
+print(\$blockFeed['content']['#markup']);
+print(\$blockFlexSlide['content']['#markup']);
+print(\"<p align='center'>\");
+if(!user_is_logged_in())
+  print(\"<a href='../user/login'><img src='/profiles/labdoo/files/pictures/button-join-labdoo.png' width='200'></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\");
+print(\"<a href='/content/labdoo-nutshell'><img src='/profiles/labdoo/files/pictures/button-learn-how-it-works.png' width='300'></a>\");
+print(\"</p>\");
+?>
+  ";
+
+  $node = new stdClass();
+  $node->type = 'page';
+  node_object_prepare($node);
+  
+  $node->title = "Front Page";
+  $node->language = LANGUAGE_NONE;
+
+  $node->body[$node->language][0]['value']   = $bodyText;
+  $node->body[$node->language][0]['summary'] = '';
+  $node->body[$node->language][0]['format']  = 'php_code';
+  
+  $node->path = array('alias' => "content/front-page");
+
+  node_save($node);
+}
+
+
+/**
+ *
  * Creates a node to generate dooject tags 
  */
 function lbd_create_tag_dooject_node()
@@ -73,6 +115,18 @@ labdoo_follow_dooject(\$dooject, \$usr, \$follow);
 
 
 /**
+ * Deletes the front page 
+ *
+ */
+function lbd_delete_front_page_node()
+{
+  $path = drupal_lookup_path("source", "content/front-page"); 
+  $node = menu_get_object("node", 1, $path);
+  node_delete($node->nid);
+}
+
+
+/**
  * Deletes the node to tag doojects 
  *
  */
@@ -103,11 +157,12 @@ function lbd_delete_follow_dooject_node()
 function labdoo_lib_enable()
 {
   // Create some initial basic nodes
+  lbd_create_front_page_node();
   lbd_create_tag_dooject_node(); 
   lbd_create_follow_dooject_node();
 
   // Set some initial basic variables
-  variable_set('site_frontpage', 'actions'); 
+  variable_set('site_frontpage', 'content/front-page'); 
   variable_set('logintoboggan_login_with_email', 1);
 
   // Photo albums
@@ -132,11 +187,16 @@ function labdoo_lib_enable()
 //      'Another old string.' => 'New String'
     )
   );
-  variable_set("locale_custom_strings_en",$custom_strings);   //note, this is only for english language
+  variable_set('locale_custom_strings_en', $custom_strings);   //note, this is only for english language
   // Note: In order to ensure all languages are properly replaced, 
   // the above needs to be complemented with a translation po file 
   // which takes care of the strings replaced aboved in all the 
   // supported languages.
+
+  // Language switcher dropdown
+  $langSwitcher = variable_get('lang_dropdown_language');
+  $langSwitcher['width'] = 120;
+  variable_set('lang_dropdown_language', $langSwitcher);
 
   drupal_set_message("labdoo_lib enabled correctly");
 }
@@ -148,6 +208,7 @@ function labdoo_lib_enable()
  */
 function labdoo_lib_disable()
 {
+  lbd_delete_front_page_node();
   lbd_delete_tag_dooject_node();
   lbd_delete_follow_dooject_node();
   drupal_set_message("labdoo_lib disabled correctly");

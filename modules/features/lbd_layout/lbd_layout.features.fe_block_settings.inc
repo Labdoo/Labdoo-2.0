@@ -48,7 +48,7 @@ function lbd_layout_default_fe_block_settings() {
     'i18n_mode' => '0',
     'module' => 'lbd_wiki',
     'node_types' => array(),
-    'pages' => '<?php return _is_book_node() != NULL ?>',
+    'pages' => '<?php return lbd_wiki_is_book_node() != NULL ?>',
     'roles' => array(),
     'themes' => array(
       'bartik' => array(

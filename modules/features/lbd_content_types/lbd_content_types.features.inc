@@ -54,6 +54,14 @@ function lbd_content_types_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'labdoo_slide' => array(
+      'name' => t('Labdoo FlexSlide'),
+      'base' => 'node_content',
+      'description' => t('A slide page meant to be used for composing FlexSlider slideshows'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'node_gallery_gallery' => array(
       'name' => t('Gallery'),
       'base' => 'node_content',
@@ -79,9 +87,9 @@ function lbd_content_types_node_info() {
       'help' => '',
     ),
     'slider_page' => array(
-      'name' => t('Slider page'),
+      'name' => t('Dashboard slider page'),
       'base' => 'node_content',
-      'description' => t('Page to be used in a views slideshow.'),
+      'description' => t('Slider page to be used in dashboards that use slider tabs (e.g., hub and edoovillage dashboards)'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

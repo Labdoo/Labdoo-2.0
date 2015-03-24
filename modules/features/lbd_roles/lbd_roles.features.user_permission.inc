@@ -169,6 +169,13 @@ function lbd_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: create labdoo_slide content.
+  $permissions['create labdoo_slide content'] = array(
+    'name' => 'create labdoo_slide content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: create new books.
   $permissions['create new books'] = array(
     'name' => 'create new books',
@@ -254,6 +261,13 @@ function lbd_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: delete any labdoo_slide content.
+  $permissions['delete any labdoo_slide content'] = array(
+    'name' => 'delete any labdoo_slide content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: delete any node_gallery_gallery content.
   $permissions['delete any node_gallery_gallery content'] = array(
     'name' => 'delete any node_gallery_gallery content',
@@ -326,6 +340,13 @@ function lbd_roles_user_default_permissions() {
   // Exported permission: delete own event content.
   $permissions['delete own event content'] = array(
     'name' => 'delete own event content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete own labdoo_slide content.
+  $permissions['delete own labdoo_slide content'] = array(
+    'name' => 'delete own labdoo_slide content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -416,6 +437,13 @@ function lbd_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: edit any labdoo_slide content.
+  $permissions['edit any labdoo_slide content'] = array(
+    'name' => 'edit any labdoo_slide content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: edit any node_gallery_gallery content.
   $permissions['edit any node_gallery_gallery content'] = array(
     'name' => 'edit any node_gallery_gallery content',
@@ -495,6 +523,13 @@ function lbd_roles_user_default_permissions() {
   // Exported permission: edit own event content.
   $permissions['edit own event content'] = array(
     'name' => 'edit own event content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit own labdoo_slide content.
+  $permissions['edit own labdoo_slide content'] = array(
+    'name' => 'edit own labdoo_slide content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -617,7 +652,8 @@ function lbd_roles_user_default_permissions() {
     'name' => 'search action content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'authenticated user',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
     ),
     'module' => 'search_config',
   );
@@ -655,7 +691,8 @@ function lbd_roles_user_default_permissions() {
     'name' => 'search book content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'authenticated user',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
     ),
     'module' => 'search_config',
   );
@@ -665,7 +702,8 @@ function lbd_roles_user_default_permissions() {
     'name' => 'search content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'authenticated user',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
     ),
     'module' => 'search',
   );
@@ -675,7 +713,8 @@ function lbd_roles_user_default_permissions() {
     'name' => 'search dootrip content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'authenticated user',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
     ),
     'module' => 'search_config',
   );
@@ -685,7 +724,8 @@ function lbd_roles_user_default_permissions() {
     'name' => 'search edoovillage content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'authenticated user',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
     ),
     'module' => 'search_config',
   );
@@ -702,8 +742,16 @@ function lbd_roles_user_default_permissions() {
     'name' => 'search hub content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'authenticated user',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
     ),
+    'module' => 'search_config',
+  );
+
+  // Exported permission: search labdoo_slide content.
+  $permissions['search labdoo_slide content'] = array(
+    'name' => 'search labdoo_slide content',
+    'roles' => array(),
     'module' => 'search_config',
   );
 
@@ -712,7 +760,8 @@ function lbd_roles_user_default_permissions() {
     'name' => 'search laptop content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'authenticated user',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
     ),
     'module' => 'search_config',
   );
@@ -722,7 +771,8 @@ function lbd_roles_user_default_permissions() {
     'name' => 'search node_gallery_gallery content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'authenticated user',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
     ),
     'module' => 'search_config',
   );
@@ -753,7 +803,8 @@ function lbd_roles_user_default_permissions() {
     'name' => 'search simplenews content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'authenticated user',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
     ),
     'module' => 'search_config',
   );
@@ -850,7 +901,8 @@ function lbd_roles_user_default_permissions() {
     'name' => 'use advanced search',
     'roles' => array(
       0 => 'administrator',
-      1 => 'authenticated user',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
     ),
     'module' => 'search',
   );
@@ -911,6 +963,13 @@ function lbd_roles_user_default_permissions() {
       0 => 'administrator',
       1 => 'book writer',
     ),
+    'module' => 'view_unpublished',
+  );
+
+  // Exported permission: view any unpublished labdoo_slide content.
+  $permissions['view any unpublished labdoo_slide content'] = array(
+    'name' => 'view any unpublished labdoo_slide content',
+    'roles' => array(),
     'module' => 'view_unpublished',
   );
 
