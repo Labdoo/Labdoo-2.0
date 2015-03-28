@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>96</value>
+<value>153</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,14 +17,13 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>96</value>
+<value>153</value>
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Labdoo Laptop Request Form
-
+<value>--------------------------------
 Requester Information:
-======================
+--------------------------------
 Your Name:
 Your Email Address:
 Your Organization :
@@ -32,9 +31,9 @@ Organization Website:
 You Labdoo account user name: (this is needed so that Labdoo can assign laptops to your project--registration can be done here: https://www.labdoo.org/user/register)
 Project title: (a short title for your project)
 
-
+-----------------
 Project Site:
-=============
+-----------------
 1.  Project Summary: (Please provide a brief statement about the purpose that the laptops will serve in your project site.)
 2.  Project Location:
 3.  Preferred language(s):
@@ -45,9 +44,9 @@ Project Site:
     4.4. Physical address (street, city, zip code, country...):
     4.5. GPS coordinates (if you know them or if you can find them out):
 5.  Claimed IT equipement
-    Number of Laptops needed: 
-    Number of eBook Reader needed: 
-    Others needed (Tablet-PCs etc):  
+    Number of Laptops needed:
+    Number of eBook Reader needed:
+    Others needed (Tablet-PCs etc):
 6.  Number of students:
 7.  Number of teachers:
 8.  Electricity in the room: (Voltage and plug/socket type, e.g. type A, B, C, D, etc. see following link for explanation of types: http://en.wikipedia.org/wiki/AC_power_plugs_and_sockets)
@@ -60,29 +59,30 @@ Project Site:
 
 ***The solicitation of a Labdoo laptop request implies that, upon receiving the laptops, the recipient agrees with the "Labdoo Laptop Recipient Agreement".
 
+----------------------------------------------------
 Labdoo Laptop Recipient Agreement:
-====================================
+----------------------------------------------------
 
 Dear Laptop receiver:
 
-We are very pleased to have the opportunity to contribute to your project by providing technology to help bridge the digital divide. 
-With every right comes responsibilities. Technology, when adequately used, can provide very powerful means to aid those that are 
+We are very pleased to have the opportunity to contribute to your project by providing technology to help bridge the digital divide.
+With every right comes responsibilities. Technology, when adequately used, can provide very powerful means to aid those that are
 most in need. But if used improperly, it can also damage our environment. By receiving the above items, you are automatically a
 ccepting to abide by the following Labdoo global responsibilities:
 
-(1) The items received will be used only for the purpose described by your organization at the time you solicited this donation. 
+(1) The items received will be used only for the purpose described by your organization at the time you solicited this donation.
 If you intend to use it for a different purpose, you will contact first the Labdoo team at contact@labdoo.org.
 
-(2) In the case that an incidence occurs to any of the received items, you will contact the Labdoo team at contact@labdoo.org, 
-including in your email the tagging number of the item(s) related to the incidence and a brief explanation. The following 
+(2) In the case that an incidence occurs to any of the received items, you will contact the Labdoo team at contact@labdoo.org,
+including in your email the tagging number of the item(s) related to the incidence and a brief explanation. The following
 incidences must always be reported:
-	(2.1) At the end of life of any of the received items, so that the item can be properly recycled. 
-	(2.2) When an item breaks, malfunctions or any change in its status.
+        (2.1) At the end of life of any of the received items, so that the item can be properly recycled.
+        (2.2) When an item breaks, malfunctions or any change in its status.
 
 (3) Every six months, please send an email to contact@labdoo.org with the list of laptops that you have and their status (working or not working).
 
 (4) Labdoo laptops are offered for free to you for education purposes.  In return, you agree to not use the laptops for commercial
-reasons and you agree not to charge any fee for the usage of the laptops.  
+reasons and you agree not to charge any fee for the usage of the laptops.
 
 (5) By returning this form filled in, the solicitor confirms owning all rights on sent materials (current or in the future) submitted to Labdoo.org and allowing such content to be publicly available from Labdoo.org. In addition, the solicitor confirms having approval for taking pictures of the children and/or any person benefiting from Labdoo laptops, tablets or any Labdoo donations, from their parents and/or legal guardians. Labdoo.org explicitly points to the fact that sent materials and pictures/photos may be used online and/or offline, and hence that they can be accessed by third parties, and that such pictures are used to help preserve the transparency and accountability of the projects.
 
@@ -97,18 +97,18 @@ The Labdoo Team.
 </body>
 <bid>
 <type>book_array</type>
-<value>65</value>
+<value>111</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>760</value>
+<value>824</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>790</value>
+<value>866</value>
 </mlid>
 <weight>
 <type>book_array</type>
-<value>-14</value>
+<value>0</value>
 </weight>
 </book>

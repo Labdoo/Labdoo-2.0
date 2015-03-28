@@ -109,6 +109,7 @@ dependencies[] = publishcontent
 dependencies[] = view_unpublished 
 dependencies[] = menu_view_unpublished 
 dependencies[] = role_delegation 
+dependencies[] = legal
 
 ;;; Performance
 dependencies[] = boost

@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>67</value>
+<value>110</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -13,15 +13,71 @@
 </field_book_language>
 <field_is_first_page>
 <type>value</type>
-<value>1</value>
+<value>0</value>
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>67</value>
+<value>109</value>
 </field_reference_book>
+<body>
+<type>value</type>
+<value><em>LABDOO is a humanitarian social network</em> joined by people around the world who want to make our planet a better place by providing those in underdeveloped and developing countries a chance at a better education. The goal of the social network is to send unused laptops, ebook readers, tablet-PCs and <em>any device that can be loaded with education software to needy schools around the world using colaboration and without incurring any economic or environmental costs</em>. 
+
+To set the ground, at Labdoo we call these unused learning devices (laptops, tablets, ebooks, etc.) <em>doojects</em>, as in lab<em>doo</em> ob<em>jects</em>. A dooject is therefore any laptop, tablet, ebook or device in general that can be sustainably transported to a needy school and that can be loaded with education software.
+
+<em>The world retires every year hundreds of millions of doojects that are still in perfect conditions</em>. Simply by sanitizing and loading them with learning software, they can become a very powerful tool to unlock education around the world.
+
+How is it possible to collect unused learning devices around the world and sustainably send them where needed without damaging the Planet? Namely, through the combination of two basic building blocks: (1) technology/information sharing and (2) massive global goodwill collaboration. To achieve sustainable organic growth and prevent damaging the planet, we use a <em>collaborative grassroots social networking system</em>. This allows Labdoo to globally unlock resources which are found in excess capacity (such as unused laptops, travelers, know-how, goodwill, etc.). Labdoo and its approach to help bring education around the globe has been acknowledged by the <em>United Nations Educational, Scientific and Cultural Organization (UNESCO) as "promoting a valuable and sustainable contribution to the development of educational learning in foreign countries"</em>.
+
+How does Labdoo work and how can I make a contribution towards helping spread education? Through five simple steps:
+
+<ul>
+<li>
+<strong>STEP 1. Tag your unused doojects.</strong> Do you have unused laptops or devices that can be repurposed for education? or do you know a friend, a relative, an organization or a company who has them? then the first step is to tag the devices (the doojects) you collect so that they can be efficiently organized inside the global inventory. To tag a dooject, log into your Labdoo account (<a href="../user/register/">create your own account first if you have not done so yet</a>) and from the menu located at the top of this page click on "Doojects/Tag". In this step, the dooject is marked with status S0 (tagged) or S1 (donated).
+</li>
+<li>
+<strong>STEP 2. Sanitize the doojects.</strong> Once tagged, the dooject needs to be sanitized and loaded with the education software. You have two options here: (1) you can do this process on your own by following the steps decribed in the <a href="../content/dooject-sanitation-guide">sanitation manual</a>; (2) alternatively, you can locate <a href="../hubs">your closest Labdoo hub</a> where you can bring the dooject so that other labdooers in the hub can carry out the sanitation process for you. In this step, the dooject is marked with status S2 (sanitized) or S3 (assigned to a school).
+</li>
+<li>
+<strong>STEP 3. Identify a dootrip.</strong> Once the dooject is sanitized, we need to identify a CO2-neutral traveling resource that can bring it to a school. We call this type of transportation resource <em>dootrip</em> (as in Lab<em>doo trip</em>). Here again you have two options: (1) if you are traveling to a location near to a needy school, then register your own dootrip by clicking on "Dootrips" and then "Create" from the menu located at the top of this page and use your own trip to bring the laptop to the destination school; (2) alternatively, you can also bring the dooject to <a href="../hubs">your closest Labdoo hub</a> where other labdooers can help find a dootrip resource to transport it to a school. In this step, the dooject is marked with status T1 (in transit).
+</li>
+<li>
+<strong>STEP 4. Track your dooject towards mission accomplished.</strong> You can track the progress your dooject makes towards reaching a school by selecting from the menu at the top of this page the option "Dooject" and then the sub-option "My doojects" (make sure you are logged into your account.) Click on the specific dooject, you will be able to see information such as its current status, its geolocalization or its associated destination school. Play around, you will see that you have many different ways to track and contribute to the progress of your dooject to complete its mission, including options such as uploading pictures, linking a dooject to a dootrip, or reviewing its historical records, among many others. In this step, the dooject is marked with status S4 (delivered).
+</li>
+<li>
+<strong>STEP 5. Recycle broken doojects.</strong> The final destination of all devices is a recycling center, so that we can preserve the environment and eleminate electronic waste. If you detect that a deployed device stops functioning, you can change its status and request a dootrip to rescue it and properly recycle it. In this step, the dooject is marked with status S5 (broken) or S6 (recycled).
+</li>
+</ul>
+All the above steps are oriented towards having the learning devices making progress to schools, following the various states S0, S1, S2, S3, T1, S4, S5 and S6, as illustrated in the following diagram.
+<hr/>
+<table align="center">
+<tr><td>
+<em>Figure. Steps to help bring a dooject to a needy school.</em>
+</td></tr>
+<tr><td>
+<img src="/sites/default/files/content/labdoo-nutshell/labdoo-mini-mission.png" width="600"/>
+</td></tr>
+</table>
+<hr/>
+As a social network, Labdoo allows you to do a lot more beyond the above basic steps. Among other tasks, you can join teams for a given subject of interest, share your experiences, ask questions in the various walls, upload pictures to your photo albums, create your own tasks and manage them via a calendar, engage in chat conversations with other labdooers, access and contribute to the Labdoo wiki knowledge-base, and you can even create your own Labdoo hub to help mobilize doojects in your local area. Here are some quick final pointers:
+
+- To join a team, go to the "Team" menu option on the top of this page.
+- The wiki is our live central knowledge-base where most of the documents, manuals and material can be found. You can access it by clicking on the "Wiki" menu option.
+- <a href="../content/labdoo-social-network-how-it-works">'The Labdoo Social Network - How It Works'</a> wiki book describes in more detail how Labdoo works.
+- In the <a href="../content/labdoo-toolkit">'Labdoo toolkit'</a> you will find tools to help you take further actions such as initiating your own Labdoo local awareness campaigns.
+- For any questions, don't hesitate to post them on any of the <a href="../teams">Teams wall</a>.
+
+Welcome to the Labdoo project and happy tagging to you!
+
+The Labdoo Team.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
 <bid>
 <type>book_array</type>
-<value>67</value>
+<value>110</value>
 </bid>
 <plid>
 <type>book_array</type>
@@ -29,7 +85,7 @@
 </plid>
 <mlid>
 <type>book_array</type>
-<value>774</value>
+<value>823</value>
 </mlid>
 <weight>
 <type>book_array</type>

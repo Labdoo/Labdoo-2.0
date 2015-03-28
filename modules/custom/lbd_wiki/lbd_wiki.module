@@ -172,16 +172,23 @@ function lbd_wiki_is_book_node() {
  *
  */
 function lbd_wiki_menu_local_tasks_alter(&$data) {
+  global $user;
   // Hide Outline tab (reordering of book hierarchy is provided in the TOC block)
   if(sizeof($data['tabs']) > 0) {
-    foreach ($data['tabs'][0]['output'] as $key => $value) {
-      if ($value['#link']['path'] == "node/%/outline") {
+    foreach($data['tabs'][0]['output'] as $key => $value) {
+      if($value['#link']['path'] == "node/%/outline") {
         unset($data['tabs'][0]['output'][$key]);
+      }
+      if($value['#link']['path'] == "node/%/revisions") {
+        $userRoles = array_values($user->roles);
+        if(!in_array('book writer', $userRoles) && !in_array('administrator', $userRoles)) {
+          unset($data['tabs'][0]['output'][$key]);
+        }
       }
     }
     if(sizeof($data['tabs'][0]['output']) == 1) {  // Hide the redundant View tab 
-      foreach ($data['tabs'][0]['output'] as $key => $value) {
-        if ($value['#link']['path'] == "node/%/view") {
+      foreach($data['tabs'][0]['output'] as $key => $value) {
+        if($value['#link']['path'] == "node/%/view") {
           unset($data['tabs'][0]['output'][$key]);
         }
       }

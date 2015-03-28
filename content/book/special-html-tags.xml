@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>89</value>
+<value>138</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>89</value>
+<value>138</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -64,21 +64,35 @@ Add a &lt;hr&gt; tag before and after your image to display a separating line.
 <li>
 Add a 'Figure' capture inside &lt;em&gt; tags on top of the image.
 </li>
+<li>
+Add both the figure capture and the figure itself inside a table &lt;table&gt; center aligned.
+</li>
 </ul>
 
 Here is an example:
 
 <code>&lt;hr/&gt;
+&lt;table align="center"&gt;
+&lt;tr&gt;&lt;td&gt;
 &lt;em&gt; Figure. This is the Labdoo logo.&lt;/em&gt;
+&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;
 &lt;img src="/profiles/labdoo/files/pictures/laptop.png" height="50" width="50"/&gt;
-&lt;hr/&gt;
-</code>
+&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;hr/&gt;</code>
 
 Which is displayed as follows:
 
 <hr/>
+<table align="center">
+<tr><td>
 <em> Figure. This is the Labdoo logo.</em>
+</td></tr>
+<tr><td>
 <img src="/profiles/labdoo/files/pictures/laptop.png" height="50" width="50"/>
+</td></tr>
+</table>
 <hr/>
 
 <strong>Inserting videos</strong>
@@ -95,15 +109,15 @@ For a good description on how to insert videos please directly refer to the <a h
 </body>
 <bid>
 <type>book_array</type>
-<value>72</value>
+<value>114</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>792</value>
+<value>841</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>796</value>
+<value>851</value>
 </mlid>
 <weight>
 <type>book_array</type>

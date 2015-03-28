@@ -76,6 +76,7 @@ projects[publishcontent] = 1.3
 projects[view_unpublished] = 1.2
 projects[menu_view_unpublished] = 1.0-beta3
 projects[role_delegation] = 1.1 
+projects[legal] = 1.5 
 
 ;--------------------
 ; Performance
