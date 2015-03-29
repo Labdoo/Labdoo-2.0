@@ -188,7 +188,7 @@ function labdoo_render_map_geolocate_node($nodeId = NULL, $displayDoojects = Fal
   if(!isset($types[$node->type]))
     return;
 
-  $map_style = 'height:200px; width:870px'; 
+  $map_style = 'height:200px; width:1170px'; 
   $map_options = '{"mapTypeId":"roadmap", "zoom":10}';
   $marker_color = NULL; 
   $visitor_marker = FALSE;
@@ -265,7 +265,7 @@ function labdoo_render_map_geolocate_node($nodeId = NULL, $displayDoojects = Fal
       return;
     $locations[1]->balloon_text = "Dootrip destination: " . str_replace('%20', ' ', $dstCity) . ", $dstCountryLong";
 
-    $map_style = 'height:400px; width:870px'; 
+    $map_style = 'height:400px; width:1170px'; 
     $map_options = '{"mapTypeId":"roadmap", "zoom":2}';
   }
 
@@ -283,6 +283,7 @@ function labdoo_render_map_geolocate_node($nodeId = NULL, $displayDoojects = Fal
  */
 function labdoo_render_dooject_header() {
   global $language;
+  $defaultLanguage = language_default();
   $htmlCode = "";
 
   if ((arg(0) != 'node') || !is_numeric(arg(1))) 
@@ -307,48 +308,36 @@ function labdoo_render_dooject_header() {
 
   $numDoojects = lbd_get_total_num_objects("laptop");
 
-  if(intval($laptopId) == $numDoojects) {
-    $nextUri = "<a href=\"" . request_uri() . "/../.." . "/laptop/000000001\">";
-  }
-  else {
+  if(intval($laptopId) == $numDoojects) 
+    $nextIdFull = sprintf("%09d", 1);
+  else 
     $nextIdFull = sprintf("%09d", intval(intval($laptopId)+1));
-    $nextUri = "<a href=\"" . request_uri() . "/../.." . "/laptop/" . $nextIdFull . "\">";
-  }
-  if(intval($laptopId) == 1) {
+  if(intval($laptopId) == 1) 
     $prevIdFull = sprintf("%09d", intval(intval($numDoojects)));
-    $prevUri = "<a href=\"" . request_uri() . "/../.." . "/laptop/" . $prevIdFull . "\">";
-  }
-  else {
+  else 
     $prevIdFull = sprintf("%09d", intval(intval($laptopId)-1));
-    $prevUri = "<a href=\"" . request_uri() . "/../.." . "/laptop/" . $prevIdFull . "\">";
-  }
 
   $tagsUri = "/content/tag-one-dooject?id=" . $laptopId;
 
   // Table header
-  $htmlCode = $htmlCode . '<table border="0" cellpadding="1" cellspacing="1" style="width: 850px;"><tbody><tr><td>';
+  $htmlCode = $htmlCode . '<table align="center" width="700px"><tr><td>';
 
   // Left arrow
-  $htmlCode = $htmlCode . '<p class="small rteleft" style="font-family: monospace;" align="right">' . $prevUri .
-                          '<img alt="" src="/profiles/labdoo/files/pictures/arrow_left.png" style="width: 40px; height: 49px; "/> 
-                           </a>&nbsp; &nbsp; &nbsp; &nbsp;';
+  $htmlCode = $htmlCode . '<a href="../laptop/'.$prevIdFull.'"><img src="/profiles/labdoo/files/pictures/arrow_left.png" width="40px"/></a>'; 
 
   // Next cell
-  $htmlCode = $htmlCode . '</td><td>'; 
+  $htmlCode = $htmlCode . '</td><td align="center">'; 
 
   // Tagging howto (lightbox)
-  $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " 
-                           align="middle"><a href="/profiles/labdoo/files/pictures/tagging-flow.png" 
-                           class="colorbox-load" style="line-height: 10px; color: rgb(17, 85, 119);"><img alt="image labdoo"  
-                           src="/profiles/labdoo/files/pictures/tagging-flow.png" style="border-style: solid; color: rgb(51, 51, 51); 
-                           width: 151px; height: 100px;" /></a></p>'; 
+  $htmlCode = $htmlCode .  '<a href="/profiles/labdoo/files/pictures/tagging-flow.png" class="colorbox-load">
+                            <img src="/profiles/labdoo/files/pictures/tagging-flow.png" width="160px"/></a>'; 
   
   // Button for tagging 
-  $htmlCode = $htmlCode . '<p>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; <input type="button" value="Print tags for this dooject"onclick="window.open(\''.$tagsUri.'\', 
+  $htmlCode = $htmlCode . '<br><input type="button" value="Print tags for this dooject" onclick="window.open(\''.$tagsUri.'\', 
                            \'windowpopup\', \'resizable=yes,menubar=1,status=no,width=700,height=700\');"/>';
 
   // Next cell
-  $htmlCode = $htmlCode . '</td><td>';
+  $htmlCode = $htmlCode . '</td><td align="center">';
 
   // Photo album icon and button
   if($edoovillageId) {
@@ -356,14 +345,15 @@ function labdoo_render_dooject_header() {
     $wNode = entity_metadata_wrapper('node', $nodeEdoovillage);
     $nodeAlbum = $wNode->field_edoovillage_photo_album->value();
     $albumUri = drupal_get_path_alias("node/" .  $nodeAlbum->nid, $language->language);
+    if($language->language != $defaultLanguage->language)
+      $albumUri = $language->language . "/" . $albumUri;
     $gotoMsg = t("Go to photo album");
-    $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="middle">
-                             <img alt="" src="/profiles/labdoo/files/pictures/photo-album-icon.jpg" style="width: 122px; height: 100px; "/></a>';
-    $htmlCode = $htmlCode . '<p><input type="button" value="' . $gotoMsg . '" onclick="window.open(\'/'.$albumUri.'\');"/>';
+    $htmlCode = $htmlCode . '<img src="/profiles/labdoo/files/pictures/photo-album-icon.jpg" width="122px"/>';
+    $htmlCode = $htmlCode . '<br><input type="button" value="'.$gotoMsg.'" onclick="window.open(\'/'.$albumUri.'\', \'_self\');"/>';
   }
 
   // Next cell
-  $htmlCode = $htmlCode . '</td><td>';
+  $htmlCode = $htmlCode . '</td><td align="center">';
 
   // Follow dooject button
   if (user_is_logged_in()) {
@@ -384,18 +374,15 @@ function labdoo_render_dooject_header() {
     $followMsg = t("Follow this dooject");
   }
   
-  $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="middle">
-           <img alt="" src="/profiles/labdoo/files/pictures/laptop.png" style="width: 102px; height: 100px; "/>&nbsp;&nbsp; </a>'; 
-  $htmlCode = $htmlCode . '<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="button" value="' . $followMsg . '" onclick="window.open(\''.$followDoojectUrl.'\', 
-           \'windowpopup\', \'resizable=yes,menubar=1,status=no,width=700,height=700\');setTimeout(\'history.go(0);\',2000);"/>';
+  $htmlCode = $htmlCode . '<img src="/profiles/labdoo/files/pictures/laptop.png" width="100px"/>'; 
+  $htmlCode = $htmlCode . '<br><input type="button" value="'.$followMsg.'" onclick="window.open(\''.$followDoojectUrl.'\', 
+                          \'windowpopup\', \'resizable=yes,menubar=1,status=no,width=700,height=700\');setTimeout(\'history.go(0);\',2000);"/>';
 
   // Next cell
-  $htmlCode = $htmlCode . '</td><td>';
+  $htmlCode = $htmlCode . '</td><td align="center">';
 
   // Print right arrow
-  $htmlCode = $htmlCode . '<p class="small rteright" style="font-family: monospace;">'.$nextUri.' 
-                           <img alt="" src="/profiles/labdoo/files/pictures/arrow_right.png" 
-                           style="width: 40px; height: 49px; "/></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;';
+  $htmlCode = $htmlCode . '<a href="../laptop/'.$nextIdFull.'"><img src="/profiles/labdoo/files/pictures/arrow_right.png" width="40px"/></a>'; 
 
   // Table ending
   $htmlCode = $htmlCode . '</td></tr></tbody></table>';
@@ -501,6 +488,7 @@ function labdoo_render_edoovillage_hub_header($nodeId = NULL, $type) {
  */
 function labdoo_render_photo_album_header() {
   global $language;
+  $defaultLanguage = language_default();
   $htmlCode = "";
 
   if ((arg(0) != 'node') || !is_numeric(arg(1))) 
@@ -528,6 +516,8 @@ function labdoo_render_photo_album_header() {
     $parentNode = $wNode->field_photo_album_hub->value();
   }
   $albumUri = drupal_get_path_alias("node/" .  $parentNode->nid, $language->language);
+  if($language->language != $defaultLanguage->language)
+    $albumUri = $language->language . "/" . $albumUri;
   $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="middle">
                            <img alt="" src="/profiles/labdoo/files/pictures/photo-album-icon.jpg" style="width: 122px; height: 100px; "/></a>';
   $htmlCode = $htmlCode . '<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="button" value="' 
@@ -1819,7 +1809,7 @@ function labdoo_block_filter_header() {
   if(strcmp($path, "hub") == 0)
       return TRUE;
 
-  if(labdoo_lib_node_is_type(array('laptop', 'dootrip')))
+  if(labdoo_lib_node_is_type(array('laptop', 'dootrip', 'node_gallery_gallery')))
     return TRUE;
 
   if(0 === strpos($path, 'node/add/'))
