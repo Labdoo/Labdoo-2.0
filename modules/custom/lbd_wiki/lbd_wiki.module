@@ -88,10 +88,19 @@ function lbd_wiki_block_view($delta = '') {
 
   // Build the tree and block title.
   $children = menu_build_tree($parent['menu_name'], $parameters);
+  // Check if it is a single page book
+  if(count($children) == 1) {
+    $child = array_values($children)[0];
+    if(count($child['below']) == 0) {
+      // For single page wiki books, print the macro stats instead of the TOC
+      $block = module_invoke('lbd_blocks_views', 'block_view', 'block_macro_statistics_vertical');
+      return $block; 
+    }
+  }
   $userRoles = array_values($user->roles);
   if(in_array('book writer', $userRoles) || in_array('administrator', $userRoles)) { 
     $metadata = "href='$lang/admin/content/book/" . $book['bid'] . "'";
-    $code = "<a $metadata>" . t('[Reorder book hierarchy]') . "</span></a></p>";
+    $code = "<a $metadata>" . t('[Reorder this book\'s hierarchy]') . "</span></a></p>";
   }
   else {
     $code = "";

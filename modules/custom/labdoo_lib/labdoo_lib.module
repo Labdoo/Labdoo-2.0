@@ -333,7 +333,8 @@ function labdoo_render_dooject_header() {
                             <img src="/profiles/labdoo/files/pictures/tagging-flow.png" width="160px"/></a>'; 
   
   // Button for tagging 
-  $htmlCode = $htmlCode . '<br><input type="button" value="Print tags for this dooject" onclick="window.open(\''.$tagsUri.'\', 
+  $printTagsMsg = t("Print tags for this dooject");
+  $htmlCode = $htmlCode . '<br><input type="button" value="'.$printTagsMsg.'" onclick="window.open(\''.$tagsUri.'\', 
                            \'windowpopup\', \'resizable=yes,menubar=1,status=no,width=700,height=700\');"/>';
 
   // Next cell
@@ -376,7 +377,7 @@ function labdoo_render_dooject_header() {
   
   $htmlCode = $htmlCode . '<img src="/profiles/labdoo/files/pictures/laptop.png" width="100px"/>'; 
   $htmlCode = $htmlCode . '<br><input type="button" value="'.$followMsg.'" onclick="window.open(\''.$followDoojectUrl.'\', 
-                          \'windowpopup\', \'resizable=yes,menubar=1,status=no,width=700,height=700\');setTimeout(\'history.go(0);\',2000);"/>';
+                          \'windowpopup\', \'resizable=yes,menubar=1,scrollbars=1,status=no,width=700,height=700\');setTimeout(\'history.go(0);\',2000);"/>';
 
   // Next cell
   $htmlCode = $htmlCode . '</td><td align="center">';
@@ -1786,6 +1787,18 @@ function labdoo_block_filter_header() {
       return TRUE;
 
   if(strcmp($path, "content/doojects-dashboard") == 0)
+      return TRUE;
+
+  if(strcmp($path, "user/login") == 0)
+      return TRUE;
+
+  if(strcmp($path, "user") == 0)
+      return TRUE;
+
+  if(strcmp($path, "user/register") == 0)
+      return TRUE;
+
+  if(strcmp($path, "user/password") == 0)
       return TRUE;
 
   if(strcmp($path, "map") == 0)
