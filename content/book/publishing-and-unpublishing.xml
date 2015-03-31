@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>133</value>
+<value>91</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>133</value>
+<value>91</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -31,15 +31,15 @@ To accomplish this, each wiki page has a tag on its top called 'Publish/Unpublis
 </body>
 <bid>
 <type>book_array</type>
-<value>114</value>
+<value>71</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>841</value>
+<value>798</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>846</value>
+<value>803</value>
 </mlid>
 <weight>
 <type>book_array</type>

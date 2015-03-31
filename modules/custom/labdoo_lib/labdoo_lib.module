@@ -1615,18 +1615,39 @@ $trailer
  *
  */
 function labdoo_render_footer() {
+  global $language;
+  $defaultLanguage = language_default();
+
+  // Compute language code prefix for links
+  $langCode = "";
+  if($language->language != $defaultLanguage->language)
+    $langCode = "/" . $language->language;
+
+  // Compute footer links (TODO: factor out this code into a function)
+  $path = explode('/', drupal_get_normal_path('content/labdoos-terms-and-conditions'));
+  $urlTerms = '"'.$langCode.'/wiki-index?field_book_language_value=All&field_reference_book_target_id='.$path[1].'"';
+  $path = explode('/', drupal_get_normal_path('content/development-team'));
+  $urlDev = '"'.$langCode.'/wiki-index?field_book_language_value=All&field_reference_book_target_id='.$path[1].'"';
+  $path = explode('/', drupal_get_normal_path('content/glits'));
+  $urlGlits = '"'.$langCode.'/wiki-index?field_book_language_value=All&field_reference_book_target_id='.$path[1].'"';
+  $path = explode('/', drupal_get_normal_path('content/faq'));
+  $urlFaq = '"'.$langCode.'/wiki-index?field_book_language_value=All&field_reference_book_target_id='.$path[1].'"';
+  $path = explode('/', drupal_get_normal_path('content/values-philosophy-and-principles-labdoo-project'));
+  $urlValues = '"'.$langCode.'/wiki-index?field_book_language_value=All&field_reference_book_target_id='.$path[1].'"';
+  $path = explode('/', drupal_get_normal_path('content/labdoo-nutshell'));
+  $urlNutshell = '"'.$langCode.'/wiki-index?field_book_language_value=All&field_reference_book_target_id='.$path[1].'"';
 
   $code = ' 
 <table align="center"> 
 <tr>
 <td width="200">
-<a href="/" color="red">About Labdoo</a>
+<a href='.$urlNutshell.'>About Labdoo</a>
 </td>
 <td width="100">
-<a href="/">Glits</a>
+<a href='.$urlGlits.'>Glits</a>
 </td>
 <td width="200">
-<a href="/">Development Team</a>
+<a href='.$urlDev.'>Development Team</a>
 </td>
 <td width="200">
 <img src="/profiles/labdoo/files/pictures/equation-2-alpha-smaller.png" width="70">
@@ -1634,13 +1655,13 @@ function labdoo_render_footer() {
 </tr>
 <tr>
 <td>
-<a href="/">Values and Philosophy</a>
+<a href='.$urlValues.'>Values and Philosophy</a>
 </td>
 <td>
-<a href="/">FAQ</a>
+<a href='.$urlFaq.'>FAQ</a>
 </td>
 <td>
-<a href="/">Terms and Conditions</a>
+<a href='.$urlTerms.'>Terms and Conditions</a>
 </td>
 <td width="200">
 <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons</a>

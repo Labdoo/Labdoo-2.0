@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>110</value>
+<value>67</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -13,11 +13,11 @@
 </field_book_language>
 <field_is_first_page>
 <type>value</type>
-<value>0</value>
+<value>1</value>
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>109</value>
+<value>67</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -61,11 +61,23 @@ All the above steps are oriented towards having the learning devices making prog
 <hr/>
 As a social network, Labdoo allows you to do a lot more beyond the above basic steps. Among other tasks, you can join teams for a given subject of interest, share your experiences, ask questions in the various walls, upload pictures to your photo albums, create your own tasks and manage them via a calendar, engage in chat conversations with other labdooers, access and contribute to the Labdoo wiki knowledge-base, and you can even create your own Labdoo hub to help mobilize doojects in your local area. Here are some quick final pointers:
 
-- To join a team, go to the "Team" menu option on the top of this page.
-- The wiki is our live central knowledge-base where most of the documents, manuals and material can be found. You can access it by clicking on the "Wiki" menu option.
-- <a href="../content/labdoo-social-network-how-it-works">'The Labdoo Social Network - How It Works'</a> wiki book describes in more detail how Labdoo works.
-- In the <a href="../content/labdoo-toolkit">'Labdoo toolkit'</a> you will find tools to help you take further actions such as initiating your own Labdoo local awareness campaigns.
-- For any questions, don't hesitate to post them on any of the <a href="../teams">Teams wall</a>.
+<ul>
+<li>
+To join a team, go to the "Teams" menu option on the top of this page.
+</li>
+<li>
+The wiki is our live central knowledge-base where most of the documents, manuals and material can be found. You can access it by clicking on the "Wiki" menu option.
+</li>
+<li>
+<a href="../content/labdoo-social-network-how-it-works">'The Labdoo Social Network - How It Works'</a> wiki book describes in more detail how Labdoo works.
+</li>
+<li>
+In the <a href="../content/labdoo-toolkit">'Labdoo toolkit'</a> you will find tools to help you take further actions such as initiating your own Labdoo local awareness campaigns.
+</li>
+<li>
+For any questions, don't hesitate to post them on any of the <a href="../teams">Teams wall</a>.
+</li>
+</ul>
 
 Welcome to the Labdoo project and happy tagging to you!
 
@@ -77,7 +89,7 @@ The Labdoo Team.</value>
 </body>
 <bid>
 <type>book_array</type>
-<value>110</value>
+<value>67</value>
 </bid>
 <plid>
 <type>book_array</type>
@@ -85,7 +97,7 @@ The Labdoo Team.</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>823</value>
+<value>779</value>
 </mlid>
 <weight>
 <type>book_array</type>

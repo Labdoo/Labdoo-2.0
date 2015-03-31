@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>150</value>
+<value>109</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>150</value>
+<value>109</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -31,15 +31,15 @@ While the Labdoo tools are provided “as is”, everyone participating in the p
 </body>
 <bid>
 <type>book_array</type>
-<value>117</value>
+<value>74</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>855</value>
+<value>811</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>863</value>
+<value>821</value>
 </mlid>
 <weight>
 <type>book_array</type>
