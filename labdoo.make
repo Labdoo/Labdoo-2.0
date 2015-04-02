@@ -94,6 +94,8 @@ projects[mass_contact] = 1.0
 projects[sharethis] = 2.10
 projects[disqus] = 1.9
 projects[disqus][patch][] = http://drupal.org/files/disqus-https.patch
+projects[flag] = 3.6
+projects[drupal_wall] = 2.6
 
 ;-------------------
 ; Location and maps

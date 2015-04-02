@@ -1,0 +1,136 @@
+diff -crB ./drupal_wall.orig/drupal_wall.global.inc ./drupal_wall/drupal_wall.global.inc
+*** ./drupal_wall.orig/drupal_wall.global.inc	2014-05-08 09:03:04.000000000 +0000
+--- ./drupal_wall/drupal_wall.global.inc	2015-04-02 04:32:02.785857056 +0000
+***************
+*** 17,24 ****
+    variable_set ('drupal_wall_global_post_offset', 0);
+    variable_set ('drupal_wall_content_type', 0);
+    // Get drupal wall post global form
+!   $drupal_wall_post_global_form = drupal_render (drupal_get_form ('_drupal_wall_content_post_form'));
+!   $output .= $drupal_wall_post_global_form;
+    // Get drupal global wall post content
+    $drupal_wall_global_post = _drupal_wall_get_global_wall_post ();
+    $output .= '<div class = "drupal-wall-global-post"> Wall Post </div>';
+--- 17,24 ----
+    variable_set ('drupal_wall_global_post_offset', 0);
+    variable_set ('drupal_wall_content_type', 0);
+    // Get drupal wall post global form
+!   $drupal_wall_post_global_form = drupal_get_form ('_drupal_wall_content_post_form');
+!   $output .= drupal_render($drupal_wall_post_global_form);
+    // Get drupal global wall post content
+    $drupal_wall_global_post = _drupal_wall_get_global_wall_post ();
+    $output .= '<div class = "drupal-wall-global-post"> Wall Post </div>';
+***************
+*** 26,33 ****
+    if ($drupal_wall_global_post) {
+      $output .= $drupal_wall_global_post;
+      // Get older post button
+!     $drupal_wall_global_post = drupal_render (drupal_get_form ('_drupal_wall_global_post_display'));
+!     $output .= $drupal_wall_global_post;
+    }
+    else {
+      $output .= '<div class="drupal_wall_global_outer"><span class="status_msg">No wall status avaliable !</span></div>';
+--- 26,33 ----
+    if ($drupal_wall_global_post) {
+      $output .= $drupal_wall_global_post;
+      // Get older post button
+!     $drupal_wall_global_post = drupal_get_form ('_drupal_wall_global_post_display');
+!     $output .= drupal_render($drupal_wall_global_post);
+    }
+    else {
+      $output .= '<div class="drupal_wall_global_outer"><span class="status_msg">No wall status avaliable !</span></div>';
+diff -crB ./drupal_wall.orig/drupal_wall.module ./drupal_wall/drupal_wall.module
+*** ./drupal_wall.orig/drupal_wall.module	2014-05-08 09:03:04.000000000 +0000
+--- ./drupal_wall/drupal_wall.module	2015-04-01 20:56:24.227293844 +0000
+***************
+*** 313,318 ****
+--- 313,319 ----
+  /**
+   * Implements hook_user_view().
+   */
++ /*
+  function drupal_wall_user_view($account, $view_mode) {
+    if ($view_mode == 'full') {
+      global $user;
+***************
+*** 352,355 ****
+          '#markup' => $user_wall 
+      );
+    }
+! }
+\ No newline at end of file
+--- 353,357 ----
+          '#markup' => $user_wall 
+      );
+    }
+! }
+! */
+diff -crB ./drupal_wall.orig/drupal_wall.page.inc ./drupal_wall/drupal_wall.page.inc
+*** ./drupal_wall.orig/drupal_wall.page.inc	2014-05-08 09:03:04.000000000 +0000
+--- ./drupal_wall/drupal_wall.page.inc	2015-04-01 18:38:22.310016440 +0000
+***************
+*** 548,551 ****
+       }
+     }
+    return $drupal_wall_image_style_options;
+! }
+\ No newline at end of file
+--- 548,551 ----
+       }
+     }
+    return $drupal_wall_image_style_options;
+! }
+diff -crB ./drupal_wall.orig/drupal_wall.tpl.php ./drupal_wall/drupal_wall.tpl.php
+*** ./drupal_wall.orig/drupal_wall.tpl.php	2014-05-08 09:03:04.000000000 +0000
+--- ./drupal_wall/drupal_wall.tpl.php	2015-04-02 04:42:35.377160947 +0000
+***************
+*** 36,48 ****
+          $node = node_load($nid);
+          global $user;
+          $type = is_string($node) ? $node : $node->type;
+-         if (user_access('edit any ' . $type . ' content', $user) || user_access('edit own ' . $type . ' content', $user) && ($user->uid == $node->uid)) {
+-           $drupal_wall_path = drupal_get_path ('module', 'drupal_wall');
+-           $img = '<img src="' . $base_url . '/' . $drupal_wall_path . '/images/edit-icon.png' . '" >'; 
+-           $redirect = $base_url . '/node/' . $nid . '/edit?destination=' . $_GET['q'];
+-           print l ($img, $redirect, array ('attributes' => array ('class' => 'anchor-class drupal-wall-edit'), 'html' => TRUE));
+-         
+-         }
+          if (user_access('delete any ' . $type . ' content', $user) || (user_access('delete own ' . $type . ' content', $user) && ($user->uid == $node->uid))) {
+            $wall_edit_delete = drupal_get_form('_drupal_wall_delete_edit_node_form', $wall_post[$i]->nid, $user->uid);
+            print drupal_render($wall_edit_delete);
+--- 36,41 ----
+***************
+*** 125,134 ****
+                 	$image_style = $wall_post[$i]->field_drupal_wall_image_style_value;
+            	  }
+            	  if ($image_style != "_none" && $image_style != ''){
+!                 print '<a href="' . $img_link_path . '">' . theme('image_style', array('path' => $img_path, 'style_name' => $image_style)) . '</a>';
+            	  }
+            	  else {
+!                 print '<a href="' . $img_link_path . '">' . theme('image_style', array('path' => $img_path, 'style_name' => 'thumbnail')) . '</a>';
+                }
+              }
+             
+--- 118,127 ----
+                 	$image_style = $wall_post[$i]->field_drupal_wall_image_style_value;
+            	  }
+            	  if ($image_style != "_none" && $image_style != ''){
+!                 print '<a href="' . $img_link_path . '?width=800" class="colorbox-load">' . theme('image_style', array('path' => $img_path, 'style_name' => $image_style)) . '</a>';
+            	  }
+            	  else {
+!                 print '<a href="' . $img_link_path . '?width=800" class="colorbox-load">' . theme('image_style', array('path' => $img_path, 'style_name' => 'thumbnail')) . '</a>';
+                }
+              }
+             
+***************
+*** 290,293 ****
+      endfor;
+    ?>
+  </div>
+! <!-- Drupal wall block : ends here ! -->
+\ No newline at end of file
+--- 283,286 ----
+      endfor;
+    ?>
+  </div>
+! <!-- Drupal wall block : ends here ! -->
