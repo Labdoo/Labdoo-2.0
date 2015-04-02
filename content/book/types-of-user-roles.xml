@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>73</value>
+<value>77</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>73</value>
+<value>77</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -59,15 +59,15 @@ As mentioned above, when you create your user for the first time, you are assign
 </body>
 <bid>
 <type>book_array</type>
-<value>71</value>
+<value>75</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>783</value>
+<value>787</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>785</value>
+<value>789</value>
 </mlid>
 <weight>
 <type>book_array</type>

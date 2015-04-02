@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>112</value>
+<value>71</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,11 +17,11 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>112</value>
+<value>71</value>
 </field_reference_book>
 <body>
 <type>value</type>
-<value>You expressly understand that Labdoo is a collaborative, non-profit, freely available and open source project whose goal is to help spread education around the world and agree that your use of the services provided by the Labdoo platform is at your sole risk and that the services are provided "as is" and “as available.” Labdoo shall not be liable to you for any direct, indirect, incidental, special consequential or exemplary damages which may be incurred by you, however caused and under any theory of liability.
+<value>The users of the Labdoo social network expressly understand that Labdoo is a collaborative, non-profit, freely available and open source project whose goal is to help spread education around the world and agree that your use of the services provided by the Labdoo platform is at your sole risk and that the services are provided "as is" and “as available.” Labdoo shall not be liable to you for any direct, indirect, incidental, special consequential or exemplary damages which may be incurred by you, however caused and under any theory of liability.
 
 Labdoo does not represent or warrant to you that:
 
@@ -92,7 +92,7 @@ Register: Registered as a charitable non-profit organization under U.S. law, IRS
 </body>
 <bid>
 <type>book_array</type>
-<value>112</value>
+<value>71</value>
 </bid>
 <plid>
 <type>book_array</type>
@@ -100,7 +100,7 @@ Register: Registered as a charitable non-profit organization under U.S. law, IRS
 </plid>
 <mlid>
 <type>book_array</type>
-<value>823</value>
+<value>783</value>
 </mlid>
 <weight>
 <type>book_array</type>

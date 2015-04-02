@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>94</value>
+<value>98</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>94</value>
+<value>98</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -31,15 +31,15 @@ To use this feature, click on the 'Reviews' tab that you will find on the top of
 </body>
 <bid>
 <type>book_array</type>
-<value>71</value>
+<value>75</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>798</value>
+<value>802</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>806</value>
+<value>810</value>
 </mlid>
 <weight>
 <type>book_array</type>

@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>79</value>
+<value>83</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>79</value>
+<value>83</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -54,15 +54,15 @@ A final comment about GICs is that besides using them to help you track broken d
 </body>
 <bid>
 <type>book_array</type>
-<value>71</value>
+<value>75</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>783</value>
+<value>787</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>791</value>
+<value>795</value>
 </mlid>
 <weight>
 <type>book_array</type>

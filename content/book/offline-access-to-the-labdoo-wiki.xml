@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>89</value>
+<value>93</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>89</value>
+<value>93</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -31,15 +31,15 @@ This type of tools come very handy for instance when you want to include a certa
 </body>
 <bid>
 <type>book_array</type>
-<value>71</value>
+<value>75</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>798</value>
+<value>802</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>801</value>
+<value>805</value>
 </mlid>
 <weight>
 <type>book_array</type>
