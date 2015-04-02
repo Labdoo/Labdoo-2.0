@@ -2324,18 +2324,19 @@ function _labdoo_lib_user_roles($account = NULL) {
   global $user;
   $userRoles = array_values($user->roles);
   $rolesMapping = array(
-    t('labdooer') => t('Provides the base functionality to carry out Labdoo mini-missions.'),
-    t('newsletter manager') => t('Manage, create and publish newsletters to help bring awareness about your Labdoo activities.'),
-    t('hub manager') => t('Manage a hub, organize hub inventory, upload pictures to your hub album.'),
-    t('edoovillage manager') => t('Create and manage edoovillages, upload pictures to your edoovillages albums.'),
-    t('superhub manager') => t('Create hubs and help manage Labdoo operations at a larger regional scale.'),
-    t('team manager') => t('Create new teams, manage memberships and all team related activities.'),
-    t('book writer') => t('Create and edit new wiki articles and books.'),
-    t('administrator') => t('All access rights.'),
+    'labdooer' => t('Provides the base functionality to carry out Labdoo mini-missions.'),
+    'newsletter manager' => t('Manage, create and publish newsletters to help bring awareness about your Labdoo activities.'),
+    'hub manager' => t('Manage a hub, organize hub inventory, upload pictures to your hub album.'),
+    'edoovillage manager' => t('Create and manage edoovillages, upload pictures to your edoovillages albums.'),
+    'superhub manager' => t('Create hubs and help manage Labdoo operations at a larger regional scale.'),
+    'team manager' => t('Create new teams, manage memberships and all team related activities.'),
+    'book writer' => t('Create and edit new wiki articles and books.'),
+    'administrator' => t('All access rights.'),
   );
 
   $allRoles = array_keys($rolesMapping);
   $potentialRoles = array_diff($allRoles, $userRoles);
+  $potentialRoles = array_diff($potentialRoles, array('administrator', 'labdooer'));
 
   $code = "
 <strong>My current roles</strong>
@@ -2348,7 +2349,7 @@ function _labdoo_lib_user_roles($account = NULL) {
     $code = $code . "
 <tr>
 <td width='180'>
-" . ucfirst($role) . "
+" . ucfirst(t($role)) . "
 </td>
 <td>
 " . $rolesMapping[$role] . "
@@ -2370,7 +2371,7 @@ function _labdoo_lib_user_roles($account = NULL) {
 <table>";
 
   if(empty($potentialRoles))
-    $code = $code . "You are assigned all possible roles.";
+    $code = $code . t("You are assigned all possible roles.");
 
   foreach($potentialRoles as $role) {
     if($role == 'labdooer')
@@ -2378,7 +2379,7 @@ function _labdoo_lib_user_roles($account = NULL) {
     $code = $code . "
 <tr>
 <td width='180'>
-" . ucfirst($role) . "
+" . ucfirst(t($role)) . "
 </td>
 <td>
 " . $rolesMapping[$role] . "
