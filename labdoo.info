@@ -116,7 +116,6 @@ dependencies[] = boost
 
 ;;; Services and social
 dependencies[] = simplenews
-dependencies[] = drupal_wall 
 
 ;;; Translations
 dependencies[] = l10n_update

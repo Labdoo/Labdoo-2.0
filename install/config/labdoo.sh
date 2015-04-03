@@ -89,6 +89,7 @@ cp -r $rootpath/profiles/labdoo/content/files/* $rootpath/sites/default/files/
 chown -R www-data:www-data $rootpath/sites/default/files/ 
 drush @lbd php-script $rootpath/profiles/labdoo/lec/lec-import-books.php
 
-# Apply Drupal wall patch
+# Apply Drupal wall patch and enabled it
 cd $rootpath/profiles/labdoo/modules/contrib/drupal_wall && patch -p2 < $rootpath/profiles/labdoo/install/patches/drupal_wall_lbd.patch
+drush @lbd $enOrDis -y flag drupal_wall
 
