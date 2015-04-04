@@ -166,9 +166,14 @@ function labdoo_lib_enable()
   lbd_create_tag_dooject_node(); 
   lbd_create_follow_dooject_node();
 
-  // Set some initial basic variables
+  // Set front page
   variable_set('site_frontpage', 'content/front-page'); 
+
+  // Set capability to login via email besides user name
   variable_set('logintoboggan_login_with_email', 1);
+
+  // Set default user account picture
+  variable_set('user_picture_default', '/sites/default/files/content/general-objects/act-5-small.png');
 
   // Photo albums
   variable_set('colorbox_load', 1);

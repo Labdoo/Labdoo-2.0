@@ -89,7 +89,10 @@ cp -r $rootpath/profiles/labdoo/content/files/* $rootpath/sites/default/files/
 chown -R www-data:www-data $rootpath/sites/default/files/ 
 drush @lbd php-script $rootpath/profiles/labdoo/lec/lec-import-books.php
 
-# Apply Drupal wall patch and enabled it
+# Apply Drupal wall patch, copy themed icons, and enable the module 
+# Note: the patch was generated using 'diff -crB ./drupal_wall.orig ./drupal_wall > drupal_wall_lbd.patch'
 cd $rootpath/profiles/labdoo/modules/contrib/drupal_wall && patch -p2 < $rootpath/profiles/labdoo/install/patches/drupal_wall_lbd.patch
+cp $rootpath/profiles/labdoo/files/pictures/likes-icon.png $rootpath/profiles/labdoo/modules/contrib/drupal_wall/images/ 
+cp $rootpath/profiles/labdoo/files/pictures/picture-default.png $rootpath/profiles/labdoo/modules/contrib/drupal_wall/images/
 drush @lbd $enOrDis -y flag drupal_wall
-
+drush @lbd $enOrDis -y lbd_wall

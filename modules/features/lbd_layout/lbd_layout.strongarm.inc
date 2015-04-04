@@ -651,7 +651,7 @@ function lbd_layout_strongarm() {
           'browse' => 1,
           'upload' => 1,
           'thumb' => 1,
-          'delete' => 1,
+          'delete' => 0,
           'resize' => 1,
           'mkdir' => 1,
           'rmdir' => 0,
@@ -1635,7 +1635,7 @@ function lbd_layout_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'site_frontpage';
-  $strongarm->value = 'actions';
+  $strongarm->value = 'content/front-page';
   $export['site_frontpage'] = $strongarm;
 
   $strongarm = new stdClass();

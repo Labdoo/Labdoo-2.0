@@ -1,8 +1,8 @@
 diff -crB ./drupal_wall.orig/drupal_wall.global.inc ./drupal_wall/drupal_wall.global.inc
 *** ./drupal_wall.orig/drupal_wall.global.inc	2014-05-08 09:03:04.000000000 +0000
---- ./drupal_wall/drupal_wall.global.inc	2015-04-02 04:32:02.785857056 +0000
+--- ./drupal_wall/drupal_wall.global.inc	2015-04-04 19:00:17.035341823 +0000
 ***************
-*** 17,24 ****
+*** 17,33 ****
     variable_set ('drupal_wall_global_post_offset', 0);
     variable_set ('drupal_wall_content_type', 0);
     // Get drupal wall post global form
@@ -10,18 +10,8 @@ diff -crB ./drupal_wall.orig/drupal_wall.global.inc ./drupal_wall/drupal_wall.gl
 !   $output .= $drupal_wall_post_global_form;
     // Get drupal global wall post content
     $drupal_wall_global_post = _drupal_wall_get_global_wall_post ();
-    $output .= '<div class = "drupal-wall-global-post"> Wall Post </div>';
---- 17,24 ----
-    variable_set ('drupal_wall_global_post_offset', 0);
-    variable_set ('drupal_wall_content_type', 0);
-    // Get drupal wall post global form
-!   $drupal_wall_post_global_form = drupal_get_form ('_drupal_wall_content_post_form');
-!   $output .= drupal_render($drupal_wall_post_global_form);
-    // Get drupal global wall post content
-    $drupal_wall_global_post = _drupal_wall_get_global_wall_post ();
-    $output .= '<div class = "drupal-wall-global-post"> Wall Post </div>';
-***************
-*** 26,33 ****
+!   $output .= '<div class = "drupal-wall-global-post"> Wall Post </div>';
+    $output .= '<fieldset id="drupal-wall-global-post" class="form-wrapper">';
     if ($drupal_wall_global_post) {
       $output .= $drupal_wall_global_post;
       // Get older post button
@@ -30,7 +20,16 @@ diff -crB ./drupal_wall.orig/drupal_wall.global.inc ./drupal_wall/drupal_wall.gl
     }
     else {
       $output .= '<div class="drupal_wall_global_outer"><span class="status_msg">No wall status avaliable !</span></div>';
---- 26,33 ----
+--- 17,33 ----
+    variable_set ('drupal_wall_global_post_offset', 0);
+    variable_set ('drupal_wall_content_type', 0);
+    // Get drupal wall post global form
+!   $drupal_wall_post_global_form = drupal_get_form ('_drupal_wall_content_post_form');
+!   $output .= drupal_render($drupal_wall_post_global_form);
+    // Get drupal global wall post content
+    $drupal_wall_global_post = _drupal_wall_get_global_wall_post ();
+!   $output .= '<div class = "drupal-wall-global-post"></div>';
+    $output .= '<fieldset id="drupal-wall-global-post" class="form-wrapper">';
     if ($drupal_wall_global_post) {
       $output .= $drupal_wall_global_post;
       // Get older post button
@@ -39,9 +38,85 @@ diff -crB ./drupal_wall.orig/drupal_wall.global.inc ./drupal_wall/drupal_wall.gl
     }
     else {
       $output .= '<div class="drupal_wall_global_outer"><span class="status_msg">No wall status avaliable !</span></div>';
+***************
+*** 154,159 ****
+    }
+    elseif (variable_get ('drupal_wall_global_post_offset') != - 1) {
+      variable_set ('drupal_wall_global_post_offset', - 1);
+!     return '<p style="color:red; margin:25px;">No more older wall post exists !</p>';
+    }
+  }
+--- 154,159 ----
+    }
+    elseif (variable_get ('drupal_wall_global_post_offset') != - 1) {
+      variable_set ('drupal_wall_global_post_offset', - 1);
+!     return '<p style="color:red; margin:25px;">No more wall post exists</p>';
+    }
+  }
 diff -crB ./drupal_wall.orig/drupal_wall.module ./drupal_wall/drupal_wall.module
 *** ./drupal_wall.orig/drupal_wall.module	2014-05-08 09:03:04.000000000 +0000
---- ./drupal_wall/drupal_wall.module	2015-04-01 20:56:24.227293844 +0000
+--- ./drupal_wall/drupal_wall.module	2015-04-04 19:58:02.780204084 +0000
+***************
+*** 45,52 ****
+        'weight' => - 1 
+    );
+    // For global drupal wall page
+!   $menu['drupal-wall'] = array (
+!       'title' => 'Drupal Wall',
+        'page callback' => '_drupal_wall_global',
+        'access callback' => 'user_access',
+        'access arguments' => array (
+--- 45,52 ----
+        'weight' => - 1 
+    );
+    // For global drupal wall page
+!   $menu['share-wall'] = array (
+!       'title' => '',
+        'page callback' => '_drupal_wall_global',
+        'access callback' => 'user_access',
+        'access arguments' => array (
+***************
+*** 82,92 ****
+    $module_path['path'] = drupal_get_path ('module', 'drupal_wall');
+    drupal_add_js (drupal_get_path ('module', 'drupal_wall') . '/drupal_wall.js');
+    drupal_add_js ($module_path, 'setting');
+!   if (! $anonymous_user && arg (0) != 'user' && arg (0) != 'drupal-wall' && $data == 'drupal_wall') {
+      $block['subject'] = NULL;
+      $block['content'] = drupal_get_form ('_drupal_wall_content_post_form');
+    }
+!   if (! $anonymous_user && arg (0) != 'user' && arg (0) != 'drupal-wall' && $data == 'drupal_wall_view') {
+      variable_set ('drupal_wall_user_id', arg (1));
+      variable_set ('drupal_wall_wall_post_offset', 0);
+      $block['subject'] = NULL;
+--- 82,92 ----
+    $module_path['path'] = drupal_get_path ('module', 'drupal_wall');
+    drupal_add_js (drupal_get_path ('module', 'drupal_wall') . '/drupal_wall.js');
+    drupal_add_js ($module_path, 'setting');
+!   if (! $anonymous_user && arg (0) != 'user' && arg (0) != 'share-wall' && $data == 'drupal_wall') {
+      $block['subject'] = NULL;
+      $block['content'] = drupal_get_form ('_drupal_wall_content_post_form');
+    }
+!   if (! $anonymous_user && arg (0) != 'user' && arg (0) != 'share-wall' && $data == 'drupal_wall_view') {
+      variable_set ('drupal_wall_user_id', arg (1));
+      variable_set ('drupal_wall_wall_post_offset', 0);
+      $block['subject'] = NULL;
+***************
+*** 165,171 ****
+    }
+    elseif (variable_get ('drupal_wall_wall_post_offset') != - 1) {
+      variable_set ('drupal_wall_wall_post_offset', - 1);
+!     return '<p style="color:red; margin:25px;">No more older wall post exists !</p>';
+    }
+  }
+  
+--- 165,171 ----
+    }
+    elseif (variable_get ('drupal_wall_wall_post_offset') != - 1) {
+      variable_set ('drupal_wall_wall_post_offset', - 1);
+!     return '<p style="color:red; margin:25px;">No more wall post exists</p>';
+    }
+  }
+  
 ***************
 *** 313,318 ****
 --- 313,319 ----
@@ -67,7 +142,24 @@ diff -crB ./drupal_wall.orig/drupal_wall.module ./drupal_wall/drupal_wall.module
 ! */
 diff -crB ./drupal_wall.orig/drupal_wall.page.inc ./drupal_wall/drupal_wall.page.inc
 *** ./drupal_wall.orig/drupal_wall.page.inc	2014-05-08 09:03:04.000000000 +0000
---- ./drupal_wall/drupal_wall.page.inc	2015-04-01 18:38:22.310016440 +0000
+--- ./drupal_wall/drupal_wall.page.inc	2015-04-04 18:55:22.900931507 +0000
+***************
+*** 344,350 ****
+    
+    if (variable_get ('drupal_wall_edit_post_button') == 1) {
+      $img = '<img src="' . $base_url . '/' . $drupal_wall_path . '/images/edit-icon.png' . '" >';
+!     $redirect = $base_url . '/node/' . $args['build_info']['args']['0'] . '/edit?destination=user/' . $user->uid;
+      $form['drupal_wall_edit_post'] = array (
+          '#markup' => l ($img, $redirect, array (
+              'attributes' => array (
+--- 344,350 ----
+    
+    if (variable_get ('drupal_wall_edit_post_button') == 1) {
+      $img = '<img src="' . $base_url . '/' . $drupal_wall_path . '/images/edit-icon.png' . '" >';
+!     $redirect = $base_url . '/node/' . $args['build_info']['args']['0'] . '/edit?destination=share-wall';
+      $form['drupal_wall_edit_post'] = array (
+          '#markup' => l ($img, $redirect, array (
+              'attributes' => array (
 ***************
 *** 548,551 ****
        }
@@ -82,7 +174,24 @@ diff -crB ./drupal_wall.orig/drupal_wall.page.inc ./drupal_wall/drupal_wall.page
 ! }
 diff -crB ./drupal_wall.orig/drupal_wall.tpl.php ./drupal_wall/drupal_wall.tpl.php
 *** ./drupal_wall.orig/drupal_wall.tpl.php	2014-05-08 09:03:04.000000000 +0000
---- ./drupal_wall/drupal_wall.tpl.php	2015-04-02 04:42:35.377160947 +0000
+--- ./drupal_wall/drupal_wall.tpl.php	2015-04-04 19:16:32.017126852 +0000
+***************
+*** 22,28 ****
+   ?>
+  
+  <!-- Drupal wall block : starts here ! -->
+! <?php if (arg(0) == 'drupal-wall'){ $drupal_wall_page = "_global";} else { $drupal_wall_page = "";} ?>
+  <div id="drupal_wall_append_older_wall_post<?php print $drupal_wall_page;?>">
+    <?php
+      for($i = 0; $i < count($wall_post); $i++) :
+--- 22,28 ----
+   ?>
+  
+  <!-- Drupal wall block : starts here ! -->
+! <?php if (arg(0) == 'share-wall'){ $drupal_wall_page = "_global";} else { $drupal_wall_page = "";} ?>
+  <div id="drupal_wall_append_older_wall_post<?php print $drupal_wall_page;?>">
+    <?php
+      for($i = 0; $i < count($wall_post); $i++) :
 ***************
 *** 36,48 ****
           $node = node_load($nid);
@@ -99,6 +208,31 @@ diff -crB ./drupal_wall.orig/drupal_wall.tpl.php ./drupal_wall/drupal_wall.tpl.p
             $wall_edit_delete = drupal_get_form('_drupal_wall_delete_edit_node_form', $wall_post[$i]->nid, $user->uid);
             print drupal_render($wall_edit_delete);
 --- 36,41 ----
+***************
+*** 78,88 ****
+            print 'created a <a href="' . $base_url . '/node/' . $wall_post[$i]->nid . '" >new ' . ucfirst($wall_post[$i]->type) . '</a>';
+          else :
+          if (isset($wall_post[$i]->field_drupal_wall_videos_value) && $wall_post[$i]->field_drupal_wall_videos_value != '') :
+!             print 'shared a <a href="' . $base_url . '/node/' . $wall_post[$i]->nid . '" >new video</a>';
+            elseif (isset($wall_post[$i]->field_drupal_wall_photos_fid) && $wall_post[$i]->field_drupal_wall_photos_fid != '') :
+!             print 'added a <a href="' . $base_url . '/node/' . $wall_post[$i]->nid . '" >new picture</a>';
+            else :
+!             print 'updates its <a href="' . $base_url . '/node/' . $wall_post[$i]->nid . '" >status</a>';
+            endif;
+          endif;
+  
+--- 71,81 ----
+            print 'created a <a href="' . $base_url . '/node/' . $wall_post[$i]->nid . '" >new ' . ucfirst($wall_post[$i]->type) . '</a>';
+          else :
+          if (isset($wall_post[$i]->field_drupal_wall_videos_value) && $wall_post[$i]->field_drupal_wall_videos_value != '') :
+!             print t('shared a new video');
+            elseif (isset($wall_post[$i]->field_drupal_wall_photos_fid) && $wall_post[$i]->field_drupal_wall_photos_fid != '') :
+!             print t('shared a new picture');
+            else :
+!             print t('shared something');
+            endif;
+          endif;
+  
 ***************
 *** 125,134 ****
                  	$image_style = $wall_post[$i]->field_drupal_wall_image_style_value;
@@ -123,14 +257,38 @@ diff -crB ./drupal_wall.orig/drupal_wall.tpl.php ./drupal_wall/drupal_wall.tpl.p
               }
              
 ***************
+*** 179,187 ****
+              $count_comments = count($wall_post[$i]->comments);
+              if ($count_comments > 0) :
+          ?>
+!         <div class="commentView">
+!           <?php print '<a href="' . $base_url . '/node/' . $wall_post[$i]->nid . '#comments" >View all ' . count($wall_post[$i]->comments) . ' comments</a>'; ?>
+!         </div>
+            <?php endif;
+              endif;
+                // End outer if.
+--- 172,181 ----
+              $count_comments = count($wall_post[$i]->comments);
+              if ($count_comments > 0) :
+          ?>
+!         <?php 
+!         if ($count_comments > 7) 
+!           print '<div class="commentView"><a href="' . $base_url . '/node/' . $wall_post[$i]->nid . '#comments" >View all ' . count($wall_post[$i]->comments) . ' comments</a></div>';
+!         ?>
+            <?php endif;
+              endif;
+                // End outer if.
+***************
 *** 290,293 ****
       endfor;
     ?>
   </div>
 ! <!-- Drupal wall block : ends here ! -->
 \ No newline at end of file
---- 283,286 ----
+--- 284,287 ----
       endfor;
     ?>
   </div>
 ! <!-- Drupal wall block : ends here ! -->
+Binary files ./drupal_wall.orig/images/likes-icon.png and ./drupal_wall/images/likes-icon.png differ
+Binary files ./drupal_wall.orig/images/picture-default.png and ./drupal_wall/images/picture-default.png differ
