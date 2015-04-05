@@ -364,7 +364,7 @@ function lbd_wall_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '2',
+          'weight' => 2,
         ),
         'joinprofile_field' => array(
           'label' => 'hidden',

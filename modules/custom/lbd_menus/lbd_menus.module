@@ -144,6 +144,10 @@ function make_main_menu() {
           );
   $mlid = menu_link_save($item);
 
+  // TODO: In the following menu items, we use hardcoded node IDs for the 'link_path'.
+  //       For some reason it does not take general URLs. Fix this by using 
+  //       supporting functions such as drupal_get_path_alias(). 
+
   /*
    * Doojects menu item
    */
@@ -561,6 +565,58 @@ function make_main_menu() {
             'language' => 'en',
             'customized' => 1,
             'plid' => $wikiMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  /*
+   * Share wall menu item
+   */
+  $item = array(
+            'link_path' => 'share-wall',
+            'link_title' => t('Share wall'),
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => 0,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => 0, 
+            'module' => 'menu',
+          );
+  $shareMlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'share-wall',
+            'link_title' => t('Global share wall'),
+            'menu_name' => 'main-menu',
+            'expanded' => true,
+            'weight' => -50,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => $shareMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => '<separator>',
+            'menu_name' => 'main-menu',
+            'weight' => -48,
+            'customized' => 1,
+            'plid' => $shareMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'node/128',
+            'link_title' => t('My share wall'),
+            'menu_name' => 'main-menu',
+            'expanded' => true,
+            'weight' => -40,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => $shareMlid, 
             'module' => 'menu',
           );
   $mlid = menu_link_save($item);

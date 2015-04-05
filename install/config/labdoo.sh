@@ -96,3 +96,6 @@ cp $rootpath/profiles/labdoo/files/pictures/likes-icon.png $rootpath/profiles/la
 cp $rootpath/profiles/labdoo/files/pictures/picture-default.png $rootpath/profiles/labdoo/modules/contrib/drupal_wall/images/
 drush @lbd $enOrDis -y flag drupal_wall
 drush @lbd $enOrDis -y lbd_wall
+drush @lbd vset drupal_wall_post_type_video 0
+drush @lbd php-eval "variable_set('allow_image_style_options', array('thumbnail' => 'thumbnail', 'medium' => 'medium', 'large' => 'large'));"
+

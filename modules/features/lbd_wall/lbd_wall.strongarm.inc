@@ -14,7 +14,7 @@ function lbd_wall_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_drupal_wall';
-  $strongarm->value = 'edit-location-settings';
+  $strongarm->value = 'edit-menu';
   $export['additional_settings__active_tab_drupal_wall'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -407,7 +407,7 @@ function lbd_wall_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_drupal_wall';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['node_preview_drupal_wall'] = $strongarm;
 
   $strongarm = new stdClass();
