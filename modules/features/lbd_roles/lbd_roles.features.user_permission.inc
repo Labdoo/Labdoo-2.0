@@ -646,6 +646,15 @@ function lbd_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: flag labdoo_like_flag.
+  $permissions['flag labdoo_like_flag'] = array(
+    'name' => 'flag labdoo_like_flag',
+    'roles' => array(
+      0 => 'authenticated user',
+    ),
+    'module' => 'flag',
+  );
+
   // Exported permission: menu view unpublished.
   $permissions['menu view unpublished'] = array(
     'name' => 'menu view unpublished',
@@ -913,6 +922,15 @@ function lbd_roles_user_default_permissions() {
       2 => 'authenticated user',
     ),
     'module' => 'simplenews',
+  );
+
+  // Exported permission: unflag labdoo_like_flag.
+  $permissions['unflag labdoo_like_flag'] = array(
+    'name' => 'unflag labdoo_like_flag',
+    'roles' => array(
+      0 => 'authenticated user',
+    ),
+    'module' => 'flag',
   );
 
   // Exported permission: unpublish any book content.
