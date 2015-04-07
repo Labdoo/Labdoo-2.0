@@ -1,6 +1,6 @@
 diff -crB ./drupal_wall.orig/drupal_wall.global.inc ./drupal_wall/drupal_wall.global.inc
 *** ./drupal_wall.orig/drupal_wall.global.inc	2014-05-08 09:03:04.000000000 +0000
---- ./drupal_wall/drupal_wall.global.inc	2015-04-05 12:52:19.573945526 +0000
+--- ./drupal_wall/drupal_wall.global.inc	2015-04-06 21:17:22.880085804 +0000
 ***************
 *** 17,33 ****
     variable_set ('drupal_wall_global_post_offset', 0);
@@ -50,12 +50,44 @@ diff -crB ./drupal_wall.orig/drupal_wall.global.inc ./drupal_wall/drupal_wall.gl
     }
     elseif (variable_get ('drupal_wall_global_post_offset') != - 1) {
       variable_set ('drupal_wall_global_post_offset', - 1);
-!     return '<p style="color:red; margin:25px;">No more wall post exists</p>';
+!     return '<p style="color:red; margin:25px;">There are no more wall posts.</p>';
     }
   }
+diff -crB ./drupal_wall.orig/drupal_wall.install ./drupal_wall/drupal_wall.install
+*** ./drupal_wall.orig/drupal_wall.install	2014-05-08 09:03:04.000000000 +0000
+--- ./drupal_wall/drupal_wall.install	2015-04-06 21:15:08.387345285 +0000
+***************
+*** 24,30 ****
+    // Set other node defaults not declared above.
+    $content_type = node_type_set_defaults ($drupal_wall);
+    // Add the body field.
+!   node_add_body_field ($content_type, $t ("What's on your mind?"));
+    // Save the content type.
+    node_type_save ($content_type);
+    // Add persistent variables that control settings.
+--- 24,30 ----
+    // Set other node defaults not declared above.
+    $content_type = node_type_set_defaults ($drupal_wall);
+    // Add the body field.
+!   node_add_body_field ($content_type, $t ("Share with other labdooers"));
+    // Save the content type.
+    node_type_save ($content_type);
+    // Add persistent variables that control settings.
+***************
+*** 126,129 ****
+    module_load_include ('inc', 'drupal_wall', 'drupal_wall.fields');
+    field_create_field (_drupal_wall_update_fields ());
+    field_create_instance (_drupal_wall_update_instances ());
+! }
+\ No newline at end of file
+--- 126,129 ----
+    module_load_include ('inc', 'drupal_wall', 'drupal_wall.fields');
+    field_create_field (_drupal_wall_update_fields ());
+    field_create_instance (_drupal_wall_update_instances ());
+! }
 diff -crB ./drupal_wall.orig/drupal_wall.module ./drupal_wall/drupal_wall.module
 *** ./drupal_wall.orig/drupal_wall.module	2014-05-08 09:03:04.000000000 +0000
---- ./drupal_wall/drupal_wall.module	2015-04-05 12:52:19.573945526 +0000
+--- ./drupal_wall/drupal_wall.module	2015-04-07 05:33:31.225082442 +0000
 ***************
 *** 45,52 ****
         'weight' => - 1 
@@ -113,7 +145,7 @@ diff -crB ./drupal_wall.orig/drupal_wall.module ./drupal_wall/drupal_wall.module
     }
     elseif (variable_get ('drupal_wall_wall_post_offset') != - 1) {
       variable_set ('drupal_wall_wall_post_offset', - 1);
-!     return '<p style="color:red; margin:25px;">No more wall post exists</p>';
+!     return '<p style="color:red; margin:25px;">There are no more wall posts.</p>';
     }
   }
   
@@ -142,7 +174,24 @@ diff -crB ./drupal_wall.orig/drupal_wall.module ./drupal_wall/drupal_wall.module
 ! */
 diff -crB ./drupal_wall.orig/drupal_wall.page.inc ./drupal_wall/drupal_wall.page.inc
 *** ./drupal_wall.orig/drupal_wall.page.inc	2014-05-08 09:03:04.000000000 +0000
---- ./drupal_wall/drupal_wall.page.inc	2015-04-05 12:55:22.418652255 +0000
+--- ./drupal_wall/drupal_wall.page.inc	2015-04-06 21:15:25.002310737 +0000
+***************
+*** 17,23 ****
+        '#format' => 'filtered_html',
+        '#required' => FALSE,
+        '#attributes' => array (
+!           'placeholder' => t ("What's on your mind?") 
+        ),
+        '#prefix' => '<div class="drupal_wall_post_status">' 
+    );
+--- 17,23 ----
+        '#format' => 'filtered_html',
+        '#required' => FALSE,
+        '#attributes' => array (
+!           'placeholder' => t ("Share with other labdooers") 
+        ),
+        '#prefix' => '<div class="drupal_wall_post_status">' 
+    );
 ***************
 *** 111,128 ****
    */
@@ -180,6 +229,16 @@ diff -crB ./drupal_wall.orig/drupal_wall.page.inc ./drupal_wall/drupal_wall.page
       }
     }
 ***************
+*** 232,238 ****
+        $new_node->revision = 0;
+        node_submit ($new_node);
+        node_save ($new_node);
+-       drupal_set_message (t ('Your post has been saved !'));
+      }
+    }
+  }
+--- 229,234 ----
+***************
 *** 344,350 ****
     
     if (variable_get ('drupal_wall_edit_post_button') == 1) {
@@ -188,7 +247,7 @@ diff -crB ./drupal_wall.orig/drupal_wall.page.inc ./drupal_wall/drupal_wall.page
       $form['drupal_wall_edit_post'] = array (
           '#markup' => l ($img, $redirect, array (
               'attributes' => array (
---- 341,347 ----
+--- 340,346 ----
     
     if (variable_get ('drupal_wall_edit_post_button') == 1) {
       $img = '<img src="' . $base_url . '/' . $drupal_wall_path . '/images/edit-icon.png' . '" >';
@@ -203,14 +262,14 @@ diff -crB ./drupal_wall.orig/drupal_wall.page.inc ./drupal_wall/drupal_wall.page
     return $drupal_wall_image_style_options;
 ! }
 \ No newline at end of file
---- 545,548 ----
+--- 544,547 ----
        }
      }
     return $drupal_wall_image_style_options;
 ! }
 diff -crB ./drupal_wall.orig/drupal_wall.tpl.php ./drupal_wall/drupal_wall.tpl.php
 *** ./drupal_wall.orig/drupal_wall.tpl.php	2014-05-08 09:03:04.000000000 +0000
---- ./drupal_wall/drupal_wall.tpl.php	2015-04-05 12:52:19.573945526 +0000
+--- ./drupal_wall/drupal_wall.tpl.php	2015-04-05 13:32:54.208013039 +0000
 ***************
 *** 22,28 ****
    ?>
@@ -326,3 +385,6 @@ diff -crB ./drupal_wall.orig/drupal_wall.tpl.php ./drupal_wall/drupal_wall.tpl.p
     ?>
   </div>
 ! <!-- Drupal wall block : ends here ! -->
+Only in ./drupal_wall: features.txt
+Binary files ./drupal_wall.orig/images/likes-icon.png and ./drupal_wall/images/likes-icon.png differ
+Binary files ./drupal_wall.orig/images/picture-default.png and ./drupal_wall/images/picture-default.png differ
