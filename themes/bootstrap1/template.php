@@ -23,8 +23,8 @@ function bootstrap1_preprocess_page(&$vars) {
     $vars['title'] = '';
 
   // Hide share wall title
-  if(!empty($vars['node']) && $vars['node']->title == 'Share Wall')
-    $vars['title'] = '';
+#  if(!empty($vars['node']) && $vars['node']->title == 'My share wall')
+#    $vars['title'] = '';
 
   if ($user->uid) {
     // Logged in user

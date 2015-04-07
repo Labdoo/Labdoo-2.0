@@ -76,7 +76,7 @@ print render(\$shareWall['content']);
   $node->type = 'private_page';
   node_object_prepare($node);
   
-  $node->title = "Share Wall";
+  $node->title = "My share wall";
   $node->language = LANGUAGE_NONE;
 
   $node->body[$node->language][0]['value']   = $bodyText;

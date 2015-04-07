@@ -29,6 +29,17 @@ drush @lbd $enOrDis -y nodeaccess_userreference
 # Rebuild permissions after installing nodeaccess_userreference
 drush @lbd php-eval 'node_access_rebuild();'
 
+# Apply Drupal wall patch, copy themed icons, and enable the module 
+# Load this before roles so that permissions are properly configured 
+# Note: the patch was generated using 'diff -crB ./drupal_wall.orig ./drupal_wall > drupal_wall_lbd.patch'
+cd $rootpath/profiles/labdoo/modules/contrib/drupal_wall && patch -p2 < $rootpath/profiles/labdoo/install/patches/drupal_wall_lbd.patch
+cp $rootpath/profiles/labdoo/files/pictures/likes-icon.png $rootpath/profiles/labdoo/modules/contrib/drupal_wall/images/ 
+cp $rootpath/profiles/labdoo/files/pictures/picture-default.png $rootpath/profiles/labdoo/modules/contrib/drupal_wall/images/
+drush @lbd $enOrDis -y flag drupal_wall
+drush @lbd $enOrDis -y lbd_wall
+drush @lbd vset drupal_wall_post_type_video 0
+drush @lbd php-eval "variable_set('allow_image_style_options', array('thumbnail' => 'thumbnail', 'medium' => 'medium', 'large' => 'large'));"
+
 drush @lbd $enOrDis -y lbd_roles
 
 drush @lbd $enOrDis -y labdoo_lib lbd_content_types labdoo_objects lbd_communicate\
@@ -89,13 +100,4 @@ cp -r $rootpath/profiles/labdoo/content/files/* $rootpath/sites/default/files/
 chown -R www-data:www-data $rootpath/sites/default/files/ 
 drush @lbd php-script $rootpath/profiles/labdoo/lec/lec-import-books.php
 
-# Apply Drupal wall patch, copy themed icons, and enable the module 
-# Note: the patch was generated using 'diff -crB ./drupal_wall.orig ./drupal_wall > drupal_wall_lbd.patch'
-cd $rootpath/profiles/labdoo/modules/contrib/drupal_wall && patch -p2 < $rootpath/profiles/labdoo/install/patches/drupal_wall_lbd.patch
-cp $rootpath/profiles/labdoo/files/pictures/likes-icon.png $rootpath/profiles/labdoo/modules/contrib/drupal_wall/images/ 
-cp $rootpath/profiles/labdoo/files/pictures/picture-default.png $rootpath/profiles/labdoo/modules/contrib/drupal_wall/images/
-drush @lbd $enOrDis -y flag drupal_wall
-drush @lbd $enOrDis -y lbd_wall
-drush @lbd vset drupal_wall_post_type_video 0
-drush @lbd php-eval "variable_set('allow_image_style_options', array('thumbnail' => 'thumbnail', 'medium' => 'medium', 'large' => 'large'));"
 
