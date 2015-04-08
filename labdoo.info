@@ -78,7 +78,6 @@ dependencies[] = gmap
 dependencies[] = gmap_location
 dependencies[] = views_autocomplete_filters
 dependencies[] = views_dependent_filters
-dependencies[] = simplenews
 dependencies[] = variable
 dependencies[] = lang_dropdown 
 dependencies[] = logintoboggan 
@@ -114,6 +113,9 @@ dependencies[] = legal
 ;;; Performance
 dependencies[] = boost
 ;dependencies[] = memcache
+
+;;; Services and social
+dependencies[] = simplenews
 
 ;;; Translations
 dependencies[] = l10n_update
@@ -152,7 +154,6 @@ dependencies[] = calendar
 
 ;;; Wiki
 dependencies[] = book
-
 
 ;;; Photo albums
 dependencies[] = file_entity

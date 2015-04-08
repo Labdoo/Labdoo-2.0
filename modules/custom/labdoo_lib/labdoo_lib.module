@@ -1042,6 +1042,15 @@ function labdoo_lib_form_node_form_alter(&$form, &$form_state, $form_id) {
     unset($form['book']);
   }
 
+  /*
+   * Wall node form
+   */
+  if($form_id == 'drupal_wall_node_form') {
+
+    // Hide title
+    unset($form['title']);
+  }
+
 }
 
 
@@ -1843,7 +1852,10 @@ function labdoo_block_filter_header() {
   if(strcmp($path, "hub") == 0)
       return TRUE;
 
-  if(labdoo_lib_node_is_type(array('laptop', 'dootrip', 'node_gallery_gallery')))
+  if((strcmp($path, "share-wall") == 0) || (strcmp($path, "content/my-share-wall") == 0))
+      return TRUE;
+
+  if(labdoo_lib_node_is_type(array('laptop', 'dootrip', 'node_gallery_gallery', 'drupal_wall')))
     return TRUE;
 
   if(0 === strpos($path, 'node/add/'))
@@ -2462,3 +2474,19 @@ function labdoo_lib_node_is_type($typesList, $onlyView = True) {
   return TRUE;
 }
 
+
+/**
+ * Implements hook_menu_local_tasks_alter
+ *
+ */
+function labdoo_lib_menu_local_tasks_alter(&$data) {
+    if(labdoo_lib_node_is_type(array('drupal_wall'), FALSE)) {
+    if(sizeof($data['tabs']) > 0) {
+      foreach($data['tabs'][0]['output'] as $key => $value) {
+        if($value['#link']['path'] == "node/%/clone/%" || $value['#link']['path'] == "node/%/view") {
+          unset($data['tabs'][0]['output'][$key]);
+        }
+      }
+    }
+  }
+}

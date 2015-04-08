@@ -15,6 +15,7 @@
 function lbd_create_front_page_node()
 {
 
+  // TODO: it's better to use print(render()) instead of using the #markup field
   $bodyText = "
 <?php 
 global \$language;
@@ -50,6 +51,39 @@ print(\"</p>\");
   $node->body[$node->language][0]['format']  = 'php_code';
   
   $node->path = array('alias' => "content/front-page");
+
+  node_save($node);
+}
+
+
+/**
+ *
+ * Creates the user's share wall 
+ */
+function lbd_create_my_share_wall()
+{
+
+  $bodyText = "
+<?php
+\$myStatus = module_invoke('drupal_wall', 'block_view', 'drupal_wall');
+\$shareWall = module_invoke('drupal_wall', 'block_view', 'drupal_wall_view');
+print render(\$myStatus['content']);
+print render(\$shareWall['content']);
+?>
+";
+
+  $node = new stdClass();
+  $node->type = 'private_page';
+  node_object_prepare($node);
+  
+  $node->title = "My share wall";
+  $node->language = LANGUAGE_NONE;
+
+  $node->body[$node->language][0]['value']   = $bodyText;
+  $node->body[$node->language][0]['summary'] = '';
+  $node->body[$node->language][0]['format']  = 'php_code';
+  
+  $node->path = array('alias' => "content/my-share-wall");
 
   node_save($node);
 }
@@ -132,6 +166,18 @@ function lbd_delete_front_page_node()
 
 
 /**
+ * Deletes the user's share wall 
+ *
+ */
+function lbd_delete_my_share_wall()
+{
+  $path = drupal_lookup_path("source", "content/my-share-wall"); 
+  $node = menu_get_object("node", 1, $path);
+  node_delete($node->nid);
+}
+
+
+/**
  * Deletes the node to tag doojects 
  *
  */
@@ -165,10 +211,16 @@ function labdoo_lib_enable()
   lbd_create_front_page_node();
   lbd_create_tag_dooject_node(); 
   lbd_create_follow_dooject_node();
+  lbd_create_my_share_wall();
 
-  // Set some initial basic variables
+  // Set front page
   variable_set('site_frontpage', 'content/front-page'); 
+
+  // Set capability to login via email besides user name
   variable_set('logintoboggan_login_with_email', 1);
+
+  // Set default user account picture
+  variable_set('user_picture_default', '/sites/default/files/content/general-objects/act-5-small.png');
 
   // Photo albums
   variable_set('colorbox_load', 1);
@@ -213,6 +265,7 @@ function labdoo_lib_enable()
  */
 function labdoo_lib_disable()
 {
+  lbd_delete_my_share_wall();
   lbd_delete_front_page_node();
   lbd_delete_tag_dooject_node();
   lbd_delete_follow_dooject_node();

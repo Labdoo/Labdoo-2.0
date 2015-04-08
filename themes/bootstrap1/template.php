@@ -17,9 +17,14 @@ function bootstrap1_preprocess_page(&$vars) {
   if(!empty($vars['node']) && in_array($vars['node']->type, array('superhub_page'))) {
     $vars['title'] = '';
   }
+
   // Hide front page title
   if(!empty($vars['node']) && $vars['node']->title == 'Front Page')
     $vars['title'] = '';
+
+  // Hide share wall title
+#  if(!empty($vars['node']) && $vars['node']->title == 'My share wall')
+#    $vars['title'] = '';
 
   if ($user->uid) {
     // Logged in user

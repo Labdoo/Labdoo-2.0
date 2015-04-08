@@ -10,6 +10,17 @@
 function lbd_roles_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: access global drupal wall content.
+  $permissions['access global drupal wall content'] = array(
+    'name' => 'access global drupal wall content',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
+    ),
+    'module' => 'drupal_wall',
+  );
+
   // Exported permission: access printer-friendly version.
   $permissions['access printer-friendly version'] = array(
     'name' => 'access printer-friendly version',
@@ -162,6 +173,15 @@ function lbd_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: create drupal_wall content.
+  $permissions['create drupal_wall content'] = array(
+    'name' => 'create drupal_wall content',
+    'roles' => array(
+      0 => 'authenticated user',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: create event content.
   $permissions['create event content'] = array(
     'name' => 'create event content',
@@ -254,6 +274,13 @@ function lbd_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: delete any drupal_wall content.
+  $permissions['delete any drupal_wall content'] = array(
+    'name' => 'delete any drupal_wall content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: delete any event content.
   $permissions['delete any event content'] = array(
     'name' => 'delete any event content',
@@ -333,6 +360,15 @@ function lbd_roles_user_default_permissions() {
     'name' => 'delete own book content',
     'roles' => array(
       0 => 'book writer',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete own drupal_wall content.
+  $permissions['delete own drupal_wall content'] = array(
+    'name' => 'delete own drupal_wall content',
+    'roles' => array(
+      0 => 'authenticated user',
     ),
     'module' => 'node',
   );
@@ -430,6 +466,13 @@ function lbd_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: edit any drupal_wall content.
+  $permissions['edit any drupal_wall content'] = array(
+    'name' => 'edit any drupal_wall content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: edit any event content.
   $permissions['edit any event content'] = array(
     'name' => 'edit any event content',
@@ -520,6 +563,15 @@ function lbd_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: edit own drupal_wall content.
+  $permissions['edit own drupal_wall content'] = array(
+    'name' => 'edit own drupal_wall content',
+    'roles' => array(
+      0 => 'authenticated user',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: edit own event content.
   $permissions['edit own event content'] = array(
     'name' => 'edit own event content',
@@ -593,6 +645,15 @@ function lbd_roles_user_default_permissions() {
     'name' => 'edit own team_task content',
     'roles' => array(),
     'module' => 'node',
+  );
+
+  // Exported permission: flag labdoo_like_flag.
+  $permissions['flag labdoo_like_flag'] = array(
+    'name' => 'flag labdoo_like_flag',
+    'roles' => array(
+      0 => 'authenticated user',
+    ),
+    'module' => 'flag',
   );
 
   // Exported permission: menu view unpublished.
@@ -716,6 +777,13 @@ function lbd_roles_user_default_permissions() {
       1 => 'anonymous user',
       2 => 'authenticated user',
     ),
+    'module' => 'search_config',
+  );
+
+  // Exported permission: search drupal_wall content.
+  $permissions['search drupal_wall content'] = array(
+    'name' => 'search drupal_wall content',
+    'roles' => array(),
     'module' => 'search_config',
   );
 
@@ -857,6 +925,15 @@ function lbd_roles_user_default_permissions() {
     'module' => 'simplenews',
   );
 
+  // Exported permission: unflag labdoo_like_flag.
+  $permissions['unflag labdoo_like_flag'] = array(
+    'name' => 'unflag labdoo_like_flag',
+    'roles' => array(
+      0 => 'authenticated user',
+    ),
+    'module' => 'flag',
+  );
+
   // Exported permission: unpublish any book content.
   $permissions['unpublish any book content'] = array(
     'name' => 'unpublish any book content',
@@ -963,6 +1040,13 @@ function lbd_roles_user_default_permissions() {
       0 => 'administrator',
       1 => 'book writer',
     ),
+    'module' => 'view_unpublished',
+  );
+
+  // Exported permission: view any unpublished drupal_wall content.
+  $permissions['view any unpublished drupal_wall content'] = array(
+    'name' => 'view any unpublished drupal_wall content',
+    'roles' => array(),
     'module' => 'view_unpublished',
   );
 

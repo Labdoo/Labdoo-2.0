@@ -144,11 +144,15 @@ function make_main_menu() {
           );
   $mlid = menu_link_save($item);
 
+  // TODO: In the following menu items, we use hardcoded node IDs for the 'link_path'.
+  //       For some reason it does not take general URLs. Fix this by using 
+  //       supporting functions such as drupal_get_path_alias(). 
+
   /*
    * Doojects menu item
    */
   $item = array(
-            'link_path' => 'node/9',
+            'link_path' => 'node/11',
             'link_title' => 'Doojects',
             'menu_name' => 'main-menu',
             'expanded' => TRUE,
@@ -173,7 +177,7 @@ function make_main_menu() {
   $mlid = menu_link_save($item);
 
   $item = array(
-            'link_path' => 'node/9',
+            'link_path' => 'node/11',
             'link_title' => t('View'),
             'menu_name' => 'main-menu',
             'weight' => -50,
@@ -198,7 +202,7 @@ function make_main_menu() {
    * Edoovillages menu item
    */
   $item = array(
-            'link_path' => 'node/10',
+            'link_path' => 'node/12',
             'link_title' => 'Edoovillages',
             'menu_name' => 'main-menu',
             'expanded' => TRUE,
@@ -223,7 +227,7 @@ function make_main_menu() {
   $mlid = menu_link_save($item);
 
   $item = array(
-            'link_path' => 'node/10',
+            'link_path' => 'node/12',
             'link_title' => t('View'),
             'menu_name' => 'main-menu',
             'weight' => -50,
@@ -249,7 +253,7 @@ function make_main_menu() {
    * Hubs menu item
    */
   $item = array(
-            'link_path' => 'node/11',
+            'link_path' => 'node/13',
             'link_title' => t('Hubs'),
             'menu_name' => 'main-menu',
             'expanded' => TRUE,
@@ -274,7 +278,7 @@ function make_main_menu() {
   $mlid = menu_link_save($item);
 
   $item = array(
-            'link_path' => 'node/11',
+            'link_path' => 'node/13',
             'link_title' => t('View'),
             'menu_name' => 'main-menu',
             'weight' => -50,
@@ -323,7 +327,7 @@ function make_main_menu() {
    * Dootrips menu item
    */
   $item = array(
-            'link_path' => 'node/12',
+            'link_path' => 'node/14',
             'link_title' => 'Dootrips',
             'menu_name' => 'main-menu',
             'expanded' => TRUE,
@@ -348,7 +352,7 @@ function make_main_menu() {
   $mlid = menu_link_save($item);
 
   $item = array(
-            'link_path' => 'node/12',
+            'link_path' => 'node/14',
             'link_title' => t('View'),
             'menu_name' => 'main-menu',
             'weight' => -50,
@@ -565,6 +569,45 @@ function make_main_menu() {
           );
   $mlid = menu_link_save($item);
 
+  /*
+   * Share wall menu item
+   */
+  $item = array(
+            'link_path' => 'share-wall',
+            'link_title' => t('Share wall'),
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => 0,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => 0, 
+            'module' => 'menu',
+          );
+  $shareMlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'share-wall',
+            'link_title' => t('Global share wall'),
+            'menu_name' => 'main-menu',
+            'expanded' => true,
+            'weight' => -50,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => $shareMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => '<separator>',
+            'menu_name' => 'main-menu',
+            'weight' => -48,
+            'customized' => 1,
+            'plid' => $shareMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
   return;
 }
 
@@ -629,6 +672,15 @@ function lbd_menus_menu() {
     'menu_name' => 'main-menu',
   );
 
+  $menus['myShareWall'] = array
+  (
+    'title' => 'My share wall',
+    'page callback' => '_menu_item_redirect_my_sharewall',
+    'access callback' => 'user_is_logged_in',
+    'type' => MENU_NORMAL_ITEM,
+    'menu_name' => 'main-menu',
+  );
+
   /*
    * URL redirects go here
    */
@@ -676,6 +728,10 @@ function _menu_item_redirect_my_actions() {
   return;
 }
 
+function _menu_item_redirect_my_sharewall() {
+  drupal_goto('content/my-share-wall');
+  return;
+}
 
 /*
  * Callback functions to redirect certain URLs.
@@ -704,27 +760,32 @@ function lbd_menus_menu_link_alter(&$item) {
     return;
   
   if ($item['page callback'] == '_menu_item_redirect_my_doojects') {
-    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='node/9' AND link_title='Doojects' AND menu_name='main-menu'")->fetchField();
+    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='node/11' AND link_title='Doojects' AND menu_name='main-menu'")->fetchField();
     $item['plid'] = $plid;
   }
 
   if ($item['page callback'] == '_menu_item_redirect_my_edoovillages') {
-    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='node/10' AND link_title='Edoovillages' AND menu_name='main-menu'")->fetchField();
+    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='node/12' AND link_title='Edoovillages' AND menu_name='main-menu'")->fetchField();
     $item['plid'] = $plid;
   }
 
   if ($item['page callback'] == '_menu_item_redirect_my_hubs') {
-    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='node/11' AND link_title='Hubs' AND menu_name='main-menu'")->fetchField();
+    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='node/13' AND link_title='Hubs' AND menu_name='main-menu'")->fetchField();
     $item['plid'] = $plid;
   }
 
   if ($item['page callback'] == '_menu_item_redirect_my_dootrips') {
-    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='node/12' AND link_title='Dootrips' AND menu_name='main-menu'")->fetchField();
+    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='node/14' AND link_title='Dootrips' AND menu_name='main-menu'")->fetchField();
     $item['plid'] = $plid;
   }
 
   if ($item['page callback'] == '_menu_item_redirect_my_actions') {
     $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='actions' AND link_title='Explore' AND menu_name='main-menu'")->fetchField();
+    $item['plid'] = $plid;
+  }
+
+  if ($item['page callback'] == '_menu_item_redirect_my_sharewall') {
+    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='share-wall' AND link_title='Share wall' AND menu_name='main-menu'")->fetchField();
     $item['plid'] = $plid;
   }
 
