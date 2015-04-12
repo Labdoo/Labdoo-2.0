@@ -1,0 +1,149 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>70</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>FAQ</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>70</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><ol>
+<li>
+<strong>What does Labdoo stand for?</strong>
+Labdoo stands for Laboratories for Education; the name is also related to the concept of “Building Laboratories for Education one location at a time.” It stands for the idea that everyone can make a difference in a child’s education.
+</li>
+<li>
+<strong>What’s the premise of the Labdoo project?</strong>
+Labdoo is  unique in that we’re a grassroots, collaborative community of volunteers from around the globe each contributing in their own part in bringing education closer to a child.  It is based upon the simple idea  that a large project can be simplified by dividing it into smaller tasks. You don’t need every person to be in the same location or need each person to have all the know-how in order to get a laptop successfully refurbished and sent to a child.  
+Labdoo is able to provide the logistical resources to help organize this wide network of laptops and volunteers through social networking tools implementing concepts such as "dooject", “tagging”, “dootrip”, "hubs", "edoovillages", etc. as described below.  
+</li>
+
+<li>
+<strong>What is a 'dooject'?</strong>
+A dooject (stands for Labdoo Object) is defined as any electronic device capable of delivering education to a child. It could be a laptop, a tablet, an ebook, or even a powerful smartphone, any of these devices can have a tremendous capability of bringing education content to children. Some people call them donation devices, others education devices, it's really up to you, but for a general term, we use the word 'dooject'.
+</li>
+
+<li>
+<strong>What is 'tagging'?</strong>
+“Tagging” is part of Labdoo’s solution in mobilizing laptops.  When you “tag” you’re simply registering your laptop within the Labdoo’s online inventory.  In registering you’re only entering information about the laptop (e.g. memory, operating system, etc.).  In the event there is a call for laptops we can notify individuals who’ve tagged their laptops to see if they wish to donate their laptops.
+</li>
+
+<li>
+<strong>I’m not quite ready to donate this laptop, should I still tag it?</strong>
+Yes!  Tagging in itself does not imply that you’re donating your laptop now or at any point.  It’s simply making you and your laptop part of the overall Labdoo network. 
+</li>
+
+<li>
+<strong>How do you tag a laptop?</strong>
+<ul>
+<li>
+Go to labdoo.org and create a user account if you have not already.
+</li>
+<li>
+Once you are logged into your account, click on the menu tab "Doojects" and then on "Tag", this will bring you to a form to fill in. 
+</li>
+<li>
+Enter as much information about the laptop as you can (while most of the fields are optional, the more information you provide the smarter decisions we will be able to make in terms of assigning a laptop to a school project).  Click Save, you will receive a 9 digit tag number.
+</li>
+<li>
+You have successfully tagged your laptop!
+</li>
+</ul>
+</li>
+
+<li>
+<strong>How can I be sure that all the information on my computer is properly erased?</strong>
+Labdoeers around the globe that take the action of sanitizing a laptop (people like you) go through a full erasing of the hard drive when re-furbishing the computer. When installing the Linux Operating System and a very powerful education software package, this process randomly writes zeros and ones to the hard drive to make sure all data that was previously on the hard drive is gone forever.
+</li>
+
+<li>
+<strong>How do you decide where the laptops are sent?</strong>
+Labdoo delivers education devices (doojects) to hundreds of schools around the world. We search for and have been sought out by organizations with education projects that coincide with our goals. As part of the Labdoo network, you can even create your own school destination projects. By the way, we call them "edoovillages".
+</li>
+
+<li>
+<strong>How do you ship laptops to their locations?</strong>
+For that, we use "dootrips" (or Labdoo trips). A dootrip is essentially a CO2-neutral transportation means used to carry laptops from one location to another. Examples of dootrips are trips carried out by tourists, NGO volunteers (doctors and engineers without borders, humanitarian personnel, etc.), international students, employees of international corporations, etc. Through the Labdoo social network, people and organizations who travel can register their trip and donate a CO2-neutral transportation resource to bring one or more laptops to schools in need. This approach costs no money and more important, it preserves Planet Earth.
+</li>
+
+<li>
+<strong>What is a Labdoo hub?</strong>
+Everybody can be a participatnt in the Labdoo network by performing a Labdoo activity. When one or more of the participants act together regularly carrying out a good number of activities, they can optionally become a hub. A hub can be understood as a node in the network which carries out a “larger density of Labdoo activities”. Examples of hubs can be a group of students in a university that get together from time to time to carry activities such as collecting and sanitizing unused laptops, organizing dootrips, recycling technology, carrying out outreaching activities, etc. Hubs can also be implemented in high schools, companies, neighbor communities, at home or in any type of organized community.
+</li>
+
+<li>
+<strong>What do you do with the laptops once they’re donated to a Labdoo hub?</strong>
+Donated laptops are checked out to see if they are still in a useable condition or ready to be recycled.  If they are still useable, we’ll tag the laptop if it has not been already, and then refurbish it (i.e. clean it, clear the hard drive, and install Edubuntu, a simple but powerful Linux based operating system with lots of education applications and available in practically all languages). 
+</li>
+
+<li>
+<strong>What do you do with donated laptops that are broken?</strong>
+Short answer: We recycle them. Long answer: We look for partners with a recycler facility who can help guarantee that the broken laptop can be recycled safely. Electronic waste is a huge problem, and one of the goals for labdoo is to help efficiently resolve this problem by going through an E-Stewards Recycler.
+</li>
+
+<li>
+<strong>What do you do about laptops that become broken while deployed in their respective locations?</strong>
+When a laptop becomes broken while deployed it can be reported through the main website, labdoo.org.  From there we can inform volunteers or partnering groups that work or are traveling through the area to pick up the laptop and bring it to a proper recycling facility. 
+</li>
+
+<li>
+<strong>I’m ready to donate my laptop, where can I drop it off?</strong>
+You have several options. If you or someone you know are traveling to a location near a destination school, you can consider bringing it yourself all the way to the school. Otherwise, you can also drop it to your closest Labdoo hub. People in the hub will then take care of identifying a dootrip to bring the laptop to a school.
+</li>
+<li>
+<strong>What do you do for projects that don’t have access to internet?</strong>
+With all our laptops we send off, we install a copy of Edubuntu which is an educational software based in the Ubuntu Linux Operating System. This software provides educational games, computer typing development and an introduction to technology to students abroad. In addition to Edubuntu, we are also making available a stripped down version of Wikipedia through a burned CD so children can have access to it without the need of Internet and many more education applications and electronic books.
+</li>
+
+<li>
+<strong>Can I still contribute even if I don’t know much about computers?</strong>
+Yes! in fact, knowledge about computers is only a very small portion of the Labdoo project. So come and join the Labdoo mission by registering and/or contacting us at contact@labdoo.org.
+</li>
+
+<li>
+<strong>How can I get updates about Labdoo?</strong>
+By going onto the website http://www.labdoo.org you can find updated information. Also, by tagging your laptop, receiving a Labdoo ID, and providing your e-mail address, you will be able to receive automatic notifications of the status of your donated laptops and pictures of them as they makes progress to a school.
+</li>
+<li>
+<strong>This FAQ was nice but it is not answering all my questions.</strong>
+Labdoo is powered by a rich Wiki system where you should be able to get most of your questions answered. The wiki can be accessed via <a href="../wiki-index">this link</a>.
+If that is not enough, you can also go to the <a href="../teams">Labdoo teams</a> page and directly post a question in any of the teams' walls. A labdooer should be able to provide an answer.
+You can also directly send an email with your questions or comments by writing to contact@labdoo.org, the Labdoo team does its best to try to answer all the questions.
+</li>
+</ol></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>70</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>0</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>811</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

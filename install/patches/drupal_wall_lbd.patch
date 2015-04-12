@@ -1,6 +1,6 @@
 diff -crB ./drupal_wall.orig/drupal_wall.global.inc ./drupal_wall/drupal_wall.global.inc
 *** ./drupal_wall.orig/drupal_wall.global.inc	2014-05-08 09:03:04.000000000 +0000
---- ./drupal_wall/drupal_wall.global.inc	2015-04-07 18:35:22.046650005 +0000
+--- ./drupal_wall/drupal_wall.global.inc	2015-04-08 06:32:37.054535187 +0000
 ***************
 *** 8,14 ****
    */
@@ -74,7 +74,7 @@ diff -crB ./drupal_wall.orig/drupal_wall.global.inc ./drupal_wall/drupal_wall.gl
   }
 diff -crB ./drupal_wall.orig/drupal_wall.install ./drupal_wall/drupal_wall.install
 *** ./drupal_wall.orig/drupal_wall.install	2014-05-08 09:03:04.000000000 +0000
---- ./drupal_wall/drupal_wall.install	2015-04-07 06:05:30.793580256 +0000
+--- ./drupal_wall/drupal_wall.install	2015-04-08 06:32:37.054535187 +0000
 ***************
 *** 24,30 ****
     // Set other node defaults not declared above.
@@ -106,7 +106,7 @@ diff -crB ./drupal_wall.orig/drupal_wall.install ./drupal_wall/drupal_wall.insta
 ! }
 diff -crB ./drupal_wall.orig/drupal_wall.module ./drupal_wall/drupal_wall.module
 *** ./drupal_wall.orig/drupal_wall.module	2014-05-08 09:03:04.000000000 +0000
---- ./drupal_wall/drupal_wall.module	2015-04-07 18:46:07.213420507 +0000
+--- ./drupal_wall/drupal_wall.module	2015-04-08 06:32:37.054535187 +0000
 ***************
 *** 45,52 ****
         'weight' => - 1 
@@ -193,7 +193,7 @@ diff -crB ./drupal_wall.orig/drupal_wall.module ./drupal_wall/drupal_wall.module
 ! */
 diff -crB ./drupal_wall.orig/drupal_wall.page.inc ./drupal_wall/drupal_wall.page.inc
 *** ./drupal_wall.orig/drupal_wall.page.inc	2014-05-08 09:03:04.000000000 +0000
---- ./drupal_wall/drupal_wall.page.inc	2015-04-07 18:58:16.811623401 +0000
+--- ./drupal_wall/drupal_wall.page.inc	2015-04-08 19:04:41.426535187 +0000
 ***************
 *** 17,23 ****
         '#format' => 'filtered_html',
@@ -258,24 +258,42 @@ diff -crB ./drupal_wall.orig/drupal_wall.page.inc ./drupal_wall/drupal_wall.page
   }
 --- 229,234 ----
 ***************
-*** 343,350 ****
-    $drupal_wall_path = drupal_get_path ('module', 'drupal_wall');
-    
+*** 337,350 ****
+   * Drupal wall Delete form for user to delete post.
+   */
+  function _drupal_wall_delete_edit_node_form($form_state, $args) {
+    $form = array ();
+    global $base_url;
+    global $user;
+!   $drupal_wall_path = drupal_get_path ('module', 'drupal_wall');
+!   
     if (variable_get ('drupal_wall_edit_post_button') == 1) {
       $img = '<img src="' . $base_url . '/' . $drupal_wall_path . '/images/edit-icon.png' . '" >';
 !     $redirect = $base_url . '/node/' . $args['build_info']['args']['0'] . '/edit?destination=user/' . $user->uid;
       $form['drupal_wall_edit_post'] = array (
           '#markup' => l ($img, $redirect, array (
               'attributes' => array (
---- 339,352 ----
-    $drupal_wall_path = drupal_get_path ('module', 'drupal_wall');
-    
+--- 333,358 ----
+   * Drupal wall Delete form for user to delete post.
+   */
+  function _drupal_wall_delete_edit_node_form($form_state, $args) {
++   $drupal_wall_path = drupal_get_path ('module', 'drupal_wall');
++   $defaultLanguage = language_default();
+    $form = array ();
++   global $language;
+    global $base_url;
+    global $user;
+! 
     if (variable_get ('drupal_wall_edit_post_button') == 1) {
 +     $path = drupal_get_path_alias(current_path());
 +     if(strcmp($path, "content/my-share-wall") == 0)
 +       $destinationUrl = "content/my-share-wall";
 +     else
 +       $destinationUrl = "share-wall";
++ 
++     // Ensure language awareness
++     if($language->language != $defaultLanguage->language)
++       $destinationUrl = $language->language . "/" . $destinationUrl;
 + 
       $img = '<img src="' . $base_url . '/' . $drupal_wall_path . '/images/edit-icon.png' . '" >';
 !     $redirect = $base_url . '/node/' . $args['build_info']['args']['0'] . '/edit?destination=' . $destinationUrl;
@@ -289,14 +307,14 @@ diff -crB ./drupal_wall.orig/drupal_wall.page.inc ./drupal_wall/drupal_wall.page
     return $drupal_wall_image_style_options;
 ! }
 \ No newline at end of file
---- 550,553 ----
+--- 556,559 ----
        }
      }
     return $drupal_wall_image_style_options;
 ! }
 diff -crB ./drupal_wall.orig/drupal_wall.tpl.php ./drupal_wall/drupal_wall.tpl.php
 *** ./drupal_wall.orig/drupal_wall.tpl.php	2014-05-08 09:03:04.000000000 +0000
---- ./drupal_wall/drupal_wall.tpl.php	2015-04-07 06:05:30.793580256 +0000
+--- ./drupal_wall/drupal_wall.tpl.php	2015-04-08 19:19:58.414535187 +0000
 ***************
 *** 22,28 ****
    ?>
@@ -355,6 +373,23 @@ diff -crB ./drupal_wall.orig/drupal_wall.tpl.php ./drupal_wall/drupal_wall.tpl.p
             endif;
           endif;
   
+***************
+*** 103,109 ****
+            <?php 
+              // What's on my mind.
+              if (isset($wall_post[$i]->body_value)) :
+!               print $wall_post[$i]->body_value;
+              endif;
+            ?>
+          </div>
+--- 96,102 ----
+            <?php 
+              // What's on my mind.
+              if (isset($wall_post[$i]->body_value)) :
+!               print nl2br($wall_post[$i]->body_value);
+              endif;
+            ?>
+          </div>
 ***************
 *** 125,134 ****
                  	$image_style = $wall_post[$i]->field_drupal_wall_image_style_value;

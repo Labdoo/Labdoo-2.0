@@ -1,0 +1,67 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>86</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>How does Labdoo deliver its mission?</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>86</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>The mechanism to deliver Labdoo's mission is via the creation of a <em>humanitarian social network</em>.  This social network provides the following functions:
+<ul>
+<li>
+It provides an efficient way to organize information: identification of sources of demand, supply, laptops, dootrips, QA resources, etc.
+</li>
+<li>
+It provides a way to break down a very large mission (solving the digital divide) into a very large number of very small tasks (tagging, sanitizing, storage, dootrip, etc.).  Each of these tasks becomes so small that its cost is negligible.
+</li>
+<li>
+It provides a way for everyone to be part of the solution (community building).  Every person can have his/her own mini-mission.
+</li>
+<li>
+Since all the information and activities are openly available through the humanitarian social network, it provides transparency.
+</li>
+<li>
+As a flat humanitarian project, it helps to break barriers and stereotypes between the beneficiaries and the benefactors.  For instance, in the Labdoo network, aid can originate from the developing world and be received by the developed world. 
+</li>
+<li>
+It is fun.
+</li>
+</ul>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>80</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>821</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>827</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-14</value>
+</weight>
+</book>

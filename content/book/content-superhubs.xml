@@ -1,0 +1,57 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>103</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Superhubs</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>103</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>A hub englobing multiple hubs within the same geographic region is called a superhub. Superhubs add two additional functionalities to the Labdoo system:
+
+<ul>
+<li>
+<strong>They are allowed to create hubs inside their region.</strong> This feature helps to decentralize the process of creating hubs enabling a more sustainable growth path and removing possible centralized bottlenecks.
+</li>
+<li>
+<strong>They can have their own site pages.</strong> Superhubs can create their own Labdoo pages to help better localize certain regional activities. For instance, they can write an informative page in a specific language to help outreach in the geographic area where the hubs under the superhub reside.
+</li>
+</ul>
+
+In the next two sections, the above two features are described in more detail.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>77</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>818</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>844</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

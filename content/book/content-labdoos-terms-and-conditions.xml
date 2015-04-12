@@ -1,0 +1,109 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>73</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Labdoo's Terms and Conditions</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>73</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>The users of the Labdoo social network expressly understand that Labdoo is a collaborative, non-profit, freely available and open source project whose goal is to help spread education around the world and agree that your use of the services provided by the Labdoo platform is at your sole risk and that the services are provided "as is" and “as available.” Labdoo shall not be liable to you for any direct, indirect, incidental, special consequential or exemplary damages which may be incurred by you, however caused and under any theory of liability.
+
+Labdoo does not represent or warrant to you that:
+
+- Your use of the services will meet your requirements,
+
+- Your use of the services will be uninterrupted, timely, secure or free from error,
+
+- Any information obtained by you as a result of your use of the services will be accurate or reliable,
+
+- That defects in the operation or functionality of any software provided to you as part of the services will be corrected.
+
+Any material downloaded or otherwise obtained through the use of the Labdoo system is done at your own discretion and risk and you will be solely responsible for any damage to your computer system or other device or loss of data that results from the download of any such material. No advice or information, whether oral or written, obtained by you through or from Labdoo shall create any warranty. Labdoo expressly disclaims all warranties and conditions of any kind, whether express or implied.
+
+<strong>Jurisdiction and legality of content</strong>
+
+Publication of information found inside the Labdoo platform may be in violation of the laws of the country or jurisdiction from where you are viewing this information. The Labdoo database is stored on servers located in various places such as the European Union and the United States of America, and is maintained in reference to the protections afforded under local and federal law of these countries. Laws in your country or jurisdiction may not protect or allow the same kinds of speech or distribution. Labdoo does not encourage the violation of any laws, and cannot be responsible for any violations of such laws, should you link to this domain or use, reproduce or republish the information contained herein.
+
+<strong>Liability for content</strong>
+
+While the contents of the Labdoo site were created with great care for the accuracy, completeness or timeliness of the content, Labdoo can not take any responsibility for the ways such contents are used. As a platform Labdoo is not obliged to monitor transmitted or stored information or to investigate circumstances that indicate illegal activity. Obligations to remove or block the use of information under the general laws remain unaffected. Labdoo will only be able to actuate on a specific infringement from the date of knowledge of such infringement. Upon notification and proof of such violations, Labdoo will remove the content immediately.
+
+<strong>Liability for links</strong>
+
+Our site contains links to external websites over which the Labdoo platform has no control. In consequence, Labdoo cannot accept responsibility for these websites. A permanent control of linked pages is unreasonable without concrete evidence of a violation. Upon notification and proof of such violations, Labdoo will remove the notified links immediately.
+
+<strong>Copyrights</strong>
+
+The content uploaded to the Labdoo platform is subject to Copyright Laws. The reproduction, adaptation, distribution or any kind of exploitation outside the limits of the copyrights require the written consent of the author. Insofar the content is created by a user, the authorship is respected.  A user uploading content to Labdoo should note that such content may at some point be shared with other third party social network platforms.  Because these other social networks have their own terms and conditions, Labdoo cannot take any responsibility for the ways the content is managed in their platforms.  
+
+Should a user become aware of any copyright infringement, Labdoo asks for the prompt notification. Upon notification and proof of such violations, the content will be removed immediately.
+
+<strong>Privacy Policy</strong>
+
+The use of our website is usually possible without providing personal information. User data collected by the Labdoo platform is always done on a voluntary basis. Labdoo does not share any user data to third parties without the user's allowance and such data is used only to facilitate the internal logistical workflow of the project.
+
+Users should be aware that data transmission over the Internet (such as communication by e-mail) can have security gaps and that a complete protection of data against access by third parties is in general not possible.
+
+<strong>Information on stored data</strong>
+
+On request we will be ready to send you related information of your personal data. To do this send an e-mail to contact@labdoo.org.
+
+<strong>Privacy Policy for Usage of Facebook, Twitter, Google +1 and Linkedin Plugins</strong>
+
+Our pages integrate plugins of the social network Facebook (1601 South California Avenue, Palo Alto, CA 94304, USA), Twitter (Twitter, Inc., 1355 Market St, Suite 900, San Francisco, CA 94103, USA), Google +1 (Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA) and Linkedin (LinkedIn Corporation, 2029 Stierlin Court, Mountain View, CA 94043, USA). We will herein refer to any of these platforms as the "social network platforms" or "SNPs". When you visit the Labdoo site, the plugins establish a connection between your browser and these social network platforms. The SNPs can obtain the information that you have visited our site and your IP address. If you click on a "Like"-type button while you are logged into any of these SNPs, you will establish a relation between the content of our pages and the SNPs. Thereby the SNPs can correlate your visit of our site with your user account. Labdoo as a platform has no knowledge of the contents of the transmitted data between your browser and the SNPs. If you do not wish that the SNPs relate your visit to our site, please log out from the SNPs before accessing the Labdoo website.
+
+For more information, please see the specific privacy policies of these social network platforms.
+
+<strong>Source information for all images and graphics</strong>
+
+Photos and graphics uploaded to the Labdoo website by Labdoo developers are under the Creative Commons license BY-SA-3.0.  
+
+<strong>Changes to these Terms</strong>
+ 
+Labdoo reserves the right to change these Terms at any time and without prior notice, by posting a revised version on the Services. Such changes shall be effective immediately upon the time that such changes are posted on the Labdoo website. While Labdoo will take any effort to communicate with you such changes, your continued access or use of the Labdoo website after those changes are posted shall be deemed your acceptance of those changes. You agree to review these Terms periodically to confirm your acceptance.
+ 
+
+The Labdoo Team
+92 Corporate Park,
+Ste. C303,
+Irvine, CA 92606
+
+E-mail: contact@labdoo.org
+Register: Registered as a charitable non-profit organization under U.S. law, IRS 501 (c)(3)</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>73</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>0</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>814</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

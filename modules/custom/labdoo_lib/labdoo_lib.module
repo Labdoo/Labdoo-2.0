@@ -1635,7 +1635,7 @@ function labdoo_render_footer() {
   // Compute footer links (TODO: factor out this code into a function)
   $path = explode('/', drupal_get_normal_path('content/labdoos-terms-and-conditions'));
   $urlTerms = '"'.$langCode.'/wiki-index?field_book_language_value=All&field_reference_book_target_id='.$path[1].'"';
-  $path = explode('/', drupal_get_normal_path('content/development-team'));
+  $path = explode('/', drupal_get_normal_path('content/source-code-development-team'));
   $urlDev = '"'.$langCode.'/wiki-index?field_book_language_value=All&field_reference_book_target_id='.$path[1].'"';
   $path = explode('/', drupal_get_normal_path('content/glits'));
   $urlGlits = '"'.$langCode.'/wiki-index?field_book_language_value=All&field_reference_book_target_id='.$path[1].'"';
@@ -1643,7 +1643,7 @@ function labdoo_render_footer() {
   $urlFaq = '"'.$langCode.'/wiki-index?field_book_language_value=All&field_reference_book_target_id='.$path[1].'"';
   $path = explode('/', drupal_get_normal_path('content/values-philosophy-and-principles-labdoo-project'));
   $urlValues = '"'.$langCode.'/wiki-index?field_book_language_value=All&field_reference_book_target_id='.$path[1].'"';
-  $path = explode('/', drupal_get_normal_path('content/labdoo-nutshell'));
+  $path = explode('/', drupal_get_normal_path('content/about-labdoo'));
   $urlNutshell = '"'.$langCode.'/wiki-index?field_book_language_value=All&field_reference_book_target_id='.$path[1].'"';
 
   $code = ' 
@@ -1655,11 +1655,12 @@ function labdoo_render_footer() {
 <td width="100">
 <a href='.$urlGlits.'>Glits</a>
 </td>
-<td width="200">
-<a href='.$urlDev.'>Development Team</a>
+<td width="300">
+<a href='.$urlDev.'>Source Code / Development Team</a>
 </td>
 <td width="200">
 <img src="/profiles/labdoo/files/pictures/equation-2-alpha-smaller.png" width="70">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/rss.xml"><img src="/misc/feed.png"></a>
 </td>
 </tr>
 <tr>
@@ -1774,7 +1775,79 @@ function labdoo_block_filter_sidebar_second() {
   if(strcmp($path, "newsletters") == 0)
       return TRUE;
 
+  if(strcmp($path, "hubs") == 0)
+      return TRUE;
+
+  if(strcmp($path, "content/doojects-dashboard") == 0)
+      return TRUE;
+
+  if(strcmp($path, "content/dootrips-dashboard") == 0)
+      return TRUE;
+
+  if(strcmp($path, "content/edoovillages-dashboard") == 0)
+      return TRUE;
+
+  if(strcmp($path, "content/hubs-dashboard") == 0)
+      return TRUE;
+
   return FALSE;
+}
+
+
+/**
+ * Implements the visibility filter for the vertical macro stats block
+ *
+ * @return TRUE if the block is to be displayed, FALSE otherwise
+ *
+ */
+function labdoo_block_filter_macro_vertical() {
+  $path = drupal_get_path_alias(current_path());
+
+  if(strcmp($path, "wiki-index") == 0)
+      return FALSE;
+
+  if(labdoo_lib_node_is_type(array('book')))
+    return FALSE;
+
+  return labdoo_block_filter_sidebar_second();
+}
+
+
+/**
+ * Implements the visibility filter for the actions feed block
+ *
+ * @return TRUE if the block is to be displayed, FALSE otherwise
+ *
+ */
+function labdoo_block_filter_actions_feed() {
+  $path = drupal_get_path_alias(current_path());
+
+  if(strcmp($path, "wiki-index") == 0)
+      return FALSE;
+
+  if(labdoo_lib_node_is_type(array('book')))
+    return FALSE;
+
+  return labdoo_block_filter_sidebar_second();
+}
+
+
+/**
+ * Implements the visibility filter for the search block
+ *
+ * @return TRUE if the block is to be displayed, FALSE otherwise
+ *
+ */
+function labdoo_block_filter_search() {
+  $path = drupal_get_path_alias(current_path());
+
+  if(strcmp($path, "wiki-index") == 0)
+      return TRUE;
+
+  if(labdoo_lib_node_is_type(array('book')))
+    return TRUE;
+
+  return labdoo_block_filter_sidebar_second();
 }
 
 
@@ -1807,18 +1880,6 @@ function labdoo_block_filter_language_switch() {
 function labdoo_block_filter_header() {
   $path = drupal_get_path_alias(current_path());
 
-  if(strcmp($path, "content/dootrips-dashboard") == 0)
-      return TRUE;
-
-  if(strcmp($path, "content/edoovillages-dashboard") == 0)
-      return TRUE;
-
-  if(strcmp($path, "content/hubs-dashboard") == 0)
-      return TRUE;
-
-  if(strcmp($path, "content/doojects-dashboard") == 0)
-      return TRUE;
-
   if(strcmp($path, "user/login") == 0)
       return TRUE;
 
@@ -1838,9 +1899,6 @@ function labdoo_block_filter_header() {
       return TRUE;
 
   if(strcmp($path, "labdooers") == 0)
-      return TRUE;
-
-  if(strcmp($path, "hubs") == 0)
       return TRUE;
 
   if(strcmp($path, "teams-dashboard") == 0)

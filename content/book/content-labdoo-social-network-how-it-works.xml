@@ -1,0 +1,64 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>77</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>The Labdoo Social Network - How It Works</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>77</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><strong> About Project Labdoo </strong>
+
+Labdoo is a social network that is designed from the ground up to serve a social cause. We like to call it an aid social network because the goal is not to make money, but rather to serve a social cause. As such, Labdoo has several properties:
+
+<ul> 
+<li>It is non-profit</li> 
+<li>It is collaborative</li> 
+<li>It is fully distributed</li>  
+<li>The code that runs the social network is open and free (GPLv3)</li> 
+<li>Anyone can participate</li> 
+<li>It is designed to run without incurring additional CO2 emissions</li> 
+<li>It requires no funding to run</li> 
+<li>It is free from any type of advertisement (since it requires no funding to sustain itself and organically grow)</li>
+</ul>
+
+As indicated, the code that runs Labdoo is freely available. In fact, you can install an instance of the Labdoo social network in your local computer if you want; you can copy the code, modify it, and improve it. You can also use portions of the code to create your own social network if you want to serve other social causes. The code is available from https://github.com/Labdoo.
+
+This document provides a description of the features implemented by the Labdoo social network.
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>77</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>0</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>818</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

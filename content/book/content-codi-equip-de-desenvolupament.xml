@@ -1,0 +1,51 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>122</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Codi / Equip de Desenvolupament</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>Catalan</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>68</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Tot el codi desenvolupat i utilitzat dins la xarxa social humanitària Labdoo és programari lliure, i es fet possible gràcies a la tasca del voluntariat lliure i desinteressat de desenvolupadors de tot el món. Si vols formar part de l'equip de desenvolupament de programari Labdoo, envia'ns un correu electrònic a contact@labdoo.org.
+
+El codi font de Labdoo es pot trobar aquí: https://github.com/Labdoo/Labdoo-2.0
+
+Tot el codi font de Labdoo es distribueix sota la llicència <a href='http://www.gnu.org/licenses/gpl-3.0.html'>GPL versió 3</a>.
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>122</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>0</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>862</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

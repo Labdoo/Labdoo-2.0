@@ -200,7 +200,7 @@ function lbd_blocks_views_block_info() {
     'status' => 1,
     'visibility' => BLOCK_VISIBILITY_PHP,
     'weight' => -100,
-    'pages' => "<?php return labdoo_block_filter_sidebar_second(); ?>",
+    'pages' => "<?php return labdoo_block_filter_macro_vertical(); ?>",
     'region' => "sidebar_second",
   );
 
@@ -230,7 +230,7 @@ function lbd_blocks_views_block_info() {
     'status' => 1,
     'visibility' => BLOCK_VISIBILITY_PHP,
     'weight' => -60,
-    'pages' => "<?php return labdoo_block_filter_sidebar_second(); ?>",
+    'pages' => "<?php return labdoo_block_filter_actions_feed(); ?>",
     'region' => "sidebar_second",
   );
 
@@ -260,7 +260,7 @@ function lbd_blocks_views_block_info() {
     'status' => 1,
     'visibility' => BLOCK_VISIBILITY_PHP,
     'weight' => -10,
-    'pages' => "<?php return labdoo_block_filter_sidebar_second(); ?>",
+    'pages' => "<?php return labdoo_block_filter_search(); ?>",
     'region' => "sidebar_second",
   );
 
@@ -268,7 +268,7 @@ function lbd_blocks_views_block_info() {
   $blocks['block_lbd_syndicate'] = array(
     'info' => "Labdoo's syndicate (RSS feed)",
     'status' => 1,
-    'visibility' => BLOCK_VISIBILITY_PHP,
+    'visibility' => BLOCK_REGION_NONE,
     'weight' => 0,
     'pages' => "<?php return labdoo_block_filter_sidebar_second(); ?>",
     'region' => "sidebar_second",

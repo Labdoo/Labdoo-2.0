@@ -1,0 +1,61 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>99</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Response to Doojects Solicitation</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>99</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Dear $SOLICITORNAME,
+
+Thank you for contacting Project Labdoo.
+
+In order to understand if we can help your project, we need first to identify possible travelers who will go from any of the Labdoo hubs to $SOLICITORCOUNTRYNAME.  Currently, we have 72 hubs across the globe.  
+
+Do you know anyone who is traveling from your area to any of the Labdoo hubs in the following weeks or months?
+Here is the list of Labdoo hubs: http://www.labdoo.org/hubs
+
+If so, we can explore ways in which we can try to bring laptops to your project. Looking forward to hearing from you.
+Thank you and best wishes,
+
+$MYNAME
+Labdoo Team
+
+</value>
+</body>
+<body>
+<type>format</type>
+<value>full_html</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>74</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>828</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>840</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-15</value>
+</weight>
+</book>

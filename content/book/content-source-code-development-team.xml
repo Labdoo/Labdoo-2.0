@@ -1,0 +1,53 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>68</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Source Code / Development Team</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>68</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>All the code developed and used within the Labdoo humanitarian social network is free software, and it is made possible thanks to the free volunteering work of software developers around the world. If you want to join the Labdoo software development team, send us an email at contact@labdoo.org.
+
+Labdoo's source code can be found here: https://github.com/Labdoo/Labdoo-2.0
+
+All of Labdoo's source code is released under <a href='http://www.gnu.org/licenses/gpl-3.0.html'>GPL version 3</a>.
+
+
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>68</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>0</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>809</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

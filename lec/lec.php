@@ -123,7 +123,7 @@ function _export_nodes($nodeType, $fields) {
 
   foreach($result as $node) {
     $nodeTitle = $node->title;
-    $nodeAlias = normalize_string($nodeTitle); 
+    $nodeAlias = normalize_string(drupal_get_path_alias('node/' . $node->nid)); 
     $nodeFileName = $exportPath . $nodeAlias . ".xml"; 
     $nodeLoaded = node_load($node->nid);
 

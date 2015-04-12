@@ -1,0 +1,85 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>93</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Managing Hubs</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>93</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Labdoo is a distributed collaborative platform that operates with very little hierarchy. This is important to ensure a sustainable and organic growth path, since hierarchies tend to generate bottlenecks and often add unnecessary management overheads. That means that when it comes to take action to help bring education to children and help reduce electronic waste, everyone can participate, the young, the adults or the elders, from anywhere, whether you have 5 minutes or a few hours of spare time. 
+
+You can participate as an individual (e.g., sanitizing your own laptop once you no longer use it) as part of the <a href="/content/grassroots-0">grassroots</a> and if you decide that you want to unite forces with some other friends and do more to serve the Labdoo cause, you can optionally create your own hub. As part of a hub, you will have some additional tools to help manage your inventory and increase your presence within the platform to better outreach the local and global communities.
+
+Here are the tools you receive when you create your own hub:
+
+<ul>
+<li><strong>Your own hub page.</strong> This page provides information (such as the location of your hub) to help donors know where they can bring their unused doojects. From this page, you can also manage your own inventory of doojects and edoovillages. 
+</li>
+<li><strong>Photo album.</strong> Every hub has its own photo album in which hub managers can upload pictures of their own Labdoo activities. To access the album, click on the "Go to photo album" button found in the hub page.
+</li>
+</ul>
+
+<hr/>
+<em> Figure. Every hub has its own page to help outreach the local community and manage its own inventory with access to open data including the list of doojects, edoovillages, and progress metrics among others.</em>
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/hub-page.png"/>
+<hr/>
+
+As a hub you can choose to do any of the following activities.  A best practice is to start with one or two activities first, and then progressively increase as you gain experience.  In any case, you decide which activities you can carry out depending on your resources, preferences and availability.
+<ul>
+<li>
+<strong>Collect and tag laptops.</strong> Collect unused laptops from your local community and maintain your own laptop inventory.
+</li>
+<li>
+<strong>Quality Assurance.</strong> Get together with friends and members of your hub, sanitize unused laptops, install Ubuntu and the education software, and package doojects ready to go on a new mini-mission.
+</li>
+<li>
+<strong>Outreach your community.</strong> Let people know about the digital divide and eWaste problems, mobilize people to help the Labdoo cause.
+</li>
+<li>
+<strong>Recycle Laptops.</strong> Recycle laptops that no longer work and help reduce eWaste.
+</li>
+<li>
+<strong>Dootrips.</strong> Organize your own dootrips by mobilizing travelers in your own area.
+</li>
+<li>
+<strong>Create edoovillages.</strong> Identify schools that need laptops and set up new edoovillage projects with them.
+</li>
+</ul>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>77</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>818</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>834</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

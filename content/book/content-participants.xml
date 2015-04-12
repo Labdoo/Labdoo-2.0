@@ -1,0 +1,47 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>105</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>The Participants</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>105</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Labdoo is a humanitarian social network where everyone can participate.  Organized according to their function, the network is composed of the following non-exclusive participating groups:  the grassroots, hubs, edoovillages and beneficiaries.  
+All of Labdoo's general values, philosophy and principles described in this document apply also to all of Labdoo's participating groups.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>80</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>821</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>846</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-11</value>
+</weight>
+</book>

@@ -1,0 +1,94 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>108</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Adding a Superhub Page</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>108</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Users with the superhub role are also allowed to create new pages in the labdoo.org platform to help manage the outreaching activities in their own regions. This feature allows this type of users provide localized content that is specific to the region they are covering. 
+
+To create a superhub page, follow the next steps (you will need to have the superhub role assigned to your user):
+
+<ol>
+<li>
+Go to the main navigation menu and click on 'Hubs', then on "[Superhub] Create content".
+<br/>
+<hr/>
+<em> Figure. This is the Labdoo logo.</em>
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/super-hub-mnm.png" width="500"/>
+<hr/>
+</li>
+<br/>
+<li>
+Fill in the fields to generate a new page:
+<ul>
+<li>
+<strong>Title.</strong> Choose a title to help identify your page (the title will not be displayed, it is only used to help you identify the page.)
+</li>
+<li>
+<strong>Type. </strong> Choose 'Page' to create a page with content. (Later we will choose "Menu block' to help create a table of contents for our pages.)
+</li>
+<li>
+<strong>Body. </strong> Create here the actual body of the page. To format your page, you can use any of the allowed HTML tags. See the sections <a href="/filter/tips">'Compose tips'</a> and <a href="/content/special-html-tags">'Special HTML tags'</a> for descriptions on how to use HTML tags for your page body.
+</li>
+</ul>
+</li>
+<br/>
+<li>
+Click 'Save'. At this point, you have created one single page of content. Next, repeat steps 1, 2 and 3 to create as many pages as you need to. Once you are done creating all your pages, go to the next step to create a menu block of your pages.
+</li>
+<br/>
+<li>
+To create a menu block, do as if you wanted to create a page, except that in the field <strong>'Type'</strong> you need to select the option 'Menu block'. A new field called <strong>'Linked pages'</strong> will show up. In this field, add all the pages where you want your menu block to show up. Next, in the <strong>'Body'</strong> field, you need to create a menu of all your pages. This is basically an HTML list of links, with each link pointing to one of your pages created in steps 1, 2 and 3, enabling site visitors a quick menu access to each of the pages. To create the body of your menu block, you can copy and paste the following code sample and modify it according to your pages:
+
+<code>&lt;a href="URL1"&gt;Title Page 1&lt;/a&gt;</code>
+<code>&lt;a href="URL2"&gt;Title Page 2&lt;/a&gt;</code>
+<code>&lt;a href="URL3"&gt;Title Page 3&lt;/a&gt;</code>
+<code>&lt;a href="URL4"&gt;Title Page 4&lt;/a&gt;</code>
+
+Substitute 'URL{1,2,3,4}' for the URLs of your pages removing the host name. For instance, if the URL of a page is <code>https://www.labdoo.org/content/adding-superhub-page</code>, then use '/content/adding-superhub-page'. Substitute also 'Title Page {1,2,3,4}' for the title of each specific page.
+When done, click on 'Save' to create your menu block.
+</li>
+</ol>
+
+At the end of this process, you will have created a set of pages and a menu block linked to the pages. Your site visitors will be able to browse all your pages by using the menu block.
+
+If you also want to create a 'URL redirect' of your pages (for instance, if you want to map the URL <code>https://www.labdoo.org/content/superhub-page-regionA</code> to <code>https://regionA.labdoo.org</code>, please email contact@labdoo.org requesting the mapping. </value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>77</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>844</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>849</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-14</value>
+</weight>
+</book>
