@@ -92,9 +92,8 @@ function lbd_wiki_block_view($delta = '') {
   if(count($children) == 1) {
     $child = array_values($children)[0];
     if(count($child['below']) == 0) {
-      // For single page wiki books, print the macro stats instead of the TOC
-      $block = module_invoke('lbd_blocks_views', 'block_view', 'block_macro_statistics_vertical');
-      return $block; 
+      // For single page wiki books, don't return the TOC
+      return NULL;
     }
   }
   $userRoles = array_values($user->roles);
