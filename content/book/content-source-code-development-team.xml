@@ -21,14 +21,13 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>All the code developed and used within the Labdoo humanitarian social network is free software, and it is made possible thanks to the free volunteering work of software developers around the world. If you want to join the Labdoo software development team, send us an email at contact@labdoo.org.
+<value>Labdoo is implemented mostly in PhP and JavaScript code. The source code is freely and openly available under the GPLv3 License. That means that you can freely download the code, install it in your laptop, modify it and contribute your improvements back to the community. The code is available as a git repository from the following link: https://github.com/Labdoo/Labdoo-2.0.
 
-Labdoo's source code can be found here: https://github.com/Labdoo/Labdoo-2.0
+The current version of the Labdoo platform is based on Drupal, a free and open-source content-management framework distributed under the GNU General Public License. Its main features are implemented using standalone modules. This helps to keep the project modular, facilitating the process of managing, maintaining and collaboratively developing the platform.
 
-All of Labdoo's source code is released under <a href='http://www.gnu.org/licenses/gpl-3.0.html'>GPL version 3</a>.
+The Labdoo source code is developed by software engineers who contribute their time out of goodwill and as a contribution to the social cause promoted by the project. 
 
-
-</value>
+If you want to join the Labdoo software development team, send us an email at development@labdoo.org.</value>
 </body>
 <body>
 <type>format</type>

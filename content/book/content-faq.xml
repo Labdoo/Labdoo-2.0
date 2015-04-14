@@ -28,23 +28,23 @@ Labdoo stands for Laboratories for Education; the name is also related to the co
 </li>
 <li>
 <strong>What’s the premise of the Labdoo project?</strong>
-Labdoo is  unique in that we’re a grassroots, collaborative community of volunteers from around the globe each contributing in their own part in bringing education closer to a child.  It is based upon the simple idea  that a large project can be simplified by dividing it into smaller tasks. You don’t need every person to be in the same location or need each person to have all the know-how in order to get a laptop successfully refurbished and sent to a child.  
-Labdoo is able to provide the logistical resources to help organize this wide network of laptops and volunteers through social networking tools implementing concepts such as "dooject", “tagging”, “dootrip”, "hubs", "edoovillages", etc. as described below.  
+Labdoo is  unique in that we’re a grassroots, collaborative community of volunteers from around the globe each contributing in their own part in bringing education closer to a child.  It is based upon the simple idea  that a large project can be simplified and made sustainable by dividing it into smaller tasks. You don’t need every person to be in the same location or need each person to have all the know-how in order to get a laptop successfully refurbished and sent to a child.  
+Labdoo is able to provide the logistical resources to help organize this wide network of laptops and volunteers through social networking tools implementing concepts such as "dooject", “tagging”, “dootrip”, "hubs", "edoovillages", etc.  
 </li>
 
 <li>
 <strong>What is a 'dooject'?</strong>
-A dooject (stands for Labdoo Object) is defined as any electronic device capable of delivering education to a child. It could be a laptop, a tablet, an ebook, or even a powerful smartphone, any of these devices can have a tremendous capability of bringing education content to children. Some people call them donation devices, others education devices, it's really up to you, but for a general term, we use the word 'dooject'.
+A dooject (stands for Labdoo Object) is defined as any electronic device capable of delivering education to a child. It could be a laptop, a tablet, an ebook, or even a powerful smartphone, as any of these devices can have a tremendous capability of bringing education content to children. Some people call them 'donation devices', others call them 'education devices', it's really up to you, but for a general term, we use the general term 'dooject'. 
 </li>
 
 <li>
 <strong>What is 'tagging'?</strong>
-“Tagging” is part of Labdoo’s solution in mobilizing laptops.  When you “tag” you’re simply registering your laptop within the Labdoo’s online inventory.  In registering you’re only entering information about the laptop (e.g. memory, operating system, etc.).  In the event there is a call for laptops we can notify individuals who’ve tagged their laptops to see if they wish to donate their laptops.
+“Tagging” is part of Labdoo’s solution in mobilizing laptops.  When you “tag” you’re simply registering your laptop within the Labdoo’s online inventory.  In registering you’re only entering information about the laptop (e.g. memory, operating system, etc.).  In the event there is a call for laptops we can notify individuals who’ve tagged their laptops to see if they wish to donate their laptops. Tagging is a key component of the Labdoo workflow because it enables transparency and allows us to efficiently organize information, which helps cuts to cost of the project practically down to zero. Thanks to this and other pieces of the system, Labdoo requires no funding to sustain itself. (See this <a href="../content/no-need-funding-just-collaboration-and-excess-capacity">wiki entry</a> for more detail on this concept.)
 </li>
 
 <li>
 <strong>I’m not quite ready to donate this laptop, should I still tag it?</strong>
-Yes!  Tagging in itself does not imply that you’re donating your laptop now or at any point.  It’s simply making you and your laptop part of the overall Labdoo network. 
+Yes!  Tagging in itself does not imply that you’re donating your laptop now or at any point.  It’s simply making you and your laptop part of the overall Labdoo network, expressing that when you no longer need to use that laptop, you hope that a child in some needy school can use it to gain access to educational content.
 </li>
 
 <li>
@@ -67,12 +67,12 @@ You have successfully tagged your laptop!
 
 <li>
 <strong>How can I be sure that all the information on my computer is properly erased?</strong>
-Labdoeers around the globe that take the action of sanitizing a laptop (people like you) go through a full erasing of the hard drive when re-furbishing the computer. When installing the Linux Operating System and a very powerful education software package, this process randomly writes zeros and ones to the hard drive to make sure all data that was previously on the hard drive is gone forever.
+Labdoeers around the globe that take the action of sanitizing a laptop (people like you actually) go through a full erasing of the hard drive when re-furbishing the computer. When installing the new Operating System and a very powerful education software package, this process randomly writes zeros and ones to the hard drive to make sure all data that was previously on the hard drive is gone forever.
 </li>
 
 <li>
 <strong>How do you decide where the laptops are sent?</strong>
-Labdoo delivers education devices (doojects) to hundreds of schools around the world. We search for and have been sought out by organizations with education projects that coincide with our goals. As part of the Labdoo network, you can even create your own school destination projects. By the way, we call them "edoovillages".
+Labdoo delivers education devices (doojects) to hundreds of schools around the world. We search for and have been sought out by organizations with education projects that coincide with Labdoo's goals. As part of the Labdoo network, you can even create your own school destination projects too. By the way, we call them "edoovillages".
 </li>
 
 <li>
@@ -82,7 +82,7 @@ For that, we use "dootrips" (or Labdoo trips). A dootrip is essentially a CO2-ne
 
 <li>
 <strong>What is a Labdoo hub?</strong>
-Everybody can be a participatnt in the Labdoo network by performing a Labdoo activity. When one or more of the participants act together regularly carrying out a good number of activities, they can optionally become a hub. A hub can be understood as a node in the network which carries out a “larger density of Labdoo activities”. Examples of hubs can be a group of students in a university that get together from time to time to carry activities such as collecting and sanitizing unused laptops, organizing dootrips, recycling technology, carrying out outreaching activities, etc. Hubs can also be implemented in high schools, companies, neighbor communities, at home or in any type of organized community.
+Everybody can be a participant in the Labdoo network by performing a Labdoo activity. When one or more of the participants act together regularly carrying out a good number of activities, they can optionally become a hub. A hub can be understood as a node in the network which carries out a “larger density of Labdoo activities”. Examples of hubs can be a group of students in a university that get together from time to time to carry activities such as collecting and sanitizing unused laptops, organizing dootrips, recycling technology, carrying out outreaching activities, etc. Hubs can also be implemented in high schools, companies, neighbor communities, at home or in any type of organized community.
 </li>
 
 <li>
@@ -92,7 +92,7 @@ Donated laptops are checked out to see if they are still in a useable condition 
 
 <li>
 <strong>What do you do with donated laptops that are broken?</strong>
-Short answer: We recycle them. Long answer: We look for partners with a recycler facility who can help guarantee that the broken laptop can be recycled safely. Electronic waste is a huge problem, and one of the goals for labdoo is to help efficiently resolve this problem by going through an E-Stewards Recycler.
+Short answer: We recycle them. Long answer: We look for partners with a recycler facility who can help guarantee that the broken laptop can be recycled safely. Electronic waste is a huge problem, and one of the goals for labdoo is to help efficiently resolve this problem by going through proper recycling facilities.
 </li>
 
 <li>
@@ -106,7 +106,7 @@ You have several options. If you or someone you know are traveling to a location
 </li>
 <li>
 <strong>What do you do for projects that don’t have access to internet?</strong>
-With all our laptops we send off, we install a copy of Edubuntu which is an educational software based in the Ubuntu Linux Operating System. This software provides educational games, computer typing development and an introduction to technology to students abroad. In addition to Edubuntu, we are also making available a stripped down version of Wikipedia through a burned CD so children can have access to it without the need of Internet and many more education applications and electronic books.
+All the laptops we send off get installed a copy of Edubuntu which is an educational software based in the Ubuntu Linux Operating System. This software provides educational games, computer typing development and an introduction to technology to students abroad. In addition to Edubuntu, we are also making available a stripped down version of Wikipedia through a burned CD and many more education applications and electronic books so that children can have access to them without the need of Internet. 
 </li>
 
 <li>
