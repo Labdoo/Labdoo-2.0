@@ -2548,3 +2548,15 @@ function labdoo_lib_menu_local_tasks_alter(&$data) {
     }
   }
 }
+
+
+/**
+ * Implements hook_views_pre_render
+ *
+ */
+function labdoo_lib_views_pre_render(&$view) {
+  if($view->name == 'wiki') {
+    $view->attachment_before = t('Don\'t see a book available in a language you need? <a href="content/wiki-translations">learn how you can contribute a book translation.</a>');
+  }
+}
+

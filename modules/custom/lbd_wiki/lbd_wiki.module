@@ -60,8 +60,11 @@ function lbd_wiki_block_info() {
  *
  */
 function lbd_wiki_block_view($delta = '') {
+  $printTOC = TRUE;
+  $defaultLanguage = language_default();
   global $language;
   global $user;
+  $code = "";
 
   if($delta != 'book_outline')
     return NULL;
@@ -72,7 +75,7 @@ function lbd_wiki_block_view($delta = '') {
 
   $nodeId = arg(1);
 
-  if ($language->language != 'en')
+  if ($language->language != $defaultLanguage->language)
     $lang = '/' . $language->language;
   else
     $lang = '';
@@ -86,44 +89,54 @@ function lbd_wiki_block_view($delta = '') {
     'max_depth' => 5,
   );
 
+  // Other translations link
+  $nodeLoaded = node_load($book['bid']);
+  $originalNodeId = labdoo_lib_get_field($nodeLoaded, 'field_reference_book', 'node', 'target_id');
+  $allTranslationsURl = $lang. '/wiki-index?field_book_language_value=All&field_reference_book_target_id='.$originalNodeId;
+  $metadata = "href='$allTranslationsURl'";
+  $code = $code . "<img src='/profiles/labdoo/files/pictures/conversation.png' style='width: 20px; height: 21px;'/>&nbsp;" . 
+                  "<a $metadata>" . t('Other translations of this page') . "</span></a></p>";
+
   // Build the tree and block title.
   $children = menu_build_tree($parent['menu_name'], $parameters);
   // Check if it is a single page book
   if(count($children) == 1) {
     $child = array_values($children)[0];
     if(count($child['below']) == 0) {
-      // For single page wiki books, don't return the TOC
-      return NULL;
+      // For single page wiki books, don't print the TOC
+      $printTOC = FALSE;
     }
   }
-  $userRoles = array_values($user->roles);
-  if(in_array('book writer', $userRoles) || in_array('administrator', $userRoles)) { 
-    $metadata = "href='$lang/admin/content/book/" . $book['bid'] . "'";
-    $code = "<a $metadata>" . t('[Reorder this book\'s hierarchy]') . "</span></a></p>";
-  }
-  else {
-    $code = "";
-  }
 
-  foreach($children as $child1) {
-    $code = $code . _process_child($child1, $nodeId, 0);
-    foreach($child1['below'] as $child2) {
-      $code = $code . _process_child($child2, $nodeId, 1);
-      foreach($child2['below'] as $child3) {
-        $code = $code . _process_child($child3, $nodeId, 2);
-        foreach($child3['below'] as $child4) {
-          $code = $code . _process_child($child4, $nodeId, 3);
-          foreach($child4['below'] as $child5) {
-            $code = $code . _process_child($child5, $nodeId, 4);
+  if($printTOC) {
+    $userRoles = array_values($user->roles);
+    if(in_array('book writer', $userRoles) || in_array('administrator', $userRoles)) { 
+      $metadata = "href='$lang/admin/content/book/" . $book['bid'] . "'";
+      $code = $code . "<img src='/profiles/labdoo/files/pictures/book.png' style='width: 20px; height: 19px;'/>&nbsp;" . 
+                      "<a $metadata>" . t('Reorder this book\'s hierarchy') . "</span></a></p>";
+    }
+
+    $code = $code . "<hr/>";
+
+    foreach($children as $child1) {
+      $code = $code . _process_child($child1, $nodeId, 0);
+      foreach($child1['below'] as $child2) {
+        $code = $code . _process_child($child2, $nodeId, 1);
+        foreach($child2['below'] as $child3) {
+          $code = $code . _process_child($child3, $nodeId, 2);
+          foreach($child3['below'] as $child4) {
+            $code = $code . _process_child($child4, $nodeId, 3);
+            foreach($child4['below'] as $child5) {
+              $code = $code . _process_child($child5, $nodeId, 4);
+            }
           }
         }
       }
     }
   }
 
-  $book_name = (book_toc($book['bid'], 1));
-
   // Build and return the $block array.
+  // $book_name = (book_toc($book['bid'], 1));
   $block['subject'] = '<none>'; // l($book_name[$book['p1']], 'node/' . $book['bid']);
   $block['content'] = array('#markup' => $code);
 

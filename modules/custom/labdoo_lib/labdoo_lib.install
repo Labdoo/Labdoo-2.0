@@ -34,7 +34,7 @@ if(\$language->language != \$defaultLanguage->language)
   \$langCode = '/' . \$language->language;
 if(!user_is_logged_in())
   print(\"<a href='\$langCode/user/login'><img src='/profiles/labdoo/files/pictures/button-join-labdoo.png' width='200'></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\");
-print(\"<a href='\$langCode/content/labdoo-nutshell'><img src='/profiles/labdoo/files/pictures/button-learn-how-it-works.png' width='300'></a>\");
+print(\"<a href='\$langCode/content/about-labdoo'><img src='/profiles/labdoo/files/pictures/button-learn-how-it-works.png' width='300'></a>\");
 print(\"</p>\");
 ?>
   ";

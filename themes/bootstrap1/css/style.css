@@ -204,3 +204,8 @@ input[type="checkbox"] {
 .gmap-control.gmap-gmap.gmap.gmap-map.gmap-loc1-gmap.gmap-processed {
   margin-bottom:1em;
 } 
+
+.dropdown-backdrop {
+  position: static;
+}
+
