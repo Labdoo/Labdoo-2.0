@@ -1778,18 +1778,6 @@ function labdoo_block_filter_sidebar_second() {
   if(strcmp($path, "hubs") == 0)
       return TRUE;
 
-  if(strcmp($path, "content/doojects-dashboard") == 0)
-      return TRUE;
-
-  if(strcmp($path, "content/dootrips-dashboard") == 0)
-      return TRUE;
-
-  if(strcmp($path, "content/edoovillages-dashboard") == 0)
-      return TRUE;
-
-  if(strcmp($path, "content/hubs-dashboard") == 0)
-      return TRUE;
-
   return FALSE;
 }
 
@@ -1908,6 +1896,18 @@ function labdoo_block_filter_header() {
       return TRUE;
 
   if(strcmp($path, "hub") == 0)
+      return TRUE;
+
+  if(strcmp($path, "content/doojects-dashboard") == 0)
+      return TRUE;
+
+  if(strcmp($path, "content/dootrips-dashboard") == 0)
+      return TRUE;
+
+  if(strcmp($path, "content/edoovillages-dashboard") == 0)
+      return TRUE;
+
+  if(strcmp($path, "content/hubs-dashboard") == 0)
       return TRUE;
 
   if((strcmp($path, "share-wall") == 0) || (strcmp($path, "content/my-share-wall") == 0))

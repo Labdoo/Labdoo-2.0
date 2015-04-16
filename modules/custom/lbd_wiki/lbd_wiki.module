@@ -94,6 +94,7 @@ function lbd_wiki_block_view($delta = '') {
   $originalNodeId = labdoo_lib_get_field($nodeLoaded, 'field_reference_book', 'node', 'target_id');
   $allTranslationsURl = $lang. '/wiki-index?field_book_language_value=All&field_reference_book_target_id='.$originalNodeId;
   $metadata = "href='$allTranslationsURl'";
+  $code = $code . "<hr/>";
   $code = $code . "<img src='/profiles/labdoo/files/pictures/conversation.png' style='width: 20px; height: 21px;'/>&nbsp;" . 
                   "<a $metadata>" . t('Other translations of this page') . "</span></a></p>";
 
@@ -116,7 +117,7 @@ function lbd_wiki_block_view($delta = '') {
                       "<a $metadata>" . t('Reorder this book\'s hierarchy') . "</span></a></p>";
     }
 
-    $code = $code . "<hr/>";
+    $code = $code . "<hr/><br/>";
 
     foreach($children as $child1) {
       $code = $code . _process_child($child1, $nodeId, 0);

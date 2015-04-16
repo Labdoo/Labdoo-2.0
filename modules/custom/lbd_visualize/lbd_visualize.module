@@ -846,7 +846,7 @@ var table = new google.visualization.ChartWrapper({
               'chartType': 'Table',
               'containerId': 'chartTable',
               'options': {
-                'width': '720px',
+                'width': '1020px',
                 'allowHtml': true, 
                 'showRowNumber': true,
                 'page': 'enable',
@@ -994,6 +994,7 @@ var options = {
     region: 'world',
     displayMode: 'markers',
     colorAxis: {colors: ['red', 'orange']},
+    width: 800,
     legend: 'none'
   };
 
@@ -1008,6 +1009,8 @@ var columnChart = new google.visualization.ChartWrapper({
                     'chartType': 'ColumnChart',
                     'options': {
                       'colors': ['#a5682a', '#DC3912', '#109618', '#005e7a', '#5a5a5a', '#ff8000', '#E67300', 'gray'],
+                      'width': 900,
+                      'legend': { position: 'bottom', alignment: 'start' },
                     },
                     'containerId': 'chartColumns',
                     'dataTable' : google.visualization.data.group(data, [$lastElement],
@@ -1115,15 +1118,16 @@ google.setOnLoadCallback(drawVisualization);
   </head>
   <body style='font-family: Arial;border: 0 none;'>
     <div id='dashboard'>
-      <table>
-        <tr style='vertical-align: top'>
-          <td colspan='3'; style='width: 780px'>
+      <table align='center' width='1000px'>
+        <tr style='vertical-align: top; 'horizontal-align: center;' >
+          <td colspan='3'; style='width: 1000px; align: center;'>
             <div id='chartLaptopsGeo' style='align: center; width: 600px; height: 360px;'></div>
           </td>
         </tr>
         <tr style='vertical-align: top'>
-          <td colspan='3'; style='width: 780px'>
+          <td colspan='3'; style='width: 580px'>
             <div id='chartColumns'></div>
+            <br/>
           </td>
         </tr>
         <tr style='vertical-align: top'>
