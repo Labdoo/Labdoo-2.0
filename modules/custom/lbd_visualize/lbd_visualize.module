@@ -994,7 +994,7 @@ var options = {
     region: 'world',
     displayMode: 'markers',
     colorAxis: {colors: ['red', 'orange']},
-    width: 800,
+    width: 700,
     legend: 'none'
   };
 
@@ -1010,7 +1010,7 @@ var columnChart = new google.visualization.ChartWrapper({
                     'options': {
                       'colors': ['#a5682a', '#DC3912', '#109618', '#005e7a', '#5a5a5a', '#ff8000', '#E67300', 'gray'],
                       'width': 900,
-                      'legend': { position: 'bottom', alignment: 'start' },
+                      'legend': { position: 'bottom', alignment: 'center' },
                     },
                     'containerId': 'chartColumns',
                     'dataTable' : google.visualization.data.group(data, [$lastElement],
@@ -1122,6 +1122,7 @@ google.setOnLoadCallback(drawVisualization);
         <tr style='vertical-align: top; 'horizontal-align: center;' >
           <td colspan='3'; style='width: 1000px; align: center;'>
             <div id='chartLaptopsGeo' style='align: center; width: 600px; height: 360px;'></div>
+            <br/><br/>
           </td>
         </tr>
         <tr style='vertical-align: top'>
