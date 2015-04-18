@@ -1009,8 +1009,9 @@ var columnChart = new google.visualization.ChartWrapper({
                     'chartType': 'ColumnChart',
                     'options': {
                       'colors': ['#a5682a', '#DC3912', '#109618', '#005e7a', '#5a5a5a', '#ff8000', '#E67300', 'gray'],
-                      'width': 900,
-                      'legend': { position: 'bottom', alignment: 'center' },
+                      'width': 1000,
+                      'legend': { position: 'right', alignment: 'center' },
+                      'chartArea' : {  left: '50', width: '60%', height: '80%' }
                     },
                     'containerId': 'chartColumns',
                     'dataTable' : google.visualization.data.group(data, [$lastElement],
@@ -1122,7 +1123,7 @@ google.setOnLoadCallback(drawVisualization);
         <tr style='vertical-align: top; 'horizontal-align: center;' >
           <td colspan='3'; style='width: 1000px; align: center;'>
             <div id='chartLaptopsGeo' style='align: center; width: 600px; height: 360px;'></div>
-            <br/><br/>
+            <br/><br/><br/>
           </td>
         </tr>
         <tr style='vertical-align: top'>
@@ -1448,6 +1449,8 @@ function lbd_display_dooject_column_chart($objectNid, $type)
   var options_column_chart_project = {
     seriesType: "bars",
     colors: ["red", "green", "gray", "orange"],
+    width : 700, 
+    chartArea : {  left: 50, width: \'60%\', height: \'80%\' }
   };
 
   var chart_column_chart_project = new google.visualization.ComboChart(document.getElementById("chart_div_column_chart_project"));

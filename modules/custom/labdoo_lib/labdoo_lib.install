@@ -22,7 +22,7 @@ global \$language;
 \$defaultLanguage = language_default();
 print(\"<img src='/profiles/labdoo/files/pictures/labdoo-header.png' width='1500'>\");
 print(\"<img src='/profiles/labdoo/files/pictures/labdoo-slogan.png' width='600'>\");
-\$blockFeed = module_invoke('views', 'block_view', 'actions-block');
+\$blockFeed = module_invoke('views', 'block_view', 'actions-block_1');
 \$blockFlexSlide = module_invoke('views', 'block_view', 'labdoo_slideshow-block');
 print(\"<br><br>\");
 print(labdoo_render_macro_stats('horizontal', \$addTitle=True));

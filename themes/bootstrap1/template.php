@@ -44,7 +44,7 @@ function bootstrap1_preprocess_page(&$vars) {
  *
  */
 function bootstrap1_button($variables) {
-  // Undoing Drupal Bootstrap theme’s rewriting of buttons.
+  // Undoing Bootstrap theme’s rewriting of buttons.
   // The following implementation of theme_button overrides 
   // bootstrap’s bootstrap_button() modification. This is
   // needed so that the module hide_submit can operate well,
