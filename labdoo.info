@@ -92,6 +92,7 @@ dependencies[] = video_filter
 dependencies[] = views_tree 
 dependencies[] = countries 
 dependencies[] = search_config 
+dependencies[] = hide_submit 
 
 ;;; Features and exports/imports
 dependencies[] = strongarm

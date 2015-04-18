@@ -37,3 +37,30 @@ function bootstrap1_preprocess_page(&$vars) {
     }
   }
 }
+
+
+/*
+ * Implements theme_button
+ *
+ */
+function bootstrap1_button($variables) {
+  // Undoing Drupal Bootstrap theme’s rewriting of buttons.
+  // The following implementation of theme_button overrides 
+  // bootstrap’s bootstrap_button() modification. This is
+  // needed so that the module hide_submit can operate well,
+  // otherwise it can't hide the button upon submit, which
+  // leads to the problem of multiple node creation
+  // upon clicking multiple consecutive times on a 
+  // 'Save' button.
+  $element = $variables['element'];
+  $element['#attributes']['type'] = 'submit';
+  element_set_attributes($element, array('id', 'name', 'value'));
+
+  $element['#attributes']['class'][] = 'form-' . $element['#button_type'];
+  if (!empty($element['#attributes']['disabled'])) {
+    $element['#attributes']['class'][] = 'form-button-disabled';
+  }
+
+  return '<input' . drupal_attributes($element['#attributes']) . ' />';
+}
+

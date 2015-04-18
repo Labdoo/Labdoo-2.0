@@ -45,6 +45,7 @@ projects[video_filter][patch][] = https://www.drupal.org/files/issues/video_filt
 projects[views_tree] = 2.0
 projects[countries] = 2.3 
 projects[search_config] = 1.1 
+projects[hide_submit] = 2.0 
 
 ;--------------------
 ; Security
