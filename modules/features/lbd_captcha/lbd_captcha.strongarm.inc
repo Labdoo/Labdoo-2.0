@@ -41,6 +41,13 @@ function lbd_captcha_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'captcha_default_challenge_on_nonlisted_forms';
+  $strongarm->value = 0;
+  $export['captcha_default_challenge_on_nonlisted_forms'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'captcha_default_validation';
   $strongarm->value = '1';
   $export['captcha_default_validation'] = $strongarm;
@@ -62,6 +69,13 @@ function lbd_captcha_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'captcha_enable_stats';
+  $strongarm->value = 0;
+  $export['captcha_enable_stats'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'captcha_log_wrong_responses';
   $strongarm->value = 0;
   $export['captcha_log_wrong_responses'] = $strongarm;
@@ -72,6 +86,24 @@ function lbd_captcha_strongarm() {
   $strongarm->name = 'captcha_persistence';
   $strongarm->value = '0';
   $export['captcha_persistence'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'captcha_placement_map_cache';
+  $strongarm->value = array(
+    'user_login' => array(
+      'path' => array(),
+      'key' => 'actions',
+      'weight' => 99,
+    ),
+    'user_register_form' => array(
+      'path' => array(),
+      'key' => 'actions',
+      'weight' => 99,
+    ),
+  );
+  $export['captcha_placement_map_cache'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -223,6 +255,13 @@ function lbd_captcha_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'recaptcha_server_status_check_interval';
+  $strongarm->value = '5';
+  $export['recaptcha_server_status_check_interval'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'recaptcha_tabindex';
   $strongarm->value = '';
   $export['recaptcha_tabindex'] = $strongarm;
@@ -231,7 +270,7 @@ function lbd_captcha_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'recaptcha_theme';
-  $strongarm->value = 'red';
+  $strongarm->value = 'clean';
   $export['recaptcha_theme'] = $strongarm;
 
   return $export;
