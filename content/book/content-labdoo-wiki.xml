@@ -21,7 +21,7 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>The Labdoo platform allows users to create their own wiki pages. To do so, your user will need to have the role of "wiki/book writer". If you don't have this role assigned and would like to write wiki pages, please email contact@labdoo.org.</value>
+<value>The Labdoo platform allows users to create their own wiki pages. To do so, your user will need to have the role of "book writer". If you don't have this role assigned and would like to write wiki pages, please email contact@labdoo.org. (You can check the current roles assigned to your user by going to 'My account' and then clicking the tab 'My roles'.)</value>
 </body>
 <body>
 <type>format</type>
@@ -41,6 +41,6 @@
 </mlid>
 <weight>
 <type>book_array</type>
-<value>-8</value>
+<value>-7</value>
 </weight>
 </book>

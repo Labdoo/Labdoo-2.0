@@ -21,9 +21,9 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>The Labdoo wiki system provides <em>version control</em> on each of the wiki pages. Every time a user modifies a wiki page, the changes are tracked. This allows for instance to roll back changes that were introduced by mistake or to see when certain changes were introduced. 
+<value>The Labdoo wiki system provides <em>revision control</em> on each of the wiki pages. Every time a user modifies a wiki page, the changes are tracked. This allows for instance to roll back changes that were introduced by mistake or to see when certain changes were introduced. 
 
-To use this feature, click on the 'Reviews' tab that you will find on the top of each wiki page. (This feature is only available to users who have the 'book writer' role enabled.)</value>
+To use this feature, click on the 'Revisions' tab that you will find on the top of each wiki page. (This feature is only available to users who have the 'book writer' role enabled.)</value>
 </body>
 <body>
 <type>format</type>

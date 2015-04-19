@@ -21,7 +21,7 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>The body section of a wiki page allows writers to use a simplified form of HTML tags to help them format their content. While the page <a href="/filter/tips">'Compose tips'</a> (a link to this page is provided at the bottom of the "body" field in the wiki form) provides a detail description of each of the HTML tags supported by the Labdoo wiki system, in this section we provide additional information for some of the tags that are a bit more advanced. 
+<value>The body section of a wiki page allows writers to use a simplified form of HTML tags to help them format their content. While the page <a href="/filter/tips">'Compose tips'</a> (a link to this page is provided at the bottom of the "body" field in each wiki form) provides a detail description of each of the HTML tags supported by the Labdoo wiki system, in this section we provide additional information for some of the tags that are a bit more advanced. 
 
 <strong>Inserting images</strong>
 
