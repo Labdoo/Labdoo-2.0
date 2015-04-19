@@ -50,8 +50,8 @@ projects[hide_submit] = 2.0
 ;--------------------
 ; Security
 ;--------------------
-projects[captcha] = 1.2
-projects[recaptcha] = 1.11
+projects[captcha] = 1.3
+projects[recaptcha] = 1.12
 projects[honeypot] = 1.17
 projects[user_restrictions] = 1.0
 
