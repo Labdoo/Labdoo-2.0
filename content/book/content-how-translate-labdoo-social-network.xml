@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>151</value>
+<value>109</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>151</value>
+<value>109</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -27,10 +27,10 @@ The translation system is based on the concept of 'templates'. To translate the 
 
 <ul>
 <li>
-<strong>Email (.email) templates.</strong> TODO.
+<strong>Email (.email) templates.</strong> Email templates correspond to the automatic email notifications that the Labdoo system sends to users when certain actions happen. For instance, when a laptop is delivered to a school, the user who contributed that laptop receives and automatic email notification in that user's preferred language. 
 </li>
 <li>
-<strong>Portable object (.po) templates.</strong> TODO.
+<strong>Portable object (.po) templates.</strong> This corresponds to the actual sentences and words that appear on the Labdoo social network. 
 </li>
 </ul>
 
@@ -96,15 +96,15 @@ TODO</value>
 </body>
 <bid>
 <type>book_array</type>
-<value>77</value>
+<value>72</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>818</value>
+<value>814</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>874</value>
+<value>851</value>
 </mlid>
 <weight>
 <type>book_array</type>

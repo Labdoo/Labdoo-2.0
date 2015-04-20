@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>96</value>
+<value>80</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>96</value>
+<value>80</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -31,15 +31,15 @@ This feature can also be used to export the book into a PDF file. For that, when
 </body>
 <bid>
 <type>book_array</type>
-<value>77</value>
+<value>72</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>833</value>
+<value>817</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>837</value>
+<value>822</value>
 </mlid>
 <weight>
 <type>book_array</type>

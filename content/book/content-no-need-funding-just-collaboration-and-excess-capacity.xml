@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>94</value>
+<value>114</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>94</value>
+<value>114</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -54,15 +54,15 @@ The 'how' can be more important that the 'what'. TODO.
 </body>
 <bid>
 <type>book_array</type>
-<value>80</value>
+<value>92</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>821</value>
+<value>834</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>835</value>
+<value>856</value>
 </mlid>
 <weight>
 <type>book_array</type>

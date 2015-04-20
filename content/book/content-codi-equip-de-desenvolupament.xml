@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>122</value>
+<value>101</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>68</value>
+<value>87</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -25,7 +25,7 @@
 
 El codi font de Labdoo es pot trobar aquí: https://github.com/Labdoo/Labdoo-2.0
 
-Tot el codi font de Labdoo es distribueix sota la llicència <a href='http://www.gnu.org/licenses/gpl-3.0.html'>GPL versió 3</a>.
+Tot el codi font de Labdoo es distribueix sota la llicència <a href="http://www.gnu.org/licenses/gpl-3.0.html">GPL versió 3</a>.
 </value>
 </body>
 <body>
@@ -34,7 +34,7 @@ Tot el codi font de Labdoo es distribueix sota la llicència <a href='http://www
 </body>
 <bid>
 <type>book_array</type>
-<value>122</value>
+<value>101</value>
 </bid>
 <plid>
 <type>book_array</type>
@@ -42,7 +42,7 @@ Tot el codi font de Labdoo es distribueix sota la llicència <a href='http://www
 </plid>
 <mlid>
 <type>book_array</type>
-<value>862</value>
+<value>843</value>
 </mlid>
 <weight>
 <type>book_array</type>

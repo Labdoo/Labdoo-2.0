@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>76</value>
+<value>84</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>76</value>
+<value>84</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -167,11 +167,11 @@ If you are not traveling, then get in touch with one of the Labdoo hubs (for ins
 </bid>
 <plid>
 <type>book_array</type>
-<value>810</value>
+<value>811</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>817</value>
+<value>826</value>
 </mlid>
 <weight>
 <type>book_array</type>

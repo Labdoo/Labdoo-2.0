@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>100</value>
+<value>82</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>100</value>
+<value>82</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -31,15 +31,15 @@ To use this feature, click on the 'Revisions' tab that you will find on the top 
 </body>
 <bid>
 <type>book_array</type>
-<value>77</value>
+<value>72</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>833</value>
+<value>817</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>841</value>
+<value>824</value>
 </mlid>
 <weight>
 <type>book_array</type>

@@ -1,0 +1,82 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>91</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Managing User Roles</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>91</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>A user can have one of the following roles:
+
+<ul>
+<li>
+<strong>Anonymous user:</strong> corresponds to users who visit labdoo.org without logging into an account. These users can only do “view” type of activities.
+</li>
+<li>
+<strong>Authenticated user:</strong> corresponds to the very basic labdoo user role. This is the role that a labdooer receives by default when registering for the first time to the system. This type of account allows users to perform all the base functions such as tagging laptops or registering a dootrip.
+</li>
+<li>
+<strong>Hub manager:</strong> provides additional functions to manage hubs.
+</li>
+<li>
+<strong>Edoovillage manager:</strong> provides additional functions to manage edoovillages.
+</li>
+<li>
+<strong>Newsletter manager:</strong> provides additional functions to manage, edit, and publish newsletters issues.
+</li>
+<li>
+<strong>Wiki writer:</strong> provides additional functions to write new wiki documents.
+</li>
+<li>
+<strong>Team manager:</strong> provides additional functions to manage Labdoo teams.
+</li>
+<li>
+<strong>Superhub manager:</strong> provides additional functions to create new hubs and help manage larger Labdoo regions englobing multiple hubs.
+</li>
+</ul>
+
+<strong>Managing your user roles</strong>
+
+You can check the current roles assigned to your user by going to 'My account' and then clicking the tab 'My roles'. 
+
+As mentioned above, when you create your user for the first time, you are assigned by default the role of "authenticated user". If you need additional roles assigned to your user (e.g., if you want to become an "edoovillage manager" to create your own edoovillages or if you want to become a "Wiki writer" to write books like the one you are reading right now), please contact the Labdoo global team at contact@labdoo.org. 
+
+ 
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>72</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>814</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>833</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-13</value>
+</weight>
+</book>

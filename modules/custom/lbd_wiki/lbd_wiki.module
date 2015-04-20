@@ -181,6 +181,8 @@ function _process_child($child, $nodeId, $level) {
  *   book portion of the node array if it is part of a book, FALSE if not
  */
 function lbd_wiki_is_book_node() {
+  if(!labdoo_lib_node_is_type(array('book'), TRUE))
+    return FALSE;
   $node = menu_get_object();
   if ($node && isset($node->book)) {
     return $node->book;

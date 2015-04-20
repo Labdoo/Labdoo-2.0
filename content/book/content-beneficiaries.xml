@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>114</value>
+<value>119</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>114</value>
+<value>119</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -32,15 +32,15 @@ In the Labdoo network there are no benefactors; instead, everyone is a beneficia
 </body>
 <bid>
 <type>book_array</type>
-<value>80</value>
+<value>92</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>846</value>
+<value>857</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>855</value>
+<value>861</value>
 </mlid>
 <weight>
 <type>book_array</type>
