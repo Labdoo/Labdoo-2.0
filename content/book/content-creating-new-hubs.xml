@@ -23,9 +23,9 @@
 <type>value</type>
 <value>Labdoo users who have the "superhub" role assigned are allowed to create new Labdoo hubs. (For information on what a hub is, please refer to the <a href="/content/hubs">Hubs Section</a> in the 'Values and Principles' wiki book.) The process of creating a new Labdoo hub is as follows:
 
-<ul>
+<ol>
 <li>
-<strong>Intial contact.</strong> The group soliciting to create a hub contacts Labdoo. This can be done through different ways, including getting in touch with an existing neighbor hub or by directly emailing contact@labdoo.org. Such request is propagated to the Labdoo superhub in charge of the region where the new hub is to be created.
+<strong>Initial contact.</strong> The group soliciting to create a hub contacts Labdoo. This can be done through different ways, including getting in touch with an existing neighbor hub or by directly emailing contact@labdoo.org. Such request is propagated to the Labdoo superhub in charge of the region where the new hub is to be created.
 </li>
 <li>
 <strong>Explaining what a Labdoo hub is.</strong> The superhub explains the potential hub manager candidates how a Labdoo hub works. It is recommended to do such communication using a phone call (can be a regular or Internet-based phone call) to ensure a proper conversation.
@@ -34,16 +34,44 @@
 <strong>Creation of Labdoo user accounts.</strong> Once decided that the hub is to be created, if the candidates don't have a Labdo user account yet, they need to create one for each of the users that will be managing the hub by going to https://www.labdoo.org/user/register.
 </li>
 <li>
-<strong>Creation of the hub.</strong> The superhub creates the new hub by going to the <a href="/node/add/hub">create hub page</a> (this page is available only to users who have superhub rights and it can be found under the 'Hub' tab in the <a href="/content/main-navigation-menu-mnm">'Main Navigation Menu'</a>) and filling in all the necessary information. Make sure to include all the users in charge of managing the new hub in the field ''Hub manager(s)' in this form.
+<strong>Creation of the hub.</strong> The superhub creates the new hub by going to the <a href="/node/add/hub">create hub page</a> (this page is available only to users who have superhub rights and it can be found under the 'Hub' tab in the <a href="/content/main-navigation-menu-mnm">'Main Navigation Menu'</a>) and filling in all the necessary information:
+<ul>
+<li>
+<strong>Title. </strong>Fill in the title following the naming convetion 'Labdoo Hub HUBNAME', where HUBNAME can be the name of the city or town where the hub is located, the name of a certain suburb, district or community inside a city, or the name of the organization (such as the name of the school, university, NGO or company) hosting the hub. For examples of names, look at the existing <a href="../hubs">list of hubs</a>.
+</li>
+<li>
+<strong>Location. </strong>Add the location of your hub and use the map interface to pin down its GPS coordinates.
+</li>
+<li>
+<strong>Hub manager(s). </strong>Add the usernames of the users who will be managing this hub. 
+</li>
+<li>
+<strong>Parent hub. </strong>Some hubs exist as supporting branches of other hubs. For instance, in certain cities, a main hub will have the help of other smaller hubs distributed across various suburbs. These smaller hubs are generally referred as 'branch hubs'. If you are creating a branch hub, select in this field its parent hub. Otherwise, select 'None' in this field.  
+</li>
+<li>
+<strong>Hub type. </strong>Select the type of supporting functions the new hub will provide. If the hub can be used as a dropping and storage location where people can bring their contributed doojects, then check the box 'Dropping point'. If the hub is capable of sanitizing doojects, check the box 'Sanitizing point'. Multiple boxes can be checked at the same time.
+</li>
+<li>
+<strong>About this hub. </strong>If you want to add additional information about this hub, you can do so in this field.
+</li>
+<li>
+<strong>Additional editors. </strong>Besides the hub managers, if you would like to give other users the rights to edit this hub, you can do so by adding them in this field.
+</li>
+</ul>
 </li>
 <li>
 <strong>Assigning roles.</strong> In the last step, the users in charge of managing the hub need to be given the additional role of 'hub manager'. To do this, go to each user page <code>https://www.labdoo-dev.org/users/USERNAME</code> (where USERNAME is the username of the user), click on the tab 'Roles', and activate the checkbox 'hub manager' as illustrated in the next figure.
-<hr/>
+<table align="center">
+<tr><td>
 <em> Figure. To assign the 'hub manager' role, go to that user's page, click on 'Roles' and select the appropriate checkbox.</em>
+</td></tr>
+<tr><td>
 <img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/assign-role.png"/>
+</td></tr>
+</table>
 <hr/>
 </li>
-</ul>
+</ol>
 
 After the above steps, the new hub managers can start their hub activities as described in the <a href="/content/managing-hubs">Hubs Section</a> of this wiki book.
 </value>

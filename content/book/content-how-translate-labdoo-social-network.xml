@@ -21,7 +21,7 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>One of the goals of Labdoo is to break barriers so that education can reach out to all the regions of the world. A key to overcoming these barriers is the capability to communicate and coordinate our actions in as many languages as possible. The more languages we support, the more people will be able to contribute and benefit. To that end, the Labdoo social network exposes an interface to facilitate the process of translating the same Labdoo system. This allows anyone to participate in the process of helping translate the platform into another language.
+<value>One of the goals of Labdoo is to break barriers so that education can reach out to all the regions of the world. A key to overcoming these barriers is the capability to communicate and coordinate our actions in as many languages as possible. The more languages we support, the more people will be able to contribute and benefit, enabling a more balanced and sustainable organic growth path. To that end, the Labdoo social network exposes an interface to facilitate the process of translating the same Labdoo system. This allows anyone to participate in the process of helping translate the platform into another language.
 
 The translation system is based on the concept of 'templates'. To translate the totality of the Labdoo platform, two types of templates need to be translated:
 
@@ -30,7 +30,7 @@ The translation system is based on the concept of 'templates'. To translate the 
 <strong>Email (.email) templates.</strong> Email templates correspond to the automatic email notifications that the Labdoo system sends to users when certain actions happen. For instance, when a laptop is delivered to a school, the user who contributed that laptop receives and automatic email notification in that user's preferred language. 
 </li>
 <li>
-<strong>Portable object (.po) templates.</strong> This corresponds to the actual sentences and words that appear on the Labdoo social network. 
+<strong>Portable object (.po) templates.</strong> This corresponds to the actual sentences and words that appear on the Labdoo social network, in all the visualization dashboards, user interfaces, forms, etc.
 </li>
 </ul>
 
@@ -88,7 +88,7 @@ Once you are done with your translations, send the translated files to the email
 
 <strong>What about translating documents in the wiki?</strong>
 
-TODO</value>
+The above two types of translations (.po and .email files) will allow you to translate the totality of the Labdoo platform except for the content found in the wiki system. This is because Laboo wiki content has its own online translation mechanism to allow wiki editors to work on their own, providing more flexibility and helping optimize the overall wiki book writing and translation workflow. If you want to translate a wiki page or book, please directly refer to the <a href="../content/wiki-translations">translation section of the wiki chapter</a>. </value>
 </body>
 <body>
 <type>format</type>
