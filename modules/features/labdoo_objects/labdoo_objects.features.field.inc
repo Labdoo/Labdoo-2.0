@@ -3698,8 +3698,8 @@ $display_output = $entity_field_item[\'value\'];',
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          'HUBTYPE0' => 'Unused doojects can be dropped in this hub',
-          'HUBTYPE1' => 'Sanitized doojects can be picked up in this hub',
+          'HUBTYPE0' => 'Dropping point',
+          'HUBTYPE1' => 'Sanitizing point',
         ),
         'allowed_values_function' => '',
       ),
@@ -3710,7 +3710,7 @@ $display_output = $entity_field_item[\'value\'];',
       'bundle' => 'hub',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'If this hub accepts to store doojects, select "Dropping point". If the hub sanitizes doojects, select "Sanitizing point". You can select multiple options at the same time.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -5824,6 +5824,7 @@ $display_output = $entity_field_item[\'value\'];',
   t('Hard drive');
   t('Hub manager(s)');
   t('Hub type');
+  t('If this hub accepts to store doojects, select "Dropping point". If the hub sanitizes doojects, select "Sanitizing point". You can select multiple options at the same time.');
   t('If this hub has a parent hub, please select it from the following list.');
   t('If you are an individual tagger, select here the group "Grassroots". If you belong to a hub, select the name of your hub.');
   t('Internet additional notes');

@@ -144,6 +144,10 @@ hr {
   display: none;
 }
 
+.control-group.form-type-select.form-item-field-branches-information-und-0-format.form-item {
+  display: none;
+}
+
 #edit-book-pick-book.btn.form-submit {
   display: none;
 }

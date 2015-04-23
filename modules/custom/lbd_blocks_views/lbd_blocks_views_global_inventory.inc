@@ -957,14 +957,19 @@ $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
 $handler->display->display_options['fields']['country']['id'] = 'country';
 $handler->display->display_options['fields']['country']['table'] = 'location';
 $handler->display->display_options['fields']['country']['field'] = 'country';
+$handler->display->display_options['fields']['country']['label'] = '';
+$handler->display->display_options['fields']['country']['element_label_colon'] = FALSE;
 /* Field: Location: City */
 $handler->display->display_options['fields']['city']['id'] = 'city';
 $handler->display->display_options['fields']['city']['table'] = 'location';
 $handler->display->display_options['fields']['city']['field'] = 'city';
+$handler->display->display_options['fields']['city']['label'] = '';
+$handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
 /* Field: Content: Hub type */
 $handler->display->display_options['fields']['field_types_of_mini_missions']['id'] = 'field_types_of_mini_missions';
 $handler->display->display_options['fields']['field_types_of_mini_missions']['table'] = 'field_data_field_types_of_mini_missions';
 $handler->display->display_options['fields']['field_types_of_mini_missions']['field'] = 'field_types_of_mini_missions';
+$handler->display->display_options['fields']['field_types_of_mini_missions']['label'] = 'Type';
 $handler->display->display_options['fields']['field_types_of_mini_missions']['delta_offset'] = '0';
 $handler->display->display_options['defaults']['filter_groups'] = FALSE;
 $handler->display->display_options['defaults']['filters'] = FALSE;
