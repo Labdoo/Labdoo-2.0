@@ -44,11 +44,6 @@ function _lbd_layout_add_login_link() {
 }
 
 function  _lbd_layout_block_settings() {
-  // change the title of the book navigation block
-  // (set '<none>' to remove it)
-  db_query("UPDATE {block} SET title=' '
-            WHERE theme='bootstrap1' AND module='book' AND delta='navigation'");
-
   // disable all the blocks for theme bootstrap1
   // their place is managed by module context
   db_query("UPDATE {block} SET status = '0' WHERE theme = 'bootstrap1'");
