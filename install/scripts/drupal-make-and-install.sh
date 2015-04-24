@@ -45,10 +45,10 @@ db_name=lbd
 db_user=lbd
 db_pass=lbd
 site_name="Labdoo"
-site_mail="admin@example.org"
+site_mail="admin@$domain"
 account_name=admin
 account_pass=admin
-account_mail="admin@example.org"
+account_mail="admin@$domain"
 
 ### create the database and user
 mysql='mysql --defaults-file=/etc/mysql/debian.cnf'
