@@ -651,7 +651,7 @@ function lbd_layout_strongarm() {
           'browse' => 1,
           'upload' => 1,
           'thumb' => 1,
-          'delete' => 0,
+          'delete' => 1,
           'resize' => 1,
           'mkdir' => 1,
           'rmdir' => 0,
