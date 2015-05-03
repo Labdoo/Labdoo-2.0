@@ -667,6 +667,17 @@ function lbd_layout_strongarm() {
           'mkdir' => 1,
           'rmdir' => 0,
         ),
+        3 => array(
+          'name' => 'newsletters',
+          'subnav' => 1,
+          'browse' => 1,
+          'upload' => 1,
+          'thumb' => 1,
+          'delete' => 1,
+          'resize' => 1,
+          'mkdir' => 1,
+          'rmdir' => 0,
+        ),
       ),
       'thumbnails' => array(
         0 => array(
