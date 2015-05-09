@@ -354,7 +354,15 @@ function lbd_layout_field_default_fields() {
       'bundle' => 'book',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Remember, when writing a wiki page:
+<ul>
+<li>Make sure you have read first the <a href="/../content/best-practices">best practices</a> wiki page.
+<li>Avoid very long pages, break them down into small sections.</li>
+<li>Keep it simple. You can use HTML markup tags such as &lt;strong&gt;, &lt;table&gt;, but it is recommended to only use them if you really need them.</li>
+<li>If you do use markup tags, ensure they are correctly written (every opening tag must much a closing tag, e.g. &lt;strong>text&lt;/strong&gt;).</li>
+<li>Save your text often to ensure it is properly formatted.</li>
+</ul>
+',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -727,6 +735,15 @@ function lbd_layout_field_default_fields() {
   t('Is this wiki page a translation of another wiki page or is this the original?');
   t('Language');
   t('Original book');
+  t('Remember, when writing a wiki page:
+<ul>
+<li>Make sure you have read first the <a href="/../content/best-practices">best practices</a> wiki page.
+<li>Avoid very long pages, break them down into small sections.</li>
+<li>Keep it simple. You can use HTML markup tags such as &lt;strong&gt;, &lt;table&gt;, but it is recommended to only use them if you really need them.</li>
+<li>If you do use markup tags, ensure they are correctly written (every opening tag must much a closing tag, e.g. &lt;strong>text&lt;/strong&gt;).</li>
+<li>Save your text often to ensure it is properly formatted.</li>
+</ul>
+');
   t('Tags');
   t('Upload an image to go with this article.');
 

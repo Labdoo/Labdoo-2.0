@@ -56,7 +56,7 @@ projects[honeypot] = 1.17
 projects[user_restrictions] = 1.0
 
 ;--------------------
-; Features and exports/imports
+; Features, migrations and exports/imports
 ;--------------------
 projects[features] = 1.0
 projects[strongarm] = 2.0
@@ -66,6 +66,9 @@ projects[uuid] = 1.0-alpha6
 ;projects[menu_import] = 1.6
 projects[defaultconfig][version] = 1.x-dev
 projects[defaultconfig][patch][1900574] = https://www.drupal.org/files/issues/1900574.defaultconfig.undefinedindex_13.patch
+projects[migrate_d2d] = 2.1
+projects[migrate] = 2.7
+
 
 ;--------------------
 ; Admin utils

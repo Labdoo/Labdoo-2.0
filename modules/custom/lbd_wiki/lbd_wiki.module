@@ -16,6 +16,7 @@
  *
  */
 
+
 /**
  * Implementation of hook_views_api
  */
@@ -232,4 +233,112 @@ function lbd_wiki_form_node_form_alter(&$form, &$form_state) {
     unset($form['book']['bid']['#options'][0]);
   }
 }
+
+
+/**
+ * Validation of a wiki page content. 
+ * Approach: validate that it is XML compliant.
+ * This validation is specially important because 
+ * if the wiki page written is not XML compliant,
+ * the wiki backup system will not work.
+ */
+
+
+/**
+ * Validates a wiki body
+ *
+ * @param string $wikiText
+ *   The body of a wiki page
+ * @return int
+ *   The number of incorrections (0 if the validation succeeded)
+ *
+ */ 
+function _validate_wiki_body($wikiText) {
+  $numErrors = 0;
+  $okErrorCodes = array();
+  array_push($okErrorCodes, 0);
+
+  libxml_use_internal_errors(true);
+
+  $xmlstr = "<dummy>" . $wikiText . "</dummy>"; # Add dummy initial markup as the parser expects 
+  $doc = simplexml_load_string($xmlstr);
+  $wikiLines = explode("\n", $xmlstr);
+  $errors = libxml_get_errors();
+
+  if(count($errors) > 0){
+    foreach ($errors as $error) {
+      if(in_array($error->code, $okErrorCodes))
+        continue;
+      drupal_set_message(_display_wiki_error($error, $wikiLines));
+      $numErrors++;
+    }
+    libxml_clear_errors();
+  }
+
+  return $numErrors;
+}
+
+
+/**
+ * Returns a formatted wiki validation error
+ *
+ * @param string $error
+ *   The error
+ * @param array $wikiLines 
+ *   An array of the lines of the wiki text 
+ * @return string 
+ *   The ready to display formatted error
+ *
+ */ 
+function _display_wiki_error($error, $wikiLines) {
+
+    switch ($error->level) {
+        case LIBXML_ERR_WARNING:
+            $return = "(Warning) ";
+            break;
+         case LIBXML_ERR_ERROR:
+            $return = "";
+            break;
+        case LIBXML_ERR_FATAL:
+            $return = "";
+            break;
+    }
+
+    $return .= "Line: $error->line | Column: $error->column: ";
+    $return .= trim($error->message) . "<br/>";
+    $return .= "<pre>" . check_plain($wikiLines[$error->line - 1]) . "</pre>";
+
+#   if ($error->file) {
+#     $return .= "\n  File: $error->file";
+#   }
+
+    return "$return";
+}
+
+
+/*
+ * Call back function to validate wiki text
+ */
+function _validate_wiki_text($form, &$form_state) {
+  $lang = $form['body']['#language'];
+  $body = $form['body'][$lang][0]['value']['#value'];
+  $numErrors = _validate_wiki_body($body);
+  if($numErrors > 0)
+    form_set_error('title', t('Your wiki text has @numerr formatting errors, please review and correct them.', 
+                              array('@numerr' => $numErrors)));
+  return;
+}
+
+
+/*
+ * Implementation of hook_form_alter
+ */
+function lbd_wiki_form_alter(&$form, &$form_state, $form_id) {
+
+  if ($form_id == 'book_node_form') {
+    $form['#validate'][] = '_validate_wiki_text';
+  }
+
+  return;
+} 
 
