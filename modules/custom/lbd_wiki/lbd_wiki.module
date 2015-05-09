@@ -260,7 +260,7 @@ function _validate_wiki_body($wikiText) {
 
   libxml_use_internal_errors(true);
 
-  $xmlstr = "<dummy>" . $wikiText . "</dummy>"; # Add dummy initial markup as the parser expects 
+  $xmlstr = "<__wikibook__>" . $wikiText . "</__wikibook__>"; # Add dummy initial markup as the parser expects 
   $doc = simplexml_load_string($xmlstr);
   $wikiLines = explode("\n", $xmlstr);
   $errors = libxml_get_errors();
@@ -306,7 +306,10 @@ function _display_wiki_error($error, $wikiLines) {
 
     $return .= "Line: $error->line | Column: $error->column: ";
     $return .= trim($error->message) . "<br/>";
-    $return .= "<pre>" . check_plain($wikiLines[$error->line - 1]) . "</pre>";
+    $code = $wikiLines[$error->line - 1];
+    $code = str_replace("<__wikibook__>", "", $code);   
+    $code = str_replace("</__wikibook__>", "", $code);
+    $return .= "<pre>" . check_plain($code) . "</pre>";
 
 #   if ($error->file) {
 #     $return .= "\n  File: $error->file";
