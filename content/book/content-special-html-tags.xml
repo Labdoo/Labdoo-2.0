@@ -43,7 +43,7 @@ Click on "My account" to go to your account.
 Click on the "File browser" tab. (If you don't see this tab, it's because you don't have enough permissions. Send an email to contact@labdoo.org to get your permissions upgraded.)
 </li>
 <li>
-You will see a file system directory tree. Next, make sure to select the folder 'content', as this is the folder used to upload images for wiki content. Please notice that if you select a folder outside 'content', your image may not correctly display in future releases of the Labdoo platform. As an option, you can also create a new directory inside 'content' by clicking on the "Directory" tab and select that new folder as the place where you upload your image.
+You will see a file system directory tree. Next, make sure to select the folder 'content', as this is the folder used to upload images for wiki content. Please notice that if you select a folder outside 'content', your image may not correctly display in future releases of the Labdoo platform. As an option, you can also create a new directory inside 'content' by clicking on the "Directory" tab and select that new folder as the place where you upload your image. A general rule of thumb is that each new wiki book should have its own directory under the folder 'content'.
 </li>
 <li>
 Click on "Upload" to complete the uploading of your image.
@@ -52,6 +52,17 @@ Click on "Upload" to complete the uploading of your image.
 Double click on the image you just uploaded. This will take you to the new image page on a new browser page. You can now copy the URL of this image page from your browser. Use this URL in the "src=" field of your &lt;img&gt; tag.
 </li>
 </ul>
+
+<hr/>
+<table align="center">
+<tr><td>
+<em> Figure. Through the file management interface, you can upload images and files. If you are adding images for the wiki, please make sure to upload your content inside the folder 'content'. Inside the folder 'content', it is also recommended that you create more folders to help you organize further your images and files, while reusing existing folders if the content belongs to the same category.</em>
+</td></tr>
+<tr><td>
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/file-mgm.png"/>
+</td></tr>
+</table>
+<hr/>
 
 <strong> Formatting figures in your wiki page </strong>
 

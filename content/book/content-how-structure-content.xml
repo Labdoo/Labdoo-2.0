@@ -1,0 +1,68 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>151</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>How to Structure Content</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>151</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>The general structure of the Labdoo wiki system is similar to other standard wiki systems (such as the Wikipedia) and hence it is fairly free style. That means that there is no need to have a lot of synchronization on what types of documents are created. If you believe that a certain article or document belongs to the Labdoo wiki system, then in general you can go ahead and create it. The wiki is an open system and your work will be subject to peer reviewing by other Labdooers so that if the new document is inappropriate to the subjects of interest in the Labdoo platform, then you will be given instructions on how to edit the content. As in any open wiki system, inappropriate content can be unpublished at any time, to ensure the wiki abides to certain standards of quality and relevancy.
+
+Besides the above general 'free style' principle, the wiki does have a few categories of documents that are considered core to the Labdoo platform and standard for all available languages. When writing a new document, one needs to first consider if the new page belongs to any of these categories and structure the document accordingly, ensuring that there is no overlapping and that the new text follows a smooth reading experience with respect to the core documents. Here is the list of core documents/categories:
+
+<ul>
+<li>
+<strong>The Labdoo Social Network - How It Works.</strong> The user manual describing how the Labdoo system works from a user perspective. This page belongs to it. <a href="../content/labdoo-social-network-how-it-works">[link]</a>
+</li>
+<li>
+<strong>Values, Philosophy and Principles of the Labdoo Project.</strong> A description of the principles of the Labdoo project, including the goals and the approach taken by the platform. <a href="../content/values-philosophy-and-principles-labdoo-project">[link]</a>
+</li>
+<li>
+<strong>Dooject Sanitation Guide.</strong> This document provides a comprehensive guide on how to sanitize devices that can be used for education purposes. <a href="../content/dooject-sanitation-guide">[link]</a>
+</li>
+<li>
+<strong>Labdoo Toolkit.</strong> The 'Labdoo Toolkit' includes documents that are needed to carry out Labdoo activities, including request forms, logos and drawings that you can use to run your own local campaigns, email templates to simplify the process of replying to solicitors, dootripper letters that can be used when traveling, etc. <a href="../content/labdoo-toolkit">[link]</a>
+</li>
+<li>
+<strong>Education Applications.</strong> In this category, wiki writers provide descriptions of the education applications that are part of the devices deployed by Labdoo in schools. This can include descriptions of the offline wikipedia, of the applications found in the Edubuntu package, or in general of any of the many education applications that doojects come preloaded with. 
+</li>
+</ul>
+
+The general principle to add content to the wiki system is as follows: if the subject of the new wiki page belongs to any of the above core categories, then consider adding the new page as part of the above documents; otherwise, you can create a new wiki book.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>72</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>817</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>871</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>
