@@ -1,0 +1,100 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>197</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Welche IT-Spenden sucht Labdoo.org?</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>197</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Der Bedarf in in- und ausländischen Projekten ist gross, viele Kinder und Schulen warten schon sehnsüchtig auf einen Lern-Computer. Daher vielen Dank, wenn Sie Labdoo.org mit einer oder mehreren IT-Spenden unterstützen. 
+
+<strong>Für Projekte (Schulen, Waisenhäuser, Kinder- / Jugendprojekte mit Bildungsbezug) suchen wir</strong>
+<ul>
+<li><strong>Laptops</strong> ab Pentium 4 aufwärts (hergestellt ab Ende 2000),</li>
+<li><strong>eBook Reader</strong> (jedes Fabrikat),</li>
+<li><strong>Tablet-PCs</strong>,</li>
+<li>solche Geräte, die für eine Entsorgung eigentlich zu schade sind, aber für einen Verkauf oder andere Nutzung nicht mehr geeignet sind.</li>
+</ul>
+
+Wer Bedenken hat und seine Festplatte ausbauen möchte, sollte unbedingt die Kleinteile (Halterung, Abdeckung und Schrauben) für die Festplatte dazulegen. Es gibt aber auch sichere Wege, die Daten auch ohne Zerstörung der Festplatte zu löschen (Labdoo.org schreibt 3-mal mit Zufallszahlen über die Platte).
+
+<strong>Außerdem suchen wir immer "koffer-kompatible" Kleinteile und Zubehör wie</strong>
+<ul>
+<li>Flachbildschirme (keine Röhrenmonitore),</li>
+<li>RAM in jeglicher Form (SD/SDHC, DDR1, DDR2, DDR3, für Laptop, eBook Reader),</li>
+<li>Festplatten alle Bauformen: IDE, SATA, 2,5" (ab 20+ GB) oder 3,5" (ab 80+ GB),</li>
+<li>Tastaturen, Mäuse (USB oder PS/2), kabelgebunden (keine Teile mit Batterien)</li>
+<li>kleinere LAN / WLAN Komponenten für Netzwerke</li>
+<li>Laptoptaschen, Ladegeräte</li>
+<li>kompakte Scanner</li>
+<li>Braille-Lesegeräte für Computer für blinde Anwender</li>
+</ul>
+
+<strong>Nicht benötigt werden:</strong>
+<ul>
+<li>Röhrenmonitore (weil diese für einen Transport per Flugpaten ungeeignet und zu schwer bzw. zu sperrig sind),</li>
+<li>Festplatten &lt; 20 GB Kapazität (weil die Lernsoftware und lizenzfreien Lerninhalte viel Speicherplatz einnehmen; Labdoo muss alles vorinstallieren, die die wenigsten unserer Edoovillages online gehen können),</li>
+<li>Funk-Mäuse oder Funk-Tastaturen, wegen der damit verbundenen Folgekosten für Ersatzbatterien.</li>
+<li>Handys (allerdings verwischt hier die Grenze zwischen Handys und Tablets immer mehr; wenn ein Handy als eReader genutzt werden kann, sprecht uns an; neuere Handys mit iOS, Android oder Windows können wir als elektronische Bibliothek nutzen).</li>
+</ul>
+
+Ab und an suchen wir große Teile wie Server oder Drucker. die wir aber nur in seltenen Fällen verschicken oder in der Region an Kindertafeln, Schulprojekte u.a. geben können.
+
+PCs / Desktops sucht manchmal lediglich das Labdoo Hub Rhein-Ruhr, nur nach Absprache, für Inlands-Projekte (Rhein-Ruhr-HubqLabdoo.org).
+
+<strong>Wichtig, bitte beachten</strong>
+<ul>
+<li>Bitte alle <strong>System-Passworte (Boot- / BIOS- / CMOS / SetUp-Passworte)</strong> entfernen, falls gesetzt (die heissen je nach Hersteller immer etwas anders) - da wir die Rechner sonst nicht starten können.</li>
+
+<li>Das normale Windows-Passwort kann ruhig gespeichert bleiben, da wir Windows gar nicht erst starten, sondern mit Linux booten und alles überschreiben. Wer möchte kann auch die gesamte Platte schon selber löschen. Ansonsten überschreiben wir noch 3 x mit Zufallszahlen, sicher ist sicher.</li>
+
+<li><strong>Bitte vergessen Sie nicht ihren Namen und E-Mailadresse auf ihrer IT-Spende anzubringen, damit wir sie zuordnen und Ihnen den Link schicken können, wohin ihre Spende geht.</strong></li>
+</ul>
+
+Es gibt mehrere Wege, wie Sie Ihre IT-Spende dem Labdoo-Projekt zukommen lassen können. 
+<ul>
+<li>Auf https://www.labdoo.org/de/hubs sind alle Abgabestellen weltweit ersichtlich. Dort können Sie auch nach ihrem Land (D, A oder CH) filtern. Vielleicht ist ja ein Hub in Ihrer Nähe oder Sie schicken es CO2 neutral mit einem entsprechenden Paketdienst.</li>
+
+<li>Dann gäbe es noch die Möglichkeit, ihre IT-Spende in einer Filiale der AfB gGmbH (http://www.afb-group.eu/index.php/de/standorte) abzugeben. Die Niederlassungen der AfB nehmen IT-Spenden mit Hinweis auf das Labdoo-Projekt an und leiten sie kostenlos an das nächstgelegene Labdoo-Hub weiter (wenn die AfB-Mitarbeiter Labdoo.org nicht kennen, verweisen Sie auf die Absprache mit dem AfB-Geschäftsführer Daniel Büchle).</li>
+</ul>
+
+Informationen zur sicheren Datenlöschung von Altdaten finden Sie hier https://www.labdoo.org/de/node/1725#FAQ06.
+
+Vielen Dank für Ihre Unterstützung. Erzählen Sie gerne weiter im privaten und beruflichen Umfeld von unserem Projekt.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>168</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>888</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>910</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

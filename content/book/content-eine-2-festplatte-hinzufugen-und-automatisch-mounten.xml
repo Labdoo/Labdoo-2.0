@@ -1,0 +1,63 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>232</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Eine 2. Festplatte hinzufügen und automatisch mounten</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>232</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Wenn die vorhandene Festplatte zu klein und und der Computer die Installation einer 2. Festplatte erlaubt kann man beim Hochfahren des Rechners dieses Laufwerk automatisch mounten (erkennen und Zugriff ermöglichen). 
+
+Hierzu sind die folgenden Schritte nötig:
+<ul>
+<li>Mount-Punkt einrichten (File Manager als Superuser starten)</li>
+<li><code>sudo pcmanfm</code>   (Enter) → Zum Ordner /mnt navigieren → dort einen Ordner mit dem Namen der Festplatte z.B. /disc2 anlegen.</li>
+<li>UUID feststellen (ID der Festplatte) → <code>sudo blkid</code>  (Enter) → in der Liste das Laufwerk suchen und UUID merken</li>
+<li>Alternativ auch über Devicemanager oder Laufwerksverwaltung möglich.</li>
+<li>UUID in Datei fstab eintragen → <code>gksudo gedit /etc/fstab</code> (Enter) →</li>
+<li>Unten die vorhandenen Zeilen einfügen, z.B.: <strong>UUID=.......(hier die UUID einsetzen) /mnt/.....(ihren Namen Platte2, disc2 o.ä.) auto defaults 0 0</strong> Zwischen den o.a. Angaben Leerzeichen lassen, speichern.</li>
+</ul>
+
+<strong>Wichtig:</strong> Damit der Zugriff auf diese Platte für alle User möglich ist müssen die Zugriffsrechte noch geändert werden: 
+<ul>
+2. Platte öffnenn → Rechtsklick in die Ordnerliste → Eigenschaften → Zugriffsrechte für Andere → Dateien erstellen und löschen freigeben → Auf alle Ordner anwenden.
+</ul>
+
+Danach neu booten. Laufwerk wird jetzt automatisch eingehängt (gemountet), ggf. noch zu den Orten im File manager pcmanFM hinzufügen für schnelleren Zugriff (als Lesezeichen).</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>922</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>949</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

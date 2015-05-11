@@ -1,0 +1,61 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>208</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Labdoo images herunterladen und entpacken, MDSUM</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>208</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Das jeweilige Image vom FTP-Server herunterladen http://ftp.labdoo.org/download/images/ Anklicken des benötigten Images oder rechte Maustaste -> speichern unter.
+
+Das Image ist gepackt/gezippt (.tar.gz). Es kann unter jedem Betriebssystem entpackt werden. 
+
+Danach das entpackte Image auf eine externe USB-Festplatte, USB-Stick oder einen Netzwerkserver kopieren. Dafür legt man am besten einen Ordner mit entsprechendem Namen, z.B. nonPAE32 auf dem Datenträger an und kopiert die entpackten Dateien dort hinein. 
+
+<strong>Bei externen Festplatten oder USB-Sticks müssen diese Ordner im obersten Verzeichnis der Platte bzs. Stick liegen, da Clonezilla nur dort danach sucht.</strong>
+
+Jedem Image liegt im jeweiligen Ordner eine Datei MD5SUM bei, in der zu jeder einzelnen Datei die MD5SUM (Checksumme) steht. Anhand der MD5SUM kann geprüft werden, ob die Datei korrekt heruntergeladen wurden. Wie man lokal die MD5SUM berechnet hängt vom Betriebssystem des Rechners ab.
+
+MD5SUM für Windows: Leider gibt es keine Windows-interne Lösung. Für Windows kann man Tools kostenlos herunterladen, z.B. http://www.netzwelt.de/download/15035-md5sum.html oder http://www.winmd5.com/ (Labdoo ist nicht für Fremdprogramme verantwortlich).
+
+MD5SUM für Ubuntu/Linux: In Linux ist ein MD5SUM Tool enthalten. Terminal im Ordner mit den Dateien und der MD5SUM Datei öffnen und ausführen
+<strong>md5sum -c MD5SUM</strong> (Enter)
+
+Mehr zu MD5SUM auf http://wiki.ubuntuusers.de/md5sum</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>924</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>925</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

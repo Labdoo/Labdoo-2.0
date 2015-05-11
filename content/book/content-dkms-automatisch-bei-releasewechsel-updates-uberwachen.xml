@@ -1,0 +1,55 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>234</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>DKMS (automatisch bei Releasewechsel Updates überwachen)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>234</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Das Tool DKMS überwacht bei Releasewechsel automatisch, ob nicht nur die Software aus den lubuntu-Quellen, sondern auch Treiber u.a. Drittsoftware auf dem neuen Release noch laufen.
+
+Eine 100%ige Garantie hat man natürlich nie, aber es ist ein weiteres Sicherheitsnetz. 
+
+Weitere Details auf http://wiki.ubuntuusers.de/DKMS
+
+Zur Installation im Terminal ausführen:
+<code>sudo apt-get install build-essential dkms</code>    (Enter, Passwort, Enter)
+
+<strong>Hinweis: </strong> DKMS ist bereits in den Labdoo Images for Cloning enthalten und wird mit dem installscript-software.sh mit installiert.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>922</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>951</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

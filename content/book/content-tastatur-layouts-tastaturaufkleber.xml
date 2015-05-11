@@ -1,0 +1,52 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>219</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Tastatur-Layouts, Tastaturaufkleber</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>219</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Wenn Tastaturaufkleber benötigt werden empfehelen wir www.Tastaturaufkleber.eu. Die Kosten dafür muss aber selber getragen werden, da diese nicht Bestandteil des Labdoo-Projektes sind.
+
+Hier findet man weitere Informationen zu verschiedenen Tastatur-Layouts
+http://ascii-table.com/keyboards.php
+http://commons.wikimedia.org
+
+Bewährt hat sich auch, den Edoovillages einen Ausdruck der voreingestellten Tastaur-Layouts mitzugeben, damit sich die Anwender daran orientieren können.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>922</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>936</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

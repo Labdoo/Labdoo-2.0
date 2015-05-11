@@ -1,0 +1,68 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>206</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Parted Magic / Clonezilla</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>206</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Um mit dem Cloning zu beginnen, ladet als erstes das lizenzfreie Tool Parted Magic herunter und brennt eine bootfähige .iso-CD, .iso-DVD oder bootfähiges USB-Medium:
+
+<a href="http://ftp.labdoo.org/download/images/parted_magic_clonezilla_2012_10.iso">Parted Magic / Clonezilla 2012_10 (für ältere und aktuelle Laptops)</a>
+
+<a href="http://ftp.labdoo.org/download/images/parted_magic_clonezilla_2013_08.iso">Parted Magic / Clonezilla 2013_08 (nur wenn 2012_10 nicht läuft, z.B. mit USB 3.0)</a>
+
+Weitere Informationen zu Parted Magic (PM) findet ihr auf http://partedmagic.com (bitte ladet NICHT von dort die aktuelle PM-Version, weil diese kostenpflichtig wurde. Die beiden o.a. PM-Versionen sind noch lizenzfrei und kostenlos.)
+
+Bitte die .iso Datei auf eine bootfähige .iso-CD oder USB-Stick brennen. Diese Unterlagen basiert auf dem Einsatz von Parted Magic.
+
+Die nachfolgenden Schritte liegen auch als YouTube Video-Tutorial vor https://www.youtube.com/user/LabdooDACH: 
+
+<strong>Deutsch</strong>
+Teil 1 - how to clone https://www.youtube.com/watch?v=1T9HeMBC4Hw 
+Teil 2 - Nach der Installation https://www.youtube.com/watch?v=2pLycKqTMbc
+
+<strong>English</strong>
+Part 1 - how to clone https://www.youtube.com/watch?v=GKXJR94QIus
+Part 2- after installation https://www.youtube.com/watch?v=AS8OJPJVPk8
+
+Parted Magic booten, Sprache auswählen, starten. Wenn die Sprachwahl verpasst wurde, kann später noch mit Keyboard Layout die richtige Tastatur eingestellt werden.
+
+Manchmal muss man wegen der Hardware bestimmten Einstellungen wählen, z.B. Pentium 4 CPU, Toshiba, Nvidia u.a.) passieren, dass Parted Magic nicht hochfährt oder der Monitor dunkel bleibt. Dann mal VESA statt X11 oder die Optionen im Failsafe Modus ausprobieren. Im o.a. YouTube Tutorial ist das auch erklärt.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>920</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>923</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

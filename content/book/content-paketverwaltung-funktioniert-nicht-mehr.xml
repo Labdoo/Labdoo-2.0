@@ -1,0 +1,68 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>225</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Paketverwaltung funktioniert nicht mehr</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>225</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>In seltenen Fällen wird der Installationsprozess nicht sauber abgeschlossen, z.B. durch Stromausfall o.ä. Bitte auf die Hinweise und eventuell Fehlermeldungen achten. Da hier nicht alle Möglichkeiten beschrieben werden können verweisen wir auf
+http://wiki.ubuntuusers.de/aptitude
+http://wiki.ubuntuusers.de/Paketverwaltung/Problembehebung
+http://wiki.ubuntuusers.de/apt/apt-get
+
+<strong>Die Installation von Paketen wurde unterbrochen:</strong>
+<code>sudo dpkg --configure -a</code> (Enter, Passwort, Enter)
+
+<strong>Es werden “kaputte” Pakete gemeldet, Reparatur per:</strong>
+<code>sudo apt-get install -f</code> (Enter, Passwort, Enter)
+
+<strong>Aktualisierung auf den neuesten Stand, ohne Releasewechsel:</strong>
+<code>sudo apt-get install dist-upgrade</code> (Enter, Passwort, Enter)
+
+<strong>Reparatur defekter Pakete</strong>
+
+<strong>Um den Zwischenspeicher der Progammliste zu löschen:</strong>
+<code>sudo apt-get clean</code>  (Enter, Passwort, Enter)
+Danach wieder neu laden
+<code>sudo aptitude -f install</code>   (Enter, Passwort, Enter)
+
+Nach den Befehlen sollte auf jeden Fall noch aufgerufen werden
+<code>sudo dpkg --configure -a</code>  (Enter, Passwort, Enter)</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>922</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>942</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

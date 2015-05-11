@@ -1,0 +1,64 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>209</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Sicheres Löschen der Festplatte</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>209</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Wurde bei der IT-Spende die Festplatte nicht gelöscht muss dies unbedingt jetzt durchgeführt werden. Labdoo.org sichert jedem Spender zu, dass seine Festplatte durch mehrfaches Überschreiben mit Zufallszahlen gelöscht werden.
+
+Linux-System geben den Festplatten Buchstaben, d.h. die 1. Platte heisst sda, die 2. sdb usw. sda1, sda2 sind dann Partitionen innerhalb der Platte sda.
+
+Parted Magic bietet 2 Möglichkeiten der sicheren Datenlöschung:
+
+- im Terminal: Terminal öffnen und eintippen:
+
+<strong><code>sudo shred /dev/sda -v -f</code></strong> (Enter) Dies startet ein 3-faches Überschreiben der Festplatte mit Zufallszahlen.
+
+- Alternativ gibt es auf dem Desktop das Tool / Icon <strong>Disk Eraser</strong>. 
+
+Damit startet ihr ein Löschprogramm mit verschiedenen Optionen.
+ 
+Die Löschung der Festplatte läuft je nach CPU und Größe ca. 1 – 2,5 Stunden.
+
+<strong>Hinweis:</strong> Bitte Partionmanager (siehe auf dem Desktop) starten und dort nachschauen, ob es mehrere Festplatten gibt. Falls ja, bitte die o.a. Prozedur auch für sdb, sdc usw. durchführen. Dies kann riuhig parallel erfolgen, um Zeit zu sparen,
+
+Erst nach Löschung der Festplatte(n) geht es weiter mit dem Aufspielen der Images.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>925</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>926</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

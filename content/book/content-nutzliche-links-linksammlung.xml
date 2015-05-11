@@ -1,0 +1,69 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>247</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Nützliche Links / Linksammlung</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>247</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>IBM ThinkPad Passwortprobleme
+http://support.lenovo.com/en_US/detail.page?LegacyDocID=migr-59377
+Dokumentation libreoffice, z.T. in den Landesprachen
+http://www.libreoffice.org/get-help/documentation/
+http://www.libreoffice.org/international-sites/
+Geotools (Koordinaten umrechnen, Koordinaten finden)
+http://gpso.de/maps/
+http://www.mygeoposition.com/ 
+http://rechneronline.de/geo-koordinaten/
+Stecker- und Stromübersicht
+http://de.wikipedia.org/wiki/L%C3%A4nder%C3%BCbersicht_Steckertypen,_Netzspannungen_und_-frequenzen
+Übersicht Boot-Optionen bei ubuntu Installation
+https://help.ubuntu.com/community/BootOptions
+Anleitung ATI-Grafikkarten
+http://wiki.cchtml.com/index.php/Ubuntu_Precise_Installation_Guide
+
+BIOS / CPU Informationen
+http://www.bios-info.de/
+http://www.cpu-world.com/
+http://www.jumperz.de/e
+
+Tool Collection
+http://www.hirensbootcd.org/
+http://www.ultimatebootcd.com/</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>963</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>964</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

@@ -1,0 +1,87 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>191</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Programme für behinderte Anwender (barrierefrei)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>191</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><strong>Programme für behinderte Anwender</strong>
+
+Die nachfolgenden Tools können als Alternative zu Programmen mit graphischer Benutzeroberfläche genommen werden. Die u.a. Tools sind i.d.R. mit einer textbasierten Oberfläche leichter zu steuern und eignen sich daher besser für blinde oder sehbehinderte Anwender. Mehr auf http://wiki.ubuntuusers.de/Barrierefreiheit
+
+<strong>Anwendung     Beschreibung    Paketname   Bildschirmfoto</strong>
+
+Orca  Bildschirm Vorlesetool Orca
+bluefish Textbasierter HTML Editor bluefish
+gespeaker mbrola Alternativer Konverter Text → Sprache gespeaker
+Espeak Tool zur Generierung elektronische Sprache Espeak
+pcmanfm Text basierter Dateimanager pcmanfm
+alpine Text orientiertes e-Mail Tool (im Terminal starten → Programmname → Enter) alpine
+irssi Text basierter IRC client (Chat) (im Terminal starten → Programmname → Enter) irssi
+lynx Text basierter Web Browser in einem Terminal (im Terminal starten → Programmname → Enter) lynx-cur
+Elinks Text basierter Web Browser in einem Terminal (im Terminal starten → Programmname → Enter) Elinks
+Midnight Commander (mc) Text basierter Datei Manager (im Terminal starten → Programmname mc → Enter) MC
+easystroke Maus / Gesten gesteuertes user interface easystroke
+dasher Texteingabe per Maus, Mauspad, Eyetracker oder Touchpad dasher
+cellwriter Konverter Handschrift → Text cellwriter
+sitplus Spiele-Therapeutische Aktivitäten / ludic-therapeutic activities sitplus
+kmag Bildschirmlupe kmag
+
+<strong>Weitere Hinweise für behinderte Anwender:</strong>
+
+In Systemeinstellungen → Zugangshilfen → Einstellungen für leichteren, barrierefreien Zugang möglich.
+
+In System Settings → Universal Access → Adaption for easier access for handicaped users.
+
+http://manual.aptosid.com/ Debian basierte Linuxversion für Behinderte,
+
+http://vinuxproject.org/ Ubuntu basierte Version für blind oder stark sehbehinderte Anwender.
+Allgemeine Hinweise
+
+Ubuntu legt großen Wert auf Barrierefreiheit, mehr Informationen hierzu unter
+
+http://wiki.ubuntuusers.de/Barrierefreiheit
+
+http://wiki.ubuntuusers.de/Eldy (ein Desktop für ältere oder behinderte Menschen)
+
+Weitere Informationen findet man auch unter:
+
+http://wiki.ubuntuusers.de/Kinder</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>170</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>895</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>904</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

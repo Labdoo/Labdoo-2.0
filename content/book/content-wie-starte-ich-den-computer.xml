@@ -1,0 +1,106 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>174</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Wie starte ich den Computer?</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>174</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><strong> Angelegte Benutzer (User)</strong>
+
+Auf einem Labdoo-Computer sind 3 Benutzer User) eingerichtet:
+
+<strong>labdoo</strong>: ist Administrator! Das Passwort um sich anzumelden ist <strong>labdoo</strong> (Es sollte aber sofort beim 1. Mal durch den Lehrer geändert werden, weil <strong>labdoo</strong> Administrator Rechte hat und kann das System verstellen!)
+
+<strong>student</strong>: ist Standard-User. Das Passwort ist <strong>labdoo></strong> (es muss nicht geändert werden, könnt ihr entscheiden) 
+
+<strong>guest</strong>: braucht kein Passwort, aber es werden alle seine Eingaben und Änderungen nach der Abmeldung gelöscht
+
+Zum Ändern des Passwortes → Gehe zu system settings → user accounts → unlock →
+Password „labdoo“ → klicke auf Passwort, ändere es, klicke auf labdoo User → wähle Standard ←→ Administrator, abhängig davon, welche Rechte gebraucht werden.
+
+<strong>Starten von Programmen</strong>
+
+Starte am besten eines der Lern- / Spielprogramme. Es gibt lustige und welche zum lernen. So startest du sie:
+
+Klicke unten links auf das lubuntu Icon (ähnlich wie bei Windows XP) →  “Education” (Bildung) oder „game“ (Spiele) → Programm anklicken
+
+Im Ordner „/Public“ (öffentlich) findet ihr nützliche Manuals, lizenzfreie Lerninhalte (OER), Offline wikis, e-books u.a. 
+
+Auf dem Desktop findet ihr ein Video. Anklicken und es zeigt und erklärt euch den Labdoo Laptop.
+
+<strong>Optional: Desktops (Benutzeroberflächen)</strong>
+
+Ein Labdoo Laptop wird mit dem lubuntu (Linux Betriebssystem auf Ubuntu-Basis mit dem LXDE-Desktop) ausgeliefert. LXDE ist eine leicht zu lernende Oberfläche, schlank, schnell. LXDE / lubuntu läuft auch auf älteren Rechnern ab 256 / 512 MB RAM.
+
+Optional kann man weitere Desktops (Oberflächen) installieren, die je nach Leistungsfähigkeit des Laptops gewählt werden sollten-
+
+- Unity: hohe Systemanforderungen (min 1 GB RAM)
+- Gnome: mittlere bis hohe Systemanforderungen (756 MB - 1 GB RAM)
+
+Ändern ... Bei der Anmeldung (Log-in) seht ihr in der rechten Ecke des Log-In Feldes ein Icon. Klickt es an und ihr erhaltet eine Liste der verfügbaren Desktops. 
+
+<strong>Sprache, regionale Formate und Tastatureinstellungen</strong>
+
+Manchmal möchtet ihr eine oder mehrere Sprachen neu installieren oder umstellen. Hierzu öffne die Systemeinstellungen durch Klicken auf dieses Icon und dann:
+Klick auf Language Support (Sprache). Wenn die Meldung “Language support not completely installed” erscheint mit Yes/Ja bestätigen und installieren.
+Im nächsten Fenster auf Install/Remove languages (Install./Entfernen Sprachen) → wähle die Sprache(n) die du brauchst→ Apply → Apply System-wide (Systemweit anwenden).
+Die neue Sprache(n) erscheinen in einer Liste: ubuntu verwendet die Sprachen von oben nach unten, d.h. Wenn ein Wort in der 1. Sprache nicht übersetzt ist kommt Sprache 2 dran usw. bis zu English.
+
+Suche die neue Sprache, anklicken, die linke Maustaste gedrückt halten und an die oberste Stelle ziehen, dort Maustaste loslassen → klick auf Apply System-wide (Systemweit anwenden). Die neue Sprache erscheint nach einem Log-out oder Neustart.
+
+<strong>Regionale Formate</strong>
+
+Man kann auch die regionalen Formate für Zahlen, Währung, Datum usw. einstellen. Hierzu auf den Reiter „Regional formats“ und in der Liste das Land der Wahl anklicken → Apply System-Wide (Systemweit anwenden). 
+
+<strong>Tastatureinstellungen</strong>
+
+Öffne System Settings (Systemeinstellungen) → Keyboard Layout (Tastaturlayout). Man sieht eine Liste aller installierten Tastaturen. Durch Tastaturaufkleber kann man eventuell das jeweilige Layout bekommen. Auch:
++ = hinzufügen einer neues Tastaturlayouts aus einer Liste
+- = entfernen eines installierten Tastaturlayouts
+△ = Layout in der Liste nach oben bewegen
+▽ = Layout in der Liste nach unten bewegen
+Tastatursymbol = zeigt die Tastatur in einer Grafik
+Options = mehrere Einstellungen (settings), z.B. Tasten- kombination für schnelles Umstellung der Tastaturen
+Man kann auch die jeweilige Tastatur auf dem Desktop auswählen:
+
+Viel Spaß beim spielen und lernen mit deinen Freunden!
+
+Das Labdoo Team.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>170</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>890</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>894</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

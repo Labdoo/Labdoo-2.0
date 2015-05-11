@@ -1,0 +1,68 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>210</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Image auf Computer clonen (installieren)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>210</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Durch Doppelklick auf das Icon <strong>Clonezilla</strong> starten. Labdoo Images for Cloning sind komplette Abbilder von lauffertigen Systemen. 
+
+Daher die Auswahl <strong> image - Image</strong> wählen. Labdoo stellt immer Images (nicht device!) basierte Versionen online.
+
+→ <strong>device-image</strong> (Labdoo stellt immer Images online, daher diese Option wählen)
+
+→ <strong>das Speichermedium auswählen</strong>, auf dem das Image liegt, ggf. mit Pfaden und Passworten. Bei externen USB-Platten/Sticks ist dies i.d.R. sdb. In Linux werden die Plattenlaufwerke mit sda (i.d.R. Systemplatte) beginnend mit Buchstaben aufsteigend benannt. <strong>Auf die Bildschirmhinweise achten, USB-Laufwerke erst auf Anforderung einstekcken und ca. 5 Sekunden warten.</strong>
+
+→ <strong>Expert</strong> (Fortgeschritten) Modus auswählen (wir empfehlen immer den Expert Modus. Das Image „merkt“ sich, wie groß die Platte war, von der sie stammt. Wenn es z.B. von einer 60 GB Platte stammt, jetzt aber auf eine 40 GB Platte installiert werden soll, kommt im Beginner Modus der Hinweis „Zielplatte zu klein“ und bricht ab. <strong>Im Expert Modus kann man später einen Haken bei der Option -icds setzen, die diese Prüfung übersteuert (s.u.)</strong>
+
+→ <strong>restoredisk</strong> für das Zurückspielen auswählen,
+
+→ <strong>das zur CPU passende Image</strong> auswählen (wichtig ist PAE / nonPAE bzw. 32 / 64 Bit, passend zur CPU),
+
+→ die <strong>Ziel-Festplatte</strong> bestätigen,
+
+→ im Expert Modus in der Liste zur <strong>Option -icds</strong> gehen und mit der Leertaste bestätigen („nicht prüfen, ob Zielplatte kleiner als Ursprungsplatte“), mit der Leertaste markieren (*),
+
+→ Die nachfolgenden Eingaben entweder mit Enter oder mit „Y“ (Yes, Ja) bestätigen,
+
+→ Die Installation startet und dauert ca. 15 – 30 Min. Danach sind alle Daten inkl. lubuntu, Einstellungen, Lernihanlten u.a. installiert.
+
+<strong>Hinweis Fehlermeldungen:</strong> Wenn man mit Clonezilla 2012_10 Images ab 14.04 LTS und höher zurückspielt, erfolgen kurz vor Ende des Clonings rote Fehlermeldungen, das bestimmte GRUB-Dateien fehlen würden. Diese Hinweise können ignoriert werden. </value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>926</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>927</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

@@ -1,0 +1,55 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>233</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Kernel Panic (kann an defektem Speicher / RAM liegen)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>233</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Wenn der Rechner öfter mit Kernel Panic abstürzt, kann dies an defekten Speicherriegeln liegen (es können aber auch andere Gründe sein). 
+
+Um den Speicher zu untersuchen kann man:
+<ul>
+<li>den Rechner neu booten, dabei die SHIFT (Umschalttaste für Großbuchstaben) gedrückt halten,</li>
+<li>das GRUB Menü wird angezeigt, dort Memtest86 (Memorytest) auswählen,</li>
+<li>bei defekten Speicherbereichen werden diese rot angezeigt,</li>
+</ul>
+
+<strong>Wichtig:</strong> Um festzustellen, welcher Speicherriegel defekt ist muss jeder Speicher einzeln getestet werden (die anderen ausbauen). Eventuell tritt der Fehler auch nur auf einem bestimmten Steckplatz auf...</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>922</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>950</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

@@ -1,0 +1,63 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>250</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Werbematerial für Hubs</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>250</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Da Labdoo.org möglich ohne Kosten auskommen möchte liegen die meisten Unterlagen online vor. Es gibt elektronisches Material, dass ihr an an Interessenten streuen kannst. Dies liegt aber meist als pdf oder editierbar im LibreOffice Format vor (es wäre gut, wenn du diese kostenlose Office-Umgebung installierst). Alles liegt auf http://ftp.labdoo.org/download/. 
+
+Und schaue dir das FAQ-Forum an http://www.labdoo.org/de/content/faq. Bei Fragen hilf das Labdoo-Team gerne weiter.
+
+Am besten beginnst du über dein bestehendes Netzwerk, die lokale Presse auf Labdoo hinzuweisen. Ohne regionale Aktionen wird es nicht gehen. Oder suche dir Hilfsvereine in der Region, die Schulen, Waisenhäuser u.a. im Ausland unterstützen und starte mit ihnen eine gemeinsame Aktion.
+
+Google spendet uns ein monatliches Budget für AdWords-Werbung. Wir legen dort eine Kampagne für dein Hub in deiner Region an und bewerben es so online.
+
+<strong>Visitenkarten</strong>
+
+
+
+
+<strong>Banner, Plakate</strong>
+
+
+
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>172</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>892</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>967</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

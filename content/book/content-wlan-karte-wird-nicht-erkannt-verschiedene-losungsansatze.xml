@@ -1,0 +1,117 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>235</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>WLAN Karte wird nicht erkannt (verschiedene Lösungsansätze)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>235</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><ol>
+
+Manchmal werden ältere oder sehr neue WLAN Karten nicht automatisch erkannt und eingebunden. 
+
+Hier gibt es verschiedene Lösungswege:
+<ul>
+<li>Auf spezielle Treiber prüfen</li>
+<li>Herstellertreiber, z.B. für Broadcast-Chips</li>
+<li>linux-backports-modules (Programmsammlung für ältere WLAN Karten)</li>
+<li>ndiswrapper (nutzt Windowstreiber für WLAN Karten)</li>
+<li>Linuxtreiber vom Hersteller selber nachinstallieren</li>
+</ul>
+
+<li><strong>Als erstes prüfen, ob spezielle Treiber erforderlich sind</strong></li>
+Preferences → Software &amp; Updates → Additional Drivers → einige Zeit warten 
+→ entweder erscheint "no additional drivers available" → keine weiteren Schritte notwendig, oder
+→ es wird eine Liste an Treibern angezeigt → den gewünschten Treiber anklicken → Apply Changes
+
+<li><strong>Feststellen, welcher WLAN Chipsatz und Hersteller verbaut ist</strong></li>
+
+Dazu im Terminal ausführen:
+<code>lspci | grep -i net</code>  	(enter)
+oder
+Anzeige von Name/Netzwerk-Chipsatz: 
+<code>lspci -nnk | grep -i net -A2 </code>	(enter)
+oder bei USB-WLAN:
+<code>lsusb</code>	(enter)
+Manche fest eingebauten Karten reagieren als USB, also im Zweifel beide Befehle ausprobieren. 
+
+Dann prüfen, ob supported:
+https://help.ubuntu.com/community/WifiDocs/WirelessCardsSupported
+http://linux-wless.passys.nl/
+http://wireless.kernel.org/en/users/Devices
+http://wiki.ubuntuusers.de/WLAN/Karten
+http://wiki.ubuntuusers.de/Systeminformationen_ermitteln?redirect=no#Hardware
+
+<li><strong>Broadcast-WLAN-Chipsatz wird nicht erkannt</strong></li>
+Sollte das WLAN auf dem Broadcom-Chipsatz basieren können die Treiber nachinstallieren:
+<code>sudo apt-get update</code>	(enter)
+<code>sudo apt-get install firmware-b43-installer</code>	(enter)
+
+Anschließend sollte es nach einem Systemneustart klappen. Falls nicht, den Treiber von Hand laden:
+<code>sudo modprobe -r b43 bcma</code>     (enter)
+
+<li><strong>Linux Backports Modules installieren</strong></li>
+
+Linux Backports Modules installieren. Dies erweitert lubuntu um die Unterstützung vieler älterer WLAN Karten. Die BackportModule sind bereits in Labdoo Image for Cloning enthalten und auch im installscript-software.sh.
+
+Eine detaillierte Liste der unterstützten WLAN Karten auf:
+http://wiki.ubuntuusers.de/WLAN/Linux-backports-modules
+http://wireless.kernel.org/en/users/Drivers
+
+Zur Installation im Terminal ausführen:
+für ubuntu 12.04: <code>sudo apt-get install linux-backports-modules-cw-3.6-$(uname -r)</code>   (Enter)
+für ubuntu 10.04: <code>sudo apt-get install linux-backports-modules-wireless-$(uname -r)</code>   (Enter)
+und für alle ubuntu Versionen Installation von linux-firmware-nonfree: <code>sudo apt-get install linux-firmware-nonfree</code>	(Enter)
+
+Sollte dies nicht funktionieren, bleibt noch
+
+<li><strong>Installation über NdisWrapper</strong></li>
+Details aufhttp://wiki.ubuntuusers.de/WLAN/NdisWrapper
+
+Bitte darauf achten, dass
+<ul>
+<li>der 32 Bit bzw. 64 Bit-Treiber der WLAN-Karte zur ubuntu-Version passt (32 oder 64 Bit)</li>
+<li>die .inf Datei im Treiber enthalten ist, z.B. bei Intel nur in .zip Versionen, nicht in den .exe enthalten!</li>
+</ul>
+Installation laut dem o.a. Wiki durchführen. Bitte auch die Tipps beachten, ggf. im Terminal installieren. Falls dies nicht funktioniert:
+
+<li><strong>... und als letzte Lösung bleibt die Installation eines nativen Linux-Treibers vom Hersteller (sofern vorhanden). Hierfür verweisen wir auf die Foren und Websites.</strong></li>
+
+</ol></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>922</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>952</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

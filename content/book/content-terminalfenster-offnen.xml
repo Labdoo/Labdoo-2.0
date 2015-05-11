@@ -1,0 +1,56 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>221</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Terminalfenster öffnen</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>221</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Oft wird auf das Öffnen eines Terminalfensters Bezug genommen. 
+
+Hierzu gleichzeitig die 3 Tasten <strong>CTL/STRG + Alt + t</strong> drücken.
+
+Alternativ → System tools → UXterm oder XTerm anklicken
+
+Das Terminalfenster öffnet sich. 
+
+Am Anfang einer Zeile stehen Name des Benutzers @ Name des Laptops. Danach kann man jetzt die Befehle eintippen. 
+
+Zum Schließen des Fenstern ggf. mehrfach den Befehl “exit” → Enter eingeben, aber erst wenn alle vorherigen Befehle abgearbeitet wurden.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>922</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>938</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

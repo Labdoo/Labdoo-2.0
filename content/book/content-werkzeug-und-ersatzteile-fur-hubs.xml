@@ -1,0 +1,69 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>251</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Werkzeug und Ersatzteile für Hubs</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>251</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Wir können natürlich nur eine Empfehlung aussprechen, was sich bewährt hat. Vielleicht habt ihr auch schon einiges an Material und Werkzeug?
+
+Vernetzt Euch in eurer Region mit IT-Unternehmen oder IT-Händlern, speziell sogenannten "Refurbishern". Das sind Unternehmen, die im größeren Stil Alt-Computer aufarbeiten und über Shops oder Broker wieder verkaufen. Aber es bleiben immer mal wieder Teile übrig, die uns sehr helfen. Ein besonders wichtiger Refurbisher ist die Afb gGmbH http://www.afb-group.de/de/, mit Geschäftsstellen in der DACH-Region (Deutschland, Österreich und der Schweiz). Wenn ein AfB-Shop in eurer Region stellt euch dort vor, weil die AfB-Shops euch nicht nur mit Ersatzteilen helfen können, sondern auch von Privatleuten deren IT-Spenden annehmen und an Labdoo weiterleiten. Wenn der AfB-Shop euch nicht kennt gehen die IT-Spenden zu AfB nach Essen. So könnt ihr die IT-Spenden aber vor Ort in Empfang nehmen und bearbeiten.
+
+Dann könnt ihr Euch an das Hub Rhein-Ruhr wenden, das über einen Fundus an Ersatzteilen verfügt und ggf. euch zusenden kann. Es gibt aber hunderte verschiedene Ladegeräte, Speicher (RAM), IDE- und SATA-Festplatten, Halterungen und Abdeckungen ("Caddy") für Festplatten, Schrauben usw. Bevor ihr defekte Computer entsorgt solltet ihr daher noch sinnvoll verwertbare Teile ausbauen und aufbewahren.
+
+Über den Labdoo.org e.V. haben wir ausserdem die Möglichkeit, fehlende Ersatzteile oder Werkzeug zu beschaffen. Der Labdoo.org e.V. refinanziert sich ausschliesslich über Spenden, daher wäre es nett, wenn ihr schaut, dass wir über Spenden Ausgaben wieder ersetzt bekämen, danke.
+
+Bei vielen Shop wie http://www.pts-trading.de/ (Batterien und Ladegeräte) oder https://de.ifixit.com/Store (Werkzeug, Reparaturtipps) erhalten wir Händlerkonditionen.
+
+<strong>Werkzeug (Empfehlung)</strong>
+
+folgt
+
+
+
+<strong>Werbematerial</strong>
+
+
+folgt
+
+
+
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>172</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>892</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>968</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

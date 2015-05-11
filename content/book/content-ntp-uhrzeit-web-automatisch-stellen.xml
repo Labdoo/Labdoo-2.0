@@ -1,0 +1,50 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>227</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>NTP - Uhrzeit via Web automatisch stellen</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>227</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Das Tool NTP ist auch bei defekter, interner Batterie, aber nur mit Online Zugang sinnvoll.
+
+Das Tool heißt NTP (im Terminal: <code>sudo apt-get install ntp</code> → Enter oder alternativ über das Softwarecenter) für Network Time Protocol und man muss nichts weiter einstellen. 
+
+Das Tool holt sich die Zeit von den Ubuntu-Poolservern und man kann, wenn man unbedingt möchte, deutsche Server einstellen, aber das tut nicht Not, weil die Notebooks ja sowieso in die ganze Welt geschickt werden.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>922</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>944</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

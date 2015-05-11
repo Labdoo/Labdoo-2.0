@@ -1,0 +1,71 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>216</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Was die Skripte leisten</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>216</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><strong> Was das Skript installscript-software.sh leistet</strong>
+
+<ul>
+<li>Installation von Edubuntu, d.h. weiterer kindgerechter Lernsoftware für Kinder</li>
+<ul><li>Lernpaket für Vorschule,</li>
+       <li>Lernpaket für die Grundschule und</li>
+       <li>Lernpaket für die weiterführende Schule</li></ul>
+<li>Installation von Programmen, die in lubuntu sonst nicht enthalten wären wie</li>
+<ul><li>Office-Paket liberoffice</li>
+       <li>ClamAV Virenschutz und aktuelle Virensignatur</li>
+       <li>Programme für den barrierefreien Zugang für seh- / hörbehinderte Anwender</li>
+       <li>Aktualisierung und Patchen des Ubuntu Systems</li>
+</ul>
+<li>User student für Schüler einrichten (student hat weniger Rechte und kann das System nicht so schnell verstellen)</li>
+<li>sinnvolle Einstellungen und Optimierungen im Ubuntu-Betriebssystems.</li>
+</ul>
+
+<strong>Was das Skript installscript-content.sh leistet</strong>
+<ul>
+<li>das Xowa Offline Wiki Tool mit Zugriff über 804 Offline-Wikis</li>
+<li>lizenzfreie Lerninhalte</li>
+<li>wikidoo - englisches Offline Wiki nach UK-Curriculum</li>
+<li>englische eBooks (eBooks in weiteren Sprachen liegen auf der externen Festplatte unter /Public/eBooks und können von dort überspielt werden)</li>
+<li>Multimedia Sprachkurs English</li>
+</ul>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>932</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>933</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

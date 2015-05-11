@@ -1,0 +1,73 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>213</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Installationsskripte (Übersicht)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>213</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Um die Installation zu erleichtern wurden verschiedene Skripte entwickelt und auch immer weiter optimiert. Wenn ihr Fragen oder Vorschläge habt wendet euch gerne an Labdoo-DACH@Labdoo.org.
+
+Alle Labdoo-Skripte liegen auf unserem FTP Server http://ftp.labdoo.org/download/images/installskripts/
+
+Zum Zeitpunkt der Ausführung eines Skriptes muss der betreffende Labdoo-Rechner online sein (LAN oder WLAN).
+
+<strong>Es gibt Skripte für die verschiedensten Zwecke, deren Einsatz wir empfehlen, um eine reine lubuntu-Installation aufzuwerten:</strong>
+<ul>
+<li><a href="http://ftp.labdoo.org/download/images/installskripts/installscript-content.sh">installscript-content.sh</a> (<strong>empfohlen</strong>; Skript installiert Lerninhalte, Offline-Wikis und Manuals, Anschluss eines USB-Sticks >= 16 GB sinnvoll)</li>
+<li><a href="http://ftp.labdoo.org/download/images/installskripts/installscript-software.sh">installscript-software.sh</a> (empfohlen; Skript installiert weitere Lernsoftware, barrierefreie Zugänge für Blinde, tools u.v.a. mehr nach)</li>
+</ul>
+
+<strong>Nützliche Skripte (optional)</strong>
+<ul>
+<li><a href="http://ftp.labdoo.org/download/images/installskripts/set-rights-folder-files-Public-correct.sh">set-rights-folder-files-Public-correct.sh</a> (optional;Skript stellt die Rechte im Ordner /home/labdoo/Public so ein, dass auch der User student darauf zugreifen kann; ist im installscript-content.sh enthalten, ist aber ggf. sinnvoll, falls ihr weitere Lerninhalte im Ordner /Public nachinstalliert)</li>
+<li><a href="http://ftp.labdoo.org/download/images/installskripts/check_cpu_32_or_64_bits_PAE_or_nonPAE.sh">check_cpu_32_or_64_bits_PAE_or_nonPAE.sh</a> (optional; zur Feststellung des CPU Typs im Terminal ausführen; nur für Cloning von Images)</li>
+</ul>
+
+<strong>Dann gibt es  Skripte, die nur in bestimmten Fällen sinnvoll sind (optional, nur für erfahrene Anwender):</strong>
+<ul>
+<li><a href="http://ftp.labdoo.org/download/images/installskripts/installscript-xowa.sh">installscript-xowa.sh</a> (Skript installiert das Offline-Wiki-Tool Xowa nach und stellt die Rechte korrekt ein)</li>
+<li><a href="http://ftp.labdoo.org/download/images/installskripts/installscript-desktops.sh">installscript-desktops.sh</a> (Skript installiert weitere Desktops (Oberflächen) nach wie Unity und Gnome; damit steigen aber auch die Systemanforderungen)</li>
+<li><a href="http://ftp.labdoo.org/download/images/installskripts/installscript-virtualbox.sh">installscript-virtualbox.sh</a> (Skript installiert VirtualBox nach, um Gast-Betriebssyteme wie Windows parallel einzusetzen, min. 2 GB RAM und Dual Core CPU sinnvoll)</li>
+<li><a href="http://ftp.labdoo.org/download/images/installskripts/childsplay%20bug%20fix.txt">childsplay bug fix.txt</a> (nur nötig, wenn Childsplay nicht startet, Hinweis auf Bugbehebung)</li>
+<li><a href="http://ftp.labdoo.org/download/images/installskripts/delete-xowa-log-folder.txt">delete-xowa-log-folder.txt</a> (nur im Terminal ausführen, wenn man selber ein Image erstellen möchte, in dem Xowa installiert ist)</li>
+</ul>
+
+<strong>Download eines Skriptes</strong> -> o.a. Links anklicken -> speichern unter -> auf dem Desktop des Labdoo-Rechnerns speichern (home/labdoo/Desktop), alternativ per USB-Stick o.ä. auf den Desktop des Labdoo-rechners kopieren.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>891</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>930</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

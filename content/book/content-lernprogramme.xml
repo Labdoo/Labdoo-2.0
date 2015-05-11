@@ -1,0 +1,160 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>190</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Lernprogramme</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>190</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><strong>Lernprogramme</strong>
+
+<strong>Astronomie &amp; Geographie</strong>
+
+<strong>Anwendung       Beschreibung    Paketname    Bildschirmfoto</strong>
+
+Celestia  Celestia ist ein Programm, mit dem man sich virtuell durch das Weltall bewegen und andere Planeten, Sterne und Galaxien besuchen kann. celestia-gnome
+KStars    KStars ist ein Programm, welches einen künstlichen Sternenhimmel auf dem Desktop erzeugt. Nachdem die Basisdaten eingegeben und Erweiterungen heruntergeladen worden sind, kann man mittels des Desktop-Planetariums Sterne, Planeten, die Sonne, den Mond und tausende Kometen und Planetoide lokalisieren, um sie ggf. mit dem eigenen Teleskop zu beobachten. kstars
+Marble   Marble ist ein Desktop Globus. Das Programm ähnelt dem populären Programm Google Earth. Es ist schlicht gehalten, trotzdem durchaus ausgereift und mächtig. Es unterstützt verschiedene Kartenmaterialien, u.a. OpenStreetMap und kann diese auf einem Globus oder einer Landkarte abbilden. marble
+Stellarium Stellarium ist eine freie Planetarium-Software. stellarium
+
+<strong>Chemie</strong>
+
+<strong>Anwendung       Beschreibung    Paketname    Bildschirmfoto</strong>
+
+Kalzium Kalzium erlaubt anhand eines Periodensystems die Erforschung der Elemente. Es ist sehr umfangreich, bspw. lässt sich nachvollziehen, ab welcher Temperatur sie den Aggregatzustand wechseln, jedes Element lässt sich mit Hilfe dieses Programms als Bohrsches Atommodell anzeigen oder es lassen sich Informationen zum Alpha- und Beta-Zerfall oder der Atommasse abrufen.  kalzium
+	
+<strong>Grafik und Konstruktion</strong>
+
+<strong>Anwendung       Beschreibung    Paketname    Bildschirmfoto</strong>
+
+Dia   Dia ist ein Diagrammeditor, welcher eine Vielzahl von Möglichkeiten zur Verfügung stellt, um ansprechende Diagramme zu erstellen. Neben der Möglichkeit, die Objekte frei zu platzieren und zu skalieren, können Grafiken eingebunden werden.  dia-gnome oder dia
+
+FreeMind FreeMind ist ein Programm zur Erstellung von Mindmaps. freemind
+GnuPaint GnuPaint ist ein simples Malprogramm, welches auf xpaint basiert. gpaint
+Inkscape Inkscape ist ein Vektorgrafik-Programm ähnlich Adobe Illustrator, FreeHand, Corel Draw oder Xara X. Die Anwendung bietet eine sehr benutzerfreundliche Oberfläche, die trotz der vielen Funktionen intuitiv und übersichtlich bleibt. inkscape
+LibreCAD LibreCAD ist ein sehr leistungsfähiges freies CAD-Programm für zweidimensionale Zeichnungen. Man kann verschiedene technische Zeichnungen erstellen, wie zum Beispiel Pläne für Gebäude, Einrichtungen oder mechanische Teile sowie Schemata und Diagramme. librecad
+Pencil  Mit Pencil kann man traditionelle handgemalte Animationen (Cartoons) erstellen. Es werden sowohl Bitmap- als auch Vektorgrafiken unterstützt. pencil
+PLM Programmierübungen in Java, Python, Scala u.a. PLM
+TkGate TkGate ist ein Programm zum Design elektrischer Schaltkreise. Manuals in ~/Public/manuals-ubuntu/English/TKGate_2_0 TkGate
+Tux Paint Tux Paint ist ein einfaches Malprogramm für kleine Kinder. Mittels Stempel, Pinsel usw. können Bilder gemalt werden. tuxpaint
+VYM VYM (View Your Mind) ist eine einfach zu bedienende Anwendung zur Erstellung von Mind Maps. vym
+
+<strong>Mathematik, Informatik</strong>
+
+<strong>Anwendung       Beschreibung    Paketname    Bildschirmfoto</strong>
+
+GeoGebra GeoGebra ist eine freie Geometriesoftware, mit der mathematische Objekte aus Geometrie, Algebra und Analysis gezeichnet werden können. geogebra
+Jfractionlab Lernprogramm zum Üben der Bruchrechnung Jfractionlab
+KAlgebra KAlgebra ist ein mathematisches Rechenprogramm. Grundlage bildet die Sprache Content MathML, mit der man die Struktur einer Formel beschreiben kann. Es können arithmetische und logische Operationen ausgeführt und zwei- sowie dreidimensionale Graphen dargestellt werden. kalgebra
+KBruch KBruch ist ein Programm, mit dem Bruchrechnung (Bruchaufgaben, Vergleichen und Faktorisieren) geübt werden kann. Der Schwierigkeitsgrad der Aufgaben lässt sich dem Wissensstand anpassen. Neue Aufgaben können hinzugefügt werden. kbruch
+Kig Kig ist ein Geometrieprogramm. Mathematische Figuren und Konzepte können interaktiv entdeckt werden. kig
+KmPlot KmPlot ist ein Programm zur grafischen Darstellung von mathematischen Funktionen. kmplot
+Lybniz  Lybniz ist ein simples Programm zum grafischen Darstellen von mathematischen Funktionen. lybniz
+TurtleArt Ein Tool zum kindgerechten Erlernen der Prorammierung TurtleArt
+Tux, of Math Command Tux, of Math Command, auch bekannt als TuxMath, ist ein Mathetrainer, mit dem die Grundrechenarten geübt werden können. Das Spielprinzip basiert auf dem Arcade-Klassiker Missile Command. Zusammen mit Tux muss man Städte durch das Lösen mathematischer Aufgaben vor der Zerstörung retten. tuxmath
+Xabacus simulation of the ancient calculator XAbacus
+XaoS XaoS ist ein Programm, welches Fraktalgrafiken in Echtzeit erstellt. xaos
+
+<strong>Physik</strong>
+
+<strong>Anwendung       Beschreibung    Paketname    Bildschirmfoto</strong>
+
+Step Step ist eine sehr umfangreiche, interaktive Physiksimulationsanwendung. step
+	
+<strong>Spiele</strong>
+
+<strong>Anwendung       Beschreibung    Paketname    Bildschirmfoto</strong>
+
+Atomix Atomix ist ein Spiel, in dem es darum geht, vorgegebene Moleküle aus einzelnen Atomen zusammenzusetzen. Das Spielprinzip basiert auf dem AMIGA-Spiel Atomix. atomix
+blinKen blinKen ist ein Spiel, welches in den 80er Jahren unter dem Namen "Senso" bekannt war. Es gilt, die Folge zu merken, in der die Felder (Rot, Gelb, Blau und Grün) blinken. Diese wird dann vom Spieler erneut eingegeben. Der Schwierigkeitsgrad steigt von Runde zu Runde. blinken
+GCompris GCompris ist eine Spielesammlung speziell für Kinder. Es vereint eine Vielzahl von Spielen zu verschiedenen Themengebieten für unterschiedliche Altersgruppen. So beinhaltet GCompris z.B. Spiele zum Thema Mathematik (kleines 1x1), Farben, Geschicklichkeit, Umgang mit dem Computer etc. Altersempfehlung 3+. gcompris
+Kanagram Kanagram ist ein Buchstabenspiel, bei dem es gilt, ein Rätsel zu lösen. Ein Wort wird durch geschickte Umstellung der vorgegebenen Buchstaben entschlüsselt. kanagram
+Kartoffelknülch Kartoffelknülch ist ein Programm, welches mehrere Hintergrundbilder (Kartoffelknülch, Ägypten, Mond, Weihnachten, etc.) zur Auswahl stellt. Mit den zur Verfügung stehenden Motiven können diese verändert werden. ktuberling
+KHangMan KHangman ist ein Galgenmännchen-Spiel. Altersempfehlung 6+. khangman
+Ri-li Ri-li ist ein Geschicklichkeitsspiel, in dem man eine Holzeisenbahn durch das Stellen der richtigen Weichen über verschiedene Schienennetze bewegen muss. Ziel ist es die im Level verteilten Wagons einzusammeln. ri-li
+
+<strong>Sprache</strong>
+
+<strong>Anwendung       Beschreibung    Paketname    Bildschirmfoto</strong>
+
+KWordQuiz KWordQuiz ist ein Vokabeltrainer, welcher nach dem Karteikastenprinzip funktioniert. Er bietet diverse Import- und Exportfunktionen an und ist in der Lage, Listen und Karteikarten auszudrucken. kwordquiz
+Parley Parley ein Vokabeltrainer und der Nachfolger von KVocTrain. Der Vokabeltrainer ist sehr umfangreich und bietet eine Vielzahl von Einstellungsmöglichkeiten, was die Erstellung von Wörterlisten und das Lernen betrifft. parley
+Kletters KLettres hilt beim Lernen des Alphabets. Die Aussprache wird in verschiedenen Sprache geübt. Für Erwachsene und Kinder. KLettres
+Siehe auch Vokabeltrainer.
+
+<strong>Tipptrainer</strong>
+
+<strong>Anwendung       Beschreibung    Paketname    Bildschirmfoto</strong>	
+
+KTouch KTouch ist ein einfacher Schreibmaschinentrainer. In vielen Übungslektionen wird das Tippen auf der PC-Tastatur geübt - zusätzliche Übungen können aus dem Internet bezogen werden. ktouch
+Tux Typing Tux Typing hilft Kindern, spielerisch tippen und schreiben zu erlernen. Altersempfehlung 5+. tuxtype
+Siehe auch Schreibtrainer.
+
+<strong>Musik</strong>
+
+<strong>Anwendung       Beschreibung    Paketname    Bildschirmfoto</strong>
+
+Gtick, KMetronome Gtick und Kmetronome sind Anwendungen zum Takt messen (Software-Metronom) Gtick, KMetronome
+Tux Guitar Programm zur Erstellung, Betrachtung und Bearbeitung von Tabulaturen und Notenblättern für viele verschiedene Instrumente, besonders Gitarre. Tux Guitar
+Solfege Trainingssoftware für Gehör und Intervalle, Akkorde und Rhythmus (Manuals in Public/manuals-ubuntu) Solfege
+Piano Booster Mit Piano Booster kann man auf neue Weise Klavierspielen lernen. Piano Booster
+VMPK Virtual MIDI Piano Keyboard VMPK
+
+<strong>Weitere Anwendungen</strong>
+
+<strong>Anwendung       Beschreibung    Paketname    Bildschirmfoto</strong>
+
+calibre Calibre ist ein plattformunabhängiges Programm zur Verwaltung und Konvertierung von E-Books. calibre
+Laby Laby ist ein Programm mit dem man die Programmierung in OCaml, Python, Lua, Ruby, Prolog, C oder Java erlernen kann. Eine Ameise muss sicher durch ein Labyrinth bewegt werden, ohne in Spinnennetze oder andere Fallen zu treten. laby
+Nanny Nanny Parental Control dient zur Überwachung und Kontrolle, was die Kinder am PC tun dürfen. nanny
+Kino Kino ist ein einfacher Video-Editor für Linux, der auch die Möglichkeit bietet, direkt im Programm die Videos vom Camcorder aufzunehmen ("capture"). kino
+KTurtle KTurtle ist eine Implementation der Programmiersprache Logo mit graphischer Oberfläche für KDE. Eine Schildkröte (Turtle) lässt sich mit Hilfe einfacher Befehle über eine Landschaft steuern. Dabei lassen sich geometrische Muster erzeugen. Der Anwender erhält einen ersten Einblick in Algorithmen und Konzepte der imperativen Programmierung (Schleifen, Prozeduren). kturtle
+ScolaSync Grafisches Werkzeug zum Kopieren von Daten auf bzw. von USB-Sticks ScolaSync
+Scribus Scribus ist ein Desktop-Publishing-Programm. Es dient der professionellen Erstellung von Layouts und ist vergleichbar mit Adobe PageMaker, QuarkXpress oder Adobe InDesign. scribus
+
+<strong>Virusscanner ClamAV (Programm ClamTK)</strong>
+
+Eigentlich ist unter lubuntu Linux kein Virenscanner nötig, da die bestehenden Sicherheitskonzepte ausreichen und zur Zeit keine Viren für den Linux-Desktop in Umlauf sind. Aus Sicherheitsgründen kann man aber einen lizenzfreien Virenscanner, z.B ClamAV installieren, mehr auf http://wiki.ubuntuusers.de/Virenscanner und http://wiki.ubuntuusers.de/ClamAV.
+
+Zum Aufrufen des Virenscanner das Programm <strong>ClamTK</strong> starten. SchülerInnen können in Edoovillages damit ihre USB-Sticks scannen und Viren entfernen.
+
+Mit dem Firefox Plugin "Fireclam" werden Downloads automatisch mit ClamAV auf Viren gescannt → https://addons.mozilla.org/de/firefox/addon/fireclam/
+
+Es müssen zusätzlich weitere Module und Virensignaturen installiert sein, daher wurde dies in das Installationsskript für Software http://ftp.labdoo.org/download/images/installskripts/installscript-software.sh und in die Images for Cloning eingebunden.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>170</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>895</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>903</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

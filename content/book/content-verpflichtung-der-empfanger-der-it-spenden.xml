@@ -1,0 +1,63 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>176</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Verpflichtung der Empfänger der IT-Spenden</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>176</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>An den Empfänger der IT-Spende,
+
+Wir freuen uns, dass wir zu ihrem Projekt mit IT-Spenden beitragen können und so Kindern und Jugendlichen die Teilhabe an der „digitalen Gesellschaft“ ermöglichen. Die IT-Spende erhalten Sie “as it is”, ohne Gewährleistung, Garantie oder sonstige Ansprüche.
+Es entsteht aber für Sie die folgenden Verpflichtungen, denen Sie mit Erhalt der IT-Spende zustimmen, basierend auf den den allgemeinen Labdoo-Grundsätzen:
+
+(1) Die erhaltenen IT-Spenden werden ausschließlich für die von Ihnen im Antrag beschriebenen Zwecke der Kinder- und Jugendbildung eingesetzt.  Sollte ein anderer Einsatz als geplant nötig werden, ist vorher per Mail an Labdoo-DACH@Labdoo.org die Zustimmung von Labdoo.org einzuholen.
+
+(2) Falls ein gespendeter Computer nicht mehr ordnungsgemäß funktioniert teilen Sie dies unter Angabe der Labdoo-ID-Nr. des Gerätes per Mail an Labdoo-DACH@Labdoo.org mit. Bitte beschreiben Sie dabei auch das aufgetretene Problem. In folgenden Fällen ist immer eine Mitteilung zu versenden:
+	(2.1) im Fall eines irreparablen Defektes, um einen kostenlosen Austausch und die Entsorgung der IT-Spende sicher zu stellen. 
+	(2.2) im Fall eines sonstigen Defekts oder einer sonstigen Statusänderung oder anderweitigen Verwendung.
+
+(3) Schicken Sie bitte alle 6 Monate eine Liste mit einer Aufstellung und dem Status aller IT-Spenden, die Sie erhalten haben, per Mail an Labdoo-DACH@Labdoo.org.
+
+(4) IT-Spenden von Labdoo erhalten Sie kostenlos und ausschließlich zum Zwecke der Kinder- und Jugendbildung. Mit Erhalt verpflichten Sie sich, die IT-Spenden nicht für kommerziellen Zwecke zu nutzen und keine Nutzungsentgelte zu verlangen. 
+
+Wir bedanken uns für Ihr Einverständnis und Ihr Engagement, um diese Welt zu einem besseren Ort zu machen. 
+
+Das Labdoo Team</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>170</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>890</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>896</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

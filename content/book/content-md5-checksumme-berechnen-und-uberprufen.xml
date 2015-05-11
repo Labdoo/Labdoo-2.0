@@ -1,0 +1,56 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>242</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>MD5 Checksumme berechnen und überprüfen</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>242</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>In den Ordnern mit den hochgeladenen Image-Dateien gibt es eine Datei MD5SUM, in der je Datei die MD5 Checksumme abelegt wird. So kann schnell geprüft werden, ob sie fehlerfrei heruntergeladen wurde.
+
+<strong>Erzeugen der MD5SUM Checksumme</strong>
+Terminal im Ordner mit den Dateien öffnen und ausführen
+<code>md5sum * > MD5SUM</code> (Enter)
+
+<strong>Prüfen der MD5SUM Checksumme</strong>
+Ubuntu/Linux: Terminal im Ordner mit den Dateien und der MD5SUM Datei öffnen und ausführen
+<code>md5sum -c MD5SUM</code>  (Enter)
+
+Windows: Leider gibt es keine Windows-interne Lösung. Es wird empfohlen kostenlose Windows-Tools wie http://www.winmd5.com/ zu nutzen.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>922</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>959</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

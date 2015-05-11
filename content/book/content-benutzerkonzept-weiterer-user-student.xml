@@ -1,0 +1,64 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>237</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Benutzerkonzept, weiterer User student</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>237</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Bei der lubuntu-Installation wird der erste Benutzer labdoo angelegt (der auch Administrator ist). Auch die Labdoo Images for Cloning und die Installations-Skripte legen den zusätzlichen bentzer student an.
+
+Der Benutzer student hat weniger Rechte, kann keine Software installieren oder löschen und kann das System i.d.R. auch nicht verstellen.
+
+Hier der manuelle Weg zur Einrichtung eines User student:
+
+Bitte nenne den Benutzer student. 
+
+Hierzu gehe zu → System Tools → User + Groups → unlock (entsperren) → +add user → Systempasswort (labdoo) eingeben →  student als Name eingeben, mit Passwort labdoo → Account Type = Standard (ist so vorbelegt) →  Create → Password (account disabled) anklicken → Passwort labdoo eingeben und bestätigen → Change → ggf. Sprache des Benutzers ändern (optional). 
+
+Zusätzlich ein Terminal öffnen und eingeben (dmit wird student zum Mitglied der Gruppe labdoo):
+sudo usermod -aG labdoo student  (Enter)
+
+Bitte beachten:
+Jeder Benutzer verbraucht Speicherplatz auf der Platte. Daher bitte nicht zu viele User anlegen und nur wenn die Platte es hergibt.
+
+Als Standard user kann man nicht das System verstellen. Der User labdoo als Administrator sollte den Lehrern vorbehalten bleiben.
+
+Jeder User hat seine eigenen Dateien. Er kann aber auf die Dateien in Ordner public (öffentlich)eines anderen Users zugreifen. Um z.B. zu den Handbüchern von labdoo zu gelangen → im Dateiexplorer → filesystem → home → labdoo → Ordner public (man kann per Bookmark einen Link im Explorer erzeugen)</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>922</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>954</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

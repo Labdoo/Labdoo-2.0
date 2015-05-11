@@ -1,0 +1,70 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>203</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Cloning mit fertigen Labdoo Images</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>203</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Diese Anleitung erkärt das Cloning mit fertigen Images. Images sind komplette Kopien von Inhalten bereits installierter Rechner, mit Betriebssystem, Software, Lerninhalten und optimierten Einstellungen. Bis auf letzte Einstellungen fr das Zielland (Sprache, Tastatur) und den Hostnamen muss man sich um nichts mehr kümmern.
+
+lubuntu hat zusätzlich den Vorteil, das man sich (kaum) um Treiber kümmern muss. D.h. man kann ein Image vom Laptop Hersteller A auf einem Laptop vom Hersteller B installieren. lubuntu kümmert sich um (fast) alles.
+
+Wichtig ist es nur, das passende Image zur aktuellen CPU (Prozessor) von unserem FTP Server herunter zu laden und zu installieren, zu clonen.
+
+Wem alle diese Schritte zu aufwendig erscheinen, kann seinen Laptop auch direkt an ein Labdoo Hub geben. Wir versichern, dass alle Daten auf gespendeten Laptops sorgfältig und sicher gelöscht werden.
+
+Für die Installation der Images benötigt man einen USB-Stick oder externe USB-Festplatte, ab 16/32 GB oder größer. Jedes Image benötigt ca. 11-12 GB. 
+
+Man sollte erst feststellen, welches Image man für den vorliegenden Laptop braucht. Oder falls man mehrere Laptops zu installieren hat, lädt man alle Images herunter. Die Images werden in unregelmäßigen Abständen (ca. alle 4 - 8 Wochen) aktualisiert.
+
+Zum Zeitpunkt der Erstellung dieses Wikis gibt es die folgenden Labdoo Images:
+
+<ul>
+<li>nonPAE32_12_04_LTS (lubuntu 12.04 LTS für nonPAE CPU)</li>
+<li>nonPAE32_14_04_LTS (lubuntu 14.04. LTS für nonPAE 32 CPU)</li>
+<li>PAE32_12_04_LTS (lubuntu 12.04 LTS für 32 Bit CPU)</li>
+<li>PAE32_14_04_LTS (lubuntu 14.04 LTS für 32 Bit CPU)</li>
+<li>PAE64_12_04_LTS (lubuntu 12.04 LTS für 64 Bit CPU)</li>
+<li>PAE64_14_04_LTS (lubuntu 14.04 LTS für 64 Bit CPU)</li>
+</ul>
+
+12.04 bzw. 14.04 verweist auf das Release-Datum der jeweiligen lubuntu-Version, d.h. April 2012 und April 2014. LTS (Long Term Support) werden ab Erscheinen 5 Jahre mit Updates versorgt. Die nächste LTS-Version wird im April 2016 (16.04 LTS) erscheinen.
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>891</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>920</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

@@ -1,0 +1,71 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>249</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Information für Hubs</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>249</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Hubs erhalten eine E-Mail-Adresse, i.d.R. in der Form STADTNAME-Hub(at)Labdoo.org oder REGION-Hub(at)Labdoo.org sowie einen Eintrag auf der Homepage https://www.labdoo.org/de/hubs.
+
+Wichtig für die Einrichtung des Hubs und der Labdoo-E-Mail ist die Verknüpfung mit einem Labdoo-Account. Bitte schickt den Namen des Labdoo-User an labdoo-DACH@Labdoo.org.
+
+
+Danach erhältst du deine E-Mailadresse und kannst sie einrichten. Stand 05/2015 werden die Labdoo-E-Mails bei Gmail gehostet. Zur Einrichtung der E-Mailadressen bitte die Einstellungen für Gmail-Konten übernehmen https://support.google.com/mail/topic/3398031?hl=de.
+
+Als nächstes bitte den Eintrag für dein Hub vervollständigen. Der Eintrag und dessen Kontaktdaten sollte so sein, dass euch Spender erreichen und kontaktieren können  (Anschrift, ggf. Öffnungszeiten, ggf. Telefonnummer). 
+
+Wenn es später in der Region weitere Annahmestellen ("Branches") gibt, die IT-Spenden annehmen, können diese auch unter dem Hub-Eintrag ergänzt werden. 
+
+Am Ende des Hub-Eintrages du bitte die Hub-Mailadresse eintragen. 
+
+Dann haben wir mehrere soziale Netzwerke. Wenn ihr nicht in allen vertreten bist macht das zwar nichts. Bitte kommt in die Gruppen, die möglich sind:
+
+https://www.facebook.com/LabdooDACH  (deutschsprachige Community)
+https://www.facebook.com/Labdoo (internationale Community)
+https://plus.google.com/communities/1121545386108120170659
+https://www.xing.com/net/Labdoo  (Firmen, Berufliche Netzwerke)
+
+Damit du auf dem Laufenden bist solltest du den Newsletter abonnieren:
+http://www.labdoo.org/de/content/newsletter-subscriptions
+Hier kannst du auch jederzeit Neuigkeiten aus deinem Hub mitteilen lassen.
+
+Noch eine Bitte: Alle Helfer sind ehrenamtlich engagiert. Wenn ihr mal kurzfristig oder auf Dauer euch nicht mehr für Labdoo.org einbringen könnt, ist das kein Problem, ihr müsst es nur sagen. Wenn das Labdoo-Team es weiss, können wir uns um eine Vertretung oder eine neuen "Kümmerer" für euer Hub bemühen. Nichts wäre schlimmer, als wenn IT-Spenden oder Kontaktversuche ins Leere laufen würden!
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>172</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>892</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>966</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

@@ -1,0 +1,56 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>228</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>LAN wird nicht erkannt (eth0)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>228</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Es kann sein, dass in seltenen Fällen das LAN Interface nicht korrekt gemanaged wird. 
+
+Hierzu in einem Terminal:
+	<code>sudo nano /etc/NetworkManager/NetworkManager.conf</code>	(Enter)
+
+Ändere die Zeile: 
+<code>managed=false</code>  →  <code>managed=true</code>
+
+Speichern; stoppen und neustarten des Network Manager:
+
+<code>sudo service network-manager restart</code>          (Enter)</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>922</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>945</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

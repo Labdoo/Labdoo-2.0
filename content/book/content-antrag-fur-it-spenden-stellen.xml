@@ -1,0 +1,74 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>188</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Antrag für IT-Spenden stellen</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>188</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Vielen Dank für Ihre Interesse an Labdoo.org und einem Antrag über eine IT-Spende für ein „Edoovillage“ (so heißen bei Labdoo.org Schulen, Heime, Jugendprojekte usw). Antragsteller kann eine private Person, ein Verein oder die Schule, ein Kinder- oder Jugendprojekt mit Bildungsbezug sein.
+
+IT-Spenden können nicht an Einzelpersonen, sondern nur an Projekte gegeben werden, in deren Eigentum die IT-Spenden auch verbleiben. Die IT-Spenden sind gekennzeichnet und nummeriert. Daher ist jederzeit eine Kontrolle möglich, ob die erhaltenen IT-Spenden auch dort noch existieren. Eine Weitergabe ist nicht erlaubt.
+
+Wichtig für eine Entscheidung, ob ein Antrag angenommen wird, ist die Logistik, z.B. ob es Flugpaten gibt, die ab und an das Projekt besuchen und IT-Spenden mitnehmen können oder ob es Hilfsendungen gibt, bei denen IT-Spenden als Beipack mitgegeben werden können.
+
+Alle Projekte stehen auf https://www.labdoo.org/de/call-for-laptops. Sie können dort auch nach Ländern u.a. Kriterien filtern.
+
+Bitte füllen Sie das Antragsformular (request sheet) soweit als möglich aus. Was Sie nicht wissen lassen Sie frei. Bitte senden Sie es mit einigen Fotos vom Umland, dem Ort, der Schule und den Kindern zurück. Danach stellen wir es nach Prüfung und Annahme auf unsere Homepage.
+
+<a href="http://ftp.labdoo.org/download/documents/english/labdoo-toolkit-english/labdoo-laptop-request-form-english.txt">- Englisches Antragsformular</a>
+<a href="http://ftp.labdoo.org/download/documents/french/labdoo-toolkit-french/labdoo-laptop-request-form-french.txt">- Französisches Antragsformular</a>
+<a href="http://ftp.labdoo.org/download/documents/spanish/labdoo-toolkit-spanish/labdoo-laptop-request-form-espa%c3%b1ol.txt">- Spanisches Antragsformular</a>
+<a href="http://ftp.labdoo.org/download/documents/german/labdoo-toolkit-german/labdoo-laptop-request-form-german.txt">- Deutsches Antragsformular</a>
+<a href="http://ftp.labdoo.org/download/documents/romanian/labdoo-toolkit-romanian/labdoo-laptop-request-form-romanian.txt">- Rumänisches Antragsformular</a>
+
+Im FAQ Forum http://www.labdoo.org/de/content/faq finden Sie die häufigsten Fragen, auch zu Zoll etc. beantwortet.
+
+Bitte sagen Sie ca. 3-4 Wochen vor Abreise Bescheid, damit wir Vorlauf haben, die IT-Spenden vorzubereiten und dem Flugpaten zuzusenden. Defekte IT-Spenden werden auch gegen Rückgabe des defekten Gerätes kostenlos ausgetauscht.
+
+Eine Projektpräsentation finden Sie auf http://ftp.labdoo.org/download/documents/german/Unterlagen/labdoo-project-german.pdf.
+
+Weitere Dokumente in Englisch, die das Projekt und die Lernsoftware und -inhalte erklärt,  können von hier heruntergeladen werden http://ftp.labdoo.org/download/documents/english/. 
+
+Wir können natürlich nur das weitergeben, was uns vorher gespendet wurde. Daher können wir auch nicht sagen, wann die IT-Spenden zusammen sind. 
+
+Sie können aber mithelfen, indem Sie z.B. ihr Netzwerk informieren und zu IT-Spendenpenden aufrufen. Oder die Presse informieren und einen Aufruf starten. Grafiken und Logos finden Sie auf http://www.labdoo.org/de/node/1725#FAQ02
+
+Bei Fragen schicken Sie einen Mail an Labdoo-DACH@Labdoo.org, danke.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>170</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>890</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>901</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

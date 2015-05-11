@@ -1,0 +1,60 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>211</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Partitionen mit Partition Editor anpassen</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>211</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Nach Abschluss der Installation den Partition Editor (Gparted, Icon auf Desktop) starten. Damit werden die Partitionen an die richtige Stelle und in die richtige Größe gebracht:
+
+→ den Bereich linux-swap anklicken, Resize / Move anklicken und mit der Maus ans Ende schieben (bitte darauf auchten, dass dabei die Pfeile am Mauszeiger nach links und rechts zeigen, weil sonst die Partition vergrößert oder verkleinert würde, aber nicht verschoben, s.u.).
+
+→ Dann die Größe des SWAP an die Speichergröße (RAM) des Rechners anpassen. Der Swap sollte gleich groß sein wie RAM. Entweder mit der Maus ziehen oder in der Tabelle darunter die Daten anpassen. Mit OK bestätigen.
+
+→ Dann die große Software/Datenpartition anpassen, i.d.R. die Partition sda1. Anklicken und mit der Maus die hintere Begrenzung nach rechts ziehen bis es an den swap stösst. Es bleibt eine kleine Lücke von 1 MB. 
+
+<strong>Wichtig:</strong> Achtet vor dem Verschieben auf das Icon am Maussymbol. Zeigen 4 Pfeile in alle Richtungen verschiebt ihr die Partition und macht sie nicht größer. Bitte die Maus so positionieren, dass 2 Pfeile nach rechts / links zeigen. Dann kann man das Ende der Partition bis zum Ende des freien Plattenplatzes ziehen.
+
+→ Auf den grünen Haken „Apply“ klicken, Apply bestätigen. Dann läuft es einige Minuten. Fertig.
+
+Rebooten (auf das Parted Magic Icon unten links in der Ecke klicken).
+
+Weiter zu Schritte nach der Installation (Anpassen an die Anforderungen im Zielland (Sprache, Tastatur) u.a.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>927</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>928</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

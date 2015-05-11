@@ -1,0 +1,60 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>207</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Prüfen, um welche CPU es sich handelt (nonPAE / PAE, 32 bit / 64 Bit)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>207</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Wenn der Rechner lubuntu oder Parted Magic (auch auf Linix-Basis) gebootet hat wird als erstes der Typ der CPU geklärt, weil nur das passende Image zur passende CPU gecloned werden kann. Sonst läuft der Laptop später nicht korrekt. So kann man ein 32-Bit Image auf eine 64-Bit CPU clonen, aber nicht umgekehrt (allerdings nutzt 32-Bit nur max. 3 MB RAM).
+
+Ein Terminal öffnen und dort ausführen (den u.a. Text markieren und kopieren):
+
+<code>grep -q '\&lt;pae\&gt;' /proc/cpuinfo &amp;&amp; echo "My CPU is PAE capable" || 
+echo "My CPU is NOT PAE capable (nonPAE)" &amp;&amp; grep -q '\&lt;lm&gt;' 
+/proc/cpuinfo &amp;&amp; echo "My CPU is a 64 bits one" || echo "My CPU is a 32 bits one"</code>
+
+<strong>Hinweis:</strong> Das Terminal ist das schwarze Bildschirm-Icon in der Taskleiste unten am Bildschirm, anklicken, das Terminal öffnet sich. Einfügen (Paste) geht im Terminal entweder durch gleichzeitiges Drücken von  Shift + CTL/STRG + v oder im Terminal rechte Maustaste und Einfügen.
+
+<strong>Alternativ:</strong> System Profiler (Icon oben im Desktop anklicken) aufrufen → Devices → Processor (bei CPUs mit mehreren Kernen einen Kern anklicken) → runterrollen bis Capabilities, dort in der Liste prüfen, ob PAE erscheint. Wenn PAE gelistet ist dann ein „PAE-Image“ einspielen, wenn kein PAE gefunden wird, dann einen „nonPAE“ image einspielen. 
+
+Aber dann bleibt noch die Abklärung, ob die CPU 32 oder 64 Bit nutzt.
+
+Download des o.a. Prüf-Skriptes --> http://ftp.labdoo.org/download/images/installskripts/check_cpu_32_or_64_bits_PAE_or_nonPAE.sh</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>923</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>924</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

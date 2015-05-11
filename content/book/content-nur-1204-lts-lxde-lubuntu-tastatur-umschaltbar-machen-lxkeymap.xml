@@ -1,0 +1,55 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>238</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>nur 12.04 LTS: LXDE / Lubuntu: Tastatur umschaltbar machen (LXKeymap)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>238</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Dieser Beitrag gilt nur für lubuntu 12.04 LTS, in lubuntu 14.04 LTS ist alles korrekt gelöst und dieser Schritt nicht nötig:
+
+Lubuntu / LXDE hat standardmäßig KEIN Tool installiert, mit dem das Tastaturlayout umgeschaltet werden kann. Dies lässt sich mit dem Programm lxkeymap bequem grafisch ändern. 
+
+Im Terminal:
+<code>sudo apt-get install lxkeymap</code>  (Enter)
+
+Im Menü ist es unter "Einstellungen -> Lxkeymap" zu finden.
+
+Leider verhindert z.Zt. ein Bug die korrekte Verarbeitung mehrerer Tastaturlayouts parallel :( Also einfach Lxkeymap aufrufen, Tastatur umstellen, später wieder Lxkeymap aufrufen usw.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>922</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>955</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

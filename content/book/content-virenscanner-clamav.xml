@@ -1,0 +1,58 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>223</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Virenscanner ClamAV</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>223</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Eigentlich ist unter Ubuntu Linux kein <strong>Virenscanner</strong> nötig, da die bestehenden Sicherheitskonzepte ausreichen und zur Zeit keine Viren für den Linux-Desktop in Umlauf sind. Einige Firmen bieten jedoch dennoch Virenscanner für Linux an, die beispielsweise auf Dateiservern sinnvoll sind, die auch von Windows-Clients genutzt werden.
+
+Ausserdem fragten einige Edoovillages an, b wir nicht einen Virusscanner mit installieren könnten. Die Schüler nutzen USB-Sticks, die aber i.d.R. stark virenverseucht sind. Mit einen Virenscanner könnten die USB-Sticks gescannt und gereinigt werden.
+
+Aus Sicherheitsgründen kann man aber einen lizenzfreien Virenscanner, z.B ClamAV installieren, mehr auf:
+http://wiki.ubuntuusers.de/Virenscanner
+http://wiki.ubuntuusers.de/ClamAV
+
+Terminal öffnen und ausführen:
+
+<code>sudo apt-get install clamav clamav-freshclam clamav-docs clamav-daemon clamtk </code> (Enter)
+
+Mit dem <strong>Firefox Plugin Fireclam</strong> werden Downloads automatisch mit ClamAV auf Viren gescannt.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>922</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>940</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

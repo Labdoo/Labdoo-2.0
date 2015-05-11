@@ -1,0 +1,118 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>217</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Test 3</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>217</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><strong>Was Installationsskripte NICHT leistet</strong>
+
+Das Labdoo-Team arbeitet daran, auch weitere Schritte zu automatisieren. Zur Zeit müssen aber die u.a. Punkte noch manuell eingestellt werden:
+
+<strong>Allgemein für alle Desktops und für alle user (labdoo und student):</strong>
+
+<strong>Firefox: </strong> 4 Reiter sollten manuell in Firefox vorbelegt werden
+<ul>
+<li><code>file:///home/labdoo/Public/wikidoo/index.htm</code></li>
+<li><code>file:///home/labdoo/Public/wikis/index.htm</code></li>
+<li><code>file:///home/labdoo/Public/eBooks/English%20Language%20Training%20Version%203.0/index.html</code></li>
+<li><code>about:startpage</code></li>
+</ul>
+
+<strong>Firefox: </strong> Fireclam Addon installieren
+<strong>Calibre: </strong>Import der eBooks für die User labdoo und student
+
+<strong>Im LXDE-Desktop / lubuntu sollten der Task Bar noch einige sinnvolle Plugins hinzu gefügt werden:</strong>
+
+Rechte Maustaste auf die Task Bar klicken → Add/Remove Panel Items → +Add → auf das gewünschte Plugin klicken → +Add → 
+<strong>Empfohlene LXDE-Plugins und deren Reihenfolge von rechts nach links sind:</strong>
+<ul>
+<li>Menu (schon installiert)</li>
+<li>Application Launch Bar (schon installiert)</li>
+<li>Spacer (schon installiert)</li>
+<li>Desktop pager (schon installiert)</li>
+<li>Spacer (schon installiert)</li>
+<li>Task Bar (schon installiert)</li>
+<li>Volume control (schon installiert)</li>
+<li>System tray (schon installiert)</li>
+<li>Indicator Applets (zu installieren)</li>
+<li><strong>Keyboard Layout Handler (Tastatur-Layout/Umschalter) (zu installieren)</strong></li>
+<li><strong>Resource Monitors (zu installieren)</strong></li>
+<li><strong>Network Status Monitor (zu installieren)</strong></li>
+<li><strong>Manage Network (zu installieren)</strong></li>
+<li>Digital clock (schon installiert)</li>
+<li>Application Launch bar (schon installiert)</li>
+</ul>
+
+Die Plugins können auf der Leiste verschoben werden → Add/Remove Panel Items → Plugin im Fenster markieren → auf Up oder Down klicken, bis Eintrag an der richtige Stelle ist.
+
+<strong>Wichtig: </strong> Ab lubuntu 14.04 LTS: Keyboard Layout handler → rechte Maustaste auf Icon in der Task Bar → settings → Wichtig! Haken aus „Keep system layout“ entfernen, sonst können nicht mehrere Tastaturlayouts installiert werden.
+
+<strong>Wichtig: </strong> Ab 14.04 LTS: Unter Light Locker die Bildschirmsperre ausschalten (für User labdoo und student)
+
+<strong>nur für lubuntu 12.04 LTS</strong>
+
+<strong>Browser: </strong> Der Standardbrowser in lubuntu 12.04 LTS ist noch Chrome, andere Ubuntu-Versionen und auch spätere lubuntu-Versionen verwenden Firefox als Browser. Um Verwirrung beim Anwender zu vermeiden sollte auch in lubuntu 12.04 LTS Firefox als Browser verwendet werden, hierzu
+<ul>
+<li>in der application launch bar Chromium entfernt und Firefox eingefügt werden → rechte Maustaste → ändern</li>
+<li>Firefox zum Standardbrowser machen →  Preferences  → Prefferred Application → Browser → Firefox (für beide User labdoo und student)</li>
+<li>optional: entfernen von Chromium</li>
+</ul>
+
+<strong>Für Lubuntu 12.04 LTS: </strong> Der Umschaltmechanismus für Tastaturlayouts in lubuntu 12.04 LTS war nicht optimal. Daher wird per Skript das Programm LXKeymap installiert und sollte auf den Desktop gelegt werden, um ein schnelleres Umschalten zu ermöglichen.
+
+<strong>Nur wenn die Desktops Unity und Gnome installiert sind</strong>
+
+<ul>
+<li>Unity (Ubuntu Default Desktop)</li>
+<li>Compiz: Optimierungen (laut Handbuch Seite 38ff, http://ftp.labdoo.org/download/images/labdoo-installation-checklist-german.pdf)</li>
+<li>Per CompizConfigSettingManager folgende Einstellungen per Skript vornehmen</li>
+<li>General → OpenGL → Set to "Fast"</li>
+<li>Effects → Switch Animation and Fading off (remove the hook)</li>
+<li>Die 4 Workspaces (Arbeitsflächen) fehlen zunächst nach der Erstinstallation von Ubuntu. Für die beiden User labdoo und student per Skript (heute manual) → System Settings öffnen → Appearance → behavior → mark activate workspaces</li>
+</ul>
+
+<ul>
+<li>Unity: Das Menü soll am Programmfenster angezeigt werden, nicht in der Menü Bar oben am Bildschirm (Änderungen müssen für beide User labdoo und student vorgenommen werden!) → Open System settings → Appearance → Behavior → show the menus for a window → mark "in the window's title"</li>
+<li>Die Benutzer (labdoo, student) werden nicht oben am Bildschirm angezeigt → Terminal öffnen → eintippen → dconf-editor → Enter</li>
+<li>In dconf-editor → apps → indicator-session → Haken in show-real-name-on-panel → Fenster schliessen</li>
+<li>Amazon Icon in der Leiste links entfernen (Klick mit rechter Maustaste auf das Icon → remove)</li>
+</ul></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>217</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>0</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>934</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

@@ -1,0 +1,68 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>230</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Drucker im Netzwerk freigeben</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>230</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Wenn ein Drucker nicht im LAN, sondern lokal via USB oder Centronicskabel an einem Linux Rechner hängt, kann man diesen Drucker für alle anderen Rechner im Netzwerk freigeben.
+
+Voraussetzung ist die Installation von CUPS (Common Unix Printing System) – ist aber Bestandteil von lubuntu.
+
+<strong>Auf dem Rechner, an dem der Drucker angeschlossen ist:</strong>
+<ul>
+<li>Im Webbrowser die Adresse <code>http://localhost:631 eingeben.</code></li>
+<li>Drucker freigeben</li>
+<li>Auf die Seite http://localhost:631/admin/ wechseln, dort einen Haken bei “Freigeben von Druckern welche mit diesem System verbunden sind / Share printers connected to this system” setzen.</li>
+<li>Alternativ diesen Befehl im Terminal ausführen: <code>cupsctl –share-printers</code> (Enter)</li>
+<li>Auf der Seite ”Drucker” den angeschlossenen Drucker auswählen.</li>
+<li>Dann im Menü “Administration” auf “Drucker gehen.</li>
+<li>Die “aktuelle Verbindung” kann unverändert bleiben → Weiter →  einen Haken bei “Diesen Drucker freigeben” setzen; </li>
+<li>optional: Einen Installationsort angeben (sinnvoll) → Weiter →  Drucker ändern</li>
+</ul>
+
+<strong>Freigegebene Drucker auf anderen Computern anzeigen (Einstellung auf den anderen Rechnern im Netzwerk)</strong>
+
+<ul>
+<li>Damit andere Rechner im Netzwerk diesen Drucker sehen können → http://localhost:631/admin → einen Haken bei Zeige freigegebene Drucker von anderen Systemen  → Einstellungen ändern → bestätigen, fertig.</li>
+<li>Alternativ im Terminal ausführen: <code>cupsctl --remote-printers</code></li>
+</ul>
+Anschließend wird im Menüpunkt “Drucker” dieser Drucker angezeigt. Ggf. kurze Zeit warten oder Neuladen der Seite.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>922</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>947</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

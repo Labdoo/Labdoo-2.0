@@ -1,0 +1,108 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>185</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Über Labdoo</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>68</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><em>LABDOO ist ein weltweites humanitäres soziales Netzwerk </em> von IT-Spendern, Flugpaten und ehrenamtlichen Helfern, die unsere Welt zu einer besseren Welt machen möchten. Durch Labdoo.org soll Kindern und Jugendlichen im In- und Ausland Zugang zu IT, besserer Bildung und ggf. Internet ermöglicht werden. Die Aufgabe von Labdoo.org ist es, nicht mehr genutzte Laptops, eBook Reader und Tablet-PCs sowie jegliches Gerät, das zu Bildungszwecken genutzt werden kann, zu bedürftigen Schulen, Heimen und Projekten zu senden. Dabei entshen keine Kosten und die Umweltbelastung soll so gering wie möglich gehalten werden.
+
+Labdoo nennt diese IT-Spenden (laptops, tablets, ebooks, etc.) <em>doojects</em>, wie in lab<em>doo</em> ob<em>jects</em>. Ein Dooject ist also ein Laptop, Tablet-PC, eBook Reader o.a. Gerät, das Lernprogramme und Lerninhalte zu bedürftigen Schulen bringt.
+
+<em>Weltweit werden Hunderte Millionen Doojects ausrangiert, die aber immer noch in einem guten Zustand sind</em>. Durch Aufarbeiten und installieren von kindgerechter Lernsoftware und Lerninhalten werden sie zu einem leistungsfähigen Lern-Tool, um weltweit den Zugang zu Bildung zu ermöglichen.
+
+Wie können nicht mehr eingesetzte Geräte ohne große Kosten und Umweltbelastung gesammelt und zu Projekten in aller Welt geschickt werden? Hierbei setzt Labdoo auf zwei Dinge: (1) Technologie/IT in Form eines Portals und (2) ein großes, weltweites Netzwerk an ehrenamtlichen Helfern. Nachhaltig und ohne die Ressourcen des Planetens zu sehr zu belasten setzen wir <em>ein soziales Netzwerk an Helfern ("grassroots") ein</em>. Dies erlaubt Labdoo weltweit auf nicht mehr genutzte Ressourcen wie nicht mehr genutzte Laptops, Flug-/Transportpaten, Know-How, Goodwill zuzugreifen. Labdoo und sein Ansatz der Hilfe bringt Bildung und Bildungschancen dahin, wo sie gebraucht werden. <em>So hat die Organisation der UNO für Bildung, Wissenschaft und Kultur (UNESCO) bestätigt, das Labdoo einen "wichtigen und nachhaltigen Beitrag zur Entwicklung von Bildungsprojekten im Ausland leistet."</em>.
+
+How funktioniert Labdoo.org und wie kann ich einen Beitrag leisten? Durch 5 einfache Schritte:
+
+<ul>
+<li>
+<strong>Schritt 1. Spenden von nicht mehr genutzter IT.</strong> Hast du nicht mehr genutzte Laptops o.a. Geräte, die für Bildungszwecke genutzt werden kann? Oder gibt es privat oder beruflich ungenutzte IT? Dann kann man entweder die IT-Spende an ein Labdoo Hub geben und dort aufarbeiten lassen oder man kann die IT-Spende selber aufarbeiten und registrieren. Als erstes wird die IT-Spende in unserer globalen Datenbank registriert. Optional (erledigt sonst das Labdoo Hub, bitte nur E-Mailadresse angeben): Um eine IT-Spende zu registrieren muss man sich mit seinem Labdoo-Konto anmelden (<a href="../user/register/">Lege zuerst dein Konto an, sofern noch nicht erolgt</a>). Klicke oben auf dieser Seite auf die Auswahl "IT-Spende/Doojects" und dann auf den Unterpunkt "Registrieren/Tag". Die IT-Spende bekommt den Status S0 (registriert/tagged) oder S1 (gespendet/donated).
+</li>
+<li>
+<strong>Schritt 2. Aufarbeiten der IT-Spende.</strong> Nach der Registrierung wird die IT-Spende bearbeitet, alte Daten werden gelöscht und die Lernsoftware und Lerninhalte aufgespielt. Hier gibt es zwei Möglichkeiten: (1) der Spender übernimmt diese Aufgabe selber, indem er die Schritte gemäß <a href="../content/dooject-sanitation-guide">sanitation manual</a> durchläuft; (2) alternativ, kann man sich an ein <a href="../hubs">Labdoo hub</a> wenden, dort abgeben oder hinschicken. Dort übernehmen dann Labdoo-Helfer die weiteren Schritte. Jetzt bekommt die IT-Spende den Status S2 (aufgearbeitet/sanitized) oder S3 (einer Schule zugewiesen/assigned to a school).
+</li>
+<li>
+<strong>Schritt 3. Suche eines Flug-/Transportpaten (dootrip).</strong> Mit Bereitstellung der IT-Spende muss ein CO2 neutraler Transport (Flug-/Transportpate) gefunden werden, der die IT-Spende vor Ort bringt. Diese Art des Transportes und des Flugpaten nennt Labdoo.org <em>dootrip</em> (wie in Lab<em>doo trip</em>). Hier gibt es wieder zwei Optionen: (1) falls du selber zum Zielort reist lege diese deinen eigenen "Dootrip" an indem du auf "Dootrips" und dann auf "Anlegen/Create" im o.a. Menü klickst. Dann bringst du selber die IT-Spende zu den Kindern; (2) alternativ, bringe deine IT-Spende <a href="../hubs">zu einem Labdoo Hub </a>. Dort kümmern sich Labdoo-Helfer darum, einen passenden Flug-/Transportpaten zu finden. Die IT-Spende bekommt jetzt den Status T1 (im Transit/in transit).
+</li>
+<li>
+<strong>Schritt 4. Verfolge den Weg deiner IT-Spende bis die 'Mission erfüllt' ist.</strong> Du kannst den Weg deiner IT-Spende bis zu einer Schule verfolgen, indem du  oben im Menü auf die Auswahl "IT-Spende/Dooject" klickst und dann auf den Unterpunkt " Meine IT-Spenden" klickst (dabei muss man aber eingeloggt sein.) Durch Anklicken einer bestimmten IT-Spende werden alle Informationen wie der aktuelle Status, der Standort oder die zugeordnete Schule angezeigt. Weitere Möglichkeiten sind das Hochladen von Fotos, Zuordnung zu einer Reise / Transport, der Verlauf und Aktualisieren der Daten. In dieser Phase hat die IT-Spende den Status S4 (geliefert/delivered).
+</li>
+<li>
+<strong>Schritt 5. Recycling defekter Geräte.</strong> Die letzte Phase für alle Geräte ist das Recycling. Dadurch soll die Umwelt und Ressourcen geschont werden. Wenn eine IT-Spende nicht mehr funktioniert kann die Schule kostenlos ein Ersatzgerät bekommen, wenn das defekte zum ordnungsgemäßen Recycling zurück gegeben wird. Die IT-Spende erhält jetzt den Status S5 (defekt/broken) oder S6 (recycled).
+</li>
+</ul>
+Alle die o.a. Schritte haben zum Ziel, die IT-Spende für Schulen, Heime o.a. Projekte fit zu machen. Dabei werden die Stati S0, S1, S2, S3, T1, S4, S5 und S6 durchlaufen, wie im nachfolgenden Diagramm geschrieben.
+<hr/>
+<table align="center">
+<tr><td>
+<em>Schritte, die eine IT-Spende auf dem Weg zu einem bedürftigen Projekt durchläuft.</em>
+</td></tr>
+<tr><td>
+<img src="/sites/default/files/content/labdoo-nutshell/labdoo-mini-mission.png" width="600"/>
+</td></tr>
+</table>
+<hr/>
+Labdoo.org ermöglicht als soziales Netzwerk noch viel mehr. So kann jeder beitragen, als Teil des Labdoo-Teams oder indem ihr eure Erfahrungen mit anderen teilt, anderen von Labdoo.org erzählt. Ihr könnt Fragen stellen oder beantworten, Bilder hochladen oder Anträge für IT-Spenden einreichen. Oder baue ein Labdoo Hub in deiner Region auf. Hier einige weiterführende Links:
+
+<ul>
+<li>
+Um Teil eine Labdoo-Teams zu werden gehe auf die o.a. Menüoption "Team".
+</li>
+<li>
+Das Wiki ist unsere zentrale Wissensbasis, in der Dokumente, Manuals u.a. Material gefunden werden kann. Klicke auf "Wiki" im o.a. Menü.
+</li>
+<li>
+<a href="../content/labdoo-social-network-how-it-works">'The Labdoo Social Network - How It Works'</a> wiki book describes in more detail how the collaborative aid platform works.
+</li>
+<li>
+In the <a href="../content/labdoo-toolkit">'Labdoo toolkit'</a> you will find tools to help you take further actions such as initiating your own Labdoo local awareness campaigns.
+</li>
+<li>
+For any questions, don't hesitate to post them on any of the <a href="../teams">Teams wall</a>.
+</li>
+</ul>
+
+Willkommen im Labdoo Projekt! Danke für deine IT-Spende und Engagement!
+
+Das Labdoo Team.
+<img src="/profiles/labdoo/files/pictures/equation-2-alpha-smaller.png"/>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>185</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>0</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>900</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

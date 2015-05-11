@@ -1,0 +1,52 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>224</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Alternate CD - Festplatte löschen</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>224</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Alte Laptops können oft nur mit der Alternate CD von lubuntu gestartet und installiert werden. 
+
+Auf dieser Alternate CD ist aber der shred-Befehl zum Löschen von Festplatten nicht enthalten. 
+
+Da das Nachladen dieses  Befehl während der Installation komplex ist wird empfohlen, sich entweder eine Knoppix-CD (http://www.knoppix.org/) oder eine Rescue CD (http://ubuntu-rescue-remix.org/) anzulegen. 
+
+Diese Live-CDs werden gestartet und dort ist auf Terminalebene der Shred-Befehl enthalten.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>922</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>941</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

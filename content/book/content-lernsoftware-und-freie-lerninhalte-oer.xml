@@ -1,0 +1,56 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>175</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Lernsoftware und freie Lerninhalte (OER)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>175</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Information zu den im Labdoo-Projekt eingesetzte Lern- und Spielsoftware und Lerninhalte
+
+Labdoo.org nutzt 
+- kindgerechte Lernsoftware für alle Altersstufen (Vorschule, Primar-, Sekundarstufe 1 und 2)  
+- Erweiterungen für barrierefreie Zugänge (u.a. für sehbehinderte Anwender)
+- Offline-Wikis, damit Kinder auch ohne Onlinezugang lesen und lernen können sowie
+- Virenscanner ClamAV
+
+Der in diesem Wiki beschriebene Leistungsumfang geht weit über die reine Installation von dem Betriebssystem lubuntu hinaus. Durch die Installation der vorbereiteten Labdoo Images for  Cloning (für Parted Magic / Clonezilla) oder der Installationsskripte auf http://ftp.labdoo.org/download/images/ erhöht man deutlich den Nutzen für die Kinder.
+
+Teile dieses Dokumentes basieren u.a. auf Texten und Grafiken von www.edubuntu.org und http://wiki.ubuntuusers.de/Edubuntu.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>170</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>890</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>895</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

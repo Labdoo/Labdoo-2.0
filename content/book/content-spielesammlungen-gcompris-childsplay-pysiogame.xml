@@ -1,0 +1,89 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>189</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Spielesammlungen Gcompris, Childsplay, Pysiogame</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>189</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><strong>Spielesammlungen Gcompris, Childsplay, Pysiogame</strong>
+
+GCompris und Childsplay sind Sammlungen unterschiedlicher Lernspiele für Kinder im Vorschul- / Grundschulalter. Die Pakte enthalten Rechen-, Schreib-, Buchstaben-, Wortfindungs- und Merkspiele. Ziel ist es die Kinder auf spielerische Art und Weise zu fördern. Beide Pakete mit über 100 Spielen sind vorinstalliert auf Labdoo-Computern.
+
+<strong>Gcompris Spielesammlung</strong>
+
+Hinter den u.a. Menüpunkte verbergen sich über 100 Spiel- und Lernprogramme, die die Kinder entdecken können:
+
+<strong>Menüpunkt                                          Beschreibung</strong>
+"Entdecke den Computer"                   Die Eingabe des Computers in verschiedenen Spielen kennenlernen.
+"Gehe zu den Entdeckungsspielen"    Spielerisch Farben, Töne, die Welt ... entdecken.
+"Puzzles"                                             Logik-, Gedächtnis-, Lege-, Knobel-, und Geduldsspiele.
+"Gehe zu den Spieletafeln"                 Zeitvertreib mit chaten, malen ...
+"Mathematik"                                      Zählen, Rechen. und Geometriespiele.
+"Gehe zu den Lesetafeln"                  Buchstaben erlernen, Leseübungen, Galgenmännchen ...
+"Gehe zu den Erlebnis-Aktivitäten"    Wissensvermittlung über elektrische Stromkreise, den Wasserkreislauf, die Funktionsweise einer Schleuse ...
+"Strategiespiele"                                Zeitvertreib mit Schach, Vier gewinnt, Oware und Kugelreihe.
+
+<strong>Childsplay Spielesammlung</strong>
+
+<strong>Icon           Beschreibung                                                                                   Schwierigkeit</strong>
+                         Klassisches Memoryspiel, Bilderpaare finden                           */**
+                         Memory mit Kleinbuchstaben                                                    */**
+                         Paare mit Großbuchstaben finden                                            */**
+                         Die richtigen Zahlen im Spiel zusammensuchen                       */**
+                         Finde die richtigen Paare von Geräuschen                               */**
+                         Maustraining - versuche die Fische zu treffen                           *
+                         Klicke die gesprochenen Buchstaben und Zahlen an                */**
+                         Tastaturtraining - den angezeigten Buchstaben tippen             *
+                         Ein Bild korrekt zusammen setzen                                             */**
+                         Geräusche dem dazugehörigen Bild zuordnen                          *
+                         Mit dem Alphabet der Tiere spielerisch Buchstaben erlernen und die passenden Tierlaute erfahren.
+	                                                                                                                   *
+                         Das Videospiel Pong                                                                 *
+                         Mit Pacman die Buchstaben eines vorgegebenen Wortes in der richtigen Reihenfolge fressen
+	                                                                                                                   **/***
+                         Geschicklichkeitsspiele                                                              **/***
+
+* = einfach, ** = mittel, *** = schwierig
+
+<strong>Pysiogame Spielesammlung</strong>
+
+pySioGame ist eine Sammlung von Lernspielen für Kinder im Alter von 3 bis 10 Jahren. PySioGame beinhaltet Spiele zu den Bereichen Mathematik, Lesen, Schreiben Malen und Gedächtnistraining.
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>170</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>895</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>902</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

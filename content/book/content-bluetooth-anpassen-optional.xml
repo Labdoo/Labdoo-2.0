@@ -1,0 +1,49 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>244</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Bluetooth anpassen (optional)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>244</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Wenn der Laptop über Bluetooth verfügt ist der Name der Bluetooth-Karte durch das Klone identisch. Damit sich die Bluetooth-Schnittstelle des Laptops korrekt meldet ein Terminal öffnen und eintippen:
+<code>sudo hciconfig hci0 name ’labdoo-00000xxxx-0'</code> (Enter)
+
+xxxx ist dabei die jeweilige Laptopnummer.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>922</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>961</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

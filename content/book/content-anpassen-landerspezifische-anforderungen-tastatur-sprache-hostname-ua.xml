@@ -1,0 +1,102 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>177</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Anpassen an Länderspezifische Anforderungen (Tastatur, Sprache, Hostname u.a.)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>177</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><ol>
+<li><strong>Was ist nach der lubuntu-Installation oder dem Klonen noch zu tun?</strong></li>
+Nach der Installation das System neu starten. Wenn der Laptop nicht korrekt hochfährt hilft manchmal ausschalten und Neustart, um in den advanced Modus zu gelangen.
+
+<li><strong>Hostnamen ändern</strong></li>
+Die geklonten Rechner heißen alle gleich z.B. labdoo-000005xxx. Hier sollte der richtige Hostname eingetragen werden, der identisch ist mit der Labdoo-ID-Nummer. Ist der Rechner schon bei labdoo.org getaffed? Wenn ja den nächsten Absatz überspringen.
+
+Sonst - Den Laptop online bei http://www.labdoo.org/de/node/add/laptop taggen (registrieren). Dabei werden Foto und Daten des Laptops registriert. Der Laptop erhält eine eindeutige Nummer, z.B. 000005214. Wenn ihr schon dabei seid druckt gleich die Aufkleber für Laptop und Ladegerät aus (print tags).
+
+Bleiben wir bei dem Beispiel - Der Rechner würde also in labdoo-000005214 umbenannt, bzw. in eure konkrete Nummer, die ihr für euren Laptop getagged habt. Der Grund hierfür ist, dass als Clone alle Laptops den gleichen Hostnamen haben und das gäbe eine Kollision, wenn diese Laptops später in einem Netzwerk zusammen geführt würden.
+
+Danach den Hostnamen wie folgt ändern:
+
+Terminal öffen (Strg/CTL + Alt + T) →  eintippen
+<code>sudo nano /etc/hosts</code> (Enter) 
+→ im Editor in der 2. Zeile am Ende den Hostnamen ändern, wie beim Taggen angezeigt 
+→ Ändern beenden  (Strg/CTL + o) der Buchstabe O, nicht die Zahl 0
+→ Datei Speichern (Enter)
+→ Datei schliessen (Strg/CTL + x) 
+
+Nochmal wie vor, jetzt im Terminal eingeben 
+<code>sudo nano /etc/hostname</code> (Enter) (man kann es abkürzen durch „Pfeil hoch“ = letzte Eingabe holen und abändern) 
+→ im Editor den Hostnamen ändern 
+→ Ändern beenden  (Strg/CTL + o) der Buchstabe O, nicht die Zahl 0
+→ Datei Speichern (Enter)
+→ Datei schliessen (Strg/CTL + x) 
+
+<li><strong>Grafikauflösung prüfen</strong></li>
+Preferences → Monitor Settings → gewünschte Einstellung auswählen → Apply
+
+<li><strong>Tastatureinstellungen, Sprache(n)</strong></li>
+In der Startleiste rechte Maustaste auf das Landeskürzel-Icon (de) → "Keyboard Layout Handler" Settings → ggf. Haken aus "Keep system layout" entfernen → durch +Add weitere Tastatur-Layouts hinzufügen oder durch -Remove entfernen → Close
+
+<li>Weitere Sprachen installieren</li>
+Preferences → Language Support → Install / remove Languages → bei der/den gewünschte(n) Sprache(n) einen Haken setzen → Apply Changes → Sprachen werden heruntergeladen, dabei mit der Rechner online sein.
+
+<strong>Sprache umstellen </strong> Zur Umstellung auf eine andere Sprache zeigt man die gewünschte Sprache oberhalb von English und lässt sie dort los → Apply System-Wide → damit werden alle Benutzer auf diese Sprache umgestellt
+
+<strong>Tipp: </strong> Geht der Labdoo-Laptop in ein Land mit "exotischer", nicht-Lateinischer Schrift sollte der Rechner auf Englisch eingestellt bleiben. So kann sich der Anwender an den Laptop gewöhnen. Er muss nämlich genau das Passwort und die Tastatur beachten. Tippt er das Passwort "labdoo" mit einer z.B. arabischen Tastatureinstellung kommt etwas völlig anderes heraus und er kann sich nicht anmelden.
+
+<strong>Regional Formats: </strong> Auf das Dreieck-Symbol klicken → die gewünschten Einheiten für Währung, Zeit u.a. auswählen → Apply System-Wide (Es gibt nicht für alle Länder deren speziellen Einstellung für Währung und Zeitformate. Dann ein möglichst ähnliches auswählen.)
+
+<li><strong>Prüfen, ob spezielle Treiber notwendig sind</strong></li>
+Preferences → Software &amp; Updates → Additional Drivers → einige Zeit warten 
+
+→ entweder erscheint "no additional drivers available" → keine weiteren Schritte notwendig, oder
+→ es wird eine Liste an Treibern angezeigt → den gewünschten Treiber anklicken → Apply Changes
+
+<li><strong>Weitere Xowa-Wikis installieren</strong></li>
+Hierzu verweisen wir auf den Wiki-Beitrag.....(folgt)
+
+<li><strong>Bluetooth-Schnittstelle anpassen (optional)</strong></li>
+Wenn der Laptop über Bluetooth verfügt, ist der Name der Bluetooth-Karte durch das Clonen identisch. Damit sich die Bluetooth-Schnittstelle des Rechners korrekt meldet → ein Terminal öffnen und eintippen:
+<code>sudo hciconfig hci0 name ’labdoo-00000xxxx-0'</code> (Enter)
+Dabei xxxx  durch die konkrete Labdoo-ID des vorliegenden Rechners.
+
+</ol></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>891</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>899</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

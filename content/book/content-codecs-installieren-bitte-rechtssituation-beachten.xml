@@ -1,0 +1,65 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>222</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Codecs installieren (bitte Rechtssituation beachten)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>222</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><strong>Wichtiger Hinweis: vor Ausführung der nachfolgend beschriebene Hinweise bitte unbedingt die rechtliche Situation im Land überprüfen. In vielen Ländern, darunter auch in Deutschland, dürfen bestimmte Codecs und Multimediaformate in Verbindung mit lizenzfreier Software NICHT genutzt werden.</strong>
+
+Ohne diese Codecs und Multimedia-Formate können aber bestimmte Audio- und Videoformate nicht abgespielt werden!
+
+Je nach Landesrecht ist es ggf. unzulässig, geschützte Codecs, Multimediaformate u.a. Zu installieren (so auch in Deutschland). Daher hier die Erklärung, wie dies ggf. im Ausland gelöst werden kann. Zwar hat das Labdoo-Projekt den Schwerpunkt auf Bildung und IT-Wissen, aber die Kinder werden sicherlich auch mal Videos von DVD oder Internet anschauen wollen. Wenn dann der Bildschirm dunkel bliebe, ist der Frust vorprogrammiert.
+
+Weitere Informationen hierzu und zu Multimediaerweiterungen für lubuntu erhält man unter http://wiki.ubuntuusers.de/Codecs.
+
+Ein Terminal öffnen und darin ausführen (Labdoo-Rechner muss dabei online sein)
+
+#------check legal situation before activating these lines / Codecs 
+
+<code>sudo apt-get install ubuntu-restricted-extras -y</code> (Enter)
+<code>sudo apt-get install non-free-codecs -y</code> (Enter)
+
+<code>sudo apt-get install curl -y</code> (Enter)
+<code>curl ftp://ftp.videolan.org/pub/debian/videolan-apt.asc | </code> (Enter)
+<code>sudo apt-key add -echo "deb ftp://ftp.videolan.org/pub/debian/stable ./" | </code> (Enter)
+<code>sudo tee /etc/apt/sources.list.d/libdvdcss.list </code> (Enter)
+<code>sudo apt-get update</code> (Enter)</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>922</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>939</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>
