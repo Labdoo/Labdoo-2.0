@@ -25,7 +25,7 @@
 
 This brief document describes the process of (1) collecting unused laptops from your local community, (2) sanitizing and (3) packaging them to make them ready for traveling to a needy school. This document can be used by Labdooers working as individuals (from home, from work, from your local organizations), or groups of Labdooers working as part of a Labdoo hub.
 
-If in any of these steps you get stuck, you can use the <a href="/content/quality-assurance-qa">Labdoo QA Team</a> to find answers to your questions or to ask new ones.
+If in any of these steps you get stuck, you can post your questions in the wall of the <a href="../content/quality-assurance-qa">Labdoo QA Team</a> so that others can help you.
 
 <strong>Collecting laptops from your local community</strong>
 
@@ -81,6 +81,9 @@ Where it says “detect keyboard”, say “No”.
 </li>
 <li>
 In the next screen, pick the country of origin of your keyboard.
+</li>
+<li>
+At this point, we are going to do a disk clean up to erase all the information in the disk. For that, start by pressing ALT+CTRL+F3, this will take you to a command shell window. In this command shell, enter the command <code>sudo shred /dev/hda -f -v --iterations=1</code>. This operation will clean up your disk from any prior personal information. If the above command does not work, try to use 'sda' instead of 'hda' (like this <code>sudo shred /dev/sda -f -v --iterations=1</code>). If it still does not work, post your case as a question in the wall of the <a href="../content/quality-assurance-qa">Labdoo QA team</a> and someone in the QA team will help you.
 </li>
 <li>
 When it tries to configure the network, press “cancel” (there is no need to do network installation since you have the CD and the updates are installed later).
