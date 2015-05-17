@@ -512,6 +512,13 @@ function labdoo_objects_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_extended_edoovillage';
+  $strongarm->value = 1;
+  $export['i18n_node_extended_edoovillage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'i18n_node_extended_hub';
   $strongarm->value = 1;
   $export['i18n_node_extended_hub'] = $strongarm;
@@ -526,6 +533,13 @@ function labdoo_objects_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_options_edoovillage';
+  $strongarm->value = array();
+  $export['i18n_node_options_edoovillage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'i18n_node_options_hub';
   $strongarm->value = array();
   $export['i18n_node_options_hub'] = $strongarm;
@@ -536,6 +550,13 @@ function labdoo_objects_strongarm() {
   $strongarm->name = 'i18n_sync_node_type_dootrip';
   $strongarm->value = array();
   $export['i18n_sync_node_type_dootrip'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_sync_node_type_edoovillage';
+  $strongarm->value = array();
+  $export['i18n_sync_node_type_edoovillage'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1061,21 +1082,21 @@ function labdoo_objects_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_dootrip';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['node_preview_dootrip'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_edoovillage';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['node_preview_edoovillage'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_hub';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['node_preview_hub'] = $strongarm;
 
   $strongarm = new stdClass();
