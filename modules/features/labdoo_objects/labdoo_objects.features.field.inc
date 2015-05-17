@@ -3713,10 +3713,10 @@ $display_output = $entity_field_item[\'value\'];',
       'description' => 'If this hub accepts to store doojects, select "Dropping point". If the hub sanitizes doojects, select "Sanitizing point". You can select multiple options at the same time.',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'list',
+          'label' => 'inline',
+          'module' => 'i18n_field',
           'settings' => array(),
-          'type' => 'list_default',
+          'type' => 'i18n_list_default',
           'weight' => '2',
         ),
         'node_gallery_node_thumbnail' => array(
