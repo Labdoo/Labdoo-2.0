@@ -1,0 +1,54 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>293</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Intel graphical interface - problem and solution</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>293</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>If you have a computer with an Intel graphical interface there is a free tool by Intel Graphics for Linux:
+https://01.org/linuxgraphics/ or the download area https://01.org/linuxgraphics/downloads
+
+If an Intel graphic chip → open Firefox and open https://01.org/linuxgraphics/downloads
+Depending on the Ubuntu release (version and 64 or 32 Bit) download the matching tool release, see link in the list https://download.01.org/gfx/ubuntu/14.04/main/pool/main/i/intel-linux-graphics-installer/intel-linux-graphics-installer_1.0.7-0intel1_amd64.deb
+
+A windows will open, just press Enter (open with gdebi-gtk (default) -->
+a new windows open --> confirm --> Install Package --> Enter Admin passwort "labdoo" (or what password you are using) --> Wait, when finished, close window
+Click on the Ubuntu Icon left upper corner --> type Intel and click on the Intel software shown below --> Enter Admin password --> Intell graphic tool will start --> Begin --> Install (will last a while...) --> each step will be confirmed with a green ok (hopefully) --> if installation is finished the laptop has to be restarted.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>255</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>973</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1010</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

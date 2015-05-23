@@ -1,0 +1,88 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>276</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>information for Dootrippers</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>169</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Dear "dootripper",
+
+<a href="http://www.iata.org/whatwedo/cargo/dgr/Documents/LithiumBattery_PassengerFlyer.jpg"><img src="/sites/default/files/content/wiki-de/iata_lithiumbattery_passengerflyer.jpg" align="right" width="300" /></a> 
+
+thank you for your contribution to take one or more laptops to an "Edoovillage“. So Labdoo.org calls schools or youth projects. And "dootripper" are called those helpers, taking laptops abroad. You will find all our edoovillages on http://www.labdoo.org/call-for-laptops.
+
+Data and history of each laptop can be seen online, too: Enter the laptop ID (number) in the <strong>Search</strong> entry field, take a picture of the QR code or browse: http://www.labdoo.org/de/laptop/00000xxxx (xxxx = no. of a laptop)
+
+In the FAQ-Forum https://dev.labdoo.org/de/content/faq-forum you will find many answers to your questions, e.g. concerning toll and IATA regulation to transport laptops and batteries in planes https://dev.labdoo.org/de/content/faq-forum#FAQ14. 
+
+<strong>For the airline, the amount of Watt-hours (Wh) of the battery is critical. Almost all laptop batteries have less than 100 Wh and can be transported without any restriction in the trunk or in your hand luggage. An approval of the airline is not required.</strong>
+
+Please return pictures or videos of the area, the town, the school etc, when delivering the laptops to the children. So the donors will get an idea, where their donation went to. And we can update our database and inform the donor (we need to know the Labdoo ID and the project you went to).
+
+Technical
+You will find a "how to start" wiki here to explain a user, how to start and use the computer
+<ul>
+<li>English: https://dev.labdoo.org/de/content/start-laptop-request</li>
+<li>German: https://dev.labdoo.org/content/wie-starte-ich-den-computer</li>
+<li>French: to follow</li>
+<li>Spanish: to follow</li>
+<li>Russian: to follow</li>
+</ul>
+
+As most of our edoovillages (projects) do not have access to internet language(s), keyboard layouts etc. are pre-installed and pre-set. How to install and switch languages etc. is explained in the above mentioned documents.
+
+The power plugs are those in use in the country of the donor. This may match with the country of the edoovillage. If the power plug is different (here is a table https://dev.labdoo.org/content/list-countries-voltage-and-power-plugs-0) it has to be changed by the receiver. Or you can buy and proceed an adapter for the power plug.
+
+Labdoo added many manuals, OER in as many languages as we found to folder Home/labdoo/Public/... (if logged in as user labdoo, the user student has a bookmark „manuals wikidoo“ in his file explorer). The documents were stored in pdf, HTML (click on index file) or Wiki. More here https://dev.labdoo.org/de/content/information-schools-project-partner-receiver-laptop-donations-edoovillages.
+
+For cloned laptops / install-scripts: When you open Firefox an English  Offline-Wikipedia for children and a multimedia English course is shown, as well as XOWA, an Offline Wiki tool more 800+ wikis in local languages.
+
+Each desktop will have a link to a video tutorial, which explains in a few mniutes Lubuntu and the educational software and content.
+
+You will find 3 user accounts, for details refer to the how-to-start wiki.
+
+Often there are local Linux or Ubuntu User Groups in the country of the edoovillages. These community might help as well in case of questions.
+
+Optional: Some very powerful laptops might come with a Windows system as a guest operating system in VirtualBox - if the requirements for a Windows license are fulfilled.
+
+Labdoo.org helpers invested a lot of time and efforts to offer you and the children an optimal system. But we all are human and cannot avoid mistakes. Or maybe you have a good suggestion, to improve our concept. 
+
+In any case inform us, we like to know and learn from you. Please send a mail to contact@Labdoo.org.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>276</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>0</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>993</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

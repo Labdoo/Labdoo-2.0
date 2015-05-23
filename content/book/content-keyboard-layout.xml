@@ -1,0 +1,136 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>302</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>keyboard layout</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>302</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><strong>Useful links keyboard layouts</strong>
+
+http://ascii-table.com/keyboards.php
+http://commons.wikimedia.org
+
+You can enclose a print-out of specific keyboard layouts, if needed.
+
+<table border="1">
+<tr>
+<th><strong>Language</strong></th>
+
+</tr> 
+
+
+<tr>
+<td><strong>German</strong></td>
+<td>Bild &#8593; </td>
+<td>Bild &#8595; </td>
+<td>Druck</td>
+<td>Ende</td>
+<td>Einfg</td>
+<td>Entf</td>
+<td>Pause</td>
+<td>Pos 1</td>
+<td>Strg</td>
+<td> &#8592; </td>
+<td> &#8593; </td>
+<td> 	&#8595; </td>
+<td> &#8617; </td>
+
+</tr> 
+
+<tr>
+<td><strong>English</strong></td>
+<td>page (up)</td>
+<td>page (down)</td>
+<td>print</td>
+<td>end</td>
+<td>Ins</td>
+<td>Del</td>
+<td>pause</td>
+<td>Home</td>
+<td>CTRL</td>
+<td>Backspace</td>
+<td>Shift</td>
+<td>Caps</td>
+<td>Enter</td>
+<td>  </td>
+
+</tr> 
+
+<tr>
+<td><strong>French</strong></td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+
+</tr> 
+
+<tr>
+<td><strong>Spanish</strong></td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+
+</tr> 
+
+</table>
+
+<br />
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>270</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>987</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1019</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

@@ -1,0 +1,77 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>291</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>NVIDIA grafical drivers, problems and solutions</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>291</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><ol>
+<li>If a computer is not able to boot and if you are not able to log-in sometimes you are still able to have access via terminal:</li>
+
+Either using CTL+ALT+t (if logged in), CTL+Alt+F3 or follow the GRUB information using the recovery mode:
+<code>sudo apt-get purge nvidia-current</code> (Enter)
+<code>sudo apt-get install linux-headers-generic</code>  (Enter)
+Reboot.
+
+<li>Preferences --> Additional Drivers --> wait a while and if proprietary drivers are offered for downlaod.</li>
+
+<li>NVIDIA driversfrom PPA (source) of developer community</li>
+
+Herefor you have to add an additional source for software (PPA). Please be aware of potential risks of adding sources (PPA) to your computer:
+
+CTL + ALT + F3 (in recovery mode) or CTL + Alt + t if logged-in opens terminal
+
+log-in as user labdoo and password labdoo,
+<code>sudo su</code> (enter)    + Passwort labdoo eingeben (enter)
+
+<strong>To add PPA for Ubuntu 14.04 / 13.10 / 13.04 / 12.10</strong>
+<code>sudo apt-add-repository ppa:xorg-edgers/ppa</code>  	(enter)
+
+<strong>To add PPA for Ubuntu 12.04 / 11.10 / 11.04 / 10.04</strong>
+<code>sudo apt-add-repository ppa:ubuntu-x-swat/x-updates</code>	(enter)
+
+and:
+<code>sudo apt-get update</code>		(enter)
+<code>sudo apt-get install nvidia-current nvidia-settings</code>		(enter)
+<code>sudo reboot</code>	(enter), um Laptop neu zu starten.
+
+<li>If your computer is older (built before 2004) it does not make sense as this card is not supported anymore. It is worth a try to use either Lubuntu 12.04 LTS or to use the Labdoo Image for cloning for Lubuntu 12.04 LTS.</li>
+</ol></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>255</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>973</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1008</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

@@ -21,121 +21,642 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value><strong>Lernprogramme</strong>
+<value><ol>
 
-<strong>Astronomie &amp; Geographie</strong>
+<li><strong>Lernsoftware</strong></li>
 
-<strong>Anwendung       Beschreibung    Paketname    Bildschirmfoto</strong>
+Labdoo.org nutzt kindgerechte Lernsoftware für alle Altersstufen (Vorschule, Primar-, Sekundarstufe 1 und 2) und Erweiterungen für barrierefreie Zugänge (u.a. für sehbehinderte Anwender). 
 
-Celestia  Celestia ist ein Programm, mit dem man sich virtuell durch das Weltall bewegen und andere Planeten, Sterne und Galaxien besuchen kann. celestia-gnome
-KStars    KStars ist ein Programm, welches einen künstlichen Sternenhimmel auf dem Desktop erzeugt. Nachdem die Basisdaten eingegeben und Erweiterungen heruntergeladen worden sind, kann man mittels des Desktop-Planetariums Sterne, Planeten, die Sonne, den Mond und tausende Kometen und Planetoide lokalisieren, um sie ggf. mit dem eigenen Teleskop zu beobachten. kstars
-Marble   Marble ist ein Desktop Globus. Das Programm ähnelt dem populären Programm Google Earth. Es ist schlicht gehalten, trotzdem durchaus ausgereift und mächtig. Es unterstützt verschiedene Kartenmaterialien, u.a. OpenStreetMap und kann diese auf einem Globus oder einer Landkarte abbilden. marble
-Stellarium Stellarium ist eine freie Planetarium-Software. stellarium
+Edubuntu ist eine für Schule und Bildung konzipierte Sammlung von Lernprogrammen und Spielen für verschiedene Altersbereiche, wurden. Teile dieses Dokumentes basieren u.a. auf Texten und Grafiken von www.edubuntu.org und  http://wiki.ubuntuusers.de/Edubuntu.
 
-<strong>Chemie</strong>
+Über Edubuntu hinaus werden mit dem Labdoo.org Installationsskript oder den Labdoo Images for Cloning (für Parted Magic / Clonezilla) viele weitere Lernsoftware und Offline-Wiki-Tools installiert (nur dann sind alle nachfolgend beschriebenen Programme installiert).
 
-<strong>Anwendung       Beschreibung    Paketname    Bildschirmfoto</strong>
+Weitere Spiel- und Lernprogramme können online über das lubuntu Software Center nachgeladen werden. 
 
-Kalzium Kalzium erlaubt anhand eines Periodensystems die Erforschung der Elemente. Es ist sehr umfangreich, bspw. lässt sich nachvollziehen, ab welcher Temperatur sie den Aggregatzustand wechseln, jedes Element lässt sich mit Hilfe dieses Programms als Bohrsches Atommodell anzeigen oder es lassen sich Informationen zum Alpha- und Beta-Zerfall oder der Atommasse abrufen.  kalzium
+<li><strong>Spielesammlungen Gcompris, Childsplay, Pysiogame</strong></li>
+
+<a href="http://wiki.ubuntuusers.de/GCompris">GCompris</a> und <a href="http://wiki.ubuntuusers.de/Spiele/Childsplay">Childsplay</a> sind Sammlungen unterschiedlicher Lernspiele für Kinder im Vorschul- / Grundschulalter. Die Pakte enthalten Rechen-, Schreib-, Buchstaben-, Wortfindungs- und Merkspiele. Ziel ist es die Kinder auf spielerische Art und Weise zu fördern. Beide Pakete mit über 100 Spielen sind vorinstalliert auf Labdoo-Computern.
+
+<li><strong>Gcompris Spielesammlung</strong></li>
+
+<table> <tr><th></th></tr>
+ <tr>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris01.png" width="130"/> </td>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris02.png" width="130"/> </td>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris03.png" width="130"/> </td>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris04.png" width="130"/> </td>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris05.png" width="140"/> </td>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris06.png" width="140"/> </td>
+</tr> 
+</table>
+<br />
+Hinter den u.a. Menüpunkte verbergen sich über 100 Spiel- und Lernprogramme, die die Kinder entdecken können:
+Menüpunkt 
+
+<table>
+ <tr>
+<th></th>
+<th><strong>Menü</strong></th>
+<th><strong>Beschreibung</strong></th>
+</tr>
+ <tr>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris_menu01.png" width="40"/> </td>
+<td>Entdecke den Computer</td>
+<td>Die Eingabe des Computers in verschiedenen Spielen kennenlernen.</td>
+</tr>
+ <tr>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris_menu02.png" width="40"/> </td>
+<td>Gehe zu den Entdeckungsspielen</td>
+<td>Spielerisch Farben, Töne, die Welt ... entdecken. </td>
+</tr>
+ <tr>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris_menu03.png" width="40"/> </td>
+<td>Puzzles</td>
+<td>Logik-, Gedächtnis-, Lege-, Knobel-, und Geduldsspiele. </td>
+</tr>
+ <tr>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris_menu04.png" width="40"/> </td>
+<td>Gehe zu den Spieletafeln</td>
+<td>Zeitvertreib mit chatten, malen ... </td>
+</tr>
+ <tr>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris_menu05.png" width="40"/> </td>
+<td>Mathematik</td>
+<td>Zählen, Rechen. und Geometriespiele</td>
+</tr>
+ <tr>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris_menu06.png" width="40"/> </td>
+<td>Gehe zu den Lesetafeln</td>
+<td>Buchstaben erlernen, Leseübungen, Galgenmännchen ... </td>
+</tr>
+ <tr>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris_menu07.png" width="40"/> </td>
+<td>Gehe zu den Erlebnis-Aktivitäten</td>
+<td>Wissensvermittlung über elektrische Stromkreise, den Wasserkreislauf, die Funktionsweise einer Schleuse ... </td>
+</tr>
+ <tr>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris_menu08.png" width="40"/> </td>
+<td>Strategiespiele</td>
+<td>Zeitvertreib mit Schach, Vier gewinnt, Oware und Kugelreihe. </td>
+</tr>
+</table>
+
+<br />
+<li><strong>Childsplay Spielesammlung</strong></li>
+
+<table> <tr><th></th></tr>
+ <tr>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay01.png" width="130"/> </td>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay02.png" width="130"/> </td>
+</tr> 
+</table>
+<br />
+
+
+<table>
+ <tr>
+<th><strong>Icon</strong></th>
+<th><strong>Beschreibung</strong></th>
+<th><strong>Schwierigkeit</strong></th>
+</tr>
+ <tr>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay_menu01.png" width="40"/> </td>
+<td>Klassisches Memoryspiel bei dem die richtigen Bilderpaare gefunden werden müssen. 
+</td>
+<td>*/**</td>
+</tr>
+ <tr>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay_menu02.png" width="40"/> </td>
+<td>Memory mit Kleinbuchstaben</td>
+<td>*/**</td>
+</tr>
+ <tr>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay_menu03.png" width="40"/> </td>
+<td>Die Paare mit Großbuchstaben finden. </td>
+<td>*/**</td>
+</tr>
+ <tr>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay_menu04.png" width="40"/> </td>
+<td>Die richtigen Zahlen im Spiel zusammensuchen.</td>
+<td>*/**</td>
+</tr>
+ <tr>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay_menu05.png" width="40"/> </td>
+<td>Finde die richtigen Paare von Geräuschen </td>
+<td>*/** </td>
+</tr>
+ <tr>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay_menu06.png" width="40"/> </td>
+<td>Maustraining - versuche die Fische zu treffen</td>
+<td>*</td>
+</tr>
+ <tr>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay_menu07.png" width="40"/> </td>
+<td>Klicke die gesprochenen Buchstaben und Zahlen an</td>
+<td>*/**</td>
+</tr>
+ <tr>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay_menu08.png" width="40"/> </td>
+<td>Tastaturtraining - drücke die Taste des angezeigten Buchstabens</td>
+<td>*</td>
+</tr>
+ <tr>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay_menu09.png" width="40"/> </td>
+<td>Ein Bild muss wieder korrekt zusammengesetzt werden</td>
+<td>*/**</td>
+</tr>
+ <tr>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay_menu10.png" width="40"/> </td>
+<td>Es werden Geräusche vorgespielt, welche dem dazugehörigen Bild zugeordnet werden müssen</td>
+<td>*</td>
+</tr>
+ <tr>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay_menu11.png" width="40"/> </td>
+<td>Mit dem Alphabet der Tiere spielerisch Buchstaben erlernen und die passenden Tierlaute erfahren</td>
+<td>*</td>
+</tr>
+ <tr>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay_menu12.png" width="40"/> </td>
+<td>Das Videospiel Pong</td>
+<td>*</td>
+</tr>
+ <tr>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay_menu13.png" width="40"/> </td>
+<td>In diesem Pacman-Clone müssen die Buchstaben eines vorgegebenen Wortes in der richtigen Reihenfolge gefressen werden</td>
+<td>**/***</td>
+</tr>
+ <tr>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay_menu14.png" width="40"/> </td>
+<td>Ziel ist es, die Kugel einzulochen. Mit der  rechten Maustaste wird gezielt und mit der  linken Taste gestoßen. Je länger diese gehalten wird, desto stärker ist der Stoß</td>
+<td>**/***</td>
+</tr>
+</table>
+* = einfach, ** = mittel, *** = schwierig
+
+<li><strong>Pysiogame Spielesammlung</strong></li>
+
+<strong>pySioGame</strong> ist eine Sammlung von Lernspielen  für Kinder im Alter von 3 bis 10 Jahren. PySioGame beinhaltet Spiele zu den Bereichen Mathematik, Lesen, Schreiben Malen und Gedächtnistraining. 
+
+<table> <tr><th></th></tr>
+ <tr>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/pysiogame01.png" width="130"/> </td>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/pysiogame02.png" width="150"/> </td>
+</tr> 
+</table>
+<br />
+
+<li><strong>Astronomie + Geographie</strong></li>
+
+<table> 
+<tr>
+<th><strong>Anwendung</strong></th>
+<th><strong>Beschreibung</strong></th>
+<th><strong>Paketname</strong></th>
+<th><strong>Bildschirmfoto</strong></th>
+</tr>
+
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/Celestia">Celestia</a></td>
+           <td>Celestia ist ein Programm, mit dem man sich virtuell durch das Weltall bewegen und andere Planeten, Sterne und Galaxien besuchen kann.</td>
+            <td>celestia-gnome</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/celestia.png" width="100"/> </td>
+</tr> 
+<tr>
+            <td><a href="http://edu.kde.org/kstars">KStars</a></td>
+           <td>KStars ist ein Programm, welches einen künstlichen Sternenhimmel auf dem Desktop erzeugt. Nachdem die Basisdaten eingegeben und Erweiterungen heruntergeladen worden sind, kann man mittels des Desktop-Planetariums Sterne, Planeten, die Sonne, den Mond und tausende Kometen und Planetoide lokalisieren, um sie ggf. mit dem eigenen Teleskop zu beobachten.</td>
+            <td>kstars</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/kstars.png" width="100"/> </td>
+</tr> 
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/Marble">Marble</a></td>
+           <td>Marble ist ein Desktop Globus. Das Programm ähnelt dem populären Programm Google Earth. Es ist schlicht gehalten, trotzdem durchaus ausgereift und mächtig. Es unterstützt verschiedene Kartenmaterialien, u.a. OpenStreetMap und kann diese auf einem Globus oder einer Landkarte abbilden.</td>
+            <td>marble</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/marble.png" width="100"/> </td>
+</tr> 
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/Stellarium">Stellarium</a></td>
+           <td>Stellarium ist eine freie Planetarium-Software.</td>
+            <td>stellarium</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/stellarium.png" width="100"/> </td>
+</tr> 
+
+</table>
+
+<li><strong>Chemie</strong></li>
+
+<table> 
+<tr>
+<th><strong>Anwendung</strong></th>
+<th><strong>Beschreibung</strong></th>
+<th><strong>Paketname</strong></th>
+<th><strong>Bildschirmfoto</strong></th>
+</tr>
+
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/Kalzium">Kalzium</a></td>
+           <td>Kalzium erlaubt anhand eines Periodensystems die Erforschung der Elemente. Es ist sehr umfangreich, bspw. lässt sich nachvollziehen, ab welcher Temperatur sie den Aggregatzustand wechseln, jedes Element lässt sich mit Hilfe dieses Programms als Bohrsches Atommodell anzeigen oder es lassen sich Informationen zum Alpha- und Beta-Zerfall oder der Atommasse abrufen.</td>
+            <td>kalzium</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/kalzium.png" width="100"/> </td>
+</tr> 
+</table>   
 	
-<strong>Grafik und Konstruktion</strong>
+<li><strong>Grafik und Konstruktion</strong></li>
 
-<strong>Anwendung       Beschreibung    Paketname    Bildschirmfoto</strong>
+<table> 
+<tr>
+<th><strong>Anwendung</strong></th>
+<th><strong>Beschreibung</strong></th>
+<th><strong>Paketname</strong></th>
+<th><strong>Bildschirmfoto</strong></th>
+</tr>
 
-Dia   Dia ist ein Diagrammeditor, welcher eine Vielzahl von Möglichkeiten zur Verfügung stellt, um ansprechende Diagramme zu erstellen. Neben der Möglichkeit, die Objekte frei zu platzieren und zu skalieren, können Grafiken eingebunden werden.  dia-gnome oder dia
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/Dia">Dia</a></td>
+           <td>Dia ist ein Diagrammeditor, welcher eine Vielzahl von Möglichkeiten zur Verfügung stellt, um ansprechende Diagramme zu erstellen. Neben der Möglichkeit, die Objekte frei zu platzieren und zu skalieren, können Grafiken eingebunden werden.</td>
+            <td>dia-gnome oder dia</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/dia.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/Mind_Map#FreeMind">FreeMind</a></td>
+           <td>FreeMind ist ein Programm zur Erstellung von Mindmaps.</td>
+            <td>freemind</td>
+           <td>  </td>
+</tr>
+<tr>
+            <td><a href="http://gpaint.sourceforge.net/">GnuPaint</a></td>
+           <td>GnuPaint ist ein simples Malprogramm.</td>
+            <td>gpaint</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/gpaint.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/Inkscape">Inkscape</a></td>
+           <td>Inkscape ist ein Vektorgrafik-Programm ähnlich Adobe Illustrator, FreeHand, Corel Draw oder Xara X. Die Anwendung bietet eine sehr benutzerfreundliche Oberfläche, die trotz der vielen Funktionen intuitiv und übersichtlich bleibt.</td>
+            <td>inkscape</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/inkscape.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/LibreCAD">LibreCAD</a></td>
+           <td>LibreCAD ist ein sehr leistungsfähiges freies CAD-Programm für zweidimensionale Zeichnungen. Man kann verschiedene technische Zeichnungen erstellen, wie zum Beispiel Pläne für Gebäude, Einrichtungen oder mechanische Teile sowie Schemata und Diagramme. </td>
+            <td>librecad</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/librecad.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://www.pencil-animation.org/">Pencil</a></td>
+           <td>Mit Pencil kann man traditionelle handgemalte Animationen (Cartoons) erstellen. Es werden sowohl Bitmap- als auch Vektorgrafiken unterstützt.</td>
+            <td>pencil</td>
+           <td>  </td>
+</tr>
+<tr>
+            <td><a href="http://www.loria.fr/~quinson/Teaching/PLM/">PLM</a></td>
+           <td>Programmierübungen in Java, Python, Scala u.a.</td>
+            <td>PLM</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/plm.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://www.tkgate.org/">TkGate</a></td>
+           <td>TkGate ist ein Programm zum Design elektrischer Schaltkreise. Manuals in ~/Public/manuals-ubuntu/English/TKGate_2_0</td>
+            <td>TkGate</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/tkgate.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/Tux_Paint">Tux Paint</a> </td>
+           <td>Tux Paint ist ein einfaches Malprogramm für kleine Kinder. Mittels Stempel, Pinsel usw. können Bilder gemalt werden.</td>
+            <td>tuxpaint</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/tuxpaint.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/Mind_Map#VYM-View-Your-Mind">VYM</a></td>
+           <td>VYM (View Your Mind) ist eine einfach zu bedienende Anwendung zur Erstellung von Mind Maps.</td>
+            <td>vym</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/vym.png" width="100"/> </td>
+</tr>
+</table>   
+ 
+<li><strong>Mathematik, Informatik</strong></li>
 
-FreeMind FreeMind ist ein Programm zur Erstellung von Mindmaps. freemind
-GnuPaint GnuPaint ist ein simples Malprogramm, welches auf xpaint basiert. gpaint
-Inkscape Inkscape ist ein Vektorgrafik-Programm ähnlich Adobe Illustrator, FreeHand, Corel Draw oder Xara X. Die Anwendung bietet eine sehr benutzerfreundliche Oberfläche, die trotz der vielen Funktionen intuitiv und übersichtlich bleibt. inkscape
-LibreCAD LibreCAD ist ein sehr leistungsfähiges freies CAD-Programm für zweidimensionale Zeichnungen. Man kann verschiedene technische Zeichnungen erstellen, wie zum Beispiel Pläne für Gebäude, Einrichtungen oder mechanische Teile sowie Schemata und Diagramme. librecad
-Pencil  Mit Pencil kann man traditionelle handgemalte Animationen (Cartoons) erstellen. Es werden sowohl Bitmap- als auch Vektorgrafiken unterstützt. pencil
-PLM Programmierübungen in Java, Python, Scala u.a. PLM
-TkGate TkGate ist ein Programm zum Design elektrischer Schaltkreise. Manuals in ~/Public/manuals-ubuntu/English/TKGate_2_0 TkGate
-Tux Paint Tux Paint ist ein einfaches Malprogramm für kleine Kinder. Mittels Stempel, Pinsel usw. können Bilder gemalt werden. tuxpaint
-VYM VYM (View Your Mind) ist eine einfach zu bedienende Anwendung zur Erstellung von Mind Maps. vym
+<table> 
+<tr>
+<th><strong>Anwendung</strong></th>
+<th><strong>Beschreibung</strong></th>
+<th><strong>Paketname</strong></th>
+<th><strong>Bildschirmfoto</strong></th>
+</tr>
 
-<strong>Mathematik, Informatik</strong>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/GeoGebra">GeoGebra</a></td>
+           <td>GeoGebra ist eine freie Geometriesoftware, mit der mathematische Objekte aus Geometrie, Algebra und Analysis gezeichnet werden können. </td>
+            <td>geogebra</td>
+           <td>  </td>
+</tr>
+<tr>
+            <td><a href="http://jfractionlab.sourceforge.net/">Jfractionlab</a></td>
+           <td> Lernprogramm zum Üben der Bruchrechnung</td>
+            <td>Jfractionlab</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/jfractionlab.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://edu.kde.org/applications/all/kalgebra/">KAlgebra</a></td>
+           <td>KAlgebra ist ein mathematisches Rechenprogramm. Grundlage bildet die Sprache Content MathML, mit der man die Struktur einer Formel beschreiben kann. Es können arithmetische und logische Operationen ausgeführt und zwei- sowie dreidimensionale Graphen dargestellt werden.</td>
+            <td>kalgebra</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/kalgebra.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/KBruch">KBruch</a></td>
+           <td>KBruch ist ein Programm, mit dem Bruchrechnung (Bruchaufgaben, Vergleichen und Faktorisieren) geübt werden kann. Der Schwierigkeitsgrad der Aufgaben lässt sich dem Wissensstand anpassen. Neue Aufgaben können hinzugefügt werden. kbruch
+Kig Kig ist ein Geometrieprogramm. Mathematische Figuren und Konzepte können interaktiv entdeckt werden.</td>
+            <td>kbruch</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/kbruch.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://edu.kde.org/kig">Kig</a></td>
+            <td>Kig ist ein Geometrieprogramm. Mathematische Figuren und Konzepte können interaktiv entdeckt werden.</td>
+            <td>kig</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/kig.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://edu.kde.org/kmplot">KmPlot</a></td>
+            <td>KmPlot ist ein Programm zur grafischen Darstellung von mathematischen Funktionen.</td>
+            <td>kmplot</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/kmplot.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://lybniz2.sourceforge.net/index.html">Lybniz</a></td>
+            <td>Lybniz  Lybniz ist ein simples Programm zum grafischen Darstellen von mathematischen Funktionen.</td>
+            <td>lybniz</td>
+           <td>  </td>
+</tr>
+<tr>
+            <td><a href="http://wiki.sugarlabs.org/go/Activities/Turtle_Art">TurtleArt</a></td>
+            <td>Ein Tool zum kindgerechten Erlernen der Prorammierung</td>
+            <td>TurtleArt</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/turtleart.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://tux4kids.alioth.debian.org/tuxmath/index.php">Tux</a></td>
+            <td>Tux, of Math Command Tux, of Math Command, auch bekannt als TuxMath, ist ein Mathetrainer, mit dem die Grundrechenarten geübt werden können. Das Spielprinzip basiert auf dem Arcade-Klassiker Missile Command. Zusammen mit Tux muss man Städte durch das Lösen mathematischer Aufgaben vor der Zerstörung retten.</td>
+            <td>tuxmath</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/tuxmath.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://www.tux.org/~bagleyd/abacus.html">Xabacus</a></td>
+            <td>simulation of the ancient calculator</td>
+            <td>XAbacus</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/xabacus.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://wmi.math.u-szeged.hu/xaos/doku.php">XaoS</a></td>
+            <td>XaoS ist ein Programm, welches Fraktalgrafiken in Echtzeit erstellt.</td>
+            <td>XAbacus</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/xaos.png" width="100"/> </td>
+</tr>
 
-<strong>Anwendung       Beschreibung    Paketname    Bildschirmfoto</strong>
+</table>  
 
-GeoGebra GeoGebra ist eine freie Geometriesoftware, mit der mathematische Objekte aus Geometrie, Algebra und Analysis gezeichnet werden können. geogebra
-Jfractionlab Lernprogramm zum Üben der Bruchrechnung Jfractionlab
-KAlgebra KAlgebra ist ein mathematisches Rechenprogramm. Grundlage bildet die Sprache Content MathML, mit der man die Struktur einer Formel beschreiben kann. Es können arithmetische und logische Operationen ausgeführt und zwei- sowie dreidimensionale Graphen dargestellt werden. kalgebra
-KBruch KBruch ist ein Programm, mit dem Bruchrechnung (Bruchaufgaben, Vergleichen und Faktorisieren) geübt werden kann. Der Schwierigkeitsgrad der Aufgaben lässt sich dem Wissensstand anpassen. Neue Aufgaben können hinzugefügt werden. kbruch
-Kig Kig ist ein Geometrieprogramm. Mathematische Figuren und Konzepte können interaktiv entdeckt werden. kig
-KmPlot KmPlot ist ein Programm zur grafischen Darstellung von mathematischen Funktionen. kmplot
-Lybniz  Lybniz ist ein simples Programm zum grafischen Darstellen von mathematischen Funktionen. lybniz
-TurtleArt Ein Tool zum kindgerechten Erlernen der Prorammierung TurtleArt
-Tux, of Math Command Tux, of Math Command, auch bekannt als TuxMath, ist ein Mathetrainer, mit dem die Grundrechenarten geübt werden können. Das Spielprinzip basiert auf dem Arcade-Klassiker Missile Command. Zusammen mit Tux muss man Städte durch das Lösen mathematischer Aufgaben vor der Zerstörung retten. tuxmath
-Xabacus simulation of the ancient calculator XAbacus
-XaoS XaoS ist ein Programm, welches Fraktalgrafiken in Echtzeit erstellt. xaos
+<li><strong>Physik</strong></li>
 
-<strong>Physik</strong>
+<table> 
+<tr>
+<th><strong>Anwendung</strong></th>
+<th><strong>Beschreibung</strong></th>
+<th><strong>Paketname</strong></th>
+<th><strong>Bildschirmfoto</strong></th>
+</tr>
 
-<strong>Anwendung       Beschreibung    Paketname    Bildschirmfoto</strong>
-
-Step Step ist eine sehr umfangreiche, interaktive Physiksimulationsanwendung. step
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/Step">Step</a></td>
+           <td>Step ist eine sehr umfangreiche, interaktive Physiksimulationsanwendung.</td>
+            <td>step</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/step.png" width="100"/> </td>
+</tr>
+</table>
 	
-<strong>Spiele</strong>
+<li><strong>Spiele</strong></li>
 
-<strong>Anwendung       Beschreibung    Paketname    Bildschirmfoto</strong>
+<table> 
+<tr>
+<th><strong>Anwendung</strong></th>
+<th><strong>Beschreibung</strong></th>
+<th><strong>Paketname</strong></th>
+<th><strong>Bildschirmfoto</strong></th>
+</tr>
 
-Atomix Atomix ist ein Spiel, in dem es darum geht, vorgegebene Moleküle aus einzelnen Atomen zusammenzusetzen. Das Spielprinzip basiert auf dem AMIGA-Spiel Atomix. atomix
-blinKen blinKen ist ein Spiel, welches in den 80er Jahren unter dem Namen "Senso" bekannt war. Es gilt, die Folge zu merken, in der die Felder (Rot, Gelb, Blau und Grün) blinken. Diese wird dann vom Spieler erneut eingegeben. Der Schwierigkeitsgrad steigt von Runde zu Runde. blinken
-GCompris GCompris ist eine Spielesammlung speziell für Kinder. Es vereint eine Vielzahl von Spielen zu verschiedenen Themengebieten für unterschiedliche Altersgruppen. So beinhaltet GCompris z.B. Spiele zum Thema Mathematik (kleines 1x1), Farben, Geschicklichkeit, Umgang mit dem Computer etc. Altersempfehlung 3+. gcompris
-Kanagram Kanagram ist ein Buchstabenspiel, bei dem es gilt, ein Rätsel zu lösen. Ein Wort wird durch geschickte Umstellung der vorgegebenen Buchstaben entschlüsselt. kanagram
-Kartoffelknülch Kartoffelknülch ist ein Programm, welches mehrere Hintergrundbilder (Kartoffelknülch, Ägypten, Mond, Weihnachten, etc.) zur Auswahl stellt. Mit den zur Verfügung stehenden Motiven können diese verändert werden. ktuberling
-KHangMan KHangman ist ein Galgenmännchen-Spiel. Altersempfehlung 6+. khangman
-Ri-li Ri-li ist ein Geschicklichkeitsspiel, in dem man eine Holzeisenbahn durch das Stellen der richtigen Weichen über verschiedene Schienennetze bewegen muss. Ziel ist es die im Level verteilten Wagons einzusammeln. ri-li
+<tr>
+            <td><a href="http://jens.triq.net/atomix.php">Atomix</a></td>
+           <td>Atomix ist ein Spiel, in dem es darum geht, vorgegebene Moleküle aus einzelnen Atomen zusammenzusetzen. Das Spielprinzip basiert auf dem AMIGA-Spiel Atomix..</td>
+            <td>atomix</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/atomix.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://edu.kde.org/blinken">blinKen</a></td>
+           <td>blinKen ist ein Spiel, welches in den 80er Jahren unter dem Namen "Senso" bekannt war. Es gilt, die Folge zu merken, in der die Felder (Rot, Gelb, Blau und Grün) blinken. Diese wird dann vom Spieler erneut eingegeben. Der Schwierigkeitsgrad steigt von Runde zu Runde.</td>
+            <td>blinken</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/blinken.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/GCompris">GCompris</a></td>
+           <td>GCompris ist eine Spielesammlung speziell für Kinder. Es vereint eine Vielzahl von Spielen zu verschiedenen Themengebieten für unterschiedliche Altersgruppen. So beinhaltet GCompris z.B. Spiele zum Thema Mathematik (kleines 1x1), Farben, Geschicklichkeit, Umgang mit dem Computer etc. Altersempfehlung 3+.</td>
+            <td>gcompris</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/Kanagram">Kanagram</a></td>
+           <td>Kanagram ist ein Buchstabenspiel, bei dem es gilt, ein Rätsel zu lösen. Ein Wort wird durch geschickte Umstellung der vorgegebenen Buchstaben entschlüsselt.</td>
+            <td>kanagram</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/kanagram.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://games.kde.org/game.php?game=ktuberling">Kartoffelknülch</a></td>
+           <td>Kartoffelknülch ist ein Programm, welches mehrere Hintergrundbilder (Kartoffelknülch, Ägypten, Mond, Weihnachten, etc.) zur Auswahl stellt. Mit den zur Verfügung stehenden Motiven können diese verändert werden. </td>
+            <td>ktuberling</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/ktuberling.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/KHangMan">KHangMan</a></td>
+           <td>KHangman ist ein Galgenmännchen-Spiel. Altersempfehlung 6+. </td>
+            <td>khangman</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/khangman.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/Spiele/Ri-li">Ri-li</a></td>
+           <td>Ri-li ist ein Geschicklichkeitsspiel, in dem man eine Holzeisenbahn durch das Stellen der richtigen Weichen über verschiedene Schienennetze bewegen muss. Ziel ist es die im Level verteilten Wagons einzusammeln. </td>
+            <td>ri-li</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/ri-li.png" width="100"/> </td>
+</tr>
 
-<strong>Sprache</strong>
+</table>
 
-<strong>Anwendung       Beschreibung    Paketname    Bildschirmfoto</strong>
+<li><strong>Sprache</strong></li>
 
-KWordQuiz KWordQuiz ist ein Vokabeltrainer, welcher nach dem Karteikastenprinzip funktioniert. Er bietet diverse Import- und Exportfunktionen an und ist in der Lage, Listen und Karteikarten auszudrucken. kwordquiz
-Parley Parley ein Vokabeltrainer und der Nachfolger von KVocTrain. Der Vokabeltrainer ist sehr umfangreich und bietet eine Vielzahl von Einstellungsmöglichkeiten, was die Erstellung von Wörterlisten und das Lernen betrifft. parley
-Kletters KLettres hilt beim Lernen des Alphabets. Die Aussprache wird in verschiedenen Sprache geübt. Für Erwachsene und Kinder. KLettres
-Siehe auch Vokabeltrainer.
+<table> 
+<tr>
+<th><strong>Anwendung</strong></th>
+<th><strong>Beschreibung</strong></th>
+<th><strong>Paketname</strong></th>
+<th><strong>Bildschirmfoto</strong></th>
+</tr>
 
-<strong>Tipptrainer</strong>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/KWordQuiz">KWordQuiz</a></td>
+           <td>KWordQuiz ist ein Vokabeltrainer, welcher nach dem Karteikastenprinzip funktioniert. Er bietet diverse Import- und Exportfunktionen an und ist in der Lage, Listen und Karteikarten auszudrucken.</td>
+            <td>kwordquiz</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/kwordquiz.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/Parley">Parley</a></td>
+           <td>Parley ein Vokabeltrainer und der Nachfolger von KVocTrain. Der Vokabeltrainer ist sehr umfangreich und bietet eine Vielzahl von Einstellungsmöglichkeiten, was die Erstellung von Wörterlisten und das Lernen betrifft</td>
+            <td>parley</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/parley.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="https://edu.kde.org/klettres/">Klettres</a></td>
+           <td>KLettres hilt beim Lernen des Alphabets. Die Aussprache wird in verschiedenen Sprache geübt. Für Erwachsene und Kinder. KLettres
+Siehe auch Vokabeltrainer.</td>
+            <td>klettres</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/klettres.png" width="100"/> </td>
+</tr>
+</table>
 
-<strong>Anwendung       Beschreibung    Paketname    Bildschirmfoto</strong>	
+<li><strong>Tipptrainer</strong></li>
 
-KTouch KTouch ist ein einfacher Schreibmaschinentrainer. In vielen Übungslektionen wird das Tippen auf der PC-Tastatur geübt - zusätzliche Übungen können aus dem Internet bezogen werden. ktouch
-Tux Typing Tux Typing hilft Kindern, spielerisch tippen und schreiben zu erlernen. Altersempfehlung 5+. tuxtype
+<table> 
+<tr>
+<th><strong>Anwendung</strong></th>
+<th><strong>Beschreibung</strong></th>
+<th><strong>Paketname</strong></th>
+<th><strong>Bildschirmfoto</strong></th>
+</tr>
+
+<tr>
+            <td><a href="http://ktouch.sourceforge.net/">KTouch</a></td>
+           <td>KTouch ist ein einfacher Schreibmaschinentrainer. In vielen Übungslektionen wird das Tippen auf der PC-Tastatur geübt - zusätzliche Übungen können aus dem Internet bezogen werden.</td>
+            <td>ktouch</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/ktouch.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://tux4kids.alioth.debian.org/tuxtype/index.php">Tux Typing</a></td>
+           <td>Tux Typing hilft Kindern, spielerisch tippen und schreiben zu erlernen. Altersempfehlung 5+. </td>
+            <td>tuxtype</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/tuxtype.png" width="100"/> </td>
+</tr>
+</table>
 Siehe auch Schreibtrainer.
+  
+<li><strong>Musik</strong></li>
 
-<strong>Musik</strong>
+<table> 
+<tr>
+<th><strong>Anwendung</strong></th>
+<th><strong>Beschreibung</strong></th>
+<th><strong>Paketname</strong></th>
+<th><strong>Bildschirmfoto</strong></th>
+</tr>
 
-<strong>Anwendung       Beschreibung    Paketname    Bildschirmfoto</strong>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/GTick">Gtick</a>, <a href="http://wiki.ubuntuusers.de/KMetronome">KMetronome</a></td>
+           <td>Gtick und Kmetronome sind Anwendungen zum Takt messen (Software-Metronom)</td>
+            <td>Gtick, KMetronome</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/gtick.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/TuxGuitar">Tux Guitar</a></td>
+           <td>Programm zur Erstellung, Betrachtung und Bearbeitung von Tabulaturen und Notenblättern für viele verschiedene Instrumente, besonders Gitarre.</td>
+            <td>Tux Guitar</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/tuxguitar.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://www.solfege.org/">Solfege</a></td>
+           <td>Trainingssoftware für Gehör und Intervalle, Akkorde und Rhythmus (Manuals in Public/manuals-ubuntu)</td>
+            <td>Solfege</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/solfege.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="https://apps.ubuntu.com/cat/applications/quantal/pianobooster/">Piano Booster</a></td>
+           <td>Mit Piano Booster kann man auf neue Weise Klavierspielen lernen.</td>
+            <td>Piano Booster</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/pianobooster.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://vmpk.sourceforge.net/">VMPK</a></td>
+           <td>Virtual MIDI Piano Keyboard </td>
+            <td>VMPK</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/vmpk.png" width="100"/> </td>
+</tr>
+</table>
 
-Gtick, KMetronome Gtick und Kmetronome sind Anwendungen zum Takt messen (Software-Metronom) Gtick, KMetronome
-Tux Guitar Programm zur Erstellung, Betrachtung und Bearbeitung von Tabulaturen und Notenblättern für viele verschiedene Instrumente, besonders Gitarre. Tux Guitar
-Solfege Trainingssoftware für Gehör und Intervalle, Akkorde und Rhythmus (Manuals in Public/manuals-ubuntu) Solfege
-Piano Booster Mit Piano Booster kann man auf neue Weise Klavierspielen lernen. Piano Booster
-VMPK Virtual MIDI Piano Keyboard VMPK
+<li><strong>Weitere Anwendungen</strong></li>
 
-<strong>Weitere Anwendungen</strong>
+<table> 
+<tr>
+<th><strong>Anwendung</strong></th>
+<th><strong>Beschreibung</strong></th>
+<th><strong>Paketname</strong></th>
+<th><strong>Bildschirmfoto</strong></th>
+</tr>
 
-<strong>Anwendung       Beschreibung    Paketname    Bildschirmfoto</strong>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/calibre">calibre</a></td>
+           <td> Calibre ist ein plattformunabhängiges Programm zur Verwaltung und Konvertierung von E-Books. </td>
+            <td>calibre</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/calibre.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://www.pps.jussieu.fr/%7Egimenez/laby/">Laby</a></td>
+           <td>Laby ist ein Programm mit dem man die Programmierung in OCaml, Python, Lua, Ruby, Prolog, C oder Java erlernen kann. Eine Ameise muss sicher durch ein Labyrinth bewegt werden, ohne in Spinnennetze oder andere Fallen zu treten.</td>
+            <td>laby</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/laby.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://projects.gnome.org/nanny/">Nanny</a></td>
+           <td>Nanny Parental Control dient zur Überwachung und Kontrolle, was die Kinder am PC tun dürfen.</td>
+            <td>nanny</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/nanny.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/Kino">Kino</a></td>
+           <td>Kino ist ein einfacher Video-Editor für Linux, der auch die Möglichkeit bietet, direkt im Programm die Videos vom Camcorder aufzunehmen ("capture").</td>
+            <td>kino</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/kino.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/KTurtle">KTurtle</a></td>
+           <td>KTurtle ist eine Implementation der Programmiersprache Logo mit graphischer Oberfläche für KDE. Eine Schildkröte (Turtle) lässt sich mit Hilfe einfacher Befehle über eine Landschaft steuern. Dabei lassen sich geometrische Muster erzeugen. Der Anwender erhält einen ersten Einblick in Algorithmen und Konzepte der imperativen Programmierung (Schleifen, Prozeduren).</td>
+            <td>kturtle</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/kturtle.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://packages.ubuntu.com/trusty/scolasync">ScolaSync</a></td>
+           <td>Grafisches Werkzeug zum Kopieren von Daten auf bzw. von USB-Sticks</td>
+            <td>ScolaSync</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/scolasync.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/Scribus">Scribus</a></td>
+           <td>Scribus ist ein Desktop-Publishing-Programm. Es dient der professionellen Erstellung von Layouts und ist vergleichbar mit Adobe PageMaker, QuarkXpress oder Adobe InDesign.</td>
+            <td>scribus</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/scribus.png" width="100"/> </td>
+</tr>
 
-calibre Calibre ist ein plattformunabhängiges Programm zur Verwaltung und Konvertierung von E-Books. calibre
-Laby Laby ist ein Programm mit dem man die Programmierung in OCaml, Python, Lua, Ruby, Prolog, C oder Java erlernen kann. Eine Ameise muss sicher durch ein Labyrinth bewegt werden, ohne in Spinnennetze oder andere Fallen zu treten. laby
-Nanny Nanny Parental Control dient zur Überwachung und Kontrolle, was die Kinder am PC tun dürfen. nanny
-Kino Kino ist ein einfacher Video-Editor für Linux, der auch die Möglichkeit bietet, direkt im Programm die Videos vom Camcorder aufzunehmen ("capture"). kino
-KTurtle KTurtle ist eine Implementation der Programmiersprache Logo mit graphischer Oberfläche für KDE. Eine Schildkröte (Turtle) lässt sich mit Hilfe einfacher Befehle über eine Landschaft steuern. Dabei lassen sich geometrische Muster erzeugen. Der Anwender erhält einen ersten Einblick in Algorithmen und Konzepte der imperativen Programmierung (Schleifen, Prozeduren). kturtle
-ScolaSync Grafisches Werkzeug zum Kopieren von Daten auf bzw. von USB-Sticks ScolaSync
-Scribus Scribus ist ein Desktop-Publishing-Programm. Es dient der professionellen Erstellung von Layouts und ist vergleichbar mit Adobe PageMaker, QuarkXpress oder Adobe InDesign. scribus
+</table>
 
-<strong>Virusscanner ClamAV (Programm ClamTK)</strong>
+<li><strong>Virusscanner <a href="http://wiki.ubuntuusers.de/ClamAV">ClamAV</a> (Programm ClamTK)</strong></li>
 
-Eigentlich ist unter lubuntu Linux kein Virenscanner nötig, da die bestehenden Sicherheitskonzepte ausreichen und zur Zeit keine Viren für den Linux-Desktop in Umlauf sind. Aus Sicherheitsgründen kann man aber einen lizenzfreien Virenscanner, z.B ClamAV installieren, mehr auf http://wiki.ubuntuusers.de/Virenscanner und http://wiki.ubuntuusers.de/ClamAV.
+<table align="right">
+<tr><td>
+</td></tr>
+<tr><td>
+<img src="/sites/default/files/content/wiki-de/edoovillages/clamav.png" width="300"/> 
+</td></tr>
+</table>
+
+Eigentlich ist unter lubuntu Linux kein Virenscanner nötig, da die bestehenden Sicherheitskonzepte ausreichen und zur Zeit keine Viren für den Linux-Desktop in Umlauf sind. Aus Sicherheitsgründen kann man aber einen lizenzfreien Virenscanner, z.B <a href="http://wiki.ubuntuusers.de/ClamAV">ClamAV</a> installieren, mehr auf http://wiki.ubuntuusers.de/Virenscanner und http://wiki.ubuntuusers.de/ClamAV.
 
 Zum Aufrufen des Virenscanner das Programm <strong>ClamTK</strong> starten. SchülerInnen können in Edoovillages damit ihre USB-Sticks scannen und Viren entfernen.
 
 Mit dem Firefox Plugin "Fireclam" werden Downloads automatisch mit ClamAV auf Viren gescannt → https://addons.mozilla.org/de/firefox/addon/fireclam/
 
-Es müssen zusätzlich weitere Module und Virensignaturen installiert sein, daher wurde dies in das Installationsskript für Software http://ftp.labdoo.org/download/images/installskripts/installscript-software.sh und in die Images for Cloning eingebunden.</value>
+Es müssen zusätzlich weitere Module und Virensignaturen installiert sein, daher wurde dies in das Installationsskript für Software http://ftp.labdoo.org/download/images/installskripts/installscript-software.sh und in die Images for Cloning eingebunden.
+
+</ol></value>
 </body>
 <body>
 <type>format</type>
@@ -147,7 +668,7 @@ Es müssen zusätzlich weitere Module und Virensignaturen installiert sein, dahe
 </bid>
 <plid>
 <type>book_array</type>
-<value>895</value>
+<value>890</value>
 </plid>
 <mlid>
 <type>book_array</type>

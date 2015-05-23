@@ -1,0 +1,68 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>283</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Add a local printer as network printer</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>283</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>If a printer is not installed via LAN in a network, but locally via USB or Centronics cable at a Linux computer you can allow other computers in the network to access to this printer. 
+
+Therefore the CUPS (Common Unix Printing System) must be installed – it is part of  Lubuntu repository.
+
+<strong>Go to the computer, which is linked to the printer:</strong>
+<ul>
+<li>Open the web browser and type the address http://localhost:631</li>
+<li>Allow printer access</li>
+<li>On page http://localhost:631/admin/ tick at “Share printers connected to this system”. </li>
+<li>Alternatively use this command in a terminal: <code>cupsctl –share-printers</code>    (Enter)</li>
+<li>Select on page ”printer” the connected printer. </li>
+<li>Click in menu “administration” on “printer”.</li>
+<li>Leave “actual connection” unchanged  → Proceed →  add a tick to “allow access to this printer / share”; </li>
+<li>optional: Add a name for the place of installation → proceed →  change printer.</li>
+</ul>
+
+<strong>Show printer on other computers in the network (has to be done on each computer in the network)</strong>
+<ul>
+<li>To show the printer on all computers in the network → http://localhost:631/admin → tick “Show printers shared by other systems”  → Change settings → acknowledge, ready.</li>
+<li>Alternatively run in a terminal: <code>cupsctl --remote-printers</code>  (Enter)</li>
+</ul>
+
+After this you should see the printer in the menu “printer”. Maybe you have to wait a while before the printer is shown or re-load the page.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>255</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>973</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1000</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

@@ -1,0 +1,139 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>253</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Tastaturaufkleber, Abkürzungen</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>253</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><strong>Nützliche Links für Tastaturinformationen</strong>
+
+http://ascii-table.com/keyboards.php
+http://commons.wikimedia.org
+
+Bewährt hat sich auch, den Edoovillages einen Ausdruck der voreingestellten Tastatur-Layouts mitzugeben, damit sich die Anwender daran orientieren können.
+
+<table border="1">
+<tr>
+<th><strong>Language</strong></th>
+
+</tr> 
+
+
+<tr>
+<td><strong>Deutsch</strong></td>
+<td>Bild &#8593; </td>
+<td>Bild &#8595; </td>
+<td>Druck</td>
+<td>Ende</td>
+<td>Einfg</td>
+<td>Entf</td>
+<td>Pause</td>
+<td>Pos 1</td>
+<td>Strg</td>
+<td> &#8592; </td>
+<td> &#8593; </td>
+<td> 	&#8595; </td>
+<td> &#8617; </td>
+
+</tr> 
+
+<tr>
+<td><strong>English</strong></td>
+<td>page (up)</td>
+<td>page (down)</td>
+<td>print</td>
+<td>end</td>
+<td>Ins</td>
+<td>Del</td>
+<td>pause</td>
+<td>Home</td>
+<td>CTRL</td>
+<td>Backspace</td>
+<td>Shift</td>
+<td>Caps</td>
+<td>Enter</td>
+<td>  </td>
+
+</tr> 
+
+<tr>
+<td><strong>French</strong></td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+
+</tr> 
+
+<tr>
+<td><strong>Spanish</strong></td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+
+</tr> 
+
+</table>
+
+<br />
+
+<strong>Hinweis für deutsche Tastaturen:</strong>
+
+Die meisten in Deutschland gespendeten Laptops haben eine deutsche Tastatur. In vielen Ländern ist die kein Problem. Wenn Tastaturaufkleber benötigt werden, empfehlen wir www.Tastaturaufkleber.eu. Die Kosten für die Tastauraufkleber muss aber der Besteller selber tragen, da dies nicht Bestandteil des Labdoo-Projektes ist.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>170</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>890</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>970</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

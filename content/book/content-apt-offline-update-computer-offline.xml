@@ -1,0 +1,64 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>298</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>apt-offline - update computer offline</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>298</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>There is the tool <strong>apt-offline</strong>. You can download an update at a place, where you have access to internet, e.g. at home. apt-offline allows you to easily upgrade or install new packages on your offline PC, by using another online PC.
+
+<strong>To Install apt-offline (execute in a terminal, press ENTER):</strong>
+<code>sudo apt-get install apt-offline</code> (Enter)
+
+<strong>Upgrading:</strong>
+On the offline PC: <code>sudo apt-offline set /tmp/apt-offline.sig</code>
+On the online PC: <code>sudo apt-offline get C:\apt-offline.sig --bug-reports --threads 5</code>
+On the offline PC: <code>sudo apt-offline install /media/USB/apt-offline.zip</code>
+
+<strong>Installing</strong>
+On the offline PC: <code>sudo apt-offline set abuse-offline.sig --install-packages abuse --src-build-dep --install-src-packages abuse </code>
+On the online PC: <code>sudo apt-offline get abuse-offline.sig --no-checksum --bundle abuse-offline.zip </code>
+On the offline PC: <code>sudo apt-offline install /media/USB/abuse-offline.zip</code>
+
+<strong>More info</strong>
+http://apt-offline.alioth.debian.org/
+http://www.debian-administration.org/article/Offline_Package_Management_for_APT
+http://ubuntuforums.org/showpost.php&amp;p=10198406&amp;postcount=5</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>255</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>973</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1015</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

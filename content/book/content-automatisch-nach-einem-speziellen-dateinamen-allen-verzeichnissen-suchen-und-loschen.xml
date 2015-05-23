@@ -21,8 +21,11 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Im Terminal ausführen (Vorsicht!!!)
-<code>find ./ -type f name „Dateiname“ -delete</code>  (Enter)</value>
+<value>Ein Terminal öffnen und darin ausführen
+
+nur suchen: <code>find ./ -type f name „Dateiname“ </code>  (Enter)
+
+suchen und löschen: <code>find ./ -type f name „Dateiname“ -delete</code>  (Enter)  <strong>(Vorsicht!!!)</strong></value>
 </body>
 <body>
 <type>format</type>

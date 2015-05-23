@@ -1,0 +1,66 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>279</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>user concept, add user student</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>279</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>When installing Lubuntu-Installation the first user created is labdoo (who is also administrator and should be reserved for the teachers, as this user may destroy the system by mistake). If you install via cloning or if you use the installation scripts the additional user student will be created automatically.
+
+The user student kas less rights, e.g. is not able to install or delete software and is not able to destroy the system.
+
+Here is the manuel way, how to create a user student:
+
+Start here → System Tools → User + Groups → unlock → +add user → system password (labdoo) →  student as name, e.g. withpassword labdoo → Account Type = Standard (as suggested) →  Create → click on password (account disabled) → input of password labdoo and acknowledge → Change → optional: cahnge language of user student. 
+
+Open a terminal and type (by executing this zhe user student will become member of the group labdoo):
+sudo usermod -aG labdoo student  (Enter)
+
+Please note:
+Each new user takes disc space. So please do not create more users.
+
+As a standard user you are not able to destroy a system by mistake (or at least it is very hard). The user labdoo (administrator) should only be used by teachers.
+
+Each user has his own folder and files in the directory /home/....(name of the user). But the folder home/labdoo/Public is a public folder. All users should have access here. To go there  open the file explorer → filesystem → home → labdoo → folder /Public (you can add a bookmark to navigate here more easily).
+
+If you add content of your own in /Public there is a script http://ftp.labdoo.org/download/images/installskripts/set-rights-folder-files-Public-correct.sh to ensure all rights are set correctly.
+
+In addition there is the user guest. guest needs no password to log-in. But guest is not able to change or store anything. When logging out all his input will be deleted automatically.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>255</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>973</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>996</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

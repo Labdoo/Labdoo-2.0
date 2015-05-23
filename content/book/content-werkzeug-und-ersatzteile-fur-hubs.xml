@@ -23,24 +23,87 @@
 <type>value</type>
 <value>Wir können natürlich nur eine Empfehlung aussprechen, was sich bewährt hat. Vielleicht habt ihr auch schon einiges an Material und Werkzeug?
 
-Vernetzt Euch in eurer Region mit IT-Unternehmen oder IT-Händlern, speziell sogenannten "Refurbishern". Das sind Unternehmen, die im größeren Stil Alt-Computer aufarbeiten und über Shops oder Broker wieder verkaufen. Aber es bleiben immer mal wieder Teile übrig, die uns sehr helfen. Ein besonders wichtiger Refurbisher ist die Afb gGmbH http://www.afb-group.de/de/, mit Geschäftsstellen in der DACH-Region (Deutschland, Österreich und der Schweiz). Wenn ein AfB-Shop in eurer Region stellt euch dort vor, weil die AfB-Shops euch nicht nur mit Ersatzteilen helfen können, sondern auch von Privatleuten deren IT-Spenden annehmen und an Labdoo weiterleiten. Wenn der AfB-Shop euch nicht kennt gehen die IT-Spenden zu AfB nach Essen. So könnt ihr die IT-Spenden aber vor Ort in Empfang nehmen und bearbeiten.
+Vernetzt Euch in eurer Region mit IT-Unternehmen oder IT-Händlern, speziell sogenannten "Refurbishern". Das sind Unternehmen, die im größeren Stil Alt-Computer aufarbeiten und über Shops oder Broker wieder verkaufen. Aber es bleiben immer mal wieder Teile übrig, die uns sehr helfen. Ein besonders wichtiger Refurbisher ist die AfB gGmbH http://www.afb-group.de/de/, mit Geschäftsstellen in der DACH-Region (Deutschland, Österreich und der Schweiz). Wenn ein AfB-Shop in eurer Region stellt euch dort vor, weil die AfB-Shops euch nicht nur mit Ersatzteilen helfen können, sondern auch von Privatleuten deren IT-Spenden annehmen und an Labdoo weiterleiten. Wenn der AfB-Shop euch nicht kennt gehen die IT-Spenden zu AfB nach Essen. So könnt ihr die IT-Spenden aber vor Ort in Empfang nehmen und bearbeiten.
 
 Dann könnt ihr Euch an das Hub Rhein-Ruhr wenden, das über einen Fundus an Ersatzteilen verfügt und ggf. euch zusenden kann. Es gibt aber hunderte verschiedene Ladegeräte, Speicher (RAM), IDE- und SATA-Festplatten, Halterungen und Abdeckungen ("Caddy") für Festplatten, Schrauben usw. Bevor ihr defekte Computer entsorgt solltet ihr daher noch sinnvoll verwertbare Teile ausbauen und aufbewahren.
 
 Über den Labdoo.org e.V. haben wir ausserdem die Möglichkeit, fehlende Ersatzteile oder Werkzeug zu beschaffen. Der Labdoo.org e.V. refinanziert sich ausschliesslich über Spenden, daher wäre es nett, wenn ihr schaut, dass wir über Spenden Ausgaben wieder ersetzt bekämen, danke.
 
-Bei vielen Shop wie http://www.pts-trading.de/ (Batterien und Ladegeräte) oder https://de.ifixit.com/Store (Werkzeug, Reparaturtipps) erhalten wir Händlerkonditionen.
+Bei vielen Shop wie http://www.pts-trading.de/ (Batterien und Ladegeräte) oder https://de.ifixit.com/Store (Werkzeug, Reparaturtipps) erhalten wir Händlerkonditionen. Alle u.a. Werkzeuge, Adapter usw. haben sich im praktischen Einsatz bewährt.
 
 <strong>Werkzeug (Empfehlung)</strong>
 
-folgt
+<table> 
+<tr>
+<th>Artikel</th>
+<th>Foto</th>
+<th>Preis €</th>
+</tr>
+<tr>
+<td><a href="http://eustore.ifixit.com/Werkzeuge/54-Bit-Driver-Kit-Standard-Box.html">iFixit 54 Bit Driver Kit Standard-Box, eine Zusammenstellung der wichtigsten Bits; Aufsätze, um (fast) alles aufschrauben zu können...</a></td>
+<td><img src="/sites/default/files/content/wiki-de/hubs/ifixit_54_bit_kit.jpg" width="250"/></td>
+<td>ca. 20 €</td>
+</tr> 
+<tr>
+<td><a href="http://eustore.ifixit.com/Werkzeuge/Organisationshilfen/Magnetic-Project-Mat.html">iFixit Magnetmatte, Schrauben und Kleinteile sicher und rutsch-fest abzulegen</a></td>
+<td><img src="/sites/default/files/content/wiki-de/hubs/magnetmatte.jpg" width="250"/></td>
+<td>ca. 20 €</td>
+</tr> 
+<tr>
+<td><a href="http://www.conrad.de/ce/de/product/989949/USB-20-zu-IDESATA-Konverter"><strong>USB 2.0</strong> zu IDE+SATA Festplatten Konverter, um externe IDE- oder SATA-Festplatten per USB anzuschliessen und extern mit den Labdoo-Images bespielen zu können</a></td>
+<td><img src="/sites/default/files/content/wiki-de/hubs/ide_sata_adapter.jpg" width="250"/></td>
+<td>ca. 20 €</td>
+</tr> 
+<tr>
+<td><a href="http://www.conrad.de/ce/de/product/976534/USB-30-zu-IDESATA-Konverterr">wie vor, aber <strong>USB 3.0</strong> zu IDE- und SATA-Festplatten Konverter</a></td>
+<td>ähnlich wie vor</td>
+<td>ca. 30 €</td>
+</tr> 
+<tr>
+<td>Anti-Statik-Armband mit Klemme</td>
+<td><img src="/sites/default/files/content/wiki-de/hubs/anti_static_armband.jpg" width="250"/></td>
+<td>ca. 4 €</td>
+</tr> 
+</table>
 
-
+<br />
+Als nützlich haben sich auch erwiesen
+<ul>
+<li>externe USB-Sticks (16/32 GB), </li>
+<li>externe USB-Festplatte (HDD),</li>
+<li>externe CD/DVD-Laufwerk,</li>
+<li>Sortierbox für Schrauben und Kleinteile (Baumarkt),</li>
+<li>kleiner Kreuzschlitzschraubenzieher, ggf. ein Set,</li>
+</ul>
+<br />
 
 <strong>Werbematerial</strong>
 
+<table> 
 
-folgt
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr> 
+<tr>
+<td>Labdoo.org Banner 85 x 200 cm (kann auch gegen Ersatz der Portokosten ausgeliehen werden)</td>
+<td><img src="/sites/default/files/content/wiki-de/hubs/banner.jpg" width="250"/></td>
+<td>ca. 100 € (Selbstkosten)</td>
+</tr>
+<tr>
+<td>Beidseitig bedruckte Labdoo-Folie 710 gr, Hochformat 42,5 x 100 cm (kann auch gegen Ersatz der Portokosten ausgeliehen werden)</td>
+<td><img src="/sites/default/files/content/wiki-de/hubs/labdoo_rollup_klein.png" width="250"/></td>
+<td>ca. 50 € (Selbstkosten)</td>
+</tr>
+<tr>
+<td>Beidseitig bedruckte Labdoo-Folie 710 gr, Querformat 60 x 42 cm (kann auch gegen Ersatz der Portokosten ausgeliehen werden)</td>
+<td><img src="/sites/default/files/content/wiki-de/hubs/poster_quer_de.png" width="250"/></td>
+<td>ca. 50 € (Selbstkosten)</td>
+</tr>
+
+
+ </table>
 
 
 

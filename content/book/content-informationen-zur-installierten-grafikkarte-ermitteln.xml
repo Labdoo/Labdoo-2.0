@@ -23,14 +23,14 @@
 <type>value</type>
 <value>Zuerst mal unter System Settings → Details für einen ersten Überblick unter Graphics oder ausführlicher per Terminal:
 
-Anzeige von Name/Chipsatz (Je nach verwendeter Ubuntu-Version erfolgt eine Anzeige mit oder ohne Kernelmodul): 
+<strong>Anzeige von Name/Chipsatz (Je nach verwendeter Ubuntu-Version erfolgt eine Anzeige mit oder ohne Kernelmodul): </strong>
 <code>lspci -nnk | grep -i VGA -A2</code> (Enter)
 
-Treiberversion
+<strong>Treiberversion</strong>
 Anzeige von Treibername und Version. 
 <code>glxinfo | grep 'OpenGL version string'</code> (Enter)
 
-Grafikmodus (Auflösung)
+<strong>Grafikmodus (Auflösung)</strong>
 Anzeige der aktuellen Auflösung, alle unterstützten Auflösungen und der Anschlüsse: 
 <code>xrandr</code> (Enter)</value>
 </body>

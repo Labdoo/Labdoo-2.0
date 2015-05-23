@@ -19,6 +19,19 @@
 <type>target_id</type>
 <value>168</value>
 </field_reference_book>
+<body>
+<type>value</type>
+<value>IT-Spenden können entweder vom Spender selber gelöscht, aufbereitet und mit Lernsoftware installiert werden oder an Labdoo.org gegeben werden. Dann erledigen wir alles...
+
+<a href="https://dev.labdoo.org/de/content/faq-forum#FAQ06">Sichere Datenlöschung von IT-Spenden</a>
+<a href="https://dev.labdoo.org/de/content/faq-forum#FAQ04">Welche IT-Spenden sucht Labdoo.org?</a>
+
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
 <bid>
 <type>book_array</type>
 <value>168</value>

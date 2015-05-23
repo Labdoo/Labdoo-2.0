@@ -1,0 +1,61 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>309</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Video-Tutorials</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>309</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><strong>Deutsche Video Tutorials</strong>
+
+Hier geht es zu den Englischen Video-Tutorials https://dev.labdoo.org/de/content/video-tutorials-0.
+
+<a href="http://ftp.labdoo.org/download/Public/videos/login-german.webm">Login /  Benutzerkonzept (User)</a>
+[video:https://youtu.be/JZEuaqwuPpg]
+
+<a href="http://ftp.labdoo.org/download/Public/videos/software-german.webm">Lernsoftware und Lubuntu / LXDE</a>
+[video:https://youtu.be/Ueg0TPJ37eU]
+
+<a href="http://ftp.labdoo.org/download/Public/videos/content-german.webm">Lerninhalte (OER) / offline wikis</a>
+[video:http://youtu.be/MOaXPUXQ_ZM]
+
+<a href="http://ftp.labdoo.org/download/Public/videos/scripts-german.webm">Skripte nutzen / Lerninhalte und Software u.v.a. mehr automatisch installieren</a>
+[video:https://youtu.be/45T3L-g2yqg]
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>170</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>890</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1026</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

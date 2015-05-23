@@ -27,14 +27,15 @@ Alle Labdoo-Skripte liegen auf unserem FTP Server http://ftp.labdoo.org/download
 
 Zum Zeitpunkt der Ausführung eines Skriptes muss der betreffende Labdoo-Rechner online sein (LAN oder WLAN).
 
-<strong>Es gibt Skripte für die verschiedensten Zwecke, deren Einsatz wir empfehlen, um eine reine lubuntu-Installation aufzuwerten:</strong>
+<strong>Es gibt Skripte für die Installation weiterer Lernsoftware, Lerninhalte und Codecs (bitte Rechtslage beachten), deren Einsatz wir dringend empfehlen, um eine reine Lubuntu-Installation aufzuwerten:</strong>
 <ul>
-<li><a href="http://ftp.labdoo.org/download/images/installskripts/installscript-content.sh">installscript-content.sh</a> (<strong>empfohlen</strong>; Skript installiert Lerninhalte, Offline-Wikis und Manuals, Anschluss eines USB-Sticks >= 16 GB sinnvoll)</li>
-<li><a href="http://ftp.labdoo.org/download/images/installskripts/installscript-software.sh">installscript-software.sh</a> (empfohlen; Skript installiert weitere Lernsoftware, barrierefreie Zugänge für Blinde, tools u.v.a. mehr nach)</li>
+<li><a href="http://ftp.labdoo.org/download/images/installskripts/installscript-content.sh">installscript-content.sh</a> (<strong>empfohlen, sehr sinnvoll</strong>; Skript installiert Lerninhalte, Offline-Wikis und Manuals, Anschluss eines USB-Sticks >= 16 GB sinnvoll)</li>
+<li><a href="http://ftp.labdoo.org/download/images/installskripts/installscript-software.sh">installscript-software.sh</a> (<strong>empfohlen, sehr sinnvoll</strong>; Skript installiert weitere Lernsoftware, barrierefreie Zugänge für Blinde, Tools u.v.a. mehr nach)</li>
 </ul>
 
-<strong>Nützliche Skripte (optional)</strong>
+<strong>Weitere nützliche Skripte (optional)</strong>
 <ul>
+<li><a href="http://ftp.labdoo.org/download/images/installskripts/installscript-codecs.sh">installscript-codecs.sh</a> (<strong>(bitte die rechtliche Lage in dem Land beachten, in dem der Rechner installiert wird!</strong>; Skript installiert weitere Codecs und Multimedia-Software für Audio und Video)</li>
 <li><a href="http://ftp.labdoo.org/download/images/installskripts/set-rights-folder-files-Public-correct.sh">set-rights-folder-files-Public-correct.sh</a> (optional;Skript stellt die Rechte im Ordner /home/labdoo/Public so ein, dass auch der User student darauf zugreifen kann; ist im installscript-content.sh enthalten, ist aber ggf. sinnvoll, falls ihr weitere Lerninhalte im Ordner /Public nachinstalliert)</li>
 <li><a href="http://ftp.labdoo.org/download/images/installskripts/check_cpu_32_or_64_bits_PAE_or_nonPAE.sh">check_cpu_32_or_64_bits_PAE_or_nonPAE.sh</a> (optional; zur Feststellung des CPU Typs im Terminal ausführen; nur für Cloning von Images)</li>
 </ul>
@@ -48,7 +49,12 @@ Zum Zeitpunkt der Ausführung eines Skriptes muss der betreffende Labdoo-Rechner
 <li><a href="http://ftp.labdoo.org/download/images/installskripts/delete-xowa-log-folder.txt">delete-xowa-log-folder.txt</a> (nur im Terminal ausführen, wenn man selber ein Image erstellen möchte, in dem Xowa installiert ist)</li>
 </ul>
 
-<strong>Download eines Skriptes</strong> -> o.a. Links anklicken -> speichern unter -> auf dem Desktop des Labdoo-Rechnerns speichern (home/labdoo/Desktop), alternativ per USB-Stick o.ä. auf den Desktop des Labdoo-rechners kopieren.</value>
+<strong>Download eines Skriptes</strong> -> o.a. Links anklicken -> speichern unter -> auf dem Desktop des Labdoo-Rechnerns speichern (home/labdoo/Desktop), alternativ per USB-Stick o.ä. auf den Desktop des Labdoo-Rechners kopieren.
+
+<a href="http://ftp.labdoo.org/download/Public/videos/scripts-german.webm">Skripte nutzen / Lerninhalte und Software u.v.a. mehr automatisch installieren</a>
+[video:https://youtu.be/45T3L-g2yqg]
+
+<strong>Nächster Schritt ausführbar machen und ausführen:</strong></value>
 </body>
 <body>
 <type>format</type>

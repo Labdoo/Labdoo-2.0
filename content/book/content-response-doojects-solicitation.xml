@@ -34,13 +34,13 @@ If so, we can explore ways in which we can try to bring laptops to your project.
 Thank you and best wishes,
 
 $MYNAME
-Labdoo Team
+Labdoo Team | www.labdoo.org
 
 </value>
 </body>
 <body>
 <type>format</type>
-<value>full_html</value>
+<value>filtered_html_advanced</value>
 </body>
 <bid>
 <type>book_array</type>

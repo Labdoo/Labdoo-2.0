@@ -83,7 +83,7 @@ Where it says “detect keyboard”, say “No”.
 In the next screen, pick the country of origin of your keyboard.
 </li>
 <li>
-At this point, we are going to do a disk clean up to erase all the information in the disk. For that, start by pressing ALT+CTRL+F3, this will take you to a command shell window. In this command shell, enter the command <code>sudo shred /dev/hda -f -v --iterations=1</code>. This operation will clean up your disk from any prior personal information. If the above command does not work, try to use 'sda' instead of 'hda' (like this <code>sudo shred /dev/sda -f -v --iterations=1</code>). If it still does not work, post your case as a question in the wall of the <a href="../content/quality-assurance-qa">Labdoo QA team</a> and someone in the QA team will help you.
+At this point, we are going to do a disk clean up to erase all the information in the disk. For that, start by pressing ALT+CTRL+F3, this will take you to a command shell window. In this command shell, enter the command <code>sudo shred /dev/sda -f -v -n 1</code>. This operation will clean up your disk from any prior personal information. If the above command does not work, try to use 'hda' instead of 'sda' (like this <code>sudo shred /dev/hda -f -v -n 1</code>). If it still does not work, post your case as a question in the wall of the <a href="../content/quality-assurance-qa">Labdoo QA team</a> and someone in the QA team will help you. To return to installation process press ALT+CTRL+F7.
 </li>
 <li>
 When it tries to configure the network, press “cancel” (there is no need to do network installation since you have the CD and the updates are installed later).
@@ -166,11 +166,11 @@ If you are not traveling, then get in touch with one of the Labdoo hubs (for ins
 </body>
 <bid>
 <type>book_array</type>
-<value>69</value>
+<value>255</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>811</value>
+<value>972</value>
 </plid>
 <mlid>
 <type>book_array</type>

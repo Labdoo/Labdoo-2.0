@@ -1,0 +1,113 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>300</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>how to start a laptop?</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>300</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><strong> User</strong>
+
+Each laptop (cloned or installed using install-scripts) comes with 3 users:
+<ul>
+<li><strong>labdoo</strong>: has super user rights / is administrator! The log-in password is <strong>labdoo</strong> (Please change this password when logging in the first time, as the user <strong>labdoo</strong> is administrator and may destroy the system! So only teacher should know the password of the user labdoo)</li>
+
+<li><strong>student</strong>: is the standard user for the students. His password is also <strong>labdoo></strong> (it's up to you, if you change the password for student)</li>
+
+<li><strong>guest</strong>: needs no password, but all his entries will be aber es werden alle seine Eingaben und Änderungen nach der Abmeldung gelöscht</li>
+</ul>
+
+<strong>To change the password</strong> → System Tools → users and groups → +Add (to add a new user) or change → password „labdoo“ → change it → ok 
+
+Manage Groups → to manage, if a user belongs to a certain group (e.g. group labdoo)
+
+<strong>To a program</strong>
+
+Start e.g. using an educational program. There are a lot of interesting, funny and educational tools and games. And so you start:
+
+Click in the left lower corner on the Lubuntu icon (similar to Windows XP) →  “Education” or „game“ → click on a program to start it
+
+In the folder of „/Public“ you will find a lot of useful manuals, OER, Offline wikis, e-books etc. 
+
+On the desktop you will a video tutorial and the Offline wiki tool Xowa. 
+
+<strong>Optional: Desktops (user interfaces)</strong>
+
+A Labdoo laptop comes with Lubuntu (Linux operating system based on Ubuntu and the LXDE desktop). LXDE is an easy to learn user interface, lean, fastl. LXDE / Lubuntu can be installed on older laptops, from 256 / 512 MB RAM.
+
+Optional you are able to install other desktops, but they ask for more hardware resources -
+
+<ul>
+<li>Unity: fast hardware needed (min 1 GB RAM)</li>
+<li>Gnome: medium to fast hardware needed (756 MB - 1 GB RAM)</li>
+</ul>
+
+<strong>language, regional formats and keyboard settings (please adjust when online)</strong>
+
+Depending on the country of the edoovillage you may want to install one or more additional language(s) or keyboard(s).
+
+Click Preferences → Language Support. Sometimes you get the message “Language support not completely installed, install now” → confirm by "Yes" and install.
+
+In the next window click → Install/Remove languages → select the language(s) needed → Apply → Apply System-wide.
+
+The new languages will show up in the language list above: Lubuntu first tries to find a word in this table in language no. 1, next in language no. 2 and so on, and will stop using English.
+
+To change priority of the languages → mark the new language → right mouse click on new language, keep on pressing right mouse button → move the language to its position, drop it → click  Apply System-wide. The new language will be used after logout and login or reboot of the computer.
+
+<strong>Regional formats</strong>
+
+You can also adjust the local currency, notation of numbers, date and time (if available). Click tab „Regional formats“ and select format in the list shown → Apply System-Wide. 
+
+<strong>keyboard settings</strong>
+
+If the laptop was cloned using images you can go ahead. Otherwise you have to add a panel item to the task bar → right mouse click on the task bar → Add / Remove Panel Items → +Add → select "Keyboard Layout Handler" → +Add → optional: move the item position within the task bar by Up or Down.
+
+Right mouse click on the symbol "de" (keyboard layout handler) in the task bar (or another country abreviation shown) → Keyboard Layout handler Settings → Remove the hook "Keep system layout", if activated (otherwise you are not able to add new layouts) → 
+
++Add → Add a new keyboard layout
+-Remove → Remove a  keyboard layout
+up → Move a keyboard layout entry in the list up
+down → Move a keyboard layout entry in the list up
+
+The number of keyboard layout entries is limited to 4 (four). 
+
+Have fun playing in learning with your Labdoo laptop!
+
+The Labdoo team</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>270</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>987</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1017</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

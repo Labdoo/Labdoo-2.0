@@ -25,7 +25,9 @@
 
 Das Tool heißt NTP (im Terminal: <code>sudo apt-get install ntp</code> → Enter oder alternativ über das Softwarecenter) für Network Time Protocol und man muss nichts weiter einstellen. 
 
-Das Tool holt sich die Zeit von den Ubuntu-Poolservern und man kann, wenn man unbedingt möchte, deutsche Server einstellen, aber das tut nicht Not, weil die Notebooks ja sowieso in die ganze Welt geschickt werden.</value>
+Das Tool holt sich die Zeit von den Ubuntu-Poolservern und man kann, wenn man unbedingt möchte, deutsche Server einstellen, aber das tut nicht Not, weil die Notebooks ja sowieso in die ganze Welt geschickt werden.
+
+NTP ist bereits Bestandteil der Labdoo Images und Installationsskripte.</value>
 </body>
 <body>
 <type>format</type>

@@ -1,0 +1,60 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>262</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Cloning laptops using prepared Labdoo images</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>262</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>This wiki will lead you through the process of cloning a Labdoo laptop usinf ready-to-use images. Images are a complete copy of a installed Labdoo computer, containg operating system, software, educational content and optimised settings. Beside adapting to the country of the edoovillage (language, keyboard) and hostname you must not take care of anything.
+
+Lubuntu will also take care of (nearly) all drivers. So you are able to clone an image from laptop manufacturer A to a laptop of manufacturer B. Lubuntu will take care of everything.
+
+But it is important that you install the matching image to the matching CPU (processor). Here you can find our link list of all available images https://dev.labdoo.org/content/liste-der-images-cloning-ftp-server. Download and unzip one or all needed images for cloning.
+
+Please keep in mind - if all steps get too complicated or need too much time you can donate your laptop to one of our Labdoo hubs. We ensure you that all of your data will be removed safely by writing random data to your disc-drive. 
+
+To install the images you need an USB disc drive (USB stick > 16/32 GB or external drive > 100 GB) or larger. Each image needs about  11-12 GB. 
+
+First you should check, which type of CPU is installed inside your computer https://dev.labdoo.org/content/pr%C3%BCfen-um-welche-cpu-es-sich-handelt-nonpae-pae-32-bit-64-bit Or if you are going to install several laptops you can download all images. The images will be maintained and updated each +/- 4 to 8 weeks.
+
+Here you can find the list of all available images https://dev.labdoo.org/content/link-list-images-cloning-ftp-server
+
+<strong>Go ahead with <a href="https://dev.labdoo.org/content/parted-magic-clonezilla">Clonezilla / Parted Magic</a></strong> </value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>255</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>972</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>979</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

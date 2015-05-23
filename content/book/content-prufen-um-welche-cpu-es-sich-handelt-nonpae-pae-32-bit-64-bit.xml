@@ -21,7 +21,7 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Wenn der Rechner lubuntu oder Parted Magic (auch auf Linix-Basis) gebootet hat wird als erstes der Typ der CPU geklärt, weil nur das passende Image zur passende CPU gecloned werden kann. Sonst läuft der Laptop später nicht korrekt. So kann man ein 32-Bit Image auf eine 64-Bit CPU clonen, aber nicht umgekehrt (allerdings nutzt 32-Bit nur max. 3 MB RAM).
+<value>Wenn der Rechner ubuntu oder Parted Magic (beide auf Linux-Basis) gebootet hat wird als erstes der Typ der CPU geklärt, weil nur das passende Image zur passende CPU gecloned werden kann. Sonst läuft der Laptop später nicht korrekt. So kann man ein 32-Bit Image auf eine 64-Bit CPU clonen, aber nicht umgekehrt (allerdings nutzt 32-Bit nur max. 3 MB RAM).
 
 Ein Terminal öffnen und dort ausführen (den u.a. Text markieren und kopieren):
 

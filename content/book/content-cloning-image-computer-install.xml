@@ -1,0 +1,68 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>268</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Cloning image to the computer (install)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>268</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Double click the icon <strong>Clonezilla</strong> to start. Labdoo images for Cloning are complete copies of a ready-to-use system. 
+
+So select <strong> image - Image</strong>. Labdoo always supports images (not device!).
+
+→ <strong>device-image</strong> (Labdoo stellt immer Images online, daher diese Option wählen)
+
+→ <strong>select storage media</strong>, on which the image is stored (if on a server with path and passwords). If using an external USB drive this might be drive e.g. sdb. The system drive (where you want to re-store the image to is sda. <strong>Please read the instructions on screen carefully. Please wait to connect the external USB drive unless you are asked to, wait min. 5 seconds and go ahead.</strong>
+
+→ <strong>Expert mode</strong> Select Expert mode (it is recommended, to use always the expert mode. The image „remembers“ the size of the origin disc drive, where it was taken from. If the target disc size is smaller (e.g. image was taken from a 60 GB Platte and will be cloned to a 40 GB disc, you will get an error in beginners mode („target disc too small").<strong>In Expert Mode you can mark the option <strong>-icds</strong> to avoid this check(see below)</strong>
+
+→ <strong>restoredisk</strong> to select restoring the image,
+
+→ <strong>select the matching image for your CPU</strong> (as explained it must match, PAE / nonPAE bzw. 32 / 64 Bit),
+
+→ die <strong>select target disc</strong>,
+
+→ mark in expert mode in the option list <strong>-icds</strong> by using the space button („do not check, if size of origin disc is larger than the target disc“) (*),
+
+→ Answer the following questions with „Y“ (Yes, Ja) or press (Enter),
+
+→ Cloning will start and will last +/- 15 – 30 min. Then all data incl. Lubuntu, settings, content etc. is installed and ready to use.
+
+<strong>Ignore error messages:</strong> If you clone a 14.04 image (or higher) using Clonezilla 2012_10 you will get at the end 2 red error messages that certain GRUB files / settings are missing. You can ignore this, everýthing is ok. </value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>255</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>984</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>985</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

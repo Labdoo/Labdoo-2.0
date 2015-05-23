@@ -5,7 +5,7 @@
 </nid>
 <title>
 <type>node_title</type>
-<value>Probleme NVIDIA Grafikkarten /-treiber</value>
+<value>NVIDIA Grafikkarten /-treiber Lösungsvorschläge</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -30,21 +30,26 @@ Nun Rechner wieder neu starten.
 
 Ggf. über Systemeinstellung --> Treiber oder das Ubuntu-Software-Center den richtigen NVIDIA-Treiber laden.
 NVIDIA Grafikkarten /-treiber aus Entwickler-PPA (Quelle) laden
+
 Es kann eine alternative Softwarequelle engebunden werden (bitte die Sicherheitsprobleme bei externen Quellen beachten). Bei sehr alten Laptops (vor ca. 2004)  macht es ggf. keinen Sinn, weil deren NVIDIA-Grafikkarten nicht mehr unterstützt werden. Hier kann es sinnvoll sein, das Labdoo Image für Ubuntu 1204 LTS zu verwenden.
-Wenn auch wiederholtes Re-Booten, auch im abgesicherten Modus (recoversy mode) nichts gebracht hat bitte versuchen. Dies installiert NVIDIA GeForce driver in Ubuntu aus der PPA-Quelle:
+
+Wenn auch wiederholtes Re-Booten, auch im abgesicherten Modus (recoversy mode) nichts gebracht hat bitte versuchen. Dies installiert 
+
+NVIDIA GeForce driver in Ubuntu aus der PPA-Quelle:
 STRG + ALT + F3 gleichzeitig drücken, dies schaltet auf die Terminalebene um.
-Anmelden mit labdoo ls User und labdoo als Passwort,
-Sudo su (enter)    + Passwort labdoo eingeben (enter)
+
+Anmelden mit labdoo User und labdoo als Passwort,
+<code>sudo su</code> (enter)    + Passwort labdoo eingeben (enter)
 
 # To add PPA for Ubuntu 14.04 / 13.10 / 13.04 / 12.10
-sudo apt-add-repository ppa:xorg-edgers/ppa  	(enter)
+<code>sudo apt-add-repository ppa:xorg-edgers/ppa</code>  	(enter)
 
 # To add PPA for Ubuntu 12.04 / 11.10 / 11.04 / 10.04
-sudo apt-add-repository ppa:ubuntu-x-swat/x-updates	(enter)
+<code>sudo apt-add-repository ppa:ubuntu-x-swat/x-updates</code>	(enter)
 
-sudo apt-get update		(enter)
-sudo apt-get install nvidia-current nvidia-settings		(enter)
-sudo reboot	(enter), um Laptop neu zu starten.</value>
+<code>sudo apt-get update</code>		(enter)
+<code>sudo apt-get install nvidia-current nvidia-settings</code>		(enter)
+<code>sudo reboot</code>	(enter), um Laptop neu zu starten.</value>
 </body>
 <body>
 <type>format</type>

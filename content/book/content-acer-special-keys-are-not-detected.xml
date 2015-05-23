@@ -1,0 +1,55 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>294</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>acer - special keys are not detected</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>294</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Some acer laptops (and Medion in Germany) have special keys e.g. to activate WiFi, but these keys are not detected.
+
+From Linux kernel 3.2 or Lubuntu 12.04 there is a core module wistron_btns, offering the same functionality as before acerhk (not needed anymore).
+
+wistron_btns has the advantage that it is part of the kernel. So installing and compiling is not needed. And 64 Bit systems are supported as well.
+
+To use and activate open a terminal and execute:
+<code>sudo modprobe -v wistron_btns</code> (enter)
+
+Taken from: http://wiki.ubuntuusers.de/Acer_Hotkeys</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>255</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>973</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1011</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

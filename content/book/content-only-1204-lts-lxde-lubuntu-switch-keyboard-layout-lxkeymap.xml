@@ -1,0 +1,57 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>299</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>only 12.04 LTS: LXDE / Lubuntu: switch keyboard layout (LXKeymap)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>299</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Only needed for Lubuntu 12.04 LTS, in lubuntu 14.04 LTS keybaord layit switching works well without:
+
+Lubuntu / LXDE comes without no tool to switch keyboard layout. With the tool lxkeymap it can be solved easily. 
+
+Execute in a terminal:
+<code>sudo apt-get install lxkeymap</code>  (Enter)
+
+Open in menu "settings" -> Lxkeymap
+
+There is a known bug in 12.04 LTS which does not allow to use several keyboard layouts in parallel. Just open Lxkeymap, switch keyboard etc.
+
+In 14.04 LTS ff. this bug is fixed and Lxkeymap not needed.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>255</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>973</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1016</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

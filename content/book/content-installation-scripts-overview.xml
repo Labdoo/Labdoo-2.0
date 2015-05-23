@@ -1,0 +1,79 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>305</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>installation scripts (overview)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>305</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>To add more useful educational content and software various installation scripts were developed and will be maintained to speed-up installation process and to make it more comfortable. If you have questions or suggestions please send a mail to contact@Labdoo.org.
+
+All Labdoo scripts can be downloaded from the FTP server http://ftp.labdoo.org/download/images/installskripts/
+
+At the moment executing a script the computer must be online (LAN or WiFi).
+
+<strong>There are scripts to install additional educational software andcontent. We strongly recommend to install these add-ons to offer children an optimal system:</strong>
+<ul>
+<li><a href="http://ftp.labdoo.org/download/images/installskripts/installscript-content.sh">installscript-content.sh</a> (<strong>recommended</strong>; Script will install educational content. offline wikis and manuals, usage of an external USB-disk or USB-stick >= 16 GB recommended)</li>
+<li><a href="http://ftp.labdoo.org/download/images/installskripts/installscript-software.sh">installscript-software.sh</a> (<strong>recommended</strong>; Script will install additional software, barrier free access for handicapped users, Tools, virus scanner and much more)</li>
+</ul>
+
+<strong>More helpful scripts (optional)</strong>
+<ul>
+<li><a href="http://ftp.labdoo.org/download/images/installskripts/installscript-codecs.sh">installscript-codecs.sh</a> (<strong>optional, please mind the legal situation in your country!)</strong>; Script will install codecs and multimedia software for audio and video</li>
+<li><a href="http://ftp.labdoo.org/download/images/installskripts/set-rights-folder-files-Public-correct.sh">set-rights-folder-files-Public-correct.sh</a> (optional;Script will set the rights to folder /home/labdoo/Public,  so user student will have access to the content in this folder as well; if later new content was added this script can be used frequently)</li>
+<li><a href="http://ftp.labdoo.org/download/images/installskripts/check_cpu_32_or_64_bits_PAE_or_nonPAE.sh">check_cpu_32_or_64_bits_PAE_or_nonPAE.sh</a> (optional; to check which type of CPU is installed, copy and paste into a terminal, execute)</li>
+</ul>
+
+<strong>Scripts for special usage (optional, only for experienced users):</strong>
+<ul>
+<li><a href="http://ftp.labdoo.org/download/images/installskripts/installscript-xowa.sh">installscript-xowa.sh</a> (Script will install the offline wiki tool Xowa and will set folder rights and cess correct)</li>
+<li><a href="http://ftp.labdoo.org/download/images/installskripts/installscript-desktops.sh">installscript-desktops.sh</a> (Script will install additional desktops (user interface, GUI) as Unity and Gnome; but more hardware recommendation is needed)</li>
+<li><a href="http://ftp.labdoo.org/download/images/installskripts/installscript-virtualbox.sh">installscript-virtualbox.sh</a> (Script will install VirtualBox, a tool to run Windows or other opertaing systems as guest in a window; min. 2 GB RAM and Dual Core CPU recommended plus a legal license!)</li>
+<li><a href="http://ftp.labdoo.org/download/images/installskripts/childsplay%20bug%20fix.txt">childsplay bug fix.txt</a> (only needed, if Childsplay does not start; explanation how to fix the bug (only 12.04 LTS, fixed in 14.04 LTS ff)</li>
+<li><a href="http://ftp.labdoo.org/download/images/installskripts/delete-xowa-log-folder.txt">delete-xowa-log-folder.txt</a> (execute in a terminal, if you want to produce images for cloning by yourself and Xowa is part of the image)</li>
+</ul>
+
+<strong>Download of a script</strong> -> click one of the links above -> save as -> save to the desktop of a Labdoo laptop (home/labdoo/Desktop), alternatively copy and paste via a USB-disk/stick to the desktop of a Labdoo computer.
+
+<a href="http://ftp.labdoo.org/download/Public/videos/scripts-english.webm">How to use scripts / automatic installation of software or content etc.</a>
+[video:https://youtu.be/aaSgbkCmiJU]
+
+<strong>Next step is to make a script executable:</strong></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>255</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>972</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1022</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

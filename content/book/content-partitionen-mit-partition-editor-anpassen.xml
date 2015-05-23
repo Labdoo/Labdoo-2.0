@@ -23,7 +23,7 @@
 <type>value</type>
 <value>Nach Abschluss der Installation den Partition Editor (Gparted, Icon auf Desktop) starten. Damit werden die Partitionen an die richtige Stelle und in die richtige Größe gebracht:
 
-→ den Bereich linux-swap anklicken, Resize / Move anklicken und mit der Maus ans Ende schieben (bitte darauf auchten, dass dabei die Pfeile am Mauszeiger nach links und rechts zeigen, weil sonst die Partition vergrößert oder verkleinert würde, aber nicht verschoben, s.u.).
+→ den Bereich linux-swap anklicken, Resize / Move anklicken und mit der Maus ans Ende schieben (bitte darauf achten, dass dabei die Pfeile am Mauszeiger nach links und rechts zeigen, weil sonst die Partition vergrößert oder verkleinert würde, aber nicht verschoben, s.u.).
 
 → Dann die Größe des SWAP an die Speichergröße (RAM) des Rechners anpassen. Der Swap sollte gleich groß sein wie RAM. Entweder mit der Maus ziehen oder in der Tabelle darunter die Daten anpassen. Mit OK bestätigen.
 

@@ -1,0 +1,55 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>286</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Kernel Panic (might be caused by defect memory/RAM )</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>286</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>If the computer crashes often during boot process it might be caused by defect RAM (of cause there might be other reasons, too). 
+
+To check RAM (memory modules):
+<ul>
+<li>boot, press SHIFT at the same time,</li>
+<li>the GRUB menu shows up, click on Memtest86 (Memory test),</li>
+<li>defect memory parts will be listed and marked red,</li>
+</ul>
+
+<strong>Important:</strong> To find out, which part of the memory is defect you have to check each RAM element. Remove the others. Sometimes the error only shows up at a certain RAM plug-in space...</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>255</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>973</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1003</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

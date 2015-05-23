@@ -1,0 +1,60 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>269</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Adapt partitions using partition manager</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>269</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Having finished the installation (cloning) start the Partition Editor (Gparted, Icon on desktop). This tool will help you to move and adapt the size to your computer.
+
+→ click on the linux-swap space, click Resize / Move and move it using the mouse to the end of the disc (please be careful, that the mouse pointer shows arrows to the left AND the right side, as otherwise you do not move but enlarge the swap space, see below).
+
+→ The swap size has to be adapted to the size of the memory (RAM) of your laptop. Both should match. Use the mouse or fill in the data you need in the table shown. Press OK.
+
+→ Next step is to enlarge the data / software partition, usually the partition sda1. Click to the end of this partition, hold mouse and move it to the right side, to the end. A small gap (1 MB) will be left and cannot be used.
+
+<strong>Important:</strong> Watch the mouse symbol before moving it. If 4 arrows are shown you will move the partition and not enlarge it or make it smaller. So please move the mouse so it shows 2 arrows (one to right and left side). Then you are able to move partition.
+
+→ Click on the green hook „Apply“, confirm Apply. Then computer will be busy for a while, ready.
+
+Reboot (click on the Parted Magic Icon lower left corner of the screen).
+
+Continue to "steps to follow after installation (Adaption to edoovillage and country (language, keyboard) etc.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>255</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>985</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>986</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

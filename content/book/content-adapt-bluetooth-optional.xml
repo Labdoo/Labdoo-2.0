@@ -1,0 +1,50 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>280</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Adapt Bluetooth (optional)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>280</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>If your laptop owns a Bluetooth interface – due to the cloning the name of the adapter is identical with all clones. To rename the adapter open a terminal
+
+<code>sudo hciconfig hci0 name ’labdoo-00000xxxx-0'</code> (Enter)
+
+Please change xxxx to the number of your laptop.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>255</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>973</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>997</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

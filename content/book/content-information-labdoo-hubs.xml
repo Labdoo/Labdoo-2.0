@@ -1,11 +1,11 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>69</value>
+<value>275</value>
 </nid>
 <title>
 <type>node_title</type>
-<value>Dooject Sanitation Guide</value>
+<value>Information for Labdoo hubs</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -13,15 +13,23 @@
 </field_book_language>
 <field_is_first_page>
 <type>value</type>
-<value>1</value>
+<value>0</value>
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>69</value>
+<value>172</value>
 </field_reference_book>
+<body>
+<type>value</type>
+<value>to follow...</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
 <bid>
 <type>book_array</type>
-<value>69</value>
+<value>275</value>
 </bid>
 <plid>
 <type>book_array</type>
@@ -29,7 +37,7 @@
 </plid>
 <mlid>
 <type>book_array</type>
-<value>811</value>
+<value>992</value>
 </mlid>
 <weight>
 <type>book_array</type>

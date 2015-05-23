@@ -1,0 +1,61 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>295</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Open a terminal</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>295</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Often you will read "open a terminal". Here is explained how to do so:
+
+Either press at the same time the 3 keys <strong>CTL + Alt + t</strong>.
+
+Or alternatively → System tools → click on UXterm or XTerm
+
+The terminal window will be shown. 
+
+At the beginning of each line you can read name of the user @ name of the laptop, e.g. labdoo@labdoo-000004xxx. You are now able to type in your comands. 
+
+When executing a command line wait until you see again this beginning of a line.
+
+To close a terminal either type “exit” → Enter eingeben, when the command is proceeded.
+
+During the installation process of Lubuntu or during the boot process you are able to press <strong>CTL + Alt + F3</strong> and you get access to the terminal level. Using <strong>CTL + Alt + F7</strong> you get back.
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>255</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>973</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1012</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

@@ -1,0 +1,70 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>252</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Mehr zur Registrierung von IT-Spenden... </value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>252</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Voraussetzung für die Registrierung von IT-Spenden ist die Anlage eines Labdoo-Users auf https://www.labdoo.org/de/user/register.
+
+Anmelden und auf https://www.labdoo.org/de/node/add/laptop gehen.
+
+Adressdaten eingeben (so detailliert wie man möchte),
+
+Status auswählen, Modell und Seriennr. eingeben,
+
+Ursprungsgruppe auswählen (grassroot als Einzelperson oder ein Hub, wenn ihr Teil des Teams seid),
+
+eine Foto des Laptops machen und hochladen, bitte die Hinweise auf der Homepage beachten,
+
+auf den Reiter <strong>zusätzliche Informationen</strong> wechseln,
+
+Gerätetyp auswählen,
+
+zusätzliche Benachrichtigungs-E-Mail (darüber können der Spender oder Projektpartner informiert werden), durch Komma und Leerstelle getrennt eingeben,
+
+technische Daten der IT-Spende eingeben,
+
+optional: unter technische Notizen Bemerkungen eingeben.
+
+
+
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>921</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>969</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

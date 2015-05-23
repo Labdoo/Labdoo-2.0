@@ -1,0 +1,74 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>303</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>start a laptop request</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>303</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Thank you very much for your interest in Labdoo.org and in starting a laptop request for an „edoovillage“ (so we call schools, orphan houses, youth projects, educational projects etc.). The request can be presented by a single person, an association or the school or project itself, as long as it help children and young adults to gain education.
+
+The Labdoo guidelines do not allow to give computer donation to a specific person, only to public or private projects or schools. The donation have to stay with the edoovillage. The donations are tagged (online registration) and have a unique Labdoo ID number. To proceed the donation is not allowed.
+
+Important to decide, whether a request is accepted, is the logistics, e.g. if the requester can proof to have supporters or helper to take donated laptops to the country abroad ("dootripper"). Or if there is a fair chance to find those dootripper via internet.
+
+All edoovilages are listed here https://www.labdoo.org/de/call-for-laptops. You are able to filter for countries or status or other criteria.
+
+Please fill in the request sheet as far as possible. What you do not know you can add later. Please return the request sheet together with pictures taken from the area, town, school and the children to one of our hubs. After an internal process of checking and if we accept your request we will add it to our homepage.
+
+<a href="http://ftp.labdoo.org/download/documents/english/labdoo-toolkit-english/labdoo-laptop-request-form-english.txt">- English request sheet</a>
+<a href="http://ftp.labdoo.org/download/documents/french/labdoo-toolkit-french/labdoo-laptop-request-form-french.txt">- French request sheet</a>
+<a href="http://ftp.labdoo.org/download/documents/spanish/labdoo-toolkit-spanish/labdoo-laptop-request-form-espa%c3%b1ol.txt">- Spanish request sheet</a>
+<a href="http://ftp.labdoo.org/download/documents/german/labdoo-toolkit-german/labdoo-laptop-request-form-german.txt">- German request sheet</a>
+<a href="http://ftp.labdoo.org/download/documents/romanian/labdoo-toolkit-romanian/labdoo-laptop-request-form-romanian.txt">- Romanian request sheet</a>
+
+In our FAQ Forum you will find more information http://www.labdoo.org/de/content/faq-forum.
+
+Please contact us +/- 3-4 weeks before your departure, so we have time to prepare laptop(s) to be taken with you. On request we return defect laptops from abroad for a safe recyclng and give spare laptops for free to the edoovillage.
+
+A project presentation in English is here http://ftp.labdoo.org/download/documents/english/labdoo-project-english.pdf.
+
+More English documents can be downloaded from here http://ftp.labdoo.org/download/documents/english/. 
+
+Labdoo.org is only able to proceed IT donations, which we received in advance. Therefore it is difficult to tell in advance, when the requested donation will be available. 
+
+But everybody can contribute by telling your friends, family etc. about Labdoo.org and ask for laptop donations and others. Or talk to the local press and start a call for laptop donation. Or become a Labdoo helper or hub. Logos, graphics etc. are linked here https://dev.labdoo.org/de/content/faq-forum#FAQ02.
+
+In case of questions please send a mail to contact@Labdoo.org, thank you.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>270</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>987</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1020</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

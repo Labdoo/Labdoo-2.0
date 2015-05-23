@@ -1,0 +1,63 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>250</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Material für Hubs</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>250</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Da Labdoo.org möglich ohne Kosten auskommen möchte, liegen die meisten Unterlagen digital und online vor. Alles Material, Grafiken, Logos, Texte u.a. stehen unter der Creative Commons cc-by-sa 3.0 https://creativecommons.org/licenses/by/3.0/de/ und sind somit frei verwendbar (allerdings mit Hinweis auf die Quelle Labdoo.org).
+
+Die Unterlagen liegen als pdf oder editierbar im LibreOffice Format vor (es wäre gut, wenn ihr  Libre-Office installiert http://de.libreoffice.org/). Alle Unterlagen, aber auch Images for Cloning u.v.a. mehr liegen auf http://ftp.labdoo.org/download/. 
+
+Unterlagen in verschiedenen Sprachen http://ftp.labdoo.org/download/documents/.
+
+Und schaut euch bitte unser FAQ-Forum an https://dev.labdoo.org/de/content/faq-forum. Bei Fragen hilf das Labdoo-Team gerne weiter.
+
+Am besten beginnst du über dein bestehendes Netzwerk, die lokale Presse auf Labdoo hinzuweisen. Ohne regionale Aktionen wird es nicht gehen. Oder suche dir Hilfsvereine in der Region, die Schulen, Waisenhäuser u.a. im Ausland unterstützen und starte mit ihnen eine gemeinsame Aktion.
+
+Google spendet uns ein monatliches Budget für AdWords-Werbung. Wir legen dort eine Kampagne für dein Hub in deiner Region an und bewerben es so online.
+
+<a href="http://ftp.labdoo.org/download/documents/german/Poster%20Flyer/">Flayer, Banner, Plakate</a>
+
+<a href="https://dev.labdoo.org/de/content/faq-forum#FAQ02">Linkliste zu Unterlagen, Grafiken, Logos und Tutorials zum Labdoo-Projekt</a>
+
+<strong>Vorlage Visitenkarten</strong> ..folgt
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>172</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>892</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>967</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

@@ -1,0 +1,1153 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>254</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Länderliste / Strom / Stecker</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>254</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><img src="/sites/default/files/content/wiki-de/hubs/stecker_liste_300.png" width="250" align="right"/>
+
+<table>
+ <tr>
+<th>Länder</th>
+<th>Spannung (V)</th>
+<th>Steckertyp</th>
+</tr> 
+<tr>
+<td><strong>A</strong></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>Afghanistan</td>
+<td>220 </td>
+<td>G </td>
+</tr>
+<tr>
+<td>Ägypten</td>
+<td>220 </td>
+<td>B </td>
+</tr>
+<tr>
+<td>Algerien</td>
+<td>127/220 </td>
+<td>B, G </td>
+</tr>
+<tr>
+<td>Amerikanisch-Samoa</td>
+<td>120/240 </td>
+<td>A, C, K, M</td>
+</tr>
+<tr>
+<td>Angola</td>
+<td>220 </td>
+<td>B</td>
+</tr>
+<tr>
+<td>Anguilla</td>
+<td>240 </td>
+<td>D</td>
+</tr>
+<tr>
+<td>Äquatorialguinea</td>
+<td>220 </td>
+<td>B</td>
+</tr>
+<tr>
+<td>Argentinien</td>
+<td>220 </td>
+<td>B, C</td>
+</tr>
+<tr>
+<td>Aruba</td>
+<td>115/127 </td>
+<td>A, B, G, K, M</td>
+</tr>
+<tr>
+<td>Australien</td>
+<td>240</td>
+<td>C, N</td>
+</tr>
+<tr>
+<td>Azoren</td>
+<td>220</td>
+<td>B, G</td>
+</tr>
+
+<tr>
+<td><strong>B</strong></td>
+<td> </td>
+<td> </td>
+</tr>
+
+<tr>
+<td>Bahamas</td>
+<td>120</td>
+<td>K, M</td>
+</tr>
+<tr>
+<td>Bahrain</td>
+<td>220</td>
+<td>D, G</td>
+</tr>
+<tr>
+<td>Bangladesch</td>
+<td>220</td>
+<td>B, G</td>
+</tr>
+<tr>
+<td>Barbados</td>
+<td>115</td>
+<td>K, M</td>
+</tr>
+<tr>
+<td>Belgien</td>
+<td>220</td>
+<td>B, F</td>
+</tr>
+<tr>
+<td>Belize</td>
+<td>110</td>
+<td>K, M</td>
+</tr>
+<tr>
+<td>Benin</td>
+<td>220</td>
+<td>G</td>
+</tr>
+<tr>
+<td>Bermuda</td>
+<td>120</td>
+<td>C, D, K, M</td>
+</tr>
+<tr>
+<td>Birma</td>
+<td>230
+</td>
+<td>D, G</td>
+</tr>
+<tr>
+<td>Bolivien</td>
+<td>110-115/220</td>
+<td>A, B, K, M</td>
+</tr>
+<tr>
+<td>Bosnien Herzegowina</td>
+<td>220</td>
+<td>A, B</td>
+</tr>
+<tr>
+<td>Botswana</td>
+<td>220</td>
+<td>D, G</td>
+</tr>
+<tr>
+<td>Brasilien</td>
+<td>110-220</td>
+<td>B, K, M</td>
+</tr>
+<tr>
+<td>Bulgarien</td>
+<td>220</td>
+<td>A, B</td>
+</tr>
+<tr>
+<td>Burkina Faso</td>
+<td>220</td>
+<td>B, N</td>
+</tr>
+<tr>
+<td>Burundi</td>
+<td>220</td>
+<td>A, B, F</td>
+</tr>
+
+<tr>
+<td><strong>C</strong></td>
+<td> </td>
+<td> </td>
+</tr>
+
+<tr>
+<td>Chile</td>
+<td>220</td>
+<td>B, I</td>
+</tr>
+<tr>
+<td>VR China</td>
+<td>220</td>
+<td>B, C</td>
+</tr>
+<tr>
+<td>Cook-Inseln</td>
+<td>240</td>
+<td>C</td>
+</tr>
+<tr>
+<td>Costa Rica</td>
+<td>120</td>
+<td>K, M</td>
+</tr>
+
+<tr>
+<td><strong>D</strong></td>
+<td> </td>
+<td> </td>
+</tr>
+
+<tr>
+<td>Dänemark</td>
+<td>220</td>
+<td>B, E</td>
+</tr>
+<tr>
+<td>Deutschland</td>
+<td>220</td>
+<td>A, B</td>
+</tr>
+<tr>
+<td>Dominica</td>
+<td>230</td>
+<td>D</td>
+</tr>
+<tr>
+<td>Dominikanische Rupublik</td>
+<td>110</td>
+<td>K, M</td>
+</tr>
+<tr>
+<td>Dominikanische Rupublik</td>
+<td>110</td>
+<td>K, M</td>
+</tr>
+<tr>
+<td>Dschibuti</td>
+<td>220</td>
+<td>B, F</td>
+</tr>
+
+<tr>
+<td><strong>E</strong></td>
+<td> </td>
+<td> </td>
+</tr>
+
+<tr>
+<td>Ecuador</td>
+<td>120</td>
+<td>B, K, M</td>
+</tr>
+<tr>
+<td>El Salvador</td>
+<td>115</td>
+<td>K, M</td>
+</tr>
+<tr>
+<td>Elfenbeinküste</td>
+<td>220</td>
+<td>B</td>
+</tr>
+
+<tr>
+<td><strong>F</strong></td>
+<td> </td>
+<td> </td>
+</tr>
+
+<tr>
+<td>Fidschi</td>
+<td>240</td>
+<td>C</td>
+</tr>
+<tr>
+<td>Finnland</td>
+<td>220</td>
+<td>A, B</td>
+</tr>
+<tr>
+<td>Frankreich</td>
+<td>220</td>
+<td>B, F</td>
+</tr>
+<tr>
+<td>Französisch-Guayana</td>
+<td>220</td>
+<td>B, F</td>
+</tr>
+
+<tr>
+<td><strong>G</strong></td>
+<td> </td>
+<td> </td>
+</tr>
+
+<tr>
+<td>Gabun</td>
+<td>220</td>
+<td>B, F</td>
+</tr>
+<tr>
+<td>Gambia</td>
+<td>220</td>
+<td>D</td>
+</tr>
+<tr>
+<td>Ghana</td>
+<td>220</td>
+<td>B, D, G</td>
+</tr>
+<tr>
+<td>Gibraltar</td>
+<td>240</td>
+<td>B, D</td>
+</tr>
+<tr>
+<td>Grenada</td>
+<td>230</td>
+<td>B, D, G</td>
+</tr>
+<tr>
+<td>Griechenland</td>
+<td>220</td>
+<td>A, B</td>
+</tr>
+<tr>
+<td>Grönland</td>
+<td>220</td>
+<td>B, E</td>
+</tr>
+<tr>
+<td>Großbritanien</td>
+<td>240</td>
+<td>D, G</td>
+</tr>
+<tr>
+<td>Guadeloupe</td>
+<td>220</td>
+<td>B, F</td>
+</tr>
+<tr>
+<td>Guam</td>
+<td>110-120</td>
+<td>K, M</td>
+</tr>
+<tr>
+<td>Guatemala</td>
+<td>120</td>
+<td>K, M</td>
+</tr>
+<tr>
+<td>Guayana</td>
+<td>110</td>
+<td>B, D, G, K, M</td>
+</tr>
+<tr>
+<td>Guinea</td>
+<td>220</td>
+<td>B, F</td>
+</tr>
+<tr>
+<td>Guinea-Bissau</td>
+<td>220</td>
+<td>A, B</td>
+</tr>
+<tr>
+<td>GUS (Russland)</td>
+<td>220</td>
+<td>A, B</td>
+</tr>
+
+<tr>
+<td><strong>H</strong></td>
+<td> </td>
+<td> </td>
+</tr>
+
+<tr>
+<td>Haiti</td>
+<td>110-250</td>
+<td>K, M</td>
+</tr>
+<tr>
+<td>Honduras</td>
+<td>110</td>
+<td>K, M</td>
+</tr>
+<tr>
+<td>Hongkong</td>
+<td>200</td>
+<td>D, G</td>
+</tr>
+
+<tr>
+<td><strong>I</strong></td>
+<td> </td>
+<td> </td>
+</tr>
+
+<tr>
+<td>Indien</td>
+<td>220-250</td>
+<td>B, G</td>
+</tr>
+<tr>
+<td>Indonesien</td>
+<td>220</td>
+<td>A, B</td>
+</tr>
+<tr>
+<td>Insel Man</td>
+<td>240</td>
+<td>B, D</td>
+</tr>
+<tr>
+<td>Iran</td>
+<td>220</td>
+<td>A, B</td>
+</tr>
+<tr>
+<td>Irland</td>
+<td>220</td>
+<td>A, D</td>
+</tr>
+<tr>
+<td>Island</td>
+<td>220</td>
+<td>A, B</td>
+</tr>
+<tr>
+<td>Israel</td>
+<td>230</td>
+<td>A, H</td>
+</tr>
+<tr>
+<td>Italien</td>
+<td>220</td>
+<td>B, I</td>
+</tr>
+
+
+<tr>
+<td><strong>J</strong></td>
+<td> </td>
+<td> </td>
+</tr>
+
+<tr>
+<td>Jamaika</td>
+<td>110</td>
+<td>K, M</td>
+</tr>
+<tr>
+<td>Japan</td>
+<td>100</td>
+<td>J, M</td>
+</tr>
+<tr>
+<td>Jemen</td>
+<td>220</td>
+<td>B, D, G</td>
+</tr>
+<tr>
+<td>Jordanien</td>
+<td>220</td>
+<td>A, B, D</td>
+</tr>
+<tr>
+<td>Jugoslawien</td>
+<td>220</td>
+<td>A, B</td>
+</tr>
+<tr>
+<td>Jungferninseln</td>
+<td>120</td>
+<td>K, M</td>
+</tr>
+
+<tr>
+<td><strong>K</strong></td>
+<td> </td>
+<td> </td>
+</tr>
+
+<tr>
+<td>Kaiman-Inseln</td>
+<td>120</td>
+<td>K, M</td>
+</tr>
+<tr>
+<td>Kambodscha</td>
+<td>120/220</td>
+<td>B</td>
+</tr>
+<tr>
+<td>Kamerun</td>
+<td>220-230</td>
+<td>B, F</td>
+</tr>
+<tr>
+<td>Kanada</td>
+<td>120</td>
+<td>K, M</td>
+</tr>
+<tr>
+<td>Kanal-Inseln</td>
+<td>240</td>
+<td>B, D</td>
+</tr>
+<tr>
+<td>Kanarische Inseln</td>
+<td>220</td>
+<td>B, F</td>
+</tr>
+<tr>
+<td>Kapverden</td>
+<td>220</td>
+<td>A, B</td>
+</tr>
+<tr>
+<td>Katar</td>
+<td>240</td>
+<td>D, G</td>
+</tr>
+<tr>
+<td>Kenia</td>
+<td>240</td>
+<td>D, G</td>
+</tr>
+<tr>
+<td>Kokos-Inseln</td>
+<td>240</td>
+<td>C, N</td>
+</tr>
+<tr>
+<td>Kolumbien</td>
+<td>110-220</td>
+<td>B, M</td>
+</tr>
+<tr>
+<td>Kongo</td>
+<td>220</td>
+<td>B</td>
+</tr>
+<tr>
+<td>Korea</td>
+<td>100/220</td>
+<td>A, K, M</td>
+</tr>
+<tr>
+<td>Kroatien</td>
+<td>220</td>
+<td>A, B</td>
+</tr>
+<tr>
+<td>Kuwait</td>
+<td>240</td>
+<td>B, D, G</td>
+</tr>
+
+<tr>
+<td><strong>L</strong></td>
+<td> </td>
+<td> </td>
+</tr>
+
+<tr>
+<td>Laos</td>
+<td>220</td>
+<td>B, K, M</td>
+</tr>
+<tr>
+<td>Lesotho</td>
+<td>240</td>
+<td>B, G</td>
+</tr>
+<tr>
+<td>Libanon</td>
+<td>110-220</td>
+<td>B</td>
+</tr>
+<tr>
+<td>Liberia</td>
+<td>120</td>
+<td>D, M</td>
+</tr>
+<tr>
+<td>Libyien</td>
+<td>127-230</td>
+<td>G, I</td>
+</tr>
+<tr>
+<td>Liechtenstein</td>
+<td>220</td>
+<td>L</td>
+</tr>
+<tr>
+<td>Luxemburg</td>
+<td>220</td>
+<td>A, B</td>
+</tr>
+
+<tr>
+<td><strong>M</strong></td>
+<td> </td>
+<td> </td>
+</tr>
+
+<tr>
+<td>Macau</td>
+<td>220</td>
+<td>B, G</td>
+</tr>
+<tr>
+<td>Madagaskar</td>
+<td>220</td>
+<td>B, F</td>
+</tr>
+<tr>
+<td>Madeira</td>
+<td>220</td>
+<td>B, G</td>
+</tr>
+<tr>
+<td>Malawi</td>
+<td>230</td>
+<td>D</td>
+</tr>
+<tr>
+<td>Malaysia</td>
+<td>240</td>
+<td>D</td>
+</tr>
+<tr>
+<td>Malediven</td>
+<td>230</td>
+<td>G</td>
+</tr>
+<tr>
+<td>Mali</td>
+<td>220</td>
+<td>B, F</td>
+</tr>
+<tr>
+<td>Malta</td>
+<td>240</td>
+<td>D</td>
+</tr>
+<tr>
+<td>Marianen-Inseln</td>
+<td>115</td>
+<td>K, M</td>
+</tr>
+<tr>
+<td>Marokko</td>
+<td>220</td>
+<td>A, B, F, G</td>
+</tr>
+<tr>
+<td>Martinique</td>
+<td>220</td>
+<td>B, F</td>
+</tr>
+<tr>
+<td>Mauretanien</td>
+<td>220</td>
+<td>B</td>
+</tr>
+<tr>
+<td>Mauritius</td>
+<td>230</td>
+<td>B, D, G</td>
+</tr>
+<tr>
+<td>Mexiko</td>
+<td>127</td>
+<td>K, M</td>
+</tr>
+<tr>
+<td>Monaco</td>
+<td>220</td>
+<td>B, F</td>
+</tr>
+<tr>
+<td>Mongolei</td>
+<td>220</td>
+<td>B</td>
+</tr>
+<tr>
+<td>Montserrat</td>
+<td>230</td>
+<td>D, K, M</td>
+</tr>
+<tr>
+<td>Mosambik</td>
+<td>220</td>
+<td>A, B</td>
+</tr>
+
+<tr>
+<td><strong>N</strong></td>
+<td> </td>
+<td> </td>
+</tr>
+
+<tr>
+<td>Namibia</td>
+<td>220-250</td>
+<td>G</td>
+</tr>
+<tr>
+<td>Nepal</td>
+<td>220</td>
+<td>G</td>
+</tr>
+<tr>
+<td>Neukaledonien</td>
+<td>220</td>
+<td>B, F</td>
+</tr>
+<tr>
+<td>Neuseeland</td>
+<td>230</td>
+<td>C, N</td>
+</tr>
+<tr>
+<td>Nicaragua</td>
+<td>120</td>
+<td>K, M</td>
+</tr>
+<tr>
+<td>Niederlande</td>
+<td>220</td>
+<td>A, B</td>
+</tr>
+<tr>
+<td>Niederlänische Antillen</td>
+<td>120-127/220</td>
+<td>A, B, K, M</td>
+</tr>
+<tr>
+<td>Niger</td>
+<td>220</td>
+<td>B</td>
+</tr>
+<tr>
+<td>Nigeria</td>
+<td>230</td>
+<td>D, G</td>
+</tr>
+<tr>
+<td>Norfolk-Inseln</td>
+<td>240</td>
+<td>C</td>
+</tr>
+<tr>
+<td>Norwegen</td>
+<td>220</td>
+<td>A, B</td>
+</tr>
+
+<tr>
+<td><strong>O</strong></td>
+<td> </td>
+<td> </td>
+</tr>
+
+<tr>
+<td>Okinawa</td>
+<td>100-120</td>
+<td>M</td>
+</tr>
+<tr>
+<td>Oman</td>
+<td>240</td>
+<td>D, G</td>
+</tr>
+<tr>
+<td>Österreich</td>
+<td>220</td>
+<td>A, H</td>
+</tr>
+
+<tr>
+<td><strong>P</strong></td>
+<td> </td>
+<td> </td>
+</tr>
+
+<tr>
+<td>Pakistan</td>
+<td>230</td>
+<td>B, G</td>
+</tr>
+<tr>
+<td>Panama</td>
+<td>110-120</td>
+<td>K, M</td>
+</tr>
+<tr>
+<td>Papua-Neuguinea</td>
+<td>240</td>
+<td>C, N</td>
+</tr>
+<tr>
+<td>Paraguay</td>
+<td>220</td>
+<td>B</td>
+</tr>
+<tr>
+<td>Peru</td>
+<td>110/220</td>
+<td>K, M</td>
+</tr>
+<tr>
+<td>Philippinen</td>
+<td>115</td>
+<td>B, K, M</td>
+</tr>
+<tr>
+<td>Pitcairn-Inseln</td>
+<td>240</td>
+<td>G</td>
+</tr>
+<tr>
+<td>Polen</td>
+<td>220</td>
+<td>A, B</td>
+</tr>
+<tr>
+<td>Portugal</td>
+<td>220</td>
+<td>A, B, G</td>
+</tr>
+<tr>
+<td>Puerto Rico</td>
+<td>120</td>
+<td>K, M</td>
+</tr>
+
+<tr>
+<td><strong>R</strong></td>
+<td> </td>
+<td> </td>
+</tr>
+
+<tr>
+<td>Ruanda</td>
+<td>220</td>
+<td>B</td>
+</tr>
+<tr>
+<td>Rumänien</td>
+<td>220</td>
+<td>A, B</td>
+</tr>
+
+<tr>
+<td><strong>S</strong></td>
+<td> </td>
+<td> </td>
+</tr>
+
+<tr>
+<td>Saint-Pierre</td>
+<td>115</td>
+<td>K, M</td>
+</tr>
+<tr>
+<td>Sambia</td>
+<td>220</td>
+<td>D</td>
+</tr>
+<tr>
+<td>Sankt Christopher-Nevis</td>
+<td>230</td>
+<td>D, G</td>
+</tr>
+<tr>
+<td>Sankt Lucia</td>
+<td>240</td>
+<td>D</td>
+</tr>
+<tr>
+<td>Sankt Vincent</td>
+<td>230</td>
+<td>D</td>
+</tr>
+<tr>
+<td>Saudi Arabien</td>
+<td>
+127/220</td>
+<td>A, F, K, M</td>
+</tr>
+<tr>
+<td>Schweden</td>
+<td>220</td>
+<td>A, B</td>
+</tr>
+<tr>
+<td>Schweiz</td>
+<td>220</td>
+<td>B, L</td>
+</tr>
+<tr>
+<td>Senegal</td>
+<td>220</td>
+<td>F</td>
+</tr>
+<tr>
+<td>Seychellen</td>
+<td>240</td>
+<td>D, G</td>
+</tr>
+<tr>
+<td>Sierra Leone</td>
+<td>230</td>
+<td>D, G</td>
+</tr>
+<tr>
+<td>Simbabwe</td>
+<td>220</td>
+<td>D, G</td>
+</tr>
+<tr>
+<td>Singapur</td>
+<td>230</td>
+<td>B, D, G</td>
+</tr>
+<tr>
+<td>Slowakei</td>
+<td>220</td>
+<td>A, B</td>
+</tr>
+<tr>
+<td>Slowenien</td>
+<td>220</td>
+<td>A, B</td>
+</tr>
+<tr>
+<td>Somalia</td>
+<td>110/220</td>
+<td>B, F</td>
+</tr>
+<tr>
+<td>Spanien</td>
+<td>220</td>
+<td>B, F</td>
+</tr>
+<tr>
+<td>Sri Lanka</td>
+<td>230</td>
+<td>G</td>
+</tr>
+<tr>
+<td>Südafrika</td>
+<td>220-250</td>
+<td>G</td>
+</tr>
+<tr>
+<td>Sudan</td>
+<td>240</td>
+<td>A, B, D</td>
+</tr>
+<tr>
+<td>Surinam</td>
+<td>110/220</td>
+<td>A, B, K, M</td>
+</tr>
+<tr>
+<td>Swasiland</td>
+<td>230</td>
+<td>G</td>
+</tr>
+<tr>
+<td>Syrien</td>
+<td>220</td>
+<td>B</td>
+</tr>
+
+<tr>
+<td><strong>T</strong></td>
+<td> </td>
+<td> </td>
+</tr>
+
+<tr>
+<td>Tahiti</td>
+<td>220</td>
+<td>F</td>
+</tr>
+<tr>
+<td>Taiwan</td>
+<td>110</td>
+<td>K, M</td>
+</tr>
+<tr>
+<td>Tansania</td>
+<td>230</td>
+<td>D, G</td>
+</tr>
+<tr>
+<td>Thailand</td>
+<td>220</td>
+<td>B, K</td>
+</tr>
+<tr>
+<td>Togo</td>
+<td>220</td>
+<td>B, F</td>
+</tr>
+<tr>
+<td>Tonga</td>
+<td>115</td>
+<td>C, G</td>
+</tr>
+<tr>
+<td>Trinidad Tobago</td>
+<td>115/230</td>
+<td>D, G, M</td>
+</tr>
+<tr>
+<td>Tschad</td>
+<td>200</td>
+<td>A, F</td>
+</tr>
+<tr>
+<td>Tschechische Republik</td>
+<td>220</td>
+<td>B, F</td>
+</tr>
+<tr>
+<td>Tunesien</td>
+<td>220</td>
+<td>B</td>
+</tr>
+<tr>
+<td>Türkei</td>
+<td>220</td>
+<td>A, B</td>
+</tr>
+
+<tr>
+<td><strong>U</strong></td>
+<td> </td>
+<td> </td>
+</tr>
+
+<tr>
+<td>Uganda</td>
+<td>240</td>
+<td>G</td>
+</tr>
+<tr>
+<td>Ungarn</td>
+<td>220</td>
+<td>A</td>
+</tr>
+<tr>
+<td>Uruguay</td>
+<td>220</td>
+<td>B, C</td>
+</tr>
+<tr>
+<td>USA</td>
+<td>120</td>
+<td>K</td>
+</tr>
+
+<tr>
+<td><strong>V</strong></td>
+<td> </td>
+<td> </td>
+</tr>
+
+<tr>
+<td>Venezuela</td>
+<td>220</td>
+<td>K, M</td>
+</tr>
+<tr>
+<td>V.A.Emirate</td>
+<td>220</td>
+<td>D, G</td>
+</tr>
+<tr>
+<td>Vietnam</td>
+<td>120/220</td>
+<td>B, F, M</td>
+</tr>
+
+<tr>
+<td><strong>W</strong></td>
+<td> </td>
+<td> </td>
+</tr>
+
+<tr>
+<td>Weihnachtsinseln</td>
+<td>240</td>
+<td>C</td>
+</tr>
+<tr>
+<td>West-Samoa</td>
+<td>230</td>
+<td>C</td>
+</tr>
+
+<tr>
+<td><strong>Z</strong></td>
+<td> </td>
+<td> </td>
+</tr>
+
+<tr>
+<td>Zentralafrik. Rep.</td>
+<td>220</td>
+<td>B</td>
+</tr>
+
+<tr>
+<td>Zypern</td>
+<td>240</td>
+<td>D</td>
+</tr>
+
+</table> </value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>891</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>971</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

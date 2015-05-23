@@ -21,8 +21,28 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value><a name="FAQ01"></a><br />
+<value><ol>
+<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ01">Wofür steht Labdoo.org?</a></li>
+<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ02">Linkliste zu Unterlagen, Grafiken, Logos und Tutorials zum Labdoo-Projekt</a></li>
+<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ03">Wie installiert man Labdoo-Laptops?</a></li>
+<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ04">Welche IT-Sachspenden braucht Labdoo.org?</a></li>
+<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ05">Wenn ich IT spenden möchte, was kann ich tun?</a></li>
+<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ06">Wie kann ich sicher sein, dass meine Daten sicher gelöscht werden?</a></li>
+<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ07">Ist wegen Windows-Firmen- / Konzernlizenzen keine IT-Spende möglich? Doch!</a></li>
+<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ08">Wie refinanziert sich das Hilfsprojekt Labdoo.org?</a></li>
+<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ09">Wenn ich mitarbeiten möchte - wie kann ich mich einbringen?</a></li>
+<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ10">Werden Spendenbescheinigungen ausgestellt? Was ist bei einer Spende steuerlich zu berücksichtigen?</a></li>
+<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ11">Sind Labdoo-Projekte nur im Ausland?</a></li>
+<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ12">Was passiert mit defekten Laptops in den Projekten?, Wie stellt Labdoo.org die Entsorgung sicher?</a></li>
+<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ13">Was kann ich tun, wenn ich ein Hilfsprojekt kenne, das auch Laptops benötigt?</a></li>
+<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ14"> Welche Vorschriften sind beim Transport im Flugzeug (IATA), dem Zoll und der Einfuhr der Laptopspenden zu beachten?</a></li>
+<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ15">Linklisten für unsere Labdoo-Gruppen bei Xing, facebook, Google+, LinkedIn u.a.</a></li>
+<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ16">Newsletter</a></li>
+<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ17">Glossar</a></li>
+</ol>
+
 <ol>
+<a name="FAQ01"></a><br /><br />
 <li>
 <strong>Wofür steht Labdoo.org?</strong>
 
@@ -63,13 +83,15 @@ Labdoo.org empfiehlt die Installation von lubuntu in Englisch. Darüber hinaus b
 <ul>
 <li>per Cloning von fertigen Images,</li>
 <li> per Installationsskript,</li> 
+<a name="FAQ04"></a>
 <li>per Schritt-für-Schritt-Installation (aufwendig, nur für erfahrene Anwender)</li>
 <li>oder ihr überlasst alles Labdoo.org ...</li> 
 <li>
-<a name="FAQ04"></a>Empfohlen wird das Clonen fertig vorbereiteter Images per Clonezilla. <a href="https://dev.labdoo.org/de/content/information-f%C3%BCr-labdoo-helfer-labdooer">Mehr zu allen Installationstechniken hier.</a>
+Empfohlen wird das Clonen fertig vorbereiteter Images per Clonezilla. <a href="https://dev.labdoo.org/de/content/information-f%C3%BCr-labdoo-helfer-labdooer">Mehr zu allen Installationstechniken hier.</a>
 </li>
 </ul>
 </li>
+<br />
 
 <li>
 <strong>Welche IT-Sachspenden braucht Labdoo.org?</strong>
@@ -282,7 +304,7 @@ http://www.facebook.com/Labdoo (Internationale Community)
 
 <li><strong>Newsletter</strong>
 
-<a name="FAQ18"></a>Labdoo.org veröffentlich ca. 2 bis 3 mal im Jahr einen Newsletter. <a href="https://dev.labdoo.org/newsletters">Hier geht es zur Anmeldung.
+<a name="FAQ17"></a>Labdoo.org veröffentlich ca. 2 bis 3 mal im Jahr einen Newsletter. <a href="https://dev.labdoo.org/newsletters">Hier geht es zur Anmeldung.
 </a>
 </li>
 

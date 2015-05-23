@@ -1,0 +1,77 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>292</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>broken packages, interrupted installation, Update to new Lubuntu release</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>292</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>The following hints were taken from
+http://wiki.ubuntuusers.de/aptitude
+http://wiki.ubuntuusers.de/Paketverwaltung/Problembehebung
+http://wiki.ubuntuusers.de/apt/apt-get
+
+<strong>The installation was interupted unpredictable:</strong>
+<code>sudo dpkg --configure -a </code>  (Enter, Password Enter)
+
+<strong>“Broken” packages are reported, repare:</strong>
+<code>sudo apt-get install -f</code>      (Enter, Password Enter)
+
+<strong>Update without upgrading to a new ubuntu release</strong>
+<code>sudo apt-get install dist-upgrade</code>    (Enter, Password Enter)
+
+<strong>Repare “broken” packages or to delete the cache of the program list:</strong>
+<code>sudo apt-get clean</code>   (Enter, Password Enter)
+
+<strong>To reload the program list again</strong>
+<code>sudo aptitude -f install</code>  (Enter, Password Enter)
+
+<strong>Package administration is not usable anymore</strong>
+Should the package administration become unusable during an upgrade or dist-upgrade you can use:
+<code>sudo aptitude -f install</code> (Enter, Password Enter)
+
+<strong>After an update of the existing installation:</strong>
+<code>sudo aptitude safe-upgrade -f</code>  (Enter, Password Enter)
+
+<strong>After running a version upgrade to a new ubuntu version:</strong>
+<code>sudo aptitude full-upgrade -f </code> (Enter, Password Enter)
+
+<strong>After these statements you should always run</strong>
+<code>sudo dpkg --configure -a </code> 	(Enter, Password Enter)</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>255</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>973</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1009</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

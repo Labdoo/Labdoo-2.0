@@ -1,0 +1,63 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>261</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Liste der Images for Cloning (FTP Server)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>261</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Zum Zeitpunkt der Erstellung dieses Wikis gibt es die folgenden Labdoo Images auf dem FTP-Server http://ftp.labdoo.org/download/images/:
+
+<strong>Lubuntu 12.04 LTS</strong>
+<ul>
+<li><a href="http://ftp.labdoo.org/download/images/nonPAE32_12_04_LTS.tar.gz">nonPAE32_12_04_LTS (lubuntu 12.04 LTS für nonPAE CPU)</a></li>
+<li><a href="http://ftp.labdoo.org/download/images/PAE32_12_04_LTS.tar.gz">PAE32_12_04_LTS (lubuntu 12.04 LTS für 32 Bit CPU)</a></li>
+<li><a href="http://ftp.labdoo.org/download/images/PAE64_12_04_LTS.tar.gz">PAE64_12_04_LTS (lubuntu 12.04 LTS für 64 Bit CPU)</a></li>
+</ul>
+
+<strong>Lubuntu 14.04 LTS (empfohlen)</strong>
+<ul>
+<li><a href="http://ftp.labdoo.org/download/images/nonPAE32_14_04_LTS.tar.gz">nonPAE32_14_04_LTS (lubuntu 14.04. LTS für nonPAE 32 CPU)</a></li>
+<li><a href="http://ftp.labdoo.org/download/images/PAE32_14_04_LTS.tar.gz">PAE32_14_04_LTS (lubuntu 14.04 LTS für 32 Bit CPU)</a></li>
+<li><a href="http://ftp.labdoo.org/download/images/PAE64_14_04_LTS.tar.gz">PAE64_14_04_LTS (lubuntu 14.04 LTS für 64 Bit CPU)</a></li>
+</ul>
+
+
+12.04 bzw. 14.04 verweist auf das Release-Datum der jeweiligen Lubuntu-Version, d.h. 12.04 = April 2012 und 14.04 = April 2014. LTS (Long Term Support) werden ab Erscheinen fünf (5) Jahre mit Updates versorgt. Die nächste LTS-Version wird im April 2016 (16.04 LTS) erscheinen.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>920</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>978</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

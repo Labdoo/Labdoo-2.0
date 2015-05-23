@@ -1,0 +1,55 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>287</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>LAN interface is not working </value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>287</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>It might happen that the LAN interface will not be recognized correctly.   
+
+Open a terminal:
+	<code>sudo nano /etc/NetworkManager/NetworkManager.conf</code>	(Enter)
+
+Check and change the line: 
+<code>managed=false</code>  →  <code>managed=true</code>
+
+store; stop and restart the network manager:
+<code>sudo service network-manager restart</code>          (Enter)</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>255</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>973</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1004</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

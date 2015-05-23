@@ -5,7 +5,7 @@
 </nid>
 <title>
 <type>node_title</type>
-<value>Labdoo images herunterladen und entpacken, MDSUM</value>
+<value>Labdoo images herunterladen und entpacken, MD5SUM</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -21,7 +21,8 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Das jeweilige Image vom FTP-Server herunterladen http://ftp.labdoo.org/download/images/ Anklicken des benötigten Images oder rechte Maustaste -> speichern unter.
+<value>Hier geht es zu Link-Liste der Images for Cloning https://dev.labdoo.org/content/liste-der-images-cloning-ftp-server
+Anklicken des benötigten Images oder rechte Maustaste -> speichern unter.
 
 Das Image ist gepackt/gezippt (.tar.gz). Es kann unter jedem Betriebssystem entpackt werden. 
 

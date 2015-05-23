@@ -1,0 +1,57 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>285</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>graphic card - check which graphical interface is installed</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>285</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Open References → Monitor stettings for a first information. Open a terminal:
+
+<strong>Show name / chip set: </strong>
+<code>lspci -nnk | grep -i VGA -A2</code> (Enter)
+
+<strong>driver version</strong>
+Show driver name and release version: 
+<code>glxinfo | grep 'OpenGL version string'</code> (Enter)
+
+<strong>graphic mode (resolution)</strong>
+Show the resolution set and all possible screen resolutions and the interfaces: 
+<code>xrandr</code> (Enter)</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>255</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>973</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1002</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

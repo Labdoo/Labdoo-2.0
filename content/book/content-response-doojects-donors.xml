@@ -42,11 +42,11 @@ Thank you once again for your contribution.
 
 Best regards,
 $MYNAME
-Labdoo Team</value>
+Labdoo Team | www.labdoo.org</value>
 </body>
 <body>
 <type>format</type>
-<value>full_html</value>
+<value>filtered_html_advanced</value>
 </body>
 <bid>
 <type>book_array</type>

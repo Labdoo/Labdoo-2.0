@@ -5,7 +5,7 @@
 </nid>
 <title>
 <type>node_title</type>
-<value>lubuntu Installation</value>
+<value>Lubuntu Installation</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -21,7 +21,99 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>....
+<value><strong>Installation des Betriebssystems Lubuntu</strong>
+
+Wenn einer oder mehrere Rechner gespendet wurden, kann man alleine oder mit weiteren Helfern gemeinsam daran gehen, diese aufzubereiten. Altdaten werden gelöscht, das Betriebssystem <a href="http://lubuntu.net/">Lubuntu</a> installiert u.a.
+
+<strong>Der Ablauf in Kürze</strong> (dies ist nicht erforderlich, <a href="https://dev.labdoo.org/content/cloning-mit-fertigen-labdoo-images">wenn der Rechner per Cloning eingerichtet wird</a>):
+<ol>
+<li>
+<a href="/node/add/laptop">Starte mit der Online-Registrierung der IT-Spende.</a> Drucke dabei die 3 Aufkleber mit der Labdoo-ID-Nr. aus und klebe 2 davon auf den Laptop und ins Batteriefach, einen auf das Ladegerät. <a href="https://dev.labdoo.org/de/content/mehr-zur-registrierung-von-it-spenden">Mehr zur Registrierung von IT-Spenden...</a>   
+</li>
+<li>
+Download von <a href="http://cdimages.ubuntu.com/lubuntu/releases/14.04.2/release/">Lubuntu 14.04 LTS (Long Term Support)</a>
+<strong>PAE32:</strong> http://cdimages.ubuntu.com/lubuntu/releases/14.04.2/release/lubuntu-14.04-desktop-i386.iso
+<strong>PAE64:</strong> http://cdimages.ubuntu.com/lubuntu/releases/14.04.2/release/lubuntu-14.04.2-desktop-amd64.iso
+(nonPAE32 CPU werden offiziell nicht mehr für 14.04 unterstützt, aber wir haben speziell <a href="https://dev.labdoo.org/content/cloning-mit-fertigen-labdoo-images">ein nonPAE 32 Image for Cloning für 14.04 LTS</a>) gebaut.
+</li>
+<li>
+Eine bootfähige iso-CD/DVD brennen
+</li>
+<li>
+Einlegen der iso-CD/DVD, ggf. Tasten zur Anzeige des Boot-Menü drücken (z.B. Dell F12, HP F9 etc.) und booten
+</li>
+<li>
+Während des Booten von CD wird das Lubuntu Installation Menü angezeigt. Falls nicht, kann es mehrere Ursachen haben (Lubuntu-Version passt nicht zur CPU; es sind noch BIOS-Einstellungen nötig). 
+</li>
+<li>
+Im Lubuntu Menü die Sprache "English" bestätigen (wichtig, keine andere Sprache).”.
+</li>
+<li>
+Bestätigen “Install Lubuntu”.
+</li>
+<li>
+Wähle die zu installierende Sprache aus. Auch hier bitte "English" auswählen. Später können weitere Sprache nachinstalliert werden.
+</li>
+<li>
+Wähle das Zielland aus. Wenne snoch nicht bekannt ist wähle dein Land aus.
+</li>
+<li>
+Auswahl der Tastaturbelegung, entweder direkt "German" auswählen oder per “detect keyboard” und Eingabe der angezeigten Zeichen.
+</li>
+<li>
+Jetzt ist der richtige Zeitpunkt für das Löschen der Festplatte. Dazu die Tasten STRG/CTRL+ALT+F3 gleichzeitig drücken. Dies schaltet auf die Terminalebene um (Shell). Hier bitte eintippen <code>sudo shred /dev/sda -f -v</code> (Enter). Dieser Befehl schreibt 3-mal Zufallszahlen über die Festplatte und löscht damit alle Altdaten. Der Löschlauf kann mehrere Stunden laufen.
+Hinweis: In seltenen Fällen <strong>hda</strong> statt <strong>sda</strong> eingeben, falls sda nicht funktioniert.
+Wenn weitere Fragen bestehen kann sie hier gepostet werden <a href="../content/quality-assurance-qa">Labdoo QA team</a>. Jemand aus dem QA Team wird dann weiterhelfen.
+Um wieder zur Installation zurückzukehren bitte gleichzeitig STRG/CTL+Alt+F7 drücken.
+</li>
+<li>
+Entweder bei der Konfiguration des LAN auf “cancel” drücken(dann werden Updates später nachgeladen) oder LAN oder Wifi/WLAN konfigurieren.
+</li>
+<li>
+Wenn nach dem “hostname” gefragt wird, bitte <strong>labdoo</strong> eingeben.
+</li>
+<li>
+Wenn nach dem “fullname” gefragt wird, bitte <strong>labdoo</strong> eingeben.
+</li>
+<li>
+Wenn nach dem “username” gefragt wird, bitte <strong>labdoo</strong> eingeben.
+</li>
+<li>
+Wenn nach dem “password” gefragt wird, bitte <strong>labdoo</strong> eingeben.
+</li>
+<li>
+Den Hinweis “Use weak password?” mit <strong>Yes</strong> bestätigen.
+</li>
+<li>
+Die Frage “Encrypt your home directory?” bitte mit <strong>No</strong> beantworten.
+</li>
+<li>
+Die Zeitzone auswählen (wenn online, wird diese richtig vorbelegt).
+</li>
+<li>
+Bei der Auswahl“Partitioning method” bitte “Guided – use entire disk” auswählen.
+</li>
+<li>
+Auswahl der Festplatte (i.d.R. sda).
+</li>
+<li>
+Wenn gefragt wird “Write changes to disks” bitte mit “Yes” antworten.
+Jetzt startet die Installation. Während der Installation kommen noch 3 Fragen:
+</li>
+<li>
+Wenn nach HTTP Proxy Information gefragt wird einfach nichts eingeben und “Continue” drücken.
+</li>
+<li>
+Wenn gefragt wird “Install the GRUB boot loader” bitte mit “Yes” antworten.
+</li>
+<li>
+Wenn gefragt wird “Is the system clock set to UTC” bitte mit “Yes” antworten.
+
+Danach endet die Installation des Betriebssystems und der Rechner wirft die CD aus und rebootet. Anmelden im Lubuntu System mit dem Anwender <strong>labdoo</strong> und dem Passwort <strong>labdoo</strong>. Jetzt den Computer mit dem Internet verbinden.
+
+Es fehlen aber noch viele Lernprogramme und Lerninhalte für die Kinder. Hierfür haben wir spezielle Skripte erstellt, die alles automatisiert nachladen. <a href="https://dev.labdoo.org/de/content/installationsskripte-%C3%BCbersicht">Mehr zu den Installationsskripten hier ...</a>
+</li>
+</ol>
 </value>
 </body>
 <body>

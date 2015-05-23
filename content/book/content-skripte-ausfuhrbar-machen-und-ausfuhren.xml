@@ -21,11 +21,11 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value><strong>Ausführbarmachen eines Skriptes</strong> -> rechte Maustaste auf das Skript auf dem Desktop -> properties (Eigenschaften -> Permissions (2. Reiter) -> Execute: Only owner and group -> ok
+<value><strong>Ausführbarmachen eines Skriptes</strong> -> rechte Maustaste auf das Skript auf dem Desktop -> properties (Eigenschaften) -> Permissions (2. Reiter) -> Execute: Only owner and group -> ok
 
 Sicherheitshalber solltet ihr die Skripte als Administrator (super-user) ausführen. Für manche Aufgaben wie die Installation von Software ist es sogar zwingend erforderlich. Sofern also nicht anderes angegeben:
 
-<strong>Ausführen eines Skriptes als Administrator (super-user)</strong> -> Terminal öffnen -> <code>cd Desktop</code> (enter), um in den Ordner /Desktop zu gelangen -> <code>sudo ./installscript...sh</code> (den Namen des Skriptes inkl. .sh am Ende) Enter -> ggf. Passwort eingeben und ablaufen lassen.
+<strong>Ausführen eines Skriptes als Administrator (super-user)</strong> -> <a href="https://dev.labdoo.org/content/terminalfenster-%C3%B6ffnen">Terminal öffnen</a> -> <code>cd Desktop</code> (enter), um in den Ordner /Desktop zu gelangen -> <code>sudo ./installscript...sh</code> (den Namen des Skriptes inkl. .sh am Ende) (Enter) -> ggf. Passwort eingeben und ablaufen lassen.
 
 <strong>1. Tipp:</strong> nach Eingabe von <code>cd Desktop</code> Eingabe von <code>ls</code> im Terminal -> Listet alle Dateien im Ordner Desktop auf -> markieren des Skriptes mit der Maus -> entweder Shift + STRG/CTL + c gleichzeitg drücken oder rechte Maustaste "kopieren" -> <code>sudo ./</code> eintippen -> entweder Shift + STRG/CTL + v oder rechte Maustaste + einfügen -> erspart das Eintippen des Skriptnamen :)
 
@@ -36,6 +36,8 @@ Sicherheitshalber solltet ihr die Skripte als Administrator (super-user) ausfüh
 <strong>Laufzeit: </strong> Die Laufzeiten der Skripte sind sehr unterschiedlich und hängen von der Geschwindigkeit deines Internet-Anschlusses und des Labdoo-Rechners ab. Speziell die Skripte für Software und Content können schon mal 2 bis 4 Stunden beim ersten Mal laufen. Dies gibt einen Hinweis, was alles den Kindern sonst entgangen wäre, wenn die Skripte diese Dinge nicht nachgeladen hätten.
 
 <strong>Beenden eines Skriptes: </strong>Sobald der Cursor wieder im Terminal in einer Zeile hinter labdoo@000004xxxx:~$ erscheint ist das Skript erfolgreich abgearbeitet worden. Dann kann das Terminalfenster geschlossen oder für eine neue Aufgabe verwendet werden.
+
+<strong>Wiederholen der letzten Eingabe:</strong> Mit der "Pfeil hoch"-Taste kann man durch die letzten Eingaben im Terminal blättern, spart manchmal viel Tipparbeit :)
 
 <strong>Wiederholung eines Skriptes: </strong> Die Skripte sind alle so ausgelegt, dass sie beliebig oft ausgeführt werden können und dabei auch sinnvolle Arbeiten erledigen. Die Skripte für die Installation von Software führen z.B. auch einen Update des Virenscanners ClamAV durch. Oder das Content-Skript gleicht mit dem FTP-Server ab, ob es Änderungen gegeben hat.
 

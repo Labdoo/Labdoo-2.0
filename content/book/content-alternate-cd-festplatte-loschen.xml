@@ -21,13 +21,27 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Alte Laptops können oft nur mit der Alternate CD von lubuntu gestartet und installiert werden. 
+<value>Sehr alte Laptops können oft nur mit der Alternate iso-CD von Lubuntu gestartet und installiert werden. Die Alternate iso-CD verzeichtet auf eine grafische Oberfläche und einge Tools. Daher ist auf der Alternate CD auch nicht der shred-Befehl zum Löschen von Festplatten enthalten. 
 
-Auf dieser Alternate CD ist aber der shred-Befehl zum Löschen von Festplatten nicht enthalten. 
+Daher vorher mit einer dieser iso-CDs, alle geringe Anforderungen an die Hardware stellen, die Daten löschen
+<ul>
+<li><a href="https://dev.labdoo.org/content/parted-magic-clonezilla">Parted Magic - CD</a> </li>
+<li>Knoppix-CD (http://www.knoppix.org/) oder</li>
+<li>eine Rescue CD (http://ubuntu-rescue-remix.org/)</li>
+</ul>
 
-Da das Nachladen dieses  Befehl während der Installation komplex ist wird empfohlen, sich entweder eine Knoppix-CD (http://www.knoppix.org/) oder eine Rescue CD (http://ubuntu-rescue-remix.org/) anzulegen. 
+Diese Live-CDs werden gestartet und dort ist auf Terminalebene der Shred-Befehl oder bei Parted Magic auch ein Datenlöschtool enthalten.
 
-Diese Live-CDs werden gestartet und dort ist auf Terminalebene der Shred-Befehl enthalten.</value>
+Alternativ kann man auch bei der Alternate CD den <strong>shred</strong>-Befehl während der Lubuntu-Installation nachinstallieren:
+<ul>
+<li>Strg/CTL + Alt + F3 gleichzeitig drücken, z.B. wenn ....</li>
+<li>Eintippen <code>apt-get install coreutils</code> (Enter)</li>
+<li><code>shred /dev/sda -v -f</code> (Enter)</li>
+<li>Strg/CTL + Alt + F7 gleichzeitig drücken</li>
+</ul>
+
+
+</value>
 </body>
 <body>
 <type>format</type>

@@ -1,0 +1,174 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>255</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>information for Labdooers</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>171</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Educational Labdoo laptops come with the operating system Lubuntu (Linux), a lot of educational software and Open Educational resources (OER) for the children. Labdoo.org recommends to install <a href="http://lubuntu.net/">Lubuntu (Ubuntu and the desktop LXDE)</a>, as Lubuntu does not ask for much resources and runs fast even on older laptops.
+
+Children of any age - Kindergarten, primary, secondary school and high-school - benefit from the educational software (Edubuntu) and educational content, Offline wikis, barrier-free usage of software and much more. If possible, install as much as possible on a laptop, as most of the edoovillages do not have access to internet. So what you do not install will not be available...
+
+To offer children the best possible installation there are 3 ways of installation:
+
+<ul>
+<li><a href="https://dev.labdoo.org/content/cloning-laptops-using-prepared-labdoo-images">cloning laptops using prepared images (recommended),</a> </li> 
+<li><a href="https://dev.labdoo.org/content/sanitation-guide-simple-method">installing Lubuntu (Ubuntu + LXDE)</a> and <a href="https://dev.labdoo.org/de/content/installation-scripts-overview">more installation scripts,</a></li>    
+<li><a href="https://dev.labdoo.org/content/faq-forum#FAQ05">or leave everything to Labdoo... ;)</a></li>
+</ul>
+
+More useful wikis
+<ul>
+<li><a href="https://dev.labdoo.org/de/content/tips-and-tricks-suggested-solutions">Technical tips and tricks, suggested solutions</a></li>
+<li><a href="https://dev.labdoo.org/de/content/anpassen-l%C3%A4nderspezifische-anforderungen-tastatur-sprache-hostname-ua">Adapting a laptop to country specific needs (keyboard, language, hostname etc.)</a></li>
+<li><a href="https://dev.labdoo.org/de/content/list-countries-voltage-and-power-plugs-0">table countries, power plug and voltage</a></li>
+<li><a href="https://dev.labdoo.org/content/shipping-notes">Shipping notes</a></li>
+</ul>
+
+Here the comparison what children are missing, if you just install Lubuntu (compared to  installation scripts  and Cloning images):
+
+<table>
+<tr >
+<th>content</th>
+<th>Lubuntu<br />(Basis)   </th> 
+<th>installation <br />scripts   </th>
+<th>Images<br />(Cloning)</th>
+</tr>
+<tr>
+<td>Lubuntu LTS (operating system)</td>
+<td> <img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/> </td>
+<td> <img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/> </td>
+<td> <img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/> </td>
+</tr> 
+<tr>
+<td>Edubuntu educational software (base) and more</td>
+<td><img src="/sites/default/files/content/wiki-de/red-cross.png" width="32"/></td>
+<td><img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/></td>
+<td><img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/></td>
+</tr>
+<tr>
+<td>Wikipedia for schools „wikidoo“ english offline lexicon, suitable for children</td>
+<td><img src="/sites/default/files/content/wiki-de/red-cross.png" width="32"/></td>
+<td><img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/></td>
+<td><img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/></td>
+</tr>
+<tr>
+<td>License-free manualsfor Ubuntu, Libreoffice etc.</td>
+<td><img src="/sites/default/files/content/wiki-de/red-cross.png" width="32"/></td>
+<td><img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/></td>
+<td><img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/></td>
+</tr>
+<tr>
+<td>License-free e-Books</td>
+<td><img src="/sites/default/files/content/wiki-de/red-cross.png" width="32"/></td>
+<td><img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/></td>
+<td><img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/></td>
+</tr>
+<tr>
+<td>XOWA, access to 800+ Offline Wikis in regional languages</td>
+<td><img src="/sites/default/files/content/wiki-de/red-cross.png" width="32"/></td>
+<td><img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/></td>
+<td><img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/></td>
+</tr>
+<tr>
+<td>Optimised user concept to avoid accidental system changes</td>
+<td><img src="/sites/default/files/content/wiki-de/red-cross.png" width="32"/></td>
+<td><img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/></td>
+<td><img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/></td>
+</tr>
+<tr>
+<td>preparation for virtual machines (VM VirtualBox)</td>
+<td><img src="/sites/default/files/content/wiki-de/red-cross.png" width="32"/></td>
+<td><img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/></td>
+<td><img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/></td>
+</tr>
+<tr>
+<td>Lubuntu 14.04 LTS for non-PAE CPUs (somme Pentium M CPUs)</td>
+<td><img src="/sites/default/files/content/wiki-de/red-cross.png" width="32"/></td>
+<td><img src="/sites/default/files/content/wiki-de/red-cross.png" width="32"/></td>
+<td><img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/></td>
+</tr>
+<tr>
+<td>Extended drivers for older WiFi cards etc.</td>
+<td><img src="/sites/default/files/content/wiki-de/red-cross.png" width="32"/></td>
+<td><img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/></td>
+<td><img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/></td>
+</tr>
+<tr>
+<td>Virus scanner and tool ClamAV</td>
+<td><img src="/sites/default/files/content/wiki-de/red-cross.png" width="32"/></td>
+<td><img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/></td>
+<td><img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/></td>
+</tr>
+<tr>
+<td>Barrier-free access for blind or hearing impaired user</td>
+<td><img src="/sites/default/files/content/wiki-de/red-cross.png" width="32"/></td>
+<td><img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/></td>
+<td><img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/></td>
+</tr>
+<tr>
+<td>Offline video tutorials for user</td>
+<td><img src="/sites/default/files/content/wiki-de/red-cross.png" width="32"/></td>
+<td><img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/></td>
+<td><img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/></td>
+</tr>
+<tr>
+<td>Browser-based English course, Multimedia based following UK Curriculum</td>
+<td><img src="/sites/default/files/content/wiki-de/red-cross.png" width="32"/></td>
+<td><img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/></td>
+<td><img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/></td>
+</tr>
+<tr>
+<td>Unique host name for each laptop</td>
+<td><img src="/sites/default/files/content/wiki-de/red-cross.png" width="32"/></td>
+<td><img src="/sites/default/files/content/wiki-de/red-cross.png"  width="32"/></td>
+<td><img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/></td>
+</tr>
+<tr>
+<td>suggested minimum size of disc drive</td>
+<td>ab 20 GB</td>
+<td>ab 20 GB</td>
+<td>ab 20 GB</td>
+</tr>
+</table>
+
+(Icons with courtesy of http://dryicons.com)
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>255</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>0</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>972</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

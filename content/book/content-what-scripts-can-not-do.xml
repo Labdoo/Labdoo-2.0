@@ -1,0 +1,118 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>308</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>What scripts can NOT do</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>308</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><strong>What scripts are not able to solve</strong>
+
+The Labdoo team is working to improve and extend capability of the scripts. At that moment the following steps have to be adjust manually:
+
+<strong>General for all desktops and for all user (labdoo and student):</strong>
+
+<strong>Firefox: </strong> 4 tabs should be added manually and pre-set in Preferences -> General
+         <ul>
+         <li><code>file:///home/labdoo/Public/wikidoo/index.htm</code></li>
+         <li><code>file:///home/labdoo/Public/wikis/index.htm</code></li>
+         <li><code>file:///home/labdoo/Public/eBooks/English%20Language%20Training%20Version%203.0/index.html</code></li>
+         <li><code>about:startpage</code></li>
+         </ul>
+
+<strong>Firefox: </strong> install add-on Fireclam (virus protection)
+<strong>Calibre: </strong>import eBooks for die users labdoo and student
+
+<strong>Add more plug-ins to the task bar (LXDEDesktop / Lubuntu):</strong>
+
+Right mouse click on the task bar → Add/Remove Panel Items → +Add → select the plug-in you want → +Add → 
+<strong>Suggested plug-ins and their sequence from right to left:</strong>
+          <ul>
+          <li>Menu (already installed)</li>
+          <li>Application Launch Bar (already installedt)</li>
+          <li>Spacer (already installed)</li>
+          <li>Desktop pager (already installed)</li>
+          <li>Spacer (already installed)</li>
+         <li>Task Bar (already installed)</li>
+         <li>Volume control (already installed)</li>
+         <li>System tray (already installed)</li>
+        <li>Indicator Applets (already installed)</li>
+        <li><strong>Keyboard Layout Handler (to be installed)</strong></li>
+        <li><strong>Resource Monitors (to be installed)</strong></li>
+         <li><strong>Network Status Monitor (to be installed)</strong></li>
+        <li><strong>Manage Network (to be installed)</strong></li>
+        <li>Digital clock (already installed)</li>
+        <li>Application Launch bar (already installed)</li>
+        </ul>
+
+The plug-ins can be moved within the task bar, right mouse click on task bar→ Add/Remove Panel Items → mark plug-in in window → click on Up or Down until the plug-in reached its position.
+
+<strong>Important: </strong> For Lubuntu 14.04 LTS ff.: Keyboard Layout handler → right mouse click on Icon in task bar → settings → Important! Remove hook in „Keep system layout“, as otherwise you are not able to install additional keyboard layouts.
+
+<strong>Important: </strong> For 14.04 LTS ff.: Use Light Locker to switch off the screen locker (for user labdoo and student)
+
+<strong>only for Lubuntu 12.04 LTS</strong>
+
+<strong>Browser: </strong> Standard browser in Lubuntu 12.04 LTS is still Chrome, later Lubuntu releases use Firefox as browser. To avoid user confusion you should install Firefox for Lubuntu 12.04 LTS  and set Firefox as standard browser, please:
+         <ul>
+          <li>remove Chromium in application launch bar and add Firefox → right mouse click → change</li>
+          <li>Set Firefox as standard browser →  Preferences  → Preferred Application → Browser → Firefox (for both user labdoo and student)</li>
+          <li>optional: uninstall Chromium</li>
+          </ul>
+
+<strong>For Lubuntu 12.04 LTS: </strong> The keyboard layout in Lubuntu 12.04 LTS was buggy. Due to this our script installs the program LXKeymap. Add a starter on the desktop to enable keyboard switching for 12.04 LTS.
+
+<strong>Only if desktops Unity and Gnome are installed</strong>
+
+         <ul>
+         <li>Unity (Ubuntu Default Desktop)</li>
+         <li>Compiz: Optimize performance</li>
+          <li>Use CompizConfigSettingManager to set</li>
+         <li>General → OpenGL → Set to "Fast"</li>
+         <li>Effects → Switch Animation and Fading off (remove the hook)</li>
+         <li>Add 4 workspaces for both users labdoo and student  → open System Settings → Appearance → behaviour → mark activate workspaces</li>
+         </ul>
+
+        <ul>
+        <li><strong>Unity: </strong> To show the menus in a program window, not in the top bar (like Apple do), to be changed for both users labdoo and student → Open System settings → Appearance → Behaviour → show the menus for a window → mark "in the window's title"</li>
+        <li>User name is not shown in the top bar on screen  → open a terminal → type → dconf-editor → Enter</li>
+        <li>In dconf-editor → apps → indicator-session → hook in show-real-name-on-panel → close window</li>
+         <li>remove Amazon Icon in application bar (right mouse click on the icon → remove)</li>
+        </ul></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>255</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1024</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1025</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

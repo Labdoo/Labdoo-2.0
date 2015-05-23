@@ -1,0 +1,50 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>289</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Monitor is only showing a small part of the full screen</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>289</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>The installation process was succesful and you are able to boot, but when logging in you are only able to see a part of the screen (usually the upper right screen corner) with a poor resolution.
+
+ber bereits im Anmeldebildschirm und auch im Desktop sieht man nur ca. ¼ des Bildschirminhaltes, i.d.R. die rechte obere Ecke. 
+
+This may be why in the BIOS setting (CMOS) not enough RAM was allocated for the screen memory, e.g. 1 MB instead of 8 MB or more. Please check.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>255</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>973</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1006</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

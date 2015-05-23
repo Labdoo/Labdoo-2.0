@@ -29,13 +29,13 @@
        <li>Lernpaket für die Grundschule und</li>
        <li>Lernpaket für die weiterführende Schule</li></ul>
 <li>Installation von Programmen, die in lubuntu sonst nicht enthalten wären wie</li>
-<ul><li>Office-Paket liberoffice</li>
+<ul><li>Office-Paket libreoffice</li>
        <li>ClamAV Virenschutz und aktuelle Virensignatur</li>
        <li>Programme für den barrierefreien Zugang für seh- / hörbehinderte Anwender</li>
-       <li>Aktualisierung und Patchen des Ubuntu Systems</li>
+       <li>Aktualisierung, Patchen und Einstellen des Lubuntu Systems</li>
 </ul>
 <li>User student für Schüler einrichten (student hat weniger Rechte und kann das System nicht so schnell verstellen)</li>
-<li>sinnvolle Einstellungen und Optimierungen im Ubuntu-Betriebssystems.</li>
+<li>sinnvolle Einstellungen und Optimierungen im Lubuntu-Betriebssystems.</li>
 </ul>
 
 <strong>Was das Skript installscript-content.sh leistet</strong>

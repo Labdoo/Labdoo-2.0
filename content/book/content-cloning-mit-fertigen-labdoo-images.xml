@@ -21,9 +21,9 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Diese Anleitung erkärt das Cloning mit fertigen Images. Images sind komplette Kopien von Inhalten bereits installierter Rechner, mit Betriebssystem, Software, Lerninhalten und optimierten Einstellungen. Bis auf letzte Einstellungen fr das Zielland (Sprache, Tastatur) und den Hostnamen muss man sich um nichts mehr kümmern.
+<value>Diese Anleitung erkärt das Cloning mit fertigen Images. Images sind komplette Kopien von Inhalten bereits installierter Rechner, mit Betriebssystem, Software, Lerninhalten und optimierten Einstellungen. Bis auf letzte Einstellungen für das Zielland (Sprache, Tastatur) und den Hostnamen muss man sich um nichts mehr kümmern.
 
-lubuntu hat zusätzlich den Vorteil, das man sich (kaum) um Treiber kümmern muss. D.h. man kann ein Image vom Laptop Hersteller A auf einem Laptop vom Hersteller B installieren. lubuntu kümmert sich um (fast) alles.
+Lubuntu hat zusätzlich den Vorteil, das man sich (kaum) um Treiber kümmern muss. D.h. man kann ein Image vom Laptop Hersteller A auf einem Laptop vom Hersteller B installieren. Lubuntu kümmert sich um (fast) alles.
 
 Wichtig ist es nur, das passende Image zur aktuellen CPU (Prozessor) von unserem FTP Server herunter zu laden und zu installieren, zu clonen.
 
@@ -31,21 +31,14 @@ Wem alle diese Schritte zu aufwendig erscheinen, kann seinen Laptop auch direkt 
 
 Für die Installation der Images benötigt man einen USB-Stick oder externe USB-Festplatte, ab 16/32 GB oder größer. Jedes Image benötigt ca. 11-12 GB. 
 
-Man sollte erst feststellen, welches Image man für den vorliegenden Laptop braucht. Oder falls man mehrere Laptops zu installieren hat, lädt man alle Images herunter. Die Images werden in unregelmäßigen Abständen (ca. alle 4 - 8 Wochen) aktualisiert.
+Man sollte erst feststellen, welches Image man für den vorliegenden Laptop braucht. https://dev.labdoo.org/content/pr%C3%BCfen-um-welche-cpu-es-sich-handelt-nonpae-pae-32-bit-64-bit 
 
-Zum Zeitpunkt der Erstellung dieses Wikis gibt es die folgenden Labdoo Images:
+Oder falls man mehrere Laptops zu installieren hat, lädt man alle Images herunter. Die Images werden in unregelmäßigen Abständen (ca. alle 4 - 8 Wochen) aktualisiert.
 
-<ul>
-<li>nonPAE32_12_04_LTS (lubuntu 12.04 LTS für nonPAE CPU)</li>
-<li>nonPAE32_14_04_LTS (lubuntu 14.04. LTS für nonPAE 32 CPU)</li>
-<li>PAE32_12_04_LTS (lubuntu 12.04 LTS für 32 Bit CPU)</li>
-<li>PAE32_14_04_LTS (lubuntu 14.04 LTS für 32 Bit CPU)</li>
-<li>PAE64_12_04_LTS (lubuntu 12.04 LTS für 64 Bit CPU)</li>
-<li>PAE64_14_04_LTS (lubuntu 14.04 LTS für 64 Bit CPU)</li>
-</ul>
+Hier geht es zu Link-Liste der Images for Cloning https://dev.labdoo.org/content/liste-der-images-cloning-ftp-server
 
-12.04 bzw. 14.04 verweist auf das Release-Datum der jeweiligen lubuntu-Version, d.h. April 2012 und April 2014. LTS (Long Term Support) werden ab Erscheinen 5 Jahre mit Updates versorgt. Die nächste LTS-Version wird im April 2016 (16.04 LTS) erscheinen.
-</value>
+
+<strong>Weiter geht es mit <a href="https://dev.labdoo.org/content/parted-magic-clonezilla">Clonezilla / Parted Magic</a></strong> </value>
 </body>
 <body>
 <type>format</type>

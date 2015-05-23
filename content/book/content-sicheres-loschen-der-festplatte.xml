@@ -37,7 +37,7 @@ Damit startet ihr ein Löschprogramm mit verschiedenen Optionen.
  
 Die Löschung der Festplatte läuft je nach CPU und Größe ca. 1 – 2,5 Stunden.
 
-<strong>Hinweis:</strong> Bitte Partionmanager (siehe auf dem Desktop) starten und dort nachschauen, ob es mehrere Festplatten gibt. Falls ja, bitte die o.a. Prozedur auch für sdb, sdc usw. durchführen. Dies kann riuhig parallel erfolgen, um Zeit zu sparen,
+<strong>Hinweis:</strong> Bitte Partionmanager (siehe auf dem Desktop) starten und dort nachschauen, ob es mehrere Festplatten gibt. Falls ja, bitte die o.a. Prozedur auch für sdb, sdc usw. durchführen. Dies kann ruhig parallel erfolgen, um Zeit zu sparen,
 
 Erst nach Löschung der Festplatte(n) geht es weiter mit dem Aufspielen der Images.</value>
 </body>

@@ -21,17 +21,15 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Bei der lubuntu-Installation wird der erste Benutzer labdoo angelegt (der auch Administrator ist). Auch die Labdoo Images for Cloning und die Installations-Skripte legen den zusätzlichen bentzer student an.
+<value>Bei der Lubuntu-Installation wird der erste Benutzer labdoo angelegt (der auch Administrator ist und den Lehrern vorbehalten sein sollte). Auch die Labdoo Images for Cloning und die Installations-Skripte legen den zusätzlichen Benutzer student an.
 
 Der Benutzer student hat weniger Rechte, kann keine Software installieren oder löschen und kann das System i.d.R. auch nicht verstellen.
 
 Hier der manuelle Weg zur Einrichtung eines User student:
 
-Bitte nenne den Benutzer student. 
-
 Hierzu gehe zu → System Tools → User + Groups → unlock (entsperren) → +add user → Systempasswort (labdoo) eingeben →  student als Name eingeben, mit Passwort labdoo → Account Type = Standard (ist so vorbelegt) →  Create → Password (account disabled) anklicken → Passwort labdoo eingeben und bestätigen → Change → ggf. Sprache des Benutzers ändern (optional). 
 
-Zusätzlich ein Terminal öffnen und eingeben (dmit wird student zum Mitglied der Gruppe labdoo):
+Zusätzlich ein Terminal öffnen und eingeben (damit wird student zum Mitglied der Gruppe labdoo):
 sudo usermod -aG labdoo student  (Enter)
 
 Bitte beachten:
@@ -39,7 +37,9 @@ Jeder Benutzer verbraucht Speicherplatz auf der Platte. Daher bitte nicht zu vie
 
 Als Standard user kann man nicht das System verstellen. Der User labdoo als Administrator sollte den Lehrern vorbehalten bleiben.
 
-Jeder User hat seine eigenen Dateien. Er kann aber auf die Dateien in Ordner public (öffentlich)eines anderen Users zugreifen. Um z.B. zu den Handbüchern von labdoo zu gelangen → im Dateiexplorer → filesystem → home → labdoo → Ordner public (man kann per Bookmark einen Link im Explorer erzeugen)</value>
+Jeder User hat seine eigenen Dateien. Er kann aber auf die Dateien in Ordner public (öffentlich)eines anderen Users zugreifen. Um z.B. zu den Handbüchern von labdoo zu gelangen → im Dateiexplorer → filesystem → home → labdoo → Ordner public (man kann per Bookmark einen Link im Explorer erzeugen)
+
+Zusätzlich hat jeder Labdoo-Rechner einen Benutzer Guest (Gast). guest hat kein Passwort, kann aber im System nichts verändern oder speicher. beim Abmelden werden alle Eingaben von guest automatisch gelöscht.</value>
 </body>
 <body>
 <type>format</type>

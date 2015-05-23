@@ -1,0 +1,58 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>265</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>check the CPU type (nonPAE / PAE, 32 bit / 64 Bit)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>265</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>As soon as you bootet into Lubuntu or PM-Parted Magic (both based on Linux) you should first check out the CPU type, as you have to clone the matching image to the matching CPU. Otherwise the computer might not reboot and work properly. E.g. a 32-Bit Image may be cloned and run on a 64-Bit CPU, but not the other way round (but the 32-Bit release ist only able to address max. 3 MB RAM).
+
+Open a terminal (see below) and execute in the terminal (you can copy and paste the following text):
+
+<code>grep -q '\&lt;pae\&gt;' /proc/cpuinfo &amp;&amp; echo "My CPU is PAE capable" || 
+echo "My CPU is NOT PAE capable (nonPAE)" &amp;&amp; grep -q '\&lt;lm&gt;' 
+/proc/cpuinfo &amp;&amp; echo "My CPU is a 64 bits one" || echo "My CPU is a 32 bits one"</code>
+
+<strong>Hint:</strong> In PM the terminal is the black screen icon in the task bar, click it, a terminal will open. Insert (Paste) into a terminal will work either by pressing at the same time Shift + CTL + v or right mouse click in the terminal and paste.
+
+<strong>Alternatively:</strong> open System Profiler (click icon in the upper part on the desktop) → Devices → Processor (if CPU has more than one processor click one of them) → scroll down to Capabilities, check in the list, if PAE is listed. If PAE is listed you can use a PAE image; if PAE is not listed install a nonPAE image. But you have to check 32 or 64 Bit, if in doubt install 32 Bit version. But the easiest way is to use the code above.
+
+You can as well download the check script 32 / 64 Bit / nonPAE / PAE from here --> http://ftp.labdoo.org/download/images/installskripts/check_cpu_32_or_64_bits_PAE_or_nonPAE.sh</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>255</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>981</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>982</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

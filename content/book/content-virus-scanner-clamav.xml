@@ -1,0 +1,56 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>296</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>virus scanner ClamAV</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>296</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>You should not need a virus scanner using Lubuntu. Linux usually needs no virus scanner due to the Linux security concept. There are very few viruses for Linux desktop in the web. Nevertheless some companies offer virus scanner for Linux, e.g. for file server being used also by Windows clients.
+
+Also some edoovillages asked to have a tool to scan USB disc drives of pupils to remove viruses from USB drives of the students. So please install ClamAV for your projects (ClamAV will be installed if you use the installationskript or images for cloning).
+
+So we recommend the license free, open source virus scanner ClamAV 
+https://help.ubuntu.com/community/ClamAV
+
+Open a terminal and execute:
+<code>sudo apt-get install clamav clamav-freshclam clamav-docs clamav-daemon clamtk</code> (Enter)
+
+And you should install the <strong>Firefox Plugin Fireclam</strong>, so downloads will be automaticaly checked on viruses using ClamAV.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>255</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>973</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1013</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

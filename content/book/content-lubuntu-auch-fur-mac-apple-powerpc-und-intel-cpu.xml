@@ -5,7 +5,7 @@
 </nid>
 <title>
 <type>node_title</type>
-<value>lubuntu auch für MAC / Apple (PowerPC und Intel CPU)</value>
+<value>Lubuntu auch für MAC / Apple (PowerPC und Intel CPU)</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -22,20 +22,21 @@
 <body>
 <type>value</type>
 <value>Ja, schließlich basiert das Apple-Betriebssystem auch auf Linux. Es gibt (leider) keine fertigen Labdoo-Images zum Clonen für Apple Laptops. Also die passende .iso zum Booten herunterladen und dann der „Schritt-für-Schritt“ folgen. Tipp: Macht dies nicht direkt beim ersten Laptop :) Alternativ könnt ihr auch das Installationsskript ausführen, dem ist es egal, auf welcher CPU es abläuft. Aktuell werden nur einige zusätzliche Module nachgeladen (es bleiben noch Restarbeiten), ab ca. Ende 2014 übernimmt das Skript alles automatisch alle Schritte.
-Wir können nicht alle Fragen zum Thema Apple hier beantworten, daher ein paar nützliche Links: http://wiki.ubuntuusers.de/Apple_Computer
-Ubuntu 12.04 LTS Desktop CD
-The desktop cd allows you to try Ubuntu without changing your computer at all, and at your option to install it permanently later. You will need at least 384MiB of RAM to install from this cd. There is one image available:
-Mac (PowerPC) and IBM-PPC (POWER5) desktop CD For Apple Macintosh G3, G4, and G5 computers, including iBooks and PowerBooks as well as IBM OpenPower machines.
-Ubuntu 12.04 LTS Alternate install CD
-The alternate install cd allows you to perform certain specialist installations of Ubuntu. It provides for the following situations:
-setting up automated deployments;
-upgrading from older installations without network access;
-LVM and/or RAID partitioning;
-installs on systems with less than about 384MiB of RAM (although note that low-memory systems may not be able to run a full desktop environment reasonably).
-In the event that you encounter a bug using the alternate installer, please file a bug on the debian-installer package. There is one image available:
-Mac (PowerPC) and IBM-PPC (POWER5) alternate install CD or Apple Macintosh G3, G4, and G5 computers, including iBooks and PowerBooks as well as IBM OpenPower machines. 
-Ubuntu 14.04 LTS (amd64 für Apple Intel)
-http://www.ubuntu.com/download/desktop/contribute/?version=14.04&amp;architecture=amd64%2Bmac</value>
+
+Wir können nicht alle Fragen zum Thema Apple hier beantworten, daher ein paar nützliche Links: 
+http://wiki.ubuntuusers.de/Apple_Computer
+
+<strong>Lubuntu für Apple</strong>
+
+<strong>Desktop image</strong>
+Mac (PowerPC) and IBM-PPC (POWER5) desktop image
+For Apple Macintosh G3, G4, and G5 computers, including iBooks and PowerBooks as well as older IBM OpenPower 7xx machines.
+http://cdimages.ubuntu.com/lubuntu/releases/14.04.2/release/lubuntu-14.04-desktop-powerpc.iso
+
+<strong>Alternate install image</strong>
+Mac (PowerPC) and IBM-PPC (POWER5) alternate install image
+For Apple Macintosh G3, G4, and G5 computers, including iBooks and PowerBooks as well as older IBM OpenPower 7xx machines.
+http://cdimages.ubuntu.com/lubuntu/releases/14.04.2/release/lubuntu-14.04-alternate-powerpc.iso</value>
 </body>
 <body>
 <type>format</type>

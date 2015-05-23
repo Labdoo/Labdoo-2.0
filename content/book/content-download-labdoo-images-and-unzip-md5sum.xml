@@ -1,0 +1,62 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>266</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Download Labdoo images and unzip, MD5SUM</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>266</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Here is the link list of all Labdoo images for Cloning https://dev.labdoo.org/content/liste-der-images-cloning-ftp-server
+Click on the needed image or right mouse click -> safe as.
+
+The image is packed / zipped (.tar.gz). You can unzip it using any operating system (Windows, Apple, Linux). 
+
+Store the unzipped image on an external USB disc-drive, USB stick or a server in your LAN. If you handle several images create a folder for each image, name it acording to the name of the image and copy files here. 
+
+<strong>If using a local device, USB disc or stick, these image folders have to be stored in the first, top folder as Clonezilla wil only search here.</strong>
+
+Each Labdoo image comes with a MD5SUM check file, containing a MD5SUM (check sum) for each file. Using the MD5SUM you can check, if the download was completed with no errors. How to handle and compare MD5SUM depends on the operating system of your computer.
+
+MD5SUM for Windows: Unfortunately there is no internal Windows tool. You can download Windows tools for free from here http://www.netzwelt.de/download/15035-md5sum.html or http://www.winmd5.com/ (Please note that Labdoo is not responsible for third party programs).
+
+MD5SUM for Lubuntu/Linux: Linux comes with a integrated MD5SUM tool. Open a terminal in the folder with the unzipped files and the MD5SUM file and execute
+<code>md5sum -c MD5SUM</code> (Enter)
+
+To learn more about MD5SUM --> http://en.wikipedia.org/wiki/MD5</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>255</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>982</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>983</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

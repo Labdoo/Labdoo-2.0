@@ -1,0 +1,118 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>297</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>WiFi cards will not be detected</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>297</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><ol>
+
+Sometimes older or very new WiFi Cards were not recognized automatically and activated. There are several ways, which might be tried to solve the problem:
+
+<ul>
+<li>check for specific drivers</li>
+<li>used drivers from the manufacturer, e.g. for Broadcast chips</li>
+<li>linux-backports-modules (collection especially for older WiFi cards)</li>
+<li>ndiswrapper (enable Lubuntu to use Windows drivers for WiFi cards)</li>
+<li>install Linux drivers from the manufacturer</li>
+</ul>
+
+<li><strong>First you should check, if specific drivers are needed</strong></li>
+Preferences → Software &amp; Updates → Additional Drivers → wait a while
+→ either  "no additional drivers available" is hown → no further action should be needed, or
+→ a list of availble drivers is shown → click the driver you want to use → Apply Changes
+
+<li><strong>Check, which WiFi chip is installed and check manufacturer name</strong></li>
+
+Open a terminal and execute:
+<code>lspci | grep -i net</code>  	(enter)
+or
+to show chip set and manufacturer: 
+<code>lspci -nnk | grep -i net -A2 </code>	(enter)
+or in case of using an USB WifI stick:
+<code>lsusb</code>	(enter)
+Note: Some build-in WiFi cards are recognized as an external USB, so if in doubt try all also this command. 
+
+T check if your WiFi card is supported:
+https://help.ubuntu.com/community/WifiDocs/WirelessCardsSupported
+http://linux-wless.passys.nl/
+http://wireless.kernel.org/en/users/Devices
+http://wiki.ubuntuusers.de/WLAN/Karten
+http://wiki.ubuntuusers.de/Systeminformationen_ermitteln?redirect=no#Hardware
+
+<li><strong>Broadcast WiFi card is not detected</strong></li>
+If your WiFi card is based on the Broadcom chip set you are able to install:
+<code>sudo apt-get update</code>	(enter)
+<code>sudo apt-get install firmware-b43-installer</code>	(enter)
+
+After rebooting the system it should work. If not activate the driver by hand:
+<code>sudo modprobe -r b43 bcma</code>     (enter)
+
+<li><strong>Install Linux Backports Modules</strong></li>
+
+Linux Backports Modules can be installed to get support for many older Wifi cards. Die BackportModule are already part of Labdoo Image for Cloning and installscript-software.sh.
+
+A detailed list of the supported WiFi cards can be found here:
+http://wiki.ubuntuusers.de/WLAN/Linux-backports-modules
+http://wireless.kernel.org/en/users/Drivers
+
+To install execute in a terminal:
+for Lubuntu 12.04: <code>sudo apt-get install linux-backports-modules-cw-3.6-$(uname -r)</code>   (Enter)
+for Lubuntu 10.04: <code>sudo apt-get install linux-backports-modules-wireless-$(uname -r)</code>   (Enter)
+and for alle Lubuntu versiones: <code>sudo apt-get install linux-firmware-nonfree</code>	(Enter)
+
+If it does not work you can try
+
+<li><strong>installation of NdisWrapper</strong></li>
+Details aufhttp://wiki.ubuntuusers.de/WLAN/NdisWrapper
+
+Please check, if
+<ul>
+<li>the 32 Bit or 64 Bit driver of the WiFi card matches with your Lubuntu version (32 or 64 Bit)</li>
+<li>the .inf file of the driver is enclosed, e.g. Intel encloses .inf only in the .zip version, not enclosed in the .exe!</li>
+</ul>
+Follow the instruction in the upper Wiki (please add here an English Wiki link). 
+
+If this does not work try:
+
+<li><strong>...the last try can be to install the native WiFi driver of the manufacturer. Please search in web for more information.</strong></li>
+
+</ol></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>255</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>973</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1014</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>
