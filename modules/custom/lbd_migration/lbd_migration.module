@@ -1,0 +1,594 @@
+<?php
+
+/**
+ * @defgroup labdoo_migration labdooMigration: Implementation of Labdoo migration classes 
+ *
+ * Implements the migration classes to migrate from Labdoo 1.0 to 2.0
+ *
+ */
+
+/*
+ * On the server side:
+ *
+ *   - Add the following line to the [mysql] section of /etc/my.cnf: bind-address=10.138.45.216 where the IP is the IP
+ *     of the server.
+ *   - Run the following command in mysql: GRANT ALL ON trackla_labdoo.* TO trackla@'74.71.239.228' IDENTIFIED BY 'password';
+ *     where the IP is the IP of the client.
+ */
+
+/**
+ * @file
+ * Module file for the Labdoo Migration module
+ *
+ * @ingroup labdoo_migration
+ */
+
+
+/**
+ * Implements hook_migrate_api().
+ */
+function lbd_migration_migrate_api() {
+
+  /*
+   * Declare the api version and migration group.
+   */
+  $api = array(
+    'api' => 2,
+    'groups' => array(
+      // migration from 1.0 to 2.0
+      'lbd_group_1_2' => array(
+        'title' => t('Labdoo 1.0 to 2.0 migrations.'),
+      ),
+      'migrations' => array(),
+    ),
+  );
+
+  /*
+   * Common arguments
+   */
+
+  $common_arguments = array(
+    'source_connection' => 'lbd_d6',
+    'source_version' => 6,
+    'group_name' => 'lbd_group_1_2',
+  );
+
+  //
+  // Dependency ordering: 
+  //   --> roles > users > files > hubs > edoovillages > laptops
+  //   -->                                             > photos (need hubs and edoovillages albums)
+  //   --> newsletters
+  //
+  // Not imported:
+  //   --> dootrips (dootrips were not used in 1.0)
+  //
+
+  /*
+   * Role migration
+   */
+
+  // Use the base migration class as-is.
+  // Roles that are no longer used are mapped to the base 'authenticated user' role.
+  $api['migrations']['lbd_roles'] = $common_arguments + array(
+    'description' => t('Migration of roles from 1.0 to 2.0'),
+    'class_name' => 'DrupalRole6Migration',
+    'role_mappings' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+      'admin' => 'administrator',
+      'root' => 'administrator',
+      'Laptop Administrator' => 'authenticated user',
+      'spam whitelisted' => 'authenticated user',
+      'Edoovillage Administrator' => 'edoovillage manager',
+      'Backup and migrate' => 'authenticated user',
+      'Hub Administrator' => 'hub manager',
+      'Logbook and Newsletter Editor' => 'book writer',
+      'Mass email unsubscribed' => 'authenticated user',
+      'Hub Admin - DACH' => 'authenticated user',
+      'ICanLocalize translator' => 'authenticated user',
+      'ICanLocalize manager' => 'authenticated user',
+      'beta tester' => 'authenticated user',
+    ),
+  );
+ 
+  /*
+   * User migration
+   */
+
+  // Use the base migration class as-is.
+  $api['migrations']['lbd_users'] = $common_arguments + array(
+    'description' => t('Migration of users from 1.0 to 2.0'),
+    'class_name' => 'DrupalUser6Migration',
+    'role_migration' => 'lbd_roles',
+    'dependencies' => array('lbd_roles'),
+  );
+
+  /*
+   * File migration
+   */
+
+  // Do not override file_class so the default MigrateFileUri class is used
+  // No need to preserve directory hierarchy, store all legacy images
+  // under lbd_1_legacy_files.
+  $api['migrations']['lbd_files'] = $common_arguments + array(
+    'class_name' => 'DrupalFile6Migration',
+    'description' => t('Migration of files from 1.0 to 2.0'),
+    'user_migration' => 'lbd_users',
+    'default_uid' => 1,
+    'source_dir' => 'http://www.labdoo.org/',
+    'destination_dir' => 'public://lbd_1_legacy_files/',
+    'dependencies' => array('lbd_users'),
+  );
+ 
+  /*
+   * Node migrations
+   */
+
+  $node_arguments = array(
+
+    'lbd_hubs' => array(
+      'class_name' => 'LbdHubNode6Migration',
+      'description' => t('Migration of hub nodes from 1.0 to 2.0'),
+      'source_type' => 'hub',
+      'destination_type' => 'hub',
+      'dependencies' => array('lbd_files'),
+    ),
+
+    'lbd_edoovillages' => array(
+      'class_name' => 'LbdEdoovillageNode6Migration',
+      'description' => t('Migration of edoovillage nodes from 1.0 to 2.0'),
+      'source_type' => 'project_site',
+      'destination_type' => 'edoovillage',
+      'dependencies' => array('lbd_hubs'),
+    ),
+
+    'lbd_doojects' => array(
+      'class_name' => 'LbdDoojectNode6Migration',
+      'description' => t('Migration of dooject nodes from 1.0 to 2.0'),
+      'source_type' => 'laptop',
+      'destination_type' => 'laptop',
+      'dependencies' => array('lbd_edoovillages'),
+    ),
+
+    'lbd_photos' => array(
+      'class_name' => 'LbdPhotoNode6Migration',
+      'description' => t('Migration of gallery photo nodes from 1.0 to 2.0'),
+      'source_type' => 'gallery_image',
+      'destination_type' => 'node_gallery_item',
+      'dependencies' => array('lbd_edoovillages'),
+    ),
+
+  );
+
+  // Tell the node migrations where the users are coming from
+  $common_node_arguments = $common_arguments + array(
+      'user_migration' => 'lbd_users'
+    );
+
+  // Register the node migrations
+  foreach ($node_arguments as $migration_name => $arguments) {
+    $arguments = array_merge_recursive($arguments, $common_node_arguments);
+    $api['migrations'][$migration_name] = $arguments;
+  }
+
+  return $api;
+}
+
+
+/**
+ * Common mappings for node migrations.
+ */
+abstract class LbdNode6Migration extends DrupalNode6Migration {
+  public function __construct(array $arguments) {
+    parent::__construct($arguments);
+  }
+
+  function __map_location($node, stdClass $row) {
+
+    // Fetch location from old node
+    $fetched_lid = Database::getConnection('default', $this->sourceConnection)
+                   ->select('location_instance', 'i')
+                   ->fields('i', array('lid'))
+                   ->condition('vid', $row->vid)
+                   ->execute()
+                   ->fetchObject();
+
+    if (!$fetched_lid) 
+      return;
+
+    $loc = Database::getConnection('default', $this->sourceConnection)
+           ->select('location', 'i')
+           ->fields('i', array('name', 'street', 'additional', 'city', 'province', 'country', 'latitude', 'longitude'))
+           ->condition('lid', $fetched_lid->lid)
+           ->execute()
+           ->fetchObject();  
+
+    if(!$loc)
+      return;
+
+    $location = array('name'       => $loc->name,
+                      'street'     => $loc->street,
+                      'additional' => $loc->additional,
+                      'city'       => $loc->city,
+                      'province'   => $loc->province,
+                      'country'    => $loc->country,
+                      'latitude'   => $loc->latitude,
+                      'longitude'  => $loc->longitude,
+                      'inhibit_geocode' => TRUE,
+                     );
+    $lid = location_save($location);
+
+    if($lid == FALSE)
+      return;
+
+    $instance = array('nid' => $node->nid,
+                      'vid' => $node->vid,
+                      'uid' => $node->uid,
+                      'genid' => '',
+                      'lid' => $lid,
+                     );
+    db_insert('location_instance')->fields($instance)->execute();
+  }
+}
+
+
+/*
+ * Mappings for hub node migrations
+ */
+class LbdHubNode6Migration extends LbdNode6Migration {
+
+  // Field mappings
+  public function __construct(array $arguments) {
+    parent::__construct($arguments);
+    $this->addFieldMapping('field_hub_manager_s_', 'field_hub_point_of_contact')
+         ->sourceMigration('lbd_users');
+    $this->addFieldMapping('field_types_of_mini_missions')->defaultValue('HUBTYPE0,HUBTYPE1')->separator(',');  
+    $this->addFieldMapping('field_parent_hub');              // stub
+    $this->addFieldMapping('field_branches_information');    // stub
+    $this->addFieldMapping('field_hub_additional_editors');  // stub
+  }
+
+  // More complex mappings (such as location) are implemented with the complete
+  // method (running at the end of this migration)
+  public function complete($node, stdClass $row) {
+    $this->__map_location($node, $row);
+    $loadedNode = node_load($node->nid);
+    // The action was not created upon saving this node because its location had
+    // still not being stored. So go ahead an generate an action now.
+    lbd_generate_action_node($loadedNode);
+  } 
+}
+
+
+/*
+ * Mappings for hub node migrations
+ */
+class LbdEdoovillageNode6Migration extends LbdNode6Migration {
+
+  // Field mappings
+  public function __construct(array $arguments) {
+    parent::__construct($arguments);
+    $this->addFieldMapping('field_project_summary', 'field_project_small_summary');
+    $this->addFieldMapping('field_project_description', 'field_project_summary');
+    $this->addFieldMapping('field_number_of_students', 'field_number_students_');
+    $this->addFieldMapping('field_number_of_teachers', 'field_number_teachers_');
+    $this->addFieldMapping('field_number_of_laptops_needed', 'field_laptops_needed');
+    $this->addFieldMapping('field_doojects_additional_notes'); // stub
+    $this->addFieldMapping('field_hub', 'field_project_hub')->sourceMigration('lbd_hubs');
+    $this->addFieldMapping('field_project_manager_s_', 'field_manager')->sourceMigration('lbd_users');
+    $this->addFieldMapping('field_on_site_point_of_contact', 'field_onsite_contact');
+    $this->addFieldMapping('field_project_application', 'field_project_application')->sourceMigration('lbd_files');
+    $this->addFieldMapping('field_edoovillage_status', 'field_project_status')->callbacks(array($this, 'updateProjectStatus'));
+    $this->addFieldMapping('field_semaphore')->defaultValue('yellow');
+    $this->addFieldMapping('field_local_language_s_', 'field_project_local_language');
+    $this->addFieldMapping('field_additional_info_language');  // stub
+    $this->addFieldMapping('field_socket_voltage', 'field_socket_voltage')->callbacks(array($this, 'updateSocketVoltage'));;
+    $this->addFieldMapping('field_socket_type', 'field_socket_type');
+    // There is no good way to migrate this, but more than 90% of projects use wired or wireless, 
+    // so set this as default and have edoovillage managers manually adjust it
+    $this->addFieldMapping('field_internet_connection_type')->defaultValue('wiredOrWireless'); 
+    $this->addFieldMapping('field_internet_additional_notes'); // stub
+    $this->addFieldMapping('field_additional_files');          // stub
+    $this->addFieldMapping('field_edoo_additional_followers'); // stub
+    //$this->addFieldMapping('field_edoovillage_photo_album');   // stub
+    $this->addFieldMapping('field_edoo_additional_notif_em');  // stub
+    $this->addFieldMapping('field_edoo_additional_editors');   // stub
+  }
+
+  protected function updateProjectStatus($field_edoovillage_status) {
+    if(strpos($field_edoovillage_status[0], 'Open') !== false) 
+      $field_edoovillage_status[0] = 'open';
+    else if(strpos($field_edoovillage_status[0], 'Completed') !== false) 
+      $field_edoovillage_status[0] = 'completed';
+    else
+      $field_edoovillage_status[0] = 'open';
+    return $field_edoovillage_status;
+  }
+
+  protected function updateSocketVoltage($field_socket_voltage) {
+    if(strpos($field_socket_voltage[0], '220-240 Volts') !== false) 
+      $field_socket_voltage[0] = '220';
+    else if(strpos($field_socket_voltage[0], '220-240 Volts') !== false) 
+      $field_socket_voltage[0] = '120';
+    else
+      $field_socket_voltage[0] = '';
+    return $field_socket_voltage[0];
+  }
+
+
+  // Additional customized mappings
+  public function complete($node, stdClass $row) {
+    $this->__map_location($node, $row);
+    $loadedNode = node_load($node->nid);
+    lbd_generate_action_node($loadedNode);
+    $loadedNode = node_load($node->nid);
+    node_save($loadedNode);
+    return;
+  } 
+
+}
+
+
+/*
+ * Mappings for dooject node migrations
+ */
+class LbdDoojectNode6Migration extends LbdNode6Migration {
+
+  // Field mappings
+  public function __construct(array $arguments) {
+    parent::__construct($arguments);
+    $this->addFieldMapping('field_status', 'field_status');
+    $this->addFieldMapping('field_model', 'field_model');
+    $this->addFieldMapping('field_serial_number', 'field_laptop_serial_number');
+    $this->addFieldMapping('field_edoovillage_destination', 'field_destination_project')->sourceMigration('lbd_edoovillages');
+    $this->addFieldMapping('field_hub_laptop', 'field_laptop_source_group')->sourceMigration('lbd_hubs');
+    $this->addFieldMapping('field_picture', 'field_picture')->sourceMigration('lbd_files');
+    $this->addFieldMapping('field_device_type', 'field_dev_type')->callbacks(array($this, 'updateDeviceType'));
+    $this->addFieldMapping('field_manager', 'field_current_manager')->sourceMigration('lbd_users');
+    $this->addFieldMapping('field_tagger', 'field_tagger_user')->sourceMigration('lbd_users');;
+    $this->addFieldMapping('field_cpu', 'field_cpu');
+    $this->addFieldMapping('field_cpu_type', 'field_cpu_type')->callbacks(array($this, 'updateCpuType'));
+    $this->addFieldMapping('field_memory', 'field_memory');
+    $this->addFieldMapping('field_hard_drive', 'field_hard_drive');
+    $this->addFieldMapping('field_battery_duration');  // stub
+    $this->addFieldMapping('field_keyboard', 'field_laptop_keyboard_type');
+    $this->addFieldMapping('field_current_operating_system', 'field_current_os');
+    $this->addFieldMapping('field_dooject_weight', 'field_laptop_weight');
+    $this->addFieldMapping('field_volts');                // stub
+    $this->addFieldMapping('field_amp_hours');            // stub
+    $this->addFieldMapping('field_battery_watt_hours');   // stub
+    $this->addFieldMapping('field_dootrips');             // stub
+    $this->addFieldMapping('field_additional_editors');   // stub
+    $this->addFieldMapping('field_additional_followers'); // stub
+    $this->addFieldMapping('field_additional_notification_em', 'field_laptop_emails_list')->callbacks(array($this, 'updateEmailsList'));;
+    $this->addFieldMapping('field_additional_notes', 'field_notes');
+  }
+
+  protected function updateDeviceType($field_device_type) {
+    if(strpos($field_device_type, 'Laptop') !== false) 
+      $field_device_type = 'laptop';
+    else if(strpos($field_device_type, 'Google phone') !== false) 
+      $field_device_type = 'googlePhone';
+    else if(strpos($field_device_type, 'iPhone') !== false) 
+      $field_device_type = 'iphone';
+    else if(strpos($field_device_type, 'Internet tablet') !== false) 
+      $field_device_type = 'internetTablet';
+    else if(strpos($field_device_type, 'Desktop') !== false) 
+      $field_device_type = 'desktop';
+    else if(strpos($field_device_type, 'BlackBerry') !== false) 
+      $field_device_type = 'blackberry';
+    else if(strpos($field_device_type, 'SmartPhone') !== false) 
+      $field_device_type = 'smartphone';
+    else if(strpos($field_device_type, 'eBook reader') !== false) 
+      $field_device_type = 'ebook';
+    else
+      $field_device_type = 'laptop';
+    return $field_device_type;
+  }
+
+  protected function updateCpuType($field_cpu_type) {
+    if(strpos($field_cpu_type, 'Single core') !== false) 
+      $field_cpu_type = '1';
+    else if(strpos($field_cpu_type, 'Duo core') !== false) 
+      $field_cpu_type = '2';
+    else if(strpos($field_cpu_type, '3') !== false) 
+      $field_cpu_type = '3';
+    else if(strpos($field_cpu_type, '4') !== false) 
+      $field_cpu_type = '4';
+    else if(strpos($field_cpu_type, '5') !== false) 
+      $field_cpu_type = '5';
+    else if(strpos($field_cpu_type, '6') !== false) 
+      $field_cpu_type = '6';
+    else if(strpos($field_cpu_type, '7') !== false) 
+      $field_cpu_type = '7';
+    else if(strpos($field_cpu_type, '8') !== false) 
+      $field_cpu_type = '8';
+    else
+      $field_cpu_type = '1';
+    return $field_cpu_type;
+  }
+
+  protected function updateEmailsList($field_laptop_emails_list) {
+    // Return empty string since the email list will be fixed in the complete() method  
+    return("");
+  }
+
+  public function prepareRow($row) {
+    if (parent::prepareRow($row) === FALSE) {
+      return FALSE;
+    }
+
+    // Status field
+    if(strpos($row->field_status, 'S0') !== false) 
+      $row->field_status = 'S0';
+    else if(strpos($row->field_status, 'S1') !== false) 
+      $row->field_status = 'S1';
+    else if(strpos($row->field_status, 'S2') !== false)
+      $row->field_status = 'S2';
+    else if(strpos($row->field_status, 'S3') !== false)
+      $row->field_status = 'S3';
+    else if(strpos($row->field_status, 'S4') !== false)
+      $row->field_status = 'S4';
+    else if(strpos($row->field_status, 'S5') !== false)
+      $row->field_status = 'S5';
+    else if(strpos($row->field_status, 'S6') !== false)
+      $row->field_status = 'S6';
+    else if(strpos($row->field_status, 'S7') !== false)
+      $row->field_status = 'S7';
+    else if(strpos($row->field_status, 'S8') !== false)
+      $row->field_status = 'S8';
+    else if(strpos($row->field_status, 'S9') !== false)
+      $row->field_status = 'S9';
+    else if(strpos($row->field_status, 'T1') !== false)
+      $row->field_status = 'T1';
+    else if(strpos($row->field_status, 'T2') !== false)
+      $row->field_status = 'T2';
+    else if(strpos($row->field_status, 'lost') !== false)
+      $row->field_status = 'L1';
+    else
+      $row->field_status = 'S0'; // default value if none of the above
+
+    return;
+  }
+
+  function __set_email_list($node, $row) {
+
+    if($row->field_laptop_emails_list == "")
+      return;
+
+    $wNode = entity_metadata_wrapper('node', node_load($node->nid));
+    $destEmailList = array();
+    $origEmailList = explode(",", $row->field_laptop_emails_list);
+    foreach($origEmailList as $origEmail) {
+      $origEmail = trim($origEmail);
+      $destEmailList[] = $origEmail;
+    }
+
+    $wNode->field_additional_notification_em->set($destEmailList);
+    $wNode->save();
+    return;
+  } 
+
+  function __set_dooject_title($node, $row) {
+    $loadedNode = node_load($node->nid);
+    $loadedNode->title = $row->title;
+    node_save($loadedNode);
+
+    $oldPath = path_load(
+      array('source' => 'node/' . $node->nid)
+    );
+    path_delete($oldPath['pid']);
+
+    $newPath = array();
+    $newPath['source'] = 'node/' . $node->nid;
+    $newPath['alias'] = 'laptop/' . $row->title; 
+    path_save($newPath);
+  } 
+
+  // Additional customized mappings
+  public function complete($node, stdClass $row) {
+    $this->__map_location($node, $row);
+    $this->__set_email_list($node, $row);
+    $this->__set_dooject_title($node, $row);
+    $loadedNode = node_load($node->nid);
+    lbd_generate_action_node($loadedNode);
+    return;
+  } 
+
+}
+
+
+/*
+ * Mappings for hub node migrations
+ */
+class LbdPhotoNode6Migration extends LbdNode6Migration {
+
+  // Field mappings
+  public function __construct(array $arguments) {
+    parent::__construct($arguments);
+    $this->addFieldMapping('node_gallery_media', 'field_gallery_image')
+         ->sourceMigration('lbd_files')
+         ->callbacks(array($this, 'updateGalleryMedia'));
+    $this->addFieldMapping('node_gallery_media:file_class')
+         ->defaultValue('MigrateFileFid');
+    $this->addFieldMapping('node_gallery_media:preserve_files')
+         ->defaultValue('TRUE');
+    $this->addFieldMapping('node_gallery_media:title')
+         ->defaultValue('');
+    $this->addFieldMapping('node_gallery_ref_1', 'field_gallery')
+         ->sourceMigration(array('lbd_edoovillages', 'lbd_hubs'))
+         ->callbacks(array($this, 'updateNodeGallery'));
+  }
+
+  protected function updateGalleryMedia($node_gallery_media) {
+    return $node_gallery_media;
+  }
+
+  public function prepareRow($row) {
+    if (parent::prepareRow($row) === FALSE) {
+      return FALSE;
+    }
+
+    $row->title = 'Picture';
+
+    //
+    // This is a bit tricky because in 1.0, the way galleries and edoovillages/hubs are
+    // connected follow different conventions, but the following approach works:
+    //
+    // Given a gallery ID ($node_gallery_ref_1), do a look up on the table content_type_gallery:
+    //   - If the field field_edoovillage_url_value is of the form node/$nodeid, 
+    //     then the edoovillage/hub node ID is $nodeid
+    //   - Otherwise, the edoovillage/hub node ID is equal to the nid column minus 1.
+    //
+
+    $nodeUrl = Database::getConnection('default', $this->sourceConnection)
+               ->select('content_type_gallery', 'i')
+               ->fields('i', array('field_edoovillage_url_value'))
+               ->condition('nid', $row->field_gallery)
+               ->execute()
+               ->fetchObject();
+    if(!$nodeUrl)
+      return;
+
+    $urlParts = explode("/", $nodeUrl->field_edoovillage_url_value);
+
+    if($urlParts[0] == 'node' && is_numeric($urlParts[1]))
+      $srcEdoovillageOrHubNodeId = $urlParts[1];
+    else
+      $srcEdoovillageOrHubNodeId = $node_gallery_ref_1 - 1;
+
+    //
+    // Strategy:
+    //   Now we have figured out the source edoovillage or hub node ID associated with this photo's album.
+    //   Next, the system will run sourceMigration(array('lbd_edoovillages', 'lbd_hubs')) to obtain
+    //   the destination edoovillage or hub node ID. This will be passed to the callback updateNodeGallery(),
+    //   which will compute the final destination photo album.
+    //
+
+    $row->field_gallery = $srcEdoovillageOrHubNodeId;
+    return;
+  }
+
+  protected function updateNodeGallery($node_gallery_ref_1) {
+
+    // We are given the destination edoovillage or hub node ID and we need to find the photo album. 
+    // First assume it is an edoovillage photo album. If it can't find it, then assume it is a hub photo album.
+    $query = "SELECT field_edoovillage_photo_album_target_id FROM field_data_field_edoovillage_photo_album WHERE entity_id=$node_gallery_ref_1";
+    $albumNodeId = db_query($query)->fetchField();
+//drupal_set_message('albumNodeId (edoov.):' . $albumNodeId);
+    if($albumNodeId) {
+      return $albumNodeId;
+    }
+
+    $query = "SELECT field_hub_photo_album_target_id FROM field_data_field_hub_photo_album WHERE entity_id=$node_gallery_ref_1";
+    $albumNodeId = db_query($query)->fetchField();
+//drupal_set_message('albumNodeId (hub):' . $albumNodeId);
+    if($albumNodeId)
+      return $albumNodeId;
+
+    // It was not found, return the original value
+    return $node_gallery_ref_1;
+  }
+
+}
+

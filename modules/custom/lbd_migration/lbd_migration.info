@@ -1,0 +1,11 @@
+name = Labdoo Migration 
+description = Implements the migration classes to move content from Labdoo 1.0 to 2.0 
+core = 7.x
+package = Labdoo 
+
+dependencies[] = migrate 
+dependencies[] = migrate_d2d 
+
+files[] = user.inc
+files[] = node.inc
+
