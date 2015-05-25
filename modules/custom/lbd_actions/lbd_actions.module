@@ -280,7 +280,7 @@ function _create_activity_node($actionType, $title, $body, $location, $streamIt,
  *
  */
 function lbd_actions_node_insert($node) {
-  _generate_labdoo_action($node);
+  lbd_generate_action_node($node);
   return;
 }
 
@@ -290,16 +290,16 @@ function lbd_actions_node_insert($node) {
  *
  */
 function lbd_actions_node_update($node) {
-  _generate_labdoo_action($node);
+  lbd_generate_action_node($node);
   return;
 }
 
 
 /*
- * _generate_labdoo_action 
+ * lbd_generate_action_node 
  *
  */
-function _generate_labdoo_action($node) {
+function lbd_generate_action_node($node) {
   $hubId = $edoovillageId = NULL;
 
   if($node->type != 'laptop' && $node->type != 'edoovillage' && $node->type != 'hub' && $node->type != 'dootrip') 
@@ -311,6 +311,12 @@ function _generate_labdoo_action($node) {
   }
   else 
     $location = $node->locations[0];
+
+  // Sanity check: if there is no location, return. This is needed to make certain 
+  // node migrations work, since in certain scenarios the location is not populated
+  // after the node has been temporarily saved first.
+  if(!$location)
+    return;
 
   // Compute location where the action takes place
   $thisCountry = labdoo_country_code2name($location['country']);

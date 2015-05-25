@@ -81,11 +81,15 @@ function _update_dooject_location_from_edoovillage($node) {
   $query = "SELECT field_edoovillage_destination_target_id 
             FROM field_data_field_edoovillage_destination WHERE entity_id=$node->nid";
   $edoovillageId = db_query($query)->fetchField();
+  if(!$edoovillageId)
+    return;
 
   // Get the location id of the destination project
   $query = "SELECT lid FROM location_instance project 
             WHERE vid=(SELECT MAX(vid) FROM location_instance WHERE nid=project.nid) AND (nid=$edoovillageId)";
   $edoovillageLid = db_query($query)->fetchField();
+  if(!$edoovillageLid)
+    return;
 
   // Update the location of the laptop to be that of the destination project
   $query = "SELECT vid FROM location_instance project 
@@ -126,6 +130,8 @@ function _update_book_reference($node) {
  *   Latitude returned as result
  * @param string $long
  *   Longitude returned as result 
+ * @param boolean $silent
+ *   If true, do not display warning messages
  * @param street $street
  *   Street name
  * @param string $state
@@ -138,19 +144,21 @@ function _update_book_reference($node) {
  *   Returns -1 if it could not resolve the query, 0 otherwise.
  *
  */
-function labdoo_lookup_coordinates($country, $city, &$lat, &$lon, $street="", $state="", $zip="", $accuracy=100) {
+function labdoo_lookup_coordinates($country, $city, &$lat, &$lon, $silent=True, $street="", $state="", $zip="", $accuracy=100) {
     # There are various online services to pull the GPS  
     # coordinates of a location. Use one of them.
     $locationString = $street . "+" . $city . "+" . $zip . "+" . $country;
     $query = str_replace(' ', '+', 'https://maps.googleapis.com/maps/api/geocode/json?address='.$locationString);
     $mapQuery = drupal_http_request($query);
     if(!property_exists($mapQuery, 'data')) {
-      drupal_set_message(t('Could not resolve coordinates from the given city and country names.'), 'warning', FALSE);
+      if($silent == False)
+        drupal_set_message(t('Could not resolve coordinates from the given city and country names.'), 'warning', FALSE);
       return -1;
     }
     $mapQueryDecoded = drupal_json_decode($mapQuery->data);
     if(!isset($mapQueryDecoded['results'][0])) {
-      drupal_set_message(t('Could not resolve coordinates from the given city and country names.'), 'warning', FALSE);
+      if($silent == False)
+        drupal_set_message(t('Could not resolve coordinates from the given city and country names.'), 'warning', FALSE);
       return -1;
     }
     $coordinates = $mapQueryDecoded['results'][0]['geometry']['location'];
@@ -564,13 +572,15 @@ function labdoo_dooject_extract_emails($node) {
       array_push($emailSet, $userObj->mail);
     }
  
-    if($node->field_additional_followers) {
-      foreach(field_get_items('node', $node, 'field_additional_followers') as $element) {
-        $userObj = user_load($element['target_id']);
-        if(in_array($userObj->mail, $emailSet))
-          continue;
-        $emailsList = $emailsList . ", " . $userObj->mail;
-        array_push($emailSet, $userObj->mail);
+    if(property_exists($node, 'field_additional_followers')) {
+      if($node->field_additional_followers) {
+        foreach(field_get_items('node', $node, 'field_additional_followers') as $element) {
+          $userObj = user_load($element['target_id']);
+          if(in_array($userObj->mail, $emailSet))
+            continue;
+          $emailsList = $emailsList . ", " . $userObj->mail;
+          array_push($emailSet, $userObj->mail);
+        }
       }
     }
 
@@ -776,7 +786,7 @@ function labdoo_lib_node_presave($node) {
   if($node->type == 'laptop') {
     // If not set, make a best estimate of its GPS coordinates
     $location = $node->locations[0]; 
-    if(!array_key_exists('latitude', $location) || !array_key_exists('longitude', $location)) {
+    if($location && (!array_key_exists('latitude', $location) || !array_key_exists('longitude', $location))) {
       // Attempt to find out the coordinates.
       // Latitude and longitude are passed as reference.
       $ret = labdoo_lookup_coordinates($location['country'], 
@@ -874,6 +884,14 @@ function labdoo_lib_node_presave($node) {
     if($node->field_is_first_page[$node->language][0]['value'] == 1)  {
       $node->field_reference_book[$node->language][0]['target_id'] = $node->nid;
     }
+  }
+
+  // If it's a newly created picture for a photo album, set the title
+  // to "Picture". Trick: instead of using 'original' to check if this
+  // is a new node, we use 'vid' because it is a more reliable indicator
+  // due to the way photo albums allow users to modify and save pics.
+  if(!property_exists($node, 'vid') && $node->type == 'node_gallery_item') {
+    $node->title = "Picture";
   }
 
   return;
@@ -1096,7 +1114,7 @@ function _update_city($lid, &$objectsCount) {
   $lat = db_query($query)->fetchObject()->latitude;
   $lon = db_query($query)->fetchObject()->longitude;
   if($lat == 0 and $lon == 0)
-    labdoo_lookup_coordinates($country, $city, $lat, $lon);
+    labdoo_lookup_coordinates($country, $city, $lat, $lon, $silent=True);
 
   if(array_key_exists($country, $country_names))
     $countryExt = $country_names[$country];
@@ -1964,6 +1982,8 @@ function labdoo_block_filter_superhub_menu() {
     return FALSE;
 
   $node = node_load(arg(1));
+  if(!$node)
+    return FALSE;
   if(!isset($types[$node->type]))
     return FALSE;
 
@@ -2526,6 +2546,8 @@ function labdoo_lib_node_is_type($typesList, $onlyView = True) {
     return FALSE;
 
   $node = node_load(arg(1));
+  if(!$node)
+    return FALSE;
   if(!in_array($node->type, $typesList))
     return FALSE;
 
