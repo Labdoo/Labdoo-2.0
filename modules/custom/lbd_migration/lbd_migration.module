@@ -57,10 +57,10 @@ function lbd_migration_migrate_api() {
   // Dependency ordering: 
   //   --> roles > users > files > hubs > edoovillages > laptops
   //   -->                                             > photos (need hubs and edoovillages albums)
-  //   --> newsletters
   //
   // Not imported:
   //   --> dootrips (dootrips were not used in 1.0)
+  //   --> newsletters (easier to import manually)
   //
 
   /*
@@ -269,7 +269,7 @@ class LbdEdoovillageNode6Migration extends LbdNode6Migration {
   public function __construct(array $arguments) {
     parent::__construct($arguments);
     $this->addFieldMapping('field_project_summary', 'field_project_small_summary');
-    $this->addFieldMapping('field_project_description', 'field_project_summary');
+    $this->addFieldMapping('field_project_description', 'field_project_summary')->callbacks(array($this, 'updateProjectDescription'));
     $this->addFieldMapping('field_number_of_students', 'field_number_students_');
     $this->addFieldMapping('field_number_of_teachers', 'field_number_teachers_');
     $this->addFieldMapping('field_number_of_laptops_needed', 'field_laptops_needed');
@@ -277,7 +277,11 @@ class LbdEdoovillageNode6Migration extends LbdNode6Migration {
     $this->addFieldMapping('field_hub', 'field_project_hub')->sourceMigration('lbd_hubs');
     $this->addFieldMapping('field_project_manager_s_', 'field_manager')->sourceMigration('lbd_users');
     $this->addFieldMapping('field_on_site_point_of_contact', 'field_onsite_contact');
-    $this->addFieldMapping('field_project_application', 'field_project_application')->sourceMigration('lbd_files');
+    $this->addFieldMapping('field_project_application', 'field_project_application')
+         ->sourceMigration('lbd_files')
+         ->callbacks(array($this, 'updateProjectApplication'));
+    $this->addFieldMapping('field_project_application:file_class')->defaultValue('MigrateFileFid');
+    $this->addFieldMapping('field_project_application:preserve_files')->defaultValue('TRUE');
     $this->addFieldMapping('field_edoovillage_status', 'field_project_status')->callbacks(array($this, 'updateProjectStatus'));
     $this->addFieldMapping('field_semaphore')->defaultValue('yellow');
     $this->addFieldMapping('field_local_language_s_', 'field_project_local_language');
@@ -293,6 +297,15 @@ class LbdEdoovillageNode6Migration extends LbdNode6Migration {
     //$this->addFieldMapping('field_edoovillage_photo_album');   // stub
     $this->addFieldMapping('field_edoo_additional_notif_em');  // stub
     $this->addFieldMapping('field_edoo_additional_editors');   // stub
+  }
+
+  protected function updateProjectDescription($field_project_description) {
+    $strippedText = preg_replace("/[[:blank:]]+/"," ", strip_tags(html_entity_decode($field_project_description)));
+    return $strippedText;
+  }
+
+  protected function updateProjectApplication($field_project_application) {
+    return $field_project_application;
   }
 
   protected function updateProjectStatus($field_edoovillage_status) {
@@ -507,8 +520,7 @@ class LbdPhotoNode6Migration extends LbdNode6Migration {
   public function __construct(array $arguments) {
     parent::__construct($arguments);
     $this->addFieldMapping('node_gallery_media', 'field_gallery_image')
-         ->sourceMigration('lbd_files')
-         ->callbacks(array($this, 'updateGalleryMedia'));
+         ->sourceMigration('lbd_files');
     $this->addFieldMapping('node_gallery_media:file_class')
          ->defaultValue('MigrateFileFid');
     $this->addFieldMapping('node_gallery_media:preserve_files')
@@ -518,10 +530,6 @@ class LbdPhotoNode6Migration extends LbdNode6Migration {
     $this->addFieldMapping('node_gallery_ref_1', 'field_gallery')
          ->sourceMigration(array('lbd_edoovillages', 'lbd_hubs'))
          ->callbacks(array($this, 'updateNodeGallery'));
-  }
-
-  protected function updateGalleryMedia($node_gallery_media) {
-    return $node_gallery_media;
   }
 
   public function prepareRow($row) {
@@ -535,11 +543,13 @@ class LbdPhotoNode6Migration extends LbdNode6Migration {
     // This is a bit tricky because in 1.0, the way galleries and edoovillages/hubs are
     // connected follow different conventions, but the following approach works:
     //
-    // Given a gallery ID ($node_gallery_ref_1), do a look up on the table content_type_gallery:
+    // Given a gallery ID ($row->field_gallery), do a look up on the table content_type_gallery:
     //   - If the field field_edoovillage_url_value is of the form node/$nodeid, 
     //     then the edoovillage/hub node ID is $nodeid
     //   - Otherwise, the edoovillage/hub node ID is equal to the nid column minus 1.
     //
+
+    drupal_set_message('source gallery ID:' . $row->field_gallery);
 
     $nodeUrl = Database::getConnection('default', $this->sourceConnection)
                ->select('content_type_gallery', 'i')
@@ -555,7 +565,7 @@ class LbdPhotoNode6Migration extends LbdNode6Migration {
     if($urlParts[0] == 'node' && is_numeric($urlParts[1]))
       $srcEdoovillageOrHubNodeId = $urlParts[1];
     else
-      $srcEdoovillageOrHubNodeId = $node_gallery_ref_1 - 1;
+      $srcEdoovillageOrHubNodeId = $row->field_gallery - 1;
 
     //
     // Strategy:
@@ -575,14 +585,14 @@ class LbdPhotoNode6Migration extends LbdNode6Migration {
     // First assume it is an edoovillage photo album. If it can't find it, then assume it is a hub photo album.
     $query = "SELECT field_edoovillage_photo_album_target_id FROM field_data_field_edoovillage_photo_album WHERE entity_id=$node_gallery_ref_1";
     $albumNodeId = db_query($query)->fetchField();
-//drupal_set_message('albumNodeId (edoov.):' . $albumNodeId);
+    drupal_set_message('albumNodeId (edoov.):' . $albumNodeId);
     if($albumNodeId) {
       return $albumNodeId;
     }
 
     $query = "SELECT field_hub_photo_album_target_id FROM field_data_field_hub_photo_album WHERE entity_id=$node_gallery_ref_1";
     $albumNodeId = db_query($query)->fetchField();
-//drupal_set_message('albumNodeId (hub):' . $albumNodeId);
+    drupal_set_message('albumNodeId (hub):' . $albumNodeId);
     if($albumNodeId)
       return $albumNodeId;
 
