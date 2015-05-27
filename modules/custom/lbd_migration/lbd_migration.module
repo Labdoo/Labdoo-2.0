@@ -243,9 +243,9 @@ class LbdHubNode6Migration extends LbdNode6Migration {
     $this->addFieldMapping('field_hub_manager_s_', 'field_hub_point_of_contact')
          ->sourceMigration('lbd_users');
     $this->addFieldMapping('field_types_of_mini_missions')->defaultValue('HUBTYPE0,HUBTYPE1')->separator(',');  
-    $this->addFieldMapping('field_parent_hub');              // stub
-    $this->addFieldMapping('field_branches_information');    // stub
-    $this->addFieldMapping('field_hub_additional_editors');  // stub
+    // $this->addFieldMapping('field_parent_hub');              // stub
+    // $this->addFieldMapping('field_branches_information');    // stub
+    // $this->addFieldMapping('field_hub_additional_editors');  // stub
   }
 
   // More complex mappings (such as location) are implemented with the complete
@@ -273,7 +273,7 @@ class LbdEdoovillageNode6Migration extends LbdNode6Migration {
     $this->addFieldMapping('field_number_of_students', 'field_number_students_');
     $this->addFieldMapping('field_number_of_teachers', 'field_number_teachers_');
     $this->addFieldMapping('field_number_of_laptops_needed', 'field_laptops_needed');
-    $this->addFieldMapping('field_doojects_additional_notes'); // stub
+    // $this->addFieldMapping('field_doojects_additional_notes'); // stub
     $this->addFieldMapping('field_hub', 'field_project_hub')->sourceMigration('lbd_hubs');
     $this->addFieldMapping('field_project_manager_s_', 'field_manager')->sourceMigration('lbd_users');
     $this->addFieldMapping('field_on_site_point_of_contact', 'field_onsite_contact');
@@ -285,18 +285,18 @@ class LbdEdoovillageNode6Migration extends LbdNode6Migration {
     $this->addFieldMapping('field_edoovillage_status', 'field_project_status')->callbacks(array($this, 'updateProjectStatus'));
     $this->addFieldMapping('field_semaphore')->defaultValue('yellow');
     $this->addFieldMapping('field_local_language_s_', 'field_project_local_language');
-    $this->addFieldMapping('field_additional_info_language');  // stub
+    // $this->addFieldMapping('field_additional_info_language');  // stub
     $this->addFieldMapping('field_socket_voltage', 'field_socket_voltage')->callbacks(array($this, 'updateSocketVoltage'));;
     $this->addFieldMapping('field_socket_type', 'field_socket_type');
     // There is no good way to migrate this, but more than 90% of projects use wired or wireless, 
     // so set this as default and have edoovillage managers manually adjust it
     $this->addFieldMapping('field_internet_connection_type')->defaultValue('wiredOrWireless'); 
-    $this->addFieldMapping('field_internet_additional_notes'); // stub
-    $this->addFieldMapping('field_additional_files');          // stub
-    $this->addFieldMapping('field_edoo_additional_followers'); // stub
-    //$this->addFieldMapping('field_edoovillage_photo_album');   // stub
-    $this->addFieldMapping('field_edoo_additional_notif_em');  // stub
-    $this->addFieldMapping('field_edoo_additional_editors');   // stub
+    // $this->addFieldMapping('field_internet_additional_notes'); // stub
+    // $this->addFieldMapping('field_additional_files');          // stub
+    // $this->addFieldMapping('field_edoo_additional_followers'); // stub
+    // $this->addFieldMapping('field_edoovillage_photo_album');   // stub
+    // $this->addFieldMapping('field_edoo_additional_notif_em');  // stub
+    // $this->addFieldMapping('field_edoo_additional_editors');   // stub
   }
 
   protected function updateProjectDescription($field_project_description) {
@@ -356,6 +356,8 @@ class LbdDoojectNode6Migration extends LbdNode6Migration {
     $this->addFieldMapping('field_edoovillage_destination', 'field_destination_project')->sourceMigration('lbd_edoovillages');
     $this->addFieldMapping('field_hub_laptop', 'field_laptop_source_group')->sourceMigration('lbd_hubs');
     $this->addFieldMapping('field_picture', 'field_picture')->sourceMigration('lbd_files');
+    $this->addFieldMapping('field_picture:file_class')->defaultValue('MigrateFileFid');
+    $this->addFieldMapping('field_picture:preserve_files')->defaultValue('TRUE');
     $this->addFieldMapping('field_device_type', 'field_dev_type')->callbacks(array($this, 'updateDeviceType'));
     $this->addFieldMapping('field_manager', 'field_current_manager')->sourceMigration('lbd_users');
     $this->addFieldMapping('field_tagger', 'field_tagger_user')->sourceMigration('lbd_users');;
@@ -363,16 +365,16 @@ class LbdDoojectNode6Migration extends LbdNode6Migration {
     $this->addFieldMapping('field_cpu_type', 'field_cpu_type')->callbacks(array($this, 'updateCpuType'));
     $this->addFieldMapping('field_memory', 'field_memory');
     $this->addFieldMapping('field_hard_drive', 'field_hard_drive');
-    $this->addFieldMapping('field_battery_duration');  // stub
+    // $this->addFieldMapping('field_battery_duration');  // stub
     $this->addFieldMapping('field_keyboard', 'field_laptop_keyboard_type');
     $this->addFieldMapping('field_current_operating_system', 'field_current_os');
     $this->addFieldMapping('field_dooject_weight', 'field_laptop_weight');
-    $this->addFieldMapping('field_volts');                // stub
-    $this->addFieldMapping('field_amp_hours');            // stub
-    $this->addFieldMapping('field_battery_watt_hours');   // stub
-    $this->addFieldMapping('field_dootrips');             // stub
-    $this->addFieldMapping('field_additional_editors');   // stub
-    $this->addFieldMapping('field_additional_followers'); // stub
+    // $this->addFieldMapping('field_volts');                // stub
+    // $this->addFieldMapping('field_amp_hours');            // stub
+    // $this->addFieldMapping('field_battery_watt_hours');   // stub
+    // $this->addFieldMapping('field_dootrips');             // stub
+    // $this->addFieldMapping('field_additional_editors');   // stub
+    // $this->addFieldMapping('field_additional_followers'); // stub
     $this->addFieldMapping('field_additional_notification_em', 'field_laptop_emails_list')->callbacks(array($this, 'updateEmailsList'));;
     $this->addFieldMapping('field_additional_notes', 'field_notes');
   }
