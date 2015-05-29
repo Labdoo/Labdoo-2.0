@@ -5,7 +5,7 @@
 </nid>
 <title>
 <type>node_title</type>
-<value>Lernprogramme</value>
+<value>Lernsoftware</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -22,12 +22,12 @@
 <body>
 <type>value</type>
 <value><ol>
+Der in diesem Wiki beschriebene Leistungsumfang geht weit über die reine Installation von dem Betriebssystem lubuntu hinaus. Durch die Installation der vorbereiteten Labdoo Images for  Cloning (für Parted Magic / Clonezilla) oder der Installationsskripte auf http://ftp.labdoo.org/download/images/ erhöht man deutlich den Nutzen für die Kinder.
 
+Teile dieses Dokumentes basieren u.a. auf Texten und Grafiken von www.edubuntu.org und http://wiki.ubuntuusers.de/Edubuntu.
 <li><strong>Lernsoftware</strong></li>
 
-Labdoo.org nutzt kindgerechte Lernsoftware für alle Altersstufen (Vorschule, Primar-, Sekundarstufe 1 und 2) und Erweiterungen für barrierefreie Zugänge (u.a. für sehbehinderte Anwender). 
-
-Edubuntu ist eine für Schule und Bildung konzipierte Sammlung von Lernprogrammen und Spielen für verschiedene Altersbereiche, wurden. Teile dieses Dokumentes basieren u.a. auf Texten und Grafiken von www.edubuntu.org und  http://wiki.ubuntuusers.de/Edubuntu.
+Labdoo.org nutzt kindgerechte Edubuntu-Lernsoftware für alle Altersstufen (Vorschule, Primar-, Sekundarstufe 1 und 2) und Erweiterungen für barrierefreie Zugänge (u.a. für sehbehinderte Anwender). 
 
 Über Edubuntu hinaus werden mit dem Labdoo.org Installationsskript oder den Labdoo Images for Cloning (für Parted Magic / Clonezilla) viele weitere Lernsoftware und Offline-Wiki-Tools installiert (nur dann sind alle nachfolgend beschriebenen Programme installiert).
 

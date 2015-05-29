@@ -82,14 +82,13 @@ Labdoo.org empfiehlt die Installation von lubuntu in Englisch. Darüber hinaus b
 
 <ul>
 <li>per Cloning von fertigen Images,</li>
-<li> per Installationsskript,</li> 
-<a name="FAQ04"></a>
+<li> per Installationsskript, <a name="FAQ04"></a></li>
 <li>per Schritt-für-Schritt-Installation (aufwendig, nur für erfahrene Anwender)</li>
 <li>oder ihr überlasst alles Labdoo.org ...</li> 
-<li>
-Empfohlen wird das Clonen fertig vorbereiteter Images per Clonezilla. <a href="https://dev.labdoo.org/de/content/information-f%C3%BCr-labdoo-helfer-labdooer">Mehr zu allen Installationstechniken hier.</a>
-</li>
 </ul>
+
+Empfohlen wird das Clonen fertig vorbereiteter Images per Clonezilla. <a href="https://dev.labdoo.org/de/content/information-f%C3%BCr-labdoo-helfer-labdooer">Mehr zu allen Installationstechniken hier.</a>
+
 </li>
 <br />
 

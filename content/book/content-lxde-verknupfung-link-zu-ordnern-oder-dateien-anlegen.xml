@@ -1,0 +1,57 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>313</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>LXDE - Verknüpfung (Link) zu Ordnern oder Dateien anlegen</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>313</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Um einen symbolischen Link zu erstellen:
+
+<strong>ab 14.04 LTS ff:</strong> Im Dateimanager PCMan den Ordner oder Datei anklicken, gleichzeitig Drücken von Strg/CTL und ⇧ (Shift) und per Drag and Drop z.B. auf den Desktop ziehen, wichtig: erst die Maustaste loslassen, dann erst die Tasten auf der Tastatur. 
+
+<strong>für 12.04.LTS oder falls Drag+Drop nicht funktioniert:</strong> ein Terminal öffnen, dann eintippen:
+
+<ul>
+<li>eingelogged als User labdoo: <code>ln -s -t /home/labdoo/Desktop /home/labdoo/Public/videos</code> (Enter) </li>
+<li>eingelogged als User student: <code>ln -s -t /home/student/Desktop /home/labdoo/Public/videos</code> (Enter) </li>
+</ul>
+
+Weitere Details --> http://wiki.ubuntuusers.de/PCMan_File_Manager</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>922</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1030</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

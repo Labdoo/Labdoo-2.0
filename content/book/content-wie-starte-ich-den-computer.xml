@@ -27,7 +27,7 @@ Auf einem Labdoo-Computer sind 3 Benutzer (User) eingerichtet:
 
 <strong>labdoo</strong>: ist Administrator! Das Passwort um sich anzumelden ist <strong>labdoo</strong> (Es sollte aber sofort beim ersten Mal durch den Lehrer geändert werden, weil <strong>labdoo</strong> Administrator Rechte hat und das System verstellen kann!)
 
-<strong>student</strong>: ist Standard-User. Das Passwort ist <strong>labdoo></strong> (es muss nicht geändert werden, könnt ihr entscheiden) 
+<strong>student</strong>: ist Standard-User. Das Passwort ist <strong>labdoo</strong> (es muss nicht geändert werden, kann jede Schule selber entscheiden) 
 
 <strong>guest</strong>: braucht kein Passwort, aber es werden alle seine Eingaben und Änderungen nach der Abmeldung gelöscht
 
@@ -48,6 +48,8 @@ Auf dem Desktop findet ihr ein Video. Anklicken und es zeigt und erklärt euch d
 
 Ein Labdoo Laptop wird mit dem Lubuntu (Linux Betriebssystem auf Ubuntu-Basis mit dem LXDE-Desktop) ausgeliefert. LXDE ist eine leicht zu lernende Oberfläche, schlank, schnell. LXDE / Lubuntu läuft auch auf älteren Rechnern ab 256 / 512 MB RAM.
 
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/language_support.png" width="225" align="right" />
+
 Optional kann man weitere Desktops (Oberflächen) installieren, die je nach Leistungsfähigkeit des Laptops gewählt werden sollten-
 
 <ul>
@@ -63,6 +65,8 @@ Klick Preferences → auf Language Support (Sprache). Falls die Meldung “Langu
 
 Im nächsten Fenster auf Install/Remove languages (Install./Entfernen Sprachen) → wähle die Sprache(n) die du brauchst→ Apply → Apply System-wide (Systemweit anwenden).
 
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/regional_formats.png" width="225" align="right" />
+
 Die neue Sprache(n) erscheinen in einer Liste: Lubuntu verwendet die Sprachen von oben nach unten, d.h. wenn ein Wort in der 1. Sprache nicht übersetzt ist kommt Sprache 2 dran usw. bis zu English.
 
 Suche die neue Sprache, anklicken, die linke Maustaste gedrückt halten und an die oberste Stelle ziehen, dort Maustaste loslassen → klick auf Apply System-wide (Systemweit anwenden). Die neue Sprache erscheint nach einem Log-out oder Neustart.
@@ -73,6 +77,8 @@ Man kann auch die regionalen Formate für Zahlen, Währung, Datum usw. einstelle
 
 <strong>Tastatureinstellungen</strong>
 
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/keyboard_layout_handler.png" width="225" align="right" />
+
 Rechter Mausklick in der Task Bar auf das Symbol "de" (oder US oder welche Tastatur gerade aktiv ist) → Keyboard Layout handler Settings (Tastaturlayout) → Entfernen des Haken "Keep system layout", wenn noch gesetzt → 
 
 +Add → Hinzufügen eines neuen Tastaturlayouts
@@ -82,9 +88,13 @@ down → Tastatureintrag nach unten verschieben
 
 Es können maximal 4 Tastatur-Layouts ausgewählt werden.
 
-Viel Spaß beim Spielen und Lernen mit deinen Freunden!
+<strong>Manuals, Video-Tutorials</strong>
 
-Das Labdoo Team.</value>
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/link-folder-videos.png" align="right" width="50" />
+
+Manuals, Videotutorials, Offline-Wikis u.v.a. mehr liegen im Ordner <a href="file://localhost/home/labdoo/Public/">/home/labdoo/Public/</a>. Über das Icon "videos" auf dem Desktop geht es direkt zum Ordner mit den Videos-Tutorials. Ein Video kann in Firefox oder einem Player angeschaut werden (ggf. Ansicht +/- zoomen).
+
+Viel Spaß beim Spielen und Lernen mit deinen Freunden!    Das Labdoo Team.</value>
 </body>
 <body>
 <type>format</type>

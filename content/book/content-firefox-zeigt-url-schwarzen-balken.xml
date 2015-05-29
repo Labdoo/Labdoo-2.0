@@ -1,0 +1,66 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>311</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Firefox zeigt in URL schwarzen Balken</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>311</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>In Verbindung mit Intel-Grafikkarten zeigt Firefox in der URL-Zeile oft nur einen schwarzen Balken. Es gibt keine Lösung, nur einen Work-around:
+<ul>
+<li>In der Adresszeile (URL) von Firefox eintippen <code>about:config</code></li>
+<li>Bestätigen, dass man vorsichtig sein wird</li>
+<li>In der Suchleiste folgenden Suchbegriff eingeben <code>gfx.xrender.enabled</code></li>
+<li>Wenn angezeigt, mit der rechte Maustaste auf <strong>true</strong> und auf <strong>toggle</strong> klicken, sodass der Wert auf <strong>false</strong> wechselt.</li>
+</ul>
+
+<strong>Diese Änderung muss für jeden Benutzer (labdoo und student) vorgenommen werden!</strong>
+
+Falls es den Eintrag gfx.xrender.enabled nicht geben sollte:
+
+<ul>
+<li>In die weiße Fläche des Suchfensters klicken</li>
+<li>Im Dialogfenster die Option New/neu auswählen</li>
+<li>Im nächsten Fenster <strong> boolean</strong> auswählen</li>
+<li>Im dritten Fenster <strong>false</strong> und mit <strong>ok</strong> bestätigen</li>
+</ul>
+Firefox neu starten
+
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>171</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>922</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1028</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

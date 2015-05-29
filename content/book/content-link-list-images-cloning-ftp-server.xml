@@ -26,7 +26,7 @@
 <strong>Lubuntu 12.04 LTS</strong>
 <ul>
 <li><a href="http://ftp.labdoo.org/download/images/nonPAE32_12_04_LTS.tar.gz">nonPAE32_12_04_LTS (Lubuntu 12.04 LTS for nonPAE CPU)</a></li>
-<li><a href="http://ftp.labdoo.org/download/images/PAE32_12_04_LTS.tar.gz">PAE32_12_04_LTS (Lubuntu 12.04 LTS for 32 Bit CPU)</a></li>
+<li>PAE32_12_04_LTS (Lubuntu 12.04 LTS for 32 Bit CPU): this image is not available any-more, support cancelled</li>
 <li><a href="http://ftp.labdoo.org/download/images/PAE64_12_04_LTS.tar.gz">PAE64_12_04_LTS (Lubuntu 12.04 LTS for 64 Bit CPU)</a></li>
 </ul>
 

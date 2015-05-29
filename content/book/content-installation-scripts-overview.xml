@@ -51,7 +51,8 @@ At the moment executing a script the computer must be online (LAN or WiFi).
 
 <strong>Download of a script</strong> -> click one of the links above -> save as -> save to the desktop of a Labdoo laptop (home/labdoo/Desktop), alternatively copy and paste via a USB-disk/stick to the desktop of a Labdoo computer.
 
-<a href="http://ftp.labdoo.org/download/Public/videos/scripts-english.webm">How to use scripts / automatic installation of software or content etc.</a>
+<a href="http://ftp.labdoo.org/download/Public/videos/scripts-english.webm">Online FTP server: How to use scripts / automatic installation of software or content etc.</a>
+<a href="file://localhost/home/labdoo/Public/videos/scripts-english.webm">Offline local: How to use scripts / automatic installation of software or content etc.</a>
 [video:https://youtu.be/aaSgbkCmiJU]
 
 <strong>Next step is to make a script executable:</strong></value>

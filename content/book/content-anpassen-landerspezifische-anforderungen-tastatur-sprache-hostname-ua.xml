@@ -22,8 +22,15 @@
 <body>
 <type>value</type>
 <value><ol>
+
+<a href="http://ftp.labdoo.org/download/Public/videos/system-settings-german.webm">Systemeinstellungen für Sprache, Tastatur, Treiber, Drucker u.a. mehr</a>
+[video:https://youtu.be/U7VP0_wj0cg]
+
 <li><strong>Was ist nach der lubuntu-Installation oder dem Klonen noch zu tun?</strong></li>
 Nach der Installation das System neu starten. Wenn der Laptop nicht korrekt hochfährt hilft manchmal ausschalten und Neustart, um in den advanced Modus zu gelangen.
+
+<a href="http://ftp.labdoo.org/download/Public/videos/hostname-german.webm">Systemdateien hosts und hostname anpassen</a>
+[video:https://youtu.be/ZwOGNZWTVpY]
 
 <li><strong>Hostnamen ändern</strong></li>
 Die geklonten Rechner heißen alle gleich z.B. labdoo-000005xxx. Hier sollte der richtige Hostname eingetragen werden, der identisch ist mit der Labdoo-ID-Nummer. Ist der Rechner schon bei labdoo.org getaffed? Wenn ja den nächsten Absatz überspringen.

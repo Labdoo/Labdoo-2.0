@@ -1,0 +1,57 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>314</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>LXDE - Create a link to folders or files</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>314</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>To create a symbolic link:
+
+<strong>for 14.04 LTS ff:</strong> Open file manager PCMan, click on the folder or file, press at the same time the keys CTL and ⇧ (Shift) and move it by Drag and Drop e.g. to the desktop, important: first unrelease mouse button, then unrelase keys. 
+
+<strong>for 12.04.LTS or if Drag+Drop does not work:</strong> open a terminal and type:
+
+<ul>
+<li>logged in as user labdoo: <code>ln -s -t /home/labdoo/Desktop /home/labdoo/Public/videos</code> (Enter) </li>
+<li>logged in as user student: <code>ln -s -t /home/student/Desktop /home/labdoo/Public/videos</code> (Enter) </li>
+</ul>
+
+More information --> http://wiki.ubuntuusers.de/PCMan_File_Manager</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>255</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>973</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1031</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>
