@@ -85,8 +85,8 @@ rm /var/www/lbd/profiles/labdoo/libraries/plupload/examples -rf
 # Install imagemagick (needed as a substitute to GD2 which has a bug on the image rotating feature)
 apt-get -y install imagemagick
 
-# Add sample nodes (disabled this when building for production)
-drush @lbd $enOrDis -y lbd_sample_nodes
+# Add sample nodes (disabled when building for production)
+test "$development" = 'true' && drush @lbd $enOrDis -y lbd_sample_nodes
 
 # Rebuild permissions again after all labdoo content types have been created
 #drush @lbd php-eval 'node_access_rebuild();'
