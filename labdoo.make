@@ -106,13 +106,13 @@ projects[drupal_wall] = 2.6
 ;-------------------
 projects[location] = 3.6
 projects[gmap] = 2.9
-projects[ip_geoloc] = 1.26
+projects[ip_geoloc] = 1.27
 
 ;-------------------
 ; Translations and language
 ;-------------------
 projects[l10n_update] = 1.1
-projects[i18n] = 1.12
+projects[i18n] = 1.13
 projects[i18nviews] = 3.x-dev
 projects[transliteration] = 3.2
 projects[lang_dropdown] = 2.5 
@@ -178,7 +178,7 @@ projects[views_slideshow] = 3.1
 projects[views_autocomplete_filters] = 1.2
 projects[views_dependent_filters] = 1.1
 projects[variable] = 2.5 
-projects[logintoboggan] = 1.4 
+projects[logintoboggan] = 1.5
 projects[flexslider] = 2.0-alpha3
 libraries[flexslider][directory_name] = flexslider 
 libraries[flexslider][download][type] = get

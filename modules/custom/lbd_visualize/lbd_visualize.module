@@ -18,6 +18,22 @@
  *
  */
 
+
+/*
+ * Sanitizes a string so it can be visualized in the dashboards
+ *
+ * @param unsanitizedText The input string
+ *
+ * @return The sanitized string
+ * 
+ */
+function sanitizeStringForVisualization($unsanitizedText) {
+    $sanitizedText = str_replace('"', "'", $unsanitizedText); 
+    $sanitizedText = preg_replace( "/\r|\n/", "", $sanitizedText);
+    return $sanitizedText;
+}
+
+
 /* 
  * Structure of the following code: 
  *
@@ -753,31 +769,40 @@ function print_dashboard_objects($objectsType, $objectsName, $objects, $metrics,
         var data = google.visualization.arrayToDataTable([
         [");
 
-  foreach($metrics as $index => $metric)
-    print("'" . $metrics[$index]['label'] . "', ");
+  $dataString = "";
+  foreach($metrics as $index => $metric) {
+    $dataString .= "'" . $metrics[$index]['label'] . "', ";
+  }
 
-  print("'Free-Text Search', 'ConstantNull'], ");
+  $dataString .= "'Free-Text Search', 'ConstantNull'], ";
 
   foreach($objects as $object) {
 
     $searchtext = '';
-    foreach($object as $field)
-        $searchtext = $searchtext . ' ' . $field;
+    foreach($object as $field) {
+        $strValue = sanitizeStringForVisualization($field); 
+        $searchtext = $searchtext . ' ' . $strValue;
+    }
 
-    print('[');
+    $dataString .= '[';
+
     foreach($metrics as $index => $metric) { 
       // TODO: checking for whether it is numeric
       // may not be the most generic way to approach this
       // and may not accommodate for all cases
-      if(is_numeric($object[$metric['field']]))
-        print($object[$metric['field']] . ',');
-      else
-        print('"' . $object[$metric['field']] . '",');
+      if(is_numeric($object[$metric['field']])) {
+        $dataString .= $object[$metric['field']] . ',';
+      }
+
+      else { // it's a string, sanitize it and print it
+        $strValue = sanitizeStringForVisualization($object[$metric['field']]);
+        $dataString .= '"' . $strValue . '",';
+      }
     }
-
-    print('"' . $searchtext . '",""],');
-
+    $dataString .= '"' . $searchtext . '",""],';
   }
+
+  print($dataString);
 
   print("
 
