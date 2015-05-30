@@ -551,7 +551,8 @@ class LbdPhotoNode6Migration extends LbdNode6Migration {
     //   - Otherwise, the edoovillage/hub node ID is equal to the nid column minus 1.
     //
 
-    drupal_set_message('source gallery ID:' . $row->field_gallery);
+    // drupal_set_message('source gallery ID:' . $row->field_gallery);
+    // file_put_contents('/tmp/dbgphotos', 'source gallery ID:' . $row->field_gallery . PHP_EOL, FILE_APPEND);
 
     $nodeUrl = Database::getConnection('default', $this->sourceConnection)
                ->select('content_type_gallery', 'i')
@@ -568,6 +569,9 @@ class LbdPhotoNode6Migration extends LbdNode6Migration {
       $srcEdoovillageOrHubNodeId = $urlParts[1];
     else
       $srcEdoovillageOrHubNodeId = $row->field_gallery - 1;
+
+    // drupal_set_message('src edoovillage or hub ID:' . $srcEdoovillageOrHubNodeId);
+    // file_put_contents('/tmp/dbgphotos', 'src edoovillage or hub ID:' . $srcEdoovillageOrHubNodeId . PHP_EOL, FILE_APPEND);
 
     //
     // Strategy:
@@ -587,16 +591,19 @@ class LbdPhotoNode6Migration extends LbdNode6Migration {
     // First assume it is an edoovillage photo album. If it can't find it, then assume it is a hub photo album.
     $query = "SELECT field_edoovillage_photo_album_target_id FROM field_data_field_edoovillage_photo_album WHERE entity_id=$node_gallery_ref_1";
     $albumNodeId = db_query($query)->fetchField();
-    drupal_set_message('albumNodeId (edoov.):' . $albumNodeId);
+    // drupal_set_message('albumNodeId (edoov.):' . $albumNodeId);
+    // file_put_contents('/tmp/dbgphotos', 'albumNodeId (edoov.):' . $albumNodeId . PHP_EOL, FILE_APPEND);
     if($albumNodeId) {
       return $albumNodeId;
     }
 
     $query = "SELECT field_hub_photo_album_target_id FROM field_data_field_hub_photo_album WHERE entity_id=$node_gallery_ref_1";
     $albumNodeId = db_query($query)->fetchField();
-    drupal_set_message('albumNodeId (hub):' . $albumNodeId);
-    if($albumNodeId)
+    // drupal_set_message('albumNodeId (hub):' . $albumNodeId);
+    // file_put_contents('/tmp/dbgphotos', 'albumNodeId (hub):' . $albumNodeId . PHP_EOL, FILE_APPEND);
+    if($albumNodeId) {
       return $albumNodeId;
+    }
 
     // It was not found, return the original value
     return $node_gallery_ref_1;
