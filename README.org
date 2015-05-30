@@ -41,6 +41,7 @@
     real 11m9.292s
     user 6m31.217s
     sys  0m59.728s
+    #+END_EXAMPLE
 
   + Make sure to include the following lines in your /etc/hosts file (outside the chroot):
 
