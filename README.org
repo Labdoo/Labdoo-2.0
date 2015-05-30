@@ -35,13 +35,12 @@
     #+END_EXAMPLE
 
     The above process can take some time, depending on bandwidth and your computer speed.
-    On an Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz with 1GB of RAM it takes 9 minutes and 41 seconds:
+    On an Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz it takes about 12 minutes:
 
     #+BEGIN_EXAMPLE
-    real 9m41.223s
-    user 3m38.554s
-    sys 0m36.375s 
-    #+END_EXAMPLE
+    real 11m9.292s
+    user 6m31.217s
+    sys  0m59.728s
 
   + Make sure to include the following lines in your /etc/hosts file (outside the chroot):
 
@@ -87,17 +86,7 @@
 
 * Documentation
 
-  - Internal doc files:
-    + [[https://github.com/Labdoo/Labdoo-2.0/blob/master/README.org][README.org]] (this file)
-    + [[https://github.com/Labdoo/Labdoo-2.0/blob/master/dev/README.org][dev/README.org]] (tips for developers)
-    + [[https://github.com/Labdoo/Labdoo-2.0/blob/master/modules/features/README.org][modules/features/README.org]]
+  + [[https://github.com/Labdoo/Labdoo-2.0/blob/master/README.org][README.org]] (this file)
+  + [[https://github.com/Labdoo/Labdoo-2.0/blob/master/dev/README.org][dev/README.org]] (tips for developers)
+  + [[https://github.com/Labdoo/Labdoo-2.0/blob/master/modules/features/README.org][modules/features/README.org]]
 
-  - Other docs that may be useful:
-    + http://codeinthehole.com/writing/pull-requests-and-other-good-practices-for-teams-using-github/
-    + http://dashohoxha.blogspot.com/2012/08/how-to-secure-ubuntu-server.html
-    + http://dashohoxha.blogspot.com/2013/07/how-to-manage-your-own-domain-name.html
-    + http://dashohoxha.blogspot.com/2013/02/how-to-set-up-chroot-environment-for.html
-    + http://dashohoxha.blogspot.com/2012/10/using-nginx-as-web-server-for-drupal.html
-    + http://www.havetheknowhow.com/Configure-the-server/Install-ssmtp.html
-    + http://arstechnica.com/security/2009/12/how-to-get-set-with-a-secure-sertificate-for-free/
-    + http://academia.edu/3993827/Development_Setup_Of_B-Translator
