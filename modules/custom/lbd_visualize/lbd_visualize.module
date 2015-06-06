@@ -120,7 +120,10 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
   $objects = array();
   $selectedNids = array();
 
+  $limitCounter = 1000;
   foreach($result as $item) {
+    if($limitCounter-- == 0)
+      break;
 
     $objectNid = $item->entity_id;
     array_push($selectedNids, $objectNid);
@@ -458,7 +461,10 @@ function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher =
   $objects = array();
   $selectedNids = array();
 
+  $limitCounter = 1000000;
   foreach($result as $item) {
+    if($limitCounter-- == 0)
+      break;
 
     $objectNid = $item->entity_id;
     array_push($selectedNids, $objectNid);
@@ -1447,12 +1453,14 @@ function lbd_display_dooject_column_chart($objectNid, $type)
     $numTransit  = labdoo_getnum_doojects($objectNid, NULL, "T1") + labdoo_getnum_doojects($objectNid, NULL, "S3");
     $numDeployed = labdoo_getnum_doojects($objectNid, NULL, "S4"); 
     $numRecycled = labdoo_getnum_doojects($objectNid, NULL, "S6");
+    $xLabel = "Edoovillage";
   }
   else if ($type == "hub") {
     $numNeeded   = labdoo_get_demand(NULL, $objectNid, FALSE);
     $numTransit  = labdoo_getnum_doojects(NULL, $objectNid, "T1") + labdoo_getnum_doojects(NULL, $objectNid, "S3");
     $numDeployed = labdoo_getnum_doojects(NULL, $objectNid, "S4"); 
     $numRecycled = labdoo_getnum_doojects(NULL, $objectNid, "S6");
+    $xLabel = "Edoovillages served by this Hub";
   }
   else {
     return;
@@ -1468,7 +1476,7 @@ function lbd_display_dooject_column_chart($objectNid, $type)
 ';
 
   $htmlCode = $htmlCode . '
-    ["Edoovillage", '.$numNeeded.', '.$numTransit.', '.$numDeployed.', '.$numRecycled.'],
+    ["' . $xLabel . '", '.$numNeeded.', '.$numTransit.', '.$numDeployed.', '.$numRecycled.'],
   ]);
 
   var options_column_chart_project = {

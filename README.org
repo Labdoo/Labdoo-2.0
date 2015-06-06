@@ -64,6 +64,25 @@
   
   + If you need to start again Labdoo you can do: =service chroot-lbd start=
 
+* Installation in production mode
+
+  A development Labdoo node can be converted into a production node by following the next steps:
+
+  + Drop the server certificate and private key to the folders /etc/ssl/certs/ and /etc/ssl/private/,
+    respectively.
+
+  + Modify the file /etc/apache2/sites-enabled/lbd-ssl.conf so that SSLCertificateFile and
+    SSLCertificateKeyFile point to the certificate and private key, respectively.
+
+  + Modify both /etc/apache2/sites-enabled/lbd-ssl.conf and /etc/apache2/sites-enabled/lbd.conf
+    so that all URL and email address information points to www.labdoo.org and contact@labdoo.org
+    (or to your chosen values for these parameters), respectively. 
+
+  + Modify /etc/hosts so that the localhost points to www.labdoo.org.
+
+  + Modify the file /var/www/lbd/sites/default/settings.php so that $base_url points 
+    to https://www.labdoo.org.
+
 * Installation in a docker container
 
   This is almost the same as the installation above, except that instead of ~install/chroot.sh~

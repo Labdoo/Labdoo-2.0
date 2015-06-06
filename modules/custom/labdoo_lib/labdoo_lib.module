@@ -1937,7 +1937,7 @@ function labdoo_block_filter_header() {
   if((strcmp($path, "share-wall") == 0) || (strcmp($path, "content/my-share-wall") == 0))
       return TRUE;
 
-  if(labdoo_lib_node_is_type(array('laptop', 'dootrip', 'node_gallery_gallery', 'drupal_wall')))
+  if(labdoo_lib_node_is_type(array('laptop', 'dootrip', 'node_gallery_gallery', 'drupal_wall', 'team_page')))
     return TRUE;
 
   if(0 === strpos($path, 'node/add/'))
@@ -2217,6 +2217,10 @@ function _labdoo_lib_user_metrics($account = NULL) {
   global $user;
   $userId = $user->uid;
 
+  if(!user_is_logged_in()) {
+    return "";
+  }
+
   $labelDoojects = t('Doojects*: ');
   $labelDootrips = t('Dootrips*: ');
   $labelEdoovillages = t('Edoovillages: ');
@@ -2418,6 +2422,11 @@ $textLegend
 
 function _labdoo_lib_user_roles($account = NULL) {
   global $user;
+
+  if(!user_is_logged_in()) {
+    return "";
+  }
+
   $userRoles = array_values($user->roles);
   $rolesMapping = array(
     'labdooer' => t('Provides the base functionality to carry out Labdoo mini-missions.'),

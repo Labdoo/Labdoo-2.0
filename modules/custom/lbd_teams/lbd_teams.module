@@ -252,7 +252,10 @@ function lbd_teams_node_presave($node) {
   if($groupId == NULL)
     return FALSE;
 
-  $node->title = "[" . lbd_nodeid2title($groupId) . "]" . " " .  $node->title;
+  // Add the tag '[TEAM_NAME]' if it has not been added yet
+  $teamTag = "[" . lbd_nodeid2title($groupId) . "]";
+  if(strpos($node->title, $teamTag) === false) 
+    $node->title = $teamTag . " " .  $node->title;
 
   return;
 }

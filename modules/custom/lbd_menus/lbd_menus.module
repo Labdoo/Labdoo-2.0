@@ -109,7 +109,7 @@ function make_main_menu() {
   $mlid = menu_link_save($item);
 
   $item = array(
-            'link_path' => 'http://ftp.labdoo.org',
+            'link_path' => 'http://ftp.labdoo.org/download',
             'link_title' => t('FTP resources'),
             'menu_name' => 'main-menu',
             'expanded' => TRUE,
