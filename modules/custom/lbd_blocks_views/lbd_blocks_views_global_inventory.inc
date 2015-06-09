@@ -19,7 +19,8 @@ $handler->display->display_options['access']['type'] = 'perm';
 $handler->display->display_options['cache']['type'] = 'none';
 $handler->display->display_options['query']['type'] = 'views_query';
 $handler->display->display_options['exposed_form']['type'] = 'basic';
-$handler->display->display_options['pager']['type'] = 'none';
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['pager']['options']['items_per_page'] = '500';
 $handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['style_plugin'] = 'gmap';
 $handler->display->display_options['style_options']['macro'] = '[gmap width=1175px | height=600px | zoom=2]';
@@ -186,6 +187,43 @@ $handler->display->display_options['filters']['views_dependent_filter']['depende
   'title' => 0,
   'title_1' => 0,
 );
+/* Filter criterion: Global: Dependent filter */
+$handler->display->display_options['filters']['views_dependent_filter_1']['id'] = 'views_dependent_filter_1';
+$handler->display->display_options['filters']['views_dependent_filter_1']['table'] = 'views';
+$handler->display->display_options['filters']['views_dependent_filter_1']['field'] = 'views_dependent_filter';
+$handler->display->display_options['filters']['views_dependent_filter_1']['group'] = 1;
+$handler->display->display_options['filters']['views_dependent_filter_1']['controller_filter'] = 'type';
+$handler->display->display_options['filters']['views_dependent_filter_1']['controller_values'] = array(
+  'edoovillage' => 'edoovillage',
+  'action' => 0,
+  'article' => 0,
+  'page' => 0,
+  'blog' => 0,
+  'book' => 0,
+  'slider_page' => 0,
+  'laptop' => 0,
+  'dootrip' => 0,
+  'gic' => 0,
+  'node_gallery_gallery' => 0,
+  'node_gallery_item' => 0,
+  'hub' => 0,
+  'labdoo_slide' => 0,
+  'simplenews' => 0,
+  'private_page' => 0,
+  'drupal_wall' => 0,
+  'superhub_page' => 0,
+  'team' => 0,
+  'team_page' => 0,
+  'event' => 0,
+  'team_task' => 0,
+);
+$handler->display->display_options['filters']['views_dependent_filter_1']['dependent_filters'] = array(
+  'field_edoovillage_status_value' => 'field_edoovillage_status_value',
+  'country' => 0,
+  'field_status_value' => 0,
+  'field_hub_laptop_target_id' => 0,
+  'keys' => 0,
+);
 /* Filter criterion: Location: Distance / Proximity */
 $handler->display->display_options['filters']['distance']['id'] = 'distance';
 $handler->display->display_options['filters']['distance']['table'] = 'location';
@@ -273,6 +311,7 @@ $handler->display->display_options['filters']['field_hub_laptop_target_id']['exp
 $handler->display->display_options['filters']['keys']['id'] = 'keys';
 $handler->display->display_options['filters']['keys']['table'] = 'search_index';
 $handler->display->display_options['filters']['keys']['field'] = 'keys';
+$handler->display->display_options['filters']['keys']['group'] = 1;
 $handler->display->display_options['filters']['keys']['exposed'] = TRUE;
 $handler->display->display_options['filters']['keys']['expose']['operator_id'] = 'keys_op';
 $handler->display->display_options['filters']['keys']['expose']['label'] = 'Search';
@@ -282,6 +321,28 @@ $handler->display->display_options['filters']['keys']['expose']['remember_roles'
   2 => '2',
   1 => 0,
   3 => 0,
+);
+/* Filter criterion: Content: Status (field_edoovillage_status) */
+$handler->display->display_options['filters']['field_edoovillage_status_value']['id'] = 'field_edoovillage_status_value';
+$handler->display->display_options['filters']['field_edoovillage_status_value']['table'] = 'field_data_field_edoovillage_status';
+$handler->display->display_options['filters']['field_edoovillage_status_value']['field'] = 'field_edoovillage_status_value';
+$handler->display->display_options['filters']['field_edoovillage_status_value']['group'] = 1;
+$handler->display->display_options['filters']['field_edoovillage_status_value']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_edoovillage_status_value']['expose']['operator_id'] = 'field_edoovillage_status_value_op';
+$handler->display->display_options['filters']['field_edoovillage_status_value']['expose']['label'] = 'Edoovillage status';
+$handler->display->display_options['filters']['field_edoovillage_status_value']['expose']['operator'] = 'field_edoovillage_status_value_op';
+$handler->display->display_options['filters']['field_edoovillage_status_value']['expose']['identifier'] = 'field_edoovillage_status_value';
+$handler->display->display_options['filters']['field_edoovillage_status_value']['expose']['multiple'] = TRUE;
+$handler->display->display_options['filters']['field_edoovillage_status_value']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  7 => 0,
+  8 => 0,
+  9 => 0,
+  3 => 0,
+  5 => 0,
+  6 => 0,
+  4 => 0,
 );
 $handler->display->display_options['path'] = 'map';
 
@@ -447,13 +508,12 @@ $handler = $view->new_display('attachment', 'Attachment - Global', 'attachment_1
 $handler->display->display_options['defaults']['title'] = FALSE;
 $handler->display->display_options['title'] = 'Attachment';
 $handler->display->display_options['defaults']['use_more'] = FALSE;
-$handler->display->display_options['use_more'] = TRUE;
 $handler->display->display_options['defaults']['use_more_always'] = FALSE;
 $handler->display->display_options['defaults']['use_more_always'] = FALSE;
 $handler->display->display_options['use_more_always'] = FALSE;
 $handler->display->display_options['defaults']['use_more_text'] = FALSE;
 $handler->display->display_options['pager']['type'] = 'some';
-$handler->display->display_options['pager']['options']['items_per_page'] = '10';
+$handler->display->display_options['pager']['options']['items_per_page'] = '50';
 $handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['defaults']['style_plugin'] = FALSE;
 $handler->display->display_options['style_plugin'] = 'table';
@@ -685,6 +745,27 @@ $handler->display->display_options['filters']['keys']['expose']['remember_roles'
   1 => 0,
   3 => 0,
 );
+/* Filter criterion: Content: Status (field_edoovillage_status) */
+$handler->display->display_options['filters']['field_edoovillage_status_value']['id'] = 'field_edoovillage_status_value';
+$handler->display->display_options['filters']['field_edoovillage_status_value']['table'] = 'field_data_field_edoovillage_status';
+$handler->display->display_options['filters']['field_edoovillage_status_value']['field'] = 'field_edoovillage_status_value';
+$handler->display->display_options['filters']['field_edoovillage_status_value']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_edoovillage_status_value']['expose']['operator_id'] = 'field_edoovillage_status_value_op';
+$handler->display->display_options['filters']['field_edoovillage_status_value']['expose']['label'] = 'Status (field_edoovillage_status)';
+$handler->display->display_options['filters']['field_edoovillage_status_value']['expose']['operator'] = 'field_edoovillage_status_value_op';
+$handler->display->display_options['filters']['field_edoovillage_status_value']['expose']['identifier'] = 'field_edoovillage_status_value';
+$handler->display->display_options['filters']['field_edoovillage_status_value']['expose']['multiple'] = TRUE;
+$handler->display->display_options['filters']['field_edoovillage_status_value']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  7 => 0,
+  8 => 0,
+  9 => 0,
+  3 => 0,
+  5 => 0,
+  6 => 0,
+  4 => 0,
+);
 $handler->display->display_options['displays'] = array(
   'page' => 'page',
   'default' => 0,
@@ -692,7 +773,6 @@ $handler->display->display_options['displays'] = array(
 );
 $handler->display->display_options['attachment_position'] = 'after';
 $handler->display->display_options['inherit_exposed_filters'] = TRUE;
-$handler->display->display_options['inherit_pager'] = TRUE;
 $handler->display->display_options['render_pager'] = TRUE;
 
 /* Display: Attachment - Dootrip */
@@ -971,6 +1051,16 @@ $handler->display->display_options['fields']['field_types_of_mini_missions']['ta
 $handler->display->display_options['fields']['field_types_of_mini_missions']['field'] = 'field_types_of_mini_missions';
 $handler->display->display_options['fields']['field_types_of_mini_missions']['label'] = 'Type';
 $handler->display->display_options['fields']['field_types_of_mini_missions']['delta_offset'] = '0';
+$handler->display->display_options['defaults']['sorts'] = FALSE;
+/* Sort criterion: Content: Title */
+$handler->display->display_options['sorts']['title']['id'] = 'title';
+$handler->display->display_options['sorts']['title']['table'] = 'node';
+$handler->display->display_options['sorts']['title']['field'] = 'title';
+/* Sort criterion: Content: Post date */
+$handler->display->display_options['sorts']['created']['id'] = 'created';
+$handler->display->display_options['sorts']['created']['table'] = 'node';
+$handler->display->display_options['sorts']['created']['field'] = 'created';
+$handler->display->display_options['sorts']['created']['order'] = 'DESC';
 $handler->display->display_options['defaults']['filter_groups'] = FALSE;
 $handler->display->display_options['defaults']['filters'] = FALSE;
 /* Filter criterion: Content: Published */

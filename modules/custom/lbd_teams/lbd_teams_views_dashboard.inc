@@ -270,6 +270,16 @@ $handler->display->display_options['filters']['status']['value'] = 1;
 $handler->display->display_options['filters']['status']['group'] = 1;
 $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
 /* Filter criterion: Content: Type */
+$handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+$handler->display->display_options['filters']['type_1']['table'] = 'node';
+$handler->display->display_options['filters']['type_1']['field'] = 'type';
+$handler->display->display_options['filters']['type_1']['value'] = array(
+  'team_page' => 'team_page',
+  'event' => 'event',
+  'team_task' => 'team_task',
+);
+$handler->display->display_options['filters']['type_1']['group'] = 1;
+/* Filter criterion: Content: Type */
 $handler->display->display_options['filters']['type']['id'] = 'type';
 $handler->display->display_options['filters']['type']['table'] = 'node';
 $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -378,12 +388,13 @@ $handler->display->display_options['filters']['field_task_type_value']['expose']
 $handler->display->display_options['filters']['field_task_type_value']['expose']['remember_roles'] = array(
   2 => '2',
   1 => 0,
-  3 => 0,
-  6 => 0,
-  5 => 0,
-  4 => 0,
   7 => 0,
   8 => 0,
+  9 => 0,
+  3 => 0,
+  5 => 0,
+  6 => 0,
+  4 => 0,
 );
 /* Filter criterion: User: Name */
 $handler->display->display_options['filters']['uid']['id'] = 'uid';
@@ -452,28 +463,23 @@ $handler->display->display_options['filters']['uid_1']['expose']['remember_roles
 $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
 $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
 $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
-$handler->display->display_options['filters']['og_group_ref_target_id']['value'] = array(
-  23 => '23',
-  24 => '24',
-  25 => '25',
-);
+$handler->display->display_options['filters']['og_group_ref_target_id']['group'] = 1;
 $handler->display->display_options['filters']['og_group_ref_target_id']['exposed'] = TRUE;
 $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['operator_id'] = 'og_group_ref_target_id_op';
-$handler->display->display_options['filters']['og_group_ref_target_id']['expose']['label'] = 'Team';
+$handler->display->display_options['filters']['og_group_ref_target_id']['expose']['label'] = 'Team(s)';
 $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['operator'] = 'og_group_ref_target_id_op';
 $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['identifier'] = 'og_group_ref_target_id';
 $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['multiple'] = TRUE;
 $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['remember_roles'] = array(
   2 => '2',
   1 => 0,
-  3 => 0,
   7 => 0,
-  6 => 0,
-  5 => 0,
   8 => 0,
   9 => 0,
+  3 => 0,
+  5 => 0,
+  6 => 0,
   4 => 0,
 );
 $handler->display->display_options['path'] = 'teams-dashboard';
-
 

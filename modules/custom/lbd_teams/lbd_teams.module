@@ -247,10 +247,13 @@ function labdoo_block_filter_team_actions() {
  */
 function lbd_teams_node_presave($node) {
 
+  if(!labdoo_lib_node_is_type(array('team_page', 'team_task', 'event')))
+    return;
+
   $groupId = lbd_teams_page_group_id();
 
   if($groupId == NULL)
-    return FALSE;
+    return;
 
   // Add the tag '[TEAM_NAME]' if it has not been added yet
   $teamTag = "[" . lbd_nodeid2title($groupId) . "]";

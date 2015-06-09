@@ -1109,6 +1109,9 @@ function lbd_get_total_num_objects($objectType) {
  */
 function _update_city($lid, &$objectsCount) {  
 
+  if(!$lid)
+    return;
+
   $country_names = location_get_iso3166_list();
 
   $query = "SELECT city, country FROM location WHERE lid=$lid";
@@ -1357,6 +1360,48 @@ function labdoo_lib_compute_watt_hours($nodeLoaded) {
 
 
 /**
+ * Returns the list of branches associated with a hub 
+ *
+ * @param node $nodeLoaded The hub node (loaded)
+ *
+ * @return The list of hubs as a string 
+ *
+ */
+function labdoo_lib_compute_hub_branches($nodeLoaded) {
+  $query = "SELECT entity_id FROM field_data_field_parent_hub WHERE field_parent_hub_target_id=$nodeLoaded->nid";
+  $result = db_query($query);
+
+  $branchesList = "";
+  foreach($result as $item) {
+    $parentHubName = lbd_nodeid2title($item->entity_id);
+    $parentHubUri = 'node/' . $item->entity_id;
+    $branchesList .= '<a href="' . $parentHubUri . '">' . $parentHubName . '</a>'; 
+    $branchesList .= "<br/>";
+  }
+
+  if($branchesList == "")
+    $branchesList = "None";
+
+  return($branchesList);
+}
+
+
+/**
+ * Implements hook_node_view
+ *
+ */
+function labdoo_lib_node_view($node, $view_mode) {
+  // TODO: Every object that has a 'computed field' that needs to be refreshed
+  // dynamically, must be resaved upon viewing. This is not very efficient but
+  // it is more efficient than clearing the cache. Need to find a better solution.
+
+  if($node->type == 'hub') // Hub has the computed field 'Hub branches'
+    node_save($node);
+
+}
+
+
+/**
  * Prints the labels of a dooject
  *                                 
  * @param laptopid The ID of the dooject 
@@ -1567,7 +1612,6 @@ function labdoo_lib_get_field($node, $field, $type, $key) {
 
 /**
  * Prints an array in a user friendly way
- * using drupal_set_message
  *
  * @param array $array An input array
  * @param string $prefix A prefix to add before the printing of each element of the array
@@ -1575,6 +1619,22 @@ function labdoo_lib_get_field($node, $field, $type, $key) {
  */
 function labdoo_lib_print_array($array) {
   print '<pre>'; print_r($array);  print '</pre>';
+  return;
+}
+
+
+/**
+ * Prings a backtrace (for debugging purposes)
+ *
+ */
+function labdoo_lib_print_backtrace() {
+  $trace=debug_backtrace();
+  $index = 0;
+  while($trace[$index]) {
+    $caller=$trace[$index];
+    drupal_set_message("Called by {$caller['function']}");
+    $index++;
+  }
   return;
 }
 
@@ -1937,7 +1997,7 @@ function labdoo_block_filter_header() {
   if((strcmp($path, "share-wall") == 0) || (strcmp($path, "content/my-share-wall") == 0))
       return TRUE;
 
-  if(labdoo_lib_node_is_type(array('laptop', 'dootrip', 'node_gallery_gallery', 'drupal_wall', 'team_page')))
+  if(labdoo_lib_node_is_type(array('laptop', 'dootrip', 'node_gallery_gallery', 'drupal_wall', 'team_page', 'superhub_page')))
     return TRUE;
 
   if(0 === strpos($path, 'node/add/'))

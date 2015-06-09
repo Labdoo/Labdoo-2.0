@@ -120,7 +120,7 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
   $objects = array();
   $selectedNids = array();
 
-  $limitCounter = 1000;
+  $limitCounter = 2000;
   foreach($result as $item) {
     if($limitCounter-- == 0)
       break;
@@ -501,10 +501,14 @@ function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher =
 
     // Get the country
     $country_names = location_get_iso3166_list();
-    $objects[$objectNid]['country'] = $node->location['country'];
-    if(array_key_exists($node->location['country'], $country_names))
-        $objects[$objectNid]['country'] = $country_names[$node->location['country']];
+    if(isset($node->location['country'])) 
+      $objects[$objectNid]['country'] = $node->location['country'];
+    else
+      $objects[$objectNid]['country'] = "";
+    if(array_key_exists($objects[$objectNid]['country'], $country_names))
+        $objects[$objectNid]['country'] = $country_names[$objects[$objectNid]['country']];
         
+    // The link
     $urlPath = drupal_get_path_alias("node/" . $objectNid, $language->language);
     if($language->language != $defaultLanguageCode)
       $urlPath = $language->language . "/" . $urlPath;
