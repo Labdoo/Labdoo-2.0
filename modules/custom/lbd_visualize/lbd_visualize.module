@@ -885,7 +885,7 @@ var table = new google.visualization.ChartWrapper({
                 'allowHtml': true, 
                 'showRowNumber': true,
                 'page': 'enable',
-                'pageSize' : 25,
+                'pageSize' : 50,
                 'sortColumn' : 0,
                 'sortAscending' : false
               },

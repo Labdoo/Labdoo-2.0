@@ -213,6 +213,8 @@ function labdoo_render_team_actions() {
 <a href='$lang/node/$groupId/activities'>" . t("View wall") . "</span></a></p>
 <img src='/profiles/labdoo/files/pictures/calendar_icon.png' style='width: 20px; height: 21px;'/>&nbsp;
 <a href='$lang/node/$groupId/calendar/month'>" . t("View calendar") . "</span></a></p>
+<img src='/profiles/labdoo/files/pictures/search.png' style='width: 20px; height: 21px;'/>&nbsp;
+<a href='$lang/teams-dashboard?og_group_ref_target_id%5B%5D=" . $groupId . "'>" . t("Search inside this team") . "</span></a></p>
 <br>
   ";
 

@@ -80,7 +80,7 @@ function gic_table($form, &$form_state, $edoovillageId) {
   //
   // Build the GIC form
   //
-  $query = 'SELECT entity_id FROM field_data_field_edoovillage_destination WHERE field_edoovillage_destination_target_id=:eid ORDER BY entity_id';
+  $query = 'SELECT nid FROM node where nid IN (SELECT entity_id FROM field_data_field_edoovillage_destination WHERE field_edoovillage_destination_target_id=:eid) ORDER BY title';
   $result = db_query($query, array(':eid' => $edoovillageId));
 
   if($result->rowCount() > 0)
@@ -100,7 +100,7 @@ function gic_table($form, &$form_state, $edoovillageId) {
   }
 
   foreach($result as $dooject) {
-    $doojectId = $dooject->entity_id;
+    $doojectId = $dooject->nid;
     $query = 'SELECT field_status_value FROM field_data_field_status WHERE entity_id=:nid';
     $status = db_query($query, array(':nid' => $doojectId))->fetchField();
 
@@ -150,11 +150,11 @@ function gic_table_submit($form, &$form_state) {
   $statusValues = array();
   generate_gic_status_values($statusKeys, $statusValues);
 
-  $query = 'SELECT entity_id FROM field_data_field_edoovillage_destination WHERE field_edoovillage_destination_target_id=:eid ORDER BY entity_id';
+  $query = 'SELECT nid FROM node where nid IN (SELECT entity_id FROM field_data_field_edoovillage_destination WHERE field_edoovillage_destination_target_id=:eid) ORDER BY title';
   $result = db_query($query, array(':eid' => $edoovillageId));
 
   foreach($result as $dooject) {
-    $doojectId = $dooject->entity_id;
+    $doojectId = $dooject->nid;
     $newStatusKey = $statusKeys[$form['container'][$doojectId]['#value']];
     $query = 'SELECT field_status_value FROM field_data_field_status WHERE entity_id=:nid';
     $currentStatusKey = db_query($query, array(':nid' => $doojectId))->fetchField();

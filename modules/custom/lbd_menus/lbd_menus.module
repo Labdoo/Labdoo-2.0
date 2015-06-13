@@ -300,6 +300,18 @@ function make_main_menu() {
   $mlid = menu_link_save($item);
 
   $item = array(
+            'link_path' => 'hubs',
+            'link_title' => t('View (tree mode)'),
+            'menu_name' => 'main-menu',
+            'weight' => 5,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => $hubMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
             'link_path' => 'node/add/superhub-page',
             'link_title' => t('[Superhub] Create content'),
             'menu_name' => 'main-menu',

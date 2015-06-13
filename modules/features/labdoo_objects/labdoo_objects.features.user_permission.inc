@@ -140,7 +140,9 @@ function labdoo_objects_user_default_permissions() {
   // Exported permission: edit any hub content.
   $permissions['edit any hub content'] = array(
     'name' => 'edit any hub content',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'superhub manager',
+    ),
     'module' => 'node',
   );
 

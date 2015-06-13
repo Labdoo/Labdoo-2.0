@@ -309,8 +309,10 @@ function lbd_generate_action_node($node) {
     $allLocations = field_get_items('node', $node, 'field_origin_of_the_trip');
     $location = $allLocations[0];
   }
-  else 
+  else if(isset($node->locations[0])) 
     $location = $node->locations[0];
+  else
+    return;
 
   // Sanity check: if there is no location, return. This is needed to make certain 
   // node migrations work, since in certain scenarios the location is not populated

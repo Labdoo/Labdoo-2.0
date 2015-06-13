@@ -205,7 +205,8 @@ function labdoo_render_map_geolocate_node($nodeId = NULL, $displayDoojects = Fal
 
   if($node->type != 'dootrip') {
     $locations = array();
-
+    if(!isset($locations[0]))
+      return;
     $locations[0] = new stdClass();
     $locations[0]->latitude = $node->locations[0]['latitude'];
     $locations[0]->longitude = $node->locations[0]['longitude']; 
@@ -672,6 +673,15 @@ function labdoo_dootrip_extract_emails($node) {
         continue;
       $emailsList = $emailsList . ", " . $userObj->mail;
       array_push($emailSet, $userObj->mail);
+    }
+
+    if($node->field_dootrip_additional_emails) {
+      foreach(field_get_items('node', $node, 'field_dootrip_additional_emails') as $element) {
+        if(in_array($element["email"], $emailSet))
+          continue;
+        $emailsList = $emailsList . ", " . $element["email"];
+        array_push($emailSet, $element["email"]);
+      }
     }
 
     $emailsList = $emailsList . ", " . variable_get('site_mail', '');
@@ -1916,7 +1926,7 @@ function labdoo_block_filter_search() {
   if(strcmp($path, "wiki-index") == 0)
       return TRUE;
 
-  if(labdoo_lib_node_is_type(array('book')))
+  if(labdoo_lib_node_is_type(array('book', 'team', 'team_page', 'event', 'team_task')))
     return TRUE;
 
   return labdoo_block_filter_sidebar_second();
