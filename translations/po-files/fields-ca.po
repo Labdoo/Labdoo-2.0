@@ -1,0 +1,1153 @@
+# Catalan translation
+labdoo-translation-fields.po0000644000000000000000000007410012516632276015170 0ustar  rootrootmsgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2015-04-25 06:20+0000\n"
+"PO-Revision-Date: 2015-04-25 06:20+0000\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n>1);\n"
+
+#: field:body:team:label
+msgctxt "body:team:label"
+msgid "Team's topic"
+msgstr "Tema de l'equip"
+
+#: field:body:team_page:label
+msgctxt "body:team_page:label"
+msgid "Conversation"
+msgstr "Conversa"
+
+#: field:body:team_task:label
+msgctxt "body:team_task:label"
+msgid "Description"
+msgstr "Descripció"
+
+#: field:field_about_me:user:label
+msgctxt "field_about_me:user:label"
+msgid "About me"
+msgstr "Sobre mi"
+
+#: field:field_action_type:#allowed_values:Dooject
+msgctxt "field_action_type:#allowed_values:Dooject"
+msgid "Doojects"
+msgstr "Doojects"
+
+#: field:field_action_type:#allowed_values:Dootrip
+msgctxt "field_action_type:#allowed_values:Dootrip"
+msgid "Dootrips"
+msgstr "Dootrips"
+
+#: field:field_action_type:#allowed_values:Edoovillage
+msgctxt "field_action_type:#allowed_values:Edoovillage"
+msgid "Edoovillages"
+msgstr "Edoovillages"
+
+#: field:field_action_type:#allowed_values:Hub
+msgctxt "field_action_type:#allowed_values:Hub"
+msgid "Hubs"
+msgstr "Hubs"
+
+#: field:field_action_type:action:label
+msgctxt "field_action_type:action:label"
+msgid "Type"
+msgstr "Tipus"
+
+#: field:field_additional_editors:laptop:description
+msgctxt "field_additional_editors:laptop:description"
+msgid "Add users who need to have permission to edit this dooject"
+msgstr "Afegeix usuaris que necessiten tenir permisos per editar aquest doobjecte"
+
+#: field:field_additional_editors:laptop:label
+msgctxt "field_additional_editors:laptop:label"
+msgid "Additional editors"
+msgstr "Editors adicionals"
+
+#: field:field_additional_files:edoovillage:label
+msgctxt "field_additional_files:edoovillage:label"
+msgid "Additional files"
+msgstr "Arxius adicionals"
+
+#: field:field_additional_followers:laptop:description
+msgctxt "field_additional_followers:laptop:description"
+msgid "Add users who want to follow this dooject"
+msgstr "Afegeix usuaris que volen seguir aquest dooject"
+
+#: field:field_additional_followers:laptop:label
+msgctxt "field_additional_followers:laptop:label"
+msgid "Additional followers"
+msgstr "Seguidors adicionals"
+
+#: field:field_additional_info_language:edoovillage:label
+msgctxt "field_additional_info_language:edoovillage:label"
+msgid "Additional information about language(s)"
+msgstr "Informació adicional sobre el(s) llenguatge(s)"
+
+#: field:field_additional_notes:laptop:description
+msgctxt "field_additional_notes:laptop:description"
+msgid ""
+"Add here any observations you would like to make. For instance you can "
+"add notes such as the quality of the laptop or if something is broken, "
+"a reminder, or a note on who donated the laptop."
+msgstr ""
+"Afegeix aquí qualsevol observació que vulguis fer. Per exemple, pots "
+"afegir notes com la quantitat de portàtils, si alguna cosa està trencada, "
+"un recordatori o una nota de qui va donar el portàtil"
+
+#: field:field_additional_notes:laptop:label
+msgctxt "field_additional_notes:laptop:label"
+msgid "Additional notes"
+msgstr "Notes adicionals"
+
+#: field:field_additional_notification_em:laptop:description
+msgctxt "field_additional_notification_em:laptop:description"
+msgid ""
+"Add here the email address(es) of additional people that you would "
+"like to be notified whenever this laptop changes its status."
+msgstr ""
+"Afegeix aquí les adreces de correu adicionals de la gent que vulguis "
+"que sigui informada quan canvia l'estat del portàtil"
+
+#: field:field_additional_notification_em:laptop:label
+msgctxt "field_additional_notification_em:laptop:label"
+msgid "Additional notification emails"
+msgstr "Adreces de correu per notificacions adicionals"
+
+#: field:field_additional_traveler_s_info:dootrip:description
+msgctxt "field_additional_traveler_s_info:dootrip:description"
+msgid ""
+"Name of the person(s) or the NGO performing the dootrip if different "
+"than the dootrippers field"
+msgstr "Non de la persona(es) o de l'ONG que fa el dootrip si és "
+"diferent que el camp dootrippers"
+
+#: field:field_additional_traveler_s_info:dootrip:label
+msgctxt "field_additional_traveler_s_info:dootrip:label"
+msgid "Additional traveler(s) information"
+msgstr "Informació adicional de viatger(s)"
+
+#: field:field_amp_hours:laptop:label
+msgctxt "field_amp_hours:laptop:label"
+msgid "Amp hours"
+msgstr "Ampers"
+
+#: field:field_arrival_date:dootrip:label
+msgctxt "field_arrival_date:dootrip:label"
+msgid "Arrival date"
+msgstr "Data d'arribada"
+
+#: field:field_battery_duration:laptop:description
+msgctxt "field_battery_duration:laptop:description"
+msgid ""
+"Make an estimate of the battery duration in minutes. If the battery is "
+"not working, please remove it from the laptop, bring the battery to "
+"your nearest local recycling facility, ship the laptop to school "
+"without the battery and mark this field with a value of zero."
+msgstr ""
+"Fes una estimació de la duració de la bateria en minuts. Si la "
+"bateria no funciona, si us plau, treu-la del portàtil, porta-la a "
+"la deixaderia més propera, empaqueta el portàtil per l'escola "
+"sense la bateria i omple aquest camp amb un 0"
+
+#: field:field_battery_duration:laptop:label
+msgctxt "field_battery_duration:laptop:label"
+msgid "Battery duration"
+msgstr "Duració de la bateria"
+
+#: field:field_battery_watt_hours:laptop:label
+msgctxt "field_battery_watt_hours:laptop:label"
+msgid "Watt-hours"
+msgstr "Watts per hora"
+
+#: field:field_book_language:book:label
+msgctxt "field_book_language:book:label"
+msgid "Language"
+msgstr "Llenguatge"
+
+#: field:field_branches_information:hub:label
+msgctxt "field_branches_information:hub:label"
+msgid "About this hub"
+msgstr "Sobre aquest hub"
+
+#: field:field_comments:dootrip:label
+msgctxt "field_comments:dootrip:label"
+msgid "Comments"
+msgstr "Comentaris"
+
+#: field:field_conversation_attachment:team_page:label
+msgctxt "field_conversation_attachment:team_page:label"
+msgid "Attachment"
+msgstr "Accessori"
+
+#: field:field_cpu:laptop:label
+msgctxt "field_cpu:laptop:label"
+msgid "CPU speed (Example: 1200 MHz)"
+msgstr "Velocitat de la CPU (Exemple: 1200 MHz)"
+
+#: field:field_cpu_type:laptop:label
+msgctxt "field_cpu_type:laptop:label"
+msgid "Number of cores (CPU type)"
+msgstr "Nombre de nuclis (tipus de CPU)"
+
+#: field:field_current_operating_system:laptop:description
+msgctxt "field_current_operating_system:laptop:description"
+msgid "Example: Ubuntu 12.04, Mac OS X, Windows 7, etc."
+msgstr "Exemple: Ubuntu 12.04, Mac OS X, Windows 7, etc."
+
+#: field:field_current_operating_system:laptop:label
+msgctxt "field_current_operating_system:laptop:label"
+msgid "Current operating system"
+msgstr "Sistema operatiu actual"
+
+#: field:field_departure_date:dootrip:label
+msgctxt "field_departure_date:dootrip:label"
+msgid "Departure date"
+msgstr "Data de sortida"
+
+#: field:field_destination_of_the_trip:dootrip:label
+msgctxt "field_destination_of_the_trip:dootrip:label"
+msgid "Destination of the trip"
+msgstr "Destinació del viatge"
+
+#: field:field_device_type:#allowed_values:androidTablet
+msgctxt "field_device_type:#allowed_values:androidTablet"
+msgid "Android tablet"
+msgstr "Tablet Android"
+
+#: field:field_device_type:#allowed_values:arduino
+msgctxt "field_device_type:#allowed_values:arduino"
+msgid "Arduino"
+msgstr "Arduino"
+
+#: field:field_device_type:#allowed_values:blackberry
+msgctxt "field_device_type:#allowed_values:blackberry"
+msgid "BlackBerry"
+msgstr "BlackBerry"
+
+#: field:field_device_type:#allowed_values:blackberryPi
+msgctxt "field_device_type:#allowed_values:blackberryPi"
+msgid "Blackberry Pi"
+msgstr "Raspberry Pi"
+
+#: field:field_device_type:#allowed_values:desktop
+msgctxt "field_device_type:#allowed_values:desktop"
+msgid "Desktop"
+msgstr "Escriptori"
+
+#: field:field_device_type:#allowed_values:diyDevice
+msgctxt "field_device_type:#allowed_values:diyDevice"
+msgid "Do-it-yourselve device"
+msgstr "Dispositiu fet per un mateix"
+
+#: field:field_device_type:#allowed_values:ebook
+msgctxt "field_device_type:#allowed_values:ebook"
+msgid "eBook"
+msgstr "Llibre electrònic"
+
+#: field:field_device_type:#allowed_values:googlePhone
+msgctxt "field_device_type:#allowed_values:googlePhone"
+msgid "Android phone"
+msgstr "Telèfon Android"
+
+#: field:field_device_type:#allowed_values:internetTable
+msgctxt "field_device_type:#allowed_values:internetTable"
+msgid "Internet tablet"
+msgstr "Tablet amb connexió a Internet"
+
+#: field:field_device_type:#allowed_values:ipad
+msgctxt "field_device_type:#allowed_values:ipad"
+msgid "iPad"
+msgstr "iPad"
+
+#: field:field_device_type:#allowed_values:iphone
+msgctxt "field_device_type:#allowed_values:iphone"
+msgid "iPhone"
+msgstr "iPhone"
+
+#: field:field_device_type:#allowed_values:laptop
+msgctxt "field_device_type:#allowed_values:laptop"
+msgid "Laptop"
+msgstr "Portàtil"
+
+#: field:field_device_type:#allowed_values:smartphone
+msgctxt "field_device_type:#allowed_values:smartphone"
+msgid "SmartPhone"
+msgstr "SmartPhone"
+
+#: field:field_device_type:laptop:label
+msgctxt "field_device_type:laptop:label"
+msgid "Device type"
+msgstr "Tipus de dispositiu"
+
+#: field:field_doojects_additional_notes:edoovillage:label
+msgctxt "field_doojects_additional_notes:edoovillage:label"
+msgid "Doojects additional notes"
+msgstr "Notes adicionals dels doojects"
+
+#: field:field_dooject_weight:laptop:label
+msgctxt "field_dooject_weight:laptop:label"
+msgid "Weight"
+msgstr "Pes"
+
+#: field:field_dootripper_s_:dootrip:description
+msgctxt "field_dootripper_s_:dootrip:description"
+msgid "User(s) who will be part of this dootrip"
+msgstr "Usuari(s) que formaran part d'aquest viatge Labdoo"
+
+#: field:field_dootripper_s_:dootrip:label
+msgctxt "field_dootripper_s_:dootrip:label"
+msgid "Dootripper(s)"
+msgstr "Dootripper(s)"
+
+#: field:field_dootrips:laptop:description
+msgctxt "field_dootrips:laptop:description"
+msgid ""
+"This field is updated automatically once dootrips are assigned to this "
+"dooject. You can also optionally set this field manually adding "
+"dootrips by typing their name."
+msgstr ""
+"Aquest camp s'actualitza automàticament un cop els dootrips s'assignen a "
+"aquest dooject. Opcionalment, pots modificar-lo manualment afegint "
+"el nom dels dootrips."
+
+#: field:field_dootrips:laptop:label
+msgctxt "field_dootrips:laptop:label"
+msgid "Dootrips assigned to this dooject"
+msgstr "Dootrips assignats a aquest dooject"
+
+#: field:field_dootrip_additional_editors:dootrip:label
+msgctxt "field_dootrip_additional_editors:dootrip:label"
+msgid "Additional editors"
+msgstr "Editors adicionals"
+
+#: field:field_dootrip_capacity:dootrip:label
+msgctxt "field_dootrip_capacity:dootrip:label"
+msgid "Number of doojects you can carry"
+msgstr "Nombre de doojects que pots portar"
+
+#: field:field_dootrip_weight:dootrip:label
+msgctxt "field_dootrip_weight:dootrip:label"
+msgid "Dooject's estimated total weight"
+msgstr "Pes estimat dels doojects"
+
+#: field:field_drupal_wall_image_style:drupal_wall:label
+msgctxt "field_drupal_wall_image_style:drupal_wall:label"
+msgid "Image Style"
+msgstr "Estil de la imatge"
+
+#: field:field_drupal_wall_photos:drupal_wall:label
+msgctxt "field_drupal_wall_photos:drupal_wall:label"
+msgid "Share Photo"
+msgstr "Compartir foto"
+
+#: field:field_drupal_wall_videos:drupal_wall:label
+msgctxt "field_drupal_wall_videos:drupal_wall:label"
+msgid "Share Videos"
+msgstr "Compartir vídeos"
+
+#: field:field_edoovillage_action:action:label
+msgctxt "field_edoovillage_action:action:label"
+msgid "Edoovillage"
+msgstr "Edoovillage"
+
+#: field:field_edoovillage_destination:laptop:label
+msgctxt "field_edoovillage_destination:laptop:label"
+msgid "Edoovillage destination"
+msgstr "Destinació de l'edoovillage"
+
+#: field:field_edoovillage_photo_album:edoovillage:label
+msgctxt "field_edoovillage_photo_album:edoovillage:label"
+msgid "Photo album"
+msgstr "Àlbum de fotos"
+
+#: field:field_edoovillage_status:#allowed_values:completed
+msgctxt "field_edoovillage_status:#allowed_values:completed"
+msgid "Completed"
+msgstr "Completat"
+
+#: field:field_edoovillage_status:#allowed_values:open
+msgctxt "field_edoovillage_status:#allowed_values:open"
+msgid "Open"
+msgstr "Obre"
+
+#: field:field_edoovillage_status:edoovillage:label
+msgctxt "field_edoovillage_status:edoovillage:label"
+msgid "Status"
+msgstr "Estat"
+
+#: field:field_edoo_additional_editors:edoovillage:label
+msgctxt "field_edoo_additional_editors:edoovillage:label"
+msgid "Additional editors"
+msgstr "Editors adicionals"
+
+#: field:field_edoo_additional_followers:edoovillage:label
+msgctxt "field_edoo_additional_followers:edoovillage:label"
+msgid "Additional followers"
+msgstr "Seguidor adicionals"
+
+#: field:field_edoo_additional_notif_em:edoovillage:label
+msgctxt "field_edoo_additional_notif_em:edoovillage:label"
+msgid "Additional notification emails"
+msgstr "Adreces electròniques de notificació adicionals"
+
+#: field:field_event_date:event:label
+msgctxt "field_event_date:event:label"
+msgid "Date(s)"
+msgstr "Data(es)"
+
+#: field:field_file_image_alt_text:image:description
+msgctxt "field_file_image_alt_text:image:description"
+msgid ""
+"Alternative text is used by screen readers, search engines, and when "
+"the image cannot be loaded. By adding alt text you improve "
+"accessibility and search engine optimization."
+msgstr ""
+"El text alternatiu s'utilitza als lectors de pantalla, motors de cerca, "
+"i quan la imatge no es pot carregar. També per millorar l'accessibilitat "
+"i l'optimització de les cerques."
+
+#: field:field_file_image_alt_text:image:label
+msgctxt "field_file_image_alt_text:image:label"
+msgid "Alt Text"
+msgstr "Text alternatiu"
+
+#: field:field_file_image_title_text:image:description
+msgctxt "field_file_image_title_text:image:description"
+msgid ""
+"Title text is used in the tool tip when a user hovers their mouse over "
+"the image. Adding title text makes it easier to understand the context "
+"of an image and improves usability."
+msgstr ""
+"El títol s'utilitza com a text informatiu de la imatge i surt quan l'usuari "
+"mou el ratolí sobre aquesta. Afegint aquests títols fas més fàcil entendre "
+"el context de la imatge i millores la usabilitat."
+
+#: field:field_file_image_title_text:image:label
+msgctxt "field_file_image_title_text:image:label"
+msgid "Title Text"
+msgstr "Títol"
+
+#: field:field_gic_date:gic:label
+msgctxt "field_gic_date:gic:label"
+msgid "Date"
+msgstr "Data"
+
+#: field:field_gic_edoovillage:gic:label
+msgctxt "field_gic_edoovillage:gic:label"
+msgid "Edoovillage"
+msgstr "Edoovillage"
+
+#: field:field_hard_drive:laptop:label
+msgctxt "field_hard_drive:laptop:label"
+msgid "Hard drive"
+msgstr "Disc dur"
+
+#: field:field_hub:edoovillage:label
+msgctxt "field_hub:edoovillage:label"
+msgid "Coordinating hub(s)"
+msgstr "Coordinador de hub(s)"
+
+#: field:field_hub_action:action:label
+msgctxt "field_hub_action:action:label"
+msgid "Hub"
+msgstr "Hub"
+
+#: field:field_hub_additional_editors:hub:label
+msgctxt "field_hub_additional_editors:hub:label"
+msgid "Additional editors"
+msgstr "Editors adicionals"
+
+#: field:field_hub_laptop:laptop:description
+msgctxt "field_hub_laptop:laptop:description"
+msgid ""
+"If you are an individual tagger, select here the group \"Grassroots\". "
+"If you belong to a hub, select the name of your hub."
+msgstr ""
+"Si ets un etiquetador individual, selecciona el grup \"Grassroots\". "
+"Si pertanys a un hub, selecciona en nom del teu hub."
+
+#: field:field_hub_laptop:laptop:label
+msgctxt "field_hub_laptop:laptop:label"
+msgid "Source group"
+msgstr "Grup font"
+
+#: field:field_hub_manager_s_:hub:label
+msgctxt "field_hub_manager_s_:hub:label"
+msgid "Hub manager(s)"
+msgstr "Gerent(s) del hub"
+
+#: field:field_hub_photo_album:hub:label
+msgctxt "field_hub_photo_album:hub:label"
+msgid "Photo album"
+msgstr "Àlbum de fotos"
+
+#: field:field_image:article:description
+msgctxt "field_image:article:description"
+msgid "Upload an image to go with this article."
+msgstr "Puja una imatge per enllaçar amb aquest article"
+
+#: field:field_image:article:label
+msgctxt "field_image:article:label"
+msgid "Image"
+msgstr "Imatge"
+
+#: field:field_image:labdoo_slide:label
+msgctxt "field_image:labdoo_slide:label"
+msgid "Image"
+msgstr "Imatge"
+
+#: field:field_internet_additional_notes:edoovillage:label
+msgctxt "field_internet_additional_notes:edoovillage:label"
+msgid "Internet additional notes"
+msgstr "Notes adicionals d'Internet"
+
+#: field:field_internet_connection_type:#allowed_values:none
+msgctxt "field_internet_connection_type:#allowed_values:none"
+msgid "None"
+msgstr "Res"
+
+#: field:field_internet_connection_type:#allowed_values:wired
+msgctxt "field_internet_connection_type:#allowed_values:wired"
+msgid "Wired"
+msgstr "Amb cables"
+
+#: field:field_internet_connection_type:#allowed_values:wiredOrWireless
+msgctxt "field_internet_connection_type:#allowed_values:wiredOrWireless"
+msgid "Wired or Wireless"
+msgstr "Amb cables o sense cables"
+
+#: field:field_internet_connection_type:#allowed_values:wireless
+msgctxt "field_internet_connection_type:#allowed_values:wireless"
+msgid "Wireless"
+msgstr "Sense cables"
+
+#: field:field_internet_connection_type:edoovillage:label
+msgctxt "field_internet_connection_type:edoovillage:label"
+msgid "Internet connection type"
+msgstr "Tipus de connexió a Internet"
+
+#: field:field_is_first_page:#allowed_values:0
+msgctxt "field_is_first_page:#allowed_values:0"
+msgid "It's a translation"
+msgstr "És una traducció"
+
+#: field:field_is_first_page:#allowed_values:1
+msgctxt "field_is_first_page:#allowed_values:1"
+msgid "It's the original"
+msgstr "És l'original"
+
+#: field:field_is_first_page:book:label
+msgctxt "field_is_first_page:book:label"
+msgid ""
+"Is this wiki page a translation of another wiki page or is this the "
+"original?"
+msgstr "Aquesta pàgina wiki és la traducció d'una altra pàgina wiki o "
+"és l'original?"
+
+#: field:field_keyboard:laptop:label
+msgctxt "field_keyboard:laptop:label"
+msgid "Keyboard (country of origin)"
+msgstr "Teclat (país d'origen)"
+
+#: field:field_labdooer_action:action:label
+msgctxt "field_labdooer_action:action:label"
+msgid "Labdooer"
+msgstr "Labdooer"
+
+#: field:field_laptops:dootrip:description
+msgctxt "field_laptops:dootrip:description"
+msgid ""
+"Once you know the dooject(s) that you will be carrying with this "
+"dootrip, enter their Labdoo identifier here."
+msgstr ""
+"Un cop coneixes el(s)dooject(s) que podràs portar en aquest "
+"dootrip, introdueix el seu identificador Labdoo aquí."
+
+#: field:field_laptops:dootrip:label
+msgctxt "field_laptops:dootrip:label"
+msgid "Dooject identifiers"
+msgstr "Identificadors dooject"
+
+#: field:field_linked_pages:superhub_page:description
+msgctxt "field_linked_pages:superhub_page:description"
+msgid ""
+"Select the superhub pages where you would like this menu block to "
+"appear"
+msgstr "Selecciona les pàgines del superhub on t'agradaria que el "
+"bloc de menú aparegui"
+
+#: field:field_linked_pages:superhub_page:label
+msgctxt "field_linked_pages:superhub_page:label"
+msgid "Linked pages"
+msgstr "Pàgines enllaçades"
+
+#: field:field_local_language_s_:edoovillage:label
+msgctxt "field_local_language_s_:edoovillage:label"
+msgid "Local language(s)"
+msgstr "Llenguatge(s) local(s)"
+
+#: field:field_manager:laptop:description
+msgctxt "field_manager:laptop:description"
+msgid "The user currently managing this dooject"
+msgstr "L'usuari actual que controla aquest dooject"
+
+#: field:field_manager:laptop:label
+msgctxt "field_manager:laptop:label"
+msgid "Manager"
+msgstr "Gerent"
+
+#: field:field_memory:laptop:label
+msgctxt "field_memory:laptop:label"
+msgid "Memory"
+msgstr "Memòria"
+
+#: field:field_model:laptop:description
+msgctxt "field_model:laptop:description"
+msgid "Brand name and model of the dooject"
+msgstr "Marca i model del dooject"
+
+#: field:field_model:laptop:label
+msgctxt "field_model:laptop:label"
+msgid "Model"
+msgstr "Model"
+
+#: field:field_number_of_days_after:dootrip:label
+msgctxt "field_number_of_days_after:dootrip:label"
+msgid "Number of days you can store the dooject after the arrival date"
+msgstr "Nombre de dies que pots emmagatzemar el dooject després de la data d'arribada"
+
+#: field:field_number_of_days_before:dootrip:label
+msgctxt "field_number_of_days_before:dootrip:label"
+msgid "Number of days you can sotre dooject before the departure date"
+msgstr "Nombre de dies que pots emmagatzemar el dooject abans de la data de sortida"
+
+#: field:field_number_of_doojects_assigne:dootrip:label
+msgctxt "field_number_of_doojects_assigne:dootrip:label"
+msgid "Number of doojects assigned"
+msgstr "Nombre de doojects assignats"
+
+#: field:field_number_of_laptops_needed:edoovillage:label
+msgctxt "field_number_of_laptops_needed:edoovillage:label"
+msgid "Number of doojects needed"
+msgstr "Nombre de doojects necessaris"
+
+#: field:field_number_of_students:edoovillage:label
+msgctxt "field_number_of_students:edoovillage:label"
+msgid "Number of students"
+msgstr "Nombre d'estudiants"
+
+#: field:field_number_of_teachers:edoovillage:label
+msgctxt "field_number_of_teachers:edoovillage:label"
+msgid "Number of teachers"
+msgstr "Nombre de professors"
+
+#: field:field_on_site_point_of_contact:edoovillage:description
+msgctxt "field_on_site_point_of_contact:edoovillage:description"
+msgid "Email address, phone number, website, etc."
+msgstr "Adreça electrònica, número de telèfon, web, etc."
+
+#: field:field_on_site_point_of_contact:edoovillage:label
+msgctxt "field_on_site_point_of_contact:edoovillage:label"
+msgid "On-site point of contact"
+msgstr "Punt de contacte al lloc"
+
+#: field:field_origin_of_the_trip:dootrip:label
+msgctxt "field_origin_of_the_trip:dootrip:label"
+msgid "Origin of the trip"
+msgstr "Origen del viatge"
+
+#: field:field_parent_hub:hub:description
+msgctxt "field_parent_hub:hub:description"
+msgid ""
+"If this hub has a parent hub, please select it from the following "
+"list."
+msgstr "Si aquest hub té un hub pare, si us plau, selecciona'l "
+"de la següent llista."
+
+#: field:field_parent_hub:hub:label
+msgctxt "field_parent_hub:hub:label"
+msgid "Parent hub"
+msgstr "Hub pare"
+
+#: field:field_photo_album_edoovillage:node_gallery_gallery:label
+msgctxt "field_photo_album_edoovillage:node_gallery_gallery:label"
+msgid "Edoovillage"
+msgstr "Edoovillage"
+
+#: field:field_photo_album_hub:node_gallery_gallery:label
+msgctxt "field_photo_album_hub:node_gallery_gallery:label"
+msgid "Hub"
+msgstr "Hub"
+
+#: field:field_picture:laptop:description
+msgctxt "field_picture:laptop:description"
+msgid ""
+"Upload here a picture of the dooject. A picture is a helpful way for "
+"donors to ensure that they are looking at the correct dooject. Please "
+"do not use pictures that you may find on the Internet, as they may be "
+"copyrighted.  Instead, please take a picture with your own camera. "
+"Once the dooject reaches a school, you can also upload another picture "
+"with the students using it."
+msgstr ""
+"Puja aquí una imatge del dooject. Una imatge és una forma fàcil pels "
+"donants d'assegurar-se que estan mirant el dooject correcte. Si us plau "
+"no utilitzis imatges que trobis a Internet, ja que potser tenen drets "
+"d'autor. Millor fes una foto amb la teva pròpia càmera. "
+"Un cop el dooject arribi a l'escola, pots pujar una altra imatge "
+"on surtin els estudiants utilitzant-lo."
+
+#: field:field_picture:laptop:label
+msgctxt "field_picture:laptop:label"
+msgid "Picture"
+msgstr "Imatge"
+
+#: field:field_project_application:edoovillage:label
+msgctxt "field_project_application:edoovillage:label"
+msgid "Project application"
+msgstr "Aplicació del projecte"
+
+
+
+
+
+
+
+
+
+
+
+#: field:field_project_description:edoovillage:label
+msgctxt "field_project_description:edoovillage:label"
+msgid "Project description"
+msgstr ""
+
+#: field:field_project_manager_s_:edoovillage:label
+msgctxt "field_project_manager_s_:edoovillage:label"
+msgid "Project manager(s)"
+msgstr ""
+
+#: field:field_project_summary:edoovillage:label
+msgctxt "field_project_summary:edoovillage:label"
+msgid "Project brief description"
+msgstr ""
+
+#: field:field_reference_book:book:label
+msgctxt "field_reference_book:book:label"
+msgid "Original book"
+msgstr ""
+
+#: field:field_semaphore:#allowed_values:green
+msgctxt "field_semaphore:#allowed_values:green"
+msgid "Green: the rest of the doojects can be sent"
+msgstr ""
+
+#: field:field_semaphore:#allowed_values:red
+msgctxt "field_semaphore:#allowed_values:red"
+msgid "Red: pictures about the project have not been uploaded yet"
+msgstr ""
+
+#: field:field_semaphore:#allowed_values:yellow
+msgctxt "field_semaphore:#allowed_values:yellow"
+msgid "Yellow: first doojects can be sent"
+msgstr ""
+
+#: field:field_semaphore:edoovillage:label
+msgctxt "field_semaphore:edoovillage:label"
+msgid "Semaphore"
+msgstr ""
+
+#: field:field_serial_number:laptop:description
+msgctxt "field_serial_number:laptop:description"
+msgid ""
+"Write here the serial number of the dooject. Usually the serial number "
+"can be found in the back of the dooject, search for keywords such as "
+"\"Serial Number\" or \"S/N\", or if you see a bar code with a number "
+"under it, use this number. If the dooject has no sticker with the "
+"serial number, then write in this field the words \"Unknown\"."
+msgstr ""
+
+#: field:field_serial_number:laptop:label
+msgctxt "field_serial_number:laptop:label"
+msgid "Serial number"
+msgstr ""
+
+#: field:field_simplenews_term:simplenews:label
+msgctxt "field_simplenews_term:simplenews:label"
+msgid "Newsletter category"
+msgstr ""
+
+#: field:field_skills:user:label
+msgctxt "field_skills:user:label"
+msgid "Skills"
+msgstr ""
+
+#: field:field_slider_tab:slider_page:label
+msgctxt "field_slider_tab:slider_page:label"
+msgid "Tab"
+msgstr ""
+
+#: field:field_slider_weight:slider_page:label
+msgctxt "field_slider_weight:slider_page:label"
+msgid "Weight"
+msgstr ""
+
+#: field:field_socket_type:edoovillage:label
+msgctxt "field_socket_type:edoovillage:label"
+msgid "Socket type"
+msgstr ""
+
+#: field:field_socket_voltage:#allowed_values:120
+msgctxt "field_socket_voltage:#allowed_values:120"
+msgid "100-127 Volts"
+msgstr ""
+
+#: field:field_socket_voltage:#allowed_values:220
+msgctxt "field_socket_voltage:#allowed_values:220"
+msgid "220-240 Volts"
+msgstr ""
+
+#: field:field_socket_voltage:edoovillage:label
+msgctxt "field_socket_voltage:edoovillage:label"
+msgid "Socket voltage"
+msgstr ""
+
+#: field:field_status:#allowed_values:L1
+msgctxt "field_status:#allowed_values:L1"
+msgid "[L1] Dooject was lost"
+msgstr ""
+
+#: field:field_status:#allowed_values:S0
+msgctxt "field_status:#allowed_values:S0"
+msgid "[S0] Tagged with a Labdoo ID"
+msgstr ""
+
+#: field:field_status:#allowed_values:S1
+msgctxt "field_status:#allowed_values:S1"
+msgid "[S1] Donated, waiting to pass quality assurance"
+msgstr ""
+
+#: field:field_status:#allowed_values:S2
+msgctxt "field_status:#allowed_values:S2"
+msgid "[S2] Passed quality assurance"
+msgstr ""
+
+#: field:field_status:#allowed_values:S3
+msgctxt "field_status:#allowed_values:S3"
+msgid "[S3] Assigned to an edoovillage, waiting to be shipped"
+msgstr ""
+
+#: field:field_status:#allowed_values:S4
+msgctxt "field_status:#allowed_values:S4"
+msgid "[S4] Deployed and being used"
+msgstr ""
+
+#: field:field_status:#allowed_values:S5
+msgctxt "field_status:#allowed_values:S5"
+msgid "[S5] Waiting to be recycled"
+msgstr ""
+
+#: field:field_status:#allowed_values:S6
+msgctxt "field_status:#allowed_values:S6"
+msgid "[S6] Recycled"
+msgstr ""
+
+#: field:field_status:#allowed_values:S7
+msgctxt "field_status:#allowed_values:S7"
+msgid "[S7] (Library) Checked out"
+msgstr ""
+
+#: field:field_status:#allowed_values:S8
+msgctxt "field_status:#allowed_values:S8"
+msgid "[S8] (Library) Available"
+msgstr ""
+
+#: field:field_status:#allowed_values:S9
+msgctxt "field_status:#allowed_values:S9"
+msgid "[S9] Deployed but not working"
+msgstr ""
+
+#: field:field_status:#allowed_values:T1
+msgctxt "field_status:#allowed_values:T1"
+msgid "[T1] In transit going to an edoovillage"
+msgstr ""
+
+#: field:field_status:#allowed_values:T2
+msgctxt "field_status:#allowed_values:T2"
+msgid "[T2] In transit going to a recycling factory"
+msgstr ""
+
+#: field:field_status:laptop:label
+msgctxt "field_status:laptop:label"
+msgid "Status"
+msgstr ""
+
+#: field:field_status_dootrip:#allowed_values:DS0
+msgctxt "field_status_dootrip:#allowed_values:DS0"
+msgid "Pending"
+msgstr ""
+
+#: field:field_status_dootrip:#allowed_values:DS1
+msgctxt "field_status_dootrip:#allowed_values:DS1"
+msgid "Completed"
+msgstr ""
+
+#: field:field_status_dootrip:#allowed_values:DS2
+msgctxt "field_status_dootrip:#allowed_values:DS2"
+msgid "Cancelled"
+msgstr ""
+
+#: field:field_status_dootrip:dootrip:label
+msgctxt "field_status_dootrip:dootrip:label"
+msgid "Status"
+msgstr ""
+
+#: field:field_superhub_page_type:#allowed_values:block
+msgctxt "field_superhub_page_type:#allowed_values:block"
+msgid "Menu Block"
+msgstr ""
+
+#: field:field_superhub_page_type:#allowed_values:page
+msgctxt "field_superhub_page_type:#allowed_values:page"
+msgid "Page"
+msgstr ""
+
+#: field:field_superhub_page_type:superhub_page:label
+msgctxt "field_superhub_page_type:superhub_page:label"
+msgid "Type"
+msgstr ""
+
+#: field:field_tagger:laptop:description
+msgctxt "field_tagger:laptop:description"
+msgid "The user who tagged this dooject"
+msgstr ""
+
+#: field:field_tagger:laptop:label
+msgctxt "field_tagger:laptop:label"
+msgid "Tagger"
+msgstr ""
+
+#: field:field_tags:article:description
+msgctxt "field_tags:article:description"
+msgid "Enter a comma-separated list of words to describe your content."
+msgstr ""
+
+#: field:field_tags:article:label
+msgctxt "field_tags:article:label"
+msgid "Tags"
+msgstr ""
+
+#: field:field_task_assigned_to:team_task:label
+msgctxt "field_task_assigned_to:team_task:label"
+msgid "Assigned to"
+msgstr ""
+
+#: field:field_task_attachment:team_task:label
+msgctxt "field_task_attachment:team_task:label"
+msgid "Attachment"
+msgstr ""
+
+#: field:field_task_priority:#allowed_values:high
+msgctxt "field_task_priority:#allowed_values:high"
+msgid "High"
+msgstr ""
+
+#: field:field_task_priority:#allowed_values:low
+msgctxt "field_task_priority:#allowed_values:low"
+msgid "Low"
+msgstr ""
+
+#: field:field_task_priority:#allowed_values:normal
+msgctxt "field_task_priority:#allowed_values:normal"
+msgid "Normal"
+msgstr ""
+
+#: field:field_task_priority:team_task:label
+msgctxt "field_task_priority:team_task:label"
+msgid "Priority"
+msgstr ""
+
+#: field:field_task_status:#allowed_values:close
+msgctxt "field_task_status:#allowed_values:close"
+msgid "Close"
+msgstr ""
+
+#: field:field_task_status:#allowed_values:deferred
+msgctxt "field_task_status:#allowed_values:deferred"
+msgid "Deferred"
+msgstr ""
+
+#: field:field_task_status:#allowed_values:duplicate
+msgctxt "field_task_status:#allowed_values:duplicate"
+msgid "Duplicate"
+msgstr ""
+
+#: field:field_task_status:#allowed_values:open
+msgctxt "field_task_status:#allowed_values:open"
+msgid "Open"
+msgstr ""
+
+#: field:field_task_status:#allowed_values:resolved
+msgctxt "field_task_status:#allowed_values:resolved"
+msgid "Resolved"
+msgstr ""
+
+#: field:field_task_status:team_task:label
+msgctxt "field_task_status:team_task:label"
+msgid "Status"
+msgstr ""
+
+#: field:field_task_type:#allowed_values:doojectSanitation
+msgctxt "field_task_type:#allowed_values:doojectSanitation"
+msgid "Dooject sanitation event"
+msgstr ""
+
+#: field:field_task_type:#allowed_values:featureRequest
+msgctxt "field_task_type:#allowed_values:featureRequest"
+msgid "Feature request"
+msgstr ""
+
+#: field:field_task_type:#allowed_values:generalTask
+msgctxt "field_task_type:#allowed_values:generalTask"
+msgid "General task"
+msgstr ""
+
+#: field:field_task_type:#allowed_values:outreachingActivity
+msgctxt "field_task_type:#allowed_values:outreachingActivity"
+msgid "Outreaching activity"
+msgstr ""
+
+#: field:field_task_type:#allowed_values:websiteBug
+msgctxt "field_task_type:#allowed_values:websiteBug"
+msgid "Website bug"
+msgstr ""
+
+#: field:field_task_type:team_task:label
+msgctxt "field_task_type:team_task:label"
+msgid "Type"
+msgstr ""
+
+#: field:field_type:#allowed_values:edoovillage
+msgctxt "field_type:#allowed_values:edoovillage"
+msgid "Edoovillage"
+msgstr ""
+
+#: field:field_type:#allowed_values:hub
+msgctxt "field_type:#allowed_values:hub"
+msgid "Hub"
+msgstr ""
+
+#: field:field_type:slider_page:label
+msgctxt "field_type:slider_page:label"
+msgid "Type"
+msgstr ""
+
+#: field:field_types_of_mini_missions:#allowed_values:HUBTYPE0
+msgctxt "field_types_of_mini_missions:#allowed_values:HUBTYPE0"
+msgid "Dropping point"
+msgstr ""
+
+#: field:field_types_of_mini_missions:#allowed_values:HUBTYPE1
+msgctxt "field_types_of_mini_missions:#allowed_values:HUBTYPE1"
+msgid "Sanitizing point"
+msgstr ""
+
+#: field:field_types_of_mini_missions:hub:description
+msgctxt "field_types_of_mini_missions:hub:description"
+msgid ""
+"If this hub accepts to store doojects, select \"Dropping point\". If "
+"the hub sanitizes doojects, select \"Sanitizing point\". You can "
+"select multiple options at the same time."
+msgstr ""
+
+#: field:field_types_of_mini_missions:hub:label
+msgctxt "field_types_of_mini_missions:hub:label"
+msgid "Hub type"
+msgstr ""
+
+#: field:field_user_name:user:description
+msgctxt "field_user_name:user:description"
+msgid "Your first and last name"
+msgstr ""
+
+#: field:field_user_name:user:label
+msgctxt "field_user_name:user:label"
+msgid "Name"
+msgstr ""
+
+#: field:field_volts:laptop:label
+msgctxt "field_volts:laptop:label"
+msgid "Volts"
+msgstr ""
+
+#: field:field_welcome_message:team:label
+msgctxt "field_welcome_message:team:label"
+msgid "Welcome message"
+msgstr ""
+
+#: field:group_group:#allowed_values:0
+msgctxt "group_group:#allowed_values:0"
+msgid "Not a team"
+msgstr ""
+
+#: field:group_group:#allowed_values:1
+msgctxt "group_group:#allowed_values:1"
+msgid "Team"
+msgstr ""
+
+#: field:group_group:team:description
+msgctxt "group_group:team:description"
+msgid "Determine if this is an OG group."
+msgstr ""
+
+#: field:group_group:team:label
+msgctxt "group_group:team:label"
+msgid "Team"
+msgstr ""
+
+#: field:node_gallery_media:node_gallery_item:description
+msgctxt "node_gallery_media:node_gallery_item:description"
+msgid "File to store Node Gallery media."
+msgstr ""
+
+#: field:node_gallery_media:node_gallery_item:label
+msgctxt "node_gallery_media:node_gallery_item:label"
+msgid "Gallery Media "
+msgstr ""
+
+#: field:node_gallery_ref_1:node_gallery_item:label
+msgctxt "node_gallery_ref_1:node_gallery_item:label"
+msgid "Galleries"
+msgstr ""
+
+#: field:og_group_ref:event:label
+msgctxt "og_group_ref:event:label"
+msgid "Team(s)"
+msgstr ""
+
+#: field:og_group_ref:team_page:label
+msgctxt "og_group_ref:team_page:label"
+msgid "Team(s)"
+msgstr ""
+
+#: field:og_group_ref:team_task:label
+msgctxt "og_group_ref:team_task:label"
+msgid "Team(s)"
+msgstr ""
+
+#: field:og_membership_request:og_membership_type_default:description
+msgctxt "og_membership_request:og_membership_type_default:description"
+msgid "This is the text a user may send to the group administrators."
+msgstr ""
+
+#: field:og_membership_request:og_membership_type_default:label
+msgctxt "og_membership_request:og_membership_type_default:label"
+msgid "Request message"
+msgstr ""
+
+#: field:og_user_node:user:label
+msgctxt "og_user_node:user:label"
+msgid "Group membership"
+msgstr ""
