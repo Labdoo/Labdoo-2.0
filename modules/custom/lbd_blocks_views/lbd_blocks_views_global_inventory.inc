@@ -101,6 +101,10 @@ $handler = $view->new_display('page', 'Global', 'page');
 $handler->display->display_options['defaults']['title'] = FALSE;
 $handler->display->display_options['title'] = 'Global inventory';
 $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+$handler->display->display_options['defaults']['pager'] = FALSE;
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['pager']['options']['items_per_page'] = '2000';
+$handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['defaults']['relationships'] = FALSE;
 $handler->display->display_options['defaults']['fields'] = FALSE;
 /* Field: Content: Type */
@@ -450,6 +454,7 @@ $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE
 $handler->display->display_options['filters']['distance']['id'] = 'distance';
 $handler->display->display_options['filters']['distance']['table'] = 'location';
 $handler->display->display_options['filters']['distance']['field'] = 'distance';
+$handler->display->display_options['filters']['distance']['operator'] = 'dist';
 $handler->display->display_options['filters']['distance']['value'] = array(
   'latitude' => '',
   'longitude' => '',
@@ -468,12 +473,17 @@ $handler->display->display_options['filters']['distance']['expose']['operator_id
 $handler->display->display_options['filters']['distance']['expose']['label'] = 'Distance / Proximity';
 $handler->display->display_options['filters']['distance']['expose']['operator'] = 'distance_op';
 $handler->display->display_options['filters']['distance']['expose']['identifier'] = 'distance';
-$handler->display->display_options['filters']['distance']['expose']['required'] = TRUE;
 $handler->display->display_options['filters']['distance']['expose']['remember'] = TRUE;
 $handler->display->display_options['filters']['distance']['expose']['remember_roles'] = array(
   2 => '2',
   1 => '1',
+  7 => 0,
+  8 => 0,
+  9 => 0,
   3 => 0,
+  5 => 0,
+  6 => 0,
+  4 => 0,
 );
 $handler->display->display_options['filters']['distance']['expose']['gmap_macro'] = array(
   'default' => '[gmap ]',
@@ -481,7 +491,7 @@ $handler->display->display_options['filters']['distance']['expose']['gmap_macro'
 $handler->display->display_options['filters']['distance']['expose']['user_location_choose'] = array(
   'default' => FALSE,
 );
-$handler->display->display_options['filters']['distance']['origin'] = 'static';
+$handler->display->display_options['filters']['distance']['origin'] = 'latlon_gmap';
 /* Filter criterion: Content: Status (field_status_dootrip) */
 $handler->display->display_options['filters']['field_status_dootrip_value']['id'] = 'field_status_dootrip_value';
 $handler->display->display_options['filters']['field_status_dootrip_value']['table'] = 'field_data_field_status_dootrip';
@@ -513,7 +523,7 @@ $handler->display->display_options['defaults']['use_more_always'] = FALSE;
 $handler->display->display_options['use_more_always'] = FALSE;
 $handler->display->display_options['defaults']['use_more_text'] = FALSE;
 $handler->display->display_options['pager']['type'] = 'some';
-$handler->display->display_options['pager']['options']['items_per_page'] = '50';
+$handler->display->display_options['pager']['options']['items_per_page'] = '500';
 $handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['defaults']['style_plugin'] = FALSE;
 $handler->display->display_options['style_plugin'] = 'table';
@@ -558,7 +568,21 @@ $handler->display->display_options['style_options']['sticky'] = TRUE;
 $handler->display->display_options['defaults']['style_options'] = FALSE;
 $handler->display->display_options['defaults']['row_plugin'] = FALSE;
 $handler->display->display_options['defaults']['row_options'] = FALSE;
+$handler->display->display_options['defaults']['header'] = FALSE;
+$handler->display->display_options['defaults']['footer'] = FALSE;
+/* Footer: Global: Unfiltered text */
+$handler->display->display_options['footer']['area_text_custom']['id'] = 'area_text_custom';
+$handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
+$handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
+$handler->display->display_options['footer']['area_text_custom']['content'] = 'The above table shows up to 500 results.';
 $handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Global: View result counter */
+$handler->display->display_options['fields']['counter']['id'] = 'counter';
+$handler->display->display_options['fields']['counter']['table'] = 'views';
+$handler->display->display_options['fields']['counter']['field'] = 'counter';
+$handler->display->display_options['fields']['counter']['label'] = 'Item';
+$handler->display->display_options['fields']['counter']['counter_start'] = '1';
+$handler->display->display_options['fields']['counter']['reverse'] = 0;
 /* Field: Content: Title */
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
