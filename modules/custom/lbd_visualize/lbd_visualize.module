@@ -49,6 +49,21 @@ function sanitizeStringForVisualization($unsanitizedText) {
  *  the user ID as argument, allowing them to generate "myObject" type of dashboards. 
  */
 
+/*
+ * Cache implementation:
+ *
+ *  In order to scale up the computation of the dashboard (as the number of objects increase),
+ *  the code incorporates a cache. The cache stores results for both geolocation maps and 
+ *  tables and is indexed accross all possible dimensions of the dashboards: users, doojects,
+ *  dootrips, hubs, edoovillages.
+ *
+ *  To see the current status of the cache, run the following db command:
+ *    mysql> SELECT cid FROM cache WHERE cid LIKE '%lbd_visualization%';
+ *  To clean the cash, run the following drush command:
+ *    # drush php-eval "cache_clear_all('lbd_visualization', 'cache', TRUE);" 
+ *
+ */
+
 /**
  * Displays a dashboard of doojects
  * 
@@ -62,6 +77,18 @@ function sanitizeStringForVisualization($unsanitizedText) {
  *
  */
 function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovillageId = NULL, $country = NULL, $switcher = TRUE) {
+  // Fast path: first check the cache
+  $cacheIndexPrefix = 'lbd_visualization_dooject_' . 'u' . $userId . 'h' . $hubId . 'e' . $edoovillageId . 'c' . $country . '_';
+  if($cache = cache_get($cacheIndexPrefix . 'objects')) {
+    $objects = $cache->data;
+    $cache = cache_get($cacheIndexPrefix . 'metrics');
+    $metrics = $cache->data;
+    $cache = cache_get($cacheIndexPrefix . 'selected_nids');
+    $selectedNids = $cache->data;
+  }
+
+  else {
+ 
   global $language;
   $defaultLanguage = language_default();
   $defaultLanguageCode = $defaultLanguage->language;
@@ -120,7 +147,7 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
   $objects = array();
   $selectedNids = array();
 
-  $limitCounter = 2000;
+  $limitCounter = 1000000;
   foreach($result as $item) {
     if($limitCounter-- == 0)
       break;
@@ -229,10 +256,14 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
       $objects[0][$thisState] = 0;
 
   }
+    cache_set($cacheIndexPrefix . 'objects', $objects, 'cache');
+    cache_set($cacheIndexPrefix . 'metrics', $metrics, 'cache');
+    cache_set($cacheIndexPrefix . 'selected_nids', $selectedNids, 'cache');
+  }
 
   if($switcher)
     print_dashboard_switcher($userId);
-  print_dashboard_objects('laptop', 'doojects', $objects, $metrics, $selectedNids);
+  print_dashboard_objects('laptop', 'doojects', $objects, $metrics, $selectedNids, $cacheIndexPrefix);
 
 }
 
@@ -249,6 +280,7 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
  *
  */
 function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $country = NULL, $switcher = TRUE) {
+  $cacheIndexPrefix = 'lbd_visualization_edoovillage_' . 'u' . $userId . 'h' . $hubId . 'c' . $country . '_';
   global $language;
   $defaultLanguage = language_default();
   $defaultLanguageCode = $defaultLanguage->language;
@@ -395,7 +427,7 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
 
   if($switcher)
     print_dashboard_switcher($userId);
-  print_dashboard_objects('edoovillage', 'edoovillages', $objects, $metrics, $selectedNids);
+  print_dashboard_objects('edoovillage', 'edoovillages', $objects, $metrics, $selectedNids, $cacheIndexPrefix);
 
 }
 
@@ -411,6 +443,7 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
  *
  */
 function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher = TRUE) {
+  $cacheIndexPrefix = 'lbd_visualization_hub_' . 'u' . $userId . 'c' . $country . '_';
   global $language;
   $defaultLanguage = language_default();
   $defaultLanguageCode = $defaultLanguage->language;
@@ -545,7 +578,7 @@ function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher =
 
   if($switcher)
     print_dashboard_switcher($userId);
-  print_dashboard_objects('hub', 'hubs', $objects, $metrics, $selectedNids);
+  print_dashboard_objects('hub', 'hubs', $objects, $metrics, $selectedNids, $cacheIndexPrefix);
 
 }
 
@@ -561,6 +594,7 @@ function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher =
  *
  */
 function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL, $switcher = TRUE) {
+  $cacheIndexPrefix = 'lbd_visualization_dootrips_' . 'u' . $userId . 'c' . $country . '_';
   global $language;
   $defaultLanguage = language_default();
   $defaultLanguageCode = $defaultLanguage->language;
@@ -671,7 +705,7 @@ function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL, $switch
 
   if($switcher)
     print_dashboard_switcher($userId);
-  print_dashboard_objects('dootrip', 'dootrips', $objects, $metrics, $selectedNids);
+  print_dashboard_objects('dootrip', 'dootrips', $objects, $metrics, $selectedNids, $cacheIndexPrefix);
 
 }
 
@@ -755,7 +789,7 @@ function print_dashboard_switcher($userId = NULL)
  * Examples of objects are: doojects, hubs, edoovillages. 
  *
  */
-function print_dashboard_objects($objectsType, $objectsName, $objects, $metrics, $nodeIds)
+function print_dashboard_objects($objectsType, $objectsName, $objects, $metrics, $nodeIds, $cacheIndexPrefix)
 {
 
   $lastElement = sizeof($metrics)+1;
@@ -1013,7 +1047,13 @@ var rows = [
 
 ");
 
-  $objectsGeoCount = labdoo_getnum_objects_by_city($objectsType, $nodeIds);
+  if($cache = cache_get($cacheIndexPrefix . 'num_objects_by_city')) {
+    $objectsGeoCount = $cache->data;
+  }
+  else {
+    $objectsGeoCount = labdoo_getnum_objects_by_city($objectsType, $nodeIds, $maxEntries=1000000);
+    cache_set($cacheIndexPrefix . 'num_objects_by_city', $objectsGeoCount, 'cache');
+  }
   foreach ($objectsGeoCount as $item) {
     print("[" . $item['lat']. ", " . $item['lon'] . ", \"" . $item['city'] . ", " . $item['country'] . "\", ". $item['count'] ."],");
   }
