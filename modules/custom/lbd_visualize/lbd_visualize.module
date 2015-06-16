@@ -281,6 +281,16 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
  */
 function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $country = NULL, $switcher = TRUE) {
   $cacheIndexPrefix = 'lbd_visualization_edoovillage_' . 'u' . $userId . 'h' . $hubId . 'c' . $country . '_';
+  if($cache = cache_get($cacheIndexPrefix . 'objects')) {
+    $objects = $cache->data;
+    $cache = cache_get($cacheIndexPrefix . 'metrics');
+    $metrics = $cache->data;
+    $cache = cache_get($cacheIndexPrefix . 'selected_nids');
+    $selectedNids = $cache->data;
+  }
+
+  else {
+ 
   global $language;
   $defaultLanguage = language_default();
   $defaultLanguageCode = $defaultLanguage->language;
@@ -425,6 +435,12 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
   $metrics[9] = array('label' => 'Completed', 'field' => 'completed', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
   $metrics[10] = array('label' => 'Open', 'field' => 'open', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
 
+  cache_set($cacheIndexPrefix . 'objects', $objects, 'cache');
+  cache_set($cacheIndexPrefix . 'metrics', $metrics, 'cache');
+  cache_set($cacheIndexPrefix . 'selected_nids', $selectedNids, 'cache');
+
+  }
+
   if($switcher)
     print_dashboard_switcher($userId);
   print_dashboard_objects('edoovillage', 'edoovillages', $objects, $metrics, $selectedNids, $cacheIndexPrefix);
@@ -444,6 +460,16 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
  */
 function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher = TRUE) {
   $cacheIndexPrefix = 'lbd_visualization_hub_' . 'u' . $userId . 'c' . $country . '_';
+  if($cache = cache_get($cacheIndexPrefix . 'objects')) {
+    $objects = $cache->data;
+    $cache = cache_get($cacheIndexPrefix . 'metrics');
+    $metrics = $cache->data;
+    $cache = cache_get($cacheIndexPrefix . 'selected_nids');
+    $selectedNids = $cache->data;
+  }
+
+  else {
+ 
   global $language;
   $defaultLanguage = language_default();
   $defaultLanguageCode = $defaultLanguage->language;
@@ -575,6 +601,12 @@ function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher =
   $metrics[6] = array('label' => 'In transit', 'field' => 'intransit', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
   $metrics[7] = array('label' => 'Delivered', 'field' => 'delivered', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
   $metrics[8] = array('label' => 'Remaining', 'field' => 'remainingShared', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+
+  cache_set($cacheIndexPrefix . 'objects', $objects, 'cache');
+  cache_set($cacheIndexPrefix . 'metrics', $metrics, 'cache');
+  cache_set($cacheIndexPrefix . 'selected_nids', $selectedNids, 'cache');
+
+  }
 
   if($switcher)
     print_dashboard_switcher($userId);

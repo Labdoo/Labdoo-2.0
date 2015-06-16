@@ -3226,6 +3226,80 @@ print $user->uid;
     ),
   );
 
+  // Exported field: 'node-superhub_page-field_shub_page_language'.
+  $fields['node-superhub_page-field_shub_page_language'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_shub_page_language',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          'none' => 'None',
+          'ca' => 'Catalan',
+          'zh-hans' => 'Chinese (simplified)',
+          'zh-hant' => 'Chinese (traditional)',
+          'en' => 'English',
+          'fr' => 'French',
+          'de' => 'German',
+          'es' => 'Spanish',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'superhub_page',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '3',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_shub_page_language',
+      'label' => 'Language',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
+        'weight' => '6',
+      ),
+    ),
+  );
+
   // Exported field: 'node-superhub_page-field_superhub_page_type'.
   $fields['node-superhub_page-field_superhub_page_type'] = array(
     'field_config' => array(
@@ -4480,6 +4554,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
   t('Hub');
   t('Image');
   t('Labdooer');
+  t('Language');
   t('Linked pages');
   t('Photo album');
   t('Priority');

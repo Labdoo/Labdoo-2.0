@@ -205,8 +205,6 @@ function labdoo_render_map_geolocate_node($nodeId = NULL, $displayDoojects = Fal
 
   if($node->type != 'dootrip') {
     $locations = array();
-    if(!isset($locations[0]))
-      return;
     $locations[0] = new stdClass();
     $locations[0]->latitude = $node->locations[0]['latitude'];
     $locations[0]->longitude = $node->locations[0]['longitude']; 
@@ -1787,17 +1785,32 @@ function labdoo_render_footer() {
  *
  */
 function labdoo_render_superhub_menu() {
+  global $language;
+
+  //
   // If we are here, we passed the filter (labdoo_block_filter_superhub_menu)
-  // so that we are in a superhub page. Load it's associated menu block and return its body code.
-  $query = "SELECT entity_id FROM field_data_field_linked_pages WHERE field_linked_pages_target_id=" . arg(1);
+  // so that there can only be two cases:
+  //   (1) We are in a superhub page. Load it's associated menu block and return its body code.
+  //   (2) We are not in a superhub page but there exists a superhub block menu with a language
+  //       equal to the current page language. Load this superhub block menu.
+  //
+  if(labdoo_lib_node_is_type(array('superhub_page'))) {
+    # case (1)
+    $query = "SELECT entity_id FROM field_data_field_linked_pages WHERE field_linked_pages_target_id=" . arg(1);
+  }
+  else {
+    # case (2)
+    $query = "SELECT entity_id FROM field_data_field_shub_page_language WHERE field_shub_page_language_value='$language->language' AND entity_id IN 
+             (SELECT entity_id FROM field_data_field_superhub_page_type WHERE field_superhub_page_type_value='block')";
+  }
   $menuBlockId = db_query($query)->fetchField();
   if($menuBlockId == "")
     return "";
+
   $node = node_load($menuBlockId);
   $code = labdoo_lib_get_field($node, 'body', 'node', 'value');
   return $code;
 }
-
 
 
 /**
@@ -2043,25 +2056,27 @@ function labdoo_block_filter_footer() {
  *
  */
 function labdoo_block_filter_superhub_menu() {
-  $types = array('superhub_page' => 1) ;
+  global $language;
+
+  /*
+   * If there exists a superhub menu page with the 'Language'
+   * field set and equal to the current page language,
+   * display such superhub menu page.
+   */
+  $query = "SELECT entity_id FROM field_data_field_shub_page_language WHERE field_shub_page_language_value='$language->language' AND entity_id IN 
+           (SELECT entity_id FROM field_data_field_superhub_page_type WHERE field_superhub_page_type_value='block')";
+  $menuBlockId = db_query($query)->fetchField();
+  // Return true if such menu block was found and if sidebar_second is present.
+  if($menuBlockId && labdoo_block_filter_sidebar_second())
+    return TRUE;
 
   /*
    * Check that this is a superhub page
    */
-  if(arg(2) != "") //  Display only in node view mode
-    return FALSE;
-
-  if((arg(0) != 'node'))
-    return FALSE;
-
-  if(!is_numeric(arg(1)))
+  if(!labdoo_lib_node_is_type(array('superhub_page')))
     return FALSE;
 
   $node = node_load(arg(1));
-  if(!$node)
-    return FALSE;
-  if(!isset($types[$node->type]))
-    return FALSE;
 
   /*
    * Check that it is of type page

@@ -279,7 +279,7 @@ function lbd_blocks_views_block_info() {
     'info' => "The superhub menu block",
     'status' => 1,
     'visibility' => BLOCK_VISIBILITY_PHP,
-    'weight' => 0,
+    'weight' => -100,
     'pages' => "<?php return labdoo_block_filter_superhub_menu(); ?>",
     'region' => "sidebar_second",
   );

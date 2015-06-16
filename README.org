@@ -68,11 +68,12 @@
 
   A development Labdoo node can be converted into a production node by following the next steps:
 
-  + Drop the server certificate and private key to the folders /etc/ssl/certs/ and /etc/ssl/private/,
+  + Drop (1) the server certificate, (2) the intermediate certificate (chain certificate) and (3) private key 
+    to the folders /etc/ssl/certs/ and /etc/ssl/private/,
     respectively.
 
-  + Modify the file /etc/apache2/sites-enabled/lbd-ssl.conf so that SSLCertificateFile and
-    SSLCertificateKeyFile point to the certificate and private key, respectively.
+  + Modify the file /etc/apache2/sites-enabled/lbd-ssl.conf so that SSLCertificateFile, SSLCertificateChainFile and
+    SSLCertificateKeyFile point to the certificate, chain certificate and private key, respectively.
 
   + Modify both /etc/apache2/sites-enabled/lbd-ssl.conf and /etc/apache2/sites-enabled/lbd.conf
     so that all URL and email address information points to www.labdoo.org and contact@labdoo.org

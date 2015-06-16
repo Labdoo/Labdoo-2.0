@@ -3103,6 +3103,7 @@ function lbd_content_types_strongarm() {
     'image' => array(
       'node_gallery_file_thumbnail' => 'gallery_item',
       'node_gallery_file_cover' => 'gallery',
+      'node_gallery_file_display' => 'none',
     ),
   );
   $export['node_gallery_api_file_link_settings'] = $strongarm;

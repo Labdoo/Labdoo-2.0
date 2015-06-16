@@ -328,8 +328,11 @@ function lbd_communicate_node_presave($node) {
   if($node->type == 'laptop') 
     _email_laptop_event($node);
 
-  if($node->type == 'dootrip') 
-    _email_dootrip_event($node, 'presave');
+// To avoid too many emails, we disable emailing users upon every
+// small change of the dootrip. So dootrip notifications are only
+// sent upon dootrip creation via lbd_communicate_node_insert
+//  if($node->type == 'dootrip') 
+//    _email_dootrip_event($node, 'presave');
 
   return;
 }
@@ -350,6 +353,11 @@ function lbd_communicate_node_insert($node) {
   return;
 }
 
+
+function lbd_communicate_comment_presave($comment) {
+  // TODO
+
+}
 
 
 /**
