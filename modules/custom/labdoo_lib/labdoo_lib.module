@@ -524,7 +524,11 @@ function labdoo_render_photo_album_header() {
     $parentNode = $wNode->field_photo_album_hub->value();
   }
   $albumUri = drupal_get_path_alias("node/" .  $parentNode->nid, $language->language);
-  if($language->language != $defaultLanguage->language)
+  // First check if the URL has a 'lan' parameter. This is a special fix, please see
+  // TODO DE-COLORBOX for more info.
+  if(!empty($_GET['lan'])) 
+    $albumUri = $_GET['lan'] . "/" . $albumUri;
+  else if($language->language != $defaultLanguage->language)
     $albumUri = $language->language . "/" . $albumUri;
   $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="middle">
                            <img alt="" src="/profiles/labdoo/files/pictures/photo-album-icon.jpg" style="width: 122px; height: 100px; "/></a>';
@@ -824,7 +828,10 @@ function labdoo_lib_node_presave($node) {
      */
     $nodeCountry = labdoo_country_code2name($node->locations[0]['country']);
     $nodeCity = $node->locations[0]['city'];
-    $node->title = $nodeCountry . ", " . $nodeCity . ": " . labdoo_lib_get_field($node, 'field_project_summary', 'node', 'value');
+    if($nodeCountry == "[country not defined]")
+      $node->title = $nodeCity . ": " . labdoo_lib_get_field($node, 'field_project_summary', 'node', 'value');
+    else
+      $node->title = $nodeCountry . ", " . $nodeCity . ": " . labdoo_lib_get_field($node, 'field_project_summary', 'node', 'value');
 
     $wNode = entity_metadata_wrapper('node', $node);
     if(!property_exists($node, 'original')) {
@@ -1399,12 +1406,24 @@ function labdoo_lib_compute_hub_branches($nodeLoaded) {
  *
  */
 function labdoo_lib_node_view($node, $view_mode) {
+  global $language;
   // TODO: Every object that has a 'computed field' that needs to be refreshed
   // dynamically, must be resaved upon viewing. This is not very efficient but
   // it is more efficient than clearing the cache. Need to find a better solution.
 
   if($node->type == 'hub') // Hub has the computed field 'Hub branches'
     node_save($node);
+
+  // TODO DE-COLORBOX: temporary fix. This forces a redirect of all photo galleries in German language
+  // to the default language English, because there is a bug that prevents them from loading the 
+  // colorbox slideshow. We also add a URL parameter 'lan=de' so that the links in the photo album
+  // can be dynamically set to point back to the 'de' pages.
+  // Upon fixing this bug, the following redirect can be removed.
+  // See also https://www.labdoo.org/content/slideshow-feature-does-not-work-german-de-language
+  if($language->language == 'de' && $node->type == 'node_gallery_gallery' && $view_mode == 'full' && arg(0) == 'node') {
+    $options = array('query' => array('lan' => 'de'));
+    drupal_goto('../' . drupal_get_path_alias("node/" .  $node->nid), $options);
+  }
 
 }
 
@@ -1430,7 +1449,7 @@ function lbd_print_dooject_labels($laptopid = NULL) {
   print(
     t('Print and attach these three labels to: (1) the device, (2) the power adaptor and (3)
        inside the battery compartment of the device. You can omit the third tag if the device has no battery
-       compartment. Check this <a href="http://www.labdoo.org/sites/default/files/tagging-flow.png" target="_blank">drawing</a> if in doubt.')
+       compartment. Check this <a href="/profiles/labdoo/files/pictures/tagging-flow.png" class="colorbox-load">drawing</a> if in doubt.')
   );
 
   print('
@@ -1738,17 +1757,24 @@ function labdoo_render_footer() {
   $path = explode('/', drupal_get_normal_path('content/about-labdoo'));
   $urlNutshell = '"'.$langCode.'/wiki-index?field_book_language_value=All&field_reference_book_target_id='.$path[1].'"';
 
+  // Now write the code
+  $aboutLabdoo = t('About Labdoo');
+  $valuesAndPhilos = t('Values and Philosophy');
+  $termsAndConditions = t('Terms and Conditions');
+  $sourceCode = t('Source Code / Development Team'); 
+  $faq = t('FAQ');
+
   $code = ' 
 <table align="center"> 
 <tr>
 <td width="200">
-<a href='.$urlNutshell.'>About Labdoo</a>
+<a href='.$urlNutshell.'>'.$aboutLabdoo.'</a>
 </td>
 <td width="100">
 <a href='.$urlGlits.'>Glits</a>
 </td>
 <td width="300">
-<a href='.$urlDev.'>Source Code / Development Team</a>
+<a href='.$urlDev.'>'.$sourceCode.'</a>
 </td>
 <td width="200">
 <img src="/profiles/labdoo/files/pictures/equation-2-alpha-smaller.png" width="70">
@@ -1757,13 +1783,13 @@ function labdoo_render_footer() {
 </tr>
 <tr>
 <td>
-<a href='.$urlValues.'>Values and Philosophy</a>
+<a href='.$urlValues.'>'.$valuesAndPhilos.'</a>
 </td>
 <td>
-<a href='.$urlFaq.'>FAQ</a>
+<a href='.$urlFaq.'>'.$faq.'</a>
 </td>
 <td>
-<a href='.$urlTerms.'>Terms and Conditions</a>
+<a href='.$urlTerms.'>'.$termsAndConditions.'</a>
 </td>
 <td width="200">
 <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons</a>
@@ -1773,6 +1799,46 @@ function labdoo_render_footer() {
 <br/><br/>
 <img src="/profiles/labdoo/files/pictures/footer-acts.png">
 ';
+
+  // Some regions need special footer. 
+  // The following overwrites the footer block based on each region / language.
+  if($langCode == '/de') {
+    $code = ' 
+<table align="center"> 
+<tr>
+<td width="200">
+<a href='.$urlNutshell.'>'.$aboutLabdoo.'</a>
+</td>
+<td width="100">
+<a href='.$urlGlits.'>Glits</a>
+</td>
+<td width="300">
+<a href='.$urlDev.'>'.$sourceCode.'</a>
+</td>
+<td width="200">
+<img src="/profiles/labdoo/files/pictures/equation-2-alpha-smaller.png" width="70">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/rss.xml"><img src="/misc/feed.png"></a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='.$urlValues.'>'.$valuesAndPhilos.'</a>
+</td>
+<td>
+<a href='.$urlFaq.'>'.$faq.'</a>
+</td>
+<td>
+<a href="../de/content/impressum">Impressum</a>
+</td>
+<td width="200">
+<a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons</a>
+</td>
+</tr>
+</table>
+<br/><br/>
+<img src="/profiles/labdoo/files/pictures/footer-acts.png">
+';
+  }
 
   return $code;
 }
@@ -2071,9 +2137,9 @@ function labdoo_block_filter_superhub_menu() {
     return TRUE;
 
   /*
-   * Check that this is a superhub page
+   * Check that it is of the right content type
    */
-  if(!labdoo_lib_node_is_type(array('superhub_page')))
+  if(!labdoo_lib_node_is_type(array('superhub_page', 'book')))
     return FALSE;
 
   $node = node_load(arg(1));
@@ -2081,8 +2147,8 @@ function labdoo_block_filter_superhub_menu() {
   /*
    * Check that it is of type page
    */
-  if(labdoo_lib_get_field($node, 'field_superhub_page_type', 'node', 'value') != 'page')
-    return FALSE;
+//  if(labdoo_lib_get_field($node, 'field_superhub_page_type', 'node', 'value') != 'page')
+//    return FALSE;
 
   return TRUE;
 }

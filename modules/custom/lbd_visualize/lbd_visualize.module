@@ -296,13 +296,13 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
   $defaultLanguageCode = $defaultLanguage->language;
 
   $numberOfQueries = 1;
-  $queryAll = "(SELECT entity_id FROM field_data_field_edoovillage_status)";
+  $queryAll = "(SELECT DISTINCT entity_id FROM field_data_field_edoovillage_status)";
   $query = "SELECT t.entity_id FROM (" . $queryAll;
   $placeHolders = array();
 
   if($hubId != NULL) 
   {
-    $queryHub = "(SELECT entity_id FROM field_data_field_hub WHERE (field_hub_target_id=:hid))";
+    $queryHub = "(SELECT DISTINCT entity_id FROM field_data_field_hub WHERE (field_hub_target_id=:hid))";
     $query = $query . " UNION ALL " . $queryHub;
     $placeHolders[':hid'] = $hubId;
     $numberOfQueries++;
@@ -428,7 +428,7 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
   $metrics[2] = array('label' => 'Needed', 'field' => 'needed', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
   $metrics[3] = array('label' => 'In transit', 'field' => 'intransit', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
   $metrics[4] = array('label' => 'Delivered', 'field' => 'delivered', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[5] = array('label' => 'Remaining', 'field' => 'remaining', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[5] = array('label' => 'Remaining = Needed - In transit - Delivered', 'field' => 'remaining', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
   $metrics[6] = array('label' => '% Completed', 'field' => 'pcompleted', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
   $metrics[7] = array('label' => 'Status', 'field' => 'status', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
   $metrics[8] = array('label' => 'Countries', 'field' => 'country', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
@@ -475,7 +475,7 @@ function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher =
   $defaultLanguageCode = $defaultLanguage->language;
 
   $numberOfQueries = 1;
-  $queryAll = "(SELECT entity_id FROM field_data_field_hub_manager_s_)";
+  $queryAll = "(SELECT DISTINCT entity_id FROM field_data_field_hub_manager_s_)";
   $query = "SELECT t.entity_id FROM (" . $queryAll;
   $placeHolders = array();
 
@@ -594,13 +594,13 @@ function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher =
 
   $metrics[0] = array('label' => 'Hub', 'field' => 'link', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
   $metrics[1] = array('label' => 'Needed', 'field' => 'needed', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[2] = array('label' => 'Remaining', 'field' => 'remaining', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[2] = array('label' => 'Remaining = Needed - In transit - Delivered', 'field' => 'remaining', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
   $metrics[3] = array('label' => '% Completed', 'field' => 'pcompleted', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
   $metrics[4] = array('label' => 'Countries', 'field' => 'country', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
   $metrics[5] = array('label' => 'Needed', 'field' => 'neededShared', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
   $metrics[6] = array('label' => 'In transit', 'field' => 'intransit', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
   $metrics[7] = array('label' => 'Delivered', 'field' => 'delivered', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[8] = array('label' => 'Remaining', 'field' => 'remainingShared', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[8] = array('label' => 'Remaining = Needed - In transit - Delivered', 'field' => 'remainingShared', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
 
   cache_set($cacheIndexPrefix . 'objects', $objects, 'cache');
   cache_set($cacheIndexPrefix . 'metrics', $metrics, 'cache');

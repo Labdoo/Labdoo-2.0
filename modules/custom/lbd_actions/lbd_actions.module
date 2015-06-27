@@ -374,7 +374,7 @@ function lbd_generate_action_node($node) {
         $body = '<table><tr><td><a href="../node/' . $node->nid . '">' . $title . '...</a><img src="/profiles/labdoo/files/pictures/laptop-dootripped.png" width="34"></a></td></tr></table>';
       }
       else if($newStatus == "S6") { 
-        $title = "Laptop " . $node->title . " has been recycled"; 
+        $title = "Laptop " . $node->title . " has been recycled in " . $thisCity . ", " . $thisCountry; 
         $body = '<table><tr><td><a href="../node/' . $node->nid . '">' . $title . '...</a><img src="/profiles/labdoo/files/pictures/laptop-recycled.png" width="27"></a></td></tr></table>';
       }
       else // don't create any activity

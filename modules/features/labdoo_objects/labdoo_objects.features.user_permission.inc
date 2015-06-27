@@ -149,7 +149,9 @@ function labdoo_objects_user_default_permissions() {
   // Exported permission: edit any laptop content.
   $permissions['edit any laptop content'] = array(
     'name' => 'edit any laptop content',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'superhub manager',
+    ),
     'module' => 'node',
   );
 

@@ -20,6 +20,9 @@ function lbd_create_front_page_node()
 <?php 
 global \$language;
 \$defaultLanguage = language_default();
+\$langCode = '';
+if(\$language->language != \$defaultLanguage->language)
+  \$langCode = '/' . \$language->language;
 print(\"<img src='/profiles/labdoo/files/pictures/labdoo-header.png' width='1500'>\");
 print(\"<img src='/profiles/labdoo/files/pictures/labdoo-slogan.png' width='600'>\");
 \$blockFeed = module_invoke('views', 'block_view', 'actions-block_1');
@@ -29,12 +32,32 @@ print(labdoo_render_macro_stats('horizontal', \$addTitle=True));
 print(\$blockFeed['content']['#markup']);
 print(\$blockFlexSlide['content']['#markup']);
 print(\"<p align='center'>\");
-\$langCode = '';
-if(\$language->language != \$defaultLanguage->language)
-  \$langCode = '/' . \$language->language;
-if(!user_is_logged_in())
+if(!user_is_logged_in()) {
+if(\$langCode == '/de')
+  print(\"<a href='\$langCode/user/login'><img src='/profiles/labdoo/files/pictures/button-join-labdoo-de.png' width='200'></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\");
+else if(\$langCode == '/zh-hant')
+  print(\"<a href='\$langCode/user/login'><img src='/profiles/labdoo/files/pictures/button-join-labdoo-zh-hant.png' width='200'></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\");
+else if(\$langCode == '/zh-hans')
+  print(\"<a href='\$langCode/user/login'><img src='/profiles/labdoo/files/pictures/button-join-labdoo-zh-hans.png' width='200'></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\");
+else if(\$langCode == '/ca')
+  print(\"<a href='\$langCode/user/login'><img src='/profiles/labdoo/files/pictures/button-join-labdoo-ca.png' width='200'></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\");
+else if(\$langCode == '/es')
+  print(\"<a href='\$langCode/user/login'><img src='/profiles/labdoo/files/pictures/button-join-labdoo-es.png' width='200'></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\");
+else // default (English)
   print(\"<a href='\$langCode/user/login'><img src='/profiles/labdoo/files/pictures/button-join-labdoo.png' width='200'></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\");
-print(\"<a href='\$langCode/content/about-labdoo'><img src='/profiles/labdoo/files/pictures/button-learn-how-it-works.png' width='300'></a>\");
+}
+if(\$langCode == '/de')
+  print(\"<a href='\$langCode/content/über-labdoo'><img src='/profiles/labdoo/files/pictures/button-learn-how-it-works.png' width='300'></a>\");
+else if(\$langCode == '/zh-hant') 
+  print(\"<a href='\$langCode/content/about-labdoo'><img src='/profiles/labdoo/files/pictures/button-learn-how-it-works-zh-hant.png' width='300'></a>\");
+else if(\$langCode == '/zh-hans') 
+  print(\"<a href='\$langCode/content/about-labdoo'><img src='/profiles/labdoo/files/pictures/button-learn-how-it-works-zh-hans.png' width='300'></a>\");
+else if(\$langCode == '/ca') 
+  print(\"<a href='\$langCode/content/about-labdoo'><img src='/profiles/labdoo/files/pictures/button-learn-how-it-works-ca.png' width='300'></a>\");
+else if(\$langCode == '/es') 
+  print(\"<a href='\$langCode/content/about-labdoo'><img src='/profiles/labdoo/files/pictures/button-learn-how-it-works-es.png' width='300'></a>\");
+else // default (English)
+  print(\"<a href='\$langCode/content/about-labdoo'><img src='/profiles/labdoo/files/pictures/button-learn-how-it-works.png' width='300'></a>\");
 print(\"</p>\");
 ?>
   ";

@@ -355,8 +355,10 @@ function lbd_communicate_node_insert($node) {
 
 
 function lbd_communicate_comment_presave($comment) {
-  // TODO
-
+//  $node = node_load($comment->nid);
+//  if($node->type == 'team_task')
+//    _email_team_event($node, 'insert'); 
+//drupal_set_message($node->type);
 }
 
 

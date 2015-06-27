@@ -5311,7 +5311,7 @@ $display_output = $entity_field_item[\'value\'];',
   $fields['node-laptop-field_hub_laptop'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_hub_laptop',
@@ -5353,6 +5353,7 @@ $display_output = $entity_field_item[\'value\'];',
     'field_instance' => array(
       'bundle' => 'laptop',
       'default_value' => NULL,
+      'default_value_function' => '',
       'deleted' => '0',
       'description' => 'If you are an individual tagger, select here the group "Grassroots". If you belong to a hub, select the name of your hub.',
       'display' => array(
@@ -5383,13 +5384,22 @@ $display_output = $entity_field_item[\'value\'];',
       'label' => 'Source group',
       'required' => 1,
       'settings' => array(
+        'behaviors' => array(
+          'prepopulate' => array(
+            'status' => 0,
+          ),
+        ),
         'user_register_form' => FALSE,
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_select',
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'size' => 60,
+        ),
+        'type' => 'entityreference_autocomplete',
         'weight' => '7',
       ),
     ),
