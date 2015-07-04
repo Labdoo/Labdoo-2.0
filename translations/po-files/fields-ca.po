@@ -84,7 +84,7 @@ msgstr "Seguidors adicionals"
 #: field:field_additional_info_language:edoovillage:label
 msgctxt "field_additional_info_language:edoovillage:label"
 msgid "Additional information about language(s)"
-msgstr "Informació adicional sobre el(s) llenguatge(s)"
+msgstr "Informació adicional sobre el/s llenguatge/s"
 
 #: field:field_additional_notes:laptop:description
 msgctxt "field_additional_notes:laptop:description"
@@ -127,7 +127,7 @@ msgstr "Non de la persona(es) o de l'ONG que fa el dootrip si és "
 #: field:field_additional_traveler_s_info:dootrip:label
 msgctxt "field_additional_traveler_s_info:dootrip:label"
 msgid "Additional traveler(s) information"
-msgstr "Informació adicional de viatger(s)"
+msgstr "Informació adicional de viatger/s"
 
 #: field:field_amp_hours:laptop:label
 msgctxt "field_amp_hours:laptop:label"
@@ -215,7 +215,7 @@ msgstr "Destinació del viatge"
 #: field:field_device_type:#allowed_values:androidTablet
 msgctxt "field_device_type:#allowed_values:androidTablet"
 msgid "Android tablet"
-msgstr "Tablet Android"
+msgstr "Tauleta Android"
 
 #: field:field_device_type:#allowed_values:arduino
 msgctxt "field_device_type:#allowed_values:arduino"
@@ -227,9 +227,9 @@ msgctxt "field_device_type:#allowed_values:blackberry"
 msgid "BlackBerry"
 msgstr "BlackBerry"
 
-#: field:field_device_type:#allowed_values:blackberryPi
-msgctxt "field_device_type:#allowed_values:blackberryPi"
-msgid "Blackberry Pi"
+#: field:field_device_type:#allowed_values:raspberryPi
+msgctxt "field_device_type:#allowed_values:raspberryPi"
+msgid "Raspberry Pi"
 msgstr "Raspberry Pi"
 
 #: field:field_device_type:#allowed_values:desktop
@@ -255,7 +255,7 @@ msgstr "Telèfon Android"
 #: field:field_device_type:#allowed_values:internetTable
 msgctxt "field_device_type:#allowed_values:internetTable"
 msgid "Internet tablet"
-msgstr "Tablet amb connexió a Internet"
+msgstr "Tauleta electrònica"
 
 #: field:field_device_type:#allowed_values:ipad
 msgctxt "field_device_type:#allowed_values:ipad"
@@ -295,12 +295,12 @@ msgstr "Pes"
 #: field:field_dootripper_s_:dootrip:description
 msgctxt "field_dootripper_s_:dootrip:description"
 msgid "User(s) who will be part of this dootrip"
-msgstr "Usuari(s) que formaran part d'aquest viatge Labdoo"
+msgstr "Usuari/s que formaran part d'aquest viatge Labdoo"
 
 #: field:field_dootripper_s_:dootrip:label
 msgctxt "field_dootripper_s_:dootrip:label"
 msgid "Dootripper(s)"
-msgstr "Dootripper(s)"
+msgstr "Dootripper/s"
 
 #: field:field_dootrips:laptop:description
 msgctxt "field_dootrips:laptop:description"
@@ -396,7 +396,7 @@ msgstr "Adreces electròniques de notificació adicionals"
 #: field:field_event_date:event:label
 msgctxt "field_event_date:event:label"
 msgid "Date(s)"
-msgstr "Data(es)"
+msgstr "Data/es"
 
 #: field:field_file_image_alt_text:image:description
 msgctxt "field_file_image_alt_text:image:description"
@@ -448,7 +448,7 @@ msgstr "Disc dur"
 #: field:field_hub:edoovillage:label
 msgctxt "field_hub:edoovillage:label"
 msgid "Coordinating hub(s)"
-msgstr "Coordinador de hub(s)"
+msgstr "Coordinador de hub/s"
 
 #: field:field_hub_action:action:label
 msgctxt "field_hub_action:action:label"
@@ -477,7 +477,7 @@ msgstr "Grup font"
 #: field:field_hub_manager_s_:hub:label
 msgctxt "field_hub_manager_s_:hub:label"
 msgid "Hub manager(s)"
-msgstr "Gerent(s) del hub"
+msgstr "Gerent/s del hub"
 
 #: field:field_hub_photo_album:hub:label
 msgctxt "field_hub_photo_album:hub:label"
@@ -563,7 +563,7 @@ msgid ""
 "Once you know the dooject(s) that you will be carrying with this "
 "dootrip, enter their Labdoo identifier here."
 msgstr ""
-"Un cop coneixes el(s)dooject(s) que podràs portar en aquest "
+"Un cop coneixes el/s dooject/s que podràs portar en aquest "
 "dootrip, introdueix el seu identificador Labdoo aquí."
 
 #: field:field_laptops:dootrip:label
@@ -587,7 +587,7 @@ msgstr "Pàgines enllaçades"
 #: field:field_local_language_s_:edoovillage:label
 msgctxt "field_local_language_s_:edoovillage:label"
 msgid "Local language(s)"
-msgstr "Llenguatge(s) local(s)"
+msgstr "Llenguatge/s local/s"
 
 #: field:field_manager:laptop:description
 msgctxt "field_manager:laptop:description"
@@ -709,55 +709,45 @@ msgctxt "field_project_application:edoovillage:label"
 msgid "Project application"
 msgstr "Aplicació del projecte"
 
-
-
-
-
-
-
-
-
-
-
 #: field:field_project_description:edoovillage:label
 msgctxt "field_project_description:edoovillage:label"
 msgid "Project description"
-msgstr ""
+msgstr "Descripció del projecte"
 
 #: field:field_project_manager_s_:edoovillage:label
 msgctxt "field_project_manager_s_:edoovillage:label"
 msgid "Project manager(s)"
-msgstr ""
+msgstr "Director/s del projecte"
 
 #: field:field_project_summary:edoovillage:label
 msgctxt "field_project_summary:edoovillage:label"
 msgid "Project brief description"
-msgstr ""
+msgstr "Descripció breu del projecte"
 
 #: field:field_reference_book:book:label
 msgctxt "field_reference_book:book:label"
 msgid "Original book"
-msgstr ""
+msgstr "Llibre original"
 
 #: field:field_semaphore:#allowed_values:green
 msgctxt "field_semaphore:#allowed_values:green"
 msgid "Green: the rest of the doojects can be sent"
-msgstr ""
+msgstr "Verd: la resta de doojects poden ser enviats"
 
 #: field:field_semaphore:#allowed_values:red
 msgctxt "field_semaphore:#allowed_values:red"
 msgid "Red: pictures about the project have not been uploaded yet"
-msgstr ""
+msgstr "Vermell: les imatges del projecte encara no s'han pujat"
 
 #: field:field_semaphore:#allowed_values:yellow
 msgctxt "field_semaphore:#allowed_values:yellow"
 msgid "Yellow: first doojects can be sent"
-msgstr ""
+msgstr "Groc: ja es poden enviar els primers doojects"
 
 #: field:field_semaphore:edoovillage:label
 msgctxt "field_semaphore:edoovillage:label"
 msgid "Semaphore"
-msgstr ""
+msgstr "Semàfor"
 
 #: field:field_serial_number:laptop:description
 msgctxt "field_serial_number:laptop:description"
@@ -768,291 +758,296 @@ msgid ""
 "under it, use this number. If the dooject has no sticker with the "
 "serial number, then write in this field the words \"Unknown\"."
 msgstr ""
+"Escriu aquí el número de sèrie del dooject. Normalment "
+"es pot trobar en la part de darrere del dooject, busca paraules clau "
+"com \"Serial Number\" o \"S/N\", o si veus un codi de barres amb un número "
+"sota d'ell, utilitza'l. Si el dooject no té cap etiqueta amb el "
+"número de sèrie, escriu en aquest camp la paraula \"Unknown\"."
 
 #: field:field_serial_number:laptop:label
 msgctxt "field_serial_number:laptop:label"
 msgid "Serial number"
-msgstr ""
+msgstr "Número de sèrie"
 
 #: field:field_simplenews_term:simplenews:label
 msgctxt "field_simplenews_term:simplenews:label"
 msgid "Newsletter category"
-msgstr ""
+msgstr "Categoria full informatiu"
 
 #: field:field_skills:user:label
 msgctxt "field_skills:user:label"
 msgid "Skills"
-msgstr ""
+msgstr "Habilitats"
 
 #: field:field_slider_tab:slider_page:label
 msgctxt "field_slider_tab:slider_page:label"
 msgid "Tab"
-msgstr ""
+msgstr "Pestanya"
 
 #: field:field_slider_weight:slider_page:label
 msgctxt "field_slider_weight:slider_page:label"
 msgid "Weight"
-msgstr ""
+msgstr "Pes"
 
 #: field:field_socket_type:edoovillage:label
 msgctxt "field_socket_type:edoovillage:label"
 msgid "Socket type"
-msgstr ""
+msgstr "Tipus de sòcol"
 
 #: field:field_socket_voltage:#allowed_values:120
 msgctxt "field_socket_voltage:#allowed_values:120"
 msgid "100-127 Volts"
-msgstr ""
+msgstr "100-127 Volts"
 
 #: field:field_socket_voltage:#allowed_values:220
 msgctxt "field_socket_voltage:#allowed_values:220"
 msgid "220-240 Volts"
-msgstr ""
+msgstr "220-240 Volts"
 
 #: field:field_socket_voltage:edoovillage:label
 msgctxt "field_socket_voltage:edoovillage:label"
 msgid "Socket voltage"
-msgstr ""
+msgstr "Voltatge del sòcol"
 
 #: field:field_status:#allowed_values:L1
 msgctxt "field_status:#allowed_values:L1"
 msgid "[L1] Dooject was lost"
-msgstr ""
+msgstr "[L1] El dooject s'ha perdut"
 
 #: field:field_status:#allowed_values:S0
 msgctxt "field_status:#allowed_values:S0"
 msgid "[S0] Tagged with a Labdoo ID"
-msgstr ""
+msgstr "[S0] Etiquetat amb un ID Labdoo"
 
 #: field:field_status:#allowed_values:S1
 msgctxt "field_status:#allowed_values:S1"
 msgid "[S1] Donated, waiting to pass quality assurance"
-msgstr ""
+msgstr "[S1] Donat, esperant a passar la garantia de qualitat"
 
 #: field:field_status:#allowed_values:S2
 msgctxt "field_status:#allowed_values:S2"
 msgid "[S2] Passed quality assurance"
-msgstr ""
+msgstr "[S2] Garantia de qualitat passada"
 
 #: field:field_status:#allowed_values:S3
 msgctxt "field_status:#allowed_values:S3"
 msgid "[S3] Assigned to an edoovillage, waiting to be shipped"
-msgstr ""
+msgstr "[S3] Assignat a una edoovillage, a l'espera de ser enviat"
 
 #: field:field_status:#allowed_values:S4
 msgctxt "field_status:#allowed_values:S4"
 msgid "[S4] Deployed and being used"
-msgstr ""
+msgstr "[S4] Entregat i sent utilitzat"
 
 #: field:field_status:#allowed_values:S5
 msgctxt "field_status:#allowed_values:S5"
 msgid "[S5] Waiting to be recycled"
-msgstr ""
+msgstr "[S5] Esperant a ser reciclat"
 
 #: field:field_status:#allowed_values:S6
 msgctxt "field_status:#allowed_values:S6"
 msgid "[S6] Recycled"
-msgstr ""
+msgstr "[S6] Reciclat"
 
 #: field:field_status:#allowed_values:S7
 msgctxt "field_status:#allowed_values:S7"
 msgid "[S7] (Library) Checked out"
-msgstr ""
+msgstr "[S7] (Biblioteca) Retirat"
 
 #: field:field_status:#allowed_values:S8
 msgctxt "field_status:#allowed_values:S8"
 msgid "[S8] (Library) Available"
-msgstr ""
+msgstr "[S8] (Biblioteca) Disponible"
 
 #: field:field_status:#allowed_values:S9
 msgctxt "field_status:#allowed_values:S9"
 msgid "[S9] Deployed but not working"
-msgstr ""
+msgstr "[S9] Entregat però sense funcionar"
 
 #: field:field_status:#allowed_values:T1
 msgctxt "field_status:#allowed_values:T1"
 msgid "[T1] In transit going to an edoovillage"
-msgstr ""
+msgstr "[T1] En trànsit anant cap a una edoovillage"
 
 #: field:field_status:#allowed_values:T2
 msgctxt "field_status:#allowed_values:T2"
 msgid "[T2] In transit going to a recycling factory"
-msgstr ""
+msgstr "[T2] En trànsit anant cap a una planta de reciclatge"
 
 #: field:field_status:laptop:label
 msgctxt "field_status:laptop:label"
 msgid "Status"
-msgstr ""
+msgstr "Estat"
 
 #: field:field_status_dootrip:#allowed_values:DS0
 msgctxt "field_status_dootrip:#allowed_values:DS0"
 msgid "Pending"
-msgstr ""
+msgstr "Pendent"
 
 #: field:field_status_dootrip:#allowed_values:DS1
 msgctxt "field_status_dootrip:#allowed_values:DS1"
 msgid "Completed"
-msgstr ""
+msgstr "Completat"
 
 #: field:field_status_dootrip:#allowed_values:DS2
 msgctxt "field_status_dootrip:#allowed_values:DS2"
 msgid "Cancelled"
-msgstr ""
+msgstr "Cancel·lat"
 
 #: field:field_status_dootrip:dootrip:label
 msgctxt "field_status_dootrip:dootrip:label"
 msgid "Status"
-msgstr ""
+msgstr "Estat"
 
 #: field:field_superhub_page_type:#allowed_values:block
 msgctxt "field_superhub_page_type:#allowed_values:block"
 msgid "Menu Block"
-msgstr ""
+msgstr "Menú Bloca"
 
 #: field:field_superhub_page_type:#allowed_values:page
 msgctxt "field_superhub_page_type:#allowed_values:page"
 msgid "Page"
-msgstr ""
+msgstr "Pàgina"
 
 #: field:field_superhub_page_type:superhub_page:label
 msgctxt "field_superhub_page_type:superhub_page:label"
 msgid "Type"
-msgstr ""
+msgstr "Tipus"
 
 #: field:field_tagger:laptop:description
 msgctxt "field_tagger:laptop:description"
 msgid "The user who tagged this dooject"
-msgstr ""
+msgstr "L'usuari que ha etiquetat aquest dooject"
 
 #: field:field_tagger:laptop:label
 msgctxt "field_tagger:laptop:label"
 msgid "Tagger"
-msgstr ""
+msgstr "Etiquetador"
 
 #: field:field_tags:article:description
 msgctxt "field_tags:article:description"
 msgid "Enter a comma-separated list of words to describe your content."
-msgstr ""
+msgstr "Introdueix la llista de paraules que descriuen el teu contingut, separades per comes"
 
 #: field:field_tags:article:label
 msgctxt "field_tags:article:label"
 msgid "Tags"
-msgstr ""
+msgstr "Etiquetes"
 
 #: field:field_task_assigned_to:team_task:label
 msgctxt "field_task_assigned_to:team_task:label"
 msgid "Assigned to"
-msgstr ""
+msgstr "Assignat a"
 
 #: field:field_task_attachment:team_task:label
 msgctxt "field_task_attachment:team_task:label"
 msgid "Attachment"
-msgstr ""
+msgstr "Accessori"
 
 #: field:field_task_priority:#allowed_values:high
 msgctxt "field_task_priority:#allowed_values:high"
 msgid "High"
-msgstr ""
+msgstr "Alta"
 
 #: field:field_task_priority:#allowed_values:low
 msgctxt "field_task_priority:#allowed_values:low"
 msgid "Low"
-msgstr ""
+msgstr "Baixa"
 
 #: field:field_task_priority:#allowed_values:normal
 msgctxt "field_task_priority:#allowed_values:normal"
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #: field:field_task_priority:team_task:label
 msgctxt "field_task_priority:team_task:label"
 msgid "Priority"
-msgstr ""
+msgstr "Prioritat"
 
 #: field:field_task_status:#allowed_values:close
 msgctxt "field_task_status:#allowed_values:close"
 msgid "Close"
-msgstr ""
+msgstr "Tancada"
 
 #: field:field_task_status:#allowed_values:deferred
 msgctxt "field_task_status:#allowed_values:deferred"
 msgid "Deferred"
-msgstr ""
+msgstr "Diferida"
 
 #: field:field_task_status:#allowed_values:duplicate
 msgctxt "field_task_status:#allowed_values:duplicate"
 msgid "Duplicate"
-msgstr ""
+msgstr "Duplicada"
 
 #: field:field_task_status:#allowed_values:open
 msgctxt "field_task_status:#allowed_values:open"
 msgid "Open"
-msgstr ""
+msgstr "Oberta"
 
 #: field:field_task_status:#allowed_values:resolved
 msgctxt "field_task_status:#allowed_values:resolved"
 msgid "Resolved"
-msgstr ""
+msgstr "Resolta"
 
 #: field:field_task_status:team_task:label
 msgctxt "field_task_status:team_task:label"
 msgid "Status"
-msgstr ""
+msgstr "Estat"
 
 #: field:field_task_type:#allowed_values:doojectSanitation
 msgctxt "field_task_type:#allowed_values:doojectSanitation"
 msgid "Dooject sanitation event"
-msgstr ""
+msgstr "Esdeveniment de sanejament de doojects"
 
 #: field:field_task_type:#allowed_values:featureRequest
 msgctxt "field_task_type:#allowed_values:featureRequest"
 msgid "Feature request"
-msgstr ""
+msgstr "Sol·licitud de funció"
 
 #: field:field_task_type:#allowed_values:generalTask
 msgctxt "field_task_type:#allowed_values:generalTask"
 msgid "General task"
-msgstr ""
+msgstr "Tasca general"
 
 #: field:field_task_type:#allowed_values:outreachingActivity
 msgctxt "field_task_type:#allowed_values:outreachingActivity"
 msgid "Outreaching activity"
-msgstr ""
+msgstr "Activitat a millorar"
 
 #: field:field_task_type:#allowed_values:websiteBug
 msgctxt "field_task_type:#allowed_values:websiteBug"
 msgid "Website bug"
-msgstr ""
+msgstr "Bug a la web"
 
 #: field:field_task_type:team_task:label
 msgctxt "field_task_type:team_task:label"
 msgid "Type"
-msgstr ""
+msgstr "Tipus"
 
 #: field:field_type:#allowed_values:edoovillage
 msgctxt "field_type:#allowed_values:edoovillage"
 msgid "Edoovillage"
-msgstr ""
+msgstr "Edoovillage"
 
 #: field:field_type:#allowed_values:hub
 msgctxt "field_type:#allowed_values:hub"
 msgid "Hub"
-msgstr ""
+msgstr "Hub"
 
 #: field:field_type:slider_page:label
 msgctxt "field_type:slider_page:label"
 msgid "Type"
-msgstr ""
+msgstr "Tipus"
 
 #: field:field_types_of_mini_missions:#allowed_values:HUBTYPE0
 msgctxt "field_types_of_mini_missions:#allowed_values:HUBTYPE0"
 msgid "Dropping point"
-msgstr ""
+msgstr "Punt d'entrega"
 
 #: field:field_types_of_mini_missions:#allowed_values:HUBTYPE1
 msgctxt "field_types_of_mini_missions:#allowed_values:HUBTYPE1"
 msgid "Sanitizing point"
-msgstr ""
+msgstr "Punt de sanejament"
 
 #: field:field_types_of_mini_missions:hub:description
 msgctxt "field_types_of_mini_missions:hub:description"
@@ -1061,93 +1056,96 @@ msgid ""
 "the hub sanitizes doojects, select \"Sanitizing point\". You can "
 "select multiple options at the same time."
 msgstr ""
+"Si aquest hub accepta emmagatzemar doojects, selecciona \"Punt d'entrega\". "
+"Si el hub saneja doojects, selecciona \"Punt de sanejament\". Pots "
+"seleccionar multiples opcions al mateix temps."
 
 #: field:field_types_of_mini_missions:hub:label
 msgctxt "field_types_of_mini_missions:hub:label"
 msgid "Hub type"
-msgstr ""
+msgstr "Tipus de hub"
 
 #: field:field_user_name:user:description
 msgctxt "field_user_name:user:description"
 msgid "Your first and last name"
-msgstr ""
+msgstr "El teu nom i cognoms"
 
 #: field:field_user_name:user:label
 msgctxt "field_user_name:user:label"
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #: field:field_volts:laptop:label
 msgctxt "field_volts:laptop:label"
 msgid "Volts"
-msgstr ""
+msgstr "Volts"
 
 #: field:field_welcome_message:team:label
 msgctxt "field_welcome_message:team:label"
 msgid "Welcome message"
-msgstr ""
+msgstr "Missatge de benvinguda"
 
 #: field:group_group:#allowed_values:0
 msgctxt "group_group:#allowed_values:0"
 msgid "Not a team"
-msgstr ""
+msgstr "No és un equip"
 
 #: field:group_group:#allowed_values:1
 msgctxt "group_group:#allowed_values:1"
 msgid "Team"
-msgstr ""
+msgstr "Equip"
 
 #: field:group_group:team:description
 msgctxt "group_group:team:description"
 msgid "Determine if this is an OG group."
-msgstr ""
+msgstr "Determinar si això és un grup OG"
 
 #: field:group_group:team:label
 msgctxt "group_group:team:label"
 msgid "Team"
-msgstr ""
+msgstr "Equip"
 
 #: field:node_gallery_media:node_gallery_item:description
 msgctxt "node_gallery_media:node_gallery_item:description"
 msgid "File to store Node Gallery media."
-msgstr ""
+msgstr "Arxiu per desar a la galeria multimèdia"
 
 #: field:node_gallery_media:node_gallery_item:label
 msgctxt "node_gallery_media:node_gallery_item:label"
 msgid "Gallery Media "
-msgstr ""
+msgstr "Galeria multimèdia"
 
 #: field:node_gallery_ref_1:node_gallery_item:label
 msgctxt "node_gallery_ref_1:node_gallery_item:label"
 msgid "Galleries"
-msgstr ""
+msgstr "Galeries"
 
 #: field:og_group_ref:event:label
 msgctxt "og_group_ref:event:label"
 msgid "Team(s)"
-msgstr ""
+msgstr "Equip/s"
 
 #: field:og_group_ref:team_page:label
 msgctxt "og_group_ref:team_page:label"
 msgid "Team(s)"
-msgstr ""
+msgstr "Equip/s"
 
 #: field:og_group_ref:team_task:label
 msgctxt "og_group_ref:team_task:label"
 msgid "Team(s)"
-msgstr ""
+msgstr "Equip/s"
 
 #: field:og_membership_request:og_membership_type_default:description
 msgctxt "og_membership_request:og_membership_type_default:description"
 msgid "This is the text a user may send to the group administrators."
-msgstr ""
+msgstr "Aquest és el text que un usuari pot enviar als administradors del grup"
 
 #: field:og_membership_request:og_membership_type_default:label
 msgctxt "og_membership_request:og_membership_type_default:label"
 msgid "Request message"
-msgstr ""
+msgstr "Sol·licitud de missatge"
 
 #: field:og_user_node:user:label
 msgctxt "og_user_node:user:label"
 msgid "Group membership"
-msgstr ""
+msgstr "Pertinença a grup"
