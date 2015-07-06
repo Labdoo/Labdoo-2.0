@@ -927,7 +927,7 @@ msgstr "Etiquetador"
 #: field:field_tags:article:description
 msgctxt "field_tags:article:description"
 msgid "Enter a comma-separated list of words to describe your content."
-msgstr "Introdueix la llista de paraules que descriuen el teu contingut, separades per comes"
+msgstr "Introdueix la llista de paraules que descriuen el teu contingut, separades per comes."
 
 #: field:field_tags:article:label
 msgctxt "field_tags:article:label"
@@ -1098,7 +1098,7 @@ msgstr "Equip"
 #: field:group_group:team:description
 msgctxt "group_group:team:description"
 msgid "Determine if this is an OG group."
-msgstr "Determinar si això és un grup OG"
+msgstr "Determina si això és un OG (Grup Orgànic)."
 
 #: field:group_group:team:label
 msgctxt "group_group:team:label"
@@ -1108,7 +1108,7 @@ msgstr "Equip"
 #: field:node_gallery_media:node_gallery_item:description
 msgctxt "node_gallery_media:node_gallery_item:description"
 msgid "File to store Node Gallery media."
-msgstr "Arxiu per desar a la galeria multimèdia"
+msgstr "Arxiu per desar a la galeria multimèdia."
 
 #: field:node_gallery_media:node_gallery_item:label
 msgctxt "node_gallery_media:node_gallery_item:label"
@@ -1138,7 +1138,7 @@ msgstr "Equip/s"
 #: field:og_membership_request:og_membership_type_default:description
 msgctxt "og_membership_request:og_membership_type_default:description"
 msgid "This is the text a user may send to the group administrators."
-msgstr "Aquest és el text que un usuari pot enviar als administradors del grup"
+msgstr "Aquest és el text que un usuari pot enviar als administradors del grup."
 
 #: field:og_membership_request:og_membership_type_default:label
 msgctxt "og_membership_request:og_membership_type_default:label"
