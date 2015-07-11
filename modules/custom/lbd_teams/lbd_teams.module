@@ -265,3 +265,25 @@ function lbd_teams_node_presave($node) {
   return;
 }
 
+
+/**
+ * Returns the list of members in a team
+ *
+ * @param integer $teamId The team identifier
+ *
+ * @return array An array containing the IDs of the users who are members of the team
+ *
+ */
+function lbd_teams_get_team_members($teamId) {
+  $members = array();
+
+  $query = "SELECT etid FROM og_membership WHERE entity_type='user' and gid=:teamId";
+  $placeHolders[':teamId'] = $teamId;
+  $result = db_query($query, $placeHolders);
+
+  foreach($result as $item)
+    $members[] = $item->etid;
+
+  return $members;
+}
+

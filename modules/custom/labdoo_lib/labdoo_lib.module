@@ -20,7 +20,7 @@
  *
  * Given a country code, it returns the name of the country
  *
- * @param string @countryCode
+ * @param string $countryCode
  *   Country code
  * @return string
  *   Country name
@@ -1622,7 +1622,7 @@ function labdoo_follow_dooject($doojectId = NULL, $userId = NULL, $follow = NULL
  * @param string $field 
  *   The entity field name 
  * @param string $type
- *   The type of node, it must be one of {'user', 'node'}
+ *   The type of node, it must be one of {'user', 'node', 'comment'}
  * @param string $key
  *   The key to retrieve
  *
@@ -1631,9 +1631,10 @@ function labdoo_lib_get_field($node, $field, $type, $key) {
   $field_items = field_get_items($type, $node, $field);
   if(!$field_items)
     return;
-  if(!array_key_exists(0, $field_items))
+  $item = array_values($field_items)[0];
+  if(!$item)
     return NULL;
-  return($field_items[0][$key]);
+  return($item[$key]);
 }
 
 
@@ -1707,19 +1708,19 @@ function labdoo_render_macro_stats($type, $addTitle=False) {
 
   $code = $header;
   $code = $code . $statsTitle . "
-<span style=\"font-size: 24px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsTagged</span>
+<span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsTagged</span>
 <span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Doojects tagged') . "</span>$separator
-<span style=\"font-size: 24px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsTransit</span>
+<span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsTransit</span>
 <span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Doojects in transit') . "</span>$separator
-<span style=\"font-size: 24px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsDelivered</span>
+<span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsDelivered</span>
 <span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Doojects delivered') . "</span>$separator
-<span style=\"font-size: 24px; align: left; line-height: 30px; color: #ff0000\">$numHubs</span>
+<span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numHubs</span>
 <span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Hubs') . "</span>$separator
-<span style=\"font-size: 24px; align: left; line-height: 30px; color: #ff0000\">$numEdoovillages</span>
+<span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numEdoovillages</span>
 <span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Edoovillages') . "</span>$separator
-<span style=\"font-size: 24px; align: left; line-height: 30px; color: #ff0000\">$numStudents</span>
+<span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numStudents</span>
 <span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Students') . "</span>$separator
-<span style=\"font-size: 24px; align: left; line-height: 30px; color: #ff0000\">$numCountries</span>
+<span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numCountries</span>
 <span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Countries') . "</span>$separator
 $trailer
   ";

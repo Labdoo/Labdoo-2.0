@@ -347,8 +347,11 @@ function lbd_communicate_node_presave($node) {
  */
 function lbd_communicate_node_insert($node) {
 
-  if($node->type == 'dootrip') 
+  if($node->type == 'dootrip')
     _email_dootrip_event($node, 'insert');
+
+  if($node->type == 'team_page' || $node->type == 'event' || $node->type == 'team_task')
+    _email_team_event($node);
 
   return;
 }
@@ -518,6 +521,98 @@ function lbd_communicate_cron() {
 
   }
 
+  return;
+}
+
+
+/**
+ *
+ * hook_comment_insert
+ *
+ */
+function lbd_communicate_comment_insert($comment) {
+  $node = node_load($comment->nid);
+  if($node->type == 'team_page' || $node->type == 'event' || $node->type == 'team_task')
+    _email_team_event($node, $comment);
+}
+
+
+/*
+ * Generates notification emails to users involved in a newly created team event 
+ *
+ * @param node $node The node that is being created or the parent page node if $comment is not NULL
+ * @param comment $comment If it's a comment, the comment node; otherwise, NULL
+ *
+ */
+function _email_team_event($node, $comment = NULL) {
+  global $user;
+
+  $langCode = user_preferred_language($user)->language;
+  if(!file_exists(_path_to_email_template($langCode) . "team_activity_subject-" . $langCode . ".email"))
+    $langCode = 'en';
+
+  $email_params['type'] = "TEAM_ACTIVITY";
+  $subjectFileName = _path_to_email_template($langCode) . "team_activity_subject-" . $langCode . ".email";
+  $bodyFileName = _path_to_email_template($langCode) . "team_activity_body-" . $langCode . ".email";
+
+  $subjectTemplate = file_get_contents($subjectFileName);
+  $bodyTemplate = file_get_contents($bodyFileName);
+
+  if($node->type == 'team_page') {
+    if($comment == NULL) {
+      $activityType = 'conversation';
+      $activityBody = labdoo_lib_get_field($node, 'body', 'node', 'value');
+    }
+    else {
+      $activityType = 'comment';
+      $activityBody = labdoo_lib_get_field($comment, 'comment_body', 'comment', 'value');
+    }
+  }
+  else if($node->type == 'event') {
+    $activityType = 'event';
+    $activityBody = labdoo_lib_get_field($node, 'body', 'node', 'value');
+  }
+  else if($node->type == 'team_task') {
+    $activityType = 'task';
+    $activityBody = labdoo_lib_get_field($node, 'body', 'node', 'value');
+  }
+  $activityTitle = $node->title;
+  $teamId = labdoo_lib_get_field($node, 'og_group_ref', 'node', 'target_id');
+  $team = node_load($teamId);
+  $teamName = $team->title;
+
+  $members = lbd_teams_get_team_members($teamId);
+  $emailsList = "";
+  foreach($members as $memberId) {
+    $userObj = user_load($memberId);
+    $emailsList = $emailsList . ", " . $userObj->mail;
+  }
+  $emailsList = trim($emailsList, ", ");
+
+  $activityUrl = url(drupal_get_path_alias("node/" .  $node->nid, $langCode), array('absolute' => TRUE));
+  if($activityType == 'comment') {
+    $query = "SELECT MAX(cid) FROM comment WHERE nid=$node->nid";
+    $newCid = db_query($query)->fetchField();
+    $activityUrl = $activityUrl . "#comment-" . $newCid;
+  }
+
+  $subject = str_replace("[ACTIVITY_TYPE]", $activityType, $subjectTemplate);
+  $subject = str_replace("[TEAM_NAME]", $teamName, $subject);
+  $subject = str_replace("[ACTIVITY_SUBJECT]", $activityTitle, $subject);
+
+  $body = str_replace("[ACTIVITY_TYPE]", $activityType, $bodyTemplate);
+  $body = str_replace("[ACTIVITY_SUBJECT]", $activityTitle, $body);
+  $body = str_replace("[TEAM_NAME]", $teamName, $body);
+  $body = str_replace("[ACTIVITY_BODY]", $activityBody, $body);
+  $body = str_replace("[ACTIVITY_URL]", $activityUrl, $body);
+
+  $email_params['subject'] = $subject;
+  $email_params['body'] = $body;
+  $email_params['to'] = variable_get('site_mail');
+
+  $email_params['headers']['Bcc'] = $emailsList;
+
+  lbd_communicate_mail_send($email_params);
   return;
 }
 

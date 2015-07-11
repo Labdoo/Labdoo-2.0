@@ -47,7 +47,7 @@ else // default (English)
   print(\"<a href='\$langCode/user/login'><img src='/profiles/labdoo/files/pictures/button-join-labdoo.png' width='200'></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\");
 }
 if(\$langCode == '/de')
-  print(\"<a href='\$langCode/content/über-labdoo'><img src='/profiles/labdoo/files/pictures/button-learn-how-it-works.png' width='300'></a>\");
+  print(\"<a href='\$langCode/content/über-labdoo'><img src='/profiles/labdoo/files/pictures/button-learn-how-it-works-de.png' width='300'></a>\");
 else if(\$langCode == '/zh-hant') 
   print(\"<a href='\$langCode/content/about-labdoo'><img src='/profiles/labdoo/files/pictures/button-learn-how-it-works-zh-hant.png' width='300'></a>\");
 else if(\$langCode == '/zh-hans') 
