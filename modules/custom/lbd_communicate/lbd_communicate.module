@@ -573,8 +573,14 @@ function _email_team_event($node, $comment = NULL) {
     $activityBody = labdoo_lib_get_field($node, 'body', 'node', 'value');
   }
   else if($node->type == 'team_task') {
-    $activityType = 'task';
-    $activityBody = labdoo_lib_get_field($node, 'body', 'node', 'value');
+    if($comment == NULL) {
+      $activityType = 'task';
+      $activityBody = labdoo_lib_get_field($node, 'body', 'node', 'value');
+    }
+    else {
+      $activityType = 'comment';
+      $activityBody = labdoo_lib_get_field($comment, 'comment_body', 'comment', 'value');
+    }
   }
   $activityTitle = $node->title;
   $teamId = labdoo_lib_get_field($node, 'og_group_ref', 'node', 'target_id');
