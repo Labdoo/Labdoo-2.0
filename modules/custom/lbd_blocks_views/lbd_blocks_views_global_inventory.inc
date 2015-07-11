@@ -223,6 +223,7 @@ $handler->display->display_options['filters']['views_dependent_filter_1']['contr
 );
 $handler->display->display_options['filters']['views_dependent_filter_1']['dependent_filters'] = array(
   'field_edoovillage_status_value' => 'field_edoovillage_status_value',
+  'field_hub_target_id' => 'field_hub_target_id',
   'country' => 0,
   'field_status_value' => 0,
   'field_hub_laptop_target_id' => 0,
@@ -338,6 +339,28 @@ $handler->display->display_options['filters']['field_edoovillage_status_value'][
 $handler->display->display_options['filters']['field_edoovillage_status_value']['expose']['identifier'] = 'field_edoovillage_status_value';
 $handler->display->display_options['filters']['field_edoovillage_status_value']['expose']['multiple'] = TRUE;
 $handler->display->display_options['filters']['field_edoovillage_status_value']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  7 => 0,
+  8 => 0,
+  9 => 0,
+  3 => 0,
+  5 => 0,
+  6 => 0,
+  4 => 0,
+);
+/* Filter criterion: Content: Coordinating hub(s) (field_hub) */
+$handler->display->display_options['filters']['field_hub_target_id']['id'] = 'field_hub_target_id';
+$handler->display->display_options['filters']['field_hub_target_id']['table'] = 'field_data_field_hub';
+$handler->display->display_options['filters']['field_hub_target_id']['field'] = 'field_hub_target_id';
+$handler->display->display_options['filters']['field_hub_target_id']['group'] = 1;
+$handler->display->display_options['filters']['field_hub_target_id']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_hub_target_id']['expose']['operator_id'] = 'field_hub_target_id_op';
+$handler->display->display_options['filters']['field_hub_target_id']['expose']['label'] = 'Coordinating hub(s)';
+$handler->display->display_options['filters']['field_hub_target_id']['expose']['operator'] = 'field_hub_target_id_op';
+$handler->display->display_options['filters']['field_hub_target_id']['expose']['identifier'] = 'field_hub_target_id';
+$handler->display->display_options['filters']['field_hub_target_id']['expose']['multiple'] = TRUE;
+$handler->display->display_options['filters']['field_hub_target_id']['expose']['remember_roles'] = array(
   2 => '2',
   1 => 0,
   7 => 0,
@@ -790,6 +813,27 @@ $handler->display->display_options['filters']['field_edoovillage_status_value'][
   6 => 0,
   4 => 0,
 );
+/* Filter criterion: Content: Coordinating hub(s) (field_hub) */
+$handler->display->display_options['filters']['field_hub_target_id']['id'] = 'field_hub_target_id';
+$handler->display->display_options['filters']['field_hub_target_id']['table'] = 'field_data_field_hub';
+$handler->display->display_options['filters']['field_hub_target_id']['field'] = 'field_hub_target_id';
+$handler->display->display_options['filters']['field_hub_target_id']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_hub_target_id']['expose']['operator_id'] = 'field_hub_target_id_op';
+$handler->display->display_options['filters']['field_hub_target_id']['expose']['label'] = 'Coordinating hub(s)';
+$handler->display->display_options['filters']['field_hub_target_id']['expose']['operator'] = 'field_hub_target_id_op';
+$handler->display->display_options['filters']['field_hub_target_id']['expose']['identifier'] = 'field_hub_target_id';
+$handler->display->display_options['filters']['field_hub_target_id']['expose']['multiple'] = TRUE;
+$handler->display->display_options['filters']['field_hub_target_id']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  7 => 0,
+  8 => 0,
+  9 => 0,
+  3 => 0,
+  5 => 0,
+  6 => 0,
+  4 => 0,
+);
 $handler->display->display_options['displays'] = array(
   'page' => 'page',
   'default' => 0,
@@ -1122,4 +1166,100 @@ $handler->display->display_options['filters']['country']['expose']['remember_rol
   4 => 0,
 );
 $handler->display->display_options['path'] = 'hubs';
+
+/* Display: Entity Reference - Doojects possible edoovillages */
+$handler = $view->new_display('entityreference', 'Entity Reference - Doojects possible edoovillages', 'entityreference_1');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['title'] = 'Doojects possible edoovillages';
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['defaults']['style_plugin'] = FALSE;
+$handler->display->display_options['style_plugin'] = 'entityreference_style';
+$handler->display->display_options['style_options']['search_fields'] = array(
+  'title' => 'title',
+);
+$handler->display->display_options['defaults']['style_options'] = FALSE;
+$handler->display->display_options['defaults']['row_plugin'] = FALSE;
+$handler->display->display_options['row_plugin'] = 'entityreference_fields';
+$handler->display->display_options['defaults']['row_options'] = FALSE;
+$handler->display->display_options['defaults']['sorts'] = FALSE;
+/* Sort criterion: Content: Title */
+$handler->display->display_options['sorts']['title']['id'] = 'title';
+$handler->display->display_options['sorts']['title']['table'] = 'node';
+$handler->display->display_options['sorts']['title']['field'] = 'title';
+/* Sort criterion: Content: Post date */
+$handler->display->display_options['sorts']['created']['id'] = 'created';
+$handler->display->display_options['sorts']['created']['table'] = 'node';
+$handler->display->display_options['sorts']['created']['field'] = 'created';
+$handler->display->display_options['sorts']['created']['order'] = 'DESC';
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Filter criterion: Content: Published */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filter criterion: Content: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'edoovillage' => 'edoovillage',
+);
+/* Filter criterion: Content: Status (field_edoovillage_status) */
+$handler->display->display_options['filters']['field_edoovillage_status_value']['id'] = 'field_edoovillage_status_value';
+$handler->display->display_options['filters']['field_edoovillage_status_value']['table'] = 'field_data_field_edoovillage_status';
+$handler->display->display_options['filters']['field_edoovillage_status_value']['field'] = 'field_edoovillage_status_value';
+$handler->display->display_options['filters']['field_edoovillage_status_value']['value'] = array(
+  'open' => 'open',
+);
+
+/* Display: Entity Reference - Doojects possible dootrips */
+$handler = $view->new_display('entityreference', 'Entity Reference - Doojects possible dootrips', 'entityreference_2');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['title'] = 'Doojects possible dootrips';
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['defaults']['style_plugin'] = FALSE;
+$handler->display->display_options['style_plugin'] = 'entityreference_style';
+$handler->display->display_options['style_options']['search_fields'] = array(
+  'title' => 'title',
+);
+$handler->display->display_options['defaults']['style_options'] = FALSE;
+$handler->display->display_options['defaults']['row_plugin'] = FALSE;
+$handler->display->display_options['row_plugin'] = 'entityreference_fields';
+$handler->display->display_options['defaults']['row_options'] = FALSE;
+$handler->display->display_options['defaults']['sorts'] = FALSE;
+/* Sort criterion: Content: Title */
+$handler->display->display_options['sorts']['title']['id'] = 'title';
+$handler->display->display_options['sorts']['title']['table'] = 'node';
+$handler->display->display_options['sorts']['title']['field'] = 'title';
+/* Sort criterion: Content: Post date */
+$handler->display->display_options['sorts']['created']['id'] = 'created';
+$handler->display->display_options['sorts']['created']['table'] = 'node';
+$handler->display->display_options['sorts']['created']['field'] = 'created';
+$handler->display->display_options['sorts']['created']['order'] = 'DESC';
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Filter criterion: Content: Published */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filter criterion: Content: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'dootrip' => 'dootrip',
+);
+/* Filter criterion: Content: Status (field_status_dootrip) (translated) */
+$handler->display->display_options['filters']['field_status_dootrip_value_i18n']['id'] = 'field_status_dootrip_value_i18n';
+$handler->display->display_options['filters']['field_status_dootrip_value_i18n']['table'] = 'field_data_field_status_dootrip';
+$handler->display->display_options['filters']['field_status_dootrip_value_i18n']['field'] = 'field_status_dootrip_value_i18n';
+$handler->display->display_options['filters']['field_status_dootrip_value_i18n']['value'] = array(
+  'DS0' => 'DS0',
+);
 

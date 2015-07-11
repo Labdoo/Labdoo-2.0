@@ -2304,7 +2304,7 @@ $display_output = $entity_field_item[\'value\'];',
         'handler_settings' => array(
           'behaviors' => array(
             'views-select-list' => array(
-              'status' => 0,
+              'status' => 1,
             ),
           ),
           'sort' => array(
@@ -2322,6 +2322,7 @@ $display_output = $entity_field_item[\'value\'];',
     'field_instance' => array(
       'bundle' => 'edoovillage',
       'default_value' => NULL,
+      'default_value_function' => '',
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -2352,6 +2353,11 @@ $display_output = $entity_field_item[\'value\'];',
       'label' => 'Coordinating hub(s)',
       'required' => 1,
       'settings' => array(
+        'behaviors' => array(
+          'prepopulate' => array(
+            'status' => 0,
+          ),
+        ),
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -2360,7 +2366,7 @@ $display_output = $entity_field_item[\'value\'];',
         'settings' => array(
           'match_operator' => 'CONTAINS',
           'path' => '',
-          'size' => 60,
+          'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
         'weight' => '8',
@@ -3606,7 +3612,7 @@ $display_output = $entity_field_item[\'value\'];',
   $fields['node-hub-field_hub_additional_editors'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_hub_additional_editors',
@@ -5079,18 +5085,17 @@ $display_output = $entity_field_item[\'value\'];',
       'locked' => '0',
       'module' => 'entityreference',
       'settings' => array(
-        'handler' => 'base',
+        'handler' => 'views',
         'handler_settings' => array(
           'behaviors' => array(
             'views-select-list' => array(
               'status' => 0,
             ),
           ),
-          'sort' => array(
-            'type' => 'none',
-          ),
-          'target_bundles' => array(
-            'dootrip' => 'dootrip',
+          'view' => array(
+            'args' => array(),
+            'display_name' => 'entityreference_2',
+            'view_name' => 'GlobalInventory',
           ),
         ),
         'target_type' => 'node',
@@ -5101,6 +5106,7 @@ $display_output = $entity_field_item[\'value\'];',
     'field_instance' => array(
       'bundle' => 'laptop',
       'default_value' => NULL,
+      'default_value_function' => '',
       'deleted' => '0',
       'description' => 'This field is updated automatically once dootrips are assigned to this dooject. You can also optionally set this field manually adding dootrips by typing their name.',
       'display' => array(
@@ -5131,6 +5137,11 @@ $display_output = $entity_field_item[\'value\'];',
       'label' => 'Dootrips assigned to this dooject',
       'required' => 0,
       'settings' => array(
+        'behaviors' => array(
+          'prepopulate' => array(
+            'status' => 0,
+          ),
+        ),
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -5171,18 +5182,17 @@ $display_output = $entity_field_item[\'value\'];',
       'locked' => '0',
       'module' => 'entityreference',
       'settings' => array(
-        'handler' => 'base',
+        'handler' => 'views',
         'handler_settings' => array(
           'behaviors' => array(
             'views-select-list' => array(
               'status' => 0,
             ),
           ),
-          'sort' => array(
-            'type' => 'none',
-          ),
-          'target_bundles' => array(
-            'edoovillage' => 'edoovillage',
+          'view' => array(
+            'args' => array(),
+            'display_name' => 'entityreference_1',
+            'view_name' => 'GlobalInventory',
           ),
         ),
         'target_type' => 'node',
@@ -5193,6 +5203,7 @@ $display_output = $entity_field_item[\'value\'];',
     'field_instance' => array(
       'bundle' => 'laptop',
       'default_value' => NULL,
+      'default_value_function' => '',
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -5223,6 +5234,11 @@ $display_output = $entity_field_item[\'value\'];',
       'label' => 'Edoovillage destination',
       'required' => 1,
       'settings' => array(
+        'behaviors' => array(
+          'prepopulate' => array(
+            'status' => 0,
+          ),
+        ),
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -5231,7 +5247,7 @@ $display_output = $entity_field_item[\'value\'];',
         'settings' => array(
           'match_operator' => 'CONTAINS',
           'path' => '',
-          'size' => 60,
+          'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
         'weight' => '6',

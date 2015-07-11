@@ -254,11 +254,62 @@ $handler->display->display_options['filters']['uid_1']['expose']['remember_roles
 
 /* Display: Page */
 $handler = $view->new_display('page', 'Page', 'page_1');
+$handler->display->display_options['defaults']['style_plugin'] = FALSE;
+$handler->display->display_options['style_plugin'] = 'default';
+$handler->display->display_options['defaults']['style_options'] = FALSE;
+$handler->display->display_options['defaults']['row_plugin'] = FALSE;
+$handler->display->display_options['row_plugin'] = 'fields';
+$handler->display->display_options['row_options']['inline'] = array(
+  'created' => 'created',
+  'name' => 'name',
+);
+$handler->display->display_options['row_options']['separator'] = ' | ';
+$handler->display->display_options['defaults']['row_options'] = FALSE;
 $handler->display->display_options['defaults']['relationships'] = FALSE;
 /* Relationship: Entity Reference: Referenced Entity */
 $handler->display->display_options['relationships']['field_task_assigned_to_target_id']['id'] = 'field_task_assigned_to_target_id';
 $handler->display->display_options['relationships']['field_task_assigned_to_target_id']['table'] = 'field_data_field_task_assigned_to';
 $handler->display->display_options['relationships']['field_task_assigned_to_target_id']['field'] = 'field_task_assigned_to_target_id';
+/* Relationship: Content: Author */
+$handler->display->display_options['relationships']['uid']['id'] = 'uid';
+$handler->display->display_options['relationships']['uid']['table'] = 'node';
+$handler->display->display_options['relationships']['uid']['field'] = 'uid';
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: User: Picture */
+$handler->display->display_options['fields']['picture']['id'] = 'picture';
+$handler->display->display_options['fields']['picture']['table'] = 'users';
+$handler->display->display_options['fields']['picture']['field'] = 'picture';
+$handler->display->display_options['fields']['picture']['relationship'] = 'uid';
+$handler->display->display_options['fields']['picture']['label'] = '';
+$handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
+/* Field: Content: Title */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Field: Content: Post date */
+$handler->display->display_options['fields']['created']['id'] = 'created';
+$handler->display->display_options['fields']['created']['table'] = 'node';
+$handler->display->display_options['fields']['created']['field'] = 'created';
+$handler->display->display_options['fields']['created']['date_format'] = 'long';
+$handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+/* Field: User: Name */
+$handler->display->display_options['fields']['name']['id'] = 'name';
+$handler->display->display_options['fields']['name']['table'] = 'users';
+$handler->display->display_options['fields']['name']['field'] = 'name';
+$handler->display->display_options['fields']['name']['relationship'] = 'uid';
+$handler->display->display_options['fields']['name']['label'] = 'Author:';
+$handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+/* Field: Content: Body */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['alter']['max_length'] = '300';
+$handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
 $handler->display->display_options['defaults']['arguments'] = FALSE;
 $handler->display->display_options['defaults']['filter_groups'] = FALSE;
 $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -418,25 +469,36 @@ $handler->display->display_options['filters']['uid']['expose']['remember_roles']
   7 => 0,
   8 => 0,
 );
-/* Filter criterion: Search: Search Terms */
-$handler->display->display_options['filters']['keys']['id'] = 'keys';
-$handler->display->display_options['filters']['keys']['table'] = 'search_index';
-$handler->display->display_options['filters']['keys']['field'] = 'keys';
-$handler->display->display_options['filters']['keys']['group'] = 1;
-$handler->display->display_options['filters']['keys']['exposed'] = TRUE;
-$handler->display->display_options['filters']['keys']['expose']['operator_id'] = 'keys_op';
-$handler->display->display_options['filters']['keys']['expose']['label'] = 'Search Terms';
-$handler->display->display_options['filters']['keys']['expose']['operator'] = 'keys_op';
-$handler->display->display_options['filters']['keys']['expose']['identifier'] = 'keys';
-$handler->display->display_options['filters']['keys']['expose']['remember_roles'] = array(
+/* Filter criterion: Global: Combine fields filter */
+$handler->display->display_options['filters']['combine']['id'] = 'combine';
+$handler->display->display_options['filters']['combine']['table'] = 'views';
+$handler->display->display_options['filters']['combine']['field'] = 'combine';
+$handler->display->display_options['filters']['combine']['operator'] = 'allwords';
+$handler->display->display_options['filters']['combine']['group'] = 1;
+$handler->display->display_options['filters']['combine']['exposed'] = TRUE;
+$handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
+$handler->display->display_options['filters']['combine']['expose']['label'] = 'Search terms';
+$handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
+$handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
+$handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
   2 => '2',
   1 => 0,
-  3 => 0,
-  6 => 0,
-  5 => 0,
-  4 => 0,
   7 => 0,
   8 => 0,
+  9 => 0,
+  3 => 0,
+  5 => 0,
+  6 => 0,
+  4 => 0,
+);
+$handler->display->display_options['filters']['combine']['expose']['autocomplete_items'] = '10';
+$handler->display->display_options['filters']['combine']['expose']['autocomplete_min_chars'] = '0';
+$handler->display->display_options['filters']['combine']['expose']['autocomplete_raw_suggestion'] = 1;
+$handler->display->display_options['filters']['combine']['expose']['autocomplete_raw_dropdown'] = 1;
+$handler->display->display_options['filters']['combine']['expose']['autocomplete_dependent'] = 0;
+$handler->display->display_options['filters']['combine']['fields'] = array(
+  'title' => 'title',
+  'body' => 'body',
 );
 /* Filter criterion: Content: Author uid */
 $handler->display->display_options['filters']['uid_1']['id'] = 'uid_1';
