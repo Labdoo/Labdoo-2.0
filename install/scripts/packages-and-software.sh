@@ -47,7 +47,7 @@ apt-get -y install nginx nginx-common nginx-full php5-fpm
 ### I am using below a workaround described there.
 
 # install uploadprogress bar (from PECL) (requested by Drupal 7)
-pecl install uploadprogress
+pecl install -Z uploadprogress
 
 gunzip /build/buildd/php5-*/pear-build-download/uploadprogress-*
 pear upgrade /build/buildd/php5-*/pear-build-download/uploadprogress-*
@@ -57,7 +57,7 @@ echo "extension = uploadprogress.so" > /etc/php5/conf.d/uploadprogress.ini
 
 ### install drush
 pear channel-discover pear.drush.org
-pear install pear.drush.org/drush-6.2.0.0
+pear install -Z pear.drush.org/drush-6.2.0.0
 
 gunzip /build/buildd/php5-*/pear-build-download/drush-*
 pear upgrade /build/buildd/php5-*/pear-build-download/drush-*
