@@ -97,7 +97,7 @@ function lbd_wiki_block_view($delta = '') {
   $metadata = "href='$allTranslationsURl'";
   $code = $code . "<hr/>";
   $code = $code . "<img src='/profiles/labdoo/files/pictures/conversation.png' style='width: 20px; height: 21px;'/>&nbsp;" . 
-                  "<a $metadata>" . t('Other translations of this page') . "</span></a></p>";
+                  "<a $metadata>" . t('Other translations of this book') . "</span></a></p>";
 
   // Build the tree and block title.
   $children = menu_build_tree($parent['menu_name'], $parameters);
