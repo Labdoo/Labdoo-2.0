@@ -72,14 +72,23 @@ function sanitizeStringForVisualization($unsanitizedText) {
  * @param edoovillageId Identifier of the edoovillage or NULL for all edoovillages
  * @param country Country in which the doojects reside or NULL for all countries 
  * @param switcher If TRUE, display the switcher; otherwise, don't display it
+ * @param $justCache If TRUE, only update the cache and do not display the dashboard
  *
  * @return A dashboard of the doojects 
  *
  */
-function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovillageId = NULL, $country = NULL, $switcher = TRUE) {
+function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovillageId = NULL, $country = NULL, $switcher = TRUE, $justCache = FALSE) {
+  // Personalized dashboards are marked as volatile, so the cache refresher run by cron can easily differentiate them.
+  // The cache for this type of dashboards is usually smaller, and it's ok to simply clean them up periodically and have users
+  // recompute them upon viewing them. The other caches (the general ones not marked as volatile), take a long time to 
+  // compute so we need to recompute them in the background (via cron) so the user does not experience large latency.
+  if($userId != NULL || $hubId != NULL || $edoovillageId != NULL || $country != NULL)
+    $volatileString = 'volatile_';
+  else
+    $volatileString = '';
+  $cacheIndexPrefix = 'lbd_visualization_dooject_' . $volatileString . 'u' . $userId . 'h' . $hubId . 'e' . $edoovillageId . 'c' . $country . '_';
   // Fast path: first check the cache
-  $cacheIndexPrefix = 'lbd_visualization_dooject_' . 'u' . $userId . 'h' . $hubId . 'e' . $edoovillageId . 'c' . $country . '_';
-  if($cache = cache_get($cacheIndexPrefix . 'objects')) {
+  if(!$justCache && ($cache = cache_get($cacheIndexPrefix . 'objects'))) {
     $objects = $cache->data;
     $cache = cache_get($cacheIndexPrefix . 'metrics');
     $metrics = $cache->data;
@@ -256,14 +265,16 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
       $objects[0][$thisState] = 0;
 
   }
-    cache_set($cacheIndexPrefix . 'objects', $objects, 'cache');
-    cache_set($cacheIndexPrefix . 'metrics', $metrics, 'cache');
-    cache_set($cacheIndexPrefix . 'selected_nids', $selectedNids, 'cache');
+
+  cache_set($cacheIndexPrefix . 'objects', $objects, 'cache');
+  cache_set($cacheIndexPrefix . 'metrics', $metrics, 'cache');
+  cache_set($cacheIndexPrefix . 'selected_nids', $selectedNids, 'cache');
+
   }
 
-  if($switcher)
+  if(!$justCache && $switcher)
     print_dashboard_switcher($userId);
-  print_dashboard_objects('laptop', 'doojects', $objects, $metrics, $selectedNids, $cacheIndexPrefix);
+  print_dashboard_objects('laptop', 'doojects', $objects, $metrics, $selectedNids, $cacheIndexPrefix, $justCache);
 
 }
 
@@ -275,13 +286,18 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
  * @param hubId Identifier of a hub or NULL for all hubs 
  * @param country Country in which the edoovillages reside or NULL for all countries 
  * @param switcher If TRUE, display the switcher; otherwise, don't display it
+ * @param $justCache If TRUE, only update the cache and do not display the dashboard
  *
  * @return A dashboard of the edoovillages 
  *
  */
-function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $country = NULL, $switcher = TRUE) {
-  $cacheIndexPrefix = 'lbd_visualization_edoovillage_' . 'u' . $userId . 'h' . $hubId . 'c' . $country . '_';
-  if($cache = cache_get($cacheIndexPrefix . 'objects')) {
+function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $country = NULL, $switcher = TRUE, $justCache = FALSE) {
+  if($userId != NULL || $hubId != NULL || $country != NULL)
+    $volatileString = 'volatile_';
+  else
+    $volatileString = '';
+  $cacheIndexPrefix = 'lbd_visualization_edoovillage_' . $volatileString . 'u' . $userId . 'h' . $hubId . 'c' . $country . '_';
+  if(!$justCache && ($cache = cache_get($cacheIndexPrefix . 'objects'))) {
     $objects = $cache->data;
     $cache = cache_get($cacheIndexPrefix . 'metrics');
     $metrics = $cache->data;
@@ -441,9 +457,9 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
 
   }
 
-  if($switcher)
+  if(!$justCache && $switcher)
     print_dashboard_switcher($userId);
-  print_dashboard_objects('edoovillage', 'edoovillages', $objects, $metrics, $selectedNids, $cacheIndexPrefix);
+  print_dashboard_objects('edoovillage', 'edoovillages', $objects, $metrics, $selectedNids, $cacheIndexPrefix, $justCache);
 
 }
 
@@ -454,13 +470,18 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
  * @param userId Identifier of the user or NULL for all users
  * @param country Country in which the hubs reside or NULL for all countries 
  * @param switcher If TRUE, display the switcher; otherwise, don't display it
+ * @param $justCache If TRUE, only update the cache and do not display the dashboard
  *
  * @return A dashboard of the edoovillages 
  *
  */
-function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher = TRUE) {
-  $cacheIndexPrefix = 'lbd_visualization_hub_' . 'u' . $userId . 'c' . $country . '_';
-  if($cache = cache_get($cacheIndexPrefix . 'objects')) {
+function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher = TRUE, $justCache = FALSE) {
+  if($userId != NULL || $country != NULL)
+    $volatileString = 'volatile_';
+  else
+    $volatileString = '';
+  $cacheIndexPrefix = 'lbd_visualization_hub_' . $volatileString . 'u' . $userId . 'c' . $country . '_';
+  if(!$justCache && ($cache = cache_get($cacheIndexPrefix . 'objects'))) {
     $objects = $cache->data;
     $cache = cache_get($cacheIndexPrefix . 'metrics');
     $metrics = $cache->data;
@@ -608,9 +629,9 @@ function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher =
 
   }
 
-  if($switcher)
+  if(!$justCache && $switcher)
     print_dashboard_switcher($userId);
-  print_dashboard_objects('hub', 'hubs', $objects, $metrics, $selectedNids, $cacheIndexPrefix);
+  print_dashboard_objects('hub', 'hubs', $objects, $metrics, $selectedNids, $cacheIndexPrefix, $justCache);
 
 }
 
@@ -621,12 +642,27 @@ function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher =
  * @param userId Identifier of the user or NULL for all users
  * @param country Country where the dootrips are terminated or NULL for all countries 
  * @param switcher If TRUE, display the switcher; otherwise, don't display it
+ * @param $justCache If TRUE, only update the cache and do not display the dashboard
  *
  * @return A dashboard of the dootrips 
  *
  */
-function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL, $switcher = TRUE) {
-  $cacheIndexPrefix = 'lbd_visualization_dootrips_' . 'u' . $userId . 'c' . $country . '_';
+function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL, $switcher = TRUE, $justCache = FALSE) {
+  if($userId != NULL || $country != NULL)
+    $volatileString = 'volatile_';
+  else
+    $volatileString = '';
+  $cacheIndexPrefix = 'lbd_visualization_dootrip_' . $volatileString . 'u' . $userId . 'c' . $country . '_';
+  if(!$justCache && ($cache = cache_get($cacheIndexPrefix . 'objects'))) {
+    $objects = $cache->data;
+    $cache = cache_get($cacheIndexPrefix . 'metrics');
+    $metrics = $cache->data;
+    $cache = cache_get($cacheIndexPrefix . 'selected_nids');
+    $selectedNids = $cache->data;
+  }
+
+  else {
+ 
   global $language;
   $defaultLanguage = language_default();
   $defaultLanguageCode = $defaultLanguage->language;
@@ -735,9 +771,15 @@ function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL, $switch
   $metrics[5] = array('label' => 'Total number of dootrips', 'field' => 'numberDootrips', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
   $metrics[6] = array('label' => 'Doojects transported', 'field' => 'completed', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
 
-  if($switcher)
+  cache_set($cacheIndexPrefix . 'objects', $objects, 'cache');
+  cache_set($cacheIndexPrefix . 'metrics', $metrics, 'cache');
+  cache_set($cacheIndexPrefix . 'selected_nids', $selectedNids, 'cache');
+
+  }
+
+  if(!$justCache && $switcher)
     print_dashboard_switcher($userId);
-  print_dashboard_objects('dootrip', 'dootrips', $objects, $metrics, $selectedNids, $cacheIndexPrefix);
+  print_dashboard_objects('dootrip', 'dootrips', $objects, $metrics, $selectedNids, $cacheIndexPrefix, $justCache);
 
 }
 
@@ -820,9 +862,28 @@ function print_dashboard_switcher($userId = NULL)
  * Prints a dashboard of Labdoo objects
  * Examples of objects are: doojects, hubs, edoovillages. 
  *
+ * @param $objectsType Type of objects
+ * @param $objectsName Objects name
+ * @param $objects List of all objects to display 
+ * @param $metrics Array with all the consolidated metrics 
+ * @param $nodeIds List of all node identifiers 
+ * @param $cacheIndexPrefix The cache index prefix to use when looking up the cache
+ * @param $justCache If TRUE, only update the cache and do not display the dashboard
+ *
  */
-function print_dashboard_objects($objectsType, $objectsName, $objects, $metrics, $nodeIds, $cacheIndexPrefix)
+function print_dashboard_objects($objectsType, $objectsName, $objects, $metrics, $nodeIds, $cacheIndexPrefix, $justCache = FALSE)
 {
+
+  // Check the cache first
+  if($cache = cache_get($cacheIndexPrefix . 'num_objects_by_city')) {
+    $objectsGeoCount = $cache->data;
+  }
+  else {
+    $objectsGeoCount = labdoo_getnum_objects_by_city($objectsType, $nodeIds, $maxEntries=1000000);
+    cache_set($cacheIndexPrefix . 'num_objects_by_city', $objectsGeoCount, 'cache');
+  }
+  if($justCache)
+    return;
 
   $lastElement = sizeof($metrics)+1;
 
@@ -1079,13 +1140,6 @@ var rows = [
 
 ");
 
-  if($cache = cache_get($cacheIndexPrefix . 'num_objects_by_city')) {
-    $objectsGeoCount = $cache->data;
-  }
-  else {
-    $objectsGeoCount = labdoo_getnum_objects_by_city($objectsType, $nodeIds, $maxEntries=1000000);
-    cache_set($cacheIndexPrefix . 'num_objects_by_city', $objectsGeoCount, 'cache');
-  }
   foreach ($objectsGeoCount as $item) {
     print("[" . $item['lat']. ", " . $item['lon'] . ", \"" . $item['city'] . ", " . $item['country'] . "\", ". $item['count'] ."],");
   }
@@ -1573,5 +1627,28 @@ function lbd_display_dooject_column_chart($objectNid, $type)
 ';
 
   return $htmlCode;
+}
+
+
+/*
+ * Implementation of hook_cron
+ *
+ */
+function lbd_visualize_cron() {
+
+  // Clean up all the volatile-marked entries (these are all dashboards
+  // different than the general ones)
+  cache_clear_all('lbd_visualization_dooject_volatile', 'cache', TRUE);
+  cache_clear_all('lbd_visualization_edoovillage_volatile', 'cache', TRUE);
+  cache_clear_all('lbd_visualization_hub_volatile', 'cache', TRUE);
+  cache_clear_all('lbd_visualization_dootrip_volatile', 'cache', TRUE);
+
+  // Re-compute the general (non-volatile marked) dashboards
+  lbd_display_dashboard_doojects(NULL, NULL, NULL, NULL, TRUE, TRUE);
+  lbd_display_dashboard_hubs(NULL, NULL, TRUE, TRUE); 
+  lbd_display_dashboard_edoovillages(NULL, NULL, NULL, TRUE, TRUE); 
+  lbd_display_dashboard_dootrips(NULL, NULL, TRUE, TRUE);
+
+  return;
 }
 

@@ -4220,7 +4220,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
       'settings' => array(
         'description_field' => 0,
         'file_directory' => 'team_tasks',
-        'file_extensions' => 'txt png pdf',
+        'file_extensions' => 'txt png pdf jpg jpeg',
         'max_filesize' => '10 MB',
         'user_register_form' => FALSE,
       ),

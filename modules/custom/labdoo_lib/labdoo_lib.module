@@ -716,7 +716,7 @@ function labdoo_lib_node_update($node) {
       //      just like we are doing with other fields.
       //      For now we leave it here as an example of an alternative technique.
       register_shutdown_function('_update_dooject_location_from_edoovillage', $node);
-      drupal_set_message(t('The location of this dooject has been automatically assigned to the location of its edoovillage.'));
+      drupal_set_message(t('The location of this dooject has been automatically assigned to the location of its edoovillage.'), 'status', FALSE);
     }
   }
 
@@ -791,15 +791,15 @@ function labdoo_lib_node_presave($node) {
     // laptop is stored as the node's title
     $laptopIdInt = lbd_allocate_dooject_id();
     $node->title = sprintf("%09d", $laptopIdInt);
+  }
 
+  if($node->type == 'laptop') {
     // Add laptop path alias for 1.0 compatibility.
     // There are basically two ways to access a laptop:
     // via laptop/$ID or content/$ID
     $path = 'laptop/' . $node->title;
     $node->path = array('alias' => $path);
-  }
 
-  if($node->type == 'laptop') {
     // If not set, make a best estimate of its GPS coordinates
     $location = $node->locations[0]; 
     if($location && (!array_key_exists('latitude', $location) || !array_key_exists('longitude', $location))) {
@@ -1407,12 +1407,16 @@ function labdoo_lib_compute_hub_branches($nodeLoaded) {
  */
 function labdoo_lib_node_view($node, $view_mode) {
   global $language;
-  // TODO: Every object that has a 'computed field' that needs to be refreshed
-  // dynamically, must be resaved upon viewing. This is not very efficient but
-  // it is more efficient than clearing the cache. Need to find a better solution.
 
+  // NOTE: Every object that has a 'computed field' that needs to be refreshed
+  // dynamically must be resaved upon being viewed in order to recompute such field. 
+  // Doing a node_save() would be inefficient and so instead, we do field_attach_update(), 
+  // which forces an update of all the fields without doing a full node_save(). This also prevents
+  // from generating a new revision and all the side effects that a full node_save()
+  // would imply. An alternative to this would be to do a cache clean up, but that would
+  // be inefficient too. 
   if($node->type == 'hub') // Hub has the computed field 'Hub branches'
-    node_save($node);
+    field_attach_update('node', $node);
 
   // TODO DE-COLORBOX: temporary fix. This forces a redirect of all photo galleries in German language
   // to the default language English, because there is a bug that prevents them from loading the 
