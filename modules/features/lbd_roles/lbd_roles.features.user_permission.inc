@@ -516,7 +516,9 @@ function lbd_roles_user_default_permissions() {
   // Exported permission: edit any superhub_page content.
   $permissions['edit any superhub_page content'] = array(
     'name' => 'edit any superhub_page content',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'superhub manager',
+    ),
     'module' => 'node',
   );
 

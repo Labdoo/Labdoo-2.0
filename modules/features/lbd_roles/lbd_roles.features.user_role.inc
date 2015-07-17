@@ -13,19 +13,19 @@ function lbd_roles_user_default_roles() {
   // Exported role: book writer.
   $roles['book writer'] = array(
     'name' => 'book writer',
-    'weight' => '8',
+    'weight' => '16',
   );
 
   // Exported role: edoovillage manager.
   $roles['edoovillage manager'] = array(
     'name' => 'edoovillage manager',
-    'weight' => '5',
+    'weight' => '13',
   );
 
   // Exported role: hub manager.
   $roles['hub manager'] = array(
     'name' => 'hub manager',
-    'weight' => '4',
+    'weight' => '15',
   );
 
   // Exported role: newsletter manager.

@@ -133,7 +133,9 @@ function labdoo_objects_user_default_permissions() {
   // Exported permission: edit any edoovillage content.
   $permissions['edit any edoovillage content'] = array(
     'name' => 'edit any edoovillage content',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'superhub manager',
+    ),
     'module' => 'node',
   );
 
