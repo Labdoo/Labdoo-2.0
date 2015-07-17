@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>265</value>
+<value>194</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,23 +17,32 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>265</value>
+<value>194</value>
 </field_reference_book>
 <body>
 <type>value</type>
-<value>As soon as you bootet into Lubuntu or PM-Parted Magic (both based on Linux) you should first check out the CPU type, as you have to clone the matching image to the matching CPU. Otherwise the computer might not reboot and work properly. E.g. a 32-Bit Image may be cloned and run on a 64-Bit CPU, but not the other way round (but the 32-Bit release ist only able to address max. 3 MB RAM).
+<value> <strong>Since June 2015 it is not necessary to check the CPU type (nonPAE32 or PAE32). The PAE32 image for cloning works with nonPAE32 and PAE32 CPUs :) So you can skip this chapter.</strong>
 
-Open a terminal (see below) and execute in the terminal (you can copy and paste the following text):
+You can install for (nearly) all CPUs the PAE 32 Bit image or install Lubuntu 32 Bit (i386). Only if you want to use more than 3 GB memory (RAM) you should use the 64 Bit version.
+
+Anyway, here are a few remarks how to check out the CPU type (nonPAE/PAE and 32 / 64 Bit), in case you need it for other purpose:
+
+<ul>
+<li>As soon as you bootet into Lubuntu or PM-Parted Magic (both based on Linux) you should first check out the CPU type, as you have to clone the matching image to the matching CPU. Otherwise the computer might not reboot and work properly. E.g. a 32-Bit Image may be cloned and run on a 64-Bit CPU, but not the other way round (but the 32-Bit release ist only able to address max. 3 MB RAM).</li>
+
+<li>Open a terminal (see below) and execute in the terminal (you can copy and paste the following text):</li>
 
 <code>grep -q '\&lt;pae\&gt;' /proc/cpuinfo &amp;&amp; echo "My CPU is PAE capable" || 
 echo "My CPU is NOT PAE capable (nonPAE)" &amp;&amp; grep -q '\&lt;lm&gt;' 
 /proc/cpuinfo &amp;&amp; echo "My CPU is a 64 bits one" || echo "My CPU is a 32 bits one"</code>
 
-<strong>Hint:</strong> In PM the terminal is the black screen icon in the task bar, click it, a terminal will open. Insert (Paste) into a terminal will work either by pressing at the same time Shift + CTL + v or right mouse click in the terminal and paste.
+<li><strong>Hint:</strong> In PM the terminal is the black screen icon in the task bar, click it, a terminal will open. Insert (Paste) into a terminal will work either by pressing at the same time Shift + CTL + v or right mouse click in the terminal and paste.</li>
 
-<strong>Alternatively:</strong> open System Profiler (click icon in the upper part on the desktop) → Devices → Processor (if CPU has more than one processor click one of them) → scroll down to Capabilities, check in the list, if PAE is listed. If PAE is listed you can use a PAE image; if PAE is not listed install a nonPAE image. But you have to check 32 or 64 Bit, if in doubt install 32 Bit version. But the easiest way is to use the code above.
+<li><strong>Alternatively:</strong> open System Profiler (click icon in the upper part on the desktop) → Devices → Processor (if CPU has more than one processor click one of them) → scroll down to Capabilities, check in the list, if PAE is listed. If PAE is listed you can use a PAE image; if PAE is not listed install a nonPAE image. But you have to check 32 or 64 Bit, if in doubt install 32 Bit version. But the easiest way is to use the code above.</li>
 
-You can as well download the check script 32 / 64 Bit / nonPAE / PAE from here --> http://ftp.labdoo.org/download/images/installskripts/check_cpu_32_or_64_bits_PAE_or_nonPAE.sh</value>
+<li>You can as well download the check script 32 / 64 Bit / nonPAE / PAE from here --&gt; http://ftp.labdoo.org/download/images/installskripts/check_cpu_32_or_64_bits_PAE_or_nonPAE.sh</li>
+
+</ul></value>
 </body>
 <body>
 <type>format</type>
@@ -41,15 +50,15 @@ You can as well download the check script 32 / 64 Bit / nonPAE / PAE from here -
 </body>
 <bid>
 <type>book_array</type>
-<value>255</value>
+<value>35</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>981</value>
+<value>961</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>982</value>
+<value>978</value>
 </mlid>
 <weight>
 <type>book_array</type>

@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>103</value>
+<value>126</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,11 +17,11 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>70</value>
+<value>27</value>
 </field_reference_book>
 <bid>
 <type>book_array</type>
-<value>103</value>
+<value>126</value>
 </bid>
 <plid>
 <type>book_array</type>
@@ -29,7 +29,7 @@
 </plid>
 <mlid>
 <type>book_array</type>
-<value>845</value>
+<value>910</value>
 </mlid>
 <weight>
 <type>book_array</type>

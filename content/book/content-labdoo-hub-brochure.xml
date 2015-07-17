@@ -1,0 +1,53 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>16733</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Labdoo Hub Brochure</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>16733</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>You can use this to help explain what a hub is and/or to announce the creation of a new hub.
+
+<a href="/sites/default/files/content/labdoo-toolkit/labdoo-hub.pdf">[Dowload in printable format]</a>
+
+<img src="/sites/default/files/content/labdoo-toolkit/labdoo-hub-1.png" width="500"/>
+
+<img src="/sites/default/files/content/labdoo-toolkit/labdoo-hub-2.png" width="500"/>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>full_html</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>41</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>825</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1054</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-12</value>
+</weight>
+</book>

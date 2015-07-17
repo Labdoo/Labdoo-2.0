@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>117</value>
+<value>185</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,11 +17,15 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>117</value>
+<value>185</value>
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Dear $SOLICITORNAME,
+<value><strong>1. Standard response</strong>
+
+---
+
+Dear $SOLICITORNAME,
 
 Thank you for contacting Project Labdoo.
 
@@ -36,6 +40,28 @@ Thank you and best wishes,
 $MYNAME
 Labdoo Team | www.labdoo.org
 
+---
+
+<strong>2. 'Cannot serve' response</strong> 
+
+In some occasions, solicitors ask us to donate laptops to individuals or non-education projects, which is not part of Labdoo's mission. For such cases, you can use the following response.
+
+---
+
+Dear $SOLICITORNAME,
+
+Thank you for contacting Project Labdoo.
+
+Project Labdoo's mission is to bring laptops loaded with education software to well organized education centers. As such, we cannot donate laptops to individuals or to organizations outside the Project's mission scope and so, unfortunately, we cannot serve your request.
+
+Alternatively, if you are enrolled in a school program, we could explore the possibility of bringing laptops to your school. If this is an option, you would be able to use the contributed laptops by borrowing them from the school in a time-shared basis together with the rest of your classmates. Notice that there is an involved process to create a project to receive laptops in a school, so this may not accommodate your immediate needs. Let us know if otherwise.
+
+Thank you for reaching out.
+
+$MYNAME
+Labdoo Team | www.labdoo.org
+
+---
 </value>
 </body>
 <body>
@@ -44,15 +70,15 @@ Labdoo Team | www.labdoo.org
 </body>
 <bid>
 <type>book_array</type>
-<value>74</value>
+<value>41</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>852</value>
+<value>934</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>859</value>
+<value>969</value>
 </mlid>
 <weight>
 <type>book_array</type>

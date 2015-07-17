@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>154</value>
+<value>192</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,11 +17,39 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>154</value>
+<value>192</value>
 </field_reference_book>
 <body>
 <type>value</type>
-<value>TODO</value>
+<value>The following explains what users receive automatic dootrip email notifications:
+
+<strong>Upon dootrip creation:</strong>
+
+<ul>
+<li>
+All users in the dootrip field "Dootripper(s)".
+</li>
+<li>
+All email addresses in the field "Additional notification emails".
+</li>
+<li>
+All Labdoo users who manage an edoovillage in a country equal to the destination country of the dootrip. This allows these users to know about the existence of the dootrip in case it can be utilized to carry doojects to that edoovillage.
+</li>
+</ul> 
+
+<strong>Upon a few days before dootrip expiration:</strong>
+<ul>
+<li>
+All users in the dootrip field "Dootripper(s)".
+</li>
+</ul>
+
+<strong>Upon dootrip modification:</strong>
+<ul>
+<li>
+To avoid sending out too many emails, currently no email notifications are sent upon modifying a dootrip. Users need to manually check the status of the dootrip. This policy can be adjusted depending on feedback received by the Labdoo community.
+</li>
+</ul></value>
 </body>
 <body>
 <type>format</type>
@@ -29,15 +57,15 @@
 </body>
 <bid>
 <type>book_array</type>
-<value>72</value>
+<value>39</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>872</value>
+<value>908</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>874</value>
+<value>976</value>
 </mlid>
 <weight>
 <type>book_array</type>

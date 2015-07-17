@@ -1,11 +1,11 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>272</value>
+<value>181</value>
 </nid>
 <title>
 <type>node_title</type>
-<value>programs for handicapped user (barrier free)</value>
+<value>Programs for handicapped user (barrier free)</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>272</value>
+<value>181</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -35,7 +35,7 @@ The tools mentioned below might be used as an alternative to the usual ubuntu to
 
 <tr>
             <td><a href="http://wiki.ubuntuusers.de/Orca">Orca</a></td>
-           <td>Screen reader</td>
+           <td>Screen reader; <strong>Wichtig:</strong> Orca will work with the desktops Unity and Gnome (Ubuntu), not with LXDE (Lubuntu), more (in German) http://wiki.ubuntuusers.de/orca; to start or end Orca press at the same time Alt + Super/Windows + S</td>
             <td>Orca</td>
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/orca.png" width="100"/> </td>
 </tr>
@@ -128,15 +128,15 @@ The tools mentioned below might be used as an alternative to the usual ubuntu to
 </body>
 <bid>
 <type>book_array</type>
-<value>270</value>
+<value>142</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>987</value>
+<value>926</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>989</value>
+<value>965</value>
 </mlid>
 <weight>
 <type>book_array</type>

@@ -1,0 +1,71 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>16916</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Responsibilities of a school hub manager</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>16916</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><strong> Responsibilities of a school hub manager </strong>
+
+ <ul>
+<strong> Beginning of the semester</strong>
+<li>Set a semester club goal and set a plan to achieve the goal</li> 
+<li>Email your parent hub the <a href="https://www.labdoo.org/content/school-hub-check-list" > School Hub Check List</a></li> 
+</ul>
+<ul>
+<strong> During the semester</strong>
+<li>Attend the parent hub meetings or meet with the parent hub manager at least twice per semester </li> 
+<li>Make sure club members record their service hours using the <a href="https://doopoints.weebly.com">Doopoint System</a></li>
+
+</ul>
+<ul>
+<strong> By the end of the second semester</strong>
+<li>Introduce new officer candidates to the parent hub toward the end of the second semester</li> 
+</ul>
+<ul>
+<strong> Fundraising</strong>
+<li>Since Labdoo does not run with money, students are not expected to do fund raising at school.
+However, some schools require school clubs to participate the school fund raising events. If that's the case, the school hub has the right to decide how to best apply the club fund. </li>
+</ul>
+<br></br>
+<br></br>
+
+</value>
+</body>
+<body>
+<type>format</type>
+<value>full_html</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>34</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1062</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1067</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

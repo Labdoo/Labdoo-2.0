@@ -1,0 +1,94 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>17075</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>How to install Xowa wikis</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>17075</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>The Tool Xowa allows access to more than 800 offline wikis. So children can read in wikis, even if you have no online access. Beside Xowa there is a child-friendly Wikipedia in the form of wikidoo.
+
+Xowa, 4 wikis (simple english) and wikidoo is already pre-installed in the Labdoo images for cloning; otherwise, it can be installed using a script, see /content/installation-scripts-overview.
+
+path to Xowa: /home/labdoo/Public/xowa
+path to Xowa-Wikis: /home/labdoo/Public/xowa/wiki
+
+Start Xowa, by double clicking on the Xowa starter on the desktop. 
+
+There are 2 kinds of Xowa wikis:
+<ul>
+<li><strong>Version 1:</strong> only text, no pictures / graphics (please mind the size of a wiki in the table, as a wiki can have 100 KB up to 40 GB)</li>
+<li><strong>Version 2:</strong> as before, but in addition with the linked pictures / graphics (recommended, as much more user-friendly and informative, but needs more disc space)</li>
+</ul>
+
+There are 2 ways to install a wiki. Start Xowa and scroll down the main page of Xowa, so you see "Links":
+<ul>
+<li><strong>Import Online (supports version 1):</strong> Click in column <strong>set up</strong> on the Download link to start the download, which might last for some hours</li>
+<li><strong>Import Offline (supports version 1 and 2):</strong> recommended, don't mind the name, the laptop must be connected to Internet when downloading; the best way is to download by script -> select the needed wiki and language -> Category system: version 2 -> Import: click on Generate script -> repeat, until your scripts contains all needed wikis, then click on "Run script".
+
+<strong>Caution:</strong>
+There is not every wiki available in each language, e.g. often wikivoyage is missing. When running an Offline Import you are able to select a non existing wiki and generate a script entry, but the script will crash when executing. So please check, if a certain wiki exists. Here is a trick, how to check easily: Open 2 Tabs (file -> New tab); one tab is to watch the Online Import table, the other tab the Offline import page. In the Online page you are able to search for the needed language and wiki. So you can see quickly, if a certain wiki exists. </li>
+</ul>
+
+<strong>Matching wiki for matching Xowa</strong>
+Unfortunately the wikis can only be run with the Xowa release, there were downloaded to, in July 2015 Xowa 2.5.4.1. Labdoo plans to update Xowa every 6 months (at the beginning and in the midldle of a year), to minimize the work for downloading wikis. 
+
+So if you download new wikis at home and want to take a USB stick to an Edoovillage that needs to be done with the same Xowa version that is installed in Edoovillage! Otherwise, wikis do not fit to Xowa ...
+
+<strong>Clean up:</strong>
+Nach dem Importieren gibt es im Ordner /xowa/wiki einen Unterordner /dump. Dieser Papierkorb enthält heruntergeladene Wikis, die nach dem Installieren gelöscht werden können, weil sie nur unnötig Platz blockieren.
+After the import there is a sub-folder /dump in the folder /xowa/wik. This trash folder contains the downloaded wikis which can be deleted after installation, because they take only unnecessary disc space.
+
+<strong>right to access Xowa folder</strong>
+Initially, only the user labdoo can access the manually installed Xowa wikis. To enable access for the user student there is a script on the desktop -> set-rights-folder-files-Public-correct.sh. Please run this script every time educational content is installed in the folder /Public. 
+
+Please run it in a terminal or the quick version): Right-click on set-rights-folder-files-Public-correct.sh -> Open with -> Xterm (if Xterm is not listed -> Open With -> system tools -> Xterm). The script starts without further input, runs for about 1 - 5 minutes, depending on the computer, and closes automatically.
+
+<strong>English wikis</strong>
+If the hard disk drive (HDD) is small, but if you want to install English wikis, but let off en.wikipedia.org. The children can use wikidoo, the filtered wikipedia for children. The other English wikis together occupy about 10 GB, but en.wikipedia needs 30 GB!
+
+<strong>Outlook</strong>
+
+A Xowa version for Android phones and tablet PCs is planned, so that we can install Xowa in the future on mobile devices.
+
+<strong>Download Xowa (only for experts)</strong>
+
+from FTP server: http://ftp.labdoo.org/download/Public/xowa/ (It is strongly recommended to use the installation script http://ftp.labdoo.org/download/images/installskripts/installscript-xowa.sh).
+from Sourceforge: http://sourceforge.net/projects/xowa (not recommende)</value>
+</body>
+<body>
+<type>format</type>
+<value>full_html</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>35</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>819</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1071</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

@@ -1,0 +1,74 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>16208</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Faire une demande pour les dons de TI</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>French</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>16208</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Merci de votre intérêt pour Labdoo.org et une application via un don d'informatique pour une "Edoovillage" (si chaud dans les écoles, les maisons, Labdoo.org projets de jeunes, etc.). Les candidats peuvent être une personne privée, une association ou une école, un projet d'éducation pour les enfants ou les jeunes en référence soit.
+
+dons informatiques ne peuvent pas être donnés à des personnes mais seulement à des projets restent également les dons de TI dans leur propriété. Les dons informatiques sont marquées et numérotées. Par conséquent tout moment un contrôle est possible si les dons informatiques résultant il existe encore. Passing est pas autorisé.
+
+Important pour une décision à savoir si une demande est acceptée, est la logistique, par exemple, si Flugpaten qui peuvent maintenant visiter le projet et de prendre des dons ou si il existe des programmes d'aide dans laquelle il dons peuvent être donnés comme un élément supplémentaire.
+
+Tous les projets sont sur https://www.labdoo.org/de/call-for-laptops. Là, vous pouvez aussi parmi les autres choses par pays critères de filtre.
+
+S'il vous plaît remplir le (feuille de demande) de formulaire de demande d'aussi loin que possible. Qu'est-ce que vous ne savez pas, ils partent. S'il vous plaît le renvoyer avec quelques photos de la région environnante, l'emplacement de l'école et les enfants. Puis nous l'avons mis à l'examen et adoption à notre page d'accueil.
+
+<a href="http://ftp.labdoo.org/download/documents/english/labdoo-toolkit-english/labdoo-laptop-request-form-english.txt">- Formulaire de demande anglais</a>
+<a href="http://ftp.labdoo.org/download/documents/french/labdoo-toolkit-french/labdoo-laptop-request-form-french.txt">- Formulaire de demande française</a>
+<a href="http://ftp.labdoo.org/download/documents/spanish/labdoo-toolkit-spanish/labdoo-laptop-request-form-espa%c3%b1ol.txt">- Formulaire de demande espagnole</a>
+<a href="http://ftp.labdoo.org/download/documents/german/labdoo-toolkit-german/labdoo-laptop-request-form-german.txt">- Formulaire de demande allemande</a>
+<a href="http://ftp.labdoo.org/download/documents/romanian/labdoo-toolkit-romanian/labdoo-laptop-request-form-romanian.txt">- Formulaire de demande roumaine</a>
+
+Dans <a href="/content/faq-forum">FAQ Forum</a>  vous trouverez les questions les plus fréquemment posées, a répondu à la douane etc.
+
+S'il vous plaît dire environ 3-4 semaines avant préavis de départ afin que nous avançons pour préparer les dons informatiques et envoyé à la vol parrain. Dons informatiques défectueux seront remplacés gratuitement contre le retour de l'appareil défectueux.
+
+Une présentation du projet peuvent être consultés sur http://ftp.labdoo.org/download/documents/french/labdoo-project-french.pdf.
+
+Autres documents en francais, expliquant le projet et le logiciel éducatif et les contenus peuvent être téléchargés à partir d'ici http://ftp.labdoo.org/download/documents/french/.
+
+Bien sûr, nous ne pouvons passer sur ce qui a déjà été donné à nous. Par conséquent, nous ne pouvons pas dire quand les dons de l'informatique sont également ensemble.
+
+Vous pouvez aider par l'exemple informer leur réseau et l'accès à l'informatique Spendenpenden. Ou informer la presse et de démarrer un appel. Graphiques et logos peuvent être trouvés sur https://www.labdoo.org/de/content/faq-forum#FAQ02.
+
+Pour des questions, s'il vous plaît envoyez un mail à contact@Labdoo.org, je vous remercie.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>16206</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1030</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1032</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

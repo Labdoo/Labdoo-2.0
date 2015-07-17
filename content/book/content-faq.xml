@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>70</value>
+<value>27</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>70</value>
+<value>27</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -132,7 +132,7 @@ You can also directly send an email with your questions or comments by writing t
 </body>
 <bid>
 <type>book_array</type>
-<value>70</value>
+<value>27</value>
 </bid>
 <plid>
 <type>book_array</type>
@@ -140,7 +140,7 @@ You can also directly send an email with your questions or comments by writing t
 </plid>
 <mlid>
 <type>book_array</type>
-<value>812</value>
+<value>811</value>
 </mlid>
 <weight>
 <type>book_array</type>

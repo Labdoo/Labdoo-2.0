@@ -1,0 +1,139 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>74</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Zu Labdoo</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>26</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Labdoo.org ist ein weltweites, soziales Netzwerk an ehrenamtlichen Helfern, IT-Spendern und Schulen. Jeder kann Teil des weltweiten humanitären Hilfsprojektes Labdoo.org werden als 
+
+<ul>
+<li><a href="/content/information-für-it-spender">IT-Spender</a>, </li>
+<li><a href="/content/information-für-flugpaten-dootripper">Flugpate</a>,</li>
+<li> <a href="/content/information-für-labdoo-helfer-labdooer">Labdoo-Helfer</a>,</li>
+<li> <a href="/content/information-für-schulen-projektpartner-empfänger-von-it-spenden-edoovillages">Schule, Projektpartner, Empfänger von IT-Spenden ("Edoovillages")</a>, </li>
+<li><a href="/content/information-für-labdoo-hubs">Labdoo Hubs</a>.</li>
+</ul>
+
+<strong>Besucht auch <a href="/content/LabdooDACH">unsere Seiten der Hubs in D, A und CH und deutschsprachigen Community</a>.</strong>
+
+Bei Labdoo wird die Aufgabe, IT-Spenden zu Kindern zu bringen, in viele, kleine Teilaufgaben zerlegt. Jeder übernimmt seine Teilaufgabe, ohne eine Erstattung seiner Kosten zu erwarten - und alles ohne große Kosten oder Umweltbelastung. Defekte IT-Spenden werden sogar kostenlos getauscht und zur Entsorgung zurück geholt.
+
+Labdoo stellt das kostenlose und offene Portal <strong>Labdoo.org</strong> zur Verfügung - ein humanitäres, soziales Netzwerk und Tools. Es wurde entwickelt, um IT-Spenden, insbesondere Laptops, eBook Reader, Tablets u.a. (doojects genannt) ohne Kosten oder Umweltbelastung zu Kindern und Schulen zu bringen.
+
+Das Tool wird "wie es ist" (“as is”) zur Verfügung gestellt. Die Entwickler können nicht für die Nutzung des Tools bzw. der Plattform haftbar gemacht werden. Diese Konzept ist angelehnt an das GNU Projekt. Der Sourcecode der Labdoo Plattform ist komplett und frei zugänglich auf <a href="https://github.com/labdoo">github</a>.
+
+<strong>Wie funktioniert Labdoo.org und wie kann ich einen Beitrag leisten?</strong>
+
+IT-Spenden durchlaufen die Stati S0 (Spende), S1 (Erfassung), S2 (techn. Prüfung durchlaufen), S3 (einem Projekt zugewiesen), T1 (im Transit), S4 (im Einsatz), S5 (Rückholung, da defekt) und S6 (recycelt), wie im nachfolgenden Diagramm dargestellt.
+<hr/>
+<table align="center">
+<tr><td>
+<em>Schritte, die eine IT-Spende auf dem Weg zu einem bedürftigen Projekt durchläuft.</em>
+</td></tr>
+<tr><td>
+<img src="/sites/default/files/content/labdoo-nutshell/labdoo-mini-mission.png" width="600"/>
+</td></tr>
+</table>
+<hr/>
+
+Weltweit ist freier Zugang zu IT und freien Lerninhalten (OER) und die Teilhabe an der digitalen Gesellschaft die Ausnahme (<em>'digitalen Graben (digital divide)'</em>). Dies ist ein Problem, da
+
+<ul>
+<li>
+es zu Ungerechtigkeiten und ungleicher Ausbildung zwischen denen führt, die Zugang zu IT und OER haben, und denen, die keinen Zugang dazu haben.  
+</li>
+<li>
+Das Potenzial und die Talente der Kinder und deren Nutzen für die Gesellschaft so verloren gehen.
+</li>
+</ul>
+
+Eure IT-Spende und Unterstützung ermöglicht Schulen und Kindern den Zugang zu IT und OER. So heben wir gemeinsam das Potenzial der Kinder, Schüler und Studenten. Offline-Wikis und Offline-Lerninhalte ermöglichen dies auch ohne Onlinezugang vor Ort.
+
+Die Macher von Labdoo.org haben sich aus mehreren Gründen für diesen Ansatz entschieden:
+
+<ul>
+<li>
+Weltweit gibt es viele, nicht mehr genutzte Laptops u.a. sowie freiwillige Helfer, die Kindern den Zugang zu Bildung und IT helfen den "digitalen Graben" zu überwinden. Laut einer <a href="http://www.bitkom.org/de/presse/8477_78769.aspx">Studie des BITKOM Verbandes</a> "horten" deutsche Haushalte ca. 22 Mio. ausrangierte Computer plus die nicht mehr genutzten Computer in Unternehmen. Und weltweit wurden 2013 über 178 Mio. portable Computer neu gekauft...
+</li>
+<li>
+Ohne den Faktor "Geld" ist das Projekt sauber, fokussiert und unabhängig. Das einzige Ziel von Labdoo.org ist es, einen Beitrag für die Verbesserung der Lern- und Lebenssituation in der Welt zu erbringen.
+</li>
+<li>
+Alle Helfer engagieren sich ehrenamtlich. Dank ihnen und der vielen IT-Spender, Flugpaten und Unterstützer funktioniert Labdooorg i.d.R. ohne Kosten. Dieser Ansatz erlaubt Labdoo ohne großes Budget und unabhängig von der wirtschaftlichen Lage zu helfen. Gerade in Krisenzeit und in Krisenregionen ist der Bedarf an IT-Spenden besonders groß und die Mittel besonders knapp.
+</li>
+<li>
+Geld für IT-Spenden würde anderen Hilfsprojekten Mittel entziehen, z.B. für Gesundheit, sauberes Wasser, Wohnraum usw. Lasst uns Geld lieber für solche Projekte verwenden, gebt uns eure ausrangierte IT. Natürlich haben auch wir manchmal Ausgaben für Ersatzteile, Reparaturen oder Logistik. Daher freuen wir uns auch über (kleine) Spenden, mehr dazu  <a href="/de/content/labdooorg-ev-d">hier</a>.
+</li>
+<li>
+Uns liegt die Umwelt sehr am Herzen. So erfolgen die Transporte möglichst CO2 neutral. Defekte Geräte werden zurück geholt und sicher entsorgt.
+</li>
+<li>
+Transparenz und Ethik sind uns wichtig. So werden IT-Spenden von Unternehmen der Wehrtechnik nicht angenommen. Und Labdoo.org e.V. (D) ist Teil der ITZ- Initiative Transparente Zivilgesellschaft von Transparency International, mehr dazu <a href="/de/content/labdooorg-ev-d">hier</a>.
+</li>
+<li>
+Labdoo ermöglicht neue, nachhaltigere Wege zur Lösung globaler Herausforderungen zu finden.  
+</li>
+</ul>
+
+Wahlweise kann eine IT-Spende an Labdoo.org gegeben werden oder man löscht die Altdaten und installiert die Lernumgebung selber, <a href="../content/information-für-labdoo-helfer-labdooer">mehr für technische Helfer hier</a> und <a href="../content/information-für-it-spender">für IT-Spender hier.</a>
+
+Labdoo.org ermöglicht als soziales Netzwerk aber noch einiges mehr. So vernetzt Labdoo Helfer, Spender und Empfänger. Hier einige weiterführende Links:
+
+<ul>
+<li>
+Das <a href="../wiki-index">Wiki</a> ist unsere zentrale Wissensbasis, in der Dokumente, Manuals u.a. Material gefunden werden kann.
+</li>
+<li>
+Das <a href="/content/faq-forum">FAQ Forum</a> beantwortet die am häufigsten gestellten Fragen.
+</li>
+<li>
+Bei weiteren Fragen wendet euch per Mail an Labdoo-DACH@Labdoo.org oder postet eure Frage auf einer der <a href="../teams">Teams Walls</a>.
+</li>
+
+</ul>
+
+<br />
+Lasst uns einfach anfangen... Willkommen im Labdoo Projekt! Danke für euer Interesse, IT-Spende und Engagement!
+
+Das Labdoo Team.
+<img src="/profiles/labdoo/files/pictures/equation-2-alpha-smaller.png"/>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>74</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>0</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>858</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

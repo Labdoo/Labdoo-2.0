@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>79</value>
+<value>56</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,13 +17,32 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>79</value>
+<value>56</value>
 </field_reference_book>
 <body>
 <type>value</type>
 <value>To download a wiki so that it can be accessed offline, you can use openly available tools that allow you to download a World Wide Web site from the Internet to a local directory. One tool that people have successfully used to download the Labdoo Wiki is called HTTrack, which is  available for free (under GPL, libre/free software license) from http://www.httrack.com/. 
 
-This type of tools come very handy for instance when you want to include a certain wiki book into a laptop that you are going to bring to a school that may have limited Internet access. If you have any questions on how to use these tools, you can ask around in the <a href="/content/quality-assurance-qa">Quality Assurance team wall</a>. </value>
+This type of tools come very handy for instance when you want to include a certain wiki book into a laptop that you are going to bring to a school that may have limited Internet access. If you have any questions on how to use these tools, you can ask around in the <a href="/content/quality-assurance-qa">Quality Assurance team wall</a>. 
+
+HTTrack documentation (overview) https://www.httrack.com/html/index.html
+HTTrack how to use https://www.httrack.com/html/shelldoc.html (beginners)
+HTTrack Manual https://www.httrack.com/html/fcguide.html (experts)
+
+The Labdoo Team has collected and prepared for you these useful offline wikis:
+
+https://www.labdoo.org/wiki-index
+https://wiki.lxde.org/ 
+https://wiki.ubuntu.com/
+https://help.ubuntu.com/
+
+These wikis will be updated each 1st day of a month and offered for download from our FTP server http://ftp.labdoo.org/download/Public/wikis/index.html (if you click this link a browser will open and you can surf through the offline wikis, but not download).
+
+To download these offline wikis you have use our <a href="/content/cloning-laptops-using-prepared-labdoo-images">Labdoo images for cloning (wikis are already part of the images)</a> or you can use  <a href="/content/installation-scripts-overview">the installation script for content</a>.
+
+
+
+</value>
 </body>
 <body>
 <type>format</type>
@@ -31,18 +50,18 @@ This type of tools come very handy for instance when you want to include a certa
 </body>
 <bid>
 <type>book_array</type>
-<value>72</value>
+<value>39</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>817</value>
+<value>826</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>821</value>
+<value>840</value>
 </mlid>
 <weight>
 <type>book_array</type>
-<value>-8</value>
+<value>-7</value>
 </weight>
 </book>

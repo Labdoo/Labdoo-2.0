@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>198</value>
+<value>127</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,38 +17,38 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>70</value>
+<value>27</value>
 </field_reference_book>
 <body>
 <type>value</type>
 <value><ol>
-<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ01">Wofür steht Labdoo.org?</a></li>
-<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ02">Linkliste zu Unterlagen, Grafiken, Logos und Tutorials zum Labdoo-Projekt</a></li>
-<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ03">Wie installiert man Labdoo-Laptops?</a></li>
-<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ04">Welche IT-Sachspenden braucht Labdoo.org?</a></li>
-<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ05">Wenn ich IT spenden möchte, was kann ich tun?</a></li>
-<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ06">Wie kann ich sicher sein, dass meine Daten sicher gelöscht werden?</a></li>
-<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ07">Ist wegen Windows-Firmen- / Konzernlizenzen keine IT-Spende möglich? Doch!</a></li>
-<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ08">Wie refinanziert sich das Hilfsprojekt Labdoo.org?</a></li>
-<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ09">Wenn ich mitarbeiten möchte - wie kann ich mich einbringen?</a></li>
-<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ10">Werden Spendenbescheinigungen ausgestellt? Was ist bei einer Spende steuerlich zu berücksichtigen?</a></li>
-<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ11">Sind Labdoo-Projekte nur im Ausland?</a></li>
-<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ12">Was passiert mit defekten Laptops in den Projekten?, Wie stellt Labdoo.org die Entsorgung sicher?</a></li>
-<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ13">Was kann ich tun, wenn ich ein Hilfsprojekt kenne, das auch Laptops benötigt?</a></li>
-<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ14"> Welche Vorschriften sind beim Transport im Flugzeug (IATA), dem Zoll und der Einfuhr der Laptopspenden zu beachten?</a></li>
-<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ15">Linklisten für unsere Labdoo-Gruppen bei Xing, facebook, Google+, LinkedIn u.a.</a></li>
-<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ16">Newsletter</a></li>
-<li><a href="https://dev.labdoo.org/de/content/faq-forum#FAQ17">Glossar</a></li>
+<li><a href="/de/content/faq-forum#FAQ01">Wofür steht Labdoo.org?</a></li>
+<li><a href="/de/content/faq-forum#FAQ02">Linkliste zu Unterlagen, Grafiken, Logos und Tutorials zum Labdoo-Projekt</a></li>
+<li><a href="/de/content/faq-forum#FAQ03">Wie installiert man Labdoo-Laptops?</a></li>
+<li><a href="/de/content/faq-forum#FAQ04">Welche IT-Sachspenden braucht Labdoo.org?</a></li>
+<li><a href="/de/content/faq-forum#FAQ05">Wenn ich IT spenden möchte, was kann ich tun?</a></li>
+<li><a href="/de/content/faq-forum#FAQ06">Wie kann ich sicher sein, dass meine Daten sicher gelöscht werden?</a></li>
+<li><a href="/de/content/faq-forum#FAQ07">Ist wegen Windows-Firmen- / Konzernlizenzen keine IT-Spende möglich? Doch!</a></li>
+<li><a href="/de/content/faq-forum#FAQ08">Wie refinanziert sich das Hilfsprojekt Labdoo.org?</a></li>
+<li><a href="/de/content/faq-forum#FAQ09">Wenn ich mitarbeiten möchte - wie kann ich mich einbringen?</a></li>
+<li><a href="/de/content/faq-forum#FAQ10">Werden Spendenbescheinigungen oder andere Nachweise ausgestellt? Was ist bei einer Spende steuerlich zu berücksichtigen?</a></li>
+<li><a href="/de/content/faq-forum#FAQ11">Sind Labdoo-Projekte nur im Ausland?</a></li>
+<li><a href="/de/content/faq-forum#FAQ12">Was passiert mit defekten Laptops in den Projekten?, Wie stellt Labdoo.org die Entsorgung sicher?</a></li>
+<li><a href="/de/content/faq-forum#FAQ13">Was kann ich tun, wenn ich ein Hilfsprojekt kenne, das auch Laptops benötigt?</a></li>
+<li><a href="/de/content/faq-forum#FAQ14"> Welche Vorschriften sind beim Transport im Flugzeug (IATA), dem Zoll und der Einfuhr der Laptopspenden zu beachten?</a></li>
+<li><a href="/de/content/faq-forum#FAQ15">Linklisten für unsere Labdoo-Gruppen bei Xing, facebook, Google+, LinkedIn u.a.</a></li>
+<li><a href="/de/content/faq-forum#FAQ16">Newsletter</a></li>
+<li><a href="/de/content/faq-forum#FAQ17">Glossar</a></li>
 </ol>
 
 <ol>
-<a name="FAQ01"></a><br /><br />
+<a name="FAQ01"/><br/><br/>
 <li>
 <strong>Wofür steht Labdoo.org?</strong>
 
 Das Hilfsprojekt Labdoo.org ist eine weltweit tätige NGO und private Initiative von ehrenamtlichen Helfern. Das Hilfsprojekt Labdoo.org sammelt ungenutzte, ausgemusterte Laptops, Tablets oder eBook Reader für Auslandsprojekte und ggf. auch PCs für regionale Projekte im Inland. Labdoo.org möchte mit den gespendeten Geräten weltweit die „digitale Kluft“ auf ökologisch verantwortungsvolle Weise verringern und den Kindern Zugang zu IT und Bildung ermöglichen. In Deutschland existiert der gemeinnützige Labdoo.org e.V.
 
-<a name="FAQ02"></a>Damit werden kostenlos Schulen sowie Kinder- und Jugendprojekte (“Edoovillages”) in aller Welt unterstützt. Eine Abgabe von IT-Spenden an Einzelpersonen ist leider nicht möglich. 
+<a name="FAQ02"/>Damit werden kostenlos Schulen sowie Kinder- und Jugendprojekte (“Edoovillages”) in aller Welt unterstützt. Eine Abgabe von IT-Spenden an Einzelpersonen ist leider nicht möglich. Hier geht es zu <a href="http://ftp.labdoo.org/download/documents/german/Unterlagen/labdoo-project-german.pdf">unserer Projektpräsentation</a>.
 </li>
 
 <li>
@@ -63,34 +63,35 @@ Hier geht es zum Ordner mit Grafiken und Labdoo Logos oder
 <li>Informationen zur kindgerechten Lernsoftware und Lerninhalten (pdf) in <a href="http://ftp.labdoo.org/download/documents/german/Unterlagen/labdoo-edubuntu-manual-de.pdf">Deutsch</a>, <a href="http://ftp.labdoo.org/download/documents/english/labdoo-edubuntu-manual-en.pdf">Englisch</a> oder <a href="http://ftp.labdoo.org/download/documents/french/labdoo-edubuntu-manual-french.pdf">Französisch</a>,</li>
 
 <li><a href="http://ftp.labdoo.org/download/documents/german/Unterlagen/Labdoo-auf-einen-Blick.pdf">Labdoo auf einen Blick" (pdf)</a>"</li>
-<li><a href="http://ftp.labdoo.org/download/documents/german/Unterlagen/Mustertext%20Labdoo_org.doc">Mustertext für Presse und Partner (.doc)</a></li>
+<li><a href="http://ftp.labdoo.org/download/documents/german/Unterlagen/Mustertext_Labdoo_org.doc">Mustertext für Presse und Partner (.doc)</a></li>
+<li><a href="http://ftp.labdoo.org/download/documents/material/Grafiken%20Logos/">Logos und Grafiken </a></li>
 <li><a href="http://ftp.labdoo.org/download/documents/material/pictures-projects/">Projektfotos aus Labdoo-Projekten</a></li>
-<li><a href="https://dev.labdoo.org/de/content/information-f%C3%BCr-flugpaten-dootripper">Information für Reisende, die Laptops zu Schulen mitnehmen möchten (Deutsch)</a></li>
+<li><a href="https://www.labdoo.org/de/content/information-für-flugpaten-dootripper">Information für Reisende, die Laptops zu Schulen mitnehmen möchten (Deutsch)</a></li>
 </ul>
 </li>
 
-Unser YouTube Kanal --> https://www.youtube.com/user/LabdooDACH mit Videoanleitungen, Projektpräsentation u.v.a. mehr.
+Unser YouTube Kanal https://www.youtube.com/user/LabdooDACH mit Videoanleitungen, Projektpräsentation u.v.a. mehr.
 
-<a name="FAQ03"></a>Es gibt Ubuntu Handbücher in verschiedenen Sprachen frei verfügbar im Internet. Auf Deutsch empfehlen wir:
-http://openbook.galileocomputing.de/ubuntu/ (für ubuntu 12.04 LTS)
-http://openbook.galileocomputing.de/linux/ (für Linux)
+<a name="FAQ03"/>Es gibt Ubuntu Handbücher in verschiedenen Sprachen frei verfügbar im Internet. Auf Deutsch empfehlen wir:
+<a href="http://openbook.rheinwerk-verlag.de/ubuntu/">http://openbook.rheinwerk-verlag.de/ubuntu/</a> (für ubuntu 12.04 LTS)
+<a href="http://openbook.rheinwerk-verlag.de/linux/">http://openbook.rheinwerk-verlag.de/linux/</a> (für Linux)
 
 <li>
 <strong>Wie installiert man Labdoo-Laptops?</strong>
 
-Labdoo.org empfiehlt die Installation von lubuntu in Englisch. Darüber hinaus beinhaltet Labdoo.org viel mehr - kindgerechte Lernsoftware und -inhalte, Offline-wikis, barrierefreie Zugänge u.v.a. mehr. Um den Kindern einen optimal ausgestatteten Laptop zur Verfügung zu stellen gibt es 4 Wege:
+Labdoo.org empfiehlt die Installation von Lubuntu in Englisch. Darüber hinaus beinhaltet Labdoo.org viel mehr - kindgerechte Lernsoftware und -inhalte, Offline-wikis, barrierefreie Zugänge u.v.a. mehr. Um den Kindern einen optimal ausgestatteten Laptop zur Verfügung zu stellen gibt es 4 Wege:
 
 <ul>
 <li>per Cloning von fertigen Images,</li>
-<li> per Installationsskript, <a name="FAQ04"></a></li>
+<li> per Installationsskript, <a name="FAQ04"/></li>
 <li>per Schritt-für-Schritt-Installation (aufwendig, nur für erfahrene Anwender)</li>
 <li>oder ihr überlasst alles Labdoo.org ...</li> 
 </ul>
 
-Empfohlen wird das Clonen fertig vorbereiteter Images per Clonezilla. <a href="https://dev.labdoo.org/de/content/information-f%C3%BCr-labdoo-helfer-labdooer">Mehr zu allen Installationstechniken hier.</a>
+Empfohlen wird das Clonen fertig vorbereiteter Images per Clonezilla. <a href="/de/content/information-labdoo-helfer-labdooer">Mehr zu allen Installationstechniken hier.</a>
 
 </li>
-<br />
+<br/>
 
 <li>
 <strong>Welche IT-Sachspenden braucht Labdoo.org?</strong>
@@ -102,7 +103,7 @@ Empfohlen wird das Clonen fertig vorbereiteter Images per Clonezilla. <a href="h
 <li>Tablet-PCs,</li> 
 <li>solche Geräte, die für eine Entsorgung eigentlich zu schade sind, aber für einen Verkauf oder andere Nutzung nicht mehr geeignet sind.</li> 
 </ul>
-<br />
+<br/>
 
 <ul>
 <strong>Außerdem suchen wir immer "koffer-kompatible" Kleinteile und Zubehör wie</strong>
@@ -123,7 +124,7 @@ Wer Bedenken hat und seine Festplatte ausbauen möchte, sollte unbedingt die Kle
 <ul>
 <strong>Nicht benötigt werden:</strong>
 <li>Röhrenmonitore,</li>
-<li>Festplatten > 20 GB Kapazität,</li>
+<li>Festplatten &lt; 20 GB Kapazität,</li>
 <li>Funk-Mäuse oder Funk-Tastaturen, wegen der damit verbundenen Folgekosten für Ersatzbatterien.</li>
 <li>Handys</li>
 </ul>
@@ -141,34 +142,15 @@ Ab und an suchen wir große Teile wie Server oder Drucker. die wir aber nur in s
 
 <strong>Bitte alle System-Passworte (Boot- / BIOS- / CMOS / SetUp-Passworte, die heißen je nach Hersteller immer etwas anders) oder Fingerabdruckscans entfernen, falls gesetzt - da wir die Rechner sonst nicht starten können.</strong>
 
-<a name="FAQ05"></a>Das normale Windows-Passwort kann ruhig gespeichert bleiben, da wir Windows gar nicht erst starten, sondern mit Linux booten und alles überschreiben. Wer möchte kann auch die gesamte Platte schon selber löschen. Ansonsten überschreiben wir noch 3 x mit Zufallszahlen, sicher ist sicher.
+<a name="FAQ05"/>Das normale Windows-Passwort kann ruhig gespeichert bleiben, da wir Windows gar nicht erst starten, sondern mit Linux booten und alles überschreiben. Wer möchte kann auch die gesamte Platte schon selber löschen. Ansonsten überschreiben wir noch 3 x mit Zufallszahlen, sicher ist sicher.
 </ul>
 </li>
 
+<a name="FAQ06"/>
 <li>
 <strong>Wenn ich IT spenden möchte, was kann ich tun?</strong>
 
-Gesucht werden nicht mehr genutzte Laptops, eBook Reader, Tablet-PCs u.a. Bitte mit Netzteil und einem Zettel mit Namen und der E-Mailadresse abgeben, damit wir den Laptop zuordnen können. Nur mit einer E-Mailadresse können wir den Spender informieren, wohin seine IT-Spende geht.
-
-Alte Daten auf der Festplatte des Laptops werden von uns alle durch mehrfaches Überschreiben mit Zufallszahlen sicher gelöscht. Dann wird Linux, kindgerechte Lernsoftware und Lerninhalte aufgespielt. Danach kann keiner mehr ihre alten Daten rekonstruieren.
-
-Wer möchte, kann natürlich die Platte und die Daten selber löschen. Oder die IT bei hohen Compliance-Auflagen einem zertifizierten Dienstleister, z.B. der Fa. AfB gGmbH übergeben (s.u.) Dort werden die Daten mit Testat sicher gelöscht.
-
-Schade wäre es, wenn aus Compliance-Gründen die Festplatten ausgebaut und geshreddert werden müssten. Aber auch dann nehmen wir die IT-Spenden ohne Festplatten gerne an. Sponsoren stellen uns Ersatzplatten zur Verfügung, auch wenn es bei 2,5" IDE-Platten langsam schwierig wird Ersatz zu finden...
-
-Jetzt gibt es mehrere Möglichkeiten, den Laptop zu spenden bzw. zu einem Labdoo-Hub zu geben:
-
-<ul>
-<li>Die AfB - Arbeit für Menschen mit Behinderung gGmbH mit ihren Niederlassungen helfen Labdoo.org. Wichtig: Bitte bei der Abgabe darauf hinweisen, dass der Laptop für Labdoo bestimmt ist - Sonst könnte AfB eventuell die Annahme verweigern. Beziehen Sie sich dabei auf die Absprache mit der Geschäftsleitung, Herr Daniel Büchle.</li>
-    Bitte kleben Sie die E-Mailadresse auf den Laptop auf, damit wir eine Nachricht mit Link schicken können, wohin die IT-Spende geht.
-<li>Alternativ kann man den Laptop auch z.B. CO-neutral mit einen Logistikunternehmen an ein Labdoo Hub schicken. Eine aktuelle Liste der Hub-Standorte und AnsprechpartnerInnen gibt es auf http://www.labdoo.org/de/hubs.</li>
-<li>Falls der Spender in der Nähe eines Hubs wohnst, kannst er seine IT-Sachspende auch gerne nach Vereinbarung dort abgeben oder eine Abholung vereinbaren:<a name="FAQ06"></a>
-        in A: http://www.labdoo.org/de/hubs?country=at
-        in CH: http://www.labdoo.org/de/hubs?country=ch
-        in D: http://www.labdoo.org/de/hubs?country=de
-        weltweit: http://www.labdoo.org/de/hubs
-</li>
-</ul>
+Mehr dazu in unserem <a href="/de/content/information-für-it-spender">Wiki-Beitrag für IT-Spender.</a>
 </li>
 
 <li><strong>Wie kann ich sicher sein, dass meine Daten sicher gelöscht werden?</strong>
@@ -177,7 +159,7 @@ Spender können die Daten ihres Laptops vor der Spende gerne selber löschen. We
 
 Firmen, die einen Entsorgungsnachweis und eine Compliance-konforme und von TÜV / Dekra zertifizierte Datenlöschung benötigen, empfehlen wir die Leistungen unseres Partners <a href="http://www.afb-group.eu/de/">AfB Arbeit für Menschen mit Behinderung gGmbH</a>. In  <a href="http://afb-group.de/de/standort">den Filialen der AfB gGmbH</a>  können aber auch Privatleute Laptopspenden abgeben.
 
-<a name="FAQ07"></a>Firmenspenden bearbeitet AfB gGmbH in einem sicheren und zertifizierten prozess (gesicherte Abholung mit firmeneigenem Fahrzeug, 4-Augenprinzip, dokumentierter Abhol- und Prozeßkette usw.). AfB ist vom TÜV und Dekra zertifiziert, arbeitet für Großkunden und Institutionen und verfügt über die erforderliche Technik, Daten sicher vom Laptop zu entfernen. Entsprechende Nachweise werden auf Wunsch erstellt. Anschließend leitet AfB die gespendeten Laptops an Labdoo.org weiter.
+<a name="FAQ07"/>Firmenspenden bearbeitet AfB gGmbH in einem sicheren und zertifizierten prozess (gesicherte Abholung mit firmeneigenem Fahrzeug, 4-Augenprinzip, dokumentierter Abhol- und Prozeßkette usw.). AfB ist vom TÜV und Dekra zertifiziert, arbeitet für Großkunden und Institutionen und verfügt über die erforderliche Technik, Daten sicher vom Laptop zu entfernen. Entsprechende Nachweise werden auf Wunsch erstellt. Anschließend leitet AfB die gespendeten Laptops an Labdoo.org weiter.
 </li>
 
 <li><strong>Ist wegen Windows-Firmen- / Konzernlizenzen keine IT-Spende möglich? Doch!</strong>
@@ -188,7 +170,7 @@ Dies spielt aber im Hilfsprojekt Labdoo.org keine Rolle, da wir das lizenzfreie 
 
 Daher können Unternehmen auch dann ihre IT an Labdoo.org abgeben, wenn die Windows-Lizenz mit der Weitergabe erlischt - wir brauchen diese Lizenz nämlich nicht :)
 
-<a name="FAQ08"></a>Außerdem wird umfangreiche, lizenzfreie Lernsoftware für Kinder aufgespielt. Wo sonst oft nur Office-Programme und Browser zur Verfügung stehen kommen bei Labdoo.org kindgerechte Lernprogramme und Lerninhalte von der Vorschule bis zur Oberstufe zum Einsatz, sowie Programme für einen barrierefreien Zugang für Blinde, Sehbehinderte und Hörgeschädigte.    
+<a name="FAQ08"/>Außerdem wird umfangreiche, lizenzfreie Lernsoftware für Kinder aufgespielt. Wo sonst oft nur Office-Programme und Browser zur Verfügung stehen kommen bei Labdoo.org kindgerechte Lernprogramme und Lerninhalte von der Vorschule bis zur Oberstufe zum Einsatz, sowie Programme für einen barrierefreien Zugang für Blinde, Sehbehinderte und Hörgeschädigte.    
 </li>
 
 <li><strong>Wie refinanziert sich das Hilfsprojekt Labdoo.org?</strong>
@@ -201,7 +183,7 @@ Labdoo.org nimmt IT-Sachspenden an, Geldspenden stehen nicht an erster Stelle. A
 
 Außerdem haben wir Unterstützer, Firmen die uns Ersatzteile zur Verfügung stellen, Freiwillige die Laptops auf Reisen mitnehmen, Helfer die Laptops als Beipack in ihren Sendungen mitgeben, Werbefachleute die uns Werbematerial erstellen, Firmen die uns als Unteraussteller auf Messen nehmen usw. Ohne diese Unterstützung wären viele unserer Leistungen gar nicht zu erbringen. Vielen Dank dafür.
 
-<a name="FAQ09"></a>In 2013 wurde der als gemeinnützig anerkannte Verein Labdoo.org e.V. gegründet. Manchmal lassen sich Ausgaben nicht vermeiden. Für solche Fälle hat der Verein ein Spendenkonto eröffnet, auf das Spenden eingezahlt werden können. <a href="http://www.labdoo.org/de/content/spenden-verein">Mehr dazu hier...</a>
+<a name="FAQ09"/>In 2013 wurde der als gemeinnützig anerkannte Verein Labdoo.org e.V. gegründet. Manchmal lassen sich Ausgaben nicht vermeiden. Für solche Fälle hat der Verein ein Spendenkonto eröffnet, auf das Spenden eingezahlt werden können. <a href="/de/content/spenden-verein">Mehr dazu hier...</a>
 </li>
 
 <li><strong>Wenn ich mitarbeiten möchte - wie kann ich mich einbringen?</strong>
@@ -217,20 +199,20 @@ Jeder kann sich in der Form einbringen, die seinem Wissen, Neigung und Möglichk
 <li>Engagement als regioanles Labdoo Hub oder Annahmestelle für IT-Spenden</li>
 </ul>
 
-<a name="FAQ10"></a>Im <a href="https://dev.labdoo.org/de/wiki-index?field_book_language_value=German">Wiki</a> haben wir für IT-Spender, Flugpaten und Helfer interessantes zusammen getragen.
+<a name="FAQ10"/>Im <a href="/wiki-index?field_book_language_value=German">Wiki</a> haben wir für IT-Spender, Flugpaten und Helfer interessantes zusammen getragen.
 </li>
 
-<li><strong>Werden Spendenbescheinigungen ausgestellt? Was ist bei einer Spende steuerlich zu berücksichtigen?</strong>
+<li><strong>Werden Spendenbescheinigungen oder andere Nachweise ausgestellt? Was ist bei einer Spende steuerlich zu berücksichtigen?</strong>
 
-Labdoo.org e.V. ist beim Amtsgericht Duisburg unter VR 5128 registriert. Beim Finanzamt Mülheim Ruhr ist der Labdoo.org e.V. unter der Steuernr. 120/5703/1940 mit Bescheid vom 22.05.2014 als gemeinnützig bestätigt worden.
+Labdoo.org e.V. ist beim Amtsgericht Duisburg unter VR 5128 registriert. Beim Finanzamt Mülheim Ruhr ist der Labdoo.org e.V. unter der Steuernr. 120/5703/1940 mit Bescheid vom 22.05.2014 als gemeinnütziger Verein bestätigt worden.
 
 <strong>Geldspenden:</strong>
-Bis 200 € reicht der Überweisungsbeleg als Spendenquittung. Bei höheren Spenden, auch IT-Sachspenden, erstellen wir gerne eine Spendenquittung, siehe auch http://www.labdoo.org/de/content/spenden-verein.
+Bis 200 € reicht der Überweisungsbeleg als Spendenquittung. Bei höheren Spenden, auch IT-Sachspenden, erstellen wir gerne eine Spendenquittung, mehr dazu <a href="/de/content/spenden-verein">hier</a>.
 
 <strong>Verwendungsnachweis / Verzicht auf Gewährleistung</strong>
-Der Labdoo.org e.V. stellt Unternehmen ein Bestätigungsschreiben aus, in dem die Sachspende bestätigt wird. Gleichzeitig erklären wir darin den Verzicht auf jegliche Gewährleistung (Wirtschaftsprüfer verlangen dies öfter).
+Der Labdoo.org e.V. stellt Unternehmen ein Bestätigungsschreiben aus, in dem die Sachspende bestätigt wird. Gleichzeitig erklären wir darin den Verzicht auf jegliche Gewährleistung. Dies kann für Unternehmen wichtig sein, da Wirtschaftsprüfer solche Nachweise verlangen.
 
-Zusätzlich kann über unsere Homepage der Verbleib aller gespendeten Laptops verfolgt und tagesaktuell exportiert werden. 
+Zusätzlich kann über unsere Homepage der Verbleib aller gespendeten Laptops verfolgt und tagesaktuell in Excel exportiert werden. 
 
 <strong>IT-Sachspenden:</strong>
 Der Wertansatz für eine IT-Sachspende sollte für die Spendenquittung mit Vergleichspreisen aus Onlinemarktplätzen dokumentiert werden, falls es später mal Nachfragen geben sollte und damit der Labdoo.org e.V. einen reellen Wert in der Spendenbescheinigung nennen kann.
@@ -251,26 +233,26 @@ Alternativ können Sie abgeschriebene Gegenstände ohne Spendenquittung verschen
 
 Deutschland ist übrigens das einzige Land, dass Sachspenden steuerlich so schlecht behandelt (ausgenommen ist per "Brot-Erlass" Spenden von Brot). Hoffen wir mal, dass sich auf Sicht etwas daran ändert.
 
-<a name="FAQ11"></a>Es würde uns freuen, wenn Unternehmen Labdoo.org bei IT-Sachspenden berücksichtigen - trotz, oder gerade wegen der o.a. beschriebenen Steuersituation.
+<a name="FAQ11"/>Es würde uns freuen, wenn Unternehmen Labdoo.org bei IT-Sachspenden berücksichtigen - trotz, oder gerade wegen der o.a. beschriebenen Steuersituation.
 </li>
 
 <li><strong>Sind Labdoo-Projekte nur im Ausland?</strong>
 
 Zugegeben - viele unsere Projekte liegen im Ausland, aber Labdoo unterstützt auch gerne Projekte in Deutschland, Österreich oder der Schweiz. <a href="http://www.labdoo.org/de/call-for-laptops?country=de">Bisher wurden diese Projekte in der DACH-Region unterstützt.</a>
 
-<a name="FAQ12"></a>Projekte in der DACH-Region erhalten i.d.R. PCs. Aktuell bearbeitet nur das Labdoo Hub Rhein-Ruhr PCs.
+<a name="FAQ12"/>Projekte in der DACH-Region erhalten i.d.R. PCs. Aktuell bearbeitet nur das Labdoo Hub Rhein-Ruhr PCs.
 </li>
 
 <li><strong>Was passiert mit defekten Laptops in den Projekten?, Wie stellt Labdoo.org die Entsorgung sicher?</strong>
 
 Wenn ein Laptop defekt ist und nicht vor Ort repariert werden kann meldet sich das Edoovillage beim betreuenden Hub und beantragt ein kostenloses Austausch-Gerät. Ein Flugpate bringt dann das defekte Gerät zurück. Scheitert der Reparaurversuch oder ist eine Reparatur unwirtschaftlich wird es in einem zertifizierten Entsorgungsunternehmen in USA, Europa o.ä. entsorgt. 
 
-<a name="FAQ13"></a>Labdoo.org liegt viel daran, die Umweltbelastung so gering wie möglich zu halten.
+<a name="FAQ13"/>Labdoo.org liegt viel daran, die Umweltbelastung so gering wie möglich zu halten.
 </li>
 
 <li><strong>Was kann ich tun, wenn ich ein Hilfsprojekt kenne, das auch Laptops benötigt?</strong>
 
-<a name="FAQ14"></a>Labdoo.org stellt Schulen u.a.kostenlos Lern-Laptops für Kinder und Jugendliche, Schulen und Bildungsprojekte weltweit bereit. Ein Antrag kann schnell und mit wenig Aufwand eingereicht werden. Für die Annahme müssen aber bestimmte Kriterien erfüllt, Strom, Infrastruktur, Beziehungen in Länder mit Labdoo Hubs (Flugpaten). <a href="/sites/default/files/content//antrag-f%C3%BCr-it-spenden-stellen">Mehr hier... </a>
+<a name="FAQ14"/>Labdoo.org stellt Schulen u.a.kostenlos Lern-Laptops für Kinder und Jugendliche, Schulen und Bildungsprojekte weltweit bereit. Ein Antrag kann schnell und mit wenig Aufwand eingereicht werden. Für die Annahme müssen aber bestimmte Kriterien erfüllt, Strom, Infrastruktur, Beziehungen in Länder mit Labdoo Hubs (Flugpaten). <a href="/sites/default/files/content//antrag-f%C3%BCr-it-spenden-stellen">Mehr hier... </a>
 </li>
 
 <li><strong> Welche Vorschriften sind beim Transport im Flugzeug (IATA), dem Zoll und der Einfuhr der Laptopspenden zu beachten?</strong>
@@ -281,7 +263,7 @@ Wir stellen die Laptops den Schulen kostenfrei als Spende zur Verfügung. Daher 
 
 Zur Vorlage beim Zoll bei größeren Lieferungen empfehlen wir dem Empfänger, <a href="http://ftp.labdoo.org/download/documents/english/labdoo-letter-dootripper.pdf">dieses Schreiben aufzusetzen</a>, das die Spende und den Zweck bestätigt und ggf. von weiteren offiziellen Stellen (z.B. Bürgermeister, Kirche o.a.) unterschreiben und gestempelt werden sollte. 
 
-<a name="FAQ15"></a>Labdoo.org rät aber von größeren Lieferungen per Luft- oder Seefracht ab. Das Verlustrisiko ist höher und leider fordern Zoll- / Hafenbeamte in einigen Ländern immer noch hohe sogenannte "Gebühren".
+<a name="FAQ15"/>Labdoo.org rät aber von größeren Lieferungen per Luft- oder Seefracht ab. Das Verlustrisiko ist höher und leider fordern Zoll- / Hafenbeamte in einigen Ländern immer noch hohe sogenannte "Gebühren".
 </li>
 
 <li><strong>Linklisten für unsere Labdoo-Gruppen bei Xing, facebook, Google+, LinkedIn u.a.</strong>
@@ -297,13 +279,13 @@ http://www.facebook.com/Labdoo (Internationale Community)
 <strong>Die Labdoo-Gruppe auf Xing:</strong> https://www.xing.com/net/labdoo/
 
 <strong>Labdoo auf LinkedIn:</strong> http://www.linkedin.com/groups/Labdoo-3857957
-<a name="FAQ16"></a>
+<a name="FAQ16"/>
 <strong>Labdoo bei twitter:</strong> https://twitter.com/labdoo_org
 </li>
 
 <li><strong>Newsletter</strong>
 
-<a name="FAQ17"></a>Labdoo.org veröffentlich ca. 2 bis 3 mal im Jahr einen Newsletter. <a href="https://dev.labdoo.org/newsletters">Hier geht es zur Anmeldung.
+<a name="FAQ17"/>Labdoo.org veröffentlich ca. 2 bis 3 mal im Jahr einen Newsletter. <a href="https://www.labdoo.org/newsletters">Hier geht es zur Anmeldung.
 </a>
 </li>
 
@@ -329,7 +311,7 @@ Labdoo.org nutzt projektintern bestimmt Begriffe:
 </body>
 <bid>
 <type>book_array</type>
-<value>198</value>
+<value>127</value>
 </bid>
 <plid>
 <type>book_array</type>

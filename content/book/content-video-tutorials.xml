@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>309</value>
+<value>79</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,54 +17,58 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>309</value>
+<value>79</value>
 </field_reference_book>
 <body>
 <type>value</type>
 <value><strong>Deutsche Video Tutorials</strong>
 
-Hier geht es zu den Englischen Video-Tutorials https://dev.labdoo.org/de/content/video-tutorials-0.
+Hier geht es zu den Englischen Video-Tutorials https://www.labdoo.org/de/content/video-tutorials-0.
 Die Links "Offline lokal" funktionieren nur auf Labdoo Rechnern.
+
+<strong>Für Anwender</strong>
 
 <a href="http://ftp.labdoo.org/download/Public/videos/login-german.webm">Online FTP-Server: Login /  Benutzerkonzept (User)</a>
 <a href="file://localhost/home/labdoo/Public/videos/login-german.webm">Offline lokal: Login /  Benutzerkonzept (User)</a>
 [video:https://youtu.be/JZEuaqwuPpg]
-<hr></hr>
+<hr/>
 
 <a href="http://ftp.labdoo.org/download/Public/videos/software-german.webm">Online FTP-Server: Lernsoftware und Lubuntu / LXDE</a>
 <a href="file://localhost/home/labdoo/Public/videos/software-german.webm">Offline lokal: Lernsoftware und Lubuntu / LXDE</a>
 [video:https://youtu.be/Ueg0TPJ37eU]
-<hr></hr>
+<hr/>
 
 <a href="http://ftp.labdoo.org/download/Public/videos/content-german.webm">Online FTP-Server: Lerninhalte (OER) / offline wikis</a>
 <a href="file://localhost/home/labdoo/Public/videos/content-german.webm">Offline lokal: Lerninhalte (OER) / offline wikis</a>
 [video:http://youtu.be/MOaXPUXQ_ZM]
-<hr></hr>
+<hr/>
 
-<a href="http://ftp.labdoo.org/download/Public/videos/how-to-clone-german.webm">Online FTP server: Cloning eines Laptops per Images und per Parted Magic und Clonezilla</a>
-<a href="file://localhost/home/labdoo/Public/videos/how-to-clone-german.webm">Offline local:  Cloning eines Laptops per Images und per Parted Magic und Clonezilla</a>
+<strong>Für Techniker</strong>
+
+<a href="http://ftp.labdoo.org/download/Public/videos/for-technicians/how-to-clone-german.webm">Online FTP server: Cloning eines Laptops per Images und per Parted Magic und Clonezilla</a>
+<a href="file://localhost/home/labdoo/Public/videos/for-technicians/how-to-clone-german.webm">Offline local:  Cloning eines Laptops per Images und per Parted Magic und Clonezilla</a>
 [video:https://www.youtube.com/watch?v=1T9HeMBC4Hw]
-<hr></hr>
+<hr/>
 
-<a href="http://ftp.labdoo.org/download/Public/videos/system-settings-german.webm">Online FTP server: Anpassung an Land, Sprache und Tastatur, Treiber u.a.</a>
-<a href="file://localhost/home/labdoo/Public/videos/system-settings-german.webm">Offline local: Anpassung an Land, Sprache und Tastatur, Treiber u.a.</a>
+<a href="http://ftp.labdoo.org/download/Public/videos/for-technicians/system-settings-german.webm">Online FTP server: Anpassung an Land, Sprache und Tastatur, Treiber u.a.</a>
+<a href="file://localhost/home/labdoo/Public/videos/for-technicians/system-settings-german.webm">Offline local: Anpassung an Land, Sprache und Tastatur, Treiber u.a.</a>
 [video:https://www.youtube.com/watch?v=U7VP0_wj0cg]
-<hr></hr>
+<hr/>
 
-<a href="http://ftp.labdoo.org/download/Public/videos/hostname-german.webm">Online FTP-Server: Systemdateien hosts und hostname anpassen</a>
-<a href="file://localhost/home/labdoo/Public/videos/hostname-german.webm">Offline lokal: Systemdateien hosts und hostname anpassen</a>
+<a href="http://ftp.labdoo.org/download/Public/videos/for-technicians/hostname-german.webm">Online FTP-Server: Systemdateien hosts und hostname anpassen</a>
+<a href="file://localhost/home/labdoo/Public/videos/for-technicians/hostname-german.webm">Offline lokal: Systemdateien hosts und hostname anpassen</a>
 [video:https://youtu.be/ZwOGNZWTVpY]
-<hr></hr>
+<hr/>
 
-<a href="http://ftp.labdoo.org/download/Public/videos/install-lubuntu-german.webm">Online FTP-Server: Installationsanleitung Lubuntu Betriebssystem</a>
-<a href="file://localhost/home/labdoo/Public/videos/install-lubuntu-german.webm">Offline lokal: Installationsanleitung Lubuntu Betriebssystem</a>
+<a href="http://ftp.labdoo.org/download/Public/videos/for-technicians/install-lubuntu-german.webm">Online FTP-Server: Installationsanleitung Lubuntu Betriebssystem</a>
+<a href="file://localhost/home/labdoo/Public/videos/for-technicians/install-lubuntu-german.webm">Offline lokal: Installationsanleitung Lubuntu Betriebssystem</a>
 [video:https://youtu.be/38DrO2cPBi0]
-<hr></hr>
+<hr/>
 
-<a href="http://ftp.labdoo.org/download/Public/videos/scripts-german.webm">Online FTP-Server: Skripte nutzen / Lerninhalte und Software u.v.a. mehr automatisch installieren</a>
-<a href="file://localhost/home/labdoo/Public/videos/install-lubuntu-german.webm">Offline lokal: Skripte nutzen / Lerninhalte und Software u.v.a. mehr automatisch installieren</a>
+<a href="http://ftp.labdoo.org/download/Public/videos/for-technicians/scripts-german.webm">Online FTP-Server: Skripte nutzen / Lerninhalte und Software u.v.a. mehr automatisch installieren</a>
+<a href="file://localhost/home/labdoo/Public/videos/for-technicians/install-lubuntu-german.webm">Offline lokal: Skripte nutzen / Lerninhalte und Software u.v.a. mehr automatisch installieren</a>
 [video:https://youtu.be/45T3L-g2yqg]
-<hr></hr>
+<hr/>
 </value>
 </body>
 <body>
@@ -73,15 +77,15 @@ Die Links "Offline lokal" funktionieren nur auf Labdoo Rechnern.
 </body>
 <bid>
 <type>book_array</type>
-<value>170</value>
+<value>33</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>890</value>
+<value>817</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>1026</value>
+<value>863</value>
 </mlid>
 <weight>
 <type>book_array</type>

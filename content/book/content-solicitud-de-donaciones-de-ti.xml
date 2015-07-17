@@ -1,0 +1,77 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>16840</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Solicitud de donaciones de TI</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>Spanish</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>16840</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Gracias por su interés en Labdoo.org y una aplicación a través de una donación de la información para un "Edoovillage" (tan caliente en las escuelas Labdoo.org, casas, proyectos juveniles, etc.). Los solicitantes pueden ser una persona privada, una asociación o una escuela, un proyecto de educación de los niños o jóvenes con referencia sea.
+
+Donaciones de TI no se puede dar a las personas, sino sólo a los proyectos también se mantienen las donaciones de TI en su propiedad. Las donaciones de TI están marcados y numerados. Por lo tanto, cada vez que un control es posible si todavía existen las donaciones de TI resultantes allí. No está permitido que pasa.
+
+Importante para una decisión sobre si se acepta la solicitud, es la logística, por ejemplo, si hay Flugpaten que puede visitar ahora y para el proyecto y llevarlo donaciones o si existen programas de ayuda en el que las donaciones se puede administrar como un elemento adicional.
+
+Todos los proyectos (Edoovillages) son <a href="/es/content/edoovillages-dashboard"> aquí</a>. Usted puede también busca por países (nombres de países son en Inglés).
+
+Por favor, rellene el formulario de solicitud (hoja petición) desde tan lejos como sea posible. Lo que usted no sabe, se van.
+
+
+Por favor regrese con algunas fotos de los alrededores, la ubicación de la escuela y los niños <a href="/de/hubs">en contacto con el Hub Labdoo junto a sus contactos en el extranjero</a>  o contact@Labdoo.org. A continuación ponemos a su consideración y aprobación en nuestra página web:
+
+<a href="http://ftp.labdoo.org/download/documents/english/labdoo-toolkit-english/labdoo-laptop-request-form-english.txt">- Formulario de Solicitud Inglés</a>
+<a href="http://ftp.labdoo.org/download/documents/french/labdoo-toolkit-french/labdoo-laptop-request-form-french.txt">- Formulario de solicitud francés</a>
+<a href="http://ftp.labdoo.org/download/documents/spanish/labdoo-toolkit-spanish/labdoo-laptop-request-form-espa%c3%b1ol.txt">- Formulario de Solicitud español</a>
+<a href="http://ftp.labdoo.org/download/documents/german/labdoo-toolkit-german/labdoo-laptop-request-form-german.txt">- Formulario de Solicitud de Alemania</a>
+<a href="http://ftp.labdoo.org/download/documents/romanian/labdoo-toolkit-romanian/labdoo-laptop-request-form-romanian.txt">- Formulario de solicitud de Rumania</a>
+
+En el <a href="/es/content/faq">FAQ </a> encontrará las preguntas más frecuentes, respondió a las costumbres, etc.
+
+Informe a alrededor de 3-4 semanas antes de la salida de un vuelo / transporte padrino ("dootripper") saber lo que avanzamos para preparar las donaciones de TI y se envía al Flugpaten. Donaciones de TI defectuosos serán reemplazados de forma gratuita contra la devolución del aparato defectuoso.
+
+Una presentación del proyecto Inglés se puede encontrar <a href="http://ftp.labdoo.org/download/documents/english/labdoo-project-english.pdf">aquí</a>.
+
+Otros documentos en español que explica el proyecto y el software educativo y el contenido se pueden descargar desde aquí http://ftp.labdoo.org/download/documents/spanish/. 
+
+Por supuesto, sólo podemos transmitir lo ha sido previamente donados a nosotros. Por lo tanto, no podemos decir que las donaciones de TI también están juntos.
+
+Usted puede ayudar con el ejemplo informar a su red y el acceso a TI Spendenpenden. O informar a la prensa e iniciar una llamada. Libremente gráficos utilizables y logotipos se pueden encontrar aquí (Por favor complete el link).
+
+Si tiene preguntas, por favor, envíe un mail a contact@Labdoo.org, gracias.</value>
+</body>
+<body>
+<type>format</type>
+<value>full_html</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>16839</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1059</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1060</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

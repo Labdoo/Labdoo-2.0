@@ -1,0 +1,60 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>16731</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Dooject Packaging Print Outs</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>16731</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>If you are packaging doojects into boxes, you can print the following 'fragile drawings' and stick them to each of the sides of your box.
+
+<a href="/sites/default/files/content/labdoo-toolkit/labdoo-magic-box-packaging.pdf">[Dowload in printable format]</a>
+
+<img src="/sites/default/files/content/labdoo-toolkit/labdoo-magic-box-packaging-1.png" width="300"/>
+
+<img src="/sites/default/files/content/labdoo-toolkit/labdoo-magic-box-packaging-2.png" width="300"/>
+
+<img src="/sites/default/files/content/labdoo-toolkit/labdoo-magic-box-packaging-3.png" width="300"/>
+
+<img src="/sites/default/files/content/labdoo-toolkit/labdoo-magic-box-packaging-4.png" width="300"/>
+
+<img src="/sites/default/files/content/labdoo-toolkit/labdoo-magic-box-packaging-5.png" width="300"/>
+
+</value>
+</body>
+<body>
+<type>format</type>
+<value>full_html</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>41</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>825</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1052</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-14</value>
+</weight>
+</book>

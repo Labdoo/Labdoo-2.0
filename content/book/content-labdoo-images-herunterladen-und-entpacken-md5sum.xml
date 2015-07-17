@@ -1,11 +1,11 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>208</value>
+<value>201</value>
 </nid>
 <title>
 <type>node_title</type>
-<value>Labdoo images herunterladen und entpacken, MD5SUM</value>
+<value>Labdoo Images herunterladen und entpacken, MD5SUM</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -17,12 +17,11 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>208</value>
+<value>201</value>
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Hier geht es zu Link-Liste der Images for Cloning https://dev.labdoo.org/content/liste-der-images-cloning-ftp-server
-Anklicken des benötigten Images oder rechte Maustaste -> speichern unter.
+<value>Hier geht es zur <a href="/content/liste-der-images-cloning-ftp-server">Link-Liste der Images for Cloning</a>.
 
 Das Image ist gepackt/gezippt (.tar.gz). Es kann unter jedem Betriebssystem entpackt werden. 
 
@@ -45,15 +44,15 @@ Mehr zu MD5SUM auf http://wiki.ubuntuusers.de/md5sum</value>
 </body>
 <bid>
 <type>book_array</type>
-<value>171</value>
+<value>31</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>924</value>
+<value>966</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>925</value>
+<value>985</value>
 </mlid>
 <weight>
 <type>book_array</type>

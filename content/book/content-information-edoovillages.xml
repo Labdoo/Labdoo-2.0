@@ -1,0 +1,56 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>142</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Information for Edoovillages</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>33</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Labdoo.org uses 
+<ul>
+<li>educational software suitable for children of all ages (pre-school, primary, secondary school and high-school)</li>
+<li>add-ons for barrier-free access for blind or handicapped users</li>
+<li>Offline Wikis and manuals, so children can learn from educational content without having internet connection and</li>
+<li>virus scanner ClamAV and other tools.</li>
+</ul>
+
+There is much coming with a Labdoo laptop than described in this wiki, much more than the operating system Lubuntu contains. By installing the prepared <a href="https://www.labdoo.org/content/cloning-laptops-using-prepared-labdoo-images">Labdoo images for Cloning (Parted Magic / Clonezilla)</a> or <a href="https://www.labdoo.org/de/content/installationsskripte-%C3%BCbersicht">Installation scripts</a> you can add much more useful content for the children.
+
+Parts of this wiki this are based on text and graphics taken from www.edubuntu.org and http://wiki.ubuntuusers.de/Edubuntu.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>142</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>0</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>926</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

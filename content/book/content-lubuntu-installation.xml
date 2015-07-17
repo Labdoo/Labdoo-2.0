@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>204</value>
+<value>48</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>204</value>
+<value>48</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -29,16 +29,16 @@ Wenn einer oder mehrere Rechner gespendet wurden, kann man alleine oder mit weit
 <a href="file://localhost/home/labdoo/Public/videos/install-lubuntu-german.webm">Offline lokal: Installationsanleitung Lubuntu Betriebssystem</a>
 [video:https://youtu.be/38DrO2cPBi0]
 
-<strong>Der Ablauf in Kürze</strong> (dies ist nicht erforderlich, <a href="https://dev.labdoo.org/content/cloning-mit-fertigen-labdoo-images">wenn der Rechner per Cloning eingerichtet wird</a>):
+<strong>Der Ablauf in Kürze</strong> (dies ist nicht erforderlich, <a href="https://www.labdoo.org/content/cloning-mit-fertigen-labdoo-images">wenn der Rechner per Cloning eingerichtet wird</a>):
 <ol>
 <li>
-<a href="/node/add/laptop">Starte mit der Online-Registrierung der IT-Spende.</a> Drucke dabei die 3 Aufkleber mit der Labdoo-ID-Nr. aus und klebe 2 davon auf den Laptop und ins Batteriefach, einen auf das Ladegerät. <a href="https://dev.labdoo.org/de/content/mehr-zur-registrierung-von-it-spenden">Mehr zur Registrierung von IT-Spenden...</a>   
+<a href="/node/add/laptop">Starte mit der Online-Registrierung der IT-Spende.</a> Drucke dabei die 3 Aufkleber mit der Labdoo-ID-Nr. aus und klebe 2 davon auf den Laptop und ins Batteriefach, einen auf das Ladegerät. <a href="https://www.labdoo.org/de/content/mehr-zur-registrierung-von-it-spenden">Mehr zur Registrierung von IT-Spenden...</a>   
 </li>
 <li>
 Download von <a href="http://cdimages.ubuntu.com/lubuntu/releases/14.04.2/release/">Lubuntu 14.04 LTS (Long Term Support)</a>
 <strong>PAE32:</strong> http://cdimages.ubuntu.com/lubuntu/releases/14.04.2/release/lubuntu-14.04-desktop-i386.iso
 <strong>PAE64:</strong> http://cdimages.ubuntu.com/lubuntu/releases/14.04.2/release/lubuntu-14.04.2-desktop-amd64.iso
-(nonPAE32 CPU werden offiziell nicht mehr für 14.04 unterstützt, aber wir haben speziell <a href="https://dev.labdoo.org/content/cloning-mit-fertigen-labdoo-images">ein nonPAE 32 Image for Cloning für 14.04 LTS</a>) gebaut.
+(nonPAE32 CPU werden offiziell nicht mehr für 14.04 unterstützt, aber wir haben speziell <a href="https://www.labdoo.org/content/cloning-mit-fertigen-labdoo-images">ein nonPAE 32 Image for Cloning für 14.04 LTS</a>) gebaut.
 </li>
 <li>
 Eine bootfähige iso-CD/DVD brennen
@@ -115,7 +115,7 @@ Wenn gefragt wird “Is the system clock set to UTC” bitte mit “Yes” antwo
 
 Danach endet die Installation des Betriebssystems und der Rechner wirft die CD aus und rebootet. Anmelden im Lubuntu System mit dem Anwender <strong>labdoo</strong> und dem Passwort <strong>labdoo</strong>. Jetzt den Computer mit dem Internet verbinden.
 
-Es fehlen aber noch viele Lernprogramme und Lerninhalte für die Kinder. Hierfür haben wir spezielle Skripte erstellt, die alles automatisiert nachladen. <a href="https://dev.labdoo.org/de/content/installationsskripte-%C3%BCbersicht">Mehr zu den Installationsskripten hier ...</a>
+Es fehlen aber noch viele Lernprogramme und Lerninhalte für die Kinder. Hierfür haben wir spezielle Skripte erstellt, die alles automatisiert nachladen. <a href="https://www.labdoo.org/de/content/installationsskripte-%C3%BCbersicht">Mehr zu den Installationsskripten hier ...</a>
 </li>
 </ol>
 </value>
@@ -126,15 +126,15 @@ Es fehlen aber noch viele Lernprogramme und Lerninhalte für die Kinder. Hierfü
 </body>
 <bid>
 <type>book_array</type>
-<value>171</value>
+<value>31</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>891</value>
+<value>815</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>921</value>
+<value>832</value>
 </mlid>
 <weight>
 <type>book_array</type>

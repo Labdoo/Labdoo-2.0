@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>210</value>
+<value>204</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>210</value>
+<value>204</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -51,15 +51,15 @@ Daher die Auswahl <strong> image - Image</strong> wählen. Labdoo stellt immer I
 </body>
 <bid>
 <type>book_array</type>
-<value>171</value>
+<value>31</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>926</value>
+<value>986</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>927</value>
+<value>988</value>
 </mlid>
 <weight>
 <type>book_array</type>

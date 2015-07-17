@@ -1,0 +1,145 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>16220</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>programmes pour aider les utilisateurs handicapés</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>French</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>16220</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><li><strong>programmes pour aider les utilisateurs handicapés</strong></li>
+
+Les outils suivants peuvent être considérés comme une alternative à des programmes en utilisant une interface utilisateur graphique. Le i.a. Outils ont i.d.R. une interface à base de texte sont plus faciles à contrôler et sont donc mieux pour les utilisateurs aveugles ou malvoyants. Plus d'informations sur http://wiki.ubuntuusers.de/Barrierefreiheit
+
+<table> 
+<tr>
+<th><strong>Application</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Paquet</strong></th>
+<th><strong>Capture d' écran</strong></th>
+</tr>
+
+<tr>
+            <td><a href="http://doc.ubuntu-fr.org/Orca">Orca</a></td>
+           <td>Orca permet à des utilisateurs non/mal-voyants d'utiliser Ubuntu;  <strong>Important:</strong> Orca will only work with the desktops Unity and Gnome (Ubuntu), not with LXDE (Lubuntu), more (in German) http://wiki.ubuntuusers.de/orca; to start or end Orca press at the same time Alt + Super/Windows + S</td>
+            <td>Orca</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/orca.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://doc.ubuntu-fr.org/Bluefish">bluefish</a></td>
+           <td>Bluefish est un éditeur de texte orienté vers le développement web, léger, rapide.</td>
+            <td>bluefish</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/bluefish.png" width="100"/> </td>
+</tr>
+<tr>
+            <td> <a href="http://doc.ubuntu-fr.org/Gespeaker">gespeaker</a> mbrola</td>
+           <td>Gespeaker est une interface graphique pour le synthétiseur vocal eSpeak</td>
+            <td>gespeaker</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/gespeaker.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://fr.wikipedia.org/wiki/ESpeak">Espeak</a></td>
+           <td>Espeak est un logiciel  de synthèse vocale.</td>
+            <td>Espeak</td>
+           <td> </td>
+</tr>
+<tr>
+            <td><a href="http://www.washington.edu/alpine/">alpine</a></td>
+           <td>Alpine est un client de messagerie rapide, facile à utiliser (start in terminal → program name →  Enter)</td>
+            <td>alpine</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/alpine.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://doc.ubuntu-fr.org/Irssi">irssi</a></td>
+           <td>Irssi est un programme de messagerie instantanée en mode console (start in terminal → program name →  Enter)</td>
+            <td>irssi</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/irssi.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://doc.ubuntu-fr.org/Lynx">lynx</a></td>
+           <td>Lynx est un navigateur Web en mode texte utilisable via une console ou un terminal (start in terminal → program name →  Enter)</td>
+            <td>lynx-cur</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/lynx.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://doc.ubuntu-fr.org/ELinks">Elinks</a></td>
+           <td>eLinks est un navigateur en console très léger et rapide (start in terminal → program name →  Enter))</td>
+            <td>Elinks</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/elinks.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://doc.ubuntu-fr.org/Midnight_Commander">Midnight Commander (mc)</a></td>
+           <td>Midnight Commander ou mc, est un gestionnaire de fichiers (start in terminal → program name →  Enter)</td>
+            <td>MC</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/mc.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://doc.ubuntu-fr.org/Easystroke">easystroke</a></td>
+           <td>C'est un logiciel de gestuelle de la souris, qui permet d'utiliser certains mouvements de la souris comme raccourcis.</td>
+            <td>easystroke</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/easystroke.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://doc.ubuntu-fr.org/Dasher">dasher</a></td>
+           <td>Dasher est une interface de saisie de texte par prédiction (démonstration vidéo), avec une gestuelle continue et naturelle de pointage. </td>
+            <td>dasher</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/dasher.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://doc.ubuntu-fr.org/CellWriter">cellwriter</a></td>
+           <td>CellWriter permet la reconnaissance de l'écriture manuscrite ou celle saisie sur une tablette graphique ou sur un clavier virtuel du type tablet PC.</td>
+            <td>cellwriter</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/cellwriter.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://sitplus.crea-si.com/node/118">sitplus</a></td>
+           <td>Activités ludiques et thérapeutiques</td>
+            <td>sitplus</td>
+           <td>  </td>
+</tr>
+<tr>
+            <td><a href="http://www.kde.org/applications/utilities/kmag/">kmag</a></td>
+           <td>KMag est un petit utilitaire pour agrandir une partie de l'écran.</td>
+            <td>kmag</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/kmag.png" width="100"/> </td>
+</tr>
+
+</table>
+
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>16206</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1030</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1035</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

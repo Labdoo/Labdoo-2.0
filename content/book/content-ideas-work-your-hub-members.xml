@@ -1,0 +1,95 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>16915</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Ideas to work on with your hub members</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>26</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Here is a list of possible topics for the school hub to work on -
+<ul>
+<strong> What is Labdoo? </strong>
+<li>Help hub members get familiar with the Labdoo process (S0-S6)  </li>
+<li>Get familiar with the Labdoo website (eg. Teams, Wiki ...)</li>
+</ul>
+<ul>
+<strong> Laptop Drive</strong>
+Reuse –  Discover idle laptops around you and put them into a better use.
+Repurpose – An old laptop can have a new story. It can help provide education resources for underprivileged children.
+Recycle –  By properly recycling a laptop, 41 lbs of carbon emission will be preserved from entering the atmosphere. This is equivalent to recycling 270 soda cans.
+<li> Spread the awareness among  family and friends </li>
+<li> Set a goal on the number of laptops to be rescued for the semester</li> 
+<li> Plan the campaign and design the laptop drive flyer</li> 
+</ul>
+<ul>
+<strong> Technical QA Session </strong>
+<li>Learn how to build a Labdoo magic box (sanitizing a laptop)</li> 
+<li>Join Labdoo Monthly QA meetings to learn how to fix a laptop</li> 
+<li>Exam basic laptop components together (eg. memories, hard drives ) </li>
+</ul>
+<ul>
+<strong> Dootrips </strong>
+<li>Learn how the laptops get delivered without additional expenses</li>
+<li>Find travelling resources among family and friends</li>
+<li>Try to match their trip plans with Edoovillages or other Labdoo hubs and help carry a laptop to its next stop</li>
+</ul>
+<ul>
+<strong> Adopt a project site (Edoovillage) </strong>
+<li>Identify an organization which needs laptop resources</li>
+<li>Help manage and communicate between the edoovillage  and others</li>
+</ul>
+<ul>
+<strong> Be part of the software development team</strong>
+<li>Help translate the Labdoo website into different languages</li>
+<li>Help proof-read the Labdoo website (wikipal)</li>
+<li>Join the <a href="https://www.labdoo.org/content/software-development">Software Development Team Wall </a> and help test the Labdoo website, identify and report bugs</li> 
+<li>Get familiar with Drupal and php</li>
+<li>Sign up to <a href= "https://github.com/Labdoo/Labdoo-2.0"> Labdoo Github </a> and understand Labdoo framework</li>
+</ul>
+<ul>
+<strong> Recycling </strong>
+<li> Watch educational videos together, for example, <a href="https://www.youtube.com/watch?v=qoDcOqewX5c">TED Talks</a></li>
+<li>Organize a field trip to recycling facility, for example, <a href="http://www.allgreenrecycling.com/tustin/"> AllGreen Electronics Recycling, Tustin</a></li>
+<li>Organize an e-waste drive</li>
+</ul>
+<br></br>
+<br></br>
+
+</value>
+</body>
+<body>
+<type>format</type>
+<value>full_html</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>34</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1062</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1066</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

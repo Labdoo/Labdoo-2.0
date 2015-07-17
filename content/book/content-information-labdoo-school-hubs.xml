@@ -1,0 +1,65 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>16911</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Information for Labdoo School Hubs</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>16911</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><strong> Labdoo School Hubs </strong>
+
+Thank you for your interest in forming a Labdoo School Hub. We appreciate your desire to help us spread awareness in your local community.
+
+Please read the following documents carefully. This information will help you make the best decision during the process. 
+
+
+<ul> 
+<li><a href="https://www.labdoo.org/content/about-labdoo">What is Labdoo? </a></li>
+<li><a href="https://www.labdoo.org/content/benefits-offered-hub-members">Benefits offered to school hub members</a></li>
+<li><a href="https://www.labdoo.org/content/responsibilities-school-hub-manager">Responsibilities of a school hub manager</a></li>
+<li><a href="https://www.labdoo.org/content/where-can-i-start">Where can I start?</a></li>
+<li><a href="https://www.labdoo.org/content/ideas-work-your-hub-members">Ideas to work on with your hub members</a></li>
+</ul>
+<br></br>
+
+We hope your Labdoo experience will not only benefit the world as a whole, but also help you write a meaningful chapter in your high school life.
+<br></br>
+<br></br>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>full_html</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>34</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>818</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1062</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>314</value>
+<value>159</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>314</value>
+<value>159</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -32,7 +32,7 @@
 <li>logged in as user student: <code>ln -s -t /home/student/Desktop /home/labdoo/Public/videos</code> (Enter) </li>
 </ul>
 
-More information --> http://wiki.ubuntuusers.de/PCMan_File_Manager</value>
+More information --&gt; http://wiki.ubuntuusers.de/PCMan_File_Manager</value>
 </body>
 <body>
 <type>format</type>
@@ -40,15 +40,15 @@ More information --> http://wiki.ubuntuusers.de/PCMan_File_Manager</value>
 </body>
 <bid>
 <type>book_array</type>
-<value>255</value>
+<value>35</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>973</value>
+<value>857</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>1031</value>
+<value>943</value>
 </mlid>
 <weight>
 <type>book_array</type>

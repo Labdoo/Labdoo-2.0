@@ -1,11 +1,11 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>276</value>
+<value>141</value>
 </nid>
 <title>
 <type>node_title</type>
-<value>information for Dootrippers</value>
+<value>Information for Dootrippers</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -17,43 +17,53 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>169</value>
+<value>29</value>
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Dear "dootripper",
+<value>Dear dootripper,
 
-<a href="http://www.iata.org/whatwedo/cargo/dgr/Documents/LithiumBattery_PassengerFlyer.jpg"><img src="/sites/default/files/content/wiki-de/iata_lithiumbattery_passengerflyer.jpg" align="right" width="300" /></a> 
-
-thank you for your contribution to take one or more laptops to an "Edoovillage“. So Labdoo.org calls schools or youth projects. And "dootripper" are called those helpers, taking laptops abroad. You will find all our edoovillages on http://www.labdoo.org/call-for-laptops.
+Thank you for your contribution to take one or more laptops to an "Edoovillage“. So Labdoo.org calls schools or youth projects. And "dootripper" are called those helpers, taking laptops abroad. You will find all our edoovillages on http://www.labdoo.org/call-for-laptops.
 
 Data and history of each laptop can be seen online, too: Enter the laptop ID (number) in the <strong>Search</strong> entry field, take a picture of the QR code or browse: http://www.labdoo.org/de/laptop/00000xxxx (xxxx = no. of a laptop)
 
-In the FAQ-Forum https://dev.labdoo.org/de/content/faq-forum you will find many answers to your questions, e.g. concerning toll and IATA regulation to transport laptops and batteries in planes https://dev.labdoo.org/de/content/faq-forum#FAQ14. 
+In the FAQ-Forum https://www.labdoo.org/de/content/faq-forum you will find many answers to your questions, e.g. <a href="/content/faq-forum#FAQ14">concerning toll and IATA regulation to transport laptops and batteries in planes</a>.
+
+<hr/>
+<table align="center">
+<tr><td>
+<em> Figure. Types of batteries.</em>
+</td></tr>
+<tr><td>
+<img src="http://www.iata.org/whatwedo/cargo/dgr/Documents/LithiumBattery_PassengerFlyer.jpg" width="600"/>
+</td></tr>
+</table>
+<hr/>
 
 <strong>For the airline, the amount of Watt-hours (Wh) of the battery is critical. Almost all laptop batteries have less than 100 Wh and can be transported without any restriction in the trunk or in your hand luggage. An approval of the airline is not required.</strong>
 
+If you are travelling in a group of several travellers you should distribute the laptops, one or two in each suitcase. So you can reduce the risc, if a suitcase gets lost. And at toll it os easier to argue that this laptop was brought for private usage and save toll.
+
 Please return pictures or videos of the area, the town, the school etc, when delivering the laptops to the children. So the donors will get an idea, where their donation went to. And we can update our database and inform the donor (we need to know the Labdoo ID and the project you went to).
 
-Technical
 You will find a "how to start" wiki here to explain a user, how to start and use the computer
 <ul>
-<li>English: https://dev.labdoo.org/de/content/start-laptop-request</li>
-<li>German: https://dev.labdoo.org/content/wie-starte-ich-den-computer</li>
-<li>French: to follow</li>
-<li>Spanish: to follow</li>
-<li>Russian: to follow</li>
+<li>English: https://www.labdoo.org/de/content/start-laptop-request</li>
+<li>German: https://www.labdoo.org/content/wie-starte-ich-den-computer</li>
+<li>French: http://ftp.labdoo.org/download/documents/french/labdoo-letter-recipient-quick-guide-french.pdf</li>
+<li>Spanish: http://ftp.labdoo.org/download/documents/spanish/labdoo-letter-recipient-quick-guide-espanol.pdf</li>
+<li>Russian: http://ftp.labdoo.org/download/documents/russian/labdoo-letter-recipient-quick-guide-russian.pdf</li>
 </ul>
 
 As most of our edoovillages (projects) do not have access to internet language(s), keyboard layouts etc. are pre-installed and pre-set. How to install and switch languages etc. is explained in the above mentioned documents.
 
-The power plugs are those in use in the country of the donor. This may match with the country of the edoovillage. If the power plug is different (here is a table https://dev.labdoo.org/content/list-countries-voltage-and-power-plugs-0) it has to be changed by the receiver. Or you can buy and proceed an adapter for the power plug.
+The power plugs are those in use in the country of the donor. This may match with the country of the edoovillage. If the power plug is different (here is a table https://www.labdoo.org/content/list-countries-voltage-and-power-plugs-0) it has to be changed by the receiver. Or you can buy and proceed an adapter for the power plug.
 
-Labdoo added many manuals, OER in as many languages as we found to folder Home/labdoo/Public/... (if logged in as user labdoo, the user student has a bookmark „manuals wikidoo“ in his file explorer). The documents were stored in pdf, HTML (click on index file) or Wiki. More here https://dev.labdoo.org/de/content/information-schools-project-partner-receiver-laptop-donations-edoovillages.
+Labdoo added many manuals, OER in as many languages as we found to folder Home/labdoo/Public/... (if logged in as user labdoo, the user student has a bookmark „manuals wikidoo“ in his file explorer). The documents were stored in pdf, HTML (click on index file) or Wiki. More here https://www.labdoo.org/de/content/information-schools-project-partner-receiver-laptop-donations-edoovillages.
 
 For cloned laptops / install-scripts: When you open Firefox an English  Offline-Wikipedia for children and a multimedia English course is shown, as well as XOWA, an Offline Wiki tool more 800+ wikis in local languages.
 
-Each desktop will have a link to a video tutorial, which explains in a few mniutes Lubuntu and the educational software and content.
+On the desktop you will find a folder <strong>videos</strong> with a set of video tutorials for users and technicians.
 
 You will find 3 user accounts, for details refer to the how-to-start wiki.
 
@@ -71,7 +81,7 @@ In any case inform us, we like to know and learn from you. Please send a mail to
 </body>
 <bid>
 <type>book_array</type>
-<value>276</value>
+<value>141</value>
 </bid>
 <plid>
 <type>book_array</type>
@@ -79,7 +89,7 @@ In any case inform us, we like to know and learn from you. Please send a mail to
 </plid>
 <mlid>
 <type>book_array</type>
-<value>993</value>
+<value>925</value>
 </mlid>
 <weight>
 <type>book_array</type>

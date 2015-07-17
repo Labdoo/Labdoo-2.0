@@ -1,0 +1,99 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>17059</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Xowa-Wikis installieren</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>17059</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Über das Tool Xowa sind über 800 Offline-Wikis verfügbar. Damit können Kinder in Wikis lesen, auch wenn sie nicht online sind. Ein kindgerechtes Wikipedia installieren wir in Form von wikidoo.
+
+In den Labdoo-Images ist wikidoo und Xowa schon mit 4 Wikis (Simple English) enthalten, ansonsten kann es per Skript installiert werden, siehe https://www.labdoo.org/de/content/installationsskripte-%C3%BCbersicht.
+
+Pfad zu Xowa: /home/labdoo/Public/xowa
+Pfad der Xowa-Wikis: /home/labdoo/Public/xowa/wiki
+
+Um Xowa zu starten liegt auf dem Desktop bereits ein Xowa-Starter (Xowa-Icon), der per Doppelklick gestartet werden kann
+
+Es gibt 2 Arten von Xowa-Wikis:
+<ul>
+<li><strong>Version 1:</strong> nur Text, keine Grafiken (bitte achtet auf die Größe des Wikis in der Tabelle, kann von 100 KB bis 40 GB reichen)</li>
+<li><strong>Version 2:</strong> wie vor, aber zusätzlich mit den verlinkten Grafiken (empfohlen, weil deutlich informativer, aber auch größer)</li>
+</ul>
+
+Und es gibt 2 Wege, um Wiki herunterzuladen. Hierzu Xowa starten und auf der Hauptseite des Programms bis zu "Links" herunterscrollen:
+<ul>
+<li><strong>Import Online (nur Version 1):</strong> In Spalte <strong>set up</strong> auf Download klicken, startet den Download, kann mehrere Stunden laufen </li>
+<li><strong>Import Offline (Version 1 und 2):</strong> empfohlen, der Name täuscht, Laptop muss dafür online sein; Download am besten per Skript -> hierzu das gewünschte Wiki und Sprache auswählen -> Category system: version 2 -> Import: auf Generate script klicken -> wiederholen, bis Skript vollständig, dann auf "Run script" klicken.
+
+<strong>Vorsicht:</strong>
+Es gibt nicht jedes Wiki in jeder Sprache, oft fehlt z.B. wikivoyage. Wenn ihr beim Offline Import trotzdem ein nicht existentes Wiki anklickt wird zwar ein Skript dafür erzeugt, das aber beim Ausführen abstürzt. Daher bitte prüfen, ob das Wiki existiert. Hierzu ein Trick: Macht 2 Tabs auf (Datei -> Neuer Tab); mit einem geht ihr in die Online Import-Tabelle, mit der anderen auf die Offline-Import-Seite. In der Online-Seite könnt ihr mit Bearbeiten -> Suchen nach der Sprache und den Wikis suchen. So seht ihr schnell, ob es ein bestimmtes Wiki auch gibt. </li>
+</ul>
+
+<strong>Passende Wikis zum passenden Xowa</strong>
+Leider können die Wikis immer nur mit der Xowa-Version genutzt werden, mit der sie heruntergeladen wurden. Aktuell (Juli 2015) ist dies Xowa 2.5.4.1. Labdoo übernimmt etwa alle 6 Monate eine aktuelle Xowa-Version (jeweils zum Jahresanfang und Jahresmitte), um den Aufwand, die Wikis aktuell halten, zu minimieren. 
+
+Wenn ihr also bei euch zuhause Xowa-Wikis herunterladet und per USB-Stick mit zu einem Edoovillage nehmen wollt, muss das mit der gleichen Xowa-Version geschehen, die auch im Edoovillage installiert ist! Sonst passen die Wikis nicht zum Xowa...
+
+<strong>Aufräumen:</strong>
+Nach dem Importieren gibt es im Ordner /xowa/wiki einen Unterordner /dump. Dieser Papierkorb enthält heruntergeladene Wikis, die nach dem Installieren gelöscht werden können, weil sie nur unnötig Platz blockieren.
+
+<strong>Rechte der Xowa-Ordner</strong>
+Zunächst kann nur der User labdoo auf nachinstallierte Xowa-Wikis zugreifen. Damit auch der Benutzer student Leserechte hat, liegt auf dem Desktop das Skript set-rights-folder-files-Public-correct.sh. Dieses bitte jedes Mal ausführen, wenn Lerninhalte nachinstalliert wurden. 
+
+Dazu im Terminal ausführen oder die Schnellversion (geht bei diesem Skript): rechte Maustaste auf set-rights-folder-files-Public-correct.sh -> Open with / Öffnen mit -> Xterm (wenn Xterm nicht angeboten wird -> Open with / Öffnen mit -> Systemwerkzeug -> Xterm). Das Skript startet ohne weitere Eingaben, läuft ca. 1 - 5 Minuten, je nach Rechner, und schliesst automatisch.
+
+<strong>Englische Wikis</strong>
+Falls die Festplatte (HDD) nicht gross ist, ihr aber trotzdem möglichst viele Englische Wikis aufspielen wollt, lasst doch en.wikipedia.org weg. Dafür haben die Kinder ja das für Kinder gefilterte Wikipedia wikidoo. Die anderen Englischen Wikis belegen zusammen ca. 10 GB, während alleine en.wikipedia rund 30 GB braucht!
+
+<strong>Speziell für Hubs in der DACH-Region: </strong>
+Auf Anfrage werden schon fertige Xowa-Wikis für häufig gebrauchte Sprachen in gepackter Form auf dem FTP-Server hinterlegt. 
+Gepackte Datei herunterladen, entpacken und in den Ordner /home/labdoo/Public/xowa/wiki verschieben. Anschliessend solltet ihr die Rechte des Xowa-Ordners per Skript richtig einstellen (s.o.)
+
+Schaut mal auf http://ftp.labdoo.org/download/images/xowa-wikis/ (darin ggf. Unterordner für die jeweilige Xowa-Version). Vielleicht ist eure Sprache ja schon dabei. Wenn nicht, schickt eine Mail an Labdoo-DACH@Labdoo.org.
+
+<strong>Ausblick</strong>
+
+Eine Xowa-Version für Android-Handys und Tablet-PCs ist in Arbeit. Damit können wir den Kindern zukünftig auch Wikis auf mobilen Endgeräten ermöglichen.
+
+<strong>Download Xowa (nur für Experten)</strong>
+
+vom FTP-Server: http://ftp.labdoo.org/download/Public/xowa/ (es wird aber dringend empfohlen das Installationskript http://ftp.labdoo.org/download/images/installskripts/installscript-xowa.sh zu nutzen!).
+von Sourceforge: http://sourceforge.net/projects/xowa</value>
+</body>
+<body>
+<type>format</type>
+<value>full_html</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>33</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>817</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1070</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

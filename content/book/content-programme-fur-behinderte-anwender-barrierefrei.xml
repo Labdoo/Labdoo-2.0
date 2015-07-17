@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>191</value>
+<value>59</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>191</value>
+<value>59</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -35,7 +35,7 @@ Die nachfolgenden Tools können als Alternative zu Programmen mit graphischer Be
 
 <tr>
             <td><a href="http://wiki.ubuntuusers.de/Orca">Orca</a></td>
-           <td>Bildschirm Vorlesetool, Screen reader</td>
+           <td>Bildschirm Vorlesetool, Screen reader; <strong>Wichtig:</strong> Orca läuft z.Zt. nur in Verbindung mit den Desktops Unity und Gnome (Ubuntu), nicht mit LXDE (Lubuntu), mehr dazu auf http://wiki.ubuntuusers.de/orca; zum Starten oder Beenden von Orca gleichzeitig die Tasten <strong>Alt + Super/Windows + S</strong> drücken.</td>
             <td>Orca</td>
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/orca.png" width="100"/> </td>
 </tr>
@@ -129,15 +129,15 @@ Bildschirmlupe</td>
 </body>
 <bid>
 <type>book_array</type>
-<value>170</value>
+<value>33</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>890</value>
+<value>817</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>904</value>
+<value>843</value>
 </mlid>
 <weight>
 <type>book_array</type>

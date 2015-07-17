@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>218</value>
+<value>85</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>218</value>
+<value>85</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -101,15 +101,15 @@ Die Plugins können auf der Leiste verschoben werden → Add/Remove Panel Items 
 </body>
 <bid>
 <type>book_array</type>
-<value>171</value>
+<value>31</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>933</value>
+<value>867</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>935</value>
+<value>869</value>
 </mlid>
 <weight>
 <type>book_array</type>

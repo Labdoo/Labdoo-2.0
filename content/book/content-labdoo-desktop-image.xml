@@ -1,0 +1,51 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>16732</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Labdoo Desktop Image</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>16732</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Once you have sanitized a dooject, you can optionally set its desktop image to the following image to give it a friendly look.
+
+<a href="/sites/default/files/content/labdoo-toolkit/labdoo-desktop.png">[Dowload in printable format]</a>
+
+<img src="/sites/default/files/content/labdoo-toolkit/labdoo-desktop.png" width="500"/>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>full_html</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>41</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>825</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1053</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-13</value>
+</weight>
+</book>

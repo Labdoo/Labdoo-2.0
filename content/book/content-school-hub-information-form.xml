@@ -1,0 +1,100 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>16996</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>School Hub Information Form</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>16996</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>
+Please copy the form below into the email body, fill the information, and email it to your parent hub manger or contact@labdoo.org at the beginning of every fall semester.
+
+<br></br>
+<ul>
+<li> 
+Your Name:_______________________________________________________
+Your Labdoo UserName:_____________________________________________
+</li>
+</ul>
+<ul>
+<li> 
+School Name:__________________________________________________________
+Physical Address:_______________________________________________________
+</li>
+</ul>
+<ul>
+<li> Hub officers 
+ Title	/     Name/     Email Address/     Labdoo Username  
+______________________________________________________________________ 
+______________________________________________________________________ 
+______________________________________________________________________ 
+______________________________________________________________________ 
+</li>
+</ul>
+<ul>
+<li>your school advisor
+     Teacher’s Name/Email Address: __________________________________
+     Email Address: ____________________________
+</li>
+</ul>
+<ul>
+<li>Set goals and facilitate activities.
+First Semester: _________________________________________________________________
+______________________________________________________________________________
+______________________________________________________________________________
+Second Semester: _______________________________________________________________
+______________________________________________________________________________
+______________________________________________________________________________
+
+(You can find activity ideas <a href="https://www.labdoo.org/content/ideas-work-your-hub-members"> Here </a> )
+</li>
+</ul>
+<ul>
+<li>Make sure you have read and agreed with the <a href="https://www.labdoo.org/content/responsibilities-school-hub-manager">Responsibilities of a school hub manager </a> section.
+</li>
+</ul>
+ 
+ 
+
+<br></br>
+<br></br>
+
+ 
+</value>
+</body>
+<body>
+<type>format</type>
+<value>full_html</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>34</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1062</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1068</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

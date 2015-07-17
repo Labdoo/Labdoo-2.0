@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>243</value>
+<value>109</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>243</value>
+<value>109</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -33,15 +33,15 @@ suchen und löschen: <code>find ./ -type f name „Dateiname“ -delete</code>  
 </body>
 <bid>
 <type>book_array</type>
-<value>171</value>
+<value>31</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>922</value>
+<value>856</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>960</value>
+<value>893</value>
 </mlid>
 <weight>
 <type>book_array</type>

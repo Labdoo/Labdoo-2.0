@@ -1,0 +1,53 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>16467</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Glits</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>28</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Informationen für IT-Spender <a href="/de/content/information-für-it-spender">hier</a>. 
+
+Informationen für Flugpaten <a href="/de/content/information-für-flugpaten-dootripper">hier</a>. 
+
+Informationen für Labdoo Helfer <a href="/de/content/information-für-labdoo-helfer-labdooer">hier</a>. 
+
+Informationen für Labdoo Hub <a href="/de/content/information-für-labdoo-hubs">hier</a>.
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>16467</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>0</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1045</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

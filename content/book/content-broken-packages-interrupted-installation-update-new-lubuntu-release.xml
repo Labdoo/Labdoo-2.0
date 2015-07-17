@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>292</value>
+<value>115</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>292</value>
+<value>115</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -60,15 +60,15 @@ Should the package administration become unusable during an upgrade or dist-upgr
 </body>
 <bid>
 <type>book_array</type>
-<value>255</value>
+<value>35</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>973</value>
+<value>857</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>1009</value>
+<value>899</value>
 </mlid>
 <weight>
 <type>book_array</type>

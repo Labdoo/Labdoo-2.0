@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>308</value>
+<value>89</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>308</value>
+<value>89</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -27,7 +27,7 @@ The Labdoo team is working to improve and extend capability of the scripts. At t
 
 <strong>General for all desktops and for all user (labdoo and student):</strong>
 
-<strong>Firefox: </strong> 4 tabs should be added manually and pre-set in Preferences -> General
+<strong>Firefox: </strong> 4 tabs should be added manually and pre-set in Preferences -&gt; General
          <ul>
          <li><code>file:///home/labdoo/Public/wikidoo/index.htm</code></li>
          <li><code>file:///home/labdoo/Public/wikis/index.htm</code></li>
@@ -101,15 +101,15 @@ The plug-ins can be moved within the task bar, right mouse click on task bar→ 
 </body>
 <bid>
 <type>book_array</type>
-<value>255</value>
+<value>35</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>1024</value>
+<value>872</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>1025</value>
+<value>873</value>
 </mlid>
 <weight>
 <type>book_array</type>

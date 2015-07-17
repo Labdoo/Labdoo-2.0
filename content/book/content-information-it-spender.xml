@@ -1,0 +1,71 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>30</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Information IT-Spender</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>30</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>IT-Spenden (Laptops, Tablets, eBook Reader u.a.) können wahlweise vom Spender selber gelöscht, aufbereitet und mit Lernsoftware bespielt werden oder an Labdoo.org gegeben werden. Dann erledigen wir alles...
+
+Am besten wendet ihr euch an ein Hub oder eine Annahmestelle ("Branch") für IT-Spenden. <a href="../hubs">Eine Liste aller Hubs und Annahmestellen gibt es hier</a> (nach dem jeweiligen Land filtern, Ländername in Englisch). Falls es in der Nähe ist kann nach Rücksprache ein Abhol- oder Abgabetermin oder die Zusendung per Paketdienst vereinbart werden.
+
+Bei Fragen oder falls kein Kontakt zum Hub zustande kommt, wendet Euch bitte an Labdoo-DACH@Labdoo.org.
+
+Ausserdem nimmt die <a href="http://www.afb-group.de/de/standorte">AfB-Gruppe</a> in ihren Geschäftsstellen IT-Spenden für Labdoo.org an und leitet sie weiter. Da nicht jeder AfB-Mitarbeiter Labdoo.org kennt ggf. auf unsere Absprache mit dem Geschäftsführer Daniel Büchle verweisen.
+
+Bitte den Namen des Spenders und seine E-Mailadresse auf der IT-Spende aufkleben, damit wir sie zuordnen und einen Link mailen können. Über den Link sieht der Spender, wohin seine IT-Spende geht. Und bitte Netzteil u.a. nicht vergessen, siehe u.a. Grafik. 
+
+Wenn mal eine Antwort etwas dauert, seht es uns bitte nach, da die Labdoo-Helfer alle ehrenamtlich dabei sind und eine Antwort ggf. durch Urlaub oder Beruf o.a. etwas dauern kann.
+
+<img src="/sites/default/files/content/wiki-de/labdoo-donor-info-german-small.png" align="right" width="450"/>
+
+Alle Spender können sich darauf verlassen, dass die Altdaten auf den Computern durch mehrfaches Überschreiben mit Zufallszahlen sicher gelöscht werden oder selber löschen, mehr dazu <a href="/content/faq-forum#FAQ06">hier</a>, auch zu Compliance-konformen Daten-Löschungen für Unternehmen. Dann wird Linux, kindgerechte Lernsoftware und Lerninhalte aufgespielt. Danach kann keiner mehr alten Daten rekonstruieren.
+
+Unsere Mindestanforderungen an IT-Spenden sind <a href="/content/faq-forum#FAQ04">hier</a> beschrieben. Bei zu alten oder irreparablen Computern bauen wir sinnvoll verwendbare Teile aus und entsorgen den Rest. Defekte IT-Spenden versuchen wir zu repararien, was aber sehr lange dauern kann.
+
+Schade wäre es, wenn die Festplatten vor der Abgabe ausgebaut und vernichtet würde. Aber auch dann nehmen wir die IT-Spenden ohne Festplatten gerne an. <strong>Nur bitte die Halterung, Abdeckung (Caddy) und Kleinteile für die Festplatte beilegen!</strong> Sponsoren stellen uns dann Ersatzplatten zur Verfügung, auch wenn es bei 2,5" IDE-Platten langsam schwierig wird, Ersatz zu finden...
+
+Auf Wunsch kann der gemeinnützige Labdoo.org e.V. auch Spendenquittungen oder Verwendungsnachweise ausstellen, <a href="/content/faq-forum#FAQ10">mehr dazu hier</a>.
+
+<strong>Hinweise für Firmenspender:</strong>
+Neben der o.a. bereits erwähnten Spendenquittung bzw. Verwendungsnachweis bieten wir Unternehmen an, ihr Firmenlogo und Link auf unsere <a href="/de/content/spender">Spenderseite</a> und in unsere <a href="http://ftp.labdoo.org/download/documents/german/Unterlagen/labdoo-project-german.pdf">Projektpräsentation (Seite 14)</a> aufzunehmen. Bitte senden Sie das Firmenlogo und Link an Labdoo-DACH@Labdoo.org.
+
+Wir würden uns auch freuen, wenn Ihr Unternehmen auch auf Labdoo.org und Ihre Unterstützung für Labdoo hinweist, z.B. auf Homepage, Newsletter, CSR- / Basel III-Berichten u.a. Unsere frei verwendbaren Materialien hierfür finden Sie <a href="https://www.labdoo.org/de/content/faq-forum#FAQ02">hier</a>.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>30</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>0</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>814</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

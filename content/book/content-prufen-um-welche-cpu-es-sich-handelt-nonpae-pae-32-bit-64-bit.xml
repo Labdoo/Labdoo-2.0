@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>207</value>
+<value>182</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,25 +17,34 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>207</value>
+<value>182</value>
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Wenn der Rechner ubuntu oder Parted Magic (beide auf Linux-Basis) gebootet hat wird als erstes der Typ der CPU geklärt, weil nur das passende Image zur passende CPU gecloned werden kann. Sonst läuft der Laptop später nicht korrekt. So kann man ein 32-Bit Image auf eine 64-Bit CPU clonen, aber nicht umgekehrt (allerdings nutzt 32-Bit nur max. 3 MB RAM).
+<value>Seit <strong>Juni 2015</strong> muss bei der Installation nicht mehr nach dem CPU-Typ (nonPAE32 oder PAE32) unterschieden werden. Daher kann dieses Kapitel übersprungen werden.
 
-Ein Terminal öffnen und dort ausführen (den u.a. Text markieren und kopieren):
+In fast allen Fällen kann das PAE 32 Bit Image bzw. Lubuntu 32 Bit (i386) genommen werden. Nur wenn der Speicher (RAM) größer als 3 GB ist lohnt die Installation der 64 Bit-Version.
+
+<hr />
+<br />
+
+Hier trotzdem noch der Hinweis, wie man den Typ der CPU (nonPAE/PAE bzw. 32 / 64 Bit) erkennen kann:
+
+<ul>
+<li>Ein Terminal öffnen und dort ausführen (den u.a. Text markieren und kopieren):</li>
 
 <code>grep -q '\&lt;pae\&gt;' /proc/cpuinfo &amp;&amp; echo "My CPU is PAE capable" || 
 echo "My CPU is NOT PAE capable (nonPAE)" &amp;&amp; grep -q '\&lt;lm&gt;' 
 /proc/cpuinfo &amp;&amp; echo "My CPU is a 64 bits one" || echo "My CPU is a 32 bits one"</code>
 
-<strong>Hinweis:</strong> Das Terminal ist das schwarze Bildschirm-Icon in der Taskleiste unten am Bildschirm, anklicken, das Terminal öffnet sich. Einfügen (Paste) geht im Terminal entweder durch gleichzeitiges Drücken von  Shift + CTL/STRG + v oder im Terminal rechte Maustaste und Einfügen.
+<li><strong>Hinweis:</strong> Das Terminal ist das schwarze Bildschirm-Icon in der Taskleiste unten am Bildschirm, anklicken, das Terminal öffnet sich. Einfügen (Paste) geht im Terminal entweder durch gleichzeitiges Drücken von  Shift + CTL/STRG + v oder im Terminal rechte Maustaste und Einfügen.</li>
 
-<strong>Alternativ:</strong> System Profiler (Icon oben im Desktop anklicken) aufrufen → Devices → Processor (bei CPUs mit mehreren Kernen einen Kern anklicken) → runterrollen bis Capabilities, dort in der Liste prüfen, ob PAE erscheint. Wenn PAE gelistet ist dann ein „PAE-Image“ einspielen, wenn kein PAE gefunden wird, dann einen „nonPAE“ image einspielen. 
+<li><strong>Alternativ:</strong> System Profiler (Icon oben im Desktop anklicken) aufrufen → Devices → Processor (bei CPUs mit mehreren Kernen einen Kern anklicken) → runterrollen bis Capabilities, dort in der Liste prüfen, ob PAE erscheint. Wenn PAE gelistet ist dann ein „PAE-Image“ einspielen, wenn kein PAE gefunden wird, dann einen „nonPAE“ image einspielen. 
+Aber dann bleibt noch die Abklärung, ob die CPU 32 oder 64 Bit nutzt. </li>
 
-Aber dann bleibt noch die Abklärung, ob die CPU 32 oder 64 Bit nutzt.
+<li>Download des o.a. Prüf-Skriptes --&gt; http://ftp.labdoo.org/download/images/installskripts/check_cpu_32_or_64_bits_PAE_or_nonPAE.sh</li>
 
-Download des o.a. Prüf-Skriptes --> http://ftp.labdoo.org/download/images/installskripts/check_cpu_32_or_64_bits_PAE_or_nonPAE.sh</value>
+</ul></value>
 </body>
 <body>
 <type>format</type>
@@ -43,15 +52,15 @@ Download des o.a. Prüf-Skriptes --> http://ftp.labdoo.org/download/images/insta
 </body>
 <bid>
 <type>book_array</type>
-<value>171</value>
+<value>31</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>923</value>
+<value>962</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>924</value>
+<value>966</value>
 </mlid>
 <weight>
 <type>book_array</type>

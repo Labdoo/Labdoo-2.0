@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>305</value>
+<value>37</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>305</value>
+<value>37</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -29,7 +29,7 @@ At the moment executing a script the computer must be online (LAN or WiFi).
 
 <strong>There are scripts to install additional educational software andcontent. We strongly recommend to install these add-ons to offer children an optimal system:</strong>
 <ul>
-<li><a href="http://ftp.labdoo.org/download/images/installskripts/installscript-content.sh">installscript-content.sh</a> (<strong>recommended</strong>; Script will install educational content. offline wikis and manuals, usage of an external USB-disk or USB-stick >= 16 GB recommended)</li>
+<li><a href="http://ftp.labdoo.org/download/images/installskripts/installscript-content.sh">installscript-content.sh</a> (<strong>recommended</strong>; Script will install educational content. offline wikis and manuals, usage of an external USB-disk or USB-stick &gt;= 16 GB recommended)</li>
 <li><a href="http://ftp.labdoo.org/download/images/installskripts/installscript-software.sh">installscript-software.sh</a> (<strong>recommended</strong>; Script will install additional software, barrier free access for handicapped users, Tools, virus scanner and much more)</li>
 </ul>
 
@@ -49,7 +49,19 @@ At the moment executing a script the computer must be online (LAN or WiFi).
 <li><a href="http://ftp.labdoo.org/download/images/installskripts/delete-xowa-log-folder.txt">delete-xowa-log-folder.txt</a> (execute in a terminal, if you want to produce images for cloning by yourself and Xowa is part of the image)</li>
 </ul>
 
-<strong>Download of a script</strong> -> click one of the links above -> save as -> save to the desktop of a Labdoo laptop (home/labdoo/Desktop), alternatively copy and paste via a USB-disk/stick to the desktop of a Labdoo computer.
+Here the short version how to handle a script. For details refer to the following chapters:
+
+<strong>Download of a script</strong> -&gt; click one of the links above -&gt; save as -&gt; save to the desktop of a Labdoo laptop (home/labdoo/Desktop), alternatively copy and paste via a USB-disk/stick to the desktop of a Labdoo computer.
+
+<strong>Make a script executable:</strong> right mouse click on the script-icon on the desktop -&gt; Properties -&gt; Permissions -&gt; Execute -&gt; Only owner and group -&gt; confirm with OK. For details refer to the next chapter.
+
+<strong>Execute a script</strong> 
+Open a terminal (press CTL and Alt and T at the same time) -&gt;
+<code>cd Desktop</code> (Enter), moves to the folder Desktop
+<code>ls</code> (Enter), lists all files and folders in /Desktop.
+<code>sudo ./(name of the script)</code> (Enter) For example: <code>sudo ./installscript-content.sh</code>
+
+<strong>Tip Copy / Paste in a terminal:</strong> Enter <code>ls</code> (Enter) and you will get the contents of /Desktop, the executable scripts are in green -&gt; mark the wanted script -&gt; press Shift and CTL and C at the same time (copy) -&gt; later press Shift and CTL and V to paste.
 
 <a href="http://ftp.labdoo.org/download/Public/videos/scripts-english.webm">Online FTP server: How to use scripts / automatic installation of software or content etc.</a>
 <a href="file://localhost/home/labdoo/Public/videos/scripts-english.webm">Offline local: How to use scripts / automatic installation of software or content etc.</a>
@@ -63,15 +75,15 @@ At the moment executing a script the computer must be online (LAN or WiFi).
 </body>
 <bid>
 <type>book_array</type>
-<value>255</value>
+<value>35</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>972</value>
+<value>819</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>1022</value>
+<value>821</value>
 </mlid>
 <weight>
 <type>book_array</type>

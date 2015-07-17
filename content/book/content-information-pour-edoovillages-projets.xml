@@ -1,0 +1,59 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>16206</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Information pour Edoovillages (projets)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>French</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>33</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Labdoo.org utilise
+<ul>
+<li>logiciels éducatifs adaptés aux enfants pour tous les âges (préscolaire, primaire, secondaire 1 et 2)</li>
+<li>Extensions pour l'accès sans obstacle (par exemple pour les utilisateurs malvoyants)</li>
+<li>Offline Wikis, afin de lire les enfants, même sans accès en ligne et peut apprendre et</li>
+<li>ClamAV scanner de virus</li>
+<li>et beaucoup, beaucoup plus ...</li>
+</ul>
+
+La portée des services décrits dans ce wiki va bien au-delà de la simple installation du système d'exploitation Lubuntu. En installant les <a href="/content/cloning-mit-fertigen-labdoo-images">Labdoo Images préparés pour le clonage (pour Parted Magic / Clonezilla)</a> ou der  <a href="/content/installationsskripte-%C3%BCbersicht">les scripts d'installation</a> à l'augmentation significative des prestations pour enfants.
+
+Certaines parties de ce wikis sont basées, entre autres sur le texte et des graphiques à partir www.edubuntu.org et http://wiki.ubuntuusers.de/Edubuntu.
+
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>16206</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>0</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1030</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

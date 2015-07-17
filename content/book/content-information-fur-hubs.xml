@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>249</value>
+<value>143</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>249</value>
+<value>143</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -54,15 +54,15 @@ Noch eine Bitte: Alle Helfer sind ehrenamtlich engagiert. Wenn ihr mal kurzfrist
 </body>
 <bid>
 <type>book_array</type>
-<value>172</value>
+<value>32</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>892</value>
+<value>816</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>966</value>
+<value>927</value>
 </mlid>
 <weight>
 <type>book_array</type>

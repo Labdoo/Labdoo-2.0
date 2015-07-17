@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>241</value>
+<value>171</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,23 +17,23 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>241</value>
+<value>171</value>
 </field_reference_book>
 <body>
 <type>value</type>
 <value>Wenn der Rechner beim Hochfahren auf Terminalebene hängen bleibt und keine grafische Oberfläche startet:
 
-ein Terminal starten, wenn noch nicht auf Terminalebene -> STRG+ALT+T
+ein Terminal starten, wenn noch nicht auf Terminalebene -&gt; STRG+ALT+T
 <code>sudo apt-get purge nvidia-current</code> (Enter)
 <code>sudo apt-get install linux-headers-generic</code>  (Enter)
 Nun Rechner wieder neu starten.
 
-Ggf. über Systemeinstellung --> Treiber oder das Ubuntu-Software-Center den richtigen NVIDIA-Treiber laden.
+Ggf. über Systemeinstellung --&gt; Treiber oder das Ubuntu-Software-Center den richtigen NVIDIA-Treiber laden.
 NVIDIA Grafikkarten /-treiber aus Entwickler-PPA (Quelle) laden
 
-Es kann eine alternative Softwarequelle engebunden werden (bitte die Sicherheitsprobleme bei externen Quellen beachten). Bei sehr alten Laptops (vor ca. 2004)  macht es ggf. keinen Sinn, weil deren NVIDIA-Grafikkarten nicht mehr unterstützt werden. Hier kann es sinnvoll sein, das Labdoo Image für Ubuntu 1204 LTS zu verwenden.
+Es kann eine alternative Softwarequelle engebunden werden (bitte die Sicherheitsprobleme bei externen Quellen beachten). Bei sehr alten Laptops (vor ca. 2004)  macht es ggf. keinen Sinn, weil deren NVIDIA-Grafikkarten nicht mehr unterstützt werden. 
 
-Wenn auch wiederholtes Re-Booten, auch im abgesicherten Modus (recoversy mode) nichts gebracht hat bitte versuchen. Dies installiert 
+Wenn auch wiederholtes Re-Booten, auch im abgesicherten Modus (recovery mode) nichts gebracht hat, bitte versuchen:
 
 NVIDIA GeForce driver in Ubuntu aus der PPA-Quelle:
 STRG + ALT + F3 gleichzeitig drücken, dies schaltet auf die Terminalebene um.
@@ -57,15 +57,15 @@ Anmelden mit labdoo User und labdoo als Passwort,
 </body>
 <bid>
 <type>book_array</type>
-<value>171</value>
+<value>31</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>922</value>
+<value>856</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>958</value>
+<value>955</value>
 </mlid>
 <weight>
 <type>book_array</type>

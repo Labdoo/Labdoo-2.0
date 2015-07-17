@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>102</value>
+<value>120</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,11 +17,11 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>102</value>
+<value>120</value>
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Labdoo users who have the "superhub" role assigned are allowed to create new Labdoo hubs. (For information on what a hub is, please refer to the <a href="/content/hubs">Hubs Section</a> in the 'Values and Principles' wiki book.) The process of creating a new Labdoo hub is as follows:
+<value>Labdoo users who have the "superhub" role assigned are allowed to create new Labdoo hubs. (For information on what a hub is, please refer to the <a href="../content/hubs">Hubs Section</a> in the 'Values and Principles' wiki book.) The process of creating a new Labdoo hub is as follows:
 
 <ol>
 <li>
@@ -82,15 +82,15 @@ After the above steps, the new hub managers can start their hub activities as de
 </body>
 <bid>
 <type>book_array</type>
-<value>72</value>
+<value>39</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>831</value>
+<value>853</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>844</value>
+<value>904</value>
 </mlid>
 <weight>
 <type>book_array</type>

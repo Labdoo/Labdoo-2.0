@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>266</value>
+<value>195</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,12 +17,11 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>266</value>
+<value>195</value>
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Here is the link list of all Labdoo images for Cloning https://dev.labdoo.org/content/liste-der-images-cloning-ftp-server
-Click on the needed image or right mouse click -> safe as.
+<value>Here is the <a href="/content/link-list-images-cloning-ftp-server">link list of all Labdoo images for Cloning</a>.
 
 The image is packed / zipped (.tar.gz). You can unzip it using any operating system (Windows, Apple, Linux). 
 
@@ -37,7 +36,7 @@ MD5SUM for Windows: Unfortunately there is no internal Windows tool. You can dow
 MD5SUM for Lubuntu/Linux: Linux comes with a integrated MD5SUM tool. Open a terminal in the folder with the unzipped files and the MD5SUM file and execute
 <code>md5sum -c MD5SUM</code> (Enter)
 
-To learn more about MD5SUM --> http://en.wikipedia.org/wiki/MD5</value>
+To learn more about MD5SUM --&gt; http://en.wikipedia.org/wiki/MD5</value>
 </body>
 <body>
 <type>format</type>
@@ -45,15 +44,15 @@ To learn more about MD5SUM --> http://en.wikipedia.org/wiki/MD5</value>
 </body>
 <bid>
 <type>book_array</type>
-<value>255</value>
+<value>35</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>982</value>
+<value>978</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>983</value>
+<value>979</value>
 </mlid>
 <weight>
 <type>book_array</type>

@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>116</value>
+<value>184</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>116</value>
+<value>184</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -50,15 +50,15 @@ Labdoo Team | www.labdoo.org</value>
 </body>
 <bid>
 <type>book_array</type>
-<value>74</value>
+<value>41</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>852</value>
+<value>934</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>858</value>
+<value>968</value>
 </mlid>
 <weight>
 <type>book_array</type>

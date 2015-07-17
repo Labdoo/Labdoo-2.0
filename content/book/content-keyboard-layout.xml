@@ -1,11 +1,11 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>302</value>
+<value>149</value>
 </nid>
 <title>
 <type>node_title</type>
-<value>keyboard layout</value>
+<value>Keyboard layout</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>302</value>
+<value>149</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -26,7 +26,7 @@
 http://ascii-table.com/keyboards.php
 http://commons.wikimedia.org
 
-You can enclose a print-out of specific keyboard layouts, if needed.
+You can enclose a print-out of specific keyboard layouts, if needed. Here is a collection of frequently needed keyboard layouts http://ftp.labdoo.org/download/documents/material/keyboard%20layouts/
 
 <table border="1">
 <tr>
@@ -37,8 +37,9 @@ You can enclose a print-out of specific keyboard layouts, if needed.
 
 <tr>
 <td><strong>German</strong></td>
-<td>Bild &#8593; </td>
-<td>Bild &#8595; </td>
+<td>ESC</td>
+<td>Bild ↑ </td>
+<td>Bild ↓ </td>
 <td>Druck</td>
 <td>Ende</td>
 <td>Einfg</td>
@@ -46,15 +47,16 @@ You can enclose a print-out of specific keyboard layouts, if needed.
 <td>Pause</td>
 <td>Pos 1</td>
 <td>Strg</td>
-<td> &#8592; </td>
-<td> &#8593; </td>
-<td> 	&#8595; </td>
-<td> &#8617; </td>
+<td> ← </td>
+<td> ↑ </td>
+<td> 	↓ </td>
+<td> ↩ </td>
 
 </tr> 
 
 <tr>
 <td><strong>English</strong></td>
+<td>ESC</td>
 <td>page (up)</td>
 <td>page (down)</td>
 <td>print</td>
@@ -68,49 +70,50 @@ You can enclose a print-out of specific keyboard layouts, if needed.
 <td>Shift</td>
 <td>Caps</td>
 <td>Enter</td>
-<td>  </td>
 
 </tr> 
 
 <tr>
 <td><strong>French</strong></td>
-<td>  </td>
-<td>  </td>
-<td>  </td>
-<td>  </td>
-<td>  </td>
-<td>  </td>
-<td>  </td>
-<td>  </td>
-<td>  </td>
-<td>  </td>
-<td>  </td>
-<td>  </td>
-<td>  </td>
+<td>Échap</td>
+<td>&#8670;  </td>
+<td>&#8671;  </td>
+<td>ImpÉc</td>
+<td>Fin</td>
+<td>Inser</td>
+<td> Suppr</td>
+<td>Pause</td>
+<td>&#8598;</td>
+<td>CTRL</td>
+<td> ← Suppr arrière</td>
+<td>Maj</td>
+<td>Verr Maj</td>
+<td>↩ Entrée</td>
 
 </tr> 
 
 <tr>
 <td><strong>Spanish</strong></td>
-<td>  </td>
-<td>  </td>
-<td>  </td>
-<td>  </td>
-<td>  </td>
-<td>  </td>
-<td>  </td>
-<td>  </td>
-<td>  </td>
-<td>  </td>
-<td>  </td>
-<td>  </td>
-<td>  </td>
+<td>ESC</td>
+<td>Re Pág</td>
+<td>Av Pág</td>
+<td>Impr</td>
+<td>Fin</td>
+<td>Insert</td>
+<td>Supr</td>
+<td>Pausa</td>
+<td>Inicio</td>
+<td>Ctrl</td>
+<td>Retroceso</td>
+<td>Mayús</td>
+<td>Bloq Mayús</td>
+<td>Entrar</td>
 
 </tr> 
 
 </table>
 
-<br />
+<br/>
 </value>
 </body>
 <body>
@@ -119,15 +122,15 @@ You can enclose a print-out of specific keyboard layouts, if needed.
 </body>
 <bid>
 <type>book_array</type>
-<value>270</value>
+<value>142</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>987</value>
+<value>926</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>1019</value>
+<value>933</value>
 </mlid>
 <weight>
 <type>book_array</type>
