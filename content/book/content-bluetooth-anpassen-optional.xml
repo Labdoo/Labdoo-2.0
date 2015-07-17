@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>244</value>
+<value>114</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>244</value>
+<value>114</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -32,15 +32,15 @@ xxxx ist dabei die jeweilige Laptopnummer.</value>
 </body>
 <bid>
 <type>book_array</type>
-<value>171</value>
+<value>31</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>922</value>
+<value>856</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>961</value>
+<value>898</value>
 </mlid>
 <weight>
 <type>book_array</type>

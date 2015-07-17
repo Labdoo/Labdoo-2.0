@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>224</value>
+<value>104</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>224</value>
+<value>104</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -25,7 +25,7 @@
 
 Daher vorher mit einer dieser iso-CDs, alle geringe Anforderungen an die Hardware stellen, die Daten löschen
 <ul>
-<li><a href="https://dev.labdoo.org/content/parted-magic-clonezilla">Parted Magic - CD</a> </li>
+<li><a href="/content/parted-magic-clonezilla">Parted Magic - CD</a> </li>
 <li>Knoppix-CD (http://www.knoppix.org/) oder</li>
 <li>eine Rescue CD (http://ubuntu-rescue-remix.org/)</li>
 </ul>
@@ -49,15 +49,15 @@ Alternativ kann man auch bei der Alternate CD den <strong>shred</strong>-Befehl 
 </body>
 <bid>
 <type>book_array</type>
-<value>171</value>
+<value>31</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>922</value>
+<value>856</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>941</value>
+<value>888</value>
 </mlid>
 <weight>
 <type>book_array</type>

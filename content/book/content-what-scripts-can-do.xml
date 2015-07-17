@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>307</value>
+<value>88</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>307</value>
+<value>88</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -43,7 +43,7 @@
 <li>install Xowa offline wiki Tool to enable access to 800+ offline wikis</li>
 <li>license-free educational content (OER)</li>
 <li>wikidoo - english offline wiki following UK-Curriculum</li>
-<li>english eBooks (eBooks in other languages can be found on the FTP server or the external USB-disk/stick --> /Public/eBooks and can be copied from here)</li>
+<li>english eBooks (eBooks in other languages can be found on the FTP server or the external USB-disk/stick --&gt; /Public/eBooks and can be copied from here)</li>
 <li>multimedia language course English</li>
 </ul>
 </value>
@@ -54,15 +54,15 @@
 </body>
 <bid>
 <type>book_array</type>
-<value>255</value>
+<value>35</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>1023</value>
+<value>834</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>1024</value>
+<value>872</value>
 </mlid>
 <weight>
 <type>book_array</type>

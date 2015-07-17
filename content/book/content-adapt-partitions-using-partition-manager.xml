@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>269</value>
+<value>207</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>269</value>
+<value>207</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -43,15 +43,15 @@ Continue to "steps to follow after installation (Adaption to edoovillage and cou
 </body>
 <bid>
 <type>book_array</type>
-<value>255</value>
+<value>35</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>985</value>
+<value>990</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>986</value>
+<value>991</value>
 </mlid>
 <weight>
 <type>book_array</type>

@@ -1,0 +1,50 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>16468</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Softwareentwicklung / Entwicklerteam</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>67</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Labdoo wird überwiegend in PHP und JavaScript-Code implementiert. Der Quellcode ist lizenzfrei und steht offen unter der GPLv3-Lizenz. Das heißt, die Sourcen können frei herunterladen, geändert und weiterentwickelt werden. So können auch Programmierer zum Labdoo-Projekt beitragen und es weiterentwickeln. Der Code steht als ein Git Repository zur Verfügung: https://github.com/Labdoo/Labdoo-2.0.
+
+Die aktuelle Version der Labdoo-Plattform basiert auf Drupal, einem freien und Open-Source Content-Management-Framework unter der GNU General Public License. Die wichtigsten Komponenten sind mit separate Module konzipiert. Dies hilft, das Projekt modular, gut pflegbar zu halten und die Verwaltung, Pflege und gemeinsame Entwicklung der Plattform einfach zu halten..
+
+Der Labdoo-Quellcode wird von Entwicklern ehrenamtlich in ihrer Freizeit entwickelt. Wenn Du dem Labdoo Software-Entwickler-Team beitreten möchtest, schicke eine E-Mail an development@labdoo.org. Neue Entwickler sind im Team herzlich willkommen.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>16468</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>0</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1046</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

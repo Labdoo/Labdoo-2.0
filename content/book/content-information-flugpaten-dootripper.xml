@@ -1,0 +1,94 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>29</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Information Flugpaten ("Dootripper")</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>29</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Liebe Flugpatin, lieber Flugpate,
+
+<a href="http://www.iata.org/whatwedo/cargo/dgr/Documents/LithiumBattery_PassengerFlyer.jpg"><img src="/sites/default/files/content/wiki-de/iata_lithiumbattery_passengerflyer.jpg" align="right" width="600"/></a> 
+
+vielen Dank für die Hilfe beim Transport eines oder mehrerer Laptops zum Zielort, zum „Edoovillage“. So heissen im Hilfsprojekt Labdoo.org die Schul- und Jugendprojekte. Alle Projekte stehen online auf http://www.labdoo.org/de/call-for-laptops.
+
+Die Daten unserer Laptops stehen auch online: Im Feld Labdoo ID die Nummer des Laptops eingeben oder im Browser eingeben: http://www.labdoo.org/de/laptop/00000xxxx (xxxx = Nr. Laptop)
+
+Im FAQ-Forum https://www.labdoo.org/de/content/faq-forum sind viele Fragen beantwortet, z.B. <a href="/de/content/faq-forum#FAQ14">zum Zoll und IATA (Transport der Laptops im Flugzeug)</a>.
+
+<strong>Für die Fluggesellschaft ist die Höhe der Watt-Stunden (Wh) der Batterie entscheidend. Fast alle Laptopakkus haben unter 100 Wh und können ohne Einschränkung im Koffer oder im Handgepäck transportiert werden. Eine Genehmigung der Fluglinie ist nicht erforderlich.</strong>
+
+Wenn mehrere Personen reisen und eine größere Anzahl Laptops dabei transportiert wird, sollten die Laptops auf mehrere Koffer verteilt werden. Zum einen reduziert dies das Verlustrisiko, falls mal ein Koffer verloren geht. Und beim Zoll ist die Diskussion so einfacher und Zollgebühren könen so ggf. vermieden werden. Bei ein oder zwei Laptops pro Person sagt der Zoll i.d.R. nichts.
+
+Bei größeren Mengen bitte im Vorfeld der Reise bei der Fluggesellschaft nach Sondertarifen für Spenden fragen. Oft bieten Reiseunternehmen deutlich günstigere Tarife für den Transport von (IT-)Spenden an. Und bei Problemen am Zoll einfach nach einem Hammer fragen und zur Not die Laptops zerschlagen, Nachschub kommt bestimmt - dies war zum Glück noch nie nötig...
+
+Es wäre schön, wenn wir aus der Schule Fotos oder Videos der Laptops bekommen, vom Umland, der Stadt, der Schule, von den Kindern. Bitte maile uns diese Fotos und gib uns kurz Bescheid, wenn der/die Laptop(s) vor Ort im Einsatz ist/sind. Wir „verbuchen“ dies und der Spender bekommt eine Mail, dass sein gespendeter Laptop angekommen ist.
+
+<strong>Wenn eine größere Zahl von 5 oder mehr IT-Spenden abgerufen wird, sagen Sie ca. 2 Monate vor Abreise Bescheid. Bei kleineren Mengen brauchen wir i.d.R. ca. 3 Wochen Vorlauf. Wir sind alle ehrenamtlich tägig, sind beruflich oder privat unterwegs, haben auch nicht immer Zeit, daher - je früher, je besser und bitte ggf. die Zeit für den Postweg einkalkulieren.</strong>
+
+Noch einige technische Hinweise:
+Für die Anwender vor Ort liegt ein<a href="/de/content/wie-starte-ich-den-computer">„how to start“ Dokument bei</a>. I.d.R. sind auf den Laptops mehrere Sprachen und Tastaturen vorinstalliert. Wie man zwischen den jeweiligen Sprachen und Tastaturen umschaltet ist im „how-to-start“ Dokument beschrieben. I.d.R. ist eine deutsche Tastatur voreingestellt. Bei der Firma www.tastaturaufkleber.eu können ggf. Tastaturaufklebern bestellt werden.
+
+Ein "How to start"-Dokument ist hier in verschiedenen Sprachen online gestellt:
+<ul>
+<li>Englisch: https://www.labdoo.org/de/content/start-laptop-request</li>
+<li>Deutsch: https://www.labdoo.org/content/wie-starte-ich-den-computer</li>
+<li>Französisch: http://ftp.labdoo.org/download/documents/french/labdoo-letter-recipient-quick-guide-french.pdf</li>
+<li>Spanisch: http://ftp.labdoo.org/download/documents/spanish/labdoo-letter-recipient-quick-guide-espanol.pdf</li>
+<li>Russisch: http://ftp.labdoo.org/download/documents/russian/labdoo-letter-recipient-quick-guide-russian.pdf</li>
+</ul>
+
+Die Netzstecker sind i.d.R. für deutsche Steckdosen (Schuko- / Euro-Stecker). Daher könnt ihr vorab die Schulen bitten, Ersatzstecker für die jeweiligen Steckdosen zu besorgen und dann zu montieren, wenn die Laptops in der Schule ankommen (wenn deutsche Stecker nicht passen). Oder ihr nehmt deutsche Mehrfachsteckerleisten mit?
+
+Wir haben frei verfügbare Handbücher in möglichst vielen Sprachen auf jedem Laptop installiert, zu finden im Ordner Home/Public/... (beim User Labdoo, für den User Student gibt es einen Link „manuals“ im Datei- Explorer zu diesen Dateien). Die Unterlagen liegen als pdf, HTML (index-Date anklicken) oder Wiki bei, <a href="/de/content/information-f%C3%BCr-edoovillages-projekte">mehr hier</a>.
+
+Firefox zeigt ein englisches Offline-Wikipedia für Kinder und einen Englischkurs. Mit XOWA ist ein Offline-Wikitool auf dem Desktop, in dem ggf. in regionalen Sprachen Wikis genutzt werden können.
+
+Im Ordner <strong>videos</strong> auf dem Desktop liegen Video-Tutorials für Anwender und technische Helfer.
+
+Dann gibt es 3 Benutzerkonten (labdoo, student und guest/Gast). Die Details sind auch im how-to-start erklärt. Labdoo ist Super-User / Administrator (nützlich, aber gefährlich, weil er das System verstellen kann). Student ist der normale Benutzer für die Kinder, ohne Admin-Rechte. Guest hat den Vorteil, dass nichts verstellt werden kann und auch nichts gespeichert bleibt, wenn dieser sich wieder abmeldet.
+
+Oft gibt es im jeweiligen Land auch eine Ubuntu oder Linux User Group, mit der man Kontakt aufnehmen kann. Diese helfen vor Ort gerne weiter und vermitteln Know-How.
+
+Auf einigen leistungsfähigeren Laptops haben wir ggf. auch Windows in einer Virtualbox installieren. Damit läuft Windows in einem Fenster als Gastbetriebssystem innerhalb des Linux-Host.
+
+Wir haben uns große Mühe gegeben, alles richtig und vollständig zu machen. Aber wenn uns ein Fehler unterlaufen ist oder etwas euch vor Ort vor Probleme stellt sagt es uns bitte. Dann können wir daran arbeiten und es beim nächsten Mal besser machen.
+
+Wenn es Fragen gibt oder du aufgrund deines Besuchs vor Ort Anregungen und Verbesserungsvorschläge hast, wende dich gerne an Labdoo-DACH@Labdoo.org.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>29</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>0</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>813</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

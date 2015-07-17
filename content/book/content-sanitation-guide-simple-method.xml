@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>84</value>
+<value>62</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,35 +17,21 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>84</value>
+<value>62</value>
 </field_reference_book>
 <body>
 <type>value</type>
 <value><strong>About this document</strong>
 
-This brief document describes the process of (1) collecting unused laptops from your local community, (2) sanitizing and (3) packaging them to make them ready for traveling to a needy school. This document can be used by Labdooers working as individuals (from home, from work, from your local organizations), or groups of Labdooers working as part of a Labdoo hub.
+This brief document describes the process of sanitizing a laptop. This document can be used by Labdooers working as individuals (from home, from work, from your local organizations), or groups of Labdooers working as part of a Labdoo hub. 
 
-If in any of these steps you get stuck, you can post your questions in the wall of the <a href="../content/quality-assurance-qa">Labdoo QA Team</a> so that others can help you.
+If you'd like to get tips on how to collect unused laptops from your local community, please click <a href="../../content/collecting-laptops-your-local-community">HERE</a>. After the laptop get sanitized, you can click<a href="../../content/packaging-laptops-ready-traveling"> HERE</a> to learn different ways to package the laptops to make them ready for traveling to a needy school. 
+
+If in any of these steps you get stuck during the sanitizing process, you can post your questions in the wall of the <a href="../content/quality-assurance-qa">Labdoo QA Team</a> so that others can help you.
 
 <a href="http://ftp.labdoo.org/download/Public/videos/install-lubuntu-english.webm">Online FTP server: Installing Lubuntu operating system</a>
 <a href="file://localhost/home/labdoo/Public/videos/install-lubuntu-english.webm">Offline local: Installing Lubuntu operating system</a>
 [video:https://youtu.be/nBUgaaHW058]
-
-<strong>Collecting laptops from your local community</strong>
-
-There exist several strategies to collect unused laptops from your local community, but in all of them, the main idea is to outreach to your network of friends, relatives, coworkers, classmates, etc. to help bring awareness about your laptop drive activities. Many of the people you know have unused laptops sitting idle and the objective is to give them an option to repurpose their unused laptops for a humanitarian/education cause. Some ideas to help you collect laptops are:
-
-<ul>
-<li>
-If you are a student or a teacher in a school, you can write a letter to the parents of the students asking for unused laptops. Many parents work for companies who have unused laptops.
-</li>
-<li>
-Use your social network skills and tools to bring awareness. Write a post on your favorite social networks (Facebook, Twitter, Google Plus, etc.) letting people know about your laptop collection activities.
-</li>
-<li>
-You can also be creative and come up with your laptop collection strategy. You will find tools to help organize your local campaigns inside the <a href="/sites/default/files/content/labdoo-tolkit/packaging.png">Labdoo Toolkit</a>.
-</li>
-</ul>
 
 <strong>Sanitizing the laptops</strong>
 
@@ -140,21 +126,9 @@ The last two commands could take from a few minutes up to an hour or so to compl
 </li>
 </ol>
 
-<strong>Packaging the laptops ready for traveling</strong>
-
-Once a laptop has been sanitized following the steps in Section II, we need to package it so it can travel to a destination school. The main goals of the packaging are two-fold: (1) the packaging should protect the laptop from any possible rough traveling conditions; (2) the packaging should make visible the Labdoo identifier of the laptop, for both its AC adapter and the laptop itself. A recommended approach is to use transparent, bubble plastic wrap and to tape the Labdoo identifier in big letters outside, for both the laptop and its AC adapter, as shown in the following pictures:
-
-<hr/>
-<em> Figure. A good way to pack your doojects: use a wrapping material to properly protect them and write the Labdoo IDs clearly outside both the devices and the AC adapters.</em>
-<img src="/sites/default/files/content/labdoo-toolkit/packaging.png"/>
-<hr/>
-
-You are welcome to use other packaging approaches based on what's available to you, as long as the laptop is well protected and its Labdoo identifier is made visible externally.
-
 <strong>What to expect next</strong>
 
-Congratulations! You have now successfully completed your laptop drive campaign and sanitized/packaged your laptops, so they are now ready to travel. At this point, the recommended next steps are as follows:
-
+Congratulations! You have now successfully completed your laptop drive campaign and sanitizedyour laptops, so they are now ready to be packed and travel.  Please go to the <a href="../../content/packaging-laptops-ready-traveling">Packaging the laptop for travelling </a> section to learn how to get the laptops ready for dootrips.
 <ul>
 <li>
 If you are traveling yourself to a school project, you can bring the laptops in your luggage. Try to distribute as many laptops to as many people traveling with you as possible because some countries have a limit on the amount of laptops that can be carried per person.
@@ -170,15 +144,15 @@ If you are not traveling, then get in touch with one of the Labdoo hubs (for ins
 </body>
 <bid>
 <type>book_array</type>
-<value>255</value>
+<value>35</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>972</value>
+<value>819</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>826</value>
+<value>846</value>
 </mlid>
 <weight>
 <type>book_array</type>

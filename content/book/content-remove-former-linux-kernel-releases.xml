@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>258</value>
+<value>183</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>258</value>
+<value>183</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -44,15 +44,15 @@ In this example you might delete the kernels 3.2.0-31 and 3.2.0-32 (the numbers 
 </body>
 <bid>
 <type>book_array</type>
-<value>255</value>
+<value>35</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>973</value>
+<value>857</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>975</value>
+<value>967</value>
 </mlid>
 <weight>
 <type>book_array</type>

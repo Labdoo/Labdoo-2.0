@@ -1,0 +1,123 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>16219</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Offline wikis et ressources éducatives libres</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>French</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>16219</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><ol>
+
+<li><strong>Offline wikis et ressources éducatives libres</strong></li>
+
+Tous les documents ci-dessous sont http://ftp.labdoo.org/download/Public/ et peuvent être téléchargés depuis. Si les ordinateurs portables Labdoo installés avec les Images Labdoo pour le clonage de ces sujets ont déjà été installés.
+
+Pour la facilité de téléchargement de contenus d'apprentissage plus loin, nous vous recommandons rsync http://doc.ubuntu-fr.org/rsync. Rsync est disponible pour les systèmes d'exploitation comme Windows, Apple ou Ubuntu: http://fr.wikipedia.org/wiki/Rsync.
+
+Ou encore plus facile, notre script d'installation pour le contenu http://ftp.labdoo.org/download/images/installskripts/installscript-content.sh.
+
+Si vous voulez régler uniquement les autorisations de dossiers dans le dossier /home/labdoo/Public afin que tous les utilisateurs du groupe peuvent accéder labdoo (y compris l'utilisateur étudiant) sur la prise du script http://ftp.labdoo.org/download/images/installskripts/set-rights-folder-files-Public-correct.sh.
+
+<li><strong>Wikipedia pour les écoles (wikidoo)</strong></li>
+
+<table> 
+<tr>
+<td>Pour les écoles de langue anglaise Labdoo.org "Wikipedia pour les écoles" ensembles de SOS Children UK un: http://www.sos-schools.org/wikipedia-for-schools. Es folgt dem Curriculum in UK. Cette sélection de thème aux enfants appelle Labdoo "wikidoo".</td>
+
+<td><img src="/sites/default/files/content/wiki-de/edoovillages/wikidoo01.png" width="300"/>  </td>
+</tr>
+
+<tr>
+<td>Sur chaque ordinateur Labdoo - si la taille du disque dur le permet – la sélection Wikipedia 2013 pour les écoles (voir l'explication ci-dessous) a été appelée "wikidoo" . Wikidoo peut être utilisée lorsque les écoles n'ont pas de connexion internet ou seulement une très lente. SOS Children UK a en 2013 fait l'effort de fournir pour les enfants des articles intéressants sur une collection hors ligne.
+
+Cette sélection Wikipedia 2013 est un logiciel gratuit sur DVD, elle est vérifiée à la main,  non-commerciale, ciblée autour du programme national du Royaume-Uni et utile pour beaucoup de monde anglophone. La 4e édition de cette sélection tient 5,9 Go d'informations précieuses pour les enfants.
+
+Wikipedia est une encyclopédie libre que l'on peut modifier et développer avec un contenu précis, mais souffre quelquefois d' actes de vandalisme. Wikipedia n'a pas nécessairement un environnement sûr pour l' enfant. La sélection des articles a été faite avec soin. Ils sont classés, pertinents, vérifiés contre le  vandalisme et réalisés par des bénévoles de SOS Enfants, que nous reconnaissons avec gratitude. </td>
+
+<td><img src="/sites/default/files/content/wiki-de/edoovillages/wikidoo02.png" width="300"/>  </td>
+</tr> 
+
+</table>
+
+<li><strong>Xowa – Wikis</strong></li>
+
+<table> <tr><th> </th></tr>
+
+<tr>
+<td>Pour les wikis (encyclopédies) dans des langues autres que l'anglais Labdoo.org Xowa utilise un outil que vous pouvez utiliser n'importe quel texte et wikis déconnecté: http://xowa.sourceforge.net/download.html. Il ya plus de 800 wikis Xowa, avec des contenus différents et langues http://xowa.sourceforge.net/image_dbs.html</td>
+
+<td><img src="/sites/default/files/content/wiki-de/edoovillages/xowa.png" width="100"/>  </td>
+</tr>
+
+</table>
+
+<li><strong>Cours multimédia Anglais http://www.englishbanana.com/</strong></li>
+
+<table> <tr><th> </th></tr>
+
+<tr>
+<td>Pour cette Labdoo utilise le cours multimédia de EnglishBanana.com. Le matériel pédagogique est en http://ftp.labdoo.org/download/Public/eBooks/English%20Language%20Training%20Version%203.0/</td>
+
+<td><img src="/sites/default/files/content/wiki-de/edoovillages/english01.png" width="300"/>  </td>
+</tr>
+
+</table>
+
+<li><strong>OER - Ressources éducatives libres</strong></li>
+
+Labdoo helper recueillir OER - Open Educational Resources, le contenu d'apprentissage libre de droits dans différentes langues. Si vous voulez nous aider pouvons être heureux plus OER envoi ou à la recherche pour les locuteurs natifs que "son" contenu de l'apprentissage des langues. La collection OER est sur http://ftp.labdoo.org/download/Public/eBooks/eBooks%20Collection/ (le contenu du dossier / anglais est scripté ou d'une image pré-installés).
+
+<li><strong>Lubuntu / LXDE Manuels, Labdoo Wikis</strong></li>
+
+Dans le dossier /home/labdoo/Public/wikis ces wikis, qui sont actualisés chaque trimestre début sont:
+
+- help.ubuntu.com
+- wiki.lxde.org
+- wiki.labdoo.org
+
+Peut-être que vous lisez ceci déconnecté de wiki sur un ordinateur portable Labdoo? ;)
+
+<li><strong>Accès VIP gratuit http://www.Free-eBooks.net</strong></li>
+
+Labdoo Edoovillages recevoir un accès VIP gratuit au site http://www.Free-eBooks.net. Ce portail est l'un des plus importants fournisseurs d'anglais gratuits, des e-livres espagnols et portugais.
+
+Pour cette première un utilisateur libre (login) sur le dessus Créer accueil. Mais ce compte n'a droit qu'à quelques livres par semaine jusqu'à laden.Daher gratuitement s'il vous plaît envoyer un e-mail en anglais à Nic nic@free-ebooks.net, lui dit avec votre login et le supplie pour déverrouiller votre compte comme un VIP-accès , Vous renvoie l'attention sur l'accord avec Labdoo.org. Avec VIP, vous pouvez accéder à un nombre illimité de e_books frais. Merci à Free-eBooks.net pour la grande offre.
+
+</ol></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>16206</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1030</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1034</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

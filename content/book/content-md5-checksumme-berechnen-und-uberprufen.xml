@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>242</value>
+<value>162</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>242</value>
+<value>162</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -25,7 +25,7 @@
 
 <strong>Erzeugen der MD5SUM Checksumme</strong>
 Terminal im Ordner mit den Dateien öffnen und ausführen
-<code>md5sum * > MD5SUM</code> (Enter)
+<code>md5sum * &gt; MD5SUM</code> (Enter)
 
 <strong>Prüfen der MD5SUM Checksumme</strong>
 Ubuntu/Linux: Terminal im Ordner mit den Dateien und der MD5SUM Datei öffnen und ausführen
@@ -39,15 +39,15 @@ Windows: Leider gibt es keine Windows-interne Lösung. Es wird empfohlen kostenl
 </body>
 <bid>
 <type>book_array</type>
-<value>171</value>
+<value>31</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>922</value>
+<value>856</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>959</value>
+<value>946</value>
 </mlid>
 <weight>
 <type>book_array</type>

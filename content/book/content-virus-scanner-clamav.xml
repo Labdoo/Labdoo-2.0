@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>296</value>
+<value>81</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>296</value>
+<value>81</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -39,15 +39,15 @@ And you should install the <strong>Firefox Plugin Fireclam</strong>, so download
 </body>
 <bid>
 <type>book_array</type>
-<value>255</value>
+<value>35</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>973</value>
+<value>857</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>1013</value>
+<value>865</value>
 </mlid>
 <weight>
 <type>book_array</type>

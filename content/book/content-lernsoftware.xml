@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>190</value>
+<value>45</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>190</value>
+<value>45</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -39,7 +39,7 @@ Weitere Spiel- und Lernprogramme können online über das lubuntu Software Cente
 
 <li><strong>Gcompris Spielesammlung</strong></li>
 
-<table> <tr><th></th></tr>
+<table> <tr><th/></tr>
  <tr>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris01.png" width="130"/> </td>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris02.png" width="130"/> </td>
@@ -49,13 +49,12 @@ Weitere Spiel- und Lernprogramme können online über das lubuntu Software Cente
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris06.png" width="140"/> </td>
 </tr> 
 </table>
-<br />
+<br/>
 Hinter den u.a. Menüpunkte verbergen sich über 100 Spiel- und Lernprogramme, die die Kinder entdecken können:
-Menüpunkt 
 
 <table>
  <tr>
-<th></th>
+<th/>
 <th><strong>Menü</strong></th>
 <th><strong>Beschreibung</strong></th>
 </tr>
@@ -101,16 +100,16 @@ Menüpunkt
 </tr>
 </table>
 
-<br />
+<br/>
 <li><strong>Childsplay Spielesammlung</strong></li>
 
-<table> <tr><th></th></tr>
+<table> <tr><th/></tr>
  <tr>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay01.png" width="130"/> </td>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay02.png" width="130"/> </td>
 </tr> 
 </table>
-<br />
+<br/>
 
 
 <table>
@@ -197,13 +196,13 @@ Menüpunkt
 
 <strong>pySioGame</strong> ist eine Sammlung von Lernspielen  für Kinder im Alter von 3 bis 10 Jahren. PySioGame beinhaltet Spiele zu den Bereichen Mathematik, Lesen, Schreiben Malen und Gedächtnistraining. 
 
-<table> <tr><th></th></tr>
+<table> <tr><th/></tr>
  <tr>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/pysiogame01.png" width="130"/> </td>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/pysiogame02.png" width="150"/> </td>
 </tr> 
 </table>
-<br />
+<br/>
 
 <li><strong>Astronomie + Geographie</strong></li>
 
@@ -664,15 +663,15 @@ Es müssen zusätzlich weitere Module und Virensignaturen installiert sein, dahe
 </body>
 <bid>
 <type>book_array</type>
-<value>170</value>
+<value>33</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>890</value>
+<value>817</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>903</value>
+<value>829</value>
 </mlid>
 <weight>
 <type>book_array</type>

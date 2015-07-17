@@ -1,11 +1,11 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>300</value>
+<value>199</value>
 </nid>
 <title>
 <type>node_title</type>
-<value>how to start a laptop?</value>
+<value>How to start a laptop?</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -17,19 +17,47 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>300</value>
+<value>199</value>
 </field_reference_book>
 <body>
 <type>value</type>
-<value><strong> User</strong>
+<value><img src="/sites/default/files/content/wiki-de/edoovillages/login1.png" align="right" width="200" alt="Login Screen" />
 
-Each laptop (cloned or installed using install-scripts) comes with 3 users:
+<strong> User</strong>
+
+Each laptop (cloned or installed using install-scripts) comes with 3 users. When logging in click on the small triangle right from labdoo --> this will show you a list of the available users:
+
 <ul>
 <li><strong>labdoo</strong>: has super user rights / is administrator! The log-in password is <strong>labdoo</strong> (Please change this password when logging in the first time, as the user <strong>labdoo</strong> is administrator and may destroy the system! So only teacher should know the password of the user labdoo)</li>
 
 <li><strong>student</strong>: is the standard user for the students. His password is also <strong>labdoo</strong> (it's up to you, if you change the password for student)</li>
 
+<img src="/sites/default/files/content/wiki-de/edoovillages/login2.png" align="right" width="200" alt="Select user" />
+
 <li><strong>guest</strong>: needs no password, but all his entries will be aber es werden alle seine Eingaben und Änderungen nach der Abmeldung gelöscht</li>
+</ul>
+
+<ul>
+<br></br>
+<table> 
+
+<strong><caption>More options when logging in</caption></strong>
+
+<tr>
+<th><img src="/sites/default/files/content/wiki-de/edoovillages/login3.png" width="150" alt=" " /></th>
+<th><img src="/sites/default/files/content/wiki-de/edoovillages/login4.png" width="150" alt=" " /></th>
+<th><img src="/sites/default/files/content/wiki-de/edoovillages/login5.png" width="150" alt=" " /></th>
+</tr> 
+
+<tr>
+<td>Optional: select one of the pre-instaled desktops (user interface)</td>
+<td><strong>Important! When typing the password make sure that the keyboard layout matches with your keyboard!</strong></td>
+<td>Optional: Enlarge font size or improve contrast, if user is visually impaired</td>
+</tr> 
+
+</table>
+
+<br></br>
 </ul>
 
 <strong>To change the password</strong> → System Tools → users and groups → +Add (to add a new user) or change → password „labdoo“ → change it → ok 
@@ -50,7 +78,7 @@ On the desktop you will a video tutorial and the Offline wiki tool Xowa.
 
 A Labdoo laptop comes with Lubuntu (Linux operating system based on Ubuntu and the LXDE desktop). LXDE is an easy to learn user interface, lean, fastl. LXDE / Lubuntu can be installed on older laptops, from 256 / 512 MB RAM.
 
-<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/language_support.png" width="225" align="right" />
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/language_support.png" width="225" align="right"/>
 
 Optional you are able to install other desktops, but they ask for more hardware resources -
 
@@ -69,7 +97,7 @@ In the next window click → Install/Remove languages → select the language(s)
 
 The new languages will show up in the language list above: Lubuntu first tries to find a word in this table in language no. 1, next in language no. 2 and so on, and will stop using English.
 
-<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/regional_formats.png" width="225" align="right" />
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/regional_formats.png" width="225" align="right"/>
 
 To change priority of the languages → mark the new language → right mouse click on new language, keep on pressing right mouse button → move the language to its position, drop it → click  Apply System-wide. The new language will be used after logout and login or reboot of the computer.
 
@@ -81,7 +109,7 @@ You can also adjust the local currency, notation of numbers, date and time (if a
 
 If the laptop was cloned using images you can go ahead. Otherwise you have to add a panel item to the task bar → right mouse click on the task bar → Add / Remove Panel Items → +Add → select "Keyboard Layout Handler" → +Add → optional: move the item position within the task bar by Up or Down.
 
-<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/keyboard_layout_handler.png" width="225" align="right" />
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/keyboard_layout_handler.png" width="225" align="right"/>
 
 Right mouse click on the symbol "de" (keyboard layout handler) in the task bar (or another country abreviation shown) → Keyboard Layout handler Settings → Remove the hook "Keep system layout", if activated (otherwise you are not able to add new layouts) → 
 
@@ -94,9 +122,9 @@ The number of keyboard layout entries is limited to 4 (four).
 
 <strong>Manuals, video tutorials and more</strong>
 
-<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/link-folder-videos.png" align="right" width="50" />
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/link-folder-videos.png" align="right" width="50"/>
 
-For manuals, video tutorials, offline wikis etc. open the folder <a href="file://localhost/home/labdoo/Public/">/home/labdoo/Public/</a>. Or click on the icon "videos" on the desktop to open the video tutorials folder. A video can be watched using Firefox or a player (view -> 1/2 size, zoom +/-).
+For manuals, video tutorials, offline wikis etc. open the folder <a href="file://localhost/home/labdoo/Public/">/home/labdoo/Public/</a>. Or click on the icon "videos" on the desktop to open the video tutorials folder. A video can be watched using Firefox or a player (view -&gt; 1/2 size, zoom +/-).
 
 Have fun learning and playing with your Labdoo laptop! The Labdoo team</value>
 </body>
@@ -106,15 +134,15 @@ Have fun learning and playing with your Labdoo laptop! The Labdoo team</value>
 </body>
 <bid>
 <type>book_array</type>
-<value>270</value>
+<value>142</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>987</value>
+<value>926</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>1017</value>
+<value>983</value>
 </mlid>
 <weight>
 <type>book_array</type>

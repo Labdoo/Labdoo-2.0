@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>238</value>
+<value>168</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>238</value>
+<value>168</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -28,7 +28,7 @@ Lubuntu / LXDE hat standardmäßig KEIN Tool installiert, mit dem das Tastaturla
 Im Terminal:
 <code>sudo apt-get install lxkeymap</code>  (Enter)
 
-Im Menü ist es unter "Einstellungen -> Lxkeymap" zu finden.
+Im Menü ist es unter "Einstellungen -&gt; Lxkeymap" zu finden.
 
 Leider verhindert z.Zt. ein Bug die korrekte Verarbeitung mehrerer Tastaturlayouts parallel :( Also einfach Lxkeymap aufrufen, Tastatur umstellen, später wieder Lxkeymap aufrufen usw.</value>
 </body>
@@ -38,15 +38,15 @@ Leider verhindert z.Zt. ein Bug die korrekte Verarbeitung mehrerer Tastaturlayou
 </body>
 <bid>
 <type>book_array</type>
-<value>171</value>
+<value>31</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>922</value>
+<value>856</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>955</value>
+<value>952</value>
 </mlid>
 <weight>
 <type>book_array</type>

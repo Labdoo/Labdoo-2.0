@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>295</value>
+<value>175</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>295</value>
+<value>175</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -44,15 +44,15 @@ During the installation process of Lubuntu or during the boot process you are ab
 </body>
 <bid>
 <type>book_array</type>
-<value>255</value>
+<value>35</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>973</value>
+<value>857</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>1012</value>
+<value>959</value>
 </mlid>
 <weight>
 <type>book_array</type>

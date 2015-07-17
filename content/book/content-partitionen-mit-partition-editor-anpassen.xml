@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>211</value>
+<value>205</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>211</value>
+<value>205</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -43,15 +43,15 @@ Weiter zu Schritte nach der Installation (Anpassen an die Anforderungen im Ziell
 </body>
 <bid>
 <type>book_array</type>
-<value>171</value>
+<value>31</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>927</value>
+<value>988</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>928</value>
+<value>989</value>
 </mlid>
 <weight>
 <type>book_array</type>

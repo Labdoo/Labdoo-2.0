@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>214</value>
+<value>78</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>214</value>
+<value>78</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -34,16 +34,14 @@ Dabei sollte die Labdoo-ID und ggf. auch die Batteriedaten (Wh) aussen auf die V
 
 Natürlich kann auch anderes Verpackungsmaterial verwendet werden, solange die IT-Spenden gut geschützt sind und die Labdoo-ID von aussen erkennbar ist.
 
-<strong>What to expect next</strong>
-
 Glückwunsch! Jetzt ist der Labdoo-Rechner für seine Reise. An dieser Stelle empfehlen wir:
 
 <ul>
 <li>
-Wenn du selber reist und den Laptop zu einem Schulprojekt bringst, kannst du den/die Laptop(s) in deinem Gepäck mitnehmen. Bei Gruppenreisen kann ja jeder einen Laptop mitnehmen. <a href="https://dev.labdoo.org/content/information-f%C3%BCr-flugpaten-dootripper">Weitere Informationen für Flugpaten hier...</a>
+Wenn du selber reist und den Laptop zu einem Schulprojekt bringst, kannst du den/die Laptop(s) in deinem Gepäck mitnehmen. Bei Gruppenreisen kann ja jeder einen Laptop mitnehmen. <a href="/content/information-f%C3%BCr-flugpaten-dootripper">Weitere Informationen für Flugpaten hier...</a>
 </li>
 <li>
-Wenn ihr den Rechner spenden wollt und nicht selber verreist nehme Kontakt mit einem <a href="/hubs">Labdoo Hub in der Nähe</a> auf oder schicke eine Mail an Labdoo-DACH@Labdoo.org. Das Labdoo Hub hilft bei der Kontaktherstellung zu einem Flugpaten. Entweder schicke die IT-Spende zum Flugpaten oder zum Hub oder es wird eine Abholung organisiert.
+Wenn ihr den Rechner spenden wollt und nicht selber verreist nehme Kontakt mit einem <a href="/hubs">Labdoo Hub in der Nähe</a> auf oder schicke eine Mail an Labdoo-DACH@Labdoo.org. Das Labdoo Hub hilft bei der Kontaktherstellung zu einem Flugpaten. Entweder schicke die IT-Spende zum Flugpaten, zum Hub oder es wird eine Abholung organisiert.
 </li>
 </ul></value>
 </body>
@@ -53,15 +51,15 @@ Wenn ihr den Rechner spenden wollt und nicht selber verreist nehme Kontakt mit e
 </body>
 <bid>
 <type>book_array</type>
-<value>171</value>
+<value>31</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>891</value>
+<value>815</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>931</value>
+<value>862</value>
 </mlid>
 <weight>
 <type>book_array</type>

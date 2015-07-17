@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>120</value>
+<value>196</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>120</value>
+<value>196</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -62,15 +62,15 @@ To help reduce electronic waste, a main obligation of the laptop recipients is t
 </body>
 <bid>
 <type>book_array</type>
-<value>92</value>
+<value>76</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>857</value>
+<value>963</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>862</value>
+<value>980</value>
 </mlid>
 <weight>
 <type>book_array</type>

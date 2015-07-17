@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>76</value>
+<value>43</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>76</value>
+<value>43</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -82,7 +82,7 @@ Ste. C303,
 Irvine, CA 92606
 
 E-mail: contact@labdoo.org
-Register: Registered as a charitable non-profit organization under U.S. law, IRS 501 (c)(3)</value>
+Register: Registered as a charitable non-profit organization under U.S. law, IRS 501 (c)(3), in Germany, and in Spain.</value>
 </body>
 <body>
 <type>format</type>
@@ -90,7 +90,7 @@ Register: Registered as a charitable non-profit organization under U.S. law, IRS
 </body>
 <bid>
 <type>book_array</type>
-<value>76</value>
+<value>43</value>
 </bid>
 <plid>
 <type>book_array</type>
@@ -98,7 +98,7 @@ Register: Registered as a charitable non-profit organization under U.S. law, IRS
 </plid>
 <mlid>
 <type>book_array</type>
-<value>818</value>
+<value>827</value>
 </mlid>
 <weight>
 <type>book_array</type>

@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>259</value>
+<value>121</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>259</value>
+<value>121</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -25,7 +25,7 @@
 
 Use an alternative distribution available in your country, e.g. 
 <ul>
-<li><a href="https://dev.labdoo.org/content/parted-magic-clonezilla">Parted Magic - CD</a> </li>
+<li><a href="/content/parted-magic-clonezilla">Parted Magic - CD</a> </li>
 <li>Knoppix-CD (http://www.knoppix.org/) oder</li>
 <li>a Rescue CD (http://ubuntu-rescue-remix.org/)</li>
 </ul>
@@ -35,7 +35,7 @@ Start these Live-CDs and you are able to use the shred order on the terminal lev
 Alternatively, you can re-install <strong> shred </strong> during the Lubuntu installation using this command:
 <ul>
 <li>press at the same time Strg/CTL + Alt + F3, e.g. when asked to .... (to be added)</li>
-<li>Type --> <code>apt-get install coreutils</code> (Enter)</li>
+<li>Type --&gt; <code>apt-get install coreutils</code> (Enter)</li>
 <li><code>shred /dev/sda -v -f</code> (Enter)</li>
 <li>press Strg/CTL + Alt + F7 at the same time to return to installation process</li>
 </ul></value>
@@ -46,15 +46,15 @@ Alternatively, you can re-install <strong> shred </strong> during the Lubuntu in
 </body>
 <bid>
 <type>book_array</type>
-<value>255</value>
+<value>35</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>973</value>
+<value>857</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>976</value>
+<value>905</value>
 </mlid>
 <weight>
 <type>book_array</type>

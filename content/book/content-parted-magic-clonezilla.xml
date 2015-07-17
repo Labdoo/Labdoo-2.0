@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>206</value>
+<value>178</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>206</value>
+<value>178</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -39,13 +39,13 @@ Die nachfolgenden Schritte liegen auch als YouTube Video-Tutorial vor https://ww
 <a href="http://ftp.labdoo.org/download/Public/videos/how-to-clone-german.webm">Online FTP server: How to clone a laptop, use Parted Magic and Clonezilla</a>
 <a href="file://localhost/home/labdoo/Public/videos/how-to-clone-german.webm">Offline local:  How to clone a laptop, use Parted Magic and Clonezilla</a>
 [video:https://www.youtube.com/watch?v=1T9HeMBC4Hw]  
-<hr></hr>
+<hr/>
   
 <strong>Teil 2 - Nach der Installation </strong>
 <a href="http://ftp.labdoo.org/download/Public/videos/system-settings-english.webm">Online FTP server: Adaption to school / country, language, keyboard, drivers etc.</a>
 <a href="file://localhost/home/labdoo/Public/videos/system-settings-english.webm">Offline local: Adaption to school / country, language, keyboard, drivers etc.</a>
 [video:https://www.youtube.com/watch?v=U7VP0_wj0cg]
-<hr></hr>
+<hr/>
 
 <strong>English</strong>
 
@@ -59,7 +59,7 @@ Die nachfolgenden Schritte liegen auch als YouTube Video-Tutorial vor https://ww
 <a href="http://ftp.labdoo.org/download/Public/videos/system-settings-english.webm">Online FTP server: Adaption to school / country, language, keyboard, drivers etc.</a>
 <a href="file://localhost/home/labdoo/Public/videos/system-settings-english.webm">Offline local: Adaption to school / country, language, keyboard, drivers etc.</a>
 [video:https://youtu.be/iM2UjEiUWik]
-<hr></hr>
+<hr/>
 
 Parted Magic booten, Sprache auswählen, starten. Wenn die Sprachwahl verpasst wurde, kann später noch mit Keyboard Layout die richtige Tastatur eingestellt werden.
 
@@ -71,15 +71,15 @@ Manchmal muss man wegen der Hardware bestimmten Einstellungen wählen, z.B. Pent
 </body>
 <bid>
 <type>book_array</type>
-<value>171</value>
+<value>31</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>920</value>
+<value>901</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>923</value>
+<value>962</value>
 </mlid>
 <weight>
 <type>book_array</type>

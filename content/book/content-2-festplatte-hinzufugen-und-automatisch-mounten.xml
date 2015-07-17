@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>232</value>
+<value>96</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>232</value>
+<value>96</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -46,15 +46,15 @@ Danach neu booten. Laufwerk wird jetzt automatisch eingehängt (gemountet), ggf.
 </body>
 <bid>
 <type>book_array</type>
-<value>171</value>
+<value>31</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>922</value>
+<value>856</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>949</value>
+<value>880</value>
 </mlid>
 <weight>
 <type>book_array</type>

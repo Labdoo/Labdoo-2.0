@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>251</value>
+<value>86</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>251</value>
+<value>86</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -66,7 +66,7 @@ Bei vielen Shop wie http://www.pts-trading.de/ (Batterien und Ladegeräte) oder 
 </tr> 
 </table>
 
-<br />
+<br/>
 Als nützlich haben sich auch erwiesen
 <ul>
 <li>externe USB-Sticks (16/32 GB), </li>
@@ -75,16 +75,16 @@ Als nützlich haben sich auch erwiesen
 <li>Sortierbox für Schrauben und Kleinteile (Baumarkt),</li>
 <li>kleiner Kreuzschlitzschraubenzieher, ggf. ein Set,</li>
 </ul>
-<br />
+<br/>
 
 <strong>Werbematerial</strong>
 
 <table> 
 
 <tr>
-<th></th>
-<th></th>
-<th></th>
+<th/>
+<th/>
+<th/>
 </tr> 
 <tr>
 <td>Labdoo.org Banner 85 x 200 cm (kann auch gegen Ersatz der Portokosten ausgeliehen werden)</td>
@@ -115,15 +115,15 @@ Als nützlich haben sich auch erwiesen
 </body>
 <bid>
 <type>book_array</type>
-<value>172</value>
+<value>32</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>892</value>
+<value>816</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>968</value>
+<value>870</value>
 </mlid>
 <weight>
 <type>book_array</type>

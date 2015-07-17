@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>261</value>
+<value>157</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,28 +17,26 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>261</value>
+<value>157</value>
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Zum Zeitpunkt der Erstellung dieses Wikis gibt es die folgenden Labdoo Images auf dem FTP-Server http://ftp.labdoo.org/download/images/:
+<value>Aktuell gibt es die folgenden Labdoo Images auf dem FTP-Server http://ftp.labdoo.org/download/images/:
 
-<strong>Lubuntu 12.04 LTS</strong>
+<strong>Lubuntu 14.04 LTS</strong>
 <ul>
-<li><a href="http://ftp.labdoo.org/download/images/nonPAE32_12_04_LTS.tar.gz">nonPAE32_12_04_LTS (lubuntu 12.04 LTS für nonPAE CPU)</a></li>
-<li>PAE32_12_04_LTS (lubuntu 12.04 LTS für 32 Bit CPU): das Image hierfür wird nicht länger bereit gestellt</li>
-<li><a href="http://ftp.labdoo.org/download/images/PAE64_12_04_LTS.tar.gz">PAE64_12_04_LTS (lubuntu 12.04 LTS für 64 Bit CPU)</a></li>
+<li><a href="http://ftp.labdoo.org/download/images/PAE32_14_04_LTS.tar.gz">PAE32_14_04_LTS (lubuntu 14.04 LTS für <strong>nonPAE und PAE 32 Bit CPU</strong>)</a></li>
+<li><a href="http://ftp.labdoo.org/download/images/PAE64_14_04_LTS.tar.gz">PAE64_14_04_LTS (lubuntu 14.04 LTS für <strong>64 Bit CPU</strong>)</a></li>
 </ul>
+Doopelklick auf den Link des gewünschten Image oder rechte Maustaste und "Speichern unter".
 
-<strong>Lubuntu 14.04 LTS (empfohlen)</strong>
-<ul>
-<li><a href="http://ftp.labdoo.org/download/images/nonPAE32_14_04_LTS.tar.gz">nonPAE32_14_04_LTS (lubuntu 14.04. LTS für nonPAE 32 CPU)</a></li>
-<li><a href="http://ftp.labdoo.org/download/images/PAE32_14_04_LTS.tar.gz">PAE32_14_04_LTS (lubuntu 14.04 LTS für 32 Bit CPU)</a></li>
-<li><a href="http://ftp.labdoo.org/download/images/PAE64_14_04_LTS.tar.gz">PAE64_14_04_LTS (lubuntu 14.04 LTS für 64 Bit CPU)</a></li>
-</ul>
+<strong>Externe Platte oder USB-Stick:</strong> Bitte stellt sicher, dass die Platte für den Download Dateinen größer 4 GB handhaben kann, z.B. <strong>NTFS</strong>. <strong>FAT32</strong> kann nur eine Dateigröße bis max. 4 GB verarbeiten und bricht dann ab. Andere Formate wie iOS, Linux gehen natürlich auch, laufen aber nicht an allen Rechnern. Daher empfehlen wir NTFS als Basis.
 
+<strong>Downloadzeit: </strong>Ein Image ist ca. 11 GB groß. Bei z.B. einer Downloadrate von z.B. DSL 3000 dauert es also ca. 10 Stunden, bei DSL 6000 ca. 5 Stunden. Aber die effektive Downloadzeit hängt von vielen Faktoren ab: eurem Provider, eurem Anschluss, wieviele gleichzeitig downloaden, Engpässe auf dem Weg vom Server (Barcelona) zu euch usw.
 
-12.04 bzw. 14.04 verweist auf das Release-Datum der jeweiligen Lubuntu-Version, d.h. 12.04 = April 2012 und 14.04 = April 2014. LTS (Long Term Support) werden ab Erscheinen fünf (5) Jahre mit Updates versorgt. Die nächste LTS-Version wird im April 2016 (16.04 LTS) erscheinen.</value>
+<strong>Bitte Stromsparschaltungen bzw. Schlafmodus während des downloads abschalten, weil sonst der Download unterbrochen werden könnte.</strong>
+14.04 verweist auf das Release-Datum der Lubuntu-Version, d.h. 14.04 = April 2014. 
+LTS (Long Term Support) werden ab Erscheinen fünf (5) Jahre mit Updates versorgt. Die nächste LTS-Version wird im April 2016 (16.04 LTS) erscheinen.</value>
 </body>
 <body>
 <type>format</type>
@@ -46,15 +44,15 @@
 </body>
 <bid>
 <type>book_array</type>
-<value>171</value>
+<value>31</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>920</value>
+<value>901</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>978</value>
+<value>941</value>
 </mlid>
 <weight>
 <type>book_array</type>

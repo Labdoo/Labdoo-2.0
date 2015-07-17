@@ -1,0 +1,117 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>17225</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Labdoo介绍</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>ChineseSimplified</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>26</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><em>LABDOO是一个人道主义的社交网</em>，由全球各地追求更美好世界的志愿者所联结, 大家为此把更好的教育机会提供给不发达地区（发展中国家和发达国家）的孩子们。社交网的目标是通过无需承担任何经济或环境成本的协作把闲置的笔电，电子书阅读器，平板电脑，及任何可加载教育软件的设备送到世界各地有需求的学校。
+首先，在Labdoo我们称这些闲置的学习设备（笔电，平板电脑，电子书等），doojects，为labdoo的实体。因此，dooject是可被加载教育软件且持续送到需求学校的任何一般笔电，平板电脑，电子书或设备。
+每年世界上数百万闲置的doojects仍处于完美状态。只需清理并加载学习软体，就可以使之成为非常强大的工具来开启世界各地的教育。
+如何在不破坏地球的情况下收集到世界各地闲置的学习设备并持续把它们送到所需要的地方？亦即通过两个基本部分的组合：（1）技术/信息共享和（2）庞大的全球善意协作。为了实现持续的有机增长和防止破坏地球，我们使用一个基层协作社交网系统。这让Labdoo能在全球范围内开放发掘的剩余潜能资源（如闲置的笔电，旅客，达人，善意等）。联合国教育，科学及文化组织（UNESCO）已确认了 Labdoo及其帮助全球教育的方法是“促进了对教育学习在国外发展宝贵而持续的贡献”。
+Labdoo如何工作，怎样才对有助于传播教育做出贡献？您可以通过以下五个简单的步骤：
+<ul>
+<li>
+<strong>
+第一步骤，标签闲置的doojects。</strong>您有可重新用于教育的闲置笔电或设备吗？或您认识
+   的朋友，亲戚，组织或公司拥有这些闲置品吗？那么第一步就是标记您收集到的设备
+  （doojects），以便它们在全球库存里被有效地管理。若要标记一个dooject，请登录到您
+   的Labdoo帐户（如果还没有账户，请首先设立您的帐户），并点击位于该页面顶部菜单
+   选项“Doojects”，然后再点击子选项“标记“。在本步骤中，dooject标有状态S0（已
+   标记）或S1（捐赠）。
+</li>
+<li>
+<strong>第二步骤， 清理您的 doojects。</strong>一旦被标记，该dooject需要进行清理，并加载教育软
+   体。您有两个选择：（1）您可以按照清洁手册中描述的步骤自己来完成此过程; （2）另
+   外，也可以找到离您最近的Labdoo中枢把您的dooject带去，中枢里的其他labdooers
+   会清理您的dooject。在该步骤中，dooject标有状态S2（清理）或S3（分配给学校）。
+
+</li>
+<li>
+<strong>步骤三，识别dootrip。</strong>一旦dooject被清理，我们需要确定一个二氧化碳式的中性运输资源把它带到学校。我们称这种类型的运输资源为dootrip（如Labdoo之旅）。这里您又有两个选择：（1）如果您正在旅行到一个有需求的学校附近，请点击“Dootrips”，注册自己的dootrip，然后从位于该页面顶部的菜单中选择“创建”，用自己的行程把笔电带到目标学校; （2）另外，您也可以把dooject带到离您最近的Labdoo中枢，那里的其他labdooers可以帮您找到一个dootrip资源把dooject运送到学校。在该步骤中，dooject标有状态T1（在途中）。
+</li>
+<li>
+<strong>步骤四，追踪dooject是否'送达目的地'。</strong>您可以从该页面顶部的菜单中选择
+  “Dooject”选项，再选子选项“我的doojects”（请确认登录到您的帐户）就可以追踪您
+   的dooject送至学校的进展。点击具体的dooject,你将能看到相关信息，例如当前状态，
+   地理定位，或相关的目标学校。请多尝试，您会发现有许多不同的做法可以追踪并促进
+   dooject的进程以达使命，方法包括上传图片，把一个dooject链接到一次dootrip
+   中，审查其历史记录，确保其现状和参数相较许多其它的doojects是最新的。在本步骤 
+   中，dooject标有状态S4（送达）。 
+</li>
+<li>
+<strong>步骤五，回收损坏的doojects。</strong>所有设备的最终目的地是一个回收中心，这样我们就可
+      以保护环境和消除电子废弃物。如果您检测到已部署的设备停止运行，您可以改变其状 
+      态，并要求dootrip抢救且妥善回收。在本步骤中，dooject标有状态S5（损坏）或
+      S6(回收）。
+</li>
+</ul>
+上述所有步骤都是针对学习设备送达学校的进展，以下的各种状态S0，S1，S2，S3，T1，S4，S5和S6如下图所示。
+<hr/>
+<table align="center">
+<tr><td>
+<em>示图:帮助把dooject送到需求学校的步骤。 </em>
+</td></tr>
+<tr><td>
+<img src="/sites/default/files/content/labdoo-nutshell/labdoo-mini-mission.png" width="600"/>
+</td></tr>
+</table>
+<hr/>
+ 
+作为一个社交网，Labdoo允许您做很多超出上述基本步骤的事。其中，你可以加入团队，为感兴趣的特定主题分享您的经验以助增加全球知识库，也可在各种墙上提问，上传图片到你的墙或项目上（图片有助于增加平台的透明度以及认知水平），创建自己的任务，并用日历加以管理，与其他labdooers对聊，进入并奉献于Labdoo维基知识库，您甚至可以创建自己的Labdoo中枢以帮助调动本区域的doojects。这里有一些快速最终要领：
+<ul>
+<li>
+加入团队，请到该页面顶部的“团队”菜单选项。
+</li>
+<li>
+维基是我们重要的中心知识库，从中可找到大部分的文件，手册和资料。您可以点
+   击“维基”菜单选项进入浏览。</li>
+<li>
+<a href="../content/labdoo-social-network-how-it-works">“Labdoo社交网 - 它如何工作"</a>这本维基书详细描述了协作援助平台如何运行。
+您会在<a href="../content/labdoo-toolkit">“Labdoo工具箱” </a>找到帮助您采取进一步行动的工具，如启动自己当地的Labdoo宣传活动。
+</li>
+<li>
+有任何疑问，切莫犹豫，敬请张贴在任何团队的墙面上。
+</li>
+</ul>
+ 欢迎加入Labdoo项目，祝您标记快乐！
+ Labdoo 团队
+<img src="/profiles/labdoo/files/pictures/equation-2-alpha-smaller.png"/></value>
+</body>
+<body>
+<type>format</type>
+<value>full_html</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>17225</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>0</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1077</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

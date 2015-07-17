@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>289</value>
+<value>163</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>289</value>
+<value>163</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -33,15 +33,15 @@ This may be why in the BIOS setting (CMOS) not enough RAM was allocated for the 
 </body>
 <bid>
 <type>book_array</type>
-<value>255</value>
+<value>35</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>973</value>
+<value>857</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>1006</value>
+<value>947</value>
 </mlid>
 <weight>
 <type>book_array</type>

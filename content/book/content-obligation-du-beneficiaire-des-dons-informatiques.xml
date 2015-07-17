@@ -1,0 +1,68 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>16222</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Obligation du bénéficiaire des dons informatiques</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>French</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>16222</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><img src="/sites/default/files/content/labdoo-toolkit/labdoo-logos-education-1.png"  width="530"/>
+
+Cher bénéficiaire d'un portable:
+
+Nous sommes très heureux de contribuer à votre projet en fournissant de la technology pour aider à combler la brèche numérique.
+Avec les droits viennent les responsabilités. La technologie, lorsqu'elle est correctement utilisée, peut fournir de puissants moyens pour aider ceux qui en ont besoin. Mais si elle est utilisée de façon incorrecte, elle peut aussi nuire à notre environnement. En recevant les articles joints, vous acceptez automatiquement de respecter les regles globales de Labdoo:
+
+(1) Les articles reçus seront utilisés uniquement pour les objectifs décrits par votre organisation lorsque vous avez solicité ce don. Si vous avez l'intention de les utiliser pour autre chose, vous contacterez d'abord l'équipe Labdoo à contact@labdoo.org
+
+(2) Si un problème se présente avec l'un des articles reçus, vous contacterez l'équipe Labdo à contact@labdoo.org, en incluant dans votre email le numéro de l'étiquette de l'article et une brève explication. Les évènements suivants doivent être toujours rapportés:
+	(2.1) La fin du cycle de vie de chaque article reçu afin qu'il puisse-t-être recyclé correctement.
+	(2.2) Une panne, un dysfonctionnement, ou un changement quelconque dans son état.
+
+Un ordinateur portable peut être très nuisible à l'environnement, c'est pourquoi ces types d'évènements doivent être communiqués au système Labdoo pour s'assurer de son recyclage correct.
+
+(3) Tous les six mois, vous enverrez un email à contact@labdoo.org avec la liste des ordinateurs portables en votre possession et leur état (en état de marche / ne fonctionne pas)
+
+(4) Les ordinateurs portables vous sont offerts gratuitement pour des objectifs éducatifs. En retour vous vous engagez à ne pas utiliser ces ordinateurs pour des objectifs lucratifs et vous acceptez de ne pas faire payer quoi que ce soit pour leur usage.
+
+Nous vous remercions pour votre contribution à faire du monde un meilleur où vivre et nous vous souhaitons bonne chance dans votre mission humanitaire.
+
+L'équipe Labdoo.
+<img src="/profiles/labdoo/files/pictures/equation-2-alpha-smaller.png" width="80"/></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>16206</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1030</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1037</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

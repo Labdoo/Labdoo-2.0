@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>288</value>
+<value>161</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>288</value>
+<value>161</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -34,7 +34,7 @@ In the zipped files and folders of unzipped Labdoo images for cloning you will f
 
 <strong>Create a MD5 check sum</strong>
 Open a terminal in the folder with the files and execute in a terminal
-<code>md5sum * > MD5SUM</code> (Enter)
+<code>md5sum * &gt; MD5SUM</code> (Enter)
 
 Windows: There is no internal Windows tool, sorry. If you still using Windows you can install and download a free tool from here http://www.winmd5.com/.</value>
 </body>
@@ -44,15 +44,15 @@ Windows: There is no internal Windows tool, sorry. If you still using Windows yo
 </body>
 <bid>
 <type>book_array</type>
-<value>255</value>
+<value>35</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>973</value>
+<value>857</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>1005</value>
+<value>945</value>
 </mlid>
 <weight>
 <type>book_array</type>

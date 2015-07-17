@@ -1,0 +1,147 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>16841</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>¿Cómo inicio el equipo?</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>Spanish</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>16841</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><img src="/sites/default/files/content/wiki-de/edoovillages/login1.png" align="right" width="200" alt="Login Screen" />
+
+<strong>Usuarios de la computadora Escala (User)</strong>
+
+En un Labdoo computadoras hay normalmente 3 usuarios (User). Al entrar clic a la derecha "labdoo" a la pequeña  triángulo  -> muestra la lista de usuarios disponibles:
+
+<strong>labdoo</strong>: es un administrador! La contraseña es registrarse <strong>labdoo</strong> (Sin embargo, se debe cambiar de inmediato en la primera vez por el profesor porque <strong> labdoo </strong> derechos de administrador y se puede ajustar el sistema!)
+
+<img src="/sites/default/files/content/wiki-de/edoovillages/login2.png" align="right" width="200" alt="seleción Usuario" />
+
+<strong>student</strong>: es usuario estándar. La contraseña es <strong> labdoo </strong> (no tiene que ser cambiado, cada escuela puede decidir)
+
+<strong>guest</strong>: no necesita una contraseña, pero hay todas sus entradas y los cambios después de borrado de cierre de sesión.
+
+<ul>
+<br></br>
+<table> 
+
+<strong><caption>Otras opciones durante el registro (Log-In)</caption></strong>
+
+<tr>
+<th><img src="/sites/default/files/content/wiki-de/edoovillages/login3.png" width="150" alt=" " /></th>
+<th><img src="/sites/default/files/content/wiki-de/edoovillages/login4.png" width="150" alt=" " /></th>
+<th><img src="/sites/default/files/content/wiki-de/edoovillages/login5.png" width="150" alt=" " /></th>
+</tr> 
+
+<tr>
+<td>Opcional: elección de los diferentes equipos de sobremesa, ya instaladas (interfaces de usuario)</td>
+<td><strong>Importante! Al escribir la contraseña, el teclado correcta debe ser seleccionado!</strong></td>
+<td>Opcional: Tamaño de la fuente y contraste ajustable con discapacidad visual</td>
+</tr> 
+
+</table>
+
+<br></br>
+</ul>
+
+<strong>Para cambiar la contraseña</strong> → Vaya a Configuración del sistema → user accounts → unlock →
+contraseña „labdoo“ → Haga clic en la contraseña, cambiarla, haga clic en labdoo usuario → Elija estándar (Standard) ←→ Administrador, dependiendo de que se necesitan derechos.
+
+<strong>A partir Programas</strong>
+
+Comience en uno de los mejores programas de aprendizaje / juego. Hay que aprender y programas de diversión. Así se inicia:
+
+Haga clic en la parte inferior izquierda del icono de Lubuntu (similar a Windows XP) →  “Education” (educación) o „game“ (Juegos) → Haga clic en el programa
+
+En la carpeta "/ public" (público) encuentra su Manuales útiles, libre de regalías contenido de aprendizaje (REA), sin conexión wikis, libros electrónicos y otros
+
+En el escritorio se encuentra una carpeta "videos". Click, allí encontrarás vídeos que explican el portátil Labdoo.
+
+<strong>Opcionales: Desktops (interfaces de usuario)</strong>
+
+Una computadora portátil Labdoo viene con el (sistema operativo Linux base de Ubuntu con el escritorio LXDE) Lubuntu. LXDE es un fácil de aprender la interfaz, delgado, rápido. LXDE / Lubuntu también se ejecuta en computadoras más viejas de 256/512 MB de RAM.
+
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/language_support.png" width="225" align="right"/>
+
+Opcionalmente se puede instalar más equipos de escritorio (superficies), que deben ser elegidos en función del rendimiento de la computadora portátil:
+
+<ul>
+<li>Unity: requisitos del sistema de alta (mínimo 1 GB de RAM)</li>
+<li>Gnome: medio a altos requerimientos de sistema (756 MB - 1 GB de RAM)</li>
+</ul>
+
+<strong>El lenguaje, los formatos regionales y configuración del teclado</strong>
+
+A veces quieres una o más lenguas reinstalar o cambiar. 
+
+Haga clic en Preferencias (Preferences) → el soporte del idioma (Language). Si el mensaje "NO Soporte de idiomas instalado COMPLETAMENTE" aparece con Sí / Sí para confirmar e instalar.
+
+En la siguiente ventana, haga clic en Instalar / Eliminar idiomas (Instalar / Quitar Idiomas) → Elija el/les idioma(s) que usted necesita→ ejecutar (Apply) → Apply System-wide ( aplicar en todo el sistema.).
+
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/regional_formats.png" width="225" align="right"/>
+
+El nuevo idioma (s) aparecen en una lista: Lubuntu utiliza los lenguajes de arriba hacia abajo, es decir, Si una palabra en el primer idioma no se traduce el lenguaje sale 2, etc. hasta Inglés.
+
+(Aplicar el sistema de ancho) Búsqueda clic, la nueva lengua, mantenga pulsado el botón izquierdo del ratón y arrastre hasta la parte superior de, suelte el botón del ratón no → Haga clic en Aplicar para todo el sistema. El nuevo idioma aparece después de una viga o reiniciar.
+
+<strong>formatos regionales (Regional Formats)</strong>
+
+También puede configurar los formatos regionales para los números, monedas, fecha. Para ello en el "formato regional" y en la lista el país de elección → Haga clic en Aplicar para todo el sistema (apply system-wide).
+
+<strong>Configuración del teclado</strong>
+
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/keyboard_layout_handler.png" width="225" align="right"/>
+
+Rechter Mausklick in der Task Bar auf das Symbol "de" (oder US oder welche Tastatur gerade aktiv ist) → Keyboard Layout handler Settings (Tastaturlayout) → Entfernen des Haken "Keep system layout", wenn noch gesetzt → 
+Haga clic en la barra de tareas en el icono "de" (o los EEUU o teclado está activo) → Ajustes de Disposición de teclado (keyboard Layout handler settings) → Retire el gancho "Keep disposición del sistema" si todavía establecer →
+
++Add (añadir) → Adición de una nueva distribución del teclado
+-Remove (quitar)→ Retirar un diseño de teclado
+up (arriba) → Mover el teclado de entrada de hasta
+down (abajo) → Mueva la entrada del teclado hacia abajo
+
+Un máximo de 4 diseños de teclado se puede seleccionar.
+
+<strong>Manuales, tutoriales en vídeo</strong>
+
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/link-folder-videos.png" align="right" width="50"/>
+
+Manuales, tutoriales en vídeo, en línea Wikis u.v.a. más están en la carpeta <a href="file://localhost/home/labdoo/Public/">/home/labdoo/Public/</a>. Sobre el icono de "videos" en el escritorio, que va directamente a la carpeta que contiene los tutoriales en vídeo. Un video puede ser visto en Firefox o un jugador (vista de zoom posiblemente +/-).
+
+Diviértete jugando y aprendiendo con tus amigos!        El equipo Labdoo.</value>
+</body>
+<body>
+<type>format</type>
+<value>full_html</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>16839</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1059</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1061</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

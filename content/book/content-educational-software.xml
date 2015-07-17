@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>271</value>
+<value>197</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>271</value>
+<value>197</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -37,7 +37,7 @@ If Edoovillages have online access further educational software can be downloade
 
 <li><strong>Gcompris game collection</strong></li>
 
-<table> <tr><th></th></tr>
+<table> <tr><th/></tr>
  <tr>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris01.png" width="130"/> </td>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris02.png" width="130"/> </td>
@@ -47,12 +47,12 @@ If Edoovillages have online access further educational software can be downloade
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris06.png" width="140"/> </td>
 </tr> 
 </table>
-<br />
+<br/>
 In the menu items are hidden more than 100 games and educational programs that can help the children:
 
 <table>
  <tr>
-<th></th>
+<th/>
 <th><strong>menu</strong></th>
 <th><strong>description</strong></th>
 </tr>
@@ -98,16 +98,16 @@ In the menu items are hidden more than 100 games and educational programs that c
 </tr>
 </table>
 
-<br />
+<br/>
 <li><strong>Childsplay game collection</strong></li>
 
-<table> <tr><th></th></tr>
+<table> <tr><th/></tr>
  <tr>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay01.png" width="130"/> </td>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay02.png" width="130"/> </td>
 </tr> 
 </table>
-<br />
+<br/>
 
 
 <table>
@@ -193,13 +193,13 @@ In the menu items are hidden more than 100 games and educational programs that c
 
 <strong>pySioGame</strong> is a set of educational applications and games for kids that can be played all in a single window. pySioGame includes maths, reading, writing, painting, and memory activities. It can be useful for children aged between 3 and 10.
 
-<table> <tr><th></th></tr>
+<table> <tr><th/></tr>
  <tr>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/pysiogame01.png" width="130"/> </td>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/pysiogame02.png" width="150"/> </td>
 </tr> 
 </table>
-<br />
+<br/>
 
 <li><strong>Astronomy + Geography</strong></li>
 
@@ -664,18 +664,18 @@ As in addition more modules and the virus signatures have to be installed (other
 </body>
 <bid>
 <type>book_array</type>
-<value>270</value>
+<value>142</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>987</value>
+<value>926</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>988</value>
+<value>981</value>
 </mlid>
 <weight>
 <type>book_array</type>
-<value>0</value>
+<value>-15</value>
 </weight>
 </book>

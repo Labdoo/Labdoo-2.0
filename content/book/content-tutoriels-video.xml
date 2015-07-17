@@ -1,0 +1,95 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>16223</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Tutoriels vidéo</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>French</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>16223</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><strong>Tutoriels vidéo</strong>
+
+Il ya actuellement des vidéos en <a href="/content/video-tutorials-0">anglais</a> et en <a href="/content/video-tutorials">allemand</a>.
+
+<strong>Pour les utilisateurs</strong>
+
+Les liens "Hors ligne locale" fonctionnent uniquement avec les ordinateurs portables Labdoo.
+
+<a href="http://ftp.labdoo.org/download/Public/videos/login-english.webm">Serveur FTP en ligne: Log-in / concept d'utilisateur</a>
+<a href="file://localhost/home/labdoo/Public/videos/login-english.webm">Hors ligne locale: Identifiant / concept d'utilisateur</a>
+[video:https://youtu.be/roj16dwwS80]
+<hr/>
+
+<a href="http://ftp.labdoo.org/download/Public/videos/software-english.webm">Serveur FTP en ligne: Logiciels éducatifs / Lubuntu et LXDE</a>
+<a href="file://localhost/home/labdoo/Public/videos/software-english.webm">Hors ligne locale: Logiciels éducatifs / Lubuntu et LXDE</a>
+[video:https://youtu.be/fuPMJdrYEoI]
+<hr/>
+
+<a href="http://ftp.labdoo.org/download/Public/videos/content-english.webm">Serveur FTP en ligne: le contenu éducatives libres (OER) / déconnecté wikis</a>
+<a href="file://localhost/home/labdoo/Public/videos/content-english.webm">Hors ligne locale: contenu éducatives libres (OER) / déconnecté wikis</a>
+[video:https://youtu.be/2W-VLHfEqQI]
+<hr/>
+
+<strong>pour les techniciens</strong>
+
+<a href="http://ftp.labdoo.org/download/Public/videos/for-technicians/how-to-clone-english.webm">Serveur FTP en ligne: Comment cloner un ordinateur portable, utiliser Parted Magie et Clonezilla</a>
+<a href="file://localhost/home/labdoo/Public/videos/for-technicians/how-to-clone-english.webm">Hors ligne locale: Comment cloner un ordinateur portable, utiliser Parted Magic and Clonezilla</a>
+[video:https://www.youtube.com/watch?v=GKXJR94QIus]
+<hr/>
+
+<a href="http://ftp.labdoo.org/download/Public/videos/for-technicians/system-settings-english.webm">Serveur FTP en ligne: Adaptation à l'école / le pays, la langue, clavier, pilotes etc.</a>
+<a href="file://localhost/home/labdoo/Public/videos/for-technicians/system-settings-english.webm">Hors ligne locale: Adaptation à l'école / le pays, la langue, clavier, pilotes etc.</a>
+[video:https://youtu.be/iM2UjEiUWik]
+<hr/>
+
+<a href="http://ftp.labdoo.org/download/Public/videos/for-technicians/hostname-english.webm">Serveur FTP en ligne: Changer le système de fichiers hosts et hostname</a>
+<a href="file://localhost/home/labdoo/Public/videos/hostname-english.webm">Hors ligne locale: Changement fichiers système hôtes et hostname</a>
+[video:https://youtu.be/ATGl0aHZHAY]
+<hr/>
+
+<a href="http://ftp.labdoo.org/download/Public/videos/for-technicians/install-lubuntu-english.webm">Serveur FTP en ligne: Installation de système d'exploitation Lubuntu</a>
+<a href="file://localhost/home/labdoo/Public/videos/install-lubuntu-english.webm">Hors ligne locale: Installation de système d'exploitation Lubuntu</a>
+[video:https://youtu.be/nBUgaaHW058]
+<hr/>
+
+<a href="http://ftp.labdoo.org/download/Public/videos/for-technicians/scripts-english.webm">Serveur FTP en ligne: Comment utiliser des scripts / installation automatique de logiciels ou de contenu etc.</a>
+<a href="file://localhost/home/labdoo/Public/videos/for-technicians/scripts-english.webm">Hors ligne locale: Comment utiliser des scripts / installation automatique du logiciel ou du contenu etc.</a>
+[video:https://youtu.be/aaSgbkCmiJU]
+<hr/>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>16206</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1030</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1038</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

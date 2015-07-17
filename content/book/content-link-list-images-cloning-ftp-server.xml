@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>263</value>
+<value>156</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,28 +17,26 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>263</value>
+<value>156</value>
 </field_reference_book>
 <body>
 <type>value</type>
-<value>In 2015 there were these Labdoo images available on our FTP-Server http://ftp.labdoo.org/download/images/:
+<value>Actually there are these Labdoo images available on our FTP-Server http://ftp.labdoo.org/download/images/:
 
-<strong>Lubuntu 12.04 LTS</strong>
+<strong>Lubuntu 14.04 LTS</strong>
 <ul>
-<li><a href="http://ftp.labdoo.org/download/images/nonPAE32_12_04_LTS.tar.gz">nonPAE32_12_04_LTS (Lubuntu 12.04 LTS for nonPAE CPU)</a></li>
-<li>PAE32_12_04_LTS (Lubuntu 12.04 LTS for 32 Bit CPU): this image is not available any-more, support cancelled</li>
-<li><a href="http://ftp.labdoo.org/download/images/PAE64_12_04_LTS.tar.gz">PAE64_12_04_LTS (Lubuntu 12.04 LTS for 64 Bit CPU)</a></li>
+<li><a href="http://ftp.labdoo.org/download/images/PAE32_14_04_LTS.tar.gz">PAE32_14_04_LTS (Lubuntu 14.04 LTS for <strong>nonPAE and PAE 32 Bit CPU</strong>)</a></li>
+<li><a href="http://ftp.labdoo.org/download/images/PAE64_14_04_LTS.tar.gz">PAE64_14_04_LTS (lubuntu 14.04 LTS for <strong>64 Bit CPU</strong>)</a></li>
 </ul>
+Double Click on the link of the needed image or right mouse click and "save as".
 
-<strong>Lubuntu 14.04 LTS (empfohlen)</strong>
-<ul>
-<li><a href="http://ftp.labdoo.org/download/images/nonPAE32_14_04_LTS.tar.gz">nonPAE32_14_04_LTS (Lubuntu 14.04. LTS for nonPAE 32 CPU)</a></li>
-<li><a href="http://ftp.labdoo.org/download/images/PAE32_14_04_LTS.tar.gz">PAE32_14_04_LTS (Lubuntu 14.04 LTS for 32 Bit CPU)</a></li>
-<li><a href="http://ftp.labdoo.org/download/images/PAE64_14_04_LTS.tar.gz">PAE64_14_04_LTS (Lubuntu 14.04 LTS for 64 Bit CPU)</a></li>
-</ul>
+<strong>External disc or USB drive:</strong> Please make sure that your disc-drive, where you want to download the image to, is able to handle files larger 4 GB, e.g. <strong>NTFS</strong>. <strong>FAT32</strong> can handle files up to max. 4 GB, then the download will stop. Other disc formats like iOS, Linux may work, but not in combination with all laptops and operating systems. So we recommend NTFS as standard format.
 
+<strong>Duration of download: </strong> The size of an Labdoo image is +/- 11 GB. If you use e.g. DSL 3000 it may last ca. 10 hours, DSL 6000 ca. 5 hours. But the download time may vary due to your provider, your internet connection, number of parallel downloads, bottle necks between the FTP server (Barcelona) and your place etc.
 
-12.04 or 14.04 define the release date of the Lubuntu release, e.g. 12.04 = April 2012 and 14.04 = April 2014. LTS (Long Term Support) releases will be supported and updated for 5 years, counted from this release date. The next LTS release will be relased in April 2016 (16.04 LTS).</value>
+<strong>Please turn off power management circuits or sleep mode during the downloads, because otherwise the download could be interrupted.</strong>
+
+14.04 tells you the release date of the Lubuntu release, e.g. 14.04 = April 2014. LTS (Long Term Support) releases will be supported and updated for 5 years, counted from this release date. The next LTS release will be released in April 2016 (16.04 LTS).</value>
 </body>
 <body>
 <type>format</type>
@@ -46,15 +44,15 @@
 </body>
 <bid>
 <type>book_array</type>
-<value>255</value>
+<value>35</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>979</value>
+<value>900</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>980</value>
+<value>940</value>
 </mlid>
 <weight>
 <type>book_array</type>

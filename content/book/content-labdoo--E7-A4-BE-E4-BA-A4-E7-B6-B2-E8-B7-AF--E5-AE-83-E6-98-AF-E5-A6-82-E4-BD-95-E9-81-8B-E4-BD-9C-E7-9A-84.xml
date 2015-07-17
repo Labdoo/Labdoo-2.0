@@ -1,0 +1,79 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>16452</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Labdoo 社交網路-它是如何運作的</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>ChineseTraditional</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>39</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><strong> 關於Labdoo專案</strong> 
+
+Labdoo 是一個社交網路，旨在由基層做起服務社會。我們稱Labdoo為非營利社交網路，因為目標是不是為了賺錢，而是要凝聚力量共同為公益事業的努力。因此，Labdoo 具有幾個屬性:
+
+• 它是非營利
+• 它是共同協作
+• 它的架構是分佈式的 •
+• 社會網路平台架構的軟件源碼是開放和自由軟體 (GPLv3)
+• 每一個人都可以參與 •
+• 整個流程設計不會導致額外的二氧化碳排放量
+• 它沒有需要資金運行
+• 它不受任何類型廣告影響 (因為它不需要資金來維持生存)
+
+如上所述，運行 Labdoo是免費的。事實上，你可以在您的電腦安裝 Labdoo 社交網路上的任何部分。如果您想要，你也可以將代碼複製，修改它，創建你自己的社交網路， 代碼是可從下面的鏈接下載 HTTPs://github.com/Labdoo。
+
+本文檔是用來提供 Labdoo 社交網路的架構說明
+
+• 原始程式碼和體系結構
+• 五個基本物件
+• 管理使用者角色
+• 主導航功能表 (MNM)
+• 視覺化儀表板
+• Labdoo 團隊
+• 活動資料
+• 如何翻譯 Labdoo 社交網路
+• Labdoo Wiki
+• 全球庫存檢查 (GICs)
+• 管理 Hub
+• Superhubs
+• Dootrip 系統
+• 管理訂閱
+• 小貼士
+• 正在進行的工作
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>16452</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>0</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1042</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

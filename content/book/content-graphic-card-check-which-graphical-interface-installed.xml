@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>285</value>
+<value>133</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>285</value>
+<value>133</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -40,15 +40,15 @@ Show the resolution set and all possible screen resolutions and the interfaces:
 </body>
 <bid>
 <type>book_array</type>
-<value>255</value>
+<value>35</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>973</value>
+<value>857</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>1002</value>
+<value>917</value>
 </mlid>
 <weight>
 <type>book_array</type>

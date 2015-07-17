@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>250</value>
+<value>54</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>250</value>
+<value>54</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -27,7 +27,7 @@ Die Unterlagen liegen als pdf oder editierbar im LibreOffice Format vor (es wär
 
 Unterlagen in verschiedenen Sprachen http://ftp.labdoo.org/download/documents/.
 
-Und schaut euch bitte unser FAQ-Forum an https://dev.labdoo.org/de/content/faq-forum. Bei Fragen hilf das Labdoo-Team gerne weiter.
+Und schaut euch bitte unser FAQ-Forum an https://www.labdoo.org/de/content/faq-forum. Bei Fragen hilf das Labdoo-Team gerne weiter.
 
 Am besten beginnst du über dein bestehendes Netzwerk, die lokale Presse auf Labdoo hinzuweisen. Ohne regionale Aktionen wird es nicht gehen. Oder suche dir Hilfsvereine in der Region, die Schulen, Waisenhäuser u.a. im Ausland unterstützen und starte mit ihnen eine gemeinsame Aktion.
 
@@ -35,7 +35,7 @@ Google spendet uns ein monatliches Budget für AdWords-Werbung. Wir legen dort e
 
 <a href="http://ftp.labdoo.org/download/documents/german/Poster%20Flyer/">Flayer, Banner, Plakate</a>
 
-<a href="https://dev.labdoo.org/de/content/faq-forum#FAQ02">Linkliste zu Unterlagen, Grafiken, Logos und Tutorials zum Labdoo-Projekt</a>
+<a href="https://www.labdoo.org/de/content/faq-forum#FAQ02">Linkliste zu Unterlagen, Grafiken, Logos und Tutorials zum Labdoo-Projekt</a>
 
 <strong>Vorlage Visitenkarten</strong> ..folgt
 </value>
@@ -46,15 +46,15 @@ Google spendet uns ein monatliches Budget für AdWords-Werbung. Wir legen dort e
 </body>
 <bid>
 <type>book_array</type>
-<value>172</value>
+<value>32</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>892</value>
+<value>816</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>967</value>
+<value>838</value>
 </mlid>
 <weight>
 <type>book_array</type>

@@ -1,0 +1,54 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>16743</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Alternatives to Linux</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>16743</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>(This section is a draft and needs to be properly written. Please describe here what's Labdoo standard practice when a school requires another operating system such as Windows.)
+
+Namely:
+
+(1) It is OK if a school wants to have a different OS.
+
+(2) If the laptop travels internationally, it is recommended to deliver the laptop with just the basic installation of Ubuntu (there is no need to install Edubuntu), and have the recipient side install the appropriate OS again. A basic OS is needed because international travel rules require laptops to be able to boot into an OS.
+
+(3) If the laptop does not travel internationally, it is recommended to deliver the laptop without OS. Just format the hard drive using 'shred'.</value>
+</body>
+<body>
+<type>format</type>
+<value>full_html</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>142</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>926</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1057</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-7</value>
+</weight>
+</book>

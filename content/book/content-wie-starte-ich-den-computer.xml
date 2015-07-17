@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>174</value>
+<value>91</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,19 +17,46 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>174</value>
+<value>91</value>
 </field_reference_book>
 <body>
 <type>value</type>
-<value><strong> Angelegte Benutzer (User)</strong>
+<value><img src="/sites/default/files/content/wiki-de/edoovillages/login1.png" align="right" width="200" alt="Login Screen" />
 
-Auf einem Labdoo-Computer sind 3 Benutzer (User) eingerichtet:
+<strong> Angelegte Benutzer (User)</strong>
+
+Auf einem Labdoo-Computer sind i.d.R. 3 Benutzer (User) eingerichtet. Beim Anmelden rechts von labdoo auf das kleine Dreieck klicken --> zeigt die Liste der verfügbaren User:
 
 <strong>labdoo</strong>: ist Administrator! Das Passwort um sich anzumelden ist <strong>labdoo</strong> (Es sollte aber sofort beim ersten Mal durch den Lehrer geändert werden, weil <strong>labdoo</strong> Administrator Rechte hat und das System verstellen kann!)
+
+<img src="/sites/default/files/content/wiki-de/edoovillages/login2.png" align="right" width="200" alt="Auswahl User" />
 
 <strong>student</strong>: ist Standard-User. Das Passwort ist <strong>labdoo</strong> (es muss nicht geändert werden, kann jede Schule selber entscheiden) 
 
 <strong>guest</strong>: braucht kein Passwort, aber es werden alle seine Eingaben und Änderungen nach der Abmeldung gelöscht
+
+<ul>
+<br></br>
+<table> 
+
+<strong><caption>Weitere Optionen bei der Anmeldung (Log-In)</caption></strong>
+
+<tr>
+<th><img src="/sites/default/files/content/wiki-de/edoovillages/login3.png" width="150" alt=" " /></th>
+<th><img src="/sites/default/files/content/wiki-de/edoovillages/login4.png" width="150" alt=" " /></th>
+<th><img src="/sites/default/files/content/wiki-de/edoovillages/login5.png" width="150" alt=" " /></th>
+</tr> 
+
+<tr>
+<td>Optional: Auswahl verschiedener, bereits installierter Desktops (Benutzeroberflächen)</td>
+<td><strong>Wichtig! Bei der Eingabe des Passwortes muss die richtige Tastatur ausgewählt sein!</strong></td>
+<td>Optional: Schriftgröße und Kontrast einstellbar bei Sehbehinderung</td>
+</tr> 
+
+</table>
+
+<br></br>
+</ul>
 
 <strong>Zum Ändern des Passwortes</strong> → Gehe zu system settings → user accounts → unlock →
 Password „labdoo“ → klicke auf Passwort, ändere es, klicke auf labdoo User → wähle Standard ←→ Administrator, abhängig davon, welche Rechte gebraucht werden.
@@ -42,15 +69,15 @@ Klicke unten links auf das Lubuntu Icon (ähnlich wie bei Windows XP) →  “Ed
 
 Im Ordner „/Public“ (öffentlich) findet ihr nützliche Manuals, lizenzfreie Lerninhalte (OER), Offline wikis, e-books u.a. 
 
-Auf dem Desktop findet ihr ein Video. Anklicken und es zeigt und erklärt euch den Labdoo Laptop.
+Auf dem Desktop findet ihr einen Ordner "Videos". Anklicken, dort findet ihr Videos, die euch den Labdoo Laptop erklären.
 
 <strong>Optional: Desktops (Benutzeroberflächen)</strong>
 
 Ein Labdoo Laptop wird mit dem Lubuntu (Linux Betriebssystem auf Ubuntu-Basis mit dem LXDE-Desktop) ausgeliefert. LXDE ist eine leicht zu lernende Oberfläche, schlank, schnell. LXDE / Lubuntu läuft auch auf älteren Rechnern ab 256 / 512 MB RAM.
 
-<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/language_support.png" width="225" align="right" />
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/language_support.png" width="225" align="right"/>
 
-Optional kann man weitere Desktops (Oberflächen) installieren, die je nach Leistungsfähigkeit des Laptops gewählt werden sollten-
+Optional kann man weitere Desktops (Oberflächen) installieren, die je nach Leistungsfähigkeit des Laptops gewählt werden sollten:
 
 <ul>
 <li>Unity: hohe Systemanforderungen (min 1 GB RAM)</li>
@@ -65,7 +92,7 @@ Klick Preferences → auf Language Support (Sprache). Falls die Meldung “Langu
 
 Im nächsten Fenster auf Install/Remove languages (Install./Entfernen Sprachen) → wähle die Sprache(n) die du brauchst→ Apply → Apply System-wide (Systemweit anwenden).
 
-<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/regional_formats.png" width="225" align="right" />
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/regional_formats.png" width="225" align="right"/>
 
 Die neue Sprache(n) erscheinen in einer Liste: Lubuntu verwendet die Sprachen von oben nach unten, d.h. wenn ein Wort in der 1. Sprache nicht übersetzt ist kommt Sprache 2 dran usw. bis zu English.
 
@@ -77,7 +104,7 @@ Man kann auch die regionalen Formate für Zahlen, Währung, Datum usw. einstelle
 
 <strong>Tastatureinstellungen</strong>
 
-<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/keyboard_layout_handler.png" width="225" align="right" />
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/keyboard_layout_handler.png" width="225" align="right"/>
 
 Rechter Mausklick in der Task Bar auf das Symbol "de" (oder US oder welche Tastatur gerade aktiv ist) → Keyboard Layout handler Settings (Tastaturlayout) → Entfernen des Haken "Keep system layout", wenn noch gesetzt → 
 
@@ -90,7 +117,7 @@ Es können maximal 4 Tastatur-Layouts ausgewählt werden.
 
 <strong>Manuals, Video-Tutorials</strong>
 
-<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/link-folder-videos.png" align="right" width="50" />
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/link-folder-videos.png" align="right" width="50"/>
 
 Manuals, Videotutorials, Offline-Wikis u.v.a. mehr liegen im Ordner <a href="file://localhost/home/labdoo/Public/">/home/labdoo/Public/</a>. Über das Icon "videos" auf dem Desktop geht es direkt zum Ordner mit den Videos-Tutorials. Ein Video kann in Firefox oder einem Player angeschaut werden (ggf. Ansicht +/- zoomen).
 
@@ -102,15 +129,15 @@ Viel Spaß beim Spielen und Lernen mit deinen Freunden!    Das Labdoo Team.</val
 </body>
 <bid>
 <type>book_array</type>
-<value>170</value>
+<value>33</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>890</value>
+<value>817</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>894</value>
+<value>875</value>
 </mlid>
 <weight>
 <type>book_array</type>

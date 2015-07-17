@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>257</value>
+<value>100</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>257</value>
+<value>100</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -46,15 +46,15 @@ Re-boot, drives should be automatically mounted. Opional: Add the new drive to p
 </body>
 <bid>
 <type>book_array</type>
-<value>255</value>
+<value>35</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>973</value>
+<value>857</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>974</value>
+<value>884</value>
 </mlid>
 <weight>
 <type>book_array</type>

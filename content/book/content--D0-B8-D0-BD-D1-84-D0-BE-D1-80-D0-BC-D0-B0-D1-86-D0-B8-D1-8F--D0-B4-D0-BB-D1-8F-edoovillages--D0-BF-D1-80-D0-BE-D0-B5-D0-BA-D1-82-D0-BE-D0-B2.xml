@@ -1,0 +1,59 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>16454</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Информация для Edoovillages (проектов)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>Russian</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>33</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Bitte ins Russische übersetzen, danke....
+
+Labdoo.org nutzt 
+<ul>
+<li>kindgerechte Lernsoftware für alle Altersstufen (Vorschule, Primar-, Sekundarstufe 1 und 2)</li>
+<li>Erweiterungen für barrierefreie Zugänge (u.a. für sehbehinderte Anwender)</li>
+<li>Offline-Wikis, damit Kinder auch ohne Onlinezugang lesen und lernen können sowie</li>
+<li>Virenscanner ClamAV</li>
+<li>und viel, viel mehr...</li>
+</ul>
+
+Der in diesem Wiki beschriebene Leistungsumfang geht weit über die reine Installation von dem Betriebssystem Lubuntu hinaus. Durch die Installation der vorbereiteten <a href="https://www.labdoo.org/content/cloning-mit-fertigen-labdoo-images">Labdoo Images for  Cloning (für Parted Magic / Clonezilla)</a> oder der  <a href="https://www.labdoo.org/de/content/installationsskripte-%C3%BCbersicht">Installationsskripte</a> erhöht man deutlich den Nutzen für die Kinder.
+
+Teile dieses Wikis basieren u.a. auf Texten und Grafiken von www.edubuntu.org und http://wiki.ubuntuusers.de/Edubuntu.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>16454</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>0</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1043</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>213</value>
+<value>38</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>213</value>
+<value>38</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -29,7 +29,7 @@ Zum Zeitpunkt der Ausführung eines Skriptes muss der betreffende Labdoo-Rechner
 
 <strong>Es gibt Skripte für die Installation weiterer Lernsoftware, Lerninhalte und Codecs (bitte Rechtslage beachten), deren Einsatz wir dringend empfehlen, um eine reine Lubuntu-Installation aufzuwerten:</strong>
 <ul>
-<li><a href="http://ftp.labdoo.org/download/images/installskripts/installscript-content.sh">installscript-content.sh</a> (<strong>empfohlen, sehr sinnvoll</strong>; Skript installiert Lerninhalte, Offline-Wikis und Manuals, Anschluss eines USB-Sticks >= 16 GB sinnvoll)</li>
+<li><a href="http://ftp.labdoo.org/download/images/installskripts/installscript-content.sh">installscript-content.sh</a> (<strong>empfohlen, sehr sinnvoll</strong>; Skript installiert Lerninhalte, Offline-Wikis und Manuals, Anschluss eines USB-Sticks &gt;= 16 GB sinnvoll)</li>
 <li><a href="http://ftp.labdoo.org/download/images/installskripts/installscript-software.sh">installscript-software.sh</a> (<strong>empfohlen, sehr sinnvoll</strong>; Skript installiert weitere Lernsoftware, barrierefreie Zugänge für Blinde, Tools u.v.a. mehr nach)</li>
 </ul>
 
@@ -49,7 +49,19 @@ Zum Zeitpunkt der Ausführung eines Skriptes muss der betreffende Labdoo-Rechner
 <li><a href="http://ftp.labdoo.org/download/images/installskripts/delete-xowa-log-folder.txt">delete-xowa-log-folder.txt</a> (nur im Terminal ausführen, wenn man selber ein Image erstellen möchte, in dem Xowa installiert ist)</li>
 </ul>
 
-<strong>Download eines Skriptes</strong> -> o.a. Links anklicken -> speichern unter -> auf dem Desktop des Labdoo-Rechnerns speichern (home/labdoo/Desktop), alternativ per USB-Stick o.ä. auf den Desktop des Labdoo-Rechners kopieren.
+Hier die Kurzversion, wie ein Skript ausgeführt wird. Für Details wird auf die nachfolgenden Kapitel verwiesen:
+
+<strong>Download eines Skriptes</strong> -&gt; o.a. Links anklicken -&gt; speichern unter -&gt; auf dem Desktop des Labdoo-Rechnerns speichern (home/labdoo/Desktop), alternativ per USB-Stick o.ä. auf den Desktop des Labdoo-Rechners kopieren.
+
+<strong>Skript ausführbar machen:</strong> rechte Maustaste auf das Skript-Icon auf dem Desktop -&gt; Properties /  Dateieigenschaften -&gt; Permissions / Berechtigungen -&gt; Execute / Ausführen -&gt; Only owner and group / Nur Besitzer oder Gruppe -&gt; mit OK bestätigen. Weitere Details zu diesem Thema stehen im nächsten Kapitel.
+
+<strong>Ausführen eines Skriptes</strong> 
+Terminal öffnen (STRG/CTL und Alt und T gleichzeitig drücken) -&gt;
+<code>cd Desktop</code> (Enter), geht zum Ordner Desktop
+<code>ls</code> (Enter), zeigt alle Dateien und Ordner in /Desktop an.
+<code>sudo ./(Name des Skriptes)</code> (Enter) Als Beispiel : <code>sudo ./installscript-content.sh</code>
+
+<strong>Tipp Copy / Paste im Terminal:</strong> Mit <code>ls</code> erhält man im Terminal das Inhaltsverzeichnis, die ausführbaren Skripte sind grün -&gt; das gewünschte Skript markieren -&gt; Shift und STRG/CTL und C gleichzeitig drücken (copy / kopieren) -&gt; später dann mit Shift und STRG/CTL und V einfügen (Paste).
 
 <a href="http://ftp.labdoo.org/download/Public/videos/scripts-german.webm">Online FTP-Server: Skripte nutzen / Lerninhalte und Software u.v.a. mehr automatisch installieren</a>
 <a href="file://localhost/home/labdoo/Public/videos/install-lubuntu-german.webm">Offline lokal: Skripte nutzen / Lerninhalte und Software u.v.a. mehr automatisch installieren</a>
@@ -63,15 +75,15 @@ Zum Zeitpunkt der Ausführung eines Skriptes muss der betreffende Labdoo-Rechner
 </body>
 <bid>
 <type>book_array</type>
-<value>171</value>
+<value>31</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>891</value>
+<value>815</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>930</value>
+<value>822</value>
 </mlid>
 <weight>
 <type>book_array</type>

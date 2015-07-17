@@ -1,0 +1,53 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>15693</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Nice Tricks</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>15693</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>(WORK IN PROGRESS.)
+
+How to quickly know how many edoovillages a hub is servicing using the dashboard and using special URL parameters:
+
+Example: 
+
+- hub ID is 386.
+- Use the parameter h=$hubId to retrieve the geomap and list: https://dev2.labdoo.org/content/edoovillages-dashboard?h=386</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>39</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>823</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1018</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-1</value>
+</weight>
+</book>

@@ -1,11 +1,11 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>303</value>
+<value>188</value>
 </nid>
 <title>
 <type>node_title</type>
-<value>start a laptop request</value>
+<value>Start a laptop request</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>303</value>
+<value>188</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -47,7 +47,7 @@ More English documents can be downloaded from here http://ftp.labdoo.org/downloa
 
 Labdoo.org is only able to proceed IT donations, which we received in advance. Therefore it is difficult to tell in advance, when the requested donation will be available. 
 
-But everybody can contribute by telling your friends, family etc. about Labdoo.org and ask for laptop donations and others. Or talk to the local press and start a call for laptop donation. Or become a Labdoo helper or hub. Logos, graphics etc. are linked here https://dev.labdoo.org/de/content/faq-forum#FAQ02.
+But everybody can contribute by telling your friends, family etc. about Labdoo.org and ask for laptop donations and others. Or talk to the local press and start a call for laptop donation. Or become a Labdoo helper or hub. Logos, graphics etc. are linked here https://www.labdoo.org/de/content/faq-forum#FAQ02.
 
 In case of questions please send a mail to contact@Labdoo.org, thank you.</value>
 </body>
@@ -57,15 +57,15 @@ In case of questions please send a mail to contact@Labdoo.org, thank you.</value
 </body>
 <bid>
 <type>book_array</type>
-<value>270</value>
+<value>142</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>987</value>
+<value>926</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>1020</value>
+<value>972</value>
 </mlid>
 <weight>
 <type>book_array</type>

@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>252</value>
+<value>55</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>252</value>
+<value>55</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -53,15 +53,15 @@ optional: unter technische Notizen Bemerkungen eingeben.
 </body>
 <bid>
 <type>book_array</type>
-<value>171</value>
+<value>31</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>921</value>
+<value>832</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>969</value>
+<value>839</value>
 </mlid>
 <weight>
 <type>book_array</type>

@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>176</value>
+<value>77</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,11 +17,13 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>176</value>
+<value>77</value>
 </field_reference_book>
 <body>
 <type>value</type>
-<value>An den Empfänger der IT-Spende,
+<value><img src="/sites/default/files/content/labdoo-toolkit/labdoo-logos-education-1.png"  width="530"/>
+
+An den Empfänger der IT-Spende,
 
 Wir freuen uns, dass wir zu ihrem Projekt mit IT-Spenden beitragen können und so Kindern und Jugendlichen die Teilhabe an der „digitalen Gesellschaft“ ermöglichen. Die IT-Spende erhalten Sie “as it is”, ohne Gewährleistung, Garantie oder sonstige Ansprüche.
 Es entsteht aber für Sie die folgenden Verpflichtungen, denen Sie mit Erhalt der IT-Spende zustimmen, basierend auf den den allgemeinen Labdoo-Grundsätzen:
@@ -38,7 +40,9 @@ Es entsteht aber für Sie die folgenden Verpflichtungen, denen Sie mit Erhalt de
 
 Wir bedanken uns für Ihr Einverständnis und Ihr Engagement, um diese Welt zu einem besseren Ort zu machen. 
 
-Das Labdoo Team</value>
+Das Labdoo Team
+<img src="/profiles/labdoo/files/pictures/equation-2-alpha-smaller.png" width="80"/>
+</value>
 </body>
 <body>
 <type>format</type>
@@ -46,15 +50,15 @@ Das Labdoo Team</value>
 </body>
 <bid>
 <type>book_array</type>
-<value>170</value>
+<value>33</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>890</value>
+<value>817</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>896</value>
+<value>861</value>
 </mlid>
 <weight>
 <type>book_array</type>

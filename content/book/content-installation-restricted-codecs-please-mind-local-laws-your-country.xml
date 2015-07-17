@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>281</value>
+<value>145</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>281</value>
+<value>145</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -55,15 +55,15 @@ Open a terminal and execute:
 </body>
 <bid>
 <type>book_array</type>
-<value>255</value>
+<value>35</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>973</value>
+<value>857</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>998</value>
+<value>929</value>
 </mlid>
 <weight>
 <type>book_array</type>

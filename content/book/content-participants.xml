@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>115</value>
+<value>179</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>115</value>
+<value>179</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -30,15 +30,15 @@ All of Labdoo's general values, philosophy and principles described in this docu
 </body>
 <bid>
 <type>book_array</type>
-<value>92</value>
+<value>76</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>834</value>
+<value>860</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>857</value>
+<value>963</value>
 </mlid>
 <weight>
 <type>book_array</type>

@@ -1,0 +1,59 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>16913</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Where Can I Start?</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>16913</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><strong>5 Easy Steps to Get Started</strong>
+
+The following steps will guide you through the process of creating a sustainable school hub.  Remember, the most important element of all is commitment. 
+
+1. Check with your school for the requirements to form a school club.
+2. Invite friends to fulfill the club officer roles.
+3. Find a teacher to be your club advisor.
+4. Email us at contact@labdoo.org.  We will find you a parent hub to work with.  The parent hub can help provide guidance for your club activities.
+5. Submit the <a href="https://www.labdoo.org/content/school-hub-information-form" >School Hub Information Form </a> to your parent hub manager.  
+
+Once you submit the "School Hub Information Form", your hub will be formally added into the <a href="https://www.labdoo.org/content/hubs-dashboard" >Labdoo Hubs</a> list.
+<br></br>
+<br></br>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>full_html</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>34</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1062</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1064</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

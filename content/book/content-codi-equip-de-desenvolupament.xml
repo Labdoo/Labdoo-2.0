@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>101</value>
+<value>119</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>87</value>
+<value>67</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -34,7 +34,7 @@ Tot el codi font de Labdoo es distribueix sota la llicència <a href="http://www
 </body>
 <bid>
 <type>book_array</type>
-<value>101</value>
+<value>119</value>
 </bid>
 <plid>
 <type>book_array</type>
@@ -42,7 +42,7 @@ Tot el codi font de Labdoo es distribueix sota la llicència <a href="http://www
 </plid>
 <mlid>
 <type>book_array</type>
-<value>843</value>
+<value>903</value>
 </mlid>
 <weight>
 <type>book_array</type>

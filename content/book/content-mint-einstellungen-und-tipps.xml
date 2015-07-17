@@ -1,0 +1,93 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>16442</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Mint - Einstellungen und Tipps</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>16442</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Mit Hilfe der Skripte kann man Lernlaptops natürlich auch auf Basis einer anderen Linux-Distribution wie Mint http://linuxmint.com/ aufsetzen. Letzendlich ist viel Geschmackssache, welche Distribution man nimmt, aber bitte bedenkt, 
+<ul>
+<li>dass die meisten Labdoo-Rechner auf Basis von Lubuntu erstellt werden.</li>
+<li>Wenn jetzt zwei Laptops, einer mit Lubuntu, einer mit Mint in einer Schule eintreffen, ist die Verwirrung gross.</li>
+<li>Und Mint braucht etwa 10-20% mehr Leistung als Lubuntu (persönliche Erfahrung).</li>
+
+Wenn ihr also ein komplettes Projekt (Edoovillage) auf Basis von Mint-basierten Rechnern ausstatten wollt und diese nicht zu alt sind, könnt ihr es gerne machen. Aber Laptops auf Basis verschiedener Distros an einer Schule mischen - davon raten wir ab.
+
+Hier noch ein paar Hinweise:
+
+<li><strong>Login (Anmeldebildschirm) auf LightDM ändern, Fehlender Benutzer Gast (Guest)</strong></li>
+
+Der Mint-Anmeldebildschirm Mint Display Manager (MDM) kennt keinen Gast-Benutzer, der aber gerade für Schulen sinnvoll ist, da dessen Eingaben beim Abmelden wieder gelöscht werden. Und Anmelden per LightDM kennen die Kinder, falls schon ein Lubuntu-Rechner in der Schule ist. Man sollte daher MDM gegen LightDM, den Anmeldebildschirm von Lubuntu/LXDE, austauschen:
+
+Hierzu ein Terminal öffnen --> 
+
+<code>sudo apt-get install lightdm lightdm-gtk-greeter unity-greeter light-themes light-locker gksu laefpad</code> (Enter)
+
+Während der Installation wird nach dem "<strong>Default display manager</strong>" gefragt, hier <strong>LightDM</strong> auswählen.
+
+Dann im Terminal ausführen
+
+<code>sudo mkdir -p -v /etc/lightdm/lightdm.config.d</code>
+
+<code>sudo touch /etc/lightdm/lightdm.config.d/50-my-config.conf</code>
+
+<code>gksudo leafpad /etc/lightdm/lightdm.config.d/50-my-config.conf</code>
+
+Im Editor  einfügen:
+<ul>
+[SeatDefaults]
+greeter-session=lightdm-gtk-greeter
+user-session=xfce
+</ul>
+<br />
+
+<li><strong>Zurück von LightDM auf MDM umschalten</strong></li>
+
+Für den Fall, dass doch wieder MDM statt LightDM zum Einsatz kommen soll, im Terminal ausführen:
+
+<code>sudo dpkg-reconfigure mdm</code> (Enter)
+
+Bei der Abfrage dann MDM auswählen.
+
+Weiteres auf:
+https://wiki.ubuntuusers.de/Displaymanager
+http://www.webupd8.org/2012/06/how-to-use-lightdm-instead-of-mdm-in.html
+</ul></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>31</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>856</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1041</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

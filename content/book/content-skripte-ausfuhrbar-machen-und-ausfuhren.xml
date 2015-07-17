@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>215</value>
+<value>64</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,17 +17,17 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>215</value>
+<value>64</value>
 </field_reference_book>
 <body>
 <type>value</type>
-<value><strong>Ausführbarmachen eines Skriptes</strong> -> rechte Maustaste auf das Skript auf dem Desktop -> properties (Eigenschaften) -> Permissions (2. Reiter) -> Execute: Only owner and group -> ok
+<value><strong>Ausführbarmachen eines Skriptes</strong> -&gt; rechte Maustaste auf das Skript auf dem Desktop -&gt; properties (Eigenschaften) -&gt; Permissions (2. Reiter) -&gt; Execute: Only owner and group -&gt; ok
 
 Sicherheitshalber solltet ihr die Skripte als Administrator (super-user) ausführen. Für manche Aufgaben wie die Installation von Software ist es sogar zwingend erforderlich. Sofern also nicht anderes angegeben:
 
-<strong>Ausführen eines Skriptes als Administrator (super-user)</strong> -> <a href="https://dev.labdoo.org/content/terminalfenster-%C3%B6ffnen">Terminal öffnen</a> -> <code>cd Desktop</code> (enter), um in den Ordner /Desktop zu gelangen -> <code>sudo ./installscript...sh</code> (den Namen des Skriptes inkl. .sh am Ende) (Enter) -> ggf. Passwort eingeben und ablaufen lassen.
+<strong>Ausführen eines Skriptes als Administrator (super-user)</strong> -&gt; <a href="https://www.labdoo.org/content/terminalfenster-%C3%B6ffnen">Terminal öffnen</a> -&gt; <code>cd Desktop</code> (enter), um in den Ordner /Desktop zu gelangen -&gt; <code>sudo ./installscript...sh</code> (den Namen des Skriptes inkl. .sh am Ende) (Enter) -&gt; ggf. Passwort eingeben und ablaufen lassen.
 
-<strong>1. Tipp:</strong> nach Eingabe von <code>cd Desktop</code> Eingabe von <code>ls</code> im Terminal -> Listet alle Dateien im Ordner Desktop auf -> markieren des Skriptes mit der Maus -> entweder Shift + STRG/CTL + c gleichzeitg drücken oder rechte Maustaste "kopieren" -> <code>sudo ./</code> eintippen -> entweder Shift + STRG/CTL + v oder rechte Maustaste + einfügen -> erspart das Eintippen des Skriptnamen :)
+<strong>1. Tipp:</strong> nach Eingabe von <code>cd Desktop</code> Eingabe von <code>ls</code> im Terminal -&gt; Listet alle Dateien im Ordner Desktop auf -&gt; markieren des Skriptes mit der Maus -&gt; entweder Shift + STRG/CTL + c gleichzeitg drücken oder rechte Maustaste "kopieren" -&gt; <code>sudo ./</code> eintippen -&gt; entweder Shift + STRG/CTL + v oder rechte Maustaste + einfügen -&gt; erspart das Eintippen des Skriptnamen :)
 
 <strong>2. Tipp</strong> Wenn das <code>installscript-content.sh</code> ausgeführt wird lohnt sich der Einsatz eines USB-Sticks oder einer externen USB-Festplatte. Diese muss "gemountet" sein, d.h. am einfachsten einmal mit dem File Manager PacManFM öffnen und prüfen, of im obersten Verzeichnis ein Ordner <strong>Public</strong> angelegt ist. Das Skript für die Lerninhalte kopiert beim ersten Mal ca. 9 GB an Daten auf den USB-Stick und anschliesend auf die Festplatte des Labdoo-Rechners. Damit ist noch keine Zeit gewonnen. Ab dem 2. Rechner aber wird nur kurz mit Änderungen auf dem FTP-Server abgeglichen und dann vom USB-Laufwerk auf die Festplatte kopiert. Dies spart euch erhebliche Zeit und entlastet den Datenverkehr mit dem FTP-Server.
 
@@ -49,15 +49,15 @@ Es gibt aber auch Schritte, die die Skripte (noch) nicht erledigen können. Dazu
 </body>
 <bid>
 <type>book_array</type>
-<value>171</value>
+<value>31</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>930</value>
+<value>822</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>932</value>
+<value>848</value>
 </mlid>
 <weight>
 <type>book_array</type>

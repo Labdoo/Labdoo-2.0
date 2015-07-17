@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>209</value>
+<value>202</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>209</value>
+<value>202</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -47,15 +47,15 @@ Erst nach Löschung der Festplatte(n) geht es weiter mit dem Aufspielen der Imag
 </body>
 <bid>
 <type>book_array</type>
-<value>171</value>
+<value>31</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>925</value>
+<value>985</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>926</value>
+<value>986</value>
 </mlid>
 <weight>
 <type>book_array</type>

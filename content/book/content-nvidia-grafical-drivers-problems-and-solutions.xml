@@ -1,7 +1,7 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>291</value>
+<value>170</value>
 </nid>
 <title>
 <type>node_title</type>
@@ -17,7 +17,7 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>291</value>
+<value>170</value>
 </field_reference_book>
 <body>
 <type>value</type>
@@ -29,7 +29,7 @@ Either using CTL+ALT+t (if logged in), CTL+Alt+F3 or follow the GRUB information
 <code>sudo apt-get install linux-headers-generic</code>  (Enter)
 Reboot.
 
-<li>Preferences --> Additional Drivers --> wait a while and if proprietary drivers are offered for downlaod.</li>
+<li>Preferences --&gt; Additional Drivers --&gt; wait a while and if proprietary drivers are offered for downlaod.</li>
 
 <li>NVIDIA driversfrom PPA (source) of developer community</li>
 
@@ -60,15 +60,15 @@ and:
 </body>
 <bid>
 <type>book_array</type>
-<value>255</value>
+<value>35</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>973</value>
+<value>857</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>1008</value>
+<value>954</value>
 </mlid>
 <weight>
 <type>book_array</type>
