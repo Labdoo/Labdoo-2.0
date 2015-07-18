@@ -1318,6 +1318,25 @@ function lbd_nodeid2title($nodeId)
 
 
 /**
+ * Returns the node ID from the title of the node 
+ *
+ * @param title The title of the node 
+ * @param type If set, the type of node (used to help reduce possible collisions) 
+ *
+ * @return The ID of a node
+ * 
+ */
+function lbd_title2nodeid($title, $type=NULL)
+{
+  if($type)
+    $result = db_query("SELECT nid FROM node WHERE title=:title AND type=:type", array(":title"=> $title, ":type"=> $type));
+  else
+    $result = db_query("SELECT nid FROM node WHERE title=:title", array(":title"=> $title));
+  return $result->fetchField();
+}
+
+
+/**
  * Returns the node id of given a laptop identifier
  *
  * @param laptopId The ID of a laptop

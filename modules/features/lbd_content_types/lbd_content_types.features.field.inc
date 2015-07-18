@@ -3970,7 +3970,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '5',
+          'weight' => '6',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -4005,7 +4005,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '8',
+        'weight' => '9',
       ),
     ),
   );
@@ -4198,7 +4198,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'module' => 'file',
           'settings' => array(),
           'type' => 'file_default',
-          'weight' => 6,
+          'weight' => '7',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -4231,7 +4231,96 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
-        'weight' => '9',
+        'weight' => '10',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-team_task-field_task_due_date'.
+  $fields['node-team_task-field_task_due_date'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_task_due_date',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'date',
+      'settings' => array(
+        'cache_count' => '4',
+        'cache_enabled' => 0,
+        'granularity' => array(
+          'day' => 'day',
+          'hour' => 'hour',
+          'minute' => 'minute',
+          'month' => 'month',
+          'second' => 0,
+          'year' => 'year',
+        ),
+        'timezone_db' => 'UTC',
+        'todate' => '',
+        'tz_handling' => 'date',
+      ),
+      'translatable' => '0',
+      'type' => 'datetime',
+    ),
+    'field_instance' => array(
+      'bundle' => 'team_task',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'date',
+          'settings' => array(
+            'format_type' => 'long',
+            'fromto' => 'both',
+            'multiple_from' => '',
+            'multiple_number' => '',
+            'multiple_to' => '',
+          ),
+          'type' => 'date_default',
+          'weight' => '3',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_task_due_date',
+      'label' => 'Due date',
+      'required' => 0,
+      'settings' => array(
+        'default_value' => 'blank',
+        'default_value2' => 'same',
+        'default_value_code' => '',
+        'default_value_code2' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'date',
+        'settings' => array(
+          'increment' => '15',
+          'input_format' => 'm/d/Y - H:i:s',
+          'input_format_custom' => '',
+          'label_position' => 'above',
+          'text_parts' => array(),
+          'year_range' => '-3:+3',
+        ),
+        'type' => 'date_select',
+        'weight' => '4',
       ),
     ),
   );
@@ -4278,7 +4367,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => '4',
+          'weight' => '5',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -4305,7 +4394,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '5',
+        'weight' => '6',
       ),
     ),
   );
@@ -4354,7 +4443,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => '3',
+          'weight' => '4',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -4381,7 +4470,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '4',
+        'weight' => '5',
       ),
     ),
   );
@@ -4598,6 +4687,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
   t('Date(s)');
   t('Description');
   t('Determine if this is an OG group.');
+  t('Due date');
   t('Edoovillage');
   t('File to store Node Gallery media.');
   t('Galleries');

@@ -248,19 +248,56 @@ function labdoo_block_filter_team_actions() {
  *
  */
 function lbd_teams_node_presave($node) {
+  // If it's a task and has a date, create an event too
+  if($node->type == 'team_task' && labdoo_lib_get_field($node, 'field_task_due_date', 'node', 'value')) {
+    $eventTitle = $node->title . " (Event)";
+    $nodeEventId = 0;
+    // If it has an associated event, get its node ID
+    if(property_exists($node, 'original')) {
+      $previousEventTitle = $node->original->title . " (Event)";
+      $nodeEventId = lbd_title2nodeid($previousEventTitle, 'event');
+    }
+    // If there is no associated event, create one
+    if(!property_exists($node, 'original') || !$nodeEventId) {
+      $newNodeEvent = new stdClass();
+      $newNodeEvent->type = 'event';
+      node_object_prepare($newNodeEvent);
+      $newNodeEvent->title = $eventTitle;
+      $newNodeEvent->language = LANGUAGE_NONE;
+      $newNodeEvent->created = time();
+      $newNodeEvent->changed = $newNodeEvent->created;
+      $newNodeEvent->status = 1;
+      $newNodeEvent->promote = 0;
+      $newNodeEvent->sticky = 0;
+      $newNodeEvent->format = 2;
+      $newNodeEvent->uid = $node->uid;
+      $newNodeEvent->field_event_date = $node->field_task_due_date;
+      $newNodeEvent->body = $node->body;
+      $newNodeEvent->og_group_ref = $node->og_group_ref;
+      node_save($newNodeEvent);
+    }
+    else {
+      // There is an associated event, just update it
+      $nodeEvent = node_load($nodeEventId);
+      $nodeEvent->title = $eventTitle;
+      $nodeEvent->field_event_date = $node->field_task_due_date;
+      $nodeEvent->body = $node->body;
+      node_save($nodeEvent);
+    }
+  }
 
-  if(!labdoo_lib_node_is_type(array('team_page', 'team_task', 'event')))
-    return;
-
-  $groupId = lbd_teams_page_group_id();
-
-  if($groupId == NULL)
-    return;
-
-  // Add the tag '[TEAM_NAME]' if it has not been added yet
-  $teamTag = "[" . lbd_nodeid2title($groupId) . "]";
-  if(strpos($node->title, $teamTag) === false) 
-    $node->title = $teamTag . " " .  $node->title;
+//  if(!labdoo_lib_node_is_type(array('team_page', 'team_task', 'event')))
+//    return;
+//
+//  $groupId = lbd_teams_page_group_id();
+//
+//  if($groupId == NULL)
+//    return;
+//
+//  // Add the tag '[TEAM_NAME]' if it has not been added yet
+//  $teamTag = "[" . lbd_nodeid2title($groupId) . "]";
+//  if(strpos($node->title, $teamTag) === false) 
+//    $node->title = $teamTag . " " .  $node->title;
 
   return;
 }
