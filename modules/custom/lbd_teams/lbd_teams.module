@@ -188,9 +188,15 @@ function lbd_teams_page_group_id() {
  *
  */
 function labdoo_render_team_actions() {
+  $path = drupal_get_path_alias(current_path());
   global $language;
 
-  $groupId = lbd_teams_page_group_id();
+  // Take care of two cases: either the page is associated
+  // with a group, or is the team-members page
+  if(strcmp($path, "content/team-members") == 0) 
+    $groupId = $_GET['t'];
+  else
+    $groupId = lbd_teams_page_group_id();
 
   if ($language->language != 'en')
     $lang = '/' . $language->language;
@@ -213,6 +219,8 @@ function labdoo_render_team_actions() {
 <a href='$lang/node/$groupId/activities'>" . t("View wall") . "</span></a></p>
 <img src='/profiles/labdoo/files/pictures/calendar_icon.png' style='width: 20px; height: 21px;'/>&nbsp;
 <a href='$lang/node/$groupId/calendar/month'>" . t("View calendar") . "</span></a></p>
+<img src='/profiles/labdoo/files/pictures/team-members.png' style='width: 22px; height: 21px;'/>&nbsp;
+<a href='$lang/content/team-members?t=" . $groupId . "'>" . t("Team members") . "</span></a></p>
 <img src='/profiles/labdoo/files/pictures/search.png' style='width: 20px; height: 21px;'/>&nbsp;
 <a href='$lang/teams-dashboard?og_group_ref_target_id%5B%5D=" . $groupId . "'>" . t("Search inside this team") . "</span></a></p>
 <br>
@@ -229,13 +237,28 @@ function labdoo_render_team_actions() {
  *
  */
 function labdoo_block_filter_team_actions() {
+  $path = drupal_get_path_alias(current_path());
+  $groupId = 0;
   global $user;
 
+  // Two cases to consider:
+  //   - This is a page associated with a group
+  //   - This is the 'Team Members' page
+  // Only in these two cases return TRUE
+ 
   $groupId = lbd_teams_page_group_id();
 
-  if($groupId == NULL)
+  if(strcmp($path, "content/team-members") == 0) { 
+    if(!empty($_GET['t'])) 
+      $groupId = $_GET['t'];
+    if(!is_numeric($groupId)) 
+      return FALSE;
+  }
+
+  if($groupId == NULL && !$groupId)
     return FALSE;
 
+  // If user is not a member, return FALSE
   if(!og_is_member('node', $groupId))
     return FALSE;
 
@@ -322,5 +345,39 @@ function lbd_teams_get_team_members($teamId) {
     $members[] = $item->etid;
 
   return $members;
+}
+
+
+/**
+ * Renders a table of the members of a team
+ *
+ * @param $teamId The team ID 
+ *
+ * @return The printed table with all members
+ *
+ */
+function lbd_display_team_members($teamId) {
+
+  if($teamId == NULL || !is_numeric($teamId)) 
+    return;
+  $members = lbd_teams_get_team_members($teamId);
+
+  $header = array(t('User name'), t('Role'));
+  $rows = array();
+  foreach($members as $userId) {
+    $userNode = user_load($userId);
+    $userCodeName = $userNode->name;
+    $userRoles = og_get_user_roles('node', $teamId, $userId);
+    if(og_user_access('node', $teamId, 'administrator member', $userNode))
+      $role = 'admin, member';
+    else
+      $role = 'member';
+    $rows[] = array("<a href='../user/" . $userId . "'>" . $userCodeName . "</a>", $role);
+  }
+ 
+  $output = theme('table', array('header' => $header, 'rows' => $rows ));
+  print($output);
+
+  return;
 }
 

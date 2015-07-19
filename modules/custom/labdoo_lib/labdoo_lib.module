@@ -2049,9 +2049,6 @@ function labdoo_block_filter_language_switch() {
   if(labdoo_block_filter_sidebar_second())
     return TRUE;
 
-  if(lbd_wiki_is_book_node())
-    return TRUE;
-
   return FALSE;
 }
 
@@ -2115,6 +2112,12 @@ function labdoo_block_filter_header() {
 
   if(0 === strpos($path, 'node/add/'))
       return TRUE;
+
+  if(lbd_teams_page_group_id() || (0 === strpos($path, 'content/team-members')))
+    return TRUE;
+
+  if(lbd_wiki_is_book_node())
+    return TRUE;
 
   return FALSE;
 }
@@ -2227,6 +2230,25 @@ function labdoo_lib_compute_dootrip_load($nodeLoaded) {
 }
 
 
+/**
+ * Call back function used to check if the given account corresponds
+ * to the current user
+ *
+ * @param $account An input account
+ *
+ * @return TRUE if the accounts match, FALSE otherwise
+ *
+ */
+function _is_my_user_page($account = NULL) {
+  global $user;
+
+  if($account->name == $user->name)
+      return TRUE;
+
+  return FALSE;
+}
+
+
 /*
  * hook_menu
  *
@@ -2234,7 +2256,7 @@ function labdoo_lib_compute_dootrip_load($nodeLoaded) {
 function labdoo_lib_menu() {
 
   $items['user/%user/metrics'] = array(
-    'access callback' => TRUE,
+    'access callback' => _is_my_user_page,
     'access arguments' => array(1),
     'page callback' => '_labdoo_lib_user_metrics',
     'page arguments' => array(1),
@@ -2244,7 +2266,7 @@ function labdoo_lib_menu() {
   );
 
   $items['user/%user/myRoles'] = array(
-    'access callback' => TRUE,
+    'access callback' => _is_my_user_page,
     'access arguments' => array(1),
     'page callback' => '_labdoo_lib_user_roles',
     'page arguments' => array(1),

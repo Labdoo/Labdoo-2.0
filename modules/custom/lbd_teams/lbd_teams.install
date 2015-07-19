@@ -183,12 +183,53 @@ function _delete_lbd_teams()
 
 
 /**
+ * Creates a node to display team members
+ */
+function lbd_create_team_members_page()
+{
+
+  $body_code = "
+<?php 
+\$teamId = NULL;
+if(!empty(\$_GET['t'])) \$teamId = \$_GET['t'];
+lbd_display_team_members(\$teamId); 
+?>
+  ";
+
+  $node = new stdClass();
+  $node->type = 'page';
+  node_object_prepare($node);
+  
+  $node->title = "Team Members";
+  $node->language = LANGUAGE_NONE;
+  $node->body[$node->language][0]['value']  = $body_code;
+  $node->body[$node->language][0]['summary'] = '';
+  $node->body[$node->language][0]['format']  = 'php_code';
+  $node->comment = 0;
+  node_save($node);
+}
+
+
+/**
+ * Deletes the node listing team members
+ *
+ */
+function lbd_delete_team_members_page()
+{
+  $path = drupal_lookup_path("source", "content/team-members"); 
+  $node = menu_get_object("node", 1, $path);
+  node_delete($node->nid);
+}
+
+
+/**
  * Implements hook_enable
  *
  */
 function lbd_teams_enable()
 {
   _create_lbd_teams(); 
+  lbd_create_team_members_page();
 }
 
 
@@ -199,5 +240,6 @@ function lbd_teams_enable()
 function lbd_teams_disable()
 {
   _delete_lbd_teams();
+  lbd_delete_team_members_page();
 }
 
