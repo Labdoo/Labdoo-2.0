@@ -2,7 +2,7 @@
 
   All of Labdoo's source code is released under GPL version 3 or later.
 
-* Installation in development node
+* Installation in development mode
 
   The recommended way of installation is to build a new server from
   scratch, inside a chroot environment.
