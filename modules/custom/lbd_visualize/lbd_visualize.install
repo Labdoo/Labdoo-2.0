@@ -170,8 +170,9 @@ function lbd_visualize_enable()
 
   _create_slider("lbd_display_slider_edoovilage_data", "Data", "content/edoovillage-data", "edoovillage", "dashboard-tabs-data", 57, 1);
   _create_slider("lbd_display_slider_edoovilage_doojects", "Doojects", "content/edoovillage-doojects", "edoovillage", "dashboard-tabs-doojects", 98, 2);
-  _create_slider("lbd_display_slider_edoovilage_metrics", "Metrics", "content/edoovillage-metrics", "edoovillage", "dashboard-tabs-metrics", 86, 3);
-  _create_slider("lbd_display_slider_edoovilage_gics", "GICs (Global Inventory Checks)", "content/edoovillage-gics", "edoovillage", "dashboard-tabs-gics", 63, 4);
+  _create_slider("lbd_display_slider_edoovilage_dootrips", "Dootrips", "content/edoovillage-dootrips", "edoovillage", "dashboard-tabs-dootrips", 86, 3);
+  _create_slider("lbd_display_slider_edoovilage_metrics", "Metrics", "content/edoovillage-metrics", "edoovillage", "dashboard-tabs-metrics", 86, 4);
+  _create_slider("lbd_display_slider_edoovilage_gics", "GICs (Global Inventory Checks)", "content/edoovillage-gics", "edoovillage", "dashboard-tabs-gics", 63, 5);
 
   _create_slider("lbd_display_slider_hub_data", "Data", "content/hub-data", "hub", "dashboard-tabs-data", 57, 1);
   _create_slider("lbd_display_slider_hub_edoovillages", "Edoovillages", "content/hub-edoovillages", "hub", "dashboard-tabs-edoovillages", 114, 2);

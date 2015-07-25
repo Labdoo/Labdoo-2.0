@@ -381,3 +381,67 @@ function lbd_display_team_members($teamId) {
   return;
 }
 
+
+/**
+ * Subscribe a user to a team
+ *
+ * @param $teamId The team group ID
+ * @param $account The user account
+ *
+ */
+function lbd_teams_register_user_to_team($teamId, $account) {
+  $values = array(
+    'entity_type' => 'user',
+    'entity' => $account,
+    'state' => OG_STATE_ACTIVE,
+  );
+
+  og_group('node', $teamId, $values);
+  return;
+}
+
+
+/**
+ *
+ * Implementation of hook_user_insert
+ *
+ */
+function lbd_teams_user_insert(&$edit, $account, $category) {
+
+  // Register the user to some default Labdoo teams
+
+  // Global group ID is 24
+  lbd_teams_register_user_to_team(24, $account);
+  
+  return;
+}
+
+
+/**
+ *
+ * Register all users to a team
+ *
+ * @param @teamId The team group ID
+ *
+ */
+//function lbd_teams_mass_register($teamId) {
+//  $query = "SELECT uid FROM users ORDER BY uid ASC";
+//  $result = db_query($query);
+//
+//  foreach($result as $item) {
+//    // Skip user zero
+//    if($item->uid == 0)
+//      continue;
+//    $account = user_load($item->uid);
+//    if($account) {
+//      lbd_teams_register_user_to_team($teamId, $account); 
+//      drupal_set_message("Account was registered to the team. User id: " . $item->uid);
+//    }
+//    else {
+//      drupal_set_message("Account was NULL. User id: " . $item->uid);
+//    }
+//  }
+//
+//  return;
+//}
+

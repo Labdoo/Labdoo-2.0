@@ -1432,6 +1432,81 @@ function lbd_display_slider_edoovilage_metrics($edoovillageId) {
 
 
 /**
+ * Displays the edoovillage dootrips slider
+ * 
+ * @param edoovillageId Identifier of the edoovillage 
+ *
+ * @return The edoovillage dootrips slider 
+ *
+ */
+function lbd_display_slider_edoovilage_dootrips($edoovillageId) {
+  global $language;
+  $defaultLanguage = language_default();
+  $defaultLanguageCode = $defaultLanguage->language;
+
+  if($edoovillageId == NULL || !is_numeric($edoovillageId)) 
+    return;
+  $loadedNode = node_load($edoovillageId);
+  if($loadedNode == FALSE)
+    return;
+  if($loadedNode->type != "edoovillage")
+    return;
+
+  $header = array(array('data' => t('Dootrip #'), 'nowrap' => 'nowrap'),
+                  array('data' => t('Origin'), 'nowrap' => 'nowrap'), 
+                  array('data' => t('Destination'), 'nowrap' => 'nowrap'), 
+                  array('data' => t('Status'), 'nowrap' => 'nowrap'),
+                  array('data' => t('Capacity'), 'nowrap' => 'nowrap'),
+                  array('data' => t('Doojects assigned'), 'nowrap' => 'nowrap'));
+  $rows = array();
+  $query = "SELECT DISTINCT(field_dootrips_target_id) FROM field_data_field_dootrips WHERE entity_id IN 
+           (SELECT entity_id FROM field_data_field_edoovillage_destination WHERE field_edoovillage_destination_target_id=:edoovillageId)";
+  $placeHolders[':edoovillageId'] = $edoovillageId;
+  $result = db_query($query, $placeHolders);
+
+  foreach($result as $item) {
+    // Load the dootrip node
+    $dootripId = $item->field_dootrips_target_id;
+    $dootripNode = node_load($dootripId);
+    $urlPath = drupal_get_path_alias("node/" . $dootripId, $language->language);
+
+    // Get the name
+    $dootripName = explode(" - ", $dootripNode->title)[0];
+    // Get source location
+    $allLocations = field_get_items('node', $dootripNode, 'field_origin_of_the_trip');
+    $location = $allLocations[0];
+    $thisCountrySrc = labdoo_country_code2name($location['country']);
+    $thisCitySrc = $location['city'];
+    // Get destination location
+    $allLocations = field_get_items('node', $dootripNode, 'field_destination_of_the_trip');
+    $location = $allLocations[0];
+    $thisCountryDst = labdoo_country_code2name($location['country']);
+    $thisCityDst = $location['city'];
+    // Get dootrip status
+    $status = field_get_items('node', $dootripNode, 'field_origin_of_the_trip');
+    $statusLabels = list_allowed_values(field_info_field("field_status_dootrip"));
+    $status = $statusLabels[labdoo_lib_get_field($dootripNode, 'field_status_dootrip', 'node', 'value')];
+    // Get dootrip capacity
+    $capacity = labdoo_lib_get_field($dootripNode, 'field_dootrip_capacity', 'node', 'value'); 
+    // Get number of dootrips assigned
+    $assigned = labdoo_lib_get_field($dootripNode, 'field_number_of_doojects_assigne', 'node', 'value'); 
+    // Create the row
+    $rows[] = array(array('data' => "<a href='" . $urlPath . "'>" . $dootripName . "</a>", 'nowrap' => 'nowrap'),
+                    array('data' => $thisCitySrc . ", " . $thisCountrySrc, 'nowrap' => 'nowrap'), 
+                    array('data' => $thisCityDst . ", " . $thisCountryDst, 'nowrap' => 'nowrap'), 
+                    array('data' => $status, 'nowrap' => 'nowrap'), 
+                    array('data' => $capacity, 'nowrap' => 'nowrap'), 
+                    array('data' => $assigned, 'nowrap' => 'nowrap'));
+  }
+ 
+  $output = theme('table', array('header' => $header, 'rows' => $rows ));
+  print($output);
+
+  return;
+}
+
+
+/**
  * Displays the edoovillage GICs slider
  * 
  * @param edoovillageId Identifier of the edoovillage 

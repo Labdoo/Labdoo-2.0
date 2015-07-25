@@ -41,6 +41,7 @@ function make_main_menu() {
             'plid' => 0, 
             'module' => 'menu',
           );
+  $item['options']['attributes']['title'] = t('Explore the Labdoo platform using a variety of tools');
   $exploreMlid = menu_link_save($item);
 
   $item = array(
@@ -80,6 +81,7 @@ function make_main_menu() {
             'plid' => $exploreMlid, 
             'module' => 'menu',
           );
+  $item['options']['attributes']['title'] = t('Dootrips are CO2-neutral routes donated by travelers to help bring education devices to schools');
   $mlid = menu_link_save($item);
 
   $item = array(
@@ -162,11 +164,12 @@ function make_main_menu() {
             'plid' => 0, 
             'module' => 'menu',
           );
+  $item['options']['attributes']['title'] = t('Doojects (Labdoo objects) are education devices such as laptops, tablets, eBooks that are donated to schools');
   $doojectMlid = menu_link_save($item);
 
   $item = array(
             'link_path' => 'node/add/laptop',
-            'link_title' => 'Tag',
+            'link_title' => 'Tag it!',
             'menu_name' => 'main-menu',
             'weight' => -40,
             'language' => 'en',
@@ -212,6 +215,7 @@ function make_main_menu() {
             'plid' => 0, 
             'module' => 'menu',
           );
+  $item['options']['attributes']['title'] = t('Edoovillages are schools and education centers that receive the doojects');
   $edoovillageMlid = menu_link_save($item);
 
   $item = array(
@@ -263,6 +267,7 @@ function make_main_menu() {
             'plid' => 0, 
             'module' => 'menu',
           );
+  $item['options']['attributes']['title'] = t('Hubs are groups of labdooers located in the same region that together help mobilize doojects from their local community');
   $hubMlid = menu_link_save($item);
 
   $item = array(
@@ -400,6 +405,7 @@ function make_main_menu() {
             'plid' => 0, 
             'module' => 'menu',
           );
+  $item['options']['attributes']['title'] = t('Teams provide a set of tools to help Labdoo users organize themselves around topic areas');
   $teamsMlid = menu_link_save($item);
 
   $item = array(
@@ -503,6 +509,7 @@ function make_main_menu() {
             'plid' => 0, 
             'module' => 'menu',
           );
+  $item['options']['attributes']['title'] = t('Newsletters are used to help outreach your local community');
   $newsletterMlid = menu_link_save($item);
 
   $item = array(
@@ -543,6 +550,7 @@ function make_main_menu() {
             'plid' => 0, 
             'module' => 'menu',
           );
+  $item['options']['attributes']['title'] = t('The wiki is where everything gets docummented');
   $wikiMlid = menu_link_save($item);
 
   $item = array(
@@ -595,6 +603,7 @@ function make_main_menu() {
             'plid' => 0, 
             'module' => 'menu',
           );
+  $item['options']['attributes']['title'] = t('In the wall you can share your pictures and activities with the rest of the Labdooers');
   $shareMlid = menu_link_save($item);
 
   $item = array(
