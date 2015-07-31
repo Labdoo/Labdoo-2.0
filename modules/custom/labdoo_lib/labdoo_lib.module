@@ -1421,6 +1421,36 @@ function labdoo_lib_compute_hub_branches($nodeLoaded) {
 
 
 /**
+ * Returns the list of edoovillages related to a dootrip
+ *
+ * @param node $nodeLoaded The dootrip node (loaded)
+ *
+ * @return The list of edoovillages as a string 
+ *
+ */
+function labdoo_lib_compute_dootrip_edoovillages($nodeLoaded) {
+  $query = "SELECT DISTINCT(field_edoovillage_destination_target_id) FROM field_data_field_edoovillage_destination 
+            WHERE entity_id IN (SELECT field_laptops_target_id FROM field_data_field_laptops 
+            WHERE entity_id=$nodeLoaded->nid)";
+  $result = db_query($query);
+
+  $edoovillagesList = "";
+  foreach($result as $item) {
+    $edoovillageName = lbd_nodeid2title($item->field_edoovillage_destination_target_id);
+    $edoovillageUri = '../node/' . $item->field_edoovillage_destination_target_id;
+    $edoovillagesList .= '<a href="' . $edoovillageUri . '">' . $edoovillageName . '</a>'; 
+    $edoovillagesList .= "<br/>";
+  }
+
+  if($edoovillagesList == "")
+    $edoovillagesList = "None";
+
+  return($edoovillagesList);
+}
+
+
+
+/**
  * Implements hook_node_view
  *
  */
@@ -2724,8 +2754,8 @@ function labdoo_lib_user_login(&$edit, $account)
     return;
   }
 
-  // redirect to preferred language homepage
-  drupal_goto('<front>', array(
+  // redirect to preferred language user account page 
+  drupal_goto('user', array(
     'language' => $languages[$user_language],
   ));
 }

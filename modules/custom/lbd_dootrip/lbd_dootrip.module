@@ -68,7 +68,7 @@ function _update_linked_nodes($node, $src_field, $dst_field, $src_name, $dst_nam
       drupal_set_message("The " . $src_name . " '" . $node->title . "'  was added to the " . $dst_name . " '" . $dstLoaded->title . "'", 'status', FALSE);
       $srcList[] = $node;
       $wDstNode->$dst_field->set($srcList);
-      $wDstNode->save();
+      field_attach_update('node', $dstLoaded);
     }
   }
 
@@ -92,7 +92,7 @@ function _update_linked_nodes($node, $src_field, $dst_field, $src_name, $dst_nam
           unset($srcList[$key]);
           drupal_set_message("The " . $src_name . " '" . $node->title . "'  was removed from the " . $dst_name . " '" . $dstLoaded->title . "'", 'status', FALSE);
           $wDstNode->$dst_field->set($srcList);
-          $wDstNode->save();
+          field_attach_update('node', $dstLoaded);
         }
       }
     }

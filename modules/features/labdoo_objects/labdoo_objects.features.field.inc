@@ -213,7 +213,7 @@ function labdoo_objects_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '13',
+          'weight' => '14',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -632,7 +632,7 @@ function labdoo_objects_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '14',
+          'weight' => '16',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -750,7 +750,7 @@ function labdoo_objects_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '15',
+          'weight' => '17',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -1069,6 +1069,77 @@ $display_output = $entity_field_item[\'value\'];',
         ),
         'type' => 'entityreference_autocomplete',
         'weight' => '10',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-dootrip-field_dootrips_edoovillages'.
+  $fields['node-dootrip-field_dootrips_edoovillages'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_dootrips_edoovillages',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'computed_field',
+      'settings' => array(
+        'code' => '$entity_field[0][\'value\'] = labdoo_lib_compute_dootrip_edoovillages($entity);',
+        'database' => array(
+          'data_default' => '',
+          'data_index' => 0,
+          'data_length' => '32',
+          'data_not_NULL' => 0,
+          'data_precision' => '10',
+          'data_scale' => '2',
+          'data_size' => 'normal',
+          'data_type' => 'varchar',
+        ),
+        'display_format' => '$display_output = $entity_field_item[\'value\'];',
+        'store' => 0,
+      ),
+      'translatable' => '0',
+      'type' => 'computed',
+    ),
+    'field_instance' => array(
+      'bundle' => 'dootrip',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'inline',
+          'module' => 'computed_field',
+          'settings' => array(),
+          'type' => 'computed_field_unsanitized',
+          'weight' => '13',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_dootrips_edoovillages',
+      'label' => 'Edoovillages',
+      'required' => FALSE,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'computed_field',
+        'settings' => array(),
+        'type' => 'computed',
+        'weight' => '19',
       ),
     ),
   );
@@ -6211,6 +6282,7 @@ $display_output = $entity_field_item[\'value\'];',
   t('Dootripper(s)');
   t('Dootrips assigned to this dooject');
   t('Edoovillage destination');
+  t('Edoovillages');
   t('Email address, phone number, website, etc.');
   t('Example: Ubuntu 12.04, Mac OS X, Windows 7, etc.');
   t('Hard drive');

@@ -148,6 +148,10 @@ hr {
   display: none;
 }
 
+.control-group.form-type-select.form-item-field-about-me-und-0-format.form-item {
+  display: none;
+}
+
 #edit-book-pick-book.btn.form-submit {
   display: none;
 }
@@ -211,5 +215,10 @@ input[type="checkbox"] {
 
 .dropdown-backdrop {
   position: static;
+}
+
+#autocomplete li.selected { 
+  background-color:#0088cc;
+  color:white;
 }
 

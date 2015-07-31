@@ -183,17 +183,19 @@ function lbd_actions_user_contributes_hub($userId, $node) {
 /**
  * Checks if a new activity being created in a given city
  * should be streamed in the action feed or not.
- * If the city of the new action is the same as the city of 
+ * If the city and title of the new action is the same as the one from 
  * the last action, then do not stream it.
  *
  * @param string $newCity
  *   The name of the city where the new activity is created
+ * @param string $newTitle
+ *   The title of the new activity
  *
  * @return boolean
  *   TRUE if it must be streamed, FALSE otherwise
  *
  */
-function _must_be_streamed($newCity) {
+function _must_be_streamed($newCity, $newTitle) {
 
   $query = "SELECT city FROM location WHERE 
               lid=(SELECT lid FROM location_instance WHERE 
@@ -201,10 +203,14 @@ function _must_be_streamed($newCity) {
                   nid=(SELECT max(nid) FROM node WHERE type='action')))";
   $lastCity = db_query($query)->fetchField();
   if($newCity != $lastCity)
-    $streamIt = TRUE;
-  else
-    $streamIt = FALSE;
-  return $streamIt;
+    return TRUE;
+
+  $query = "SELECT title FROM node WHERE type='action' and nid=(SELECT max(nid) FROM node WHERE type='action')";
+  $lastTitle = db_query($query)->fetchField();
+  if($newTitle != $lastTitle)
+    return TRUE;
+
+  return FALSE;
 }
 
 
@@ -421,7 +427,7 @@ function lbd_generate_action_node($node) {
     $body = '<table><tr><td><a href="../node/' . $node->nid . '">' . $title . '...</a><img src="/profiles/labdoo/files/pictures/dootrip.png" width="30"></a></td></tr></table>';
   }
 
-  $streamIt = _must_be_streamed($thisCity); 
+  $streamIt = _must_be_streamed($thisCity, $title); 
   _create_activity_node($actionType, $title, $body, $location, $streamIt, $hubId, $edoovillageId);
   return;
 }

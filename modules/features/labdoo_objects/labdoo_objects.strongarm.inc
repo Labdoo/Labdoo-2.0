@@ -292,7 +292,7 @@ function labdoo_objects_strongarm() {
       'display' => array(
         'sharethis' => array(
           'default' => array(
-            'weight' => '14',
+            'weight' => '15',
             'visible' => TRUE,
           ),
         ),
@@ -526,6 +526,13 @@ function labdoo_objects_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_extended_laptop';
+  $strongarm->value = 1;
+  $export['i18n_node_extended_laptop'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'i18n_node_options_dootrip';
   $strongarm->value = array();
   $export['i18n_node_options_dootrip'] = $strongarm;
@@ -547,6 +554,13 @@ function labdoo_objects_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_options_laptop';
+  $strongarm->value = array();
+  $export['i18n_node_options_laptop'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'i18n_sync_node_type_dootrip';
   $strongarm->value = array();
   $export['i18n_sync_node_type_dootrip'] = $strongarm;
@@ -564,6 +578,13 @@ function labdoo_objects_strongarm() {
   $strongarm->name = 'i18n_sync_node_type_hub';
   $strongarm->value = array();
   $export['i18n_sync_node_type_hub'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_sync_node_type_laptop';
+  $strongarm->value = array();
+  $export['i18n_sync_node_type_laptop'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
