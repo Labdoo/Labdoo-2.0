@@ -13,7 +13,7 @@ msgstr ""
 #: field:body:team:label
 msgctxt "body:team:label"
 msgid "Team's topic"
-msgstr "Thema"
+msgstr "Ziel der Gruppe"
 
 #: field:body:team_page:label
 msgctxt "body:team_page:label"
@@ -58,12 +58,12 @@ msgstr "Typ"
 #: field:field_additional_editors:laptop:description
 msgctxt "field_additional_editors:laptop:description"
 msgid "Add users who need to have permission to edit this dooject"
-msgstr "Benutzer hinzufügen, die diese IT-Spende auch ändern dürfen."
+msgstr "Benutzer hinzufügen, der diese IT-Spende auch ändern darf"
 
 #: field:field_additional_editors:laptop:label
 msgctxt "field_additional_editors:laptop:label"
 msgid "Additional editors"
-msgstr "Änderunggen auch durch"
+msgstr "Änderungen auch durch"
 
 #: field:field_additional_files:edoovillage:label
 msgctxt "field_additional_files:edoovillage:label"
@@ -73,7 +73,7 @@ msgstr "Weitere Dateien"
 #: field:field_additional_followers:laptop:description
 msgctxt "field_additional_followers:laptop:description"
 msgid "Add users who want to follow this dooject"
-msgstr "Benutzer hinzufügen, die dieser IT-Spenden folgen möchten"
+msgstr "Benutzer hinzufügen, der dieser IT-Spenden folgen möchte"
 
 #: field:field_additional_followers:laptop:label
 msgctxt "field_additional_followers:laptop:label"
@@ -91,9 +91,9 @@ msgid ""
 "Add here any observations you would like to make. For instance you can "
 "add notes such as the quality of the laptop or if something is broken, "
 "a reminder, or a note on who donated the laptop."
-msgstr "Hier kannst die Anmerkungen ergänzen, z.B. über die IT-Spende, "
-"Ausstattung, Probleme, Defekte oder Hinweise. Oder eine Eriinerungs- "
-"Notiz oder Angaben zum IT-Spender. "
+msgstr "Hier bitte Hinweise ergänzen, z.B. über die IT-Spende, "
+"Ausstattung, Probleme, Defekte o.a. Notizen oder Angaben zum IT-Spender."
+""
 
 #: field:field_additional_notes:laptop:label
 msgctxt "field_additional_notes:laptop:label"
@@ -105,13 +105,13 @@ msgctxt "field_additional_notification_em:laptop:description"
 msgid ""
 "Add here the email address(es) of additional people that you would "
 "like to be notified whenever this laptop changes its status."
-msgstr "Bitte gebe hier die E-Mailadresse(n) weiterer Personen ein, die"
+msgstr "Bitte hier die E-Mailadresse(n) weiterer Personen eingeben, die"
 "benachrichtigt werden sollen, wenn sich der Status der IT-Spende ändert."
 
 #: field:field_additional_notification_em:laptop:label
 msgctxt "field_additional_notification_em:laptop:label"
 msgid "Additional notification emails"
-msgstr "Weitere Benachrichtigungs-eMailadressen"
+msgstr "Weitere e-Mails zur Benachrichtigung"
 
 #: field:field_additional_traveler_s_info:dootrip:description
 msgctxt "field_additional_traveler_s_info:dootrip:description"
@@ -134,7 +134,7 @@ msgstr "Amp-Stunden (Ah)"
 #: field:field_arrival_date:dootrip:label
 msgctxt "field_arrival_date:dootrip:label"
 msgid "Arrival date"
-msgstr "Datum der Ankunfts"
+msgstr "Datum der Ankunft"
 
 #: field:field_battery_duration:laptop:description
 msgctxt "field_battery_duration:laptop:description"
@@ -144,7 +144,7 @@ msgid ""
 "your nearest local recycling facility, ship the laptop to school "
 "without the battery and mark this field with a value of zero."
 msgstr "Geschätzte Batterie Laufzeit - falls die Batterie nicht arbeitet "
-"bringe sie zum nächsten Entsorgungshof. Entweder schicke die IT-Spende "
+"bringe sie zum nächsten Entsorgungshof und schicke die IT-Spende "
 "ohne Batterie zum Projekt. Oder frage ein Labdoo Hub, ob es Ersatz hat. "
 "Bitte trage dann den Wert 0 (Null) bei Batterielaufzeit ein. "
 
@@ -166,7 +166,7 @@ msgstr "Sprache"
 #: field:field_branches_information:hub:label
 msgctxt "field_branches_information:hub:label"
 msgid "About this hub"
-msgstr "Über diese Hub"
+msgstr "Über dieses Hub"
 
 #: field:field_comments:dootrip:label
 msgctxt "field_comments:dootrip:label"
@@ -181,7 +181,7 @@ msgstr "Anlage"
 #: field:field_cpu:laptop:label
 msgctxt "field_cpu:laptop:label"
 msgid "CPU speed (Example: 1200 MHz)"
-msgstr "CPU Taktung (Beispiel: 1200 MHz)"
+msgstr "CPU Taktung (Beispiel: 1600 MHz)"
 
 #: field:field_cpu_type:laptop:label
 msgctxt "field_cpu_type:laptop:label"
@@ -191,7 +191,7 @@ msgstr "Anzahl der CPU-Kerne"
 #: field:field_current_operating_system:laptop:description
 msgctxt "field_current_operating_system:laptop:description"
 msgid "Example: Ubuntu 12.04, Mac OS X, Windows 7, etc."
-msgstr "Beispiel: lubuntu 12.04 LTS, Mac OS X, Windows 7, etc."
+msgstr "Beispiel: Lubuntu 14.04 LTS, Mac OS X, Windows 7 etc."
 
 #: field:field_current_operating_system:laptop:label
 msgctxt "field_current_operating_system:laptop:label"
@@ -236,7 +236,7 @@ msgstr "Desktop/PC"
 #: field:field_device_type:#allowed_values:diyDevice
 msgctxt "field_device_type:#allowed_values:diyDevice"
 msgid "Do-it-yourselve device"
-msgstr "Do-it-yourselve Gerät"
+msgstr "Selbstbau-Gerät"
 
 #: field:field_device_type:#allowed_values:ebook
 msgctxt "field_device_type:#allowed_values:ebook"
@@ -271,7 +271,7 @@ msgstr "Laptop"
 #: field:field_device_type:#allowed_values:smartphone
 msgctxt "field_device_type:#allowed_values:smartphone"
 msgid "SmartPhone"
-msgstr "SmartPhone"
+msgstr "Smartphone"
 
 #: field:field_device_type:laptop:label
 msgctxt "field_device_type:laptop:label"
@@ -304,9 +304,9 @@ msgid ""
 "This field is updated automatically once dootrips are assigned to this "
 "dooject. You can also optionally set this field manually adding "
 "dootrips by typing their name."
-msgstr "Dieses Feld wird automatisch aktualisiert, sobald ein Dootrip "
-"dieser IT-Spende zugewiesen wird. Man kann auch manuell einen Dootrip "
-"zuordnen, indem man dessen Namen eintippt."
+msgstr "Dieses Feld wird automatisch aktualisiert, sobald ein Flugpate "
+"(Dootrip) dieser IT-Spende zugewiesen wird. Man kann auch manuell einen"
+"Dootrip zuordnen, indem man dessen Namen eintippt."
 
 #: field:field_dootrips:laptop:label
 msgctxt "field_dootrips:laptop:label"
@@ -361,12 +361,12 @@ msgstr "Fotoalbum"
 #: field:field_edoovillage_status:#allowed_values:completed
 msgctxt "field_edoovillage_status:#allowed_values:completed"
 msgid "Completed"
-msgstr "Abgeschlossen"
+msgstr "komplett beliefert"
 
 #: field:field_edoovillage_status:#allowed_values:open
 msgctxt "field_edoovillage_status:#allowed_values:open"
 msgid "Open"
-msgstr "Noch offen"
+msgstr "offen"
 
 #: field:field_edoovillage_status:edoovillage:label
 msgctxt "field_edoovillage_status:edoovillage:label"
@@ -381,7 +381,7 @@ msgstr "Änderungen auch durch"
 #: field:field_edoo_additional_followers:edoovillage:label
 msgctxt "field_edoo_additional_followers:edoovillage:label"
 msgid "Additional followers"
-msgstr "Weitere Followers"
+msgstr "Weitere Follower"
 
 #: field:field_edoo_additional_notif_em:edoovillage:label
 msgctxt "field_edoo_additional_notif_em:edoovillage:label"
@@ -478,7 +478,7 @@ msgstr "Fotoalbum"
 #: field:field_image:article:description
 msgctxt "field_image:article:description"
 msgid "Upload an image to go with this article."
-msgstr "Lade ein Bild hierzu hoch."
+msgstr "Lade ein Bild zur IT-Spende hoch."
 
 #: field:field_image:article:label
 msgctxt "field_image:article:label"
@@ -535,7 +535,7 @@ msgctxt "field_is_first_page:book:label"
 msgid ""
 "Is this wiki page a translation of another wiki page or is this the "
 "original?"
-msgstr "Ist diese wiki-Seite eine Übersetzung einer anderen wiki-Seite oder "
+msgstr "Ist diese wiki-Seite eine Übersetzung einer anderen Wiki-Seite oder "
 "ist dies das Original?"
 
 #: field:field_keyboard:laptop:label
@@ -624,17 +624,17 @@ msgstr "Anfangspunkt der Reise"
 #: field:field_number_of_laptops_needed:edoovillage:label
 msgctxt "field_number_of_laptops_needed:edoovillage:label"
 msgid "Number of doojects needed"
-msgstr "Anzahl der benötigten IT-Spenden"
+msgstr "Anzahl benötigte IT-Spenden"
 
 #: field:field_number_of_students:edoovillage:label
 msgctxt "field_number_of_students:edoovillage:label"
 msgid "Number of students"
-msgstr "Anzahl der Schüler"
+msgstr "Anzahl Schüler"
 
 #: field:field_number_of_teachers:edoovillage:label
 msgctxt "field_number_of_teachers:edoovillage:label"
 msgid "Number of teachers"
-msgstr "Anzahl der Lehrer"
+msgstr "Anzahl Lehrer"
 
 #: field:field_on_site_point_of_contact:edoovillage:description
 msgctxt "field_on_site_point_of_contact:edoovillage:description"
@@ -649,14 +649,15 @@ msgstr "Kontakt vor Ort"
 #: field:field_origin_of_the_trip:dootrip:label
 msgctxt "field_origin_of_the_trip:dootrip:label"
 msgid "Origin of the trip"
-msgstr "Anfangspunkt der Reis"
+msgstr "Anfangspunkt der Reise"
 
 #: field:field_parent_hub:hub:description
 msgctxt "field_parent_hub:hub:description"
 msgid ""
 "If this hub has a parent hub, please select it from the following "
 "list."
-msgstr ""
+msgstr "Falls dieses Hub ein übergeordnetes Haupt-Hub hat wähle dies bitte aus "
+
 
 #: field:field_parent_hub:hub:label
 msgctxt "field_parent_hub:hub:label"
@@ -685,14 +686,14 @@ msgid ""
 msgstr "Lade hier ein Foto der IT-Spende hoch, z.B. des Laptops. Ein Foto "
 "zeigt dem Spender, dass seine IT-Spende wirklich bearbeitet wurde. Bitte "
 "benutze keine Bilder aus dem Internet, da diese ggf. durch Copyright "
-"geschützt sein könnten. Bitte verwende mit deiner Kamera selbst gemachte Fotos. "
+"geschützt sein könnten. Bitte verwende selbst gemachte Fotos. "
 "Wenn die IT-Spende eine Schule erreicht und du Fotos vom Einsatz vor Ort bei den "
 "Schülern bekommst, lade diese bitte auch ins Fotoalbum (Scrapbook) des Edoovillage hoch."
 
 #: field:field_picture:laptop:label
 msgctxt "field_picture:laptop:label"
 msgid "Picture"
-msgstr "Bild"
+msgstr "Foto"
 
 #: field:field_project_application:edoovillage:label
 msgctxt "field_project_application:edoovillage:label"
@@ -732,7 +733,7 @@ msgstr "Rot: Es liegen noch keine Unterlagen wie Projektfotos vor :("
 #: field:field_semaphore:#allowed_values:yellow
 msgctxt "field_semaphore:#allowed_values:yellow"
 msgid "Yellow: first doojects can be sent"
-msgstr "Gelb: Laptopversand kann beginnen, aber letzte Punkte noch in der Abklärung :|"
+msgstr "Gelb: Laptopversand kann beginnen, aber letzte Punkte sind noch in der Abklärung :|"
 
 #: field:field_semaphore:edoovillage:label
 msgctxt "field_semaphore:edoovillage:label"
@@ -749,8 +750,8 @@ msgid ""
 "serial number, then write in this field the words \"Unknown\"."
 msgstr "Setze hier die Seriennummer der IT-Spende ein. Üblicherweise findest du die "
 "Seriennr. auf der Unterseite des Gerätes oder im Batteriefach. Schaue dort nach Begriffen wie "
-"\"Serial Number\" oder \"S/N\", manchmal auch als Barcode mit einer Zahl "
-"darunter. Wenn diese IT-Spende keinen Aufkleber mit der Seriennr. hat dann "
+"\"Serial Number\" oder \"S/N\", manchmal auch als Barcode mit einer Zahl darunter. "
+"Wenn diese IT-Spende keinen Aufkleber mit der Seriennr. hat dann "
 "setze in dieses Feld das Wort \"Unknown\" ein."
 
 #: field:field_serial_number:laptop:label
@@ -961,7 +962,7 @@ msgstr "Geschlossen"
 #: field:field_task_status:#allowed_values:deferred
 msgctxt "field_task_status:#allowed_values:deferred"
 msgid "Deferred"
-msgstr "Aufgeschoben"
+msgstr "Verschoben"
 
 #: field:field_task_status:#allowed_values:duplicate
 msgctxt "field_task_status:#allowed_values:duplicate"
@@ -976,7 +977,7 @@ msgstr "Offen"
 #: field:field_task_status:#allowed_values:resolved
 msgctxt "field_task_status:#allowed_values:resolved"
 msgid "Resolved"
-msgstr ""
+msgstr "Erledigt"
 
 #: field:field_task_status:team_task:label
 msgctxt "field_task_status:team_task:label"
@@ -1001,7 +1002,7 @@ msgstr "Allgemeine Aufgabe"
 #: field:field_task_type:#allowed_values:outreachingActivity
 msgctxt "field_task_type:#allowed_values:outreachingActivity"
 msgid "Outreaching activity"
-msgstr "Labdoo.org bekannt machen"
+msgstr "Aktion um Labdoo.org bekannt zu machen"
 
 #: field:field_task_type:#allowed_values:websiteBug
 msgctxt "field_task_type:#allowed_values:websiteBug"
@@ -1044,8 +1045,8 @@ msgid ""
 "If this hub accepts to store doojects, select \"Dropping point\". If "
 "the hub sanitizes doojects, select \"Sanitizing point\". You can "
 "select multiple options at the same time."
-msgstr "Wenn das Hub nur IT-Spenden lagert, wähle \"Annahmestelle\" aus. Wenn "
-"das Hub auch aktiv IT-Spenden aufarbeitet, wähle \"Hub (Zentrale Anlaufstelle)\" aus. "
+msgstr "Wenn das Hub nur passiv IT-Spenden lagert, wähle \"Annahmestelle\" aus. "
+"Wenn das Hub auch aktiv IT-Spenden aufarbeitet, wähle \"Hub (Zentrale Anlaufstelle)\" aus. "
 "Du kannst auch mehrere Optionen gleichzeitig auswählen. "
 
 #: field:field_types_of_mini_missions:hub:label
@@ -1126,7 +1127,7 @@ msgstr "Team(s)"
 #: field:og_membership_request:og_membership_type_default:description
 msgctxt "og_membership_request:og_membership_type_default:description"
 msgid "This is the text a user may send to the group administrators."
-msgstr "Dieser Text kann an den Gruppen-Administrator geschickt werden."
+msgstr "Dieser Text wird an den Gruppen-Administrator geschickt."
 
 #: field:og_membership_request:og_membership_type_default:label
 msgctxt "og_membership_request:og_membership_type_default:label"
