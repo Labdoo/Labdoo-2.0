@@ -441,10 +441,10 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
 
   $metrics[0] = array('label' => 'Edoovillage', 'field' => 'link', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
   $metrics[1] = array('label' => 'Hubs', 'field' => 'hub', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
-  $metrics[2] = array('label' => 'Needed', 'field' => 'needed', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[3] = array('label' => 'In transit', 'field' => 'intransit', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[4] = array('label' => 'Delivered', 'field' => 'delivered', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[5] = array('label' => 'Remaining = Needed - In transit - Delivered', 'field' => 'remaining', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[2] = array('label' => 'Needed (N)', 'field' => 'needed', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[3] = array('label' => 'In transit (T)', 'field' => 'intransit', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[4] = array('label' => 'Delivered (D)', 'field' => 'delivered', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[5] = array('label' => 'Remaining (R = N-T-D)', 'field' => 'remaining', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
   $metrics[6] = array('label' => '% Completed', 'field' => 'pcompleted', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
   $metrics[7] = array('label' => 'Status', 'field' => 'status', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
   $metrics[8] = array('label' => 'Countries', 'field' => 'country', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
@@ -614,14 +614,14 @@ function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher =
   }
 
   $metrics[0] = array('label' => 'Hub', 'field' => 'link', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[1] = array('label' => 'Needed', 'field' => 'needed', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[2] = array('label' => 'Remaining = Needed - In transit - Delivered', 'field' => 'remaining', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[1] = array('label' => 'Needed (N)', 'field' => 'needed', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[2] = array('label' => 'Remaining (R = N-T-D)', 'field' => 'remaining', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
   $metrics[3] = array('label' => '% Completed', 'field' => 'pcompleted', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
   $metrics[4] = array('label' => 'Countries', 'field' => 'country', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
-  $metrics[5] = array('label' => 'Needed', 'field' => 'neededShared', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[6] = array('label' => 'In transit', 'field' => 'intransit', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[7] = array('label' => 'Delivered', 'field' => 'delivered', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[8] = array('label' => 'Remaining = Needed - In transit - Delivered', 'field' => 'remainingShared', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[5] = array('label' => 'Needed (N)', 'field' => 'neededShared', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[6] = array('label' => 'In transit (T)', 'field' => 'intransit', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[7] = array('label' => 'Delivered (D)', 'field' => 'delivered', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[8] = array('label' => 'Remaining (R = N-T-D)', 'field' => 'remainingShared', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
 
   cache_set($cacheIndexPrefix . 'objects', $objects, 'cache');
   cache_set($cacheIndexPrefix . 'metrics', $metrics, 'cache');
@@ -1657,6 +1657,7 @@ function lbd_display_dooject_column_chart($objectNid, $type)
     $numNeeded   = labdoo_get_demand($objectNid, NULL, FALSE);
     $numTransit  = labdoo_getnum_doojects($objectNid, NULL, "T1") + labdoo_getnum_doojects($objectNid, NULL, "S3");
     $numDeployed = labdoo_getnum_doojects($objectNid, NULL, "S4"); 
+    $numNeedRecycle = labdoo_getnum_doojects($objectNid, NULL, "S5");
     $numRecycled = labdoo_getnum_doojects($objectNid, NULL, "S6");
     $xLabel = "Edoovillage";
   }
@@ -1664,6 +1665,7 @@ function lbd_display_dooject_column_chart($objectNid, $type)
     $numNeeded   = labdoo_get_demand(NULL, $objectNid, FALSE);
     $numTransit  = labdoo_getnum_doojects(NULL, $objectNid, "T1") + labdoo_getnum_doojects(NULL, $objectNid, "S3");
     $numDeployed = labdoo_getnum_doojects(NULL, $objectNid, "S4"); 
+    $numNeedRecycle = labdoo_getnum_doojects(NULL, $objectNid, "S5");
     $numRecycled = labdoo_getnum_doojects(NULL, $objectNid, "S6");
     $xLabel = "Edoovillages served by this Hub";
   }
@@ -1677,16 +1679,16 @@ function lbd_display_dooject_column_chart($objectNid, $type)
   google.load("visualization", "1.1", {packages:["corechart"], callback: drawChart});
   function drawChart() {
   var data_column_chart_project = google.visualization.arrayToDataTable([
-    ["Project", "Laptops needed", "Laptops in transit", "Laptops delivered (working)", "Laptops delivered (need recycle)"],
+    ["Project", "Laptops needed", "Laptops in transit", "Laptops delivered (working)", "Laptops delivered (need recycle)", "Laptops recycled"],
 ';
 
   $htmlCode = $htmlCode . '
-    ["' . $xLabel . '", '.$numNeeded.', '.$numTransit.', '.$numDeployed.', '.$numRecycled.'],
+    ["' . $xLabel . '", '.$numNeeded.', '.$numTransit.', '.$numDeployed.', '.$numNeedRecycle.', '.$numRecycled.'],
   ]);
 
   var options_column_chart_project = {
     seriesType: "bars",
-    colors: ["red", "green", "gray", "orange"],
+    colors: ["red", "green", "gray", "orange", "#0099CC"],
     width : 700, 
     chartArea : {  left: 50, width: \'60%\', height: \'80%\' }
   };
