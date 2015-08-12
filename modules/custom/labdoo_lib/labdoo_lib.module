@@ -113,6 +113,20 @@ function _update_book_reference($node) {
   $nodeLoaded = node_load($node->nid);
   $nodeLoaded->field_reference_book[$nodeLoaded->language][0]['target_id'] = $node->nid;
   node_save($nodeLoaded);
+  return;
+}
+
+
+/**
+ * Updates a hub. This function is useful for instance when
+ * there is a need to updated computed fields (like the 'hub branches').
+ *
+ * @param node Node id of the dooject
+ *
+ */
+function _update_hub($node) {
+  field_attach_update('node', $node);
+  return;
 }
 
 
@@ -600,34 +614,37 @@ function labdoo_dooject_extract_emails($node) {
       }
     }
 
-    if(property_exists($node, 'field_edoovillage_destination')) {
-      if($node->field_edoovillage_destination) {
-        foreach(field_get_items('node', $node, 'field_edoovillage_destination') as $element) {
-          $edoovillageNode = node_load($element['target_id']);
-          if($edoovillageNode->field_project_manager_s_) {
-            foreach(field_get_items('node', $edoovillageNode, 'field_project_manager_s_') as $element2) {
-              $userObj = user_load($element2['target_id']);
-              if(in_array($userObj->mail, $emailSet))
-                continue;
-              $emailsList = $emailsList . ", " . $userObj->mail;
-              array_push($emailSet, $userObj->mail);
+    $doojectStatus = labdoo_lib_get_field($node, 'field_status', 'node', 'value'); 
+    if(($doojectStatus == "T1" || $doojectStatus == "S4" || $doojectStatus == "S3")) {
+      if(property_exists($node, 'field_edoovillage_destination')) {
+        if($node->field_edoovillage_destination) {
+          foreach(field_get_items('node', $node, 'field_edoovillage_destination') as $element) {
+            $edoovillageNode = node_load($element['target_id']);
+            if($edoovillageNode->field_project_manager_s_) {
+              foreach(field_get_items('node', $edoovillageNode, 'field_project_manager_s_') as $element2) {
+                $userObj = user_load($element2['target_id']);
+                if(in_array($userObj->mail, $emailSet))
+                  continue;
+                $emailsList = $emailsList . ", " . $userObj->mail;
+                array_push($emailSet, $userObj->mail);
+              }
             }
-          }
-          if($edoovillageNode->field_edoo_additional_followers) {
-            foreach(field_get_items('node', $edoovillageNode, 'field_edoo_additional_followers') as $element2) {
-              $userObj = user_load($element2['target_id']);
-              if(in_array($userObj->mail, $emailSet))
-                continue;
-              $emailsList = $emailsList . ", " . $userObj->mail;
-              array_push($emailSet, $userObj->mail);
+            if($edoovillageNode->field_edoo_additional_followers) {
+              foreach(field_get_items('node', $edoovillageNode, 'field_edoo_additional_followers') as $element2) {
+                $userObj = user_load($element2['target_id']);
+                if(in_array($userObj->mail, $emailSet))
+                  continue;
+                $emailsList = $emailsList . ", " . $userObj->mail;
+                array_push($emailSet, $userObj->mail);
+              }
             }
-          }
-          if($edoovillageNode->field_edoo_additional_notif_em) {
-            foreach(field_get_items('node', $edoovillageNode, 'field_edoo_additional_notif_em') as $element2) {
-              if(in_array($element2["email"], $emailSet))
-                continue;
-              $emailsList = $emailsList . ", " . $element2["email"];
-              array_push($emailSet, $element2["email"]);
+            if($edoovillageNode->field_edoo_additional_notif_em) {
+              foreach(field_get_items('node', $edoovillageNode, 'field_edoo_additional_notif_em') as $element2) {
+                if(in_array($element2["email"], $emailSet))
+                  continue;
+                $emailsList = $emailsList . ", " . $element2["email"];
+                array_push($emailSet, $element2["email"]);
+              }
             }
           }
         }
@@ -862,6 +879,19 @@ function labdoo_lib_node_presave($node) {
       $loadedNodeAlbum->title = $node->title . " - Photo Album";;
       node_save($loadedNodeAlbum);
     }
+    // Update the parent hub nodes (the original and the new one if any)
+    // to make sure its computed field_branches field is most up to date.
+    // _update_hub needs to run as a callback after this hub is saved
+    // to ensure it gets the most up to date state.
+    if(property_exists($node, 'original')) {
+      $wNodeOriginal = entity_metadata_wrapper('node', $node->original);
+      $originalParentHub = $wNodeOriginal->field_parent_hub->value();
+      if($originalParentHub)
+        register_shutdown_function('_update_hub', $originalParentHub);
+    }
+    $parentHub = $wNode->field_parent_hub->value();
+    if($parentHub)
+      register_shutdown_function('_update_hub', $parentHub);
   }
 
   if($node->type == 'dootrip') {
@@ -1457,16 +1487,6 @@ function labdoo_lib_compute_dootrip_edoovillages($nodeLoaded) {
 function labdoo_lib_node_view($node, $view_mode) {
   global $language;
 
-  // NOTE: Every object that has a 'computed field' that needs to be refreshed
-  // dynamically must be resaved upon being viewed in order to recompute such field. 
-  // Doing a node_save() would be inefficient and so instead, we do field_attach_update(), 
-  // which forces an update of all the fields without doing a full node_save(). This also prevents
-  // from generating a new revision and all the side effects that a full node_save()
-  // would imply. An alternative to this would be to do a cache clean up, but that would
-  // be inefficient too. 
-  if($node->type == 'hub') // Hub has the computed field 'Hub branches'
-    field_attach_update('node', $node);
-
   // TODO DE-COLORBOX: temporary fix. This forces a redirect of all photo galleries in German language
   // to the default language English, because there is a bug that prevents them from loading the 
   // colorbox slideshow. We also add a URL parameter 'lan=de' so that the links in the photo album
@@ -1882,7 +1902,7 @@ function labdoo_render_footer() {
 <a href='.$urlFaq.'>'.$faq.'</a>
 </td>
 <td>
-<a href="../de/content/impressum">Impressum</a>
+<a href="/de/content/impressum">Impressum</a>
 </td>
 <td width="200">
 <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons</a>

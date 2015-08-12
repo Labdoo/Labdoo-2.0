@@ -100,4 +100,8 @@ cp -r $rootpath/profiles/labdoo/content/files/* $rootpath/sites/default/files/
 chown -R www-data:www-data $rootpath/sites/default/files/ 
 drush @lbd php-script $rootpath/profiles/labdoo/lec/lec-import-books.php
 
+# Lower the communication module priority so its hooks are invoked after the labdoo_lib hooks
+# Note: to see all labdoo's modules weights, run the command:
+#   drush @lbd sql-query "select filename, weight from system where filename LIKE 'profiles\/labdoo\/modules\/custom\/%'"
+drush @lbd sql-query "UPDATE system SET weight=10 WHERE filename='profiles/labdoo/modules/custom/lbd_communicate/lbd_communicate.module'"
 

@@ -48,6 +48,34 @@ function lbd_communicate_mail($key, &$message, $email_params) {
 
 
 /**
+ * Partitions a string of coma-separated email addresses into two sets: the first
+ * set includes the first $LBD_COMM_MAX_EMAILS_BATCH email addresses;
+ * the second string includes the rest.
+ *
+ * @param $emailString The string of coma-separated email addresses
+ *
+ * @return An array of two components, one for each string partition
+ *
+ */
+function _partition_email_params($emailString) {
+  $LBD_COMM_MAX_EMAILS_BATCH = 20;
+
+  $emailList = explode(",", $emailString);
+  if(sizeof($emailList) > $LBD_COMM_MAX_EMAILS_BATCH) {
+    $selectedEmailList = array_slice($emailList, 0, $LBD_COMM_MAX_EMAILS_BATCH);
+    $leftoutEmailList = array_slice($emailList, $LBD_COMM_MAX_EMAILS_BATCH, sizeof($emailList) - $LBD_COMM_MAX_EMAILS_BATCH);
+    $selectedEmailString = implode(",", $selectedEmailList);
+    $leftoutEmailString = implode(",", $leftoutEmailList);
+  }
+  else {
+    $selectedEmailString = $emailString;
+    $leftoutEmailString = ""; 
+  }
+  return array($selectedEmailString, $leftoutEmailString);
+}
+
+
+/**
  * Sends a notification email
  *
  * @param array $email_params 
@@ -61,6 +89,25 @@ function lbd_communicate_mail($key, &$message, $email_params) {
  */
 function lbd_communicate_mail_send($email_params) {
   global $user;
+
+  // Throttle the amount of email sent out to a maximum of LBD_COMM_MAX_EMAILS_BATCH emails
+  // and have the rest be processed in the next cron job.
+  // Note: to check the status of the batches in the cache, run the command:
+  //   > drush php-eval "print_r(cache_get('cachedEmailParametersArray'))"
+
+  list($selectedEmailString, $leftoutEmailString) = _partition_email_params($email_params['headers']['Bcc']);
+  $email_params['headers']['Bcc'] = $selectedEmailString;
+  if($leftoutEmailString != "") {
+    $cachedEmailParameters = $email_params;
+    $cachedEmailParameters['headers']['Bcc'] = $leftoutEmailString;
+    $cache = cache_get('cachedEmailParametersArray');
+    if($cache && property_exists($cache, 'data'))
+      $cachedEmailParametersArray = $cache->data;
+    else
+      $cachedEmailParametersArray = array();
+    $cachedEmailParametersArray[] = $cachedEmailParameters;
+    cache_set('cachedEmailParametersArray', $cachedEmailParametersArray);
+  }
 
   // Module that calls this hook_mail API and the type of email to sent
   $module = 'lbd_communicate';
@@ -519,6 +566,25 @@ function lbd_communicate_cron() {
 
     lbd_communicate_mail_send($email_params);
 
+  }
+
+  // Check for any batches of emails that were too large to be sent out 
+  // and which were chopped into smaller batches. Any outstanding batch
+  // is saved in the cached under the cid 'cachedEmailParametersArray'
+  $cache = cache_get('cachedEmailParametersArray');
+  if($cache && property_exists($cache, 'data')) {
+    $cachedEmailParametersArray = $cache->data;
+    $newCachedEmailParametersArray = array();
+    foreach($cachedEmailParametersArray as $cachedEmailParameters) {
+      list($selectedEmailString, $leftoutEmailString) = _partition_email_params($cachedEmailParameters['headers']['Bcc']);
+      $cachedEmailParameters['headers']['Bcc'] = $selectedEmailString;
+      lbd_communicate_mail_send($cachedEmailParameters);
+      if($leftoutEmailString != "") {
+        $cachedEmailParameters['headers']['Bcc'] = $leftoutEmailString;
+        $newCachedEmailParametersArray[] = $cachedEmailParameters;
+      }
+    }
+    cache_set('cachedEmailParametersArray', $newCachedEmailParametersArray);
   }
 
   return;
