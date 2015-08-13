@@ -911,14 +911,23 @@ function print_dashboard_objects($objectsType, $objectsName, $objects, $metrics,
     $dataString .= "'" . $metrics[$index]['label'] . "', ";
   }
 
-  $dataString .= "'Free-Text Search', 'ConstantNull'], ";
+  // For laptop objects, constrain the search to Labdoo IDs
+  if($objectsType == 'laptop')
+    $dataString .= "'Dooject ID', 'ConstantNull'], ";
+  else 
+    $dataString .= "'Free-Text Search', 'ConstantNull'], ";
 
   foreach($objects as $object) {
-
     $searchtext = '';
-    foreach($object as $field) {
-        $strValue = sanitizeStringForVisualization($field); 
-        $searchtext = $searchtext . ' ' . $strValue;
+    foreach($object as $key => $field) {
+      // For laptop objects, include in the search field only the 
+      // Labdoo ID (use the 'link' field as proxy for ID)
+      if($objectsType == 'laptop') {
+        if($key != 'link')
+          continue;
+      }
+      $strValue = sanitizeStringForVisualization($field); 
+      $searchtext = $searchtext . ' ' . $strValue;
     }
 
     $dataString .= '[';
@@ -986,8 +995,24 @@ var pickerControl$index = new google.visualization.ControlWrapper({
     ");
   }
 
-  print("
-
+  if($objectsType == 'laptop') {
+    print("
+/*
+ * StringFilter control for the 'Text' column
+ */
+var stringFilter = new google.visualization.ControlWrapper({
+                     'controlType': 'StringFilter',
+                     'containerId': 'controlTextFilter',
+                     'options': {
+                       'filterColumnLabel': 'Dooject ID',
+                       'label': 'Dooject ID',
+                       'matchType': 'any'
+                     }
+                   });
+    ");
+  }
+  else {
+    print("
 /*
  * StringFilter control for the 'Text' column
  */
@@ -1000,6 +1025,10 @@ var stringFilter = new google.visualization.ControlWrapper({
                        'matchType': 'any'
                      }
                    });
+    ");
+  }
+
+  print("
 
 /*
  * Table chart
