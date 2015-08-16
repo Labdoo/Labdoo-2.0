@@ -146,31 +146,32 @@ function lbd_create_follow_dooject_node()
 {
 
   $bodyText = "
-<?php 
+<?php
+\$method = '';
 \$dooject = '';
 \$usr = '';
-\$follow = '';
-\$dooject = \$hub = NULL;
+\$value = '';
+if(!empty(\$_GET['m'])) \$method = \$_GET['m'];
 if(!empty(\$_GET['d'])) \$dooject = \$_GET['d'];
 if(!empty(\$_GET['u'])) \$usr = \$_GET['u'];
 else {global \$user; \$usr = \$user->uid;}
-if(!empty(\$_GET['f'])) \$follow = \$_GET['f'];
-labdoo_follow_dooject(\$dooject, \$usr, \$follow);
+if(!empty(\$_GET['v'])) \$value = \$_GET['v'];
+labdoo_update_flags_dooject(\$method, \$dooject, \$usr, \$value);
 ?>
   ";
 
   $node = new stdClass();
   $node->type = 'private_page';
   node_object_prepare($node);
-  
-  $node->title = "Follow a dooject";
+
+  $node->title = "Dooject";
   $node->language = LANGUAGE_NONE;
 
   $node->body[$node->language][0]['value']   = $bodyText;
   $node->body[$node->language][0]['summary'] = '';
   $node->body[$node->language][0]['format']  = 'php_code';
-  
-  $node->path = array('alias' => "content/follow-dooject");
+
+  $node->path = array('alias' => "content/dooject-update");
 
   node_save($node);
 }

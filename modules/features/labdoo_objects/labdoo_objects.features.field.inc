@@ -5850,6 +5850,80 @@ $display_output = $entity_field_item[\'value\'];',
     ),
   );
 
+  // Exported field: 'node-laptop-field_pick_me_up'.
+  $fields['node-laptop-field_pick_me_up'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_pick_me_up',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Disabled',
+          1 => 'Enabled',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'laptop',
+      'default_value' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '19',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_pick_me_up',
+      'label' => 'Pick me up',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'display_label' => 1,
+        ),
+        'type' => 'options_onoff',
+        'weight' => '23',
+      ),
+    ),
+  );
+
   // Exported field: 'node-laptop-field_picture'.
   $fields['node-laptop-field_picture'] = array(
     'field_config' => array(
@@ -6313,6 +6387,7 @@ $display_output = $entity_field_item[\'value\'];',
   t('Once you know the dooject(s) that you will be carrying with this dootrip, enter their Labdoo identifier here.');
   t('Origin of the trip');
   t('Parent hub');
+  t('Pick me up');
   t('Picture');
   t('Project application');
   t('Project brief description');

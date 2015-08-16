@@ -126,7 +126,9 @@ function labdoo_objects_user_default_permissions() {
   // Exported permission: edit any dootrip content.
   $permissions['edit any dootrip content'] = array(
     'name' => 'edit any dootrip content',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'superhub manager',
+    ),
     'module' => 'node',
   );
 

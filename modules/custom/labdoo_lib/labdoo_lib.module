@@ -303,11 +303,12 @@ function labdoo_render_map_geolocate_node($nodeId = NULL, $displayDoojects = Fal
  *
  */
 function labdoo_render_dooject_header() {
+  global $user;
   global $language;
   $defaultLanguage = language_default();
   $htmlCode = "";
 
-  if ((arg(0) != 'node') || !is_numeric(arg(1))) 
+  if ((arg(0) != 'node') || !is_numeric(arg(1)))
     return;
 
   $nodeObj = node_load(arg(1));
@@ -329,37 +330,31 @@ function labdoo_render_dooject_header() {
 
   $numDoojects = lbd_get_total_num_objects("laptop");
 
-  if(intval($laptopId) == $numDoojects) 
+  if(intval($laptopId) == $numDoojects)
     $nextIdFull = sprintf("%09d", 1);
-  else 
+  else
     $nextIdFull = sprintf("%09d", intval(intval($laptopId)+1));
-  if(intval($laptopId) == 1) 
+  if(intval($laptopId) == 1)
     $prevIdFull = sprintf("%09d", intval(intval($numDoojects)));
-  else 
+  else
     $prevIdFull = sprintf("%09d", intval(intval($laptopId)-1));
 
   $tagsUri = "/content/tag-one-dooject?id=" . $laptopId;
 
   // Table header
-  $htmlCode = $htmlCode . '<table align="center" width="700px"><tr><td>';
+  $htmlCode = $htmlCode . '<table align="center" width="1150px"><tr><td align="left">';
 
   // Left arrow
-  $htmlCode = $htmlCode . '<a href="../laptop/'.$prevIdFull.'"><img src="/profiles/labdoo/files/pictures/arrow_left.png" width="40px"/></a>'; 
+  $htmlCode = $htmlCode . "<a style='float: left;' href='../laptop/".$prevIdFull."'>
+              <img src='/profiles/labdoo/files/pictures/arrow_left.png' style='float: right; width: 30px; height: 31px;'/></span></a>";
 
-  // Next cell
-  $htmlCode = $htmlCode . '</td><td align="center">'; 
-
-  // Tagging howto (lightbox)
-  $htmlCode = $htmlCode .  '<a href="/profiles/labdoo/files/pictures/tagging-flow.png" class="colorbox-load">
-                            <img src="/profiles/labdoo/files/pictures/tagging-flow.png" width="160px"/></a>'; 
-  
-  // Button for tagging 
-  $printTagsMsg = t("Print tags for this dooject");
-  $htmlCode = $htmlCode . '<br><input type="button" value="'.$printTagsMsg.'" onclick="window.open(\''.$tagsUri.'\', 
-                           \'windowpopup\', \'resizable=yes,menubar=1,status=no,width=700,height=700\');"/>';
-
-  // Next cell
   $htmlCode = $htmlCode . '</td><td align="center">';
+
+  $htmlCode = $htmlCode . "&nbsp&nbsp&nbsp";
+
+  // Print tags
+  $htmlCode = $htmlCode . "<img src='/profiles/labdoo/files/pictures/tag.png' style='width: 30px; height: 21px;'/>&nbsp;
+              <a href='".$tagsUri."' target='_blank'>".t("Print tags")."</span></a>&nbsp&nbsp&nbsp";
 
   // Photo album icon and button
   if($edoovillageId) {
@@ -370,41 +365,72 @@ function labdoo_render_dooject_header() {
     if($language->language != $defaultLanguage->language)
       $albumUri = $language->language . "/" . $albumUri;
     $gotoMsg = t("Go to photo album");
-    $htmlCode = $htmlCode . '<img src="/profiles/labdoo/files/pictures/photo-album-icon.jpg" width="122px"/>';
-    $htmlCode = $htmlCode . '<br><input type="button" value="'.$gotoMsg.'" onclick="window.open(\'/'.$albumUri.'\', \'_self\');"/>';
+    $htmlCode = $htmlCode . "<img src='/profiles/labdoo/files/pictures/edoovillage.png' style='width: 35px; height: 30px;'/>&nbsp;
+                <a href='/".$albumUri."'>" . t("Photo album") . "</span></a>&nbsp&nbsp&nbsp";
   }
-
-  // Next cell
-  $htmlCode = $htmlCode . '</td><td align="center">';
 
   // Follow dooject button
   if (user_is_logged_in()) {
-    global $user;
-    $userId = $user->uid; 
+    $userId = $user->uid;
     $userObj = user_load($userId);
-    if(labdoo_is_dooject_followed($nodeObj, $userObj)) { 
-      $followDoojectUrl = request_uri() . "/../../content/follow-dooject?d=$nodeId&u=$userId&f=0";
+    if(labdoo_is_dooject_followed($nodeObj, $userObj)) {
+      $followDoojectUrl = strtok(request_uri(), '?') . "?m=f&d=$nodeId&u=$userId&v=0";
       $followMsg = "Unfollow this dooject";
+      $followIcon = "signal.png";
+      $hoverMessage = t('Click to stop receiving updates of this dooject');
     }
     else {
-      $followDoojectUrl = request_uri() . "/../../content/follow-dooject?d=$nodeId&u=$userId&f=1";
+      $followDoojectUrl = strtok(request_uri(), '?') . "?m=f&d=$nodeId&u=$userId&v=1";
       $followMsg = t("Follow this dooject");
+      $followIcon = "signal-off.png";
+      $hoverMessage = t('Click to receive updates about this dooject');
     }
+    $htmlCode = $htmlCode . "<img src='/profiles/labdoo/files/pictures/".$followIcon."' style='width: 30px; height: 30px;'/>&nbsp;
+                <a style='cursor:Pointer;' title='".$hoverMessage."' href='".$followDoojectUrl."'>" .$followMsg."</span></a>&nbsp&nbsp&nbsp";
   }
   else {
-    $followDoojectUrl = request_uri() . "/../../content/follow-dooject?d=$nodeId&f=1";
+    $followDoojectUrl = request_uri() . "/../../content/dooject-update?m=f&d=$nodeId&v=1";
     $followMsg = t("Follow this dooject");
+    $htmlCode = $htmlCode . "<img src='/profiles/labdoo/files/pictures/signal.png' style='width: 30px; height: 30px;'/>&nbsp;
+                <span style='cursor:Pointer; color:grey' title='Log in to modify this field'>".$followMsg."</span>&nbsp&nbsp&nbsp";
   }
-  
-  $htmlCode = $htmlCode . '<img src="/profiles/labdoo/files/pictures/laptop.png" width="100px"/>'; 
-  $htmlCode = $htmlCode . '<br><input type="button" value="'.$followMsg.'" onclick="window.open(\''.$followDoojectUrl.'\', 
-                          \'windowpopup\', \'resizable=yes,menubar=1,scrollbars=1,status=no,width=700,height=700\');setTimeout(\'history.go(0);\',2000);"/>';
 
-  // Next cell
-  $htmlCode = $htmlCode . '</td><td align="center">';
+  // Pick me up button
+  $userId = $user->uid;
+  $wDoojectNode = entity_metadata_wrapper('node', $nodeObj);
+  $currPickmeFlag = $wDoojectNode->field_pick_me_up->value();
+  if($currPickmeFlag) {
+    $pickmeupUrl = strtok(request_uri(), '?') . "?m=p&d=$nodeId&u=$userId&v=0";
+    $pickmeupMsg = "Pick me up";
+    $pickmeupIcon = 'truck.png';
+    $hoverMessage = t('Click to turn off "pick me up"');
+  }
+  else {
+    $pickmeupUrl = strtok(request_uri(), '?') . "?m=p&d=$nodeId&u=$userId&v=1";
+    $pickmeupMsg = "Don't pick me up";
+    $pickmeupIcon = 'truck-off.png';
+    $hoverMessage = t('Click this link if you want someone from a nearby Labdoo hub to pick up this dooject from its current location');
+  }
+  if(node_access("update", $nodeObj, $user)) {
+    $htmlCode = $htmlCode . "<img src='/profiles/labdoo/files/pictures/" . $pickmeupIcon . "' style='width: 35px; height: 30px;'/>&nbsp;
+                <a style='cursor:Pointer;' title='".$hoverMessage."' href='".$pickmeupUrl."'>" .$pickmeupMsg."</span></a>&nbsp&nbsp&nbsp";
+  }
+  else {
+    if (user_is_logged_in()) {
+      $htmlCode = $htmlCode . "<img src='/profiles/labdoo/files/pictures/" . $pickmeupIcon . "' style='width: 35px; height: 30px;'/>&nbsp;
+                  <span style='color:grey;'>".$pickmeupMsg."</span>&nbsp&nbsp&nbsp";
+    }
+    else {
+      $htmlCode = $htmlCode . "<img src='/profiles/labdoo/files/pictures/" . $pickmeupIcon . "' style='width: 35px; height: 30px;'/>&nbsp;
+                  <span style='cursor:Pointer; color:grey;' title='Log in to modify this field'>".$pickmeupMsg."</span>&nbsp&nbsp&nbsp";
+    }
+  }
 
-  // Print right arrow
-  $htmlCode = $htmlCode . '<a href="../laptop/'.$nextIdFull.'"><img src="/profiles/labdoo/files/pictures/arrow_right.png" width="40px"/></a>'; 
+  $htmlCode = $htmlCode . '</td><td align="right">';
+
+  // Right arrow
+  $htmlCode = $htmlCode . "<a style='float: right;' href='../laptop/".$nextIdFull."'>
+              <img src='/profiles/labdoo/files/pictures/arrow_right.png' style='float: right; width: 30px; height: 31px;'/></span></a>";
 
   // Table ending
   $htmlCode = $htmlCode . '</td></tr></tbody></table>';
@@ -1486,6 +1512,7 @@ function labdoo_lib_compute_dootrip_edoovillages($nodeLoaded) {
  */
 function labdoo_lib_node_view($node, $view_mode) {
   global $language;
+  global $user;
 
   // TODO DE-COLORBOX: temporary fix. This forces a redirect of all photo galleries in German language
   // to the default language English, because there is a bug that prevents them from loading the 
@@ -1498,6 +1525,33 @@ function labdoo_lib_node_view($node, $view_mode) {
     drupal_goto('../' . drupal_get_path_alias("node/" .  $node->nid), $options);
   }
 
+  if($node->type == 'laptop') {
+    $method = '';
+    $dooject = '';
+    $usr = '';
+    $value = '';
+    $dooject = $hub = NULL;
+    if(!empty($_GET['m']))
+      $method = $_GET['m'];
+    if(!empty($_GET['d']))
+      $dooject = $_GET['d'];
+    if(!empty($_GET['u']))
+      $usr = $_GET['u'];
+    else {
+      global $user;
+      $usr = $user->uid;
+    }
+    if(!empty($_GET['v'])) 
+      $value = $_GET['v'];
+    if($method != '' && $dooject != '' && $usr != '' && $dooject != '') {
+      if($method == 'p' && node_access("update", $node, $user)) 
+        labdoo_update_flags_dooject($method, $dooject, $usr, $value);
+      if($method == 'f')
+        labdoo_update_flags_dooject($method, $dooject, $usr, $value);
+    }
+  }
+
+  return;
 }
 
 
@@ -1600,86 +1654,103 @@ function labdoo_is_dooject_followed($doojectObject, $userObject) {
  
 
 /**
- * Allows a user to follow a dooject
+ * Updates the flags of a dooject 
  *
+ * @param method The method defining what type of action: {f (follow), p (pick me up)}
  * @param laptopid The ID of the dooject 
  * @param userid The ID of the user 
- * @param follow If '1', follow the dooject; if '0', stop following the dooject 
+ * @param value The value to set 
  *
  */
-function labdoo_follow_dooject($doojectId = NULL, $userId = NULL, $follow = NULL) {
+function labdoo_update_flags_dooject($method = "", $doojectId = NULL, $userId = NULL, $value = NULL) {
 
-  print('<img alt="" src="/profiles/labdoo/files/pictures/laptop_follow.png" style="width: 117px; height: 108px; "/> ');
-
-  if(($doojectId == NULL) || 
-     (!is_numeric($doojectId)) || 
-     (intval($doojectId) < 0))
+  if($method != 'f' && $method != 'p')
   {
-    print(t("Not a valid dooject."));
+    // Not a valid method
     return;
   }
 
-  if(($userId == NULL) || 
-     (!is_numeric($userId)) || 
-     (intval($userId) < 0))
+  if(($doojectId == NULL) || (!is_numeric($doojectId)) || (intval($doojectId) < 0))
   {
-    print(t("Not a valid user."));
+    // Not a valid dooject
     return;
   }
- 
-  if($follow != 0 && $follow != 1)
+
+  if(($userId == NULL) || (!is_numeric($userId)) || (intval($userId) < 0))
   {
-    print(t("Wrong parameter"));
+    // Not a valid user
+    return;
+  }
+
+  if($value != 0 && $value != 1)
+  {
+    // Wrong parameter
     return;
   }
 
   $doojectNode = node_load($doojectId);
   if($doojectNode == FALSE || $doojectNode->type != 'laptop')
   {
-    print(t("Dooject not found"));
+    // Dooject not found
     return;
   }
 
   $newRef = user_load($userId);
   if($newRef == FALSE)
   {
-    print(t("User not found"));
+    // User not found
     return;
   }
 
-  $wDoojectNode = entity_metadata_wrapper('node', $doojectNode);
-  $currList = $wDoojectNode->field_additional_followers->value();
-  if(!$currList)
-    $currList = array();
+  if($method == 'f') {
+    $wDoojectNode = entity_metadata_wrapper('node', $doojectNode);
+    $currList = $wDoojectNode->field_additional_followers->value();
+    if(!$currList)
+      $currList = array();
 
-  if(in_array($newRef, $currList))
-  {
-    if($follow == '1') 
+    if(in_array($newRef, $currList))
     {
-      drupal_set_message(t('You are already tracking Dooject ' . $doojectNode->title));
-      return; // User is already following this dooject, just return
+      if($value == '1')
+      {
+        drupal_set_message(t('You are already following Dooject ' . $doojectNode->title));
+        return; // User is already following this dooject, just return
+      }
     }
-  }
-  else if($follow == '0')
-  {
-    drupal_set_message(t('You are not tracking Dooject ' . $doojectNode->title));
-    return; // User is already following this dooject, just return
+    else if($value == '0')
+    {
+      drupal_set_message(t('You are not following Dooject ' . $doojectNode->title));
+      return; // User is already not following this dooject, just return
+    }
+
+    if($value == '1')
+    {
+      $currList[] = $newRef;
+      drupal_set_message(t('You are now following Dooject ' . $doojectNode->title));
+    }
+    else
+    {
+      $key = array_search($newRef, $currList);
+      unset($currList[$key]);
+      drupal_set_message(t('You are no longer following Dooject ' . $doojectNode->title));
+    }
+
+    $wDoojectNode->field_additional_followers->set($currList);
+    $wDoojectNode->save();
   }
 
-  if($follow == '1')
-  {
-    $currList[] = $newRef;
-    drupal_set_message(t('You are now tracking Dooject ' . $doojectNode->title));
+  if($method == 'p') {
+    $wDoojectNode = entity_metadata_wrapper('node', $doojectNode);
+    $currPickmeFlag = $wDoojectNode->field_pick_me_up->value();
+    if($value == '1') {
+      drupal_set_message(t('Dooject ' . $doojectNode->title . ' is marked as ready to be picked up'));
+      $wDoojectNode->field_pick_me_up->set(TRUE);
+    }
+    else {
+      drupal_set_message(t('Dooject ' . $doojectNode->title . ' is marked as not ready to be picked up'));
+      $wDoojectNode->field_pick_me_up->set(FALSE);
+    }
+    $wDoojectNode->save();
   }
-  else
-  {
-    $key = array_search($newRef, $currList);
-    unset($currList[$key]);
-    drupal_set_message(t('You are no longer tracking Dooject ' . $doojectNode->title));
-  }
-
-  $wDoojectNode->field_additional_followers->set($currList);
-  $wDoojectNode->save();
 
   return;
 }

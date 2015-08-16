@@ -210,6 +210,12 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
     // Extract the serial number 
     $objects[$objectNid]['serialNumber'] = labdoo_lib_get_field($node, 'field_serial_number', 'node', 'value'); 
 
+    // Pick me up flag
+    if(labdoo_lib_get_field($node, 'field_pick_me_up', 'node', 'value') == 1)
+      $objects[$objectNid]['pickMeUp'] = 'yes';
+    else 
+      $objects[$objectNid]['pickMeUp'] = 'no';
+
     // Extract Model Field 
     $objects[$objectNid]['model'] = labdoo_lib_get_field($node, 'field_model', 'node', 'value');
 
@@ -237,17 +243,18 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
   $metrics[3] = array('label' => 'Edoovillage', 'field' => 'edoovillage', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
   $metrics[4] = array('label' => 'Country', 'field' => 'country', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
   $metrics[5] = array('label' => 'Serial number', 'field' => 'serialNumber', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[6] = array('label' => 'Model', 'field' => 'model', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[7] = array('label' => 'Wh', 'field' => 'Wh', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[8] = array('label' => 'Notes', 'field' => 'notes', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[9] = array('label' => 'S0 - tagged', 'field' => 'S0', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[10] = array('label' => 'S1 - donated', 'field' => 'S1', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[11] = array('label' => 'S2 - sanitized', 'field' => 'S2', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[12] = array('label' => 'S3 - assigned', 'field' => 'S3', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[13] = array('label' => 'T1 - in transit', 'field' => 'T1', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[14] = array('label' => 'S4 - deployed', 'field' => 'S4', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[15] = array('label' => 'S5 - needs recycle', 'field' => 'S5', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[16] = array('label' => 'S6 - recycled', 'field' => 'S6', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[6] = array('label' => 'Pick me up', 'field' => 'pickMeUp', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[7] = array('label' => 'Model', 'field' => 'model', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[8] = array('label' => 'Wh', 'field' => 'Wh', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[9] = array('label' => 'Notes', 'field' => 'notes', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[10] = array('label' => 'S0 - tagged', 'field' => 'S0', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[11] = array('label' => 'S1 - donated', 'field' => 'S1', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[12] = array('label' => 'S2 - sanitized', 'field' => 'S2', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[13] = array('label' => 'S3 - assigned', 'field' => 'S3', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[14] = array('label' => 'T1 - in transit', 'field' => 'T1', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[15] = array('label' => 'S4 - deployed', 'field' => 'S4', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[16] = array('label' => 'S5 - needs recycle', 'field' => 'S5', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[17] = array('label' => 'S6 - recycled', 'field' => 'S6', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
 
   if(empty($objects)) {
 
@@ -256,6 +263,7 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
     $objects[0]['status'] = "";
     $objects[0]['country'] = "";
     $objects[0]['serialNumber'] = ""; 
+    $objects[0]['pickMeUp'] = ""; 
     $objects[0]['model'] = ""; 
     $objects[0]['Wh'] = ""; 
     $objects[0]['notes'] = ""; 
@@ -1717,7 +1725,8 @@ function lbd_display_dooject_column_chart($objectNid, $type)
 
   var options_column_chart_project = {
     seriesType: "bars",
-    colors: ["red", "green", "gray", "orange", "#0099CC"],
+    colors: ["#a5682a", "#DC3912", "#109618", "orange", "#0099CC"],
+
     width : 700, 
     chartArea : {  left: 50, width: \'60%\', height: \'80%\' }
   };
