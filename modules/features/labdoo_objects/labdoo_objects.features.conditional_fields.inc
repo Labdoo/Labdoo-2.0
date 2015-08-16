@@ -37,7 +37,21 @@ function labdoo_objects_conditional_fields_default_fields() {
           3 => 0,
           4 => 0,
         ),
-        2 => array(
+        7 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        8 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        9 => array(
           1 => '1',
           2 => '2',
           5 => 0,
@@ -45,6 +59,34 @@ function labdoo_objects_conditional_fields_default_fields() {
           4 => 0,
         ),
         3 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        5 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        6 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        4 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
           1 => '1',
           2 => '2',
           5 => 0,
@@ -54,7 +96,7 @@ function labdoo_objects_conditional_fields_default_fields() {
       ),
       'element_edit' => array(
         1 => '1',
-        3 => 0,
+        3 => '3',
       ),
       'element_edit_per_role' => 0,
       'element_edit_roles' => array(
@@ -62,11 +104,35 @@ function labdoo_objects_conditional_fields_default_fields() {
           1 => '1',
           3 => 0,
         ),
-        2 => array(
+        7 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        8 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        9 => array(
           1 => '1',
           3 => 0,
         ),
         3 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        5 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        6 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        4 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        2 => array(
           1 => '1',
           3 => 0,
         ),
