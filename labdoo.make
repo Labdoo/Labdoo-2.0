@@ -10,7 +10,7 @@ defaults[projects][subdir] = contrib
 ; Bootstrap Theme
 ;--------------------
 projects[bootstrap] = 2.2
-projects[jquery_update] = 2.5
+projects[jquery_update] = 2.6
 libraries[bootstrap][directory_name] = bootstrap
 libraries[bootstrap][download][type] = get
 libraries[bootstrap][download][url] = https://github.com/twbs/bootstrap/archive/v3.0.0.zip
@@ -67,7 +67,7 @@ projects[uuid] = 1.0-alpha6
 projects[defaultconfig][version] = 1.x-dev
 projects[defaultconfig][patch][1900574] = https://www.drupal.org/files/issues/1900574.defaultconfig.undefinedindex_13.patch
 projects[migrate_d2d] = 2.1
-projects[migrate] = 2.7
+projects[migrate] = 2.8
 
 
 ;--------------------
@@ -91,7 +91,7 @@ projects[memcache] = 1.2
 ;--------------------
 ; Services and social
 ;--------------------
-projects[google_analytics] = 2.0
+projects[google_analytics] = 2.1
 projects[drupalchat] = 1.4
 projects[simplenews] = 1.1
 projects[mass_contact] = 1.0
@@ -159,7 +159,7 @@ projects[calendar] = 3.5
 ;--------------------
 ; Extensions and others
 ;--------------------
-projects[ctools] = 1.7
+projects[ctools] = 1.9
 projects[libraries] = 2.2
 projects[entity] = 1.6
 projects[xautoload] = 4.5

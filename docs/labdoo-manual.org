@@ -1,3 +1,5 @@
+Note: This documentation page is depecreated in favor of Labdoo's wiki where all most up to date docs can be found. For a latest version of this doc, please go to https://www.labdoo.org/content/labdoo-social-network-how-it-works.
+
 ** About Project Labdoo
 
 Labdoo is a social network that is designed from the ground up to serve a social cause. We like to call it an aid social network to denote that the goal is not to make money, but rather to serve a social cause. As such, Labdoo has several properties: 
