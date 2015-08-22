@@ -1,8 +1,6 @@
 <?php
 
 /*
- * This rule redirects edoovillage and hub nodes to
- * their own dashboard
  * Note: to refresh rules, you need to run cron
  */
 function labdoo_lib_default_rules_configuration() {
@@ -38,5 +36,17 @@ function labdoo_lib_default_rules_configuration() {
 
   $configs['rules_redirect_hub_to_its_dashboard'] = rules_import($rule);
   return $configs;
+}
+
+
+/**
+ * Implements hook_default_rules_configuration_alter.
+ */
+function labdoo_lib_default_rules_configuration_alter(&$configs) {
+  // These rules are deprecated since they are now implemented
+  // programmatically via the labdoo_lib_node_view() using drupal_goto() which is
+  // easier to maintain and scale. 
+  $configs['rules_redirect_edoovillage_to_its_dashboard']->active = FALSE;
+  $configs['rules_redirect_hub_to_its_dashboard']->active = FALSE;
 }
 

@@ -44,3 +44,13 @@ function lbd_teams_default_rules_configuration() {
   return $configs;
 }
 
+
+/**
+ * Implements hook_default_rules_configuration_alter.
+ */
+function lbd_teams_default_rules_configuration_alter(&$configs) {
+  // This rule is deprecated since automatic notification of teams related
+  // messages is done programmatically via the lbd_communications module
+  $configs['rules_teams_new_content']->active = FALSE;
+}
+

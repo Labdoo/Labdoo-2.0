@@ -1551,6 +1551,19 @@ function labdoo_lib_node_view($node, $view_mode) {
     }
   }
 
+  // Handle page redirects here
+
+  $languages = language_list();
+  $path = drupal_get_path_alias(current_path());
+
+  if(($node->type == 'edoovillage') && (strcmp($path, "edoovillage") != 0) && ($view_mode == 'full')) {
+    drupal_goto('edoovillage', array('language' => $languages[$language->language], 'query' => array('e' => $node->nid)));
+  }
+
+  if(($node->type == 'hub') && (strcmp($path, "hub") != 0) && ($view_mode == 'full')) {
+    drupal_goto('hub', array('language' => $languages[$language->language], 'query' => array('h' => $node->nid)));
+  }
+
   return;
 }
 
