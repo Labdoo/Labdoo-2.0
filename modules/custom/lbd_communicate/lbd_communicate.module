@@ -690,3 +690,21 @@ function _email_team_event($node, $comment = NULL) {
   return;
 }
 
+
+/**
+ * Remove a specific email announcement from the cache.
+ * This function can be used from drush as follows:
+ *  > drush php-eval "lbd_communicate_pop_email_cache(0);" # pops the top element 
+ *
+ * @param $position The position of the email announcement to remove
+ *                  in the cache entry cachedEmailParametersArray
+ * 
+ */
+function lbd_communicate_pop_email_cache($position) {
+  $cache = cache_get('cachedEmailParametersArray'); 
+  $cachedEmailParametersArray = $cache->data; 
+  unset($cachedEmailParametersArray[$position]);
+  cache_set('cachedEmailParametersArray', $cachedEmailParametersArray);
+  return;
+}
+

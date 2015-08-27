@@ -211,6 +211,13 @@ function labdoo_render_map_geolocate_node($nodeId = NULL, $displayDoojects = Fal
     return;
 
   $map_style = 'height:200px; width:1170px'; 
+  // TODO: the following switch should be made based on whether
+  // the client is using a mobile browser or not, instead of content type.
+  // Consider installing a module like context_mobile_detect and using
+  // user-agent information to do this switch.
+  if($node->type == 'hub')
+    $map_style = 'height:200px; width:920px'; 
+     
   $map_options = '{"mapTypeId":"roadmap", "zoom":10}';
   $marker_color = NULL; 
   $visitor_marker = FALSE;

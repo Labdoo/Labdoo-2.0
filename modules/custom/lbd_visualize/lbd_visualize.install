@@ -119,7 +119,7 @@ global \$user;
 if(!file_exists(dirname(__FILE__) . '/../../../files/pictures/" . $tab . "-' . \$langCode . '.png'))
   \$langCode = 'en';
 
-print('<img src=\"/profiles/labdoo/files/pictures/" . $tab . "-' . \$langCode . '.png\" style=\"width: " . $tabWidth . "px; height: 30px; \"/>&nbsp;');
+print('<img src=\"/profiles/labdoo/files/pictures/" . $tab . "-' . \$langCode . '.png\" style=\"height: 22px; \"/>&nbsp;');
 
 ?>
   ";
