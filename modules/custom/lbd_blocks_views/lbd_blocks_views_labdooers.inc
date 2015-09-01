@@ -117,5 +117,31 @@ $handler->display->display_options['filters']['distance_1']['origin'] = 'latlon_
 
 /* Display: Page */
 $handler = $view->new_display('page', 'Page', 'page');
+$handler->display->display_options['defaults']['pager'] = FALSE;
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['pager']['options']['items_per_page'] = '1000';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Location: City */
+$handler->display->display_options['fields']['city']['id'] = 'city';
+$handler->display->display_options['fields']['city']['table'] = 'location';
+$handler->display->display_options['fields']['city']['field'] = 'city';
+/* Field: Location: Country */
+$handler->display->display_options['fields']['country']['id'] = 'country';
+$handler->display->display_options['fields']['country']['table'] = 'location';
+$handler->display->display_options['fields']['country']['field'] = 'country';
+/* Field: User: Roles */
+$handler->display->display_options['fields']['rid']['id'] = 'rid';
+$handler->display->display_options['fields']['rid']['table'] = 'users_roles';
+$handler->display->display_options['fields']['rid']['field'] = 'rid';
+$handler->display->display_options['fields']['rid']['empty'] = 'labdooer';
+/* Field: User: Link */
+$handler->display->display_options['fields']['view_user']['id'] = 'view_user';
+$handler->display->display_options['fields']['view_user']['table'] = 'users';
+$handler->display->display_options['fields']['view_user']['field'] = 'view_user';
+$handler->display->display_options['fields']['view_user']['label'] = '';
+$handler->display->display_options['fields']['view_user']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['view_user']['alter']['text'] = 'Visit';
+$handler->display->display_options['fields']['view_user']['element_label_colon'] = FALSE;
 $handler->display->display_options['path'] = 'labdooers';
 

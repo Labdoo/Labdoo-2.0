@@ -408,13 +408,13 @@ function labdoo_render_dooject_header() {
   $currPickmeFlag = $wDoojectNode->field_pick_me_up->value();
   if($currPickmeFlag) {
     $pickmeupUrl = strtok(request_uri(), '?') . "?m=p&d=$nodeId&u=$userId&v=0";
-    $pickmeupMsg = "Pick me up";
+    $pickmeupMsg = "Pick me up (actived)";
     $pickmeupIcon = 'truck.png';
     $hoverMessage = t('Click to turn off "pick me up"');
   }
   else {
     $pickmeupUrl = strtok(request_uri(), '?') . "?m=p&d=$nodeId&u=$userId&v=1";
-    $pickmeupMsg = "Don't pick me up";
+    $pickmeupMsg = "Pick me up (deactivated)";
     $pickmeupIcon = 'truck-off.png';
     $hoverMessage = t('Click this link if you want someone from a nearby Labdoo hub to pick up this dooject from its current location');
   }
