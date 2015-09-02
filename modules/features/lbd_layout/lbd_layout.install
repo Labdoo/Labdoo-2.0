@@ -44,7 +44,7 @@ function _lbd_layout_add_login_link() {
 }
 
 function  _lbd_layout_block_settings() {
-  // disable all the blocks for theme bootstrap1
+  // disable all the blocks for theme labdoo
   // their place is managed by module context
-  db_query("UPDATE {block} SET status = '0' WHERE theme = 'bootstrap1'");
+  db_query("UPDATE {block} SET status = '0' WHERE theme = 'labdoo'");
 }

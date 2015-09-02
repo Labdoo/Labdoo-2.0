@@ -1658,7 +1658,7 @@ function lbd_layout_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'theme_bootstrap1_settings';
+  $strongarm->name = 'theme_labdoo_settings';
   $strongarm->value = array(
     'toggle_logo' => 1,
     'toggle_name' => 0,
@@ -1680,13 +1680,13 @@ function lbd_layout_strongarm() {
     'cdn_bootstrap_version' => '2.3.2',
     'favicon_mimetype' => 'image/png',
   );
-  $export['theme_bootstrap1_settings'] = $strongarm;
+  $export['theme_labdoo_settings'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'theme_default';
-  $strongarm->value = 'bootstrap1';
+  $strongarm->value = 'labdoo';
   $export['theme_default'] = $strongarm;
 
   $strongarm = new stdClass();
