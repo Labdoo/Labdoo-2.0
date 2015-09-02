@@ -57,16 +57,16 @@ projects[hide_submit] = 2.0
 ; Security
 ;--------------------
 projects[captcha] = 1.3
-projects[recaptcha] = 1.12
-projects[honeypot] = 1.17
+projects[recaptcha] = 2.0
+projects[honeypot] = 1.19
 projects[user_restrictions] = 1.0
 
 ;--------------------
 ; Features, migrations and exports/imports
 ;--------------------
-projects[features] = 1.0
+projects[features] = 2.6
 projects[strongarm] = 2.0
-projects[features_extra] = 1.0-beta1
+projects[features_extra] = 1.0
 projects[node_export] = 3.0
 projects[uuid] = 1.0-alpha6
 ;projects[menu_import] = 1.6
@@ -80,13 +80,14 @@ projects[migrate] = 2.8
 ; Admin utils
 ;--------------------
 projects[module_filter] = 2.0 
-projects[drush_language] = 1.2
+projects[drush_language] = 1.5
 projects[delete_all] = 1.1
 projects[publishcontent] = 1.3
 projects[view_unpublished] = 1.2
 projects[menu_view_unpublished] = 1.0-beta3
 projects[role_delegation] = 1.1 
 projects[legal] = 1.5 
+projects[l10n_update] = 2.0
 
 ;--------------------
 ; Performance
@@ -98,7 +99,7 @@ projects[memcache] = 1.5
 ; Services and social
 ;--------------------
 projects[google_analytics] = 2.1
-projects[drupalchat] = 1.4
+projects[drupalchat] = 1.6
 projects[simplenews] = 1.1
 projects[mass_contact] = 1.0
 projects[sharethis] = 2.10
@@ -128,7 +129,7 @@ projects[lang_dropdown] = 2.5
 ;--------------------
 projects[email] = 1.3
 projects[mailsystem] = 2.34
-projects[mimemail] = 1.0-beta3
+projects[mimemail] = 1.0-beta4
 projects[reroute_email] = 1.2
 projects[smtp] = 1.2
 ;projects[phpmailer] = 3.x-dev
