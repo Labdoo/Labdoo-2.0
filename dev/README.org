@@ -110,37 +110,6 @@ Development Tools, Tips and Tricks
   be useful.
 
 
-* Re-installing the application
-
-  It can be done with the script =dev/reinstall.sh=:
-  #+BEGIN_EXAMPLE
-  docker-enter lbd
-  cd /usr/local/src/labdoo/
-  nohup nice dev/reinstall.sh settings.sh &
-  tail -f nohup.out
-  #+END_EXAMPLE
-  It will rebuild the Drupal directory with *drush make* and install
-  the labdoo profile with *drush site-install*, and then do all the
-  rest of configurations just like they are done during installation.
-
-  Normally there is no need to reinstall the application, unless we
-  want to test the installation profile and the installation scripts.
-
-  Another kind of re-installation, which touches only the database of
-  Drupal and nothing else, can be done with the script
-  =dev/reinstall-db.sh=:
-  #+BEGIN_EXAMPLE
-  docker-enter lbd
-  cd /usr/local/src/labdoo/
-  nohup nice dev/reinstall-db.sh @lbd_dev &
-  tail -f nohup.out
-  #+END_EXAMPLE
-
-  It is useful for testing the installation of custom modules, feature
-  modules, etc. The argument *@lbd_dev* is the alias of the site that
-  should be reinstalled.
-
-
 * Making a backup of the application
 
   Sometimes, when testing things on Drupal (installing/uninstalling
