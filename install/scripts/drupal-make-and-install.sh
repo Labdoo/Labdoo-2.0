@@ -69,6 +69,8 @@ drush site-install --verbose --yes labdoo \
       --account-name="$account_name" --account-pass="$account_pass" --account-mail="$account_mail"
 
 ### set propper directory permissions
+mkdir -p $drupal_dir/sites/all/translations
+chown -R www-data: $drupal_dir/sites/all/translations
 mkdir -p sites/default/files/
 chown -R www-data: sites/default/files/
 mkdir -p cache/
