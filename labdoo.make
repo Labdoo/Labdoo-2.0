@@ -9,11 +9,17 @@ defaults[projects][subdir] = contrib
 ;--------------------
 ; Bootstrap Theme
 ;--------------------
-projects[bootstrap] = 2.2
-projects[jquery_update] = 2.6
+projects[bootstrap] = 3.0
+projects[jquery_update] = 3.0-alpha2
+projects[less] = 4.0
+
 libraries[bootstrap][directory_name] = bootstrap
 libraries[bootstrap][download][type] = get
-libraries[bootstrap][download][url] = https://github.com/twbs/bootstrap/archive/v3.2.0.zip
+libraries[bootstrap][download][url] = https://github.com/twbs/bootstrap/archive/v3.3.5.zip
+
+libraries[lessphp][directory_name] = lessphp
+libraries[lessphp][download][type] = get
+libraries[lessphp][download][url] = https://github.com/oyejorge/less.php/archive/v1.7.0.5.tar.gz
 
 ;--------------------
 ; Development

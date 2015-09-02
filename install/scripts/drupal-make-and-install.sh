@@ -11,9 +11,11 @@ drush make --prepare-install --force-complete \
            --contrib-destination=profiles/labdoo \
            $makefile $drupal_dir
 
-### fix some things on the application directory
+### copy the bootstrap library to the custom theme, etc.
 cd $drupal_dir/profiles/labdoo/
 cp -a libraries/bootstrap themes/contrib/bootstrap/
+cp -a libraries/bootstrap themes/labdoo/
+cp libraries/bootstrap/less/variables.less themes/labdoo/less/
 
 ### Replace the profile labdoo with a version
 ### that is a git clone, so that any updates
