@@ -16,6 +16,7 @@ else
     ### create a container for development
     docker create --name=$container $image
     docker start $container
+    rm -rf labdoo/
     docker cp $container:/var/www/lbd/profiles/labdoo $(pwd)/
     docker stop $container
     docker rm $container
