@@ -11,12 +11,6 @@ drush make --prepare-install --force-complete \
            --contrib-destination=profiles/labdoo \
            $makefile $drupal_dir
 
-### copy the bootstrap library to the custom theme, etc.
-cd $drupal_dir/profiles/labdoo/
-cp -a libraries/bootstrap themes/contrib/bootstrap/
-cp -a libraries/bootstrap themes/labdoo/
-cp libraries/bootstrap/less/variables.less themes/labdoo/less/
-
 ### Replace the profile labdoo with a version
 ### that is a git clone, so that any updates
 ### can be retrieved easily (without having to
@@ -31,9 +25,11 @@ cp -a labdoo-bak/themes/contrib/ labdoo/themes/
 ### cleanup
 rm -rf labdoo-bak/
 
-### create the downloads dir
-mkdir -p /var/www/downloads/
-chown www-data /var/www/downloads/
+### copy the bootstrap library to the custom theme, etc.
+cd $drupal_dir/profiles/labdoo/
+cp -a libraries/bootstrap themes/contrib/bootstrap/
+cp -a libraries/bootstrap themes/labdoo/
+cp libraries/bootstrap/less/variables.less themes/labdoo/less/
 
 ### start mysqld manually, if it is not running
 if test -z "$(ps ax | grep [m]ysqld)"
@@ -75,3 +71,6 @@ mkdir -p sites/default/files/
 chown -R www-data: sites/default/files/
 mkdir -p cache/
 chown -R www-data: cache/
+### create the downloads dir
+mkdir -p /var/www/downloads/
+chown www-data /var/www/downloads/
