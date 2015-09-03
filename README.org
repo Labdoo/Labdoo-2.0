@@ -117,15 +117,17 @@
 
   + Modify and customize the settings:
     #+BEGIN_EXAMPLE
-    cp myproject/install/settings.sh cfg.sh
+    cd myproject/docker/
+    cp ../install/settings.sh cfg.sh
     vim cfg.sh
     #+END_EXAMPLE
 
   + Build a Docker image:
     #+BEGIN_EXAMPLE
-    myproject/docker-build.sh cfg.sh
-    tail -f nohup-myproject-master.out
-    less -r nohup-myproject-master.out
+    cd myproject/docker/
+    ./build.sh cfg.sh
+    tail -f nohup/nohup-myproject-master.out
+    less -r nohup/nohup-myproject-master.out
     #+END_EXAMPLE
     This will create a docker image, named =myproject:master= with a
     minimal ubuntu system and everything that is needed for the normal
@@ -133,12 +135,10 @@
 
   + Create a Docker container like this:
     #+BEGIN_EXAMPLE
-    docker images
-    docker create --name=myproject --hostname=example.org \
-	       -p 80:80 -p 443:443 myproject:master
+    myproject/docker/create.sh
     #+END_EXAMPLE
-    Then you can start and stop the container with =docker start myproject=
-    and =docker stop myproject=.
+    Then you can start and stop the container with
+    =myproject/docker/start.sh= and =myproject/docker/stop.sh=.
 
   If it is installed on a local machine (for testing or development),
   add the domain name =example.org= on ~/etc/hosts~:
