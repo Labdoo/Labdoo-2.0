@@ -119,7 +119,7 @@ $handler->display->display_options['filters']['distance_1']['origin'] = 'latlon_
 $handler = $view->new_display('page', 'Page', 'page');
 $handler->display->display_options['defaults']['pager'] = FALSE;
 $handler->display->display_options['pager']['type'] = 'some';
-$handler->display->display_options['pager']['options']['items_per_page'] = '1000';
+$handler->display->display_options['pager']['options']['items_per_page'] = '10000';
 $handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['defaults']['fields'] = FALSE;
 /* Field: Location: City */
@@ -143,5 +143,103 @@ $handler->display->display_options['fields']['view_user']['label'] = '';
 $handler->display->display_options['fields']['view_user']['alter']['alter_text'] = TRUE;
 $handler->display->display_options['fields']['view_user']['alter']['text'] = 'Visit';
 $handler->display->display_options['fields']['view_user']['element_label_colon'] = FALSE;
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Filter criterion: User: Active */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'users';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = '1';
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filter criterion: Location: Distance / Proximity */
+$handler->display->display_options['filters']['distance_1']['id'] = 'distance_1';
+$handler->display->display_options['filters']['distance_1']['table'] = 'location';
+$handler->display->display_options['filters']['distance_1']['field'] = 'distance';
+$handler->display->display_options['filters']['distance_1']['operator'] = 'dist';
+$handler->display->display_options['filters']['distance_1']['value'] = array(
+  'latitude' => '',
+  'longitude' => '',
+  'postal_code' => '',
+  'country' => '',
+  'php_code' => '',
+  'nid_arg' => '',
+  'nid_loc_field' => 'node',
+  'uid_arg' => '',
+  'search_distance' => '100',
+  'search_units' => 'km',
+);
+$handler->display->display_options['filters']['distance_1']['group'] = 1;
+$handler->display->display_options['filters']['distance_1']['exposed'] = TRUE;
+$handler->display->display_options['filters']['distance_1']['expose']['operator_id'] = 'distance_1_op';
+$handler->display->display_options['filters']['distance_1']['expose']['label'] = 'Distance / Proximity';
+$handler->display->display_options['filters']['distance_1']['expose']['operator'] = 'distance_1_op';
+$handler->display->display_options['filters']['distance_1']['expose']['identifier'] = 'distance_1';
+$handler->display->display_options['filters']['distance_1']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+  7 => 0,
+  6 => 0,
+  5 => 0,
+  8 => 0,
+  9 => 0,
+  4 => 0,
+);
+$handler->display->display_options['filters']['distance_1']['expose']['gmap_macro'] = array(
+  'default' => '[gmap ]',
+);
+$handler->display->display_options['filters']['distance_1']['expose']['user_location_choose'] = array(
+  'default' => FALSE,
+);
+$handler->display->display_options['filters']['distance_1']['origin'] = 'latlon_gmap';
+/* Filter criterion: Location: City */
+$handler->display->display_options['filters']['city']['id'] = 'city';
+$handler->display->display_options['filters']['city']['table'] = 'location';
+$handler->display->display_options['filters']['city']['field'] = 'city';
+$handler->display->display_options['filters']['city']['group'] = 1;
+$handler->display->display_options['filters']['city']['exposed'] = TRUE;
+$handler->display->display_options['filters']['city']['expose']['operator_id'] = 'city_op';
+$handler->display->display_options['filters']['city']['expose']['label'] = 'City';
+$handler->display->display_options['filters']['city']['expose']['operator'] = 'city_op';
+$handler->display->display_options['filters']['city']['expose']['identifier'] = 'city';
+$handler->display->display_options['filters']['city']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  7 => 0,
+  8 => 0,
+  9 => 0,
+  3 => 0,
+  5 => 0,
+  6 => 0,
+  4 => 0,
+);
+$handler->display->display_options['filters']['city']['expose']['autocomplete_items'] = '10';
+$handler->display->display_options['filters']['city']['expose']['autocomplete_min_chars'] = '0';
+$handler->display->display_options['filters']['city']['expose']['autocomplete_field'] = 'city';
+$handler->display->display_options['filters']['city']['expose']['autocomplete_raw_suggestion'] = 1;
+$handler->display->display_options['filters']['city']['expose']['autocomplete_raw_dropdown'] = 1;
+$handler->display->display_options['filters']['city']['expose']['autocomplete_dependent'] = 0;
+/* Filter criterion: Location: Country */
+$handler->display->display_options['filters']['country']['id'] = 'country';
+$handler->display->display_options['filters']['country']['table'] = 'location';
+$handler->display->display_options['filters']['country']['field'] = 'country';
+$handler->display->display_options['filters']['country']['group'] = 1;
+$handler->display->display_options['filters']['country']['exposed'] = TRUE;
+$handler->display->display_options['filters']['country']['expose']['operator_id'] = 'country_op';
+$handler->display->display_options['filters']['country']['expose']['label'] = 'Country';
+$handler->display->display_options['filters']['country']['expose']['operator'] = 'country_op';
+$handler->display->display_options['filters']['country']['expose']['identifier'] = 'country';
+$handler->display->display_options['filters']['country']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  7 => 0,
+  8 => 0,
+  9 => 0,
+  3 => 0,
+  5 => 0,
+  6 => 0,
+  4 => 0,
+);
 $handler->display->display_options['path'] = 'labdooers';
 

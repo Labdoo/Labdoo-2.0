@@ -2233,6 +2233,9 @@ function labdoo_block_filter_header() {
   if(strcmp($path, "hub") == 0)
       return TRUE;
 
+  if(strcmp($path, "contact") == 0)
+      return TRUE;
+
   if(strcmp($path, "content/doojects-dashboard") == 0)
       return TRUE;
 

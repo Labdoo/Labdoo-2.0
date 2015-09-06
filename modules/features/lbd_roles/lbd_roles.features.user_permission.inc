@@ -121,6 +121,7 @@ function lbd_roles_user_default_permissions() {
     'name' => 'assign book writer role',
     'roles' => array(
       0 => 'administrator',
+      1 => 'superhub manager',
     ),
     'module' => 'role_delegation',
   );
@@ -270,7 +271,9 @@ function lbd_roles_user_default_permissions() {
   // Exported permission: delete any book content.
   $permissions['delete any book content'] = array(
     'name' => 'delete any book content',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'superhub manager',
+    ),
     'module' => 'node',
   );
 
