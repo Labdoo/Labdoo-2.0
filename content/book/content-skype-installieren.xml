@@ -1,0 +1,68 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>18066</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Skype installieren</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>18066</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Zur Installation von Skype muss die Paketquelle für Partnerprogramme freigeschaltet sein. Ansonsten erhält man die Meldung, dass Skype nicht gefunden werden könne.
+
+<strong>Hinweis:</strong> Wenn der Rechner per Cloning von Images erstellt wurde muss die Programmquelle Canonical Partner NICHT freigeschaltet werden, sie ist es schon. Bitte den nächsten Abschnitt überspringen.
+
+<strong>Freischaltung der Programmquelle Canonical Partners</strong>
+
+Auf das Lubuntu-Icon (Start) unten links klicken &#8594; System Tools &#8594; Lubuntu Software Center &#8594; im Programmfenster oben rechts auf das Zahnrad klicken (ggf. vorher auf das Dreieck klicken) &#8594; im Fenster, das sich öffnet auf "Open Software Properties" klicken &#8594; Tab / Reiter "Other Software" öffnen &#8594; einen Haken in Auswahl "Canonical Partners" machen, Admin-Passwort eingeben &#8594; Close &#8594; es kommt der Hinweis, die Softwareliste neu zu laden, bitte durchführen. (Es gibt noch andere Wege, wer sie kennt, kann diese natürlich auch nutzen...)
+
+Danach kann mit der eigentlichen Installation von Skype begonnen werden:
+
+<strong>Installation von Skype</strong>
+
+Ein Terminalfenster öffnen und eintippen
+
+<code>sudo apt-get install skype</code> (Enter, Passwort eingeben, enter, nächste Frage mit <strong>y</strong> beantworten)
+
+Nur wenn der Hinweis kommt, Skype werde nicht gefunden: Habt ihr die Partner-Programme freigeschaltet? Siehe o.a. Abschnitt. Alternativ die Quellen aktualisieren, dazu im Terminal ausführen <code>sudo apt-get update</code>
+
+<strong>Um ein Start-Icon für Skype auf den Desktop zu erstellen:</strong>
+
+Auf das Lubuntu-Logo unter Links klicken &#8594; mit der Maus auf Internet gehen &#8594; die Liste der Internet-Programme klappt heraus &#8594; mit der rechten Maustaste auf Skype klicken &#8594; Add to desktop &#8594; Doppelklick auf das Skype-Logo auf dem Desktop startet Skype.
+
+Mehr auf https://wiki.ubuntuusers.de/SKYPE</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>31</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>856</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1127</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

@@ -1,0 +1,68 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>18078</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>install Skype</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>18078</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>To install Skype the source "Canonical Partners" must be activated. Otherwise you will get the message "Skype cannot be found".
+
+<strong>Hint:</strong> If you installed the computer using Cloning of Images it is NOT necessary to activate the Canonical partners programs, as that was already done within the image. Please proceed to the next chapter.
+
+<strong>Activate source Canonical Partners</strong>
+
+Click on the Lubuntu-Icon (Start) in the lower left corner &#8594; System Tools &#8594; Lubuntu Software Center &#8594; click on the tool symbol in the right upper corner of this window (sometime click on the triangle first to show the tool symbol) &#8594; in the window opening click on "Open Software Properties" &#8594; click on Tab "Other Software" &#8594; make a hook to select "Canonical Partners", you will be asked for the administrator password &#8594; click on Close &#8594; there is a suggestion to re-laod the software list, please do so.
+
+If you have added Canonical Partners you can start to install Skype:
+
+<strong>Installing Skype</strong>
+
+Open a terminal and type
+
+<code>sudo apt-get install skype</code> (Enter, tayp password, Enter, answer next question using <strong>y</strong>)
+
+Only to make sure, if you get the message "Skype not found": Did you add the Canonical Partner Programs as recommended above? Another reason might be you missed to update the software list. so open a terminal and execute <code>sudo apt-get update</code> (Enter).
+
+<strong>To get a Skype start icon on the desktop:</strong>
+
+Click on the Lubuntu-Start Logo in the left lower corner &#8594; click on "Internet" &#8594; the list of internet programs will be shown &#8594; right mouse click on Skype &#8594; Left mouse click on "Add to desktop" &#8594; a double click on the Skype icon on the desktop will start Skype.
+
+More details &#8594; https://help.ubuntu.com/community/Skype</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>35</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>857</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1128</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

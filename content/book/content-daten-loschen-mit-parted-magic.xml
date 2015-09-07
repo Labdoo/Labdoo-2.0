@@ -1,0 +1,58 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>17554</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Daten löschen mit Parted Magic</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>17554</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Die Löschung der alten Daten ist ein wesentlicher Bestandteil des Labdoo-Konzeptes. Daher bitte nach dem Booten mit dem Parted Magic-iso noch bestehende Daten wie folgt löschen:
+
+<ul>
+<li>entweder im Terminal löschen
+In der Taskleiste am unteren Bildschirmrand auf das schwarze Terminal-Icon klicken, ein Terminalfenster öffnet sich. Hier bitte eintippen <code>sudo shred /dev/sda -f -v</code> (Enter). Dieser Befehl schreibt 3-mal Zufallszahlen über die Festplatte und löscht damit alle Altdaten. 
+Hinweis: 
+In seltenen Fällen bei sehr alten Festplatten <strong>hda</strong> statt <strong>sda</strong> eingeben, falls sda nicht funktioniert.
+Ggf. noch die Tastaturbelegung noch passend einstellen (de - deutsch in Keyboard Layout)</li>
+<li>oder mit dem Tool Disc Eraser auf dem Parted Magic Desktop
+Hierzu das Icon (roter Radierer Disc Eraser anklicken) und den Anweisungen folgen.</li>
+</ul>
+Der Löschlauf kann mehrere Stunden dauern.
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>31</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>962</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1121</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

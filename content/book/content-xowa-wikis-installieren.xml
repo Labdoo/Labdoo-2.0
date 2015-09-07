@@ -32,17 +32,18 @@ Um Xowa zu starten liegt auf dem Desktop bereits ein Xowa-Starter (Xowa-Icon), d
 
 Es gibt 2 Arten von Xowa-Wikis:
 <ul>
-<li><strong>Version 1:</strong> nur Text, keine Grafiken (bitte achtet auf die Größe des Wikis in der Tabelle, kann von 100 KB bis 40 GB reichen)</li>
+<li><strong>Version 1:</strong> nur Text, keine Grafiken (bitte achtet auf die Größe des Wikis in der Tabelle, kann von 100 KB bis 40 GB reichen); Bilder können für ein Wiki Version 1 per Import Offline (s.u.) nachinstalliert werden.</li>
 <li><strong>Version 2:</strong> wie vor, aber zusätzlich mit den verlinkten Grafiken (empfohlen, weil deutlich informativer, aber auch größer)</li>
 </ul>
 
 Und es gibt 2 Wege, um Wiki herunterzuladen. Hierzu Xowa starten und auf der Hauptseite des Programms bis zu "Links" herunterscrollen:
 <ul>
-<li><strong>Import Online (nur Version 1):</strong> In Spalte <strong>set up</strong> auf Download klicken, startet den Download, kann mehrere Stunden laufen </li>
-<li><strong>Import Offline (Version 1 und 2):</strong> empfohlen, der Name täuscht, Laptop muss dafür online sein; Download am besten per Skript -> hierzu das gewünschte Wiki und Sprache auswählen -> Category system: version 2 -> Import: auf Generate script klicken -> wiederholen, bis Skript vollständig, dann auf "Run script" klicken.
+<li><strong>Import Online (nur Version 1):</strong> Xowa starten → herunterscrollen bis <strong>Links</strong> → Import Online → herunterscrollen bis zur Wiki-Liste → ggf. per Suchen nach dem englischen Name der Sprache suchen → in Spalte <strong>set up</strong> auf den Link <strong>download</strong> klicken → Download startet, kann je nach wiki-Größe Stunden dauern... → zuletzt in /home/labdoo/Public/xowa/wiki den Ordner /dump löschen</li>
+
+<li><strong>Import Offline (Version 1 und 2):</strong> empfohlen, der Name täuscht, Laptop muss dafür online sein; Download am besten per Skript → hierzu herunterscrollen bis <strong>Links</strong> → Import Offline → das gewünschte Wiki und Sprache auswählen → Category system: version 2 → Import: auf Generate script klicken → wiederholen, bis Skript vollständig, dann auf "Run script" klicken.
 
 <strong>Vorsicht:</strong>
-Es gibt nicht jedes Wiki in jeder Sprache, oft fehlt z.B. wikivoyage. Wenn ihr beim Offline Import trotzdem ein nicht existentes Wiki anklickt wird zwar ein Skript dafür erzeugt, das aber beim Ausführen abstürzt. Daher bitte prüfen, ob das Wiki existiert. Hierzu ein Trick: Macht 2 Tabs auf (Datei -> Neuer Tab); mit einem geht ihr in die Online Import-Tabelle, mit der anderen auf die Offline-Import-Seite. In der Online-Seite könnt ihr mit Bearbeiten -> Suchen nach der Sprache und den Wikis suchen. So seht ihr schnell, ob es ein bestimmtes Wiki auch gibt. </li>
+Es gibt nicht jedes Wiki in jeder Sprache, oft fehlt z.B. wikivoyage. Wenn ihr beim Offline Import trotzdem ein nicht existentes Wiki anklickt wird zwar ein Skript dafür erzeugt, das aber beim Ausführen abstürzt. Daher bitte prüfen, ob das Wiki existiert. Hierzu ein Trick: Macht 2 Tabs auf (Datei → Neuer Tab); mit einem geht ihr in die Online Import-Tabelle, mit der anderen auf die Offline-Import-Seite. In der Online-Seite könnt ihr mit Bearbeiten → Suchen nach der Sprache und den Wikis suchen. So seht ihr schnell, ob es ein bestimmtes Wiki auch gibt. </li>
 </ul>
 
 <strong>Passende Wikis zum passenden Xowa</strong>
@@ -55,17 +56,20 @@ Nach dem Importieren gibt es im Ordner /xowa/wiki einen Unterordner /dump. Diese
 
 <strong>Rechte der Xowa-Ordner</strong>
 Zunächst kann nur der User labdoo auf nachinstallierte Xowa-Wikis zugreifen. Damit auch der Benutzer student Leserechte hat, liegt auf dem Desktop das Skript set-rights-folder-files-Public-correct.sh. Dieses bitte jedes Mal ausführen, wenn Lerninhalte nachinstalliert wurden. 
-
-Dazu im Terminal ausführen oder die Schnellversion (geht bei diesem Skript): rechte Maustaste auf set-rights-folder-files-Public-correct.sh -> Open with / Öffnen mit -> Xterm (wenn Xterm nicht angeboten wird -> Open with / Öffnen mit -> Systemwerkzeug -> Xterm). Das Skript startet ohne weitere Eingaben, läuft ca. 1 - 5 Minuten, je nach Rechner, und schliesst automatisch.
+<ul>
+Dazu im Terminal ausführen oder die Schnellversion (geht bei diesem Skript): rechte Maustaste auf set-rights-folder-files-Public-correct.sh → Open with / Öffnen mit → Xterm (wenn Xterm nicht angeboten wird→ Open with / Öffnen mit → Systemwerkzeug → Xterm). Das Skript startet ohne weitere Eingaben, läuft ca. 1 - 5 Minuten, je nach Rechner, und schliesst automatisch.
+</ul>
 
 <strong>Englische Wikis</strong>
 Falls die Festplatte (HDD) nicht gross ist, ihr aber trotzdem möglichst viele Englische Wikis aufspielen wollt, lasst doch en.wikipedia.org weg. Dafür haben die Kinder ja das für Kinder gefilterte Wikipedia wikidoo. Die anderen Englischen Wikis belegen zusammen ca. 10 GB, während alleine en.wikipedia rund 30 GB braucht!
 
 <strong>Speziell für Hubs in der DACH-Region: </strong>
 Auf Anfrage werden schon fertige Xowa-Wikis für häufig gebrauchte Sprachen in gepackter Form auf dem FTP-Server hinterlegt. 
-Gepackte Datei herunterladen, entpacken und in den Ordner /home/labdoo/Public/xowa/wiki verschieben. Anschliessend solltet ihr die Rechte des Xowa-Ordners per Skript richtig einstellen (s.o.)
+<ul>
+Gepacktes Wiki herunterladen → entpacken und in den Ordner /home/labdoo/Public/xowa/wiki verschieben → Die Rechte des Xowa-Ordners per Skript →.sh auf dem Desktop richtig einstellen (s.o.)
 
 Schaut mal auf http://ftp.labdoo.org/download/images/xowa-wikis/ (darin ggf. Unterordner für die jeweilige Xowa-Version). Vielleicht ist eure Sprache ja schon dabei. Wenn nicht, schickt eine Mail an Labdoo-DACH@Labdoo.org.
+</ul>
 
 <strong>Ausblick</strong>
 
@@ -78,15 +82,15 @@ von Sourceforge: http://sourceforge.net/projects/xowa</value>
 </body>
 <body>
 <type>format</type>
-<value>full_html</value>
+<value>filtered_html_advanced</value>
 </body>
 <bid>
 <type>book_array</type>
-<value>33</value>
+<value>31</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>817</value>
+<value>815</value>
 </plid>
 <mlid>
 <type>book_array</type>

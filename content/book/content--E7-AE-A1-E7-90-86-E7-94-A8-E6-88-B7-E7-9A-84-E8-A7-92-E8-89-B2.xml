@@ -1,0 +1,56 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>17403</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>管理用户的角色</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>ChineseSimplified</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>39</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>用户可以是以下角色之一：
+<ul>
+<li><strong>匿名用户：</strong>无需登录帐户只访问labdoo.org的用户。这些用户只能做“浏览”之类的活动。</li>
+<li><strong>认证用户:</strong> Labdoo非常基本的用户角色。这是首次在系统注册时，labdooer收到系统所设定的角色。这种类型的帐户允许用户执行所有基本功能，例如标记笔电或登记dootrip。 </li>
+<li><strong>中枢经理:</strong> 提供更多的功能来管理中心，包括编辑自己的中枢信息，分配新的管理者到中枢，或上传图片到中枢相册。很多时候此角色还兼任edoovillage经理，这样	中枢经理还可以创建和分配新的edoovillages到中枢帐户。</li>
+<li><strong>Edoovillage 经理: </strong>提供更多的功能来管理edoovillages，包括创建和编辑edoovillages，分配其他编辑到edoovillages，或上传图片到edoovillages相册。 </li>
+<li><strong>通讯经理: </strong>提供更多的功能来管理，编辑和发布新闻简报。</li>
+<li><strong>维基作家: </strong>提供更多功能来编写新的维基文件。这个角色可以创建新的wiki页面，编辑现有的，并发布或取消发布其内容。</li>
+<li><strong>团队经理: </strong>提供更多的功能来管理Labdoo团队，包括创建新的Labdoo团队，管理一个团队的部分用户，或分配团队管理角色给其他用户。</li>
+<li><strong>超级中枢经理:</strong>提供更多的功能来创建新的中枢和帮助管理更大的Labdoo地区使众多中枢全球化。</li>
+</ul> </value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>17400</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1113</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1116</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

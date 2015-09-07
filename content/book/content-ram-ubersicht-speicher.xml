@@ -1,0 +1,108 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>18421</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>RAM - Übersicht Speicher</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>18421</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Es gibt Speicher (RAM) für PC und Laptop, die wir hier kurz vorstellen. Die Größe eines RAM-Riegels für Laptops ist ca. 67 mm x 32 mm.
+
+Die verschiedenen SD-Karten für Tablets und Handys werden hier nicht erklärt. Da sie zu leicht aus IT-Spenden zu entfernen sind empfehlen wir deren Verwendung nur, wenn sie im Gerät sicher verbaut werden können.
+
+<strong>SD-RAM</strong>
+
+<table align="right">
+<tr><td>
+</td></tr>
+<tr><td>
+<img src="/sites/default/files/content/wiki-de/labdooer/sd-ram.png" width="250"/>
+</td></tr>
+</table>
+
+SD-RAM ist die älteste Bauform, i.d.R. bekommt Labdoo.org diese in den Größen 64 MB und 128 MB gespendet, selten auch 256 MB RAM. 64 MB SD-RAM kann entsorgt werden, weil zu klein. Mit 2 x 128 MB kann ein Laptop auf 256 MB RAM aufgerüstet werden, nicht üppig, aber gerade noch ausreichend. 2 x 256 MB = 512 MB SD-RAM wäre natürlich optimal, aber leider sehr selten. Da SD-RAM oft in älteren Rechnern (z.B. Pentium III) kurz vor oder nach der Jahrtausendwende verbaut wurde, sollte jeweils geprüft werden, ob die Performance überhaupt ausreichend ist. Sehr oft liegen die Laptops, in die SD-RAM passt, unter den Mindestanforderungen von Labdoo.org.
+
+<table align="right">
+<tr><td>
+</td></tr>
+<tr><td>
+<img src="/sites/default/files/content/wiki-de/labdooer/ddr1-ram.png" width="250"/>
+</td></tr>
+</table>
+
+<strong>DDR1 RAM</strong>
+DDR1 RAM für Laptops wurde ca. von 2000 bis 2004 verbaut, interessant für Labdoo.org sind die Größen 256 MB, 512 MB und 1 GB. Tipp: Falls nicht auf dem Aufdruck erkennbar, erkennt man DDR1 RAM an den großen Chips und einer gröberen Zahnung verglichen mit DDR2. Ca. 10 mm von aussen ist eine Kerbe zwischen den Kontakten, die in die Nut der RAM-Halterung im Laptop passt.
+
+<strong>DDR2 RAM</strong>
+<table align="right">
+<tr><td>
+</td></tr>
+<tr><td>
+<img src="/sites/default/files/content/wiki-de/labdooer/ddr2-ram.png" width="250"/>
+</td></tr>
+</table>
+Ca. von 2005 bis 2011 wurde DDR2 RAM verbaut, zu erkennen an den kleineren Chips und der feineren Zahnung. Typische Größen sind 512 MB, 1 GB, 2 GB. Die Kerbe zwischen den Kontakten ist bei ca. 11 mm von aussen leicht gegenüber DDR1 versetzt. 
+
+<strong>Daher bitte ohne Druck DDR1 und DDR 2 in die Halterung im Laptops einschieben. Wenn es nicht passt bitte keinen Druck ausüben. Dann ist es vermutlich die falsche Bauform... Zum Entfernen die beiden Laschen rechts und links vom RAM-Riegel nach aussen drücken und leicht von unten gegen das RAM drücken, dann löst es sich.</strong>
+
+<table align="right">
+<tr><td>
+</td></tr>
+<tr><td>
+<img src="/sites/default/files/content/wiki-de/labdooer/ddr3-ram.png" width="250"/>
+</td></tr>
+</table>
+
+<strong>DDR3 RAM</strong>
+Ca. ab 2011 bis heute wird DDR3 RAM verbaut, oft in den Größen 1 GB, 2 GB oder 4 GB. Die Kerbe ist mehr in die Mitte gewandert (bei ca. 29 mm von aussen). Die Chips sind klein, dadurch ist DDR 3 leicht zu erkennen. DDR3 RAM sieht schon fast wieder aus wie der Uralt SD-RAM.
+
+<strong>DDR4 RAM</strong>
+...kennt Labdoo.org aktuell (Herbst 2015) nur vom Hörensagen, weil es so neu ist, dass es noch nicht gespendet wurde :)
+
+<strong>Achtung: Bitte Strom und Batterie entfernen, bevor Laptops geöffnet werden. Zerstörung von Platinen durch statische Aufladung kann durch geerdete Armbänder vermieden werden, siehe https://www.labdoo.org/de/content/werkzeug-und-ersatzteile-f%C3%BCr-hubs. Labdoo.org ist nicht für Fehler oder Defekte aufgrund unsachgemäßer Anwendung haftbar.</strong>
+
+RAM ist unterschiedlich schnell getaktet, der langsamste Chip bestimmt die Geschwindigkeit. Optimal sind daher immer 2 RAMs mit gleicher Taktung. Und manche RAMs vertragen sich auch nicht untereinander, bis hin dass der Laptop nicht mehr hochfährt.
+
+<strong>Weiterführende Links:</strong>
+<strong>SD-RAM:</strong> https://de.wikipedia.org/wiki/Synchronous_Dynamic_Random_Access_Memory
+<strong>DDR1/DR2/DDR3/DDR4:</strong> https://de.wikipedia.org/wiki/DDR-SDRAM
+https://de.wikipedia.org/wiki/Arbeitsspeicher
+http://www.elektronik-kompendium.de/sites/com/1312291.htm
+https://de.wikibooks.org/wiki/Computerhardware:_RAM</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>31</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>856</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1132</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

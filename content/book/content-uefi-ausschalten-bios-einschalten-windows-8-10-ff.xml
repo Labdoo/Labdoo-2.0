@@ -1,0 +1,91 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>17702</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>UEFI ausschalten, BIOS einschalten (Windows 8 / 10 ff.)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>17702</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Um z.B. das Bootmenü beim Start zu sehen muss der UEFI Bootmodus ausgeschaltet werden. UEFI ist ab Windows 8, 8.1 bzw. 10 ff. auf vielen Laptops voreingestellt. UEFI behindert aber die Installation anderer Betriebssystems ausser Windows. Daher wie folgt vorgehen:
+
+<strong>für Windows 8</strong>
+
+<ul>
+<li>Den Laptops starten </li>
+<li>die Tasten <strong>Windows</strong> und <strong>I</strong> (i) drücken,</li>
+<li>PC Einstellungen öffnen / Change PC Settings</li>
+<li>General Settings </li>
+<li>rechts auf Advanced Options </li>
+<li>"restart" anklicken; bitte etwas Geduld, der PC startet nicht neu, sondern wechselt nur zu...</li>
+<li>Choose an Option</li>
+<li>Troubleshoot</li>
+<li>Advanced options</li>
+<li>UEFI Firmware Settings</li>
+<li>Restart (jetzt erfolgt der Neustart)</li>
+weiter siehe unten
+</ul>
+
+<strong>für Windows 8.1</strong>
+
+<ul>
+<li>Den Laptops starten</li>
+<li>die Tasten <strong>Windows</strong> und <strong>I</strong> (i) drücken,</li>
+<li>PC Einstellungen öffnen / Change PC Settings</li>
+<li>Update/Wiederherstellung bzw. update and recovery</li>
+<li>Wiederherstellung / recovery</li>
+<li>Erweiterter Start / Advanced startup auswählen</li>
+<li>"Jetzt neu starten / restart" anklicken; bitte etwas Geduld, der PC startet nicht neu, sondern wechselt nur zu... Option auswählen / Choose an Option</li>
+<li>Problembehandlung / Troubleshoot</li>
+<li>Erweiterte Optionen / Advanced options</li>
+<li>UEFI Firmware Einstellungen / Settings</li>
+<li>Neu starten / Restart (jetzt erfolgt der Neustart)</li>
+</ul>
+
+<strong>und dann nach dem Neustart im BIOS die Einstellungen ändern</strong>
+<ul>
+<li><code>Secure Boot = disable</code></li>
+<li><code>UEFI Boot = CSM Boot</code>, manchmal auch <code>Launch CSM = Enabled</code></li>
+Es kann je nach BIOS und Hersteller auch andere Bezeichnungen oder Einstellungen geben, bitte ggf. im Web recherchieren.
+</ul>
+
+Nützliche Links:
+http://itsfoss.com/disable-uefi-secure-boot-in-windows-8/
+http://www.pcmag.com/article2/0,2817,2417361,00.asp
+http://askubuntu.com/questions/221835/installing-ubuntu-on-a-pre-installed-windows-8-64-bit-system-uefi-supported</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>31</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>856</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1125</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

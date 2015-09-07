@@ -35,7 +35,7 @@ Hierzu sind die folgenden Schritte nötig:
 
 <strong>Wichtig:</strong> Damit der Zugriff auf diese Platte für alle User möglich ist müssen die Zugriffsrechte noch geändert werden: 
 <ul>
-2. Platte öffnenn → Rechtsklick in die Ordnerliste → Eigenschaften → Zugriffsrechte für Andere → Dateien erstellen und löschen freigeben → Auf alle Ordner anwenden.
+2. Platte öffnen → Rechtsklick in die Ordnerliste → Eigenschaften → Zugriffsrechte für Andere → Dateien erstellen und löschen freigeben → Auf alle Ordner anwenden.
 </ul>
 
 Danach neu booten. Laufwerk wird jetzt automatisch eingehängt (gemountet), ggf. noch zu den Orten im File manager pcmanFM hinzufügen für schnelleren Zugriff (als Lesezeichen).</value>

@@ -1,0 +1,68 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>17553</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Alte Daten sicher löschen</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>17553</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Wichtig ist, dass <strong>die Daten auf jedem gespendeten Laptop oder PC sicher gelöscht werden</strong>. Hierbei werden die Festplatten i.d.R. 3-mal mit Zufallszahlen überschrieben, sodass keine Rekonstruktion der Altdaten möglich ist. Hierzu gibt es es mehrere Möglichkeiten:
+
+<ul>
+<li>während der <a href="/de/content/cloning-mit-fertigen-labdoo-images">Installation eines Images for Cloning per Parted Magic iso CD</a> (weitere Details im Wiki-Beitrag)</li>
+
+<ul>
+<li><a href="/de/content/daten-l%C3%B6schen-mit-parted-magic">per Shell und Terminal </a></li>oder
+<li><a href="/de/content/daten-l%C3%B6schen-mit-parted-magic">per Disk Eraser (Programm auf dem Parted Magic Desktop</a> )</li>
+
+</ul>
+
+<li><a href="/de/content/lubuntu-installation">während einer Installation des (L)ubuntu-Betriebssytems</a></li>
+
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/MeinPC/RichtigLoeschen/richtigloeschen_node.html">mittels Löschtools, empfohlen vom BSI Bundesamt für Sicherheit und Informationstechnik</a> </li>
+
+<li>Compliance-konforme Datenlöschung mit TÜV- und DEKRA-Zertifikat und Testat über zertifizierte Dienstleister und Partner</li>
+
+</ul>
+
+Mehr dazu auch im FAQ-Forum unter https://www.labdoo.org/de/content/faq-forum#FAQ06.
+
+<strong>Hinweis:</strong>
+Wenn aus technischen Gründen keine der o.a. Ansätze für eine sichere Datenlöschung möglich ist, wendet euch bitte an ein Labdoo Hub. Hubs haben weitere Möglichkeiten, wie den Ausbau der Festplatte und Löschung über externe Adapter u.a. Die Datensicherheit ist ein zentraler Bestandteil des Labdoo-Konzeptes. <strong>Kein Labdoo-Computer darf ohne vorherige Datenlöschung weitergegeben werden.</strong></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>31</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>815</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1120</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

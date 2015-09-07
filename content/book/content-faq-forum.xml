@@ -114,9 +114,11 @@ Empfohlen wird das Clonen fertig vorbereiteter Images per Clonezilla. <a href="/
 <li>kleinere LAN / WLAN Komponenten für Netzwerke</li>
 <li>Laptoptaschen, Ladegeräte</li>
 <li>kompakte Scanner</li>
+<li>Beamer</li>
 <li>Braille-Lesegeräte für Computer für blinde Anwender</li>
-PCs sucht nur ab und zu das Hub Rhein-Ruhr nach Absprache für Inlands-Projekte.
+Wir bitten um Verständnis, dass wir solche Kleinteile nicht im Labdoo-Projekt registrieren. Der Aufwand, jeweils eine Labdoo-ID zu vergeben, wäre hierfür zu gross. Daher können wir für Kleinteile auch keine Rückmeldung geben, wohin diese gegeben werden.
 
+PCs sucht das Hub Rhein-Ruhr nur ab und zu nach Absprache für Inlands-Projekte.
 
 Wer Bedenken hat und seine Festplatte ausbauen möchte, sollte unbedingt die Kleinteile (Halterung, Abdeckung und Schrauben) für die Festplatte dazulegen. Es gibt aber auch sichere Wege, die Daten auch ohne Zerstörung der Festplatte zu löschen (Labdoo.org schreibt 3 x mit Zufallszahlen über die Platte).
 </ul>
@@ -150,7 +152,7 @@ Ab und an suchen wir große Teile wie Server oder Drucker. die wir aber nur in s
 <li>
 <strong>Wenn ich IT spenden möchte, was kann ich tun?</strong>
 
-Mehr dazu in unserem <a href="/de/content/information-für-it-spender">Wiki-Beitrag für IT-Spender.</a>
+Mehr dazu in unserem <a href="/de/content/information-it-spender">Wiki-Beitrag für IT-Spender.</a>
 </li>
 
 <li><strong>Wie kann ich sicher sein, dass meine Daten sicher gelöscht werden?</strong>
@@ -204,22 +206,25 @@ Jeder kann sich in der Form einbringen, die seinem Wissen, Neigung und Möglichk
 
 <li><strong>Werden Spendenbescheinigungen oder andere Nachweise ausgestellt? Was ist bei einer Spende steuerlich zu berücksichtigen?</strong>
 
+<br/>
+
+<strong>Gilt nur für Spender in Deutschland</strong> (in Österreich und in der Schweiz gibt es leider (noch) keinen gemeinnützigen Labdoo-Verein):
 Labdoo.org e.V. ist beim Amtsgericht Duisburg unter VR 5128 registriert. Beim Finanzamt Mülheim Ruhr ist der Labdoo.org e.V. unter der Steuernr. 120/5703/1940 mit Bescheid vom 22.05.2014 als gemeinnütziger Verein bestätigt worden.
 
 <strong>Geldspenden:</strong>
 Bis 200 € reicht der Überweisungsbeleg als Spendenquittung. Bei höheren Spenden, auch IT-Sachspenden, erstellen wir gerne eine Spendenquittung, mehr dazu <a href="/de/content/spenden-verein">hier</a>.
 
 <strong>Verwendungsnachweis / Verzicht auf Gewährleistung</strong>
-Der Labdoo.org e.V. stellt Unternehmen ein Bestätigungsschreiben aus, in dem die Sachspende bestätigt wird. Gleichzeitig erklären wir darin den Verzicht auf jegliche Gewährleistung. Dies kann für Unternehmen wichtig sein, da Wirtschaftsprüfer solche Nachweise verlangen.
+Der Labdoo.org e.V. stellt Unternehmen ein rechtsverbindliches Bestätigungsschreiben aus, in dem die Sachspende bestätigt wird. Gleichzeitig erklären wir darin den Verzicht auf jegliche Gewährleistung. Dies kann für Unternehmen wichtig sein, falls Wirtschaftsprüfer solche Nachweise verlangen, um keine Rückstellung bilden zu müssen.
 
 Zusätzlich kann über unsere Homepage der Verbleib aller gespendeten Laptops verfolgt und tagesaktuell in Excel exportiert werden. 
 
 <strong>IT-Sachspenden:</strong>
-Der Wertansatz für eine IT-Sachspende sollte für die Spendenquittung mit Vergleichspreisen aus Onlinemarktplätzen dokumentiert werden, falls es später mal Nachfragen geben sollte und damit der Labdoo.org e.V. einen reellen Wert in der Spendenbescheinigung nennen kann.
+Der Wertansatz für eine IT-Sachspende für die Spendenquittung wird - sofern möglich - mit Vergleichspreisen aus Onlinemarktplätzen dokumentiert, falls es dazu später mal Nachfragen geben sollte und damit der Labdoo.org e.V. einen reellen Wert in der Spendenbescheinigung nennen kann.
 
-Übrigens kann Labdoo.org auch bei der Bereitstellung von TÜV oder Dekra zertifizierten Löschungs- oder Entsorgungszertifikate für Unternehms- oder IT-Leitung helfen, z.B. über Partner wie die AfB gGmbH (http://www.afb-group.eu).
+Übrigens kann Labdoo.org auch bei der Bereitstellung von TÜV oder Dekra zertifizierten Löschungs- oder Entsorgungszertifikate für Unternehms- oder IT-Leitung helfen, z.B. über Partner wie die <a href="http://www.afb-group.eu">AfB gGmbH</a>.
 
-<strong>Steuern - gilt nur für Firmen in Deutschland und nicht für Privatpersonen! (für Details wenden Sie sich bitte an Ihren Steuerberater):</strong>
+<strong>Steuern - gilt nur für Unternehmen in Deutschland und nicht für Privatpersonen (für Details wenden Sie sich bitte an Ihren Steuerberater):</strong>
 
 Gemäß §6 Abs. 1 Nr. 4 EStG kann in Deutschland ein Wirtschaftsgut entnommen werden und der Restwert (Buchwert) als Spende steuerlich geltend gemacht werden, wenn es unmittelbar danach einer gemeinnützigen Einrichtung gespendet wird.
 
@@ -238,9 +243,7 @@ Deutschland ist übrigens das einzige Land, dass Sachspenden steuerlich so schle
 
 <li><strong>Sind Labdoo-Projekte nur im Ausland?</strong>
 
-Zugegeben - viele unsere Projekte liegen im Ausland, aber Labdoo unterstützt auch gerne Projekte in Deutschland, Österreich oder der Schweiz. <a href="http://www.labdoo.org/de/call-for-laptops?country=de">Bisher wurden diese Projekte in der DACH-Region unterstützt.</a>
-
-<a name="FAQ12"/>Projekte in der DACH-Region erhalten i.d.R. PCs. Aktuell bearbeitet nur das Labdoo Hub Rhein-Ruhr PCs.
+Zugegeben - die meisten unserer Projekte liegen im Ausland, aber Labdoo unterstützt auch viele Projekte in <a href="https://www.labdoo.org/de/content/edoovillages-dashboard?c=de">Deutschland</a>, <a href="https://www.labdoo.org/de/content/edoovillages-dashboard?c=at">Österreich</a> oder der <a href="https://www.labdoo.org/de/content/edoovillages-dashboard?c=ch">Schweiz.</a> <a name="FAQ12"/>Projekte in der DACH-Region erhalten i.d.R. PCs. Aktuell bearbeitet nur das Labdoo Hub Rhein-Ruhr PCs.
 </li>
 
 <li><strong>Was passiert mit defekten Laptops in den Projekten?, Wie stellt Labdoo.org die Entsorgung sicher?</strong>
@@ -252,7 +255,7 @@ Wenn ein Laptop defekt ist und nicht vor Ort repariert werden kann meldet sich d
 
 <li><strong>Was kann ich tun, wenn ich ein Hilfsprojekt kenne, das auch Laptops benötigt?</strong>
 
-<a name="FAQ14"/>Labdoo.org stellt Schulen u.a.kostenlos Lern-Laptops für Kinder und Jugendliche, Schulen und Bildungsprojekte weltweit bereit. Ein Antrag kann schnell und mit wenig Aufwand eingereicht werden. Für die Annahme müssen aber bestimmte Kriterien erfüllt, Strom, Infrastruktur, Beziehungen in Länder mit Labdoo Hubs (Flugpaten). <a href="/sites/default/files/content//antrag-f%C3%BCr-it-spenden-stellen">Mehr hier... </a>
+<a name="FAQ14"/>Labdoo.org stellt Schulen u.a.kostenlos Lern-Laptops für Kinder und Jugendliche, Schulen und Bildungsprojekte weltweit bereit. Ein Antrag kann schnell und mit wenig Aufwand eingereicht werden. Für die Annahme müssen aber bestimmte Kriterien erfüllt, Strom, Infrastruktur, Beziehungen in Länder mit Labdoo Hubs (Flugpaten). <a href="/de/content/antrag-f%C3%BCr-it-spenden-stellen">Mehr hier... </a>
 </li>
 
 <li><strong> Welche Vorschriften sind beim Transport im Flugzeug (IATA), dem Zoll und der Einfuhr der Laptopspenden zu beachten?</strong>

@@ -1,0 +1,85 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>17364</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Registrieren (taggen) einer IT-Spende</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>17364</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Wer möchte kann seine IT-Spende ("dooject") selber registrieren, ansonsten übernimmt das auch Labdoo.org gerne (in dem Fall nur die E-Mailadresse aufkleben). Um die IT-Spende zu registrieren muss man sich zunächst <a href="/de/user/register">einen Benutzer (User) anlegen</a>.
+
+Dann geht auf <a href="/de/node/add/laptop">/de/node/add/laptop</a> und erfasst die Daten eurer IT-Spende (was ihr nicht wisst bitte freilassen, viele Eingaben sind nur optional):
+
+<ul>
+<strong>1. Reiter (Tab)</strong>
+<li><strong>Status:</strong> Hier den Status auswählen, meist S0, S1 oder S2</li>
+<li><strong>Modell:</strong> Modellbezeichnung, z.B. IBM Lenovo T60</li>
+<li><strong>Seriennummer:</strong> Aufkleber meist auf der Unterseite des Laptops, auch Service-Tag o.ä.</li>
+<li><strong>Ursprungsgruppe:</strong> Entweder als Einzelperson = <strong>grassroot</strong> oder als Helfer eines Hubs dieses Hub auswählen</li>
+<li><strong>Bild:</strong> Ein digitales Fotos der IT-Spende hochladen (bitte ein eigenes Foto benutzen)</li>
+<li><strong>Gerätetyp:</strong> Typ auswählen, meist Laptop</li>
+<li><strong>Manager:</strong> hier den eigenen Usernamen eingeben</li>
+<li><strong>Location:</strong> Adresse eingeben, an der sich die IT-Spende befindet (die Geokoordinaten für Google Maps werden anhand der Adresse automatisch ermittelt)</li>
+</ul>
+
+<ul>
+<strong>2. Reiter (Tab)</strong>
+<li><strong>Datenerfasser:</strong> vorbelegt mit dem eigenen User</li>
+<li><strong>CPU Taktung:</strong> Geschwindigkeit der CPU, z.B. 1730</li>
+<li><strong>Anzahl der CPU Kerne:</strong> 1-Kern, Dual Core = 2 usw.</li>
+<li><strong>Speicher (RAM):</strong> Speichergröße, z.B. 750 MB</li>
+<li><strong>Festplatte:</strong> Größe der Festplatte, z.B. 80 GB</li>
+<li><strong>Batterielaufzeit:</strong> nur eingeben, wenn Erfahrungswerte vorliegen, sonst leer lassen</li>
+<li><strong>Tastatur:</strong> Land auswählen, Namen in Englisch (z.B. Germany)</li>
+<li><strong>Aktuell Betriebssystem:</strong> z.B. Windows XP oder Lubuntu 14.04 LTS (32 Bit)</li>
+<li><strong>Gewicht:</strong> z.B. 3 kg</li>
+<li><strong>Volt:</strong> Volt-Angabe der Batterie (herausnehmen, meist auf der Batterie vermerkt)</li>
+<li><strong>Amp-Stunden (Ah):</strong> Ampere-Stunden der Batterie (meist auf der Batterie vermerkt; wenn nur Wh (Watt-Std.) vermerkt diese durch Volt teilen und mal 1000 nehmen)</li>
+<li><strong>Zugeordneter dootrip (Flugpate):</strong> dootrip eingeben wenn bekannt (der muss aber angelegt sein; verweist darauf; sonst freilassen, wird vom Hub angelegt)</li>
+<li><strong>Änderungen auch durch:</strong> hier Benutername (nicht E-Mail) eines weiteren Labdoo-Helfers eingeben</li>
+<li><strong>Weitere Follower:</strong> erhält Mails bei Statusänderungen</li>
+<li><strong>Weitere Benachrichtigs-eMail:</strong> Hier die E-Mailadresse des IT-Spenders u.a. eintragen (wird nicht angezeigt), dient nur der Benachrichtigung</li>
+<li><strong>Weitere Notizen:</strong> für Notizen über den Spender (z.B. gespendet von X Y, aus Z, vielen Dank) oder infos über Defekte (z.B. benötigt externe Tastatur und Maus)</li>
+</ul>
+<strong>Weiteres Element hinzufügen</strong> = durch Anklicken wird jeweils eine weitere Eingabemöglichkeit hinzugefügt.
+
+Ab Status S3 (einem Projekt zugeordnet) und höher ist zwingend die Zuordnung eines Edoovillage (Projektes) erforderlich. Ab Status T1 (im Transit) wird die Adresse des Edoovillage auf den Laptop vererbt.
+
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>31</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>815</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1107</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

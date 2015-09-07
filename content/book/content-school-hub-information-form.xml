@@ -21,8 +21,7 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>
-Please copy the form below into the email body, fill the information, and email it to your parent hub manger or contact@labdoo.org at the beginning of every fall semester.
+<value>Please copy the form below into the email body, fill the information, and email it to your parent hub manger or contact@labdoo.org at the beginning of every fall semester.
 
 <br></br>
 <ul>
@@ -47,7 +46,7 @@ ______________________________________________________________________
 </li>
 </ul>
 <ul>
-<li>your school advisor
+<li>Your school advisor
      Teacher’s Name/Email Address: __________________________________
      Email Address: ____________________________
 </li>
@@ -79,7 +78,7 @@ ______________________________________________________________________________
 </body>
 <body>
 <type>format</type>
-<value>full_html</value>
+<value>filtered_html_advanced</value>
 </body>
 <bid>
 <type>book_array</type>

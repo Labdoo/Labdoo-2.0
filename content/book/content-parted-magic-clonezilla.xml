@@ -63,7 +63,7 @@ Die nachfolgenden Schritte liegen auch als YouTube Video-Tutorial vor https://ww
 
 Parted Magic booten, Sprache auswählen, starten. Wenn die Sprachwahl verpasst wurde, kann später noch mit Keyboard Layout die richtige Tastatur eingestellt werden.
 
-Manchmal muss man wegen der Hardware bestimmten Einstellungen wählen, z.B. Pentium 4 CPU, Toshiba, Nvidia u.a.) passieren, dass Parted Magic nicht hochfährt oder der Monitor dunkel bleibt. Dann mal VESA statt X11 oder die Optionen im Failsafe Modus ausprobieren. Im o.a. YouTube Tutorial ist das auch erklärt.</value>
+Manchmal muss man wegen der Hardware bestimmten Einstellungen wählen, z.B. Pentium 4 CPU, Toshiba, Nvidia u.a. Sonst kann es passieren, dass Parted Magic nicht hochfährt oder der Monitor dunkel bleibt. Dann mal VESA statt X11 oder die Optionen im Failsafe Modus ausprobieren. Im o.a. YouTube Tutorial ist das auch erklärt.</value>
 </body>
 <body>
 <type>format</type>

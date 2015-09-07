@@ -23,10 +23,9 @@
 <type>value</type>
 <value><strong>About this document</strong>
 
-This brief document describes the process of sanitizing a laptop. This document can be used by Labdooers working as individuals (from home, from work, from your local organizations), or groups of Labdooers working as part of a Labdoo hub. 
+This brief document describes the process of sanitizing a laptop.  
 
-If you'd like to get tips on how to collect unused laptops from your local community, please click <a href="../../content/collecting-laptops-your-local-community">HERE</a>. After the laptop get sanitized, you can click<a href="../../content/packaging-laptops-ready-traveling"> HERE</a> to learn different ways to package the laptops to make them ready for traveling to a needy school. 
-
+If you'd like to get tips on how to collect unused laptops from your local community, please click <a href="../../content/collecting-laptops-your-local-community">HERE</a>. After the laptop gets sanitized, you can click<a href="../../content/packaging-laptops-ready-traveling"> HERE</a> to learn different ways to package the laptops to make them ready for traveling to a needy school. 
 If in any of these steps you get stuck during the sanitizing process, you can post your questions in the wall of the <a href="../content/quality-assurance-qa">Labdoo QA Team</a> so that others can help you.
 
 <a href="http://ftp.labdoo.org/download/Public/videos/install-lubuntu-english.webm">Online FTP server: Installing Lubuntu operating system</a>
@@ -35,11 +34,11 @@ If in any of these steps you get stuck during the sanitizing process, you can po
 
 <strong>Sanitizing the laptops</strong>
 
-Once you have laptops, organize a laptop sanitation event. You can invite your friends at home, at school, at work, etc. and spend a couple of hours or so sanitizing laptops, or you can do it on your own too. The current standard process of sanitizing a laptop is as follows:
+The current standard process of sanitizing a laptop is as follows:
 
 <ol>
 <li>
-Start by tagging your laptop by going to the <a href="/node/add/laptop">tagging page</a>. Make sure you print the three labels and attach two of them to the laptop and one to the AC adapter following the instructions that you will find in the website.
+If the laptop is not already tagged with a Labdoo ID number, please follow the instruction under  <a href="/node/add/laptop">"tagging a laptop" </a>page. Make sure you print 3 labels and attach two of them to the laptop and one to the AC adapter following the instructions that you will find in the website.
 </li>
 <li>
 Download the Lubuntu 14.04 release from this link (this is a large .iso image):
@@ -49,13 +48,13 @@ http://cdimage.ubuntu.com/lubuntu/releases/14.04/release/lubuntu-14.04-desktop-i
 Burn the downloaded file into a CD. 
 </li>
 <li>
-Introduce the CD into the laptop you intend to sanitize.
+If the hard drive is not pre-erased.  Please click <a href="https://www.labdoo.org/content/how-erase-data-hard-drive">HERE </a> to follow the instruction to clean the hard drive.
 </li>
 <li>
-Upon booting the laptop with the CD, you should see the Linux installation menu. If you don't see it, you need to enter into the bios of the laptop and change the booting order of your computer to make sure it first boots from the CD. 
+Insert the Lubuntu CD into the laptop you intend to sanitize and boot the laptop from the CD. Upon booting the laptop with the CD, you should see the Linux installation menu. If you don't see it, you need to enter into the bios of the laptop and change the booting order of your computer to make sure it first boots from the CD. 
 </li>
 <li>
-Upon seeing the Linux installation menu, start by selecting the installation language; for instance, choose “English”.
+Upon seeing the Lubuntu installation menu, start by selecting the installation language; for instance, choose “English”.
 </li>
 <li>
 Select “Install Lubuntu”.
@@ -64,7 +63,13 @@ Select “Install Lubuntu”.
 Select the language to be installed in the laptop. If you don't know the destination country,  select “English”. If you know the destination country, select that country's language.
 </li>
 <li>
-Select the destination country. If you don't know it, pick any country that you like.
+In the "Wirless" screen, if you have internet connection, you may select the network you use from the list and enter its password.  Otherwise, leave it as default.
+</li>
+<li>
+The next window is just to confirm the laptop fit into the minimum Hard Drive requirement.  Hit "continue" once.
+</li>
+<li>
+Select the destination country. If you don't know it, pick the country you are located.
 </li>
 <li>
 Where it says “detect keyboard”, say “No”.
@@ -72,17 +77,15 @@ Where it says “detect keyboard”, say “No”.
 <li>
 In the next screen, pick the country of origin of your keyboard.
 </li>
-<li>
-At this point, we are going to do a disk clean up to erase all the information in the disk. For that, start by pressing ALT+CTRL+F3, this will take you to a command shell window. In this command shell, enter the command <code>sudo shred /dev/sda -f -v -n 1</code>. This operation will clean up your disk from any prior personal information. If the above command does not work, try to use 'hda' instead of 'sda' (like this <code>sudo shred /dev/hda -f -v -n 1</code>). If it still does not work, post your case as a question in the wall of the <a href="../content/quality-assurance-qa">Labdoo QA team</a> and someone in the QA team will help you. To return to installation process press ALT+CTRL+F7.
-</li>
+
 <li>
 When it tries to configure the network, press “cancel” (there is no need to do network installation since you have the CD and the updates are installed later).
 </li>
 <li>
-When it asks for the “hostname”, please enter the word “labdoo”.
+When it asks for the “Your name”, please enter the word “labdoo”.
 </li>
 <li>
-When it asks for the “fullname”, please enter the word “labdoo”.
+When it asks for the “Your computer name”, please enter the word labdoo with it's Labdoo ID number (eg. labdoo_000003454).
 </li>
 <li>
 When it asks for the “username”, please enter the word “labdoo”.
@@ -91,23 +94,13 @@ When it asks for the “username”, please enter the word “labdoo”.
 When it asks for the “password”, please enter the word “labdoo”.
 </li>
 <li>
-When it says “Use weak password?”, please say “Yes”.
-</li>
-<li>
-When it says “Encrypt your home directory?”, please say “No”.
+When it asks for the “Confirm your password”, please enter the word “labdoo”.
 </li>
 <li>
 Select any time zone you want if the system asks you.
 </li>
 <li>
 When it says “Partitioning method”, please say “Guided – use entire disk”.
-</li>
-<li>
-Select the only hard drive available in your laptop.
-</li>
-<li>
-When it says “Write changes to disks”, please say “Yes”.
-At this point the installation will start. There are two more questions that will come up during the installation:
 </li>
 <li>
 When asked for HTTP proxy information, please leave it empty and just press “Continue”.

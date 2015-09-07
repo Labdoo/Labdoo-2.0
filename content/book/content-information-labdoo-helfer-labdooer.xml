@@ -21,28 +21,30 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Labdoo-Lernlaptops beinhalten über das Betriebsstem Lubuntu (Linux) hinaus umfangreiche, kindgerechte Lernsoftware und lizenzfreie Lerninhalte (OER). Empfohlen wird, die <a href="http://lubuntu.net/">Linux-Variante Lubuntu (Ubuntu mit dem Desktop LXDE)</a> zu installieren, weil diese auch auf älteren Computern schnell läuft.
+<value><strong>Labdoo-Lernlaptops</strong> beinhalten über das Betriebsstem <strong>Lubuntu (Linux)</strong> hinaus umfangreiche, <strong>kindgerechte Lernsoftware und lizenzfreie Lerninhalte (OER)</strong>. Empfohlen wird, die <a href="http://lubuntu.net/">Linux-Variante Lubuntu (Ubuntu mit dem Desktop LXDE)</a> zu installieren, weil diese auch auf älteren Computern schnell läuft.
 
-Kinder und Jugendliche vom Vorschulalter bis zur Hochschulreife haben über die Basisinstallation von lubuntu hinaus weitere Lernsoftware (Edubuntu) und Lerninhalte, Offline-wikis, barrierefreie Zugänge u.v.a. mehr zur Verfügung. Alles sollte auf dem Computer gespeichert sein, weil die wenigsten Edoovillages einen Onlinezugang haben.
+Kinder und Jugendliche vom Vorschulalter bis zur Hochschulreife erhalten über die Basisinstallation von Lubuntu hinaus weitere Lernsoftware (Edubuntu) hinaus Zugang zu Lerninhalten, Offline-wikis, barrierefreien Zugänge u.v.a. mehr. Alles wird offline auf dem Computer gespeichert, weil die wenigsten Edoovillages einen Onlinezugang haben.
 
-Der erste Schritte ist die Anlage eines Labdoo-User (Log-in), dann kann es los gehen.
+<strong>Ihr könnt eure IT-Spende auch so wie sie ist Labdoo.org überlassen und wir kümmern uns um alles (<a href="/de/content/faq-forum#FAQ06">Info zur Datenlöschung hier</a>). Das Anlegen eines Labdoo-Benutzers und die Installation ist nur nötig, wenn der Spender alles selber übernehmen möchte, was - wie gesagt - garnicht erforderlich ist.</strong>
+
+Entweder also <a href="/de/content/faq-forum#FAQ05">die IT-Spende an  Labdoo geben</a>. Oder - der erste Schritt ist die Anlage eines Labdoo-User (Log-in), dann kann es los gehen...
 
 Um den Kindern einen optimal ausgestatteten Rechner zur Verfügung zu stellen gibt es 3 Möglichkeiten:
 
 <ul>
 <li><a href="https://www.labdoo.org/content/cloning-mit-fertigen-labdoo-images">per Cloning von fertigen Images (empfohlen),</a> </li> 
 <li><a href="https://www.labdoo.org/de/content/lubuntu-installation">per Lubuntu-Installation (Ubuntu + LXDE)</a> und <a href="https://www.labdoo.org/de/content/installationsskripte-%C3%BCbersicht">weiteren Installationsskripten,</a></li>    
-<li><a href="https://www.labdoo.org/content/faq-forum#FAQ05">oder ihr überlasst alles Labdoo... ;)</a></li>
+<li><a href="https://www.labdoo.org/content/faq-forum#FAQ05">oder ihr überlasst alles Labdoo. Ihr müsst eure IT-Spende weder registrieren noch installieren, Labdoo übernimmt das auch alles für euch... ;)</a></li>
 </ul>
 
 Weitere nützliche Beiträge im Wiki
 <ul>
+<li><a href="/de/content/registrieren-taggen-it-spende">Registrieren (taggen) einer IT-Spende</a></li>
 <li><a href="https://www.labdoo.org/content/tipps-und-tricks-l%C3%B6sungsvorschl%C3%A4ge">Technische Tipps und Tricks, Lösungsvorschläge</a></li>
-
-<li><a href="https://www.labdoo.org/de/content/anpassen-l%C3%A4nderspezifische-anforderungen-tastatur-sprache-hostname-ua">Anpassen an Länderspezifische Anforderungen (Tastatur, Sprache, Hostname u.a.)</a></li>
-<li><a href="https://www.labdoo.org/content/l%C3%A4nderliste-strom-stecker">Länderliste mit Stecker- / Stromtabelle</a></li>
-<li><a href="https://www.labdoo.org/content/versandhinweise">Versandhinweise</a></li>
-<li><a href="https://www.labdoo.org/de/content/video-tutorials">Video Tutorials (Deutsch)</a></li>
+<li><a href="/de/content/anpassen-l%C3%A4nderspezifische-anforderungen-tastatur-sprache-hostname-ua">Anpassen an Länderspezifische Anforderungen (Tastatur, Sprache, Hostname u.a.)</a></li>
+<li><a href="/de/content/l%C3%A4nderliste-strom-stecker">Länderliste mit Stecker- / Stromtabelle</a></li>
+<li><a href="/de/content/versandhinweise">Versandhinweise</a></li>
+<li><a href="/de/content/video-tutorials">Video Tutorials (Deutsch)</a></li>
 
 </ul>
 

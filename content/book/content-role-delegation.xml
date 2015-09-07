@@ -1,0 +1,61 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>17335</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Role Delegation</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>17335</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Superhub users have the capability to assign certain roles to users. This helps to make the platform more sustainable as users can delegate roles to other users to help distribute tasks. For instance, a superhub user can assign the role of "edoovillage manager" to another user so that the latter can help manage a new edoovillage project.
+
+If you are assigned the role of superhub, you can assign new roles to users as follows (make sure you are logged in first):
+
+<ol>
+<li>
+Go to that user account page (a user account page can be accessed via the URL <code>https://www.labdoo.org/users/$USERNAME</code>, where $USERNAME is the user's name)
+</li>
+<li>
+You will see a tab "Roles", click on it.
+</li>
+<li>
+In that page, you can assign or remove roles to that user.
+</li>
+</ol>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>39</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>837</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1091</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

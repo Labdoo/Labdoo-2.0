@@ -21,27 +21,31 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value><strong> Responsibilities of a school hub manager </strong>
+<value>
 
+
+<strong>1. Beginning of the first semester</strong>
  <ul>
-<strong> Beginning of the semester</strong>
 <li>Set a semester club goal and set a plan to achieve the goal</li> 
-<li>Email your parent hub the <a href="https://www.labdoo.org/content/school-hub-check-list" > School Hub Check List</a></li> 
+<li>Email your parent hub in the <a href="https://www.labdoo.org/content/school-hub-check-list" > School Hub Check List</a></li> 
 </ul>
+
+<strong> 2. During each semester</strong>
 <ul>
-<strong> During the semester</strong>
 <li>Attend the parent hub meetings or meet with the parent hub manager at least twice per semester </li> 
 <li>Make sure club members record their service hours using the <a href="https://doopoints.weebly.com">Doopoint System</a></li>
 
 </ul>
+
+<strong>3.  By the end of the second semester</strong>
 <ul>
-<strong> By the end of the second semester</strong>
-<li>Introduce new officer candidates to the parent hub toward the end of the second semester</li> 
+<li>Find new officer candidates to act as the school hub managers for the next school year </li>
+<li>Introduce the new officers to the parent hub before school ends</li> 
 </ul>
+<strong>4. Fundraising</strong>
 <ul>
-<strong> Fundraising</strong>
-<li>Since Labdoo does not run with money, students are not expected to do fund raising at school.
-However, some schools require school clubs to participate the school fund raising events. If that's the case, the school hub has the right to decide how to best apply the club fund. </li>
+<li>Since Labdoo does not operate with money, students are not expected to do fund raising at school.
+However, some schools require school clubs to participate in school fund raising events. If that's the case, the school hub has the right to decide how to best apply the club funds toward club activities. </li>
 </ul>
 <br></br>
 <br></br>
@@ -50,7 +54,7 @@ However, some schools require school clubs to participate the school fund raisin
 </body>
 <body>
 <type>format</type>
-<value>full_html</value>
+<value>filtered_html_advanced</value>
 </body>
 <bid>
 <type>book_array</type>

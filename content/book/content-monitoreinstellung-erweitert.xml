@@ -1,0 +1,78 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>18363</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Monitoreinstellung (erweitert)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>18363</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><table align="right">
+<tr><td>
+</td></tr>
+<tr><td>
+<img src="/sites/default/files/content/wiki-de/labdooer/aranda01.png" width="200"/>
+</td></tr>
+</table>
+
+Wem die Monitoreinstellungen von Lubuntu nicht ausreichen kann das Tool <strong>ARandR</strong> nutzen, z.B. wenn ein 2. Monitor oder ein Beamer angeschlossen sind.
+http://wiki.ubuntuusers.de/RandR#Grafische-Werkzeuge
+https://help.ubuntu.com/community/Lubuntu/MultiDisplay
+ARandR bietet dann erweiterte Einstellmöglichkeiten für Auflösung, ob es sich wie ein großer Monitor verhalten soll oder wie 2 getrennte. 
+
+Seit September 2015 ist ARandR in den Labdoo Images for Cloning und im installschript-software.sh enthalten. 
+
+Ansonsten kann es wie folgt installiert werden:
+
+<table align="right">
+<tr><td>
+</td></tr>
+<tr><td>
+<img src="/sites/default/files/content/wiki-de/labdooer/aranda02.png" width="200"/>
+</td></tr>
+</table>
+
+<ul>
+entweder
+<li>Terminal öffnen,</li>
+<li> <code>sudo apt-get install ARandR</code> (Enter, Passwort eingeben, enter)</li>
+oder
+<li>über das Lubuntu Software Center</li>
+</ul>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>31</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>856</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1130</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

@@ -30,7 +30,7 @@ Please read the following documents carefully. This information will help you ma
 
 <ul> 
 <li><a href="https://www.labdoo.org/content/about-labdoo">What is Labdoo? </a></li>
-<li><a href="https://www.labdoo.org/content/benefits-offered-hub-members">Benefits offered to school hub members</a></li>
+<li><a href="https://www.labdoo.org/content/benefits-offered-school-hub-members">Benefits offered to school hub members</a></li>
 <li><a href="https://www.labdoo.org/content/responsibilities-school-hub-manager">Responsibilities of a school hub manager</a></li>
 <li><a href="https://www.labdoo.org/content/where-can-i-start">Where can I start?</a></li>
 <li><a href="https://www.labdoo.org/content/ideas-work-your-hub-members">Ideas to work on with your hub members</a></li>
@@ -44,7 +44,7 @@ We hope your Labdoo experience will not only benefit the world as a whole, but a
 </body>
 <body>
 <type>format</type>
-<value>full_html</value>
+<value>filtered_html_advanced</value>
 </body>
 <bid>
 <type>book_array</type>

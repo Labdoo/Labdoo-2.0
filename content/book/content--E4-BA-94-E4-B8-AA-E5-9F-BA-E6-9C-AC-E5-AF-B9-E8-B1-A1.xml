@@ -1,0 +1,55 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>17402</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>五个基本对象</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>ChineseSimplified</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>39</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Labdoo社交网的核心是基于五个对象：labdooers，doojects，dootrips，edoovillages和hubs。
+<ul>
+
+<li><strong>Labdooers:</strong> Labdoo 的用户</li>
+<li><strong>Doojects:</strong>  Labdoo 的物件。 实际的设备（物件）如可加载教育应用软体并配置到贫困学校的笔电，平板电脑等 。</li>
+<li><strong>Dootrips:</strong>  Labdoo 的旅行。把笔电从一处携带到另一处如二氧化碳式的中性运输方式。 dootrips是由游客，非政府组织的志愿者（无国界医生和工程师，人道主义工作者等），国际学生，跨国公司员工等的旅行来完成。</li>
+<li><strong>Edoovillages:</strong>  收到doojects如装有教育软件的笔电或平板电脑的学校。 </li>
+<li><strong>Hubs:</strong>  基于每个人都可以（从家里，学校，工作处等）参加Labdoo，labdooers就常能在当地组织志愿者群体。中枢就是一组在一个特定地区一起执行Labdoo任务的labdooers。</li>
+
+</ul></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>17400</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1113</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1115</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>
