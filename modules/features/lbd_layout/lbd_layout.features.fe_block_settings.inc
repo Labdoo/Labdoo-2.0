@@ -61,7 +61,7 @@ function lbd_layout_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'seven',
-        'weight' => '-100',
+        'weight' => '-33',
       ),
     ),
     'title' => '',

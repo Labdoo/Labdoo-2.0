@@ -52,7 +52,7 @@ function lbd_layout_flexslider_default_presets() {
     'pausePlay' => 0,
     'pauseText' => 'Pause',
     'playText' => 'Play',
-    'randomize' => 0,
+    'randomize' => 1,
     'thumbCaptions' => 0,
     'thumbCaptionsBoth' => 0,
     'animationLoop' => 1,

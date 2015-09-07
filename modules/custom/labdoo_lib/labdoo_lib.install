@@ -53,9 +53,11 @@ else if(\$langCode == '/zh-hant')
 else if(\$langCode == '/zh-hans') 
   print(\"<a href='\$langCode/content/about-labdoo'><img src='/profiles/labdoo/files/pictures/button-learn-how-it-works-zh-hans.png' width='300'></a>\");
 else if(\$langCode == '/ca') 
-  print(\"<a href='\$langCode/content/about-labdoo'><img src='/profiles/labdoo/files/pictures/button-learn-how-it-works-ca.png' width='300'></a>\");
+  print(\"<a href='\$langCode/content/sobre-labdoo'><img src='/profiles/labdoo/files/pictures/button-learn-how-it-works-ca.png' width='300'></a>\");
 else if(\$langCode == '/es') 
   print(\"<a href='\$langCode/content/about-labdoo'><img src='/profiles/labdoo/files/pictures/button-learn-how-it-works-es.png' width='300'></a>\");
+else if(\$langCode == '/it') 
+  print(\"<a href='\$langCode/content/circa-labdoo'><img src='/profiles/labdoo/files/pictures/button-learn-how-it-works.png' width='300'></a>\");
 else // default (English)
   print(\"<a href='\$langCode/content/about-labdoo'><img src='/profiles/labdoo/files/pictures/button-learn-how-it-works.png' width='300'></a>\");
 print(\"</p>\");

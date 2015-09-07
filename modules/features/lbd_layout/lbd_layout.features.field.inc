@@ -433,6 +433,7 @@ function lbd_layout_field_default_fields() {
           'English' => 'English',
           'French' => 'French',
           'German' => 'German',
+          'Italian' => 'Italian',
           'Russian' => 'Russian',
           'Spanish' => 'Spanish',
         ),

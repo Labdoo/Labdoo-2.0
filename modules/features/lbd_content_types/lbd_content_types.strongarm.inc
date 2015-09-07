@@ -988,6 +988,12 @@ function lbd_content_types_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'node_gallery_node_thumbnail' => array(
+        'custom_settings' => TRUE,
+      ),
+      'print' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -1001,7 +1007,14 @@ function lbd_content_types_strongarm() {
           'weight' => '2',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'sharethis' => array(
+          'default' => array(
+            'weight' => '2',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__event'] = $strongarm;

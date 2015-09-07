@@ -1458,15 +1458,8 @@ function lbd_content_types_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'date',
-          'settings' => array(
-            'format_type' => 'long_with_time_zone',
-            'fromto' => 'both',
-            'multiple_from' => '',
-            'multiple_number' => '',
-            'multiple_to' => '',
-          ),
-          'type' => 'date_default',
+          'settings' => array(),
+          'type' => 'hidden',
           'weight' => '1',
         ),
         'node_gallery_node_thumbnail' => array(
@@ -1567,11 +1560,10 @@ function lbd_content_types_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'og_ui',
+          'label' => 'hidden',
           'settings' => array(),
-          'type' => 'og_list_default',
-          'weight' => 2,
+          'type' => 'hidden',
+          'weight' => '3',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
