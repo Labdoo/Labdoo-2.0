@@ -79,6 +79,13 @@
     so that all URL and email address information points to www.labdoo.org and contact@labdoo.org
     (or to your chosen values for these parameters), respectively. 
 
+  + If you want to disable the SSL password prompt upon restarting apache, add the following two lines
+    to the beginning of the file /usr/share/apache2/ask-for-passphrase: 
+    #+BEGIN_EXAMPLE
+    echo $PASSPHRASE_LITERAL
+    exit
+    #+END_EXAMPLE
+
   + Modify /etc/hosts so that the localhost points to www.labdoo.org.
 
   + Modify the file /var/www/lbd/sites/default/settings.php so that $base_url points 

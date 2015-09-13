@@ -2400,7 +2400,7 @@ function _is_my_user_page($account = NULL) {
 function labdoo_lib_menu() {
 
   $items['user/%user/metrics'] = array(
-    'access callback' => _is_my_user_page,
+    'access callback' => '_is_my_user_page',
     'access arguments' => array(1),
     'page callback' => '_labdoo_lib_user_metrics',
     'page arguments' => array(1),
@@ -2410,7 +2410,7 @@ function labdoo_lib_menu() {
   );
 
   $items['user/%user/myRoles'] = array(
-    'access callback' => _is_my_user_page,
+    'access callback' => '_is_my_user_page',
     'access arguments' => array(1),
     'page callback' => '_labdoo_lib_user_roles',
     'page arguments' => array(1),
