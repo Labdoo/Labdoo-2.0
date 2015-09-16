@@ -100,6 +100,13 @@ $handler->display->display_options['access']['type'] = 'role';
 $handler->display->display_options['access']['role'] = array(
   2 => '2',
 );
+$handler->display->display_options['defaults']['style_plugin'] = FALSE;
+$handler->display->display_options['style_plugin'] = 'default';
+$handler->display->display_options['style_options']['grouping'] = 'title_1';
+$handler->display->display_options['defaults']['style_options'] = FALSE;
+$handler->display->display_options['defaults']['row_plugin'] = FALSE;
+$handler->display->display_options['row_plugin'] = 'node';
+$handler->display->display_options['defaults']['row_options'] = FALSE;
 $handler->display->display_options['defaults']['empty'] = FALSE;
 /* No results behavior: Global: Text area */
 $handler->display->display_options['empty']['area']['id'] = 'area';
@@ -141,6 +148,21 @@ $handler->display->display_options['fields']['field_comments']['label'] = '';
 $handler->display->display_options['fields']['field_comments']['alter']['max_length'] = '50';
 $handler->display->display_options['fields']['field_comments']['alter']['trim'] = TRUE;
 $handler->display->display_options['fields']['field_comments']['element_label_colon'] = FALSE;
+$handler->display->display_options['defaults']['sorts'] = FALSE;
+/* Sort criterion: Content: Last comment time */
+$handler->display->display_options['sorts']['last_comment_timestamp']['id'] = 'last_comment_timestamp';
+$handler->display->display_options['sorts']['last_comment_timestamp']['table'] = 'node_comment_statistics';
+$handler->display->display_options['sorts']['last_comment_timestamp']['field'] = 'last_comment_timestamp';
+$handler->display->display_options['sorts']['last_comment_timestamp']['order'] = 'DESC';
+/* Sort criterion: Content: Post date */
+$handler->display->display_options['sorts']['created']['id'] = 'created';
+$handler->display->display_options['sorts']['created']['table'] = 'node';
+$handler->display->display_options['sorts']['created']['field'] = 'created';
+$handler->display->display_options['sorts']['created']['order'] = 'DESC';
+/* Sort criterion: Content: Title */
+$handler->display->display_options['sorts']['title']['id'] = 'title';
+$handler->display->display_options['sorts']['title']['table'] = 'node';
+$handler->display->display_options['sorts']['title']['field'] = 'title';
 $handler->display->display_options['path'] = 'my-teams-activities';
 
 /* Display: Teams wall */
@@ -149,6 +171,21 @@ $handler->display->display_options['defaults']['title'] = FALSE;
 $handler->display->display_options['title'] = 'All teams activities';
 $handler->display->display_options['defaults']['access'] = FALSE;
 $handler->display->display_options['access']['type'] = 'none';
+$handler->display->display_options['defaults']['sorts'] = FALSE;
+/* Sort criterion: Content: Last comment time */
+$handler->display->display_options['sorts']['last_comment_timestamp']['id'] = 'last_comment_timestamp';
+$handler->display->display_options['sorts']['last_comment_timestamp']['table'] = 'node_comment_statistics';
+$handler->display->display_options['sorts']['last_comment_timestamp']['field'] = 'last_comment_timestamp';
+$handler->display->display_options['sorts']['last_comment_timestamp']['order'] = 'DESC';
+/* Sort criterion: Content: Post date */
+$handler->display->display_options['sorts']['created']['id'] = 'created';
+$handler->display->display_options['sorts']['created']['table'] = 'node';
+$handler->display->display_options['sorts']['created']['field'] = 'created';
+$handler->display->display_options['sorts']['created']['order'] = 'DESC';
+/* Sort criterion: Content: Title */
+$handler->display->display_options['sorts']['title']['id'] = 'title';
+$handler->display->display_options['sorts']['title']['table'] = 'node';
+$handler->display->display_options['sorts']['title']['field'] = 'title';
 $handler->display->display_options['defaults']['arguments'] = FALSE;
 $handler->display->display_options['path'] = 'teams-activities';
 

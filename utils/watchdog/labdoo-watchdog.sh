@@ -25,10 +25,10 @@ then
         echo >> $TEMPDIR/mail
         echo >> $TEMPDIR/mail
         echo "Access log:" >> $TEMPDIR/mail
-        tail -n 30 /var/log/apache2/access.log >> $TEMPDIR/mail
+        tail -n 60 /var/log/apache2/access.log >> $TEMPDIR/mail
         echo >> $TEMPDIR/mail
         echo "Error log:" >> $TEMPDIR/mail
-        tail -n 30 /var/log/apache2/error.log >> $TEMPDIR/mail
+        tail -n 60 /var/log/apache2/error.log >> $TEMPDIR/mail
         echo >> $TEMPDIR/mail
         # Restart labdoo
         echo "Now restarting Labdoo..." >> $TEMPDIR/mail
