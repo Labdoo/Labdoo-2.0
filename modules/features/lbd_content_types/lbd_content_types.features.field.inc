@@ -687,7 +687,74 @@ function lbd_content_types_field_default_fields() {
           'rows' => 5,
         ),
         'type' => 'text_textarea',
-        'weight' => 0,
+        'weight' => '0',
+      ),
+    ),
+  );
+
+  // Exported field: 'comment-comment_node_team_page-field_conv_comment_attach'.
+  $fields['comment-comment_node_team_page-field_conv_comment_attach'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '5',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_conv_comment_attach',
+      'foreign keys' => array(
+        'fid' => array(
+          'columns' => array(
+            'fid' => 'fid',
+          ),
+          'table' => 'file_managed',
+        ),
+      ),
+      'indexes' => array(
+        'fid' => array(
+          0 => 'fid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'file',
+      'settings' => array(
+        'display_default' => 0,
+        'display_field' => 1,
+        'uri_scheme' => 'public',
+      ),
+      'translatable' => '0',
+      'type' => 'file',
+    ),
+    'field_instance' => array(
+      'bundle' => 'comment_node_team_page',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'file',
+          'settings' => array(),
+          'type' => 'file_default',
+          'weight' => 1,
+        ),
+      ),
+      'entity_type' => 'comment',
+      'field_name' => 'field_conv_comment_attach',
+      'label' => 'Attachment',
+      'required' => 0,
+      'settings' => array(
+        'description_field' => 0,
+        'file_directory' => '',
+        'file_extensions' => 'txt png pdf jpg jpeg',
+        'max_filesize' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'file',
+        'settings' => array(
+          'progress_indicator' => 'throbber',
+        ),
+        'type' => 'file_generic',
+        'weight' => '1',
       ),
     ),
   );
@@ -749,7 +816,74 @@ function lbd_content_types_field_default_fields() {
           'rows' => 5,
         ),
         'type' => 'text_textarea',
-        'weight' => 0,
+        'weight' => '0',
+      ),
+    ),
+  );
+
+  // Exported field: 'comment-comment_node_team_task-field_task_comment_attach'.
+  $fields['comment-comment_node_team_task-field_task_comment_attach'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '5',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_task_comment_attach',
+      'foreign keys' => array(
+        'fid' => array(
+          'columns' => array(
+            'fid' => 'fid',
+          ),
+          'table' => 'file_managed',
+        ),
+      ),
+      'indexes' => array(
+        'fid' => array(
+          0 => 'fid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'file',
+      'settings' => array(
+        'display_default' => 0,
+        'display_field' => 1,
+        'uri_scheme' => 'public',
+      ),
+      'translatable' => '0',
+      'type' => 'file',
+    ),
+    'field_instance' => array(
+      'bundle' => 'comment_node_team_task',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'file',
+          'settings' => array(),
+          'type' => 'file_default',
+          'weight' => 1,
+        ),
+      ),
+      'entity_type' => 'comment',
+      'field_name' => 'field_task_comment_attach',
+      'label' => 'Attachment',
+      'required' => 0,
+      'settings' => array(
+        'description_field' => 0,
+        'file_directory' => '',
+        'file_extensions' => 'txt png pdf jpg jpeg',
+        'max_filesize' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'file',
+        'settings' => array(
+          'progress_indicator' => 'throbber',
+        ),
+        'type' => 'file_generic',
+        'weight' => '1',
       ),
     ),
   );
@@ -3740,7 +3874,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
       'module' => 'file',
       'settings' => array(
         'display_default' => 0,
-        'display_field' => 0,
+        'display_field' => 1,
         'uri_scheme' => 'public',
       ),
       'translatable' => '0',
