@@ -919,22 +919,15 @@ function print_dashboard_objects($objectsType, $objectsName, $objects, $metrics,
     $dataString .= "'" . $metrics[$index]['label'] . "', ";
   }
 
-  // For laptop objects, constrain the search to Labdoo IDs
-  if($objectsType == 'laptop')
-    $dataString .= "'Dooject ID', 'ConstantNull'], ";
-  else 
-    $dataString .= "'Free-Text Search', 'ConstantNull'], ";
+  $dataString .= "'Free-Text Search', 'ConstantNull'], ";
 
   foreach($objects as $object) {
     $searchtext = '';
     foreach($object as $key => $field) {
-      // For laptop objects, include in the search field only the 
-      // Labdoo ID (use the 'link' field as proxy for ID)
-      if($objectsType == 'laptop') {
-        if($key != 'link')
-          continue;
-      }
-      $strValue = sanitizeStringForVisualization($field); 
+      // Add a prefix key to allow for field specific searches
+      // such as id:000000001
+      $thisString = strtolower($key) . ":" . $field;
+      $strValue = sanitizeStringForVisualization($thisString); 
       $searchtext = $searchtext . ' ' . $strValue;
     }
 
@@ -1003,24 +996,7 @@ var pickerControl$index = new google.visualization.ControlWrapper({
     ");
   }
 
-  if($objectsType == 'laptop') {
-    print("
-/*
- * StringFilter control for the 'Text' column
- */
-var stringFilter = new google.visualization.ControlWrapper({
-                     'controlType': 'StringFilter',
-                     'containerId': 'controlTextFilter',
-                     'options': {
-                       'filterColumnLabel': 'Dooject ID',
-                       'label': 'Dooject ID',
-                       'matchType': 'any'
-                     }
-                   });
-    ");
-  }
-  else {
-    print("
+  print("
 /*
  * StringFilter control for the 'Text' column
  */
@@ -1033,8 +1009,7 @@ var stringFilter = new google.visualization.ControlWrapper({
                        'matchType': 'any'
                      }
                    });
-    ");
-  }
+  ");
 
   print("
 
@@ -1330,6 +1305,7 @@ google.setOnLoadCallback(drawVisualization);
             <br/>
           </td>
         </tr>
+        <tr><td><a href='../content/searching-inside-visualization-dashboards' target='_blank'>Search help</a></tr></td>
         <tr style='vertical-align: top'>
           <td colspan='1'; style='width: 200px'>
             <div id='controlTextFilter'></div>
