@@ -2849,6 +2849,11 @@ function _labdoo_lib_user_roles($account = NULL) {
  */
 function labdoo_lib_user_login(&$edit, $account)
 {
+
+  // Don't redirect if this is a password recovery login action
+  if(isset($_POST['form_id']) && $_POST['form_id'] == 'user_pass_reset') 
+    return;
+
   // retrieve user language
   $user_language = $account->language;
 
