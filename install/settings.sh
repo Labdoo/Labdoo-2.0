@@ -1,6 +1,6 @@
 
 ### Git branch that will be used.
-git_branch='master'
+git_branch='upgrade-to-bootstrap3'
 
 ### Domain of the website.
 domain='www.labdoo-dev.org'
