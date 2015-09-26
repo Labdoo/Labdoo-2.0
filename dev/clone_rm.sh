@@ -33,15 +33,12 @@ rm -f /etc/apache2/sites-{available,enabled}/$target{,-ssl}.conf
 domain=$(head -n 1 /etc/hosts.conf | cut -d' ' -f2)
 sub=${target#*_}
 hostname=$sub.$domain
-sed -i /etc/hosts -e "/^127.0.0.1 $hostname/d"
 sed -i /etc/hosts.conf -e "/^127.0.0.1 $hostname/d"
+/etc/hosts_update.sh
 
 ### restart services
-#for service in php5-fpm memcached mysql nginx
-for service in php5-fpm memcached mysql nginx apache2
-do
-    if test -f /etc/supervisor/conf.d/$service.conf
-    then
-        supervisorctl restart $service
-    fi
-done
+/etc/init.d/mysql restart
+/etc/init.d/apache2 restart
+#/etc/init.d/php5-fpm restart
+#/etc/init.d/memcached restart
+#/etc/init.d/nginx restart

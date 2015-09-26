@@ -33,10 +33,10 @@ function lbd_hybridauth_default_fe_block_settings() {
         'theme' => 'bartik_fb',
         'weight' => '0',
       ),
-      'bootstrap1' => array(
+      'labdoo' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'bootstrap1',
+        'theme' => 'labdoo',
         'weight' => '0',
       ),
       'seven' => array(

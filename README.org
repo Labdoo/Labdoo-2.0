@@ -112,6 +112,44 @@
    docker.io run -d --name=lbd --hostname=example.org -p 80:80 -p 443:443 labdoo
    #+END_EXAMPLE
 
+  Installation is done inside a Docker container. For instructions
+  about installing Docker see: https://docs.docker.com/installation/
+
+  + Modify and customize the settings:
+    #+BEGIN_EXAMPLE
+    cd myproject/docker/
+    cp ../install/settings.sh cfg.sh
+    vim cfg.sh
+    #+END_EXAMPLE
+
+  + Build a Docker image:
+    #+BEGIN_EXAMPLE
+    cd myproject/docker/
+    ./build.sh cfg.sh
+    tail -f nohup/nohup-myproject-master.out
+    less -r nohup/nohup-myproject-master.out
+    #+END_EXAMPLE
+    This will create a docker image, named =myproject:master= with a
+    minimal ubuntu system and everything that is needed for the normal
+    work of the Drupal application.
+
+  + Create a Docker container like this:
+    #+BEGIN_EXAMPLE
+    myproject/docker/create.sh
+    #+END_EXAMPLE
+    Then you can start and stop the container with
+    =myproject/docker/start.sh= and =myproject/docker/stop.sh=.
+
+  If it is installed on a local machine (for testing or development),
+  add the domain name =example.org= on ~/etc/hosts~:
+  #+BEGIN_EXAMPLE
+  127.0.0.1 example.org
+  #+END_EXAMPLE
+  This way it can be accessed by typing =https://example.org=
+  on the browser location (not =https://127.0.0.1= or
+  =https://localhost=).
+
+
 * Documentation
 
   + [[https://github.com/Labdoo/Labdoo-2.0/blob/master/README.org][README.org]] (this file)

@@ -38,7 +38,7 @@ EOF
 
 # set base_url
 cat >> $drupal_settings << EOF
-\$base_url = "https://example.org";
+\$base_url = "https://$domain";
 
 EOF
 
@@ -81,11 +81,13 @@ $drush --yes features-revert lbd_captcha
 #$drush --yes pm-enable lbd_mass_contact
 #$drush --yes pm-enable lbd_googleanalytics
 
-
-### install also multi-language support
-$drush --yes pm-enable l10n_update
-mkdir -p $drupal_dir/sites/all/translations
-chown -R www-data: $drupal_dir/sites/all/translations
-
 ### update to the latest version of core and modules
+#$drush --yes pm-refresh
 #$drush --yes pm-update
+
+### refresh and update translations
+if [ "$development" != 'true' ]
+then
+    $drush --yes l10n-update-refresh
+    $drush --yes l10n-update
+fi

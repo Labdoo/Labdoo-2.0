@@ -1,4 +1,6 @@
 context
+variable:theme_labdoo_settings
+variable:theme_default
 views_view:front_page
 variable:site_frontpage
 menu_links:main-menu:<front>

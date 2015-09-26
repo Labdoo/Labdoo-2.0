@@ -11,10 +11,6 @@ drush make --prepare-install --force-complete \
            --contrib-destination=profiles/labdoo \
            $makefile $drupal_dir
 
-### fix some things on the application directory
-cd $drupal_dir/profiles/labdoo/
-cp -a libraries/bootstrap themes/contrib/bootstrap/
-
 ### Replace the profile labdoo with a version
 ### that is a git clone, so that any updates
 ### can be retrieved easily (without having to
@@ -29,9 +25,11 @@ cp -a labdoo-bak/themes/contrib/ labdoo/themes/
 ### cleanup
 rm -rf labdoo-bak/
 
-### create the downloads dir
-mkdir -p /var/www/downloads/
-chown www-data /var/www/downloads/
+### copy the bootstrap library to the custom theme, etc.
+cd $drupal_dir/profiles/labdoo/
+cp -a libraries/bootstrap themes/contrib/bootstrap/
+cp -a libraries/bootstrap themes/labdoo/
+cp libraries/bootstrap/less/variables.less themes/labdoo/less/
 
 ### start mysqld manually, if it is not running
 if test -z "$(ps ax | grep [m]ysqld)"
@@ -45,10 +43,10 @@ db_name=lbd
 db_user=lbd
 db_pass=lbd
 site_name="Labdoo"
-site_mail="admin@example.org"
+site_mail="admin@$domain"
 account_name=admin
 account_pass=admin
-account_mail="admin@example.org"
+account_mail="admin@$domain"
 
 ### create the database and user
 mysql='mysql --defaults-file=/etc/mysql/debian.cnf'
@@ -67,7 +65,12 @@ drush site-install --verbose --yes labdoo \
       --account-name="$account_name" --account-pass="$account_pass" --account-mail="$account_mail"
 
 ### set propper directory permissions
+mkdir -p $drupal_dir/sites/all/translations
+chown -R www-data: $drupal_dir/sites/all/translations
 mkdir -p sites/default/files/
 chown -R www-data: sites/default/files/
 mkdir -p cache/
 chown -R www-data: cache/
+### create the downloads dir
+mkdir -p /var/www/downloads/
+chown www-data /var/www/downloads/

@@ -1,13 +1,6 @@
 #!/bin/bash
 ### regenerate mysql and phpmyadmin secrets
 
-### make sure that mysqld is running
-source $(dirname $0)/set_mysql_passwd.sh
-$(dirname $0)/mysqld.sh start
-
-### to remove the current password do:
-### mysqladmin -u root -pcurrent_password password
-
 ### regenerate the password of debian-sys-maint
 PASSWD=$(mcookie | head -c 16)
 mysql --defaults-file=/etc/mysql/debian.cnf -B \
@@ -19,6 +12,7 @@ sed -i /etc/mysql/debian.cnf \
 PASSWD=$(mcookie)
 sed -i /etc/phpmyadmin/config-db.php \
     -e "/^\$dbpass/ c \$dbpass='$PASSWD';"
+source $(dirname $0)/set_mysql_passwd.sh
 set_mysql_passwd phpmyadmin $PASSWD
 
 ### get a new password for the root user of mysql

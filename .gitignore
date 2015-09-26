@@ -6,4 +6,5 @@ libraries/
 modules/contrib/
 modules/libraries/
 themes/contrib/
+themes/labdoo/bootstrap/
 restore-private-vars.php

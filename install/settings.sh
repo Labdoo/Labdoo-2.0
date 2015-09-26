@@ -1,12 +1,6 @@
 
-### Default settings for building the chroot.
-target='lbd'
-arch='i386'
-suite='trusty'
-apt_mirror='http://archive.ubuntu.com/ubuntu'
-
 ### Git branch that will be used.
-git_branch='master'
+git_branch='upgrade-to-bootstrap3'
 
 ### Domain of the website.
 domain='www.labdoo-dev.org'
@@ -30,9 +24,8 @@ mysql_passwd_lbd='grassroots'
 ### Install also extra things that are useful for development.
 development='true'
 
-### A reboot is needed after installation/configuration.
-### If you want to do it automatically, set it to 'true'.
-reboot='false'
-
-### Start chroot service automatically on reboot.
-start_on_boot='false'
+### Login through ssh.
+### Only login through private keys is allowed.
+### See also this:
+###   http://dashohoxha.blogspot.com/2012/08/how-to-secure-ubuntu-server.html
+sshd_port=2201
