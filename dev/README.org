@@ -4,59 +4,18 @@
 
 Development Tools, Tips and Tricks
 
-* Installation
-
-  If you need to install frequently (for example for testing), a
-  script like this can be useful:
-  #+BEGIN_EXAMPLE
-  #!/bin/bash -x
-
-  source=dbox
-  installer=chroot
-  git_branch=master
-  nohup_out="nohup-$source-$git_branch-$installer.out"
-
-  rm -f $nohup_out
-  nohup time nice $source/install/{$installer.sh,settings.sh} cfg.sh \
-      --git_branch=$git_branch --reboot=true > $nohup_out &
-  sleep 1
-  tail -f $nohup_out
-  #+END_EXAMPLE
-
-  The file ~cfg.sh~ overrides the default config settings (for example
-  passwords):
-  #+BEGIN_EXAMPLE
-  apt_mirror='http://us-east-1.ec2.archive.ubuntu.com/ubuntu/'
-  gmail_account='test@example.org'
-  gmail_passwd=3omRoxtho
-  development='true'
-  #+END_EXAMPLE
-
-  You can also override configuration settings from the command line.
-
-  *Note:* The order of giving the settings is important. The last one
-  overrides the previous settings.
-
-
 * How to access the shell
 
   When things are still in development and testing we need to access
   the shell of the installed system in order to check log files,
   debug, play with changing configurations, etc.
 
-  When the installation is done on a chroot directory, then you simply
-  switch to it with the command =chroot=:
-  #+BEGIN_EXAMPLE
-  chroot /var/chroot/lbd/
-  #+END_EXAMPLE
-
-  When the installation is done in a docker container, you have to install
-  first the commands =nsenter= and =docker-enter= like this:
+  For this we can install the command =docker-enter=:
   #+BEGIN_EXAMPLE
   docker run -v /usr/local/bin:/target jpetazzo/nsenter
   #+END_EXAMPLE
 
-  Then you can access the shell of a running container like this:
+  Then access the shell of a running container like this:
   #+BEGIN_EXAMPLE
   docker-enter lbd
   #+END_EXAMPLE
@@ -67,19 +26,27 @@ Development Tools, Tips and Tricks
 
 * Install sshd
 
-  In order to access the server remotely through drush, ssh-client,
-  etc. you can install *sshd* with the script ~dev/install-sshd.sh~,
-  like this:
+  We want to start a sshd server on port 2201 inside the container,
+  but when we created the container with =docker run= we did not think
+  about forwarding this port. We have to destroy this container and
+  create a new one, with an addition =-p= option for the
+  port 2201. But first we should use the command =docker commit= to
+  save to a new image any configurations and data that we already have
+  in this container.
   #+BEGIN_EXAMPLE
-  chroot /var/chroot/lbd/
-  cd /usr/local/src/labdoo/
-  dev/install-sshd.sh
+  docker stop lbd
+  docker commit lbd labdoo:1
+  docker images
+  docker rm lbd
+  docker run -d --name=lbd --hostname=example.org \
+	     -p 80:80 -p 443:443 -p 2201:2201 labdoo:1
   #+END_EXAMPLE
 
-  By default it will install and run a sshd that listens on the port *2201*,
-  but you can also give it the port number as an argument:
+  Now we can enter the container and start the sshd server:
   #+BEGIN_EXAMPLE
-  dev/install-sshd.sh 2211
+  docker-enter lbd
+  cd /usr/local/src/labdoo/
+  dev/install-sshd.sh 2201
   #+END_EXAMPLE
 
 
@@ -88,12 +55,10 @@ Development Tools, Tips and Tricks
   There are two webservers installed, apache2 and nginx (with php5-fpm
   and memcached). For development Apache2 can be more suitable, while
   for production NGINX is supposed to be more responsive in high load.
-  It also has built-in cache and its configuration is tweaked for DoS
-  protection, short timeout, etc.
 
   We can choose one of them like this:
   #+BEGIN_EXAMPLE
-  chroot /var/chroot/lbd/
+  docker-enter lbd
   cd /usr/local/src/labdoo/
   dev/webserver.sh apache2
   dev/webserver.sh nginx
@@ -104,9 +69,9 @@ Development Tools, Tips and Tricks
 
   Clones of the main site can be used for development and testing. 
 
-  Inside the chroot you can make a clone for development like this:
+  Inside the container you can make a clone for development like this:
   #+BEGIN_EXAMPLE
-  chroot /var/chroot/lbd/
+  docker-enter lbd
   cd /usr/local/src/labdoo/
   dev/clone.sh lbd lbd_dev1
   dev/clone.sh lbd_dev1 lbd_test1
@@ -123,7 +88,7 @@ Development Tools, Tips and Tricks
   Other clones like this can be created for testing etc. To cleanup
   (remove/erase) a clone, you can use *clone_rm.sh* like this:
   #+BEGIN_EXAMPLE
-  chroot /var/chroot/lbd/
+  docker-enter lbd
   cd /usr/local/src/labdoo/
   dev/clone_rm.sh lbd_dev1
   dev/clone_rm.sh lbd_test1
@@ -134,7 +99,7 @@ Development Tools, Tips and Tricks
   a development copy with a live or testing one), with the script
   =dev/config.php=:
   #+BEGIN_EXAMPLE
-  chroot /var/chroot/lbd/
+  docker-enter lbd
   cd /usr/local/src/labdoo/
   drush @lbd_dev php-script dev/config.php dev2
   #+END_EXAMPLE
@@ -143,37 +108,6 @@ Development Tools, Tips and Tricks
   something like 'user+dev1@gmail.com', will enable email re-routing,
   display the /devel/ menu on the footer region, etc. Sometimes it may
   be useful.
-
-
-* Re-installing the application
-
-  It can be done with the script =dev/reinstall.sh=:
-  #+BEGIN_EXAMPLE
-  chroot /var/chroot/lbd/
-  cd /usr/local/src/labdoo/
-  nohup nice dev/reinstall.sh settings.sh &
-  tail -f nohup.out
-  #+END_EXAMPLE
-  It will rebuild the Drupal directory with *drush make* and install
-  the labdoo profile with *drush site-install*, and then do all the
-  rest of configurations just like they are done during installation.
-
-  Normally there is no need to reinstall the application, unless we
-  want to test the installation profile and the installation scripts.
-
-  Another kind of re-installation, which touches only the database of
-  Drupal and nothing else, can be done with the script
-  =dev/reinstall-db.sh=:
-  #+BEGIN_EXAMPLE
-  chroot /var/chroot/lbd/
-  cd /usr/local/src/labdoo/
-  nohup nice dev/reinstall-db.sh @lbd_dev &
-  tail -f nohup.out
-  #+END_EXAMPLE
-
-  It is useful for testing the installation of custom modules, feature
-  modules, etc. The argument *@lbd_dev* is the alias of the site that
-  should be reinstalled.
 
 
 * Making a backup of the application
@@ -190,7 +124,7 @@ Development Tools, Tips and Tricks
   the code (the whole Drupal directory) and the database. It can be
   done like this:
   #+BEGIN_EXAMPLE
-  chroot /var/chroot/lbd/
+  docker-enter lbd
   cd /usr/local/src/labdoo/
   dev/snapshot.sh make @lbd
   dev/snapshot.sh make @lbd_dev
@@ -221,20 +155,56 @@ Development Tools, Tips and Tricks
   #+END_EXAMPLE
 
 
-* Accessing the code of the application from outside chroot
+* Accessing the code of the application from outside container
 
-  In order to access easily the code of the application from outside
-  chroot, you can create a symbolic link like this:
-  #+BEGIN_EXAMPLE
-  cd /var/chroot/
-  ln -s lbd/var/www/lbd_dev/profiles/labdoo/ \
-        lbd_dev
-  #+END_EXAMPLE
+  In general it is not possible to directly access the directories and
+  files of of a container from the host system.  However we can use
+  the docker /volumes/ to share directories between the container and
+  the host. It can be done like this:
 
-  Now you can go to */var/chroot/dev/* and start /emacs/ or any other
-  tools. This way you don't have to install /emacs/ or any other
-  development tools inside the /chroot/ and can use the best of
-  development tools that your host system can offer.
+  + First we make a backup of the directory inside the container that
+    we want to share:
+    #+BEGIN_EXAMPLE
+    docker-enter lbd
+    cd /var/www/lbd_dev/profiles/
+    cp -a labdoo/ labdoo-bak
+    exit
+    #+END_EXAMPLE
+
+  + Then we save the image of the container as =labdoo:dev=, in order
+    to start a new container based on it:
+    #+BEGIN_EXAMPLE
+    docker stop lbd
+    docker commit lbd labdoo:dev
+    docker images
+    #+END_EXAMPLE
+
+  + Next we create a new container that shares a directory with the
+    host system (using the option =-v=):
+    #+BEGIN_EXAMPLE
+    docker run -d --name=lbd_dev --hostname=dev.example.org \
+	       -v $(pwd)/lbd_dev:/var/www/lbd_dev/profiles/labdoo/
+	       -p 80:80 -p 443:443 labdoo:dev
+    #+END_EXAMPLE
+    *Note:* The container *lbd* must be stoped before we create and
+    start the new container *lbd_dev*, otherwise the ports 80 and 443
+    will conflict.
+
+  + Finally we enter the container and move the content of the backup
+    directory to the shared directory:
+    #+BEGIN_EXAMPLE
+    docker-enter lbd_dev
+    cd /var/www/lbd_dev/profiles/labdoo/
+    cp -a ../labdoo-bak/* .
+    cp -a ../labdoo-bak/.* .
+    rm -rf ../labdoo-bak/
+    exit
+    #+END_EXAMPLE
+
+  Now we can go to the directory *lbd_dev/* and start /emacs/ or any
+  other tools. This way we don't have to install /emacs/ or any other
+  development tools inside the container and we can use the best of
+  development tools that the host system can offer.
 
 
 * Pushing commits
@@ -289,7 +259,7 @@ Development Tools, Tips and Tricks
   At some point, all the modifications on the local copy of the
   application (sandbox) have to be transferred to a public server,
   where the application is in "production", performing "live". On that
-  public server there is the same /chroot/ environment as in the
+  public server there is the same docker container as in the
   development server. The synchronization of the application can be
   done via git push and pull.
 
@@ -371,8 +341,8 @@ Development Tools, Tips and Tricks
   option on the config file will make sure that it fails.
 
   For drush commands to work remotely, *ssh* daemon has to be running
-  on the remote server, inside the chroot environment. By default it
-  is not installed, but it can be installed with the script
+  on the remote server, inside the docker container. By default it is
+  not installed, but it can be installed with the script
   *dev/install-sshd.sh*. This script will also take care to change the
   ssh port to *2201*, in order to avoid any conflicts with any
   existing daemon on the host environment, and also for increased

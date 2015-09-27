@@ -93,10 +93,8 @@ chown www-data: -R $dst_dir/sites/default/files/*
 chown root: $dst_dir/sites/default/files/.htaccess
 
 ### restart services
-for service in php5-fpm memcached mysql nginx apache2
-do
-    if test -f /etc/supervisor/conf.d/$service.conf
-    then
-        supervisorctl restart $service
-    fi
-done
+/etc/init.d/mysql restart
+/etc/init.d/apache2 restart
+#/etc/init.d/php5-fpm restart
+#/etc/init.d/memcached restart
+#/etc/init.d/nginx restart

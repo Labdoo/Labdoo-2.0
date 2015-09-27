@@ -52,7 +52,7 @@
   /layout/ feature (which is supposed to re-construct automatically
   the layout and look of a freshly installed Labdoo site):
   #+BEGIN_EXAMPLE
-  variable:theme_bootstrap1_settings
+  variable:theme_labdoo_settings
   variable:theme_default
   box:headerbox
   context:admin
@@ -193,15 +193,15 @@
   function _lbd_layout_block_settings() {
     // set the title of the menu block as Navigation
     db_query("UPDATE {block} SET title='Navigation'
-	      WHERE theme='bootstrap1' AND delta='navig-menu'");
+	      WHERE theme='labdoo' AND delta='navig-menu'");
 
     // remove the title of the block user-menu
     db_query("UPDATE {block} SET title='<none>'
-	      WHERE theme='bootstrap1' AND delta='user-menu'");
+	      WHERE theme='labdoo' AND delta='user-menu'");
 
-    // disable all the blocks for theme bootstrap1
+    // disable all the blocks for theme labdoo
     // their place is managed by module context
-    db_query("UPDATE {block} SET status = '0' WHERE theme = 'bootstrap1'");
+    db_query("UPDATE {block} SET status = '0' WHERE theme = 'labdoo'");
   }
   #+END_EXAMPLE
 

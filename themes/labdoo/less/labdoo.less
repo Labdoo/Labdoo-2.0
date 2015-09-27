@@ -1,0 +1,68 @@
+
+@font-family-comic:       'comic sans ms', @font-family-sans-serif;
+
+@font-size-h1:            x-large;  //floor((@font-size-base * 2.6)); // ~36px
+@font-size-h2:            large;    //floor((@font-size-base * 2.15)); // ~30px
+@font-size-h3:            medium;   //ceil((@font-size-base * 1.7)); // ~24px
+@font-size-h4:            small;    //ceil((@font-size-base * 1.25)); // ~18px
+
+@headings-font-family:    @font-family-comic;  //inherit;
+@headings-color:          #009900;    //inherit;
+
+/* Fix a bug of the bootstrap theme. */
+input[type="radio"],
+input[type="checkbox"] {
+    margin-left: 0px !important;
+}
+
+/* The font of the site brand. */
+.navbar-brand {
+    font-family: @font-family-comic;
+    font-size: large;
+}
+
+/* Don't display breadcrumb and page header. */
+.breadcrumb, .page-header {
+    display: none;
+}
+
+/* The header of the front page. */
+#boxes-box-headerbox {
+    h1 {
+	color: #ff0000;
+	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 20px;
+    }
+}
+
+/* Styles of the main content. */
+#block-system-main {
+    .node {
+	h2 {
+	    margin-top: 5px;
+
+	    a {
+		text-decoration: none;
+	    }
+	}
+
+	.submitted {
+	    display: none;
+	}
+
+	.content {
+	    padding-bottom: 15px;
+	    margin-bottom: 10px;
+	    border-bottom: 1px solid #ccc;
+
+	    .field-name-field-tags {
+		display: none;
+	    }
+	}
+
+	.links {
+	    display: none;
+	}
+    }
+}

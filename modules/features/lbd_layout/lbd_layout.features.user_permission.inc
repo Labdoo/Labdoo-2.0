@@ -10,11 +10,11 @@
 function lbd_layout_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: administer imce.
+  // Exported permission: 'administer imce'.
   $permissions['administer imce'] = array(
     'name' => 'administer imce',
     'roles' => array(
-      0 => 'administrator',
+      'administrator' => 'administrator',
     ),
     'module' => 'imce',
   );
