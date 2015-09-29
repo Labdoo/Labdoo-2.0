@@ -1,6 +1,7 @@
 *~
 .emacs*
 TAGS
+options.sh
 *.sql.gz
 libraries/
 modules/contrib/
