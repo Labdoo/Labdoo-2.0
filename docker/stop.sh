@@ -1,7 +1,6 @@
 #!/bin/bash -x
 
-docker_dir=$(dirname $0)
-source $docker_dir/config
+source ./config
 
 docker stop $container
 

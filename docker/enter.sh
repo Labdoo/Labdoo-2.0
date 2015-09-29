@@ -1,6 +1,5 @@
 #!/bin/bash
 
-docker_dir=$(dirname $0)
-source $docker_dir/config
+source ./config
 
 docker exec -it $container env TERM=xterm bash

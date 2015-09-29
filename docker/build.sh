@@ -27,17 +27,17 @@ Examples:
 
 ### collect in a file all the settings and options
 function get_options {
-    options=$project_dir/options.sh
+    options=$srcdir/options.sh
     echo '#!/bin/bash' > $options
     echo '### This file contains all the settings' >> $options
     echo '### and options given from the command line.' >> $options
     echo '' >> $options
 
     ### save the default settings
-    source $project_dir/install/settings.sh
-    echo "### ----- Start: $project_dir/install/settings.sh" >> $options
-    cat $project_dir/install/settings.sh >> $options
-    echo "### ----- End: $project_dir/install/settings" >> $options
+    source $srcdir/install/settings.sh
+    echo "### ----- Start: $srcdir/install/settings.sh" >> $options
+    cat $srcdir/install/settings.sh >> $options
+    echo "### ----- End: $srcdir/install/settings" >> $options
     
     ### get command line options and save them to options.sh
     for opt in "$@"
@@ -69,9 +69,9 @@ function get_options {
                     exit 1
                 fi
                 source $settings
-                echo "### ----- Start: $settings" >> $options
+                echo "### ----- Start: $(pwd)/$settings" >> $options
                 cat $settings >> $options
-                echo "### ----- End: $settings" >> $options
+                echo "### ----- End: $(pwd)/$settings" >> $options
                 echo
                 ;;
         esac
@@ -82,13 +82,13 @@ function get_options {
 }
 
 ### Get the project.
-current_dir=$(pwd)
+workdir=$(pwd)
 cd $(dirname $0)
 cd $(pwd -P)
 cd ..
-project_dir=$(pwd)
+srcdir=$(pwd)
 project=$(ls *.info | sed -e 's/\.info$//')
-cd $current_dir
+cd $workdir
 
 ### get the settings and options
 get_options "$@"
@@ -98,8 +98,8 @@ if [ "$1" != "calling_myself" ]
 then
     # this script has *not* been called recursively by itself
     datestamp=$(date +%F | tr -d -)
-    nohup_out=nohup/nohup-$project-$git_branch-$datestamp.out
-    mkdir -p nohup/
+    nohup_out=logs/nohup-$project-$git_branch-$datestamp.out
+    mkdir -p logs/
     rm -f $nohup_out
     nohup nice "$0" "calling_myself" "$@" > $nohup_out &
     sleep 1
@@ -111,16 +111,16 @@ else
 fi
 
 ### make sure that we are using the right git branch
-cd $project_dir/
+cd $srcdir/
 git checkout $git_branch
 git pull
-cd $current_dir
+cd $workdir
 
 ### build the docker image
-time docker build --tag=$project:$git_branch --file=$project_dir/docker/Dockerfile $project_dir/
+time docker build --tag=$project:$git_branch --file=$srcdir/docker/Dockerfile $srcdir/
 
 ### save image and container name to config file
-cat <<EOF > $project_dir/docker/config
+cat <<EOF > $workdir/config
 image=$project:$git_branch
 container=$project-$git_branch
 hostname=$domain

@@ -1,7 +1,6 @@
 #!/bin/bash
 
-docker_dir=$(dirname $0)
-source $docker_dir/config
+source ./config
 
 datestamp=$(date +%F)
 image="$container:$datestamp"
