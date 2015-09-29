@@ -128,7 +128,7 @@
 
   + Modify and customize the settings:
     #+BEGIN_EXAMPLE
-    cd docker/settings.sh .
+    cp docker/settings.sh .
     vim settings.sh
     #+END_EXAMPLE
 
