@@ -12,10 +12,22 @@ then
     docker create --name=$container --hostname=$hostname \
         -p 80:80 -p 443:443 -p $ssh:$ssh $image
 else
+    ### remove the directory labdoo/ if it exists
+    if test -d labdoo/
+    then
+        cd labdoo/
+        if test -n "$(git status --porcelain)"
+        then
+            echo "Directory labdoo/ cannot be removed because it has uncommited changes."
+            exit 1
+        fi
+        cd ..
+        rm -rf labdoo/
+    fi
+
     ### create a container for development
     docker create --name=$container $image
     docker start $container
-    rm -rf labdoo/
     docker cp $container:/var/www/lbd/profiles/labdoo $(pwd)/
     docker stop $container
     docker rm $container
