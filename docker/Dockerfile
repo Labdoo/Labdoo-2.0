@@ -9,3 +9,4 @@ COPY . /usr/local/src/labdoo/
 ENV code_dir /usr/local/src/labdoo
 WORKDIR /usr/local/src/labdoo/
 RUN ["install/install.sh"]
+WORKDIR /var/www/lbd/profiles/labdoo
