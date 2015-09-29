@@ -1,7 +1,7 @@
 #!/bin/bash -x
 
-cd $(dirname $0)
-source ./config
+docker_dir=$(dirname $0)
+source $docker_dir/config
 ssh=${ssh:-2201}
 
 docker stop $container

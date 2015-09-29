@@ -84,6 +84,7 @@ function get_options {
 ### Get the project.
 current_dir=$(pwd)
 cd $(dirname $0)
+cd $(pwd -P)
 cd ..
 project_dir=$(pwd)
 project=$(ls *.info | sed -e 's/\.info$//')
