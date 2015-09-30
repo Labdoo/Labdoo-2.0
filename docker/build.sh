@@ -125,7 +125,7 @@ image=$project:$git_branch
 container=$project-$git_branch
 hostname=$domain
 dev=$development
-ssh=$sshd_port
+ports="-p 80:80 -p 443:443 -p $sshd_port:$sshd_port"
 EOF
 
 ### print the start and end times

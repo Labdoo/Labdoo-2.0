@@ -1,40 +1,44 @@
 #!/bin/bash -x
 
 source ./config
-ssh=${ssh:-2201}
 
 docker stop $container
 docker rm $container
+
+### Remove the given directory if it exists.
+function remove_dir() {
+    local dir=$1
+    if test -d $dir/
+    then
+        cd $dir/
+        if test -n "$(git status --porcelain)"
+        then
+            echo "Directory $dir/ cannot be removed because it has uncommited changes."
+            exit 1
+        fi
+        cd ..
+        rm -rf $dir/
+    fi
+}
 
 if [ "$dev" = 'false' ]
 then
     ### create a container for production
     docker create --name=$container --hostname=$hostname \
-        -p 80:80 -p 443:443 -p $ssh:$ssh $image
+        $ports $image
 else
     ### remove the directory labdoo/ if it exists
-    if test -d labdoo/
-    then
-        cd labdoo/
-        if test -n "$(git status --porcelain)"
-        then
-            echo "Directory labdoo/ cannot be removed because it has uncommited changes."
-            exit 1
-        fi
-        cd ..
-        rm -rf labdoo/
-    fi
+    remove_dir labdoo
 
-    ### create a container for development
+    ### copy the directory labdoo/ from the image to the host
     docker create --name=$container $image
     docker start $container
     docker cp $container:/var/www/lbd/profiles/labdoo $(pwd)/
     docker stop $container
     docker rm $container
 
-    let ssh1=ssh+1
+    ### create a container for development
     docker create --name=$container --hostname=$hostname \
         -v $(pwd)/labdoo:/var/www/lbd/profiles/labdoo \
-        -p 81:80 -p 444:443 -p $ssh1:$ssh \
-        $image
+        $ports $image
 fi
