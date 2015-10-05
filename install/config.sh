@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 ### get config settings from a file
 if [ "$1" != '' ]
