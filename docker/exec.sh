@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 ### go to the docker directory
 cd $(dirname $0)/../
@@ -11,6 +11,5 @@ then
 fi
 source ./config
 
-### stop the container
-docker stop $container
-
+### run exec
+docker exec -it $container $@
