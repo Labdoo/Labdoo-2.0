@@ -82,13 +82,14 @@ function get_options {
 }
 
 ### Get the project.
+calldir=$(pwd)
 cd $(dirname $0)
 workdir=$(dirname $(pwd))
 cd $(pwd -P)
 cd ..
 srcdir=$(pwd)
 project=$(ls *.info | sed -e 's/\.info$//')
-cd $workdir
+cd $calldir
 
 ### get the settings and options
 get_options "$@"
@@ -98,8 +99,8 @@ if [ "$1" != "calling_myself" ]
 then
     # this script has *not* been called recursively by itself
     datestamp=$(date +%F | tr -d -)
-    nohup_out=logs/nohup-$project-$git_branch-$datestamp.out
-    mkdir -p logs/
+    nohup_out=$workdir/logs/nohup-$project-$git_branch-$datestamp.out
+    mkdir -p $workdir/logs/
     rm -f $nohup_out
     nohup nice "$0" "calling_myself" "$@" > $nohup_out &
     sleep 1
