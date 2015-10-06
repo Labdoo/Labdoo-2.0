@@ -168,6 +168,17 @@
     This way it can be accessed by typing =https://example.org= on the
     browser location (not =https://127.0.0.1= or =https://localhost=).
 
+  + To change the configuration, run:
+    #+BEGIN_EXAMPLE
+    docker/exec.sh install/config.sh
+    #+END_EXAMPLE
+    and give the new settings interactively.
+
+    Or edit ~labdoo/options.sh~ and then run:
+    #+BEGIN_EXAMPLE
+    docker/exec.sh install/config.sh options.sh
+    #+END_EXAMPLE
+
 
 * Documentation
 
