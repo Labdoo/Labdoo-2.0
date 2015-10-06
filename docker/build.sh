@@ -82,8 +82,8 @@ function get_options {
 }
 
 ### Get the project.
-workdir=$(pwd)
 cd $(dirname $0)
+workdir=$(dirname $(pwd))
 cd $(pwd -P)
 cd ..
 srcdir=$(pwd)
