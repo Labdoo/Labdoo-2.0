@@ -45,6 +45,9 @@ function get_options {
         case $opt in
             -h|--help)       usage ;;
     
+            --dont-fork)
+                ;;
+
             --git_branch=*)
                 git_branch=${opt#*=} 
                 echo git_branch="$git_branch" >> $options
@@ -60,7 +63,6 @@ function get_options {
     
             *)
                 if [ ${opt:0:1} = '-' ]; then usage; fi
-                if [ $opt = 'calling_myself' ]; then continue; fi
     
                 settings=$opt
                 if ! test -f "$settings"
@@ -95,19 +97,19 @@ cd $calldir
 get_options "$@"
 
 ### make sure that the script is called with `nohup nice ...`
-if [ "$1" != "calling_myself" ]
+if [ "$1" != "--dont-fork" ]
 then
     # this script has *not* been called recursively by itself
     datestamp=$(date +%F | tr -d -)
     nohup_out=$workdir/logs/nohup-$project-$git_branch-$datestamp.out
     mkdir -p $workdir/logs/
     rm -f $nohup_out
-    nohup nice "$0" "calling_myself" "$@" > $nohup_out &
+    nohup nice "$0" "--dont-fork" "$@" > $nohup_out &
     sleep 1
     tail -f $nohup_out
     exit
 else
-    # this script has been called recursively by itself
+    # this script has been called by itself
     shift # remove the flag $1 that is used as a termination condition
 fi
 
@@ -125,6 +127,7 @@ cat <<EOF > $workdir/config
 image=$project:$git_branch
 container=$project-$git_branch
 hostname=$domain
+domains="$domain dev.$domain"
 dev=$development
 ports="-p 80:80 -p 443:443 -p $sshd_port:$sshd_port"
 EOF
