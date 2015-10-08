@@ -6,7 +6,7 @@ set -e
 
 ### make directories for source code and workdir
 srcdir=/opt/src
-workdir= /opt/workdir
+workdir=/opt/workdir
 mkdir -p $srcdir $workdir
 
 ### make sure that the script is called with `nohup nice ...`
