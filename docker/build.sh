@@ -71,9 +71,9 @@ function get_options {
                     exit 1
                 fi
                 source $settings
-                echo "### ----- Start: $(pwd)/$settings" >> $options
+                echo "### ----- Start: $settings" >> $options
                 cat $settings >> $options
-                echo "### ----- End: $(pwd)/$settings" >> $options
+                echo "### ----- End: $settings" >> $options
                 echo
                 ;;
         esac
