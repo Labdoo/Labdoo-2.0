@@ -179,6 +179,17 @@
     docker/exec.sh install/config.sh options.sh
     #+END_EXAMPLE
 
+  *Note:* An easier way to install is by using the script
+  ~utils/docker-install.sh~ which automates the steps above, with
+  certain conventions for directory names etc. 
+  #+BEGIN_EXAMPLE
+  vim utils/docker-install.sh
+  utils/docker-install.sh --domain=test.example.org
+  or
+  utils/docker-install.sh $(pwd)/settings.sh \
+      --git_branch=test --domain=test.example.org
+  #+END_EXAMPLE
+
 
 * Documentation
 
