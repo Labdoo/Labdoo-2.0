@@ -104,7 +104,7 @@ then
     nohup_out=$workdir/logs/nohup-$project-$git_branch-$datestamp.out
     mkdir -p $workdir/logs/
     rm -f $nohup_out
-    nohup nice "$0" "--dont-fork" "$@" > $nohup_out &
+    nohup nice $0 --dont-fork $@ > $nohup_out &
     sleep 1
     tail -f $nohup_out
     exit
