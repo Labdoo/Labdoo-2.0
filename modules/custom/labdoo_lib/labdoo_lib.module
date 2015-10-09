@@ -408,7 +408,7 @@ function labdoo_render_dooject_header() {
   $currPickmeFlag = $wDoojectNode->field_pick_me_up->value();
   if($currPickmeFlag) {
     $pickmeupUrl = strtok(request_uri(), '?') . "?m=p&d=$nodeId&u=$userId&v=0";
-    $pickmeupMsg = "Pick me up (actived)";
+    $pickmeupMsg = "Pick me up (activated)";
     $pickmeupIcon = 'truck.png';
     $hoverMessage = t('Click to turn off "pick me up"');
   }
@@ -1921,28 +1921,27 @@ function labdoo_render_footer() {
   $urlValues = '"'.$langCode.'/wiki-index?field_book_language_value=All&field_reference_book_target_id='.$path[1].'"';
   $path = explode('/', drupal_get_normal_path('content/about-labdoo'));
   $urlNutshell = '"'.$langCode.'/wiki-index?field_book_language_value=All&field_reference_book_target_id='.$path[1].'"';
+  $urlContact = '"'.$langCode.'/contact'.'"';
 
   // Now write the code
   $aboutLabdoo = t('About Labdoo');
   $valuesAndPhilos = t('Values and Philosophy');
   $termsAndConditions = t('Terms and Conditions');
   $sourceCode = t('Source Code / Development Team'); 
+  $contactLabdoo = t('Contact Labdoo');
   $faq = t('FAQ');
 
   $code = ' 
 <table align="center"> 
 <tr>
-<td width="200">
+<td width="300">
 <a href='.$urlNutshell.'>'.$aboutLabdoo.'</a>
 </td>
-<td width="100">
+<td width="250">
 <a href='.$urlGlits.'>Glits</a>
 </td>
 <td width="300">
-<a href='.$urlDev.'>'.$sourceCode.'</a>
-</td>
-<td width="200">
-<img src="/profiles/labdoo/files/pictures/equation-2-alpha-smaller.png" width="70">
+<img src="/profiles/labdoo/files/pictures/equation-2-alpha-smaller.png" width="60">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/rss.xml"><img src="/misc/feed.png"></a>
 </td>
 </tr>
@@ -1954,10 +1953,18 @@ function labdoo_render_footer() {
 <a href='.$urlFaq.'>'.$faq.'</a>
 </td>
 <td>
+<a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='.$urlDev.'>'.$sourceCode.'</a>
+</td>
+<td>
 <a href='.$urlTerms.'>'.$termsAndConditions.'</a>
 </td>
-<td width="200">
-<a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons</a>
+<td>
+<a href='.$urlContact.'>'.$contactLabdoo.'</a>
 </td>
 </tr>
 </table>
@@ -1971,17 +1978,14 @@ function labdoo_render_footer() {
     $code = ' 
 <table align="center"> 
 <tr>
-<td width="200">
+<td width="300">
 <a href='.$urlNutshell.'>'.$aboutLabdoo.'</a>
 </td>
-<td width="100">
+<td width="250">
 <a href='.$urlGlits.'>Glits</a>
 </td>
 <td width="300">
-<a href='.$urlDev.'>'.$sourceCode.'</a>
-</td>
-<td width="200">
-<img src="/profiles/labdoo/files/pictures/equation-2-alpha-smaller.png" width="70">
+<img src="/profiles/labdoo/files/pictures/equation-2-alpha-smaller.png" width="60">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/rss.xml"><img src="/misc/feed.png"></a>
 </td>
 </tr>
@@ -1993,10 +1997,18 @@ function labdoo_render_footer() {
 <a href='.$urlFaq.'>'.$faq.'</a>
 </td>
 <td>
+<a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='.$urlDev.'>'.$sourceCode.'</a>
+</td>
+<td>
 <a href="/de/content/impressum">Impressum</a>
 </td>
-<td width="200">
-<a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons</a>
+<td>
+<a href='.$urlContact.'>'.$contactLabdoo.'</a>
 </td>
 </tr>
 </table>

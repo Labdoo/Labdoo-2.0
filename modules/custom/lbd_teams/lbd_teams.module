@@ -205,8 +205,29 @@ function labdoo_render_team_actions() {
 
   $homePath = $lang . "/" . drupal_get_path_alias("node/$groupId");
 
-  $code = "
-<p><strong><span style='color:#009900; font-size:16px;'>Team " . lbd_nodeid2title($groupId) . "</span></strong></p>
+  // For some special groups, do not allow write access
+  $teamName = lbd_nodeid2title($groupId);
+  if($teamName == "Global")
+    $noWritingRights = TRUE;
+  else
+    $noWritingRights = FALSE;
+
+  if($noWritingRights) {
+    $code = "
+<p><strong><span style='color:#009900; font-size:16px;'>Team " . $teamName . "</span></strong></p>
+<img src='/profiles/labdoo/files/pictures/home.png' style='width: 20px; height: 21px;'/>&nbsp;
+<a href='$homePath'>" . t("Team's home page") . "</span></a></p>
+<img src='/profiles/labdoo/files/pictures/wall.png' style='width: 20px; height: 21px;'/>&nbsp;
+<a href='$lang/node/$groupId/activities'>" . t("View wall") . "</span></a></p>
+<img src='/profiles/labdoo/files/pictures/calendar_icon.png' style='width: 20px; height: 21px;'/>&nbsp;
+<a href='$lang/node/$groupId/calendar/month'>" . t("View calendar") . "</span></a></p>
+<img src='/profiles/labdoo/files/pictures/search.png' style='width: 20px; height: 21px;'/>&nbsp;
+<a href='$lang/teams-dashboard?og_group_ref_target_id%5B%5D=" . $groupId . "'>" . t("Search inside this team") . "</span></a></p>
+    ";
+  }
+  else {
+    $code = "
+<p><strong><span style='color:#009900; font-size:16px;'>Team " . $teamName . "</span></strong></p>
 <img src='/profiles/labdoo/files/pictures/home.png' style='width: 20px; height: 21px;'/>&nbsp;
 <a href='$homePath'>" . t("Team's home page") . "</span></a></p>
 <img src='/profiles/labdoo/files/pictures/conversation.png' style='width: 20px; height: 21px;'/>&nbsp;
@@ -221,7 +242,10 @@ function labdoo_render_team_actions() {
 <a href='$lang/node/$groupId/calendar/month'>" . t("View calendar") . "</span></a></p>
 <img src='/profiles/labdoo/files/pictures/search.png' style='width: 20px; height: 21px;'/>&nbsp;
 <a href='$lang/teams-dashboard?og_group_ref_target_id%5B%5D=" . $groupId . "'>" . t("Search inside this team") . "</span></a></p>
-  ";
+    ";
+  }
+
+
 
   // Additional code for members
   if(og_is_member('node', $groupId)) {
