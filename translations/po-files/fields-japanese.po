@@ -1,0 +1,1149 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2015-04-25 06:20+0000\n"
+"PO-Revision-Date: 2015-04-25 06:20+0000\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n>1);\n"
+
+#: field:body:team:label
+msgctxt "body:team:label"
+msgid "Team's topic"
+msgstr "チームトピック"
+
+#: field:body:team_page:label
+msgctxt "body:team_page:label"
+msgid "Conversation"
+msgstr "掲示板"
+
+#: field:body:team_task:label
+msgctxt "body:team_task:label"
+msgid "Description"
+msgstr "概要"
+
+#: field:field_about_me:user:label
+msgctxt "field_about_me:user:label"
+msgid "About me"
+msgstr "About me"
+
+#: field:field_action_type:#allowed_values:Dooject
+msgctxt "field_action_type:#allowed_values:Dooject"
+msgid "Doojects"
+msgstr "Dooject"
+
+#: field:field_action_type:#allowed_values:Dootrip
+msgctxt "field_action_type:#allowed_values:Dootrip"
+msgid "Dootrips"
+msgstr "Dootrip"
+
+#: field:field_action_type:#allowed_values:Edoovillage
+msgctxt "field_action_type:#allowed_values:Edoovillage"
+msgid "Edoovillages"
+msgstr "Edoovillage"
+
+#: field:field_action_type:#allowed_values:Hub
+msgctxt "field_action_type:#allowed_values:Hub"
+msgid "Hubs"
+msgstr "ハブ"
+
+#: field:field_action_type:action:label
+msgctxt "field_action_type:action:label"
+msgid "Type"
+msgstr "種類"
+
+#: field:field_additional_editors:laptop:description
+msgctxt "field_additional_editors:laptop:description"
+msgid "Add users who need to have permission to edit this dooject"
+msgstr "Dooject編集のためには許可を必要とするユーザーを追加"
+
+#: field:field_additional_editors:laptop:label
+msgctxt "field_additional_editors:laptop:label"
+msgid "Additional editors"
+msgstr "編集者を追加"
+
+#: field:field_additional_files:edoovillage:label
+msgctxt "field_additional_files:edoovillage:label"
+msgid "Additional files"
+msgstr "ファイルを追加"
+
+#: field:field_additional_followers:laptop:description
+msgctxt "field_additional_followers:laptop:description"
+msgid "Add users who want to follow this dooject"
+msgstr "このDoojectをフォローしたいユーザーを追加"
+
+#: field:field_additional_followers:laptop:label
+msgctxt "field_additional_followers:laptop:label"
+msgid "Additional followers"
+msgstr "フォロワーを追加"
+
+#: field:field_additional_info_language:edoovillage:label
+msgctxt "field_additional_info_language:edoovillage:label"
+msgid "Additional information about language(s)"
+msgstr "言語に関するその他の情報"
+
+#: field:field_additional_notes:laptop:description
+msgctxt "field_additional_notes:laptop:description"
+msgid ""
+"Add here any observations you would like to make. For instance you can "
+"add notes such as the quality of the laptop or if something is broken, "
+"a reminder, or a note on who donated the laptop."
+msgstr ""
+"特筆すべき事項があればこちらに追加してください。"
+"例えば、ラップトップに不具合がある等のラップトップの状態に関する"
+"注意事項を書き添えたり、ラップトップを寄付した人に関する情報を記すことができます。"
+
+#: field:field_additional_notes:laptop:label
+msgctxt "field_additional_notes:laptop:label"
+msgid "Additional notes"
+msgstr "追加事項"
+
+#: field:field_additional_notification_em:laptop:description
+msgctxt "field_additional_notification_em:laptop:description"
+msgid ""
+"Add here the email address(es) of additional people that you would "
+"like to be notified whenever this laptop changes its status."
+msgstr ""
+"このラップトップに関するステータスに変更が生じた際に"
+"それを知らせたい他の方のメールアドレスを追加してください。"
+
+#: field:field_additional_notification_em:laptop:label
+msgctxt "field_additional_notification_em:laptop:label"
+msgid "Additional notification emails"
+msgstr "メールアドレスを追加"
+
+#: field:field_additional_traveler_s_info:dootrip:description
+msgctxt "field_additional_traveler_s_info:dootrip:description"
+msgid ""
+"Name of the person(s) or the NGO performing the dootrip if different "
+"than the dootrippers field"
+msgstr ""
+"Doortripper記入欄に記載されている方では無い方がDootripに参加する場合は、その方の或いはNGOの名前を記載してください。"
+
+#: field:field_additional_traveler_s_info:dootrip:label
+msgctxt "field_additional_traveler_s_info:dootrip:label"
+msgid "Additional traveler(s) information"
+msgstr "その他の参加者の情報を追加"
+
+#: field:field_amp_hours:laptop:label
+msgctxt "field_amp_hours:laptop:label"
+msgid "Amp hours"
+msgstr "アンペア時"
+
+#: field:field_arrival_date:dootrip:label
+msgctxt "field_arrival_date:dootrip:label"
+msgid "Arrival date"
+msgstr "到着日"
+
+#: field:field_battery_duration:laptop:description
+msgctxt "field_battery_duration:laptop:description"
+msgid ""
+"Make an estimate of the battery duration in minutes. If the battery is "
+"not working, please remove it from the laptop, bring the battery to "
+"your nearest local recycling facility, ship the laptop to school "
+"without the battery and mark this field with a value of zero."
+msgstr ""
+"バッテリーの耐久時間を分単位で記載してください。もしバッテリーが機能していない場合は、"
+"バッテリーをラップトップから取り外し、最寄りのリサイクル施設に持ち込み、 "
+"学校にはバッテリー無しのラップトップを送ってください。"
+"その場合、本欄にはゼロと記載してください。"
+
+#: field:field_battery_duration:laptop:label
+msgctxt "field_battery_duration:laptop:label"
+msgid "Battery duration"
+msgstr "バッテリー耐久時間"
+
+#: field:field_battery_watt_hours:laptop:label
+msgctxt "field_battery_watt_hours:laptop:label"
+msgid "Watt-hours"
+msgstr "ワットー時間"
+
+#: field:field_book_language:book:label
+msgctxt "field_book_language:book:label"
+msgid "Language"
+msgstr "言語"
+
+#: field:field_branches_information:hub:label
+msgctxt "field_branches_information:hub:label"
+msgid "About this hub"
+msgstr "このハブについて"
+
+#: field:field_comments:dootrip:label
+msgctxt "field_comments:dootrip:label"
+msgid "Comments"
+msgstr "コメント"
+
+#: field:field_conversation_attachment:team_page:label
+msgctxt "field_conversation_attachment:team_page:label"
+msgid "Attachment"
+msgstr "添付"
+
+#: field:field_cpu:laptop:label
+msgctxt "field_cpu:laptop:label"
+msgid "CPU speed (Example: 1200 MHz)"
+msgstr "CPU速度（例：1200MHz）"
+
+#: field:field_cpu_type:laptop:label
+msgctxt "field_cpu_type:laptop:label"
+msgid "Number of cores (CPU type)"
+msgstr "コア番号（CPUの種類）"
+
+#: field:field_current_operating_system:laptop:description
+msgctxt "field_current_operating_system:laptop:description"
+msgid "Example: Ubuntu 12.04, Mac OS X, Windows 7, etc."
+msgstr "例：Ubuntu 12.04, Mac OS X, Windows 7等"
+
+#: field:field_current_operating_system:laptop:label
+msgctxt "field_current_operating_system:laptop:label"
+msgid "Current operating system"
+msgstr "現在のOS"
+
+#: field:field_departure_date:dootrip:label
+msgctxt "field_departure_date:dootrip:label"
+msgid "Departure date"
+msgstr "出発日"
+
+#: field:field_destination_of_the_trip:dootrip:label
+msgctxt "field_destination_of_the_trip:dootrip:label"
+msgid "Destination of the trip"
+msgstr "到着予定地"
+
+#: field:field_device_type:#allowed_values:androidTablet
+msgctxt "field_device_type:#allowed_values:androidTablet"
+msgid "Android tablet"
+msgstr "アンドロイド・タブレット"
+
+#: field:field_device_type:#allowed_values:arduino
+msgctxt "field_device_type:#allowed_values:arduino"
+msgid "Arduino"
+msgstr "Arduino"
+
+#: field:field_device_type:#allowed_values:blackberry
+msgctxt "field_device_type:#allowed_values:blackberry"
+msgid "BlackBerry"
+msgstr "BlackBerry"
+
+#: field:field_device_type:#allowed_values:blackberryPi
+msgctxt "field_device_type:#allowed_values:blackberryPi"
+msgid "Blackberry Pi"
+msgstr "Blackberry Pi"
+
+#: field:field_device_type:#allowed_values:desktop
+msgctxt "field_device_type:#allowed_values:desktop"
+msgid "Desktop"
+msgstr "デスクトップ"
+
+#: field:field_device_type:#allowed_values:diyDevice
+msgctxt "field_device_type:#allowed_values:diyDevice"
+msgid "Do-it-yourselve device"
+msgstr "DIYサービス"
+
+#: field:field_device_type:#allowed_values:ebook
+msgctxt "field_device_type:#allowed_values:ebook"
+msgid "eBook"
+msgstr "Eブック"
+
+#: field:field_device_type:#allowed_values:googlePhone
+msgctxt "field_device_type:#allowed_values:googlePhone"
+msgid "Android phone"
+msgstr "アンドロイド携帯"
+
+#: field:field_device_type:#allowed_values:internetTable
+msgctxt "field_device_type:#allowed_values:internetTable"
+msgid "Internet tablet"
+msgstr "インターネット・タブレット"
+
+#: field:field_device_type:#allowed_values:ipad
+msgctxt "field_device_type:#allowed_values:ipad"
+msgid "iPad"
+msgstr "iPad"
+
+#: field:field_device_type:#allowed_values:iphone
+msgctxt "field_device_type:#allowed_values:iphone"
+msgid "iPhone"
+msgstr "iPhone"
+
+#: field:field_device_type:#allowed_values:laptop
+msgctxt "field_device_type:#allowed_values:laptop"
+msgid "Laptop"
+msgstr "ラップトップ"
+
+#: field:field_device_type:#allowed_values:smartphone
+msgctxt "field_device_type:#allowed_values:smartphone"
+msgid "SmartPhone"
+msgstr "スマートフォン"
+
+#: field:field_device_type:laptop:label
+msgctxt "field_device_type:laptop:label"
+msgid "Device type"
+msgstr ""
+
+#: field:field_doojects_additional_notes:edoovillage:label
+msgctxt "field_doojects_additional_notes:edoovillage:label"
+msgid "Doojects additional notes"
+msgstr "Doojectに関する追記事項"
+
+#: field:field_dooject_weight:laptop:label
+msgctxt "field_dooject_weight:laptop:label"
+msgid "Weight"
+msgstr "重さ"
+
+#: field:field_dootripper_s_:dootrip:description
+msgctxt "field_dootripper_s_:dootrip:description"
+msgid "User(s) who will be part of this dootrip"
+msgstr "このDootripに参加するユーザー"
+
+#: field:field_dootripper_s_:dootrip:label
+msgctxt "field_dootripper_s_:dootrip:label"
+msgid "Dootripper(s)"
+msgstr "Dootripper"
+
+#: field:field_dootrips:laptop:description
+msgctxt "field_dootrips:laptop:description"
+msgid ""
+"This field is updated automatically once dootrips are assigned to this "
+"dooject. You can also optionally set this field manually adding "
+"dootrips by typing their name."
+msgstr ""
+"本欄は、DootripがDoojectに設定され次第、自動に更新されます。"
+"参加者の名前を追加することにより、手動でDootripを追加することも可能です。"
+
+#: field:field_dootrips:laptop:label
+msgctxt "field_dootrips:laptop:label"
+msgid "Dootrips assigned to this dooject"
+msgstr "Doojectに設定されたDootrip"
+
+#: field:field_dootrip_additional_editors:dootrip:label
+msgctxt "field_dootrip_additional_editors:dootrip:label"
+msgid "Additional editors"
+msgstr "編集者を追加"
+
+#: field:field_dootrip_capacity:dootrip:label
+msgctxt "field_dootrip_capacity:dootrip:label"
+msgid "Number of doojects you can carry"
+msgstr "持参可能なDoojectの数"
+
+#: field:field_dootrip_weight:dootrip:label
+msgctxt "field_dootrip_weight:dootrip:label"
+msgid "Dooject's estimated total weight"
+msgstr "Doojectの総重量見込み"
+
+#: field:field_drupal_wall_image_style:drupal_wall:label
+msgctxt "field_drupal_wall_image_style:drupal_wall:label"
+msgid "Image Style"
+msgstr "イメージ・スタイル"
+
+#: field:field_drupal_wall_photos:drupal_wall:label
+msgctxt "field_drupal_wall_photos:drupal_wall:label"
+msgid "Share Photo"
+msgstr "写真を共有する"
+
+#: field:field_drupal_wall_videos:drupal_wall:label
+msgctxt "field_drupal_wall_videos:drupal_wall:label"
+msgid "Share Videos"
+msgstr "映像を共有する"
+
+#: field:field_edoovillage_action:action:label
+msgctxt "field_edoovillage_action:action:label"
+msgid "Edoovillage"
+msgstr "Edovillage"
+
+#: field:field_edoovillage_destination:laptop:label
+msgctxt "field_edoovillage_destination:laptop:label"
+msgid "Edoovillage destination"
+msgstr "Edovillage目的地"
+
+#: field:field_edoovillage_photo_album:edoovillage:label
+msgctxt "field_edoovillage_photo_album:edoovillage:label"
+msgid "Photo album"
+msgstr "フォトアルバム"
+
+#: field:field_edoovillage_status:#allowed_values:completed
+msgctxt "field_edoovillage_status:#allowed_values:completed"
+msgid "Completed"
+msgstr "完了"
+
+#: field:field_edoovillage_status:#allowed_values:open
+msgctxt "field_edoovillage_status:#allowed_values:open"
+msgid "Open"
+msgstr "開ける"
+
+#: field:field_edoovillage_status:edoovillage:label
+msgctxt "field_edoovillage_status:edoovillage:label"
+msgid "Status"
+msgstr "ステータス"
+
+#: field:field_edoo_additional_editors:edoovillage:label
+msgctxt "field_edoo_additional_editors:edoovillage:label"
+msgid "Additional editors"
+msgstr "編集者を追加"
+
+#: field:field_edoo_additional_followers:edoovillage:label
+msgctxt "field_edoo_additional_followers:edoovillage:label"
+msgid "Additional followers"
+msgstr "フォロワーを追加"
+
+#: field:field_edoo_additional_notif_em:edoovillage:label
+msgctxt "field_edoo_additional_notif_em:edoovillage:label"
+msgid "Additional notification emails"
+msgstr "通知先メールアドレスの追加"
+
+#: field:field_event_date:event:label
+msgctxt "field_event_date:event:label"
+msgid "Date(s)"
+msgstr "日にち"
+
+#: field:field_file_image_alt_text:image:description
+msgctxt "field_file_image_alt_text:image:description"
+msgid ""
+"Alternative text is used by screen readers, search engines, and when "
+"the image cannot be loaded. By adding alt text you improve "
+"accessibility and search engine optimization."
+msgstr ""
+"代替テキストは、スクリーン・リーダー、検索エンジンに読み込まれる他、画像が読み込めない時に使用される。"
+"代替テキストを追加することにより、アクセシビリティが向上し、"
+"検索エンジンの最適化が実現する。"
+
+#: field:field_file_image_alt_text:image:label
+msgctxt "field_file_image_alt_text:image:label"
+msgid "Alt Text"
+msgstr "代替テキスト"
+
+#: field:field_file_image_title_text:image:description
+msgctxt "field_file_image_title_text:image:description"
+msgid ""
+"Title text is used in the tool tip when a user hovers their mouse over "
+"the image. Adding title text makes it easier to understand the context "
+"of an image and improves usability."
+msgstr ""
+"タイトル・テキストは、ユーザーが画像上にマウスポインターを合わせた際に表示される簡潔な説明。"
+"タイトル・テキストを追加することで、画像の文脈が分かり易くなり、ユーザビリティが向上する。"
+
+#: field:field_file_image_title_text:image:label
+msgctxt "field_file_image_title_text:image:label"
+msgid "Title Text"
+msgstr "タイトル"
+
+#: field:field_gic_date:gic:label
+msgctxt "field_gic_date:gic:label"
+msgid "Date"
+msgstr "日にち"
+
+#: field:field_gic_edoovillage:gic:label
+msgctxt "field_gic_edoovillage:gic:label"
+msgid "Edoovillage"
+msgstr "Edovillage"
+
+#: field:field_hard_drive:laptop:label
+msgctxt "field_hard_drive:laptop:label"
+msgid "Hard drive"
+msgstr "ハード・ドライブ"
+
+#: field:field_hub:edoovillage:label
+msgctxt "field_hub:edoovillage:label"
+msgid "Coordinating hub(s)"
+msgstr "ハブをコーディネート"
+
+#: field:field_hub_action:action:label
+msgctxt "field_hub_action:action:label"
+msgid "Hub"
+msgstr "ハブ"
+
+#: field:field_hub_additional_editors:hub:label
+msgctxt "field_hub_additional_editors:hub:label"
+msgid "Additional editors"
+msgstr "編集者を追加"
+
+#: field:field_hub_laptop:laptop:description
+msgctxt "field_hub_laptop:laptop:description"
+msgid ""
+"If you are an individual tagger, select here the group \"Grassroots\". "
+"If you belong to a hub, select the name of your hub."
+msgstr ""
+"個人のタッガーの場合は、 \"Grassroots\"グループを選択。"
+"ハブに所属している場合は、ハブ名を選択。"
+
+#: field:field_hub_laptop:laptop:label
+msgctxt "field_hub_laptop:laptop:label"
+msgid "Source group"
+msgstr "ソース・グループ"
+
+#: field:field_hub_manager_s_:hub:label
+msgctxt "field_hub_manager_s_:hub:label"
+msgid "Hub manager(s)"
+msgstr "ハブ管理者"
+
+#: field:field_hub_photo_album:hub:label
+msgctxt "field_hub_photo_album:hub:label"
+msgid "Photo album"
+msgstr "フォト・アルバム"
+
+#: field:field_image:article:description
+msgctxt "field_image:article:description"
+msgid "Upload an image to go with this article."
+msgstr "本記事の内容に沿った画像をアップロードしてください。"
+
+#: field:field_image:article:label
+msgctxt "field_image:article:label"
+msgid "Image"
+msgstr "画像"
+
+#: field:field_image:labdoo_slide:label
+msgctxt "field_image:labdoo_slide:label"
+msgid "Image"
+msgstr "画像"
+
+#: field:field_internet_additional_notes:edoovillage:label
+msgctxt "field_internet_additional_notes:edoovillage:label"
+msgid "Internet additional notes"
+msgstr "備考を追加"
+
+#: field:field_internet_connection_type:#allowed_values:none
+msgctxt "field_internet_connection_type:#allowed_values:none"
+msgid "None"
+msgstr "無し"
+
+#: field:field_internet_connection_type:#allowed_values:wired
+msgctxt "field_internet_connection_type:#allowed_values:wired"
+msgid "Wired"
+msgstr "有線"
+
+#: field:field_internet_connection_type:#allowed_values:wiredOrWireless
+msgctxt "field_internet_connection_type:#allowed_values:wiredOrWireless"
+msgid "Wired or Wireless"
+msgstr "有線/無線"
+
+#: field:field_internet_connection_type:#allowed_values:wireless
+msgctxt "field_internet_connection_type:#allowed_values:wireless"
+msgid "Wireless"
+msgstr "無線"
+
+#: field:field_internet_connection_type:edoovillage:label
+msgctxt "field_internet_connection_type:edoovillage:label"
+msgid "Internet connection type"
+msgstr "インターネット接続タイプ"
+
+#: field:field_is_first_page:#allowed_values:0
+msgctxt "field_is_first_page:#allowed_values:0"
+msgid "It's a translation"
+msgstr "翻訳"
+
+#: field:field_is_first_page:#allowed_values:1
+msgctxt "field_is_first_page:#allowed_values:1"
+msgid "It's the original"
+msgstr "原文"
+
+#: field:field_is_first_page:book:label
+msgctxt "field_is_first_page:book:label"
+msgid ""
+"Is this wiki page a translation of another wiki page or is this the "
+"original?"
+msgstr ""
+"このwikiページは他のwikiページの翻訳、或いはオリジナルのページですか？"
+
+#: field:field_keyboard:laptop:label
+msgctxt "field_keyboard:laptop:label"
+msgid "Keyboard (country of origin)"
+msgstr "キーボード（出身国）"
+
+#: field:field_labdooer_action:action:label
+msgctxt "field_labdooer_action:action:label"
+msgid "Labdooer"
+msgstr "Labdoger"
+
+#: field:field_laptops:dootrip:description
+msgctxt "field_laptops:dootrip:description"
+msgid ""
+"Once you know the dooject(s) that you will be carrying with this "
+"dootrip, enter their Labdoo identifier here."
+msgstr ""
+"本Dootripで実施するDoojectを把握している場合は、Labdoo識別情報を入力下さい。"
+
+#: field:field_laptops:dootrip:label
+msgctxt "field_laptops:dootrip:label"
+msgid "Dooject identifiers"
+msgstr "Dooject識別情報"
+
+#: field:field_linked_pages:superhub_page:description
+msgctxt "field_linked_pages:superhub_page:description"
+msgid ""
+"Select the superhub pages where you would like this menu block to "
+"appear"
+msgstr ""
+"このメニューが表示されることを防ぎたいスーパーハブ・ページを選択してください。"
+
+#: field:field_linked_pages:superhub_page:label
+msgctxt "field_linked_pages:superhub_page:label"
+msgid "Linked pages"
+msgstr "リンク・ページ"
+
+#: field:field_local_language_s_:edoovillage:label
+msgctxt "field_local_language_s_:edoovillage:label"
+msgid "Local language(s)"
+msgstr "現地語"
+
+#: field:field_manager:laptop:description
+msgctxt "field_manager:laptop:description"
+msgid "The user currently managing this dooject"
+msgstr "別のユーザーが現在本Doojectを担当しています。"
+
+#: field:field_manager:laptop:label
+msgctxt "field_manager:laptop:label"
+msgid "Manager"
+msgstr "マネージャー"
+
+#: field:field_memory:laptop:label
+msgctxt "field_memory:laptop:label"
+msgid "Memory"
+msgstr "メモリー"
+
+#: field:field_model:laptop:description
+msgctxt "field_model:laptop:description"
+msgid "Brand name and model of the dooject"
+msgstr "Doojectのブランド名及びモデル"
+
+#: field:field_model:laptop:label
+msgctxt "field_model:laptop:label"
+msgid "Model"
+msgstr "モデル"
+
+#: field:field_number_of_days_after:dootrip:label
+msgctxt "field_number_of_days_after:dootrip:label"
+msgid "Number of days you can store the dooject after the arrival date"
+msgstr "到着後Doojectのために費やすことのできる日数"
+
+#: field:field_number_of_days_before:dootrip:label
+msgctxt "field_number_of_days_before:dootrip:label"
+msgid "Number of days you can store the dooject before the departure date"
+msgstr "出発目にDoojectのために費やすことのできる日数"
+
+#: field:field_number_of_doojects_assigne:dootrip:label
+msgctxt "field_number_of_doojects_assigne:dootrip:label"
+msgid "Number of doojects assigned"
+msgstr "設定予定のDoojectの件数"
+
+#: field:field_number_of_laptops_needed:edoovillage:label
+msgctxt "field_number_of_laptops_needed:edoovillage:label"
+msgid "Number of doojects needed"
+msgstr "必要なDoojectの件数"
+
+#: field:field_number_of_students:edoovillage:label
+msgctxt "field_number_of_students:edoovillage:label"
+msgid "Number of students"
+msgstr "生徒数"
+
+#: field:field_number_of_teachers:edoovillage:label
+msgctxt "field_number_of_teachers:edoovillage:label"
+msgid "Number of teachers"
+msgstr "先生数"
+
+#: field:field_on_site_point_of_contact:edoovillage:description
+msgctxt "field_on_site_point_of_contact:edoovillage:description"
+msgid "Email address, phone number, website, etc."
+msgstr "メールアドレス、電話番号、ウェブサイト等"
+
+#: field:field_on_site_point_of_contact:edoovillage:label
+msgctxt "field_on_site_point_of_contact:edoovillage:label"
+msgid "On-site point of contact"
+msgstr "現地連絡先"
+
+#: field:field_origin_of_the_trip:dootrip:label
+msgctxt "field_origin_of_the_trip:dootrip:label"
+msgid "Origin of the trip"
+msgstr "本旅行の出発地"
+
+#: field:field_parent_hub:hub:description
+msgctxt "field_parent_hub:hub:description"
+msgid ""
+"If this hub has a parent hub, please select it from the following "
+"list."
+msgstr ""
+"本ハブの母体ハブをがある場合は、次のリストからそのハブを選択してください。"
+
+#: field:field_parent_hub:hub:label
+msgctxt "field_parent_hub:hub:label"
+msgid "Parent hub"
+msgstr "母体ハブ"
+
+#: field:field_photo_album_edoovillage:node_gallery_gallery:label
+msgctxt "field_photo_album_edoovillage:node_gallery_gallery:label"
+msgid "Edoovillage"
+msgstr "Edoovillage"
+
+#: field:field_photo_album_hub:node_gallery_gallery:label
+msgctxt "field_photo_album_hub:node_gallery_gallery:label"
+msgid "Hub"
+msgstr "ハブ"
+
+#: field:field_picture:laptop:description
+msgctxt "field_picture:laptop:description"
+msgid ""
+"Upload here a picture of the dooject. A picture is a helpful way for "
+"donors to ensure that they are looking at the correct dooject. Please "
+"do not use pictures that you may find on the Internet, as they may be "
+"copyrighted.  Instead, please take a picture with your own camera. "
+"Once the dooject reaches a school, you can also upload another picture "
+"with the students using it."
+msgstr ""
+"Doojectの写真をこちらにアップロードしてください。写真の掲載は、ドナーにとって"
+"支援しているDoojectを確実に見つける手助けになります。"
+"インターネット上で拾ってきた画像等、コピーライト上に問題がある写真を掲載しないでください。"
+"自ら撮影した写真に限って掲載してください。"
+"Doojectが目的の学校に配置された際には、実際に生徒がラップトップを使う様子を収めた新たな写真を掲載することが出来ます。"
+
+
+#: field:field_picture:laptop:label
+msgctxt "field_picture:laptop:label"
+msgid "Picture"
+msgstr "写真"
+
+#: field:field_project_application:edoovillage:label
+msgctxt "field_project_application:edoovillage:label"
+msgid "Project application"
+msgstr "プロジェクト申請"
+
+#: field:field_project_description:edoovillage:label
+msgctxt "field_project_description:edoovillage:label"
+msgid "Project description"
+msgstr "プロジェクト概要"
+
+#: field:field_project_manager_s_:edoovillage:label
+msgctxt "field_project_manager_s_:edoovillage:label"
+msgid "Project manager(s)"
+msgstr "プロジェクト・マネージャー"
+
+#: field:field_project_summary:edoovillage:label
+msgctxt "field_project_summary:edoovillage:label"
+msgid "Project brief description"
+msgstr "プロジェクトへの想い"
+
+#: field:field_reference_book:book:label
+msgctxt "field_reference_book:book:label"
+msgid "Original book"
+msgstr "原義"
+
+#: field:field_semaphore:#allowed_values:green
+msgctxt "field_semaphore:#allowed_values:green"
+msgid "Green: the rest of the doojects can be sent"
+msgstr ""緑：その他のDoojectを配送できます。"
+
+#: field:field_semaphore:#allowed_values:red
+msgctxt "field_semaphore:#allowed_values:red"
+msgid "Red: pictures about the project have not been uploaded yet"
+msgstr "赤：プロジェクトに関する写真が未だアップロードされていません。"
+
+#: field:field_semaphore:#allowed_values:yellow
+msgctxt "field_semaphore:#allowed_values:yellow"
+msgid "Yellow: first doojects can be sent"
+msgstr "黄：最初のDoojectが配送可能です。"
+
+#: field:field_semaphore:edoovillage:label
+msgctxt "field_semaphore:edoovillage:label"
+msgid "Semaphore"
+msgstr "同期"
+
+#: field:field_serial_number:laptop:description
+msgctxt "field_serial_number:laptop:description"
+msgid ""
+"Write here the serial number of the dooject. Usually the serial number "
+"can be found in the back of the dooject, search for keywords such as "
+"\"Serial Number\" or \"S/N\", or if you see a bar code with a number "
+"under it, use this number. If the dooject has no sticker with the "
+"serial number, then write in this field the words \"Unknown\"."
+msgstr ""
+"Doojectのシリアル・ナンバーを記入してください。 "
+"通常、シリアル・ナンバーは、Doojectの裏側に記載されています。"
+"\"Serial Number\" 或いは \"S/N\"などのワードで検索してください。または、下に数字が並んでいるバーコードが見当たる場合は、"
+"その数字を記入してください。もしDoojectにシリアル・ナンバーの記載されたステッカーが添付されていない場合は、"
+"\"Unknown\"と記入してください。"
+
+#: field:field_serial_number:laptop:label
+msgctxt "field_serial_number:laptop:label"
+msgid "Serial number"
+msgstr "シリアル・ナンバー"
+
+#: field:field_simplenews_term:simplenews:label
+msgctxt "field_simplenews_term:simplenews:label"
+msgid "Newsletter category"
+msgstr "ニューズレターの種類"
+
+#: field:field_skills:user:label
+msgctxt "field_skills:user:label"
+msgid "Skills"
+msgstr "スキル"
+
+#: field:field_slider_tab:slider_page:label
+msgctxt "field_slider_tab:slider_page:label"
+msgid "Tab"
+msgstr "タブ"
+
+#: field:field_slider_weight:slider_page:label
+msgctxt "field_slider_weight:slider_page:label"
+msgid "Weight"
+msgstr "重さ"
+
+#: field:field_socket_type:edoovillage:label
+msgctxt "field_socket_type:edoovillage:label"
+msgid "Socket type"
+msgstr "ソケット・タイプ"
+
+#: field:field_socket_voltage:#allowed_values:120
+msgctxt "field_socket_voltage:#allowed_values:120"
+msgid "100-127 Volts"
+msgstr "100-127ボルト"
+
+#: field:field_socket_voltage:#allowed_values:220
+msgctxt "field_socket_voltage:#allowed_values:220"
+msgid "220-240 Volts"
+msgstr "220-240ボルト"
+
+#: field:field_socket_voltage:edoovillage:label
+msgctxt "field_socket_voltage:edoovillage:label"
+msgid "Socket voltage"
+msgstr "ソケット電圧"
+
+#: field:field_status:#allowed_values:L1
+msgctxt "field_status:#allowed_values:L1"
+msgid "[L1] Dooject was lost"
+msgstr "[L1] Doojectを喪失しました。"
+
+#: field:field_status:#allowed_values:S0
+msgctxt "field_status:#allowed_values:S0"
+msgid "[S0] Tagged with a Labdoo ID"
+msgstr "[S0] Labdoo IDをタグ付け"
+
+#: field:field_status:#allowed_values:S1
+msgctxt "field_status:#allowed_values:S1"
+msgid "[S1] Donated, waiting to pass quality assurance"
+msgstr "[S1] 寄付済み、品質審査中"
+
+
+#: field:field_status:#allowed_values:S2
+msgctxt "field_status:#allowed_values:S2"
+msgid "[S2] Passed quality assurance"
+msgstr "[S2] 品質審査合格"
+
+#: field:field_status:#allowed_values:S3
+msgctxt "field_status:#allowed_values:S3"
+msgid "[S3] Assigned to an edoovillage, waiting to be shipped"
+msgstr "[S3] Edovillageが決定、出荷待ち"
+
+#: field:field_status:#allowed_values:S4
+msgctxt "field_status:#allowed_values:S4"
+msgid "[S4] Deployed and being used"
+msgstr "[S4] 配置済み、使用中"
+
+#: field:field_status:#allowed_values:S5
+msgctxt "field_status:#allowed_values:S5"
+msgid "[S5] Waiting to be recycled"
+msgstr "[S5] リサイクル待ち"
+
+#: field:field_status:#allowed_values:S6
+msgctxt "field_status:#allowed_values:S6"
+msgid "[S6] Recycled"
+msgstr "[S6] リサイクル済"
+
+#: field:field_status:#allowed_values:S7
+msgctxt "field_status:#allowed_values:S7"
+msgid "[S7] (Library) Checked out"
+msgstr "[S7] （ライブラリー）チェック・アウト"
+
+#: field:field_status:#allowed_values:S8
+msgctxt "field_status:#allowed_values:S8"
+msgid "[S8] (Library) Available"
+msgstr "[S8] （ライブラリー）閲覧可能"
+
+#: field:field_status:#allowed_values:S9
+msgctxt "field_status:#allowed_values:S9"
+msgid "[S9] Deployed but not working"
+msgstr "[S9] 配置済み、未使用"
+
+#: field:field_status:#allowed_values:T1
+msgctxt "field_status:#allowed_values:T1"
+msgid "[T1] In transit going to an edoovillage"
+msgstr "[T1] E"dovillageに配送中"
+
+#: field:field_status:#allowed_values:T2
+msgctxt "field_status:#allowed_values:T2"
+msgid "[T2] In transit going to a recycling factory"
+msgstr "[T2] リサイクル施設に配送中"
+
+#: field:field_status:laptop:label
+msgctxt "field_status:laptop:label"
+msgid "Status"
+msgstr "ステータス"
+
+#: field:field_status_dootrip:#allowed_values:DS0
+msgctxt "field_status_dootrip:#allowed_values:DS0"
+msgid "Pending"
+msgstr "保留"
+
+#: field:field_status_dootrip:#allowed_values:DS1
+msgctxt "field_status_dootrip:#allowed_values:DS1"
+msgid "Completed"
+msgstr "完了"
+
+#: field:field_status_dootrip:#allowed_values:DS2
+msgctxt "field_status_dootrip:#allowed_values:DS2"
+msgid "Cancelled"
+msgstr "中止"
+
+#: field:field_status_dootrip:dootrip:label
+msgctxt "field_status_dootrip:dootrip:label"
+msgid "Status"
+msgstr "ステータス"
+
+#: field:field_superhub_page_type:#allowed_values:block
+msgctxt "field_superhub_page_type:#allowed_values:block"
+msgid "Menu Block"
+msgstr "メニュー・ブロック"
+
+#: field:field_superhub_page_type:#allowed_values:page
+msgctxt "field_superhub_page_type:#allowed_values:page"
+msgid "Page"
+msgstr "ページ"
+
+#: field:field_superhub_page_type:superhub_page:label
+msgctxt "field_superhub_page_type:superhub_page:label"
+msgid "Type"
+msgstr "種類"
+
+#: field:field_tagger:laptop:description
+msgctxt "field_tagger:laptop:description"
+msgid "The user who tagged this dooject"
+msgstr "本Doojectにタグ付けされているユーザー"
+
+#: field:field_tagger:laptop:label
+msgctxt "field_tagger:laptop:label"
+msgid "Tagger"
+msgstr "タッガー"
+
+#: field:field_tags:article:description
+msgctxt "field_tags:article:description"
+msgid "Enter a comma-separated list of words to describe your content."
+msgstr "コンテンツをコンマで句切った文字リストで記入してください。"
+
+#: field:field_tags:article:label
+msgctxt "field_tags:article:label"
+msgid "Tags"
+msgstr "タグ"
+
+#: field:field_task_assigned_to:team_task:label
+msgctxt "field_task_assigned_to:team_task:label"
+msgid "Assigned to"
+msgstr "タグ先"
+
+#: field:field_task_attachment:team_task:label
+msgctxt "field_task_attachment:team_task:label"
+msgid "Attachment"
+msgstr "添付"
+
+#: field:field_task_priority:#allowed_values:high
+msgctxt "field_task_priority:#allowed_values:high"
+msgid "High"
+msgstr "高"
+
+#: field:field_task_priority:#allowed_values:low
+msgctxt "field_task_priority:#allowed_values:low"
+msgid "Low"
+msgstr "低"
+
+#: field:field_task_priority:#allowed_values:normal
+msgctxt "field_task_priority:#allowed_values:normal"
+msgid "Normal"
+msgstr "ノーマル"
+
+#: field:field_task_priority:team_task:label
+msgctxt "field_task_priority:team_task:label"
+msgid "Priority"
+msgstr "優先"
+
+#: field:field_task_status:#allowed_values:close
+msgctxt "field_task_status:#allowed_values:close"
+msgid "Close"
+msgstr "閉じる"
+
+#: field:field_task_status:#allowed_values:deferred
+msgctxt "field_task_status:#allowed_values:deferred"
+msgid "Deferred"
+msgstr "延期"
+
+#: field:field_task_status:#allowed_values:duplicate
+msgctxt "field_task_status:#allowed_values:duplicate"
+msgid "Duplicate"
+msgstr "複製"
+
+#: field:field_task_status:#allowed_values:open
+msgctxt "field_task_status:#allowed_values:open"
+msgid "Open"
+msgstr "開く"
+
+#: field:field_task_status:#allowed_values:resolved
+msgctxt "field_task_status:#allowed_values:resolved"
+msgid "Resolved"
+msgstr "決定"
+
+#: field:field_task_status:team_task:label
+msgctxt "field_task_status:team_task:label"
+msgid "Status"
+msgstr "ステータス"
+
+#: field:field_task_type:#allowed_values:doojectSanitation
+msgctxt "field_task_type:#allowed_values:doojectSanitation"
+msgid "Dooject sanitation event"
+msgstr "Doojectのサニタイジング"
+
+#: field:field_task_type:#allowed_values:featureRequest
+msgctxt "field_task_type:#allowed_values:featureRequest"
+msgid "Feature request"
+msgstr "フィーチャー・リクエスト"
+
+#: field:field_task_type:#allowed_values:generalTask
+msgctxt "field_task_type:#allowed_values:generalTask"
+msgid "General task"
+msgstr "タスク"
+
+#: field:field_task_type:#allowed_values:outreachingActivity
+msgctxt "field_task_type:#allowed_values:outreachingActivity"
+msgid "Outreaching activity"
+msgstr "その他の活動"
+
+#: field:field_task_type:#allowed_values:websiteBug
+msgctxt "field_task_type:#allowed_values:websiteBug"
+msgid "Website bug"
+msgstr "ウェブサイト・バグ"
+
+#: field:field_task_type:team_task:label
+msgctxt "field_task_type:team_task:label"
+msgid "Type"
+msgstr "種類"
+
+#: field:field_type:#allowed_values:edoovillage
+msgctxt "field_type:#allowed_values:edoovillage"
+msgid "Edoovillage"
+msgstr "Edovillage"
+
+#: field:field_type:#allowed_values:hub
+msgctxt "field_type:#allowed_values:hub"
+msgid "Hub"
+msgstr "ハブ"
+
+#: field:field_type:slider_page:label
+msgctxt "field_type:slider_page:label"
+msgid "Type"
+msgstr "種類"
+
+#: field:field_types_of_mini_missions:#allowed_values:HUBTYPE0
+msgctxt "field_types_of_mini_missions:#allowed_values:HUBTYPE0"
+msgid "Dropping point"
+msgstr "配置場所"
+
+#: field:field_types_of_mini_missions:#allowed_values:HUBTYPE1
+msgctxt "field_types_of_mini_missions:#allowed_values:HUBTYPE1"
+msgid "Sanitizing point"
+msgstr "サニタイジング場所"
+
+#: field:field_types_of_mini_missions:hub:description
+msgctxt "field_types_of_mini_missions:hub:description"
+msgid ""
+"If this hub accepts to store doojects, select \"Dropping point\". If "
+"the hub sanitizes doojects, select \"Sanitizing point\". You can "
+"select multiple options at the same time."
+msgstr ""
+"本ハブ上でDoojectを保存することを承認する場合は、\"Dropping point\"を選択してください。"
+"もし本ハブがDoojectをサニタイジングする場合は、\"Sanitizing point\"を選択してください。"
+"一度に複数のオプションを選択することが可能です。"
+
+#: field:field_types_of_mini_missions:hub:label
+msgctxt "field_types_of_mini_missions:hub:label"
+msgid "Hub type"
+msgstr "ハブの種類"
+
+#: field:field_user_name:user:description
+msgctxt "field_user_name:user:description"
+msgid "Your first and last name"
+msgstr "姓名"
+
+#: field:field_user_name:user:label
+msgctxt "field_user_name:user:label"
+msgid "Name"
+msgstr "名前"
+
+#: field:field_volts:laptop:label
+msgctxt "field_volts:laptop:label"
+msgid "Volts"
+msgstr "電圧"
+
+#: field:field_welcome_message:team:label
+msgctxt "field_welcome_message:team:label"
+msgid "Welcome message"
+msgstr "歓迎メッセージ"
+
+#: field:group_group:#allowed_values:0
+msgctxt "group_group:#allowed_values:0"
+msgid "Not a team"
+msgstr "非チーム"
+
+#: field:group_group:#allowed_values:1
+msgctxt "group_group:#allowed_values:1"
+msgid "Team"
+msgstr "チーム"
+
+#: field:group_group:team:description
+msgctxt "group_group:team:description"
+msgid "Determine if this is an OG group."
+msgstr "OGグループかどうか確認下さい。"
+
+#: field:group_group:team:label
+msgctxt "group_group:team:label"
+msgid "Team"
+msgstr "チーム"
+
+#: field:node_gallery_media:node_gallery_item:description
+msgctxt "node_gallery_media:node_gallery_item:description"
+msgid "File to store Node Gallery media."
+msgstr "ノード・ギャラリー・メディアに保存してください。"
+
+#: field:node_gallery_media:node_gallery_item:label
+msgctxt "node_gallery_media:node_gallery_item:label"
+msgid "Gallery Media "
+msgstr "ギャラリー・メディア"
+
+#: field:node_gallery_ref_1:node_gallery_item:label
+msgctxt "node_gallery_ref_1:node_gallery_item:label"
+msgid "Galleries"
+msgstr "ギャラリー"
+
+#: field:og_group_ref:event:label
+msgctxt "og_group_ref:event:label"
+msgid "Team(s)"
+msgstr "チーム"
+
+#: field:og_group_ref:team_page:label
+msgctxt "og_group_ref:team_page:label"
+msgid "Team(s)"
+msgstr "チーム"
+
+#: field:og_group_ref:team_task:label
+msgctxt "og_group_ref:team_task:label"
+msgid "Team(s)"
+msgstr ""
+
+#: field:og_membership_request:og_membership_type_default:description
+msgctxt "og_membership_request:og_membership_type_default:description"
+msgid "This is the text a user may send to the group administrators."
+msgstr "これは、グループ管理者にユーザーが送信し得るテキストです。"
+
+#: field:og_membership_request:og_membership_type_default:label
+msgctxt "og_membership_request:og_membership_type_default:label"
+msgid "Request message"
+msgstr "メッセージ申請"
+
+#: field:og_user_node:user:label
+msgctxt "og_user_node:user:label"
+msgid "Group membership"
+msgstr "グループ・メンバーシップ"
+
