@@ -1043,7 +1043,7 @@ function lbd_content_types_strongarm() {
       'display' => array(
         'sharethis' => array(
           'default' => array(
-            'weight' => '2',
+            'weight' => '3',
             'visible' => TRUE,
           ),
         ),
@@ -1349,6 +1349,12 @@ function lbd_content_types_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'node_gallery_node_thumbnail' => array(
+        'custom_settings' => TRUE,
+      ),
+      'print' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -1364,6 +1370,12 @@ function lbd_content_types_strongarm() {
       ),
       'display' => array(
         'og_extras_nodes_entity_view_1' => array(
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
+        'sharethis' => array(
           'default' => array(
             'weight' => '10',
             'visible' => TRUE,

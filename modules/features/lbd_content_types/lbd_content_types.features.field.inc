@@ -846,7 +846,7 @@ function lbd_content_types_field_default_fields() {
       'module' => 'file',
       'settings' => array(
         'display_default' => 0,
-        'display_field' => 1,
+        'display_field' => 0,
         'uri_scheme' => 'public',
       ),
       'translatable' => '0',
@@ -1515,7 +1515,7 @@ function lbd_content_types_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '0',
+          'weight' => '2',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -1591,10 +1591,17 @@ function lbd_content_types_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '1',
+          'label' => 'inline',
+          'module' => 'date',
+          'settings' => array(
+            'format_type' => 'long',
+            'fromto' => 'both',
+            'multiple_from' => '',
+            'multiple_number' => '',
+            'multiple_to' => '',
+          ),
+          'type' => 'date_default',
+          'weight' => '0',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -1633,6 +1640,79 @@ function lbd_content_types_field_default_fields() {
         ),
         'type' => 'date_select',
         'weight' => '5',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-event-field_location_event'.
+  $fields['node-event-field_location_event'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_location_event',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'event',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'inline',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '1',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_location_event',
+      'label' => 'Location',
+      'required' => 1,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'rows' => '5',
+        ),
+        'type' => 'text_textarea',
+        'weight' => '6',
       ),
     ),
   );
@@ -1697,7 +1777,7 @@ function lbd_content_types_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '3',
+          'weight' => '4',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -3769,6 +3849,89 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
     ),
   );
 
+  // Exported field: 'node-team-og_roles_permissions'.
+  $fields['node-team-og_roles_permissions'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'og_roles_permissions',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Use default roles and permissions',
+          1 => 'Override default roles and permissions',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'team',
+      'default_value' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '3',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'og_roles_permissions',
+      'label' => 'Group roles and permissions',
+      'required' => TRUE,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'view modes' => array(
+        'full' => array(
+          'custom settings' => FALSE,
+          'label' => 'Full',
+          'type' => 'list_default',
+        ),
+        'teaser' => array(
+          'custom settings' => FALSE,
+          'label' => 'Teaser',
+          'type' => 'list_default',
+        ),
+      ),
+      'widget' => array(
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
+        'weight' => 33,
+      ),
+    ),
+  );
+
   // Exported field: 'node-team_page-body'.
   $fields['node-team_page-body'] = array(
     'field_config' => array(
@@ -3874,7 +4037,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
       'module' => 'file',
       'settings' => array(
         'display_default' => 0,
-        'display_field' => 1,
+        'display_field' => 0,
         'uri_scheme' => 'public',
       ),
       'translatable' => '0',
@@ -4818,11 +4981,13 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
   t('File to store Node Gallery media.');
   t('Galleries');
   t('Gallery Media ');
+  t('Group roles and permissions');
   t('Hub');
   t('Image');
   t('Labdooer');
   t('Language');
   t('Linked pages');
+  t('Location');
   t('Photo album');
   t('Priority');
   t('Select the superhub pages where you would like this menu block to appear');

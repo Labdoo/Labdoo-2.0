@@ -680,6 +680,22 @@ function _email_team_event($node, $comment = NULL) {
   $body = str_replace("[ACTIVITY_URL]", $activityUrl, $body);
   $body = str_replace("[TEAMS_MGM_URL]", $teamsMgmUrl, $body);
 
+  // If the activity type is 'event', add the date and location
+  if($activityType == 'event') {
+    $eventTime = labdoo_lib_get_field($node, 'field_event_date', 'node', 'value');
+    $eventLocation = labdoo_lib_get_field($node, 'field_location_event', 'node', 'value');
+    // Convert to single line
+    $eventLocation = str_replace("\r", " | ", $eventLocation);
+    $eventLocation = str_replace("\n", "", $eventLocation);
+    $bodyHeader = "---\n";
+    $bodyHeader = $bodyHeader . "Event name: " . $activityTitle . "\n";
+    $bodyHeader = $bodyHeader . "Time: " . $eventTime . "\n";
+    $bodyHeader = $bodyHeader . "Location: " . $eventLocation . "\n";
+    $bodyHeader = $bodyHeader . "Link: " . $activityUrl . "\n";
+    $bodyHeader = $bodyHeader . "---\n\n";
+    $body = $bodyHeader . $body;
+  }
+
   $email_params['subject'] = $subject;
   $email_params['body'] = $body;
   $email_params['to'] = variable_get('site_mail');
