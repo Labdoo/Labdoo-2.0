@@ -5961,12 +5961,18 @@ $display_output = $entity_field_item[\'value\'];',
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'image',
+          'module' => 'colorbox',
           'settings' => array(
-            'image_link' => '',
-            'image_style' => '',
+            'colorbox_caption' => 'auto',
+            'colorbox_caption_custom' => '',
+            'colorbox_gallery' => 'post',
+            'colorbox_gallery_custom' => '',
+            'colorbox_image_style' => '',
+            'colorbox_multivalue_index' => NULL,
+            'colorbox_node_style' => 'medium',
+            'colorbox_node_style_first' => '',
           ),
-          'type' => 'image',
+          'type' => 'colorbox',
           'weight' => '8',
         ),
         'node_gallery_node_thumbnail' => array(
