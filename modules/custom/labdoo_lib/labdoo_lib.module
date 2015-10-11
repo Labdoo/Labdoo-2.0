@@ -859,6 +859,7 @@ function labdoo_lib_node_presave($node) {
                                        $location['city'], 
                                        $node->locations[0]['latitude'], 
                                        $node->locations[0]['longitude'],
+                                       $silent=True,
                                        $location['street'],
                                        $location['province'],
                                        $location['postal_code'],
