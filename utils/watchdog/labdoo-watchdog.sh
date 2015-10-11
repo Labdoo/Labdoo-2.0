@@ -11,7 +11,7 @@ PATH=/bin:/usr/bin:/usr/sbin
 TEMPDIR=/tmp/labdoo-watchdog
 EMAIL=contact@labdoo.org
 
-if ( ! wget --no-check-certificate --timeout=30 -q -P $TEMPDIR http://localhost/robots.txt )
+if ( ! wget --no-check-certificate --timeout=15 -q -P $TEMPDIR http://localhost/robots.txt )
 then
     # Server is down.
     # If already in the process of being recovered, don't proceed.

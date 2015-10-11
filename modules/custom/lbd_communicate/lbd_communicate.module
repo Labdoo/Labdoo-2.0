@@ -90,23 +90,24 @@ function _partition_email_params($emailString) {
 function lbd_communicate_mail_send($email_params) {
   global $user;
 
-  // Throttle the amount of email sent out to a maximum of LBD_COMM_MAX_EMAILS_BATCH emails
-  // and have the rest be processed in the next cron job.
-  // Note: to check the status of the batches in the cache, run the command:
-  //   > drush php-eval "print_r(cache_get('cachedEmailParametersArray'))"
-
-  list($selectedEmailString, $leftoutEmailString) = _partition_email_params($email_params['headers']['Bcc']);
-  $email_params['headers']['Bcc'] = $selectedEmailString;
-  if($leftoutEmailString != "") {
-    $cachedEmailParameters = $email_params;
-    $cachedEmailParameters['headers']['Bcc'] = $leftoutEmailString;
-    $cache = cache_get('cachedEmailParametersArray');
-    if($cache && property_exists($cache, 'data'))
-      $cachedEmailParametersArray = $cache->data;
-    else
-      $cachedEmailParametersArray = array();
-    $cachedEmailParametersArray[] = $cachedEmailParameters;
-    cache_set('cachedEmailParametersArray', $cachedEmailParametersArray);
+  if(array_key_exists('headers', $email_params) && array_key_exists('Bcc', $email_params['headers'])) {
+    // Throttle the amount of email sent out to a maximum of LBD_COMM_MAX_EMAILS_BATCH emails
+    // and have the rest be processed in the next cron job.
+    // Note: to check the status of the batches in the cache, run the command:
+    //   > drush php-eval "print_r(cache_get('cachedEmailParametersArray'))"
+    list($selectedEmailString, $leftoutEmailString) = _partition_email_params($email_params['headers']['Bcc']);
+    $email_params['headers']['Bcc'] = $selectedEmailString;
+    if($leftoutEmailString != "") {
+      $cachedEmailParameters = $email_params;
+      $cachedEmailParameters['headers']['Bcc'] = $leftoutEmailString;
+      $cache = cache_get('cachedEmailParametersArray');
+      if($cache && property_exists($cache, 'data'))
+        $cachedEmailParametersArray = $cache->data;
+      else
+        $cachedEmailParametersArray = array();
+      $cachedEmailParametersArray[] = $cachedEmailParameters;
+      cache_set('cachedEmailParametersArray', $cachedEmailParametersArray);
+    }
   }
 
   // Module that calls this hook_mail API and the type of email to sent
@@ -208,6 +209,20 @@ function _email_laptop_event($node) {
     $email_params['type'] = "LAPTOP_UPDATED";
     $subjectFileName = _path_to_email_template($langCode) . "laptop_updated_subject-" . $langCode . ".email";
     $bodyFileName = _path_to_email_template($langCode) . "laptop_updated_body-" . $langCode . ".email";
+    // IF an edoovillage was assigned and this dooject has a dootrip assigned,
+    // notify it to the dootripers group
+    if($newStatus == "S3" || $newStatus == "T1") {
+      $wNode = entity_metadata_wrapper('node', $node);
+      $dootripsList = $wNode->field_dootrips->value();
+      if($dootripsList) {
+        foreach($dootripsList as $dootripNode) {
+          if(!key_exists('nid', $dootripNode))
+            continue;
+          $dootripLoaded = node_load($dootripNode->nid);
+          _email_dootrip_event($dootripLoaded, 'edoovillageAssigned');
+        }
+      }
+    }
   }
 
   $emailsList = $user->mail;
@@ -247,43 +262,56 @@ function _email_dootrip_event($node, $eventType) {
   if(!file_exists(_path_to_email_template($langCode) . "dootrip_added_subject-" . $langCode . ".email")) 
     $langCode = 'en';
 
-  if(!property_exists($node, 'original')) {  // Dootrip was created
-    if($eventType == 'presave')
-      return; // dootrip creation is handled by event 'insert'
+  // 3 cases:
+  //  - A new dootrip was created ('insert')
+  //  - A dootrip was updated ('presave')
+  //  - A dooject changed status to S3 or T1 and this dooject is associated with it ('edoovillageAssigned')
+
+  if($eventType == 'insert') {  
     $email_params['type'] = "DOOTRIP_ADDED";
     $subjectFileName = _path_to_email_template($langCode) . "dootrip_added_subject-" . $langCode . ".email";
     $bodyFileName = _path_to_email_template($langCode) . "dootrip_added_body-" . $langCode . ".email";
   }
-  else {  // Dootrip was updated
-    // There is no need to check if $eventType == 'insert' because if we are
-    // here, then $eventyType must be equal to 'presave'
-    $wasChanged = FALSE;
-    $wNodeNew = entity_metadata_wrapper('node', $node);
-    $wNodeOrig = entity_metadata_wrapper('node', $node->original);
-    $doojectListNew = $wNodeNew->field_laptops->value();
-    $doojectListOrig = $wNodeOrig->field_laptops->value();
-    if($doojectListNew != $doojectListOrig) 
-      $wasChanged = TRUE;
-    else {
+  else { 
+    // If we are here, there are two types of events possible: 
+    // 'presave' or 'edoovillageAssigned'
+    if($eventType == 'presave') {
+      if(!property_exists($node, 'original'))
+        return;
+      $wasChanged = FALSE;
+      $wNodeNew = entity_metadata_wrapper('node', $node);
+      $wNodeOrig = entity_metadata_wrapper('node', $node->original);
+      // Check if dooject list was altered
+      $doojectListNew = $wNodeNew->field_laptops->value();
+      $doojectListOrig = $wNodeOrig->field_laptops->value();
+      if($doojectListNew != $doojectListOrig) 
+        $wasChanged = TRUE;
+      // Check if assigned users were altered 
       $userListNew = $wNodeNew->field_dootripper_s_->value();
       $userListOrig = $wNodeOrig->field_dootripper_s_->value();
       if($userListNew != $userListOrig) 
         $wasChanged = TRUE;
-      else {
-        $destinationNew = labdoo_lib_get_field($node, 'field_destination_of_the_trip', 'node', 'country');
-        $destinationOrig = labdoo_lib_get_field($node->original, 'field_destination_of_the_trip', 'node', 'country');
-        if($destinationNew != $destinationOrig)
-          $wasChanged = TRUE;
-        else {
-          $originNew = labdoo_lib_get_field($node, 'field_origin_of_the_trip', 'node', 'country');
-          $originOrig = labdoo_lib_get_field($node->original, 'field_origin_of_the_trip', 'node', 'country');
-          if($originNew != $originOrig)
-            $wasChanged = TRUE;
-        }
-      }
+      // Check if destination was altered
+      $destinationNew = labdoo_lib_get_field($node, 'field_destination_of_the_trip', 'node', 'country');
+      $destinationOrig = labdoo_lib_get_field($node->original, 'field_destination_of_the_trip', 'node', 'country');
+      if($destinationNew != $destinationOrig)
+        $wasChanged = TRUE;
+      // Check if origin was altered
+      $originNew = labdoo_lib_get_field($node, 'field_origin_of_the_trip', 'node', 'country');
+      $originOrig = labdoo_lib_get_field($node->original, 'field_origin_of_the_trip', 'node', 'country');
+      if($originNew != $originOrig)
+        $wasChanged = TRUE;
+      // Check if status was altered
+      $statusNew = $wNodeNew->field_status_dootrip->value();
+      $statusOrig = $wNodeOrig->field_status_dootrip->value();
+      if($statusNew != $statusOrig) 
+        $wasChanged = TRUE;
+      // If no relevant changes, do nothing
+      if($wasChanged == FALSE) 
+        return;
     }
-    if($wasChanged == FALSE) 
-      return;
+    // If we are here, this is either a 'presave' with wasChanged TRUE or an 'edoovillageAssigned' case,
+    // both need to be resolved as a DOOTRIP_UPDATED
     $email_params['type'] = "DOOTRIP_UPDATED"; 
     $subjectFileName = _path_to_email_template($langCode) . "dootrip_updated_subject-" . $langCode . ".email";
     $bodyFileName = _path_to_email_template($langCode) . "dootrip_updated_body-" . $langCode . ".email";
@@ -375,11 +403,8 @@ function lbd_communicate_node_presave($node) {
   if($node->type == 'laptop') 
     _email_laptop_event($node);
 
-// To avoid too many emails, we disable emailing users upon every
-// small change of the dootrip. So dootrip notifications are only
-// sent upon dootrip creation via lbd_communicate_node_insert
-//  if($node->type == 'dootrip') 
-//    _email_dootrip_event($node, 'presave');
+  if($node->type == 'dootrip') 
+    _email_dootrip_event($node, 'presave');
 
   return;
 }
