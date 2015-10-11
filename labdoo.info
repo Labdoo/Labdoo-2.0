@@ -93,6 +93,7 @@ dependencies[] = views_tree
 dependencies[] = countries 
 dependencies[] = search_config 
 dependencies[] = hide_submit 
+dependencies[] = date_popup 
 
 ;;; Features and exports/imports
 dependencies[] = strongarm
