@@ -4,7 +4,7 @@ This document describes the steps needed to translate the Labdoo.org social netw
 
 ** Steps to translate Labdoo.org
 
-*** Translation of email (.email) files
+*** Translation of email (.email) files (estimated time 2 hours)
 
 + Go to https://github.com/Labdoo/Labdoo-2.0/tree/master/translations/templates/labdoo-translation-email-files.tar
 
@@ -18,7 +18,7 @@ This document describes the steps needed to translate the Labdoo.org social netw
 
 + Repeat the steps above for all extracted files.
 
-*** Translation of portable object (.po) files
+*** Translation of portable object (.po) files (estimated time 2 hours)
 
 + Go to https://github.com/Labdoo/Labdoo-2.0/tree/master/translations/templates/labdoo-translation-po-files.tar
 
