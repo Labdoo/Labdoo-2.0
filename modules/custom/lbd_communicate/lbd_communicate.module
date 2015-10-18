@@ -188,7 +188,7 @@ function _email_laptop_event($node) {
     $langCode = 'en';
 
   /*
-   * Send out notification email 
+   * Send out notification email to users associated with dooject 
    */
   if($previousStatus == "WAS_CREATED" && $newStatus != "S4") {
     $email_params['type'] = "LAPTOP_ADDED";        
@@ -209,24 +209,21 @@ function _email_laptop_event($node) {
     $email_params['type'] = "LAPTOP_UPDATED";
     $subjectFileName = _path_to_email_template($langCode) . "laptop_updated_subject-" . $langCode . ".email";
     $bodyFileName = _path_to_email_template($langCode) . "laptop_updated_body-" . $langCode . ".email";
-    // IF an edoovillage was assigned and this dooject has a dootrip assigned,
-    // notify it to the dootripers group
-    if($newStatus == "S3" || $newStatus == "T1") {
-      $wNode = entity_metadata_wrapper('node', $node);
-      $dootripsList = $wNode->field_dootrips->value();
-      if($dootripsList) {
-        foreach($dootripsList as $dootripNode) {
-          if(!key_exists('nid', $dootripNode))
-            continue;
-          $dootripLoaded = node_load($dootripNode->nid);
-          _email_dootrip_event($dootripLoaded, 'edoovillageAssigned');
-        }
-      }
-    }
   }
 
   $emailsList = $user->mail;
   $emailsList = $emailsList . ", " . labdoo_dooject_extract_emails($node);    
+
+  // If dooject has associated dootrips, add the dootrippers email address too
+  $wNode = entity_metadata_wrapper('node', $node);
+  $dootripsList = $wNode->field_dootrips->value();
+  if($dootripsList) {
+    foreach($dootripsList as $dootripNode) {
+      $dootripLoaded = node_load($dootripNode->nid);
+      $emailsList = $emailsList . ", " . labdoo_dootrip_extract_emails($dootripLoaded); 
+    }
+  }
+
   $email_params['to'] = $emailsList; 
 
   $subjectTemplate = file_get_contents($subjectFileName);
@@ -266,6 +263,8 @@ function _email_dootrip_event($node, $eventType) {
   //  - A new dootrip was created ('insert')
   //  - A dootrip was updated ('presave')
   //  - A dooject changed status to S3 or T1 and this dooject is associated with it ('edoovillageAssigned')
+
+  // Note: the edoovillageAssigned type is no longer used because it turned out to be too pedantic
 
   if($eventType == 'insert') {  
     $email_params['type'] = "DOOTRIP_ADDED";
@@ -349,6 +348,8 @@ function _email_dootrip_event($node, $eventType) {
    * who have projects in the dootrip's destination country.
    * Do not need to update the field 'type' since its value does not change.
    */
+  if($eventType != 'insert') // Only if this is a newly created dootrip (to avoid being pedantic)
+    return;
   $subjectFileName = _path_to_email_template($langCode) . "dootrip_announce_subject-" . $langCode . ".email";
   $subjectTemplate = file_get_contents($subjectFileName);
   $subject = $subjectTemplate;
@@ -372,7 +373,7 @@ function _email_dootrip_event($node, $eventType) {
   $result = db_query($query, array(':co' => $country)); 
 
   foreach($result as $item) {
-    $emailsList = "";
+    $emailsList = variable_get('site_mail', '');
     $hubNode = node_load($item->field_hub_target_id);
     foreach(field_get_items('node', $hubNode, 'field_hub_manager_s_') as $element) {
       $userObj = user_load($element['target_id']);
