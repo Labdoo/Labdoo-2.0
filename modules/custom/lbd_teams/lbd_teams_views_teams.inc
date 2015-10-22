@@ -120,6 +120,38 @@ $handler->display->display_options['filters']['type']['value'] = array(
 
 /* Display: Page */
 $handler = $view->new_display('page', 'Page', 'page');
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Content: Nid */
+$handler->display->display_options['fields']['nid']['id'] = 'nid';
+$handler->display->display_options['fields']['nid']['table'] = 'node';
+$handler->display->display_options['fields']['nid']['field'] = 'nid';
+$handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+/* Field: Content: Title */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = 'Team';
+$handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['title']['alter']['path'] = 'node/[nid]/activities';
+$handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+/* Field: Content: Body */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = 'Description';
+$handler->display->display_options['fields']['body']['alter']['max_length'] = '300';
+$handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+/* Field: Content: Team */
+$handler->display->display_options['fields']['group_group']['id'] = 'group_group';
+$handler->display->display_options['fields']['group_group']['table'] = 'field_data_group_group';
+$handler->display->display_options['fields']['group_group']['field'] = 'group_group';
+$handler->display->display_options['fields']['group_group']['label'] = 'Join Link';
+$handler->display->display_options['fields']['group_group']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['group_group']['type'] = 'og_group_subscribe';
+$handler->display->display_options['fields']['group_group']['settings'] = array(
+  'field_name' => '0',
+);
 $handler->display->display_options['path'] = 'teams';
 $handler->display->display_options['menu']['title'] = 'Groups';
 $handler->display->display_options['menu']['weight'] = '10';

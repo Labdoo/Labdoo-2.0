@@ -218,7 +218,7 @@ function labdoo_render_team_actions() {
 <img src='/profiles/labdoo/files/pictures/home.png' style='width: 20px; height: 21px;'/>&nbsp;
 <a href='$homePath'>" . t("Team's home page") . "</span></a></p>
 <img src='/profiles/labdoo/files/pictures/wall.png' style='width: 20px; height: 21px;'/>&nbsp;
-<a href='$lang/node/$groupId/activities'>" . t("View wall") . "</span></a></p>
+<a href='$homePath/activities'>" . t("View wall") . "</span></a></p>
 <img src='/profiles/labdoo/files/pictures/calendar_icon.png' style='width: 20px; height: 21px;'/>&nbsp;
 <a href='$lang/node/$groupId/calendar/month'>" . t("View calendar") . "</span></a></p>
 <img src='/profiles/labdoo/files/pictures/search.png' style='width: 20px; height: 21px;'/>&nbsp;
@@ -237,7 +237,7 @@ function labdoo_render_team_actions() {
 <img src='/profiles/labdoo/files/pictures/community.png' style='width: 20px; height: 21px;'/>&nbsp;
 <a href='$lang/node/add/event?og_group_ref=$groupId'>" . t("Start event") . "</span></a></p>
 <img src='/profiles/labdoo/files/pictures/wall.png' style='width: 20px; height: 21px;'/>&nbsp;
-<a href='$lang/node/$groupId/activities'>" . t("View wall") . "</span></a></p>
+<a href='$homePath/activities'>" . t("View wall") . "</span></a></p>
 <img src='/profiles/labdoo/files/pictures/calendar_icon.png' style='width: 20px; height: 21px;'/>&nbsp;
 <a href='$lang/node/$groupId/calendar/month'>" . t("View calendar") . "</span></a></p>
 <img src='/profiles/labdoo/files/pictures/search.png' style='width: 20px; height: 21px;'/>&nbsp;
