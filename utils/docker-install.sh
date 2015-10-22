@@ -35,18 +35,15 @@ else
     git clone https://github.com/docker-build/wsproxy
 fi
 
-if ! test -d $srcdir/wsproxy
-then
-    ### create a link on workdir
-    cd $workdir/
-    ln -sf $srcdir/wsproxy .
+### create a link on workdir
+cd $workdir/
+ln -sf $srcdir/wsproxy .
 
-    ### build and run wsproxy
-    cd $workdir/
-    wsproxy/rm.sh 2>/dev/null
-    wsproxy/build.sh
-    wsproxy/run.sh
-fi
+### build and run wsproxy
+cd $workdir/
+wsproxy/rm.sh 2>/dev/null
+wsproxy/build.sh
+wsproxy/run.sh
 
 ### get labdoo
 if test -d $srcdir/labdoo
