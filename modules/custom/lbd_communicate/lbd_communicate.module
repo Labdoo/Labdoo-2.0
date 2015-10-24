@@ -679,11 +679,35 @@ function _email_team_event($node, $comment = NULL) {
   $team = node_load($teamId);
   $teamName = $team->title;
 
-  $members = lbd_teams_get_team_members($teamId);
-  $emailsList = "";
-  foreach($members as $memberId) {
-    $userObj = user_load($memberId);
-    $emailsList = $emailsList . ", " . $userObj->mail;
+  $wNode = entity_metadata_wrapper('node', $node);
+  if($node->type == 'team_page') {
+    $sendAll = $wNode->field_send_to_all_conversation->value();
+    $sendToFieldName = 'field_send_to_conversation'; 
+  }
+  else if($node->type == 'team_task') { 
+    $sendAll = $wNode->field_send_to_all_task->value();
+    $sendToFieldName = 'field_send_to_task'; 
+  }
+  else
+    $sendAll = TRUE;
+
+  $emailsList = variable_get('site_mail', '');
+  if($sendAll) { // Send to all members of this team
+    $members = lbd_teams_get_team_members($teamId);
+    foreach($members as $memberId) {
+      $userObj = user_load($memberId);
+      $emailsList = $emailsList . ", " . $userObj->mail;
+    }
+  }
+  else { // Send only to users in the 'send to' field
+    if(property_exists($node, $sendToFieldName)) {
+      if($node->$sendToFieldName) {
+        foreach(field_get_items('node', $node, $sendToFieldName) as $element) {
+          $userObj = user_load($element['target_id']);
+          $emailsList = $emailsList . ", " . $userObj->mail;
+        }
+      }
+    }
   }
   $emailsList = trim($emailsList, ", ");
 
