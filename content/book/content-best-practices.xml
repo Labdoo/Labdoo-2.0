@@ -28,7 +28,7 @@
 <strong>Keep it simple</strong>. You have the option to use HTML markup tags, but it is recommended to only use them if you really need them. An important rule is to keep things simple so they are easier to maintain. When it comes to wiki, simple is better.
 </li>
 <li>
-<strong>Use links with relative paths</strong>. Please see XXX.
+<strong>Use links with relative paths</strong>. Please check this wiki entry on how <a href="../content/creating-internal-links">how links should be created</a>.
 </li>
 <li>
 <strong>Ensure HTML tags are correctly written.</strong> To begin with, we start with an important best practice. If you use HTML tags to format your wiki pages, ensure that they are correctly written. All tags need to have an open clause and a closing clause. For instance: <code>&lt;em&gt;text here&lt;/em&gt;</code>. If your tag does not include any object inside (such as the new line tag <code>&lt;br&gt;</code> or the horizontal line tag <code>&lt;hr&gt;</code>), then you have two options: you can use either <code>&lt;br&gt;&lt;/br&gt;</code> (without any object between the clauses) or the more compact version <code>&lt;br/&gt;</code>. This first best practice is specially important because the Labdoo system provides automatic back ups of all the wiki content which needs to parse all the wiki pages, and if the tags are not correctly set up, the parsing process can break.

@@ -1,0 +1,54 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>40</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>About Teams</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>40</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Labdoo provides a communication tool to help labdooers manage their own projects and activities in collaboration with other labdooers. We call this feature "Labdoo teams". Each team organizes around a theme or topic, and users can join a team or many teams depending on their interests. <a href="https://www.labdoo.org/teams" > "List All Teams" </a>provides a current list of the topics available and a short description on each topic. 
+
+Click on the topic you are interested at the teams list  will bring you into its  <a href="https://www.labdoo.org/content/teams-wall">team </a>where the team communication takes place.  
+
+Users may check teams conversations and tasks under "Teams Wall" or "My Teams Wall".
+
+Users with the "team manager" role can create their own new teams and communities around them.
+
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>39</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>823</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>824</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-9</value>
+</weight>
+</book>

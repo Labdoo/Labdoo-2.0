@@ -1,0 +1,78 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>18961</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Drupal problems</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>18961</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>In some combinations (operating system, desktop, browser) the Labdoo.org web-site shows some "strange" behaviour. This wiki chapter is to collect these special problems. As Labdoo.org is only using Drupal as a underlay tool it is beyond our control to solve the problems. Maybe the Drupal team will update and correct the tool (at least we hope...).
+
+If you do not have the problems described below you are lucky :)
+
+So-far these problems were found
+<ul>
+<li>to store and close a dooject, edoovillage, post etc. you have to press "save" twice; workaround: none, you have to press "save" twice</li>
+<li>tagging a laptop and adding more than one notification e-mail (will cause entry for notification email switch to "source group"); workaround: once a dooject is stored you are able to add as many notification mails as you want without any problem</li>
+<li>creating an edoovillage and adding more than one notification emails (will cause entry for notification email switch to "source group"); workaround: once a dooject is stored you are able to add as many notification mails as you want without any problem</li>
+</ul>
+
+<table>
+<tr>
+<strong>
+<th>operating<br/>system</th>
+<th>Desktop<br/>(optional)   </th> 
+<th>browser   </th>
+<th>working<br/>(green hook = no problem,<br/>red cross = not working)</th>
+</strong>
+</tr>
+<tr>
+<td>Ubuntu</td>
+<td>KDE </td>
+<td>Firefox</td>
+<td> <img src="/sites/default/files/content/wiki-de/red-cross.png" width="32"/> </td>
+</tr> 
+<tr>
+<td>Windows 7</td>
+<td> </td>
+<td>Firefox</td>
+<td><img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/></td>
+</tr>
+</table></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>35</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>857</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1144</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

@@ -1,0 +1,50 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>18886</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Dootripper's Travel Letter</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>18886</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>If you are doing a dootrip and would like to carry with you a letter describing the objective of your trip in case you need to justify your cargo to customs upon arriving at the destination country, please download the following template and modify it with your personal information.
+
+<a href="https://www.labdoo.org/sites/default/files/content/labdoo-toolkit/labdoodootripperletter.odt">[Dowload template letter in Open Office]</a>
+<a href="https://www.labdoo.org/sites/default/files/content/labdoo-toolkit/labdoodootripperletter.docx">[Dowload template letter in Word format]</a>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>41</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>934</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1140</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

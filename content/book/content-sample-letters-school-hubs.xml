@@ -1,0 +1,53 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>19240</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Sample Letters for School Hubs</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>19240</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>In this page you will find several examples of letters written by high school students. These sample letters are used to make the calls to collect unused laptops and tablets from parents, relatives and friends. The letters are sent to the parents via the school's mailing system. Upon receiving the letter, parents bring their unused laptops to the school. Then the students organize a workshop to sanitize the laptops and install the education software, making them ready for other needy schools. If you have other sample letters (in any language) and would like to share them, please add them to the bottom of this page.
+
+<strong>Language: Catalan | Sample letter #1.</strong>
+
+<a href="/sites/default/files/content/labdoo-toolkit/model-carta-escola-hub-1.pdf">[Download]</a>
+
+<img src="/sites/default/files/content/labdoo-toolkit/model-carta-escola-hub-1.png" width="500"/>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>41</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>934</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1152</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

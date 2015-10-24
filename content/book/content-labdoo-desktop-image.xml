@@ -23,14 +23,14 @@
 <type>value</type>
 <value>Once you have sanitized a dooject, you can optionally set its desktop image to the following image to give it a friendly look.
 
-<a href="/sites/default/files/content/labdoo-toolkit/labdoo-desktop.png">[Dowload in printable format]</a>
+<a href="/sites/default/files/content/labdoo-toolkit/labdoo-desktop.png">[Download in printable format]</a>
 
 <img src="/sites/default/files/content/labdoo-toolkit/labdoo-desktop.png" width="500"/>
 </value>
 </body>
 <body>
 <type>format</type>
-<value>full_html</value>
+<value>filtered_html_advanced</value>
 </body>
 <bid>
 <type>book_array</type>

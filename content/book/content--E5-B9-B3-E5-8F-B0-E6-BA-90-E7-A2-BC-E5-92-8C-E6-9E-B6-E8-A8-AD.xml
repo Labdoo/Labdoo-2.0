@@ -21,7 +21,7 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>abdoo 大部分使用 PHP和JavaScript 寫成。源碼是使用GPLv3的自由和公開授權。這表示你可以自由地下載代碼，安裝，或者改善它，用於回饋社會。該代碼可從Git的鏈接下載https://github.com/Labdoo/Labdoo-2.0.
+<value>Labdoo 大部分使用 PHP和JavaScript 寫成。源碼是使用GPLv3的自由和公開授權。這表示你可以自由地下載代碼，安裝，或者改善它，用於回饋社會。該代碼可從Git的鏈接下載https://github.com/Labdoo/Labdoo-2.0.
 
 Labdoo平台是架設於Drupal， 一個GNU自由和開放源碼的內容管理框架。其主要特點是採用獨立的模塊。這有助於保持專案模塊化，便於管理，維護和合作開發平台。
 
@@ -45,6 +45,6 @@ Labdoo源碼是由軟件工程師為促進社會發展,貢獻他們的時間共�
 </mlid>
 <weight>
 <type>book_array</type>
-<value>0</value>
+<value>-15</value>
 </weight>
 </book>

@@ -1,0 +1,69 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>19541</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Managing Your Own Newsletters</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>19541</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>If you want to manage your own newsletter, please send an email to contact@labdoo.org and ask the Labdoo team to assign the role of 'Newsletter manager' to your account. Once this is done, you will see a new 'Newsletter' tab on the top Main Navigation Menu. By clicking on 'Newsletter' and then 'Create an issue' you will be taken to a dashboard where you can create and edit your newsletter as shown in the next figure.
+
+<hr/>
+<table align="center">
+<tr><td>
+<em> Figure. Click on 'Newsletter' and 'Create an issue' to go to the newsletter edit dashboard.</em>
+</td></tr>
+<tr><td>
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/newsletter-edit.png" width="700"/>
+</td></tr>
+</table>
+<hr/>
+
+You will need to select a title for your newsletter as well as the 'Newsletter category' corresponding to the newsletter your are managing.
+
+The 'body' field includes the actual content of your issue. Start by copying and pasting from one of the templates that you will find in <a href="../content/newsletters">this wiki section</a>. After that, edit the 'Issue' number and the 'Date'. Finally, add each of your news entry by simply copying and pasting the following template codeblock and by modifying the text and image according to the news entry.
+
+<code>&lt;td colspan="2"&gt;
+&lt;font color="#666666" size="4"&gt;Title of This News Entry Here&lt;/font&gt;
+Write here one or two paragraphs describing this news entry.
+&lt;img src="/sites/default/files/styles/labdoo_flexslider_image_style/public/lbd_slides/guinea-conakry.png" width="680"/&gt;
+&lt;/td&gt;</code>
+
+Once you are done editing your newsletter and have ensured that it is correct, you can submit it to your list of subscribed users by clicking on the tab 'Newsletter' and then selecting 'Send newsletter'. Notice that the system allows you to also send yourself a sample of the newsletter issue by selecting the option 'Send one test newsletter to the test address'. We recommend you to do so prior to sending the final version out to your whole audience.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>39</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1162</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1163</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

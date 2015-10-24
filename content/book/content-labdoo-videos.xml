@@ -1,0 +1,94 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>18916</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Labdoo Videos</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>18916</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>The following videos can be used for your own Labdoo campaigns. Let's say you need to explain a potential laptop donor how Labdoo works? you can use the 'Circle of Life' video. Need to illustrate Labdoo's grassroots growth? you can use the 'Growth Video'. As we develop more videos, they will also be added to this page.
+
+<br/>
+<strong>The Circle of Life (English)</strong>
+<br/>
+[video:https://www.youtube.com/watch?v=Gpo-7GjFydw]
+
+<br/>
+<strong>The Circle of Life (Catalan)</strong>
+<br/>
+
+[video:https://www.youtube.com/watch?v=AWd4ezIyglU]
+
+<br/>
+<strong>The Circle of Life (Chinese)</strong>
+<br/>
+
+[video:https://www.youtube.com/watch?v=wYbwWHbA-xE]
+
+<br/>
+<strong>The Circle of Life (German)</strong>
+<br/>
+
+[video:https://www.youtube.com/watch?v=HoVE52sy75U]
+
+<br/>
+<strong>The Circle of Life (Italian)</strong>
+<br/>
+
+[video:https://www.youtube.com/watch?v=zA2QNsT8G9o]
+
+<br/>
+<strong>The Circle of Life (Spanish)</strong>
+<br/>
+
+[video:https://www.youtube.com/watch?v=vK5QIuyFqm8]
+
+<br/>
+<strong>The Circle of Life (Spanish/Mexican)</strong>
+<br/>
+
+[video:https://www.youtube.com/watch?v=c8ozh2Ea-tk]
+
+<br/>
+<strong>Organic Growth</strong>
+<br/>
+
+[video:https://vimeo.com/132791723]
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>41</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>825</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1142</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-7</value>
+</weight>
+</book>

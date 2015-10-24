@@ -1,0 +1,88 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>19443</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>關於Labdoo</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>ChineseTraditional</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>26</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>LABDOOR 是由全球各地追求更美好世界的志願者為把更好的教育機會提供給不發達地區(發展中國家和發達國家)的孩子們一個人道主義所建立的社交網。社交網的目標是通過無需任何經濟或環境成本的前提下把閒置的筆電及任何可加載教育軟件的設備送到世界各地有需求的學校。
+
+在Labdoo我們稱這些閒置的學習設備(例如筆電,平板電腦,及電子書等)為doojects。每年世界上數百萬閒置的doojects仍處於完美狀態。只需清理並加載學習軟體,就可以使之成為非常強勁的工具來開啟世界各地的教育。
+
+如何在不破壞地球的情況下收集到世界各地閒置的學習設備並持續把它們送到所需要的地方？亦即通過兩個基本部分的組合：（1）技術/信息共享和（2）龐大的全球善意協作。為了實現持續的有機增長和防止破壞地球，我們使用一個基層協作社交網系統。這讓Labdoo能在全球範圍內開放發掘的剩餘潛能資源（如閒置的筆電，旅客，達人，善意等）。聯合國教育，科學及文化組織（UNESCO）已確認了Labdoo及其幫助全球教育的方法是“促進了對教育學習在國外發展寶貴而持續的貢獻”。
+
+Labdoo是如何運行來為傳播教育做出貢獻呢？您可以通過以下五個簡單的步驟來完成：
+
+第一，標記閒置的doojects。您有可重新用於教育的閒置筆電或設備嗎？或您認識的朋友，親戚，組織或公司擁有這些閒置品嗎？那麼第一步就是標記您收集到的設備（doojects），以便它們在全球庫存裡被有效地被管理。若要標記一個dooject，請登入您的Labdoo帳戶（如果還沒有賬戶，請先設立您的帳戶），點擊位於該頁面頂部菜單選項“Doojects”，然後再點擊子選項“Tag it“。在本步驟中，將dooject標成狀態S0（已標記）或S1（捐贈）。
+
+第二， 維修您的 doojects。一旦被標記，該dooject需要進行維修，並加載教育軟體。您有兩個選擇：（1）您可以按照維修手冊中描述的步驟自己來完成此過程; （2）或是你也可以找到離您最近的Labdoo Hub把您的dooject帶去，Hub裡的其他labdooers會幫忙維修您的dooject。完成維修後，dooject狀態將標為S2（清理）或更進一步的S3（已分配給學校）。
+
+步驟三，識別dootrip。一旦dooject完成維修，我們需要確定一個環保的運輸資源將它帶到學校。我們稱這種類型的運輸資源為dootrip（如Labdoo之旅）。這裡您又有兩個選擇：（1）如果您正在旅行到一個有需求的學校附近，請點擊“Dootrips”，註冊自己的dootrip，然後從位於該頁面頂部的菜單中選擇“創建”，用自己的行程把筆電帶到目標學校; （2）另外，您也可以把dooject帶到離您最近的Labdoo  Hub，那裡的其他labdooers可以幫您找到一個dootrip資源將dooject運送到學校。在該步驟中，dooject標為狀態T1（在途中）。
+
+步驟四，追踪dooject是否送達目的地'。您可以從頁面頂部的選單中選擇“Dooject”選項,再選子選項“我的doojects”(請確認登入您的帳戶)就可以追踪您的dooject 的進展。點擊具體的dooject,你將能看到其相關信息,例如當前狀態,地理定位,或相關的目標學校。請多嘗試,您會發現有許多不同的做法可以追踪並幫助
+dooject的進程以達使命,方法包括上傳圖片,把一個dooject鏈接到一次dootrip中,審查其歷史記錄,確保其現狀和參數相較許多其它的doojects是最新的。當筆電被安全的送達目的地時,其狀態將被標為S4(送達)。
+
+步驟五，回收損壞的doojects。所有電子設備的最終目的地是回歸於回收中心，這樣我們就可以保護環境以及消除電子廢棄物。如果您檢測到已部署的設備停止運行，請改變其狀態，並送出請求dootrip,搶救且妥善回收改設備。在本步驟中，dooject標有狀態為S5（損壞）或S6(回收）。
+
+上述所有步驟都是針對學習設備送達學校的各種狀態S0，S1，S2，S3，T1，S4，S5和S6如下圖所示。
+
+<table align="center">
+<tr><td>
+<em> 示圖:將筆電送到需求學校的程序
+。</em>
+</td></tr>
+<tr><td>
+<img src="/sites/default/files/content/labdoo-nutshell/labdoo-mini-mission.png" width="600"/>
+</td></tr>
+</table>
+
+
+加入一個社交網, 您還能做很多超出上述基本步驟的貢獻。你可以加入團隊，為感興趣的特定主題分享您的經驗以助增加全球知識庫，也可在各Team Wall上提問，或上傳圖片到你的牆上（圖片有助於增加平台的透明度以及認知水平），創建自己的任務，並用日曆加以管理，與其他labdooers聯絡，為Labdoo維基知識庫做貢獻，您甚至可以創​​建自己的Labdoo Hub以幫助調動鄰近區域的doojects。
+
+這裡有一些快速要領：
+
+加入團隊，請到該頁面頂部的“Teams”菜單選項。
+Wiki是我們重要的中心知識庫，從中可找到大部分的文件，手冊和資料。您可以點擊“Wiki”菜單選項進入瀏覽。“Labdoo社交網- 它如何運作"這本Wiki書中詳細描述了協作援助平台是如何運行。
+您會在“Labdoo工具箱” 找到幫助您採取進一步行動的工具，如啟動自己當地的Labdoo宣傳活動。
+
+如果有任何疑問， 敬請張貼在任何團隊的牆面上。再次歡迎投入我們的行列，祝您Labdoo旅程快樂！
+
+Labdoo 團隊</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>19443</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>0</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1155</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

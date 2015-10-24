@@ -5,7 +5,7 @@
 </nid>
 <title>
 <type>node_title</type>
-<value>Searching inside teams</value>
+<value>Searching Inside Teams</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -41,6 +41,6 @@
 </mlid>
 <weight>
 <type>book_array</type>
-<value>-14</value>
+<value>-13</value>
 </weight>
 </book>

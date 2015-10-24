@@ -108,6 +108,6 @@ The above two types of translations (.po and .email files) will allow you to tra
 </mlid>
 <weight>
 <type>book_array</type>
-<value>-8</value>
+<value>-7</value>
 </weight>
 </book>

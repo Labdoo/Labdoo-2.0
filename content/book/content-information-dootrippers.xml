@@ -23,57 +23,92 @@
 <type>value</type>
 <value>Dear dootripper,
 
-Thank you for your contribution to take one or more laptops to an "Edoovillage“. So Labdoo.org calls schools or youth projects. And "dootripper" are called those helpers, taking laptops abroad. You will find all our edoovillages on https://www.labdoo.org/content/edoovillages-dashboard.
+Thank you for your contribution to take one or more laptops to an Edoovillage. Your action is really a key step towards helping make Labdoo a sustainable project. By reusing and re-purposing your trip, you are not only bringing education to needy schools, but your are also helping to preserve planet Earth by avoiding generating additional CO2 emissions.
 
-Data and history of each laptop can be seen online, too: Enter the laptop ID (number) in the <strong>Search</strong> entry field, take a picture of the QR code or browse, e.g. ...labdoo.org/de/laptop/00000xxxx (xxxx = no. of a laptop)
+In this section you will find information that will help you make your trip more efficient, safe and fun.
 
-In the FAQ-Forum https://www.labdoo.org/de/content/faq-forum you will find many answers to your questions, e.g. <a href="/content/faq-forum#FAQ14">concerning toll and IATA regulation to transport laptops and batteries in planes</a>.
+<strong>Transport, Customs and Dootripper Letter</strong>
+
+<ul>
+<li>
+Practically all countries accept people carrying 2 laptops without questioning. If you are carrying more than 2 laptops, we recommend that you check the customs rules for the specific country you are traveling to. If you plan to carry more laptops than what the rules allow you to, distribute them in equal share to the people that are traveling with you. For instance, if you are carrying 6 laptops and you are traveling with 2 more people, have each person carry 2 laptops.
+</li>
+
+<li>
+Check in the laptops. It is recommended that you pack the laptops in a luggage that you will be checking in. This way your laptop will travel all the way to the destination without you having to worry.
+</li>
+
+<li>
+If you need to carry more laptops than what the custom rules allow, you will need to explain that the laptops are not for commercial use and that they are for education and humanitarian purposes.  To do so, it is recommended that you print the 'Dootripper letter' which you will find in the <a href="../content/dootrippers-travel-letter">Labdoo Toolkit</a>
+</li>
+
+<li>
+Almost all laptop batteries have less than 100 Wh and can be transported without any restriction as a checked in luggage or in your hand luggage. If your battery wattage is less than 100 Wh, an approval of the airline is not required. Otherwise, please check the IATA rules at the time of your traveling or feel free to pose a question to the Labdoo teams community: https://www.labdoo.org/teams.
+</li>
 
 <hr/>
 <table align="center">
 <tr><td>
-<em> Figure. Types of batteries.</em>
+<em> Figure. Types of batteries. (Picture source from www.iata.org)</em>
 </td></tr>
 <tr><td>
-<img src="http://www.iata.org/whatwedo/cargo/dgr/Documents/LithiumBattery_PassengerFlyer.jpg" width="600"/>
+<img src="http://www.iata.org/whatwedo/cargo/dgr/Documents/LithiumBattery_PassengerFlyer.jpg" width="900"/>
 </td></tr>
 </table>
 <hr/>
 
-<strong>For the airline, the amount of Watt-hours (Wh) of the battery is critical. Almost all laptop batteries have less than 100 Wh and can be transported without any restriction in the trunk or in your hand luggage. An approval of the airline is not required.</strong>
-
-If you are travelling in a group of several travellers you should distribute the laptops, one or two in each suitcase. So you can reduce the risc, if a suitcase gets lost. And at toll it os easier to argue that this laptop was brought for private usage and save toll.
-
-Please return pictures or videos of the area, the town, the school etc, when delivering the laptops to the children. So the donors will get an idea, where their donation went to. And we can update our database and inform the donor (we need to know the Labdoo ID and the project you went to).
-
-You will find a "how to start" wiki here to explain a user, how to start and use the computer
-<ul>
-<li>English: https://www.labdoo.org/de/content/start-laptop-request</li>
-<li>German: https://www.labdoo.org/content/wie-starte-ich-den-computer</li>
-<li>French: http://ftp.labdoo.org/download/documents/french/labdoo-letter-recipient-quick-guide-french.pdf</li>
-<li>Spanish: http://ftp.labdoo.org/download/documents/spanish/labdoo-letter-recipient-quick-guide-espanol.pdf</li>
-<li>Russian: http://ftp.labdoo.org/download/documents/russian/labdoo-letter-recipient-quick-guide-russian.pdf</li>
 </ul>
 
-As most of our edoovillages (projects) do not have access to internet language(s), keyboard layouts etc. are pre-installed and pre-set. How to install and switch languages etc. is explained in the above mentioned documents.
+<strong>Take Pictures and Upload them to the Photo Album</strong>
 
-The power plugs are those in use in the country of the donor. This may match with the country of the edoovillage. If the power plug is different (here is a table https://www.labdoo.org/content/list-countries-voltage-and-power-plugs-0) it has to be changed by the receiver. Or you can buy and proceed an adapter for the power plug.
+Remember to take a good amount of pictures of your trip. Pictures are really important to keep the Labdoo platform transparent and accountable. They are the best way to demonstrate that the donated laptops do reach their intended destination: an education center or school. Please make sure that the pictures are of good quality, that will be much appreciated by the people who are eager to see their laptops deployed in schools helping children reach an education.
 
-Labdoo added many manuals, OER in as many languages as we found to folder Home/labdoo/Public/... (if logged in as user labdoo, the user student has a bookmark „manuals wikidoo“ in his file explorer). The documents were stored in pdf, HTML (click on index file) or Wiki. More here https://www.labdoo.org/de/content/information-schools-project-partner-receiver-laptop-donations-edoovillages.
+Make sure you upload the pictures to the photo album of the edoovillage you are visiting. If you don't have enough rights to upload pictures to that album, ask that edoovillage manager. You will find this information in that edoovillage page.
 
-For cloned laptops / install-scripts: When you open Firefox an English  Offline-Wikipedia for children and a multimedia English course is shown, as well as XOWA, an Offline Wiki tool more 800+ wikis in local languages.
+<strong>What to Do Once the Laptops are Deployed</strong>
 
-On the desktop you will find a folder <strong>videos</strong> with a set of video tutorials for users and technicians.
+Here is a list of things to consider once you have deployed the laptops in a edoovillage:
 
-You will find 3 user accounts, for details refer to the how-to-start wiki.
+<ul>
+<li>
+You will find a "how to start" wiki in the following links that explain how to use the Labdoo laptops. Tell the students and teachers of the school where you are deploying the laptops about these wiki guides:
+</li>
 
+- English: https://www.labdoo.org/content/start-laptop-request
+- German: https://www.labdoo.org/de/content/wie-starte-ich-den-computer
+- French: http://ftp.labdoo.org/download/documents/french/labdoo-letter-recipient-quick-guide-french.pdf
+- Spanish: http://ftp.labdoo.org/download/documents/spanish/labdoo-letter-recipient-quick-guide-espanol.pdf
+- Russian: http://ftp.labdoo.org/download/documents/russian/labdoo-letter-recipient-quick-guide-russian.pdf
+
+<li>
+Since some of the edoovillages do not have access to Internet, various languages and keyboard layouts are pre-installed and pre-set. The above guides describe how to switch the default language in the laptop if you need to do so.
+</li>
+<li>
+The power plugs provided with the laptop may or may not match depending on the standard used by the edoovillage's country. If the power plugs do not match, they can be acquired from a local computer store at a very modest price. This <a href="../content/list-countries-voltage-and-power-plugs">table</a> provides a list of standard plugs based on countries.
+</li>
+<li>
+Labdoo laptops come preloaded with several Open Education Resources (OER) manuals in a large variety of languages under the folder '/home/labdoo/Public/'. 
+</li>
+<li>
+On the laptop desktop you will find a folder called <strong>videos</strong> with a set of video tutorials for users and technicians.
+</li>
+<li>
+You will find 3 user accounts, for details refer to the <a href="/content/how-start-laptop">how-to-start wiki</a>.
+</li>
+<li>
 Often there are local Linux or Ubuntu User Groups in the country of the edoovillages. These community might help as well in case of questions.
-
+</li>
+<li>
 Optional: Some very powerful laptops might come with a Windows system as a guest operating system in VirtualBox - if the requirements for a Windows license are fulfilled.
-
+</li>
+<li>
 Labdoo.org helpers invested a lot of time and efforts to offer you and the children an optimal system. But we all are human and cannot avoid mistakes. Or maybe you have a good suggestion, to improve our concept. 
-
-In any case inform us, we like to know and learn from you. Please send a mail to contact@Labdoo.org.</value>
+</li>
+<li>
+In any case inform us, we like to know and learn from you. Please send a mail to contact@Labdoo.org.
+</li>
+</ul>
+</value>
 </body>
 <body>
 <type>format</type>

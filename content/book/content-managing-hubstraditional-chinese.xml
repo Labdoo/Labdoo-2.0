@@ -1,0 +1,55 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>17349</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Managing Hubs(Traditional Chinese)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>ChineseTraditional</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>39</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Labdoo is a distributed collaborative platform that operates with very little hierarchy. This is important to ensure a sustainable and organic growth path, since hierarchies tend to generate bottlenecks and often add unnecessary management overheads. That means that when it comes to take action to help bring education to children and help reduce electronic waste, everyone can participate, the young, the adults or the elders, from anywhere, whether you have 5 minutes or a few hours of spare time. 
+
+You can participate as an individual (e.g., sanitizing your own laptop once you no longer use it) as part of the <a href="/content/grassroots-0">grassroots</a> and if you decide that you want to unite forces with some other friends and do more to serve the Labdoo cause, you can optionally create your own hub. As part of a hub, you will have some additional tools to help manage your inventory and increase your presence within the platform to better outreach the local and global communities.
+
+Please find detail information about managing a Labdoo Hub <a href="https://www.labdoo.org/content/information-labdoo-hubs"> here </a>.
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>16452</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1042</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1102</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-4</value>
+</weight>
+</book>

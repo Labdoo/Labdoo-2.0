@@ -1,0 +1,65 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>19301</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Tagging procedures</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>19301</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>The donated laptop needs to be tagged and labelled with its unique Labdoo ID number for easiness of tracing its parts and location.
+
+Following is the steps how to tag a Labdoo laptop.
+
+1. Login to www.labdoo.org
+2. You need to "Login" (top right of the page) in order to tag a laptop
+3. On the top pull-down menu, select "Doojects" -> "Tag it!"
+4. Fill the laptop information (You have to answer all the fields ended with a "*")
+6. It's very important to add the laptop donor's email address to ensure they can receive the status of the laptop.  Here's how
+    - Under Create Dooject, select the second tab "Additional Information" 
+    - Scroll down to Additional notification emails
+    - Fill the donor's email address here.
+7. Click "Save" once you are done. An unique Labdoo ID number will be assigned to the laptop.
+8. You can click on "Print tags" to print the "Labdoo ID" labels or write the Labdoo ID number on the preprint blank label sheets. (https://www.labdoo.org/sites/default/files/content/labdoo-toolkit/labdoo-laptop_id_labels.pdf)
+9. Tape the labels to laptop, its power adaptor, and all the parts which came with the laptop.
+
+Below is an example of the tagging information needs to be filled.
+<img src="/sites/default/files/superhubs/labdoo-oc/tagging.png" width="800"/>
+
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>35</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>846</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1153</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

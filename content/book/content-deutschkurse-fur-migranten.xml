@@ -21,17 +21,25 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Für Migranten gibt es zahlreiche Onlineangebote für <strong>Deutschkurse</strong>. Zu Inhalten und Qualität der Onlineangebote können wir nichts sagen, jegliche Haftung für die verlinkten Inhalte wird ausgeschlossen. Mit dieser Linksammlung möchten wir nur die Suche nach Angeboten zu Deutschkursen erleichtern:
+<value>Für Migranten gibt es zahlreiche Onlineangebote für <strong>Deutschkurse</strong>, hier eine kleine Auswahl. Zu Inhalten und Qualität der einzelnen Onlineangebote können wir nichts sagen. Jegliche Haftung für die verlinkten Inhalte wird ausgeschlossen. Mit dieser Linksammlung möchten wir nur die Suche nach Angeboten zu Deutschkursen erleichtern:
 
 <table>
 
 <tr>
 <th>Website / App / Tool</th>
-<th>Website </th> 
-<th>App </th>
-<th>Offline<br/> möglich</th>
+<th>Website  </th> 
+<th>auch als <br/> App </th>
+<th>auch <br/> Offline </th>
 <th> </th>
 </tr>
+
+<tr>
+<td>http://wikis.zum.de/willkommen/Hauptseite</td>
+<td> <img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/> </td>
+<td>   </td>
+<td>  </td>
+<td>  </td>
+</tr> 
 
 <tr>
 <td>https://www.sz.europa-uni.de/de/lektorate/deutsch/links-und-tipps-zum-deutschlernen/index.html</td>
@@ -50,7 +58,7 @@
 </tr> 
 
 <tr>
-<td>http://www.deutschalsfremdsprache.ch/<br />(auf Anfrage darf dieser Deutschkurs offline auf Labdoo-Rechnern installiert werden, <br />falls vor Ort kein Online-Zugang möglich ist)</td>
+<td>http://www.deutschalsfremdsprache.ch/  (*)</td>
 <td> <img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/> </td>
 <td>   </td>
 <td> <img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/> </td>
@@ -66,10 +74,10 @@
 </tr> 
 
 <tr>
-<td>http://www.dw.com/de/deutsch-lernen/deutschkurse/s-2068</td>
+<td>http://www.dw.com/de/deutsch-lernen/deutschkurse/s-2068  (*)</td>
 <td> <img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/> </td>
 <td>   </td>
-<td>  </td>
+<td> <img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/> </td>
 <td>  </td>
 </tr> 
 
@@ -130,15 +138,26 @@
 
 <tr>
 <td>https://play.google.com/store/search?q=lerne%20deutsch&amp;c=apps</td>
-<td> </td>
 <td>  <img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/>  </td>
 <td>  </td>
 <td>  </td>
 </tr> 
 
+<tr>
+<td>http://www.willkommensabc.de/ 
+(Website, App und Download als pdf oder ePub3)</td>
+<td>  <img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/>  </td>
+<td> <img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/> </td>
+<td> <img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/> </td>
+</tr> 
+
+
 </table>
 
-Wir nehmen gerne weitere Hinweise auf. Bitte hierzu eine Mail an Labdoo-DACH@Labdoo.org senden, danke.</value>
+<br /><br />
+(*) Die für eine Offline-Nutzung im Rahmen des Labdoo-Projektes freigegebenen Inhalte dieser Websites können <a href="http://ftp.labdoo.org/download/hub-content/hub-Labdoo-DACH/Deutschkurse/">hier</a> heruntergeladen werden. Bitte beachten Sie die Hinweise in read-me.txt, danke.
+
+<br />Wir nehmen gerne weitere Hinweise auf. Bitte senden Sie hierzu eine Mail an Labdoo-DACH@Labdoo.org, danke.</value>
 </body>
 <body>
 <type>format</type>

@@ -1,0 +1,69 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>19717</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Team Overview(Traiditional Chinese)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>ChineseTraditional</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>39</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Inside a team, Labdoo users can perform the following tasks:
+
+<ul>
+<li>
+Start a conversation.
+</li>
+<li>
+Create a task to be performed some time scheduled in the future.
+</li>
+<li>
+Create an event in a calendar (e.g., a typical example of event is a laptop sanitation event).
+</li>
+<li>
+View the wall of that team and engage in discussions.
+</li>
+<li>
+View the calendar of events in that team.
+</li>
+</ul>
+<hr/>
+<em>Figure. The teams page allows you to manage your own project activities and collaborate with other labdoers.</em>
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/teams.png"/>
+<hr/>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>16452</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1097</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1176</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-15</value>
+</weight>
+</book>

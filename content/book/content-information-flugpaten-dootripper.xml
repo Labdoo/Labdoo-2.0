@@ -23,19 +23,34 @@
 <type>value</type>
 <value>Liebe Flugpatin, lieber Flugpate,
 
-<a href="http://www.iata.org/whatwedo/cargo/dgr/Documents/LithiumBattery_PassengerFlyer.jpg"><img src="/sites/default/files/content/wiki-de/iata_lithiumbattery_passengerflyer.jpg" align="right" width="600"/></a> 
-
-vielen Dank für die Hilfe beim Transport eines oder mehrerer IT-Spenden zum Zielort, zum <a href="/de/content/edoovillages-dashboard">„Edoovillage“</a>, dort Projekt suchen, unter "doojects" sind die Daten der Laptops gelistet; alternativ den QR-Code auf der IT-Spende abfotografieren. 
+vielen Dank für die Hilfe beim Transport eines oder mehrerer IT-Spenden zum Zielort, zum <a href="/de/content/edoovillages-dashboard">„Edoovillage“</a>. Damit leistest du einen wichtigen Beitrag, um Kindern die Chance auf Bildung zu bringen, Elektroschrott zu vermeiden und dies alles ohne zusätzliche CO2-Belastung. Die Details zu dem Edooviallge sind online gestellt, z.B. unter dem Reiter "doojects" sind die Daten der Laptops zu dem Projekt gelistet; alternativ den QR-Code auf der IT-Spende abfotografieren.
 
 Im FAQ-Forum https://www.labdoo.org/de/content/faq-forum sind viele Fragen beantwortet, z.B. <a href="/de/content/faq-forum#FAQ14">zum Zoll und IATA (Transport der Laptops im Flugzeug)</a>.
 
+<strong>Transport, Zoll und Flugpaten-Brief</strong>
+
 <strong>Für die Fluggesellschaft sind die Watt-Stunden (Wh) der Batterie entscheidend. Fast alle Laptopakkus haben unter 100 Wh und können ohne Einschränkung im Koffer oder im Handgepäck transportiert werden. Eine Genehmigung der Fluglinie ist nicht erforderlich, bei größeren Stückzahlen aber empfehlenswert. Und Fluggesellschaft bieten Sondertarife für größere Spendentransporte.</strong>
 
-Wenn mehrere Personen reisen und eine größere Anzahl Laptops dabei transportieren, sollten die Laptops auf mehrere Koffer verteilt werden (reduziert das Verlustrisiko). Bei ein oder zwei Laptops pro Person sagt der Zoll i.d.R. nichts, erspart Zoll und unnütze Diskussionen. Sollte es doch mal Problemen am Zoll geben - einfach nach einem Hammer fragen und zur Not die Laptops zerschlagen ;) , Nachschub kommt bestimmt - dies war aber zum Glück noch nie nötig... Labdoo.org übernimmt keine Frachtlieferung oder Verzollungen. Bei größeren Stückzahlen empfehlen wir, sich von dem Empfänger der Computer ein Bestätigungsschreiben ausstellen zu lassen. Mehr dazu hier https://www.labdoo.org/de/content/faq-forum#FAQ14.
+<hr/>
+<table align="center">
+<tr><td>
+<em> Grafik. Batteriearten. (Bildquelle www.iata.org)</em>
+</td></tr>
+<tr><td>
+<img src="http://www.iata.org/whatwedo/cargo/dgr/Documents/LithiumBattery_PassengerFlyer.jpg" width="900"/>
+</td></tr>
+</table>
+<hr/>
+
+Wenn mehrere Personen reisen und eine größere Anzahl Laptops dabei transportieren, sollten die Laptops auf mehrere Koffer verteilt werden (reduziert das Verlustrisiko). Bei ein oder zwei Laptops pro Person sagt der Zoll i.d.R. nichts, erspart Zoll und unnütze Diskussionen. Labdoo.org übernimmt keine Frachtlieferung oder Verzollungen. Bei größeren Stückzahlen empfehlen wir, sich von dem Empfänger der Computer ein Bestätigungsschreiben ausstellen zu lassen, dass es sich um eine Spende handelt. Mehr dazu hier https://www.labdoo.org/de/content/faq-forum#FAQ14.
+
+<strong>Fotos oder Videos vom Projekt</strong>
 
 Es wäre schön, wenn wir aus der Schule Fotos oder Videos der Laptops bekommen, vom Umland, der Stadt, der Schule, von den Kindern. Bitte maile uns diese Fotos und gib uns kurz Bescheid, wenn die IT-Spende(n) vor Ort im Einsatz ist/sind. Wir „verbuchen“ dies und der Spender bekommt eine Information, dass sein gespendeter Laptop angekommen ist.
 
-<strong>Wenn eine größere Zahl von mehr als 5 IT-Spenden abgerufen wird, sagen Sie ca. 4-6 Wochen vor Abreise Bescheid. Bei kleineren Mengen brauchen wir i.d.R. ca. 2-4 Wochen Vorlauf. Wir sind alle ehrenamtlich tätig, sind beruflich oder privat unterwegs, haben auch nicht immer Zeit, daher - je früher, je besser und bitte ggf. den Postweg einkalkulieren.</strong>
+<strong>Logistik, Abholung oder Zusendung</strong>
+
+<strong>Wenn eine größere Zahl von mehr als 5 IT-Spenden abgerufen wird, sagen Sie ca. 4-6 Wochen vor Abreise Bescheid. Bei kleineren Mengen brauchen wir i.d.R. ca. 2-4 Wochen Vorlauf. Wir sind alle ehrenamtlich tätig, sind beruflich oder privat unterwegs, haben auch nicht immer Zeit, daher - je früher, je besser und bitte ggf. Abholung oder den Postweg einkalkulieren.</strong>
 
 Noch einige technische Hinweise:
 Für die Anwender vor Ort liegt ein<a href="/de/content/wie-starte-ich-den-computer">„how to start“ Dokument bei</a>. I.d.R. sind auf den Laptops mehrere Sprachen und Tastaturen vorinstalliert. Wie man zwischen den jeweiligen Sprachen und Tastaturen umschaltet ist im „how-to-start“ Dokument beschrieben. I.d.R. ist eine deutsche Tastatur voreingestellt. Bei der Firma www.tastaturaufkleber.eu können ggf. Tastaturaufklebern bestellt werden.
@@ -67,7 +82,7 @@ Dann gibt es 3 Benutzerkonten (labdoo, student und guest/Gast). Die Details sind
 
 Oft gibt es im jeweiligen Land auch eine Ubuntu oder Linux User Group, mit der man Kontakt aufnehmen kann. Diese helfen vor Ort gerne weiter und vermitteln Know-How.
 
-Auf einigen leistungsfähigeren Laptops haben wir ggf. auch Windows in einer Virtualbox installieren. Damit läuft Windows in einem Fenster als Gastbetriebssystem innerhalb des Linux-Host.
+Optional: Auf einigen leistungsfähigeren Laptops haben wir ggf. auch Windows in einer Virtualbox installieren. Damit läuft Windows in einem Fenster als Gastbetriebssystem innerhalb des Linux-Host.
 
 Wir haben uns große Mühe gegeben, alles richtig und vollständig zu machen. Aber wenn uns ein Fehler unterlaufen ist oder etwas euch vor Ort vor Probleme stellt sagt es uns bitte. Dann können wir daran arbeiten und es beim nächsten Mal besser machen. Fragen oder Verbesserungsvorschläge gerne an Labdoo-DACH@Labdoo.org.</value>
 </body>

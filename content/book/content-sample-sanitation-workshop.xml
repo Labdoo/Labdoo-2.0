@@ -1,0 +1,180 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>18880</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Sample Sanitation Workshop</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>18880</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>If you'd like to organize a sanitation workshop at your hub, here's some recommendations.
+
+<strong> I.  Agenda</strong>
+ (Prepare to have between 2-3 hours to efficiently carrying out a successful workshop.) 
+      * Welcome and Update - 15 mins
+      * Short Presentation - 15 to 30 mins (optional)
+      * Divide into different stations to work on different tasks - one hour
+      * Feedback and Clean up - 15 mins. 
+<br></br>
+
+<strong> II. Workshop Stations </strong>
+<table>
+ <tr>
+<th></th><th></th>
+<th>Task Description    </th>
+<th> Volunteer Skill Level</th>
+</tr>
+
+ <tr>
+<th>Station1:</th><td>  </td>
+<td>Laptop Cleaning     </td>
+ 
+<td>First time</td>
+ </tr>
+<tr>
+<th>Station2:</th><td>  </td>
+<td>Tagging Laptop   </td>
+<td>Second time</td>
+</tr>
+<tr>
+<th>Station3:</th><td>  </td>
+<td>Inspection</td>
+<td>Fifth time</td>
+
+</tr>
+<tr>
+<th>Station4:</th><td>  </td>
+<td>Repair</td>
+<td>Experienced</td>
+</tr>
+</table>
+<br></br>
+<br></br>
+
+STATION 1. LAPTOP CLEANING LEADER'S TASKS
+
+*Before meeting- 
+1. Setup the station
+2. Check each cleaning kit. Refill the Alcohol and cotton swabs if needed.
+
+*During meeting- 
+1. Have volunteers sign in at labdoo-oc.weebly.com
+2. Briefly introduce Labdoo Flow (https://www.labdoo.org/content/about-labdoo)
+3. Instructions on Clean kit and how to clean a laptop
+4. Inspect the laptops and check to see if the laptop is tagged after cleaning.
+Yes => send the laptop goes to Station 3, Inspection.
+No => the laptop goes to Station 2, Tagging.
+
+*By the end of the meeting - 
+1. Have members fill the <a href="https://www.labdoo.org/content/workshop-feedback-form"> feedback form. </a>
+2. Collect the cleaning kits and take the used clothe home to wash them. Remember to bring them back next time.
+3. Put the uncleaned laptops back to storage.
+
+Cleaning kit - one soft clothe, a small bottle of 91% alcohol, 10-15 cotton swabs
+
+===========================================================
+
+STATION 2. TAGGING LEADER'S TASKS
+
+*Before the meeting-
+1. Prepare the Labdoo ID sheets, a pair of sensors, clear masking tape, 5 black/blue pens
+2. Setup the station.
+
+*During the meeting- 
+1. Have volunteers sign in at labdoo-oc.weebly.com
+2. Match each laptop with its power adaptor.
+3. Briefly introduce Labdoo tagging procedure (https://www.labdoo.org/content/tagging-procedures)
+- Volunteers can following the "Sample Tagging" to enter the required fields.
+4. LEADER, please verify the donor's information has been correctly input after tagging.
+5. Send the tagged laptop to Station 3 for inspection.
+
+*By the end of the meeting 
+1. Have members fill the <a href="https://www.labdoo.org/content/workshop-feedback-form"> feedback form. </a>
+2. Place all untagged laptops back into the box and return to the storage room.
+
+===========================================================
+
+STATION 3. INSPECTION LEADER'S TASKS
+
+*Preparation before the meeting- 
+1.10 copies of inspection form
+2. 2-3 copies of Lubuntu CD and USB
+3. painter's tapes and a few markers to write
+
+*During the meeting- 
+1. Have volunteers sign in at the labdoo-oc.weebly.com
+2. Inspection procedures for laptops from Station 2.
+A. Power on the laptop and see if it has any OS installed.
+B. If yes, follow the steps to erase data from the laptop.
+C. Properly label laptop's condition with painter's tape and send to Station 4. 
+3. Inspection procedures for laptops from Station 3.
+A. Make sure the laptop condition matches the Laptop Inspection CheckList.
+B. Change the laptop status to S2 @ http://www.labdoo.org/laptop/LabdooID# , and add the laptop condition to the "Additional Notes" area under the "Additional Information" panel.
+
+*By the end of the meeting -
+1. Have members fill the <a href="https://www.labdoo.org/content/workshop-feedback-form"> feedback form. </a>
+2. Collect all the laptops and place them back into the storage room.
+
+===========================================================
+
+STATION 4. REPAIR LEADER'S TASKS
+
+*Before the meeting-
+1. 2-3 copies of current Lubuntu CD and USB
+2. Separate the laptops require hardware repair from the software installation
+
+*During the meeting-
+1. Have volunteers sign in at labdoo-oc.weebly.com
+2. Divide group to HW (hardware) and SW (software)
+3. SW installation group - follow the software installation steps here, https://www.labdoo.org/content/sanitation-guide-simple-method .
+4. If it fails to install, properly label the problem with painter's tape and send it to the HW group.
+5. Send finish installation laptop back to Station 3 for inspection.
+6. HW group - you know what you need to do:)
+
+*By the end of the meeting - 
+1. Have members fill the <a href="https://www.labdoo.org/content/workshop-feedback-form"> feedback form. </a>
+2. Collect all the laptops and place them back into the storage room.
+
+
+
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>34</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>818</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1139</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

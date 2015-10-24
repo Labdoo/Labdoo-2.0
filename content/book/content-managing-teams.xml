@@ -55,7 +55,7 @@ To manage a team that you have created, do as follows:
 </body>
 <body>
 <type>format</type>
-<value>full_html</value>
+<value>filtered_html_advanced</value>
 </body>
 <bid>
 <type>book_array</type>
@@ -71,6 +71,6 @@ To manage a team that you have created, do as follows:
 </mlid>
 <weight>
 <type>book_array</type>
-<value>-13</value>
+<value>-12</value>
 </weight>
 </book>

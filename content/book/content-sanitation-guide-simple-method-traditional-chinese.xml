@@ -1,0 +1,154 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>19819</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Sanitation Guide: Simple Method (Traditional Chinese)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>ChineseTraditional</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>31</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><strong>About this document</strong>
+
+This brief document describes the process of sanitizing a laptop.  
+
+If you'd like to get tips on how to collect unused laptops from your local community, please click <a href="../../content/labdoo-guide-rescue-laptopy">HERE</a>. After the laptop gets sanitized, you can click<a href="../../content/packaging-laptops-ready-traveling"> HERE</a> to learn different ways to package the laptops to make them ready for traveling to a needy school. 
+If in any of these steps you get stuck during the sanitizing process, you can post your questions in the wall of the <a href="../content/quality-assurance-qa">Labdoo QA Team</a> so that others can help you.
+
+<a href="http://ftp.labdoo.org/download/Public/videos/install-lubuntu-english.webm">Online FTP server: Installing Lubuntu operating system</a>
+<a href="file://localhost/home/labdoo/Public/videos/install-lubuntu-english.webm">Offline local: Installing Lubuntu operating system</a>
+[video:https://youtu.be/nBUgaaHW058]
+
+<strong>Sanitizing the laptops</strong>
+
+The current standard process of sanitizing a laptop is as follows:
+
+<ol>
+<li>
+If the laptop is not already tagged with a Labdoo ID number, please follow the instruction under  <a href="/node/add/laptop">"tagging a laptop" </a>page. Make sure you print 3 labels and attach two of them to the laptop and one to the AC adapter following the instructions that you will find in the website.
+</li>
+<li>
+Download the Lubuntu 14.04 release from this link (this is a large .iso image):
+http://cdimage.ubuntu.com/lubuntu/releases/14.04/release/lubuntu-14.04-desktop-i386.iso
+</li>
+<li>
+Burn the downloaded file into a CD. 
+</li>
+<li>
+If the hard drive is not pre-erased.  Please click <a href="https://www.labdoo.org/content/how-erase-data-hard-drive">HERE </a> to follow the instruction to clean the hard drive.
+</li>
+<li>
+Insert the Lubuntu CD into the laptop you intend to sanitize and boot the laptop from the CD. Upon booting the laptop with the CD, you should see the Linux installation menu. If you don't see it, you need to enter into the bios of the laptop and change the booting order of your computer to make sure it first boots from the CD. 
+</li>
+<li>
+Upon seeing the Lubuntu installation menu, start by selecting the installation language; for instance, choose “English”.
+</li>
+<li>
+Select “Install Lubuntu”.
+</li>
+<li>
+Select the language to be installed in the laptop. If you don't know the destination country,  select “English”. If you know the destination country, select that country's language.
+</li>
+<li>
+In the "Wirless" screen, if you have internet connection, you may select the network you use from the list and enter its password.  Otherwise, leave it as default.
+</li>
+<li>
+The next window is just to confirm the laptop fit into the minimum Hard Drive requirement.  Hit "continue" once.
+</li>
+<li>
+Select the destination country. If you don't know it, pick the country you are located.
+</li>
+<li>
+Where it says “detect keyboard”, say “No”.
+</li>
+<li>
+In the next screen, pick the country of origin of your keyboard.
+</li>
+
+<li>
+When it tries to configure the network, press “cancel” (there is no need to do network installation since you have the CD and the updates are installed later).
+</li>
+<li>
+When it asks for the “Your name”, please enter the word “labdoo”.
+</li>
+<li>
+When it asks for the “Your computer name”, please enter the word labdoo with it's Labdoo ID number (eg. labdoo_000003454).
+</li>
+<li>
+When it asks for the “username”, please enter the word “labdoo”.
+</li>
+<li>
+When it asks for the “password”, please enter the word “labdoo”.
+</li>
+<li>
+When it asks for the “Confirm your password”, please enter the word “labdoo”.
+</li>
+<li>
+Select any time zone you want if the system asks you.
+</li>
+<li>
+When it says “Partitioning method”, please say “Guided – use entire disk”.
+</li>
+<li>
+When asked for HTTP proxy information, please leave it empty and just press “Continue”.
+</li>
+<li>
+When it says “Install the GRUB boot loader”, please say “Yes”.
+</li>
+<li>
+When it says “Is the system clock set to UTC”, please say “Yes”.
+This completes the installation of the basic operating system. Next, reboot the machine and log into the Lubuntu system using the username “labdoo and password “labdoo”. Once you are into the Lubuntu system, Make sure also that the laptop is connected to the Internet, via Ethernet cable or via WIFI. Finally, type ALT+CTRL+t to open a terminal window, and in it, type the following commands:
+
+<code>$ sudo apt-get update [and press ENTER]</code>
+<code>$ sudo apt-get install edubuntu-desktop libreoffice [and press ENTER]</code>
+<code>$ sudo apt-get upgrade [and press ENTER]</code>
+The last two commands could take from a few minutes up to an hour or so to complete.
+</li>
+</ol>
+
+<strong>What to expect next</strong>
+
+Congratulations! You have now successfully completed your laptop drive campaign and sanitizedyour laptops, so they are now ready to be packed and travel.  Please go to the <a href="../../content/packaging-laptops-ready-traveling">Packaging the laptop for travelling </a> section to learn how to get the laptops ready for dootrips.
+<ul>
+<li>
+If you are traveling yourself to a school project, you can bring the laptops in your luggage. Try to distribute as many laptops to as many people traveling with you as possible because some countries have a limit on the amount of laptops that can be carried per person.
+</li>
+<li>
+If you are not traveling, then get in touch with one of the Labdoo hubs (for instance, one which is closest to you) from the <a href="/hubs">hubs list</a>. The Labdoo hub will help you decide which school your laptop should be sent to and it will also help you get in touch with the travelers going to that school so the laptops can be picked up from you.
+</li>
+</ul></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>19818</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1199</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1200</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

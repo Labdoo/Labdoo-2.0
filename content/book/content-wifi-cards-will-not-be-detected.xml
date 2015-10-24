@@ -21,42 +21,43 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value><ol>
+<value><strong>1. Initial Considerations.</strong>
 
-Sometimes older or very new WiFi Cards were not recognized automatically and activated. There are several ways, which might be tried to solve the problem:
-
+Before you check for the cause of a non-functioning wireless card (WiFi) please check that:
 <ul>
-<li>check for specific drivers</li>
-<li>used drivers from the manufacturer, e.g. for Broadcast chips</li>
-<li>linux-backports-modules (collection especially for older WiFi cards)</li>
-<li>ndiswrapper (enable Lubuntu to use Windows drivers for WiFi cards)</li>
-<li>install Linux drivers from the manufacturer</li>
+<li> The wireless LAN (WiFi) function is properly activated via the hardware switch/slider (often on one side of the laptop) or via a function key on the computer keyboard, </li>
+<li> There is a wireless card (WiFi) installed (often we get laptop donations without a wireless card), see below <strong>Check which WiFi chip is installed and check the manufacturer name</strong>. In case there is no WiFi card installed you can add one or use a connection via LAN (cable). </li>
 </ul>
 
-<li><strong>First you should check, if specific drivers are needed</strong></li>
+Sometimes older or very new WiFi Cards are not recognized automatically. The following check list provides a set of steps that you can try to fix this situation.
+
+<strong>2. Check list.</strong>
+
+<ul>
+<li><strong>Check if specific drivers are needed</strong></li>
 Preferences → Software &amp; Updates → Additional Drivers → wait a while
 → either  "no additional drivers available" is hown → no further action should be needed, or
 → a list of availble drivers is shown → click the driver you want to use → Apply Changes
 
-<li><strong>Check, which WiFi chip is installed and check manufacturer name</strong></li>
+<li><strong>Check which WiFi chip is installed and check the manufacturer name</strong></li>
 
 Open a terminal and execute:
 <code>lspci | grep -i net</code>  	(enter)
 or
 to show chip set and manufacturer: 
 <code>lspci -nnk | grep -i net -A2 </code>	(enter)
-or in case of using an USB WifI stick:
+or in case of using an USB Wifi stick:
 <code>lsusb</code>	(enter)
-Note: Some build-in WiFi cards are recognized as an external USB, so if in doubt try all also this command. 
+Note: Some build-in WiFi cards are recognized as an external USB, so if in doubt try also these commands. 
 
-T check if your WiFi card is supported:
+To check if your WiFi card is supported:
 https://help.ubuntu.com/community/WifiDocs/WirelessCardsSupported
 http://linux-wless.passys.nl/
 http://wireless.kernel.org/en/users/Devices
 http://wiki.ubuntuusers.de/WLAN/Karten
 http://wiki.ubuntuusers.de/Systeminformationen_ermitteln?redirect=no#Hardware
 
-<li><strong>Broadcast WiFi card is not detected</strong></li>
+<li><strong>Check if the Broadcom WiFi chip is not detected</strong></li>
 If your WiFi card is based on the Broadcom chip set you are able to install:
 <code>sudo apt-get update</code>	(enter)
 <code>sudo apt-get install firmware-b43-installer</code>	(enter)
@@ -64,9 +65,9 @@ If your WiFi card is based on the Broadcom chip set you are able to install:
 After rebooting the system it should work. If not activate the driver by hand:
 <code>sudo modprobe -r b43 bcma</code>     (enter)
 
-<li><strong>Install Linux Backports Modules</strong></li>
+<li><strong>Try installing Linux Backport Modules</strong></li>
 
-Linux Backports Modules can be installed to get support for many older Wifi cards. Die BackportModule are already part of Labdoo Image for Cloning and installscript-software.sh.
+Linux Backport Modules can be installed to get support for many older Wifi cards. The Backport Modules are already part of Labdoo Image for Cloning and installscript-software.sh.
 
 A detailed list of the supported WiFi cards can be found here:
 http://wiki.ubuntuusers.de/WLAN/Linux-backports-modules
@@ -75,12 +76,12 @@ http://wireless.kernel.org/en/users/Drivers
 To install execute in a terminal:
 for Lubuntu 12.04: <code>sudo apt-get install linux-backports-modules-cw-3.6-$(uname -r)</code>   (Enter)
 for Lubuntu 10.04: <code>sudo apt-get install linux-backports-modules-wireless-$(uname -r)</code>   (Enter)
-and for alle Lubuntu versiones: <code>sudo apt-get install linux-firmware-nonfree</code>	(Enter)
+and for all Lubuntu versions: <code>sudo apt-get install linux-firmware-nonfree</code>	(Enter)
 
-If it does not work you can try
+If it does not work you can try:
 
-<li><strong>installation of NdisWrapper</strong></li>
-Details aufhttp://wiki.ubuntuusers.de/WLAN/NdisWrapper
+<li><strong>Try installing NdisWrapper</strong></li>
+Details at: http://wiki.ubuntuusers.de/WLAN/NdisWrapper
 
 Please check, if
 <ul>
@@ -91,9 +92,8 @@ Follow the instruction in the upper Wiki (please add here an English Wiki link).
 
 If this does not work try:
 
-<li><strong>...the last try can be to install the native WiFi driver of the manufacturer. Please search in web for more information.</strong></li>
-
-</ol></value>
+<li><strong>Try installing the native WiFi driver of the manufacturer.</strong></li> Please search in web for more information.
+</ul></value>
 </body>
 <body>
 <type>format</type>

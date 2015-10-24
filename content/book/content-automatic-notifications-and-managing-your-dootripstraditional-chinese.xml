@@ -1,0 +1,60 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>19778</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Automatic Notifications and Managing your Dootrips(Traditional Chinese)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>ChineseTraditional</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>39</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>To facilitate the process of communicating and managing dootrips, Labdoo users involved in a dootrip can receive any of the following automatic email notifications:
+
+<ul>
+<li>
+<strong>Travelers and related users upon dootrip creation.</strong> Every time a dootrip is created, the travelers and users related to that dootrip receive a notification email.
+</li>
+<li>
+<strong>Labdoo users who have projects in the dootrip's destination country.</strong> When a dootrip is created, a notification email is sent out to all Labdoo users who manage an open edoovillage in a country equal to the destination country of the dootrip. This allows these users to know about the existence of that dootrip, giving them the option to claim the resource for the transport of doojects to that edoovillage.
+</li>
+<li>
+<strong>Travelers and related users upon dootrip expiration.</strong> When a dootrip expires, if it's status is still pending, a notification email is sent out to travelers and users related to that dootrip to remind them to update the dootrip status.
+</li>
+</ul>
+
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>16452</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1104</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1194</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

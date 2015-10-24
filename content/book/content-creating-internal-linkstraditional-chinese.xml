@@ -1,0 +1,62 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>19767</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Creating internal links(Traditional Chinese)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>ChineseTraditional</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>39</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>If you need to create a link to a page that lives inside www.labdoo.org (for instance, a link to another wiki page), it's important to use relative paths starting with the string <code>../</code>. For instance, if you want to create a link to this wiki page, follow this example:
+
+<code>&lt;a href="../content/creating-internal-links"&gt;An example link to this wiki page&lt;/a&gt;</code>
+
+Which generates this link:
+<a href="../content/creating-internal-links">An example link to this wiki page</a>
+
+Using the string <code>../</code> in front of your internal links serves two goals:
+
+<ul>
+<li>
+It generates a relative path, so that the link can be used independent of the URL base path (this is helpful for instance in development mode or when cloning the wiki to other hosts)
+</li>
+<li>
+It allows the link to work regardless of the language selected by the user. (You can test this feature by changing the language of this page and then clicking on the link, it should take you to this same page while preserving the selected language.)
+</li>
+</ul></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>16452</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1100</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1183</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

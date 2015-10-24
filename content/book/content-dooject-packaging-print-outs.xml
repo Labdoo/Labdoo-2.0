@@ -23,7 +23,7 @@
 <type>value</type>
 <value>If you are packaging doojects into boxes, you can print the following 'fragile drawings' and stick them to each of the sides of your box.
 
-<a href="/sites/default/files/content/labdoo-toolkit/labdoo-magic-box-packaging.pdf">[Dowload in printable format]</a>
+<a href="/sites/default/files/content/labdoo-toolkit/labdoo-magic-box-packaging.pdf">[Download in printable format]</a>
 
 <img src="/sites/default/files/content/labdoo-toolkit/labdoo-magic-box-packaging-1.png" width="300"/>
 
@@ -39,7 +39,7 @@
 </body>
 <body>
 <type>format</type>
-<value>full_html</value>
+<value>filtered_html_advanced</value>
 </body>
 <bid>
 <type>book_array</type>

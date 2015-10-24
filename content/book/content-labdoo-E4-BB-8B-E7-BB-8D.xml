@@ -96,7 +96,7 @@ Labdoo如何工作，怎样才对有助于传播教育做出贡献？您可以�
 </body>
 <body>
 <type>format</type>
-<value>full_html</value>
+<value>filtered_html_advanced</value>
 </body>
 <bid>
 <type>book_array</type>

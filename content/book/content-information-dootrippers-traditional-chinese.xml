@@ -1,0 +1,132 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>19445</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Information for Dootrippers (Traditional Chinese)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>ChineseTraditional</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>29</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Dear dootripper,
+
+Thank you for your contribution to take one or more laptops to an Edoovillage. Your action is really a key step towards helping make Labdoo a sustainable project. By reusing and re-purposing your trip, you are not only bringing education to needy schools, but your are also helping to preserve planet Earth by avoiding generating additional CO2 emissions.
+
+In this section you will find information that will help you make your trip more efficient, safe and fun.
+
+<strong>Transport, Customs and Dootripper Letter</strong>
+
+<ul>
+<li>
+Practically all countries accept people carrying 2 laptops without questioning. If you are carrying more than 2 laptops, we recommend that you check the customs rules for the specific country you are traveling to. If you plan to carry more laptops than what the rules allow you to, distribute them in equal share to the people that are traveling with you. For instance, if you are carrying 6 laptops and you are traveling with 2 more people, have each person carry 2 laptops.
+</li>
+
+<li>
+Check in the laptops. It is recommended that you pack the laptops in a luggage that you will be checking in. This way your laptop will travel all the way to the destination without you having to worry.
+</li>
+
+<li>
+If you need to carry more laptops than what the custom rules allow, you will need to explain that the laptops are not for commercial use and that they are for education and humanitarian purposes.  To do so, it is recommended that you print the 'Dootripper letter' which you will find in the <a href="../content/dootrippers-travel-letter">Labdoo Toolkit</a>
+</li>
+
+<li>
+Almost all laptop batteries have less than 100 Wh and can be transported without any restriction as a checked in luggage or in your hand luggage. If your battery wattage is less than 100 Wh, an approval of the airline is not required. Otherwise, please check the IATA rules at the time of your traveling or feel free to pose a question to the Labdoo teams community: https://www.labdoo.org/teams.
+</li>
+
+<hr/>
+<table align="center">
+<tr><td>
+<em> Figure. Types of batteries. (Picture source from www.iata.org)</em>
+</td></tr>
+<tr><td>
+<img src="http://www.iata.org/whatwedo/cargo/dgr/Documents/LithiumBattery_PassengerFlyer.jpg" width="900"/>
+</td></tr>
+</table>
+<hr/>
+
+</ul>
+
+<strong>Take Pictures and Upload them to the Photo Album</strong>
+
+Remember to take a good amount of pictures of your trip. Pictures are really important to keep the Labdoo platform transparent and accountable. They are the best way to demonstrate that the donated laptops do reach their intended destination: an education center or school. Please make sure that the pictures are of good quality, that will be much appreciated by the people who are eager to see their laptops deployed in schools helping children reach an education.
+
+Make sure you upload the pictures to the photo album of the edoovillage you are visiting. If you don't have enough rights to upload pictures to that album, ask that edoovillage manager. You will find this information in that edoovillage page.
+
+<strong>What to Do Once the Laptops are Deployed</strong>
+
+Here is a list of things to consider once you have deployed the laptops in a edoovillage:
+
+<ul>
+<li>
+You will find a "how to start" wiki in the following links that explain how to use the Labdoo laptops. Tell the students and teachers of the school where you are deploying the laptops about these wiki guides:
+</li>
+
+- English: https://www.labdoo.org/content/start-laptop-request
+- German: https://www.labdoo.org/de/content/wie-starte-ich-den-computer
+- French: http://ftp.labdoo.org/download/documents/french/labdoo-letter-recipient-quick-guide-french.pdf
+- Spanish: http://ftp.labdoo.org/download/documents/spanish/labdoo-letter-recipient-quick-guide-espanol.pdf
+- Russian: http://ftp.labdoo.org/download/documents/russian/labdoo-letter-recipient-quick-guide-russian.pdf
+
+<li>
+Since some of the edoovillages do not have access to Internet, various languages and keyboard layouts are pre-installed and pre-set. The above guides describe how to switch the default language in the laptop if you need to do so.
+</li>
+<li>
+The power plugs provided with the laptop may or may not match depending on the standard used by the edoovillage's country. If the power plugs do not match, they can be acquired from a local computer store at a very modest price. This <a href="../content/list-countries-voltage-and-power-plugs">table</a> provides a list of standard plugs based on countries.
+</li>
+<li>
+Labdoo laptops come preloaded with several Open Education Resources (OER) manuals in a large variety of languages under the folder '/home/labdoo/Public/'. 
+</li>
+<li>
+On the laptop desktop you will find a folder called <strong>videos</strong> with a set of video tutorials for users and technicians.
+</li>
+<li>
+You will find 3 user accounts, for details refer to the <a href="/content/how-start-laptop">how-to-start wiki</a>.
+</li>
+<li>
+Often there are local Linux or Ubuntu User Groups in the country of the edoovillages. These community might help as well in case of questions.
+</li>
+<li>
+Optional: Some very powerful laptops might come with a Windows system as a guest operating system in VirtualBox - if the requirements for a Windows license are fulfilled.
+</li>
+<li>
+Labdoo.org helpers invested a lot of time and efforts to offer you and the children an optimal system. But we all are human and cannot avoid mistakes. Or maybe you have a good suggestion, to improve our concept. 
+</li>
+<li>
+In any case inform us, we like to know and learn from you. Please send a mail to contact@Labdoo.org.
+</li>
+</ul></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>19445</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>0</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1157</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

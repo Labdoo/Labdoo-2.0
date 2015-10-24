@@ -1,0 +1,63 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>19856</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Welcome Message to Labdoo Hubs</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>19856</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Dear $HUBMANAGERNAME,
+
+Thank you for joining Project Labdoo as a Hub Manager and welcome aboard. Here is a link to your hub:
+
+$LINKTOTHENEWHUB
+
+As a hub manager, you will have access to additional tools within the Labdoo system to help you manage your doojects/edoovillages/dootrips inventories and to help organize your outreaching campaigns.
+
+Here is some information to get you started:
+
+- The hubs quick brochure: https://www.labdoo.org/content/labdoo-hub-brochure
+- Information on how to manage your hub: https://www.labdoo.org/content/information-labdoo-hubs
+
+For any questions, do not hesitate to reach out to Labdoo via the various <a href="https://www.labdoo.org/teams">teams wall</a> or via the <a href="https://www.labdoo.org/contact">contact form</a>.
+
+Best regards,
+$MYNAME
+Labdoo Team | www.labdoo.org</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>41</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>934</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1204</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

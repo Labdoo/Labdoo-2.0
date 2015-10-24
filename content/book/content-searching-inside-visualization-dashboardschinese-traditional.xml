@@ -1,0 +1,60 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>19716</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Searching Inside Visualization Dashboards(Chinese Traditional)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>ChineseTraditional</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>39</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Within each visualization dashboard, you will find various tools to help you search, count, geolocate and track the status of any of the four main Labdoo objects (doojects, dootrips, edoovillages and hubs). These tools include a geolocation map to position the displayed objects, a column chart that provides counting metrics, a search box and a set of drop down menu options to filter your search.
+
+Of special interest is the search box "Free-Text Search", which allows you to search objects across pretty much any of their properties. For instance, you can search objects across Labdoo ID, status, country, assigned edoovillage, etc. One useful feature is that you can do automatically filtered searches by adding a prefix to your query. For instance, let's say that in the doojects dashboard you want to find the device that has Labdoo ID equal to 000002358. To do so, you can type in the search box <code>id:000002358</code>. Or let's say that you want to find all dootrips that have as destination country Tanzania. To do so, you can go to the dootrips dashboard and type in the search box <code>dstcountry:tanzania</code>. The list of special keywords available for each of the four visualization dashboards is presented in the next table.
+
+<hr/>
+<em> Table. List of keywords available to perform filtered searches</em>
+<hr/>
+<table>
+<tr><th width="100" align="left">Dashboard</th><th align="left">Search keys</th></tr> 
+<tr><td>Doojects</td><td>id, hub, edoovillage, status, notes, tagger, manager, emails, country, serialnumber, pickmeup, model, wh</td></tr>
+<tr><td>Dootrips</td><td>title, capacity, numberdootrips, status, completed, srccountry, dstcountry</td></tr>
+<tr><td>Edoovillages</td><td>title, hub, needed, intransit, delivered, remaining, pcompleted, status, country, completed, open</td></tr>
+<tr><td>Hubs</td><td>title, needed, intransit, delivered, remaining, neededshared, remainingshared, pcompleted, country</td></tr>
+</table>
+<hr/></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>16452</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1096</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1175</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

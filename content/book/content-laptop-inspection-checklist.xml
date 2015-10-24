@@ -1,0 +1,77 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>19302</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Laptop Inspection CheckList</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>19302</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Labdoo ID #___________________________ 
+
+<br></br>
+<br></br>
+
+1.  Make sure all parts are properly tagged with the same Labdoo ID number (laptop, adaptor and other external components)   
+
+2.  Notes on any defects or limitations (eg. no wifi, missing keys ...) 
+
+___________________________________________________________________________
+
+___________________________________________________________________________
+
+
+3.  Make sure Edubuntu is properly installed. (Test it with the GCompris game)
+
+4.  Open the Internet Browser and go to www.labdoo.org  (Test the Internet connection)
+
+5.  Play a video from Youtube to make sure video and sound play properly.
+
+6.  Offline Wikipedia/ebook installation (Wikidoo) /or xowa offline wiki for different languages 
+      (should show its icon on the desktop)
+
+7. Installation of English Training Material (EnglishBanana) 
+
+8. Language:______________________________________
+ 
+
+<br></br>
+<br></br>
+<br></br>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>34</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1139</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1154</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

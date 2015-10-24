@@ -21,40 +21,22 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>In order to facilitate the process of communicating and managing dootrips, Labdoo users involved in a dootrip receive automatic email notifications upon the occurrence of certain relevant events. In particular, if you are related to a dootrip, you will receive the following type of notification emails:
-
-
-
-
-The following explains what users receive automatic dootrip email notifications:
-
-<strong>Upon dootrip creation:</strong>
+<value>To facilitate the process of communicating and managing dootrips, Labdoo users involved in a dootrip can receive any of the following automatic email notifications:
 
 <ul>
 <li>
-All users in the dootrip field "Dootripper(s)".
+<strong>Travelers and related users upon dootrip creation.</strong> Every time a dootrip is created, the travelers and users related to that dootrip receive a notification email.
 </li>
 <li>
-All email addresses in the field "Additional notification emails".
+<strong>Labdoo users who have projects in the dootrip's destination country.</strong> When a dootrip is created, a notification email is sent out to all Labdoo users who manage an open edoovillage in a country equal to the destination country of the dootrip. This allows these users to know about the existence of that dootrip, giving them the option to claim the resource for the transport of doojects to that edoovillage.
 </li>
 <li>
-All Labdoo users who manage an edoovillage in a country equal to the destination country of the dootrip. This allows these users to know about the existence of the dootrip in case it can be utilized to carry doojects to that edoovillage.
-</li>
-</ul> 
-
-<strong>Upon a few days before dootrip expiration:</strong>
-<ul>
-<li>
-All users in the dootrip field "Dootripper(s)".
+<strong>Travelers and related users upon dootrip expiration.</strong> When a dootrip expires, if it's status is still pending, a notification email is sent out to travelers and users related to that dootrip to remind them to update the dootrip status.
 </li>
 </ul>
 
-<strong>Upon dootrip modification:</strong>
-<ul>
-<li>
-To avoid sending out too many emails, currently no email notifications are sent upon modifying a dootrip. Users need to manually check the status of the dootrip. This policy can be adjusted depending on feedback received by the Labdoo community.
-</li>
-</ul></value>
+
+</value>
 </body>
 <body>
 <type>format</type>

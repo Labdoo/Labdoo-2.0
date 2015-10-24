@@ -1,0 +1,56 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>19446</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Information for Edoovillages (Traditional Chinese)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>ChineseTraditional</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>33</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Labdoo.org uses 
+<ul>
+<li>educational software suitable for students of all ages (from pre-school to high-school)</li>
+<li>add-ons to provide barrier-free access for blind or handicapped users</li>
+<li>offline wikis and manuals so that educational content can be accessed even without an internet connection</li>
+<li>virus scanner ClamAV and other tools</li>
+</ul>
+
+Labdoo laptops are not limited to the default programs and tools provided by the Lubuntu operating system. By installing the prepared <a href="https://www.labdoo.org/content/cloning-laptops-using-prepared-labdoo-images">Labdoo images for Cloning (Parted Magic / Clonezilla)</a> or <a href="https://www.labdoo.org/de/content/installationsskripte-%C3%BCbersicht">Installation scripts</a> you can add more useful educational content.
+
+Parts of this wiki are based on text and graphics taken from www.edubuntu.org and http://wiki.ubuntuusers.de/Edubuntu.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>19446</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>0</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1158</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

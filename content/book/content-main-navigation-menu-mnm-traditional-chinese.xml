@@ -1,0 +1,54 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>17342</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>The Main Navigation Menu (MNM) (Traditional Chinese)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>ChineseTraditional</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>39</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>The layout of the Labdoo system is controlled via the main navigation menu (MNM), located at the top of the page. The MNM is present in all the pages and allows users to quickly move to the various resources and tools. An important property of the MNM is that the availability of the various options depends on the role of the user. The more roles a user has, the more options he/she sees in the main navigation menu. 
+
+Given their relevance, users can find in the MNM access tabs for each of the five basic objects: doojects, dootrips, edoovillages, hubs and the user account tabs. In addition, the MNM contains other menu options to help Labdooers inter-operate with the platform, such as visualization dashboards, wiki pages, newsletters, wall-like forums or team and project management operations, among others.<br/>
+
+<hr/>
+<em> Figure. The main navigation menu (MNM) is found on all Labdoo pages at the very top of the screen.</em>
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/mnm.png"/>
+<hr/>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>16452</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1042</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1095</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-11</value>
+</weight>
+</book>

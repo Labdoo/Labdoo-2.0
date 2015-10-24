@@ -23,14 +23,14 @@
 <type>value</type>
 <value>You can use this poster to help explain the Labdoo circle of life workflow.
 
-<a href="/sites/default/files/content/labdoo-toolkit/labdoo-story.png">[Dowload in printable format]</a>
+<a href="/sites/default/files/content/labdoo-toolkit/labdoo-story.png">[Download in printable format]</a>
 
 <img src="/sites/default/files/content/labdoo-toolkit/labdoo-story.png" width="700"/>
 </value>
 </body>
 <body>
 <type>format</type>
-<value>full_html</value>
+<value>filtered_html_advanced</value>
 </body>
 <bid>
 <type>book_array</type>
@@ -46,6 +46,6 @@
 </mlid>
 <weight>
 <type>book_array</type>
-<value>-11</value>
+<value>-9</value>
 </weight>
 </book>

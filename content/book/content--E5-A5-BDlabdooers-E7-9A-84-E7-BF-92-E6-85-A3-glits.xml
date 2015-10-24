@@ -54,7 +54,7 @@ Labdoo平台提供了所有您需要即時管理自己doojects庫存的在線工
 </body>
 <body>
 <type>format</type>
-<value>full_html</value>
+<value>filtered_html_advanced</value>
 </body>
 <bid>
 <type>book_array</type>

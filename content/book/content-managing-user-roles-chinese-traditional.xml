@@ -1,0 +1,61 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>17341</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Managing User Roles (Chinese Traditional)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>ChineseTraditional</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>39</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>A user can have one of the following roles:
+• Anonymous user: corresponds to users who visit labdoo.org without logging into an account. These users can only do “view” type of activities. 
+• Authenticated user: corresponds to the very basic labdoo user role. This is the role that a labdooer receives by default when registering for the first time to the system. This type of account allows users to perform all the base functions such as tagging laptops or registering a dootrip. 
+• Hub manager: provides additional functions to manage hubs, including editing your own hub information, assigning new managers to your hub, or uploading pictures to your hub photo album. Most often when this role is assigned, the user is also assigned the edoovillage manager role so that the hub manager can also create and assign new edoovillages to the hub account. 
+• Edoovillage manager: provides additional functions to manage edoovillages, including creating and editing edoovillages, assigning other editors to edoovillages, or uploading pictures to edoovillages photo albums. 
+• Newsletter manager: provides additional functions to manage, edit, and publish newsletters issues. 
+• Wiki writer: provides additional functions to write new wiki documents. This role can create new wiki pages, edit existing ones, and publish or unpublish them. 
+• Team manager: provides additional functions to manage Labdoo teams, including creating new Labdoo teams, managing the users part of a team or assigning team management roles to other users. 
+• Superhub manager: provides additional functions to create new hubs and help manage larger Labdoo regions englobing multiple hubs. 
+
+Managing your user roles
+
+You can check the current roles assigned to your user by going to 'My account' and then clicking the tab 'My roles'. 
+
+As mentioned above, when you create your user for the first time, you are assigned by default the role of "authenticated user". If you need additional roles assigned to your user (e.g., if you want to become an "edoovillage manager" to create your own edoovillages or if you want to become a "Wiki writer" to write books like the one you are reading right now), please contact the Labdoo global team at contact@labdoo.org.
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>16452</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1042</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1094</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-13</value>
+</weight>
+</book>

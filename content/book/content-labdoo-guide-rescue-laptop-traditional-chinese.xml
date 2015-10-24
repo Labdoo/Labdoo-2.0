@@ -1,0 +1,64 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>19821</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Labdoo guide to rescue a laptop (Traditional Chinese)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>ChineseTraditional</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>31</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>There are several strategies to collect unused laptops from your local community. Many of the people you know have unused laptops sitting idly and the objective is to give them an option to repurpose their unused laptop while it still has value. Here are some ideas to help you find and rescue an idle laptop.
+
+<strong> Step 1. Think of 5 people who will most likely donate their used laptops. </strong>They can be your parents, your company, your relatives, or your friends. If you are a student or a teacher in a school, you can write a letter to the parents of the students asking for unused laptops. Many parents work for companies that have unused laptops.
+
+<strong>Step 2. List 5 favorite things you like about Labdoo.  </strong>You can get some ideas from the  <a href="https://www.labdoo.org/content/values-philosophy-and-principles-labdoo-project" >Labdoo Value, Philosophy and Principles.</a>
+<strong>Step 3. Be proactive!  </strong> Contact the potential donors, in person or by e-mail. Tell them why you like Labdoo and explain the benefits everyone can enjoy with their donated laptops! Listed below are some pitching ideas.
+<ul>
+<li> Benefit to the donor: They are basically helping themselves clear out old things and making more space. </li>
+<li>Benefit to the community: The carbon footprint produced by a laptop is equivalent to 270 soda cans. Recycling laptops properly helps keep our environment green. </li>
+<li>Benefit to the children who receive the laptops: The repurposed laptops are powerful tools to help underprivileged children receive an education. Once the donated laptop arrives at its destination, the donor will be able to follow the link assigned to the laptop he/she donated and see pictures of those children using the laptops.</li>
+</ul>
+<strong> Tips: </strong>	
+1. Believe that what you are doing is creating a positive impact. A change in perspective can change your whole approach!
+2.  If you are too shy to ask face-to-face, hand written letters or emails are good alternatives.
+3. Use your social networking skills and tools to bring awareness. Write a post on your favorite social networks (Facebook, Twitter, Google Plus, etc.) letting people know about your laptop collecting activities.
+4. Don’t let the idea of rejection stop you. It happens to everyone, and it’s part of the learning process.
+5. Leave friendly reminders to the people who promised you a laptop. Many donors need frequent reminders that they should take proper action on their idle laptops when they still hold value.
+6. You can be creative and come up with your laptop collection strategy.
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>19818</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1199</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1202</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

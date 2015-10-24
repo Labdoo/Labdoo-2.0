@@ -23,7 +23,7 @@
 <type>value</type>
 <value>You can use this to help explain what a hub is and/or to announce the creation of a new hub.
 
-<a href="/sites/default/files/content/labdoo-toolkit/labdoo-hub.pdf">[Dowload in printable format]</a>
+<a href="/sites/default/files/content/labdoo-toolkit/labdoo-hub.pdf">[Download in printable format]</a>
 
 <img src="/sites/default/files/content/labdoo-toolkit/labdoo-hub-1.png" width="500"/>
 
@@ -32,7 +32,7 @@
 </body>
 <body>
 <type>format</type>
-<value>full_html</value>
+<value>filtered_html_advanced</value>
 </body>
 <bid>
 <type>book_array</type>

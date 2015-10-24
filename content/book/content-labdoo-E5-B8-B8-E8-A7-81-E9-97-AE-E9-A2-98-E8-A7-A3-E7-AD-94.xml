@@ -86,7 +86,7 @@ Labdoo是由丰富的Wiki系统所驱动，您大多数问题应该能得到解�
 </body>
 <body>
 <type>format</type>
-<value>full_html</value>
+<value>filtered_html_advanced</value>
 </body>
 <bid>
 <type>book_array</type>

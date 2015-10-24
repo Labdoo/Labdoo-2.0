@@ -60,7 +60,7 @@ Hier geht es zum Ordner mit Grafiken und Labdoo Logos oder
 <ul>
 <li>Präsentation des Labdoo-Projektes (pdf) in <a href="http://ftp.labdoo.org/download/documents/german/Unterlagen/labdoo-project-german.pdf">Deutsch</a>, <a href="http://ftp.labdoo.org/download/documents/english/labdoo-project-english.pdf">Englisch</a> oder <a href="http://ftp.labdoo.org/download/documents/french/labdoo-project-french.pdf">Französisch</a>,</li>
 
-<li>Informationen zur kindgerechten Lernsoftware und Lerninhalten (pdf) in <a href="http://ftp.labdoo.org/download/documents/german/Unterlagen/labdoo-edubuntu-manual-de.pdf">Deutsch</a>, <a href="http://ftp.labdoo.org/download/documents/english/labdoo-edubuntu-manual-en.pdf">Englisch</a> oder <a href="http://ftp.labdoo.org/download/documents/french/labdoo-edubuntu-manual-french.pdf">Französisch</a>,</li>
+<li>Informationen für Projekte,u.a. zur kindgerechten Lernsoftware und Lerninhalten auf <a href="/de/content/information-edoovillages-projekte">Deutsch</a>, <a href="/content/information-edoovillages">Englisch</a> oder <a href="/content/information-pour-edoovillages-projets">Französisch</a>,</li>
 
 <li><a href="http://ftp.labdoo.org/download/documents/german/Unterlagen/Labdoo-auf-einen-Blick.pdf">Labdoo auf einen Blick" (pdf)</a>"</li>
 <li><a href="http://ftp.labdoo.org/download/documents/german/Unterlagen/Mustertext_Labdoo_org.doc">Mustertext für Presse und Partner (.doc)</a></li>
@@ -98,10 +98,10 @@ Empfohlen wird das Clonen fertig vorbereiteter Images per Clonezilla. <a href="/
 
 <ul>
 <strong>Für unsere Projekte im In-und Ausland suchen wir</strong>
-<li>Laptops ab Pentium 4 aufwärts (hergestellt ab Ende 2000),</li>
+<li>Laptops (auch Netbooks und Apple), ab Pentium 4 aufwärts (hergestellt ab 2001),</li>
 <li>eBook Reader (jedes Fabrikat),</li> 
-<li>Tablet-PCs,</li> 
-<li>solche Geräte, die für eine Entsorgung eigentlich zu schade sind, aber für einen Verkauf oder andere Nutzung nicht mehr geeignet sind.</li> 
+<li>Tablet-PCs (jedes Fabrikat),</li> 
+<li>generell kompakte IT, die für eine Entsorgung eigentlich zu schade ist...</li> 
 </ul>
 <br/>
 
@@ -255,7 +255,7 @@ Wenn ein Laptop defekt ist und nicht vor Ort repariert werden kann meldet sich d
 
 <li><strong>Was kann ich tun, wenn ich ein Hilfsprojekt kenne, das auch Laptops benötigt?</strong>
 
-<a name="FAQ14"/>Labdoo.org stellt Schulen u.a.kostenlos Lern-Laptops für Kinder und Jugendliche, Schulen und Bildungsprojekte weltweit bereit. Ein Antrag kann schnell und mit wenig Aufwand eingereicht werden. Für die Annahme müssen aber bestimmte Kriterien erfüllt, Strom, Infrastruktur, Beziehungen in Länder mit Labdoo Hubs (Flugpaten). <a href="/de/content/antrag-f%C3%BCr-it-spenden-stellen">Mehr hier... </a>
+<a name="FAQ14"/>Labdoo.org stellt Schulen u.a.kostenlos Lern-Laptops für Kinder und Jugendliche, Schulen und Bildungsprojekte weltweit bereit. Ein Antrag kann schnell und mit wenig Aufwand eingereicht werden. Für die Annahme müssen aber bestimmte Kriterien erfüllt, Strom, Infrastruktur, Beziehungen in Länder mit Labdoo Hubs (Flugpaten). <a href="/de/content/antrag-f%C3%BCr-it-spenden-stellen">Mehr  dazu hier... </a>
 </li>
 
 <li><strong> Welche Vorschriften sind beim Transport im Flugzeug (IATA), dem Zoll und der Einfuhr der Laptopspenden zu beachten?</strong>
@@ -264,7 +264,10 @@ Laut <a href="http://www.iata.org/whatwedo/cargo/dgr/Documents/LithiumBattery_Pa
 
 Wir stellen die Laptops den Schulen kostenfrei als Spende zur Verfügung. Daher fällt bei der Einfuhr auch kein Zoll. Ein bis zwei Laptops pro Flugpate gehen i.d.R. problemlos als privaten Nutzung durch.
 
-Zur Vorlage beim Zoll bei größeren Lieferungen empfehlen wir dem Empfänger, <a href="http://ftp.labdoo.org/download/documents/english/labdoo-letter-dootripper.pdf">dieses Schreiben aufzusetzen</a>, das die Spende und den Zweck bestätigt und ggf. von weiteren offiziellen Stellen (z.B. Bürgermeister, Kirche o.a.) unterschreiben und gestempelt werden sollte. 
+Zur Vorlage beim Zoll bei größeren Lieferungen empfehlen wir vom Empfänger ein Schreiben aufsetzen zu lassen, dass es ich um eine kostenlose IT-Spende handelt  und ggf. von weiteren offiziellen Stellen (z.B. Bürgermeister, Kirche o.a.) unterschreiben und stempeln zu lassen. Textvorschläge können hier heruntergealden werden:
+
+<a href="https://www.labdoo.org/sites/default/files/content/labdoo-toolkit/labdoodootripperletter.odt">[Dowload Musterbrief .odt, LibreOffice / Open Office]</a>
+<a href="https://www.labdoo.org/sites/default/files/content/labdoo-toolkit/labdoodootripperletter.docx">[Dowload Musterbrief .docx, Word Format]</a>
 
 <a name="FAQ15"/>Labdoo.org rät aber von größeren Lieferungen per Luft- oder Seefracht ab. Das Verlustrisiko ist höher und leider fordern Zoll- / Hafenbeamte in einigen Ländern immer noch hohe sogenannte "Gebühren".
 </li>

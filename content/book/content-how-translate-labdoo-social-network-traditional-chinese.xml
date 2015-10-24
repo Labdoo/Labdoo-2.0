@@ -1,0 +1,113 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>17346</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>How to Translate the Labdoo Social Network (Traditional Chinese)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>ChineseTraditional</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>39</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>One of the goals of Labdoo is to break barriers so that education can reach out to all the regions of the world. A key to overcoming these barriers is the capability to communicate and coordinate our actions in as many languages as possible. The more languages we support, the more people will be able to contribute and benefit, enabling a more balanced and sustainable organic growth path. To that end, the Labdoo social network exposes an interface to facilitate the process of translating the same Labdoo system. This allows anyone to participate in the process of helping translate the platform into another language.
+
+The translation system is based on the concept of 'templates'. To translate the totality of the Labdoo platform, two types of templates need to be translated:
+
+<ul>
+<li>
+<strong>Email (.email) templates.</strong> Email templates correspond to the automatic email notifications that the Labdoo system sends to users when certain actions happen. For instance, when a laptop is delivered to a school, the user who contributed that laptop receives and automatic email notification in that user's preferred language. 
+</li>
+<li>
+<strong>Portable object (.po) templates.</strong> This corresponds to the actual sentences and words that appear on the Labdoo social network, in all the visualization dashboards, user interfaces, forms, etc.
+</li>
+</ul>
+
+If you would like to contribute to the Labdoo project by helping translate the platform to another language, you can do so by following the next instructions.
+
+<strong>1. Translation of email (.email) templates.</strong>
+
+<ol>
+<li>
+Go to https://github.com/Labdoo/Labdoo-2.0/tree/master/translations/templates/labdoo-translation-email-files.tar
+</li>
+<li>
+Right click on the button “Raw”, select the option ‘Save link as’ and download the file into your local computer.
+</li>
+<li>
+Unzip the file using your favorite unzip application. This will extract various files.
+</li>
+<li>
+For each file extracted, open it using a text editor and translate it to your language.
+</li>
+<li>
+Save the file using the same file name but changing its suffix to reflect the language you are translating to. For instance, if you are translating to Japanese the file ‘dootrip_added_body-en.email’, rename the translated file to ‘dootrip_added_body-japanese.email’.
+</li>
+<li>
+Repeat the steps above for all extracted files.
+</li>
+</ol>
+
+<strong>2. Translation of portable object (.po) templates.</strong>
+
+<ol>
+<li>
+Go to https://github.com/Labdoo/Labdoo-2.0/tree/master/translations/templates/labdoo-translation-po-files.tar
+</li>
+<li>
+Right click on the button “Raw”, select the option ‘Save link as’ and download the file into your local computer.
+</li>
+<li>
+Unzip the file using your favorite unzip application. This will extract various files.
+</li>
+<li>
+For each file extracted, open it using a text editor. To translate the file, search for all occurrences of the keyword ‘msgstr “”’ and include into the quote “” the translation of the English words found in the field ‘msgid’.
+</li>
+<li>
+Save the file using the same file name but changing its suffix to reflect the language you are translating to. For instance, if you are translating to Japanese the file ‘fields-en.po’, rename the translated file to ‘fields-japanese.po’.
+</li>
+<li>
+Repeat the steps above for all extracted files.
+</li>
+</ol>
+
+<strong>Where to send the translated files</strong>
+
+Once you are done with your translations, send the translated files to the email address project-labdoo@labdoo.org using as subject ‘Labdoo.org translation files’.
+
+<strong>What about translating documents in the wiki?</strong>
+
+The above two types of translations (.po and .email files) will allow you to translate the totality of the Labdoo platform except for the content found in the wiki system. This is because Laboo wiki content has its own online translation mechanism to allow wiki editors to work on their own, providing more flexibility and helping optimize the overall wiki book writing and translation workflow. If you want to translate a wiki page or book, please directly refer to the <a href="../content/wiki-translations">translation section of the wiki chapter</a>. </value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>16452</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1042</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1099</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-7</value>
+</weight>
+</book>

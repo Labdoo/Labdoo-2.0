@@ -1,0 +1,124 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>28</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Glits (Good Labdoo Habits)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>28</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><strong>Good Labdoo Habits (Glits)</strong>
+<hr/><br/>
+
+<ol>
+<li>
+<strong>Tag your dooject before donating it.</strong>
+Donors of doojects (laptops, tablets, etc.) are always encouraged to tag their devices before passing them on to the next person or hub. By tagging them first, you will be able to receive automatic email notifications of their status and location, helping increase the transparency and accountability of the Labdoo platform.
+</li>
+
+<li>
+<strong>Clean your dooject from any possible dirt.</strong>
+It is unavoidable that devices tend to get dirty with time, specially certain parts of them such as keyboards and screens. Labdooers are encouraged to clean the devices as much as they can. Think how much this act will be appreciated by the people who will receive them in a destination school. To clean a dooject, use a smooth cloth mildly wet with a solution of 50% water and 50% alcohol. 
+</li>
+
+<li>
+<strong>Don't forget to provide the power adapter.</strong>
+Sometimes we get so excited about the donation of a laptop or any electronic device that we forget about an important component: its power adapter. Without it, we can't really boot up the device and while many hubs keep small inventories of spare adapters, it can get sometimes tricky to find them. If you are a donor, remember to provide also the AC adapter. 
+</li>
+
+<li>
+<strong>Keep a healthy inventory of spare components.</strong>
+If you are doing your own dooject sanitation activities (whether from home, from school, at work or from anywhere) it is a good habit to keep a well organized small inventory of spare components such as hard drives, memory RAM or power adapters. You can easily get them from broken laptops and they may help fix other future laptop donations.
+</li>
+
+<li>
+<strong>Ask relatives and friends for unused doojects and possible dootrips.</strong>
+Hundreds of millions of people in the world have unused laptops and tablets at home and if you live in the richer regions of the world it is very likely that a friend or relative of yours has one or more doojects. Whenever you are socializing, find good excuses to ask around and tell people about the Labdoo story. Little acts like this can really make an impact in bringing education to a child somewhere in the world.
+</li>
+
+<li>
+<strong>Use post-its to visually mark doojects when you have a good number of them stacking up.</strong>
+While the Labdoo platform provides all the online tools you need to manage your inventory of doojects in real time, when it comes to physically moving them around, it is often handy to stick a post-it or some type of note to each device with some quick pointer information such as its status or destination project if already assigned. This helps to quickly visualize their status and organize them. Remember also that you can always scan the QR code of the device's Labdoo ID to get a full online description of its status.
+</li>
+
+<li>
+<strong>The party is not over once a dooject reaches status S4. Do recycle!</strong>
+We cannot stress enough the importance of properly recycling those devices that no longer work. This is indeed a key element in the Labdoo workflow, because devices that are not properly recycled can potentially end up in eWaste landfills polluting our Planet with dangerous contaminants. See for instance <a href="http://www.greenpeace.org/international/en/campaigns/detox/electronics/the-e-waste-problem/where-does-e-waste-end-up/">this article</a>.
+It is also very important that you bring your broken devices to a recycling factory that performs recycling in a proper way. A good number of recycling factories do not do actual recycling and may end up selling the devices to poorer regions of the world where there is no proper recycling facilities.  
+</li>
+
+<li>
+<strong>Rescue doojects as much as you can.</strong>
+It's fun and easy to get people motivated to make a party, but what about cleaning things up once the party is finished? Think about not only how to bring education devices to schools in need, but also on how to rescue them once they are broken. If you travel, check if there is a Labdoo school with laptops near the place you go. If so, consider visiting the school and offer the help to rescue a broken device. Pick up any broken device and bring it back to a place where you can find a proper recycling factory. By doing so, you will be making a big contribution as part of a collaborative network that not only brings computers to needy school, but also helps eliminate global electronic waste by rescuing broken devices. 
+To find out if there is a school near the place you go, check the <a href="../content/edoovillages-dashboard">edoovillage dashboard</a> where you will find a searchable list of all the Labdoo schools around the world. By clicking on each school page, you can even check if they have broken doojects.
+</li>
+
+<li>
+<strong>Share your experiences and ask your questions openly using the various online forums.</strong>
+If you learn something new, share it, there is a good chance that others can benefit from your experiences. The building of an online knowledge base is key to ensure a healthy organic and sustainable growth of the project. There are plenty of ways you can share at Labdoo, such as writing a post in any of <a href="../teams">the teams</a> (organized by their own topics), or sharing it directly to the <a href="../share-wall">global wall</a>. Likewise, if you have a question, post it openly on the team forums too, good chances are that someone will know the answer and reply back to you and, moreover, your question will help build a piece of the global knowledge base too!
+</li>
+
+<li>
+<strong>Take pictures.</strong>
+Pictures are key at least in three ways: first, they help increase the level of transparency in the Labdoo system, by allowing all the donors and participants to visually see their laptops deployed and being used by children in a school; second, seeing the happy face of a child using your own laptop in a distant country helps you understand the value of the collaborative human chain, which in turn helps to bring awareness and provides new incentives to donate more doojects to the cause, keeping the wheels turning; third, they are fun! So remember to take pictures at any stage of the project (as you sanitize or recycle devices, as you perform a dootrip, or as you deliver them to a final destination school).
+</li>
+
+<li>
+<strong>Ask for the donor's email address.</strong>
+Sometimes donors don't have the time or simply don't want to be bothered with the process of tagging their own dooject. In that case, ask the donor if he or she wants to provide an email address where automatic updates of their donated dooject will be sent. This way they can at least track the status as the dooject makes progress to a school, which helps increase transparency, accountability and awareness. If so, you can add that email address in the field 'Additional notification emails' that you will find in the <a href="../node/add/laptop">tagging form</a>.
+</li>
+
+<li>
+<strong>Encourage getting doojects from known transparent sources.</strong>
+The best way to ensure the devices we receive come from trusted and transparent sources is to use our own network of known friends and relatives. The point is that almost every home and company in the richer regions of the world has unused laptops and learning devices piling up dust, so we don't have to go very far to find them. We just need to poke our local network to discover and unlock these resources.
+</li>
+
+<li>
+<strong>Test that a dooject boots up correctly as soon as you receive it.</strong>
+It's very easy to do. When you receive a dooject, try to adopt the habit of booting it up for a quick status check. This simple check will help you make quick up front right decisions on what to do with the device as well as increase the level of confidence that the device comes from a trusted source. Further, if the donor is next to you, you will be able to get some insights as to the functioning status of the device. 
+</li>
+
+<li>
+<strong>Detecting spam or fraudulent messages.</strong> As you know, Labdoo operates without the need of funding. That means that all global logistical operations to collect, sanitize and carry laptops to school happen without the need of money. This clean-cut approach helps also identify potential spammers: if you receive an email from a potential donor to your project asking for a money contribution, you can conclude with certainty that that is a spam activity. Please avoid replying to such and all type of spam requests or activities. Avoid also replying to any user that has no track record within the Labdoo system. For instance, a user that claims he or she has laptops available for your project should also have those laptops tagged or should also have friends within the Labdoo social network who can confirm for you that such request is legitimate. The Labdoo Platform has been designed to be robust against spamming activity with three main tools: transparency, collaboration and information sharing. The more open and transparent our activities are reported to the Labdoo platform, the easier is to differentiate benign activities from spam activities. So make sure to use the information collected within the Labdoo system and your close network of Labdoo friends to help you validate legitimate requests. 
+</li>
+
+<li>
+<strong>Reporting spam or fraudulent messages.</strong> If you do receive spam, we recommend two actions: (1) report the spam email to Google by following the instructions in <a href="https://support.google.com/mail/contact/gtag_headers?group=hijack_spam">this link</a>, this will help anti-spam technology do its job (you can also report the spam activity to other email providers); (2) forward the spam email to contact@labdoo.org so that the Labdoo team can investigate such activity too.
+</li>
+</ol></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>28</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>0</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>812</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

@@ -21,7 +21,11 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value><ol>
+<value>Bevor ihr den Grund für eine nicht funktionierende WLAN-Karte in Treiberproblemen sucht schaut bitte, ob
+<ul>
+<li>ob beim Rechner die WLAN-Funktion per Schieberegler (oft an einer Seite des Laptops) oder per Funktionstaste aktiviert werden muss,</li>
+<li>ob im Laptop überhaupt eine WLAN-Karte verbaut ist (oft werden uns Laptops ohne WLAN-Karte gespendet), s.u. <strong>Feststellen, welcher WLAN Chipsatz und Hersteller verbaut ist</strong>; in dem Fall bleibt noch der Anschluss per LAN (Kabel).</li>
+</ul>
 
 Manchmal werden ältere oder sehr neue WLAN Karten nicht automatisch erkannt und eingebunden. 
 
@@ -90,9 +94,7 @@ Bitte darauf achten, dass
 </ul>
 Installation laut dem o.a. Wiki durchführen. Bitte auch die Tipps beachten, ggf. im Terminal installieren. Falls dies nicht funktioniert:
 
-<li><strong>... und als letzte Lösung bleibt die Installation eines nativen Linux-Treibers vom Hersteller (sofern vorhanden). Hierfür verweisen wir auf die Foren und Websites.</strong></li>
-
-</ol></value>
+<li><strong>... und als letzte Lösung bleibt die Installation eines nativen Linux-Treibers vom Hersteller (sofern vorhanden). Hierfür verweisen wir auf die Foren und Websites.</strong></li></value>
 </body>
 <body>
 <type>format</type>
