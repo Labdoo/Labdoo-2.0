@@ -168,20 +168,12 @@
     This way it can be accessed by typing =https://example.org= on the
     browser location (not =https://127.0.0.1= or =https://localhost=).
 
-  + To change the configuration, run:
-    #+BEGIN_EXAMPLE
-    docker/exec.sh install/config.sh
-    #+END_EXAMPLE
-    and give the new settings interactively.
 
-    Or edit ~labdoo/options.sh~ and then run:
-    #+BEGIN_EXAMPLE
-    docker/exec.sh install/config.sh options.sh
-    #+END_EXAMPLE
+* Quick install
 
-  *Note:* An easier way to install is by using the script
+  An easier way to install is by using the script
   ~utils/docker-install.sh~ which automates the steps above, with
-  certain conventions for directory names etc. 
+  certain conventions for directory names etc.
   #+BEGIN_EXAMPLE
   vim utils/docker-install.sh
   utils/docker-install.sh --domain=test.example.org
@@ -189,6 +181,44 @@
   utils/docker-install.sh $(pwd)/settings.sh \
       --git_branch=test --domain=test.example.org
   #+END_EXAMPLE
+
+  This script also installs [[https://github.com/docker-build/wsproxy][wsproxy]], which allows to run more that one
+  containers with ports 80/443. For this to work, the variable =ports=
+  on ~config~ is set to empty, so that docker does not forward the
+  ports 80 and 443 to the containers. The HTTP request forward to the
+  correct website container is handled by the *wsproxy* container,
+  based on the domain name.
+
+  *NOTE:* Although =utils/docker-install.sh= is handy for making a quick
+  installation, it is highly recommended to read and understand this
+  script, because this will be helpful for maintaining the
+  installation.  It is not so long and it is easy to understand.
+
+
+* Change configuration
+
+  To change the configuration of the server after it has been built,
+  or in case of using a pre-built image, run:
+  #+BEGIN_EXAMPLE
+  docker/exec.sh install/config.sh
+  #+END_EXAMPLE
+  and give the new settings interactively.
+
+  Another option is to edit the configuration settings file and give
+  it as a argument to the script:
+  #+BEGIN_EXAMPLE
+  docker/enter.sh
+  cp install/settings.sh .
+  vim settings.sh
+  install/config.sh settings.sh
+  #+END_EXAMPLE
+
+  It is also possible to run configuration scripts individually, to
+  change only certain configurations. For example:
+  #+BEGIN_EXAMPLE
+  docker/exec.sh install/config/domain.sh
+  #+END_EXAMPLE
+  These scripts can be found on ~install/config/~.
 
 
 * Documentation
