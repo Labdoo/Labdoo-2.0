@@ -10,7 +10,7 @@ defaults[projects][subdir] = contrib
 ; Bootstrap Theme
 ;--------------------
 projects[bootstrap] = 3.0
-projects[jquery_update] = 3.0-alpha2
+projects[jquery_update] = 3.0-alpha3
 projects[less] = 4.0
 
 libraries[bootstrap][directory_name] = bootstrap
@@ -64,11 +64,11 @@ projects[user_restrictions] = 1.0
 ;--------------------
 ; Features, migrations and exports/imports
 ;--------------------
-projects[features] = 2.6
+projects[features] = 2.7
 projects[strongarm] = 2.0
 projects[features_extra] = 1.0
 projects[node_export] = 3.0
-projects[uuid] = 1.0-alpha6
+projects[uuid] = 1.0-beta1
 ;projects[menu_import] = 1.6
 projects[defaultconfig][version] = 1.x-dev
 projects[defaultconfig][patch][1900574] = https://www.drupal.org/files/issues/1900574.defaultconfig.undefinedindex_13.patch
@@ -99,7 +99,7 @@ projects[memcache] = 1.5
 ; Services and social
 ;--------------------
 projects[google_analytics] = 2.1
-projects[drupalchat] = 1.6
+projects[drupalchat] = 1.7
 projects[simplenews] = 1.1
 projects[mass_contact] = 1.0
 projects[sharethis] = 2.10
@@ -169,10 +169,10 @@ projects[calendar] = 3.5
 projects[ctools] = 1.9
 projects[libraries] = 2.2
 projects[entity] = 1.6
-projects[xautoload] = 4.5
+projects[xautoload] = 5.2
 projects[token] = 1.6
 projects[rules] = 2.9
-projects[pathauto] = 1.2
+projects[pathauto] = 1.3
 projects[subpathauto] = 1.3
 projects[entityreference] = 1.1
 projects[field_group] = 1.4
