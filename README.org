@@ -112,6 +112,115 @@
    docker.io run -d --name=lbd --hostname=example.org -p 80:80 -p 443:443 labdoo
    #+END_EXAMPLE
 
+  Installation is done inside a Docker container. For instructions
+  about installing Docker see: https://docs.docker.com/installation/
+
+  + Create a working directory:
+    #+BEGIN_EXAMPLE
+    mkdir workdir/
+    #+END_EXAMPLE
+
+  + Link the docker directory inside the working directory: 
+    #+BEGIN_EXAMPLE
+    cd workdir/
+    ln -s ../myproject/docker .
+    #+END_EXAMPLE
+
+  + Modify and customize the settings:
+    #+BEGIN_EXAMPLE
+    cp docker/settings.sh .
+    vim settings.sh
+    #+END_EXAMPLE
+
+  + Build a Docker image:
+    #+BEGIN_EXAMPLE
+    docker/build.sh settings.sh
+    tail -f logs/nohup-myproject-master-20150929.out
+    less -r logs/nohup-myproject-master-20150929.out
+    #+END_EXAMPLE
+    This will create a docker image, named =myproject:master= with a
+    minimal ubuntu system and everything that is needed for the normal
+    work of the Drupal application.
+
+  + Create a Docker container like this:
+    #+BEGIN_EXAMPLE
+    docker/create.sh
+    #+END_EXAMPLE
+    It will create a container with port forwarding like this: =-p
+    80:80 -p 443:443 -p 2201:2201=. If you don't like the default port
+    forwarding, edit ~config~ and modify it, before creating the
+    container.
+
+  + Now you can start and stop the container with =docker/start.sh=
+    and =docker/stop.sh=, enter the shell of the container with
+    =docker/enter.sh=, etc.
+
+  + If =development=true= is set on the settings, then the code of the
+    application inside the container will be linked to the directory
+    ~myproject/~, so that you can edit and work on it easily.
+
+  + If it is installed on a local machine (for testing or
+    development), add the domain name =example.org= on ~/etc/hosts~,
+    like this:
+    #+BEGIN_EXAMPLE
+    127.0.0.1 example.org
+    #+END_EXAMPLE
+    This way it can be accessed by typing =https://example.org= on the
+    browser location (not =https://127.0.0.1= or =https://localhost=).
+
+
+* Quick install
+
+  An easier way to install is by using the script
+  ~utils/docker-install.sh~ which automates the steps above, with
+  certain conventions for directory names etc.
+  #+BEGIN_EXAMPLE
+  vim utils/docker-install.sh
+  utils/docker-install.sh --domain=test.example.org
+  or
+  utils/docker-install.sh $(pwd)/settings.sh \
+      --git_branch=test --domain=test.example.org
+  #+END_EXAMPLE
+
+  This script also installs [[https://github.com/docker-build/wsproxy][wsproxy]], which allows to run more that one
+  containers with ports 80/443. For this to work, the variable =ports=
+  on ~config~ is set to empty, so that docker does not forward the
+  ports 80 and 443 to the containers. The HTTP request forward to the
+  correct website container is handled by the *wsproxy* container,
+  based on the domain name.
+
+  *NOTE:* Although =utils/docker-install.sh= is handy for making a quick
+  installation, it is highly recommended to read and understand this
+  script, because this will be helpful for maintaining the
+  installation.  It is not so long and it is easy to understand.
+
+
+* Change configuration
+
+  To change the configuration of the server after it has been built,
+  or in case of using a pre-built image, run:
+  #+BEGIN_EXAMPLE
+  docker/exec.sh install/config.sh
+  #+END_EXAMPLE
+  and give the new settings interactively.
+
+  Another option is to edit the configuration settings file and give
+  it as a argument to the script:
+  #+BEGIN_EXAMPLE
+  docker/enter.sh
+  cp install/settings.sh .
+  vim settings.sh
+  install/config.sh settings.sh
+  #+END_EXAMPLE
+
+  It is also possible to run configuration scripts individually, to
+  change only certain configurations. For example:
+  #+BEGIN_EXAMPLE
+  docker/exec.sh install/config/domain.sh
+  #+END_EXAMPLE
+  These scripts can be found on ~install/config/~.
+
+
 * Documentation
 
   + [[https://github.com/Labdoo/Labdoo-2.0/blob/master/README.org][README.org]] (this file)

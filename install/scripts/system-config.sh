@@ -94,3 +94,34 @@ update-locale
 ### enable apache2 as a webserver
 dev_scripts="$drupal_dir/profiles/labdoo/dev"
 $dev_scripts/webserver.sh apache2
+
+### customize the configuration of sshd
+sed -i /etc/ssh/sshd_config \
+    -e 's/^Port/#Port/' \
+    -e 's/^PasswordAuthentication/#PasswordAuthentication/' \
+    -e 's/^X11Forwarding/#X11Forwarding/'
+
+sed -i /etc/ssh/sshd_config \
+    -e '/^### custom config/,$ d'
+
+sshd_port=${sshd_port:-2201}
+cat <<EOF >> /etc/ssh/sshd_config
+### custom config
+Port $sshd_port
+PasswordAuthentication no
+X11Forwarding no
+EOF
+
+### config phpmyadmin
+if [ "$development" = 'true' ]
+then
+    ### make login expiration time longer
+    sed -i /etc/phpmyadmin/config.inc.php \
+        -e "/Don't expire login quickly/,$ d"
+    cat <<EOF >> /etc/phpmyadmin/config.inc.php
+// Don't expire login quickly
+\$sessionDuration = 60*60*24*7; // 60*60*24*7 = one week
+ini_set('session.gc_maxlifetime', \$sessionDuration);
+\$cfg['LoginCookieValidity'] = \$sessionDuration;
+EOF
+fi

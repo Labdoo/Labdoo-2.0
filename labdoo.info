@@ -49,6 +49,7 @@ dependencies[] = diff
 ;dependencies[] = coder
 
 ;;; Extensions and others
+dependencies[] = less
 dependencies[] = ctools
 dependencies[] = libraries
 dependencies[] = entity
