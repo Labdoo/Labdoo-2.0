@@ -737,6 +737,13 @@ function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL, $switch
     else
       $objects[$objectNid]['completed'] = 0;
 
+    // Extract dootrippers
+    $objects[$objectNid]['dootrippers'] = '';
+    foreach(field_get_items('node', $node, 'field_dootripper_s_') as $element) {
+      $userObj = user_load($element['target_id']);
+      $objects[$objectNid]['dootrippers'] = $objects[$objectNid]['dootrippers'] . ' ' . $userObj->name;
+    }
+
     // Get the source country
     $allLocations = field_get_items('node', $node, 'field_origin_of_the_trip');
     $location = $allLocations[0];
@@ -766,6 +773,7 @@ function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL, $switch
     $objects[0]['numberDootrips'] = "";
     $objects[0]['status'] = "";
     $objects[0]['completed'] = 0;
+    $objects[0]['dootrippers'] = "";
     $objects[0]['srcCountry'] = "";
     $objects[0]['dstCountry'] = "";
     $objects[0]['link'] = "No dootrips in this view"; 
@@ -778,6 +786,7 @@ function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL, $switch
   $metrics[4] = array('label' => 'Destination country', 'field' => 'dstCountry', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
   $metrics[5] = array('label' => 'Total number of dootrips', 'field' => 'numberDootrips', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
   $metrics[6] = array('label' => 'Doojects transported', 'field' => 'completed', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
+  $metrics[7] = array('label' => 'Dootrippers', 'field' => 'dootrippers', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
 
   cache_set($cacheIndexPrefix . 'objects', $objects, 'cache');
   cache_set($cacheIndexPrefix . 'metrics', $metrics, 'cache');
@@ -926,7 +935,7 @@ function print_dashboard_objects($objectsType, $objectsName, $objects, $metrics,
     foreach($object as $key => $field) {
       // Add a prefix key to allow for field specific searches
       // such as id:000000001
-      $thisString = strtolower($key) . ":" . $field;
+      $thisString = strtolower($key) . ":" . trim($field);
       $strValue = sanitizeStringForVisualization($thisString); 
       $searchtext = $searchtext . ' ' . $strValue;
     }
