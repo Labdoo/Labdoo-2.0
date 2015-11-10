@@ -1,0 +1,1157 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2015-04-25 06:20+0000\n"
+"PO-Revision-Date: 2015-04-25 06:20+0000\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n>1);\n"
+
+#: field:body:team:label
+msgctxt "body:team:label"
+msgid "Team's topic"
+msgstr "Timu mada"
+
+#: field:body:team_page:label
+msgctxt "body:team_page:label"
+msgid "Conversation"
+msgstr "Mazungumzo"
+
+#: field:body:team_task:label
+msgctxt "body:team_task:label"
+msgid "Description"
+msgstr "Maelezo"
+
+#: field:field_about_me:user:label
+msgctxt "field_about_me:user:label"
+msgid "About me"
+msgstr "Kuhusu mimi"
+
+#: field:field_action_type:#allowed_values:Dooject
+msgctxt "field_action_type:#allowed_values:Dooject"
+msgid "Doojects"
+msgstr "Doojects"
+
+#: field:field_action_type:#allowed_values:Dootrip
+msgctxt "field_action_type:#allowed_values:Dootrip"
+msgid "Dootrips"
+msgstr "Dootrips"
+
+#: field:field_action_type:#allowed_values:Edoovillage
+msgctxt "field_action_type:#allowed_values:Edoovillage"
+msgid "Edoovillages"
+msgstr "Edoovillages"
+
+#: field:field_action_type:#allowed_values:Hub
+msgctxt "field_action_type:#allowed_values:Hub"
+msgid "Hubs"
+msgstr "Hubs"
+
+#: field:field_action_type:action:label
+msgctxt "field_action_type:action:label"
+msgid "Type"
+msgstr "Aina"
+
+#: field:field_additional_editors:laptop:description
+msgctxt "field_additional_editors:laptop:description"
+msgid "Add users who need to have permission to edit this dooject"
+msgstr "Kuongeza watumiaji ambao wanahitaji ruhusa ya kuhariri dooject hii"
+
+#: field:field_additional_editors:laptop:label
+msgctxt "field_additional_editors:laptop:label"
+msgid "Additional editors"
+msgstr "Wahariri ziada"
+
+#: field:field_additional_files:edoovillage:label
+msgctxt "field_additional_files:edoovillage:label"
+msgid "Additional files"
+msgstr "Ziada mafaili"
+
+#: field:field_additional_followers:laptop:description
+msgctxt "field_additional_followers:laptop:description"
+msgid "Add users who want to follow this dooject"
+msgstr "Kuongeza watumiaji ambao wanataka kufuata dooject hii"
+
+#: field:field_additional_followers:laptop:label
+msgctxt "field_additional_followers:laptop:label"
+msgid "Additional followers"
+msgstr "Wafuasi ziada"
+
+#: field:field_additional_info_language:edoovillage:label
+msgctxt "field_additional_info_language:edoovillage:label"
+msgid "Additional information about language(s)"
+msgstr "Maelezo ya ziada kuhusu lugha"
+
+#: field:field_additional_notes:laptop:description
+msgctxt "field_additional_notes:laptop:description"
+msgid ""
+"Add here any observations you would like to make. For instance you can "
+"add notes such as the quality of the laptop or if something is broken, "
+"a reminder, or a note on who donated the laptop."
+msgstr ""
+"Kuongeza hapa uchunguzi wowote ungependa kufanya. Kwa mfano unaweza"
+"kuongeza maelezo kama vile ubora wa laptop au kama kitu ni kuvunjwa,"
+"mawaidha, au kumbuka ambao walichangia laptop."
+
+#: field:field_additional_notes:laptop:label
+msgctxt "field_additional_notes:laptop:label"
+msgid "Additional notes"
+msgstr "Maelezo ya ziada"
+
+#: field:field_additional_notification_em:laptop:description
+msgctxt "field_additional_notification_em:laptop:description"
+msgid ""
+"Add here the email address(es) of additional people that you would "
+"like to be notified whenever this laptop changes its status."
+msgstr ""
+"Kuongeza hapa anwani ya barua pepe ya watu wa ziada ambao wewe ungekuwa"
+"upate taarifa wakat laptop inabadili maelezo yake."
+
+
+#: field:field_additional_notification_em:laptop:label
+msgctxt "field_additional_notification_em:laptop:label"
+msgid "Additional notification emails"
+msgstr "Barua pepe notisi ya ziada"
+
+#: field:field_additional_traveler_s_info:dootrip:description
+msgctxt "field_additional_traveler_s_info:dootrip:description"
+msgid ""
+"Name of the person(s) or the NGO performing the dootrip if different "
+"than the dootrippers field"
+msgstr ""
+"Jina la mtu (watu) au mashirika yasiyo ya kiserikali kufanya dootrip ikiwa tofauti"
+"kuliko dootrippers uwanja"
+
+#: field:field_additional_traveler_s_info:dootrip:label
+msgctxt "field_additional_traveler_s_info:dootrip:label"
+msgid "Additional traveler(s) information"
+msgstr "Msafiri ziada  habari"
+
+#: field:field_amp_hours:laptop:label
+msgctxt "field_amp_hours:laptop:label"
+msgid "Amp hours"
+msgstr "Masaa Amp"
+
+#: field:field_arrival_date:dootrip:label
+msgctxt "field_arrival_date:dootrip:label"
+msgid "Arrival date"
+msgstr "tarehe ya kuwasili"
+
+#: field:field_battery_duration:laptop:description
+msgctxt "field_battery_duration:laptop:description"
+msgid ""
+"Make an estimate of the battery duration in minutes. If the battery is "
+"not working, please remove it from the laptop, bring the battery to "
+"your nearest local recycling facility, ship the laptop to school "
+"without the battery and mark this field with a value of zero."
+msgstr ""
+"fanya makadirio ya betri  katika dakika Kama betri ."
+"haifanyi kazi, tafadhali ondoa hiyo kwenye laptop, peleka betri kwa"
+"mtaa wako wa karibu zaidi iangaliwe, safirisha laptop  shule"
+"bila betri na alama kaz hii ni sawa na sifuri "
+
+#: field:field_battery_duration:laptop:label
+msgctxt "field_battery_duration:laptop:label"
+msgid "Battery duration"
+msgstr "muda wa betri"
+
+#: field:field_battery_watt_hours:laptop:label
+msgctxt "field_battery_watt_hours:laptop:label"
+msgid "Watt-hours"
+msgstr "Watt-saa"
+
+#: field:field_book_language:book:label
+msgctxt "field_book_language:book:label"
+msgid "Language"
+msgstr "Lugha"
+
+#: field:field_branches_information:hub:label
+msgctxt "field_branches_information:hub:label"
+msgid "About this hub"
+msgstr "Kuhusu hiki kitovu"
+
+#: field:field_comments:dootrip:label
+msgctxt "field_comments:dootrip:label"
+msgid "Comments"
+msgstr "Maoni"
+
+#: field:field_conversation_attachment:team_page:label
+msgctxt "field_conversation_attachment:team_page:label"
+msgid "Attachment"
+msgstr "Attachment"
+
+#: field:field_cpu:laptop:label
+msgctxt "field_cpu:laptop:label"
+msgid "CPU speed (Example: 1200 MHz)"
+msgstr "CPU kasi (Mfano: 1200 MHz)"
+
+#: field:field_cpu_type:laptop:label
+msgctxt "field_cpu_type:laptop:label"
+msgid "Number of cores (CPU type)"
+msgstr "Idadi ya vipande (CPU aina)"
+
+#: field:field_current_operating_system:laptop:description
+msgctxt "field_current_operating_system:laptop:description"
+msgid "Example: Ubuntu 12.04, Mac OS X, Windows 7, etc."
+msgstr "Mfano: Ubuntu 12.04, Mac OS X, Windows 7, nk"
+
+#: field:field_current_operating_system:laptop:label
+msgctxt "field_current_operating_system:laptop:label"
+msgid "Current operating system"
+msgstr "mfumo wa uendeshaji"
+
+#: field:field_departure_date:dootrip:label
+msgctxt "field_departure_date:dootrip:label"
+msgid "Departure date"
+msgstr "tarehe ya kuondoka"
+
+#: field:field_destination_of_the_trip:dootrip:label
+msgctxt "field_destination_of_the_trip:dootrip:label"
+msgid "Destination of the trip"
+msgstr "sehemu ya kufikia safari"
+
+#: field:field_device_type:#allowed_values:androidTablet
+msgctxt "field_device_type:#allowed_values:androidTablet"
+msgid "Android tablet"
+msgstr "Android tablet"
+
+#: field:field_device_type:#allowed_values:arduino
+msgctxt "field_device_type:#allowed_values:arduino"
+msgid "Arduino"
+msgstr "Arduino"
+
+#: field:field_device_type:#allowed_values:blackberry
+msgctxt "field_device_type:#allowed_values:blackberry"
+msgid "BlackBerry"
+msgstr "Blackberry"
+
+#: field:field_device_type:#allowed_values:blackberryPi
+msgctxt "field_device_type:#allowed_values:blackberryPi"
+msgid "Blackberry Pi"
+msgstr "Blackberry Pi"
+
+#: field:field_device_type:#allowed_values:desktop
+msgctxt "field_device_type:#allowed_values:desktop"
+msgid "Desktop"
+msgstr "desktop"
+
+#: field:field_device_type:#allowed_values:diyDevice
+msgctxt "field_device_type:#allowed_values:diyDevice"
+msgid "Do-it-yourselve device"
+msgstr "fanya mwenyewe kwenye kifaa chako"
+
+#: field:field_device_type:#allowed_values:ebook
+msgctxt "field_device_type:#allowed_values:ebook"
+msgid "eBook"
+msgstr "e book"
+
+#: field:field_device_type:#allowed_values:googlePhone
+msgctxt "field_device_type:#allowed_values:googlePhone"
+msgid "Android phone"
+msgstr "simu Android "
+
+#: field:field_device_type:#allowed_values:internetTable
+msgctxt "field_device_type:#allowed_values:internetTable"
+msgid "Internet tablet"
+msgstr "Internet tablet"
+
+#: field:field_device_type:#allowed_values:ipad
+msgctxt "field_device_type:#allowed_values:ipad"
+msgid "iPad"
+msgstr "iPad"
+
+#: field:field_device_type:#allowed_values:iphone
+msgctxt "field_device_type:#allowed_values:iphone"
+msgid "iPhone"
+msgstr "iPhone"
+
+#: field:field_device_type:#allowed_values:laptop
+msgctxt "field_device_type:#allowed_values:laptop"
+msgid "Laptop"
+msgstr "Laptop"
+
+#: field:field_device_type:#allowed_values:smartphone
+msgctxt "field_device_type:#allowed_values:smartphone"
+msgid "SmartPhone"
+msgstr "Smartphone"
+
+#: field:field_device_type:laptop:label
+msgctxt "field_device_type:laptop:label"
+msgid "Device type"
+msgstr "Aina ya device"
+
+#: field:field_doojects_additional_notes:edoovillage:label
+msgctxt "field_doojects_additional_notes:edoovillage:label"
+msgid "Doojects additional notes"
+msgstr "Doojects maelezo ya ziada"
+
+#: field:field_dooject_weight:laptop:label
+msgctxt "field_dooject_weight:laptop:label"
+msgid "Weight"
+msgstr "Uzito"
+
+#: field:field_dootripper_s_:dootrip:description
+msgctxt "field_dootripper_s_:dootrip:description"
+msgid "User(s) who will be part of this dootrip"
+msgstr "Mtumiaji  ambaye utakuwa ni sehemu ya dootrip hii"
+
+#: field:field_dootripper_s_:dootrip:label
+msgctxt "field_dootripper_s_:dootrip:label"
+msgid "Dootripper(s)"
+msgstr "Dootripper (s)"
+
+#: field:field_dootrips:laptop:description
+msgctxt "field_dootrips:laptop:description"
+msgid ""
+"This field is updated automatically once dootrips are assigned to this "
+"dooject. You can also optionally set this field manually adding "
+"dootrips by typing their name."
+msgstr ""
+"Uwanja huu unajiupdated  mara moja dootrips inaandikishwa kwenye hii"
+"dooject. Unaweza pia jiandikisha uwanja huu manually kuongeza"
+"dootrips kwa kuandika jina lao."
+
+#: field:field_dootrips:laptop:label
+msgctxt "field_dootrips:laptop:label"
+msgid "Dootrips assigned to this dooject"
+msgstr "Dootrips inasainiwa kwenye dooject hii"
+
+#: field:field_dootrip_additional_editors:dootrip:label
+msgctxt "field_dootrip_additional_editors:dootrip:label"
+msgid "Additional editors"
+msgstr "Wahariri ziada"
+
+#: field:field_dootrip_capacity:dootrip:label
+msgctxt "field_dootrip_capacity:dootrip:label"
+msgid "Number of doojects you can carry"
+msgstr "Idadi ya doojects unaweza kubeba"
+
+#: field:field_dootrip_weight:dootrip:label
+msgctxt "field_dootrip_weight:dootrip:label"
+msgid "Dooject's estimated total weight"
+msgstr "Dooject ya makadirio ya jumla uzito"
+
+#: field:field_drupal_wall_image_style:drupal_wall:label
+msgctxt "field_drupal_wall_image_style:drupal_wall:label"
+msgid "Image Style"
+msgstr "Aina ya picha "
+
+#: field:field_drupal_wall_photos:drupal_wall:label
+msgctxt "field_drupal_wall_photos:drupal_wall:label"
+msgid "Share Photo"
+msgstr "Kushiriki picha"
+
+#: field:field_drupal_wall_videos:drupal_wall:label
+msgctxt "field_drupal_wall_videos:drupal_wall:label"
+msgid "Share Videos"
+msgstr "Kushiriki Video"
+
+#: field:field_edoovillage_action:action:label
+msgctxt "field_edoovillage_action:action:label"
+msgid "Edoovillage"
+msgstr "Edoovillage"
+
+#: field:field_edoovillage_destination:laptop:label
+msgctxt "field_edoovillage_destination:laptop:label"
+msgid "Edoovillage destination"
+msgstr "Edoovillage mafikio"
+
+#: field:field_edoovillage_photo_album:edoovillage:label
+msgctxt "field_edoovillage_photo_album:edoovillage:label"
+msgid "Photo album"
+msgstr "Picha albamu"
+
+#: field:field_edoovillage_status:#allowed_values:completed
+msgctxt "field_edoovillage_status:#allowed_values:completed"
+msgid "Completed"
+msgstr "Kukamilika"
+
+#: field:field_edoovillage_status:#allowed_values:open
+msgctxt "field_edoovillage_status:#allowed_values:open"
+msgid "Open"
+msgstr "kufungua"
+
+#: field:field_edoovillage_status:edoovillage:label
+msgctxt "field_edoovillage_status:edoovillage:label"
+msgid "Status"
+msgstr "status "
+
+#: field:field_edoo_additional_editors:edoovillage:label
+msgctxt "field_edoo_additional_editors:edoovillage:label"
+msgid "Additional editors"
+msgstr "Wahariri ziada"
+
+#: field:field_edoo_additional_followers:edoovillage:label
+msgctxt "field_edoo_additional_followers:edoovillage:label"
+msgid "Additional followers"
+msgstr "Wafuasi ziada"
+
+#: field:field_edoo_additional_notif_em:edoovillage:label
+msgctxt "field_edoo_additional_notif_em:edoovillage:label"
+msgid "Additional notification emails"
+msgstr "Barua pepe notisi ya ziada"
+
+#: field:field_event_date:event:label
+msgctxt "field_event_date:event:label"
+msgid "Date(s)"
+msgstr "Tarehe"
+
+#: field:field_file_image_alt_text:image:description
+msgctxt "field_file_image_alt_text:image:description"
+msgid ""
+"Alternative text is used by screen readers, search engines, and when "
+"the image cannot be loaded. By adding alt text you improve "
+"accessibility and search engine optimization."
+msgstr ""
+"Nakala Mbadala hutumiwa na  wasomaji, injini ya utafutaji, na wakati"
+"mfano haiwezi kupakuliwa. Kwa kuongeza  maandishi makubwa kuboresha"
+"upatikanaji "
+
+#: field:field_file_image_alt_text:image:label
+msgctxt "field_file_image_alt_text:image:label"
+msgid "Alt Text"
+msgstr "Nakala kwa maandishi makubwa"
+
+#: field:field_file_image_title_text:image:description
+msgctxt "field_file_image_title_text:image:description"
+msgid ""
+"Title text is used in the tool tip when a user hovers their mouse over "
+"the image. Adding title text makes it easier to understand the context "
+"of an image and improves usability."
+msgstr ""
+" maandishi makubwa ni kutumika katika chombo ncha wakati mtumiaji ameweka mouse  juu ya"
+"picha. Kuongeza cheo Nakala inafanya kuwa rahisi kuelewa mazingira"
+"ya picha na inaboresha utumiaji."
+
+#: field:field_file_image_title_text:image:label
+msgctxt "field_file_image_title_text:image:label"
+msgid "Title Text"
+msgstr "Kichwa Nakala"
+
+#: field:field_gic_date:gic:label
+msgctxt "field_gic_date:gic:label"
+msgid "Date"
+msgstr "Tarehe"
+
+#: field:field_gic_edoovillage:gic:label
+msgctxt "field_gic_edoovillage:gic:label"
+msgid "Edoovillage"
+msgstr "Edoovillage"
+
+#: field:field_hard_drive:laptop:label
+msgctxt "field_hard_drive:laptop:label"
+msgid "Hard drive"
+msgstr "Hard drive"
+
+#: field:field_hub:edoovillage:label
+msgctxt "field_hub:edoovillage:label"
+msgid "Coordinating hub(s)"
+msgstr "Kuratibu kitovu "
+
+#: field:field_hub_action:action:label
+msgctxt "field_hub_action:action:label"
+msgid "Hub"
+msgstr "Hub"
+
+#: field:field_hub_additional_editors:hub:label
+msgctxt "field_hub_additional_editors:hub:label"
+msgid "Additional editors"
+msgstr "Wahariri ziada"
+
+#: field:field_hub_laptop:laptop:description
+msgctxt "field_hub_laptop:laptop:description"
+msgid ""
+"If you are an individual tagger, select here the group \"Grassroots\". "
+"If you belong to a hub, select the name of your hub."
+msgstr ""
+"Kama wewe ni tagger mtu binafsi, teua hapa kundi \" Grassroots \ "."
+"Kama ninyi ni hub, chagua jina la hub yako."
+
+#: field:field_hub_laptop:laptop:label
+msgctxt "field_hub_laptop:laptop:label"
+msgid "Source group"
+msgstr "Kundi Chanzo"
+
+#: field:field_hub_manager_s_:hub:label
+msgctxt "field_hub_manager_s_:hub:label"
+msgid "Hub manager(s)"
+msgstr "Hub meneja"
+
+#: field:field_hub_photo_album:hub:label
+msgctxt "field_hub_photo_album:hub:label"
+msgid "Photo album"
+msgstr "Picha albamu"
+
+#: field:field_image:article:description
+msgctxt "field_image:article:description"
+msgid "Upload an image to go with this article."
+msgstr "Pakia picha kwenda na makala hii."
+
+#: field:field_image:article:label
+msgctxt "field_image:article:label"
+msgid "Image"
+msgstr "Image"
+
+#: field:field_image:labdoo_slide:label
+msgctxt "field_image:labdoo_slide:label"
+msgid "Image"
+msgstr "Image"
+
+#: field:field_internet_additional_notes:edoovillage:label
+msgctxt "field_internet_additional_notes:edoovillage:label"
+msgid "Internet additional notes"
+msgstr "mtandao maelezo ya ziada"
+
+#: field:field_internet_connection_type:#allowed_values:none
+msgctxt "field_internet_connection_type:#allowed_values:none"
+msgid "None"
+msgstr "Hakuna"
+
+#: field:field_internet_connection_type:#allowed_values:wired
+msgctxt "field_internet_connection_type:#allowed_values:wired"
+msgid "Wired"
+msgstr "enye waya"
+
+#: field:field_internet_connection_type:#allowed_values:wiredOrWireless
+msgctxt "field_internet_connection_type:#allowed_values:wiredOrWireless"
+msgid "Wired or Wireless"
+msgstr "enye waya au isiyo na waya"
+
+#: field:field_internet_connection_type:#allowed_values:wireless
+msgctxt "field_internet_connection_type:#allowed_values:wireless"
+msgid "Wireless"
+msgstr "isiyo na waya"
+
+#: field:field_internet_connection_type:edoovillage:label
+msgctxt "field_internet_connection_type:edoovillage:label"
+msgid "Internet connection type"
+msgstr "aina ya mtandao"
+
+#: field:field_is_first_page:#allowed_values:0
+msgctxt "field_is_first_page:#allowed_values:0"
+msgid "It's a translation"
+msgstr "Ni tafsiri ya"
+
+#: field:field_is_first_page:#allowed_values:1
+msgctxt "field_is_first_page:#allowed_values:1"
+msgid "It's the original"
+msgstr "Ni awali"
+
+#: field:field_is_first_page:book:label
+msgctxt "field_is_first_page:book:label"
+msgid ""
+"Is this wiki page a translation of another wiki page or is this the "
+"original?"
+msgstr ""
+"Je, ukurasa huu tafsiri ya ukurasa mwingine  ni hii"
+"ya awali?"
+
+#: field:field_keyboard:laptop:label
+msgctxt "field_keyboard:laptop:label"
+msgid "Keyboard (country of origin)"
+msgstr "Kinanda (nchi ya asili)"
+
+#: field:field_labdooer_action:action:label
+msgctxt "field_labdooer_action:action:label"
+msgid "Labdooer"
+msgstr "Labdooer"
+
+#: field:field_laptops:dootrip:description
+msgctxt "field_laptops:dootrip:description"
+msgid ""
+"Once you know the dooject(s) that you will be carrying with this "
+"dootrip, enter their Labdoo identifier here."
+msgstr ""
+"Mara unajua dooject unatakiwa kufanya na hii"
+"dootrip, ingiza Labdoo zao vitambulisho hapa."
+
+#: field:field_laptops:dootrip:label
+msgctxt "field_laptops:dootrip:label"
+msgid "Dooject identifiers"
+msgstr "Dooject vitambulisho"
+
+#: field:field_linked_pages:superhub_page:description
+msgctxt "field_linked_pages:superhub_page:description"
+msgid ""
+"Select the superhub pages where you would like this menu block to "
+"appear"
+msgstr ""
+"Chagua kurasa superhub ambapo ungependa hii orodha kuzuia na"
+"kuonekana"
+
+#: field:field_linked_pages:superhub_page:label
+msgctxt "field_linked_pages:superhub_page:label"
+msgid "Linked pages"
+msgstr "Ikiunganishwa kurasa"
+
+#: field:field_local_language_s_:edoovillage:label
+msgctxt "field_local_language_s_:edoovillage:label"
+msgid "Local language(s)"
+msgstr "Lugha za Mitaa"
+
+#: field:field_manager:laptop:description
+msgctxt "field_manager:laptop:description"
+msgid "The user currently managing this dooject"
+msgstr "Mtumiaji kwa sasa kusimamia dooject hii"
+
+#: field:field_manager:laptop:label
+msgctxt "field_manager:laptop:label"
+msgid "Manager"
+msgstr "Meneja"
+
+#: field:field_memory:laptop:label
+msgctxt "field_memory:laptop:label"
+msgid "Memory"
+msgstr "Kumbukumbu"
+
+#: field:field_model:laptop:description
+msgctxt "field_model:laptop:description"
+msgid "Brand name and model of the dooject"
+msgstr "Bidhaa mfano wa dooject jina na"
+
+#: field:field_model:laptop:label
+msgctxt "field_model:laptop:label"
+msgid "Model"
+msgstr "Mfano"
+
+#: field:field_number_of_days_after:dootrip:label
+msgctxt "field_number_of_days_after:dootrip:label"
+msgid "Number of days you can store the dooject after the arrival date"
+msgstr "Idadi ya siku unaweza kuhifadhi dooject baada ya tarehe ya kuwasili"
+
+#: field:field_number_of_days_before:dootrip:label
+msgctxt "field_number_of_days_before:dootrip:label"
+msgid "Number of days you can store the dooject before the departure date"
+msgstr "Idadi ya siku unaweza kuhifadhi dooject kabla ya tarehe ya kuondoka"
+
+#: field:field_number_of_doojects_assigne:dootrip:label
+msgctxt "field_number_of_doojects_assigne:dootrip:label"
+msgid "Number of doojects assigned"
+msgstr "Idadi ya doojects kupewa"
+
+#: field:field_number_of_laptops_needed:edoovillage:label
+msgctxt "field_number_of_laptops_needed:edoovillage:label"
+msgid "Number of doojects needed"
+msgstr "Idadi ya doojects zinahitajika"
+
+#: field:field_number_of_students:edoovillage:label
+msgctxt "field_number_of_students:edoovillage:label"
+msgid "Number of students"
+msgstr "Idadi ya wanafunzi"
+
+#: field:field_number_of_teachers:edoovillage:label
+msgctxt "field_number_of_teachers:edoovillage:label"
+msgid "Number of teachers"
+msgstr "Idadi ya walimu"
+
+#: field:field_on_site_point_of_contact:edoovillage:description
+msgctxt "field_on_site_point_of_contact:edoovillage:description"
+msgid "Email address, phone number, website, etc."
+msgstr "Barua pepe ya mitaani, namba ya simu, tovuti, nk"
+
+#: field:field_on_site_point_of_contact:edoovillage:label
+msgctxt "field_on_site_point_of_contact:edoovillage:label"
+msgid "On-site point of contact"
+msgstr "Hatua  ya mawasiliano"
+
+#: field:field_origin_of_the_trip:dootrip:label
+msgctxt "field_origin_of_the_trip:dootrip:label"
+msgid "Origin of the trip"
+msgstr "Mwanzo wa safari"
+
+#: field:field_parent_hub:hub:description
+msgctxt "field_parent_hub:hub:description"
+msgid ""
+"If this hub has a parent hub, please select it from the following "
+"list."
+msgstr ""
+"Kama hub hii ina mzazi hub, tafadhali kuchagua ni kutoka ifuatayo"
+"orodha."
+
+#: field:field_parent_hub:hub:label
+msgctxt "field_parent_hub:hub:label"
+msgid "Parent hub"
+msgstr "Kitovu Mzazi"
+
+#: field:field_photo_album_edoovillage:node_gallery_gallery:label
+msgctxt "field_photo_album_edoovillage:node_gallery_gallery:label"
+msgid "Edoovillage"
+msgstr "Edoovillage"
+
+#: field:field_photo_album_hub:node_gallery_gallery:label
+msgctxt "field_photo_album_hub:node_gallery_gallery:label"
+msgid "Hub"
+msgstr "Hub"
+
+#: field:field_picture:laptop:description
+msgctxt "field_picture:laptop:description"
+msgid ""
+"Upload here a picture of the dooject. A picture is a helpful way for "
+"donors to ensure that they are looking at the correct dooject. Please "
+"do not use pictures that you may find on the Internet, as they may be "
+"copyrighted.  Instead, please take a picture with your own camera. "
+"Once the dooject reaches a school, you can also upload another picture "
+"with the students using it."
+msgstr ""
+"Weka hapa picha ya dooject. Picha ni njia muhimu kwa ajili ya"
+"wafadhili ili kuhakikisha kwamba wao wanaangalia dooject sahihi. Tafadhali"
+"hawatumii picha kwamba unaweza kupata kwenye mtandao, kama wanaweza kuwa"
+"hakimiliki. Badala yake, tafadhali chukua picha na kamera yako mwenyewe."
+"Kwa mara nyingine dooject ikifika shule, unaweza pia weka picha nyingine"
+"na  wanafunzi wanaotumia hiyo."
+
+#: field:field_picture:laptop:label
+msgctxt "field_picture:laptop:label"
+msgid "Picture"
+msgstr "Picha"
+
+#: field:field_project_application:edoovillage:label
+msgctxt "field_project_application:edoovillage:label"
+msgid "Project application"
+msgstr "Mradi maombi"
+
+#: field:field_project_description:edoovillage:label
+msgctxt "field_project_description:edoovillage:label"
+msgid "Project description"
+msgstr "Mradi maelezo"
+
+#: field:field_project_manager_s_:edoovillage:label
+msgctxt "field_project_manager_s_:edoovillage:label"
+msgid "Project manager(s)"
+msgstr "Mradi meneja"
+
+#: field:field_project_summary:edoovillage:label
+msgctxt "field_project_summary:edoovillage:label"
+msgid "Project brief description"
+msgstr "Maelezo mafupi Mradi"
+
+#: field:field_reference_book:book:label
+msgctxt "field_reference_book:book:label"
+msgid "Original book"
+msgstr "Nakala kitabu"
+
+#: field:field_semaphore:#allowed_values:green
+msgctxt "field_semaphore:#allowed_values:green"
+msgid "Green: the rest of the doojects can be sent"
+msgstr "kijani:waliobaki doojects wanaweza tumwa"
+
+#: field:field_semaphore:#allowed_values:red
+msgctxt "field_semaphore:#allowed_values:red"
+msgid "Red: pictures about the project have not been uploaded yet"
+msgstr "nyekundu: picha kuhusu mradi haijawekwa bado"
+
+#: field:field_semaphore:#allowed_values:yellow
+msgctxt "field_semaphore:#allowed_values:yellow"
+msgid "Yellow: first doojects can be sent"
+msgstr "Njano: kwanza doojects inaweza kutumwa"
+
+#: field:field_semaphore:edoovillage:label
+msgctxt "field_semaphore:edoovillage:label"
+msgid "Semaphore"
+msgstr "Semaphore"
+
+#: field:field_serial_number:laptop:description
+msgctxt "field_serial_number:laptop:description"
+msgid ""
+"Write here the serial number of the dooject. Usually the serial number "
+"can be found in the back of the dooject, search for keywords such as "
+"\"Serial Number\" or \"S/N\", or if you see a bar code with a number "
+"under it, use this number. If the dooject has no sticker with the "
+"serial number, then write in this field the words \"Unknown\"."
+msgstr ""
+""
+"Andika hapa namba ya siri dooject. Kwa kawaida namba ya siri"
+"inaweza kupatikana katika nyuma ya dooject, kutafuta maneno kama vile"
+"\" namba ya siri\ "au \" S / N \ ", au kama unaweza kuona  kificho kwa namba"
+"chini yake, tumia namba hii. Kama dooject hana sticker na"
+"namba ya siri, kisha kuandika katika uwanja huu maneno \" haijulikani \ "."
+
+#: field:field_serial_number:laptop:label
+msgctxt "field_serial_number:laptop:label"
+msgid "Serial number"
+msgstr "Namba ya siri"
+
+#: field:field_simplenews_term:simplenews:label
+msgctxt "field_simplenews_term:simplenews:label"
+msgid "Newsletter category"
+msgstr "Jarida jamii"
+
+#: field:field_skills:user:label
+msgctxt "field_skills:user:label"
+msgid "Skills"
+msgstr "Stadi"
+
+#: field:field_slider_tab:slider_page:label
+msgctxt "field_slider_tab:slider_page:label"
+msgid "Tab"
+msgstr "Tab"
+
+#: field:field_slider_weight:slider_page:label
+msgctxt "field_slider_weight:slider_page:label"
+msgid "Weight"
+msgstr "Uzito"
+
+#: field:field_socket_type:edoovillage:label
+msgctxt "field_socket_type:edoovillage:label"
+msgid "Socket type"
+msgstr "Aina soketi"
+
+#: field:field_socket_voltage:#allowed_values:120
+msgctxt "field_socket_voltage:#allowed_values:120"
+msgid "100-127 Volts"
+msgstr "100-127 Volts"
+
+#: field:field_socket_voltage:#allowed_values:220
+msgctxt "field_socket_voltage:#allowed_values:220"
+msgid "220-240 Volts"
+msgstr "220-240 Volts"
+
+#: field:field_socket_voltage:edoovillage:label
+msgctxt "field_socket_voltage:edoovillage:label"
+msgid "Socket voltage"
+msgstr "Soketi voltage"
+
+#: field:field_status:#allowed_values:L1
+msgctxt "field_status:#allowed_values:L1"
+msgid "[L1] Dooject was lost"
+msgstr "[L1] Dooject waliopotea"
+
+#: field:field_status:#allowed_values:S0
+msgctxt "field_status:#allowed_values:S0"
+msgid "[S0] Tagged with a Labdoo ID"
+msgstr "[S0] Tagged with Labdoo ID"
+
+#: field:field_status:#allowed_values:S1
+msgctxt "field_status:#allowed_values:S1"
+msgid "[S1] Donated, waiting to pass quality assurance"
+msgstr "[S1] walichangia, kusubiri kupita ubora"
+
+#: field:field_status:#allowed_values:S2
+msgctxt "field_status:#allowed_values:S2"
+msgid "[S2] Passed quality assurance"
+msgstr "[S2] Kupita ubora"
+
+#: field:field_status:#allowed_values:S3
+msgctxt "field_status:#allowed_values:S3"
+msgid "[S3] Assigned to an edoovillage, waiting to be shipped"
+msgstr "[S3] Kwa ajili ya edoovillage, kusubiri kwa kusafirishwa"
+
+#: field:field_status:#allowed_values:S4
+msgctxt "field_status:#allowed_values:S4"
+msgid "[S4] Deployed and being used"
+msgstr "[S4] Uliotumika na inatumiwa"
+
+#: field:field_status:#allowed_values:S5
+msgctxt "field_status:#allowed_values:S5"
+msgid "[S5] Waiting to be recycled"
+msgstr "[S5] Kusubiri kwa kuwa mzunguko"
+
+#: field:field_status:#allowed_values:S6
+msgctxt "field_status:#allowed_values:S6"
+msgid "[S6] Recycled"
+msgstr "[S6] iliyozungushwa"
+
+#: field:field_status:#allowed_values:S7
+msgctxt "field_status:#allowed_values:S7"
+msgid "[S7] (Library) Checked out"
+msgstr "[S7] (maktaba) umetolewa nje"
+
+#: field:field_status:#allowed_values:S8
+msgctxt "field_status:#allowed_values:S8"
+msgid "[S8] (Library) Available"
+msgstr "[S8] (maktaba) unapatikana"
+
+#: field:field_status:#allowed_values:S9
+msgctxt "field_status:#allowed_values:S9"
+msgid "[S9] Deployed but not working"
+msgstr "[S9] Uliotumika lakini haifanyi kazi"
+
+#: field:field_status:#allowed_values:T1
+msgctxt "field_status:#allowed_values:T1"
+msgid "[T1] In transit going to an edoovillage"
+msgstr "[T1] Katika tkwenda edoovillage"
+
+#: field:field_status:#allowed_values:T2
+msgctxt "field_status:#allowed_values:T2"
+msgid "[T2] In transit going to a recycling factory"
+msgstr "[T2] Katika  kwenda kusindika kiwanda"
+
+#: field:field_status:laptop:label
+msgctxt "field_status:laptop:label"
+msgid "Status"
+msgstr "Hali"
+
+#: field:field_status_dootrip:#allowed_values:DS0
+msgctxt "field_status_dootrip:#allowed_values:DS0"
+msgid "Pending"
+msgstr "inabaki"
+
+#: field:field_status_dootrip:#allowed_values:DS1
+msgctxt "field_status_dootrip:#allowed_values:DS1"
+msgid "Completed"
+msgstr "Kukamilika"
+
+#: field:field_status_dootrip:#allowed_values:DS2
+msgctxt "field_status_dootrip:#allowed_values:DS2"
+msgid "Cancelled"
+msgstr "Kufutwa"
+
+#: field:field_status_dootrip:dootrip:label
+msgctxt "field_status_dootrip:dootrip:label"
+msgid "Status"
+msgstr "Hali"
+
+#: field:field_superhub_page_type:#allowed_values:block
+msgctxt "field_superhub_page_type:#allowed_values:block"
+msgid "Menu Block"
+msgstr "menu Kuzuia"
+
+#: field:field_superhub_page_type:#allowed_values:page
+msgctxt "field_superhub_page_type:#allowed_values:page"
+msgid "Page"
+msgstr "kurasa"
+
+#: field:field_superhub_page_type:superhub_page:label
+msgctxt "field_superhub_page_type:superhub_page:label"
+msgid "Type"
+msgstr "Aina"
+
+#: field:field_tagger:laptop:description
+msgctxt "field_tagger:laptop:description"
+msgid "The user who tagged this dooject"
+msgstr "Mtumiaji ambaye tagged dooject hii"
+
+#: field:field_tagger:laptop:label
+msgctxt "field_tagger:laptop:label"
+msgid "Tagger"
+msgstr "Tagger"
+
+#: field:field_tags:article:description
+msgctxt "field_tags:article:description"
+msgid "Enter a comma-separated list of words to describe your content."
+msgstr "Ingieni kutenganisha maneno ya kuelezea maudhui yako."
+
+#: field:field_tags:article:label
+msgctxt "field_tags:article:label"
+msgid "Tags"
+msgstr "Vitambulisho"
+
+#: field:field_task_assigned_to:team_task:label
+msgctxt "field_task_assigned_to:team_task:label"
+msgid "Assigned to"
+msgstr "Kwa ajili ya"
+
+#: field:field_task_attachment:team_task:label
+msgctxt "field_task_attachment:team_task:label"
+msgid "Attachment"
+msgstr "Attachment"
+
+#: field:field_task_priority:#allowed_values:high
+msgctxt "field_task_priority:#allowed_values:high"
+msgid "High"
+msgstr "Juu"
+
+#: field:field_task_priority:#allowed_values:low
+msgctxt "field_task_priority:#allowed_values:low"
+msgid "Low"
+msgstr "Chini"
+
+#: field:field_task_priority:#allowed_values:normal
+msgctxt "field_task_priority:#allowed_values:normal"
+msgid "Normal"
+msgstr "Kawaida"
+
+#: field:field_task_priority:team_task:label
+msgctxt "field_task_priority:team_task:label"
+msgid "Priority"
+msgstr "Kipaumbele"
+
+#: field:field_task_status:#allowed_values:close
+msgctxt "field_task_status:#allowed_values:close"
+msgid "Close"
+msgstr "Karibu"
+
+#: field:field_task_status:#allowed_values:deferred
+msgctxt "field_task_status:#allowed_values:deferred"
+msgid "Deferred"
+msgstr "Aliahirisha kesi"
+
+#: field:field_task_status:#allowed_values:duplicate
+msgctxt "field_task_status:#allowed_values:duplicate"
+msgid "Duplicate"
+msgstr "Duplicate"
+
+#: field:field_task_status:#allowed_values:open
+msgctxt "field_task_status:#allowed_values:open"
+msgid "Open"
+msgstr "fungua"
+
+#: field:field_task_status:#allowed_values:resolved
+msgctxt "field_task_status:#allowed_values:resolved"
+msgid "Resolved"
+msgstr "Kutatuliwa"
+
+#: field:field_task_status:team_task:label
+msgctxt "field_task_status:team_task:label"
+msgid "Status"
+msgstr "Hali"
+
+#: field:field_task_type:#allowed_values:doojectSanitation
+msgctxt "field_task_type:#allowed_values:doojectSanitation"
+msgid "Dooject sanitation event"
+msgstr "Dooject tukio usafi wa mazingira"
+
+#: field:field_task_type:#allowed_values:featureRequest
+msgctxt "field_task_type:#allowed_values:featureRequest"
+msgid "Feature request"
+msgstr "Aina ya Ombi"
+
+#: field:field_task_type:#allowed_values:generalTask
+msgctxt "field_task_type:#allowed_values:generalTask"
+msgid "General task"
+msgstr "Mkuu wa Kazi"
+
+#: field:field_task_type:#allowed_values:outreachingActivity
+msgctxt "field_task_type:#allowed_values:outreachingActivity"
+msgid "Outreaching activity"
+msgstr "shughuli za nje"
+
+#: field:field_task_type:#allowed_values:websiteBug
+msgctxt "field_task_type:#allowed_values:websiteBug"
+msgid "Website bug"
+msgstr "Tovuti mdudu"
+
+#: field:field_task_type:team_task:label
+msgctxt "field_task_type:team_task:label"
+msgid "Type"
+msgstr "Aina"
+
+#: field:field_type:#allowed_values:edoovillage
+msgctxt "field_type:#allowed_values:edoovillage"
+msgid "Edoovillage"
+msgstr "Edoovillage"
+
+#: field:field_type:#allowed_values:hub
+msgctxt "field_type:#allowed_values:hub"
+msgid "Hub"
+msgstr "Hub"
+
+#: field:field_type:slider_page:label
+msgctxt "field_type:slider_page:label"
+msgid "Type"
+msgstr "Aina"
+
+#: field:field_types_of_mini_missions:#allowed_values:HUBTYPE0
+msgctxt "field_types_of_mini_missions:#allowed_values:HUBTYPE0"
+msgid "Dropping point"
+msgstr "Kuacha hatua"
+
+#: field:field_types_of_mini_missions:#allowed_values:HUBTYPE1
+msgctxt "field_types_of_mini_missions:#allowed_values:HUBTYPE1"
+msgid "Sanitizing point"
+msgstr "Sanitizing hatua"
+
+#: field:field_types_of_mini_missions:hub:description
+msgctxt "field_types_of_mini_missions:hub:description"
+msgid ""
+"If this hub accepts to store doojects, select \"Dropping point\". If "
+"the hub sanitizes doojects, select \"Sanitizing point\". You can "
+"select multiple options at the same time."
+msgstr ""
+"Kama hub hii anapokea kuhifadhi doojects, kuchagua \" Kuacha hatua \ ". Kama"
+"kitovu sanitizes doojects, kuchagua \" sanitizing hatua \ ". Unaweza"
+"kuchagua chaguzi mbalimbali kwa wakati mmoja."
+
+#: field:field_types_of_mini_missions:hub:label
+msgctxt "field_types_of_mini_missions:hub:label"
+msgid "Hub type"
+msgstr "Aina Hub"
+
+#: field:field_user_name:user:description
+msgctxt "field_user_name:user:description"
+msgid "Your first and last name"
+msgstr "jina la kwanza na  mwisho"
+
+#: field:field_user_name:user:label
+msgctxt "field_user_name:user:label"
+msgid "Name"
+msgstr "Jina"
+
+#: field:field_volts:laptop:label
+msgctxt "field_volts:laptop:label"
+msgid "Volts"
+msgstr "Volts"
+
+#: field:field_welcome_message:team:label
+msgctxt "field_welcome_message:team:label"
+msgid "Welcome message"
+msgstr "Karibu ujumbe"
+
+#: field:group_group:#allowed_values:0
+msgctxt "group_group:#allowed_values:0"
+msgid "Not a team"
+msgstr "Si timu"
+
+#: field:group_group:#allowed_values:1
+msgctxt "group_group:#allowed_values:1"
+msgid "Team"
+msgstr "Timu"
+
+#: field:group_group:team:description
+msgctxt "group_group:team:description"
+msgid "Determine if this is an OG group."
+msgstr "Kutambua kama hii ni kundi asili(sahihi)"
+
+#: field:group_group:team:label
+msgctxt "group_group:team:label"
+msgid "Team"
+msgstr "Timu"
+
+#: field:node_gallery_media:node_gallery_item:description
+msgctxt "node_gallery_media:node_gallery_item:description"
+msgid "File to store Node Gallery media."
+msgstr "Picha ya kuhifadhi  Nyumba ya sanaa vyombo vya habari."
+
+#: field:node_gallery_media:node_gallery_item:label
+msgctxt "node_gallery_media:node_gallery_item:label"
+msgid "Gallery Media "
+msgstr "Gallery media"
+
+#: field:node_gallery_ref_1:node_gallery_item:label
+msgctxt "node_gallery_ref_1:node_gallery_item:label"
+msgid "Galleries"
+msgstr "Sanaa"
+
+#: field:og_group_ref:event:label
+msgctxt "og_group_ref:event:label"
+msgid "Team(s)"
+msgstr "Timu"
+
+#: field:og_group_ref:team_page:label
+msgctxt "og_group_ref:team_page:label"
+msgid "Team(s)"
+msgstr "Timu"
+
+#: field:og_group_ref:team_task:label
+msgctxt "og_group_ref:team_task:label"
+msgid "Team(s)"
+msgstr "Timu"
+
+#: field:og_membership_request:og_membership_type_default:description
+msgctxt "og_membership_request:og_membership_type_default:description"
+msgid "This is the text a user may send to the group administrators."
+msgstr "Hii ni maandishi mtumiaji anaweza kutuma kwa kundi watendaji."
+
+#: field:og_membership_request:og_membership_type_default:label
+msgctxt "og_membership_request:og_membership_type_default:label"
+msgid "Request message"
+msgstr "Ujumbe Ombi"
+
+#: field:og_user_node:user:label
+msgctxt "og_user_node:user:label"
+msgid "Group membership"
+msgstr "Taarifa"
+
