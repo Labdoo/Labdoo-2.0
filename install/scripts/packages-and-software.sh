@@ -56,8 +56,12 @@ mkdir -p /etc/php5/conf.d/
 echo "extension = uploadprogress.so" > /etc/php5/conf.d/uploadprogress.ini
 
 ### install drush
-pear channel-discover pear.drush.org
-pear install -Z pear.drush.org/drush-6.2.0.0
+wget https://github.com/drush-ops/drush/releases/download/8.0.0-rc3/drush.phar
+# Test install.
+php drush.phar core-status
+# Rename to `drush` instead of `php drush.phar`. Destination can be anywhere on $PATH. 
+chmod +x drush.phar
+sudo mv drush.phar /usr/local/bin/drush
+# Enrich the bash startup file with completion and aliases.
+drush init
 
-gunzip /build/buildd/php5-*/pear-build-download/drush-*
-pear upgrade /build/buildd/php5-*/pear-build-download/drush-*
