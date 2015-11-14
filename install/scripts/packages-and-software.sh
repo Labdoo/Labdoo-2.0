@@ -56,12 +56,10 @@ mkdir -p /etc/php5/conf.d/
 echo "extension = uploadprogress.so" > /etc/php5/conf.d/uploadprogress.ini
 
 ### install drush
-wget https://github.com/drush-ops/drush/releases/download/8.0.0-rc3/drush.phar
-# Test install.
-php drush.phar core-status
-# Rename to `drush` instead of `php drush.phar`. Destination can be anywhere on $PATH. 
-chmod +x drush.phar
-sudo mv drush.phar /usr/local/bin/drush
-# Enrich the bash startup file with completion and aliases.
-drush init
+# For new versions of drush, modify the following lines
+wget https://github.com/drush-ops/drush/archive/6.2.0.zip
+unzip 6.2.0.zip
+chmod u+x drush-6.2.0/drush 
+ln -s $(pwd)/drush-6.2.0/drush /usr/bin/drush
+which drush
 
