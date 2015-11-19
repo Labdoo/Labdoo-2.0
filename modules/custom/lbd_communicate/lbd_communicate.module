@@ -724,6 +724,7 @@ function _email_team_event($node, $comment = NULL) {
   $subject = str_replace("[ACTIVITY_SUBJECT]", $activityTitle, $subject);
 
   $body = str_replace("[ACTIVITY_TYPE]", $activityType, $bodyTemplate);
+  $body = str_replace("[USERNAME]", $user->name, $body);
   $body = str_replace("[ACTIVITY_SUBJECT]", $activityTitle, $body);
   $body = str_replace("[TEAM_NAME]", $teamName, $body);
   $body = str_replace("[ACTIVITY_BODY]", $activityBody, $body);
