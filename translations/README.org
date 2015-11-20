@@ -6,31 +6,21 @@ This document describes the steps needed to translate the Labdoo.org social netw
 
 *** Translation of portable object (.po) files (estimated time 2 hours)
 
-+ Go to https://github.com/Labdoo/Labdoo-2.0/tree/master/translations/templates/labdoo-translation-po-files.tar
++ Go to https://github.com/Labdoo/Labdoo/tree/master/translations/po-files/templates/labdoo-translation-fields.po
 
 + Right click on the button "Raw", select the option 'Save link as' and download the file into your local computer.
 
-+ Unzip the file using your favorite unzip application. This will extract various files.
++ To translate the file, search for all occurrences of the keyword 'msgstr ""' and include into the quote "" the translation of the English words found in the field 'msgid'.
 
-+ For each file extracted, open it using a text editor. To translate the file, search for all occurrences of the keyword 'msgstr ""' and include into the quote "" the translation of the English words found in the field 'msgid'.
-
-+ Save the file using the same file name but changing its suffix to reflect the language you are translating to. For instance, if you are translating to Japanese the file 'fields-en.po', rename the translated file to 'fields-japanese.po'. 
-
-+ Repeat the steps above for all extracted files.
++ Save the translated file using the same file name but adding a suffix to reflect the language you are translating to. For instance, if you are translating to Japanese, save the filename as 'labdoo-translation-fields-japanese.po'. 
 
 *** Translation of email (.email) files (estimated time 2 hours)
 
-+ Go to https://github.com/Labdoo/Labdoo-2.0/tree/master/translations/templates/labdoo-translation-email-files.tar
++ Go to https://github.com/Labdoo/Labdoo/tree/master/translations/email-files/en
 
-+ Right click on the button "Raw", select the option 'Save link as' and download the file into your local computer.
++ Translate each of the files you will find in this folder.
 
-+ Unzip the file using your favorite unzip application. This will extract various files.
-
-+ For each file extracted, open it using a text editor and translate it to your language. 
-
-+ Save the file using the same file name but changing its suffix to reflect the language you are translating to. For instance, if you are translating to Japanese the file 'dootrip_added_body-en.email', rename the translated file to 'dootrip_added_body-japanese.email'. 
-
-+ Repeat the steps above for all extracted files.
++ Save each translation file using the same original file name but changing its suffix to reflect the language you are translating to. For instance, if you are translating to Japanese the file 'dootrip_added_body-en.email', rename the translated file to 'dootrip_added_body-japanese.email'. 
 
 *** Where to send the translated files
 
