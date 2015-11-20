@@ -9,7 +9,7 @@ defaults[projects][subdir] = contrib
 ;--------------------
 ; Bootstrap Theme
 ;--------------------
-projects[bootstrap] = 3.0
+projects[bootstrap] = 3.1
 projects[jquery_update] = 3.0-alpha3
 projects[less] = 4.0
 
