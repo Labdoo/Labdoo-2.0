@@ -838,6 +838,14 @@ function print_dashboard_switcher($userId = NULL)
       $url4 = "Dootrips";
       break;
 
+    # Path alias for compatibility with 1.0 
+    case "call-for-laptops":
+      $url1 = "Edoovillages";
+      $url2 = "Doojects";
+      $url3 = "Hubs";
+      $url4 = "Dootrips";
+      break;
+
     case "content/dootrips-dashboard":
       $url1 = "Dootrips";
       $url2 = "Doojects";
@@ -1261,13 +1269,25 @@ var runOnce = google.visualization.events.addListener(table, 'ready', function (
     for (var i = 0; i < $numTableColumns; i++) {
       // replace double-quotes with double-double quotes for CSV compatibility
       tmpStr = tempData.getColumnLabel(i).replace(/\"/g, '\"\"');
+      // TODO: temporarily disable 'Serial number' and 'Model' because
+      //       arbitrary strings in these fields are breaking the CSV download 
+      //       file button.
+      if(tmpStr == 'Serial number')
+        continue;
+      if(tmpStr == 'Model')
+        continue;
       tmpArr.push('\"' + tmpStr + '\"');
     }
     csvData.push(tmpArr.join('\t'));
     for (var i = 0; i < tempData.getNumberOfRows(); i++) {
       tmpArr = [];
       for (var j = 0; j < $numTableColumns; j++) {
-        switch(data.getColumnType(j)) {
+        tmpStr = tempData.getColumnLabel(j).replace(/\"/g, '\"\"');
+        if(tmpStr == 'Serial number')
+          continue;
+        if(tmpStr == 'Model')
+          continue;
+        switch(tempData.getColumnType(j)) {
           case 'string':
             tmpStr = tempData.getValue(i, j).replace(/\"/g, '\"\"');
             // remove html tags

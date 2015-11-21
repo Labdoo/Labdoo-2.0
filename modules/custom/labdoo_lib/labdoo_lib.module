@@ -2255,7 +2255,7 @@ function labdoo_block_filter_header() {
   if(strcmp($path, "content/dootrips-dashboard") == 0)
       return TRUE;
 
-  if(strcmp($path, "content/edoovillages-dashboard") == 0)
+  if(strcmp($path, "content/edoovillages-dashboard") == 0 || strcmp($path, "call-for-laptops") == 0)
       return TRUE;
 
   if(strcmp($path, "content/hubs-dashboard") == 0)
