@@ -105,13 +105,22 @@ $handler->display->display_options['filters']['entity_type']['value'] = 'user';
 /* Display: Page */
 $handler = $view->new_display('page', 'Page', 'page_1');
 $handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Content: Nid */
+$handler->display->display_options['fields']['nid']['id'] = 'nid';
+$handler->display->display_options['fields']['nid']['table'] = 'node';
+$handler->display->display_options['fields']['nid']['field'] = 'nid';
+$handler->display->display_options['fields']['nid']['relationship'] = 'og_membership_related_node_group';
+$handler->display->display_options['fields']['nid']['exclude'] = TRUE;
 /* Field: Content: Title */
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
 $handler->display->display_options['fields']['title']['field'] = 'title';
 $handler->display->display_options['fields']['title']['relationship'] = 'og_membership_related_node_group';
 $handler->display->display_options['fields']['title']['label'] = 'Team';
+$handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['title']['alter']['path'] = 'node/[nid]/activities';
 $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
+$handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
 /* Field: OG membership: Created */
 $handler->display->display_options['fields']['created']['id'] = 'created';
 $handler->display->display_options['fields']['created']['table'] = 'og_membership';

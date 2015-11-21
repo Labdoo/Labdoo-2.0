@@ -512,7 +512,9 @@ function lbd_roles_user_default_permissions() {
   // Exported permission: edit any simplenews content.
   $permissions['edit any simplenews content'] = array(
     'name' => 'edit any simplenews content',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'newsletter manager',
+    ),
     'module' => 'node',
   );
 
@@ -1077,8 +1079,7 @@ function lbd_roles_user_default_permissions() {
     'name' => 'view revisions',
     'roles' => array(
       0 => 'administrator',
-      1 => 'anonymous user',
-      2 => 'authenticated user',
+      1 => 'authenticated user',
     ),
     'module' => 'node',
   );
