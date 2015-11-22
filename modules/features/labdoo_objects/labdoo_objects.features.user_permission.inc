@@ -154,7 +154,8 @@ function labdoo_objects_user_default_permissions() {
   $permissions['edit any laptop content'] = array(
     'name' => 'edit any laptop content',
     'roles' => array(
-      0 => 'superhub manager',
+      0 => 'laptop manager',
+      1 => 'superhub manager',
     ),
     'module' => 'node',
   );

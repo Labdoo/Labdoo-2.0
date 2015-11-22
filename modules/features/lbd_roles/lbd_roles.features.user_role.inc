@@ -28,6 +28,12 @@ function lbd_roles_user_default_roles() {
     'weight' => '15',
   );
 
+  // Exported role: laptop manager.
+  $roles['laptop manager'] = array(
+    'name' => 'laptop manager',
+    'weight' => '22',
+  );
+
   // Exported role: newsletter manager.
   $roles['newsletter manager'] = array(
     'name' => 'newsletter manager',

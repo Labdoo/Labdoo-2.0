@@ -10,7 +10,7 @@
 function labdoo_objects_conditional_fields_default_fields() {
   $items = array();
 
-  $items[] = array(
+  $items["node:laptop:0"] = array(
     'entity' => 'node',
     'bundle' => 'laptop',
     'dependent' => 'field_edoovillage_destination',

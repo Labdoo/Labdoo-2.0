@@ -146,6 +146,13 @@ function lbd_roles_user_default_permissions() {
     'module' => 'role_delegation',
   );
 
+  // Exported permission: assign laptop manager role.
+  $permissions['assign laptop manager role'] = array(
+    'name' => 'assign laptop manager role',
+    'roles' => array(),
+    'module' => 'role_delegation',
+  );
+
   // Exported permission: clone node.
   $permissions['clone node'] = array(
     'name' => 'clone node',
