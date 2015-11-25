@@ -82,6 +82,8 @@ function _update_linked_nodes($node, $src_field, $dst_field, $src_name, $dst_nam
         continue;      
 
       $dstLoaded = node_load($dstNode['target_id']);
+      if(!$dstLoaded) // Destination node no longer exists (it was probably removed)
+        return;
       $wDstNode = entity_metadata_wrapper('node', $dstLoaded);
       $srcList = $wDstNode->$dst_field->value();
       if(!$srcList)
