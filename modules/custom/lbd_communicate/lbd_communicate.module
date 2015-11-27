@@ -504,8 +504,8 @@ function lbd_communicate_mail_alter(&$message) {
  */
 function lbd_communicate_cron() {
   global $base_url;
-  $DOOTRIP_EMAIL_EXPIRED_PERIOD = 432000; // In seconds (5 days after expiration, send notification)
-  $DOOTRIP_EMAIL_EXPIRED_REPETITIONS = 3; // Send three more notifications in the same interval (i.e., 5, 10, 15 days)
+  $DOOTRIP_EMAIL_EXPIRED_PERIOD = 864000; // In seconds (10 days after expiration, send notification)
+  $DOOTRIP_EMAIL_EXPIRED_REPETITIONS = 3; // Send three more notifications in the same interval (i.e., 10, 20, 30 days)
   $cron_last = variable_get('cron_last');
 
   /*

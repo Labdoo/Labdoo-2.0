@@ -2264,7 +2264,7 @@ function labdoo_block_filter_header() {
   if((strcmp($path, "share-wall") == 0) || (strcmp($path, "content/my-share-wall") == 0))
       return TRUE;
 
-  if(labdoo_lib_node_is_type(array('laptop', 'dootrip', 'node_gallery_gallery', 'drupal_wall', 'team_page', 'superhub_page')))
+  if(labdoo_lib_node_is_type(array('laptop', 'dootrip', 'node_gallery_gallery', 'drupal_wall', 'team_page', 'superhub_page', 'simplenews')))
     return TRUE;
 
   if(0 === strpos($path, 'node/add/'))
