@@ -871,6 +871,14 @@ function labdoo_lib_node_presave($node) {
         $node->locations[0]['inhibit_geocode'] = FALSE;
       }
     }
+
+    # If status is set back to a 'non-edoovillage assigned state', remove the edoovillage
+    $doojectStatus = labdoo_lib_get_field($node, 'field_status', 'node', 'value');
+    if(preg_match('(S0|S1|S2)', $doojectStatus)) {
+      $wNode = entity_metadata_wrapper('node', $node);
+      $wNode->field_edoovillage_destination->set(0); // It expects a node ID; setting it to zero seems to do it
+    }
+
   }
 
   if($node->type == 'edoovillage') {

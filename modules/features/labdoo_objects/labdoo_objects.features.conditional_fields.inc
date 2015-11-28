@@ -93,6 +93,13 @@ function labdoo_objects_conditional_fields_default_fields() {
           3 => 0,
           4 => 0,
         ),
+        10 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
       ),
       'element_edit' => array(
         1 => '1',
@@ -136,12 +143,16 @@ function labdoo_objects_conditional_fields_default_fields() {
           1 => '1',
           3 => 0,
         ),
+        10 => array(
+          1 => '1',
+          3 => '3',
+        ),
       ),
       'selector' => '',
       'values_set' => '6',
       'value_form' => '_none',
       'value' => array(
-        'RegExp' => '(S3|S4|T1)',
+        'RegExp' => '(S3|S4|T1|S7|S8|S9)',
       ),
       'values' => array(),
     ),
