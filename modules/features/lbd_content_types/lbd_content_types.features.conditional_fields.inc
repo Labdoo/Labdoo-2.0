@@ -10,7 +10,7 @@
 function lbd_content_types_conditional_fields_default_fields() {
   $items = array();
 
-  $items[] = array(
+  $items["node:superhub_page:0"] = array(
     'entity' => 'node',
     'bundle' => 'superhub_page',
     'dependent' => 'field_linked_pages',
@@ -149,7 +149,7 @@ function lbd_content_types_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["node:team_page:0"] = array(
     'entity' => 'node',
     'bundle' => 'team_page',
     'dependent' => 'field_send_to_conversation',
@@ -284,7 +284,7 @@ function lbd_content_types_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["node:team_task:0"] = array(
     'entity' => 'node',
     'bundle' => 'team_task',
     'dependent' => 'field_send_to_task',

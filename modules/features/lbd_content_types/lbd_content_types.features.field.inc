@@ -717,7 +717,7 @@ function lbd_content_types_field_default_fields() {
       'module' => 'file',
       'settings' => array(
         'display_default' => 0,
-        'display_field' => 1,
+        'display_field' => 0,
         'uri_scheme' => 'public',
       ),
       'translatable' => '0',
@@ -985,7 +985,7 @@ function lbd_content_types_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          'Dooject' => 'Doojects',
+          'Dooject' => 'Dootronics',
           'Dootrip' => 'Dootrips',
           'Edoovillage' => 'Edoovillages',
           'Hub' => 'Hubs',
@@ -1515,7 +1515,7 @@ function lbd_content_types_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '2',
+          'weight' => '3',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -1594,11 +1594,12 @@ function lbd_content_types_field_default_fields() {
           'label' => 'inline',
           'module' => 'date',
           'settings' => array(
-            'format_type' => 'long',
+            'format_type' => 'long_with_time_zone',
             'fromto' => 'both',
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
+            'show_remaining_days' => 0,
           ),
           'type' => 'date_default',
           'weight' => '0',
@@ -1638,7 +1639,7 @@ function lbd_content_types_field_default_fields() {
           'text_parts' => array(),
           'year_range' => '-3:+3',
         ),
-        'type' => 'date_select',
+        'type' => 'date_popup',
         'weight' => '5',
       ),
     ),
@@ -1731,7 +1732,7 @@ function lbd_content_types_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
-        'weight' => '7',
+        'weight' => '8',
       ),
     ),
   );
@@ -1774,7 +1775,7 @@ function lbd_content_types_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '1',
+          'weight' => '2',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -1804,7 +1805,7 @@ function lbd_content_types_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '6',
+        'weight' => '7',
       ),
     ),
   );
@@ -1869,7 +1870,7 @@ function lbd_content_types_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '4',
+          'weight' => '6',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -4145,7 +4146,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'module' => 'file',
           'settings' => array(),
           'type' => 'file_default',
-          'weight' => 2,
+          'weight' => '2',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -4220,11 +4221,10 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'list',
+          'label' => 'hidden',
           'settings' => array(),
-          'type' => 'list_default',
-          'weight' => 3,
+          'type' => 'hidden',
+          'weight' => '3',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -4307,13 +4307,10 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'entityreference',
-          'settings' => array(
-            'link' => FALSE,
-          ),
-          'type' => 'entityreference_label',
-          'weight' => 4,
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '4',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -4650,11 +4647,10 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'list',
+          'label' => 'hidden',
           'settings' => array(),
-          'type' => 'list_default',
-          'weight' => 8,
+          'type' => 'hidden',
+          'weight' => '8',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -4737,13 +4733,10 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'entityreference',
-          'settings' => array(
-            'link' => FALSE,
-          ),
-          'type' => 'entityreference_label',
-          'weight' => 9,
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '9',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -5105,6 +5098,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
+            'show_remaining_days' => FALSE,
           ),
           'type' => 'date_default',
           'weight' => '3',
@@ -5321,7 +5315,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'generalTask' => 'General task',
           'websiteBug' => 'Website bug',
           'featureRequest' => 'Feature request',
-          'doojectSanitation' => 'Dooject sanitation event',
+          'doojectSanitation' => 'Dootronic sanitation event',
           'outreachingActivity' => 'Outreaching activity',
         ),
         'allowed_values_function' => '',

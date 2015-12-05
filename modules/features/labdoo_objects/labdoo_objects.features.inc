@@ -48,7 +48,7 @@ function labdoo_objects_node_info() {
       'help' => '',
     ),
     'laptop' => array(
-      'name' => t('Dooject'),
+      'name' => t('Dootronic'),
       'base' => 'node_content',
       'description' => t('Use this content type to tag and register a laptop.'),
       'has_title' => '1',

@@ -108,9 +108,9 @@ function labdoo_objects_field_default_fields() {
           'second' => 0,
           'year' => 'year',
         ),
-        'timezone_db' => 'UTC',
+        'timezone_db' => '',
         'todate' => '',
-        'tz_handling' => 'user',
+        'tz_handling' => 'none',
       ),
       'translatable' => '0',
       'type' => 'date',
@@ -167,6 +167,7 @@ function labdoo_objects_field_default_fields() {
           'input_format' => 'm/d/Y - H:i:s',
           'input_format_custom' => '',
           'label_position' => 'above',
+          'no_fieldset' => 0,
           'text_parts' => array(),
           'year_range' => '-3:+3',
         ),
@@ -272,9 +273,9 @@ function labdoo_objects_field_default_fields() {
           'second' => 0,
           'year' => 'year',
         ),
-        'timezone_db' => 'UTC',
+        'timezone_db' => '',
         'todate' => '',
-        'tz_handling' => 'user',
+        'tz_handling' => 'none',
       ),
       'translatable' => '0',
       'type' => 'date',
@@ -331,6 +332,7 @@ function labdoo_objects_field_default_fields() {
           'input_format' => 'm/d/Y - H:i:s',
           'input_format_custom' => '',
           'label_position' => 'above',
+          'no_fieldset' => 0,
           'text_parts' => array(),
           'year_range' => '-3:+3',
         ),
@@ -835,7 +837,7 @@ function labdoo_objects_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_dootrip_capacity',
-      'label' => 'Number of doojects you can carry',
+      'label' => 'Number of dootronics you can carry',
       'required' => 1,
       'settings' => array(
         'max' => '',
@@ -913,7 +915,7 @@ $display_output = $entity_field_item[\'value\'];',
       ),
       'entity_type' => 'node',
       'field_name' => 'field_dootrip_weight',
-      'label' => 'Dooject\'s estimated total weight',
+      'label' => 'Dootronics\' estimated total weight',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -1192,8 +1194,9 @@ $display_output = $entity_field_item[\'value\'];',
     'field_instance' => array(
       'bundle' => 'dootrip',
       'default_value' => NULL,
+      'default_value_function' => '',
       'deleted' => '0',
-      'description' => 'Once you know the dooject(s) that you will be carrying with this dootrip, enter their Labdoo identifier here.',
+      'description' => 'Once you know the dootronic(s) that you will be carrying with this dootrip, enter their Labdoo identifier here.',
       'display' => array(
         'default' => array(
           'label' => 'inline',
@@ -1219,9 +1222,14 @@ $display_output = $entity_field_item[\'value\'];',
       ),
       'entity_type' => 'node',
       'field_name' => 'field_laptops',
-      'label' => 'Dooject identifiers',
+      'label' => 'Dootronic identifiers',
       'required' => 0,
       'settings' => array(
+        'behaviors' => array(
+          'prepopulate' => array(
+            'status' => 0,
+          ),
+        ),
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -1287,7 +1295,7 @@ $display_output = $entity_field_item[\'value\'];',
       ),
       'entity_type' => 'node',
       'field_name' => 'field_number_of_days_after',
-      'label' => 'Number of days you can store the dooject after the arrival date',
+      'label' => 'Number of days you can store the dootronic(s) after the arrival date',
       'required' => 0,
       'settings' => array(
         'max' => '',
@@ -1355,7 +1363,7 @@ $display_output = $entity_field_item[\'value\'];',
       ),
       'entity_type' => 'node',
       'field_name' => 'field_number_of_days_before',
-      'label' => 'Number of days you can store the dooject before the departure date',
+      'label' => 'Number of days you can store the dootronic(s) before the departure date',
       'required' => 0,
       'settings' => array(
         'max' => '',
@@ -1431,7 +1439,7 @@ $display_output = $entity_field_item[\'value\'];',
       ),
       'entity_type' => 'node',
       'field_name' => 'field_number_of_doojects_assigne',
-      'label' => 'Number of doojects assigned',
+      'label' => 'Number of dootronics assigned',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -1965,7 +1973,7 @@ $display_output = $entity_field_item[\'value\'];',
       ),
       'entity_type' => 'node',
       'field_name' => 'field_doojects_additional_notes',
-      'label' => 'Doojects additional notes',
+      'label' => 'Dootronics additional notes',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -2715,7 +2723,7 @@ $display_output = $entity_field_item[\'value\'];',
       ),
       'entity_type' => 'node',
       'field_name' => 'field_number_of_laptops_needed',
-      'label' => 'Number of doojects needed',
+      'label' => 'Number of dootronics needed',
       'required' => 1,
       'settings' => array(
         'max' => '',
@@ -3336,8 +3344,8 @@ $display_output = $entity_field_item[\'value\'];',
       'settings' => array(
         'allowed_values' => array(
           'red' => 'Red: pictures about the project have not been uploaded yet',
-          'yellow' => 'Yellow: first doojects can be sent',
-          'green' => 'Green: the rest of the doojects can be sent',
+          'yellow' => 'Yellow: first dootronics can be sent',
+          'green' => 'Green: the rest of the dootronics can be sent',
         ),
         'allowed_values_function' => '',
       ),
@@ -4096,7 +4104,7 @@ $display_output = $entity_field_item[\'value\'];',
       'bundle' => 'hub',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'If this hub accepts to store doojects, select "Dropping point". If the hub sanitizes doojects, select "Sanitizing point". You can select multiple options at the same time.',
+      'description' => 'If this hub accepts to store dootronics, select "Dropping point". If the hub sanitizes dootronics, select "Sanitizing point". You can select multiple options at the same time.',
       'display' => array(
         'default' => array(
           'label' => 'inline',
@@ -4181,7 +4189,7 @@ $display_output = $entity_field_item[\'value\'];',
       'default_value' => NULL,
       'default_value_function' => '',
       'deleted' => '0',
-      'description' => 'Add users who need to have permission to edit this dooject',
+      'description' => 'Add users who need to have permission to edit this dootronic',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -4325,7 +4333,7 @@ $display_output = $entity_field_item[\'value\'];',
       'default_value' => NULL,
       'default_value_function' => '',
       'deleted' => '0',
-      'description' => 'Add users who want to follow this dooject',
+      'description' => 'Add users who want to follow this dootronic',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -4373,10 +4381,12 @@ $display_output = $entity_field_item[\'value\'];',
             'blog' => 0,
             'book' => 0,
             'dootrip' => 0,
+            'drupal_wall' => 0,
             'edoovillage' => 0,
             'event' => 0,
             'gic' => 0,
             'hub' => 0,
+            'labdoo_slide' => 0,
             'laptop' => 0,
             'node_gallery_gallery' => 0,
             'node_gallery_item' => 0,
@@ -5181,7 +5191,7 @@ $display_output = $entity_field_item[\'value\'];',
       'default_value' => NULL,
       'default_value_function' => '',
       'deleted' => '0',
-      'description' => 'This field is updated automatically once dootrips are assigned to this dooject. You can also optionally set this field manually adding dootrips by typing their name.',
+      'description' => 'This field is updated automatically once dootrips are assigned to this dootronic. You can also optionally set this field manually adding dootrips by typing their name.',
       'display' => array(
         'default' => array(
           'label' => 'inline',
@@ -5207,7 +5217,7 @@ $display_output = $entity_field_item[\'value\'];',
       ),
       'entity_type' => 'node',
       'field_name' => 'field_dootrips',
-      'label' => 'Dootrips assigned to this dooject',
+      'label' => 'Dootrips assigned to this dootronic',
       'required' => 0,
       'settings' => array(
         'behaviors' => array(
@@ -5608,7 +5618,7 @@ $display_output = $entity_field_item[\'value\'];',
       'default_value' => NULL,
       'default_value_function' => '',
       'deleted' => '0',
-      'description' => 'The user currently managing this dooject',
+      'description' => 'The user currently managing this dootronic',
       'display' => array(
         'default' => array(
           'label' => 'inline',
@@ -5810,7 +5820,7 @@ $display_output = $entity_field_item[\'value\'];',
       'bundle' => 'laptop',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Brand name and model of the dooject',
+      'description' => 'Brand name and model',
       'display' => array(
         'default' => array(
           'label' => 'inline',
@@ -5959,7 +5969,7 @@ $display_output = $entity_field_item[\'value\'];',
     'field_instance' => array(
       'bundle' => 'laptop',
       'deleted' => '0',
-      'description' => 'Upload here a picture of the dooject. A picture is a helpful way for donors to ensure that they are looking at the correct dooject. Please do not use pictures that you may find on the Internet, as they may be copyrighted.  Instead, please take a picture with your own camera. Once the dooject reaches a school, you can also upload another picture with the students using it.',
+      'description' => 'Upload here a picture of the dootronic. A picture is a helpful way for donors to ensure that they are looking at the correct dootronic. Please do not use pictures that you may find on the Internet, as they may be copyrighted.  Instead, please take a picture with your own camera. Once the dootronic reaches a school, you can also upload another picture with the students using it.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -6051,7 +6061,7 @@ $display_output = $entity_field_item[\'value\'];',
       'bundle' => 'laptop',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Write here the serial number of the dooject. Usually the serial number can be found in the back of the dooject, search for keywords such as "Serial Number" or "S/N", or if you see a bar code with a number under it, use this number. If the dooject has no sticker with the serial number, then write in this field the words "Unknown".',
+      'description' => 'Write here the serial number of the dootronic. Usually the serial number can be found in the back of the dootronic, search for keywords such as "Serial Number" or "S/N", or if you see a bar code with a number under it, use this number. If the dootronic has no sticker with the serial number, then write in this field the words "Unknown".',
       'display' => array(
         'default' => array(
           'label' => 'inline',
@@ -6123,7 +6133,7 @@ $display_output = $entity_field_item[\'value\'];',
           'S9' => '[S9] Deployed but not working',
           'T1' => '[T1] In transit going to an edoovillage',
           'T2' => '[T2] In transit going to a recycling factory',
-          'L1' => '[L1] Dooject was lost',
+          'L1' => '[L1] Dootronic was lost',
         ),
         'allowed_values_function' => '',
       ),
@@ -6217,8 +6227,9 @@ $display_output = $entity_field_item[\'value\'];',
     'field_instance' => array(
       'bundle' => 'laptop',
       'default_value' => NULL,
+      'default_value_function' => '',
       'deleted' => '0',
-      'description' => 'The user who tagged this dooject',
+      'description' => 'The user who tagged this dootronic',
       'display' => array(
         'default' => array(
           'label' => 'inline',
@@ -6247,6 +6258,62 @@ $display_output = $entity_field_item[\'value\'];',
       'label' => 'Tagger',
       'required' => 1,
       'settings' => array(
+        'behaviors' => array(
+          'prepopulate' => array(
+            'status' => 0,
+          ),
+        ),
+        'nodeaccess_userreference' => array(
+          'all' => array(
+            'view' => 0,
+          ),
+          'all_published' => '0',
+          'author' => array(
+            'delete' => 0,
+            'update' => 0,
+            'view' => 0,
+          ),
+          'author_published' => '0',
+          'create' => array(
+            'action' => 0,
+            'article' => 0,
+            'blog' => 0,
+            'book' => 0,
+            'dootrip' => 0,
+            'drupal_wall' => 0,
+            'edoovillage' => 0,
+            'event' => 0,
+            'gic' => 0,
+            'hub' => 0,
+            'labdoo_slide' => 0,
+            'laptop' => 0,
+            'node_gallery_gallery' => 0,
+            'node_gallery_item' => 0,
+            'page' => 0,
+            'private_page' => 0,
+            'simplenews' => 0,
+            'slider_page' => 0,
+            'superhub_page' => 0,
+            'team' => 0,
+            'team_page' => 0,
+            'team_task' => 0,
+          ),
+          'priority' => '0',
+          'referenced' => array(
+            'delete' => 0,
+            'deny_delete' => 0,
+            'deny_update' => 0,
+            'deny_view' => 0,
+            'update' => 0,
+            'view' => 0,
+          ),
+          'referenced_published' => '0',
+          'unused' => '0',
+          'views' => array(
+            'view' => '',
+            'view_args' => '',
+          ),
+        ),
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -6338,8 +6405,8 @@ $display_output = $entity_field_item[\'value\'];',
   t('About this hub');
   t('Add here any observations you would like to make. For instance you can add notes such as the quality of the laptop or if something is broken, a reminder, or a note on who donated the laptop.');
   t('Add here the email address(es) of additional people that you would like to be notified whenever this laptop changes its status.');
-  t('Add users who need to have permission to edit this dooject');
-  t('Add users who want to follow this dooject');
+  t('Add users who need to have permission to edit this dootronic');
+  t('Add users who want to follow this dootronic');
   t('Additional editors');
   t('Additional files');
   t('Additional followers');
@@ -6350,7 +6417,7 @@ $display_output = $entity_field_item[\'value\'];',
   t('Amp hours');
   t('Arrival date');
   t('Battery duration');
-  t('Brand name and model of the dooject');
+  t('Brand name and model');
   t('CPU speed (Example: 1200 MHz)');
   t('Comments');
   t('Coordinating hub(s)');
@@ -6358,11 +6425,11 @@ $display_output = $entity_field_item[\'value\'];',
   t('Departure date');
   t('Destination of the trip');
   t('Device type');
-  t('Dooject identifiers');
-  t('Dooject\'s estimated total weight');
-  t('Doojects additional notes');
   t('Dootripper(s)');
-  t('Dootrips assigned to this dooject');
+  t('Dootrips assigned to this dootronic');
+  t('Dootronic identifiers');
+  t('Dootronics additional notes');
+  t('Dootronics\' estimated total weight');
   t('Edoovillage destination');
   t('Edoovillages');
   t('Email address, phone number, website, etc.');
@@ -6371,7 +6438,7 @@ $display_output = $entity_field_item[\'value\'];',
   t('Hub branches');
   t('Hub manager(s)');
   t('Hub type');
-  t('If this hub accepts to store doojects, select "Dropping point". If the hub sanitizes doojects, select "Sanitizing point". You can select multiple options at the same time.');
+  t('If this hub accepts to store dootronics, select "Dropping point". If the hub sanitizes dootronics, select "Sanitizing point". You can select multiple options at the same time.');
   t('If this hub has a parent hub, please select it from the following list.');
   t('If you are an individual tagger, select here the group "Grassroots". If you belong to a hub, select the name of your hub.');
   t('Internet additional notes');
@@ -6384,15 +6451,15 @@ $display_output = $entity_field_item[\'value\'];',
   t('Model');
   t('Name of the person(s) or the NGO performing the dootrip if different than the dootrippers field');
   t('Number of cores (CPU type)');
-  t('Number of days you can store the dooject after the arrival date');
-  t('Number of days you can store the dooject before the departure date');
-  t('Number of doojects assigned');
-  t('Number of doojects needed');
-  t('Number of doojects you can carry');
+  t('Number of days you can store the dootronic(s) after the arrival date');
+  t('Number of days you can store the dootronic(s) before the departure date');
+  t('Number of dootronics assigned');
+  t('Number of dootronics needed');
+  t('Number of dootronics you can carry');
   t('Number of students');
   t('Number of teachers');
   t('On-site point of contact');
-  t('Once you know the dooject(s) that you will be carrying with this dootrip, enter their Labdoo identifier here.');
+  t('Once you know the dootronic(s) that you will be carrying with this dootrip, enter their Labdoo identifier here.');
   t('Origin of the trip');
   t('Parent hub');
   t('Pick me up');
@@ -6408,15 +6475,15 @@ $display_output = $entity_field_item[\'value\'];',
   t('Source group');
   t('Status');
   t('Tagger');
-  t('The user currently managing this dooject');
-  t('The user who tagged this dooject');
-  t('This field is updated automatically once dootrips are assigned to this dooject. You can also optionally set this field manually adding dootrips by typing their name.');
-  t('Upload here a picture of the dooject. A picture is a helpful way for donors to ensure that they are looking at the correct dooject. Please do not use pictures that you may find on the Internet, as they may be copyrighted.  Instead, please take a picture with your own camera. Once the dooject reaches a school, you can also upload another picture with the students using it.');
+  t('The user currently managing this dootronic');
+  t('The user who tagged this dootronic');
+  t('This field is updated automatically once dootrips are assigned to this dootronic. You can also optionally set this field manually adding dootrips by typing their name.');
+  t('Upload here a picture of the dootronic. A picture is a helpful way for donors to ensure that they are looking at the correct dootronic. Please do not use pictures that you may find on the Internet, as they may be copyrighted.  Instead, please take a picture with your own camera. Once the dootronic reaches a school, you can also upload another picture with the students using it.');
   t('User(s) who will be part of this dootrip');
   t('Volts');
   t('Watt-hours');
   t('Weight');
-  t('Write here the serial number of the dooject. Usually the serial number can be found in the back of the dooject, search for keywords such as "Serial Number" or "S/N", or if you see a bar code with a number under it, use this number. If the dooject has no sticker with the serial number, then write in this field the words "Unknown".');
+  t('Write here the serial number of the dootronic. Usually the serial number can be found in the back of the dootronic, search for keywords such as "Serial Number" or "S/N", or if you see a bar code with a number under it, use this number. If the dootronic has no sticker with the serial number, then write in this field the words "Unknown".');
 
   return $fields;
 }
