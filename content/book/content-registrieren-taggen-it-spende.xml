@@ -21,7 +21,7 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Wer möchte kann seine IT-Spende ("dooject") selber registrieren, ansonsten übernimmt das auch Labdoo.org gerne (in dem Fall nur die E-Mailadresse aufkleben). Um die IT-Spende zu registrieren muss man sich zunächst <a href="/de/user/register">einen Benutzer (User) anlegen</a>.
+<value>Wer möchte kann seine IT-Spende ("dootronic") selber registrieren, ansonsten übernimmt das auch Labdoo.org gerne (in dem Fall nur die E-Mailadresse aufkleben). Um die IT-Spende zu registrieren muss man sich zunächst <a href="/de/user/register">einen Benutzer (User) anlegen</a>.
 
 Dann geht auf <a href="/de/node/add/laptop">/de/node/add/laptop</a> und erfasst die Daten eurer IT-Spende (was ihr nicht wisst bitte freilassen, viele Eingaben sind nur optional):
 
@@ -59,7 +59,6 @@ Dann geht auf <a href="/de/node/add/laptop">/de/node/add/laptop</a> und erfasst 
 <strong>Weiteres Element hinzufügen</strong> = durch Anklicken wird jeweils eine weitere Eingabemöglichkeit hinzugefügt.
 
 Ab Status S3 (einem Projekt zugeordnet) und höher ist zwingend die Zuordnung eines Edoovillage (Projektes) erforderlich. Ab Status T1 (im Transit) wird die Adresse des Edoovillage auf den Laptop vererbt.
-
 </value>
 </body>
 <body>

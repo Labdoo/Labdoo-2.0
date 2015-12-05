@@ -35,6 +35,13 @@
 </li>
 </ul>
 
+In addition to the above notifications, users will receive the following set of reminders:
+
+<ul>
+<li>
+<strong>Upon a dootrip expiration.</strong> Five days after a dootrip expires, if the dootrip status has not been changed to 'Completed' or 'Cancelled', then the users in charge of that dootrip will receive an email reminder to update the status of the dootrip. This email reminder is sent three times, each one separated by 5 days. That is, the reminder is sent 5 days, 10 days and 15 days after the dootrip has been completed and as long as the status is not changed.
+</li>
+</ul>
 
 </value>
 </body>

@@ -268,7 +268,7 @@ $handler->display->display_options['defaults']['fields'] = FALSE;
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
 $handler->display->display_options['fields']['title']['field'] = 'title';
-$handler->display->display_options['fields']['title']['label'] = 'Dooject ID';
+$handler->display->display_options['fields']['title']['label'] = 'Dootronic ID';
 /* Field: Location: Country */
 $handler->display->display_options['fields']['country']['id'] = 'country';
 $handler->display->display_options['fields']['country']['table'] = 'location';
@@ -495,7 +495,7 @@ $handler->display->display_options['defaults']['fields'] = FALSE;
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
 $handler->display->display_options['fields']['title']['field'] = 'title';
-$handler->display->display_options['fields']['title']['label'] = 'Dooject ID';
+$handler->display->display_options['fields']['title']['label'] = 'Dootronic ID';
 /* Field: Location: Country */
 $handler->display->display_options['fields']['country']['id'] = 'country';
 $handler->display->display_options['fields']['country']['table'] = 'location';

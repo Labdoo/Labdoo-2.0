@@ -287,14 +287,21 @@ $handler->display->display_options['filters']['field_status_value']['field'] = '
 $handler->display->display_options['filters']['field_status_value']['group'] = 1;
 $handler->display->display_options['filters']['field_status_value']['exposed'] = TRUE;
 $handler->display->display_options['filters']['field_status_value']['expose']['operator_id'] = 'field_status_value_op';
-$handler->display->display_options['filters']['field_status_value']['expose']['label'] = 'Dooject status';
+$handler->display->display_options['filters']['field_status_value']['expose']['label'] = 'Dootronic status';
 $handler->display->display_options['filters']['field_status_value']['expose']['operator'] = 'field_status_value_op';
 $handler->display->display_options['filters']['field_status_value']['expose']['identifier'] = 'field_status_value';
 $handler->display->display_options['filters']['field_status_value']['expose']['multiple'] = TRUE;
 $handler->display->display_options['filters']['field_status_value']['expose']['remember_roles'] = array(
   2 => '2',
   1 => 0,
+  7 => 0,
+  8 => 0,
+  9 => 0,
   3 => 0,
+  5 => 0,
+  6 => 0,
+  4 => 0,
+  10 => 0,
 );
 /* Filter criterion: Content: Source group (field_hub_laptop) */
 $handler->display->display_options['filters']['field_hub_laptop_target_id']['id'] = 'field_hub_laptop_target_id';
@@ -1223,6 +1230,7 @@ $handler->display->display_options['filters']['field_edoovillage_status_value'][
 $handler->display->display_options['filters']['field_edoovillage_status_value']['field'] = 'field_edoovillage_status_value';
 $handler->display->display_options['filters']['field_edoovillage_status_value']['value'] = array(
   'open' => 'open',
+  'completed' => 'completed',
 );
 
 /* Display: Entity Reference - Doojects possible dootrips */
@@ -1281,5 +1289,7 @@ $handler->display->display_options['filters']['field_status_dootrip_value_i18n']
 $handler->display->display_options['filters']['field_status_dootrip_value_i18n']['field'] = 'field_status_dootrip_value_i18n';
 $handler->display->display_options['filters']['field_status_dootrip_value_i18n']['value'] = array(
   'DS0' => 'DS0',
+  'DS1' => 'DS1',
+  'DS2' => 'DS2',
 );
 

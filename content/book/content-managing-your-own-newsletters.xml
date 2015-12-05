@@ -38,11 +38,11 @@ You will need to select a title for your newsletter as well as the 'Newsletter c
 
 The 'body' field includes the actual content of your issue. Start by copying and pasting from one of the templates that you will find in <a href="../content/newsletters">this wiki section</a>. After that, edit the 'Issue' number and the 'Date'. Finally, add each of your news entry by simply copying and pasting the following template codeblock and by modifying the text and image according to the news entry.
 
-<code>&lt;td colspan="2"&gt;
+<code>&lt;br&gt;
 &lt;font color="#666666" size="4"&gt;Title of This News Entry Here&lt;/font&gt;
 Write here one or two paragraphs describing this news entry.
 &lt;img src="/sites/default/files/styles/labdoo_flexslider_image_style/public/lbd_slides/guinea-conakry.png" width="680"/&gt;
-&lt;/td&gt;</code>
+&lt;/br&gt;</code>
 
 Once you are done editing your newsletter and have ensured that it is correct, you can submit it to your list of subscribed users by clicking on the tab 'Newsletter' and then selecting 'Send newsletter'. Notice that the system allows you to also send yourself a sample of the newsletter issue by selecting the option 'Send one test newsletter to the test address'. We recommend you to do so prior to sending the final version out to your whole audience.</value>
 </body>

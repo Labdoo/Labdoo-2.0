@@ -31,7 +31,7 @@ If the laptop does not travel internationally, it is recommended to deliver the 
 
 <strong>Virtualbox</strong>
 
-If the dooject comes with min. 2 GB RAM and min. a dual CPU you can consider about using <a href="https://www.virtualbox.org/">Virtualbox</a>, a tool to install a guest OS (also called Virtual Machine (VM)). So you are able to use run e.g. (L)Ubuntu as the host OS and e.g. Windows as guest OS at the same time.
+If the Dootronic comes with min. 2 GB RAM and min. a dual CPU you can consider about using <a href="https://www.virtualbox.org/">Virtualbox</a>, a tool to install a guest OS (also called Virtual Machine (VM)). So you are able to use run e.g. (L)Ubuntu as the host OS and e.g. Windows as guest OS at the same time.
 
 To install a VM you have to fulfil the same legal and license regulations as for a host OS.
 

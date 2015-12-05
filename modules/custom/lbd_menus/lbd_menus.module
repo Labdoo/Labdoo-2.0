@@ -151,11 +151,11 @@ function make_main_menu() {
   //       supporting functions such as drupal_get_path_alias(). 
 
   /*
-   * Doojects menu item
+   * Dootronics menu item
    */
   $item = array(
             'link_path' => 'node/11',
-            'link_title' => 'Doojects',
+            'link_title' => 'Dootronics',
             'menu_name' => 'main-menu',
             'expanded' => TRUE,
             'weight' => -50,
@@ -164,8 +164,8 @@ function make_main_menu() {
             'plid' => 0, 
             'module' => 'menu',
           );
-  $item['options']['attributes']['title'] = t('Doojects (Labdoo objects) are education devices such as laptops, tablets, eBooks that are donated to schools');
-  $doojectMlid = menu_link_save($item);
+  $item['options']['attributes']['title'] = t('Dootronics (Labdoo electronics) are education devices such as laptops, tablets, eBooks that are donated to schools');
+  $dootronicMlid = menu_link_save($item);
 
   $item = array(
             'link_path' => 'node/add/laptop',
@@ -174,7 +174,7 @@ function make_main_menu() {
             'weight' => -40,
             'language' => 'en',
             'customized' => 1,
-            'plid' => $doojectMlid, 
+            'plid' => $dootronicMlid, 
             'module' => 'menu',
           );
   $mlid = menu_link_save($item);
@@ -186,7 +186,7 @@ function make_main_menu() {
             'weight' => -50,
             'language' => 'en',
             'customized' => 1,
-            'plid' => $doojectMlid, 
+            'plid' => $dootronicMlid, 
             'module' => 'menu',
           );
   $mlid = menu_link_save($item);
@@ -196,7 +196,7 @@ function make_main_menu() {
             'menu_name' => 'main-menu',
             'weight' => -48,
             'customized' => 1,
-            'plid' => $doojectMlid, 
+            'plid' => $dootronicMlid, 
             'module' => 'menu',
           );
   $mlid = menu_link_save($item);
@@ -215,7 +215,7 @@ function make_main_menu() {
             'plid' => 0, 
             'module' => 'menu',
           );
-  $item['options']['attributes']['title'] = t('Edoovillages are schools and education centers that receive the doojects');
+  $item['options']['attributes']['title'] = t('Edoovillages are schools and education centers where the dootronics are deployed');
   $edoovillageMlid = menu_link_save($item);
 
   $item = array(
@@ -267,7 +267,7 @@ function make_main_menu() {
             'plid' => 0, 
             'module' => 'menu',
           );
-  $item['options']['attributes']['title'] = t('Hubs are groups of labdooers located in the same region that together help mobilize doojects from their local community');
+  $item['options']['attributes']['title'] = t('Hubs are groups of labdooers located in the same region that together help mobilize dootronics from their local community');
   $hubMlid = menu_link_save($item);
 
   $item = array(
@@ -648,10 +648,10 @@ function lbd_menus_menu() {
    *
    */
 
-  $menus['myDoojects'] = array
+  $menus['myDootronics'] = array
   (
-    'title' => 'My doojects',
-    'page callback' => '_menu_item_redirect_my_doojects',
+    'title' => 'My dootronics',
+    'page callback' => '_menu_item_redirect_my_dootronics',
     'access callback' => 'user_is_logged_in',
     'type' => MENU_NORMAL_ITEM,
     'menu_name' => 'main-menu',
@@ -720,9 +720,9 @@ function lbd_menus_menu() {
  * Callback functions to redirect dynamic menu items
  *
  */ 
-function _menu_item_redirect_my_doojects() {
+function _menu_item_redirect_my_dootronics() {
   global $user; 
-  drupal_goto('content/doojects-dashboard', array('query' => array('u' => $user->uid)));
+  drupal_goto('content/dootronics-dashboard', array('query' => array('u' => $user->uid)));
   return;
 }
 
@@ -780,8 +780,8 @@ function lbd_menus_menu_link_alter(&$item) {
   if(!array_key_exists('page callback', $item))
     return;
   
-  if ($item['page callback'] == '_menu_item_redirect_my_doojects') {
-    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='node/11' AND link_title='Doojects' AND menu_name='main-menu'")->fetchField();
+  if ($item['page callback'] == '_menu_item_redirect_my_dootronics') {
+    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='node/11' AND link_title='Dootronics' AND menu_name='main-menu'")->fetchField();
     $item['plid'] = $plid;
   }
 

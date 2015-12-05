@@ -19,6 +19,14 @@
 <type>target_id</type>
 <value>76</value>
 </field_reference_book>
+<body>
+<type>value</type>
+<value>Page in construction.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
 <bid>
 <type>book_array</type>
 <value>16125</value>

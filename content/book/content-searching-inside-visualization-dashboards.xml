@@ -31,7 +31,7 @@ Of special interest is the search box "Free-Text Search", which allows you to se
 <table>
 <tr><th width="100" align="left">Dashboard</th><th align="left">Search keys</th></tr> 
 <tr><td>Doojects</td><td>id, hub, edoovillage, status, notes, tagger, manager, emails, country, serialnumber, pickmeup, model, wh</td></tr>
-<tr><td>Dootrips</td><td>title, capacity, numberdootrips, status, completed, srccountry, dstcountry</td></tr>
+<tr><td>Dootrips</td><td>title, capacity, numberdootrips, status, completed, srccountry, dstcountry, dootrippers, additionalinfo</td></tr>
 <tr><td>Edoovillages</td><td>title, hub, needed, intransit, delivered, remaining, pcompleted, status, country, completed, open</td></tr>
 <tr><td>Hubs</td><td>title, needed, intransit, delivered, remaining, neededshared, remainingshared, pcompleted, country</td></tr>
 </table>

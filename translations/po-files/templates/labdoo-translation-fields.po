@@ -1,14 +1,105 @@
+# LANGUAGE translation of Labdoo.org 
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2015-04-25 06:20+0000\n"
-"PO-Revision-Date: 2015-04-25 06:20+0000\n"
+"POT-Creation-Date: 2015-12-05 14:01+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n>1);\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: field:field_branches:hub:label
+msgctxt "field_branches:hub:label"
+msgid "Hub branches"
+msgstr ""
+
+#: field:field_conv_comment_attach:comment_node_team_page:label
+msgctxt "field_conv_comment_attach:comment_node_team_page:label"
+msgid "Attachment"
+msgstr ""
+
+#: field:field_device_type:#allowed_values:internetTablet
+msgctxt "field_device_type:#allowed_values:internetTablet"
+msgid "Internet tablet"
+msgstr ""
+
+#: field:field_dootrips_edoovillages:dootrip:label
+msgctxt "field_dootrips_edoovillages:dootrip:label"
+msgid "Edoovillages"
+msgstr ""
+
+#: field:field_dootrip_additional_emails:dootrip:label
+msgctxt "field_dootrip_additional_emails:dootrip:label"
+msgid "Additional notification emails"
+msgstr ""
+
+#: field:field_image_event:event:label
+msgctxt "field_image_event:event:label"
+msgid "Image"
+msgstr ""
+
+#: field:field_location_event:event:label
+msgctxt "field_location_event:event:label"
+msgid "Location"
+msgstr ""
+
+#: field:field_pick_me_up:#allowed_values:0
+msgctxt "field_pick_me_up:#allowed_values:0"
+msgid "Disabled"
+msgstr ""
+
+#: field:field_pick_me_up:#allowed_values:1
+msgctxt "field_pick_me_up:#allowed_values:1"
+msgid "Enabled"
+msgstr ""
+
+#: field:field_pick_me_up:laptop:label
+msgctxt "field_pick_me_up:laptop:label"
+msgid "Pick me up"
+msgstr ""
+
+#: field:field_send_to_all_conversation:team_page:label
+msgctxt "field_send_to_all_conversation:team_page:label"
+msgid "Send to all members of this team (beta)"
+msgstr ""
+
+#: field:field_send_to_all_task:team_task:label
+msgctxt "field_send_to_all_task:team_task:label"
+msgid "Send to all members of this team (beta)\t"
+msgstr ""
+
+#: field:field_send_to_conversation:team_page:label
+msgctxt "field_send_to_conversation:team_page:label"
+msgid "Send only to: (beta)"
+msgstr ""
+
+#: field:field_send_to_task:team_task:label
+msgctxt "field_send_to_task:team_task:label"
+msgid "Send only to: (beta)\t"
+msgstr ""
+
+#: field:field_task_due_date:team_task:label
+msgctxt "field_task_due_date:team_task:label"
+msgid "Due date"
+msgstr ""
+
+#: field:og_roles_permissions:#allowed_values:0
+msgctxt "og_roles_permissions:#allowed_values:0"
+msgid "Use default roles and permissions"
+msgstr ""
+
+#: field:og_roles_permissions:#allowed_values:1
+msgctxt "og_roles_permissions:#allowed_values:1"
+msgid "Override default roles and permissions"
+msgstr ""
+
+#: field:og_roles_permissions:team:label
+msgctxt "og_roles_permissions:team:label"
+msgid "Group roles and permissions"
+msgstr ""
 
 #: field:body:team:label
 msgctxt "body:team:label"
@@ -32,7 +123,7 @@ msgstr ""
 
 #: field:field_action_type:#allowed_values:Dooject
 msgctxt "field_action_type:#allowed_values:Dooject"
-msgid "Doojects"
+msgid "Dootronics"
 msgstr ""
 
 #: field:field_action_type:#allowed_values:Dootrip
@@ -57,7 +148,7 @@ msgstr ""
 
 #: field:field_additional_editors:laptop:description
 msgctxt "field_additional_editors:laptop:description"
-msgid "Add users who need to have permission to edit this dooject"
+msgid "Add users who need to have permission to edit this dootronic"
 msgstr ""
 
 #: field:field_additional_editors:laptop:label
@@ -72,7 +163,7 @@ msgstr ""
 
 #: field:field_additional_followers:laptop:description
 msgctxt "field_additional_followers:laptop:description"
-msgid "Add users who want to follow this dooject"
+msgid "Add users who want to follow this dootronic"
 msgstr ""
 
 #: field:field_additional_followers:laptop:label
@@ -218,6 +309,11 @@ msgstr ""
 
 #: field:field_device_type:#allowed_values:blackberryPi
 msgctxt "field_device_type:#allowed_values:blackberryPi"
+msgid "Raspberry Pi"
+msgstr ""
+
+#: field:field_device_type:#allowed_values:blackberryPi
+msgctxt "field_device_type:#allowed_values:blackberryPi"
 msgid "Blackberry Pi"
 msgstr ""
 
@@ -273,7 +369,7 @@ msgstr ""
 
 #: field:field_doojects_additional_notes:edoovillage:label
 msgctxt "field_doojects_additional_notes:edoovillage:label"
-msgid "Doojects additional notes"
+msgid "Dootronics additional notes"
 msgstr ""
 
 #: field:field_dooject_weight:laptop:label
@@ -295,13 +391,13 @@ msgstr ""
 msgctxt "field_dootrips:laptop:description"
 msgid ""
 "This field is updated automatically once dootrips are assigned to this "
-"dooject. You can also optionally set this field manually adding "
+"dootronic. You can also optionally set this field manually adding "
 "dootrips by typing their name."
 msgstr ""
 
 #: field:field_dootrips:laptop:label
 msgctxt "field_dootrips:laptop:label"
-msgid "Dootrips assigned to this dooject"
+msgid "Dootrips assigned to this dootronic"
 msgstr ""
 
 #: field:field_dootrip_additional_editors:dootrip:label
@@ -311,12 +407,12 @@ msgstr ""
 
 #: field:field_dootrip_capacity:dootrip:label
 msgctxt "field_dootrip_capacity:dootrip:label"
-msgid "Number of doojects you can carry"
+msgid "Number of dootronics you can carry"
 msgstr ""
 
 #: field:field_dootrip_weight:dootrip:label
 msgctxt "field_dootrip_weight:dootrip:label"
-msgid "Dooject's estimated total weight"
+msgid "Dootronics' estimated total weight"
 msgstr ""
 
 #: field:field_drupal_wall_image_style:drupal_wall:label
@@ -492,14 +588,14 @@ msgctxt "field_internet_connection_type:#allowed_values:wired"
 msgid "Wired"
 msgstr ""
 
-#: field:field_internet_connection_type:#allowed_values:wiredOrWireless
-msgctxt "field_internet_connection_type:#allowed_values:wiredOrWireless"
-msgid "Wired or Wireless"
-msgstr ""
-
 #: field:field_internet_connection_type:#allowed_values:wireless
 msgctxt "field_internet_connection_type:#allowed_values:wireless"
 msgid "Wireless"
+msgstr ""
+
+#: field:field_internet_connection_type:#allowed_values:wiredOrWireless
+msgctxt "field_internet_connection_type:#allowed_values:wiredOrWireless"
+msgid "Wired or Wireless"
 msgstr ""
 
 #: field:field_internet_connection_type:edoovillage:label
@@ -537,13 +633,13 @@ msgstr ""
 #: field:field_laptops:dootrip:description
 msgctxt "field_laptops:dootrip:description"
 msgid ""
-"Once you know the dooject(s) that you will be carrying with this "
+"Once you know the dootronic(s) that you will be carrying with this "
 "dootrip, enter their Labdoo identifier here."
 msgstr ""
 
 #: field:field_laptops:dootrip:label
 msgctxt "field_laptops:dootrip:label"
-msgid "Dooject identifiers"
+msgid "Dootronic identifiers"
 msgstr ""
 
 #: field:field_linked_pages:superhub_page:description
@@ -565,7 +661,7 @@ msgstr ""
 
 #: field:field_manager:laptop:description
 msgctxt "field_manager:laptop:description"
-msgid "The user currently managing this dooject"
+msgid "The user currently managing this dootronic"
 msgstr ""
 
 #: field:field_manager:laptop:label
@@ -580,7 +676,7 @@ msgstr ""
 
 #: field:field_model:laptop:description
 msgctxt "field_model:laptop:description"
-msgid "Brand name and model of the dooject"
+msgid "Brand name and model"
 msgstr ""
 
 #: field:field_model:laptop:label
@@ -590,22 +686,24 @@ msgstr ""
 
 #: field:field_number_of_days_after:dootrip:label
 msgctxt "field_number_of_days_after:dootrip:label"
-msgid "Number of days you can store the dooject after the arrival date"
+msgid "Number of days you can store the dootronic(s) after the arrival date"
 msgstr ""
 
 #: field:field_number_of_days_before:dootrip:label
 msgctxt "field_number_of_days_before:dootrip:label"
-msgid "Number of days you can store the dooject before the departure date"
+msgid ""
+"Number of days you can store the dootronic(s) before the departure "
+"date"
 msgstr ""
 
 #: field:field_number_of_doojects_assigne:dootrip:label
 msgctxt "field_number_of_doojects_assigne:dootrip:label"
-msgid "Number of doojects assigned"
+msgid "Number of dootronics assigned"
 msgstr ""
 
 #: field:field_number_of_laptops_needed:edoovillage:label
 msgctxt "field_number_of_laptops_needed:edoovillage:label"
-msgid "Number of doojects needed"
+msgid "Number of dootronics needed"
 msgstr ""
 
 #: field:field_number_of_students:edoovillage:label
@@ -658,12 +756,12 @@ msgstr ""
 #: field:field_picture:laptop:description
 msgctxt "field_picture:laptop:description"
 msgid ""
-"Upload here a picture of the dooject. A picture is a helpful way for "
-"donors to ensure that they are looking at the correct dooject. Please "
-"do not use pictures that you may find on the Internet, as they may be "
-"copyrighted.  Instead, please take a picture with your own camera. "
-"Once the dooject reaches a school, you can also upload another picture "
-"with the students using it."
+"Upload here a picture of the dootronic. A picture is a helpful way for "
+"donors to ensure that they are looking at the correct dootronic. "
+"Please do not use pictures that you may find on the Internet, as they "
+"may be copyrighted.  Instead, please take a picture with your own "
+"camera. Once the dootronic reaches a school, you can also upload "
+"another picture with the students using it."
 msgstr ""
 
 #: field:field_picture:laptop:label
@@ -698,7 +796,7 @@ msgstr ""
 
 #: field:field_semaphore:#allowed_values:green
 msgctxt "field_semaphore:#allowed_values:green"
-msgid "Green: the rest of the doojects can be sent"
+msgid "Green: the rest of the dootronics can be sent"
 msgstr ""
 
 #: field:field_semaphore:#allowed_values:red
@@ -708,7 +806,7 @@ msgstr ""
 
 #: field:field_semaphore:#allowed_values:yellow
 msgctxt "field_semaphore:#allowed_values:yellow"
-msgid "Yellow: first doojects can be sent"
+msgid "Yellow: first dootronics can be sent"
 msgstr ""
 
 #: field:field_semaphore:edoovillage:label
@@ -719,11 +817,11 @@ msgstr ""
 #: field:field_serial_number:laptop:description
 msgctxt "field_serial_number:laptop:description"
 msgid ""
-"Write here the serial number of the dooject. Usually the serial number "
-"can be found in the back of the dooject, search for keywords such as "
-"\"Serial Number\" or \"S/N\", or if you see a bar code with a number "
-"under it, use this number. If the dooject has no sticker with the "
-"serial number, then write in this field the words \"Unknown\"."
+"Write here the serial number of the dootronic. Usually the serial "
+"number can be found in the back of the dootronic, search for keywords "
+"such as \"Serial Number\" or \"S/N\", or if you see a bar code with a "
+"number under it, use this number. If the dootronic has no sticker with "
+"the serial number, then write in this field the words \"Unknown\"."
 msgstr ""
 
 #: field:field_serial_number:laptop:label
@@ -773,7 +871,7 @@ msgstr ""
 
 #: field:field_status:#allowed_values:L1
 msgctxt "field_status:#allowed_values:L1"
-msgid "[L1] Dooject was lost"
+msgid "[L1] Dootronic was lost"
 msgstr ""
 
 #: field:field_status:#allowed_values:S0
@@ -878,7 +976,7 @@ msgstr ""
 
 #: field:field_tagger:laptop:description
 msgctxt "field_tagger:laptop:description"
-msgid "The user who tagged this dooject"
+msgid "The user who tagged this dootronic"
 msgstr ""
 
 #: field:field_tagger:laptop:label
@@ -958,7 +1056,7 @@ msgstr ""
 
 #: field:field_task_type:#allowed_values:doojectSanitation
 msgctxt "field_task_type:#allowed_values:doojectSanitation"
-msgid "Dooject sanitation event"
+msgid "Dootronic sanitation event"
 msgstr ""
 
 #: field:field_task_type:#allowed_values:featureRequest
@@ -1014,8 +1112,8 @@ msgstr ""
 #: field:field_types_of_mini_missions:hub:description
 msgctxt "field_types_of_mini_missions:hub:description"
 msgid ""
-"If this hub accepts to store doojects, select \"Dropping point\". If "
-"the hub sanitizes doojects, select \"Sanitizing point\". You can "
+"If this hub accepts to store dootronics, select \"Dropping point\". If "
+"the hub sanitizes dootronics, select \"Sanitizing point\". You can "
 "select multiple options at the same time."
 msgstr ""
 
@@ -1108,4 +1206,5 @@ msgstr ""
 msgctxt "og_user_node:user:label"
 msgid "Group membership"
 msgstr ""
+
 

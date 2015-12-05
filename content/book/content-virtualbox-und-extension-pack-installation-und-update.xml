@@ -1,0 +1,84 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>20794</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>VirtualBox und Extension Pack, Installation und Update</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>20794</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Zur <strong>Erstinstallation</strong> wird der Einsatz empfohlen von:
+
+<ul>
+<li><a href="http://ftp.labdoo.org/download/images/installskripts/installscript-virtualbox.sh">installscript-virtualbox.sh</a> (Skript installiert VirtualBox nach, um Gast-Betriebssyteme wie Windows parallel einzusetzen, min. 2 GB RAM und Dual Core CPU sinnvoll)</li>
+
+<li><a href="https://wiki.ubuntuusers.de/VirtualBox/Installation">weitere Informationen und Schritte sind im Wiki Ubuntuusers.de beschrieben</a></li>
+</ul>
+
+
+Danach muss für in jeder virtuelle Maschine noch das entsprechende Extension Pack installiert werden. Wichtig: Bitte darauf achten, dass die Release-Nummer von VirtualBox und dem Extension Pack identisch sind! Hierzu Virtualbox starten (entweder auf das Lubuntu-Icon links unten --> Run --> virtualbox (Enter) oder auf <code>Accessories --> VirtualBox</code>) und unter Help --> About VirtualBox die Versionnr. von VirtualBox ablesen. Dann unter <code>File --> Preferences --> Extensions</code> die Releasenr. des Oracle VM VitualBox Extension Pack ablesen. Beide sollten gleich sein, falls nicht siehe unten.
+
+<strong>Update, Wechsel in der VitualBox Release-Nummer</strong>
+
+Bei einfachen Patches von VirtualBox ohne Wechsel auf eine höhere Versionsnummer ist nichts weiter zu beachten. In größeren Abständen wechselt die (L)Ubuntu-Distribution aber bei VirtualBox auf eine höhere Versionsnummer (zuletzt im Dezember 2015 auf 4.3.34). In diesem Fällen wird das Extension Pack <strong>nicht</strong> automatisch mit aktualisiert. Hierzu bitte wie folgt vorgehen:
+
+<ul>
+<strong>Zum Update des Extension Pack</strong>
+<li>wie o.a. beschrieben nach <code>File --> Preferences --> Extensions</code> gehen und dort das alte Extension Pack löschen (rechts auf das blaue Rechteck mit dem roten X klicken)</li>
+
+<li>dann das passende Extension Pack von der Homepage laden https://www.virtualbox.org/wiki/Downloads, "Open with VirtualBox", den weiteren Schritten folgen und installieren, fertig</li>
+</ul>
+
+<ul>
+<strong>Update der iso-Datei für die virtuellen Maschinen (VM)</strong>
+<li>später muss dann in der virtuellen Maschine auch ggf. das Extension Pack aktualisiert werden, dazu</li>
+
+<li>Hierzu http://download.virtualbox.org/virtualbox/ und darin den zur Versionsnr. passenden Unterordner öffnen,</li>
+
+<li>dann die Datei VBoxGuestAdditions_x.x.xx.iso (x.x.xx ist aktuell4.3.34) herunterladen (geht meist in den Ordner home/labdoo/Downloads),</li>
+
+<li>ein Terminal öffen und eintippen <code>gksu pcmanfm</code> (Enter und Passwort), startet den Dateimanager mit Superuser-Rechten,</li>
+
+<li>in den Ordner <strong>/home/labdoo/Downloads</strong> navigieren, dort die herunter geladene iso-Datei umbenennen in <strong>VBoxGuestAdditions.iso</strong> (Versionsnr. aus dem Namen entfernen),</li>
+
+<li>ein 2. Tab im Dateibrowser öffnen (links oben auf das nach "+"-Zeichen im Rahmen klicken), im 2. Tab in den Ordner <strong>/usr/share/virtualbox/</strong> navigieren. Dort habt ihr aber nur Schreibrechte, wenn ihr - wie vor beschrieben - Superuser seid, weil es ein Systemordner ist.</li>
+
+<li>jetzt kopiert ihr die Datei <strong>VBoxGuestAdditions.iso</strong> aus dem Ordner <strong>/home/labdoo/Downloads</strong>  in den Ordner <strong>/usr/share/virtualbox/</strong> und überschreibt dabei die alte iso-Datei. Fertig, jetzt ist alles vorbereitet, um in einer virtuellen Maschinen später darüber das Extension Pack in der virtuellen Maschine (VM) nachzuinstallieren.</li>
+
+</ul></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>31</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>856</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1228</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

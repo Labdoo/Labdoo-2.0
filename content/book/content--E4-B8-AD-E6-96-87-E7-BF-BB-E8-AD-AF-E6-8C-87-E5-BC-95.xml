@@ -1,0 +1,63 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>20180</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>中文翻譯指引</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>ChineseTraditional</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>20180</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>•詳細閱讀需要翻譯的文件和要翻譯內容相關的文件
+•最好準備一本英語詞典或者使用線上詞典以方便查閱生字，例如：Yahoo!奇摩字典；至於術語、縮寫等請先查閱 Wikipedia 文章、以 Google 搜尋、以及參考 Answers.com 上的內容等
+•所以在翻譯時只要遇到不清楚原意的條目，請加入 "(Someone should review this)" 。與其翻譯錯誤讓瞭解中文與英文的人都看不懂，更希望能保留英文起碼讓懂英文的人瞭解。
+•複審翻譯
+
+1. "Title"   留在最後複審完成後再翻譯。
+2. 準確表述原文的意思。
+3.中文應該意思清晰且符合中文表達習慣。
+4.原文如果表達不清晰，中文應該意譯，並且應根據上下文和註解進行推斷並填補相應的訊息。例如 "print error" 不該直譯為「列印錯誤」，而是「列印發生錯誤」以免造成混淆。
+5.情況 3 不能太多。
+6.對相同術語或短語的翻譯，必須前後一致。
+7.使用「您」而不是「你」。
+8.為了美觀，通常建議在中文與英文、中文與阿拉伯數字、英文與阿拉伯數字之間加入一個半形空格。
+9.不要使用機器翻譯的成果來提交，也就是說您可以使用 Google Translate  來幫助您理解內容，但是不能不經考慮就把其自動翻譯的結果放在翻譯裡。
+
+<br></br>
+<br></br>
+<br></br></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>16452</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1099</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1211</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

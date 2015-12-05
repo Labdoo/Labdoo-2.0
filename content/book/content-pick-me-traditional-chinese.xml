@@ -21,23 +21,23 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value><strong>1. For Dooject Contributors:</strong>
+<value><strong>1. For Dootronic Contributors:</strong>
 
-'Pick me up' is a feature designed to make the process of contributing doojects (laptops, tablets, etc.) to the Labdoo project as easy as possible. The idea is simple: do you have a dooject at home that you no longer use but you are so busy that you cannot afford to spend much time on making your contribution? then follow these very simple steps, which should take only a few minutes of your time:
+'Pick me up' is a feature designed to make the process of contributing dootronics (laptops, tablets, etc.) to the Labdoo project as easy as possible. The idea is simple: do you have a dootronic at home that you no longer use but you are so busy that you cannot afford to spend much time on making your contribution? then follow these very simple steps, which should take only a few minutes of your time:
 
 <ol>
 <li>
-<strong>Tag your contributed dooject first</strong>. You can do this as usual, by clicking on the menu option 'Doojects' and then the sub-option 'Tag it!'. Then fill in the form providing information about your dooject and click on 'Save'. This process should take no more than 5 minutes.
+<strong>Tag your contributed dootronic first</strong>. You can do this as usual, by clicking on the menu option 'dootronics' and then the sub-option 'Tag it!'. Then fill in the form providing information about your dootronic and click on 'Save'. This process should take no more than 5 minutes.
 </li>
 <li>
-<strong>Click on the 'Print tags' link</strong>. On your newly created dooject page, you will see an icon and a link 'Print tags', click on it. This will show you the labels and QR codes associated with your dooject. Print them and attach them to your dooject. This should take another 5 minutes approximately.
+<strong>Click on the 'Print tags' link</strong>. On your newly created dootronic page, you will see an icon and a link 'Print tags', click on it. This will show you the labels and QR codes associated with your dootronic. Print them and attach them to your dootronic. This should take another 5 minutes approximately.
 </li>
 <li>
-<strong>Now click on the 'Pick me up' link and you are done!</strong> By clicking on the 'Pick me up' link, you are telling the Labdoo community that your laptop can be picked up from its current location. These 'pick me up' marks are periodically read by Labdoo hub volunteers. You should expect someone from a nearby hub to reach out to you and come pick up your contributed dooject. This step should take, well, about the time it takes to 'click' on a link... so about one second!
+<strong>Now click on the 'Pick me up' link and you are done!</strong> By clicking on the 'Pick me up' link, you are telling the Labdoo community that your laptop can be picked up from its current location. These 'pick me up' marks are periodically read by Labdoo hub volunteers. You should expect someone from a nearby hub to reach out to you and come pick up your contributed dootronic. This step should take, well, about the time it takes to 'click' on a link... so about one second!
 </li>
 </ol>
 
-The 'Pick me up' button enables a process by which your contributed dooject can be put in circulation into the Labdoo logistical system only requiring from your side about 10 minutes of your time. We are all often busy in our daily activities, but we've designed the process so that there is now practically no excuse for not contributing your unused laptops and education devices to a needy school! 
+The 'Pick me up' button enables a process by which your contributed dootronic can be put in circulation into the Labdoo logistical system only requiring from your side about 10 minutes of your time. We are all often busy in our daily activities, but we've designed the process so that there is now practically no excuse for not contributing your unused laptops and education devices to a needy school! 
 
 As ususal, if you have any feedback on how to improve this and other Labdoo features, share it via the <a href='../content/software-development'>'Software Development Team'</a>. 
 
@@ -45,7 +45,7 @@ As ususal, if you have any feedback on how to improve this and other Labdoo feat
 <hr/>
 <table align="center">
 <tr><td>
-<em> Figure. Once you've tagged a dooject, click on 'Pick me up' if you'd like some volunteer from a nearby Labdoo hub pick up your dooject.</em>
+<em> Figure. Once you've tagged a dootronic, click on 'Pick me up' if you'd like some volunteer from a nearby Labdoo hub pick up your dootronic.</em>
 </td></tr>
 <tr><td>
 <img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/pick-me-up.png" width="900"/>
@@ -55,7 +55,7 @@ As ususal, if you have any feedback on how to improve this and other Labdoo feat
 
 <strong>2. For Hub Labdooers:</strong>
 
-If you belong to a hub, you can check the list of doojects near your area that are marked as 'pick me up' by going to the menu item 'Dooject' and then clicking on 'View'. This will take you to the doojects global dashboard. Now click on the button 'Fields' and select the 'Pick me up' option. This will add a column with the status of the 'Pick me up' flag for each dooject. Click on the top header of that column to order them according to the value of this flag and you will see all the doojects that are marked with a value of 'yes' for those that are ready to be picked up. Remember that you can also narrow down your search by selecting the country option.</value>
+If you belong to a hub, you can check the list of dootronics near your area that are marked as 'pick me up' by going to the menu item 'dootronic' and then clicking on 'View'. This will take you to the dootronics global dashboard. Now click on the button 'Fields' and select the 'Pick me up' option. This will add a column with the status of the 'Pick me up' flag for each dootronic. Click on the top header of that column to order them according to the value of this flag and you will see all the dootronics that are marked with a value of 'yes' for those that are ready to be picked up. Remember that you can also narrow down your search by selecting the country option.</value>
 </body>
 <body>
 <type>format</type>

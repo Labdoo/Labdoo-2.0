@@ -25,7 +25,7 @@
 
 <li><strong>Offline wikis and OER – Open Educational Ressources</strong></li>
 
-Alle nachfolgend Unterlagen liegen auf http://ftp.labdoo.org/download/Public/ und können vor dort heruntergeladen werden. Wenn Labdoo Laptops mit dem Labdoo Images for Cloning installiert wurden sind diese Lerninhalte bereits installiert.
+Alle nachfolgend Unterlagen liegen auf auf dem FTP-Server des Labdoo-Projektes http://ftp.labdoo.org/download/Public/ und können vor dort heruntergeladen werden. Wenn Labdoo Laptops mit dem Labdoo Images for Cloning installiert wurden sind diese Lerninhalte bereits installiert.
 
 Zum einfachen Download weiterer Lerninhalte empfehlen wir rsync http://de.wikipedia.org/wiki/Rsync. Rsync gibt es für Betriebssysteme wie Windows, Apple oder Ubuntu: http://wiki.ubuntuusers.de/rsync.
 
@@ -33,14 +33,12 @@ Oder noch einfacher, unser Installationsskript für Content http://ftp.labdoo.or
 
 Wer nur die Ordnerrechte im Ordner /home/labdoo/Public so setzen möchte, dass alle Benutzer der Gruppe labdoo (also auch der User student) darauf zugreifen können, nimmt das Skript http://ftp.labdoo.org/download/images/installskripts/set-rights-folder-files-Public-correct.sh.
 
-<li><strong>Wikipedia for schools (wikidoo)</strong></li>
+<li><strong>Wikipedia for schools (wikidoo, empfohlen)</strong></li>
 
 <table> <tr><th> </th></tr>
 
 <tr>
-<td>Für englischsprachige Schulen setzt Labdoo.org „Wikipedia for schools“ von SOS Children UK ein: http://www.sos-schools.org/wikipedia-for-schools. Es folgt dem Curriculum in UK.
-
-Diese kindgerechte Themenauswahl nennt Labdoo „wikidoo“. </td>
+<td>Für englischsprachige Schulen setzt Labdoo.org „Wikipedia for schools“ein: http://www.sos-schools.org/wikipedia-for-schools. Es folgt dem Britischen Curriculum. Diese kindgerechte Themenauswahl nennt Labdoo „wikidoo“. Wikidoo belegt ca. 6,5 GB Plattenkapazität. I.d.R. ist wikidoo in den Images for Cloning bereits enthalten, es gibt aber auch spezielles Image PAE32_without_wikidoo, das auf Platten &lt;= 20 GB installiert werden kann. </td>
 
 <td><img src="/sites/default/files/content/wiki-de/edoovillages/wikidoo01.png" width="300"/>  </td>
 </tr>
@@ -53,7 +51,33 @@ Diese kindgerechte Themenauswahl nennt Labdoo „wikidoo“. </td>
 
 </table>
 
-<li><strong>Xowa – Wikis</strong></li>
+<li><strong>RACHEL Offline content (English oder Spanish, optional)</strong></li>
+
+<table> <tr><th> </th></tr>
+
+<tr>
+<td>Für englisch- und spanischsprachige Länder empfiehlt Labdoo.org RACHEL http://www.worldpossible.org/rachel/, eine Sammlung von lizenzfreien Inhalten. Darin ist auch die „Wikipedia for schools“ (s.o.) enthalten, aber auch Themen wie Khan Academy (math and science classes), MedLine Medical Encyclopedia, Hesperian Health Guides, Khan Academy (health videos), CK-12 STEM Textbooks, Gutenberg World Literature eBooks, OLPC Educational Games/ Lessons, UNESCO Primary School Resources, MathExpression Math Videos, Learn to Type "Power Typing", Music Theory, MIT Scratch.
+</td>
+
+<td><img src="/sites/default/files/content/wiki-de/edoovillages/rachel.jpg" width="300"/>  </td>
+</tr>
+
+<tr>
+<td>
+RACHEL kann lokal und offline im Browser eingesetzt werden (von Labdoo empfohlen), aber auch auf Tablets (Android), Servern und unter Windows. 
+
+Der englische Content benötigt 22,5 GB auf der Festplatte. Wenn man dafür wikidoo (6,5 GB) löscht braucht man 16 GB mehr gegenüber einer Standardinstallation. RACHEL in Englisch kann hier heruntergeladen werden (die Datei mit der höchsten Releasenr. auswählen) http://rachelfriends.org/rachelusb_32EN/
+
+Die spanische RACHEL Version findet man hier http://rachelfriends.org/rachelusb_32ES/
+
+Die ZIP-Dateien herunterladen, in den Ordner /home/labdoo/Public/RACHEL entpacken. Weitere Schritte zur Einrichtung stehen auf https://www.labdoo.org/de/content/rachel-installieren.</td>
+
+<td><img src="/sites/default/files/content/wiki-de/edoovillages/rachel02_small.png" width="300"/>  </td>
+</tr> 
+
+</table>
+
+<li><strong>Xowa – Wikis (empfohlen)</strong></li>
 
 <table> <tr><th> </th></tr>
 
@@ -65,7 +89,7 @@ Diese kindgerechte Themenauswahl nennt Labdoo „wikidoo“. </td>
 
 </table>
 
-<li><strong>Multimedia Englischkurs http://www.englishbanana.com/</strong></li>
+<li><strong>Multimedia Englischkurs http://www.englishbanana.com/ (empfohlen)</strong></li>
 
 <table> <tr><th> </th></tr>
 
@@ -77,7 +101,7 @@ Diese kindgerechte Themenauswahl nennt Labdoo „wikidoo“. </td>
 
 </table>
 
-<li><strong>OER – Open Educational Resources</strong></li>
+<li><strong>OER – Open Educational Resources (empfohlen)</strong></li>
 
 Labdoo-Helfer sammeln OER – Open Educational Resources, lizenzfreie Lerninhalte in verschiedenen Sprachen. Wer uns dabei unterstützen möchte kann gerne weitere OER einsenden oder als Muttersprachler für „seine“ Sprache Lerninhalte suchen. Die OER-Sammlung liegt auf http://ftp.labdoo.org/download/Public/eBooks/eBooks%20Collection/ (der Inhalt des Ordners /english wird per Skript oder im Image vorinstalliert)
 
@@ -91,7 +115,7 @@ Im Ordner /home/labdoo/Public/wikis liegen diese Wikis, die jeweils am Quartalsa
 
 Vielleicht lest ihr dieses Wiki gerade offline auf einem Labdoo Laptop? ;)
 
-<li><strong>Kostenloser VIP-Zugang zu http://www.Free-eBooks.net</strong></li>
+<li><strong>Kostenloser VIP-Zugang zu http://www.Free-eBooks.net (optional)</strong></li>
 
 Labdoo Edoovillages erhalten einen kostenlosen VIP Zugang zur Website http://www.Free-eBooks.net. Dieses Portal zählt weltweit zu den größten Anbietern kostenloser englischer, spanischer und portugieisischer e-Books.
 

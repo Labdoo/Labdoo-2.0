@@ -1,0 +1,94 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>18914</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>About Dootronics</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>18914</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><strong>What are dootronics?</strong>
+
+At Labdoo, we use the word <strong>dootronics</strong> (as in lab<strong>doo</strong> elec<strong>tronics</strong>) to refer to any computer device that can be used for education purposes. A dootronic is therefore any laptop, tablet, ebook or computer device in general that can be loaded with education software and sustainably transported to a needy school.
+
+dootronics within the Labdoo social network are tracked using a unique tag called the Labdoo ID. A Labdoo ID consists of a unique 9 digit number and a unique QR code. The QR code points to the dootronic URL and provides the functions of traceability and transparency, allowing donors and participants to know the status of their contributed dootronic. 
+
+<hr/>
+<table align="center">
+<tr><td>
+<em> Figure. Each dootronic is tagged with a unique Labdoo ID such as the one in the illustration.</em>
+</td></tr>
+<tr><td>
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/labdoo-id.png" width="700"/>
+</td></tr>
+</table>
+<hr/>
+
+<br/>
+
+dootronics follow a set of stages from the time they are introduced into the Labdoo system, through the time they are delivered to a school, and to their final recycling stage in which the laptop is disassembled into reusable parts. These stages allow participants to organize each task around each dootronic, in an orderly and transparent manner. 
+
+The set of stages a dootronic can go through are:
+
+<strong>S0: </strong> Tagged with a Labdoo ID
+<strong>S1: </strong> Donated, waiting to pass quality assurance
+<strong>S2: </strong> Passed quality assurance
+<strong>S3: </strong> Assigned to an edoovillage, waiting to be shipped
+<strong>S4: </strong> Deployed and being used
+<strong>S5: </strong> Waiting to be recycled
+<strong>S6: </strong> Recycled
+<strong>S7: </strong> (Deployed in a school library) Checked out
+<strong>S8: </strong> (Deployed in a school library) Available
+<strong>S9: </strong> Deployed but not working
+<strong>T1: </strong> In transit going to an edoovillage
+<strong>T2: </strong> In transit going to a recycling factory
+<strong>L1: </strong> dootronic was lost
+
+<strong>Tagging and updating the state of a dootronic</strong>
+
+There are two main operations you can do on a laptop: you can "tag" it or you can "update" it. Each of these two operations are described next:
+
+<ul>
+<li>
+To tag a laptop, click on "dootronics" and then click on "Tag it!". Fill in the form with as much information about the laptop as you can, and click on "Save". After saving, click on the link "Print tags", this will bring up a new screen with the tags. Print the tags and attach them to the laptop.
+</li>
+<li>
+To update the state of the laptop, go to that laptop page and click on "Edit". Update the "Status" field and click on "Save". Remember that to go to a laptop page, you can use the URL: <code>https://www.labdoo.org/laptop/LABDOO_ID</code>. For  instance, to go to laptop 000002280, use this URL https://www.labdoo.org/laptop/000002280.
+</li>
+</ul></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>39</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>823</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1141</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-12</value>
+</weight>
+</book>

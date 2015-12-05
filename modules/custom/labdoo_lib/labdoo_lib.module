@@ -69,10 +69,10 @@ function _generate_dootrip_title($node, $dootripId) {
 
 
 /**
- * Updates the location of a dooject to match that of its 
+ * Updates the location of a dootronic to match that of its 
  * assigned edoovillage
  *
- * @param node Node id of the dooject
+ * @param node Node id of the dootronic
  *
  */
 function _update_dooject_location_from_edoovillage($node) {
@@ -231,7 +231,7 @@ function labdoo_render_map_geolocate_node($nodeId = NULL, $displayDoojects = Fal
     $locations[0]->longitude = $node->locations[0]['longitude']; 
 
     if($node->type == 'laptop') {
-      $locations[0]->balloon_text = "Dooject ID: $node->title";
+      $locations[0]->balloon_text = "Dootronic ID: $node->title";
     }
     if($node->type == 'edoovillage') {
       $nodeCity = $node->locations[0]['city'];
@@ -267,7 +267,7 @@ function labdoo_render_map_geolocate_node($nodeId = NULL, $displayDoojects = Fal
         $doojectLon = $nodeDooject->locations[0]['longitude'];
         $doojectLon = strval(floatval($doojectLon)+rand(-500,500)/10000000);
         $locations[$i]->longitude = $doojectLon;
-        $locations[$i]->balloon_text = "Dooject ID: $nodeDooject->title";
+        $locations[$i]->balloon_text = "Dootronic ID: $nodeDooject->title";
         $i = $i + 1;
       }
     }
@@ -388,7 +388,7 @@ function labdoo_render_dooject_header() {
     }
     else {
       $followDoojectUrl = strtok(request_uri(), '?') . "?m=f&d=$nodeId&u=$userId&v=1";
-      $followMsg = t("Follow this dooject");
+      $followMsg = t("Follow this dootronic");
       $followIcon = "signal-off.png";
       $hoverMessage = t('Click to receive updates about this dooject');
     }
@@ -397,7 +397,7 @@ function labdoo_render_dooject_header() {
   }
   else {
     $followDoojectUrl = request_uri() . "/../../content/dooject-update?m=f&d=$nodeId&v=1";
-    $followMsg = t("Follow this dooject");
+    $followMsg = t("Follow this dootronic");
     $htmlCode = $htmlCode . "<img src='/profiles/labdoo/files/pictures/signal.png' style='width: 30px; height: 30px;'/>&nbsp;
                 <span style='cursor:Pointer; color:grey' title='Log in to modify this field'>".$followMsg."</span>&nbsp&nbsp&nbsp";
   }
@@ -1741,26 +1741,26 @@ function labdoo_update_flags_dooject($method = "", $doojectId = NULL, $userId = 
     {
       if($value == '1')
       {
-        drupal_set_message(t('You are already following Dooject ' . $doojectNode->title));
+        drupal_set_message(t('You are already following Dootronic ' . $doojectNode->title));
         return; // User is already following this dooject, just return
       }
     }
     else if($value == '0')
     {
-      drupal_set_message(t('You are not following Dooject ' . $doojectNode->title));
+      drupal_set_message(t('You are not following Dootronic ' . $doojectNode->title));
       return; // User is already not following this dooject, just return
     }
 
     if($value == '1')
     {
       $currList[] = $newRef;
-      drupal_set_message(t('You are now following Dooject ' . $doojectNode->title));
+      drupal_set_message(t('You are now following Dootronic ' . $doojectNode->title));
     }
     else
     {
       $key = array_search($newRef, $currList);
       unset($currList[$key]);
-      drupal_set_message(t('You are no longer following Dooject ' . $doojectNode->title));
+      drupal_set_message(t('You are no longer following Dootronic ' . $doojectNode->title));
     }
 
     $wDoojectNode->field_additional_followers->set($currList);
@@ -1771,11 +1771,11 @@ function labdoo_update_flags_dooject($method = "", $doojectId = NULL, $userId = 
     $wDoojectNode = entity_metadata_wrapper('node', $doojectNode);
     $currPickmeFlag = $wDoojectNode->field_pick_me_up->value();
     if($value == '1') {
-      drupal_set_message(t('Dooject ' . $doojectNode->title . ' is marked as ready to be picked up'));
+      drupal_set_message(t('Dootronic ' . $doojectNode->title . ' is marked as ready to be picked up'));
       $wDoojectNode->field_pick_me_up->set(TRUE);
     }
     else {
-      drupal_set_message(t('Dooject ' . $doojectNode->title . ' is marked as not ready to be picked up'));
+      drupal_set_message(t('Dootronic ' . $doojectNode->title . ' is marked as not ready to be picked up'));
       $wDoojectNode->field_pick_me_up->set(FALSE);
     }
     $wDoojectNode->save();
@@ -1861,6 +1861,10 @@ function labdoo_render_macro_stats($type, $addTitle=False) {
     $header = "";
     $separator = "<br>";
     $trailer = "<br>";
+    if(0) {
+    $blockAddToAny = module_invoke('addtoany', 'block_view', 'addtoany_button');
+    $trailer = $trailer . render($blockAddToAny["content"]);
+    }
   }
   else {
     $blockLanguage = module_invoke('lang_dropdown', 'block_view', 'language');
@@ -1877,16 +1881,16 @@ function labdoo_render_macro_stats($type, $addTitle=False) {
 
 // Lines currently not included in the macro stats:
 // <span style=\"font-size: 24px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsNeeded</span>
-// <span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Doojects needed') . "</span>$separator
+// <span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Dootronics needed') . "</span>$separator
 
   $code = $header;
   $code = $code . $statsTitle . "
 <span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsTagged</span>
-<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Doojects tagged') . "</span>$separator
+<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Dootronics tagged') . "</span>$separator
 <span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsTransit</span>
-<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Doojects in transit') . "</span>$separator
+<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('In transit') . "</span>$separator
 <span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsDelivered</span>
-<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Doojects delivered') . "</span>$separator
+<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Delivered') . "</span>$separator
 <span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numHubs</span>
 <span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Hubs') . "</span>$separator
 <span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numEdoovillages</span>
@@ -2583,7 +2587,7 @@ function _labdoo_lib_user_metrics($account = NULL) {
     return "";
   }
 
-  $labelDoojects = t('Doojects*: ');
+  $labelDoojects = t('Dootronics*: ');
   $labelDootrips = t('Dootrips*: ');
   $labelEdoovillages = t('Edoovillages: ');
   $labelHubs = t('Hubs: ');

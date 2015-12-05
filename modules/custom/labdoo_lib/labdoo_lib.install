@@ -281,6 +281,9 @@ function labdoo_lib_enable()
   $langSwitcher['width'] = 120;
   variable_set('lang_dropdown_language', $langSwitcher);
 
+  // Do not allow users to configure their timezone
+  variable_set('configurable_timezones', 0);
+
   drupal_set_message("labdoo_lib enabled correctly");
 }
 

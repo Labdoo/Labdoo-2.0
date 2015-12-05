@@ -784,12 +784,12 @@ function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL, $switch
   }
 
   $metrics[0] = array('label' => 'Dootrip', 'field' => 'link', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[1] = array('label' => 'Doojects capacity', 'field' => 'capacity', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
+  $metrics[1] = array('label' => 'Dootronics capacity', 'field' => 'capacity', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
   $metrics[2] = array('label' => 'Status', 'field' => 'status', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
   $metrics[3] = array('label' => 'Source country', 'field' => 'srcCountry', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
   $metrics[4] = array('label' => 'Destination country', 'field' => 'dstCountry', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
   $metrics[5] = array('label' => 'Total number of dootrips', 'field' => 'numberDootrips', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[6] = array('label' => 'Doojects transported', 'field' => 'completed', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
+  $metrics[6] = array('label' => 'Dootronics transported', 'field' => 'completed', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
   $metrics[7] = array('label' => 'Dootrippers', 'field' => 'dootrippers', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
   $metrics[8] = array('label' => 'Additional info', 'field' => 'additionalInfo', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
 
@@ -822,8 +822,8 @@ function print_dashboard_switcher($userId = NULL)
 
   switch(drupal_get_path_alias(current_path())) {
     
-    case "content/doojects-dashboard":
-      $url1 = "Doojects";
+    case "content/dootronics-dashboard":
+      $url1 = "Dootronics";
       $url2 = "Edoovillages";
       $url3 = "Hubs";
       $url4 = "Dootrips";
@@ -832,13 +832,13 @@ function print_dashboard_switcher($userId = NULL)
     case "content/hubs-dashboard":
       $url1 = "Hubs";
       $url2 = "Edoovillages";
-      $url3 = "Doojects";
+      $url3 = "Dootronics";
       $url4 = "Dootrips";
       break;
 
     case "content/edoovillages-dashboard":
       $url1 = "Edoovillages";
-      $url2 = "Doojects";
+      $url2 = "Dootronics";
       $url3 = "Hubs";
       $url4 = "Dootrips";
       break;
@@ -846,14 +846,14 @@ function print_dashboard_switcher($userId = NULL)
     # Path alias for compatibility with 1.0 
     case "call-for-laptops":
       $url1 = "Edoovillages";
-      $url2 = "Doojects";
+      $url2 = "Dootronics";
       $url3 = "Hubs";
       $url4 = "Dootrips";
       break;
 
     case "content/dootrips-dashboard":
       $url1 = "Dootrips";
-      $url2 = "Doojects";
+      $url2 = "Dootronics";
       $url3 = "Hubs";
       $url4 = "Edoovillages";
       break;
@@ -864,11 +864,11 @@ function print_dashboard_switcher($userId = NULL)
   // logged in, this is a "myObjects" type of dashboard
   if($userId != NULL and $userId == $user->uid) {
     $urlParameters = "?u=" . $userId;
-    $dashboardTitle = t('My Labdoo Metrics | Select dashboard:');
+    $dashboardTitle = t('My Labdoo metrics | Select dashboard:');
   }
   else {
     $urlParameters = "";
-    $dashboardTitle = t('Labdoo Metrics | Select dashboard:');
+    $dashboardTitle = t('Labdoo metrics | Select dashboard:');
   }
 
   $code = "<p><strong><span style='color:#ff3300;'>$dashboardTitle</span></strong></p>
@@ -927,7 +927,7 @@ function print_dashboard_objects($objectsType, $objectsName, $objects, $metrics,
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
   <meta http-equiv='content-type' content='text/html; charset=utf-8'/>
-    <title>Doojects Dashboard Using Google Visualization API</title>
+    <title>Dootronics Dashboard Using Google Visualization API</title>
     <script type='text/javascript' src='https://www.google.com/jsapi'></script>
     <script type='text/javascript'>google.load('visualization', '1.1', {packages: ['controls', 'geomap']});</script>
     <script type='text/javascript'>
@@ -1168,7 +1168,7 @@ var dataMap = new google.visualization.DataTable();
 dataMap.addColumn('number', 'LATITUDE', 'Latitude');
 dataMap.addColumn('number', 'LONGITUDE', 'Longitude');
 dataMap.addColumn('string', 'DESCRIPTION', 'Description');
-dataMap.addColumn('number', 'Number of "); print($objectsName . "', 'Number of Doojects');
+dataMap.addColumn('number', 'Number of "); print($objectsName . "', 'Number of Dootronics');
 
 var rows = [
 
@@ -1504,7 +1504,7 @@ function lbd_display_slider_edoovilage_dootrips($edoovillageId) {
                   array('data' => t('Destination'), 'nowrap' => 'nowrap'), 
                   array('data' => t('Status'), 'nowrap' => 'nowrap'),
                   array('data' => t('Capacity'), 'nowrap' => 'nowrap'),
-                  array('data' => t('Doojects assigned'), 'nowrap' => 'nowrap'));
+                  array('data' => t('Dootronics assigned'), 'nowrap' => 'nowrap'));
   $rows = array();
   $query = "SELECT DISTINCT(field_dootrips_target_id) FROM field_data_field_dootrips WHERE entity_id IN 
            (SELECT entity_id FROM field_data_field_edoovillage_destination WHERE field_edoovillage_destination_target_id=:edoovillageId)";
@@ -1707,7 +1707,7 @@ function lbd_display_dooject_column_chart($objectNid, $type)
     $numNeedRecycle = labdoo_getnum_doojects($objectNid, NULL, "S5") + labdoo_getnum_doojects($objectNid, NULL, "S9");
     $numRecycled = labdoo_getnum_doojects($objectNid, NULL, "S6");
     $numTagged = $numTransit + $numDeployed + $numNeedRecycle + $numRecycled;
-    $xLabel = "Doojects";
+    $xLabel = "Dootronics";
   }
   else if ($type == "hub") {
     $numNeeded   = labdoo_get_demand(NULL, $objectNid, FALSE);
@@ -1716,7 +1716,7 @@ function lbd_display_dooject_column_chart($objectNid, $type)
     $numNeedRecycle = labdoo_getnum_doojects(NULL, $objectNid, "S5") + labdoo_getnum_doojects(NULL, $objectNid, "S9");
     $numRecycled = labdoo_getnum_doojects(NULL, $objectNid, "S6");
     $numTagged = $numTransit + $numDeployed + $numNeedRecycle + $numRecycled;
-    $xLabel = "Doojects";
+    $xLabel = "Dootronics";
   }
   else {
     return;
@@ -1728,7 +1728,7 @@ function lbd_display_dooject_column_chart($objectNid, $type)
   google.load("visualization", "1.1", {packages:["corechart"], callback: drawChart});
   function drawChart() {
   var data_column_chart_project = google.visualization.arrayToDataTable([
-    ["Project", "Doojects needed", "Doojects tagged", "Doojects in transit", "Doojects delivered (working)", "Doojects delivered (broken)", "Doojects recycled"],
+    ["Project", "Dootronics needed", "Dootronics tagged", "Dootronics in transit", "Dootronics delivered (working)", "Dootronics delivered (broken)", "Dootronics recycled"],
 ';
 
   $htmlCode = $htmlCode . '

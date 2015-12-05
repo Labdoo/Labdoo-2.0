@@ -111,7 +111,7 @@ function gic_table($form, &$form_state, $edoovillageId) {
     $form['container'][$doojectId] = array (
       '#type'      => 'select',
       '#disabled'  => $cantSubmit,
-      '#title'     => t('Dooject <a href="@langCode/content/@id">@id</a>:', array('@langCode' => $langCode, '@id' => $title)),
+      '#title'     => t('Dootronic <a href="@langCode/content/@id">@id</a>:', array('@langCode' => $langCode, '@id' => $title)),
       '#options'   => $statusValues,
       '#default_value'  => variable_get($doojectId, $currentIndex),
     );
@@ -160,7 +160,7 @@ function gic_table_submit($form, &$form_state) {
     $currentStatusKey = db_query($query, array(':nid' => $doojectId))->fetchField();
 
     $doojectNode = node_load($doojectId);
-    $body = $body . 'Dooject ID: <a href="../content/' . $doojectNode->title. '">' . $doojectNode->title . '</a> | Status: ' . $newStatusKey;
+    $body = $body . 'Dootronic ID: <a href="../content/' . $doojectNode->title. '">' . $doojectNode->title . '</a> | Status: ' . $newStatusKey;
 
     if($newStatusKey != $currentStatusKey) {
       $recordChanged = TRUE;

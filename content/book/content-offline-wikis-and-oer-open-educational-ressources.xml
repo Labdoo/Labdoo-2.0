@@ -33,7 +33,7 @@ Or even easier, use our installation script for content http://ftp.labdoo.org/do
 
 If you added own content to the folder /home/labdoo/Public and if you want to make sure that all users of the group labdoo (user student as well) gets access please use this script: http://ftp.labdoo.org/download/images/installskripts/set-rights-folder-files-Public-correct.sh.
 
-<li><strong>Wikipedia for schools (wikidoo)</strong></li>
+<li><strong>Wikipedia for schools (wikidoo, recommended)</strong></li>
 
 <table> <tr><th> </th></tr>
 
@@ -53,6 +53,33 @@ Wikidoo comes with about 6,000 themes, 26 mio. words and 50,000 pictures (releas
 </tr> 
 
 </table>
+
+<li><strong>RACHEL Offline content (English or Spanish, optional)</strong></li>
+
+<table> <tr><th> </th></tr>
+
+<tr>
+<td>RACHEL, a collection of license-free content, is recommended for use in English or Spanish speaking coutries http://www.worldpossible.org/rachel/. „Wikipedia for schools“ (wikidoo, see above) is part of the RACHEL collection, but also educational documents of the Khan Academy (math and science classes), MedLine Medical Encyclopedia, Hesperian Health Guides, Khan Academy (health videos), CK-12 STEM text-books, Gutenberg World Literature eBooks, OLPC Educational Games/ Lessons, UNESCO Primary School Resources, MathExpression Math Videos, Learn to Type "Power Typing", Music Theory, MIT Scratch etc..
+</td>
+
+<td><img src="/sites/default/files/content/wiki-de/edoovillages/rachel.jpg" width="300"/>  </td>
+</tr>
+
+<tr>
+<td>
+ACHEL can be installed locally and read in a browser (recommended). The download comes also with reader and server software for tablets (Android), server and for Windows, but those are not needed. 
+
+The English content takes 22,5 GB on a disc-drive. When you remove the wikidoo folder (6,5 GB) you need in total additional 16 GB more vompared to a wikidoo installation. The English RACHEL collection can be downloaded from here (please select the file with the highest release number) http://rachelfriends.org/rachelusb_32EN/
+
+The Spanish RACHEL version can be found here http://rachelfriends.org/rachelusb_32ES/
+
+Download the ZIP files and unzip them into a new folder /home/labdoo/Public/RACHEL. The next steps are described here https://www.labdoo.org/content/install-rachel.</td>
+
+<td><img src="/sites/default/files/content/wiki-de/edoovillages/rachel02_small.png" width="300"/>  </td>
+</tr> 
+
+</table>
+
 
 <li><strong>Xowa – Wikis</strong></li>
 

@@ -1,0 +1,83 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>20814</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Informative message to your regional hubs</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>20814</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>From time to time, it is a good habit to send out an email to hubs in your area reminding them about the Labdoo tools that are available to help organize their laptop campaigns and sanitation events. For instance, for school hubs this message can be send out around early September as their yearly coursework starts. For other hubs (company, NGO, or home hubs) this message can be sent out anytime. 
+
+In this page you will find templates for such type of message in various languages that you can re-use for your convenience. 
+
+<strong>English</strong>
+
+To be done.
+
+<strong>Catalan</strong>
+
+Benvolguts/des:
+
+Amb el retorn a les activitats laborals i escolars, us volem fer arribar les eines que trobareu a la plataforma Labdoo.org per tal que pugueu continuar organitzant les vostres campanyes de mobilització de portàtils i tauletes en desús.
+
+Al "Labdoo Toolkit" hi trobareu eines generals: https://www.labdoo.org/ca/content/labdoo-toolkit
+
+Podeu baixar-vos els logos de Labdoo per crear els vostres fulletons de mobilització des d'aqui: https://www.labdoo.org/ca/content/labdoo-logos
+
+El poster de Labdoo: https://www.labdoo.org/content/labdoo-story-poster
+
+Si el vostre es un Hub Escola, en aquesta pagina hi trobareu exemples de cartes per enviar als pares: https://www.labdoo.org/ca/content/sample-letters-school-hubs
+
+La guia simple de sanejament: https://www.labdoo.org/ca/content/sanitation-guide-simple-method
+
+Videos explicatius del Projecte Labdoo: https://www.labdoo.org/ca/content/labdoo-videos
+
+En aquest vincle hi trobareu un resum de les bones pràctiques Labdoo: https://www.labdoo.org/ca/content/glits-good-labdoo-habits
+
+Recordeu com sempre que l'etiquetatge de portàtils es fa anant a "Dootronics" - "Tag it": https://www.labdoo.org/ca/node/add/laptop
+
+Us desitgem a tots i totes molts èxits en les recol·lectes d'ordinadors portàtils i tauletes i gràcies un cop més per participar en el Projecte Labdoo per fer arribar l'educació a escoles d'arreu del món.
+
+Per a qualsevol pregunta, no dubteu a contactar-nos.
+
+Labdoo Team Catalonia | www.labdoo.org/ca
+<img src="/profiles/labdoo/files/pictures/equation-2-alpha-smaller.png" width="100"/>
+
+#Si voleu deixar de rebre aquest tipus de notificacions, responeu aquest missatge posant la paraula "UNSUBSCRIBE".</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>41</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>934</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1230</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

@@ -1,0 +1,83 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>20795</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>VirtualBox and Extension Pack, installation and update</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>20795</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>When you are installing VirtualBox the first time manually  please follow these steps (if you are cloning you can ignore this wiki page):
+
+<ul>
+<li><a href="http://ftp.labdoo.org/download/images/installskripts/installscript-virtualbox.sh">installscript-virtualbox.sh</a> (Script will install VirtualBox, a tool to run Windows or other opertaing systems as guest in a window; min. 2 GB RAM and Dual Core CPU recommended plus a legal license!)</li>
+
+<li>more information and steps are explained in the wiki <a href="https://wiki.ubuntuusers.de/VirtualBox/Installation">Ubuntuusers.de (maybe some English Labdooer can add here a similar English wiki link?)</a></li>
+</ul>
+
+After having installed VirtualBox you have to add the matching Extension Pack. Important: Please make sure that the release number of VirtualBox and Extension Pack are identical! For this purpose, start VirtualBox (either using the icon on the bottom left Lubuntu --> Run --> virtualbox (Enter) or by <code>Accessories --> VirtualBox</code>) and open Help --> About VirtualBox to see the release-no. of VirtualBox. Next step is to open <code>File --> Preferences --> Extensions</code> to see the release-no. of the Oracle VM VitualBox Extension Pack. Both must match, if not please follow the steps explained below.
+
+<strong>Update, Update to a higher VitualBox release number</strong>
+
+If the VirtualBox is only patched without upgrading to a higher version n further actions have to be taken. In longer intervals the (L)Ubuntu distribution upgrades VirtualBox to a higher version number (most recently in December 2015 to 4.3.34). In such a case, the Extension Pack will <strong> not </strong> automatically be updated. For this purpose, proceed as follows:
+
+<ul>
+<strong>To Update the Extension Pack</strong>
+<li>open as described above <code>File --> Preferences --> Extensions</code> and delete the former installed Extension Pack (click on the blue square with the red X)</li>
+
+<li>Then download the matching  Extension Pack from here https://www.virtualbox.org/wiki/Downloads, "Open with VirtualBox", and follow the steps to install it, ready</li>
+</ul>
+
+<ul>
+<strong>Update of the iso-file for the virtual machines (VM)</strong>
+<li>To add the Extension Pack to a virtual machine itself you have to update a file in a system folder:</li>
+
+<li>Open http://download.virtualbox.org/virtualbox/ and navigate to the sub-folder, which matches with the release no. of your actual VirtualBox,</li>
+
+<li>download the file  VBoxGuestAdditions_x.x.xx.iso (x.x.xx is actually 4.3.34) (it will be stored in the folder home/labdoo/Downloads),</li>
+
+<li>open a terminal and type <code>gksu pcmanfm</code> (Enter and password) to start the file-manager as super-user (you need that to modify system folders, be careful),</li>
+
+<li>navigate to the folder <strong>/home/labdoo/Downloads</strong> and change the name of the downloaded iso-file to <strong>VBoxGuestAdditions.iso</strong> (remove the version no. from the file name),</li>
+
+<li>open a 2nd tab in the file-manager (click on the "+" within a frame in the left upper corner), navigate in the 2nd tab to the folder <strong>/usr/share/virtualbox/</strong>. Here you will be only able to write, if you started the file-manager as super-user.</li>
+
+<li>Now copy the file <strong>VBoxGuestAdditions.iso</strong> from the folder <strong>/home/labdoo/Downloads</strong>  into the folder <strong>/usr/share/virtualbox/</strong> and overwrite the former iso-file. Ready, now everything is prepared to add the Extension Pack to a virtual machine (VM) in the future on this computer.</li>
+
+</ul></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>35</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>857</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1229</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

@@ -1,0 +1,75 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>20514</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>RACHEL installieren</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>20514</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>RACHEL ist eine Sammlung von Offline-Lerninhalten in Englisch und Spanisch. Für einen Überblick empfehlen wir https://www.Labdoo.org/de/content/offline-wikis-und-oer-open-educational-ressources und http://www.worldpossible.org/rachel/. RACHEL ist mit Inhalten in Englisch oder Spanisch verfügbar. Wegen der Größe von 20-25 GB wird die Installation nur auf Datenträgern ab 60 GB oder größer empfohlen.
+
+Als erstes müssen die Inhalte von RACHEL von euch lokal herunter geladen werden. Da dies 22,5 GB an Daten je Sprache mit sich bringt braucht ihr viel Geduld... Ihr könnt es wahlweise vom RACHEL-Server http://rachelfriends.org/ oder von unserem Labdoo FTP-Server http://ftp.labdoo.org/download/RACHEL/ herunterladen. Es gibt auf dem RACHEL-Server auch Versionen für den Pi-MInicomputer und auch spezielle Tools für Netzwerke oder Windows. Da diese Plattformen im Labdoo-Projekt (noch) keine große Rolle spielen konzentriert sich diese Anleitung auf den reinen Content und dessen Gebrauch in einem Web-Browser.
+
+<strong> RACHEL in Englisch (aktuelle Version 3.1.5, ca. 20 GB)</strong>
+Download vom RACHEL-Server: http://rachelfriends.org/rachelusb_32EN/rachelusb_32EN_3.1.5.zip
+Download vom Labdoo-FTP-Server: http://ftp.labdoo.org/download/RACHEL/RACHEL_EN.tar.gz
+
+<strong>RACHEL in Spanisch (aktuelle Version 1.0.0, ca. 25 GB)</strong>
+Download vom RACHEL-Server: http://rachelfriends.org/rachelusb_32ES/rachelusb_32ES_1.0.0.zip
+Download vom Labdoo-FTP-Server: http://ftp.labdoo.org/download/RACHEL/RACHEL_ES.tar.gz
+
+Dann die heruntergeladene Datei im Ordner <code>/home/labdoo/Public/RACHEL</code> entpacken (dauert sehr lange..., die Fehlermeldung am Schluss kann ignoriert werden). Ihr braucht den darin enthaltenen Ordner <code>/bin</code>, und darin die Datei  <code>/home/labdoo/Public/RACHEL/bin/www/starthere.html</code> (durch Doppelklick) im Browser öffnen - und ihr seht die Startseite von RACHEL. Direkt der erste Block "wikipedia for schools" (Labdoo nennt es wikidoo) ist auf vielen Labdoo Rechnern schon vorinstalliert. Daher könnt ihr den kompletten Ordner <code>/home/labdoo/Public/wikidoo</code> löschen. Dies spart ca. 6,5 GB Daten, wäre sonst doppelt auf dem Rechner.
+
+Um den Zugang für Anwender zu erleichtern, empfehlen wir im Browser (Firefox) einen Reiter (Tab) mit der o.a. starthere-Datei vorzubelegen. Hierzu Firefox öffnen, oft ist im ersten Reiter "Wikipedia for Schools" vorbelegt. Dann in der Menüleiste öffnen <code>File (Datei) --> Open File (Datei öffnen) --> navigiere zu /home/labdoo/Public/RACHEL/bin/www/starthere.html --> Open (öffnen)</code>.
+
+Dann <code>Edit (Ändern) --> Preferences (Einstellungen), öffnet ein Fenster für Einstellungen --></code>
+<code>Use current Pages (aktuelle Seiten übernehmen) --> Fenster Preferences schliessen</code>.
+
+Dies für die User <strong>labdoo</strong> und <strong>student</strong> wiederholen.
+
+<strong>Installation auf einem Tablet</strong>
+Es gibt zwar für Android eine Installationsdatei (apk) http://rachelfriends.org/z-rachelandroid_APK/rachelandroid_APK_1.2.zip. Solange ihr die o.a. RACHEL-Inhalte nur im Browser auf einem beliebigen Tablet anschaut, braucht ihr dieses Programm nicht auf dem Tablet zu installieren. Es reichen die Inhalte, so könnt ihr auch RACHEL auf Android- oder Apple-Tablets u.a. nutzen. Der Haken - die wenigsten Tablets haben genug internen Speicher dafür. Also müsstet ihr schauen, ob ihr externe SD/microSD-Karten bekommt. Diese wiederum sind aber leicht zu entfernen... Es wird also in eurem Ermessen liegen, wie ihr die Installation auf Tablets vornehmt.
+
+<strong>Hinweis:</strong>
+RACHEL ist viel mehr als nur Inhalte für den Browser. Im Download enthalten sind z.B. exe-Dateien für Windows, Programme für Android oder für Server. Nötig sind sie im Labdoo-Projekt nicht, weil wir ja auf jedem Rechner einen Browser installiert haben. Diese zusätzlichen Programme nehmen aber wenig Platz weg, daher lasst sie bitte drauf. So könnten Schulen vor Ort z.B. die Inhalte auf andere Rechner kopieren und auf anderen Plattformen einsetzen.
+
+Für weitere Informationen verweisen wir auf die RACHEL-Seiten im Web:
+Infos: http://www.worldpossible.org/rachel/
+Online-Demo: http://www.rachel.worldpossible.org/</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>31</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>815</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1214</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

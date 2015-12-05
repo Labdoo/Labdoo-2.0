@@ -1,0 +1,55 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>20229</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Outreaching Personalized Cards</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>20229</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>You can download these templates to create your own personalized Labdoo outreaching cards.
+
+<a href="/sites/default/files/content/labdoo-toolkit/labdoo-outreaching-cards-front.odt">[Front - Download in editable Open Office file format]</a>
+
+<img src="/sites/default/files/content/labdoo-toolkit/outreaching-card-front.png" width="500"/>
+
+<a href="/sites/default/files/content/labdoo-toolkit/labdoo-outreaching-cards-back.odt">[Back - Download in editable Open Office file format]</a>
+
+<img src="/sites/default/files/content/labdoo-toolkit/outreaching-card-back.png" width="500"/>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>41</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>825</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1212</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-7</value>
+</weight>
+</book>

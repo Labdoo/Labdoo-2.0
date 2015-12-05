@@ -1,0 +1,78 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>19715</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>About Dootronics(Traditional Chinese)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>ChineseTraditional</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>39</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>At Labdoo, we use the word dootronics (as in labdoo electronics) to refer to any computer device that can be used for education purposes. A dootronic is therefore any laptop, tablet, ebook or computer device in general that can be loaded with education software and sustainably transported to a needy school.
+
+dootronics within the Labdoo social network are tracked using a unique tag called the Labdoo ID. A Labdoo ID consists of a unique 9 digit number and a unique QR code. The QR code points to the dootronic URL and provides the functions of traceability and transparency, allowing donors and participants to know the status of their contributed dootronic. 
+
+<hr/>
+<table align="center">
+<tr><td>
+<em> Figure. Each dootronic is tagged with a unique Labdoo ID such as the one in the illustration.</em>
+</td></tr>
+<tr><td>
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/labdoo-id.png" width="700"/>
+</td></tr>
+</table>
+<hr/>
+
+
+dootronics follow a set of stages from the time they are introduced into the Labdoo system, through the time they are delivered to a school, and to their final recycling stage in which the laptop is disassembled into reusable parts. These stages allow participants to organize each task around each dootronic, in an orderly and transparent manner. 
+
+The set of stages a dootronic can go through are:
+
+S0:  Tagged with a Labdoo ID
+S1:  Donated, waiting to pass quality assurance
+S2:  Passed quality assurance
+S3:  Assigned to an edoovillage, waiting to be shipped
+S4:  Deployed and being used
+S5:  Waiting to be recycled
+S6:  Recycled
+S7:  (Deployed in a school library) Checked out
+S8:  (Deployed in a school library) Available
+S9:  Deployed but not working
+T1:  In transit going to an edoovillage
+T2:  In transit going to a recycling factory
+L1:  Dootronic was lost</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>16452</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1042</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1174</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-12</value>
+</weight>
+</book>

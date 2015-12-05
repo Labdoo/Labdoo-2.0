@@ -21,9 +21,7 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Dootrips (or Labdoo trips) are CO2-neutral transportation means used to carry doojects (laptops, tablets, etc.) from one location to another. Examples of dootrips are trips carried out by tourists, NGO volunteers (doctors and engineers without borders, humanitarian personnel, etc.), international students, employees of international corporations, etc. Dootrips constitute a key element within the Labdoo  platform to help deliver laptops and tablets loaded with educational software to needy schools without incurring additional CO2 emissions on the planet.
-
-If you are traveling and have place in your luggage to bring one or more doojects (laptops, tablets, etc.), or if you are part of an organization or company which has people traveling or which transports goods from one place to another and have extra room to bring a few more goods, you can register a dootrip to the Labdoo platform. This allows the system to identify routes that connect places where there are unused doojects with places where doojects are needed for education purposes.
+<value>If you are traveling and have place in your luggage to bring one or more dootronics (laptops, tablets, etc.), or if you are part of an organization or company which has people traveling or which transports goods from one place to another and have extra room to bring a few more goods, you can register a dootrip to the Labdoo platform. This allows the system to identify routes that connect places where there are unused dootronics with places where dootronics are needed for education purposes.
 
 The steps to register a dootrip are as follows:
 
@@ -32,15 +30,14 @@ The steps to register a dootrip are as follows:
 In the 'Dootrips' tab located on the top of each Labdoo page, click on 'Create' (make sure you are logged in with your user account).
 </li>
 <li>
-Fill in as many fields in the form as you can. If you already know the doojects that you will carry in your dootrip, you can add them in the field 'Dooject identifiers'. If you don't know them yet, you can leave this field empty, and you or some one else can make the assignment some time in the future. Set the status as 'Pending'.
+Fill in as many fields in the form as you can. If you already know the dootronics that you will carry in your dootrip, you can add them in the field 'dootronic identifiers'. If you don't know them yet, you can leave this field empty, and you or some one else can make the assignment some time in the future. Set the status as 'Pending'.
 </li>
 <li>
 Click on 'save'.
 </li>
 </ul>
 
-Once you have carried out your dootrip, it is important to modify the field 'Status' to 'Completed'. If for some reason the dootrip was cancelled, set this field to 'Cancelled'.
-</value>
+Once you have carried out your dootrip, it is important to modify the field 'Status' to 'Completed'. If for some reason the dootrip was cancelled, set this field to 'Cancelled'.</value>
 </body>
 <body>
 <type>format</type>

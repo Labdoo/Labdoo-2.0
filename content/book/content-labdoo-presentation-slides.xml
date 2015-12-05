@@ -1,0 +1,51 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>20295</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Labdoo Presentation Slides</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>20295</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>If you need to present Project Labdoo in front of your audience (at your school, at your work, in a conference, anywhere), feel free to use these slides. If you'd like to modify the slides, send us an email at contact@labdoo.org and we will send you the original sources so that you can adjust the content.
+
+<a href="/sites/default/files/content/labdoo-toolkit/labdoo.org-slides.pdf">[Download in printable format]</a>
+
+<img src="/sites/default/files/content/labdoo-toolkit/labdoo.org-slides.png" width="700"/>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>41</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>825</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1213</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

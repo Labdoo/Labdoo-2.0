@@ -163,7 +163,7 @@ function _delete_dashboard_node($dashboardPath)
  */
 function lbd_visualize_enable()
 {
-  _create_objects_dashboard("lbd_display_dashboard_doojects", "Doojects Dashboard", "content/doojects-dashboard"); 
+  _create_objects_dashboard("lbd_display_dashboard_doojects", "Dootronics Dashboard", "content/dootronics-dashboard"); 
   _create_objects_dashboard("lbd_display_dashboard_edoovillages", "Edoovillages Dashboard", "content/edoovillages-dashboard"); 
   _create_objects_dashboard("lbd_display_dashboard_hubs", "Hubs Dashboard", "content/hubs-dashboard"); 
   _create_objects_dashboard("lbd_display_dashboard_dootrips", "Dootrips Dashboard", "content/dootrips-dashboard"); 
