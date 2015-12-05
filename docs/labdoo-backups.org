@@ -1,0 +1,28 @@
+** Making an Image Snapshot of Labdoo.org
+
+  - TODO
+
+** Making a Snapshot of the Labdoo Wiki
+
+  - Follow the next steps
+
+    #+BEGIN_EXAMPLE
+    cd /var/www/lbd/profiles/labdoo/modules/custom/
+    ll ../../content/book/  # take a look at the current wiki directory
+    mkdir /var/backups/lbd/lec-backups/20151014/  # change the date to match today
+    ll ../../content/book/ | wc -l  # count current number of wiki docs
+    mv ../../content/book/content-* /var/backups/lbd/lec-backups/20151014/ # move all wiki docs away from the labdoo git repo
+    git status  # verify git status
+    git status | grep deleted | wc -l
+    drush @lbd php-script ../../lec/lec-export-books.php  # export the latest status of the complete Labdoo.org life wiki
+    drush @lbd php-script ../../lec/lec-check-books.php # check that all wiki content is correct (all docs should return "ok") 
+    ll ../../content/book/ | wc -l # check total number of wiki docs
+    ll /var/backups/lbd/lec-backups/20151014/ | wc -l # compare with previous number (you get an idea how many wiki docs were added/removed)
+    cp -r /var/www/lbd/sites/default/files/content/* ../../content/files/content/ # copy wiki images, attachments to git repo
+    git add ../../content/book/content-*
+    git add ../../content/files/
+    git commit
+    git push
+    git status
+    #+END_EXAMPLE
+
