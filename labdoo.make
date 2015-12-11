@@ -46,6 +46,7 @@ projects[views_tree] = 2.0
 projects[countries] = 2.3 
 projects[search_config] = 1.1 
 projects[hide_submit] = 2.0 
+projects[extlink] = 1.18
 
 ;--------------------
 ; Security
@@ -96,6 +97,7 @@ projects[drupalchat] = 1.4
 projects[simplenews] = 1.1
 projects[mass_contact] = 1.0
 projects[sharethis] = 2.12
+projects[addtoany] = 4.10
 projects[disqus] = 1.12
 projects[disqus][patch][] = http://drupal.org/files/disqus-https.patch
 projects[flag] = 3.6

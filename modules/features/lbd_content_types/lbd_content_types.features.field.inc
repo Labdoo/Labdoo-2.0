@@ -670,7 +670,7 @@ function lbd_content_types_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 0,
+          'weight' => '0',
         ),
       ),
       'entity_type' => 'comment',
@@ -730,10 +730,12 @@ function lbd_content_types_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'file',
-          'settings' => array(),
-          'type' => 'file_default',
-          'weight' => 1,
+          'module' => 'file_entity',
+          'settings' => array(
+            'file_view_mode' => 'teaser',
+          ),
+          'type' => 'file_rendered',
+          'weight' => '1',
         ),
       ),
       'entity_type' => 'comment',
@@ -799,7 +801,7 @@ function lbd_content_types_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 0,
+          'weight' => '0',
         ),
       ),
       'entity_type' => 'comment',
@@ -816,7 +818,7 @@ function lbd_content_types_field_default_fields() {
           'rows' => 5,
         ),
         'type' => 'text_textarea',
-        'weight' => '0',
+        'weight' => '2',
       ),
     ),
   );
@@ -859,10 +861,12 @@ function lbd_content_types_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'file',
-          'settings' => array(),
-          'type' => 'file_default',
-          'weight' => 1,
+          'module' => 'file_entity',
+          'settings' => array(
+            'file_view_mode' => 'teaser',
+          ),
+          'type' => 'file_rendered',
+          'weight' => '2',
         ),
       ),
       'entity_type' => 'comment',
@@ -872,7 +876,7 @@ function lbd_content_types_field_default_fields() {
       'settings' => array(
         'description_field' => 0,
         'file_directory' => '',
-        'file_extensions' => 'txt png pdf jpg jpeg',
+        'file_extensions' => 'txt pdf jpg jpeg png',
         'max_filesize' => '',
         'user_register_form' => FALSE,
       ),
@@ -883,7 +887,7 @@ function lbd_content_types_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
-        'weight' => '1',
+        'weight' => '4',
       ),
     ),
   );
@@ -1555,6 +1559,78 @@ function lbd_content_types_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-event-field_additional_emails_event'.
+  $fields['node-event-field_additional_emails_event'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_additional_emails_event',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'event',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Enter a comma-separated list of correct email addresses.',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '7',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_additional_emails_event',
+      'label' => 'Additional notification emails',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'rows' => '5',
+        ),
+        'type' => 'text_textarea',
+        'weight' => '9',
+      ),
+    ),
+  );
+
   // Exported field: 'node-event-field_event_date'.
   $fields['node-event-field_event_date'] = array(
     'field_config' => array(
@@ -1806,6 +1882,224 @@ function lbd_content_types_field_default_fields() {
         ),
         'type' => 'text_textarea',
         'weight' => '7',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-event-field_send_to_all_event'.
+  $fields['node-event-field_send_to_all_event'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_send_to_all_event',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => '',
+          1 => '',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'event',
+      'default_value' => array(
+        0 => array(
+          'value' => 1,
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '8',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_send_to_all_event',
+      'label' => 'Send to all members of this team (beta)',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'display_label' => 1,
+        ),
+        'type' => 'options_onoff',
+        'weight' => '10',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-event-field_send_to_event'.
+  $fields['node-event-field_send_to_event'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_send_to_event',
+      'foreign keys' => array(
+        'users' => array(
+          'columns' => array(
+            'target_id' => 'uid',
+          ),
+          'table' => 'users',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(),
+        ),
+        'target_type' => 'user',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'event',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '9',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_send_to_event',
+      'label' => 'Send only to these members: (beta)',
+      'required' => 0,
+      'settings' => array(
+        'behaviors' => array(
+          'prepopulate' => array(
+            'status' => 0,
+          ),
+        ),
+        'nodeaccess_userreference' => array(
+          'all' => array(
+            'view' => 0,
+          ),
+          'all_published' => '0',
+          'author' => array(
+            'delete' => 0,
+            'update' => 0,
+            'view' => 0,
+          ),
+          'author_published' => '0',
+          'create' => array(
+            'action' => 0,
+            'article' => 0,
+            'blog' => 0,
+            'book' => 0,
+            'dootrip' => 0,
+            'drupal_wall' => 0,
+            'edoovillage' => 0,
+            'event' => 0,
+            'gic' => 0,
+            'hub' => 0,
+            'labdoo_slide' => 0,
+            'laptop' => 0,
+            'node_gallery_gallery' => 0,
+            'node_gallery_item' => 0,
+            'page' => 0,
+            'private_page' => 0,
+            'simplenews' => 0,
+            'slider_page' => 0,
+            'superhub_page' => 0,
+            'team' => 0,
+            'team_page' => 0,
+            'team_task' => 0,
+          ),
+          'priority' => '0',
+          'referenced' => array(
+            'delete' => 0,
+            'deny_delete' => 0,
+            'deny_update' => 0,
+            'deny_view' => 0,
+            'update' => 0,
+            'view' => 0,
+          ),
+          'referenced_published' => '0',
+          'unused' => '0',
+          'views' => array(
+            'view' => '',
+            'view_args' => '',
+          ),
+        ),
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'size' => '60',
+        ),
+        'type' => 'entityreference_autocomplete',
+        'weight' => '11',
       ),
     ),
   );
@@ -4143,9 +4437,11 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'file',
-          'settings' => array(),
-          'type' => 'file_default',
+          'module' => 'file_entity',
+          'settings' => array(
+            'file_view_mode' => 'teaser',
+          ),
+          'type' => 'file_rendered',
           'weight' => '2',
         ),
         'node_gallery_node_thumbnail' => array(
@@ -4650,7 +4946,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '8',
+          'weight' => '10',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -4679,7 +4975,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'display_label' => 1,
         ),
         'type' => 'options_onoff',
-        'weight' => '11',
+        'weight' => '12',
       ),
     ),
   );
@@ -4736,7 +5032,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '9',
+          'weight' => '11',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -4823,7 +5119,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '12',
+        'weight' => '13',
       ),
     ),
   );
@@ -5013,10 +5309,12 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'file',
-          'settings' => array(),
-          'type' => 'file_default',
-          'weight' => '7',
+          'module' => 'file_entity',
+          'settings' => array(
+            'file_view_mode' => 'teaser',
+          ),
+          'type' => 'file_rendered',
+          'weight' => '8',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -5049,7 +5347,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
-        'weight' => '10',
+        'weight' => '11',
       ),
     ),
   );
@@ -5496,6 +5794,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Additional notification emails');
   t('Assigned to');
   t('Attachment');
   t('Body');
@@ -5508,6 +5807,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
   t('Determine if this is an OG group.');
   t('Due date');
   t('Edoovillage');
+  t('Enter a comma-separated list of correct email addresses.');
   t('File to store Node Gallery media.');
   t('Galleries');
   t('Gallery Media ');
@@ -5521,6 +5821,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
   t('Photo album');
   t('Priority');
   t('Select the superhub pages where you would like this menu block to appear');
+  t('Send only to these members: (beta)');
   t('Send only to: (beta)');
   t('Send only to: (beta)	');
   t('Send to all members of this team (beta)');

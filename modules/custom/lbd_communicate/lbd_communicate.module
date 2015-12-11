@@ -688,6 +688,10 @@ function _email_team_event($node, $comment = NULL) {
     $sendAll = $wNode->field_send_to_all_task->value();
     $sendToFieldName = 'field_send_to_task'; 
   }
+  else if($node->type == 'event') {
+    $sendAll = $wNode->field_send_to_all_event->value();
+    $sendToFieldName = 'field_send_to_event'; 
+  }
   else
     $sendAll = TRUE;
 
@@ -710,6 +714,22 @@ function _email_team_event($node, $comment = NULL) {
     }
   }
   $emailsList = trim($emailsList, ", ");
+
+  // Events have an additional field called field_additional_emails_event where users can add
+  // additional email addresses that need to be notified. Include them too in $emailsList.
+  if($node->type == 'event') {
+    $additionalEmails = $wNode->field_additional_emails_event->value();
+    $additionalEmailsList = explode(",", $additionalEmails);
+    $validatedEmails = "";
+    foreach($additionalEmailsList as $email) {
+      $trimmedEmail = trim($email);
+      if(valid_email_address($trimmedEmail))
+        $validatedEmails = $validatedEmails . ", " . $trimmedEmail;
+    }
+    $validatedEmails = substr($validatedEmails, 1); // remove extra comma
+  }
+
+  $emailsList = $emailsList . ", " . $validatedEmails;
 
   $activityUrl = url(drupal_get_path_alias("node/" .  $node->nid, $langCode), array('absolute' => TRUE));
   $teamsMgmUrl = url(drupal_get_path_alias("my-teams", $langCode), array('absolute' => TRUE));

@@ -36,6 +36,29 @@ function labdoo_country_code2name($countryCode) {
 
 
 /**
+ * Prints all the countries and cities within Labdoo.org
+ *
+ * This function can be used to generate cloudtags with http://worditout.com/word-cloud/make-a-new-one
+ *
+ */
+function labdoo_list_all_countries() {
+  $query = "SELECT country FROM location";
+  $countries = db_query($query);
+  foreach($countries as $country) {
+    # Substitute blank spaces with sign "~" so that countries with multiple words can be processed together
+    $countrySet = $countrySet . ", " . str_replace(" ", "~", labdoo_country_code2name($country->country));
+  }
+  drupal_set_message($countrySet);
+  $query = "SELECT DISTINCT city FROM location";
+  $cities = db_query($query);
+  foreach($cities as $city) {
+    $citySet = $citySet . ", " . str_replace(" ", "~", $city->city);
+  }
+  drupal_set_message($citySet);
+}
+
+
+/**
  * Generates the title of a dootrip 
  *
  * @param node The node of the dootrip 
@@ -350,6 +373,10 @@ function labdoo_render_dooject_header() {
 
   // Table header
   $htmlCode = $htmlCode . '<table align="center" width="1150px"><tr><td align="left">';
+
+  // Hack: Add a tiny invisible image (of size zero in fact) to control the image that will show up 
+  // when sharing the page with addtoany 
+  $htmlCode = $htmlCode . '<img src="/profiles/labdoo/files/pictures/laptop.png" width="0" style="visibility:hidden"/>';
 
   // Left arrow
   $htmlCode = $htmlCode . "<a style='float: left;' href='../laptop/".$prevIdFull."'>
@@ -1841,6 +1868,37 @@ function labdoo_lib_print_backtrace() {
 
 
 /**
+ * Renders the AddToAny share button
+ *
+ * @return Code rendering the AddToAny block
+ *
+ */
+function _render_addtoany() {
+  $blockAddToAny = module_invoke('addtoany', 'block_view', 'addtoany_button');
+  $code = render($blockAddToAny["content"]);
+  // Add a tiny invisible image (of size zero in fact) to control the image that will show up 
+  // when sharing the page with addtoany
+  $code = $code . '<img src="/profiles/labdoo/files/pictures/laptop.png" width="0" style="visibility:hidden"/>';
+  return($code);
+}
+
+
+/**
+ * Renders the language switch block 
+ *
+ * @return Code rendering the language switch block
+ * 
+ */
+function labdoo_render_language_switch() {
+  $blockLanguage = module_invoke('lang_dropdown', 'block_view', 'language');
+  $languageSwitchCode = render($blockLanguage["content"]); 
+  $languageSwitchCode = str_replace("<form ", "<form style='height:10px' ", $languageSwitchCode);
+  $code = "<table><tr><td>$languageSwitchCode</td></tr><tr><td>"._render_addtoany()."</td></tr></table>" . "<br/>";
+  return($code);
+} 
+
+
+/**
  * Renders the macro statistics 
  *
  * @param string $type Type of rendering, can be "horizontal" or "vertical"
@@ -1861,10 +1919,6 @@ function labdoo_render_macro_stats($type, $addTitle=False) {
     $header = "";
     $separator = "<br>";
     $trailer = "<br>";
-    if(0) {
-    $blockAddToAny = module_invoke('addtoany', 'block_view', 'addtoany_button');
-    $trailer = $trailer . render($blockAddToAny["content"]);
-    }
   }
   else {
     $blockLanguage = module_invoke('lang_dropdown', 'block_view', 'language');
@@ -1872,7 +1926,7 @@ function labdoo_render_macro_stats($type, $addTitle=False) {
     $languageSwitchCode = str_replace("<form ", "<form style='height:10px' ", $languageSwitchCode);
     $header = "<table><tr><td style='width:1090px'>";
     $separator = "&nbsp; &nbsp;";
-    $trailer ="</td><td>$languageSwitchCode</td></tr></table><br>";
+    $trailer ="</td><td>"."</td><td width='130px' align='center'>".labdoo_render_language_switch()."</td></tr></table>";
   }
 
   $statsTitle = "";
@@ -2154,10 +2208,9 @@ function labdoo_block_filter_sidebar_second() {
 function labdoo_block_filter_macro_vertical() {
   $path = drupal_get_path_alias(current_path());
 
-  if(strcmp($path, "wiki-index") == 0)
-      return FALSE;
-
-  if(labdoo_lib_node_is_type(array('book')))
+  # For wiki pages, do not show the vertical stats (show instead the horizontal stats),
+  # except for the main general wiki index page
+  if(labdoo_lib_node_is_type(array('book')) && strcmp($path, "wiki-index") != 0)
     return FALSE;
 
   return labdoo_block_filter_sidebar_second();
@@ -2210,8 +2263,7 @@ function labdoo_block_filter_search() {
  */
 function labdoo_block_filter_language_switch() {
 
-  // Show up the switch whenever the right column (sidebar_second)
-  // is displayed and also on top of the TOC block for wiki pages.
+  // Show up the switch whenever the right column (sidebar_second) is displayed 
   if(labdoo_block_filter_sidebar_second())
     return TRUE;
 
@@ -2261,7 +2313,7 @@ function labdoo_block_filter_header() {
   if(strcmp($path, "contact") == 0)
       return TRUE;
 
-  if(strcmp($path, "content/doojects-dashboard") == 0)
+  if(strcmp($path, "content/dootronics-dashboard") == 0)
       return TRUE;
 
   if(strcmp($path, "content/dootrips-dashboard") == 0)

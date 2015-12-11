@@ -94,6 +94,7 @@ dependencies[] = countries
 dependencies[] = search_config 
 dependencies[] = hide_submit 
 dependencies[] = date_popup 
+dependencies[] = extlink 
 
 ;;; Features and exports/imports
 dependencies[] = strongarm
@@ -118,6 +119,7 @@ dependencies[] = boost
 
 ;;; Services and social
 dependencies[] = simplenews
+dependencies[] = addtoany 
 
 ;;; Translations
 dependencies[] = l10n_update

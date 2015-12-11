@@ -366,7 +366,6 @@ function lbd_blocks_views_block_view($delta = '') {
     // Macro statistics (horizontal)
     case 'block_macro_statistics_horiz':
       $block['subject'] = "<none>";
-//      $block['title'] = t("Global progress");
       $block['content'] = array(
              '#markup' => labdoo_render_macro_stats("horizontal"),
       );
@@ -374,9 +373,8 @@ function lbd_blocks_views_block_view($delta = '') {
 
     // Language switch
     case 'block_link_language_switch':
-      $blockLanguage = module_invoke('lang_dropdown', 'block_view', 'language');
       $block['subject'] = "<none>";
-      $block['content'] = drupal_render($blockLanguage["content"]);
+      $block['content'] = labdoo_render_language_switch();
       break;
 
     // Actions feed 

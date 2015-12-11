@@ -890,7 +890,17 @@ function lbd_content_types_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_comment__comment_node_team_page';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(),
       'display' => array(),
@@ -903,14 +913,24 @@ function lbd_content_types_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_comment__comment_node_team_task';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'author' => array(
-          'weight' => '-2',
+          'weight' => '0',
         ),
         'subject' => array(
-          'weight' => '-1',
+          'weight' => '1',
         ),
       ),
       'display' => array(),
@@ -1511,7 +1531,7 @@ function lbd_content_types_strongarm() {
       'display' => array(
         'sharethis' => array(
           'default' => array(
-            'weight' => '8',
+            'weight' => '9',
             'visible' => TRUE,
           ),
         ),
