@@ -10,7 +10,7 @@
 function lbd_layout_conditional_fields_default_fields() {
   $items = array();
 
-  $items[] = array(
+  $items["node:book:0"] = array(
     'entity' => 'node',
     'bundle' => 'book',
     'dependent' => 'field_reference_book',

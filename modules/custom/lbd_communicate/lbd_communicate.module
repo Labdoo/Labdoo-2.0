@@ -727,9 +727,9 @@ function _email_team_event($node, $comment = NULL) {
         $validatedEmails = $validatedEmails . ", " . $trimmedEmail;
     }
     $validatedEmails = substr($validatedEmails, 1); // remove extra comma
+    $emailsList = $emailsList . ", " . $validatedEmails;
   }
 
-  $emailsList = $emailsList . ", " . $validatedEmails;
 
   $activityUrl = url(drupal_get_path_alias("node/" .  $node->nid, $langCode), array('absolute' => TRUE));
   $teamsMgmUrl = url(drupal_get_path_alias("my-teams", $langCode), array('absolute' => TRUE));

@@ -59,6 +59,15 @@ function lbd_roles_user_default_permissions() {
     'module' => 'search_config',
   );
 
+  // Exported permission: administer addtoany.
+  $permissions['administer addtoany'] = array(
+    'name' => 'administer addtoany',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'addtoany',
+  );
+
   // Exported permission: administer book outlines.
   $permissions['administer book outlines'] = array(
     'name' => 'administer book outlines',

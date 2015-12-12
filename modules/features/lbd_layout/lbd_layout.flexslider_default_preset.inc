@@ -16,8 +16,6 @@ function lbd_layout_flexslider_default_presets() {
   $preset->name = 'labdoo_flexslider_option_set';
   $preset->title = 'Labdoo FlexSlider Option Set';
   $preset->theme = 'classic';
-  $preset->imagestyle_normal = 'labdoo_flexslider_image_style';
-  $preset->imagestyle_thumbnail = 'flexslider_thumbnail';
   $preset->options = array(
     'namespace' => 'flex-',
     'selector' => '.slides > li',
