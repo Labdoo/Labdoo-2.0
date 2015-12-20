@@ -469,15 +469,15 @@ function lbd_actions_node_view($node, $view_mode) {
     $reason = lbd_actions_user_contributes_dooject($userId, $node);
 
     if($reason == "manager") {
-      drupal_set_message(t("You are this dooject's manager."), 'status', FALSE);
+      drupal_set_message(t("You are this dootronic's manager."), 'status', FALSE);
       return;
     }
     else if($reason == "tagger") {
-      drupal_set_message(t("You have contributed to this dooject by tagging it."), 'status', FALSE);
+      drupal_set_message(t("You have contributed to this dootronic by tagging it."), 'status', FALSE);
       return;
     }
     else if($reason == "dootrip") {
-      drupal_set_message(t("You have contributed to this dooject by providing a dootrip."), 'status', FALSE);
+      drupal_set_message(t("You have contributed to this dootronic by providing a dootrip."), 'status', FALSE);
       return;
     }
     return;
@@ -492,7 +492,7 @@ function lbd_actions_node_view($node, $view_mode) {
       return;
     }
     else if($reason == "dooject") {
-      drupal_set_message(t("You have contributed to a dooject that is transported by this dootrip."), 'status', FALSE);
+      drupal_set_message(t("You have contributed to a dootronic that is transported by this dootrip."), 'status', FALSE);
       return;
     }
 
@@ -508,7 +508,7 @@ function lbd_actions_node_view($node, $view_mode) {
       return;
     }
     else if($reason == "dooject") {
-      drupal_set_message(t("You have contributed to this edoovillage with at least one dooject."), 'status', FALSE);
+      drupal_set_message(t("You have contributed to this edoovillage with at least one dootronic."), 'status', FALSE);
       return;
     }
     else if($reason == "dootrip") {
@@ -527,7 +527,7 @@ function lbd_actions_node_view($node, $view_mode) {
       return;
     }
     else if($reason == "dooject") {
-      drupal_set_message(t("You have contributed to this hub with at least one dooject."), 'status', FALSE);
+      drupal_set_message(t("You have contributed to this hub with at least one dootronic."), 'status', FALSE);
       return;
     }
     else if($reason == "dootrip") {

@@ -284,6 +284,9 @@ function labdoo_lib_enable()
   // Do not allow users to configure their timezone
   variable_set('configurable_timezones', 0);
 
+  // When deleting an account make its content belong to the Anonymous user.
+  variable_set('user_cancel_method', 'user_cancel_reassign');
+
   drupal_set_message("labdoo_lib enabled correctly");
 }
 

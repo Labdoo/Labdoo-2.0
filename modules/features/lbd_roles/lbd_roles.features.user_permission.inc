@@ -153,6 +153,25 @@ function lbd_roles_user_default_permissions() {
     'module' => 'role_delegation',
   );
 
+  // Exported permission: cancel account.
+  $permissions['cancel account'] = array(
+    'name' => 'cancel account',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'authenticated user',
+    ),
+    'module' => 'user',
+  );
+
+  // Exported permission: change own username.
+  $permissions['change own username'] = array(
+    'name' => 'change own username',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'user',
+  );
+
   // Exported permission: clone node.
   $permissions['clone node'] = array(
     'name' => 'clone node',
@@ -896,6 +915,15 @@ function lbd_roles_user_default_permissions() {
     'name' => 'search slider_page content',
     'roles' => array(),
     'module' => 'search_config',
+  );
+
+  // Exported permission: select account cancellation method.
+  $permissions['select account cancellation method'] = array(
+    'name' => 'select account cancellation method',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'user',
   );
 
   // Exported permission: send newsletter.

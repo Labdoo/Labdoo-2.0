@@ -1548,6 +1548,74 @@ function labdoo_lib_compute_dootrip_edoovillages($nodeLoaded) {
 }
 
 
+/**
+ * Returns the list of dootronics associated to a hub managed by a user
+ *
+ * @param user $userId The ID of the user
+ *
+ * @return The list of dootronics
+ *
+ */
+function labdoo_lib_user2hub2dootronic($userId) {
+  $dootronicsList = array();
+  $query = "SELECT entity_id FROM field_data_field_hub_laptop WHERE field_hub_laptop_target_id IN 
+            (SELECT entity_id FROM field_data_field_hub_manager_s_ WHERE field_hub_manager_s__target_id=$userId);";
+  $result = db_query($query);
+  foreach($result as $dootronic) 
+    array_push($dootronicsList, $dootronic->entity_id);
+  return($dootronicsList);
+}
+
+
+/**
+ * Returns the list of dootronics associated to an edoovillage managed by a user
+ *
+ * @param user $userId The ID of the user
+ *
+ * @return The list of dootronics
+ *
+ */
+function labdoo_lib_user2edoovillage2dootronic($userId) {
+  $dootronicsList = array();
+  $query = "SELECT entity_id FROM field_data_field_edoovillage_destination WHERE field_edoovillage_destination_target_id IN 
+            (SELECT entity_id FROM field_data_field_project_manager_s_ WHERE field_project_manager_s__target_id=$userId);";
+  $result = db_query($query);
+  foreach($result as $dootronic) 
+    array_push($dootronicsList, $dootronic->entity_id);
+  return($dootronicsList);
+}
+
+
+/**
+ * Implements hook_node_access
+ *
+ */
+function labdoo_lib_node_access($node, $op, $account) {
+
+  // For logged in users accessing a dootronic page, check
+  // if the user should have extra access rights due to
+  // its relationship paths (e.g. via hub, via edoovillage)
+  // with the dootronic
+  if(!user_is_logged_in()) 
+    return NODE_ACCESS_IGNORE;
+
+  if(!property_exists($node, 'type'))
+    return NODE_ACCESS_IGNORE;
+    
+  if($node->type == 'laptop') {
+    $dootronicsList = labdoo_lib_user2hub2dootronic($account->uid);
+    if(in_array($node->nid, $dootronicsList)) {
+      return NODE_ACCESS_ALLOW;
+    }
+    $dootronicsList = labdoo_lib_user2edoovillage2dootronic($account->uid);
+    if(in_array($node->nid, $dootronicsList)) {
+      return NODE_ACCESS_ALLOW;
+    }
+  }
+
+  return NODE_ACCESS_IGNORE;
+}
+
 
 /**
  * Implements hook_node_view

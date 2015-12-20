@@ -245,14 +245,20 @@ function labdoo_render_team_actions() {
     ";
   }
 
-
-
   // Additional code for members
   if(og_is_member('node', $groupId)) {
     $code = $code . "
 <img src='/profiles/labdoo/files/pictures/team-members.png' style='width: 22px; height: 21px;'/>&nbsp;
 <a href='$lang/content/team-members?t=" . $groupId . "'>" . t("Team members") . "</span></a></p>
+<img src='/misc/feed.png' style='width: 20px; height: 21px;'/>&nbsp;
+<a href='$lang/group/node/$groupId/unsubscribe'>" . t("Unsubscribe from this team") . "</span></a></p>
 <br>
+    ";
+  }
+  else {
+    $code = $code . "
+<img src='/misc/feed.png' style='width: 20px; height: 21px;'/>&nbsp;
+<a href='$lang/group/node/$groupId/subscribe'>" . t("Subscribe to this team") . "</span></a></p>
     ";
   }
 
