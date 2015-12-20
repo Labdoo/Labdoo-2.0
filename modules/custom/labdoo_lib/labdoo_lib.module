@@ -85,7 +85,8 @@ function _generate_dootrip_title($node, $dootripId) {
     $dstLocation = $dstCity . " (" . $dstCountry . ")";
   else
     $dstLocation = $dstCountry;
-  $newTitle = "Dootrip #" . $dootripId . " - from " . $srcLocation . " to " . $dstLocation;
+  $dootripIdStr = sprintf("%09d", $dootripId);
+  $newTitle = "Dootrip #" . $dootripIdStr . " - from " . $srcLocation . " to " . $dstLocation;
 
   return $newTitle;
 }
@@ -834,6 +835,8 @@ function _create_photo_album($node) {
 /**
  * Allocate a new dooject ID
  *
+ * @return The new ID
+ *
  */
 function lbd_allocate_dooject_id() {
 
@@ -846,6 +849,33 @@ function lbd_allocate_dooject_id() {
   $potentialId = 1;
   foreach($result as $item) {
     $thisId = intval($item->title);
+    if($potentialId < $thisId)
+      break;
+    $potentialId++;
+  }
+  return($potentialId); 
+}
+
+
+/**
+ * Allocate a new dootrip ID
+ *
+ * @return The new ID
+ *
+ */
+function lbd_allocate_dootrip_id() {
+
+  $query = "SELECT title FROM node WHERE type='dootrip' ORDER BY title ASC";
+  $result = db_query($query);
+
+  // The following algorithm searches for any possible
+  // holes in the Labdoo ID space and if none, allocates the next 
+  // smallest ID
+  $potentialId = 1;
+  foreach($result as $item) {
+    $dootripWords = explode(' ', $item->title);
+    $dootripNumber = explode('#', $dootripWords[1]);
+    $thisId = intval($dootripNumber[1]);
     if($potentialId < $thisId)
       break;
     $potentialId++;
@@ -967,8 +997,9 @@ function labdoo_lib_node_presave($node) {
     /*
      * Update the title
      */
-    if(!property_exists($node, 'original'))
-      $dootripId = lbd_get_total_num_objects("dootrip") + 1; 
+    if(!property_exists($node, 'original')) {
+      $dootripId = lbd_allocate_dootrip_id();
+    }
     else {
       $dootripWords = explode(' ', trim($node->title));
       $dootripNumber = explode('#', $dootripWords[1]);
