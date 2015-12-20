@@ -13,6 +13,152 @@ function lbd_layout_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'addtoany_additional_css';
+  $strongarm->value = '';
+  $export['addtoany_additional_css'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'addtoany_additional_html';
+  $strongarm->value = '<a class="a2a_button_google_plus">
+    <img src="//farm4.staticflickr.com/3774/12004033365_8965d86637_o.png" border="0" alt="Google+" width="20"/>
+</a>
+<a class="a2a_button_facebook">
+    <img src="//farm3.staticflickr.com/2863/12004329833_ddcd67ff4a_o.png" border="0" alt="Facebook" width="20"/>
+</a>
+<a class="a2a_button_twitter">
+    <img src="//farm3.staticflickr.com/2886/12004329883_8daa4af904_o.png" border="0" alt="Twitter" width="20"/>
+</a>
+<a class="a2a_dd" href="https://www.addtoany.com/share">
+    <img src="//farm8.staticflickr.com/7326/12005120763_a44dc82111_o.png" border="0" alt="Share" width="20"/>
+</a>';
+  $export['addtoany_additional_html'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'addtoany_additional_html_placement';
+  $strongarm->value = 'before';
+  $export['addtoany_additional_html_placement'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'addtoany_additional_js';
+  $strongarm->value = '';
+  $export['addtoany_additional_js'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'addtoany_buttons_size';
+  $strongarm->value = '32';
+  $export['addtoany_buttons_size'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'addtoany_custom_image';
+  $strongarm->value = '';
+  $export['addtoany_custom_image'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'addtoany_display_in_nodecont';
+  $strongarm->value = 0;
+  $export['addtoany_display_in_nodecont'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'addtoany_display_in_nodelink';
+  $strongarm->value = 0;
+  $export['addtoany_display_in_nodelink'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'addtoany_display_in_rss';
+  $strongarm->value = 1;
+  $export['addtoany_display_in_rss'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'addtoany_display_in_teasers';
+  $strongarm->value = 0;
+  $export['addtoany_display_in_teasers'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'addtoany_display_weight';
+  $strongarm->value = '40';
+  $export['addtoany_display_weight'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'addtoany_image';
+  $strongarm->value = 'none';
+  $export['addtoany_image'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'addtoany_image_attributes';
+  $strongarm->value = 'alt="Share"';
+  $export['addtoany_image_attributes'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'addtoany_link_text';
+  $strongarm->value = '';
+  $export['addtoany_link_text'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'addtoany_nodetypes';
+  $strongarm->value = array(
+    'action' => 0,
+    'article' => 0,
+    'page' => 0,
+    'blog' => 0,
+    'book' => 0,
+    'slider_page' => 0,
+    'dootrip' => 0,
+    'laptop' => 0,
+    'edoovillage' => 0,
+    'gic' => 0,
+    'node_gallery_gallery' => 0,
+    'node_gallery_item' => 0,
+    'hub' => 0,
+    'labdoo_slide' => 0,
+    'private_page' => 0,
+    'drupal_wall' => 0,
+    'simplenews' => 0,
+    'superhub_page' => 0,
+    'team' => 0,
+    'team_page' => 0,
+    'event' => 0,
+    'team_task' => 0,
+  );
+  $export['addtoany_nodetypes'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'addtoany_no_3p';
+  $strongarm->value = 0;
+  $export['addtoany_no_3p'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'admin_theme';
   $strongarm->value = 'seven';
   $export['admin_theme'] = $strongarm;
@@ -929,10 +1075,7 @@ function lbd_layout_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'search_active_modules';
   $strongarm->value = array(
-    'location_search' => 'location_search',
-    'node' => 'node',
-    'user' => 'user',
-    'file_entity' => 0,
+    0 => 'node',
   );
   $export['search_active_modules'] = $strongarm;
 
@@ -1652,7 +1795,7 @@ function lbd_layout_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'site_frontpage';
-  $strongarm->value = 'node/7';
+  $strongarm->value = 'content/front-page';
   $export['site_frontpage'] = $strongarm;
 
   $strongarm = new stdClass();
