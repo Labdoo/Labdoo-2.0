@@ -1,0 +1,14 @@
+** Tuning the Boost module
+
+  To tune (increase/decrease) the amount of cache available for the boost module do as follows:
+
+  - Edit /etc/fstab and search for the line corresponding to '/var/www/lbd/cache'. In that line, change	the 'size' parameter to the cache size value you want to set.
+
+  - Re-start the Labdoo server so that all mount points can be re-mounted. Upon coming back, run 'df -h', you should now see your new cache size value.
+
+  - To make this change permanent into the Labdoo source code, apply the same modification to the file install/scripts/system-config.sh where it says /var/www/lbd/cache.
+
+** Tuning memcache
+
+  - TODO
+

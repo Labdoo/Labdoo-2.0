@@ -731,6 +731,7 @@ function labdoo_dooject_extract_emails($node) {
 
     if($emailsList[0] == ",")
       $emailsList = substr($emailsList, 2);
+
     return $emailsList; 
 }
 
@@ -885,6 +886,21 @@ function lbd_allocate_dootrip_id() {
 
 
 /**
+ * Extracts the dootrip ID from a dootrip title
+ *
+ * @param  string $dootripTitle The title of the dootrip
+ *
+ * @return The dootrip ID
+ *
+ */ 
+function lbd_extract_dootrip_id($dootripTitle) {
+  $dootripWords = explode(' ', trim($dootripTitle));
+  $dootripNumber = explode('#', $dootripWords[1]);
+  return $dootripNumber[1];
+}
+
+
+/**
  * Implementation of hook_node_presave
  *
  */
@@ -1001,9 +1017,7 @@ function labdoo_lib_node_presave($node) {
       $dootripId = lbd_allocate_dootrip_id();
     }
     else {
-      $dootripWords = explode(' ', trim($node->title));
-      $dootripNumber = explode('#', $dootripWords[1]);
-      $dootripId = $dootripNumber[1];
+      $dootripId = lbd_extract_dootrip_id($node->title);
     }
     $dootripTitle = _generate_dootrip_title($node, $dootripId);
     $node->title = $dootripTitle;

@@ -222,3 +222,13 @@ input[type="checkbox"] {
   color:white;
 }
 
+
+/*
+ * Disable displaying links URLs when printing a page
+ */
+@media print {
+  a[href]:after {
+    content: none;
+  }
+}
+

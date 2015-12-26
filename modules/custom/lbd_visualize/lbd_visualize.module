@@ -216,6 +216,18 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
     else 
       $objects[$objectNid]['pickMeUp'] = 'no';
 
+    // Dootrips field 
+    $dootripsFieldList = field_get_items('node', $node, 'field_dootrips'); 
+    $dootripsStrList = "";
+    foreach($dootripsFieldList as $key => $dootripNode) {
+      $dstLoaded = node_load($dootripNode['target_id']);
+      if($dootripsStrList == "")
+        $dootripsStrList = "#" . lbd_extract_dootrip_id($dstLoaded->title);  
+      else
+        $dootripsStrList = $dootripsStrList . ", " . "#" . lbd_extract_dootrip_id($dstLoaded->title);  
+    }
+    $objects[$objectNid]['dootripId'] = $dootripsStrList; 
+
     // Extract Model Field 
     $objects[$objectNid]['model'] = labdoo_lib_get_field($node, 'field_model', 'node', 'value');
 
@@ -246,15 +258,16 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
   $metrics[6] = array('label' => 'Pick me up', 'field' => 'pickMeUp', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
   $metrics[7] = array('label' => 'Model', 'field' => 'model', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
   $metrics[8] = array('label' => 'Wh', 'field' => 'Wh', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[9] = array('label' => 'Notes', 'field' => 'notes', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[10] = array('label' => 'S0 - tagged', 'field' => 'S0', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[11] = array('label' => 'S1 - donated', 'field' => 'S1', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[12] = array('label' => 'S2 - sanitized', 'field' => 'S2', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[13] = array('label' => 'S3 - assigned', 'field' => 'S3', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[14] = array('label' => 'T1 - in transit', 'field' => 'T1', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[15] = array('label' => 'S4 - deployed', 'field' => 'S4', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[16] = array('label' => 'S5 - needs recycle', 'field' => 'S5', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[17] = array('label' => 'S6 - recycled', 'field' => 'S6', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[9] = array('label' => 'Dootrips', 'field' => 'dootripId', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[10] = array('label' => 'Notes', 'field' => 'notes', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[11] = array('label' => 'S0 - tagged', 'field' => 'S0', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[12] = array('label' => 'S1 - donated', 'field' => 'S1', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[13] = array('label' => 'S2 - sanitized', 'field' => 'S2', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[14] = array('label' => 'S3 - assigned', 'field' => 'S3', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[15] = array('label' => 'T1 - in transit', 'field' => 'T1', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[16] = array('label' => 'S4 - deployed', 'field' => 'S4', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[17] = array('label' => 'S5 - needs recycle', 'field' => 'S5', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[18] = array('label' => 'S6 - recycled', 'field' => 'S6', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
 
   if(empty($objects)) {
 
@@ -267,6 +280,7 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
     $objects[0]['model'] = ""; 
     $objects[0]['Wh'] = ""; 
     $objects[0]['notes'] = ""; 
+    $objects[0]['dootripId'] = ""; 
     $objects[0]['link'] = "No doojects in this view"; 
     $objects[0]['completed'] = $objects[0]['open'] = 0; 
     foreach($possibleStates as $thisState)
@@ -762,6 +776,12 @@ function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL, $switch
     $objects[$objectNid]['dstCountry'] = $location['country'];
     if(array_key_exists($location['country'], $country_names))
         $objects[$objectNid]['dstCountry'] = $country_names[$location['country']];
+
+    // Get departure date
+    $objects[$objectNid]['departureDate'] = labdoo_lib_get_field($node, 'field_departure_date', 'node', 'value');
+
+    // Get arrival date
+    $objects[$objectNid]['arrivalDate'] = labdoo_lib_get_field($node, 'field_arrival_date', 'node', 'value');
         
     $urlPath = drupal_get_path_alias("node/" . $objectNid, $language->language);
     if($language->language != $defaultLanguageCode)
@@ -780,18 +800,22 @@ function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL, $switch
     $objects[0]['additionalInfo'] = "";
     $objects[0]['srcCountry'] = "";
     $objects[0]['dstCountry'] = "";
+    $objects[0]['departureDate'] = "";
+    $objects[0]['arrivalDate'] = "";
     $objects[0]['link'] = "No dootrips in this view"; 
   }
 
   $metrics[0] = array('label' => 'Dootrip', 'field' => 'link', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[1] = array('label' => 'Dootronics capacity', 'field' => 'capacity', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
-  $metrics[2] = array('label' => 'Status', 'field' => 'status', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
-  $metrics[3] = array('label' => 'Source country', 'field' => 'srcCountry', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
-  $metrics[4] = array('label' => 'Destination country', 'field' => 'dstCountry', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
-  $metrics[5] = array('label' => 'Total number of dootrips', 'field' => 'numberDootrips', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[6] = array('label' => 'Dootronics transported', 'field' => 'completed', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
-  $metrics[7] = array('label' => 'Dootrippers', 'field' => 'dootrippers', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
-  $metrics[8] = array('label' => 'Additional info', 'field' => 'additionalInfo', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[1] = array('label' => 'Capacity', 'field' => 'capacity', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
+  $metrics[2] = array('label' => 'Transported', 'field' => 'completed', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
+  $metrics[3] = array('label' => 'Status', 'field' => 'status', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+  $metrics[4] = array('label' => 'Origin', 'field' => 'srcCountry', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+  $metrics[5] = array('label' => 'Destination', 'field' => 'dstCountry', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+  $metrics[6] = array('label' => 'Departure', 'field' => 'departureDate', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[7] = array('label' => 'Arrival', 'field' => 'arrivalDate', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[8] = array('label' => 'Dootrippers', 'field' => 'dootrippers', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[9] = array('label' => 'Additional info', 'field' => 'additionalInfo', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[10] = array('label' => 'Total number of dootrips', 'field' => 'numberDootrips', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
 
   cache_set($cacheIndexPrefix . 'objects', $objects, 'cache');
   cache_set($cacheIndexPrefix . 'metrics', $metrics, 'cache');
@@ -949,6 +973,8 @@ function print_dashboard_objects($objectsType, $objectsName, $objects, $metrics,
       // Add a prefix key to allow for field specific searches
       // such as id:000000001
       $thisString = strtolower($key) . ":" . trim($field);
+      if($key == 'dootripId') # Since dootripId can contain a list of dootrips, process it differently 
+        $thisString = trim(str_replace("#", "dootripid:", $field));
       $strValue = sanitizeStringForVisualization($thisString); 
       $searchtext = $searchtext . ' ' . $strValue;
     }
@@ -1513,9 +1539,9 @@ function lbd_display_slider_edoovilage_dootrips($edoovillageId) {
 
   foreach($result as $item) {
     // Load the dootrip node
-    $dootripId = $item->field_dootrips_target_id;
-    $dootripNode = node_load($dootripId);
-    $urlPath = drupal_get_path_alias("node/" . $dootripId, $language->language);
+    $dootripNid = $item->field_dootrips_target_id;
+    $dootripNode = node_load($dootripNid);
+    $urlPath = drupal_get_path_alias("node/" . $dootripNid, $language->language);
 
     // Get the name
     $dootripName = explode(" - ", $dootripNode->title)[0];
