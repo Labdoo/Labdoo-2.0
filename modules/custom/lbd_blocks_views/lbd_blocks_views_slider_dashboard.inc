@@ -284,6 +284,28 @@ $handler->display->display_options['fields']['changed']['field'] = 'changed';
 $handler->display->display_options['fields']['changed']['label'] = 'Last updated';
 $handler->display->display_options['fields']['changed']['date_format'] = 'short';
 $handler->display->display_options['fields']['changed']['second_date_format'] = 'long';
+/* Field: Content: Model */
+$handler->display->display_options['fields']['field_model']['id'] = 'field_model';
+$handler->display->display_options['fields']['field_model']['table'] = 'field_data_field_model';
+$handler->display->display_options['fields']['field_model']['field'] = 'field_model';
+/* Field: Content: Serial number */
+$handler->display->display_options['fields']['field_serial_number']['id'] = 'field_serial_number';
+$handler->display->display_options['fields']['field_serial_number']['table'] = 'field_data_field_serial_number';
+$handler->display->display_options['fields']['field_serial_number']['field'] = 'field_serial_number';
+/* Field: Content: Watt-hours */
+$handler->display->display_options['fields']['field_battery_watt_hours']['id'] = 'field_battery_watt_hours';
+$handler->display->display_options['fields']['field_battery_watt_hours']['table'] = 'field_data_field_battery_watt_hours';
+$handler->display->display_options['fields']['field_battery_watt_hours']['field'] = 'field_battery_watt_hours';
+/* Field: Content: Weight */
+$handler->display->display_options['fields']['field_dooject_weight']['id'] = 'field_dooject_weight';
+$handler->display->display_options['fields']['field_dooject_weight']['table'] = 'field_data_field_dooject_weight';
+$handler->display->display_options['fields']['field_dooject_weight']['field'] = 'field_dooject_weight';
+$handler->display->display_options['fields']['field_dooject_weight']['settings'] = array(
+  'thousand_separator' => '',
+  'decimal_separator' => '.',
+  'scale' => '2',
+  'prefix_suffix' => 1,
+);
 $handler->display->display_options['defaults']['sorts'] = FALSE;
 /* Sort criterion: Content: Title */
 $handler->display->display_options['sorts']['title']['id'] = 'title';
@@ -511,6 +533,28 @@ $handler->display->display_options['fields']['changed']['field'] = 'changed';
 $handler->display->display_options['fields']['changed']['label'] = 'Last updated';
 $handler->display->display_options['fields']['changed']['date_format'] = 'short';
 $handler->display->display_options['fields']['changed']['second_date_format'] = 'long';
+/* Field: Content: Model */
+$handler->display->display_options['fields']['field_model']['id'] = 'field_model';
+$handler->display->display_options['fields']['field_model']['table'] = 'field_data_field_model';
+$handler->display->display_options['fields']['field_model']['field'] = 'field_model';
+/* Field: Content: Serial number */
+$handler->display->display_options['fields']['field_serial_number']['id'] = 'field_serial_number';
+$handler->display->display_options['fields']['field_serial_number']['table'] = 'field_data_field_serial_number';
+$handler->display->display_options['fields']['field_serial_number']['field'] = 'field_serial_number';
+/* Field: Content: Watt-hours */
+$handler->display->display_options['fields']['field_battery_watt_hours']['id'] = 'field_battery_watt_hours';
+$handler->display->display_options['fields']['field_battery_watt_hours']['table'] = 'field_data_field_battery_watt_hours';
+$handler->display->display_options['fields']['field_battery_watt_hours']['field'] = 'field_battery_watt_hours';
+/* Field: Content: Weight */
+$handler->display->display_options['fields']['field_dooject_weight']['id'] = 'field_dooject_weight';
+$handler->display->display_options['fields']['field_dooject_weight']['table'] = 'field_data_field_dooject_weight';
+$handler->display->display_options['fields']['field_dooject_weight']['field'] = 'field_dooject_weight';
+$handler->display->display_options['fields']['field_dooject_weight']['settings'] = array(
+  'thousand_separator' => '',
+  'decimal_separator' => '.',
+  'scale' => '2',
+  'prefix_suffix' => 1,
+);
 $handler->display->display_options['defaults']['sorts'] = FALSE;
 /* Sort criterion: Content: Title */
 $handler->display->display_options['sorts']['title']['id'] = 'title';
