@@ -171,14 +171,18 @@ function _email_laptop_event($node) {
   global $base_url;
   global $user;
 
-  if(property_exists($node, 'original'))
+  if(property_exists($node, 'original')) {
     $previousStatus = labdoo_lib_get_field($node->original, 'field_status', 'node', 'value');
-  else
+    $previousPickMeUp = labdoo_lib_get_field($node->original, 'field_pick_me_up', 'node', 'value');
+  }
+  else {
     $previousStatus = "WAS_CREATED";
+  }
 
   $newStatus = labdoo_lib_get_field($node, 'field_status', 'node', 'value'); 
+  $newPickMeUp = labdoo_lib_get_field($node, 'field_pick_me_up', 'node', 'value'); 
 
-  if($previousStatus == $newStatus) 
+  if(($previousStatus == $newStatus) && ($previousPickMeUp == $newPickMeUp))
     return;
 
   $edoovillageNid = 0;  // An arbitrary initial value
@@ -224,6 +228,49 @@ function _email_laptop_event($node) {
     }
   }
 
+  // Now add to the list of email addresses all hub managers who have declared interest in receiving
+  // this type of laptop event.
+  $sqlCondition = "";
+  if($email_params['type'] == "LAPTOP_ADDED") {
+    $sqlCondition = "field_hub_manager_notifications_value='HUB_TAGGED'";
+  }
+  if($newPickMeUp == "1") {
+    if($sqlCondition != "")
+      $sqlCondition = $sqlCondition . " OR ";
+    $sqlCondition = $sqlCondition . "field_hub_manager_notifications_value='HUB_PICKME'";
+  }
+
+  if($sqlCondition != "") {
+    $query = "SELECT entity_id FROM field_data_field_hub_manager_notifications WHERE $sqlCondition";
+    $result = db_query($query); 
+
+    foreach($result as $item) {
+      // Compute distance between user and laptop
+      $userId = $item->entity_id;
+      $query = "SELECT city FROM location WHERE lid IN (SELECT lid FROM location_instance WHERE uid=$userId)";
+      $userCity = db_query($query)->fetchField(); 
+      $query = "SELECT country FROM location WHERE lid IN (SELECT lid FROM location_instance WHERE uid=$userId)";
+      $userCountry = db_query($query)->fetchField(); 
+      if(labdoo_lookup_coordinates($userCountry, $userCity, $userLat, $userLon) < 0)
+        continue;
+      $laptopLat = $node->locations[0]['latitude'];
+      $laptopLon = $node->locations[0]['longitude'];
+      $latlon_a['lat'] = $userLat;
+      $latlon_a['lon'] = $userLon;
+      $latlon_b['lat'] = $laptopLat;
+      $latlon_b['lon'] = $laptopLon; 
+      $distance = location_distance_between($latlon_a, $latlon_b, 'km');
+      // Extract user radius 
+      $query = "SELECT field_notification_area_value FROM field_data_field_notification_area WHERE entity_id=$userId";
+      $userRadius = db_query($query)->fetchField();
+      // If distance is within radius, add to email list
+      if($distance['scalar'] <= intval($userRadius)) {
+        $userObj = user_load($userId);
+        $emailsList = $emailsList . ", " . $userObj->mail;
+      }
+    }
+  }
+
   $email_params['to'] = $emailsList; 
 
   $subjectTemplate = file_get_contents($subjectFileName);
@@ -231,9 +278,15 @@ function _email_laptop_event($node) {
 
   $statusLabels = list_allowed_values(field_info_field("field_status"));
 
+  if($newPickMeUp == "1") 
+    $extraInfo = " ('Pick me up' ON)";
+  else
+    $extraInfo = "";
+
   $subject = str_replace("[ID]", $laptopId, $subjectTemplate);
+  $subject = $subject . $extraInfo;
   $body = str_replace("[ID]", $laptopId, $bodyTemplate);
-  $body = str_replace("[STATUS]", $statusLabels[$newStatus], $body);
+  $body = str_replace("[STATUS]", $statusLabels[$newStatus] . $extraInfo, $body);
   $body = str_replace("[LAPTOP_URL]", url('content/'. $laptopId, array('absolute' => TRUE)), $body);
   $body = str_replace("[EDOOVILLAGE_URL]", url('node/'. $edoovillageNid, array('absolute' => TRUE)), $body);
   $body = str_replace("[CONTACT_EMAIL]", variable_get('site_mail', ''), $body);

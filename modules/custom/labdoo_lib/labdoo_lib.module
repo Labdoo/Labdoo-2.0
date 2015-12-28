@@ -1232,6 +1232,24 @@ function labdoo_lib_form_node_form_alter(&$form, &$form_state, $form_id) {
     unset($form['title']);
   }
 
+  return;
+}
+
+
+/**
+ * Implements hook_form_user_profile_form_alter
+ *
+ */
+function labdoo_lib_form_user_profile_form_alter(&$form, &$form_state) {
+  global $user;
+  $userRoles = array_values($user->roles);
+
+  if(!in_array('hub manager', $userRoles)) {
+    // If it's not a hub manager, hide the hub manager notifications field group
+    field_group_hide_field_groups($form, array('group_hub_manager_notifications'));
+  }
+
+  return;
 }
 
 
