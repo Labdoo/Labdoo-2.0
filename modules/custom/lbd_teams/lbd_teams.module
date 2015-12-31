@@ -191,10 +191,11 @@ function labdoo_render_team_actions() {
   $path = drupal_get_path_alias(current_path());
   global $language;
 
-  // Take care of two cases: either the page is associated
-  // with a group, or is the team-members page
+  // Take care of the cases described in [*]
   if(strcmp($path, "content/team-members") == 0) 
     $groupId = $_GET['t'];
+  else if(strcmp($path, "teams-dashboard") == 0) 
+    $groupId = $_GET['og_group_ref_target_id'][0];
   else
     $groupId = lbd_teams_page_group_id();
 
@@ -277,21 +278,30 @@ function labdoo_block_filter_team_actions() {
   $groupId = 0;
   global $user;
 
-  // Two cases to consider:
-  //   - This is a page associated with a group
+  // Three mutually exclusive cases to consider: [*]
   //   - This is the 'Team Members' page
-  // Only in these two cases return TRUE
+  //   - This is the 'Search inside this team' page
+  //   - This is a page associated with a group
+  // Only in these cases return TRUE
  
-  $groupId = lbd_teams_page_group_id();
-
   if(strcmp($path, "content/team-members") == 0) { 
-    if(!empty($_GET['t'])) 
-      $groupId = $_GET['t'];
-    if(!is_numeric($groupId)) 
+    if(empty($_GET['t'])) 
       return FALSE;
+    $groupId = $_GET['t'];
+  }
+  else if(strcmp($path, "teams-dashboard") == 0) { 
+    if(empty($_GET['og_group_ref_target_id']))
+      return FALSE;
+    $groupId = $_GET['og_group_ref_target_id'][0];
+  }
+  else {
+    $groupId = lbd_teams_page_group_id();
   }
 
   if($groupId == NULL && !$groupId)
+    return FALSE;
+
+  if(!is_numeric($groupId)) 
     return FALSE;
 
   return TRUE;

@@ -1253,6 +1253,20 @@ function labdoo_lib_form_user_profile_form_alter(&$form, &$form_state) {
 }
 
 
+/**
+ * Implements hook_form_alter
+ *
+ */
+function labdoo_lib_form_alter(&$form, &$form_state, $form_id) {
+
+  // Do not show the hub manager notification options during registration
+  if($form_id == 'user_register_form')
+    field_group_hide_field_groups($form, array('group_hub_manager_notifications'));
+
+  return;
+}
+
+
 /** 
  * Calculates the total number of objects 
  * 
@@ -2719,7 +2733,7 @@ function _labdoo_lib_user_num_edoovillages($userId) {
 
 function _labdoo_lib_user_num_hubs($userId) {
   $numberOfQueries = 1;
-  $queryAll = "(SELECT entity_id FROM field_data_field_hub_manager_s_)";
+  $queryAll = "(SELECT DISTINCT entity_id FROM field_data_field_hub_manager_s_)";
   $query = "SELECT t.entity_id FROM (" . $queryAll;
   $placeHolders = array();
 

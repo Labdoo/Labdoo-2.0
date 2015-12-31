@@ -1,0 +1,29 @@
+** The following are some of the most commonly used SQL queries.
+
+  - To get the list of countries where Labdoo is working do as follows (the list is ordered according to order in which a country was added to Labdoo.org):
+
+    #+BEGIN_EXAMPLE
+    mysql> SELECT DISTINCT country FROM location WHERE lid IN (SELECT lid FROM location_instance WHERE nid!=0 ORDER by nid);
+    #+END_EXAMPLE
+
+  - To get the same list for cities instead of countries:
+
+    #+BEGIN_EXAMPLE
+    mysql> SELECT DISTINCT city FROM location WHERE lid IN (SELECT lid FROM location_instance WHERE nid!=0 ORDER by nid);
+    #+END_EXAMPLE
+
+  - To see the current status of the visualization cache:
+
+    #+BEGIN_EXAMPLE
+    mysql> SELECT cid FROM cache WHERE cid LIKE '%lbd_visualization%';
+    #+END_EXAMPLE
+
+** The following are some of the most commonly used drush queries.
+
+  - To delete the visualization cache:
+ 
+    #+BEGIN_EXAMPLE
+    # drush php-eval "cache_clear_all('lbd_visualization', 'cache', TRUE);"
+    #+END_EXAMPLE
+
+

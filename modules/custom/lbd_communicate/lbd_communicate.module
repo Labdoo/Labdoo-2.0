@@ -230,6 +230,18 @@ function _email_laptop_event($node) {
 
   // Now add to the list of email addresses all hub managers who have declared interest in receiving
   // this type of laptop event.
+
+  // TODO: Optimize. The following code is fine if only a few users are expected to be interested in 
+  // receiving these notifications. By limitting it to hub manager and to only a certain region via 
+  // the radious parameter, it is expected that only a few users will be added to the notification
+  // list. However, in the future we should make this code more scalable and fast. One idea is to
+  // have a cache of users who opt in to receive such type of notifications and update such cache
+  // upon a users saving its profile, rather than searching the whole DB for users at the time a
+  // dootronic is updated as is done now. Another option is to run this code as part of cron, in 
+  // a way that the system periodically checks what happened since the last time cron was run and
+  // sends out notifications as needed. This second optimization would decouple the following action
+  // from the user activity, making the user experience faster. Currently, the overhead is neglegible,
+  // but this is an area of further performance improvement.
   $sqlCondition = "";
   if($email_params['type'] == "LAPTOP_ADDED") {
     $sqlCondition = "field_hub_manager_notifications_value='HUB_TAGGED'";
@@ -436,6 +448,164 @@ function _email_dootrip_event($node, $eventType) {
     lbd_communicate_mail_send($email_params);
   }
 
+  return;
+}
+
+
+/*
+ * Generates notification emails to users involved in a newly created team event 
+ *
+ * @param node $node The node that is being created or the parent page node if $comment is not NULL
+ * @param comment $comment If it's a comment, the comment node; otherwise, NULL
+ *
+ */
+function _email_team_event($node, $comment = NULL) {
+  global $user;
+
+  $langCode = user_preferred_language($user)->language;
+  if(!file_exists(_path_to_email_template($langCode) . "team_activity_subject-" . $langCode . ".email"))
+    $langCode = 'en';
+
+  $email_params['type'] = "TEAM_ACTIVITY";
+  $subjectFileName = _path_to_email_template($langCode) . "team_activity_subject-" . $langCode . ".email";
+  $bodyFileName = _path_to_email_template($langCode) . "team_activity_body-" . $langCode . ".email";
+
+  $subjectTemplate = file_get_contents($subjectFileName);
+  $bodyTemplate = file_get_contents($bodyFileName);
+
+  if($node->type == 'team_page') {
+    if($comment == NULL) {
+      $activityType = 'conversation';
+      $activityBody = labdoo_lib_get_field($node, 'body', 'node', 'value');
+    }
+    else {
+      $activityType = 'comment';
+      $activityBody = labdoo_lib_get_field($comment, 'comment_body', 'comment', 'value');
+    }
+  }
+  else if($node->type == 'event') {
+    $activityType = 'event';
+    $activityBody = labdoo_lib_get_field($node, 'body', 'node', 'value');
+  }
+  else if($node->type == 'team_task') {
+    if($comment == NULL) {
+      $activityType = 'task';
+      $activityBody = labdoo_lib_get_field($node, 'body', 'node', 'value');
+    }
+    else {
+      $activityType = 'comment';
+      $activityBody = labdoo_lib_get_field($comment, 'comment_body', 'comment', 'value');
+    }
+  }
+  $activityTitle = $node->title;
+  $teamId = labdoo_lib_get_field($node, 'og_group_ref', 'node', 'target_id');
+  $team = node_load($teamId);
+  $teamName = $team->title;
+
+  $wNode = entity_metadata_wrapper('node', $node);
+  if($node->type == 'team_page') {
+    $sendAll = $wNode->field_send_to_all_conversation->value();
+    $sendToFieldName = 'field_send_to_conversation'; 
+  }
+  else if($node->type == 'team_task') { 
+    $sendAll = $wNode->field_send_to_all_task->value();
+    $sendToFieldName = 'field_send_to_task'; 
+  }
+  else if($node->type == 'event') {
+    $sendAll = $wNode->field_send_to_all_event->value();
+    $sendToFieldName = 'field_send_to_event'; 
+  }
+  else
+    $sendAll = TRUE;
+
+  $emailsList = variable_get('site_mail', '');
+  if($sendAll) { // Send to all members of this team
+    $members = lbd_teams_get_team_members($teamId);
+    foreach($members as $memberId) {
+      $userObj = user_load($memberId);
+      $emailsList = $emailsList . ", " . $userObj->mail;
+    }
+  }
+  else { // Send only to users in the 'send to' field
+    if(property_exists($node, $sendToFieldName)) {
+      if($node->$sendToFieldName) {
+        foreach(field_get_items('node', $node, $sendToFieldName) as $element) {
+          $userObj = user_load($element['target_id']);
+          $emailsList = $emailsList . ", " . $userObj->mail;
+        }
+      }
+    }
+  }
+  $emailsList = trim($emailsList, ", ");
+
+  // Events have an additional field called field_additional_emails_event where users can add
+  // additional email addresses that need to be notified. Include them too in $emailsList.
+  if($node->type == 'event') {
+    $additionalEmails = $wNode->field_additional_emails_event->value();
+    $additionalEmailsList = explode(",", $additionalEmails);
+    $validatedEmails = "";
+    foreach($additionalEmailsList as $email) {
+      $trimmedEmail = trim($email);
+      if(valid_email_address($trimmedEmail))
+        $validatedEmails = $validatedEmails . ", " . $trimmedEmail;
+    }
+    $validatedEmails = substr($validatedEmails, 1); // remove extra comma
+    $emailsList = $emailsList . ", " . $validatedEmails;
+  }
+
+  // Ensure that all users who added a comment are included in the email list.
+  // This is needed because it is possible for users to add a comment to a team
+  // without being registered to that team.
+  $query = "SELECT uid FROM comment WHERE nid=$node->nid";
+  $items = db_query($query);
+  foreach($items as $item) {
+    $userLoaded = user_load($item->uid);
+    $emailsList = $emailsList . ", " . $userLoaded->mail;
+  }
+
+  $activityUrl = url(drupal_get_path_alias("node/" .  $node->nid, $langCode), array('absolute' => TRUE));
+  $teamsMgmUrl = url(drupal_get_path_alias("my-teams", $langCode), array('absolute' => TRUE));
+  if($activityType == 'comment') {
+    $query = "SELECT MAX(cid) FROM comment WHERE nid=$node->nid";
+    $newCid = db_query($query)->fetchField();
+    $activityUrl = $activityUrl . "#comment-" . $newCid;
+  }
+
+  $subject = str_replace("[ACTIVITY_TYPE]", $activityType, $subjectTemplate);
+  $subject = str_replace("[TEAM_NAME]", $teamName, $subject);
+  $subject = str_replace("[ACTIVITY_SUBJECT]", $activityTitle, $subject);
+
+  $body = str_replace("[ACTIVITY_TYPE]", $activityType, $bodyTemplate);
+  $body = str_replace("[USERNAME]", $user->name, $body);
+  $body = str_replace("[ACTIVITY_SUBJECT]", $activityTitle, $body);
+  $body = str_replace("[TEAM_NAME]", $teamName, $body);
+  $body = str_replace("[ACTIVITY_BODY]", $activityBody, $body);
+  $body = str_replace("[ACTIVITY_URL]", $activityUrl, $body);
+  $body = str_replace("[TEAMS_MGM_URL]", $teamsMgmUrl, $body);
+
+  // If the activity type is 'event', add the date and location
+  if($activityType == 'event') {
+    $eventTime = labdoo_lib_get_field($node, 'field_event_date', 'node', 'value');
+    $eventLocation = labdoo_lib_get_field($node, 'field_location_event', 'node', 'value');
+    // Convert to single line
+    $eventLocation = str_replace("\r", " | ", $eventLocation);
+    $eventLocation = str_replace("\n", "", $eventLocation);
+    $bodyHeader = "---\n";
+    $bodyHeader = $bodyHeader . "Event name: " . $activityTitle . "\n";
+    $bodyHeader = $bodyHeader . "Time: " . $eventTime . "\n";
+    $bodyHeader = $bodyHeader . "Location: " . $eventLocation . "\n";
+    $bodyHeader = $bodyHeader . "Link: " . $activityUrl . "\n";
+    $bodyHeader = $bodyHeader . "---\n\n";
+    $body = $bodyHeader . $body;
+  }
+
+  $email_params['subject'] = $subject;
+  $email_params['body'] = $body;
+  $email_params['to'] = variable_get('site_mail');
+
+  $email_params['headers']['Bcc'] = $emailsList;
+
+  lbd_communicate_mail_send($email_params);
   return;
 }
 
@@ -679,154 +849,6 @@ function lbd_communicate_comment_insert($comment) {
   $node = node_load($comment->nid);
   if($node->type == 'team_page' || $node->type == 'event' || $node->type == 'team_task')
     _email_team_event($node, $comment);
-}
-
-
-/*
- * Generates notification emails to users involved in a newly created team event 
- *
- * @param node $node The node that is being created or the parent page node if $comment is not NULL
- * @param comment $comment If it's a comment, the comment node; otherwise, NULL
- *
- */
-function _email_team_event($node, $comment = NULL) {
-  global $user;
-
-  $langCode = user_preferred_language($user)->language;
-  if(!file_exists(_path_to_email_template($langCode) . "team_activity_subject-" . $langCode . ".email"))
-    $langCode = 'en';
-
-  $email_params['type'] = "TEAM_ACTIVITY";
-  $subjectFileName = _path_to_email_template($langCode) . "team_activity_subject-" . $langCode . ".email";
-  $bodyFileName = _path_to_email_template($langCode) . "team_activity_body-" . $langCode . ".email";
-
-  $subjectTemplate = file_get_contents($subjectFileName);
-  $bodyTemplate = file_get_contents($bodyFileName);
-
-  if($node->type == 'team_page') {
-    if($comment == NULL) {
-      $activityType = 'conversation';
-      $activityBody = labdoo_lib_get_field($node, 'body', 'node', 'value');
-    }
-    else {
-      $activityType = 'comment';
-      $activityBody = labdoo_lib_get_field($comment, 'comment_body', 'comment', 'value');
-    }
-  }
-  else if($node->type == 'event') {
-    $activityType = 'event';
-    $activityBody = labdoo_lib_get_field($node, 'body', 'node', 'value');
-  }
-  else if($node->type == 'team_task') {
-    if($comment == NULL) {
-      $activityType = 'task';
-      $activityBody = labdoo_lib_get_field($node, 'body', 'node', 'value');
-    }
-    else {
-      $activityType = 'comment';
-      $activityBody = labdoo_lib_get_field($comment, 'comment_body', 'comment', 'value');
-    }
-  }
-  $activityTitle = $node->title;
-  $teamId = labdoo_lib_get_field($node, 'og_group_ref', 'node', 'target_id');
-  $team = node_load($teamId);
-  $teamName = $team->title;
-
-  $wNode = entity_metadata_wrapper('node', $node);
-  if($node->type == 'team_page') {
-    $sendAll = $wNode->field_send_to_all_conversation->value();
-    $sendToFieldName = 'field_send_to_conversation'; 
-  }
-  else if($node->type == 'team_task') { 
-    $sendAll = $wNode->field_send_to_all_task->value();
-    $sendToFieldName = 'field_send_to_task'; 
-  }
-  else if($node->type == 'event') {
-    $sendAll = $wNode->field_send_to_all_event->value();
-    $sendToFieldName = 'field_send_to_event'; 
-  }
-  else
-    $sendAll = TRUE;
-
-  $emailsList = variable_get('site_mail', '');
-  if($sendAll) { // Send to all members of this team
-    $members = lbd_teams_get_team_members($teamId);
-    foreach($members as $memberId) {
-      $userObj = user_load($memberId);
-      $emailsList = $emailsList . ", " . $userObj->mail;
-    }
-  }
-  else { // Send only to users in the 'send to' field
-    if(property_exists($node, $sendToFieldName)) {
-      if($node->$sendToFieldName) {
-        foreach(field_get_items('node', $node, $sendToFieldName) as $element) {
-          $userObj = user_load($element['target_id']);
-          $emailsList = $emailsList . ", " . $userObj->mail;
-        }
-      }
-    }
-  }
-  $emailsList = trim($emailsList, ", ");
-
-  // Events have an additional field called field_additional_emails_event where users can add
-  // additional email addresses that need to be notified. Include them too in $emailsList.
-  if($node->type == 'event') {
-    $additionalEmails = $wNode->field_additional_emails_event->value();
-    $additionalEmailsList = explode(",", $additionalEmails);
-    $validatedEmails = "";
-    foreach($additionalEmailsList as $email) {
-      $trimmedEmail = trim($email);
-      if(valid_email_address($trimmedEmail))
-        $validatedEmails = $validatedEmails . ", " . $trimmedEmail;
-    }
-    $validatedEmails = substr($validatedEmails, 1); // remove extra comma
-    $emailsList = $emailsList . ", " . $validatedEmails;
-  }
-
-  $activityUrl = url(drupal_get_path_alias("node/" .  $node->nid, $langCode), array('absolute' => TRUE));
-  $teamsMgmUrl = url(drupal_get_path_alias("my-teams", $langCode), array('absolute' => TRUE));
-  if($activityType == 'comment') {
-    $query = "SELECT MAX(cid) FROM comment WHERE nid=$node->nid";
-    $newCid = db_query($query)->fetchField();
-    $activityUrl = $activityUrl . "#comment-" . $newCid;
-  }
-
-  $subject = str_replace("[ACTIVITY_TYPE]", $activityType, $subjectTemplate);
-  $subject = str_replace("[TEAM_NAME]", $teamName, $subject);
-  $subject = str_replace("[ACTIVITY_SUBJECT]", $activityTitle, $subject);
-
-  $body = str_replace("[ACTIVITY_TYPE]", $activityType, $bodyTemplate);
-  $body = str_replace("[USERNAME]", $user->name, $body);
-  $body = str_replace("[ACTIVITY_SUBJECT]", $activityTitle, $body);
-  $body = str_replace("[TEAM_NAME]", $teamName, $body);
-  $body = str_replace("[ACTIVITY_BODY]", $activityBody, $body);
-  $body = str_replace("[ACTIVITY_URL]", $activityUrl, $body);
-  $body = str_replace("[TEAMS_MGM_URL]", $teamsMgmUrl, $body);
-
-  // If the activity type is 'event', add the date and location
-  if($activityType == 'event') {
-    $eventTime = labdoo_lib_get_field($node, 'field_event_date', 'node', 'value');
-    $eventLocation = labdoo_lib_get_field($node, 'field_location_event', 'node', 'value');
-    // Convert to single line
-    $eventLocation = str_replace("\r", " | ", $eventLocation);
-    $eventLocation = str_replace("\n", "", $eventLocation);
-    $bodyHeader = "---\n";
-    $bodyHeader = $bodyHeader . "Event name: " . $activityTitle . "\n";
-    $bodyHeader = $bodyHeader . "Time: " . $eventTime . "\n";
-    $bodyHeader = $bodyHeader . "Location: " . $eventLocation . "\n";
-    $bodyHeader = $bodyHeader . "Link: " . $activityUrl . "\n";
-    $bodyHeader = $bodyHeader . "---\n\n";
-    $body = $bodyHeader . $body;
-  }
-
-  $email_params['subject'] = $subject;
-  $email_params['body'] = $body;
-  $email_params['to'] = variable_get('site_mail');
-
-  $email_params['headers']['Bcc'] = $emailsList;
-
-  lbd_communicate_mail_send($email_params);
-  return;
 }
 
 

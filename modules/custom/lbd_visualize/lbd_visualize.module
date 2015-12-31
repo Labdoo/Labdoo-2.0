@@ -219,12 +219,14 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
     // Dootrips field 
     $dootripsFieldList = field_get_items('node', $node, 'field_dootrips'); 
     $dootripsStrList = "";
-    foreach($dootripsFieldList as $key => $dootripNode) {
-      $dstLoaded = node_load($dootripNode['target_id']);
-      if($dootripsStrList == "")
-        $dootripsStrList = "#" . lbd_extract_dootrip_id($dstLoaded->title);  
-      else
-        $dootripsStrList = $dootripsStrList . ", " . "#" . lbd_extract_dootrip_id($dstLoaded->title);  
+    if(!empty($dootripsFieldList)) {
+      foreach($dootripsFieldList as $key => $dootripNode) {
+        $dstLoaded = node_load($dootripNode['target_id']);
+        if($dootripsStrList == "")
+          $dootripsStrList = "#" . lbd_extract_dootrip_id($dstLoaded->title);  
+        else
+          $dootripsStrList = $dootripsStrList . ", " . "#" . lbd_extract_dootrip_id($dstLoaded->title);  
+      }
     }
     $objects[$objectNid]['dootripId'] = $dootripsStrList; 
 

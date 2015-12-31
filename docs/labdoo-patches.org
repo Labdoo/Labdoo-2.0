@@ -1,0 +1,15 @@
+** The following provides the list of patches that need to be applied to contributed modules.
+
+  - Module: addtoany
+
+    #+BEGIN_EXAMPLE
+    diff /var/www/lbd/sites/all/modules/addtoany/addtoany.module /tmp/addtoany.module.backup 
+    354,359d353
+    <   // Add possible URL parameters
+    <   $params = drupal_get_query_parameters();
+    <   foreach($params as $key => $value) {
+    <     $link_url = $link_url . '?' . $key . '=' . $value;
+    <   }
+    < 
+    #+END_EXAMPLE
+
