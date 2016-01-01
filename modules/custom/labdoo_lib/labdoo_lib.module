@@ -2125,7 +2125,7 @@ function labdoo_render_footer() {
   $urlTerms = '"'.$langCode.'/wiki-index?field_book_language_value=All&field_reference_book_target_id='.$path[1].'"';
   $path = explode('/', drupal_get_normal_path('content/source-code-development-team'));
   $urlDev = '"'.$langCode.'/wiki-index?field_book_language_value=All&field_reference_book_target_id='.$path[1].'"';
-  $path = explode('/', drupal_get_normal_path('content/glits'));
+  $path = explode('/', drupal_get_normal_path('content/glits-good-labdoo-habits'));
   $urlGlits = '"'.$langCode.'/wiki-index?field_book_language_value=All&field_reference_book_target_id='.$path[1].'"';
   $path = explode('/', drupal_get_normal_path('content/faq'));
   $urlFaq = '"'.$langCode.'/wiki-index?field_book_language_value=All&field_reference_book_target_id='.$path[1].'"';

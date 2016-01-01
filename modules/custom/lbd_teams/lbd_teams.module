@@ -399,14 +399,19 @@ function lbd_teams_get_team_members($teamId) {
  *
  */
 function lbd_display_team_members($teamId) {
+  $numMembersPerPage = 100;
+  $pagerId = pager_find_page();
 
   if($teamId == NULL || !is_numeric($teamId)) 
     return;
   $members = lbd_teams_get_team_members($teamId);
 
-  $header = array(t('User name'), t('Role'));
+  $header = array('', t('User name'), t('Role'));
   $rows = array();
-  foreach($members as $userId) {
+  for($i = $pagerId * $numMembersPerPage; $i < ($pagerId + 1) * $numMembersPerPage; ++$i) {
+    if(!array_key_exists($i, $members))
+      break;
+    $userId = $members[$i];
     $userNode = user_load($userId);
     $userCodeName = $userNode->name;
     $userRoles = og_get_user_roles('node', $teamId, $userId);
@@ -414,10 +419,12 @@ function lbd_display_team_members($teamId) {
       $role = 'admin, member';
     else
       $role = 'member';
-    $rows[] = array("<a href='../user/" . $userId . "'>" . $userCodeName . "</a>", $role);
+    $rows[] = array($i+1, "<a href='../user/" . $userId . "'>" . $userCodeName . "</a>", $role);
   }
  
+  pager_default_initialize(count($members), $numMembersPerPage);
   $output = theme('table', array('header' => $header, 'rows' => $rows ));
+  $output .= theme('pager');
   print($output);
 
   return;

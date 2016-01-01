@@ -1,4 +1,6 @@
-** The following are some of the most commonly used SQL queries.
+** SQL Queries
+
+The following are some of the most commonly used SQL queries.
 
   - To get the list of countries where Labdoo is working do as follows (the list is ordered according to order in which a country was added to Labdoo.org):
 
@@ -18,7 +20,9 @@
     mysql> SELECT cid FROM cache WHERE cid LIKE '%lbd_visualization%';
     #+END_EXAMPLE
 
-** The following are some of the most commonly used drush queries.
+** Drush Queries
+
+The following are some of the most commonly used drush queries.
 
   - To delete the visualization cache:
  
