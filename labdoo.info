@@ -165,4 +165,6 @@ dependencies[] = node_gallery
 dependencies[] = plupload 
 dependencies[] = colorbox 
 dependencies[] = imagemagick 
+dependencies[] = imagecache_actions 
+dependencies[] = imagecache_canvasactions
 

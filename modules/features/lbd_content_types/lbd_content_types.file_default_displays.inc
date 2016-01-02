@@ -48,7 +48,7 @@ function lbd_content_types_file_default_displays() {
   $file_display->settings = array(
     'colorbox_node_style' => 'node_gallery_thumbnail',
     'colorbox_node_style_first' => '',
-    'colorbox_image_style' => '',
+    'colorbox_image_style' => 'labdoo_album_photo',
     'colorbox_gallery' => 'page',
     'colorbox_gallery_custom' => '',
     'colorbox_caption' => 'auto',

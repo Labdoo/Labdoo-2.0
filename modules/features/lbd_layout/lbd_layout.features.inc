@@ -39,6 +39,31 @@ function lbd_layout_views_api() {
 function lbd_layout_image_default_styles() {
   $styles = array();
 
+  // Exported image style: labdoo_album_photo.
+  $styles['labdoo_album_photo'] = array(
+    'name' => 'labdoo_album_photo',
+    'label' => 'Labdoo album photo',
+    'effects' => array(
+      1 => array(
+        'label' => 'Overlay (watermark)',
+        'help' => 'Choose the file image you wish to use as an overlay, and position it in a layer on top of the canvas.',
+        'dimensions passthrough' => TRUE,
+        'effect callback' => 'canvasactions_file2canvas_effect',
+        'form callback' => 'canvasactions_file2canvas_form',
+        'summary theme' => 'canvasactions_file2canvas_summary',
+        'module' => 'imagecache_canvasactions',
+        'name' => 'canvasactions_file2canvas',
+        'data' => array(
+          'xpos' => 'right',
+          'ypos' => 'bottom',
+          'alpha' => '100',
+          'path' => 'sites/default/files/content/labdoo-toolkit/logo-2-alpha-small.png',
+        ),
+        'weight' => '1',
+      ),
+    ),
+  );
+
   // Exported image style: labdoo_flexslider_image_style.
   $styles['labdoo_flexslider_image_style'] = array(
     'name' => 'labdoo_flexslider_image_style',

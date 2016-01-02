@@ -200,3 +200,4 @@ libraries[plupload][directory_name] = plupload
 libraries[plupload][download][type] = get
 libraries[plupload][download][url] = https://github.com/moxiecode/plupload/archive/v1.5.8.zip 
 projects[imagemagick] = 1.0 
+projects[imagecache_actions] = 1.5 
