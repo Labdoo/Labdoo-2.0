@@ -21,26 +21,25 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>At its core, the Labdoo social network is based around five types of objects: labdooers, doojects, dootrips, edoovillages and hubs.
+<value>At its core, the Labdoo social network is based around five types of objects: labdooers, dootronics, dootrips, edoovillages and hubs.
 
 <ul> 
 <li>
 <strong>Labdooers:</strong> Labdoo users.
 </li>
 <li>
-<strong>Doojects:</strong> Labdoo objects. The actual devices (objects) such as laptops, tablets, etc. that get loaded with education applications and deployed in needy schools.
+<strong>Dootronics:</strong> Labdoo objects. The actual devices (objects) such as laptops, tablets, etc. that get loaded with education applications and deployed in needy schools.
 </li>
 <li>
 <strong>Dootrips:</strong> Labdoo trips. CO2-neutral transportation means used to carry laptops from one location to another. Examples of dootrips are trips carried out by tourists, NGO volunteers (doctors and engineers without borders, humanitarian personnel, etc.), international students, employees of international corporations, etc.
 </li>
 <li>
-<strong>Edoovillages:</strong> Schools who receive doojects such as laptops or tablets loaded with education software.
+<strong>Edoovillages:</strong> Schools who receive dootronics such as laptops or tablets loaded with education software.
 </li>
 <li>
 <strong>Hubs:</strong> while everyone can participate (from home, from school, from work, etc.), labdooers find commonly useful to organize themselves locally as groups of volunteers. A hub is just that, a group of labdooers located in a given region that get together to carry out Labdoo tasks.
 </li>
-</ul> 
-</value>
+</ul> </value>
 </body>
 <body>
 <type>format</type>

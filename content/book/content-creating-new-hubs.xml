@@ -49,7 +49,7 @@
 <strong>Parent hub. </strong>Some hubs exist as supporting branches of other hubs. For instance, in certain cities, a main hub will have the help of other smaller hubs distributed across various suburbs. These smaller hubs are generally referred as 'branch hubs'. If you are creating a branch hub, select in this field its parent hub. Otherwise, select 'None' in this field. To see tree view of all the hubs and branches, refer to the <a href="../hubs">'Hubs (tree view)' page</a> under the 'Explore' tab.
 </li>
 <li>
-<strong>Hub type. </strong>Select the type of supporting functions the new hub will provide. If the hub can be used as a dropping and storage location where people can bring their contributed doojects, then check the box 'Dropping point'. If the hub is capable of sanitizing doojects, check the box 'Sanitizing point'. Multiple boxes can be checked at the same time.
+<strong>Hub type. </strong>Select the type of supporting functions the new hub will provide. If the hub can be used as a dropping and storage location where people can bring their contributed dootronics, then check the box 'Dropping point'. If the hub is capable of sanitizing dootronics, check the box 'Sanitizing point'. Multiple boxes can be checked at the same time.
 </li>
 <li>
 <strong>About this hub. </strong>If you want to add additional information about this hub, you can do so in this field.
@@ -73,8 +73,7 @@
 </li>
 </ol>
 
-After the above steps, the new hub managers can start their hub activities as described in the <a href="/content/managing-hubs">Hubs Section</a> of this wiki book.
-</value>
+After the above steps, the new hub managers can start their hub activities as described in the <a href="/content/managing-hubs">Hubs Section</a> of this wiki book.</value>
 </body>
 <body>
 <type>format</type>

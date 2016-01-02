@@ -28,13 +28,15 @@
 <li><a href="http://ftp.labdoo.org/download/images/PAE32_14_04_LTS.tar.gz">PAE32_14_04_LTS (lubuntu 14.04 LTS für <strong>nonPAE und PAE 32 Bit CPU</strong>)</a></li>
 <li><a href="http://ftp.labdoo.org/download/images/PAE64_14_04_LTS.tar.gz">PAE64_14_04_LTS (lubuntu 14.04 LTS für <strong>64 Bit CPU</strong>)</a></li>
 </ul>
-Doopelklick auf den Link des gewünschten Image oder rechte Maustaste und "Speichern unter".
+Doppelklick auf den Link des gewünschten Image oder rechte Maustaste und "Speichern unter".
+
+Speziell für Flüchtlingsprojekte in Deutschland stellen wir ein Image bereit, dass Wörterbücher, eBooks u.a. Informationen in den häufigsten Sprachen der Flüchtlinge enthält, <a href="/de/content/deutschkurse-für-migranten">mehr dazu hier</a>.
 
 <strong>Externe Platte oder USB-Stick:</strong> Bitte stellt sicher, dass die Platte für den Download Dateinen größer 4 GB handhaben kann, z.B. <strong>NTFS</strong>. <strong>FAT32</strong> kann nur eine Dateigröße bis max. 4 GB verarbeiten und bricht dann ab. Andere Formate wie iOS, Linux gehen natürlich auch, laufen aber nicht an allen Rechnern. Daher empfehlen wir NTFS als Basis.
 
 <strong>Downloadzeit: </strong>Ein Image ist ca. 11 GB groß. Bei z.B. einer Downloadrate von z.B. DSL 3000 dauert es also ca. 10 Stunden, bei DSL 6000 ca. 5 Stunden. Aber die effektive Downloadzeit hängt von vielen Faktoren ab: eurem Provider, eurem Anschluss, wieviele gleichzeitig downloaden, Engpässe auf dem Weg vom Server (Barcelona) zu euch usw.
 
-<strong>Bitte Stromsparschaltungen bzw. Schlafmodus während des downloads abschalten, weil sonst der Download unterbrochen werden könnte.</strong>
+<strong>Bitte Stromsparschaltungen bzw. Schlafmodus während des Downloads abschalten, weil sonst der Download unterbrochen werden könnte.</strong>
 14.04 verweist auf das Release-Datum der Lubuntu-Version, d.h. 14.04 = April 2014. 
 LTS (Long Term Support) werden ab Erscheinen fünf (5) Jahre mit Updates versorgt. Die nächste LTS-Version wird im April 2016 (16.04 LTS) erscheinen.</value>
 </body>

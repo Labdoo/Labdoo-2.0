@@ -1,0 +1,70 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>19765</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>如何撰寫Wiki頁面</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>ChineseTraditional</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>39</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>如要撰寫一個維基頁面，請遵照以下步驟：
+<ul>
+<li>
+點擊選單列"Wiki"並選擇"Add new content"
+</li>
+<li>
+在維基表格內填入以下資訊：
+</li>
+<li>
+<strong>Title.</strong> 若您創造的頁面將是分類中的第一頁，此欄將是分類的標題，若此頁面將是分類中章節的第一頁，則此欄為章節標題。
+</li>
+<li>
+<strong>Language.</strong> 選擇您將要創作此頁維基所用之語言。
+</li>
+<li>
+<strong>Is this page part of an original book.</strong> 若您正在從另一個原始維基網站翻譯，在這個欄位請選擇 "It's a translation"，其他情況請選擇 "It's the original" ，若您選擇前者，則會有另一欄選項，請選擇您正在翻譯的維基頁面之分類。
+</li>
+<li>
+<strong>Body.</strong> 在此寫下您的維基頁面的本文。此系統提供簡單的HTML語法使使用者能遵照想要的格式呈現（例如斜體，租體或標點等等。對於此類語法的描述請參考  <a href="/content/special-html-tags">Special HTML tags</a>.
+</li>
+<li>
+<strong>Book outline.</strong> 在"Book"欄底下，若此頁面屬新分類，請點選 "create a new book"，若您的新頁面與分類中的章節有關，請在清單中點選其所屬之分類，若是後者情況，在 "Parent item" 欄中選擇現存的父章節以加入成為其的子章節。
+</li>
+</ul>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>16452</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1100</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1181</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

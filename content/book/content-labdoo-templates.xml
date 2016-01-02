@@ -21,7 +21,7 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>This wiki book includes a list of email templates that labdooers can use to help automate the process of replying to email requests. For instance, when a hub manager receives an edoovillage creation request from a destination school, the manager can automatically use the 'Response to Doojects Solicitation' template. While each request will have its own specific requirements, using general templates to help automate responses to email requests help in two ways:
+<value>This wiki book includes a list of email templates that labdooers can use to help automate the process of replying to email requests. For instance, when a hub manager receives an edoovillage creation request from a destination school, the manager can automatically use the 'Response to Dootronics Solicitation' template. While each request will have its own specific requirements, using general templates to help automate responses to email requests help in two ways:
 
 <ul>
 <li>
@@ -34,7 +34,7 @@ They avoid labdooers having to re-write over and over emails that are identical 
 </body>
 <body>
 <type>format</type>
-<value>full_html</value>
+<value>filtered_html_advanced</value>
 </body>
 <bid>
 <type>book_array</type>
@@ -50,6 +50,6 @@ They avoid labdooers having to re-write over and over emails that are identical 
 </mlid>
 <weight>
 <type>book_array</type>
-<value>-5</value>
+<value>-4</value>
 </weight>
 </book>

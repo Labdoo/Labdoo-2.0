@@ -21,17 +21,17 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Labdoo.org uses 
+<value>Labdoo.org 使用
 <ul>
-<li>educational software suitable for students of all ages (from pre-school to high-school)</li>
-<li>add-ons to provide barrier-free access for blind or handicapped users</li>
-<li>offline wikis and manuals so that educational content can be accessed even without an internet connection</li>
-<li>virus scanner ClamAV and other tools</li>
+<li>適用於所有年齡層的學生（幼兒園至高中）的教育軟體。</li>
+<li> 提供視障人士或殘疾人士無障礙使用體驗的外掛。</li>
+<li> 離線百科全書以及手冊，以便這些教育性的內容能夠在無網路的環境下被存取。</li>
+<li> 防毒軟體 ClamAV 以及其他工具。</li>
 </ul>
 
-Labdoo laptops are not limited to the default programs and tools provided by the Lubuntu operating system. By installing the prepared <a href="https://www.labdoo.org/content/cloning-laptops-using-prepared-labdoo-images">Labdoo images for Cloning (Parted Magic / Clonezilla)</a> or <a href="https://www.labdoo.org/de/content/installationsskripte-%C3%BCbersicht">Installation scripts</a> you can add more useful educational content.
-
-Parts of this wiki are based on text and graphics taken from www.edubuntu.org and http://wiki.ubuntuusers.de/Edubuntu.</value>
+Labdoo 筆記型電腦並不被侷限於Lubuntu上所提供的預載軟體及工具。只要安裝以下的 <a href="https://www.labdoo.org/content/cloning-laptops-using-prepared-labdoo-images">Labdoo 鏡像 (Parted Magic / Clonezilla )</a> 或是 <a href="https://www.labdoo.org/de/content/installationsskripte-%C3%BCbersicht">安裝腳本</a> 你就可以添加一些更加實用的教育內容。
+複製
+這個百科頁面的其中一部份源自 www.edubuntu.org 以及 http://wiki.ubuntuusers.de/Edubuntu。</value>
 </body>
 <body>
 <type>format</type>

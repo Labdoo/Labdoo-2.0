@@ -218,12 +218,6 @@ Derrière les  options de menu ci-dessous se cachent plus d' une centaine de jeu
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/celestia.png" width="100"/> </td>
 </tr> 
 <tr>
-            <td><a href="http://doc.ubuntu-fr.org/kstars">KStars</a></td>
-           <td>KStars est un planétarium de bureau pour KDE. Il fournit une simulation graphique précise du ciel nocturne, de n'importe quel endroit sur Terre, à toute date et toute heure. L'affichage comporte plus de 100 millions d'étoiles, 13 000 objets du ciel lointain, toutes les huit planètes, le Soleil et la Lune, des milliers de comètes et d'astéroïdes que l' on peut observer  à l' occasion avec un téléscope.</td>
-            <td>kstars</td>
-           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/kstars.png" width="100"/> </td>
-</tr> 
-<tr>
             <td><a href="http://doc.ubuntu-fr.org/Marble">Marble</a></td>
            <td>Marble est un globe de bureau. Le programme est similaire au programme Google Earth populaire. Il est simple, mais très mature et puissante. Il prend en charge différents matériaux de carte, y compris OpenStreetMap et peut les afficher sur un globe ou une carte.</td>
             <td>marble</td>
@@ -238,24 +232,6 @@ Derrière les  options de menu ci-dessous se cachent plus d' une centaine de jeu
 
 </table>
 
-<li><strong>Chimie</strong></li>
-
-<table> 
-<tr>
-<th><strong>Application</strong></th>
-<th><strong>Description</strong></th>
-<th><strong>paquet</strong></th>
-<th><strong>Capture d' écran</strong></th>
-</tr>
-
-<tr>
-            <td><a href="http://doc.ubuntu-fr.org/Kalzium">Kalzium</a></td>
-           <td>Kalzium est un logiciel de chimie : tables de Mendeleiv, résolveur d'équations chimiques, avec de nombreux renseignements sur les différents atomes. Vous serez incollable sur le tableau de la classification périodique des éléments de Dimitri Ivanovitch Mendeleïev.</td>
-            <td>kalzium</td>
-           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/kalzium.png" width="100"/> </td>
-</tr> 
-</table>   
-	
 <li><strong>Graphismes et constructions</strong></li>
 
 <table> 
@@ -357,18 +333,6 @@ Derrière les  options de menu ci-dessous se cachent plus d' une centaine de jeu
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/kalgebra.png" width="100"/> </td>
 </tr>
 <tr>
-            <td><a href="http://edu.kde.org/kbruch/">KBruch</a></td>
-           <td>KBruch est un petit programme pour pratiquer le calcul des fractions, l' équation, conversion, factorisation...</td>
-            <td>kbruch</td>
-           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/kbruch.png" width="100"/> </td>
-</tr>
-<tr>
-            <td><a href="http://doc.ubuntu-fr.org/kig">Kig</a></td>
-            <td>Kig est un programme pour explorer les constructions géométriques.</td>
-            <td>kig</td>
-           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/kig.png" width="100"/> </td>
-</tr>
-<tr>
             <td><a href="http://doc.ubuntu-fr.org/kmplot">KmPlot</a></td>
             <td>Logiciel de mathématiques: éditeur d'équations et traceur de courbe.</td>
             <td>kmplot</td>
@@ -466,12 +430,6 @@ Derrière les  options de menu ci-dessous se cachent plus d' une centaine de jeu
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/ktuberling.png" width="100"/> </td>
 </tr>
 <tr>
-            <td><a href="http://doc.ubuntu-fr.org/KHangMan">KHangMan</a></td>
-           <td>KHangMan est un jeu du pendu, adaptable au besoin des joueurs.</td>
-            <td>khangman</td>
-           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/khangman.png" width="100"/> </td>
-</tr>
-<tr>
             <td><a href="http://doc.ubuntu-fr.org/Ri-li">Ri-li</a></td>
            <td>Ri-li est un adorable petit train de bois, qui a perdu ses wagons. Manipuler les aiguillages pour l'aider à les récupérer.</td>
             <td>ri-li</td>
@@ -491,22 +449,10 @@ Derrière les  options de menu ci-dessous se cachent plus d' une centaine de jeu
 </tr>
 
 <tr>
-            <td><a href="http://wiki.ubuntuusers.de/KWordQuiz">KWordQuiz</a></td>
-           <td>KwordQuiz est un outil puissant permettant de maîtriser du vocabulaire nouveau. Cela peut être un langage ou tout autre type de terminologie.</td>
-            <td>kwordquiz</td>
-           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/kwordquiz.png" width="100"/> </td>
-</tr>
-<tr>
             <td><a href="http://wiki.ubuntuusers.de/Parley">Parley</a></td>
            <td>Parley est un utilitaire pour l'apprentissage d'une langue étrangère.</td>
             <td>parley</td>
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/parley.png" width="100"/> </td>
-</tr>
-<tr>
-            <td><a href="https://edu.kde.org/klettres/">Klettres</a></td>
-           <td>Klettres garde tout en apprenant l'alphabet. La prononciation est pratiquée dans différentes langues. Pour les adultes et les enfants. KLettres voir également entraîneur de vocabulaire.</td>
-            <td>klettres</td>
-           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/klettres.png" width="100"/> </td>
 </tr>
 </table>
 Voir aussi <a href="http://doc.ubuntu-fr.org/logiciels_d_apprentissage_de_langues">apprentissage des langues. (Français et Langues étrangères)</a>.
@@ -521,12 +467,6 @@ Voir aussi <a href="http://doc.ubuntu-fr.org/logiciels_d_apprentissage_de_langue
 <th><strong>Capture d' écran</strong></th>
 </tr>
 
-<tr>
-            <td><a href="http://doc.ubuntu-fr.org/ktouch">KTouch</a></td>
-           <td>Ktouch est un programme pour l'apprentissage et la pratique de la frappe au clavier.</td>
-            <td>ktouch</td>
-           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/ktouch.png" width="100"/> </td>
-</tr>
 <tr>
             <td><a href="http://doc.ubuntu-fr.org/tuxtype2">TuxTyp2</a></td>
            <td>TuxTyp2 est une application ludique pour apprendre à taper au clavier grâce à des petits jeux.</td>
@@ -561,6 +501,7 @@ Voir aussi <a href="http://doc.ubuntu-fr.org/dactylographie">dactylographie</a>.
 <tr>
             <td><a href="http://www.solfege.org/">Solfege</a></td>
            <td>Logiciel de formation d'oreille pour vous aider à former des intervalles, accords, gammes et les rythmes (manuels en /Public/manuals-ubuntu)</td>
+           <td>Solfege</td>
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/solfege.png" width="100"/> </td>
 </tr>
 <tr>
@@ -575,6 +516,68 @@ Voir aussi <a href="http://doc.ubuntu-fr.org/dactylographie">dactylographie</a>.
             <td>VMPK</td>
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/vmpk.png" width="100"/> </td>
 </tr>
+</table>
+
+<li><strong>LibreOffice suite bureautique</strong></li>
+
+<table> 
+<tr>
+<th><strong>Application</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>paquet</strong></th>
+<th><strong>Capture d' écran</strong></th>
+</tr>
+
+<tr>
+            <td><a href="https://fr.libreoffice.org/">LibreOffice suite bureautique</a></td>
+           <td>LibreOffice est une suite bureautique puissante. Son interface claire et ses outils avancés vous permettent de libérer votre créativité et de développer votre productivité. LibreOffice intègre plusieurs applications qui en font la suite bureautique Libre and Open Source la plus évoluée sur le marché : Writer le traitement de texte, Calc le tableur, Impress le module de présentation, Draw notre application de dessin et d'organigrammes, Base notre base de données et interface de base de données et Math pour l'édition de formules mathématiques.</td>
+           <td>LibreOffice suite bureautique</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/libreoffice.png" width="100"/> </td>
+</tr>
+
+
+<tr>
+            <td><a href="https://fr.libreoffice.org/discover/writer/">LibreOffice Writer</a></td>
+           <td>Writer a toutes les fonctionnalités attendues d'un outil d'édition bureautique moderne et d'un traitement de texte complet. Assez simple pour une note rapide, mais assez puissant pour créer des livres complets avec des contenus, des schémas, des index, et plus encore. Vous êtes libre de vous concentrer sur votre message, tandis que Writer lui donnera une belle allure.</td>
+            <td>writer</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/libreoffice_writer.png" width="100"/> </td>
+</tr>
+
+<tr>
+            <td><a href="https://fr.libreoffice.org/discover/calc/">LibreOffice Calc</a></td>
+           <td>Calc est le tableur dont vous avez toujours eu besoin. Les nouveaux utilisateurs le trouvent intuitif et facile à apprendre. Les professionnels des données et manipulateurs de chiffres apprécieront la gamme complète de fonctions avancées. Les assistants peuvent vous guider dans le choix et l'utilisation d'une gamme complète de fonctions de feuilles de calcul avancées. Ou vous pouvez encore télécharger des modèles à partir du référentiel LibreOffice, pour des solutions de feuilles de calcul prêtes à l'emploi.</td>
+            <td>calc</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/libreoffice_calc.png" width="100"/> </td>
+</tr>
+
+<tr>
+            <td><a href="https://fr.libreoffice.org/discover/impress/">LibreOffice Impress</a></td>
+           <td>Impress est un outil vraiment exceptionnel pour créer des présentations multimédia efficaces. L'édition et la création de présentations est souple, grâce à différents types d'édition et modes d'affichage : Normal (pour l'édition générale), Plan (pour organiser et structurer le contenu de votre texte), Notes (pour visualiser et modifier les notes jointes à une diapositive), Prospectus (pour la production de matériel sur papier), et Trieuse de diapositives (pour une vue en miniatures qui vous permet de localiser et organiser rapidement vos diapositives).</td>
+            <td>impress</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/libreoffice_impress.png" width="100"/> </td>
+</tr>
+
+<tr>
+            <td><a href="https://fr.libreoffice.org/discover/draw/">LibreOffice Draw</a></td>
+           <td>Draw permet de produire tout ce que vous voulez, allant d'un croquis rapide à un plan complexe, et vous donne les moyens de communiquer par des graphiques et des diagrammes. Avec une taille de page maximale de 300 cm par 300 cm, Draw est un excellent module pour la production de dessins techniques, des affiches générales, etc. Draw permet de manipuler des objets graphiques, les regrouper, les recadrer, utiliser des objets en 3D et bien plus encore.</td>
+            <td>draw</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/libreoffice_draw.png" width="100"/> </td>
+</tr>
+
+<tr>
+            <td><a href="https://fr.libreoffice.org/discover/base/">LibreOffice Base</a></td>
+           <td>Base est une base de données complète, conçue pour répondre aux besoins d'un large éventail d'utilisateurs. Mais Base s'adresse également aux utilisateurs avancés et aux entreprises exigeantes et fournit des pilotes natifs pour certains moteurs de base de données multi-utilisateurs les plus largement utilisés : MySQL / MariaDB, Adabas D, MS Access et PostgreSQL. En outre, le support intégré des pilotes JDBC et ODBC standard permet de vous connecter à pratiquement n'importe quel autre moteur de base de données existant.</td>
+            <td>base</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/libreoffice_base.png" width="100"/> </td>
+</tr>
+
+<tr>
+            <td><a href="https://fr.libreoffice.org/discover/math/">LibreOffice Math</a></td>
+           <td>Math est l'éditeur de formules de la suite LibreOffice, qui peut être appelé depuis vos documents texte, feuilles de calcul, présentations et dessins, vous permettant d'insérer des formules mathématiques et scientifiques parfaitement formatées. Vos formules peuvent inclure un large éventail d'éléments, de fractions, de termes avec exposants et indices, intégrales et des fonctions mathématiques, des inégalités, des systèmes d'équations, et des matrices.</td>
+            <td>math</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/libreoffice_math.png" width="100"/> </td>
+</tr>
+
 </table>
 
 <li><strong>Autres applications</strong></li>
@@ -610,12 +613,6 @@ Voir aussi <a href="http://doc.ubuntu-fr.org/dactylographie">dactylographie</a>.
            <td>Kino est un logiciel de montage vidéo adapté aux débutants. Kino est le logiciel idéal pour manipuler vos vidéos issues de votre caméscope numérique DV.</td>
             <td>kino</td>
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/kino.png" width="100"/> </td>
-</tr>
-<tr>
-            <td><a href="http://wiki.ubuntuusers.de/KTurtle">KTurtle</a></td>
-           <td>KTurtle est un environnement de programmation éducatif pour le bureau KDE. KTurtle vise à rendre la programmation aussi simple et palpable que possible, et peut donc être utilisé pour enseigner aux enfants les bases des mathématiques, de la géométrie et de la programmation. Le langage de programmation utilisé dans KTurtle est basé sur Logo.</td>
-            <td>kturtle</td>
-           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/kturtle.png" width="100"/> </td>
 </tr>
 <tr>
             <td><a href="http://packages.ubuntu.com/trusty/scolasync">ScolaSync</a></td>

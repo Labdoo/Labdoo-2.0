@@ -21,9 +21,9 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Every wiki page has at its bottom a link labeled 'Printer-friendly version' which viewers can use to generate a printer friendly version of that page. (To test it, click on the same link you will find at the bottom of this page.) To print the complete book instead of a single page, go to the first page of the book and click on its 'Printer-friendly version' link, it will take you to a page containing the whole book.
+<value>在每個百科頁面的下方，都有一個叫做「列表機適用版本」的鏈接，可以提供讀者們一個可以被列印的版本。（若想進行測試，在此頁的最下方點擊「列表機適用版本」的鏈接。）若欲列印整本書，回到該本書的第一頁，并點擊該頁面最下方的「列表機適用版本」鏈接。這將帶您進入可以讓您列印一本完整的書的頁面。 
 
-This feature can also be used to export the book into a PDF file. For that, when printing the book using your browser printing option, select the option to save it as a PDF. (This option will depend on the browser you are using.)</value>
+這項功能也可以讓您把書本匯出之PDF檔。若與使用此功能，當您於瀏覽器中列印書本時，在選項的部份選擇「儲存至PDF檔」。（這個選項將會因瀏覽器而異。）</value>
 </body>
 <body>
 <type>format</type>

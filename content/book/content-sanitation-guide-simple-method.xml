@@ -45,7 +45,11 @@ Download the Lubuntu 14.04 release from this link (this is a large .iso image):
 http://cdimage.ubuntu.com/lubuntu/releases/14.04/release/lubuntu-14.04-desktop-i386.iso
 </li>
 <li>
-Burn the downloaded file into a CD. 
+Burn the downloaded file into a CD. Make sure you burn the downloaded file as an ISO image. If you don't know how to do that, you can follow the instructions from any one these links depending on the type of computer your are using to burn the CD:
+(Note: you can either use a CD or a DVD, the burning process is the same. We recommend to use a CD because some older computers do not accept DVD.) 
+- <a href="http://www.ubuntu.com/download/desktop/burn-a-dvd-on-windows">Burning a CD using a Windows computer.</a>
+- <a href="http://www.ubuntu.com/download/desktop/burn-a-dvd-on-ubuntu">Burning a CD using an Ubuntu computer.</a>
+- <a href="http://www.ubuntu.com/download/desktop/burn-a-dvd-on-mac-osx">Burning a CD using a Apple/Mac computer.</a>
 </li>
 <li>
 If the hard drive is not pre-erased.  Please click <a href="https://www.labdoo.org/content/how-erase-data-hard-drive">HERE </a> to follow the instruction to clean the hard drive.

@@ -28,13 +28,12 @@
 <strong>Travelers and related users upon dootrip creation.</strong> Every time a dootrip is created, the travelers and users related to that dootrip receive a notification email.
 </li>
 <li>
-<strong>Labdoo users who have projects in the dootrip's destination country.</strong> When a dootrip is created, a notification email is sent out to all Labdoo users who manage an open edoovillage in a country equal to the destination country of the dootrip. This allows these users to know about the existence of that dootrip, giving them the option to claim the resource for the transport of doojects to that edoovillage.
+<strong>Labdoo users who have projects in the dootrip's destination country.</strong> When a dootrip is created, a notification email is sent out to all Labdoo users who manage an open edoovillage in a country equal to the destination country of the dootrip. This allows these users to know about the existence of that dootrip, giving them the option to claim the resource for the transport of dootronics to that edoovillage.
 </li>
 <li>
 <strong>Travelers and related users upon dootrip expiration.</strong> When a dootrip expires, if it's status is still pending, a notification email is sent out to travelers and users related to that dootrip to remind them to update the dootrip status.
 </li>
 </ul>
-
 </value>
 </body>
 <body>

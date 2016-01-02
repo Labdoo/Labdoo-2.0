@@ -19,6 +19,14 @@
 <type>target_id</type>
 <value>43</value>
 </field_reference_book>
+<body>
+<type>value</type>
+<value>The Catalan translation for this page is not available yet. If you are interested in helping to do this translation, please contact the Labdoo Team at contact@labdoo.org.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
 <bid>
 <type>book_array</type>
 <value>71</value>

@@ -23,13 +23,17 @@
 <type>value</type>
 <value>Liebe Flugpatin, lieber Flugpate,
 
-vielen Dank für die Hilfe beim Transport eines oder mehrerer IT-Spenden zum Zielort, zum <a href="/de/content/edoovillages-dashboard">„Edoovillage“</a>. Damit leistest du einen wichtigen Beitrag, um Kindern die Chance auf Bildung zu bringen, Elektroschrott zu vermeiden und dies alles ohne zusätzliche CO2-Belastung. Die Details zu dem Edooviallge sind online gestellt, z.B. unter dem Reiter "doojects" sind die Daten der Laptops zu dem Projekt gelistet; alternativ den QR-Code auf der IT-Spende abfotografieren.
+vielen Dank für die Hilfe beim Transport eines oder mehrerer IT-Spenden zum Zielort, zum <a href="/de/content/edoovillages-dashboard">„Edoovillage“</a>. Damit leistest du einen wichtigen Beitrag, um Kindern die Chance auf Bildung zu bringen, Elektroschrott zu vermeiden und dies alles ohne zusätzliche CO2-Belastung. Die Details zu dem Edooviallge sind online gestellt, z.B. unter dem Reiter "dootronics" sind die Daten der Laptops zu dem Projekt gelistet; alternativ den QR-Code auf der IT-Spende abfotografieren.
 
 Im FAQ-Forum https://www.labdoo.org/de/content/faq-forum sind viele Fragen beantwortet, z.B. <a href="/de/content/faq-forum#FAQ14">zum Zoll und IATA (Transport der Laptops im Flugzeug)</a>.
 
 <strong>Transport, Zoll und Flugpaten-Brief</strong>
 
 <strong>Für die Fluggesellschaft sind die Watt-Stunden (Wh) der Batterie entscheidend. Fast alle Laptopakkus haben unter 100 Wh und können ohne Einschränkung im Koffer oder im Handgepäck transportiert werden. Eine Genehmigung der Fluglinie ist nicht erforderlich, bei größeren Stückzahlen aber empfehlenswert. Und Fluggesellschaft bieten Sondertarife für größere Spendentransporte.</strong>
+
+Wenn mehrere Personen reisen und eine größere Anzahl Laptops dabei transportieren, sollten die Laptops auf mehrere Koffer verteilt werden (reduziert das Verlustrisiko). Bei ein oder zwei Laptops pro Person sagt der Zoll i.d.R. nichts, erspart Zoll und unnütze Diskussionen. Labdoo.org übernimmt keine Frachtlieferung oder Verzollungen. Bei größeren Stückzahlen empfehlen wir, sich von dem Empfänger der Computer ein Bestätigungsschreiben ausstellen zu lassen, dass es sich um eine Spende handelt. Mehr dazu hier https://www.labdoo.org/de/content/faq-forum#FAQ14.
+
+Der Flugpate haftet nicht bei Verlust oder Diebstahl der IT-Spende. Es wäre zwar schade, aber wir stellen keine Forderungen an den Flugpaten. Trotzdem empfehlen wir das Risiko zu minimieren und die IT-Spenden auf Handgepäck und mehrere Koffer zu verteilen, falls mehrere Geräte auf einmal transportiert werden.
 
 <hr/>
 <table align="center">
@@ -41,8 +45,6 @@ Im FAQ-Forum https://www.labdoo.org/de/content/faq-forum sind viele Fragen beant
 </td></tr>
 </table>
 <hr/>
-
-Wenn mehrere Personen reisen und eine größere Anzahl Laptops dabei transportieren, sollten die Laptops auf mehrere Koffer verteilt werden (reduziert das Verlustrisiko). Bei ein oder zwei Laptops pro Person sagt der Zoll i.d.R. nichts, erspart Zoll und unnütze Diskussionen. Labdoo.org übernimmt keine Frachtlieferung oder Verzollungen. Bei größeren Stückzahlen empfehlen wir, sich von dem Empfänger der Computer ein Bestätigungsschreiben ausstellen zu lassen, dass es sich um eine Spende handelt. Mehr dazu hier https://www.labdoo.org/de/content/faq-forum#FAQ14.
 
 <strong>Fotos oder Videos vom Projekt</strong>
 
@@ -64,7 +66,7 @@ Ein "How to start"-Dokument ist hier in verschiedenen Sprachen online gestellt:
 <li>Russisch: http://ftp.labdoo.org/download/documents/russian/labdoo-letter-recipient-quick-guide-russian.pdf</li>
 </ul>
 
-Die Netzstecker sind i.d.R. für deutsche Steckdosen (Schuko- / Euro-Stecker). Daher kann die Schule vorab Ersatzstecker für die jeweiligen Steckdosen besorgen und dann an den Stromkabeln montieren. Oder ihr nehmt deutsche Mehrfachsteckerleisten mit?
+Die Netzstecker sind i.d.R. für deutsche Steckdosen (Schuko- / Euro-Stecker). Daher kann die Schule vorab Ersatzstecker für die jeweiligen Steckdosen besorgen und dann an den Stromkabeln montieren. Oder ihr nehmt deutsche bzw. Schweizer Mehrfachsteckerleisten mit?
 
 Wir haben frei verfügbare Handbücher offline (lokal) in möglichst vielen Sprachen auf jedem Laptop installiert, zu finden
 
@@ -74,11 +76,7 @@ Wir haben frei verfügbare Handbücher offline (lokal) in möglichst vielen Spra
 <li>oder Wiki bei, <a href="/de/content/information-f%C3%BCr-edoovillages-projekte">mehr hier</a></li>
 </ul>
 
-Firefox zeigt in einem Reiter (Tab) ein englisches Offline-Wikipedia für Kinder und einen Englischkurs. Mit XOWA ist ein Offline-Wikitool auf dem Desktop installiert, in dem ggf. in regionalen Sprachen Wikis genutzt werden können.
-
-Im Ordner <strong>videos</strong> auf dem Desktop liegen Video-Tutorials für Anwender und technische Helfer.
-
-Dann gibt es 3 Benutzerkonten (labdoo, student und guest/Gast). Die Details sind auch im how-to-start erklärt. Labdoo ist Super-User / Administrator (nützlich, aber gefährlich, weil er das System verstellen kann). Student ist der normale Benutzer für die Kinder, ohne Admin-Rechte. Guest hat den Vorteil, dass nichts verstellt werden kann und auch nichts gespeichert bleibt, wenn dieser sich wieder abmeldet.
+Weitere Infos für den Einstieg gibt es hier in <a href="/de/content/wie-starte-ich-den-computer">Deutsch</a>, <a href="/de/content/how-start-laptop">Englisch</a>, <a href="/de/content/comment-d%C3%A9buter-avec-lordinateur">Französisch</a> oder  <a href="/de/content/%C2%BFc%C3%B3mo-inicio-el-equipo">Spanisch</a>.
 
 Oft gibt es im jeweiligen Land auch eine Ubuntu oder Linux User Group, mit der man Kontakt aufnehmen kann. Diese helfen vor Ort gerne weiter und vermitteln Know-How.
 

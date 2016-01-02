@@ -21,17 +21,17 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Dear dootripper,
+<value>Dear Dootripper,
+Thank you for your contribution to take one or more laptops to an Edoovillage! Your action is a key step towards helping make Labdoo a sustainable project. By reusing and repurposing your laptop, you are not only bringing education to needy schools, but you are also helping to preserve the planet by avoiding generating additional CO2 emissions.
 
-Thank you for your contribution to take one or more laptops to an Edoovillage. Your action is really a key step towards helping make Labdoo a sustainable project. By reusing and re-purposing your trip, you are not only bringing education to needy schools, but your are also helping to preserve planet Earth by avoiding generating additional CO2 emissions.
+In this section you will find information that will help you make your trip more efficient, safe, and fun.
 
-In this section you will find information that will help you make your trip more efficient, safe and fun.
 
-<strong>Transport, Customs and Dootripper Letter</strong>
+<strong>Transport, Customs, and Dootripper Letter</strong>
 
 <ul>
 <li>
-Practically all countries accept people carrying 2 laptops without questioning. If you are carrying more than 2 laptops, we recommend that you check the customs rules for the specific country you are traveling to. If you plan to carry more laptops than what the rules allow you to, distribute them in equal share to the people that are traveling with you. For instance, if you are carrying 6 laptops and you are traveling with 2 more people, have each person carry 2 laptops.
+Practically all countries accept people carrying 2 laptops without questioning. If you are carrying more than 2 laptops, we recommend that you check the customs rules for the specific country you are traveling to. If you plan to carry more laptops than what the rules allow you to, distribute them equally to the people who are traveling with you. For instance, if you are carrying 6 laptops and you are traveling with 2 more people, have each person carry 2 laptops.
 </li>
 
 <li>
@@ -40,6 +40,7 @@ Check in the laptops. It is recommended that you pack the laptops in a luggage t
 
 <li>
 If you need to carry more laptops than what the custom rules allow, you will need to explain that the laptops are not for commercial use and that they are for education and humanitarian purposes.  To do so, it is recommended that you print the 'Dootripper letter' which you will find in the <a href="../content/dootrippers-travel-letter">Labdoo Toolkit</a>
+If you need to carry more laptops than the custom rules allow, you will need to explain that the laptops are not for commercial use and that they are for education and humanitarian purposes. To do so, it is recommended that you print the 'Dootripper letter' which you will find in the  <a href="../content/dootrippers-travel-letter">Labdoo Toolkit</a>
 </li>
 
 <li>
@@ -61,7 +62,7 @@ Almost all laptop batteries have less than 100 Wh and can be transported without
 
 <strong>Take Pictures and Upload them to the Photo Album</strong>
 
-Remember to take a good amount of pictures of your trip. Pictures are really important to keep the Labdoo platform transparent and accountable. They are the best way to demonstrate that the donated laptops do reach their intended destination: an education center or school. Please make sure that the pictures are of good quality, that will be much appreciated by the people who are eager to see their laptops deployed in schools helping children reach an education.
+Remember to take a good amount of pictures of your trip. Pictures are important to keep the Labdoo platform transparent and accountable. They are the best way to demonstrate that the donated laptops reach their intended destination: an education center or school. Please make sure that the pictures are of good quality, that will be very appreciated by the people who are eager to see their laptops deployed in schools helping children reach an education.
 
 Make sure you upload the pictures to the photo album of the edoovillage you are visiting. If you don't have enough rights to upload pictures to that album, ask that edoovillage manager. You will find this information in that edoovillage page.
 
@@ -81,7 +82,7 @@ You will find a "how to start" wiki in the following links that explain how to u
 - Russian: http://ftp.labdoo.org/download/documents/russian/labdoo-letter-recipient-quick-guide-russian.pdf
 
 <li>
-Since some of the edoovillages do not have access to Internet, various languages and keyboard layouts are pre-installed and pre-set. The above guides describe how to switch the default language in the laptop if you need to do so.
+Since some edoovillages do not have access to Internet, various languages and keyboard layouts are pre-installed and pre-set. The above guides describe how to switch the default language in the laptop if you need to do so.
 </li>
 <li>
 The power plugs provided with the laptop may or may not match depending on the standard used by the edoovillage's country. If the power plugs do not match, they can be acquired from a local computer store at a very modest price. This <a href="../content/list-countries-voltage-and-power-plugs">table</a> provides a list of standard plugs based on countries.
@@ -93,19 +94,16 @@ Labdoo laptops come preloaded with several Open Education Resources (OER) manual
 On the laptop desktop you will find a folder called <strong>videos</strong> with a set of video tutorials for users and technicians.
 </li>
 <li>
-You will find 3 user accounts, for details refer to the <a href="/content/how-start-laptop">how-to-start wiki</a>.
+You will find 3 user accounts. For details refer to the <a href="/content/how-start-laptop">how-to-start wiki</a>.
 </li>
 <li>
-Often there are local Linux or Ubuntu User Groups in the country of the edoovillages. These community might help as well in case of questions.
+Often there are local Linux or Ubuntu User Groups in the country of the edoovillages. These communities might help in case of questions.
 </li>
 <li>
 Optional: Some very powerful laptops might come with a Windows system as a guest operating system in VirtualBox - if the requirements for a Windows license are fulfilled.
 </li>
 <li>
-Labdoo.org helpers invested a lot of time and efforts to offer you and the children an optimal system. But we all are human and cannot avoid mistakes. Or maybe you have a good suggestion, to improve our concept. 
-</li>
-<li>
-In any case inform us, we like to know and learn from you. Please send a mail to contact@Labdoo.org.
+Labdoo.org helpers invested a lot of time and efforts to offer you and the children an optimal system. But we all are human and cannot avoid mistakes. If you have suggestions to improve the Labdoo system, please inform us! We would like to know and learn from you. Please send a mail to contact@Labdoo.org.
 </li>
 </ul>
 </value>

@@ -21,30 +21,29 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Inside a team, Labdoo users can perform the following tasks:
+<value>在群組裡面，Labdoo的用戶能夠處理以下事務：
 
 <ul>
 <li>
-Start a conversation.
+創建新的對話。
 </li>
 <li>
-Create a task to be performed some time scheduled in the future.
+創建已安排時間的事項。
 </li>
 <li>
-Create an event in a calendar (e.g., a typical example of event is a laptop sanitation event).
+在行事曆裡頭創立活動（筆電消毒是一個典型的活動例子）。
 </li>
 <li>
-View the wall of that team and engage in discussions.
+查看群組的佈告欄，并參與討論。
 </li>
 <li>
-View the calendar of events in that team.
+查看群組的行事曆。
 </li>
 </ul>
 <hr/>
-<em>Figure. The teams page allows you to manage your own project activities and collaborate with other labdoers.</em>
+<em>圖片。群組頁面能夠讓您管理自己的專案活動以及與其他Labdoo用戶合作。</em>
 <img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/teams.png"/>
-<hr/>
-</value>
+<hr/></value>
 </body>
 <body>
 <type>format</type>

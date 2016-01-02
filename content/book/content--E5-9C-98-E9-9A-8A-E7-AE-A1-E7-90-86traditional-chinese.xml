@@ -1,0 +1,58 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>19763</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>團隊管理(Traditional Chinese)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>ChineseTraditional</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>26</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>若您的 Labdoo 帳號已經被指定為『團隊領導者（team manager）』，您將可以配置與管理您的團隊。
+
+請遵照下列指示以便您管理您的團隊：
+
+1.在團隊的首頁中，您將會看見三個選項：瀏覽（'View），編輯（'Edit）與團隊（Team），點擊團隊（Team）。
+
+2. 在那頁面中，您將會看到能幫助您管理您的團隊的多個選項，說明如下。
+
+到團隊的首頁並點擊團隊（Team）進入管理頁面。
+
+3. 舉例而言，點擊成員（People）即可看到當下的成員清單，點擊加入成員（Add people）以新增成員。請注意有些設定可能為唯讀，其取決於您在團隊中的角色。
+
+您可以點擊加入成員（Add people）進入以下頁面。</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>16452</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1097</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1179</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-13</value>
+</weight>
+</book>

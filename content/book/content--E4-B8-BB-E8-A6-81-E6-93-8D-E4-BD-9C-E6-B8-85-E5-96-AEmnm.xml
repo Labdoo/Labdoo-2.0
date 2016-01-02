@@ -1,0 +1,53 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>17342</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>主要操作清單(MNM)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>ChineseTraditional</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>39</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Labdoo 系統的外觀佈局可以由頁面最上方的主要操作清單（main navigation menu）編輯（以下簡稱MNM）。此清單在每個頁面皆可操作，讓使用者能更快速的移動到各個資源與工具頁面，MNM有一項重要的特性：眾多選項的可用性取決於使用者的角色，若使用者同時擔任越多角色，則所能看見的MNM選項越多。
+
+鑑於其相關性，使用者可以在MNM的選項中找到五個基本物件：dootronics, dootrips, edoovillages, hubs 與 user account。此外，MNM包含其他清單選項，幫助使用者操作平台，例如可視化平板（visualization dashboards），維基頁面（wiki pages），通訊（newsletters），壁狀論壇（wall-like forum）或團隊與工作管理操作......等等。 <br/>
+
+<hr/>
+<em> 圖例，主要操作清單 (MNM) 位於Labdoo頁面最上面 </em>
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/mnm.png"/>
+<hr/></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>16452</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1042</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1095</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-11</value>
+</weight>
+</book>

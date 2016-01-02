@@ -21,14 +21,13 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Labdoo provides a communication tool to help labdooers manage their own projects and activities in collaboration with other labdooers. We call this feature "Labdoo teams". Each team organizes around a theme or topic, and users can join a team or many teams depending on their interests. <a href="https://www.labdoo.org/teams" > "List All Teams" </a>provides a current list of the topics available and a short description on each topic. 
+<value>Labdoo 是一個提供協助使用者們管理專案以及活動的溝通平台。我們把這個功能稱作為「Labdoo 群組」。每個群組將管理一個主題或專題，其他的使用者們則能夠依據他們的興趣來加入各種不同的群組。<a href="https://www.labdoo.org/teams" > "列出所有群組" </a>提供現有群組以及它們個別所對應的主題、簡短敘述的完整列表。
 
-Click on the topic you are interested at the teams list  will bring you into its  <a href="https://www.labdoo.org/content/teams-wall">team </a>where the team communication takes place.  
+點擊任何你感興趣的專題，將會帶您進入該 <a href="https://www.labdoo.org/content/teams-wall">群組</a>，也就是群組成員溝通的地方。  
 
-Users may check teams conversations and tasks under "Teams Wall" or "My Teams Wall".
+使用者們可于「群組佈告欄」或「我的群組佈告欄」查看小組的聊天記錄及該做事項。
 
-Users with the "team manager" role can create their own new teams and communities around them.
-</value>
+擁有「群組經理」頭銜的使用者能夠建立新的群主。</value>
 </body>
 <body>
 <type>format</type>

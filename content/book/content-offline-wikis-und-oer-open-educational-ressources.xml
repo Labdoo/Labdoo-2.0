@@ -40,13 +40,13 @@ Wer nur die Ordnerrechte im Ordner /home/labdoo/Public so setzen möchte, dass a
 <tr>
 <td>Für englischsprachige Schulen setzt Labdoo.org „Wikipedia for schools“ein: http://www.sos-schools.org/wikipedia-for-schools. Es folgt dem Britischen Curriculum. Diese kindgerechte Themenauswahl nennt Labdoo „wikidoo“. Wikidoo belegt ca. 6,5 GB Plattenkapazität. I.d.R. ist wikidoo in den Images for Cloning bereits enthalten, es gibt aber auch spezielles Image PAE32_without_wikidoo, das auf Platten &lt;= 20 GB installiert werden kann. </td>
 
-<td><img src="/sites/default/files/content/wiki-de/edoovillages/wikidoo01.png" width="300"/>  </td>
+<td><img src="/sites/default/files/content/wiki-de/edoovillages/wikidoo01.png" width="250"/>  </td>
 </tr>
 
 <tr>
 <td>Wikidoo wird dann genutzt, wenn die Schulen keinen oder nur einen sehr langsamen Internetzugang haben. SOS Children UK hat sich die 2013 die Mühe gemacht, für die Kinder interessante Artikel zu einer Offline-Sammlung zu filtern und zusammen zu stellen. Wikidoo umfasst ca. 6.000 kindgerechte Artikel, 26 Mio. Worte und 50.000 Bilder (Stand: 10/2013). http://ftp.labdoo.org/download/Public/wikidoo/</td>
 
-<td><img src="/sites/default/files/content/wiki-de/edoovillages/wikidoo02.png" width="300"/>  </td>
+<td><img src="/sites/default/files/content/wiki-de/edoovillages/wikidoo02.png" width="250"/>  </td>
 </tr> 
 
 </table>
@@ -59,7 +59,7 @@ Wer nur die Ordnerrechte im Ordner /home/labdoo/Public so setzen möchte, dass a
 <td>Für englisch- und spanischsprachige Länder empfiehlt Labdoo.org RACHEL http://www.worldpossible.org/rachel/, eine Sammlung von lizenzfreien Inhalten. Darin ist auch die „Wikipedia for schools“ (s.o.) enthalten, aber auch Themen wie Khan Academy (math and science classes), MedLine Medical Encyclopedia, Hesperian Health Guides, Khan Academy (health videos), CK-12 STEM Textbooks, Gutenberg World Literature eBooks, OLPC Educational Games/ Lessons, UNESCO Primary School Resources, MathExpression Math Videos, Learn to Type "Power Typing", Music Theory, MIT Scratch.
 </td>
 
-<td><img src="/sites/default/files/content/wiki-de/edoovillages/rachel.jpg" width="300"/>  </td>
+<td><img src="/sites/default/files/content/wiki-de/edoovillages/rachel.jpg" width="250"/>  </td>
 </tr>
 
 <tr>
@@ -72,7 +72,7 @@ Die spanische RACHEL Version findet man hier http://rachelfriends.org/rachelusb_
 
 Die ZIP-Dateien herunterladen, in den Ordner /home/labdoo/Public/RACHEL entpacken. Weitere Schritte zur Einrichtung stehen auf https://www.labdoo.org/de/content/rachel-installieren.</td>
 
-<td><img src="/sites/default/files/content/wiki-de/edoovillages/rachel02_small.png" width="300"/>  </td>
+<td><img src="/sites/default/files/content/wiki-de/edoovillages/rachel02_small.png" width="250"/>  </td>
 </tr> 
 
 </table>
@@ -96,7 +96,7 @@ Die ZIP-Dateien herunterladen, in den Ordner /home/labdoo/Public/RACHEL entpacke
 <tr>
 <td>Hierzu nutzt Labdoo den Multimediakurs von EnglishBanana.com. Das Lehrmaterial liegt auf http://ftp.labdoo.org/download/Public/eBooks/English%20Language%20Training%20Version%203.0/</td>
 
-<td><img src="/sites/default/files/content/wiki-de/edoovillages/english01.png" width="300"/>  </td>
+<td><img src="/sites/default/files/content/wiki-de/edoovillages/english01.png" width="250"/>  </td>
 </tr>
 
 </table>

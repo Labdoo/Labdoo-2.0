@@ -5,7 +5,7 @@
 </nid>
 <title>
 <type>node_title</type>
-<value>Deutschkurse für Migranten</value>
+<value>Linkliste, Deutschkurse und Image (Cloning) speziell für Migranten</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -21,7 +21,31 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Für Migranten gibt es zahlreiche Onlineangebote für <strong>Deutschkurse</strong>, hier eine kleine Auswahl. Zu Inhalten und Qualität der einzelnen Onlineangebote können wir nichts sagen. Jegliche Haftung für die verlinkten Inhalte wird ausgeschlossen. Mit dieser Linksammlung möchten wir die Suche nach Angeboten zu Deutschkursen erleichtern:
+<value><ul>
+<li><strong>Spezielles Image for Cloning für Flüchtlingsprojekte</strong></li>
+
+Speziell für Flüchtlingsprojekte stellen wir ein Image for Cloning zum Download bereit (Mindestgröße Festplatte >= 80 GB). Es sind viele Inhalte, Sprachen und Wikis vorinstalliert, sodass die Rechner auch ohne Onlineanbindung gut genutzt werden können:
+<a href="http://ftp.labdoo.org/download/images/PAE64_Refugees_DE.tar.gz">PAE64_Refugees_DE (auf Basis von Lubuntu 14.04 LTS für <strong>64 Bit CPU</strong>)</a>
+Doppelklick auf den Link des gewünschten Image oder rechte Maustaste und "Speichern unter".
+
+Vorinstalliert sind (weitere Sprachen und Inhalte kann natürlich auch selber nachinstalliert werden):
+<ul>
+<li><strong>Anwendersprachen: Deutsch (de, voreingestellt)</strong>, Englisch (en), Französich (fr), Spanisch (es), Albanisch (sq), Arabisch (ar), Bosnisch (bs), Bulgarisch (bg), Kurdisch (ku), Mazedonisch (mk), Türkisch (tr), Pashto (ps), Rumänisch (ro), Russisch (ru), Serbisch (sr), Tigrinya (ti),</li>
+<li><strong>Wikis (vorinstalliert zur Offline-Nutzung jeweils wiktionary (Wörterbuch), wikibook (eBooks), wikiversity (Lerninhalte); sofern in der Sprache vorhanden):</strong> Deutsch (de) Englisch (en), Französich (fr), Spanisch (es), Albanisch (sq), Arabisch (ar), Bosnisch (bs), Bulgarisch (bg), Kurdisch (ku), Mazedonisch (mk), Türkisch (tr), Pashto (ps), Rumänisch (ro), Russisch (ru), Serbisch (sr), Tigrinya (ti),</li>
+<li><strong>Offline-Homepages:</strong> aus der u.a. Linkliste haben wir die Inhalte der Homepages ganz oder teilweise gespiegelt und dem Image beigefügt: </li>
+
+<ul>
+<li>http://www.DeutschAlsFremdsprache.ch</li>
+<li>http://www.willkommensabc.de/</li>
+<li>https://www.lingolia.com/de/daf</li>
+<li>http://www.refugeeguide.de/ u.a.</li>
+</ul>
+
+</ul>
+
+<li><strong>Linkliste, Deutschkurse</strong></li>
+
+Für Migranten gibt es zahlreiche Onlineangebote für <strong>Deutschkurse</strong>, hier eine kleine Auswahl. Zu Inhalten und Qualität der einzelnen Onlineangebote können wir nichts sagen. Jegliche Haftung für die verlinkten Inhalte wird ausgeschlossen. Mit dieser Linksammlung möchten wir die Suche nach Angeboten zu Deutschkursen erleichtern:
 
 <table>
 
@@ -45,7 +69,7 @@
 <td>http://www.dw.com/de/deutsch-lernen/deutschkurse/s-2068  <strong>(*)</strong> </td>
 <td> <img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/> </td>
 <td>   </td>
-<td> in Vorbereitung </td>
+<td> in Prüfung </td>
 <td>  </td>
 </tr> 
 
@@ -72,6 +96,13 @@ Kostenloses Unterrichtsmaterial (Download) für ehrenamtliche Lehrkräfte</td>
 <td>  </td>
 <td>  </td>
 </tr> 
+
+<tr>
+<td> http://www.refugeeguide.de/ (Nützliche Information für Flüchtlinge, pdf)</td>
+<td> <img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/>   </td>
+<td>  </td>
+<td> <img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/> (als pdf) </td>
+</tr>
 
 <tr>
 <td>https://www.leo.org/
@@ -184,20 +215,15 @@ Info-Portal auf Englisch)</td>
 <td>  </td>
 </tr>
 
-<tr>
-<td> </td>
-<td>   </td>
-<td>  </td>
-<td>  </td>
-</tr>
-
 </table>
 
 <strong> <a href="http://ftp.labdoo.org/download/hub-content/hub-Labdoo-DACH/Deutschkurse/">(*) Die für eine Offline-Nutzung im Rahmen des Labdoo-Projektes freigegebenen Deutschkurse dieser Websites können hier heruntergeladen werden.</a> Hierzu nacheinander mit  der rechten Maustaste auf die Dateien im Browser -> jeweils "speichern unter". Bitte die Hinweise zum Speichern und Entpacken in read-me.txt beachten, danke.</strong>
 
 <strong>Labdoo.org nutzt zusätzlich das  <a href="/de/content/offline-wikis-und-oer-open-educational-ressources">Offline-Wiki-Tool Xowa</a>. Damit kann dann u.a. <a href="https://de.wiktionary.org/wiki/Wiktionary:Hauptseite">Wiktionary</a> mit über 441.000 deutschsprachigne Einträgen zu über 230 Sprachen offline (d.h. ohne Internetanbindung) genutzt werden.</strong>
 
-<br />Wir nehmen gerne weitere Hinweise auf. Bitte senden Sie hierzu eine Mail an Labdoo-DACH@Labdoo.org, danke.</value>
+<br />Wir nehmen gerne weitere Hinweise auf. Bitte senden Sie hierzu eine Mail an Labdoo-DACH@Labdoo.org, danke.
+
+</ul></value>
 </body>
 <body>
 <type>format</type>

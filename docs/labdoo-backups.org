@@ -19,8 +19,8 @@
     ll ../../content/book/ | wc -l # check total number of wiki docs
     ll /var/backups/lbd/lec-backups/20151014/ | wc -l # compare with previous number (you get an idea how many wiki docs were added/removed)
     cp -r /var/www/lbd/sites/default/files/content/* ../../content/files/content/ # copy wiki images, attachments to git repo
-    git add ../../content/book/content-*
-    git add ../../content/files/
+    git add -A ../../content/book/
+    git add -A ../../content/files/
     git commit
     git push
     git status

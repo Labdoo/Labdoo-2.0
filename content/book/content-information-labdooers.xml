@@ -21,11 +21,11 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Educational Labdoo laptops come with the operating system Lubuntu (Linux), a lot of educational software and Open Educational resources (OER) for the children. Labdoo.org recommends to install <a href="http://lubuntu.net/">Lubuntu (Ubuntu and the desktop LXDE)</a>, as Lubuntu does not ask for much resources and runs fast even on older laptops.
+<value>Educational Labdoo laptops come with the operating system Lubuntu (Linux) which holds a lot of educational software and Open Educational resources (OER) for the children. Labdoo.org recommends to install <a href="http://lubuntu.net/">Lubuntu (Ubuntu and the desktop LXDE)</a>,as Lubuntu does not ask for many resources and runs fast even on older laptops.
 
-Children of any age - Kindergarten, primary, secondary school and high-school - benefit from the educational software (Edubuntu) and educational content, Offline wikis, barrier-free usage of software and much more. If possible, install as much as possible on a laptop, as most of the edoovillages do not have access to internet. So what you do not install will not be available...
+Children of any age - Kindergarten, primary, secondary school and high school - benefit from the educational software (Edubuntu) and educational content, offline wikis, barrier-free usage of software, and many more. If possible, install as much as possible on a laptop, as most of the edoovillages do not have access to internet. What you do not install will not be available...
 
-To offer children the best possible installation there are 3 ways of installation:
+To offer children the best possible installation, there are 3 ways of installation:
 
 <ul>
 <li><a href="/content/cloning-laptops-using-prepared-labdoo-images">cloning laptops using prepared images (recommended),</a> </li> 
@@ -33,7 +33,7 @@ To offer children the best possible installation there are 3 ways of installatio
 <li><a href="/content/faq-forum#FAQ05">or leave everything to Labdoo... ;)</a></li>
 </ul>
 
-More useful wikis
+More useful wikis:
 <ul>
 <li><a href="/content/tips-and-tricks-suggested-solutions">Technical tips and tricks, suggested solutions</a></li>
 <li><a href="/content/anpassen-l%C3%A4nderspezifische-anforderungen-tastatur-sprache-hostname-ua">Adapting a laptop to country specific needs (keyboard, language, hostname etc.)</a></li>
@@ -41,8 +41,8 @@ More useful wikis
 <li><a href="/content/shipping-notes">Shipping notes</a></li>
 <li><a href="/content/video-tutorials-0">Video tutorials (English)</a></li>
 </ul>
+Here is the comparison with what children are missing, if you just install Lubuntu (compared to installation scripts and Cloning images):
 
-Here the comparison what children are missing, if you just install Lubuntu (compared to  installation scripts  and Cloning images):
 
 <table>
 <tr>

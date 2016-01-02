@@ -21,18 +21,18 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>A hub englobing multiple hubs within the same geographic region is called a superhub. Superhubs add two additional functionalities to the Labdoo system:
+<value>超級活動中心是一個包含許多相同地理位置的活動中心的活動中心。超級活動中心為 Labdoo 系統提供了兩項額外的功能：
 
 <ul>
 <li>
-<strong>They are allowed to create hubs inside their region.</strong> This feature helps to decentralize the process of creating hubs enabling a more sustainable growth path and removing possible centralized bottlenecks.
+<strong>他們被允許在自己的區域裡創立活動中心。</strong> 這項功能使創立活動中心去中心化，提供一個更加穩定的成長路徑以及去除那些中心化的瓶頸。
 </li>
 <li>
-<strong>They can have their own site pages.</strong> Superhubs can create their own Labdoo pages to help better localize certain regional activities. For instance, they can write an informative page in a specific language to help outreach in the geographic area where the hubs under the superhub reside.
+<strong>他們能夠擁有屬於自己的網站頁面。</strong> 超級活動中心能夠創立屬於自己的 Labdoo 頁面，以便能夠讓一些區域性的活動更加的局部化。比如說，他們能夠使用特定的語言來撰寫一些資訊性的頁面，以便能夠讓更多位於該區域互動中心的使用者們閱讀。
 </li>
 </ul>
 
-In the next two sections, the above two features are described in more detail.</value>
+再接下來的兩個部份，我們將會更加深入的討論上述兩項功能。</value>
 </body>
 <body>
 <type>format</type>

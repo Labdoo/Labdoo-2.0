@@ -25,9 +25,13 @@
 
 Dann kann es vorkommen, dass z.B. die Pfeiltasten nicht reagieren, obwohl man diese dringend braucht, um das BIOS wieder richtig einzustellen. In solchen Fällen ist die USB-Ansteuerung (und damit die interne Tastatur) deaktiviert. 
 
-Eine Lösung: Anschliessen einer OS/2- oder einer externen USB-Tastatur (die geht merkwürdigerweise), normal installieren bzw. BIOS richtig einstellen. 
+Mögliche Lösungen:
+<ul>
+<li>Anschliessen einer PS/2- oder einer externen USB-Tastatur (die geht merkwürdigerweise), normal installieren bzw. BIOS richtig einstellen,</li>
+<li> im BIOS ggf. "USB-Legacy-Support" deaktivieren (disable), um die Tastatur und das Touchpad zu aktivieren. Ohne diese Einstellung im BIOS reagiert das Touchpad und die Tastatur nicht (z.B. bei Beim Medion MD41700)</li>
+</ul>
 
-Auf www.bios-info.de findet man gute Informationen zum BIOS auf verschiedenen Laptops. </value>
+Auf www.bios-info.de findet man gute Informationen und Tipps zum BIOS auf verschiedenen Laptops. </value>
 </body>
 <body>
 <type>format</type>

@@ -218,12 +218,6 @@ In the menu items are hidden more than 100 games and educational programs that c
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/celestia.png" width="100"/> </td>
 </tr> 
 <tr>
-            <td><a href="http://edu.kde.org/kstars">KStars</a></td>
-           <td>KStars is a program that creates an artificial star sky on your desktop. Once the basic data is entered and extensions have been downloaded, you can locate using the desktop planetarium stars, planets, the sun, the moon and thousands of comets and asteroids, in order to possibly observe with his own telescope.</td>
-            <td>kstars</td>
-           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/kstars.png" width="100"/> </td>
-</tr> 
-<tr>
             <td><a href="http://wiki.ubuntuusers.de/Marble">Marble</a></td>
            <td>Marble is a desktop globe. The program is similar to the popular Google Earth program. It is kept simple, yet very sophisticated and powerful. It supports a variety of card materials including OpenStreetMap and can reproduce it on a globe or a map.</td>
             <td>marble</td>
@@ -238,24 +232,6 @@ In the menu items are hidden more than 100 games and educational programs that c
 
 </table>
 
-<li><strong>Chemestry</strong></li>
-
-<table> 
-<tr>
-<th><strong>program</strong></th>
-<th><strong>description</strong></th>
-<th><strong>program name</strong></th>
-<th><strong>screen shot</strong></th>
-</tr>
-
-<tr>
-            <td><a href="http://wiki.ubuntuusers.de/Kalzium">Kalzium</a></td>
-           <td>Calcium allows the study of the Periodic Table of Elements. It is very extensive, for example, it can be reconstructed the temperature at which they change the physical state of each element. Using this program it can be calculated and shown as Bohr's atomic model, or it can retrieve information on the alpha-and beta-decay or the atomic mass.</td>
-            <td>kalzium</td>
-           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/kalzium.png" width="100"/> </td>
-</tr> 
-</table>   
-	
 <li><strong>Graphic and Construction</strong></li>
 
 <table> 
@@ -356,18 +332,6 @@ In the menu items are hidden more than 100 games and educational programs that c
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/kalgebra.png" width="100"/> </td>
 </tr>
 <tr>
-            <td><a href="http://wiki.ubuntuusers.de/KBruch">KBruch</a></td>
-           <td>KBruch is a program to practice fractions (fraction tasks, comparing, and factoring). The difficulty of the tasks can be adapted to the level of knowledge. New tasks can be added.</td>
-            <td>kbruch</td>
-           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/kbruch.png" width="100"/> </td>
-</tr>
-<tr>
-            <td><a href="http://edu.kde.org/kig">Kig</a></td>
-            <td>Kig is a geometry program. Mathematical figures and concepts can be explored interactively.</td>
-            <td>kig</td>
-           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/kig.png" width="100"/> </td>
-</tr>
-<tr>
             <td><a href="http://edu.kde.org/kmplot">KmPlot</a></td>
             <td>KmPlot is a program to visualize mathematical functions.</td>
             <td>kmplot</td>
@@ -465,12 +429,6 @@ In the menu items are hidden more than 100 games and educational programs that c
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/ktuberling.png" width="100"/> </td>
 </tr>
 <tr>
-            <td><a href="http://wiki.ubuntuusers.de/KHangMan">KHangMan</a></td>
-           <td>KHangman is a Hangman game. Recommended age 6 +.</td>
-            <td>khangman</td>
-           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/khangman.png" width="100"/> </td>
-</tr>
-<tr>
             <td><a href="http://wiki.ubuntuusers.de/Spiele/Ri-li">Ri-li</a></td>
            <td>Ri-li is a skill game where you have to move a wooden train set by asking the right course of different rail networks. The goal is to collect the cars distributed in the level.</td>
             <td>ri-li</td>
@@ -490,23 +448,10 @@ In the menu items are hidden more than 100 games and educational programs that c
 </tr>
 
 <tr>
-            <td><a href="http://wiki.ubuntuusers.de/KWordQuiz">KWordQuiz</a></td>
-           <td>KWordQuiz is a vocabulary trainer, which works on the principle of file boxes. It offers a variety of import and export functions and is able to print, lists and index cards.</td>
-            <td>kwordquiz</td>
-           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/kwordquiz.png" width="100"/> </td>
-</tr>
-<tr>
             <td><a href="http://wiki.ubuntuusers.de/Parley">Parley</a></td>
            <td>Parley is a vocabulary trainer and one of the successors of KVocTrain. The Vocabulary is extensive and offers a variety of settings, which concerns the creation of word lists and learning.</td>
             <td>parley</td>
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/parley.png" width="100"/> </td>
-</tr>
-<tr>
-            <td><a href="https://edu.kde.org/klettres/">Klettres</a></td>
-           <td>KLettres aims to help to learn the alphabet and then to read some syllables in different languages.
-It is meant to help learning the very first sounds of a new language, for children or for adults.</td>
-            <td>klettres</td>
-           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/klettres.png" width="100"/> </td>
 </tr>
 </table>
 
@@ -520,12 +465,6 @@ It is meant to help learning the very first sounds of a new language, for childr
 <th><strong>screen shot</strong></th>
 </tr>
 
-<tr>
-            <td><a href="http://ktouch.sourceforge.net/">KTouch</a></td>
-           <td>KTouch is a simple typewriter coach. In many tutorials the typing on the PC keyboard is practiced - additional exercises can be downloaded from the Internet.</td>
-            <td>ktouch</td>
-           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/ktouch.png" width="100"/> </td>
-</tr>
 <tr>
             <td><a href="http://tux4kids.alioth.debian.org/tuxtype/index.php">Tux Typing</a></td>
            <td>Tux Typing helps children to learn write and playful touch. Recommended age 5 +.</td>
@@ -577,6 +516,68 @@ It is meant to help learning the very first sounds of a new language, for childr
 </tr>
 </table>
 
+<li><strong>Office applications</strong></li>
+
+<table> 
+<tr>
+<th><strong>program</strong></th>
+<th><strong>description</strong></th>
+<th><strong>program name</strong></th>
+<th><strong>screen shot</strong></th>
+</tr>
+
+<tr>
+            <td><a href="https://libreoffice.org/">LibreOffice Suite</a></td>
+           <td>LibreOffice is a powerful office suite; its clean interface and powerful tools let you unleash your creativity and grow your productivity. LibreOffice embeds several applications that make it the most powerful Free and Open Source Office suite on the market: Writer, the word processor, Calc, the spreadsheet application, Impress, the presentation engine, Draw, our drawing and flowcharting application, Base, our database and database frontend, and Math for editing mathematics.</td>
+            <td>LibreOffice Suite</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/libreoffice.png" width="100"/> </td>
+</tr>
+
+
+<tr>
+            <td><a href="https://libreoffice.org/discover/writer/">LibreOffice Writer</a></td>
+           <td>Writer has all the features you need from a modern, full-featured word processing and desktop publishing tool. It's simple enough for a quick memo, but powerful enough to create complete books with contents, diagrams, indexes, and more. You're free to concentrate on your message, while Writer will make it look great.</td>
+            <td>writer</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/libreoffice_writer.png" width="100"/> </td>
+</tr>
+
+<tr>
+            <td><a href="https://libreoffice.org/discover/calc/">LibreOffice Calc</a></td>
+           <td>Calc is the spreadsheet program you've always needed. Newcomers find it intuitive and easy to learn. Professional data miners and number crunchers will appreciate the comprehensive range of advanced functions. Wizards can guide you through choosing and using a comprehensive range of advanced spreadsheet functions. Or you can download templates from the LibreOffice template repository, for ready-made spreadsheet solutions.</td>
+            <td>calc</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/libreoffice_calc.png" width="100"/> </td>
+</tr>
+
+<tr>
+            <td><a href="https://libreoffice.org/discover/impress/">LibreOffice Impress</a></td>
+           <td>Impress is a truly outstanding tool for creating effective multimedia presentations. Presentation edition and creation is flexible, thanks to different editing and view modes: Normal (for general editing), Outline (for organizing and outlining your text content), Notes (for viewing and editing the notes attached to a slide), Handout (for producing paper-based material), and Slide Sorter (for a thumbnail sheet view that lets you quickly locate and order your slides).</td>
+            <td>impress</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/libreoffice_impress.png" width="100"/> </td>
+</tr>
+
+<tr>
+            <td><a href="https://libreoffice.org/discover/draw/">LibreOffice Draw</a></td>
+           <td>Draw lets you produce anything from a quick sketch to a complex plan, and gives you the means to communicate with graphics and diagrams. With a maximum page size of 300cm by 300cm, Draw is a an excellent package for producing technical drawings, general posters, etc. Draw lets you manipulate graphical objects, group them, crop them, use objects in 3D and much more.</td>
+            <td>draw</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/libreoffice_draw.png" width="100"/> </td>
+</tr>
+
+<tr>
+            <td><a href="https://libreoffice.org/discover/base/">LibreOffice Base</a></td>
+           <td>Base is a full-featured desktop database front end, designed to meet the needs of a broad array of users. But Base also caters to power users and enterprise requirements, and provides native-support drivers for some of the most-widely employed multi-user database engines: MySQL/MariaDB, Adabas D, MS Access and PostgreSQL. In addition, the built-in support for JDBC- and ODBC-standard drivers allows you to connect to virtually any other existing database engine as well.</td>
+            <td>base</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/libreoffice_base.png" width="100"/> </td>
+</tr>
+
+<tr>
+            <td><a href="https://libreoffice.org/discover/math/">LibreOffice Math</a></td>
+           <td>Math is the LibreOffice suite's formula editor, that can be invoked in your text documents, spreadsheets, presentations and drawings, to enable you to insert perfectly-formatted mathematical and scientific formulas. Your formulas can include a wide range of elements, from fractions, terms with exponents and indices, integrals, and mathematical functions, to inequalities, systems of equations, and matrices.</td>
+            <td>math</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/libreoffice_math.png" width="100"/> </td>
+</tr>
+
+</table>
+
 <li><strong>Additional programs</strong></li>
 
 <table> 
@@ -610,12 +611,6 @@ It is meant to help learning the very first sounds of a new language, for childr
            <td>Kino is a simple video editor for GNU / Linux, which also offers the ability to directly program the videos from the camcorder to take ("capture").</td>
             <td>kino</td>
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/kino.png" width="100"/> </td>
-</tr>
-<tr>
-            <td><a href="http://wiki.ubuntuusers.de/KTurtle">KTurtle</a></td>
-           <td>KTurtle is an implementation of the Logo programming language with a graphical interface for KDE. A turtle (turtle) can be controlled using simple commands over a landscape. It is possible to generate geometric patterns. The user gets a first glimpse of algorithms and concepts of imperative programming (loops, procedures).</td>
-            <td>kturtle</td>
-           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/kturtle.png" width="100"/> </td>
 </tr>
 <tr>
             <td><a href="http://packages.ubuntu.com/trusty/scolasync">ScolaSync</a></td>
