@@ -257,7 +257,7 @@ function _email_laptop_event($node) {
     $result = db_query($query); 
 
     foreach($result as $item) {
-      // Compute distance between user and laptop
+      // Compute distance between hub manager and laptop
       $userId = $item->entity_id;
       $query = "SELECT city FROM location WHERE lid IN (SELECT lid FROM location_instance WHERE uid=$userId)";
       $userCity = db_query($query)->fetchField(); 
@@ -272,6 +272,8 @@ function _email_laptop_event($node) {
       $latlon_b['lat'] = $laptopLat;
       $latlon_b['lon'] = $laptopLon; 
       $distance = location_distance_between($latlon_a, $latlon_b, 'km');
+      if($distance == NULL)
+        continue;
       // Extract user radius 
       $query = "SELECT field_notification_area_value FROM field_data_field_notification_area WHERE entity_id=$userId";
       $userRadius = db_query($query)->fetchField();
@@ -669,6 +671,9 @@ function lbd_communicate_user_insert(&$edit, $account, $category) {
   global $base_url;
   global $language;
 
+  /*
+   * Send our welcome message to user.
+   */
   // The user is being created here, so at this point the global $user is not
   // set up yet. Instead, pull the language directly from the page language,
   // which is what is used to define the initial default language of the
@@ -678,7 +683,7 @@ function lbd_communicate_user_insert(&$edit, $account, $category) {
     $langCode = 'en';
 
   $email_params['type'] = "USER_CREATED";        
-  $email_params['to'] = $edit['mail']; 
+  $email_params['to'] = $edit['mail'] . ", " . variable_get('site_mail', ''); 
 
   $subjectFileName = _path_to_email_template($langCode) . "user_created_subject-" . $langCode . ".email";
   $bodyFileName = _path_to_email_template($langCode) . "user_created_body-" . $langCode . ".email";
@@ -689,6 +694,68 @@ function lbd_communicate_user_insert(&$edit, $account, $category) {
   $subject = $subjectTemplate;
   $body = str_replace("[LABDOOUSER]", $edit['name'], $bodyTemplate);
   $body = str_replace("[DASHBOARD_URL]", $base_url . '/content/dashboard-slider', $body);
+
+  $email_params['subject'] = $subject;
+  $email_params['body'] = $body;
+   
+  lbd_communicate_mail_send($email_params);
+
+  /*
+   * Send out informative message to hubs that have indicated interest in
+   * being notified about this type of event.
+   *
+   */
+  $email_params = array();
+  $emailsList = ""; 
+
+  // Find all hub managers interested in this event and add them to the email list
+  $userLat = $account->locations[0]['latitude'];
+  $userLon = $account->locations[0]['longitude']; 
+  $query = "SELECT entity_id FROM field_data_field_hub_manager_notifications WHERE field_hub_manager_notifications_value='USER_NEW'";
+  $result = db_query($query); 
+  foreach($result as $item) {
+    // Compute distance between hub manager and new user 
+    $userId = $item->entity_id;
+    $query = "SELECT city FROM location WHERE lid IN (SELECT lid FROM location_instance WHERE uid=$userId)";
+    $userCity = db_query($query)->fetchField(); 
+    $query = "SELECT country FROM location WHERE lid IN (SELECT lid FROM location_instance WHERE uid=$userId)";
+    $userCountry = db_query($query)->fetchField(); 
+    if(labdoo_lookup_coordinates($userCountry, $userCity, $hubMgerLat, $hubMgerLon) < 0)
+      continue;
+    $latlon_a['lat'] = $hubMgerLat;
+    $latlon_a['lon'] = $hubMgerLon;
+    $latlon_b['lat'] = $userLat;
+    $latlon_b['lon'] = $userLon; 
+    $distance = location_distance_between($latlon_a, $latlon_b, 'km');
+    if($distance == NULL)
+      continue;
+    // Extract user radius 
+    $query = "SELECT field_notification_area_value FROM field_data_field_notification_area WHERE entity_id=$userId";
+    $userRadius = db_query($query)->fetchField();
+    // If distance is within radius, add to email list
+    if($distance['scalar'] <= intval($userRadius)) {
+      $userObj = user_load($userId);
+      $emailsList = $emailsList . ", " . $userObj->mail;
+    }
+  }
+
+  if($emailsList[0] == ",")
+    $emailsList = substr($emailsList, 2);
+
+  $email_params['to'] = variable_get('site_mail');
+  $email_params['headers']['Bcc'] = $emailsList;
+  $email_params['type'] = "USER_CREATED";        
+
+  // Send it in English as each hub manager may have a different prefered language
+  $langCode = 'en';
+  $subjectFileName = _path_to_email_template($langCode) . "notification_user_created_subject-" . $langCode . ".email";
+  $bodyFileName = _path_to_email_template($langCode) . "notification_user_created_body-" . $langCode . ".email";
+
+  $subjectTemplate = file_get_contents($subjectFileName);
+  $bodyTemplate = file_get_contents($bodyFileName);
+
+  $subject = $subjectTemplate;
+  $body = str_replace("[LABDOOUSER]", $edit['name'], $bodyTemplate);
 
   $email_params['subject'] = $subject;
   $email_params['body'] = $body;

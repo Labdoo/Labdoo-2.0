@@ -190,6 +190,7 @@ function lbd_teams_page_group_id() {
 function labdoo_render_team_actions() {
   $path = drupal_get_path_alias(current_path());
   global $language;
+  global $user;
 
   // Take care of the cases described in [*]
   if(strcmp($path, "content/team-members") == 0) 
@@ -207,8 +208,11 @@ function labdoo_render_team_actions() {
   $homePath = $lang . "/" . drupal_get_path_alias("node/$groupId");
 
   // For some special groups, do not allow write access
+  $members = lbd_teams_get_team_members($groupId);
   $teamName = lbd_nodeid2title($groupId);
-  if($teamName == "Global")
+  if(!in_array($user->uid, $members))
+    $noWritingRights = TRUE;
+  else if($teamName == "Global" && $user->name != 'Labdoo')
     $noWritingRights = TRUE;
   else
     $noWritingRights = FALSE;
