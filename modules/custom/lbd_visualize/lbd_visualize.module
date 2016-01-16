@@ -1543,6 +1543,8 @@ function lbd_display_slider_edoovilage_dootrips($edoovillageId) {
     // Load the dootrip node
     $dootripNid = $item->field_dootrips_target_id;
     $dootripNode = node_load($dootripNid);
+    if(!$dootripNode)
+      continue;
     $urlPath = drupal_get_path_alias("node/" . $dootripNid, $language->language);
 
     // Get the name
@@ -1744,6 +1746,7 @@ function lbd_display_dooject_column_chart($objectNid, $type)
     $numNeedRecycle = labdoo_getnum_doojects(NULL, $objectNid, "S5") + labdoo_getnum_doojects(NULL, $objectNid, "S9");
     $numRecycled = labdoo_getnum_doojects(NULL, $objectNid, "S6");
     $numTagged = $numTransit + $numDeployed + $numNeedRecycle + $numRecycled;
+    $numTagged = labdoo_getnum_doojects(NULL, $objectNid, "S0") + labdoo_getnum_doojects(NULL, $objectNid, "S1") + labdoo_getnum_doojects(NULL, $objectNid, "S2");
     $xLabel = "Dootronics";
   }
   else {

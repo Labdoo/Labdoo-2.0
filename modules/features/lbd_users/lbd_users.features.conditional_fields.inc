@@ -24,7 +24,7 @@ function lbd_users_conditional_fields_default_fields() {
       'element_view' => array(
         1 => '1',
         2 => '2',
-        5 => 0,
+        5 => '5',
         3 => 0,
         4 => 0,
       ),

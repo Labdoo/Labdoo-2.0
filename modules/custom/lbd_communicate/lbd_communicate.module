@@ -143,7 +143,7 @@ function lbd_communicate_mail_send($email_params) {
 //    drupal_set_message(t('An automatic email has been sent out to the user(s) connected with this event.'));
   }
   else {
-    drupal_set_message(t('There was a problem sending an automatic message, please contant Labdoo at ' . variable_get('site_mail', 'contact@labdoo.org')), 'error');
+    drupal_set_message(t('There was a problem sending an automatic message, please contact Labdoo at ' . variable_get('site_mail', 'contact@labdoo.org')), 'error');
   }
 
 }
@@ -542,8 +542,11 @@ function _email_team_event($node, $comment = NULL) {
 
   // Events have an additional field called field_additional_emails_event where users can add
   // additional email addresses that need to be notified. Include them too in $emailsList.
-  if($node->type == 'event') {
-    $additionalEmails = $wNode->field_additional_emails_event->value();
+  if($node->type == 'event' || $node->type == 'team_page') {
+    if($node->type == 'event')
+      $additionalEmails = $wNode->field_additional_emails_event->value();
+    else
+      $additionalEmails = $wNode->field_additional_emails_conver->value();
     $additionalEmailsList = explode(",", $additionalEmails);
     $validatedEmails = "";
     foreach($additionalEmailsList as $email) {
@@ -755,7 +758,7 @@ function lbd_communicate_user_insert(&$edit, $account, $category) {
   $bodyTemplate = file_get_contents($bodyFileName);
 
   $subject = $subjectTemplate;
-  $body = str_replace("[LABDOOUSER]", $edit['name'], $bodyTemplate);
+  $body = str_replace("[USERID]", $edit['uid'], $bodyTemplate);
 
   $email_params['subject'] = $subject;
   $email_params['body'] = $body;

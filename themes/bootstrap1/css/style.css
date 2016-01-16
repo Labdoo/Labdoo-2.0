@@ -232,3 +232,10 @@ input[type="checkbox"] {
   }
 }
 
+/*
+ * Hide the default book navigation
+ */
+.book-navigation {
+display:none;
+}
+

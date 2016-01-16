@@ -58,6 +58,19 @@ function make_main_menu() {
   $mlid = menu_link_save($item);
 
   $item = array(
+            'link_path' => 'content/labdoos-corporate-social-responsibility-csr-package',
+            'link_title' => t('Labdoo for Companies (CSR)'),
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -45,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => $exploreMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
             'link_path' => 'map',
             'link_title' => t('Global inventory'),
             'menu_name' => 'main-menu',

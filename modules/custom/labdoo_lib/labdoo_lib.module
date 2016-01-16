@@ -1626,6 +1626,19 @@ function labdoo_lib_compute_dootrip_edoovillages($nodeLoaded) {
 
 
 /**
+ * Returns the username of the user entity passed
+ *
+ * @param array $entity The user entity
+ *
+ * @return The username
+ *
+ */
+function labdoo_lib_compute_username($entity) {
+  return($entity->name);
+}
+
+
+/**
  * Returns the list of dootronics associated to a hub managed by a user
  *
  * @param user $userId The ID of the user
@@ -3164,4 +3177,20 @@ function labdoo_lib_views_pre_render(&$view) {
     $view->attachment_before = t('Don\'t see a book available in a language you need? <a href="content/wiki-translations">learn how you can contribute a book translation.</a>');
   }
 }
+
+
+/**
+ * Implementation of hook_node_validate 
+ */
+function labdoo_lib_node_validate($node, $form, &$form_state) {
+
+  if ($node->type == 'dootrip') {
+    $departureDate = labdoo_lib_get_field($node, 'field_departure_date', 'node', 'value');
+    $arrivalDate = labdoo_lib_get_field($node, 'field_arrival_date', 'node', 'value');
+    if($arrivalDate < $departureDate)
+      form_set_error('field_arrival_date', t("The arrival date must not be before the departure date"));
+  }
+
+  return;
+} 
 

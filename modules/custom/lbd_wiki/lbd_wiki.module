@@ -53,8 +53,54 @@ function lbd_wiki_block_info() {
     'pages' => "<?php return lbd_wiki_is_book_node() != NULL ?>", 
     'region' => "sidebar_second",
   );
+
+  $block['book_outline_2'] = array(
+    'info' => 'Book Outline (inline)',
+    'status' => 1,
+    'visibility' => BLOCK_VISIBILITY_PHP,
+    'weight' => 0,
+    'pages' => "<?php return lbd_wiki_is_book_node() != NULL ?>", 
+    'region' => "content",
+  );
   return $block;
 }
+
+
+/**
+ * Cut a branch from a book tree 
+ *
+ * @param array $tree
+ *   The tree
+ * @param array $nodeId
+ *   The node ID from which to cut a branch 
+ *
+ * @return array
+ *   The branch
+ */
+function _tree_cut_branch($tree, $nodeId) {
+  foreach($tree as $child1) {
+    if($child1['link']['link_path'] == 'node/' . $nodeId)
+      return $child1['below'];
+    foreach($child1['below'] as $child2) {
+      if($child2['link']['link_path'] == 'node/' . $nodeId)
+        return $child2['below'];
+      foreach($child2['below'] as $child3) {
+        if($child3['link']['link_path'] == 'node/' . $nodeId)
+          return $child3['below'];
+        foreach($child3['below'] as $child4) {
+          if($child4['link']['link_path'] == 'node/' . $nodeId)
+            return $child4['below'];
+          foreach($child4['below'] as $child5) {
+            if($child5['link']['link_path'] == 'node/' . $nodeId)
+              return $child5['below'];
+          }
+        }
+      }
+    }
+  }
+  return($tree);
+}
+
 
 /**
  * Implements hook_block_view().
@@ -67,7 +113,7 @@ function lbd_wiki_block_view($delta = '') {
   global $user;
   $code = "";
 
-  if($delta != 'book_outline')
+  if($delta != 'book_outline' && $delta != 'book_outline_2')
     return NULL;
 
   $book = lbd_wiki_is_book_node();
@@ -118,11 +164,26 @@ function lbd_wiki_block_view($delta = '') {
                       "<a $metadata>" . t('Reorder this book\'s hierarchy') . "</span></a></p>";
     }
 
-    $code = $code . "<hr/><br/>";
+    if($delta == 'book_outline_2') { 
+      $children = _tree_cut_branch($children, $nodeId); 
+      $code = "";
+      if($children) {
+        $code = $code . "<hr/>";
+        $code = $code . t("<strong><font color='red'>Continue reading under this section:</font></strong>");
+        $code = $code . "<hr/>";
+      }
+    }
+    else {
+      $code = $code . "<hr/>";
+      $code = $code . t("<strong><font color='gray'>Table of Content:</font></strong>");
+      $code = $code . "<hr/>";
+    }
 
     foreach($children as $child1) {
       $code = $code . _process_child($child1, $nodeId, 0);
       foreach($child1['below'] as $child2) {
+        if($delta == 'book_outline_2')
+          break; // For book_outline_2, only print one level
         $code = $code . _process_child($child2, $nodeId, 1);
         foreach($child2['below'] as $child3) {
           $code = $code . _process_child($child3, $nodeId, 2);

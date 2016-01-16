@@ -48,7 +48,7 @@ function lbd_users_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '1',
+          'weight' => '4',
         ),
       ),
       'entity_type' => 'user',
@@ -91,6 +91,7 @@ function lbd_users_field_default_fields() {
         'allowed_values' => array(
           'HUB_PICKME' => 'Upon a dootronic being marked with the \'pick me up\' flag',
           'HUB_TAGGED' => 'Uppon tagging a dootronic',
+          'USER_NEW' => 'Upon a new user joining Project Labdoo',
         ),
         'allowed_values_function' => '',
       ),
@@ -217,7 +218,7 @@ function lbd_users_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '2',
+          'weight' => '5',
         ),
       ),
       'entity_type' => 'user',
@@ -276,7 +277,7 @@ function lbd_users_field_default_fields() {
       'description' => 'Your first and last name',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'inline',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
@@ -303,6 +304,65 @@ function lbd_users_field_default_fields() {
     ),
   );
 
+  // Exported field: 'user-user-field_username'.
+  $fields['user-user-field_username'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_username',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'computed_field',
+      'settings' => array(
+        'code' => '$entity_field[0][\'value\'] = labdoo_lib_compute_username($entity);',
+        'database' => array(
+          'data_default' => '',
+          'data_index' => 0,
+          'data_length' => '32',
+          'data_not_NULL' => 0,
+          'data_precision' => '10',
+          'data_scale' => '2',
+          'data_size' => 'normal',
+          'data_type' => 'varchar',
+        ),
+        'display_format' => '$display_output = $entity_field_item[\'value\'];',
+        'store' => 0,
+      ),
+      'translatable' => '0',
+      'type' => 'computed',
+    ),
+    'field_instance' => array(
+      'bundle' => 'user',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'inline',
+          'module' => 'computed_field',
+          'settings' => array(),
+          'type' => 'computed_field_plain',
+          'weight' => '1',
+        ),
+      ),
+      'entity_type' => 'user',
+      'field_name' => 'field_username',
+      'label' => 'Username',
+      'required' => FALSE,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'computed_field',
+        'settings' => array(),
+        'type' => 'computed',
+        'weight' => '7',
+      ),
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('About me');
@@ -312,6 +372,7 @@ function lbd_users_field_default_fields() {
   t('Skills');
   t('Specify the region you would like to receive notifications from. For instance, if you set this value to 50 km, you will receive notifications from activity happening within 50 kms of your home location.');
   t('Types of notifications');
+  t('Username');
   t('Your first and last name');
 
   return $fields;

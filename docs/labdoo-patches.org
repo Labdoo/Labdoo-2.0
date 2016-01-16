@@ -19,3 +19,4 @@ The following provides the list of patches that need to be applied to contribute
     < 
     #+END_EXAMPLE
 
+  - String overrides are not exported to github. Remember to migrate them upon building a new server.
