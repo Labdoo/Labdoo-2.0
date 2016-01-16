@@ -1,28 +1,27 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>73</value>
+<value>22713</value>
 </nid>
 <title>
 <type>node_title</type>
-<value>Tips and tricks, suggested solutions</value>
+<value>FAQ</value>
 </title>
 <field_book_language>
 <type>value</type>
-<value>English</value>
+<value>Spanish</value>
 </field_book_language>
 <field_is_first_page>
 <type>value</type>
-<value>1</value>
+<value>0</value>
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>73</value>
+<value>27</value>
 </field_reference_book>
 <body>
 <type>value</type>
-<value>This wiki is based on comments of technical Labdoo helpers and https://wiki.ubuntu.com/. If you are not able to find a solution to your problem please refer to the internet.
-</value>
+<value>La traducción al español de esta página no está disponible. Si estás interesado/a en ayudar a hacer esta traducción, por favor, contacta con el Equipo Labdoo a contact@labdoo.org. Mientras tanto, por favor haz clic en 'Other translations of this book' para ver la traducción al inglés de esta página.</value>
 </body>
 <body>
 <type>format</type>
@@ -30,18 +29,18 @@
 </body>
 <bid>
 <type>book_array</type>
-<value>35</value>
+<value>22713</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>819</value>
+<value>0</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>857</value>
+<value>1255</value>
 </mlid>
 <weight>
 <type>book_array</type>
-<value>-9</value>
+<value>0</value>
 </weight>
 </book>

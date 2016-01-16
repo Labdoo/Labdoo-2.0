@@ -1,11 +1,11 @@
 <book>
 <nid>
 <type>node_id</type>
-<value>20814</value>
+<value>22639</value>
 </nid>
 <title>
 <type>node_title</type>
-<value>Informative Message to Your Regional Hubs</value>
+<value>Things You Can Do To Spread Education</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -17,20 +17,11 @@
 </field_is_first_page>
 <field_reference_book>
 <type>target_id</type>
-<value>20814</value>
+<value>22639</value>
 </field_reference_book>
 <body>
 <type>value</type>
-<value>From time to time, it is a good habit to send out an email to hubs in your area reminding them about the Labdoo tools that are available to help organize their laptop campaigns and sanitation events. For instance, for school hubs this message can be send out around early September as their yearly coursework starts. For other hubs (company, NGO, or home hubs) this message can be sent out anytime. 
-
-In this page you will find templates for such type of message in various languages that you can re-use for your convenience. 
-
-<hr/>
-<strong>English</strong>
-<hr/>
-
-<img src="https://www.labdoo.org/sites/default/files/content/labdoo-toolkit/logo-2.png" width="300"/>
-<img src="https://www.labdoo.org/sites/default/files/newsletters/en/statistics-snapshot-01-01-2016.png" width="700"/>
+<value><img src="https://www.labdoo.org/sites/default/files/content/labdoo-toolkit/logo-2.png" width="300"/>
 
 The world buys every year more than 400 million laptops and electronic tablets, yet 5000 million people still don't have access to powerful online and free sources of education. Whether we have 5 minutes, one hour, or a day of our time, here are a few things we can all do together or on our own to help spread education around the world:
 
@@ -71,47 +62,7 @@ The world buys every year more than 400 million laptops and electronic tablets, 
 
 The Labdoo Team
 <img src="https://www.labdoo.org/profiles/labdoo/files/pictures/equation-2-alpha-smaller.png" width="100"/>
-<hr/>
-<img src="https://www.labdoo.org/profiles/labdoo/files/pictures/footer-acts.png" width="800"/>
-
-<hr/>
-<strong>Catalan</strong>
-<hr/>
-
-<img src="https://www.labdoo.org/sites/default/files/content/labdoo-toolkit/logo-2.png" width="300"/>
-<img src="https://www.labdoo.org/sites/default/files/newsletters/en/statistics-snapshot-01-01-2016.png" width="700"/>
-
-Benvolguts/des:
-
-Amb el retorn a les activitats laborals i escolars, us volem fer arribar les eines que trobareu a la plataforma Labdoo.org per tal que pugueu continuar organitzant les vostres campanyes de mobilització de portàtils i tauletes en desús i fer arribar educació als llocs més necessitats.
-
-Al "Labdoo Toolkit" hi trobareu eines generals: https://www.labdoo.org/ca/content/labdoo-toolkit
-
-Podeu baixar-vos els logos de Labdoo per crear els vostres fulletons de mobilització des d'aquí: https://www.labdoo.org/ca/content/labdoo-logos
-
-Aquí teniu la guia simple explicant els passos de sanejament de portàtils: https://www.labdoo.org/ca/content/sanitation-guide-simple-method
-
-El poster de Labdoo: https://www.labdoo.org/content/labdoo-story-poster
-
-I videos explicatius del Projecte Labdoo: https://www.labdoo.org/ca/content/labdoo-videos
-
-Si sou una empresa, en aquesta pàgina hi trobareu el paquet de Responsabilitat Social Corporativa: https://www.labdoo.org/content/labdoos-corporate-social-responsibility-csr-package
-
-Si sou part d'un Hub Escola, en aquesta pàgina hi trobareu exemples de cartes per enviar als pares: https://www.labdoo.org/ca/content/sample-letters-school-hubs
-
-Aquí hi trobareu un resum de les bones pràctiques Labdoo: https://www.labdoo.org/ca/content/glits-good-labdoo-habits
-
-I recordeu com sempre que l'etiquetatge de portàtils es fa anant a "Dootronics" - "Tag it": https://www.labdoo.org/ca/node/add/laptop
-
-Us desitgem a tots i totes molts èxits en les recollides d'ordinadors portàtils i tauletes i gràcies un cop més per participar en el Projecte Labdoo per fer arribar l'educació a escoles d'arreu del món.
-
-Per a qualsevol pregunta, no dubteu a contactar-nos.
-
-Labdoo Team Catalonia | www.labdoo.org/ca
-<img src="https://www.labdoo.org/profiles/labdoo/files/pictures/equation-2-alpha-smaller.png" width="100"/>
-<hr/>
-<img src="https://www.labdoo.org/profiles/labdoo/files/pictures/footer-acts.png" width="800"/>
-<hr/></value>
+</value>
 </body>
 <body>
 <type>format</type>
@@ -119,15 +70,15 @@ Labdoo Team Catalonia | www.labdoo.org/ca
 </body>
 <bid>
 <type>book_array</type>
-<value>41</value>
+<value>22639</value>
 </bid>
 <plid>
 <type>book_array</type>
-<value>934</value>
+<value>0</value>
 </plid>
 <mlid>
 <type>book_array</type>
-<value>1230</value>
+<value>1254</value>
 </mlid>
 <weight>
 <type>book_array</type>

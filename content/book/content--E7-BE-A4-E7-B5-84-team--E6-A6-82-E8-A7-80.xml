@@ -5,7 +5,7 @@
 </nid>
 <title>
 <type>node_title</type>
-<value>Team Overview(Traiditional Chinese)</value>
+<value>群組 (Team) 概觀</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -21,7 +21,7 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>在群組裡面，Labdoo的用戶能夠處理以下事務：
+<value>在群組 (Team) 裡面，Labdoo的用戶能夠處理以下事務：
 
 <ul>
 <li>

@@ -23,9 +23,6 @@
 <type>value</type>
 <value><strong>Nützliche Links zum Tastatur-Layout</strong>
 
-http://ascii-table.com/keyboards.php
-http://commons.wikimedia.org
-
 Bewährt hat sich auch, den Edoovillages einen Ausdruck der voreingestellten Tastatur-Layouts mitzugeben, damit sich die Anwender daran orientieren können.
 
 <table border="1">
@@ -116,7 +113,20 @@ Bewährt hat sich auch, den Edoovillages einen Ausdruck der voreingestellten Tas
 
 <strong>Hinweis für deutsche Tastaturen:</strong>
 
-Die meisten in Deutschland gespendeten Laptops haben eine deutsche Tastatur. In vielen Ländern ist die kein Problem. Wenn Tastaturaufkleber benötigt werden, empfehlen wir www.Tastaturaufkleber.eu. Die Kosten für die Tastauraufkleber muss aber der Besteller selber tragen, da dies nicht Bestandteil des Labdoo-Projektes ist.</value>
+Die meisten in Deutschland gespendeten Laptops verfügen über eine deutsche Tastatur. In vielen Ländern ist dies auch kein Problem, die Kindern lernen sehr schnell die Belegung der Tasten. Die Umrüstung einer internen Laptoptastatur ist nicht sinnvoll. Sie kann bis zu 100 € kosten, sofern man überhaupt noch eine passende Ersatztastatur bekommt. Alternativ gibt es 2 Möglichkeiten:
+
+<strong>Tastaturaufkleber</strong>
+Wenn Tastaturaufkleber benötigt werden, empfehlen wir www.Tastaturaufkleber.eu. Die Kosten für die Tastaturaufkleber muss aber der Besteller selber tragen, da dies nicht Bestandteil des Labdoo-Projektes ist. Es gibt transparente und undurchsichtige Aufkleber in verschiedenen Varianten. Bitte lassen Sie sich beraten oder nutzen den Webshop.
+
+<strong>Externe USB-Tastaturen</strong>
+
+Eine andere Möglichkeit ist der Anschluss einer externen Tastatur per USB. Manchmal bekommt Labdoo.org ausländische USB-Tastaturen gespendet, die wir dann natürlich auch zur Verfügung stellen. Fragen Sie bei uns an. Wenn keine passende Tastatur verfügbar ist müssten Sie selber tätig werden und in Deutschland, Österreich oder der Schweiz bzw. am Einsatzort externe Tastauren mit passendem Layout bestellen. 
+
+Eine Übersicht über verfügbare Tastaturbelegungen für die verschiedenen Länder und Sprachen gibt es auf http://ascii-table.com/keyboards.php oder per <a href="https://commons.wikimedia.org/w/index.php?title=Special%3ASearch&amp;profile=default&amp;search=keyboard+layout&amp;fulltext=Search&amp;uselang=de">Suche nach "keyboard layout" auf Wikimedia.org</a> (ggf. noch im Suchfenster die gewünschte Sprache hinzufügen).
+
+
+
+</value>
 </body>
 <body>
 <type>format</type>

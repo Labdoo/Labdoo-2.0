@@ -1465,7 +1465,7 @@ function lbd_content_types_strongarm() {
         'sharethis' => array(
           'default' => array(
             'weight' => '10',
-            'visible' => TRUE,
+            'visible' => FALSE,
           ),
         ),
       ),

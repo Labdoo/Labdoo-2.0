@@ -1,0 +1,162 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>22756</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>How To Sanitize a Laptop</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>22756</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>The process of sanitizing a laptop involves two aspects: (1) cleaning up the laptop from any previous information and (2) installing the education software.
+
+The education software installed in every Labdoo laptop is called Edubuntu. Edubuntu is a powerful free software platform including education applications covering all of areas of science, from pre-school level to high-school level and available in more than 130 languages.You can learn more about Edubuntu directly from https://www.edubuntu.org/. In addition to the Edubuntu platform, laptops can optionally be preloaded with additional education content such as an offline version of Wikipedia and other Open Education Resources (OER).
+
+Labdoo provides two laptop sanitation manuals: a simple sanitation guide and an advanced sanitation guide. If you are new to the Labdoo Project, we recommend you to follow the simple sanitation guide. If you need to deal with large numbesr of laptops and are experienced, we recommend you to use the advanced sanitation guide.
+
+The simple sanitation guide installs the base Edubuntu platform (preloaded with all the Edubuntu education applications) and it allows you to optionally install extra education packages via some scripts. The advanced sanitation guide uses pre-configured images and it allows you to install all the packages (both the Edubuntu platform plus all the extra education packages) in one shot using the image. The next table summarizes the packages that are installed by each method. 
+
+<hr/>
+<table cellpadding="5">
+<tr align='left'>
+<th>Content</th>
+<th>Simple <br/>Method</th> 
+<th>Simple Method <br/>Plus Scripts</th>
+<th>Advanced <br/>Method</th>
+</tr>
+<tr>
+<td>Lubuntu LTS (Operating System)</td>
+<td> Yes </td>
+<td> Yes </td>
+<td> Yes </td>
+</tr> 
+<tr>
+<td>Edubuntu educational software (base education packages)</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Wikipedia for schools "wikidoo" english offline lexicon, suitable for children</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>License-free manualsfor Ubuntu, Libreoffice etc.</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>License-free e-Books</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>XOWA, access to 800+ Offline Wikis in regional languages</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Optimised user concept to avoid accidental system changes</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>preparation for virtual machines (VM VirtualBox)</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Lubuntu 14.04 LTS for non-PAE CPUs (somme Pentium M CPUs)</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Extended drivers for older WiFi cards etc.</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Virus scanner and tool ClamAV</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Barrier-free access for blind or hearing impaired user</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Offline video tutorials for user</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Browser-based English course, Multimedia based following UK Curriculum</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Unique host name for each laptop</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Suggested minimum size of disc drive</td>
+<td>20 GB</td>
+<td>20 GB</td>
+<td>20 GB</td>
+</tr>
+</table>
+<hr/>
+
+Please continue reading this guide to learn the step by step process of sanitizing a laptop.
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>35</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>819</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1260</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-14</value>
+</weight>
+</book>

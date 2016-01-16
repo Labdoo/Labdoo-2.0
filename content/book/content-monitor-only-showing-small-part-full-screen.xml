@@ -45,6 +45,6 @@ This may be why in the BIOS setting (CMOS) not enough RAM was allocated for the 
 </mlid>
 <weight>
 <type>book_array</type>
-<value>0</value>
+<value>3</value>
 </weight>
 </book>

@@ -21,9 +21,11 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value><strong>1. Standard response</strong>
+<value><hr/>
+<strong>English</strong>
+<hr/>
 
----
+1. Standard response.
 
 Dear $SOLICITORNAME,
 
@@ -35,14 +37,17 @@ Do you know anyone who is traveling from your area to any of the Labdoo hubs in 
 Here is the list of Labdoo hubs: http://www.labdoo.org/hubs
 
 If so, we can explore ways in which we can try to bring laptops to your project. Looking forward to hearing from you.
+
 Thank you and best wishes,
 
 $MYNAME
 Labdoo Team | www.labdoo.org
+Tag a laptop, spread education
+<img src="https://www.labdoo.org/profiles/labdoo/files/pictures/equation-2-alpha-smaller.png" width="100"/>
 
 ---
 
-<strong>2. 'Cannot serve' response</strong> 
+2. 'Cannot serve' response.
 
 In some occasions, solicitors ask us to donate laptops to individuals or non-education projects, which is not part of Labdoo's mission. For such cases, you can use the following response.
 
@@ -60,9 +65,157 @@ Thank you for reaching out.
 
 $MYNAME
 Labdoo Team | www.labdoo.org
+Tag a laptop, spread education
+<img src="https://www.labdoo.org/profiles/labdoo/files/pictures/equation-2-alpha-smaller.png" width="100"/>
+
+
+<hr/>
+<strong>Spanish</strong>
+<hr/>
+
+1. Respuesta estándar.
+
+Hola $NOMBREDELSOLICITANTE,
+
+Gracias por contactar con el Proyecto Labdoo.org.
+
+Con el fin de entender si podemos ayudar a tu proyecto, primero tenemos que identificar posibles viajeros que irán desde cualquiera de los centros Labdoo a $SOLICITORCOUNTRYNAME.
+
+¿Conoces a alguien que viaje desde su área a cualquiera de los hubs Labdoo en las siguientes semanas o meses?
+Aquí encontrarás la lista de los hubs Labdoo: http://www.labdoo.org/es/hubs
+
+Si es así, podemos explorar las formas en que podemos tratar de llevar computadoras portátiles para su proyecto. 
+
+A la espera de saber de ti.
+
+Atentamente,
+
+$MINOMBRE
+Labdoo Team | www.labdoo.org
+Tag a laptop, spread education
+<img src="https://www.labdoo.org/profiles/labdoo/files/pictures/equation-2-alpha-smaller.png" width="100"/>
 
 ---
-</value>
+
+2. Respuesta cuando no es posible servir computadoras.
+
+En algunas ocasiones, los solicitantes piden computadoras portátiles para personas o proyectos que no tienen como objetivo la educación, y por lo tanto para objetivos que no son parte de la misión Laddoo.org. Para estos casos, puedes utilizar la siguiente respuesta.
+
+---
+
+Hola  $NOMBREDELSOLICITANTE,
+
+Gracias por contactar con el Proyecto Labdoo.org.
+
+La misión del Proyecto Labdoo es llevar computadoras portátiles cargadas con software educativo a centros educativos bien organizados. Como tal, no podemos donar computadoras portátiles a individuos o a organizaciones que tienen otros objetivos diferentes a la educación y por ello, desafortunadamente, no podemos servir a su solicitud.
+
+Alternativamente, si usted está vinculado a una escuela, se podría explorar la posibilidad de llevar computadoras portátiles a su escuela. Si esto es una opción, usted y sus compañeros serán capaces de utilizar los ordenadores portátiles aportados desde la escuela en régimen de tiempo compartido y desde la escuela, junto con el resto de sus compañeros de clase. 
+
+Gracias por contactar con el Proyecto Labdoo.org.
+
+Atentamente,
+
+$MINOMBRE
+Labdoo Team | www.labdoo.org
+Tag a laptop, spread education
+<img src="https://www.labdoo.org/profiles/labdoo/files/pictures/equation-2-alpha-smaller.png" width="100"/>
+
+
+<hr/>
+<strong>Chinese</strong>
+<hr/>
+
+1. 標準回應.
+
+親愛的 $SOLICITORNAME,
+
+感謝您聯繫 Labdoo.
+
+為了理解我們是否有能力贊助您的專案，我們首先需要找到可能從任何 Labdoo hubs到 $SOLICITORCOUNTRYNAME的旅客。
+
+您有認識在最近幾周可能會從任何 Labdoo hubs旅行到您所在地區的人嗎?　以下是 Labdoo hubs的名單供您參考:  http://www.labdoo.org/hubs
+
+如果有的話，我們可以繼續計劃如何將捐贈的筆記本電腦帶到您的專案。期待你的囘覆。
+
+謝謝！　
+
+$MYNAME
+Labdoo 小組 | www.labdoo.org
+<img src="https://www.labdoo.org/profiles/labdoo/files/pictures/equation-2-alpha-smaller.png" width="100"/>
+
+---
+
+2. '無法提供服務' 回應
+
+在某些情況下，申請者希望捐贈筆電給個人或非教育專案，超越 Labdoo 服務的範圍。對於這種情況下，你可以使用以下的回應。
+
+---
+親愛的 $SOLICITORNAME,
+
+感謝您聯繫Labdoo。
+
+Labdoo的使命是捐贈裝有教育軟體的筆電到教育中心。因此，我們不能捐獻筆電給非教育專案的組織，因此，非常抱歉，我們無法處理您的請求。
+
+如果你是學生，我們可以探討將筆電帶到你們學校的可能性。如果這個可以是一個變通的選擇，您將能與學校的其他同學一起共享Labdoo提供的電腦設施。筆電捐贈過程涉及在學校創建一個專案，所以這可能這不能立即提供您的需要。請讓我們知道您的決定，所以我們可以繼續討論進一步的合作。
+
+謝謝！
+
+$MYNAME
+Labdoo 小組 | www.labdoo.org
+<img src="https://www.labdoo.org/profiles/labdoo/files/pictures/equation-2-alpha-smaller.png" width="100"/>
+
+
+<hr/>
+<strong>Catalan</strong>
+<hr/>
+
+1. Resposta estàndard.
+
+Hola $NOMDELSOL·LICITANT,
+
+Gràcies per contactar amb el projecte Labdoo.org.
+
+Amb la finalitat de veure si podem ajudar al teu projecte, primer hem d'identificar els possibles viatgers que aniran des de qualsevol dels centres Labdoo a $NOMPAÍSSOL·LICITANT.
+
+¿Coneixes a algú que viatgi des de la seva zona a qualsevol dels hubs en les pròximes setmanes o mesos?
+Aquí trobaràs la llista dels hubs de Labdoo: http://www.labdoo.org/ca/hubs
+
+Si es així, podem mirar les formes en que podem tractar de fer arribar els dootronics (ordinadors portàtils, tablets, ...) per al projecte.
+
+Estarem encantats de tornar a sentir de tu.
+
+Atentament,
+
+$ELMEUNOM
+Labdoo Team | www.labdoo.org
+Etiqueta un dootronic, propaga l'educació
+<img src="https://www.labdoo.org/profiles/labdoo/files/pictures/equation-2-alpha-smaller.png" width="100"/>
+
+---
+
+2. Resposta quan no és possible portar ordinadors.
+
+E algunes ocasions, els solicitants demanen dootronics (ordinadors portàtils, ...) per a persones o projectes que no tenen com a objectiu l'educació i, per tant, per a objectius que no són part de la missió de Laboo.org. Per aquests casos, pots utilitzar la següent resposta.
+
+---
+
+Hola  $NOMDELSOL·LICITANT,
+
+Gràcies per contactar amb el projecte Labdoo.org.
+
+La missió del projecte Labdoo és portar dootronics (portàtils, tablets, ...) carregats amb programari educatiu a centres educatius ben organitzats. Així doncs, no podem donar dootronics a persones o organitzacions que tinguin altres objectius diferents a l'educació i, per tant, desafortunadament, no podem gestionar la teva sol·licitud.
+
+De totes formes, si estàs vinculat a una escola, es podria mirar de portar dootronics a aquella escola. D'aquesta forma, podries utilitzar els dootronics donats a l'escola i compartir-los amb la resta d'alumnes d'aquesta. Pensa, però, que això requereix temps i, pert tant, és possible que no resolgui les teves necessitats immediates.
+tu i els teus companys seran capaços d'utilitzar els dootronics donats a aquella escola en regim de temps compartit i així també els podran la resta de companys de l'escola.
+
+Gràcies per contactar amb el proyecto Labdoo.org.
+
+Atentament,
+
+$ELMEUNOM
+Labdoo Team | www.labdoo.org
+Etiqueta un dootronic, propaga l'educació
+<img src="https://www.labdoo.org/profiles/labdoo/files/pictures/equation-2-alpha-smaller.png" width="100"/></value>
 </body>
 <body>
 <type>format</type>

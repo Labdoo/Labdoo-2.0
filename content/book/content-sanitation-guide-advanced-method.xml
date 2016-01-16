@@ -5,7 +5,7 @@
 </nid>
 <title>
 <type>node_title</type>
-<value>Cloning laptops using prepared Labdoo images</value>
+<value>Sanitation Guide: Advanced Method</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -21,7 +21,9 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>This wiki will lead you through the process of cloning a Labdoo laptop using ready-to-use images. Images are a complete copy of a installed Labdoo computer, containing operating system, software, educational content and optimised settings. Beside adapting to the country of the edoovillage (language, keyboard) and hostname you must not take care of anything.
+<value>This wiki will lead you through the process of cloning a Labdoo laptop using ready-to-use images. This process is powerful because it allows you to sanitize laptops using a fast and efficient cloning process and hence it is ideal if you are dealing with a large number of laptops. However, this process is a bit more complex too, and hence we consider it an advanced method. If you are new to Labdoo and inexperienced with computers, we recommend you to use the <a href='content/sanitation-guide-simple-method'>Simple Sanitation Method</a>, but if you are up for learning a cool way to install powerful software in a computer, this is your guide.
+
+Images are a complete copy of an installed Labdoo computer, containing everything from the operating system, software, educational content and all the optimized settings. Except for adapting the final configuration to the country of the destination edoovillage (language and keyboard) and setting the hostname, the cloning process takes care of everything for you in one shot.
 
 Lubuntu will also take care of (nearly) all drivers. So you are able to clone an image from laptop manufacturer A to a laptop of manufacturer B. Lubuntu will take care of everything.
 
@@ -47,7 +49,7 @@ The images will be maintained and updated each +/- 4 to 8 weeks.
 </bid>
 <plid>
 <type>book_array</type>
-<value>819</value>
+<value>1260</value>
 </plid>
 <mlid>
 <type>book_array</type>
@@ -55,6 +57,6 @@ The images will be maintained and updated each +/- 4 to 8 weeks.
 </mlid>
 <weight>
 <type>book_array</type>
-<value>0</value>
+<value>-14</value>
 </weight>
 </book>

@@ -23,13 +23,11 @@
 <type>value</type>
 <value><strong>About this document</strong>
 
-This brief document describes the process of sanitizing a laptop.  
+This brief document describes the process of sanitizing a laptop according to the Simple Method.  
 
 If you'd like to get tips on how to collect unused laptops from your local community, please click <a href="https://www.labdoo.org/content/labdoo-guide-rescue-laptop">HERE</a>. After the laptop gets sanitized, you can click<a href="https://www.labdoo.org/content/packaging-laptops-ready-traveling"> HERE</a> to learn different ways to package the laptops to make them ready for traveling to a needy school. 
 If in any of these steps you get stuck during the sanitizing process, you can post your questions in the wall of the <a href="../content/quality-assurance-qa">Labdoo QA Team</a> so that others can help you.
 
-<a href="http://ftp.labdoo.org/download/Public/videos/install-lubuntu-english.webm">Online FTP server: Installing Lubuntu operating system</a>
-<a href="file://localhost/home/labdoo/Public/videos/install-lubuntu-english.webm">Offline local: Installing Lubuntu operating system</a>
 [video:https://youtu.be/nBUgaaHW058]
 
 <strong>Sanitizing the laptops</strong>
@@ -72,6 +70,11 @@ In the "Wirless" screen, if you have internet connection, you may select the net
 <li>
 The next window is just to confirm the laptop fit into the minimum Hard Drive requirement.  Hit "continue" once.
 </li>
+
+<li>
+Now we are going to do a small trick to ensure we completely removal any previous private data from the computer. Please press at the same time the keys 'Alt + CTRL + F3'. This will take you to a terminal window. In this terminal window, please enter the following command: <code>sudo shred /dev/sda -f -v --iterations=2</code>. (If this command does not work, you can try with 'hda' instead of 'sda', like this: <code>sudo shred /dev/hda -f -v --iterations=2</code>.) This is a process that will run for about 1 hour or so, and overwrites the disk with random values. After this process is done, press at the same time the keys 'Alt + CTRL + F7' to continue the installation process and go to the next step. (Please see the video in this page for a complementary illustration of this step.)
+</li>
+
 <li>
 Select the destination country. If you don't know it, pick the country you are located.
 </li>
@@ -145,7 +148,7 @@ If you are not traveling, then get in touch with one of the Labdoo hubs (for ins
 </bid>
 <plid>
 <type>book_array</type>
-<value>819</value>
+<value>1260</value>
 </plid>
 <mlid>
 <type>book_array</type>

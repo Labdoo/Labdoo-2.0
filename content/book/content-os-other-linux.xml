@@ -1,0 +1,58 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>16743</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>OS Other Than Linux</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>16743</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Some edoovillages may prefer to use other operating systems (OS) , such as Windows, instead of the Labdoo standard installation- Linux.  Please help edoovillages understand the benefit on the complete set of education software comes with the Labdoo standard installation before making the switch. Please also try to add as many Open Educational Resources (OER) and freeware as possible for that OS.
+If the laptop is travelling internationally, it is recommended to install the laptop with basic, license free (L)Ubuntu, and have the edoovillages install their desired OS locally. A basic OS is needed because the international travel rules require laptops to be able to boot into an OS.
+If the laptop does not travel internationally, it is recommended to deliver the laptop without an OS. Just format the hard drive by using 'shred' command.
+
+
+<strong>Please make sure all software and OS installed in Labdoo devices are NOT violating any copyrights or laws.  This is the reason Labdoo.org strongly encourages using open and license-free OS such as (L)Ubuntu..</strong>
+
+<strong>Virtualbox</strong>
+
+If the laptop comes with more than 2 GB RAM and a dual CPU, you can consider using  <a href="https://www.virtualbox.org/">Virtualbox</a>, which a tool to install a guest OS, which is also called Virtual Machine (VM). By doing so, you will be  able to run(L)Ubuntu as the host OS and Windows, or other OS, as a guest OS at the same time.
+You also need  to fulfill the same legal and license regulations on the guest OS as mentioned above.
+The images provided by Labdoo for cloning laptop come with a pre-installed Virtualbox. There is also a installation script to install Virtualbox and its extensions for a Linux OS available.
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>142</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>926</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1057</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-7</value>
+</weight>
+</book>

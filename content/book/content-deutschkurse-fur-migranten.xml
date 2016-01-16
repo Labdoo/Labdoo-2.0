@@ -30,9 +30,28 @@ Doppelklick auf den Link des gewünschten Image oder rechte Maustaste und "Speic
 
 Vorinstalliert sind (weitere Sprachen und Inhalte kann natürlich auch selber nachinstalliert werden):
 <ul>
-<li><strong>Anwendersprachen: Deutsch (de, voreingestellt)</strong>, Englisch (en), Französich (fr), Spanisch (es), Albanisch (sq), Arabisch (ar), Bosnisch (bs), Bulgarisch (bg), Kurdisch (ku), Mazedonisch (mk), Türkisch (tr), Pashto (ps), Rumänisch (ro), Russisch (ru), Serbisch (sr), Tigrinya (ti),</li>
-<li><strong>Wikis (vorinstalliert zur Offline-Nutzung jeweils wiktionary (Wörterbuch), wikibook (eBooks), wikiversity (Lerninhalte); sofern in der Sprache vorhanden):</strong> Deutsch (de) Englisch (en), Französich (fr), Spanisch (es), Albanisch (sq), Arabisch (ar), Bosnisch (bs), Bulgarisch (bg), Kurdisch (ku), Mazedonisch (mk), Türkisch (tr), Pashto (ps), Rumänisch (ro), Russisch (ru), Serbisch (sr), Tigrinya (ti),</li>
-<li><strong>Offline-Homepages:</strong> aus der u.a. Linkliste haben wir die Inhalte der Homepages ganz oder teilweise gespiegelt und dem Image beigefügt: </li>
+<li><strong>Anwendersprachen und Offline-Wikis (wiktionary (Wörterbuch), wikibook (eBooks), wikiversity (Lerninhalte) in den Sprachen:</strong></li>
+
+<ul>
+<li><strong>Deutsch (de, voreingestellt)</strong>,</li>
+<li>Albanisch (sq),</li>
+<li>Arabisch (ar),</li>
+<li>Bosnisch (bs),</li>
+<li>Bulgarisch (bg),</li>
+<li>Englisch (en),</li>
+<li>Französisch (fr),</li>
+<li>Kurdisch (ku),</li>
+<li>Mazedonisch (mk),</li>
+<li>Pashto (ps),</li>
+<li>Spanisch (es),</li>
+<li>Rumänisch (ro),</li>
+<li>Russisch (ru),</li>
+<li>Serbisch (sr),</li>
+<li>Tigrinya (ti),</li>
+<li>Türkisch (tr),</li>
+</ul>
+
+<li><strong>Offline-Homepages:</strong> aus der u.a. Linkliste haben wir die Inhalte der Homepages ganz oder teilweise gespeichert: </li>
 
 <ul>
 <li>http://www.DeutschAlsFremdsprache.ch</li>
@@ -110,6 +129,15 @@ Online-Wörterbuch </td>
 <td>  <img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/>  </td>
 <td> <img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/> </td>
 <td>  </td>
+</tr> 
+
+<tr>
+<td>
+http://www.adia-erding.de 
+Linksammlung von AIDA Erding</td>
+<td>  <img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/>  </td>
+<td>  </td>
+<td> <img src="/sites/default/files/content/wiki-de/green-hook.png" width="32"/> (z.T. als pdf) </td>
 </tr> 
 
 <tr>

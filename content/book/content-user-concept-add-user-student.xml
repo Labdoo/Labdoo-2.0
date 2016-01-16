@@ -61,6 +61,6 @@ In addition there is the user guest. guest needs no password to log-in. But gues
 </mlid>
 <weight>
 <type>book_array</type>
-<value>0</value>
+<value>15</value>
 </weight>
 </book>

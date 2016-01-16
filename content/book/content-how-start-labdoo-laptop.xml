@@ -5,7 +5,7 @@
 </nid>
 <title>
 <type>node_title</type>
-<value>How to start a laptop?</value>
+<value>How To Start A Labdoo Laptop?</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -23,25 +23,25 @@
 <type>value</type>
 <value><img src="/sites/default/files/content/wiki-de/edoovillages/login1.png" align="right" width="200" alt="Login Screen" />
 
-<strong> User</strong>
+<strong> User Accounts</strong>
 
-Each laptop (cloned or installed using install-scripts) comes with 3 users. When logging in click on the small triangle right from labdoo --> this will show you a list of the available users:
+Each laptop (cloned or installed using install-scripts) is preinstalled with 3 user accounts. When logging in click on the small triangle right from labdoo --> this will show you a list of currently available user accounts:
 
 <ul>
-<li><strong>labdoo</strong>: has super user rights / is administrator! The log-in password is <strong>labdoo</strong> (Please change this password when logging in the first time, as the user <strong>labdoo</strong> is administrator and may destroy the system! So only teacher should know the password of the user labdoo)</li>
+<li><strong>labdoo</strong>: has super user rights / is administrator! The log-in password is <strong>labdoo</strong> (Please change this password when login for the first time. <strong>labdoo</strong> is an administrator account and have all the access right on the computer.  Working under this account without a proper knowledge may crash the system! Therefore, it is recommended to have only teachers know the password of the user <strong>labdoo</strong>)</li>
 
-<li><strong>student</strong>: is the standard user for the students. His password is also <strong>labdoo</strong> (it's up to you, if you change the password for student)</li>
+<li><strong>student</strong>: is a standard user  account for  students. The password is also <strong>labdoo</strong> (You can decide to change the current password or not.)</li>
 
 <img src="/sites/default/files/content/wiki-de/edoovillages/login2.png" align="right" width="200" alt="Select user" />
 
-<li><strong>guest</strong>: needs no password, but all his entries will be aber es werden alle seine Eingaben und Änderungen nach der Abmeldung gelöscht</li>
+<li><strong>guest</strong>: is an account which doesn’t  require a password to log in. All data will be automatically erased after the user log off from this account</li>
 </ul>
 
 <ul>
 <br></br>
 <table> 
 
-<strong><caption>More options when logging in</caption></strong>
+<strong><caption>Other Log In Options</caption></strong>
 
 <tr>
 <th><img src="/sites/default/files/content/wiki-de/edoovillages/login3.png" width="150" alt=" " /></th>
@@ -51,7 +51,7 @@ Each laptop (cloned or installed using install-scripts) comes with 3 users. When
 
 <tr>
 <td>Optional: select one of the pre-instaled desktops (user interface)</td>
-<td><strong>Important! When typing the password make sure that the keyboard layout matches with your keyboard!</strong></td>
+<td><strong>Important! When typing in the password, make sure that the keyboard layout matches with your keyboard!</strong></td>
 <td>Optional: Enlarge font size or improve contrast, if user is visually impaired</td>
 </tr> 
 
@@ -62,17 +62,19 @@ Each laptop (cloned or installed using install-scripts) comes with 3 users. When
 
 <strong>To change the password</strong> → System Tools → users and groups → +Add (to add a new user) or change → password „labdoo“ → change it → ok 
 
-Manage Groups → to manage, if a user belongs to a certain group (e.g. group labdoo)
+Manage Groups → to group users (e.g. group labdoo)
 
-<strong>To start a program</strong>
+<strong>To Start a Program</strong>
 
-Start e.g. using an educational program. There are a lot of interesting, funny and educational tools and games. And so you start:
+There are many useful, fun and educational software and games installed. To start a program:
 
-Click in the left lower corner on the Lubuntu icon (similar to Windows XP) →  “Education” or „game“ → click on a program to start it
+Click on the lower left corner on the Lubuntu icon (similar to Windows XP) → “Education” or "game“ → click on the program you want to start it.
 
-In the folder of „/Public“ you will find a lot of useful manuals, OER, Offline wikis, e-books etc. 
+In the folder of “/Public”, you will find a lot of useful reference manuals, such as OER, Offline wikis, e-books etc.
 
-On the desktop you will a video tutorial and the Offline wiki tool Xowa. 
+There are also a video introductory and an Offline wikipedia (Xowa) available on the desktop.
+
+==
 
 <strong>Optional: Desktops (user interfaces)</strong>
 

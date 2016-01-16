@@ -105,7 +105,7 @@ The plug-ins can be moved within the task bar, right mouse click on task bar→ 
 </bid>
 <plid>
 <type>book_array</type>
-<value>872</value>
+<value>857</value>
 </plid>
 <mlid>
 <type>book_array</type>
@@ -113,6 +113,6 @@ The plug-ins can be moved within the task bar, right mouse click on task bar→ 
 </mlid>
 <weight>
 <type>book_array</type>
-<value>0</value>
+<value>-13</value>
 </weight>
 </book>

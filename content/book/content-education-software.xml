@@ -5,7 +5,7 @@
 </nid>
 <title>
 <type>node_title</type>
-<value>Educational software</value>
+<value>Education software</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -23,19 +23,21 @@
 <type>value</type>
 <value><ol>
 
-<li><strong>Educational software</strong></li>
+<li><strong>Education software</strong></li>
 
-Labdoo.org uses educational software for children for all ages (pre-school, primary, secondary school and high-school) and extensions for barrier-free access (e.g. for handicapped or blind user). Edubuntu is a collection of educational software and games for schools and education. Part of this documents is based on text and graphics of www.edubuntu.org and  http://wiki.ubuntuusers.de/Edubuntu.
+The Labdoo education device comes with education software for children of all ages. The material covers from pre-school level to high-school level.  The computer is also equipped  with barrier-free access to help handicapped or blind users. 
 
-If you used the Labdoo.org installation script or the Labdoo images for Cloning (for Parted Magic / Clonezilla) the software and desktops (user interface) mentioned in this text will be installed.
+Edubuntu is a collection of free educational programs a group of volunteers put together. Below you can find a brief description on some programs. You can find more detail information on   www.edubuntu.org and  http://wiki.ubuntuusers.de/Edubuntu.
 
-If Edoovillages have online access further educational software can be downloaded via the Lubuntu Software Center. 
+You can use the installation cloning scripts provided by Labdoo.org (Parted Magic / Clonezilla) to install a complete set of  programs  listed in this document.
 
-<li><strong>game collections Gcompris, Childsplay, Pysiogame</strong></li>
+You can also download any software interest you by using “Lubuntu Software Center” through internet.
 
-<a href="http://wiki.ubuntuusers.de/GCompris">GCompris</a> and <a href="http://wiki.ubuntuusers.de/Spiele/Childsplay">Childsplay</a> are collections of different educational games for children of various age groups. Depending on the installed packages it contains arithmetic, spelling, letter, word-finding and memory games. The goal is the children in a fun way to promote. Since Gcompris contains over 100 games it is pre-installed on laptops Labdoo.
+<li><strong>Game Collections</strong></li>
 
-<li><strong>Gcompris game collection</strong></li>
+<a href="http://wiki.ubuntuusers.de/GCompris">GCompris</a> and <a href="http://wiki.ubuntuusers.de/Spiele/Childsplay">Childsplay</a> are educational game suites for children aged 2 to 10.  The suites contain arithmetic, spelling, letter, word-finding and memory games. The goal is to promote learning through game playing.  
+
+<li><strong>Gcompris</strong></li>
 
 <table> <tr><th/></tr>
  <tr>
@@ -48,48 +50,48 @@ If Edoovillages have online access further educational software can be downloade
 </tr> 
 </table>
 <br/>
-In the menu items are hidden more than 100 games and educational programs that can help the children:
+Gcompris contains more than 100 games and education programs to help  children learn in a fun way. Below is a brief description on some key features.
 
 <table>
  <tr>
 <th/>
-<th><strong>menu</strong></th>
-<th><strong>description</strong></th>
+<th><strong>Menu</strong></th>
+<th><strong>Description</strong></th>
 </tr>
  <tr>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris_menu01.png" width="40"/> </td>
-<td>discover the laptop</td>
-<td>To learn about input to the computer in different games.</td>
+<td>Discover the computer</td>
+<td>Learn computer parts in different games.</td>
 </tr>
  <tr>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris_menu02.png" width="40"/> </td>
 <td>Go to the discovery games</td>
-<td>Discover in games colour, sounds, the world... </td>
+<td>Discover colors, sounds, the world and more. </td>
 </tr>
  <tr>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris_menu03.png" width="40"/> </td>
 <td>Puzzles</td>
-<td>Logic-, memory-, puzzle-, toss- and patience games. </td>
+<td>Learn logic, memory, puzzle, tossing, and patience. </td>
 </tr>
  <tr>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris_menu04.png" width="40"/> </td>
-<td>go to the games panel</td>
+<td>Games panel</td>
 <td>Pastime with chat, draw ... </td>
 </tr>
  <tr>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris_menu05.png" width="40"/> </td>
 <td>Mathematics</td>
-<td>Count, Calculate and geometry games.</td>
+<td>Learn how to count, calculate and geometry.</td>
 </tr>
  <tr>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris_menu06.png" width="40"/> </td>
-<td>go to the read panel</td>
-<td>Learn about letters, reading  and hang man ... </td>
+<td>English Learning</td>
+<td>Learn  English alphabets, reading, hangman game and more. </td>
 </tr>
  <tr>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris_menu07.png" width="40"/> </td>
-<td>Go to experience activity</td>
-<td>Knowledge of electrical circuits, the water cycle, the operation of a lock ... </td>
+<td>Science activities</td>
+<td>Learn electrical circuits, the water cycle, the operation of a lock ... </td>
 </tr>
  <tr>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/gcompris_menu08.png" width="40"/> </td>
@@ -99,7 +101,7 @@ In the menu items are hidden more than 100 games and educational programs that c
 </table>
 
 <br/>
-<li><strong>Childsplay game collection</strong></li>
+<li><strong>Childsplay</strong></li>
 
 <table> <tr><th/></tr>
  <tr>
@@ -113,42 +115,42 @@ In the menu items are hidden more than 100 games and educational programs that c
 <table>
  <tr>
 <th><strong>Icon</strong></th>
-<th><strong>description</strong></th>
-<th><strong>difficulty</strong></th>
+<th><strong>Descriptions</strong></th>
+<th><strong>Level of difficulty</strong></th>
 </tr>
  <tr>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay_menu01.png" width="40"/> </td>
-<td>Classic memory game in which the correct pairs of pictures to be found.</td>
+<td>Classic memory game by pairing pictures.</td>
 <td>*/**</td>
 </tr>
  <tr>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay_menu02.png" width="40"/> </td>
-<td>memory with small letters.</td>
+<td>Memory game with lower case letters.</td>
 <td>*/**</td>
 </tr>
  <tr>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay_menu03.png" width="40"/> </td>
-<td>Memory with capital letters.</td>
+<td>Memory game with capital letters.</td>
 <td>*/**</td>
 </tr>
  <tr>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay_menu04.png" width="40"/> </td>
-<td>Find the matching numbers in the game.</td>
+<td>Memory game to match numbers.</td>
 <td>*/**</td>
 </tr>
  <tr>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay_menu05.png" width="40"/> </td>
-<td>Find the matching sounds in the game. </td>
+<td>Memory game to match different sounds. </td>
 <td>*/** </td>
 </tr>
  <tr>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay_menu06.png" width="40"/> </td>
-<td>Mouse training - try to hit the fish.</td>
+<td>Mouse training  by hitting fish.</td>
 <td>*</td>
 </tr>
  <tr>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay_menu07.png" width="40"/> </td>
-<td>Click on the spoken letters and numbers</td>
+<td>Listen to correct pronunciation of letters and numbers</td>
 <td>*/**</td>
 </tr>
  <tr>
@@ -158,27 +160,27 @@ In the menu items are hidden more than 100 games and educational programs that c
 </tr>
  <tr>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay_menu09.png" width="40"/> </td>
-<td>A picture must be reassembled correctly</td>
+<td>Puzzle game by resembling a picture.</td>
 <td>*/**</td>
 </tr>
  <tr>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay_menu10.png" width="40"/> </td>
-<td>Sounds will be played, which must be assigned to the corresponding image</td>
+<td>Matching sound with its image.</td>
 <td>*</td>
 </tr>
  <tr>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay_menu11.png" width="40"/> </td>
-<td>Learn the alphabet letters and the matching animal sound</td>
+<td>Matching alphabet letters with animals associated with it.</td>
 <td>*</td>
 </tr>
  <tr>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay_menu12.png" width="40"/> </td>
-<td>The video game Pong. </td>
+<td>Ping Pong Game. </td>
 <td>*</td>
 </tr>
  <tr>
 <td> <img src="/sites/default/files/content/wiki-de/edoovillages/childsplay_menu13.png" width="40"/> </td>
-<td>In this Pacman-clone, the letters of a given word have to be eaten in the correct order</td>
+<td>Letters Pacman -  The letters of a given word have to be eaten in correct order</td>
 <td>**/***</td>
 </tr>
  <tr>
@@ -189,9 +191,9 @@ In the menu items are hidden more than 100 games and educational programs that c
 </table>
 * = easy, ** = medium, *** = difficult
 
-<li><strong>Pysiogame game colelction</strong></li>
+<li><strong>Pysiogame</strong></li>
 
-<strong>pySioGame</strong> is a set of educational applications and games for kids that can be played all in a single window. pySioGame includes maths, reading, writing, painting, and memory activities. It can be useful for children aged between 3 and 10.
+<strong>pySioGame</strong> is a education game suite which different games can be played individually. It includes maths, reading, writing, painting, and memory activities and suitable for children between age 3 to10.
 
 <table> <tr><th/></tr>
  <tr>
@@ -201,14 +203,14 @@ In the menu items are hidden more than 100 games and educational programs that c
 </table>
 <br/>
 
-<li><strong>Astronomy + Geography</strong></li>
+<li><strong>Astronomy and Geography</strong></li>
 
 <table> 
 <tr>
-<th><strong>program</strong></th>
-<th><strong>description</strong></th>
-<th><strong>program name</strong></th>
-<th><strong>screen shot</strong></th>
+<th><strong>Program</strong></th>
+<th><strong>Descriptions</strong></th>
+<th><strong>Program name</strong></th>
+<th><strong>Screenshot</strong></th>
 </tr>
 
 <tr>
@@ -219,27 +221,27 @@ In the menu items are hidden more than 100 games and educational programs that c
 </tr> 
 <tr>
             <td><a href="http://wiki.ubuntuusers.de/Marble">Marble</a></td>
-           <td>Marble is a desktop globe. The program is similar to the popular Google Earth program. It is kept simple, yet very sophisticated and powerful. It supports a variety of card materials including OpenStreetMap and can reproduce it on a globe or a map.</td>
+           <td>Marble is a desktop globe. The program is similar to Google Earth program. The program is simple, yet very sophisticated and powerful. It supports a variety of other programs including OpenStreetMap and can reproduce it on its globe or  map view.</td>
             <td>marble</td>
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/marble.png" width="100"/> </td>
 </tr> 
 <tr>
             <td><a href="http://wiki.ubuntuusers.de/Stellarium">Stellarium</a></td>
-           <td>Stellarium is a free planetarium software.</td>
+           <td>Stellarium is a  planetarium program.</td>
             <td>stellarium</td>
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/stellarium.png" width="100"/> </td>
 </tr> 
 
 </table>
 
-<li><strong>Graphic and Construction</strong></li>
+<li><strong>Graphic and Construction Software</strong></li>
 
 <table> 
 <tr>
-<th><strong>program</strong></th>
-<th><strong>description</strong></th>
-<th><strong>program name</strong></th>
-<th><strong>screen shot</strong></th>
+<th><strong>Program</strong></th>
+<th><strong>Descriptions</strong></th>
+<th><strong>Program name</strong></th>
+<th><strong>Screenshot</strong></th>
 </tr>
 
 <tr>
@@ -303,14 +305,14 @@ In the menu items are hidden more than 100 games and educational programs that c
 </tr>
 </table>   
  
-<li><strong>Mathematics, Informatics</strong></li>
+<li><strong>Mathematics and Statistics</strong></li>
 
 <table> 
 <tr>
-<th><strong>program</strong></th>
-<th><strong>description</strong></th>
-<th><strong>program name</strong></th>
-<th><strong>screen shot</strong></th>
+<th><strong>Program</strong></th>
+<th><strong>Descriptions</strong></th>
+<th><strong>Program name</strong></th>
+<th><strong>Screenshot</strong></th>
 </tr>
 
 <tr>
@@ -374,10 +376,10 @@ In the menu items are hidden more than 100 games and educational programs that c
 
 <table> 
 <tr>
-<th><strong>program</strong></th>
-<th><strong>description</strong></th>
-<th><strong>program name</strong></th>
-<th><strong>screen shot</strong></th>
+<th><strong>Program</strong></th>
+<th><strong>Descriptions</strong></th>
+<th><strong>Program name</strong></th>
+<th><strong>Screenshot</strong></th>
 </tr>
 
 <tr>
@@ -392,10 +394,10 @@ In the menu items are hidden more than 100 games and educational programs that c
 
 <table> 
 <tr>
-<th><strong>program</strong></th>
-<th><strong>description</strong></th>
-<th><strong>program name</strong></th>
-<th><strong>screen shot</strong></th>
+<th><strong>Program</strong></th>
+<th><strong>Descriptions</strong></th>
+<th><strong>Program name</strong></th>
+<th><strong>Screenshot</strong></th>
 </tr>
 
 <tr>
@@ -437,14 +439,14 @@ In the menu items are hidden more than 100 games and educational programs that c
 
 </table>
 
-<li><strong>Language</strong></li>
+<li><strong>Language Learning</strong></li>
 
 <table> 
 <tr>
-<th><strong>program</strong></th>
-<th><strong>description</strong></th>
-<th><strong>program name</strong></th>
-<th><strong>screen shot</strong></th>
+<th><strong>Program</strong></th>
+<th><strong>Descriptions</strong></th>
+<th><strong>Program name</strong></th>
+<th><strong>Screenshot</strong></th>
 </tr>
 
 <tr>
@@ -459,10 +461,10 @@ In the menu items are hidden more than 100 games and educational programs that c
 
 <table> 
 <tr>
-<th><strong>program</strong></th>
-<th><strong>description</strong></th>
-<th><strong>program name</strong></th>
-<th><strong>screen shot</strong></th>
+<th><strong>Program</strong></th>
+<th><strong>Descriptions</strong></th>
+<th><strong>Program name</strong></th>
+<th><strong>Screenshot</strong></th>
 </tr>
 
 <tr>
@@ -478,10 +480,10 @@ In the menu items are hidden more than 100 games and educational programs that c
 
 <table> 
 <tr>
-<th><strong>program</strong></th>
-<th><strong>description</strong></th>
-<th><strong>program name</strong></th>
-<th><strong>screen shot</strong></th>
+<th><strong>Program</strong></th>
+<th><strong>Descriptions</strong></th>
+<th><strong>Program name</strong></th>
+<th><strong>Screenshot</strong></th>
 </tr>
 
 <tr>
@@ -516,14 +518,14 @@ In the menu items are hidden more than 100 games and educational programs that c
 </tr>
 </table>
 
-<li><strong>Office applications</strong></li>
+<li><strong>Office Applications</strong></li>
 
 <table> 
 <tr>
-<th><strong>program</strong></th>
-<th><strong>description</strong></th>
-<th><strong>program name</strong></th>
-<th><strong>screen shot</strong></th>
+<th><strong>Program</strong></th>
+<th><strong>Descriptions</strong></th>
+<th><strong>Program name</strong></th>
+<th><strong>Screenshot</strong></th>
 </tr>
 
 <tr>
@@ -578,14 +580,14 @@ In the menu items are hidden more than 100 games and educational programs that c
 
 </table>
 
-<li><strong>Additional programs</strong></li>
+<li><strong>Additional Programs</strong></li>
 
 <table> 
 <tr>
-<th><strong>program</strong></th>
-<th><strong>description</strong></th>
-<th><strong>program name</strong></th>
-<th><strong>screen shot</strong></th>
+<th><strong>Program</strong></th>
+<th><strong>Descriptions</strong></th>
+<th><strong>Program name</strong></th>
+<th><strong>Screenshot</strong></th>
 </tr>
 
 <tr>
@@ -633,7 +635,7 @@ In the menu items are hidden more than 100 games and educational programs that c
 
 </table>
 
-<li><strong>Virus scanner <a href="http://wiki.ubuntuusers.de/ClamAV">ClamAV</a> (Program ClamTK)</strong></li>
+<li><strong>Virus scanner <a href="http://wiki.ubuntuusers.de/ClamAV">ClamAV</a> (ClamTK)</strong></li>
 
 <table align="right">
 <tr><td>
@@ -643,19 +645,17 @@ In the menu items are hidden more than 100 games and educational programs that c
 </td></tr>
 </table>
 
-You should not need a virus scanner using Lubuntu. Linux usually needs no virus scanner due to the Linux security concept. There are very few (not to say - none) viruses for Linux desktop in the web. Nevertheless some companies offer virus scanner for Linux, e.g. for file server being used also by Windows clients.
+Linux doesn’t normally need a virus scanner due to the Linux security concept. There are very few (not to say - none) viruses in Linux desktop. Nevertheless, some companies still offer virus scanner for extra security, for example to protect its file server being used by Windows clients.
 
-Also some edoovillages asked to have a tool to scan USB disc drives of pupils to remove viruses on the USB drives. So please install ClamAv for your projects (ClamAV will be installed if you use the installationskript or images for cloning).
+Some edoovillages also request a tool to be able to scan a USB  drive and remove possible virus from it. ClamAv is recommended for this purpose (ClamAV is automatically installed if you are using the installation scripts or cloning images).
 
-So we recommend the license free, open source virus scanner ClamAV
-https://help.ubuntu.com/community/ClamAV
+To serve the purpose, we recommend the license free, open source virus scanner called ClamAV
+https://help.ubuntu.com/community/ClamAV (You can use ClamTK to start the program).
 
-To start the virus scanner start the program ClamTK.
-
-For Firefox you can install the addon Fireclam. Downloads will be scanned automatically.
+For the Firefox web browser, you can install an add-on called Fireclam 
 https://addons.mozilla.org/en-US/firefox/addon/fireclam/
 
-As in addition more modules and the virus signatures have to be installed (otherwise it will not work). So run either the installation script for software http://ftp.labdoo.org/download/images/installskripts/installscript-software.sh or install images for Cloning (preinstalled already in images).
+More  modules and the virus signatures may need to be installed in order to run program smoothly.  Therefore, please run either the installation script for Labdoo ftp site ( http://ftp.labdoo.org/download/images/installskripts/installscript-software.sh ) or use the cloning images since all programs are already preinstalled in the images.
 
 </ol></value>
 </body>

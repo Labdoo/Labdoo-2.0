@@ -5,7 +5,7 @@
 </nid>
 <title>
 <type>node_title</type>
-<value>Information for Edoovillages (Traditional Chinese)</value>
+<value>Edoovillages 相關資訊 </value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -21,7 +21,7 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Labdoo.org 使用
+<value>Labdoo.org 筆記型電腦提供
 <ul>
 <li>適用於所有年齡層的學生（幼兒園至高中）的教育軟體。</li>
 <li> 提供視障人士或殘疾人士無障礙使用體驗的外掛。</li>

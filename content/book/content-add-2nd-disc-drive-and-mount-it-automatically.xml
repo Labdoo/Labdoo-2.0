@@ -58,6 +58,6 @@ Re-boot, drives should be automatically mounted. Opional: Add the new drive to p
 </mlid>
 <weight>
 <type>book_array</type>
-<value>0</value>
+<value>-10</value>
 </weight>
 </book>

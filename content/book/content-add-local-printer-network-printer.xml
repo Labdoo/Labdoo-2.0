@@ -63,6 +63,6 @@ After this you should see the printer in the menu “printer”. Maybe you have 
 </mlid>
 <weight>
 <type>book_array</type>
-<value>0</value>
+<value>-9</value>
 </weight>
 </book>

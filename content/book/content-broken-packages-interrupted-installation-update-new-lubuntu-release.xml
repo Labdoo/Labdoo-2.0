@@ -72,6 +72,6 @@ Should the package administration become unusable during an upgrade or dist-upgr
 </mlid>
 <weight>
 <type>book_array</type>
-<value>0</value>
+<value>13</value>
 </weight>
 </book>

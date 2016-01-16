@@ -1623,7 +1623,7 @@ function lbd_content_types_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'rows' => '5',
+          'rows' => '1',
         ),
         'type' => 'text_textarea',
         'weight' => '9',
@@ -4399,11 +4399,83 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
     ),
   );
 
+  // Exported field: 'node-team_page-field_additional_emails_conver'.
+  $fields['node-team_page-field_additional_emails_conver'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_additional_emails_conver',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'team_page',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Enter a comma-separated list of correct email addresses.',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '5',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_additional_emails_conver',
+      'label' => 'Additional notification emails',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'rows' => '1',
+        ),
+        'type' => 'text_textarea',
+        'weight' => '35',
+      ),
+    ),
+  );
+
   // Exported field: 'node-team_page-field_conversation_attachment'.
   $fields['node-team_page-field_conversation_attachment'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '5',
+      'cardinality' => '10',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_conversation_attachment',
@@ -4436,7 +4508,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'file_entity',
           'settings' => array(
             'file_view_mode' => 'teaser',
@@ -4792,7 +4864,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           ),
           'prepopulate' => array(
             'action' => 'hide',
-            'action_on_edit' => 1,
+            'action_on_edit' => 0,
             'fallback' => 'none',
             'providers' => array(
               'og_context' => 0,
@@ -4821,7 +4893,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
         'module' => 'og',
         'settings' => array(),
         'type' => 'og_complex',
-        'weight' => '0',
+        'weight' => 0,
       ),
     ),
   );

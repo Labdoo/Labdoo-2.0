@@ -113,6 +113,6 @@ If this does not work try:
 </mlid>
 <weight>
 <type>book_array</type>
-<value>0</value>
+<value>10</value>
 </weight>
 </book>

@@ -21,7 +21,9 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value><strong>English:</strong>
+<value><hr/>
+<strong>English</strong>
+<hr/>
 
 Dear $SOLICITORNAME,
 
@@ -46,22 +48,25 @@ Thank you once again for your contribution.
 
 Best regards,
 $MYNAME
-Tag a laptop, spread education
 Labdoo Team | www.labdoo.org
+Tag a laptop, spread education
+<img src="https://www.labdoo.org/profiles/labdoo/files/pictures/equation-2-alpha-smaller.png" width="100"/>
 
-<strong>Spanish:</strong>
+<hr/>
+<strong>Spanish</strong>
+<hr/>
 
-Hola $ SOLICITORNAME,
+Hola $NOMBREDELSOLICITANTE,
 
 Gracias por tu interés en contribuir a la causa Labdoo.org.
 
-Con el fin de hacer su contribución, puedes traer tu(s) portátil(ess) a tu Labdoo hub más cercano. Encontrarás la lista global de hubs Labdoo en el siguiente enlace: www.labdoo.org/hubs
+Con el fin de hacer tu contribución, puedes traer tu(s) portátil(ess) a tu Labdoo hub más cercano. Encontrarás la lista global de hubs Labdoo en el siguiente enlace: www.labdoo.org/es/hubs
 
 Si deseas recibir correos electrónicos automáticos del estado de tu ordenador portátil a medida que avanza hacia una escuela destino, así como fotos de la escuela una vez tu portátil ha llegado a la escuela, puedes llevar a cabo una de las dos opciones siguientes:
 
 <ul>
 <li>
-Etiquetar el portátil mediante la creación de una cuenta en Labdoo.org y siguiendo las instrucciones de este formulario: http://www.labdoo.org/node/add/laptop
+Etiquetar el portátil mediante la creación de una cuenta en Labdoo.org y siguiendo las instrucciones de este formulario: http://www.labdoo.org/es/node/add/laptop
 </li>
 <li>
 De forma alternativa, también puedes enganchar un post-it a la computadora portátil con tu dirección de correo electrónico. La siguiente persona en la cadena etiquetará el portátil e incluirá tu dirección de correo electrónico para que puedas recibir las actualizaciones de estado de tu portátil.
@@ -73,9 +78,39 @@ Para cualquier pregunta adicional, por favor no dudes en responder a este mensaj
 Gracias una vez más por tu contribución.
 
 Atentamente,
-$ MINOMBRE
+$MINOMBRE
+Labdoo Team | www.labdoo.org
 Tag a laptop, spread education
-Labdoo Team | www.labdoo.org</value>
+<img src="https://www.labdoo.org/profiles/labdoo/files/pictures/equation-2-alpha-smaller.png" width="100"/>
+
+<hr/>
+<strong>Catalan</strong>
+<hr/>
+
+Hola $NOMDELSOLICITANT,
+
+Gràcies pel teu interès en contribuir a la causa Labdoo.org.
+
+Per tal de fer la teva contribució, pots portar el teu portàtil(s) al teu Hub més proper. Trobaràs la llista global de Hubs Labdoo al següent enllaç: www.labdoo.org/ca/hubs
+
+Si desitges rebre correus electrònics automàtics de l'estat del teu ordinador portàtil mentre fa el seu camí cap a una escola necessitada, així com fotos de l'escola una vegada que el teu ordinador portàtil hagi arribat al seu destí, pots fer una de les dues opcions següents:
+
+Etiquetar el portàtil mitjançant la creació d'un compte en Labdoo.org i seguint les instruccions d'aquest formulari: http://www.labdoo.org/ca/node/add/laptop
+
+Si bé encoratgem aquesta primera opció, de manera alternativa també pots adjuntar un post-it a l'ordinador portàtil amb la teva adreça de correu electrònic. La següent persona en la cadena col.laborativa Labdoo etiquetarà el teu portàtil i inclourà la teva adreça de correu electrònic perquè puguis rebre les actualitzacions.
+
+Per a qualsevol dubte, ens pots fer arribar les teves preguntes responent directament a aquest missatge.
+
+Gràcies un cop més per la teva contribució.
+
+Cordialment,
+$ELTEUNOM
+Labdoo Team | www.labdoo.org
+Tag a laptop, spread education
+<img src="https://www.labdoo.org/profiles/labdoo/files/pictures/equation-2-alpha-smaller.png" width="100"/>
+
+
+</value>
 </body>
 <body>
 <type>format</type>

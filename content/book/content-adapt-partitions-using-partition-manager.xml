@@ -47,7 +47,7 @@ Continue to "steps to follow after installation (Adaption to edoovillage and cou
 </bid>
 <plid>
 <type>book_array</type>
-<value>990</value>
+<value>987</value>
 </plid>
 <mlid>
 <type>book_array</type>
@@ -55,6 +55,6 @@ Continue to "steps to follow after installation (Adaption to edoovillage and cou
 </mlid>
 <weight>
 <type>book_array</type>
-<value>0</value>
+<value>-15</value>
 </weight>
 </book>
