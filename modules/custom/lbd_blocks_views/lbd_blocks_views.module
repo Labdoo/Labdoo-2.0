@@ -131,6 +131,31 @@ function lbd_blocks_views_block_info() {
     'region' => "content",
   );
 
+  // Dootrip header
+  $blocks['block_dootrip_header'] = array(
+    'info' => "The header of a dootrip",
+    'status' => 1,
+    'visibility' => BLOCK_VISIBILITY_PHP,
+    'weight' => -100,
+    'pages' => "
+<?php
+  \$match = FALSE;
+  \$types = array('dootrip' => 1) ;
+
+  if(arg(2) != \"\") //  Display only in node view mode
+    return FALSE;
+
+  if ((arg(0) == 'node') && is_numeric(arg(1))) {
+    \$node = node_load(arg(1));
+    \$match = isset(\$types[\$node->type]);
+  }
+
+  return \$match;
+?>
+               ",
+    'region' => "content",
+  );
+
   // Edoovillage header
   $blocks['block_edoovillage_header'] = array(
     'info' => "The header of an edoovillage",
@@ -319,6 +344,14 @@ function lbd_blocks_views_block_view($delta = '') {
       $block['subject'] = "<none>";
       $block['content'] = array(
              '#markup' => labdoo_render_dooject_header(),
+      );
+      break;
+
+    // Dooject header
+    case 'block_dootrip_header':
+      $block['subject'] = "<none>";
+      $block['content'] = array(
+             '#markup' => labdoo_render_dootrip_header(),
       );
       break;
 

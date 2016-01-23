@@ -747,9 +747,20 @@ function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL, $switch
     $statusLabels = list_allowed_values(field_info_field("field_status_dootrip"));
     $objects[$objectNid]['status'] = $statusLabels[labdoo_lib_get_field($node, 'field_status_dootrip', 'node', 'value')];
 
-    // Extract completed field 
-    if(labdoo_lib_get_field($node, 'field_status_dootrip', 'node', 'value') == "DS1")
-      $objects[$objectNid]['completed'] = $objects[$objectNid]['capacity'];
+    $dootripStatus = labdoo_lib_get_field($node, 'field_status_dootrip', 'node', 'value');
+
+    // Extract number of dootronics in transit
+    $wNode = entity_metadata_wrapper('node', $node);
+    $dootronicsList = $wNode->field_laptops->value();
+    $numDootronics = count($dootronicsList);
+    if($dootripStatus == 'DS0')
+       $objects[$objectNid]['inTransit'] = $numDootronics;
+    else
+       $objects[$objectNid]['inTransit'] = 0;
+
+    // Extract number of dootronics completed (delivered) via this dootrips
+    if(labdoo_lib_get_field($node, 'field_status_dootrip', 'node', 'value') == "DS1") 
+      $objects[$objectNid]['completed'] = $numDootronics;
     else
       $objects[$objectNid]['completed'] = 0;
 
@@ -797,6 +808,7 @@ function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL, $switch
     $objects[0]['capacity'] = 0;
     $objects[0]['numberDootrips'] = "";
     $objects[0]['status'] = "";
+    $objects[0]['inTransit'] = 0;
     $objects[0]['completed'] = 0;
     $objects[0]['dootrippers'] = "";
     $objects[0]['additionalInfo'] = "";
@@ -809,15 +821,16 @@ function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL, $switch
 
   $metrics[0] = array('label' => 'Dootrip', 'field' => 'link', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
   $metrics[1] = array('label' => 'Capacity', 'field' => 'capacity', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
-  $metrics[2] = array('label' => 'Transported', 'field' => 'completed', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
-  $metrics[3] = array('label' => 'Status', 'field' => 'status', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
-  $metrics[4] = array('label' => 'Origin', 'field' => 'srcCountry', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
-  $metrics[5] = array('label' => 'Destination', 'field' => 'dstCountry', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
-  $metrics[6] = array('label' => 'Departure', 'field' => 'departureDate', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[7] = array('label' => 'Arrival', 'field' => 'arrivalDate', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[8] = array('label' => 'Dootrippers', 'field' => 'dootrippers', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[9] = array('label' => 'Additional info', 'field' => 'additionalInfo', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[10] = array('label' => 'Total number of dootrips', 'field' => 'numberDootrips', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[2] = array('label' => 'In transit', 'field' => 'inTransit', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
+  $metrics[3] = array('label' => 'Transported', 'field' => 'completed', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
+  $metrics[4] = array('label' => 'Status', 'field' => 'status', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+  $metrics[5] = array('label' => 'Origin', 'field' => 'srcCountry', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+  $metrics[6] = array('label' => 'Destination', 'field' => 'dstCountry', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+  $metrics[7] = array('label' => 'Departure', 'field' => 'departureDate', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[8] = array('label' => 'Arrival', 'field' => 'arrivalDate', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[9] = array('label' => 'Dootrippers', 'field' => 'dootrippers', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[10] = array('label' => 'Additional info', 'field' => 'additionalInfo', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[11] = array('label' => 'Total number of dootrips', 'field' => 'numberDootrips', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
 
   cache_set($cacheIndexPrefix . 'objects', $objects, 'cache');
   cache_set($cacheIndexPrefix . 'metrics', $metrics, 'cache');
@@ -897,7 +910,9 @@ function print_dashboard_switcher($userId = NULL)
     $dashboardTitle = t('Labdoo metrics | Select dashboard:');
   }
 
-  $code = "<p><strong><span style='color:#ff3300;'>$dashboardTitle</span></strong></p>
+  $code = "<strong><span style='color:#ff3300;'>$dashboardTitle</span></strong><br/>
+           <a href='../content/visualization-dashboards' target='_blank' style='font-size: 12px'>Dashboard help</a>
+           <br/>
            <form>
            <select name='URL' onchange='window.location.href=this.form.URL.options[this.form.URL.selectedIndex].value'>
            <option value='$lang/content/$url1-dashboard$urlParameters'>$url1</option>
@@ -1076,7 +1091,7 @@ var table = new google.visualization.ChartWrapper({
                 'page': 'enable',
                 'pageSize' : 50,
                 'sortColumn' : 0,
-                'sortAscending' : false
+                'sortAscending' : true
               },
               view: {columns: [0, 1, 2, 3, 4]} 
             });
@@ -1302,13 +1317,6 @@ var runOnce = google.visualization.events.addListener(table, 'ready', function (
     for (var i = 0; i < $numTableColumns; i++) {
       // replace double-quotes with double-double quotes for CSV compatibility
       tmpStr = tempData.getColumnLabel(i).replace(/\"/g, '\"\"');
-      // TODO: temporarily disable 'Serial number' and 'Model' because
-      //       arbitrary strings in these fields are breaking the CSV download 
-      //       file button.
-      if(tmpStr == 'Serial number')
-        continue;
-      if(tmpStr == 'Model')
-        continue;
       tmpArr.push('\"' + tmpStr + '\"');
     }
     csvData.push(tmpArr.join('\t'));
@@ -1316,15 +1324,18 @@ var runOnce = google.visualization.events.addListener(table, 'ready', function (
       tmpArr = [];
       for (var j = 0; j < $numTableColumns; j++) {
         tmpStr = tempData.getColumnLabel(j).replace(/\"/g, '\"\"');
-        if(tmpStr == 'Serial number')
-          continue;
-        if(tmpStr == 'Model')
-          continue;
         switch(tempData.getColumnType(j)) {
           case 'string':
+            // Some text could potentially produce a benign error.
+            // Catch the exception and in the event of an error 
+            // continue processing so that we can still produce
+            // a downloadable CSV file.
+            try {
             tmpStr = tempData.getValue(i, j).replace(/\"/g, '\"\"');
             // remove html tags
             tmpStr = tmpStr.replace(/<\/?[^>]+(>|$)/g, \"\"); 
+            }
+            catch(err) {}
             tmpArr.push('\"' + tmpStr + '\"');
             break;
           case 'number':
@@ -1371,7 +1382,7 @@ google.setOnLoadCallback(drawVisualization);
         <tr style='vertical-align: top'>
           <td colspan='1'; style='width: 200px'>
             <div id='controlTextFilter'></div>
-          </td>
+          </td></tr><tr>
 
   ");
 

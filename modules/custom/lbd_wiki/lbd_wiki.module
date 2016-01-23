@@ -107,6 +107,9 @@ function _tree_cut_branch($tree, $nodeId) {
  *
  */
 function lbd_wiki_block_view($delta = '') {
+  global $wikiLastChildrenMenuLink;
+  global $wikiLastChildrenMenuLinkTime;
+  $currentTime = time();
   $printTOC = TRUE;
   $defaultLanguage = language_default();
   global $language;
@@ -129,24 +132,29 @@ function lbd_wiki_block_view($delta = '') {
 
   // Vars and params for the menu_build_tree() function.
   $path = 'node/' . $book['bid'];
-  $parent = menu_link_get_preferred($path, $book['menu_name']);
-  $parameters = array(
-    'only_active_trail' => FALSE,
-    'min_depth' => $parent['depth'] + 0,
-    'max_depth' => 5,
-  );
 
-  // Other translations link
-  $nodeLoaded = node_load($book['bid']);
-  $originalNodeId = labdoo_lib_get_field($nodeLoaded, 'field_reference_book', 'node', 'target_id');
-  $allTranslationsURl = $lang. '/wiki-index?field_book_language_value=All&field_reference_book_target_id='.$originalNodeId;
-  $metadata = "href='$allTranslationsURl'";
-  $code = $code . "<hr/>";
-  $code = $code . "<img src='/profiles/labdoo/files/pictures/conversation.png' style='width: 20px; height: 21px;'/>&nbsp;" . 
-                  "<a $metadata>" . t('Other translations of this book') . "</span></a></p>";
+  // Note: We cache the children data structure for two reasons:
+  //       (1) To not have to recalculate it twice since
+  //           this function is invoked twice for each wiki
+  //           page (one for book_outline another for book_outline_2).
+  //       (2) Somehow there is an issue when invoking menu_build_tree()
+  //           a second time with the exact same parameters. 
+  if($wikiLastChildrenMenuLinkTime and (($currentTime - $wikiLastChildrenMenuLinkTime) < 5)) {
+    $children = $wikiLastChildrenMenuLink;
+  }
+  else {
+    $parent = menu_link_get_preferred($path, $book['menu_name']);
+    $parameters = array(
+      'only_active_trail' => FALSE,
+      'min_depth' => $parent['depth'] + 0,
+      'max_depth' => 5,
+    );
+    // Build the tree and block title.
+    $children = menu_build_tree($parent['menu_name'], $parameters);
+    $wikiLastChildrenMenuLink = $children;
+    $wikiLastChildrenMenuLinkTime = $currentTime;
+  }
 
-  // Build the tree and block title.
-  $children = menu_build_tree($parent['menu_name'], $parameters);
   // Check if it is a single page book
   if(count($children) == 1) {
     $child = array_values($children)[0];
@@ -154,6 +162,17 @@ function lbd_wiki_block_view($delta = '') {
       // For single page wiki books, don't print the TOC
       $printTOC = FALSE;
     }
+  }
+
+  // Other translations link
+  $nodeLoaded = node_load($book['bid']);
+  $originalNodeId = labdoo_lib_get_field($nodeLoaded, 'field_reference_book', 'node', 'target_id');
+  $allTranslationsURl = $lang. '/wiki-index?field_book_language_value=All&field_reference_book_target_id='.$originalNodeId;
+  $metadata = "href='$allTranslationsURl'";
+  if($delta == 'book_outline') {
+    $code = $code . "<hr/>";
+    $code = $code . "<img src='/profiles/labdoo/files/pictures/conversation.png' style='width: 20px; height: 21px;'/>&nbsp;" . 
+                    "<a $metadata>" . t('Other translations of this book') . "</span></a></p>";
   }
 
   if($printTOC) {

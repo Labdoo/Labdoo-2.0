@@ -169,7 +169,7 @@ function labdoo_objects_field_default_fields() {
           'label_position' => 'above',
           'no_fieldset' => 0,
           'text_parts' => array(),
-          'year_range' => '-3:+3',
+          'year_range' => '-0:+3',
         ),
         'type' => 'date_popup',
         'weight' => '8',
@@ -588,7 +588,7 @@ function labdoo_objects_field_default_fields() {
   $fields['node-dootrip-field_dootrip_additional_editors'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_dootrip_additional_editors',

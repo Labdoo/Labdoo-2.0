@@ -330,7 +330,7 @@ function labdoo_render_map_geolocate_node($nodeId = NULL, $displayDoojects = Fal
 /**
  * Renders a dooject's header
  *
- * @param nodeId The ID of the dooject 
+ * @return The code to render
  *
  */
 function labdoo_render_dooject_header() {
@@ -394,14 +394,16 @@ function labdoo_render_dooject_header() {
   // Photo album icon and button
   if($edoovillageId) {
     $nodeEdoovillage = node_load($edoovillageId);
-    $wNode = entity_metadata_wrapper('node', $nodeEdoovillage);
-    $nodeAlbum = $wNode->field_edoovillage_photo_album->value();
-    $albumUri = drupal_get_path_alias("node/" .  $nodeAlbum->nid, $language->language);
-    if($language->language != $defaultLanguage->language)
-      $albumUri = $language->language . "/" . $albumUri;
-    $gotoMsg = t("Go to photo album");
-    $htmlCode = $htmlCode . "<img src='/profiles/labdoo/files/pictures/edoovillage.png' style='width: 35px; height: 30px;'/>&nbsp;
-                <a href='/".$albumUri."'>" . t("Photo album") . "</span></a>&nbsp&nbsp&nbsp";
+    if($nodeEdoovillage) {
+      $wNode = entity_metadata_wrapper('node', $nodeEdoovillage);
+      $nodeAlbum = $wNode->field_edoovillage_photo_album->value();
+      $albumUri = drupal_get_path_alias("node/" .  $nodeAlbum->nid, $language->language);
+      if($language->language != $defaultLanguage->language)
+        $albumUri = $language->language . "/" . $albumUri;
+      $gotoMsg = t("Go to photo album");
+      $htmlCode = $htmlCode . "<img src='/profiles/labdoo/files/pictures/edoovillage.png' style='width: 35px; height: 30px;'/>&nbsp;
+                  <a href='/".$albumUri."'>" . t("Photo album") . "</span></a>&nbsp&nbsp&nbsp";
+    }
   }
 
   // Follow dooject button
@@ -410,15 +412,15 @@ function labdoo_render_dooject_header() {
     $userObj = user_load($userId);
     if(labdoo_is_dooject_followed($nodeObj, $userObj)) {
       $followDoojectUrl = strtok(request_uri(), '?') . "?m=f&d=$nodeId&u=$userId&v=0";
-      $followMsg = "Unfollow this dooject";
+      $followMsg = "Unfollow this dootronic";
       $followIcon = "signal.png";
-      $hoverMessage = t('Click to stop receiving updates of this dooject');
+      $hoverMessage = t('Click to stop receiving updates of this dootronic');
     }
     else {
       $followDoojectUrl = strtok(request_uri(), '?') . "?m=f&d=$nodeId&u=$userId&v=1";
       $followMsg = t("Follow this dootronic");
       $followIcon = "signal-off.png";
-      $hoverMessage = t('Click to receive updates about this dooject');
+      $hoverMessage = t('Click to receive updates about this dootronic');
     }
     $htmlCode = $htmlCode . "<img src='/profiles/labdoo/files/pictures/".$followIcon."' style='width: 30px; height: 30px;'/>&nbsp;
                 <a style='cursor:Pointer;' title='".$hoverMessage."' href='".$followDoojectUrl."'>" .$followMsg."</span></a>&nbsp&nbsp&nbsp";
@@ -444,7 +446,7 @@ function labdoo_render_dooject_header() {
     $pickmeupUrl = strtok(request_uri(), '?') . "?m=p&d=$nodeId&u=$userId&v=1";
     $pickmeupMsg = "Pick me up (deactivated)";
     $pickmeupIcon = 'truck-off.png';
-    $hoverMessage = t('Click this link if you want someone from a nearby Labdoo hub to pick up this dooject from its current location');
+    $hoverMessage = t('Click this link if you want someone from a nearby Labdoo hub to pick up this dootronic from its current location');
   }
   if(node_access("update", $nodeObj, $user)) {
     $htmlCode = $htmlCode . "<img src='/profiles/labdoo/files/pictures/" . $pickmeupIcon . "' style='width: 35px; height: 30px;'/>&nbsp;
@@ -465,6 +467,78 @@ function labdoo_render_dooject_header() {
 
   // Right arrow
   $htmlCode = $htmlCode . "<a style='float: right;' href='../laptop/".$nextIdFull."'>
+              <img src='/profiles/labdoo/files/pictures/arrow_right.png' style='float: right; width: 30px; height: 31px;'/></span></a>";
+
+  // Table ending
+  $htmlCode = $htmlCode . '</td></tr></tbody></table>';
+
+  return($htmlCode);
+}
+
+
+/**
+ * Returns the previous or next node from a given base node
+ *
+ * @param object $node The base node
+ * @param string $op The operation, one of {'prev', 'next'}
+ *
+ * @return The ID of the previous or next node
+ *
+ */
+function labdoo_lib_prev_next_node($node, $op) {
+
+  $nid = $node->nid;
+  $type = $node->type;
+
+  if($op == 'next') {
+    $query = "SELECT nid FROM node WHERE (nid > $nid AND type = '$type') ORDER BY nid LIMIT 1";
+    $nodeId = db_query($query)->fetchField();
+    if(!$nodeId) { // wrap around
+      $query = "SELECT min(nid) FROM node WHERE type = '$type'";
+      $nodeId = db_query($query)->fetchField();
+    }
+  }
+  else { // prev
+    $query = "SELECT nid FROM node WHERE (nid < $nid AND type = '$type') ORDER BY nid DESC LIMIT 1";
+    $nodeId = db_query($query)->fetchField();
+    if(!$nodeId) { // wrap around
+      $query = "SELECT max(nid) FROM node WHERE type = '$type'";
+      $nodeId = db_query($query)->fetchField();
+    }
+  }
+  return $nodeId;
+}
+
+
+/**
+ * Renders a dooject's header
+ *
+ * @return The code to render
+ *
+ */
+function labdoo_render_dootrip_header() {
+  global $language;
+  $langCode = $language->language;
+  $htmlCode = '';
+
+  $nodeObj = node_load(arg(1));
+  $prevNodeId = labdoo_lib_prev_next_node($nodeObj, 'prev');
+  $nextNodeId = labdoo_lib_prev_next_node($nodeObj, 'next');
+
+  $prevUri = drupal_get_path_alias("node/" . $prevNodeId, $langCode);
+  $nextUri = drupal_get_path_alias("node/" . $nextNodeId, $langCode);
+
+  // Table header
+  $htmlCode = $htmlCode . '<table align="center" width="1150px"><tr><td align="left">';
+
+  // Left arrow
+  $htmlCode = $htmlCode . "<a style='float: left;' href='../" . $prevUri . "'>
+              <img src='/profiles/labdoo/files/pictures/arrow_left.png' style='float: right; width: 30px; height: 31px;'/></span></a>";
+
+  $htmlCode = $htmlCode . '</td><td align="center">';
+
+  // Right arrow
+  $htmlCode = $htmlCode . "<a style='float: right;' href='../" . $nextUri . "'>
               <img src='/profiles/labdoo/files/pictures/arrow_right.png' style='float: right; width: 30px; height: 31px;'/></span></a>";
 
   // Table ending
@@ -1574,25 +1648,28 @@ function labdoo_lib_compute_watt_hours($nodeLoaded) {
  *
  * @param node $nodeLoaded The hub node (loaded)
  *
- * @return The list of hubs as a string 
+ * @return The list of hubs as a code string 
  *
  */
 function labdoo_lib_compute_hub_branches($nodeLoaded) {
   $query = "SELECT entity_id FROM field_data_field_parent_hub WHERE field_parent_hub_target_id=$nodeLoaded->nid";
   $result = db_query($query);
 
-  $branchesList = "";
+  $branchesCode = "";
+  $branchesList = array();
   foreach($result as $item) {
     $parentHubName = lbd_nodeid2title($item->entity_id);
     $parentHubUri = 'node/' . $item->entity_id;
-    $branchesList .= '<a href="' . $parentHubUri . '">' . $parentHubName . '</a>'; 
-    $branchesList .= "<br/>";
+    // Add a comment with the $parentHubName to allow for alphabetic ordering 
+    array_push($branchesList, '<!--' . $parentHubName . '--><a href="' . $parentHubUri . '">' . $parentHubName . '</a>');
   }
+  sort($branchesList);
 
-  if($branchesList == "")
-    $branchesList = "None";
+  $branchesCode = implode("<br/>", $branchesList);
+  if($branchesCode == "")
+    $branchesCode = "None2";
 
-  return($branchesList);
+  return($branchesCode);
 }
 
 
