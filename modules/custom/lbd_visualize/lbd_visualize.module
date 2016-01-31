@@ -423,6 +423,11 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
 
     // Extract %completed field 
     $objects[$objectNid]['pcompleted'] = floor(($needed - $remaining) / $needed * 100.00); 
+ 
+    // Extract number of students
+    $objects[$objectNid]['numStudents'] = labdoo_lib_get_field($node, 'field_number_of_students', 'node', 'value'); 
+    if(!is_numeric($objects[$objectNid]['numStudents']))
+        $objects[$objectNid]['numStudents'] = "0";
 
     // Extract status field 
     $objects[$objectNid]['status'] = $objectstatus = labdoo_lib_get_field($node, 'field_edoovillage_status', 'node', 'value'); 
@@ -456,6 +461,7 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
     $objects[0]['delivered'] = ""; 
     $objects[0]['remaining'] = ""; 
     $objects[0]['pcompleted'] = 0;
+    $objects[0]['numStudents'] = "";
     $objects[0]['status'] = "";
     $objects[0]['country'] = "";
     $objects[0]['link'] = "No edoovillages in this view"; 
@@ -470,10 +476,11 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
   $metrics[4] = array('label' => 'Delivered (D)', 'field' => 'delivered', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
   $metrics[5] = array('label' => 'Remaining (R = N-T-D)', 'field' => 'remaining', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
   $metrics[6] = array('label' => '% Completed', 'field' => 'pcompleted', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
-  $metrics[7] = array('label' => 'Status', 'field' => 'status', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
-  $metrics[8] = array('label' => 'Countries', 'field' => 'country', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
-  $metrics[9] = array('label' => 'Completed', 'field' => 'completed', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[10] = array('label' => 'Open', 'field' => 'open', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[7] = array('label' => 'Number of students', 'field' => 'numStudents', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[8] = array('label' => 'Status', 'field' => 'status', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+  $metrics[9] = array('label' => 'Countries', 'field' => 'country', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+  $metrics[10] = array('label' => 'Completed', 'field' => 'completed', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[11] = array('label' => 'Open', 'field' => 'open', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
 
   cache_set($cacheIndexPrefix . 'objects', $objects, 'cache');
   cache_set($cacheIndexPrefix . 'metrics', $metrics, 'cache');
@@ -1076,6 +1083,12 @@ var stringFilter = new google.visualization.ControlWrapper({
                    });
   ");
 
+  // For the dootrips dashboard, present in descending alphabetic order.
+  if($objectType == 'dootrip')
+    $sortAscValue = 'false';
+  else
+    $sortAscValue = 'true';
+
   print("
 
 /*
@@ -1091,7 +1104,7 @@ var table = new google.visualization.ChartWrapper({
                 'page': 'enable',
                 'pageSize' : 50,
                 'sortColumn' : 0,
-                'sortAscending' : true
+                'sortAscending' : " . $sortAscValue . "
               },
               view: {columns: [0, 1, 2, 3, 4]} 
             });
@@ -1757,7 +1770,6 @@ function lbd_display_dooject_column_chart($objectNid, $type)
     $numNeedRecycle = labdoo_getnum_doojects(NULL, $objectNid, "S5") + labdoo_getnum_doojects(NULL, $objectNid, "S9");
     $numRecycled = labdoo_getnum_doojects(NULL, $objectNid, "S6");
     $numTagged = $numTransit + $numDeployed + $numNeedRecycle + $numRecycled;
-    $numTagged = labdoo_getnum_doojects(NULL, $objectNid, "S0") + labdoo_getnum_doojects(NULL, $objectNid, "S1") + labdoo_getnum_doojects(NULL, $objectNid, "S2");
     $xLabel = "Dootronics";
   }
   else {

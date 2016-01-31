@@ -6,6 +6,10 @@
 # This script currently does not check for system wide failures, so it is limited
 # in scope. However, it supports the most common case of failures. A future enhancement 
 # is to include a wider set of failures.
+#
+# Run this script as a cron job:
+#     * * * * *  /var/www/lbd/profiles/labdoo/utils/watchdog/labdoo-watchdog.sh 
+#
 
 PATH=/bin:/usr/bin:/usr/sbin
 TEMPDIR=/tmp/labdoo-watchdog

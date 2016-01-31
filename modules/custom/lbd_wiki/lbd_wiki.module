@@ -164,13 +164,17 @@ function lbd_wiki_block_view($delta = '') {
     }
   }
 
+  $code = $code . "<hr/>";
+  // Back to wiki index link
+  $code = $code . "<img src='/profiles/labdoo/files/pictures/arrow_left.png' style='width: 20px; height: 21px;'/>&nbsp;" .  
+                  "<a href='../wiki-index'>" . t('Back to all wiki books') . "</span></a></p>";
+
   // Other translations link
   $nodeLoaded = node_load($book['bid']);
   $originalNodeId = labdoo_lib_get_field($nodeLoaded, 'field_reference_book', 'node', 'target_id');
   $allTranslationsURl = $lang. '/wiki-index?field_book_language_value=All&field_reference_book_target_id='.$originalNodeId;
   $metadata = "href='$allTranslationsURl'";
   if($delta == 'book_outline') {
-    $code = $code . "<hr/>";
     $code = $code . "<img src='/profiles/labdoo/files/pictures/conversation.png' style='width: 20px; height: 21px;'/>&nbsp;" . 
                     "<a $metadata>" . t('Other translations of this book') . "</span></a></p>";
   }
