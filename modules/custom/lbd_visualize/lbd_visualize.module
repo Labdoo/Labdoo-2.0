@@ -1500,6 +1500,7 @@ function lbd_display_slider_edoovilage_doojects($edoovillageId = NULL) {
     return;
 
   $block = module_invoke('views', 'block_view', 'slider_dashboard-block_edoovillage_doojects');
+  print("<a href='content/about-dootronics' target='_blank'>[Click here for help about dootronics]</a><br/><hr/>");
   print($block["content"]["#markup"]);
 
   return;
@@ -1524,6 +1525,7 @@ function lbd_display_slider_edoovilage_metrics($edoovillageId) {
   if($loadedNode->type != "edoovillage")
     return;
 
+  print("<a href='content/visualization-dashboards' target='_blank'>[Click here to learn more about visualizing metrics]</a><br/><hr/>");
   lbd_display_dashboard_doojects(NULL, NULL, $edoovillageId, NULL, FALSE); 
 
   return;
@@ -1601,6 +1603,7 @@ function lbd_display_slider_edoovilage_dootrips($edoovillageId) {
   }
  
   $output = theme('table', array('header' => $header, 'rows' => $rows ));
+  print("<a href='content/dootrip-system' target='_blank'>[Click here for help about dootrips]</a><br/>");
   print($output);
 
   return;
@@ -1626,6 +1629,7 @@ function lbd_display_slider_edoovilage_gics($edoovillageId) {
     return;
 
   $formGics = drupal_get_form('gic_table', $edoovillageId); 
+  print("<a href='content/global-inventory-checks-gics' target='_blank'>[Click here for help about GICs]</a><br/><hr/>");
   print(drupal_render($formGics)); 
 
   return;

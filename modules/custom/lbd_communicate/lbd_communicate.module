@@ -555,7 +555,8 @@ function _email_team_event($node, $comment = NULL) {
         $validatedEmails = $validatedEmails . ", " . $trimmedEmail;
     }
     $validatedEmails = substr($validatedEmails, 1); // remove extra comma
-    $emailsList = $emailsList . ", " . $validatedEmails;
+    if($validatedEmails != "")
+      $emailsList = $emailsList . ", " . $validatedEmails;
   }
 
   // Ensure that all users who added a comment are included in the email list.
@@ -567,6 +568,10 @@ function _email_team_event($node, $comment = NULL) {
     $userLoaded = user_load($item->uid);
     $emailsList = $emailsList . ", " . $userLoaded->mail;
   }
+
+  // Include also the author of the parent node
+  $userLoaded = user_load($node->uid);
+  $emailsList = $emailsList . ", " . $userLoaded->mail;
 
   $activityUrl = url(drupal_get_path_alias("node/" .  $node->nid, $langCode), array('absolute' => TRUE));
   $teamsMgmUrl = url(drupal_get_path_alias("my-teams", $langCode), array('absolute' => TRUE));
