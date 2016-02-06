@@ -20,6 +20,7 @@
   - To update the Drupal core to the latest release, do as follows:
 
     #+BEGIN_EXAMPLE
+    # Set the site under maintenance mode and clear the cache
     drush vset --exact maintenance_mode 1
     drush cache-clear all
     cp /var/www/lbd/.htaccess /var/www/lbd/.htaccess.backup
@@ -27,6 +28,10 @@
     cp /var/www/lbd/sites/default/settings.php /var/www/lbd/sites/default/settings.php.backup
     drush up drupal
     # check if there were any changes to .htaccess, robots.txt and settings.php and if so, reapply them.
+    diff /var/www/lbd/.htaccess /var/www/lbd/.htaccess.backup
+    diff /var/www/lbd/robots.txt /var/www/lbd/robots.txt.backup
+    diff /var/www/lbd/sites/default/settings.php /var/www/lbd/sites/default/settings.php.backup
+    # Bring the site back and clear the cache one more time
     drush vset --exact maintenance_mode 0
     drush cache-clear all 
     #+END_EXAMPLE
