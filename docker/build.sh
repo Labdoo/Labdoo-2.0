@@ -116,7 +116,7 @@ fi
 ### make sure that we are using the right git branch
 cd $srcdir/
 git checkout $git_branch
-git pull
+#git pull
 cd $workdir
 
 ### build the docker image
