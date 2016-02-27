@@ -34,7 +34,9 @@ function remove_dir() {
 if [ "$dev" = 'false' ]
 then
     ### create a container for production
-    docker create --name=$container --hostname=$hostname --restart=always $ports $image
+    docker create --name=$container --hostname=$hostname --restart=always \
+        -v $(pwd)/downloads:/var/www/downloads \
+        $ports $image
 else
     ### remove the directory labdoo/ if it exists
     remove_dir labdoo
