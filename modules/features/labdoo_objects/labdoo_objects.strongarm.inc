@@ -969,9 +969,9 @@ function labdoo_objects_strongarm() {
     'display' => array(
       'weight' => '0',
       'hide' => array(
-        'name' => 0,
-        'street' => 0,
-        'additional' => 0,
+        'name' => 'name',
+        'street' => 'street',
+        'additional' => 'additional',
         'city' => 0,
         'province' => 0,
         'postal_code' => 0,
