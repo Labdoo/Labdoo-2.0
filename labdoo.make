@@ -47,6 +47,7 @@ projects[countries] = 2.3
 projects[search_config] = 1.1 
 projects[hide_submit] = 2.0 
 projects[extlink] = 1.18
+projects[views_distinct] = 1.0 
 
 ;--------------------
 ; Security

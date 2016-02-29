@@ -95,6 +95,7 @@ dependencies[] = search_config
 dependencies[] = hide_submit 
 dependencies[] = date_popup 
 dependencies[] = extlink 
+dependencies[] = views_distinct 
 
 ;;; Features and exports/imports
 dependencies[] = strongarm
