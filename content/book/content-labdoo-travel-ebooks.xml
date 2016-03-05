@@ -1,0 +1,58 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>23939</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Labdoo Travel eBooks</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>23939</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Labdoo Travel eBooks are a new and exciting addition to our Labdoo network. They inspire students to learn about the world, while they learn vital commuter skills. 
+
+These eBooks, which are fun and easy to make, help teach sentence structure and typing while developing communication skills, creativity and understanding. Students will acquire knowledge, self confidence and pride.
+
+We invite teachers and volunteers to author eBooks too. Not only will you be contributing to the lives of these students, and drawing public recognition to your organization. It can also help people open their eyes to the fun and pretty world.
+
+Join hands with our teachers, volunteers and children. Help us teach the skills that will enable all young people to compete in the global market for a better life. 
+
+Click <a href= "http://ftp.labdoo.org/download/Public/eBooks/Labdoo%20Travel%20eBooks/Gallery" > Here </a> to enjoy explore the world contributed by our precious little ones.
+
+<br></br>
+<br></br>
+<br></br></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>142</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>926</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1307</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

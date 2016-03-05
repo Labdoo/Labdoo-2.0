@@ -1,0 +1,52 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>23192</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Wie erreiche ich die lokale Presse?</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>23192</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Trotz Internet ist die lokale Presse ein sehr wichtiger Multiplikator für Labdoo.org. Zwar kann Labdoo.org keine Anzeigen schalten, i.d.R. ist die Presse aber trotzdem bereit, über eure lokalen Aktivitäten zu berichten. 
+
+Zu Beginn empfehlen wir einen persönlichen Besuch in der Redaktion der regionalen Presse, z.B. der Tageszeitung, der kostenlosen Stadt(teil)magazine etc. Nehmt dafür Unterlagen, z.B. eine ausgedruckte Projektpräsentation mit. Später reicht es aus, Neuigkeiten per Mail an die Reaktion(en) zu schicken. Aufhänger für Berichte sind z.B. der Start eines Hubs, Annahme von oder Aufrufe zu IT-Spenden, neue Edoovillages (Projekte) u.a. Und schöne Fotos kommen immer gut :) Je mehr Ihr den regionalen Bezug herausstreicht, umso größer die Chance, dass es gedruckt wird.
+
+Die Labdoo Vereine bieten euch auch den Service, eure Berichte und Fotos zu einer Pressemeldung aufzubereiten. Schickt uns einfach was ihr habt - jede IT-Spende, jedes Projekt, jede Ankunft bei den Kindern ist eine Meldung wert...
+
+<strong>Für D:</strong> Labdoo hat ein Konto bei http://www.openpr.de (bei Recherche Labdoo eingeben). Über dieses Presseportal erreichen wir kostenlos die überregionalen Medien. Wenn ihr Berichte mit überregionalem Bezug habt mailt die gerne zur Veröffentlichung an uns.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>32</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1242</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1266</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

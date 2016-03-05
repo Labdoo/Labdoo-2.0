@@ -23,9 +23,31 @@
 <type>value</type>
 <value>In diesem Wiki findet ihr Informationen für bereits bestehende Hubs, aber auch für HelferInnen, die überlegen, ein neues Labdoo Hub in ihrer Region aufzubauen - erprobte Ideen, "best-practice" Aktionen zur Gewinnung neuer IT-Spender und HelferInnen, Werkzeuge u.v.a. mehr. 
 
-Wenn ihr auch gute Erfahrungen macht teilt uns dies gerne mit. Dann nehmen wir es hier auf, damit auch andere Hubs und HelferInnen davon profitieren können.
+Labdoo.org unterscheidet zwischen <strong>Labdoo Hubs ("Drehkreuz")</strong> und <strong>Branch (vergleichbar einer "Filiale / Aussenstelle", Annahmestelle)</strong>. Die bereits bestehenden Hubs stehen auf www.labdoo.org.org/de/hubs.
 
-</value>
+Ein <strong>Branch</strong> ist einem Hub angeschlossen, wird aber nur in Teilaufgaben wie der Annahme und Weitergabe von IT-Spenden tätig. Es erscheint zwar auf unserer Homepage, hat aber keine eigene E-Mailadresse und wird auch sonst nicht in unseren Unterlagen gelistet.
+
+Bei einem <strong>Hub</strong> bildet sich i.d.R. eine regionale Gruppe von Helfern, die jeweils nach Neigung und Kenntnissen sich gegenseitig helfen. Der eine hat einen Raum zum Lagern, der andere kennt sich vielleicht mit Ubuntu (Linux) aus und kann installieren, der nächste kümmert sich im das Bekanntmachen von Labdoo.org, nimmt Geräte entgegen oder mit ins Ausland usw. Ein Hub hat eine eigene E-Mailadresse und macht sich stärker nach außen bemerkbar (Presse, lokale Netzwerke, unsere Homepage, unsere Präsentation usw)
+
+Zeitlich kann jeder soviel Zeit einbringen wie er möchte, das können wenige Stunden im Monat sein oder mehr. Es soll ja Spaß machen und ehrenamtliches Engagement bleiben.
+
+Bei Fragen oder Interesse schickt gerne eine Mail an Labdoo-DACH@Labdoo.org, danke.
+
+Als Hub kümmert ihr euch in eurer Region um
+<ul>
+<li>telefonische Anfragen oder Anfragen per Mail zu bearbeiten (oft nur wenige im Monat)</li>
+<li>euer Hub in der Region über Presse, Auslage von Werbematerial u.a. Wegen bekannt zu machen,</li>
+<li>über Anträge von Projekten (Edoovillages) zu entscheiden und diese online zu stellen, z.B. für Projekte, Schulen, Heime u.a.; alles was einen Bezug zu Kindern, Jugendlichen (in D bis 26 Jahre) und Bildung hat</li>
+<li>euch mit weiteren Helfern und Projekten in eurer Region zu vernetzen</li>
+<li>IT-Spenden von privaten Spendern oder Unternehmen entgegen zu nehmen und aufzuarbeiten,</li>
+<li>Flug- bzw. Transportpaten mit Rechnern zu versorgen.</li>
+</ul>
+
+Das Portal unterstützt euch, so könnt ihr z.B. aktivieren, dass ihr automatisch eine Benachrichtigung bekommt, wenn im Umkreis eures Hubs ein Laptops zur Abholung ("pick-me-up") bereit steht. Hierzu geht ihr auf <code>Mein Konto -> Profil bearbeiten -> unter Hub Manager notification</code> einen Haken in "Upon a dootronic being marked with the 'pick me up' flag " machen und den Suchradius (notification area), z.B. 50 oder 100 km festlegen.
+
+Ihr bestimmt selber, wie viel Zeit und Engagement Ihr einbringen möchtet. Der Aufbau eines lokalen Teams und die Verteilung der Aufgaben auf mehrere Personen hat sich bewährt.
+
+Wenn ihr auch gute Erfahrungen macht teilt uns dies gerne mit. Dann nehmen wir es hier auf, damit auch andere Hubs und HelferInnen davon profitieren können.</value>
 </body>
 <body>
 <type>format</type>

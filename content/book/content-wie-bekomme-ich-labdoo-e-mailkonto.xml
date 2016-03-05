@@ -1,0 +1,60 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>23201</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Wie bekomme ich ein Labdoo E-Mailkonto?</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>23201</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Als Hub erhaltet ihr eine E-Mail-Adresse, i.d.R. in der Form STADT-Hub(at)Labdoo.org oder REGION-Hub(at)Labdoo.org sowie einen Eintrag auf der Homepage https://www.labdoo.org/de/hubs.
+
+Wichtig für die Einrichtung des Hubs und der Labdoo-E-Mail ist die Verknüpfung mit einem Labdoo-Konto (User). Bitte schickt zuerst den Namen des Labdoo-User (Log-In Name) und eure Wunsch-eMailadresse an Labdoo-DACH@Labdoo.org. Euer Labdoo-User bekommt dann Hub-Rechte, d.h. ihr seht bestimmte Informationen und habt Rechte, die normale Anwender nicht haben. Bitte geht mit diesen Möglichkeiten sorgsam um und beachtet die nationalen Datenschutzbestimmungen.
+
+Danach erhaltet ihr eure E-Mailadresse mit Passwort und könnt sie einrichten. Aktuell werden die Labdoo-E-Mails bei Gmail gehostet. Zur Einrichtung der E-Mailadressen bitte die Einstellungen für Gmail-Konten übernehmen https://support.google.com/mail/topic/3398031?hl=de.
+
+Als nächstes bitte den Eintrag für euer Hub vervollständigen. Der Eintrag und dessen Kontaktdaten sollte so detailliert sein, dass euch Spender erreichen und kontaktieren können (Anschrift, ggf. Öffnungszeiten, möglichst auch Festnetz und/oder Handynummer). 
+
+Wenn es später in der Region weitere Annahmestellen ("Branches") gibt, die euch bei der Annahme von IT-Spenden unterstützen, können diese wie "Filialen" eines Hubs unter dem Hub-Eintrag ergänzt werden. 
+
+Im Feld "Über dieses Hub" könnt ihr etwas zu euch, eurem Team und eurem Hub schreiben. Setzt dort bitte auch eure Hub-Mailadresse und ggf. Links zu externen Seiten ein. 
+
+<strong>Noch eine Bitte:</strong>
+Zwar sind alle Helfer ehrenamtlich engagiert, aber es ist dennoch wichtig ist, dass IT-Spender das Hub immer und schnell erreichen können. Wenn ihr euch temporär (z.B. wegen Urlaub, Erkrankung) oder dauerhaft (z.B. wegen Umzug) nicht mehr um das Hub kümmern könnt, informiert bitte Labdoo-DACH@Labdoo.org. Wir kümmern uns dann übergangsweise oder auf Dauer um eure Mails oder suchen eine/n NachfolgerIn fürs Hub. Nichts wäre schlimmer, als wenn IT-Spenden oder Kontaktversuche ins Leere laufen würden!
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>32</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>927</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1275</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

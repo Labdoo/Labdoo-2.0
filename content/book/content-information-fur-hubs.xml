@@ -5,7 +5,7 @@
 </nid>
 <title>
 <type>node_title</type>
-<value>Information für Hubs</value>
+<value>Tipps und Tricks für Hubs</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -21,69 +21,7 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Hier erhalten Hubs Tipps, Hinweise und einen Überblick.
-
-Labdoo.org unterscheidet zwischen <strong>Labdoo Hubs ("Drehkreuz")</strong> und <strong>Branch (vergleichbar einer "Filiale / Aussenstelle", Annahmestelle)</strong>. Die bereits bestehenden Hubs stehen auf www.labdoo.org.org/de/hubs.
-
-Ein <strong>Branch</strong> ist einem Hub angeschlossen, wird aber nur in Teilaufgaben wie der Annahme und Weitergabe von IT-Spenden tätig. Es erscheint zwar auf unserer Homepage, hat aber keine eigene E-Mailadresse und wird auch sonst nicht in unseren Unterlagen gelistet.
-
-Bei einem <strong>Hub</strong> bildet sich i.d.R. eine regionale Gruppe von Helfern, die jeweils nach Neigung und Kenntnissen sich gegenseitig helfen. Der eine hat einen Raum zum Lagern, der andere kennt sich vielleicht mit Ubuntu (Linux) aus und kann installieren, der nächste kümmert sich im das Bekanntmachen von Labdoo.org, nimmt Geräte entgegen oder mit ins Ausland usw. Ein Hub hat eine eigene E-Mailadresse und macht sich stärker nach außen bemerkbar (Presse, lokale Netzwerke, unsere Homepage, unsere Präsentation usw)
-
-Zeitlich kann jeder soviel Zeit einbringen wie er möchte, das können wenige Stunden im Monat sein oder mehr. Es soll ja Spaß machen und ehrenamtliches Engagement bleiben.
-
-Bei Fragen oder Interesse schickt gerne eine Mail an Labdoo-DACH@Labdoo.org, danke.
-
-<ul>
-<li><strong>E-Mail-Konto, Erreichbarkeit</strong></li>
-
-Als Hub erhaltet ihr eine E-Mail-Adresse, i.d.R. in der Form STADT-Hub(at)Labdoo.org oder REGION-Hub(at)Labdoo.org sowie einen Eintrag auf der Homepage https://www.labdoo.org/de/hubs.
-
-Wichtig für die Einrichtung des Hubs und der Labdoo-E-Mail ist die Verknüpfung mit einem Labdoo-Konto (User). Bitte schickt zuerst den Namen des Labdoo-User (Log-In Name) und eure Wunsch-eMailadresse an Labdoo-DACH@Labdoo.org. Euer Labdoo-User bekommt dann Hub-Rechte, d.h. ihr seht bestimmte Informationen und habt Rechte, die normale Anwender nicht haben. Bitte geht mit diesen Möglichkeiten sorgsam um und beachtet die nationalen Datenschutzbestimmungen.
-
-Danach erhaltet ihr eure E-Mailadresse mit Passwort und könnt sie einrichten. Aktuell werden die Labdoo-E-Mails bei Gmail gehostet. Zur Einrichtung der E-Mailadressen bitte die Einstellungen für Gmail-Konten übernehmen https://support.google.com/mail/topic/3398031?hl=de.
-
-Als nächstes bitte den Eintrag für euer Hub vervollständigen. Der Eintrag und dessen Kontaktdaten sollte so detailliert sein, dass euch Spender erreichen und kontaktieren können (Anschrift, ggf. Öffnungszeiten, möglichst auch Festnetz und/oder Handynummer). 
-
-Wenn es später in der Region weitere Annahmestellen ("Branches") gibt, die euch bei der Annahme von IT-Spenden unterstützen, können diese wie "Filialen" eines Hubs unter dem Hub-Eintrag ergänzt werden. 
-
-Im Feld "Über dieses Hub" könnt ihr etwas zu euch, eurem Team und eurem Hub schreiben. Setzt dort bitte auch eure Hub-Mailadresse und ggf. Links zu externen Seiten ein. 
-
-Als Hub kümmert ihr euch in eurer Region um
-<ul>
-<li>telefonische Anfragen oder Anfragen per Mail zu bearbeiten (oft nur wenige im Monat)</li>
-<li>euer Hub in der Region über Presse, Auslage von Werbematerial u.a. Wegen bekannt zu machen,</li>
-<li>über Anträge von Projekten (Edoovillages) zu entscheiden und diese online zu stellen, z.B. für Projekte, Schulen, Heime u.a.; alles was einen Bezug zu Kindern, Jugendlichen (in D bis 26 Jahre) und Bildung hat</li>
-<li>euch mit weiteren Helfern und Projekten in eurer Region zu vernetzen</li>
-<li>IT-Spenden von privaten Spendern oder Unternehmen entgegen zu nehmen und aufzuarbeiten,</li>
-<li>Flug- bzw. Transportpaten mit Rechnern zu versorgen.</li>
-</ul>
-
-Das Portal unterstützt euch, so könnt ihr z.B. aktivieren, dass ihr automatisch eine Benachrichtigung bekommt, wenn im Umkreis eures Hubs ein Laptops zur Abholung ("pick-me-up") bereit steht. Hierzu geht ihr auf <code>Mein Konto -> Profil bearbeiten -> unter Hub Manager notification</code> einen Haken in "Upon a dootronic being marked with the 'pick me up' flag " machen und den Suchradius (notification area), z.B. 50 oder 100 km festlegen.
-
-Ihr bestimmt selber, wie viel Zeit und Engagement Ihr einbringen möchtet. Der Aufbau eines lokalen Teams und die Verteilung der Aufgaben auf mehrere Personen hat sich bewährt.
-
-<strong>Noch eine Bitte:</strong>
-Zwar sind alle Helfer ehrenamtlich engagiert, aber es ist dennoch wichtig ist, dass IT-Spender das Hub immer und schnell erreichen können. Wenn ihr euch temporär (z.B. wegen Urlaub, Erkrankung) oder dauerhaft (z.B. wegen Umzug) nicht mehr um das Hub kümmern könnt, informiert bitte Labdoo-DACH@Labdoo.org. Wir kümmern uns dann übergangsweise oder auf Dauer um eure Mails oder suchen eine/n NachfolgerIn fürs Hub. Nichts wäre schlimmer, als wenn IT-Spenden oder Kontaktversuche ins Leere laufen würden!
-
-<li><strong>Teams und soziale Netzwerke</strong></li>
-
-Auf unserer Homepage findet ihr unter https://www.labdoo.org/de/teams verschiedene Labdoo-Gruppen. In jedem Fall solltet ihr Mitglied in der DACH-Gruppe werden https://www.labdoo.org/de/content/labdooorg-dach, für alle deutschsprachigen Informationen. Empfehlen können wir auch die schwarzen Bretter im Coffee Shop https://www.labdoo.org/content/coffee-shop und das globale Brett https://www.labdoo.org/content/global.
-
-Labdoo ist in mehreren sozialen Netzwerken vertreten. Wenn ihr in einigen angemeldet seid freuen wir uns über euer Like, +1 oder werdet Follower:
-
-<ul>
-<li>https://www.facebook.com/LabdooDACH  (deutschsprachige Community)</li>
-<li>https://www.facebook.com/Labdoo (internationale Community)</li>
-<li>https://plus.google.com/communities/1121545386108120170659</li>
-<li>https://www.xing.com/net/Labdoo  (Firmen, Berufliche Netzwerke)</li>
-<li>https://twitter.com/hammannette (Deutsch)</li>
-<li>https://twitter.com/labdoo_org (International)</li>
-</ul>
-
-Damit Ihr auf dem Laufenden bist solltet ihr den <strong>Newsletter</strong> abonnieren http://www.labdoo.org/de/content/newsletter-subscriptions
-Ihr könnt jederzeit Neuigkeiten aus eurem Hub mitteilen, die wir gerne in den nächsten Newsletter aufnehmen.
-
-</ul></value>
+<value>Hier findet ihr nützliche Hinweise, Tipps und Tricks. Wir freuen uns auf eure Fragen oder weitere Anregungen, die wir gerne aufnehmen.</value>
 </body>
 <body>
 <type>format</type>

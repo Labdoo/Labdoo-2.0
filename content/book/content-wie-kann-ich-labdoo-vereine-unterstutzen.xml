@@ -1,0 +1,51 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>23198</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Wie kann ich die Labdoo-Vereine unterstützen?</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>23198</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><strong>Einwerben von Spenden, Fördermitgliedschaft</strong>
+
+Die Unterstützung für Logistik, Hubs ud Helfer kostet die Vereine Spendengelder. Hier könnt ihr mithelfen, für eure regionalen Aktivitäten geflossene Hilfen wieder einzuwerben. Sprecht Unternehmen, Stiftungen, Sparkassen oder genossenschaftliche Banken auf eure regionale Tätigkeit an und bittet sie, euch zu unterstützen. Oft stellen diese Institutionen Fördermittel für regionale Vereine bzw. Aktivitäten bereit.
+
+<strong>In Deutschland</strong> könnt ihr Unterstützer und Empfänger von IT-Spenden auf unsere <strong>Fördermitgliedschaft im Labdoo.org e.V.</strong> hinweisen (in Vorbereitung, ab Frühjahr 2016, Details folgen).
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>32</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1243</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1272</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

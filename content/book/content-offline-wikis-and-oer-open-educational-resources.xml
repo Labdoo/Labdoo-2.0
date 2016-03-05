@@ -21,9 +21,9 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value><ol>
-
-<li><strong>Offline wikis and OER – Open Educational Ressources</strong></li>
+<value><font color="red">
+[Please print and attach this sheet to your dootronic shipment to ensure that the recipient knows how to use the computer. To print this sheet, click on 'Printer-friendly version' at the bottom of this page. Make sure to print it using the double page option in your printer settings to minimize the amount of paper used. Also, please print only one copy of this document for each group of laptops shipped together.]
+</font>
 
 All below mentioned documents can be downloaded from http://ftp.labdoo.org/download/Public/. If a Labdoo laptop was installed using Labdoo images for cloning the English content is pre-installed.
 
@@ -32,6 +32,8 @@ For an easy download we recommend rsync http://en.wikipedia.org/wiki/Rsync. Rsyn
 Or even easier, use our installation script for content http://ftp.labdoo.org/download/images/installskripts/installscript-content.sh.
 
 If you added own content to the folder /home/labdoo/Public and if you want to make sure that all users of the group labdoo (user student as well) gets access please use this script: http://ftp.labdoo.org/download/images/installskripts/set-rights-folder-files-Public-correct.sh.
+
+<ol>
 
 <li><strong>Wikipedia for schools (wikidoo, recommended)</strong></li>
 

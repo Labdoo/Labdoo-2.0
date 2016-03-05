@@ -33,9 +33,9 @@ Nach der Installation das System neu starten. Wenn der Laptop nicht korrekt hoch
 [video:https://youtu.be/ZwOGNZWTVpY]
 
 <li><strong>Hostnamen ändern</strong></li>
-Die geklonten Rechner heißen alle gleich z.B. labdoo-000005xxx. Hier sollte der richtige Hostname eingetragen werden, der identisch ist mit der Labdoo-ID-Nummer. Ist der Rechner schon bei labdoo.org getaffed? Wenn ja den nächsten Absatz überspringen.
+Die geklonten Rechner heißen alle gleich z.B. labdoo-000005xxx. Hier sollte der richtige Hostname eingetragen werden, der identisch ist mit der Labdoo-ID-Nummer. Ist der Rechner schon bei labdoo.org getagged? Wenn ja, bitte den nächsten Absatz überspringen.
 
-Sonst - Den Laptop online bei http://www.labdoo.org/de/node/add/laptop taggen (registrieren). Dabei werden Foto und Daten des Laptops registriert. Der Laptop erhält eine eindeutige Nummer, z.B. 000005214. Wenn ihr schon dabei seid druckt gleich die Aufkleber für Laptop und Ladegerät aus (print tags).
+Sonst - sen Laptop online bei http://www.labdoo.org/de/node/add/laptop taggen (registrieren). Dabei werden Foto und Daten des Laptops registriert. Der Laptop erhält eine eindeutige Nummer, z.B. 000005214. Wenn ihr schon dabei seid druckt gleich die Aufkleber für Laptop und Ladegerät aus (print tags).
 
 Bleiben wir bei dem Beispiel - Der Rechner würde also in labdoo-000005214 umbenannt, bzw. in eure konkrete Nummer, die ihr für euren Laptop getagged habt. Der Grund hierfür ist, dass als Clone alle Laptops den gleichen Hostnamen haben und das gäbe eine Kollision, wenn diese Laptops später in einem Netzwerk zusammen geführt würden.
 
@@ -77,7 +77,7 @@ Preferences → Software &amp; Updates → Additional Drivers → einige Zeit wa
 → es wird eine Liste an Treibern angezeigt → den gewünschten Treiber anklicken → Apply Changes
 
 <li><strong>Weitere Xowa-Wikis installieren</strong></li>
-Hierzu verweisen wir auf den Wiki-Beitrag.....(folgt)
+<a href="/de/content/xowa-wikis-installieren.">...ist hier beschrieben </a>
 
 <li><strong>Bluetooth-Schnittstelle anpassen (optional)</strong></li>
 Wenn der Laptop über Bluetooth verfügt, ist der Name der Bluetooth-Karte durch das Clonen identisch. Damit sich die Bluetooth-Schnittstelle des Rechners korrekt meldet → ein Terminal öffnen und eintippen:

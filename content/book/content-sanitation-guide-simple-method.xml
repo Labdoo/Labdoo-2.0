@@ -21,7 +21,7 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value><strong>About this document</strong>
+<value><strong>Introduction</strong>
 
 This brief document describes the process of sanitizing a laptop according to the Simple Method.  
 
@@ -30,7 +30,7 @@ If in any of these steps you get stuck during the sanitizing process, you can po
 
 [video:https://youtu.be/nBUgaaHW058]
 
-<strong>Sanitizing the laptops</strong>
+<strong>Sanitation Steps</strong>
 
 The current standard process of sanitizing a laptop is as follows:
 
@@ -48,9 +48,6 @@ Burn the downloaded file into a CD. Make sure you burn the downloaded file as an
 - <a href="http://www.ubuntu.com/download/desktop/burn-a-dvd-on-windows">Burning a CD using a Windows computer.</a>
 - <a href="http://www.ubuntu.com/download/desktop/burn-a-dvd-on-ubuntu">Burning a CD using an Ubuntu computer.</a>
 - <a href="http://www.ubuntu.com/download/desktop/burn-a-dvd-on-mac-osx">Burning a CD using a Apple/Mac computer.</a>
-</li>
-<li>
-If the hard drive is not pre-erased.  Please click <a href="https://www.labdoo.org/content/how-erase-data-hard-drive">HERE </a> to follow the instruction to clean the hard drive.
 </li>
 <li>
 Insert the Lubuntu CD into the laptop you intend to sanitize and boot the laptop from the CD. Upon booting the laptop with the CD, you should see the Linux installation menu. If you don't see it, you need to enter into the bios of the laptop and change the booting order of your computer to make sure it first boots from the CD. 
@@ -156,6 +153,6 @@ If you are not traveling, then get in touch with one of the Labdoo hubs (for ins
 </mlid>
 <weight>
 <type>book_array</type>
-<value>-15</value>
+<value>-14</value>
 </weight>
 </book>

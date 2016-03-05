@@ -1,0 +1,73 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>23111</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Managing Your Hub Notification Triggers</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>23111</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>As a hub manager, you will have the capability to activate some triggers allowing you to automatically receive notifications upon certain events that might be of interest to your hub operations. To manage your notification triggers, click first on 'My account' to go to your account page. From there, click on the 'Edit profile' tab. This will open your profile configuration page. In that page, scroll down until you see the section 'Hub manager notifications'. In that section, you will be able to select which notification triggers you want to activate and also define your notification area.
+
+Under 'Types of notifications ', select any of the triggers that you want to turn on:
+
+<ul>
+<li>
+'Upon a dootronic being marked with the 'pick me up' flag': Select this trigger if you want to be notified of dootronics that have been marked with the flag 'Pick me up' near your area.
+</li>
+<li>
+'Uppon tagging a dootronic': Select this trigger if you want to be notified upon a dootronic being tagged near your area.
+</li>
+<li>
+'Upon a new user joining Project Labdoo': Select this trigger if you want to be notified upon a new user being registered near your area.
+</li>
+</ul>
+
+Under 'Notification area', specify the area of the region you would like to receive notifications from. For instance, if you set this value to 50 km, you will receive notifications from activity happening within 50 kms of your home location.
+
+<hr/>
+<table align="center">
+<tr><td>
+<em> Figure. As a hub manager, you can configure notifications to help you track relevant activities.</em>
+</td></tr>
+<tr><td>
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/hub-notification-triggers.png" width="750"/>
+</td></tr>
+</table>
+<hr/></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>39</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>835</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1263</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

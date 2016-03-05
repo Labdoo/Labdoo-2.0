@@ -181,18 +181,6 @@ function make_main_menu() {
   $dootronicMlid = menu_link_save($item);
 
   $item = array(
-            'link_path' => 'node/add/laptop',
-            'link_title' => 'Tag it!',
-            'menu_name' => 'main-menu',
-            'weight' => -40,
-            'language' => 'en',
-            'customized' => 1,
-            'plid' => $dootronicMlid, 
-            'module' => 'menu',
-          );
-  $mlid = menu_link_save($item);
-
-  $item = array(
             'link_path' => 'node/11',
             'link_title' => t('View'),
             'menu_name' => 'main-menu',
@@ -205,9 +193,32 @@ function make_main_menu() {
   $mlid = menu_link_save($item);
 
   $item = array(
-            'link_path' => '<separator>',
+            'link_path' => 'content/about-dootronics',
+            'link_title' => t('About dootronics'),
             'menu_name' => 'main-menu',
             'weight' => -48,
+            'customized' => 1,
+            'plid' => $dootronicMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => '<separator>',
+            'menu_name' => 'main-menu',
+            'weight' => -45,
+            'customized' => 1,
+            'plid' => $dootronicMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'node/add/laptop',
+            'link_title' => t('Tag it!'),
+            'menu_name' => 'main-menu',
+            'weight' => -40,
+            'language' => 'en',
             'customized' => 1,
             'plid' => $dootronicMlid, 
             'module' => 'menu',
@@ -232,18 +243,6 @@ function make_main_menu() {
   $edoovillageMlid = menu_link_save($item);
 
   $item = array(
-            'link_path' => 'node/add/edoovillage',
-            'link_title' => t('Create'),
-            'menu_name' => 'main-menu',
-            'weight' => -40,
-            'language' => 'en',
-            'customized' => 1,
-            'plid' => $edoovillageMlid, 
-            'module' => 'menu',
-          );
-  $mlid = menu_link_save($item);
-
-  $item = array(
             'link_path' => 'node/12',
             'link_title' => t('View'),
             'menu_name' => 'main-menu',
@@ -256,7 +255,8 @@ function make_main_menu() {
   $mlid = menu_link_save($item);
 
   $item = array(
-            'link_path' => '<separator>',
+            'link_path' => 'content/managing-edoovillages',
+            'link_title' => t('About edoovillages'),
             'menu_name' => 'main-menu',
             'weight' => -48,
             'customized' => 1,
@@ -265,6 +265,27 @@ function make_main_menu() {
           );
   $mlid = menu_link_save($item);
 
+  $item = array(
+            'link_path' => '<separator>',
+            'menu_name' => 'main-menu',
+            'weight' => -45,
+            'customized' => 1,
+            'plid' => $edoovillageMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'node/add/edoovillage',
+            'link_title' => t('Create'),
+            'menu_name' => 'main-menu',
+            'weight' => -40,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => $edoovillageMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
 
   /*
    * Hubs menu item
@@ -284,18 +305,6 @@ function make_main_menu() {
   $hubMlid = menu_link_save($item);
 
   $item = array(
-            'link_path' => 'node/add/hub',
-            'link_title' => t('Create'),
-            'menu_name' => 'main-menu',
-            'weight' => -40,
-            'language' => 'en',
-            'customized' => 1,
-            'plid' => $hubMlid, 
-            'module' => 'menu',
-          );
-  $mlid = menu_link_save($item);
-
-  $item = array(
             'link_path' => 'node/13',
             'link_title' => t('View'),
             'menu_name' => 'main-menu',
@@ -308,9 +317,32 @@ function make_main_menu() {
   $mlid = menu_link_save($item);
 
   $item = array(
-            'link_path' => '<separator>',
+            'link_path' => 'content/managing-hubs',
+            'link_title' => t('About hubs'),
             'menu_name' => 'main-menu',
             'weight' => -48,
+            'customized' => 1,
+            'plid' => $hubMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => '<separator>',
+            'menu_name' => 'main-menu',
+            'weight' => -45,
+            'customized' => 1,
+            'plid' => $hubMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'node/add/hub',
+            'link_title' => t('Create'),
+            'menu_name' => 'main-menu',
+            'weight' => -40,
+            'language' => 'en',
             'customized' => 1,
             'plid' => $hubMlid, 
             'module' => 'menu',
@@ -370,18 +402,6 @@ function make_main_menu() {
   $dootripMlid = menu_link_save($item);
 
   $item = array(
-            'link_path' => 'node/add/dootrip',
-            'link_title' => t('Create'),
-            'menu_name' => 'main-menu',
-            'weight' => -40,
-            'language' => 'en',
-            'customized' => 1,
-            'plid' => $dootripMlid, 
-            'module' => 'menu',
-          );
-  $mlid = menu_link_save($item);
-
-  $item = array(
             'link_path' => 'node/14',
             'link_title' => t('View'),
             'menu_name' => 'main-menu',
@@ -394,7 +414,8 @@ function make_main_menu() {
   $mlid = menu_link_save($item);
 
   $item = array(
-            'link_path' => '<separator>',
+            'link_path' => 'content/dootrip-system',
+            'link_title' => t('About dootrips'),
             'menu_name' => 'main-menu',
             'weight' => -48,
             'customized' => 1,
@@ -403,6 +424,27 @@ function make_main_menu() {
           );
   $mlid = menu_link_save($item);
 
+  $item = array(
+            'link_path' => '<separator>',
+            'menu_name' => 'main-menu',
+            'weight' => -45,
+            'customized' => 1,
+            'plid' => $dootripMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'node/add/dootrip',
+            'link_title' => t('Create'),
+            'menu_name' => 'main-menu',
+            'weight' => -40,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => $dootripMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
 
   /*
    * Teams menu item

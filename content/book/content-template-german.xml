@@ -68,27 +68,27 @@ Datum: XXX
 
 <br><a name="#01"/><font color="#666666" size="5">Title of This News Entry Here</font><br/><br/>
 Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. 
-<br/><img src="/sites/default/files/styles/labdoo_flexslider_image_style/public/lbd_slides/guinea-conakry.png" width="600"/></br>
+<br/><img src="https://www.labdoo.org/sites/default/files/styles/labdoo_flexslider_image_style/public/lbd_slides/guinea-conakry.png" width="600"/></br>
 
 <a name="#02"/>
 <br><font color="#666666" size="5">Title of This News Entry Here</font><br/><br/>
 Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. 
-<br/><img src="/sites/default/files/styles/labdoo_flexslider_image_style/public/lbd_slides/guinea-conakry.png" width="600"/></br>
+<br/><img src="https://www.labdoo.org/sites/default/files/styles/labdoo_flexslider_image_style/public/lbd_slides/guinea-conakry.png" width="600"/></br>
 
 <a name="#03"/>
 <br><font color="#666666" size="5">Title of This News Entry Here</font><br/><br/>
 Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. 
-<br/><img src="/sites/default/files/styles/labdoo_flexslider_image_style/public/lbd_slides/guinea-conakry.png" width="600"/></br>
+<br/><img src="https://www.labdoo.org/sites/default/files/styles/labdoo_flexslider_image_style/public/lbd_slides/guinea-conakry.png" width="600"/></br>
 
 <a name="#04"/>
 <br><font color="#666666" size="5">Title of This News Entry Here</font><br/><br/>
 Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. 
-<br/><img src="/sites/default/files/styles/labdoo_flexslider_image_style/public/lbd_slides/guinea-conakry.png" width="600"/></br>
+<br/><img src="https://www.labdoo.org/sites/default/files/styles/labdoo_flexslider_image_style/public/lbd_slides/guinea-conakry.png" width="600"/></br>
 
 <a name="#05"/>
 <br><font color="#666666" size="5">Title of This News Entry Here</font><br/><br/>
 Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. Write here one or two paragraphs describing this news entry. 
-<br/><img src="/sites/default/files/styles/labdoo_flexslider_image_style/public/lbd_slides/guinea-conakry.png" width="600"/></br>
+<br/><img src="https://www.labdoo.org/sites/default/files/styles/labdoo_flexslider_image_style/public/lbd_slides/guinea-conakry.png" width="600"/></br>
 
 </td>
 </tr>
@@ -133,7 +133,7 @@ Write here one or two paragraphs describing this news entry. Write here one or t
 </bid>
 <plid>
 <type>book_array</type>
-<value>1162</value>
+<value>1277</value>
 </plid>
 <mlid>
 <type>book_array</type>
@@ -141,6 +141,6 @@ Write here one or two paragraphs describing this news entry. Write here one or t
 </mlid>
 <weight>
 <type>book_array</type>
-<value>0</value>
+<value>-12</value>
 </weight>
 </book>

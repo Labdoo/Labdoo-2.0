@@ -1,0 +1,52 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>23710</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Labdoo Student Diary</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>23710</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>In addition to the guidelines described in the <a href="../content/labdoo-school-hub-booklet">Labdoo School Hub Booklet</a>, it is often suggested by teachers that students performing Labdoo activities take the initiative of writing a report or a diary of their activities. This allows students to enhance their writing and communication skills while at the same time they share their social activities and their learning lessons with the rest of the classmates and the local community.
+
+Here is a great example of a diary that one of the high school students from one of the Labdoo School Hubs wrote and that you can use as a reference example:
+
+<a href="/sites/default/files/newsletters/en/labdoostudentdiary.pdf" target="_blank">[Download in pdf format]</a>
+
+<img src="/sites/default/files/newsletters/en/labdoo-diary-sample.png" width="800"/></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>41</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>825</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1281</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-6</value>
+</weight>
+</book>

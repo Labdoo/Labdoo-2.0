@@ -1,0 +1,97 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>113</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Configuring the Bios</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>113</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><strong>How to change the booting order of a laptop from the bios</strong>
+
+BIOS (Basic Input Output Subsystem) is a programmable chip that controls how information is passed to various devices in the computer system. A typical method to access the BIOS settings screen is to press ESC, F1, F2, F8 or F10 right after your start your computer.
+
+BIOS settings allow you to run a boot sequence from a hard drive, a CD-ROM drive, the network, or an external device. You may configure the order that your computer searches these physical devices for the boot sequence.
+
+The first device in the order list has the first boot priority. To install the Labdoo software you will need to ensure the CD-ROM, the USB or the network (depending on which method you use to install the software) are given the highest booting priority.
+
+Note: in the case of a USB installation, before you set boot priority for the USB device, plug the device into a USB port to ensure the BIOS will be able to detect it.
+
+To specify the boot sequence:
+
+<ol>
+<li>
+Start the computer and press ESC, F1, F2, F8 or F10 multiple times during the initial startup screen. Depending on the BIOS manufacturer, a menu may appear.
+</li>
+<li>
+Choose to enter BIOS setup. The BIOS setup utility page appears.
+</li>
+<li>
+Use the arrow keys to select the BOOT tab. System devices appear in order of priority.
+</li>
+<li>
+To give the CD/DVD, the USB or the Network the highest boot sequence priority, move such device to the first position in the list.
+</li>
+<li>
+Save and exit the BIOS setup utility.
+</li>
+<li>
+The computer will restart and will initiate its booting process by looking first at the device you gave the highest priority, allowing you to install the Labdoo software.
+</li>
+</ol>
+
+<hr/>
+<table align="center">
+<tr><td>
+<em> Figure. Illustration of the BIOS boot menu where you can change the booting order.</em>
+</td></tr>
+<tr><td>
+<img src="/sites/default/files/content/wiki-de/labdooer/bios-config.gif" width="600"/>
+</td></tr>
+</table>
+<hr/>
+
+<strong>Troubleshooting potential issues with the bios.</strong>
+
+In some rare cases the BIOS could be reset during the process of deleting the hard drive information from the system, or some times older laptops do not support internal and/or external USB keyboards during the booting process.
+
+It might happen that you are not able to use the arrow keys (up, down, right, left) to configure the BIOS. In such cases  the USB control (and sometimes the internal keyboard) was deactivated. 
+
+A possible solution is to connect an external PS/2 or USB keyboard, and continue to install or adjust the BIOS.
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>35</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>857</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>897</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-11</value>
+</weight>
+</book>

@@ -1,0 +1,92 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>23200</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Welche Werkzeuge sind sinnvoll?</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>23200</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Je nach eurem Know-How oder in eurem Helfernetzwerk wollt ihr eventuell Reparaturen durchführen. Alle u.a. Werkzeuge, Adapter usw. haben sich im praktischen Einsatz bewährt.
+
+<table> 
+<tr>
+<th>Artikel</th>
+<th>Foto</th>
+<th>Preis €</th>
+</tr>
+<tr>
+<td><a href="http://eustore.ifixit.com/Werkzeuge/54-Bit-Driver-Kit-Standard-Box.html">iFixit 54 Bit Driver Kit Standard-Box, eine Zusammenstellung der wichtigsten Bits; Aufsätze, um (fast) alles aufschrauben zu können...</a></td>
+<td><img src="/sites/default/files/content/wiki-de/hubs/ifixit_54_bit_kit.jpg" width="250"/></td>
+<td>ca. 20 €</td>
+</tr> 
+<tr>
+<td><a href="http://eustore.ifixit.com/Werkzeuge/Organisationshilfen/Magnetic-Project-Mat.html">iFixit Magnetmatte, Schrauben und Kleinteile sicher und rutsch-fest abzulegen</a></td>
+<td><img src="/sites/default/files/content/wiki-de/hubs/magnetmatte.jpg" width="250"/></td>
+<td>ca. 20 €</td>
+</tr> 
+<tr>
+<td><a href="http://www.conrad.de/ce/de/product/989949/USB-20-zu-IDESATA-Konverter"><strong>USB 2.0</strong> zu IDE+SATA Festplatten Konverter, um externe IDE- oder SATA-Festplatten per USB anzuschliessen und extern mit den Labdoo-Images bespielen zu können</a></td>
+<td><img src="/sites/default/files/content/wiki-de/hubs/ide_sata_adapter.jpg" width="250"/></td>
+<td>ca. 20 €</td>
+</tr> 
+<tr>
+<td><a href="http://www.conrad.de/ce/de/product/976534/USB-30-zu-IDESATA-Konverterr">wie vor, aber <strong>USB 3.0</strong> zu IDE- und SATA-Festplatten Konverter</a></td>
+<td>ähnlich wie vor</td>
+<td>ca. 30 €</td>
+</tr> 
+<tr>
+<td>Anti-Statik-Armband mit Klemme</td>
+<td><img src="/sites/default/files/content/wiki-de/hubs/anti_static_armband.jpg" width="250"/></td>
+<td>ca. 4 €</td>
+</tr> 
+</table>
+
+<br/>
+Als nützlich haben sich auch erwiesen
+<ul>
+<li>externe USB-Sticks (16/32 GB), </li>
+<li>externe USB-Festplatte (HDD),</li>
+<li>externe CD/DVD-Laufwerk,</li>
+<li>Sortierbox für Schrauben und Kleinteile (Baumarkt),</li>
+<li>kleiner Kreuzschlitzschraubenzieher, ggf. ein Set,</li>
+<li>externe USB-Tastatur und USB-Maus.</li>
+</ul>
+<br/>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>32</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>927</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1274</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

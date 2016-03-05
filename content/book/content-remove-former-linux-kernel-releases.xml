@@ -56,6 +56,6 @@ In this example you might delete the kernels 3.2.0-31 and 3.2.0-32 (the numbers 
 </mlid>
 <weight>
 <type>book_array</type>
-<value>7</value>
+<value>4</value>
 </weight>
 </book>

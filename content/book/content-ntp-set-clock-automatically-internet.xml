@@ -45,6 +45,6 @@ NTP is already part of the Labdoo images and install scripts.</value>
 </mlid>
 <weight>
 <type>book_array</type>
-<value>4</value>
+<value>1</value>
 </weight>
 </book>

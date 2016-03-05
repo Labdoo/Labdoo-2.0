@@ -1,0 +1,56 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>122</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>DKMS (Automatically Driver Updates)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>122</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Dynamic Kernel Module Support (DKMS) is a program/framework that enables generating Linux kernel modules whose sources generally reside outside the kernel source tree. The concept is to have DKMS modules automatically rebuilt when a new kernel is installed.
+
+An essential feature of DKMS is that it automatically recompiles all DKMS modules if a new kernel version is installed. This allows drivers and devices outside of the mainline kernel to continue working after a Linux kernel upgrade.
+
+To install DKMS, do as follows:
+
+- Open  a terminal by pressing at the same time the keys ALT + CTRL T
+- Type in the following command:
+<code>sudo apt-get install build-essential dkms</code>     [Enter] + [Password] + [Enter]
+
+Note: DKMS is already installed if you cloned a laptop using the advanced method or if you used the installscript-software.sh.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>35</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>857</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>906</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-10</value>
+</weight>
+</book>

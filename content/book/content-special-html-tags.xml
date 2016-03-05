@@ -112,6 +112,13 @@ You may insert videos using the following simple tag:
 
 <img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/video-filter.png"/>
 
+For example:
+
+<code>&#91;video:https://www.youtube.com/watch?v=Gpo-7GjFydw&#93;</code>
+
+[video:https://www.youtube.com/watch?v=Gpo-7GjFydw]
+
+
 For a good description on how to insert videos please directly refer to the <a href="/filter/tips">'Compose tips'</a> page under the 'Video Filter' section.</value>
 </body>
 <body>

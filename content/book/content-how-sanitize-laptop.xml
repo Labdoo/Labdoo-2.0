@@ -25,7 +25,7 @@
 
 The education software installed in every Labdoo laptop is called Edubuntu. Edubuntu is a powerful free software platform including education applications covering all of areas of science, from pre-school level to high-school level and available in more than 130 languages.You can learn more about Edubuntu directly from https://www.edubuntu.org/. In addition to the Edubuntu platform, laptops can optionally be preloaded with additional education content such as an offline version of Wikipedia and other Open Education Resources (OER).
 
-Labdoo provides two laptop sanitation manuals: a simple sanitation guide and an advanced sanitation guide. If you are new to the Labdoo Project, we recommend you to follow the simple sanitation guide. If you need to deal with large numbesr of laptops and are experienced, we recommend you to use the advanced sanitation guide.
+Labdoo provides two laptop sanitation manuals: a simple sanitation guide and an advanced sanitation guide. If you are new to the Labdoo Project, we recommend you to follow the simple sanitation guide. If you need to deal with large numbers of laptops and are experienced, we recommend you to use the advanced sanitation guide. Remember also that as a last resort and if you don't have the time to sanitize your own computer, you can always bring it to your closest hub and have the labdooers there sanitize it for you (to see the list of available hubs, click on 'Hubs -> View' to go to the list of <a href='../content/hubs-dashboard'>Labdoo hubs</a>).
 
 The simple sanitation guide installs the base Edubuntu platform (preloaded with all the Edubuntu education applications) and it allows you to optionally install extra education packages via some scripts. The advanced sanitation guide uses pre-configured images and it allows you to install all the packages (both the Edubuntu platform plus all the extra education packages) in one shot using the image. The next table summarizes the packages that are installed by each method. 
 
@@ -44,19 +44,25 @@ The simple sanitation guide installs the base Edubuntu platform (preloaded with 
 <td> Yes </td>
 </tr> 
 <tr>
-<td>Edubuntu educational software (base education packages)</td>
+<td>Edubuntu Educational Software (base education packages)</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>Yes</td>
 </tr>
 <tr>
-<td>Wikipedia for schools "wikidoo" english offline lexicon, suitable for children</td>
+<td>Office Suite (Libreoffice)</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Wikipedia for schools "wikidoo" (English offline lexicon suitable for children)</td>
 <td>No</td>
 <td>Yes</td>
 <td>Yes</td>
 </tr>
 <tr>
-<td>License-free manualsfor Ubuntu, Libreoffice etc.</td>
+<td>License-free manuals for Ubuntu, Libreoffice, etc.</td>
 <td>No</td>
 <td>Yes</td>
 <td>Yes</td>
@@ -74,43 +80,7 @@ The simple sanitation guide installs the base Edubuntu platform (preloaded with 
 <td>Yes</td>
 </tr>
 <tr>
-<td>Optimised user concept to avoid accidental system changes</td>
-<td>No</td>
-<td>Yes</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>preparation for virtual machines (VM VirtualBox)</td>
-<td>No</td>
-<td>Yes</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Lubuntu 14.04 LTS for non-PAE CPUs (somme Pentium M CPUs)</td>
-<td>No</td>
-<td>No</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Extended drivers for older WiFi cards etc.</td>
-<td>No</td>
-<td>Yes</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Virus scanner and tool ClamAV</td>
-<td>No</td>
-<td>Yes</td>
-<td>Yes</td>
-</tr>
-<tr>
 <td>Barrier-free access for blind or hearing impaired user</td>
-<td>No</td>
-<td>Yes</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Offline video tutorials for user</td>
 <td>No</td>
 <td>Yes</td>
 <td>Yes</td>
@@ -122,22 +92,39 @@ The simple sanitation guide installs the base Edubuntu platform (preloaded with 
 <td>Yes</td>
 </tr>
 <tr>
-<td>Unique host name for each laptop</td>
+<td>Offline video tutorials for user</td>
 <td>No</td>
-<td>No</td>
+<td>Yes</td>
 <td>Yes</td>
 </tr>
 <tr>
-<td>Suggested minimum size of disc drive</td>
+<td>Optimized user flow to avoid accidental system changes</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Preparation for virtual machines (VM VirtualBox)</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Virus scanner and tool ClamAV</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Suggested minimum size of disk drive</td>
 <td>20 GB</td>
-<td>20 GB</td>
-<td>20 GB</td>
+<td>30 GB</td>
+<td>30 GB</td>
 </tr>
 </table>
 <hr/>
 
-Please continue reading this guide to learn the step by step process of sanitizing a laptop.
-</value>
+Please continue reading this guide to learn the step by step process of sanitizing a laptop by choosing one of the two available methods: simple or advanced.</value>
 </body>
 <body>
 <type>format</type>

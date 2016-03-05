@@ -5,7 +5,7 @@
 </nid>
 <title>
 <type>node_title</type>
-<value>Add a local printer as network printer</value>
+<value>Add a Local Printer as Network Printer</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -21,29 +21,25 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>If a printer is not installed via LAN in a network, but locally via USB or Centronics cable at a Linux computer you can allow other computers in the network to access to this printer. 
+<value>If you have a printer directly connected to your Labdoo computer (via USB or a Centronics cable), you can share access to the printer from other computers via a local network. To do so you need to use CUPS (Common Unix Printing System) as follows.
 
-Therefore the CUPS (Common Unix Printing System) must be installed – it is part of  Lubuntu repository.
-
-<strong>Go to the computer, which is linked to the printer:</strong>
+<strong>Configuring the Labdoo computer attached to the printer:</strong>
 <ul>
-<li>Open the web browser and type the address http://localhost:631</li>
-<li>Allow printer access</li>
-<li>On page http://localhost:631/admin/ tick at “Share printers connected to this system”. </li>
-<li>Alternatively use this command in a terminal: <code>cupsctl –share-printers</code>    (Enter)</li>
-<li>Select on page ”printer” the connected printer. </li>
-<li>Click in menu “administration” on “printer”.</li>
-<li>Leave “actual connection” unchanged  → Proceed →  add a tick to “allow access to this printer / share”; </li>
-<li>optional: Add a name for the place of installation → proceed →  change printer.</li>
+<li>Open the web browser and type the URL address http://localhost:631</li>
+<li>On the admin page http://localhost:631/admin/ select “Share printers connected to this system”. </li>
+<li>Select under ”Printers” the connected printer. </li>
+<li>Click on the menu “Administration” and on “Printer”.</li>
+<li>Leave “Actual connection” unchanged  → Proceed →  select “Allow access to this printer / share”.</li>
+<li>Optional: add a name for the place of installation → Proceed →  Change settings.</li>
 </ul>
 
-<strong>Show printer on other computers in the network (has to be done on each computer in the network)</strong>
+<strong>Showing the printer on other Labdoo computers connected via the network:</strong>
 <ul>
-<li>To show the printer on all computers in the network → http://localhost:631/admin → tick “Show printers shared by other systems”  → Change settings → acknowledge, ready.</li>
-<li>Alternatively run in a terminal: <code>cupsctl --remote-printers</code>  (Enter)</li>
+<li>Open the web browser and type the URL address http://localhost:631/admin</li>
+<li>Select the option “Show printers shared by other systems”  → Change settings.</li>
 </ul>
 
-After this you should see the printer in the menu “printer”. Maybe you have to wait a while before the printer is shown or re-load the page.</value>
+After this you should see the printer in the menu “Printer". Maybe you have to wait a little bit before the printer is shown or re-load the page http://localhost:631/admin/.</value>
 </body>
 <body>
 <type>format</type>
@@ -63,6 +59,6 @@ After this you should see the printer in the menu “printer”. Maybe you have 
 </mlid>
 <weight>
 <type>book_array</type>
-<value>-9</value>
+<value>-12</value>
 </weight>
 </book>

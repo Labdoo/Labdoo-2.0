@@ -1,0 +1,89 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>19301</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Tagging Procedure</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>19301</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Each dootronic contributed to the Labdoo platform needs to be tagged and labeled with its unique Labdoo Indentifier (ID) to ensure that donors can track their donation all the way to the final destination school and/or the recycling factory.
+
+The following steps describe the process of tagging a Labdoo laptop.
+
+<ol>
+<li>
+Login to Labdoo.org by clicking on the "Login" link located on the top right corner of www.labdoo.org.
+</li>
+<li>
+On the top pull-down menu, select "Dootronics" -> "Tag it!"
+</li>
+<li>
+Fill in the information about your dootronic (ensure you fill in all the fields marked with a "*")
+</li>
+<li>
+If the donor desires so, it's very important to add the donor's email address to ensure that he/she can receive email updates about the status of the dootronic.  Here's how:
+    - Under Create Dootronic, select the second tab "Additional Information".
+    - Scroll down to the field 'Additional notification emails'.
+    - Fill in the donor's email address in this field.
+</li>
+<li>
+Click "Save" once you are done. A unique Labdoo ID number will be assigned to the laptop.
+</li>
+<li>
+On the new page after clicking 'save', click on "Print tags" to print the "Labdoo ID" labels. (Alternatively, you can manually write the Labdoo ID number on the preprint blank label sheets <a href='/sites/default/files/content/labdoo-toolkit/labdoo-laptop_id_labels.pdf' target='_blank'>that you will find in this link</a>.
+</li>
+<li>
+Tape the labels to (1) the laptop, (2) its power adapter, and all (3) the parts which come with the laptop. Ensure the taping is resistant so that the label does not get detached from the laptop.
+</li>
+</ol>
+
+Below you will find a picture with an example of the tagging information that needs to be filled in.
+
+<hr/>
+<table align="center">
+<tr><td>
+<em> Figure. Example of tagging procedure.</em>
+</td></tr>
+<tr><td>
+<img src="/sites/default/files/superhubs/labdoo-oc/tagging.png" width="800"/>
+</td></tr>
+</table>
+<hr/>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>35</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>819</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1153</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-13</value>
+</weight>
+</book>

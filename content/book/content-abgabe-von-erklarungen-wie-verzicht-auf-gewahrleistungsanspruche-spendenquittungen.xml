@@ -1,0 +1,54 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>23196</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Abgabe von Erklärungen wie Verzicht auf Gewährleistungsansprüche, Spendenquittungen</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>23196</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Die gemeinnützige Labdoo-Vereine in Deutschand und der Schweiz können rechtsverbindliche Erklärungen abgeben oder Dokumente ausstellen, z.B. 
+
+<ul>
+<li>den unwiderruflichen Verzicht auf Gewährleistungsansprüche erklären (Firmen, die IT spenden, müssten sonst Rückstellungen für mögliche Gewährleistung bilden) oder</li>
+<li>Bestätigungen für Geldzuwendungen oder Sachzuwendungen (Spendenquittungen) ausstellen.</li>
+</ul>
+
+Mehr auch auf https://www.labdoo.org/de/content/faq-forum#FAQ10. Da oft auch Fragen zu Compliance, Datensicherheit u.a. geklärt werden müssen, bindet rechtzeitig den Verein in die Abklärung ein.
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>32</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1243</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1270</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

@@ -1,0 +1,58 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>23940</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>How to create a Labdoo Travel eBook</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>23940</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Step 1. Print out the <a href = "http://ftp.labdoo.org/download/Public/eBooks/Labdoo%20Travel%20eBooks/drawing-paper-template.png" >“drawing-paper-template.png” </a> (in landscape paper orientation) for students to draw on.   
+Step 2. Have each student verbally describes his/her favorite place (or food) and ask him/her why he/she likes it.
+Step 3.  Ask the student to fill the title/name areas of the template page.
+Step 4. While the memory is still fresh, ask the student to use the lines area of the drawing template to write down what he just described about the food/place in his native language, preferably 3-5 sentences.
+Step 5. Have the student draws inside the blank box on the left to illustrate the paragraph he/she just wrote.
+Step 6. Help the student translate his paragraph into English if the native language used is not English.
+Step 7. Send us the drawings you've collected from the students, together with the <a href="http://ftp.labdoo.org/download/Public/eBooks/Labdoo%20Travel%20eBooks/eBook%20_ConsentToPublish.pdf"> Consent to Publish Form </a>, and we are happy to put them together as an eBook for your school.
+
+Tip 1: Have the student draw in pencil first and then color it if time is allowed.
+Tip 2: The student can use the back of the template page to write more if more space is needed.
+
+Thank you so much for being part of the Labdoo community!
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>142</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1307</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1308</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

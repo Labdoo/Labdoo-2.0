@@ -21,7 +21,9 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value><img src="/sites/default/files/content/wiki-de/edoovillages/login1.png" align="right" width="200" alt="Login Screen" />
+<value><strong>Procesamiento de texto preliminar</strong>
+
+<img src="/sites/default/files/content/wiki-de/edoovillages/login1.png" align="right" width="200" alt="Login Screen" />
 
 <strong>Usuarios de la computadora Escala (User)</strong>
 
@@ -106,7 +108,6 @@ También puede configurar los formatos regionales para los números, monedas, fe
 
 <img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/keyboard_layout_handler.png" width="225" align="right"/>
 
-Rechter Mausklick in der Task Bar auf das Symbol "de" (oder US oder welche Tastatur gerade aktiv ist) → Keyboard Layout handler Settings (Tastaturlayout) → Entfernen des Haken "Keep system layout", wenn noch gesetzt → 
 Haga clic en la barra de tareas en el icono "de" (o los EEUU o teclado está activo) → Ajustes de Disposición de teclado (keyboard Layout handler settings) → Retire el gancho "Keep disposición del sistema" si todavía establecer →
 
 +Add (añadir) → Adición de una nueva distribución del teclado
@@ -126,7 +127,7 @@ Diviértete jugando y aprendiendo con tus amigos!        El equipo Labdoo.</valu
 </body>
 <body>
 <type>format</type>
-<value>full_html</value>
+<value>filtered_html_advanced</value>
 </body>
 <bid>
 <type>book_array</type>

@@ -57,10 +57,26 @@ Click 'Save'. At this point, you have created one single page of content. Next, 
 <li>
 To create a menu block, do as if you wanted to create a page, except that in the field <strong>'Type'</strong> you need to select the option 'Menu block'. A new field called <strong>'Linked pages'</strong> will show up. In this field, add all the pages where you want your menu block to show up. Next, in the <strong>'Body'</strong> field, you need to create a menu of all your pages. This is basically an HTML list of links, with each link pointing to one of your pages created in steps 1, 2 and 3, enabling site visitors a quick menu access to each of the pages. To create the body of your menu block, you can copy and paste the following code sample and modify it according to your pages:
 
-<code>&lt;a href="URL1"&gt;Title Page 1&lt;/a&gt;</code>
-<code>&lt;a href="URL2"&gt;Title Page 2&lt;/a&gt;</code>
-<code>&lt;a href="URL3"&gt;Title Page 3&lt;/a&gt;</code>
-<code>&lt;a href="URL4"&gt;Title Page 4&lt;/a&gt;</code>
+<code>&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;strong&gt;&lt;span style='color:#ff3300;'&gt;Your SuperHub Name&lt;/span&gt;&lt;/strong&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;form&gt;
+&lt;select name='URL' onchange='window.location.href=this.form.URL.options[this.form.URL.selectedIndex].value'&gt;
+&lt;option&gt;Choose&lt;/option&gt;
+&lt;option value='URL1'&gt;Title Page 1&lt;/option&gt;
+&lt;option value='URL2'&gt;Title Page 2&lt;/option&gt;
+&lt;option value='URL3'&gt;Title Page 3&lt;/option&gt;
+&lt;option value='URL4'&gt;Title Page 4&lt;/option&gt;
+&lt;/select&gt;
+&lt;/form&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</code>
 
 Substitute 'URL{1,2,3,4}' for the URLs of your pages removing the host name. For instance, if the URL of a page is <code>https://www.labdoo.org/content/adding-superhub-page</code>, then use '/content/adding-superhub-page'. Substitute also 'Title Page {1,2,3,4}' for the title of each specific page.
 When done, click on 'Save' to create your menu block.

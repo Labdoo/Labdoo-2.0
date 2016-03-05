@@ -1,0 +1,52 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>23190</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Wie finde und kontakte ich Labdoo-Helfer (Labdooer) in meiner Region?</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>23190</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Jeder Anwender, der sich mit einem Account registriert, erhält zwar eine allgemeine Begrüßungsmail. Ihr solltet aber nach einigen Wochen nachhaken und selber den Kontakt herstellen.
+
+Auf dem Labdoo-Portal könnt ihr dazu unter https://www.labdoo.org/de/labdooers mit verschiedenen Einstellungen nach Helfern, IT-Spendern suchen. Funktioniert der vorstehende Link für euren User nicht meldet euch bitte in Deutschland und Österreich unter Labdoo-DACH@Labdoo.org bzw. in der Schweiz bei Zuerich-Hub@Labdoo.org, damit wir euch ggf. die nötigen rechte geben können.
+
+Gebt in regelmäßigen Abständen (z.B. einmal im Quartal) eure Stadt und den Suchradius ein und ihr seht in chronologischer Reihenfolge die in eurer Region registrierten User. Klickt auch den User-Namen, dann auf den Reiter "Kontakt". Dann könnt ihr eine interne Mail versenden und den Kontakt herstellen. Aus Datenschutzrechten seht ihr nicht die Kontaktdaten, sofern der/die HelferIn dieses nicht in seinem Profil eingetragen hat.
+
+<strong>Hinweis:</strong> Erst seit der Umstellung auf das Labdoo-Portal 2.0 Mitte 2015 müssen die Anwender Stadt und Land eintragen. Davor waren dies keine Zwangseingaben. Daher gibt es viele ältere Anwender, die sich vorher ohne Ortsangaben registrierten und daher nicht über diesen Suchmodus zu finden sind.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>32</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1242</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1264</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

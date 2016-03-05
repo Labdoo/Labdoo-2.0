@@ -1,0 +1,60 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>24585</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>What if I Want to be Part of the LGS Team</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>24585</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>If you want to be part of the global pool of helpers in the LGS Team, please do as follows:
+
+<ol>
+<li>
+If you haven't done so, create a Labdoo account by going to https://www.labdoo.org/user/register
+</li>
+<li>
+Log in to your Labdoo account and go to the <a href="../content/quality-assurance-qa">Labdoo QA team page</a>
+</li>
+<li>
+Click on 'Subscribe to this team' to register to this team.
+</li>
+</ol>
+
+That's it, you are now part of the LGS Team. By registering to this team, any questions posted into its wall will be send to you in the form of an email, and if you know the answer to that question, you are most welcome to reply directly on the wall to help resolve it.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>24582</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1469</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1472</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

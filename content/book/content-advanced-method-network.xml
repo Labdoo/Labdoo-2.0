@@ -1,0 +1,255 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>116</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Advanced Method (With Network)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>116</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><strong>Introduction</strong>
+
+This wiki will lead you through the process of sanitizing Labdoo laptops using ready-to-use images over the network. This process is powerful because it allows you to sanitize laptops using a fast and efficient cloning process and hence it is ideal if you are dealing with a large number of laptops. However, this process is a bit more complex too, and hence we consider it an advanced method. If you are new to Labdoo and inexperienced with computers, we recommend you to use the <a href='content/sanitation-guide-simple-method'>Simple Sanitation Method</a>, but if you are up for learning a cool way to install powerful software in a computer, this is your guide.
+
+Images are a complete software copy of an installed Labdoo computer, containing everything from the operating system, software, educational content and all the optimized settings. Except for adapting the final configuration to the country of the destination edoovillage (language and keyboard) and setting the hostname, the cloning process takes care of everything for you in one shot.
+
+Go ahead into the next section for a step by step description of the Sanitation process based on images.
+
+<strong>Steps to Follow</strong>
+
+# Installbox
+########################################
+
+The Installbox setup allows you to automatically install Linux clients on large scale.
+
+### Pre-Requirements
+
+ - A laptop with wireless LAN and gigabit ethernet port
+ - A  gigabit switch
+ - Network cables to connect the clients
+ - Wireless internet access where you are NOT using the IPv4 network address 192.168.20.0/24
+
+# Installbox Setup
+########################################
+
+ - Download the customized ISO image: http://id-install-prd.ethz.ch/labdoo/installbox/jessie/debian-jessie-installbox.iso
+ - Either burn the image to a CD or write it to a USB key using dd if=debian-jessie-installbox.iso of=/dev/sdb
+   (replace sdb with the device node of your USB key, if necessary).
+ - Boot the laptop using the CD or the USB key. 
+ - Please do not connect the ethernet cable yet.
+ - Select the Install option during boot.
+ - You will be prompted to select the keyboard layout, choose the one that fits for you.
+ - During network setup please select the wireless interface. There should be two interfaces listed:
+   eth0 (which is ethernet, don't select this one!) and wlan0.
+    Note: If you do not see those two interfaces here, please abort the installation as your device is not supported then.
+ - When you have selected wlan0, the installer will search for wireless networks available. Choose your network please.
+   Most modern wireless networks use WPA/PSK for authentication, so if you are unsure, you can probably select this option.
+ - Type in your Wireless password in the next step. Please note that it's displayed in clear text.
+ - Relax, the rest of the installation should work fully automated.
+ - After a while the device reboots, you can now connect an ethernet cable from the installbox laptop to the gigabit switch.
+ - You should now be able to connect any client to the switch and select ethernet boot.
+   On Lenovo you can press F12 and choose the network interface as boot device. 
+ - On the installbox, a NFS export has been created on /exports.
+   This will be available to all clients on the LAN and should contain the clonezilla images.
+
+# PXE Boot Options
+########################################
+
+When you boot a client, the boot menu will show the following options:
+
+ - Clonezilla Autorestore x86
+   This should be started on a client where you want to apply the default image. No interaction needed, all existing data will be deleted. 
+   It will restore an image called linux-x86 which must be available in /exports on the installbox.
+
+ - Clonezilla Autorestore x86_64
+   Same as Autorestore x86 but for the 64bit variant. It will automatically restore an image called linux-x86_64
+
+ - Preseed x86
+   Prepare a 32bit master installation
+
+ - Preseed x86_64
+   Prepare a 64bit master installation
+
+ - Clonezilla Autosave x86
+   Create an image of a master installation. It will automatically written to the NFS share /exports and will be named linux-x86.
+    Note: This will overwrite an existing image of the same name on the installbox.
+
+ - Clonezilla Autosave x86_64
+   Same as Autosave x68 but for the 64bit variant. It will automatically write a disk image to the installbox at /exports/linux-x86_64.
+    Note: This will overwrite an existing image of the same name on the installbox.
+
+ - Clonezilla Live
+   Just the default live image with all options and the NFS share already mounted
+
+ - SystemRescueCD
+   A universal system recovery toolbox. It also contains gparted for manual partitioning.
+   To start gparted, simply type startx and then click on the gparted icon in the taskbar.
+
+ - Boot and Nuke
+   starts dban and will automatically wipe all data on disk
+
+ Note: on all options you can press the tab key in order to change settings manually.
+ To permanently adjust the file, edit /var/lib/tftpboot/prd/pxelinux.cfg/default on the installbox.
+
+# Workflow
+########################################
+
+After you have set up the installbox a typical workflow would be the following:
+
+1. Create a master image 
+
+ - Choose another laptop on which you want to create the master image
+ - Connect the laptop to a port on the gigabit switch
+ - Follow the steps described in the 'Prepare Master Image' section
+
+Alternatively you can download a prepared master image. See 'Image Creation Cutoff' section below for further details.
+
+2. Provision laptops with the newly created master image
+
+ - after the master image has been stored on the installbox, choose the relevant Clonezilla Autorestore option from the PXE menu
+
+Once you have created a master image, there is no need to re-create it other than changes needs to be done to it.
+Next time, you can just start provisioning clients using the Autorestore option.
+
+ Hint: if unsure, just create a master image for the x86 architecture. This should work on nearly every machine.
+
+# Image Creation Cutoff
+########################################
+
+If you do not want to prepare an image on your own, you can download the prebuild image for the x86 architecture.
+
+To do so, execute the following commands on the installbox:
+
+sudo wget -c http://id-install-prd.ethz.ch/labdoo/installbox/jessie/linux-x86.tar.gz -O /exports/linux-x86.tar.gz
+sudo tar xvzf /exports/linux-x86.tar.gz -C /exports/
+
+ Note: the download of the image might take quite a long time, depending on your internet connection.
+ If the download is interrupted for some reason, you can resume it by executing exactly the wget command from above again. 
+
+This image is set up for Swiss German Keyboard layout. If you want to customize it:
+ - Deploy a machine using the 'Clonezilla Autorestore x86' function.
+ - Boot it and make your customization. 
+ - Boot the SystemRescueCD and start gparted. 
+ - Shrink the root partition to ~ 30000MB.
+ - Remove any existing version of the image by running sudo rm -rf /exports/linux-x86 on the installbox. 
+ - Reboot the client that contains your modifications and select the Clonezilla Autosave option for x86.
+   This will save your modified version to the installbox.
+
+# Prepare Master Image
+########################################
+
+In order to prepare a master image from scratch, please make sure that your installbox laptop has a working wireless lan internet connection.
+
+### Preseed
+
+On a client that is connected to the gigabit switch, start the pxe boot and select either Preseed for x86 or x86_64.
+This will set up a base install of lubuntu with a user called labdoo with password labdoo.
+
+After preseeding, boot into the newly installed system and apply the customization from:
+
+ http://ftp.labdoo.org/download/images/installskripts/
+
+If you want to modify the preseed file, e.g. to setup a different user account, just edit /var/lib/tftpboot/trusty/preseed.cfg
+
+ Hint: to change the keyboard layout (which defaults to us), simply run dpkg-reconfigure keyboard-configuration after installation.
+
+### Creating the Image
+
+When the client has been set up according to your needs, reboot and select the relevant Clonezilla Autosave option that fits the architecture of your master setup.
+
+This will automatically save an image to the installbox which can afterwards be applied to other clients using the Clonezilla Autorestore function for that architecture.
+
+ Note: this automated process has been optimized for image installations on systems with at least 40GB HDD/SSD space. 
+ If you are in need of installing in on machines with smaller disks, please shrink the root partition before creating the image.
+
+# Image Requirements
+########################################
+
+If you do not want to use the images that can be prepared with the installbox setup, please make sure that your images
+fulfill the following requirements:
+
+ - images that should be deployed automatically using this setup must have the following partition layout:
+    /dev/sda1 - swap (suggested size 2GB)
+    /dev/sda2 - root / ext4
+ - after preparation of the master, please shrink the root partition to it's minimal size possible.
+   This ensures that the image will be deployable on small drives as well. 
+
+# Resetting the Installbox
+########################################
+
+You can reset the changes made to the installbox default settings at any time by running /usr/local/sbin/applypuppet as root.
+
+# Making of the Installbox ISO
+########################################
+
+This step is not necessary and just for informational purpose. It describes how the ISO for the installbox has been created.
+
+apt-get install -y bsdtar genisoimage syslinux-utils
+cd ~
+rm -rf cd
+mkdir cd
+wget http://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/current/i386/iso-cd/firmware-8.2.0-i386-netinst.iso 
+bsdtar -C cd -xf firmware-8.2.0-i386-netinst.iso
+vi cd/isolinux/txt.cfg
+-         append vga=788 initrd=/install.386/initrd.gz --- quiet
++        append vga=788 initrd=/install.386/initrd.gz url=http://id-install-prd.ethz.ch/labdoo/installbox/jessie/preseed.cfg locale=en_US.UTF-8 ipv6.disable=1 debconf_debug=5 netcfg/get_domain=domain.example netcfg/dhcp_timeout=60 netcfg/get_hostname=installbox --- quiet
+quit vi with ESC :wq!
+vi cd/isolinux/gtk.cfg
+-         append vga=788 initrd=/install.386/gtk/initrd.gz --- quiet
++        append vga=788 initrd=/install.386/gtk/initrd.gz url=http://id-install-prd.ethz.ch/labdoo/installbox/jessie/preseed.cfg locale=en_US.UTF-8 ipv6.disable=1 debconf_debug=5 netcfg/get_domain=domain.example netcfg/dhcp_timeout=60 netcfg/get_hostname=installbox --- quiet
+quit vi with ESC :wq!
+cd cd; md5sum `find ! -name "md5sum.txt" ! -path "./isolinux/*" -follow -type f` > md5sum.txt; cd ..
+genisoimage -o debian-jessie-installbox.iso -r -J -no-emul-boot -boot-load-size 4 -boot-info-table -b isolinux/isolinux.bin -c isolinux/boot.cat ./cd 
+isohybrid debian-jessie-installbox.iso
+
+# Additional Notes
+########################################
+
+ - There is a script available on the installbox called /usr/local/sbin/pxesync.
+   It can sync the files needed for PXE boot for the Ubuntu and Debian distributions.
+
+
+# Changelog
+########################################
+
+20150930 v0.2
+ - added prebuild image
+
+20150928 v0.1 
+- initial setup</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>35</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1465</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>900</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-14</value>
+</weight>
+</book>

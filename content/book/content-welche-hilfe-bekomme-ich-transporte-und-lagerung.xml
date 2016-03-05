@@ -1,0 +1,83 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>23195</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Welche Hilfe bekomme ich für Transporte und Lagerung?</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>23195</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Üblicherweise übernehmen Flug-/Transportpaten den Transport der IT-Spenden. Dies ist aber nicht immer möglich bzw. die IT-Spenden müssen oft unter Termindruck wegen der Abreise zum Flugpaten. Oder es müssen größere IT-Spenden befördert oder gelagert werden. <strong>In Deutschland ist seit 2015 die Nachfrage nach IT-Spenden für Deutsch- und Integrationskurse für Flüchtlinge sprunghaft gestiegen, die aber besondere Anforderungen an die Logistik stellen.</strong>
+
+Da den Vereinen nur begrenzte Mittel zur Verfügung stehen, sollte im Vorfeld die Zustimmung des Vereins bei größeren Ausgaben eingeholt werden.
+
+Die Vereine bieten die folgende Unterstützung bzw. Lösungen an:
+
+<ul>
+<li><strong>Erstattung des Portos</strong></li>
+
+Ausgelegtes Porto kann unter Einreichen der Belege erstattet werden. Hierzu muss aus den Belegen der Zweck (Bezug zu Labdoo.org), Höhe des Portos und der Empfänger hervorgehen.
+
+<li><strong>Mietwagen</strong></li>
+
+<table> 
+<tr>
+<th/>
+<th/>
+</tr> 
+
+<tr>
+<td>
+In Deutschland unterstützt die <strong><a href="https://www.sixt.de/">Sixt GmbH &amp; Co. Autovermietung KG</a></strong> die Labdoo-Aktivitäten. Zur Anmietung eines Pkws oder Transporters kann ein <strong>Charity Code</strong> beim Verein erfragt werden, um eine vergünstigte Mietrate zu erhalten.
+</td>
+<td> 
+<a href="http://www.sixt.de/" target="_blank"><img src="/sites/default/files/superhubs/dach/spender/logo_sixt_128.png" width="128"/></a>
+</td>
+</tr>
+
+</table>
+
+<li><strong>Lagerung</strong></li>
+
+Wenn in den eigenen Räumlichkeiten keine größeren Mengen an IT-Spenden möglich ist, fragt zunächst in eurem lokalen Netzwerk, ob dort ggf. Lagerraum gestellt werden kann, ggf. auch durch Aufrufe in der lokalen Presse oder über unsere sozialen Netzwerke.
+
+In Deutschland laufen Verhandlungen mit einem internationalen Unternehmen, das Mietfläche in Lagerhallen anbietet. Sobald die Verhandlungen ein Ergebnis gebracht haben informieren wir hier. Ziel ist es befristet zu Sonderkonditionen Lagerfläche für regionale Labdoo Hubs anmieten zu können.
+
+</ul>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>32</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1243</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1269</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

@@ -1,0 +1,66 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>51</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>About Hubs</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>51</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Everybody can be a participant in the Labdoo network by performing actions to help spread education around the globe.  When one or more of the participants act together regularly, they can optionally create their own Labdoo Hub. A hub is mainly a group of people that get together from time to time to carry activities such as collecting and sanitizing unused laptops, organizing dootrips, recycling technology, or carrying out outreaching activities, among others. Hubs are flexible in that they do not need to carry out all of these activities, but just the ones that are appropriate to the skills of the people part of it. For instance, some hubs are just dropping points where people can bring their unused laptops which then get transported to other hubs where they get sanitized. Hubs are typically implemented in high schools, at home, in companies, in your local neighbor community, in any type of organized community.
+
+When a hub is created, it receives a kit containing the following:
+
+<ul>
+<li>
+A hub space inside the Labdoo systems that allows for the management of donated devices, dootrips, edoovillages, etc.
+</li>
+<li>
+The listing of the hub in the page www.labdoo.org/hubs to help it gain visiblity.
+</li>
+<li>
+The rights to create new edoovillages.
+</li>
+<li>
+A web album inside the hub space where pictures of the hub's activities can be uploaded.
+</li>
+</ul>
+
+You can also find detailed information about managing a Labdoo Hub <a href="https://www.labdoo.org/content/information-labdoo-hubs"> in this link</a>.
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>39</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>823</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>835</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-4</value>
+</weight>
+</book>

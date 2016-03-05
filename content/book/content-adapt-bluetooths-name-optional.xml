@@ -1,0 +1,50 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>99</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Adapt Bluetooth's Name (Optional)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>99</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>If you sanitized your laptop via the advanced method, then due to the cloning process, the name of the laptop's bluethooth device will be identical with all clones. To assign a unique name to your device, run the following command on a terminal:
+
+<code>sudo hciconfig hci0 name ’labdoo-XYZ-0'</code>
+
+Where XYZ is the Labdoo ID of the laptop.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>35</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>857</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>883</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-17</value>
+</weight>
+</book>

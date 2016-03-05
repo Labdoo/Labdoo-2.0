@@ -21,7 +21,11 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value><img src="/sites/default/files/content/wiki-de/edoovillages/login1.png" align="right" width="200" alt="Login Screen" />
+<value><font color="red">
+[Please print and attach this sheet to your dootronic shipment to ensure that the recipient knows how to use the computer. To print this sheet, click on 'Printer-friendly version' at the bottom of this page. Make sure to print it using the double page option in your printer settings to minimize the amount of paper used. Also, please print only one copy of this document for each group of laptops shipped together.]
+</font>
+
+<img src="/sites/default/files/content/wiki-de/edoovillages/login1.png" align="right" width="200" alt="Login Screen" />
 
 <strong> User Accounts</strong>
 
@@ -72,63 +76,63 @@ Click on the lower left corner on the Lubuntu icon (similar to Windows XP) → �
 
 In the folder of “/Public”, you will find a lot of useful reference manuals, such as OER, Offline wikis, e-books etc.
 
-There are also a video introductory and an Offline wikipedia (Xowa) available on the desktop.
-
-==
+There are also a video tutorial and an Offline wikipedia (Xowa) icons available on the desktop.
 
 <strong>Optional: Desktops (user interfaces)</strong>
 
-A Labdoo laptop comes with Lubuntu (Linux operating system based on Ubuntu and the LXDE desktop). LXDE is an easy to learn user interface, lean, fastl. LXDE / Lubuntu can be installed on older laptops, from 256 / 512 MB RAM.
+Labdoo laptops come with Lubuntu (Linux operating system based on Ubuntu and the LXDE desktop). LXDE is a fast and easy to learn user interface. It can be installed on older laptops with minimum 256 / 512 MB RAM.
 
 <img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/language_support.png" width="225" align="right"/>
 
-Optional you are able to install other desktops, but they ask for more hardware resources -
+You can also install different desktops as an option, but those may require more hardware resources.
 
 <ul>
-<li>Unity: fast hardware needed (min 1 GB RAM)</li>
-<li>Gnome: medium to fast hardware needed (756 MB - 1 GB RAM)</li>
+<li>Unity: minimum 1 GB of RAM</li>
+<li>Gnome: minimum 756 MB - 1 GB of RAM</li>
 </ul>
 
-<strong>language, regional formats and keyboard settings (please adjust when online)</strong>
+<strong>Please adjust languages, regional formats and keyboard settings when internet access is available.</strong>
 
-Depending on the country of the edoovillage you may want to install one or more additional language(s) or keyboard(s).
+Depending on the country edoovillage is located, you may want to install one or more additional language(s) or keyboard(s).
 
-Click Preferences → Language Support. Sometimes you get the message “Language support not completely installed, install now” → confirm by "Yes" and install.
+You can adjust language setting by selecting Preferences → Language Support. You may get messages like “Language support not completely installed, install now”. Click on "Yes" and continue the installation.
 
-In the next window click → Install/Remove languages → select the language(s) needed → Apply → Apply System-wide.
+In the following windows, select Install/Remove languages → select the language(s) needed → Apply → Apply System-wide.
 
-The new languages will show up in the language list above: Lubuntu first tries to find a word in this table in language no. 1, next in language no. 2 and so on, and will stop using English.
+The new languages will show up in the language list (as shown above). Lubuntu will use the first language setting in the table, then go to the next one, and continue.  If no languages matched, it will use English as default.
 
 <img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/regional_formats.png" width="225" align="right"/>
 
-To change priority of the languages → mark the new language → right mouse click on new language, keep on pressing right mouse button → move the language to its position, drop it → click  Apply System-wide. The new language will be used after logout and login or reboot of the computer.
+To change priority of the languages → select and hold the right mouse button on the new language  → move the language to its position and release the right mouse button → click Apply System-wide. The new language will be used after logout then login or after rebooting the computer.
 
 <strong>Regional formats</strong>
 
-You can also adjust the local currency, notation of numbers, date and time (if available). Click tab „Regional formats“ and select format in the list shown → Apply System-Wide. 
+You can also adjust the local currency, notation of numbers, date and time, if available. Click on the tab “Regional formats“ and select the format as shown in the list → Apply System-Wide. 
 
-<strong>keyboard settings</strong>
+<strong>Keyboard settings</strong>
 
-If the laptop was cloned using images you can go ahead. Otherwise you have to add a panel item to the task bar → right mouse click on the task bar → Add / Remove Panel Items → +Add → select "Keyboard Layout Handler" → +Add → optional: move the item position within the task bar by Up or Down.
+You may skip this step if the laptop was cloned with images. Otherwise, you have to add a panel item to the task bar by clicking with right mouse button on the task bar → Add / Remove Panel Items → +Add → select "Keyboard Layout Handler" → +Add → optional: move the item position within the task bar by Up or Down.
 
 <img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/keyboard_layout_handler.png" width="225" align="right"/>
 
-Right mouse click on the symbol "de" (keyboard layout handler) in the task bar (or another country abreviation shown) → Keyboard Layout handler Settings → Remove the hook "Keep system layout", if activated (otherwise you are not able to add new layouts) → 
+Right click on the symbol "de" (keyboard layout handler) in the task bar (or another country abbreviation will be shown) → Keyboard Layout handler Settings → Remove the hook "Keep system layout", if activated, otherwise, you won’t be able to add new layouts) →
 
 +Add → Add a new keyboard layout
 -Remove → Remove a  keyboard layout
-up → Move a keyboard layout entry in the list up
-down → Move a keyboard layout entry in the list up
+^Up → Move a keyboard layout entry in the list up
+vDown → Move a keyboard layout entry in the list up
 
-The number of keyboard layout entries is limited to 4 (four). 
+The maximum number of  keyboard layouts is 4.. 
 
 <strong>Manuals, video tutorials and more</strong>
 
 <img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/link-folder-videos.png" align="right" width="50"/>
 
-For manuals, video tutorials, offline wikis etc. open the folder <a href="file://localhost/home/labdoo/Public/">/home/labdoo/Public/</a>. Or click on the icon "videos" on the desktop to open the video tutorials folder. A video can be watched using Firefox or a player (view -&gt; 1/2 size, zoom +/-).
+You can go to the folder <a href="file://localhost/home/labdoo/Public/">/home/labdoo/Public/</a>  for more manuals, video tutorials, offline wikis etc.  A tutorial video icon is placed on the desktop.  You can watch it by using Firefox or other media player (view -&gt; 1/2 size, zoom +/-).
 
-Have fun learning and playing with your Labdoo laptop! The Labdoo team</value>
+Have fun learning and playing with your Labdoo laptop!
+
+ The Labdoo team</value>
 </body>
 <body>
 <type>format</type>

@@ -1,0 +1,82 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>24586</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>What if I want to Receive Aid from the LGS Support Team</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>24586</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>If you have a technical question, you can ask it to the LGS Team by following the next steps:
+
+<ol>
+<li>
+If you haven't done so, create a Labdoo account by going to https://www.labdoo.org/user/register
+</li>
+<li>
+Log in to your Labdoo account and go to the <a href="../content/quality-assurance-qa">Labdoo QA team page.</a>
+</li>
+<li>
+If you haven't done so, click on 'Subscribe to this team' to register to this team.
+</li>
+<li>
+Check first that your question has not been answered before. To do so, please go to the <a href='../teams-dashboard?og_group_ref_target_id%5B%5D=25'>search dashboard inside the LGS Team</a> and put keywords related to your question in the field 'Search terms' and click on 'Apply'. A list of previous conversations related to your keywords will show up that could provide the answer to your questions. If you don't find the answer, proceed to the next point.
+</li>
+<li>
+Click on 'Start conversation'. In that form, put a title to your question and write your question in the 'Conversation' field. If you are a student, teacher or a staff member from an edoovillage, select the checkbox for this option and then under 'My edoovillage' write the name of your country and select your edoovillage project. Finally, make sure the option 'Send to all members of this team' is selected.
+</li>
+<li>
+Click on 'Save'. Your question is now submitted!
+</li>
+</ol>
+
+Anyone with a technical question is allowed to submit it via the steps described above, whether you are from an edoovillage or not. If you are from an edoovillage, do make sure you select the option "I am a student, a teacher or a staff member from an edoovillage" and fill in the name of your edoovillage so that the LGS team knows from which school you are messaging us. You can submit as many technical questions as you want.
+
+Once you complete the above steps, your question is submitted to the LGS team and in short you will receive a reply.
+
+<hr/>
+<table align="center">
+<tr><td>
+<em> Figure. Submit your questions by clicking on 'Start conversation' and filling in these fields.</em>
+</td></tr>
+<tr><td>
+<img src="/sites/default/files/content/LGS/lgs-make-a-question.png" width="700"/>
+</td></tr>
+</table>
+<hr/></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>24582</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1469</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1473</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

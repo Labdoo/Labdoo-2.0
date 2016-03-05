@@ -1,0 +1,80 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>23194</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Wie erreiche ich IT-Spender, Firmen, Vereine u.a.?</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>23194</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Ein Hub sollte mehrere Wege nutzen, an IT-Spenden zu kommen. Den idealen Weg gibt es nicht. Findet für euch heraus, was für euch am besten funktioniert. Der eine ist in der Wirtschaft vernetzt, ein anderer in Vereinen, Schule, Hochschule  oder Politik. Da die meisten HelferInnen Labdoo ehrenamtlich unterstützen, empfehlen wir aus Zeitgründen, bestehende Plattformen, Netzwerke und Multiplikatoren zu nutzen. Baut Gespräche über Labdoo in euren Alltag ein - statistisch ist jeder 4. Gesprächspartner ein potentieller IT-Spender.
+
+<ul>
+<li><strong>Private IT-Spender</strong></li>
+
+Bewährt haben sich zur Ansprache eines breiten Publikums durch z.B.
+<ul>
+<li>regelmäßige, lokale Presseberichte,</li>
+<li>Beiträge in kommunalen oder regionalen Internetplattformen, Foren oder Online-Kleinanzeigen,</li>
+<li>Teilnahme an Umweltmärkten, Wettbewerben o.a.</li>
+<li>Auslegen von Visitenkarten in Computershops, Reisebüros o.a. Orten.</li>
+</ul>
+
+<li><strong>Unternehmen, Vereine, Institutionen, öffentliche Stellen</strong></li>
+
+Unternehmen bündeln je nach Größe ihr soziales Engagement in der Abteilung Corporate Social Responsibility (CSR), im Mittelstand ist es oft Chefsache. Hier haben sich u.a. Vorträge, Berichte oder Teilnahme an Veranstaltungen bewährt, z.B. bei der
+<ul>
+<li>örtlichen IHK,</li>
+<li>Wirtschaftsförderung,</li>
+<li>Unternehmerverbände,</li>
+<li>CSR-Netzwerktreffen,</li>
+<li>den Kommunen, Bereich Bürgerliches Engagement oder Umwelt,</li>
+<li>Schulen, Projekten oder Vereinen, die IT-Spenden vor Ort oder im Ausland brauchen könnten,</li>
+<li>Stiftungen u.a.</li>
+</ul>
+
+</ul>
+
+Wenn Unternehmen Computer leasen gibt es i.d.R. keine Chance für eine IT-Spende, weil die geleaste IT dann an den Leasinggeber zurück gegeben werden muss. Bitte beachtet auch die anderen Wiki-und FAQ-Beiträge zu wichtigen Themen für Unternehmen (Compliance, Datenlöschung, Spendenquittungen, Verzicht auf Gewährleistung u.a.).
+
+<li><strong>Vernetzung mit Vereinen und Schulen in der Region</strong></li>
+
+In euren Regionen gibt es oft andere Hilfsorganisationen, Initiativen oder Vereine, die entweder im Ausland (Partner-)Schulen, Waisenhäuser usw. oder im Inland Flüchtlingsprojekte, Seiteneinsteigerkinder, Sprach- oder Integrationskurse unterstützen. Vernetzt euch mit denen, weil sie oft IT brauchen, oft als Flugpaten IT-Spenden zu ihren Projekten mitnehmen oder unter deren Mitgliedern zu IT-Spenden aufrufen können.
+
+Um diese Vereine und Initiativen zu finden, achtet auf die Tagespresse oder Stadtanzeiger oder geht über Suchmaschinen, z.B. euer Ort/Region und "Schule Afrika", "Schule Asien/Südamerika/Mittelamerika oder einzelne Länder usw.", "Ausland Partnerschule", "Flüchtlingsprojekt" usw.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>32</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1242</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1268</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

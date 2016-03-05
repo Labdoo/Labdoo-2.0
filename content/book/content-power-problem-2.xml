@@ -1,0 +1,50 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>24363</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Power On Problem 2</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>24363</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Scenario 1: <strong>Do you see any LEDs flash when you press the power button or hear the fan or hard drive kick over for a second? </strong>
+
+If so, visit the <a href="   "> Power Problem </a> page.  
+
+Scenario 2: If the screen is black</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>24344</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1454</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1463</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

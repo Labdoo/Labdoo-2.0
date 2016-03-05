@@ -1,0 +1,71 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>23199</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Wie komme ich an Ersatzteile?</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>23199</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>In der u.a. Aufstellung findet ihr unsere Empfehlungen für Werkzeuge und Ersatzteilebeschaffung - was sich bewährt hat. Bitte berichtet uns von euren Erfahrungen. Gerne nehmen wir auch eure Tipps mit auf, damit alle davon profitieren.
+
+<strong>Ersatzteile</strong>
+
+Wir helfen euch auch bei der Beschaffung von Ersatzteilen, falls mal Teile fehlen oder ihr diese zur Reparatur benötigt.
+
+<ul>
+<li><strong>Lokale IT-Händler</strong></li>
+
+Vernetzt Euch in eurer Region mit IT-Unternehmen oder IT-Händlern, ggf. auch mit "Refurbishern". Das sind Unternehmen, die im größeren Stil gebrauchte Computer aufarbeiten und über Shops oder Broker wieder verkaufen. Aber es bleiben dabei immer mal wieder Teile übrig, die uns sehr helfen. 
+
+<li><strong>Aufbau eines eigenen Ersatzteillagers</strong></li>
+
+Es gibt viele, verschiedene <strong>Ladegeräte, Speicherriegel (RAM), IDE- und SATA-Festplatten, Halterungen und Abdeckungen für Festplatten ("Caddy"), Tastaturen, Schrauben</strong> usw. Bevor ihr defekte Computer entsorgt, solltet ihr daher noch sinnvoll verwertbare Teile ausbauen und aufbewahren. <strong>In D:</strong> Der Labdoo.org e.V. kann deutschen Hubs <a href="http://www.faltbox.de">professionelle Faltboxen</a> zur Lagerung und für den Transport kostenlos besorgen.
+
+<li><strong>AfB gGmbH</strong></li>
+
+Ein besonders wichtiger Refurbisher ist die AfB gGmbH http://www.afb-group.de/de/, mit Geschäftsstellen in der DACH-Region (Deutschland, Österreich und der Schweiz). Wenn es einen AfB-Shop in eurer Region gibt, stellt euch dort vor. Die AfB-Shops können euch nicht nur mit Ersatzteilen helfen können, sondern sie nehmen auch von Privatleuten deren IT-Spenden an und leiten sie an Labdoo weiter. Wenn der lokale AfB-Shop euch nicht kennt, gehen diese IT-Spenden zu AfB nach Essen. So könntet ihr die IT-Spenden aber vor Ort in Empfang nehmen und bearbeiten.
+
+<li><strong>Ersatzteilbeschaffung über Labdoo-Vereine</strong></li>
+
+In Deutschland und der Schweiz könnt ihr Euch an die nationalen Labdoo-Vereine wenden, die über einen Fundus an Ersatzteilen verfügen oder diese beschaffen können. Die Vereine refinanzieren sich ausschliesslich über Spenden. Daher wird je nach Alter und Zustand der IT-Spende und Kosten des Ersatzteils abgewogen, ob der Kauf angemessen und sinnvoll ist.
+
+Bei vielen Shops wie z.B. http://www.pts-trading.de/ (Batterien und Ladegeräte) oder https://de.ifixit.com/Store (Werkzeug, Reparaturtipps) erhält Labdoo Händlerkonditionen. 
+
+</ul></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>32</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>927</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1273</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

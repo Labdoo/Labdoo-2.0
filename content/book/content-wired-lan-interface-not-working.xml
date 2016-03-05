@@ -1,0 +1,58 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>154</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Wired LAN Interface is Not Working </value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>154</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>In some systems, the wired (cable) LAN interface may not be recognized. The symptom is that the interface shows up when you click on the network manager icon but it shows as deactivated. To get it to work, try the following:
+
+<ul>
+<li>
+Open a terminal by pressing ALT+CTRL+T and type the following command: <code>sudo nano /etc/NetworkManager/NetworkManager.conf</code>
+</li>
+<li>
+Check and change this line: <code>managed=false</code>  →  <code>managed=true</code>
+</li>
+<li>
+Save the file and restart the network manager: <code>sudo service network-manager restart</code>
+</li>
+</ul></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>35</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>857</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>938</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-3</value>
+</weight>
+</book>

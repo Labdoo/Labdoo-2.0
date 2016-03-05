@@ -1,0 +1,73 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>100</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Add a 2nd Disk Drive</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>100</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>If the installed hard disk becomes too small and the computer allows the installation of a 2nd disk, you can configure such 2nd disk to mount automatically during booting time. To do so you have to: 
+
+<ul>
+<li>
+Press ALT+CTRL+T at the same time to start a terminal, and type the following command to initiate the file manager in superuser mode: <code>sudo pcmanfm &amp;</code> (enter).
+</li>
+<li>
+Navigate to the folder /mnt and create inside it a new folder with the name of the 2nd disk.
+</li>
+<li>
+Get the UUID (ID of the disk-drive) of the 2nd disk by typing the command <code>sudo blkid</code>, search for your 2nd drive in the list and write down its UUID.
+</li>
+<li>
+Type the following command to edit the fstab file: <code>sudo nano /etc/fstab</code> [Enter]
+</li>
+<li>
+Add at the end of the fstab file a new line as follows (in one single line): 
+<code>UUID=[add here the UUID of the 2nd disk you wrote down above]
+/mnt/[add here the name of the 2nd disk folder you created above] auto defaults 0 0</code> 
+(Make sure to leave a space character between each entry)
+Leave the file editor by pressing CTRL+X then Y (to save) and [Enter].
+</li>
+<li>
+Optionally, to allow access for all users to your 2nd disk do as follows: Open your file manager in superuser mode again <code>sudo pcmanfm &amp;</code>, go to your 2nd disk folder and right click on it with your mouse. Under properties, select "Access rights for others", check the "Allow create or delete new files / folders",  and then "Apply to all folders".
+</li>
+</ul>
+
+Re-boot your computer. The new disk should be automatically mounted.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>35</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>857</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>884</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-13</value>
+</weight>
+</book>

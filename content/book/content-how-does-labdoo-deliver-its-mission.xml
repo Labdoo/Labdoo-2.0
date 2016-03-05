@@ -5,7 +5,7 @@
 </nid>
 <title>
 <type>node_title</type>
-<value>How does Labdoo deliver its mission?</value>
+<value>How Does Labdoo Deliver its Mission?</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -62,6 +62,6 @@ It is fun.
 </mlid>
 <weight>
 <type>book_array</type>
-<value>-14</value>
+<value>-15</value>
 </weight>
 </book>

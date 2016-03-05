@@ -1,0 +1,56 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>24353</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Power Problem</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>24353</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Scenario1 : The laptop is all quiet after pressing the power-on button. 
+Scenario 2:  You see LEDs on the laptop flash when you press the power button or hear the fan or hard drive kick over for a second and stop.
+<br></br>
+<strong> Steps to take </strong>
+Action 1. Remove the battery from the laptop.  Make sure the AC power adapter is plugged in. Press the power-on button again.
+Action 2. Check if the voltage/current printed on the AC power adapter matches the voltage/current label on the laptop. You can normally find the label on the bottom case where the battery is located at.)
+Action 3. Wiggle the power jack to the laptop 
+Action 4. Does the DC voltage measured at the connector of the AC adapter matches the voltage printed on the label of the AC adapter?
+
+<strong>Can the laptop be powered on properly now? </strong>  <a href="../content/start-troubleshooting" >       [Yes] </a>  <a href="../content/power-jack-problem" > [No]  </a> 
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>24344</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1454</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1458</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

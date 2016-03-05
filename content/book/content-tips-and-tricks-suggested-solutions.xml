@@ -5,7 +5,7 @@
 </nid>
 <title>
 <type>node_title</type>
-<value>Tips and tricks, suggested solutions</value>
+<value>Tips and Tricks, Suggested Solutions</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -21,7 +21,7 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>This wiki is based on comments of technical Labdoo helpers and https://wiki.ubuntu.com/. If you are not able to find a solution to your problem please refer to the internet.
+<value>The following section describes relevant learning experiences gained by Labdooers around the world who (like you) are helping to sanitize laptops and make them ready for needy schools. It will teach you tips and tricks that will be very handy when sanitizing your laptops. If you are not able to find a solution to your problem in this section, please ask your questions to <a href='../content/quality-assurance-qa/activities'>the Labdoo QA team</a> and another Labdooer there will provide an answer for you.
 </value>
 </body>
 <body>
@@ -42,6 +42,6 @@
 </mlid>
 <weight>
 <type>book_array</type>
-<value>-9</value>
+<value>-8</value>
 </weight>
 </book>

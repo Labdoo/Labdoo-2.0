@@ -1,0 +1,60 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>23202</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Welche sozialen Netzwerke und Newsletter nutzt Labdoo?</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>23202</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Auf unserer Homepage findet ihr unter https://www.labdoo.org/de/teams verschiedene Labdoo-Gruppen. In jedem Fall solltet ihr Mitglied in der DACH-Gruppe werden https://www.labdoo.org/de/content/labdooorg-dach, für alle deutschsprachigen Informationen. Empfehlen können wir auch die schwarzen Bretter im Coffee Shop https://www.labdoo.org/content/coffee-shop und das globale Brett https://www.labdoo.org/content/global.
+
+Labdoo ist in mehreren sozialen Netzwerken vertreten. Wenn ihr in einigen angemeldet seid freuen wir uns über euer Like, +1 oder werdet Follower:
+
+<ul>
+<li>https://www.facebook.com/LabdooDACH  (deutschsprachige Community)</li>
+<li>https://www.facebook.com/Labdoo (internationale Community)</li>
+<li>https://plus.google.com/communities/1121545386108120170659</li>
+<li>https://www.xing.com/net/Labdoo  (Firmen, Berufliche Netzwerke)</li>
+<li>https://twitter.com/hammannette (Deutsch)</li>
+<li>https://twitter.com/labdoo_org (International)</li>
+</ul>
+
+Damit Ihr auf dem Laufenden bist solltet ihr den <strong>Newsletter</strong> abonnieren http://www.labdoo.org/de/content/newsletter-subscriptions
+Ihr könnt jederzeit Neuigkeiten aus eurem Hub mitteilen, die wir gerne in den nächsten Newsletter aufnehmen.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>32</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>927</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1276</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

@@ -45,6 +45,6 @@ search and delete: <code>find ./ -type f name „Dateiname“ -delete</code>  (E
 </mlid>
 <weight>
 <type>book_array</type>
-<value>8</value>
+<value>5</value>
 </weight>
 </book>

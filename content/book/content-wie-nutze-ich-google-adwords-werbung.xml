@@ -1,0 +1,52 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>23193</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Wie nutze ich Google Adwords Werbung?</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>23193</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Die gemeinnützigen Labdoo-Vereine in Deutschland und der Schweiz haben sich für das Programm <strong>Google Grants for NGOs</strong> qualifiziert. Darüber erhalten die Vereine von Google ein monatliches Budget von 10.000 $ für AdWords-Werbung. Als Einzelperson habt ihr keinen Zugang zu diesem Google-Programm, nur Vereine.
+
+Wenn z.B. Anwender bei der Google-Suche bestimmte Suchbegriffe eingegeben werden sehen sie neben der Trefferliste unsere Werbung und einen Link.
+
+Für jedes Labdoo Hub legen wir eine Online-Kampagne an, die euch regional helfen soll, IT-Spender, Helfer oder Flugpaten auf euch aufmerksam zu machen. Hierzu brauchen wir euren Beitrag, z.B. gibt es einen besonderen Namen für eure Region oder Landkreise? Welche Städte sind wichtig? 
+
+Es gibt aber Einschränkungen, auf die wie keinen Einfluss haben. Es gibt ein Tages- und Monatslimit, danach wird keine Anzeige mehr geschaltet. Und der Preis ist limitiert, d.h. bieten Andere mehr für eine Anzeige kommt Labdoo nicht zum Zuge.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>32</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1243</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1267</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

@@ -1,0 +1,56 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>148</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Kernel Panic Caused by Defective in Memory/RAM</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>148</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>If the computer crashes often during the boot process, there is a possibility that it is because of a defective memory (RAM) module. (There could be other reasons too naturally). 
+
+To check if the RAM module is working properly (memory modules) do as follows:
+
+<ul>
+<li>Boot the system and press SHIFT at the same time.</li>
+<li>The GRUB menu will show up. Click on Memtest86 (memory test).</li>
+<li>The system will perform a memory test. At the end of this test, the defective parts (if any) will be listed and marked in red.</li>
+</ul>
+
+<strong>Hint:</strong> To know exactly which memory module is defective, you can remove all memory modules and check each of them individually by running the above test.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>35</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>857</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>932</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-4</value>
+</weight>
+</book>

@@ -1,0 +1,75 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>24583</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>The LGS Workflow</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>24583</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Here is how the LGS workflow works:
+
+<ol>
+<li>
+When a laptop is sanitized and packaged, print and attach the <a href="../content/labdoo-global-support-sheet">Labdoo Global Support Sheet</a> as part of the shipment.
+</li>
+<li>
+Upon receiving a dootronic, users will see the LGS sheet and learn from it how to post their questions via the LGS system. This step is also described under the <a href="../content/what-if-i-want-receive-aid-lgs-support-team">What if I want to Receive Aid from the LGS Support Team</a> section.
+</li>
+<li>
+When a dootronic user posts a question via the LGS system, members of the LGS team receive a notification email and are able to provide answers to the questions also via the LGS system. This step is also described in detail under the <a href="../content/what-if-i-want-be-part-lgs-team">What if I Want to be Part of the LGS Team</a> section.
+</li>
+</ol>
+
+This process ensures both (1) that dootronic users' technical questions are efficiently answered and (2) that we continue to build an online global knowledgebase of questions and answers that other users can benefit from.
+
+Please notice the following when using the LGS support team:
+
+<ul>
+<li>
+While we will do an effort in replying to all possible languages, the world has more than 6000 languages and so we can't presume we can understand all of them. The recommended language to make questions is English because, although we also have Labdooers who are proficient in other languages such as German, Chinese, Spanish, Italian, French, and Catalan. Please try to use any of these languages unless there is no other way around for you. 
+</li>
+<li>
+Labdoo has a pretty good team of volunteers throughout the world who are familiar with the technical aspects of a laptop and computers in general, but we can't promise that we know all the answers. We will do our best though. Please notice that all answers are provided 'as is' and according to the Labdoo Terms and Conditions that you will find in your account (https://www.labdoo.org/user) under the 'Edit account' tab.
+</li>
+<li>
+There are also many good knowledge bases and blogs in the Internet where you may find answers to your questions. Feel free to look for them as well using your favorite web search engine, you will find them very useful too. For instance, you can check sites such as askubuntu.com.
+</li>
+</ul>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>24582</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1469</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1470</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-15</value>
+</weight>
+</book>

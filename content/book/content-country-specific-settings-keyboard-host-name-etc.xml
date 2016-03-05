@@ -1,0 +1,102 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>25034</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Country specific settings (keyboard, host name etc.)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>31</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><ol>
+
+<a href="http://ftp.labdoo.org/download/Public/videos/system-settings-english.webm">System settings (language, keyboard, driver etc.)</a>
+[video:https://youtu.be/iM2UjEiUWik]
+
+<li><strong>What has to be done after installing Lubuntu or installation via PXE / cloning?</strong></li>
+Restart the system. If it does not boot try the advanced mode. Or check, if you installed by mistake a PAE64 bit image to a PAE32 bit CPU (which will not work).
+
+<a href="http://ftp.labdoo.org/download/Public/videos/hostname-english.webm">Adapt system files hosts and hostname</a>
+[video:https://youtu.be/ATGl0aHZHAY]
+
+<li><strong>Change host name</strong></li>
+The cloned computer have all named the same name, e.g. labdoo-000006xxx. You should change it to the Labdoo-ID-no. of the computer. Did you already tag the computer? If so, you can skip the next chapter.
+
+Otherwise - go to http://www.labdoo.org/node/add/laptop taggen (Tag It!). Now you can register data and picture of the computer. Each computer gets a unique number. Print ID-labels and stick them to computer and power supply. If you do not rename a computer with a unique host name there will be a collision of names in the local network. 
+
+To modify the file hosts follow these steps:
+
+Open a terminal (press CTL + Alt + T) →  type
+<code>sudo nano /etc/hosts</code> (Enter) 
+→ move cursor to the end of line 2 and change host name 
+→ start storing file by pressing CTL + o (the letter o, not the number 0)
+→ store file (Enter)
+→ end editor by pressing CTL + x
+
+Next step is ti to modify file hostname, open a terminal or use the open terminal and type 
+<code>sudo nano /etc/hostname</code> (Enter) (you can use ↑ to recall the last input and modify it) 
+→ change the host name in the editor 
+→ start storing file by pressing CTL + o (the letter o, not the number 0)
+→ store file (Enter)
+→ end editor by pressing CTL + x
+
+<li><strong>Check graphic resolution</strong></li>
+Preferences → Monitor Settings → select the resolution you need or stay with the resolution already set → Apply → if ok, save
+
+<li><strong>Keyboard and language settings</strong></li>
+Right mouse click on the country icon (de, us) in the start panel → "Keyboard Layout Handler" Settings → remove hook from "Keep system layout" → by +Add you can add up to 4 keyboard layouts or by -Remove you can remove them → Close
+
+<li>Install additional languages</li>
+Preferences → Language Support → Install / remove Languages → add a hook at the language(s) you want to add (remove a language by removing the hook) → Apply Changes → computer must be connected to web and will start to download language(s).
+
+<strong>Change language</strong> To change to another user language move the needed language by mouse (keep left button pressed) to the to of the language list and drop it → Apply System-Wide → all users will use this language, for more details refer to (L)Ubuntu manuals in folder /home/labdoo/Public/manuals-ubuntu.
+
+<strong>Hint: </strong> If you send the computer to a country using a "non-latin" alphabet you should stay with the English language. User can learn about keyboard and switch later. You must understand the foreign language and know the keyboard layout to use the computer. E.g. typing the password "labdoo" using Chinese or Arabian keyboard layout you type something completely different, which will not be accepted as password.
+
+<strong>Regional Formats: </strong> Click on the tab "regional formats", click on the triangle → select needed setting (will change format of time / date and currency) → Apply System-Wide (There are not all setting for all countries available. In this case select a similar one.)
+
+<li><strong>Check, if you need specific driver</strong></li>
+Preferences → Software &amp; Updates → Additional Drivers → wait a while 
+
+→ either "no additional drivers available" shows up → no further steps have to be taken or
+→ a list of drivers will be shown → select and install the needed driver(s) → Apply Changes
+
+<li><strong>Add Xowa Offline wikis</strong></li>
+<a href="/content/installing-xowa-wikis">How to install Xowa wikis is explained here...</a>
+
+</ol></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>35</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1465</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1475</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

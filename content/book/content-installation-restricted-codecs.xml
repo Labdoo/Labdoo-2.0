@@ -1,0 +1,60 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>145</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Installation of Restricted Codecs</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>145</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Please notice that depending on the local law, it might be illegal to install certain codecs and multimedia extensions. Check your local regulations first prior to proceeding with the installation of the following software.
+
+As in all software for Ubuntu, there are two ways to do the installation: via the Ubuntu Sofware Center or via the command line.
+
+The installation via the Ubuntu Software Center is as follows. Open the Ubuntu Software Center (or the Synaptic Package Manager) and search for "restricted codecs". Select the package found and click on install. During the installation you will need to accept an EULA license agreement. To have full support to watch DVDs you must also install libdvdcss2 and non-free-codecs from the Medibuntu Repository. Please notice that in Europe these repositories are not allowed to be used. Further information can be read here: http://www.videolan.org/developers/libdvdcss.html
+
+The same installation can be done via the command line through the following steps. Open a terminal by pressing at the same time the keys ALT+CTRL+T. Then type the following commands:
+
+<code>sudo apt-get install ubuntu-restricted-extras -y</code> (Enter)
+<code>sudo apt-get install non-free-codecs -y</code> (Enter)
+<code>sudo apt-get install curl -y</code> (Enter)
+<code>curl ftp://ftp.videolan.org/pub/debian/videolan-apt.asc | </code> (Enter)
+<code>sudo apt-key add -echo "deb ftp://ftp.videolan.org/pub/debian/stable ./" | </code> (Enter)
+<code>sudo tee /etc/apt/sources.list.d/libdvdcss.list </code> (Enter)
+<code>sudo apt-get update</code> (Enter)</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>35</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>857</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>929</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-6</value>
+</weight>
+</book>

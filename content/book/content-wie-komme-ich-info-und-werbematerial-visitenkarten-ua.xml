@@ -1,0 +1,98 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>23197</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Wie komme ich an Info- und Werbematerial, Visitenkarten u.a.?</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>23197</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Da Labdoo.org möglichst ohne Kosten auskommen möchte, liegen die meisten Unterlagen digital und online vor. Material, Grafiken, Logos, Texte u.a. stehen unter der <a href="https://creativecommons.org/licenses/by/3.0/de/">Creative Commons Lizenz CC-by-SA 3.0</a> und sind somit bei Nennung der Quelle Labdoo.org frei verwendbar.
+
+Die Unterlagen liegen als pdf oder editierbar im LibreOffice Format vor (es wäre gut, wenn ihr Libre-Office installiert http://de.libreoffice.org/). Alle Unterlagen, aber auch Images for Cloning u.v.a. mehr liegen auf http://ftp.labdoo.org/download/. 
+
+Unterlagen in verschiedenen Sprachen auf unserem FTP-Server http://ftp.labdoo.org/download/documents/, insbesondere <a href="http://ftp.labdoo.org/download/documents/german/Poster%20Flyer/">Flyer, Banner, Plakate</a>. 
+
+Und schaut euch bitte unser <a href="/de/content/faq-forum">FAQ-Forum</a> an, speziell <a href="/de/content/faq-forum#FAQ02">die Linkliste zu Texten, Grafiken und Logos</a>. Bei Fragen hilf das Labdoo-Team gerne weiter.
+
+Über den Labdoo-Verein kann das u.a. Werbematerial gestellt werden, deren Produktion über Spendengelder finanziert werden:
+
+<strong>Banner und Roll-Up</strong>
+
+Die u.a. Kosten sollen euch nur als Orientierung dienen, ihr müsst das Material nicht bezahlen. Aber wir müssen Spenden in gleicher Höhe einwerben, wobei ihr uns vielleicht helfen könnt.
+
+<table> 
+<tr>
+<th/>
+<th/>
+<th/>
+</tr> 
+<tr>
+<td>Labdoo.org Banner 85 x 200 cm (kann auch gegen Ersatz der Portokosten ausgeliehen werden)</td>
+<td><img src="/sites/default/files/content/wiki-de/hubs/banner.jpg" width="125"/></td>
+<td>ca. 50 € (Selbstkosten)</td>
+</tr>
+<tr>
+<td>Beidseitig bedruckte Labdoo-Folie 710 gr, Hochformat 42,5 x 100 cm (kann auch gegen Ersatz der Portokosten ausgeliehen werden)</td>
+<td><img src="/sites/default/files/content/wiki-de/hubs/labdoo_rollup_klein.png" width="125"/></td>
+<td>ca. 25 € (Selbstkosten)</td>
+</tr>
+
+<tr>
+<td>Beidseitig bedruckte Labdoo-Folie 710 gr, Querformat 60 x 42 cm (kann auch gegen Ersatz der Portokosten ausgeliehen werden)</td>
+<td><img src="/sites/default/files/content/wiki-de/hubs/poster_quer_de.png" width="125"/></td>
+<td>ca. 25 € (Selbstkosten)</td>
+</tr>
+ </table>
+
+
+<strong>Visitenkarten (Empfehlung)</strong>
+
+<table> 
+<tr>
+<th/>
+<th/>
+<th/>
+</tr> 
+<tr>
+<td>Es ist manchmal hilfreich, Visitenkarten verteilen zu können, z.B. auf Veranstaltungen, in Computershops o.a. Die Labdoo-Vereine unterstützen Euch dabei, indem wir ein <strong><a href="http://ftp.labdoo.org/download/documents/german/Unterlagen/visitenkarte-hub-template.odg">Visitenkartenlayout als Vorschlag</a></strong> bereitstellen und die Druckkosten übernehmen. Bitte wendet euch an den deutschen bzw. Schweizer Verein, um Details abzusprechen.</td>
+<td><img src="/sites/default/files/superhubs/dach/verein-d/visitenkarte-hub-template.png" width="125"/></td>
+<td>kostenlos</td>
+</tr>
+ </table></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>32</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1243</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1271</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

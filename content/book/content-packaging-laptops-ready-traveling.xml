@@ -5,7 +5,7 @@
 </nid>
 <title>
 <type>node_title</type>
-<value>Packaging the laptops ready for traveling</value>
+<value>Packaging the Laptops Ready for Traveling</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -43,7 +43,7 @@ You are welcome to use other packaging approaches based on what's available to y
 </bid>
 <plid>
 <type>book_array</type>
-<value>846</value>
+<value>819</value>
 </plid>
 <mlid>
 <type>book_array</type>
@@ -51,6 +51,6 @@ You are welcome to use other packaging approaches based on what's available to y
 </mlid>
 <weight>
 <type>book_array</type>
-<value>-14</value>
+<value>-12</value>
 </weight>
 </book>

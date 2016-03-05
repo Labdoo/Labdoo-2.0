@@ -1,0 +1,193 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>177</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Advanced Method (Without Network)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>177</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><strong>Introduction</strong>
+
+This wiki page will guide you through the process of sanitizing a laptop and installing the education software according to the advanced method (without network). The advanced method is based on the process of cloning the Labdoo/Lubuntu image, which includes all the necessary software. This process is a bit more complex than the <a href='../content/sanitation-guide-simple-method'>sanitation process based on the simple method</a>, but its advantage resides in that it will allow you to sanitize laptops and install a very large and complete education package in a more efficient and speedier way.
+  
+<strong>Sanitation Steps</strong>
+
+Follow the next steps to sanitize a Labdoo laptop according to the advanced method. If you have any questions or doubts through the process, please post your queries in the <a href='../content/quality-assurance-qa/activities'>Labdoo Quality Assurance Team</a> and another Labdooer will provide an answer.
+
+Embedded in the descriptions of each of following steps you will also encounter two videos. We recommend you to watch them as they provide valuable graphical insights about the installation process.
+
+<hr/>
+Video. Advanced method part 1.
+<br/>
+[video:https://www.youtube.com/watch?v=GKXJR94QIus] 
+<br/>
+<hr/>
+
+<ol>
+<li>
+<strong>Download Parted Magic tool.</strong>
+
+Start first by downloading the license-free tool Parted Magic. Choose to download the Parted Magic image from one of the following two links:
+
+<ul>
+<li>
+<a href="http://ftp.labdoo.org/download/images/parted_magic_clonezilla_2012_10.iso">Parted Magic / Clonezilla 2012/10</a>: We recommend you to use this version which should work for older and modern laptops.
+</li>
+<li>
+<a href="http://ftp.labdoo.org/download/images/parted_magic_clonezilla_2013_08.iso">Parted Magic / Clonezilla 2013/08</a>: In some cases the 2012/10 version may fail depending on the laptop. For these cases, try the 2013/08 version.
+</li>
+</ul>
+
+Download and burn the Parted Magic ISO image into a bootable CD or a USB stick. 
+
+</li>
+<li>
+
+<strong>Start Parted Magic.</strong>
+
+Insert your Parted Magic CD or USB stick into your laptop and boot it. (Make sure that the bios of your laptop is set to boot first from the CD drive or from the USB stick. For information on how to configure the booting order using the bios <a href='../content/configuring-bios'>please refer to this page</a>.)
+
+Once Parted Magic starts, select the default option 'Default settings (Runs from RAM)'. This option should work for most of computers, but if you find any issues, you can manually set a different configuration by using the various options found in the Parted Magic menu. In this case, see also the above video for an explanation of some of the options.
+
+Once parted magic has completed booting, you will be presented with a graphical desktop with various icons. It's important to start by deleting all the data from the laptop hard disk to ensure all previous private information is erased. You can do this by clicking on the icon 'Disk eraser' and follow the instructions. The deletion can take several hours.
+
+</li>
+<li>
+
+<strong>Download the Labdoo/Lubuntu ISO image.</strong>
+
+Prior to selecting a proper Lubuntu/Edubuntu image for your laptop, you need to know what type of laptop you have. To do so, once Parted Magic is booted, click on the black screen icon found in the task bar at the bottom of your screen. This will open a terminal window. In this terminal, type the following command:
+
+<code>grep -q 'lm' /proc/cpuinfo &amp;&amp; echo "My CPU is a 64 bits one" || echo "My CPU is a 32 bits one"</code>
+
+The output will tell you whether you have a 32 or a 64 bit computer. Based on this information, you can now download the most suitable Labdoo image from the following link: http://ftp.labdoo.org/download/images/
+
+Notice that there are different images, so you will need to make sure you download the right image based on the characteristics of your laptop and the type of education software you want to install. The following README file (located also on the above link folder) describes each image and will help you decide the right image for your laptop: http://ftp.labdoo.org/download/images/README-EN.txt
+
+Store the downloaded zipped image file on an external USB disk-drive/memory stick or in another computer connected to your local network. If you handle several images create a folder for each image and copy each image into its own folder. If you are using a local device such as a USB disk or memory stick, please store these image folders under the first top level folder to ensure that Clonezilla (described in the next steps) will be able to find them.
+
+Now go to that folder and unzip the downloaded file using the following command:
+
+<code>tar zxf FILENAME.tar.gz</code>
+
+(substitute FILENAME by the name of the file). This will uncompress the downloaded file.
+
+Each Labdoo image comes with a checksum file containing an MD5SUM value. Using this MD5SUM value you can check if the download was completed with no errors. How to handle and compare MD5SUM depends on the operating system of your computer. To compare the MD5SUM using a Linux machine, open a terminal and go into the folder where both the unzipped file and the MD5SUM file are located and execute the following command: 
+
+<code>md5sum -c MD5SUM</code>
+
+To learn more about MD5SUM you can check: http://en.wikipedia.org/wiki/MD5
+
+</li>
+<li>
+
+<strong>Install the Labdoo/Lubuntu image.</strong>
+
+Labdoo images are complete copies that include all the operating system and education software. So by cloning them into your laptop, you will have a newly sanitized computer ready to deliver education to children. Follow the next steps to carry out the cloning process.
+
+<ul>
+<li>
+While running Parted Magic, double click the icon 'Clonezilla' to start the image cloning process. 
+</li>
+<li>
+Select the option 'Image' (instead of device).
+</li>
+<li>
+Next, select the 'Storage Media' on which the Labdoo/Lubuntu image you downloaded in the previous step is stored. Read the instructions on the screen as they will guide you too.
+</li>
+<li>
+Next, select 'Expert Mode'. We need to use expert mode because the Labdoo/Lubuntu image 'remembers' the size of the original disk upon which it was created. If the target disk in the new cloned laptop is smaller, you will get an error in beginners mode ('target disk too small'). In Expert Mode you can enable the option '-icds' to avoid this check (see below).
+</li>
+<li>
+Select 'Restore Disk' to select the restoring the image.
+</li>
+<li>
+Select the Labdoo/Lubuntu image that you previously downloaded.
+</li>
+<li>
+Select the target disk.
+</li>
+<li>
+Mark in expert mode the option list '-icds' by using the space button ('do not check if the size of the origin disk is larger than the target disk').
+</li>
+<li>
+Answer the following questions with "Y" (Yes).
+</li>
+<li>
+At this point, the cloning process will start and it will last from 15 to 30 minutes. Once finished, the complete Lubuntu operating system plus all the education software and Labdoo settings are installed and ready to use! this is the big advantage of using this cloning process, if you were to instead download all the education packages from the Internet it would take you a good amount of hours.
+</li>
+</ul>
+
+Note: If you are cloning a 14.04 image (or higher) using 'Clonezilla 2012/10' you may get at the end two red error messages saying that certain GRUB files and settings are missing. You can ignore this message, everything is ok. 
+
+</li>
+<li>
+
+<strong>Steps to complete the configuration of the laptop after the cloning process.</strong>
+
+<hr/>
+Video. Advanced method part 2.
+<br/>
+[video:https://www.youtube.com/watch?v=GKXJR94QIus] 
+<br/>
+<hr/>
+
+Once you have completed the previous cloning process, start the Partition Editor by clicking on the Gparted Icon found on the desktop. This tool will help you adapt the size of your computer through the following steps:
+
+<ul>
+<li>
+Click on the Linux swap space, click on the option "Resize / Move" and drag it using the mouse to the end of the disk (please make sure that the mouse pointer shows arrows to the left AND to the right side, as otherwise you will be enlarging the swap space instead).
+</li>
+<li>
+The swap size also needs to be adapted to the size of the memory (RAM) of your laptop. Both should match. Use the mouse or fill in the data you need in the shown table. Then press OK.
+</li>
+<li>
+Next step is to enlarge the data / software partition, usually named partition 'sda1'. Click at the end of this partition and drag it all the way to the right. A small gap (1 MB) will be left which cannot be used, that is ok.
+</li>
+<li>
+Click on the green hook 'Apply' and confirm it. The computer will then be busy for a while adjusting the partition sizes.
+</li>
+<li>
+Once the computer finishes the previous process, reboot it by clicking on the lower left corner of the screen of the Parted Magic desktop. You laptop is now ready to help unleash education somewhere in the planet!
+</li>
+</ul>
+
+</li>
+</ol></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>35</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1465</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>961</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-15</value>
+</weight>
+</book>

@@ -36,13 +36,9 @@
 
 You will need to select a title for your newsletter as well as the 'Newsletter category' corresponding to the newsletter your are managing.
 
-The 'body' field includes the actual content of your issue. Start by copying and pasting from one of the templates that you will find in <a href="../content/newsletters">this wiki section</a>. After that, edit the 'Issue' number and the 'Date'. Finally, add each of your news entry by simply copying and pasting the following template codeblock and by modifying the text and image according to the news entry.
+The 'body' field includes the actual content of your issue. Start by copying and pasting from one of the templates that you will find in <a href="../content/newsletter-templates">this wiki section</a>. You can copy the template by clicking on the 'Edit' tab of the template page and then by copying the content from its body to the body of your new newsletter. 
 
-<code>&lt;br&gt;
-&lt;font color="#666666" size="4"&gt;Title of This News Entry Here&lt;/font&gt;
-Write here one or two paragraphs describing this news entry.
-&lt;img src="/sites/default/files/styles/labdoo_flexslider_image_style/public/lbd_slides/guinea-conakry.png" width="680"/&gt;
-&lt;/br&gt;</code>
+Once you have copied the template to your newsletter body, you can modify the small fields like the 'Issue number' and the 'Date'. In the template, you will find a set of sample news (all identical), each including a title placeholder 'Title of This News Entry Here', a text paragraph placeholder 'Write here one or two paragraphs describing this news entry.' and a sample image '/sites/default/files/styles/labdoo_flexslider_image_style/public/lbd_slides/guinea-conakry.png'. You need to substitute these three values by your own title, text and image for each of your news entries. (If you don't know how to upload pictures for your newsletter, read <a href='../content/special-html-tags'>this other wiki page</a>.) 
 
 Once you are done editing your newsletter and have ensured that it is correct, you can submit it to your list of subscribed users by clicking on the tab 'Newsletter' and then selecting 'Send newsletter'. Notice that the system allows you to also send yourself a sample of the newsletter issue by selecting the option 'Send one test newsletter to the test address'. We recommend you to do so prior to sending the final version out to your whole audience.</value>
 </body>
@@ -64,6 +60,6 @@ Once you are done editing your newsletter and have ensured that it is correct, y
 </mlid>
 <weight>
 <type>book_array</type>
-<value>0</value>
+<value>-15</value>
 </weight>
 </book>

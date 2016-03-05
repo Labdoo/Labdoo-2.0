@@ -21,7 +21,11 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value><ol>
+<value><font color="red">
+[Bitte druckt diese Seite aus und legt sie eurer IT-Spende bei, wenn sie verschickt wird. So stellt ihr sicher, dass der Empfänger über die Bedienung des Computers informiert ist. Zum Ausdrucken auf 'Printer-friendly version / Druckversion' am Ende der Seite klicken. Wenn möglich, beidseitig und ggf. je 2 Seiten auf eine A4-Seite drucken, um Papier und Druckkosten zu sparen. Ausserdem reicht es, je Lieferung einen Ausdruck dieses Dokumentes beizufügen, danke.]
+</font>
+
+<ol>
 Der in diesem Wiki beschriebene Leistungsumfang geht weit über die reine Installation von dem Betriebssystem lubuntu hinaus. Durch die Installation der vorbereiteten Labdoo Images for  Cloning (für Parted Magic / Clonezilla) oder der Installationsskripte auf http://ftp.labdoo.org/download/images/ erhöht man deutlich den Nutzen für die Kinder.
 
 Teile dieses Dokumentes basieren u.a. auf Texten und Grafiken von www.edubuntu.org und http://wiki.ubuntuusers.de/Edubuntu.

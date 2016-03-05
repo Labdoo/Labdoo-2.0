@@ -21,12 +21,19 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Aktuell gibt es die folgenden Labdoo Images auf dem FTP-Server http://ftp.labdoo.org/download/images/:
+<value>Aktuell gibt es die folgenden Labdoo Images auf Basis von Lubuntu 14.04 LTS auf dem FTP-Server http://ftp.labdoo.org/download/images/:
 
-<strong>Lubuntu 14.04 LTS</strong>
+<strong>Standard-Images</strong>
 <ul>
 <li><a href="http://ftp.labdoo.org/download/images/PAE32_14_04_LTS.tar.gz">PAE32_14_04_LTS (lubuntu 14.04 LTS für <strong>nonPAE und PAE 32 Bit CPU</strong>)</a></li>
 <li><a href="http://ftp.labdoo.org/download/images/PAE64_14_04_LTS.tar.gz">PAE64_14_04_LTS (lubuntu 14.04 LTS für <strong>64 Bit CPU</strong>)</a></li>
+</ul>
+
+<strong>Spezielle Images</strong>
+<ul>
+<li><a href="http://ftp.labdoo.org/download/images/PAE32_without_wikidoo.tar.gz">PAE32_without_wikidoo</a> (Image ohne Wikipedia for schools; für Festplatten ab 20 GB)</li>
+<li><a href="http://ftp.labdoo.org/download/images/PAE64_RACHEL.tar.gz">PAE64_RACHEL</a> (Image mit vorinstalliertem <a href="https://www.labdoo.org/de/content/rachel-installieren">RACHEL</a>; für Festplatten ab 80 GB)</li>
+<li><a href="http://ftp.labdoo.org/download/images/PAE64_Refugees_DE.tar.gz">PAE64_Refugees_DE</a> (Image für Flüchtlingsprojekte im deutschsprachigen Raum; für Festplatten ab 60 GB, <a href="https://www.labdoo.org/de/content/deutschkurse-f%C3%BCr-migranten">Details dazu hier</a>)</li>
 </ul>
 Doppelklick auf den Link des gewünschten Image oder rechte Maustaste und "Speichern unter".
 

@@ -1,0 +1,49 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>24362</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Boot from a different device</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>24362</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>You can boot up the laptop from USB or DVD/CD drive instead of its Hard Drive.  Here's how.
+
+Reboot your computer and look for the "BIOS" or "Setup" key. 
+The correct key will be displayed on the computer manufacturer's logo screen when the computer first starts up. Keys vary depending on the manufacturer. Common keys include F1, F2, F11, and Delete.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>24344</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1461</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1462</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>
