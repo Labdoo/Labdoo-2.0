@@ -58,7 +58,7 @@ function make_main_menu() {
   $mlid = menu_link_save($item);
 
   $item = array(
-            'link_path' => 'content/labdoos-corporate-social-responsibility-csr-package',
+            'link_path' => '<front>',
             'link_title' => t('Labdoo for Companies (CSR)'),
             'menu_name' => 'main-menu',
             'expanded' => TRUE,
@@ -192,8 +192,15 @@ function make_main_menu() {
           );
   $mlid = menu_link_save($item);
 
+  /*
+   * Note: menu items pointing to static pages whose node ID is not known
+   * at the time this module is installed (such as menu items pointing 
+   * to the wiki like the 'About ...' links) are set to point to the
+   * front page '<front>' and hence these menu items require to be
+   * manually adjusted
+   */
   $item = array(
-            'link_path' => 'content/about-dootronics',
+            'link_path' => '<front>',
             'link_title' => t('About dootronics'),
             'menu_name' => 'main-menu',
             'weight' => -48,
@@ -255,7 +262,7 @@ function make_main_menu() {
   $mlid = menu_link_save($item);
 
   $item = array(
-            'link_path' => 'content/managing-edoovillages',
+            'link_path' => '<front>',
             'link_title' => t('About edoovillages'),
             'menu_name' => 'main-menu',
             'weight' => -48,
@@ -317,7 +324,7 @@ function make_main_menu() {
   $mlid = menu_link_save($item);
 
   $item = array(
-            'link_path' => 'content/managing-hubs',
+            'link_path' => '<front>',
             'link_title' => t('About hubs'),
             'menu_name' => 'main-menu',
             'weight' => -48,
@@ -414,7 +421,7 @@ function make_main_menu() {
   $mlid = menu_link_save($item);
 
   $item = array(
-            'link_path' => 'content/dootrip-system',
+            'link_path' => '<front>',
             'link_title' => t('About dootrips'),
             'menu_name' => 'main-menu',
             'weight' => -48,
