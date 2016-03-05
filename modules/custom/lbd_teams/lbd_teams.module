@@ -498,3 +498,83 @@ function lbd_teams_user_insert(&$edit, $account, $category) {
 //  return;
 //}
 
+
+/**
+ * Adds a username to a rendereable code string
+ *
+ * @param $code The renderable code string
+ * @param $user The user node
+ *
+ * @return The new rendreable code string
+ *
+ */
+function _add_team_follower_to_code($code, $user) {
+
+  if(strpos($code, $user->name) !== false) 
+    return $code;
+  if($code == "")
+    $code = $code . "<a href='../user/" . $user->uid . "'>" . $user->name . "</a>";
+  else 
+    $code = $code . ", " . "<a href='../user/" . $user->uid . "'>" . $user->name . "</a>";
+  return $code;
+}
+
+
+/**
+ * Renders a list of users that are following a given conversation/task/event
+ *
+ * @param $node The node of the team conversation/task/event
+ *
+ * @return The code with the list of users
+ *
+ * TODO. Most of the logic in this function is also implemented
+ * in _email_team_event(). Need to factor out the code. 
+ *
+ */
+function lbd_print_team_followers($node) {
+  $code = ""; 
+  $wNode = entity_metadata_wrapper('node', $node);
+  if($node->type == 'team_page') {
+    $sendAll = $wNode->field_send_to_all_conversation->value();
+    $sendToFieldName = 'field_send_to_conversation'; 
+  }
+  else if($node->type == 'team_task') { 
+    $sendAll = $wNode->field_send_to_all_task->value();
+    $sendToFieldName = 'field_send_to_task'; 
+  }
+  else if($node->type == 'event') {
+    $sendAll = $wNode->field_send_to_all_event->value();
+    $sendToFieldName = 'field_send_to_event'; 
+  }
+  else
+    $sendAll = TRUE;
+
+  if($sendAll) { 
+    $code = $code . "<a href='$lang/content/team-members?t=" . lbd_teams_page_group_id() . "'>" . "Everyone in this group</a>";
+    return $code;
+  }
+  else { // Send only to users in the 'send to' field
+    if(property_exists($node, $sendToFieldName)) {
+      if($node->$sendToFieldName) {
+        foreach(field_get_items('node', $node, $sendToFieldName) as $element) {
+          $userLoaded = user_load($element['target_id']);
+          $code = _add_team_follower_to_code($code, $userLoaded);
+        }
+      }
+    }
+  }
+
+  $query = "SELECT uid FROM comment WHERE nid=$node->nid";
+  $items = db_query($query);
+  foreach($items as $item) {
+    $userLoaded = user_load($item->uid);
+    $code = _add_team_follower_to_code($code, $userLoaded);
+  }
+
+  // Include also the author of the parent node
+  $userLoaded = user_load($node->uid);
+  $code = _add_team_follower_to_code($code, $userLoaded);
+
+  return($code);
+}
+

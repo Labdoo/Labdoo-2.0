@@ -236,6 +236,13 @@ input[type="checkbox"] {
  * Hide the default book navigation
  */
 .book-navigation {
-display:none;
+  display:none;
+}
+
+
+.alert-error {
+  background-color: #d6e9c6;
+  border-color: #d6e9c6;
+  color: #468847;
 }
 

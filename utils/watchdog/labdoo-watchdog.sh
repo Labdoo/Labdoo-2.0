@@ -7,8 +7,9 @@
 # in scope. However, it supports the most common case of failures. A future enhancement 
 # is to include a wider set of failures.
 #
-# Run this script as a cron job:
+# Run this script as a cron job, example:
 #     * * * * *  /var/www/lbd/profiles/labdoo/utils/watchdog/labdoo-watchdog.sh 
+#     15 2 * * * /var/www/lbd/profiles/labdoo/utils/watchdog/labdoo-watchdog.sh --restart-now
 #
 
 PATH=/bin:/usr/bin:/usr/sbin

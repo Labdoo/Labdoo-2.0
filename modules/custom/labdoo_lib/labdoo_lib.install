@@ -287,6 +287,9 @@ function labdoo_lib_enable()
   // When deleting an account make its content belong to the Anonymous user.
   variable_set('user_cancel_method', 'user_cancel_reassign');
 
+  // Set the access denied message
+  variable_set('r4032login_access_denied_message', t('Please log in to your Labdoo account to view this page.'));
+
   drupal_set_message("labdoo_lib enabled correctly");
 }
 

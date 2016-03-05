@@ -1084,7 +1084,7 @@ var stringFilter = new google.visualization.ControlWrapper({
   ");
 
   // For the dootrips dashboard, present in descending alphabetic order.
-  if($objectType == 'dootrip')
+  if($objectsType == 'dootrip')
     $sortAscValue = 'false';
   else
     $sortAscValue = 'true';
@@ -1691,6 +1691,7 @@ function lbd_display_slider_hub_edoovillages($hubId) {
   //  to debug that as it could come from any 3rd party module. Instead, to avoid
   // the warnings (which also consume unnecessary cycles), since we just need
   // the first part of the array, we just generate our own print statement.
+  print("<a href='content/managing-edoovillages' target='_blank'>[Click here for help about edoovillages]</a><br/><hr/>");
   print($block["content"]["#markup"]);
 
   return;
@@ -1716,6 +1717,7 @@ function lbd_display_slider_hub_doojects($hubId) {
     return;
 
   $block = module_invoke('views', 'block_view', 'slider_dashboard-block_hub_doojects');
+  print("<a href='content/about-dootronics' target='_blank'>[Click here for help about dootronics]</a><br/><hr/>");
   print($block["content"]["#markup"]);
 
   return;
@@ -1740,6 +1742,7 @@ function lbd_display_slider_hub_metrics($hubId) {
   if($loadedNode->type != "hub")
     return;
 
+  print("<a href='content/visualization-dashboards' target='_blank'>[Click here to learn more about visualizing metrics]</a><br/><hr/>");
   lbd_display_dashboard_edoovillages(NULL, $hubId, NULL, FALSE);
   return;
 }

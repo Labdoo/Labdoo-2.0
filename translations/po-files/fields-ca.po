@@ -477,7 +477,7 @@ msgstr "Grup font"
 #: field:field_hub_manager_s_:hub:label
 msgctxt "field_hub_manager_s_:hub:label"
 msgid "Hub manager(s)"
-msgstr "Gerent/s del hub"
+msgstr "Manager/s del hub"
 
 #: field:field_hub_photo_album:hub:label
 msgctxt "field_hub_photo_album:hub:label"
@@ -597,7 +597,7 @@ msgstr "L'usuari actual que controla aquest dooject"
 #: field:field_manager:laptop:label
 msgctxt "field_manager:laptop:label"
 msgid "Manager"
-msgstr "Gerent"
+msgstr "Manager"
 
 #: field:field_memory:laptop:label
 msgctxt "field_memory:laptop:label"

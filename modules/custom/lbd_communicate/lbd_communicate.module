@@ -223,6 +223,10 @@ function _email_laptop_event($node) {
   $dootripsList = $wNode->field_dootrips->value();
   if($dootripsList) {
     foreach($dootripsList as $dootripNode) {
+      // It is possible that $dootripNode is just an empty placeholder. This situation
+      // arises on laptops that are assigned to a dootrip that gets deleted later on.
+      if(!$dootripNode)
+        continue;
       $dootripLoaded = node_load($dootripNode->nid);
       $emailsList = $emailsList . ", " . labdoo_dootrip_extract_emails($dootripLoaded); 
     }

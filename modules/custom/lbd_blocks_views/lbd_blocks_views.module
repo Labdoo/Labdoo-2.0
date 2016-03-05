@@ -319,6 +319,17 @@ function lbd_blocks_views_block_info() {
     'region' => "footer",
   );
 
+  // Team object header block
+  $blocks['block_team_object_header'] = array(
+    'info' => "Labdoo team object header",
+    'status' => 1,
+    'visibility' => BLOCK_VISIBILITY_PHP,
+    'weight' => -100,
+    'pages' => "<?php return labdoo_block_filter_team_object_header(); ?>",
+    'region' => "content",
+  );
+
+
   return $blocks;
 }
 
@@ -457,6 +468,14 @@ function lbd_blocks_views_block_view($delta = '') {
       $block['subject'] = "<none>";
       $block['content'] = array(
              '#markup' => labdoo_render_footer(),
+      );
+      break;
+
+    // The team object header 
+    case 'block_team_object_header':
+      $block['subject'] = "<none>";
+      $block['content'] = array(
+             '#markup' => labdoo_render_team_object_header(),
       );
       break;
 

@@ -1306,6 +1306,18 @@ function labdoo_lib_form_node_form_alter(&$form, &$form_state, $form_id) {
     unset($form['title']);
   }
 
+  if($form_id == 'team_page_node_form') {
+    // Only show the field to associate a conversation
+    // with an edoovillage if this conversation belongs
+    // to the QA team.
+    $groupId = lbd_teams_page_group_id();
+    $groupPath = drupal_get_path_alias("node/$groupId");
+    if(strcmp($groupPath, "content/quality-assurance-qa") != 0) {
+      $form['field_are_you_a_student_teacher_']['#access'] = FALSE;
+      $form['field_team_my_edoovillage']['#access'] = FALSE;
+    }
+  }
+
   return;
 }
 
@@ -1336,6 +1348,17 @@ function labdoo_lib_form_alter(&$form, &$form_state, $form_id) {
   // Do not show the hub manager notification options during registration
   if($form_id == 'user_register_form')
     field_group_hide_field_groups($form, array('group_hub_manager_notifications'));
+
+  // If its a dootrip and if this is a cloning operation, reset some values to avoid
+  // possible mistakes
+  if($form_id == 'dootrip_node_form' && (strpos(drupal_get_path_alias(current_path()), 'clone/confirm')) != FALSE) {
+    foreach($form['field_laptops'][LANGUAGE_NONE] as $key => $dootronicTargetId)
+      if(is_numeric($key))
+        unset($form['field_laptops'][LANGUAGE_NONE][$key]['target_id']['#default_value']) ;
+    unset($form['field_departure_date'][LANGUAGE_NONE][0]['#default_value']['value']) ;
+    unset($form['field_arrival_date'][LANGUAGE_NONE][0]['#default_value']['value']);
+    unset($form['field_status_dootrip'][LANGUAGE_NONE]['#default_value']) ;
+  }
 
   return;
 }
@@ -1667,7 +1690,7 @@ function labdoo_lib_compute_hub_branches($nodeLoaded) {
 
   $branchesCode = implode("<br/>", $branchesList);
   if($branchesCode == "")
-    $branchesCode = "None2";
+    $branchesCode = "None";
 
   return($branchesCode);
 }
@@ -1854,23 +1877,32 @@ function labdoo_lib_node_view($node, $view_mode) {
  */
 function lbd_print_dooject_labels($laptopid = NULL) {
 
-  $nodeId = lbd_laptopid2nodeid($laptopid);
-  if($nodeId == "" || (($nodeLoaded = node_load($nodeId)) == FALSE)) {
-    print(t('<p>Wrong Identifier. Please use a valid <span style="color:#ff0000;">9 digit</span> number to correctly display tags.</p>'));
-    return; 
-  }
-    
-  $adjustedWidth = 110;
-  // If the Wh field is present, the print it in the label
-  $wattageHour = labdoo_lib_compute_watt_hours($nodeLoaded);
-  
+  $query = explode('&', $_SERVER['QUERY_STRING']);
+  $params = array();
+
   print(
     t('Print and attach these three labels to: (1) the device, (2) the power adaptor and (3)
        inside the battery compartment of the device. You can omit the third tag if the device has no battery
        compartment. Check this <a href="/profiles/labdoo/files/pictures/tagging-flow.png" class="colorbox-load">drawing</a> if in doubt.')
   );
 
-  print('
+  foreach($query as $param) {
+    $keyPair = explode('=', $param);
+    if($keyPair[0] != "id")
+      continue;
+    $laptopid = $keyPair[1];
+
+    $nodeId = lbd_laptopid2nodeid($laptopid);
+    if($nodeId == "" || (($nodeLoaded = node_load($nodeId)) == FALSE)) {
+      print(t('<p>Wrong Identifier. Please use a valid <span style="color:#ff0000;">9 digit</span> number to correctly display tags.</p>'));
+      return; 
+    }
+    
+    $adjustedWidth = 110;
+    // If the Wh field is present, the print it in the label
+    $wattageHour = labdoo_lib_compute_watt_hours($nodeLoaded);
+
+    print('
 <br>
 <br>
 
@@ -1884,9 +1916,9 @@ ID: '.$laptopid.'
 </strong></p>
                         </td>
                         <td style="width: 100px;">
-  ');
-  lbd_generate_qrcode($laptopid);
-  print('
+    ');
+    lbd_generate_qrcode($laptopid);
+    print('
                         </td>
                         <td style="width: ' . $adjustedWidth . 'px;">
 <p><strong style="color: rgb(0, 0, 0); font-family: monospace; line-height: 2px; font-size: 11px;">
@@ -1895,9 +1927,9 @@ ID: '.$laptopid.'
 </strong></p>
                         </td>
                         <td style="width: 100px;">
-  ');
-  lbd_generate_qrcode($laptopid);
-  print('
+    ');
+    lbd_generate_qrcode($laptopid);
+    print('
                         </td>
                         <td style="width: ' . $adjustedWidth . 'px;">
 <p><strong style="color: rgb(0, 0, 0); font-family: monospace; line-height: 2px; font-size: 11px;">
@@ -1906,9 +1938,9 @@ ID: '.$laptopid.'
 </strong></p>
                         </td>
                         <td style="width: 100px;">
-  ');
-  lbd_generate_qrcode($laptopid);
-  print('
+    ');
+    lbd_generate_qrcode($laptopid);
+    print('
                         </td>
                         <td style="width: 150px;">
 <p><strong style="color: rgb(0, 0, 0); font-family: monospace; line-height: 2px; font-size: 11px;">Battery<br>watt-hours:<br>' . $wattageHour . '<br></strong></p>
@@ -1917,7 +1949,8 @@ ID: '.$laptopid.'
         </tbody>
 </table>
 
-  ');
+    ');
+  }
 
   return;
 }
@@ -2324,6 +2357,24 @@ function labdoo_render_footer() {
 
 
 /**
+ * Renders the Labdoo team object header
+ *
+ * @return The code to render
+ *
+ */
+function labdoo_render_team_object_header() {
+  if ((arg(0) != 'node') || !is_numeric(arg(1)))
+    return;
+  $node = node_load(arg(1));
+
+  $code = $code . "<p align='right'><strong><font color='gray'>" . t("Following this conversation") . "</font></strong><br/>" . lbd_print_team_followers($node) . "</p>"; 
+  $code = $code . "<hr/>";
+
+  return $code; 
+}
+
+
+/**
  * Renders the superhub menu block 
  *
  * @return The code to render
@@ -2344,6 +2395,8 @@ function labdoo_render_superhub_menu() {
     $query = "SELECT entity_id FROM field_data_field_linked_pages WHERE field_linked_pages_target_id=" . arg(1);
   }
   else {
+    if($language->language == 'en')
+      return "";
     # case (2)
     $query = "SELECT entity_id FROM field_data_field_shub_page_language WHERE field_shub_page_language_value='$language->language' AND entity_id IN 
              (SELECT entity_id FROM field_data_field_superhub_page_type WHERE field_superhub_page_type_value='block')";
@@ -2593,6 +2646,23 @@ function labdoo_block_filter_footer() {
 
   if(strcmp($path, "content/tag-one-dooject") == 0)
       return FALSE;
+
+  return TRUE;
+}
+
+
+/**
+ * Implements the visibility filter for the Labdoo team object header 
+ *
+ * @return TRUE if the block is to be displayed, FALSE otherwise
+ *
+ */
+function labdoo_block_filter_team_object_header() {
+
+  if(!user_is_logged_in()) 
+    return FALSE;
+  if(!labdoo_lib_node_is_type(array('team_page', 'event', 'team_task')))
+    return FALSE;
 
   return TRUE;
 }
