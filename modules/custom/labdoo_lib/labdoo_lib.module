@@ -3341,3 +3341,112 @@ function labdoo_lib_node_validate($node, $form, &$form_state) {
   return;
 } 
 
+
+/**
+ * Generates HTML/Javascript code to render a button to download
+ * a CSV file from a PHP (string) table array.
+ *
+ * @param array $table  
+ *   A PHP string array with the data to download as a CSV file
+ *
+ * @return string $code
+ *   The code to render
+ *
+ */ 
+function labdoo_table_download_button($table) {
+
+  // Convert a PHP table of strings into an HTML table
+  $tableCode = "<table>";
+  for ($i = 0; $i < count($table); $i++) { 
+    $tableCode = $tableCode . "<tr>";
+    for ($j = 0; $j < count($table[$i]); $j++)
+      $tableCode = $tableCode . "<th>" . $table[$i][$j] . "</th>";
+    $tableCode = $tableCode . "</tr>";
+  }
+  $tableCode = $tableCode . "</table>";
+
+  // Use javascript to generate a download button for the table
+  $code = '
+        <div class=\'container\'> 
+          <div id="dvData" style="display:none"> ' . $tableCode . ' </div>
+          <div class=\'button\'>
+              <a href="#" id ="export" role=\'button\'><img src="sites/default/files/content/general-objects/download-button.png" width="100"></a>
+           </div>
+        </div>
+
+        <script type=\'text/javascript\' src=\'https://code.jquery.com/jquery-1.11.0.min.js\'></script>
+        <script type=\'text/javascript\'>
+
+        $(document).ready(function () {
+
+            function exportTableToCSV($table, filename) {
+
+                var $headers = $table.find(\'tr:has(th)\'),
+                    $rows = $table.find(\'tr:has(td)\'),
+                    // Temporary delimiter characters unlikely to be typed by keyboard
+                    // This is to avoid accidentally splitting the actual contents
+                    tmpColDelim = String.fromCharCode(11), // vertical tab character
+                    tmpRowDelim = String.fromCharCode(0), // null character
+                    // actual delimiter characters for CSV format
+                    colDelim = \'","\',
+                    rowDelim = \'"\r\n"\';
+                    // Grab text from table into CSV formatted string
+                    var csv = \'"\';
+                    csv += formatRows($headers.map(grabRow));
+                    csv += rowDelim;
+                    csv += formatRows($rows.map(grabRow)) + \'"\';
+                    // Data URI
+                    var csvData = \'data:application/csv;charset=utf-8,\' + encodeURIComponent(csv);
+                $(this)
+                    .attr({
+                    \'download\': filename
+                        ,\'href\': csvData
+                        //,\'target\' : \'_blank\' //if you want it to open in a new window
+                });
+
+                // Format the output so it has the appropriate delimiters
+                function formatRows(rows){
+                    return rows.get().join(tmpRowDelim)
+                        .split(tmpRowDelim).join(rowDelim)
+                        .split(tmpColDelim).join(colDelim);
+                }
+
+                // Grab and format a row from the table
+                function grabRow(i,row){
+                    var $row = $(row);
+                    //for some reason $cols = $row.find(\'td\') || $row.find(\'th\') won\'t work...
+                    var $cols = $row.find(\'td\'); 
+                    if(!$cols.length) $cols = $row.find(\'th\');  
+                    return $cols.map(grabCol)
+                                .get().join(tmpColDelim);
+                }
+
+                // Grab and format a column from the table 
+                function grabCol(j,col){
+                    var $col = $(col),
+                        $text = $col.text();
+                    return $text.replace(\'"\', \'""\'); // escape double quotes
+                }
+            }
+
+            $("#export").click(function (event) {
+                // CSV
+                var d = new Date();
+                var prefix = d.getFullYear() + ":" +
+                             ("00" + (d.getMonth() + 1)).slice(-2) + "/" + 
+                             ("00" + d.getDate()).slice(-2) + "/" + 
+                             ("00" + d.getHours()).slice(-2) + ":" + 
+                             ("00" + d.getMinutes()).slice(-2) + ":" + 
+                             ("00" + d.getSeconds()).slice(-2);
+                exportTableToCSV.apply(this, [$(\'#dvData>table\'), "data-" + prefix + ".csv"]);
+                
+                // IF CSV, don\'t do event.preventDefault() or return false
+                // We actually need this to be a typical hyperlink
+            });
+        });
+    </script>
+  ';
+
+  return $code;
+}
+
