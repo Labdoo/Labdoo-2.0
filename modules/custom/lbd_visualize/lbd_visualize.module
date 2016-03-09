@@ -1553,18 +1553,27 @@ function lbd_display_slider_edoovilage_dootrips($edoovillageId) {
   if($loadedNode->type != "edoovillage")
     return;
 
-  $header = array(array('data' => t('Dootrip #'), 'nowrap' => 'nowrap'),
-                  array('data' => t('Origin'), 'nowrap' => 'nowrap'), 
-                  array('data' => t('Destination'), 'nowrap' => 'nowrap'), 
-                  array('data' => t('Status'), 'nowrap' => 'nowrap'),
-                  array('data' => t('Capacity'), 'nowrap' => 'nowrap'),
-                  array('data' => t('Dootronics assigned'), 'nowrap' => 'nowrap'));
+  $tableArray[0][0] = t('Dootrip #');
+  $tableArray[0][1] = t('Origin');
+  $tableArray[0][2] = t('Destination');
+  $tableArray[0][3] = t('Status');
+  $tableArray[0][4] = t('Capacity');
+  $tableArray[0][5] = t('Dootronics assigned');
+ 
+  $header = array(array('data' => $tableArray[0][0], 'nowrap' => 'nowrap'),
+                  array('data' => $tableArray[0][1], 'nowrap' => 'nowrap'), 
+                  array('data' => $tableArray[0][2], 'nowrap' => 'nowrap'), 
+                  array('data' => $tableArray[0][3], 'nowrap' => 'nowrap'),
+                  array('data' => $tableArray[0][4], 'nowrap' => 'nowrap'),
+                  array('data' => $tableArray[0][5], 'nowrap' => 'nowrap'));
+
   $rows = array();
   $query = "SELECT DISTINCT(field_dootrips_target_id) FROM field_data_field_dootrips WHERE entity_id IN 
            (SELECT entity_id FROM field_data_field_edoovillage_destination WHERE field_edoovillage_destination_target_id=:edoovillageId)";
   $placeHolders[':edoovillageId'] = $edoovillageId;
   $result = db_query($query, $placeHolders);
 
+  $i = 0; 
   foreach($result as $item) {
     // Load the dootrip node
     $dootripNid = $item->field_dootrips_target_id;
@@ -1594,17 +1603,28 @@ function lbd_display_slider_edoovilage_dootrips($edoovillageId) {
     // Get number of dootrips assigned
     $assigned = labdoo_lib_get_field($dootripNode, 'field_number_of_doojects_assigne', 'node', 'value'); 
     // Create the row
-    $rows[] = array(array('data' => "<a href='" . $urlPath . "'>" . $dootripName . "</a>", 'nowrap' => 'nowrap'),
-                    array('data' => $thisCitySrc . ", " . $thisCountrySrc, 'nowrap' => 'nowrap'), 
-                    array('data' => $thisCityDst . ", " . $thisCountryDst, 'nowrap' => 'nowrap'), 
-                    array('data' => $status, 'nowrap' => 'nowrap'), 
-                    array('data' => $capacity, 'nowrap' => 'nowrap'), 
-                    array('data' => $assigned, 'nowrap' => 'nowrap'));
+    $i++;
+    $j = 0;
+    $tableArray[$i][$j++] = "<a href='" . $urlPath . "'>" . $dootripName . "</a>";
+    $tableArray[$i][$j++] = $thisCitySrc . ", " . $thisCountrySrc;
+    $tableArray[$i][$j++] = $thisCityDst . ", " . $thisCountryDst;
+    $tableArray[$i][$j++] = $status;
+    $tableArray[$i][$j++] = $capacity;
+    $tableArray[$i][$j++] = $assigned;
+    $j = 0;
+    $rows[] = array(array('data' => $tableArray[$i][$j++], 'nowrap' => 'nowrap'),
+                    array('data' => $tableArray[$i][$j++], 'nowrap' => 'nowrap'), 
+                    array('data' => $tableArray[$i][$j++], 'nowrap' => 'nowrap'), 
+                    array('data' => $tableArray[$i][$j++], 'nowrap' => 'nowrap'), 
+                    array('data' => $tableArray[$i][$j++], 'nowrap' => 'nowrap'), 
+                    array('data' => $tableArray[$i][$j++], 'nowrap' => 'nowrap'));
   }
  
   $output = theme('table', array('header' => $header, 'rows' => $rows ));
   print("<a href='content/dootrip-system' target='_blank'>[Click here for help about dootrips]</a><br/>");
   print($output);
+  // Render the download button
+  print(labdoo_table_download_button($tableArray));
 
   return;
 }
