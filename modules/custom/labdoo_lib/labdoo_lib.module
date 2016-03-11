@@ -3353,7 +3353,7 @@ function labdoo_lib_node_validate($node, $form, &$form_state) {
  *   The code to render
  *
  */ 
-function labdoo_table_download_button($table) {
+function labdoo_table_download_button($table, $divId="dvData") {
 
   // Convert a PHP table of strings into an HTML table
   $tableCode = "<table>";
@@ -3368,9 +3368,9 @@ function labdoo_table_download_button($table) {
   // Use javascript to generate a download button for the table
   $code = '
         <div class=\'container\'> 
-          <div id="dvData" style="display:none"> ' . $tableCode . ' </div>
+          <div id="'.$divId.'" style="display:none"> ' . $tableCode . ' </div>
           <div class=\'button\'>
-              <a href="#" id ="export" role=\'button\'><img src="sites/default/files/content/general-objects/download-button.png" width="100"></a>
+              <a href="#" id ="export" role=\'button\'><img src="/sites/default/files/content/general-objects/download-button.png" width="100"></a>
            </div>
         </div>
 
@@ -3438,7 +3438,7 @@ function labdoo_table_download_button($table) {
                              ("00" + d.getHours()).slice(-2) + ":" + 
                              ("00" + d.getMinutes()).slice(-2) + ":" + 
                              ("00" + d.getSeconds()).slice(-2);
-                exportTableToCSV.apply(this, [$(\'#dvData>table\'), "data-" + prefix + ".csv"]);
+                exportTableToCSV.apply(this, [$(\'#'.$divId.'>table\'), "data-" + prefix + ".csv"]);
                 
                 // IF CSV, don\'t do event.preventDefault() or return false
                 // We actually need this to be a typical hyperlink
@@ -3448,5 +3448,47 @@ function labdoo_table_download_button($table) {
   ';
 
   return $code;
+}
+
+
+/**
+ * Generates a download button from the query results of a view.
+ *
+ * @param array
+ *   viewResult The results of a views query using views_get_view_result()
+ * 
+ * @return
+ *   Code that renders the download button
+ *
+ */
+function labdoo_views_download_button($viewResult) {
+  $j = 0;
+
+  // Compose the header of the table first
+  foreach($viewResult[0] as $fieldName => $value) { 
+    // All CCK fields start with an extra "field_" prefix (e.g., field_field_status).
+    // Remove it.
+    if(substr($fieldName, 0, 6) == "field_")
+      $fieldName = substr($fieldName, 6);
+    $fieldInfo = field_info_instance('node', $fieldName, 'laptop');
+    // If nothing was returned, skip this field as it's not interesting.
+    if(!$fieldInfo)
+      continue;
+
+    $fieldNames[] = "field_" . $fieldName;
+    $viewTable[0][$j++] = $fieldInfo['label'];
+  }
+
+  // Compose next the table rows
+  foreach($viewResult as $key => $object) {
+    $j = 0;
+    foreach($fieldNames as $fieldName) { 
+      $fieldValue = $object->$fieldName;
+      $markup = $fieldValue[0]['rendered']['#markup'];
+      $viewTable[$key+1][$j++] = $markup;
+    }
+  }
+
+  return labdoo_table_download_button($viewTable, "downloadViewsId");
 }
 
