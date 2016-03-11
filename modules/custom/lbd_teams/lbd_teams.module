@@ -221,7 +221,7 @@ function labdoo_render_team_actions() {
     $code = "
 <p><strong><span style='color:#009900; font-size:16px;'>Team " . $teamName . "</span></strong></p>
 <img src='/profiles/labdoo/files/pictures/home.png' style='width: 20px; height: 21px;'/>&nbsp;
-<a href='$homePath'>" . t("Team's home page") . "</span></a></p>
+<a href='$homePath'>" . t("About this team") . "</span></a></p>
 <img src='/profiles/labdoo/files/pictures/wall.png' style='width: 20px; height: 21px;'/>&nbsp;
 <a href='$homePath/activities'>" . t("View wall") . "</span></a></p>
 <img src='/profiles/labdoo/files/pictures/calendar_icon.png' style='width: 20px; height: 21px;'/>&nbsp;
@@ -234,7 +234,7 @@ function labdoo_render_team_actions() {
     $code = "
 <p><strong><span style='color:#009900; font-size:16px;'>Team " . $teamName . "</span></strong></p>
 <img src='/profiles/labdoo/files/pictures/home.png' style='width: 20px; height: 21px;'/>&nbsp;
-<a href='$homePath'>" . t("Team's home page") . "</span></a></p>
+<a href='$homePath'>" . t("About this team") . "</span></a></p>
 <img src='/profiles/labdoo/files/pictures/conversation.png' style='width: 20px; height: 21px;'/>&nbsp;
 <a href='$lang/node/add/team-page?og_group_ref=$groupId'>" . t("Start conversation") . "</span></a></p>
 <img src='/profiles/labdoo/files/pictures/check.png' style='width: 20px; height: 21px;'/>&nbsp;

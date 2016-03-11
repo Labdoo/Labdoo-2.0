@@ -400,7 +400,6 @@ function labdoo_render_dooject_header() {
       $albumUri = drupal_get_path_alias("node/" .  $nodeAlbum->nid, $language->language);
       if($language->language != $defaultLanguage->language)
         $albumUri = $language->language . "/" . $albumUri;
-      $gotoMsg = t("Go to photo album");
       $htmlCode = $htmlCode . "<img src='/profiles/labdoo/files/pictures/edoovillage.png' style='width: 35px; height: 30px;'/>&nbsp;
                   <a href='/".$albumUri."'>" . t("Photo album") . "</span></a>&nbsp&nbsp&nbsp";
     }
@@ -587,7 +586,7 @@ function labdoo_render_edoovillage_hub_header($nodeId = NULL, $type) {
     return;
 
   // Table header
-  $htmlCode = $htmlCode . '<table border="0" cellpadding="1" cellspacing="1" style="width: 920px;"><tbody><tr><td style="width: 200px;">';
+  $htmlCode = $htmlCode . '<table border="0" cellpadding="1" cellspacing="1" style="width: 920px;"><tbody><tr><td style="width: 400px;">';
 
   // Photo album icon and button
   if($type == "edoovillage") 
@@ -598,11 +597,10 @@ function labdoo_render_edoovillage_hub_header($nodeId = NULL, $type) {
   $wNode = entity_metadata_wrapper('node', $nodeObj);
   $nodeAlbum = $wNode->$field_photo_album->value();
   $albumUri = drupal_get_path_alias("node/" . $nodeAlbum->nid, $langCode);
-  $gotoMsg = t("Go to photo album");
 
   $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="middle">
-                           <img alt="" src="/profiles/labdoo/files/pictures/photo-album-icon.jpg" style="width: 122px; height: 100px; "/></a>';
-  $htmlCode = $htmlCode . '<p align="middle"><input type="button" value="' . $gotoMsg . '" onclick="window.open(\''.$albumUri.'\', \'_self\');"/>';
+                           <a href="'.$albumUri.'">
+                           <img alt="" src="/sites/default/files/content/general-objects/goto-photo-album.png" style="width: 150px; "/></a>';
 
   if($type == "edoovillage") {
     // Next cell
@@ -618,7 +616,7 @@ function labdoo_render_edoovillage_hub_header($nodeId = NULL, $type) {
       $semaphorePic = 'semaphore-yellow-' . $langCode . '.png';
     else if($semaphoreState == 'green')
       $semaphorePic = 'semaphore-green-' . $langCode . '.png';
-    $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="right">
+    $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="center">
                              <img alt="" src="/profiles/labdoo/files/pictures/' . $semaphorePic . '" style="width: 280px; height: 85px; "/></a>';
   }
   // Next cell
@@ -664,11 +662,11 @@ function labdoo_render_photo_album_header() {
 
   // Edoovillage or hub icon and button
   $wNode = entity_metadata_wrapper('node', $nodeObj);
-  $gotoMsg = t("Go to edoovillage");
+  $gotoIcon = "/sites/default/files/content/general-objects/goto-edoovillage.png";
   $parentNodeType = 'edoovillage';
   $parentNode = $wNode->field_photo_album_edoovillage->value();
   if(!$parentNode) {
-    $gotoMsg = t("Go to hub");
+    $gotoIcon = "/sites/default/files/content/general-objects/goto-hub.png";
     $parentNodeType = 'hub';
     $parentNode = $wNode->field_photo_album_hub->value();
   }
@@ -680,9 +678,8 @@ function labdoo_render_photo_album_header() {
   else if($language->language != $defaultLanguage->language)
     $albumUri = $language->language . "/" . $albumUri;
   $htmlCode = $htmlCode . '<p class="small" style="font-family: monospace; " align="middle">
-                           <img alt="" src="/profiles/labdoo/files/pictures/photo-album-icon.jpg" style="width: 122px; height: 100px; "/></a>';
-  $htmlCode = $htmlCode . '<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="button" value="' 
-                        .  $gotoMsg . '" onclick="window.open(\'/'.$albumUri.'\', \'_self\');"/>';
+                           <a href="/'.$albumUri.'">
+                           <img alt="" src="'.$gotoIcon.'" style="width: 150px; "/></a>';
 
   // Next cell
   $htmlCode = $htmlCode . '</td><td>';
@@ -3370,7 +3367,7 @@ function labdoo_table_download_button($table) {
         <div class=\'container\'> 
           <div id="dvData" style="display:none"> ' . $tableCode . ' </div>
           <div class=\'button\'>
-              <a href="#" id ="export" role=\'button\'><img src="sites/default/files/content/general-objects/download-button.png" width="100"></a>
+              <a href="#" id ="export" role=\'button\'><img src="/sites/default/files/content/general-objects/download-button.png" width="100"></a>
            </div>
         </div>
 
