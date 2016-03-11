@@ -1481,8 +1481,7 @@ function lbd_display_slider_edoovilage_data($edoovillageId = NULL) {
 
 
 /**
-
- * Displays the edoovillage "check doojects" slider
+ * Displays the edoovillage doojects slider
  * 
  * @param edoovillageId Identifier of the edoovillage 
  *
@@ -1502,6 +1501,9 @@ function lbd_display_slider_edoovilage_doojects($edoovillageId = NULL) {
   $block = module_invoke('views', 'block_view', 'slider_dashboard-block_edoovillage_doojects');
   print("<a href='content/about-dootronics' target='_blank'>[Click here for help about dootronics]</a><br/><hr/>");
   print($block["content"]["#markup"]);
+
+  $viewResult = views_get_view_result('slider_dashboard', 'block_edoovillage_doojects', $edoovillageId);
+  print(labdoo_views_download_button($viewResult));
 
   return;
 }
