@@ -1798,7 +1798,10 @@ function lbd_display_dooject_column_chart($objectNid, $type)
     $numDeployed = labdoo_getnum_doojects(NULL, $objectNid, "S4") + labdoo_getnum_doojects(NULL, $objectNid, "S7") + labdoo_getnum_doojects(NULL, $objectNid, "S8");
     $numNeedRecycle = labdoo_getnum_doojects(NULL, $objectNid, "S5") + labdoo_getnum_doojects(NULL, $objectNid, "S9");
     $numRecycled = labdoo_getnum_doojects(NULL, $objectNid, "S6");
-    $numTagged = $numTransit + $numDeployed + $numNeedRecycle + $numRecycled;
+    $numTagged = $numTransit + $numDeployed + $numNeedRecycle + $numRecycled + 
+                 labdoo_getnum_doojects(NULL, $objectNid, "S0") + 
+                 labdoo_getnum_doojects(NULL, $objectNid, "S1") + 
+                 labdoo_getnum_doojects(NULL, $objectNid, "S2");
     $xLabel = "Dootronics";
   }
   else {
