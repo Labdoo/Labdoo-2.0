@@ -510,6 +510,59 @@ function labdoo_lib_prev_next_node($node, $op) {
 
 
 /**
+ * Generates a table listing all the dootronics linked to a dootrip.
+ *
+ * @param node $node The dootrip node.
+ *
+ * @return array The table with the dootronics linked to the dootrip.
+ * 
+ */
+function _generate_dootrip_dootronics_table($node) {
+  $dootronicsTable = array();
+
+  // Extract dootronics list
+  $wNode = entity_metadata_wrapper('node', $node);
+  $doojectsList = $wNode->field_laptops->value();
+  if(!$doojectsList) 
+    return $dootronicsTable;
+
+  // Add the table header
+  $i = 0;
+  $j = 0;
+  $dootronicsTable[$i][$j++] = "ID";
+  $dootronicsTable[$i][$j++] = "Status";
+  $dootronicsTable[$i][$j++] = "Model";
+  $dootronicsTable[$i][$j++] = "Serial number";
+  $dootronicsTable[$i][$j++] = "Watt-hours";
+  $dootronicsTable[$i][$j++] = "Weight";
+
+  // For each dootronic, add a row to the table
+  foreach($doojectsList as $doojectNode) {
+    if(!key_exists('nid', $doojectNode))
+      continue;
+    $i++;
+    $j = 0;
+    $doojectLoaded = node_load($doojectNode->nid);
+    $wDoojectLoaded = entity_metadata_wrapper('node', $doojectLoaded);
+    // Extract the status
+    $dootronicsTable[$i][$j++] = "# " . $doojectLoaded->title; 
+    // Extract the status
+    $dootronicsTable[$i][$j++] = $wDoojectLoaded->field_status->value();
+    // Extract the model 
+    $dootronicsTable[$i][$j++] = $wDoojectLoaded->field_model->value();
+    // Extract the serial number 
+    $dootronicsTable[$i][$j++] = $wDoojectLoaded->field_serial_number->value();
+    // Extract the watt-hours 
+    $dootronicsTable[$i][$j++] = $wDoojectLoaded->field_battery_watt_hours->value();
+    // Extract the weight (hack: should extract Kgms units from the field)
+    $dootronicsTable[$i][$j++] = $wDoojectLoaded->field_dooject_weight->value() . " Kgms"; 
+  }
+
+  return($dootronicsTable);
+}
+
+
+/**
  * Renders a dooject's header
  *
  * @return The code to render
@@ -528,11 +581,18 @@ function labdoo_render_dootrip_header() {
   $nextUri = drupal_get_path_alias("node/" . $nextNodeId, $langCode);
 
   // Table header
-  $htmlCode = $htmlCode . '<table align="center" width="1150px"><tr><td align="left">';
+  $htmlCode = $htmlCode . '<table align="center" width="1150px"><tr><td align="left" width="60px">';
 
   // Left arrow
   $htmlCode = $htmlCode . "<a style='float: left;' href='../" . $prevUri . "'>
               <img src='/profiles/labdoo/files/pictures/arrow_left.png' style='float: right; width: 30px; height: 31px;'/></span></a>";
+
+  $htmlCode = $htmlCode . '</td><td align="left">';
+
+  // Button to download list of dootronics
+  $dootronicsTable = _generate_dootrip_dootronics_table($nodeObj);
+  $dootripDownloadButton = labdoo_table_download_button($dootronicsTable, "downloadButtonDootrips", "download-button-dootronics.png", 180);
+  $htmlCode = $htmlCode . $dootripDownloadButton;
 
   $htmlCode = $htmlCode . '</td><td align="center">';
 
@@ -3353,7 +3413,7 @@ function labdoo_lib_node_validate($node, $form, &$form_state) {
  *   The code to render
  *
  */ 
-function labdoo_table_download_button($table, $signature="") {
+function labdoo_table_download_button($table, $signature="", $downloadIcon="download-button.png", $iconWidth=100) {
 
   // Convert a PHP table of strings into an HTML table
   $tableCode = "<table>";
@@ -3367,12 +3427,10 @@ function labdoo_table_download_button($table, $signature="") {
 
   // Use javascript to generate a download button for the table
   $code = '
-        <div class=\'container\'> 
           <div id="dvData'.$signature.'" style="display:none"> ' . $tableCode . ' </div>
           <div class=\'button\'>
-              <a href="#" id ="export'.$signature.'" role=\'button\'><img src="/sites/default/files/content/general-objects/download-button.png" width="100"></a>
+              <a href="#" id ="export'.$signature.'" role=\'button\'><img src="/sites/default/files/content/general-objects/'.$downloadIcon.'" width="'.$iconWidth.'"></a>
            </div>
-        </div>
 
         <script type=\'text/javascript\' src=\'https://code.jquery.com/jquery-1.11.0.min.js\'></script>
         <script type=\'text/javascript\'>
