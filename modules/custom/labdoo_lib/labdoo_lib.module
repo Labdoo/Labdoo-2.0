@@ -3346,11 +3346,14 @@ function labdoo_lib_node_validate($node, $form, &$form_state) {
  * @param array $table  
  *   A PHP string array with the data to download as a CSV file
  *
+ * @param string @$signature
+ *   A string to uniquely identify this button to avoid name collisions
+ *
  * @return string $code
  *   The code to render
  *
  */ 
-function labdoo_table_download_button($table, $divId="dvData") {
+function labdoo_table_download_button($table, $signature="") {
 
   // Convert a PHP table of strings into an HTML table
   $tableCode = "<table>";
@@ -3365,9 +3368,9 @@ function labdoo_table_download_button($table, $divId="dvData") {
   // Use javascript to generate a download button for the table
   $code = '
         <div class=\'container\'> 
-          <div id="'.$divId.'" style="display:none"> ' . $tableCode . ' </div>
+          <div id="dvData'.$signature.'" style="display:none"> ' . $tableCode . ' </div>
           <div class=\'button\'>
-              <a href="#" id ="export" role=\'button\'><img src="/sites/default/files/content/general-objects/download-button.png" width="100"></a>
+              <a href="#" id ="export'.$signature.'" role=\'button\'><img src="/sites/default/files/content/general-objects/download-button.png" width="100"></a>
            </div>
         </div>
 
@@ -3426,7 +3429,7 @@ function labdoo_table_download_button($table, $divId="dvData") {
                 }
             }
 
-            $("#export").click(function (event) {
+            $("#export'.$signature.'").click(function (event) {
                 // CSV
                 var d = new Date();
                 var prefix = d.getFullYear() + ":" +
@@ -3435,7 +3438,7 @@ function labdoo_table_download_button($table, $divId="dvData") {
                              ("00" + d.getHours()).slice(-2) + ":" + 
                              ("00" + d.getMinutes()).slice(-2) + ":" + 
                              ("00" + d.getSeconds()).slice(-2);
-                exportTableToCSV.apply(this, [$(\'#'.$divId.'>table\'), "data-" + prefix + ".csv"]);
+                exportTableToCSV.apply(this, [$(\'#dvData'.$signature.'>table\'), "data-" + prefix + ".csv"]);
                 
                 // IF CSV, don\'t do event.preventDefault() or return false
                 // We actually need this to be a typical hyperlink
@@ -3459,9 +3462,10 @@ function labdoo_table_download_button($table, $divId="dvData") {
  *
  */
 function labdoo_views_download_button($viewResult) {
-  $j = 0;
 
-  // Compose the header of the table first
+  // Compose the header of the table first                                                
+  $j = 0;
+  $viewTable[0][$j++] = "ID";
   foreach($viewResult[0] as $fieldName => $value) { 
     // All CCK fields start with an extra "field_" prefix (e.g., field_field_status).
     // Remove it.
@@ -3479,6 +3483,8 @@ function labdoo_views_download_button($viewResult) {
   // Compose next the table rows
   foreach($viewResult as $key => $object) {
     $j = 0;
+    # Add "# " to avoid being casted to an integer value
+    $viewTable[$key+1][$j++] = "# ".$object->node_title; 
     foreach($fieldNames as $fieldName) { 
       $fieldValue = $object->$fieldName;
       $markup = $fieldValue[0]['rendered']['#markup'];
@@ -3486,6 +3492,6 @@ function labdoo_views_download_button($viewResult) {
     }
   }
 
-  return labdoo_table_download_button($viewTable, "downloadViewsId");
+  return labdoo_table_download_button($viewTable, "downloadButtonViews");
 }
 

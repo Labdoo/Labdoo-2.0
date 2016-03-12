@@ -1502,6 +1502,7 @@ function lbd_display_slider_edoovilage_doojects($edoovillageId = NULL) {
   print("<a href='content/about-dootronics' target='_blank'>[Click here for help about dootronics]</a><br/><hr/>");
   print($block["content"]["#markup"]);
 
+  // Render the download button
   $viewResult = views_get_view_result('slider_dashboard', 'block_edoovillage_doojects', $edoovillageId);
   print(labdoo_views_download_button($viewResult));
 
@@ -1626,7 +1627,7 @@ function lbd_display_slider_edoovilage_dootrips($edoovillageId) {
   print("<a href='content/dootrip-system' target='_blank'>[Click here for help about dootrips]</a><br/>");
   print($output);
   // Render the download button
-  print(labdoo_table_download_button($tableArray));
+  print(labdoo_table_download_button($tableArray, "downloadButtonDootrips"));
 
   return;
 }
@@ -1741,6 +1742,10 @@ function lbd_display_slider_hub_doojects($hubId) {
   $block = module_invoke('views', 'block_view', 'slider_dashboard-block_hub_doojects');
   print("<a href='content/about-dootronics' target='_blank'>[Click here for help about dootronics]</a><br/><hr/>");
   print($block["content"]["#markup"]);
+
+  // Render the download button
+  $viewResult = views_get_view_result('slider_dashboard', 'block_hub_doojects', $hubId);
+  print(labdoo_views_download_button($viewResult));
 
   return;
 }
