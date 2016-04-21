@@ -20,6 +20,18 @@ The following are some of the most commonly used SQL queries.
     mysql> SELECT cid FROM cache WHERE cid LIKE '%lbd_visualization%';
     #+END_EXAMPLE
 
+  - To see outstanding newsletters:
+   
+    #+BEGIN_EXAMPLE
+    mysql> select * from simplenews_newsletter;
+    #+END_EXAMPLE
+
+  - To stop sending a newsletter:
+
+    #+BEGIN_EXAMPLE
+    mysql> update simplenews_newsletter set status=0 where nid=20510; # change 20510 for the nid of the newsletter 
+    #+END_EXAMPLE
+
 ** Drush Queries
 
 The following are some of the most commonly used drush queries.
@@ -30,4 +42,15 @@ The following are some of the most commonly used drush queries.
     # drush php-eval "cache_clear_all('lbd_visualization', 'cache', TRUE);"
     #+END_EXAMPLE
 
+  - To check the status of the lbd_communicate email batches:
+
+    #+BEGIN_EXAMPLE
+    # drush php-eval "print_r(cache_get('cachedEmailParametersArray'));" 
+    #+END_EXAMPLE
+
+  - To remove the top email batch set from the cache:
+
+    #+BEGIN_EXAMPLE
+    # drush php-eval "lbd_communicate_pop_email_cache(0);" # pops the top element
+    #+END_EXAMPLE
 

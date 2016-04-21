@@ -618,13 +618,16 @@ function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher =
       $objects[$objectNid]['country'] = "";
     if(array_key_exists($objects[$objectNid]['country'], $country_names))
         $objects[$objectNid]['country'] = $country_names[$objects[$objectNid]['country']];
+
+    $titleCountry = $objects[$objectNid]['country'];
+    $titleCity = $node->location['city'];
         
     // The link
     $urlPath = drupal_get_path_alias("node/" . $objectNid, $language->language);
     if($language->language != $defaultLanguageCode)
       $urlPath = $language->language . "/" . $urlPath;
-    $objects[$objectNid]['link'] = "<!--$node->title (comment added to help alphabetically order this column)-->" . 
-                                   "<a href=/$urlPath>$node->title</a>";
+    $objects[$objectNid]['link'] = "<!--$titleCountry $titleCity $node->title (comment added to help alphabetically order this column)-->" . 
+                                   "<a href=/$urlPath>$titleCountry | $titleCity | $node->title</a>";
 
   }
 
@@ -1498,13 +1501,15 @@ function lbd_display_slider_edoovilage_doojects($edoovillageId = NULL) {
   if($loadedNode->type != "edoovillage")
     return;
 
-  $block = module_invoke('views', 'block_view', 'slider_dashboard-block_edoovillage_doojects');
   print("<a href='content/about-dootronics' target='_blank'>[Click here for help about dootronics]</a><br/><hr/>");
-  print($block["content"]["#markup"]);
 
   // Render the download button
   $viewResult = views_get_view_result('slider_dashboard', 'block_edoovillage_doojects', $edoovillageId);
-  print(labdoo_views_download_button($viewResult));
+  print(labdoo_views_download_button($viewResult, "downloadButtonEdoovillageDoojects"));
+
+  // Render the table
+  $block = module_invoke('views', 'block_view', 'slider_dashboard-block_edoovillage_doojects');
+  print($block["content"]["#markup"]);
 
   return;
 }
@@ -1624,11 +1629,11 @@ function lbd_display_slider_edoovilage_dootrips($edoovillageId) {
   }
  
   $output = theme('table', array('header' => $header, 'rows' => $rows ));
-  print("<a href='content/dootrip-system' target='_blank'>[Click here for help about dootrips]</a><br/>");
-  print($output);
+  print("<a href='content/dootrip-system' target='_blank'>[Click here for help about dootrips]</a><br/><hr/>");
   // Render the download button
   print(labdoo_table_download_button($tableArray, "downloadButtonDootrips"));
-
+  // Render the table
+  print($output);
   return;
 }
 
@@ -1708,13 +1713,19 @@ function lbd_display_slider_hub_edoovillages($hubId) {
   if($loadedNode->type != "hub")
     return;
 
+  print("<a href='content/managing-edoovillages' target='_blank'>[Click here for help about edoovillages]</a><br/><hr/>");
+
+  // Render the download button
+  $viewResult = views_get_view_result('slider_dashboard', 'block_hub_edoovillages', $hubId);
+  print(labdoo_views_download_button($viewResult, "downloadButtonHubEdoovillages"));
+
+  // Render the table
   $block = module_invoke('views', 'block_view', 'slider_dashboard-block_hub_edoovillages');
   // The following line of code should be a "print render ($block);" statement.
   // However, doing so generates a bunch of unharming PHP warnings. It is difficult
   //  to debug that as it could come from any 3rd party module. Instead, to avoid
   // the warnings (which also consume unnecessary cycles), since we just need
   // the first part of the array, we just generate our own print statement.
-  print("<a href='content/managing-edoovillages' target='_blank'>[Click here for help about edoovillages]</a><br/><hr/>");
   print($block["content"]["#markup"]);
 
   return;
@@ -1740,12 +1751,15 @@ function lbd_display_slider_hub_doojects($hubId) {
     return;
 
   $block = module_invoke('views', 'block_view', 'slider_dashboard-block_hub_doojects');
+
   print("<a href='content/about-dootronics' target='_blank'>[Click here for help about dootronics]</a><br/><hr/>");
-  print($block["content"]["#markup"]);
 
   // Render the download button
   $viewResult = views_get_view_result('slider_dashboard', 'block_hub_doojects', $hubId);
-  print(labdoo_views_download_button($viewResult));
+  print(labdoo_views_download_button($viewResult, "downloadButtonHubDoojects"));
+
+  // Render the table
+  print($block["content"]["#markup"]);
 
   return;
 }
@@ -1770,7 +1784,7 @@ function lbd_display_slider_hub_metrics($hubId) {
     return;
 
   print("<a href='content/visualization-dashboards' target='_blank'>[Click here to learn more about visualizing metrics]</a><br/><hr/>");
-  lbd_display_dashboard_edoovillages(NULL, $hubId, NULL, FALSE);
+  lbd_display_dashboard_doojects(NULL, $hubId, NULL, NULL, FALSE); 
   return;
 }
 
@@ -1806,6 +1820,7 @@ function lbd_display_dooject_column_chart($objectNid, $type)
     $numTagged = $numTransit + $numDeployed + $numNeedRecycle + $numRecycled + 
                  labdoo_getnum_doojects(NULL, $objectNid, "S0") + 
                  labdoo_getnum_doojects(NULL, $objectNid, "S1") + 
+                 labdoo_getnum_doojects(NULL, $objectNid, "L1") + 
                  labdoo_getnum_doojects(NULL, $objectNid, "S2");
     $xLabel = "Dootronics";
   }

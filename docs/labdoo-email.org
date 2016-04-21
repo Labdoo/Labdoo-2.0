@@ -1,0 +1,37 @@
+** Configuraiton of Labdoo's email server parameters.
+
+  - To configure labdoo's email server parameters, modify the file /etc/ssmtp/ssmtp.conf. Here is a sample:
+
+    #+BEGIN_EXAMPLE
+    #
+    # Config file for sSMTP sendmail
+    #
+    # The person who gets all mail for userids < 1000
+    # Make this empty to disable rewriting.
+    #root=postmaster
+    root=dev-user@labdoo.org
+    
+    # The place where the mail goes. The actual machine name is required no
+    # MX records are consulted. Commonly mailhosts are named mail.domain.com
+    #mailhub=mail
+    mailhub=smtp.gmail.com:587
+    
+    AuthUser=dev-user@labdoo.org
+    AuthPass=xxx
+    UseTLS=YES
+    UseSTARTTLS=YES
+    
+    # Where will the mail seem to come from?
+    #rewriteDomain=
+    rewriteDomain=gmail.com
+    
+    # The full hostname
+    hostname=www.labdoo.org
+    
+    # Are users allowed to set their own From: address?
+    # YES - Allow the user to specify their own From: address
+    # NO - Use the system generated From: address
+    #FromLineOverride=YES
+    FromLineOverride=YES
+    #+END_EXAMPLE
+

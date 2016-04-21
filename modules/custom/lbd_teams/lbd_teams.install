@@ -57,9 +57,9 @@ Remember that in each team, you will be able to create forum conversations, task
 
 define("WELCOME_MESSAGE_QA_TEAM", 
 "
-<strong>About the Labdoo Quality Assurance (QA) Team</strong>
+<strong>About the Labdoo Global Support (LGS) Team</strong>
 
-The intended topic of this team is to be a forum dedicated to sharing experiences and helping each other in the process of sanitizing (both software and hardware wise) unused devices for educational purposed (laptops, tablets, etc.). Use also this forum to help coordinate your QA parties and tasks around the sanitation process.
+The objective of this team is to serve as a forum dedicated to resolving technical questions related to the process of sanitizing and using laptops. If you are a teacher or a student at a school who has received one or more Labdoo laptops and have a technical question about the laptops, this is the right place to post your questions. Also if you are sanitizing a laptop to make a contribution to a school, you can post your technical questions in this team too. Labdoo volunteers from around the world will be looking at your questions and providing answers to help both resolve your technical inquiries while contributing to build the global knowledge base. You can also find more information about the <a href='../content/labdoo-global-support-lgs-program'>Labdoo Global Support Program under this link</a>.
 
 Here are a set of general guidelines to follow when participating in the QA Team:
 
@@ -134,7 +134,7 @@ function _create_lbd_teams()
   node_save($node);
 
   // Quality assurance 
-  $bodyText = t("Ask questions and share your experiences related to the process of sanitizing eletronic devices for educational purposes.");
+  $bodyText = t("Ask questions and share your experiences related to the process of using and sanitizing electronic devices for educational purposes.");
   $welcomeMessage = WELCOME_MESSAGE_QA_TEAM;
 
   $node = new stdClass();
@@ -152,7 +152,7 @@ function _create_lbd_teams()
   $node->field_welcome_message[$node->language][0]['summary'] = '';
   $node->field_welcome_message[$node->language][0]['format']  = 'filtered_html';
   
-  $node->path = array('alias' => "content/quality-assurance-qa");
+  $node->path = array('alias' => "content/labdoo-global-support-lgs");
 
   node_save($node);
 
@@ -174,7 +174,7 @@ function _delete_lbd_teams()
   $node = menu_get_object("node", 1, $path);
   node_delete($node->nid);
 
-  $path = drupal_lookup_path("source", "content/quality-assurance-qa"); 
+  $path = drupal_lookup_path("source", "content/labdoo-global-support-lgs"); 
   $node = menu_get_object("node", 1, $path);
   node_delete($node->nid);
 

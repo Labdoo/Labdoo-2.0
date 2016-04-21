@@ -217,6 +217,7 @@ function labdoo_lookup_coordinates($country, $city, &$lat, &$lon, $silent=True, 
  *
  */
 function labdoo_render_map_geolocate_node($nodeId = NULL, $displayDoojects = False, $divId = "map-geolocate-node") {
+  global $language;
 
   if($nodeId == NULL) {
     // Make sure this is called from a valid node
@@ -240,7 +241,7 @@ function labdoo_render_map_geolocate_node($nodeId = NULL, $displayDoojects = Fal
   // Consider installing a module like context_mobile_detect and using
   // user-agent information to do this switch.
   if($node->type == 'hub')
-    $map_style = 'height:200px; width:920px'; 
+    $map_style = 'height:300px; width:920px'; 
      
   $map_options = '{"mapTypeId":"roadmap", "zoom":10}';
   $marker_color = NULL; 
@@ -267,13 +268,19 @@ function labdoo_render_map_geolocate_node($nodeId = NULL, $displayDoojects = Fal
       $nodeCountry = labdoo_country_code2name($node->locations[0]['country']);
       $locations[0]->balloon_text = "Hub: $nodeCity, $nodeCountry";
       // Geolocate the branches too
-      for($i = 1; $i < count($node->locations); $i++) {
-        $nodeCity = $node->locations[$i]['city'];
-        $nodeCountry = labdoo_country_code2name($node->locations[$i]['country']);
+      $hubBranches = labdoo_lib_hub_branches_list($node);
+      $i = 0;
+      foreach($hubBranches as $hubBranch) {
+        $i++;
+        $hubBranchLoaded = node_load($hubBranch);
+        $nodeCity = $hubBranchLoaded->locations[0]['city'];
+        $nodeCountry = labdoo_country_code2name($hubBranchLoaded->locations[0]['country']);
         $locations[$i] = new stdClass();
-        $locations[$i]->latitude = $node->locations[$i]['latitude'];
-        $locations[$i]->longitude = $node->locations[$i]['longitude'];
-        $locations[$i]->balloon_text = "Hub branch: $nodeCity, $nodeCountry";
+        $locations[$i]->latitude = $hubBranchLoaded->locations[0]['latitude'];
+        $locations[$i]->longitude = $hubBranchLoaded->locations[0]['longitude'];
+        $hubUri = drupal_get_path_alias("node/" .  $hubBranchLoaded->nid, $language->language);
+        $locations[$i]->balloon_text = "<a href='$hubUri'>Hub branch: $nodeCity, $nodeCountry</a>";
+        $locations[$i]->marker_color = "labdoo-marker-orange";
       }
       $map_options = '{"mapTypeId":"roadmap", "zoom":7}';
     }
@@ -591,7 +598,7 @@ function labdoo_render_dootrip_header() {
 
   // Button to download list of dootronics
   $dootronicsTable = _generate_dootrip_dootronics_table($nodeObj);
-  $dootripDownloadButton = labdoo_table_download_button($dootronicsTable, "downloadButtonDootrips", "download-button-dootronics.png", 180);
+  $dootripDownloadButton = labdoo_table_download_button($dootronicsTable, "downloadButtonDootrips", "download-button-data.png", 180);
   $htmlCode = $htmlCode . $dootripDownloadButton;
 
   $htmlCode = $htmlCode . '</td><td align="center">';
@@ -1434,7 +1441,7 @@ function lbd_get_total_num_objects($objectType) {
     $query = "SELECT SUM(field_number_of_students_value) FROM field_data_field_number_of_students";
   }
   else if($objectType == 'country') {
-    $query = "SELECT COUNT(*) FROM ( SELECT DISTINCT country FROM location ) AS countries";
+    $query = "SELECT COUNT(*) FROM (SELECT DISTINCT country FROM location WHERE lid IN (SELECT lid FROM location_instance WHERE nid!=0 ORDER by nid)) AS countries";
   }
   else {
     $query = "SELECT COUNT(*) FROM node WHERE type='$objectType'";
@@ -1724,6 +1731,27 @@ function labdoo_lib_compute_watt_hours($nodeLoaded) {
 
 
 /**
+ * Given a hub, it returns the node IDs of its branches
+ *
+ * @param node $nodeLoaded The hub node (loaded)
+ *
+ * @return The list of node IDs of the hub branches
+ *
+ */
+function labdoo_lib_hub_branches_list($nodeLoaded) {
+  $query = "SELECT entity_id FROM field_data_field_parent_hub WHERE field_parent_hub_target_id=$nodeLoaded->nid";
+  $result = db_query($query);
+
+  $branchIdList = array();
+  foreach($result as $item) {
+    array_push($branchIdList, $item->entity_id);
+  }
+ 
+  return($branchIdList);
+}
+
+
+/**
  * Returns the list of branches associated with a hub 
  *
  * @param node $nodeLoaded The hub node (loaded)
@@ -1732,14 +1760,13 @@ function labdoo_lib_compute_watt_hours($nodeLoaded) {
  *
  */
 function labdoo_lib_compute_hub_branches($nodeLoaded) {
-  $query = "SELECT entity_id FROM field_data_field_parent_hub WHERE field_parent_hub_target_id=$nodeLoaded->nid";
-  $result = db_query($query);
+  $hubBranches = labdoo_lib_hub_branches_list($nodeLoaded);
 
   $branchesCode = "";
   $branchesList = array();
-  foreach($result as $item) {
-    $parentHubName = lbd_nodeid2title($item->entity_id);
-    $parentHubUri = 'node/' . $item->entity_id;
+  foreach($hubBranches as $hubBranch) {
+    $parentHubName = lbd_nodeid2title($hubBranch);
+    $parentHubUri = 'node/' . $hubBranch;
     // Add a comment with the $parentHubName to allow for alphabetic ordering 
     array_push($branchesList, '<!--' . $parentHubName . '--><a href="' . $parentHubUri . '">' . $parentHubName . '</a>');
   }
@@ -3413,7 +3440,12 @@ function labdoo_lib_node_validate($node, $form, &$form_state) {
  *   The code to render
  *
  */ 
-function labdoo_table_download_button($table, $signature="", $downloadIcon="download-button.png", $iconWidth=100) {
+function labdoo_table_download_button($table, $signature="", $downloadIcon="download-button-data.png", $iconWidth=150) {
+
+  // If the table does not have at least two rows (header 
+  // plus one item), return empty code.
+  if(!array_key_exists(1, $table))
+    return "";
 
   // Convert a PHP table of strings into an HTML table
   $tableCode = "<table>";
@@ -3514,12 +3546,15 @@ function labdoo_table_download_button($table, $signature="", $downloadIcon="down
  *
  * @param array
  *   viewResult The results of a views query using views_get_view_result()
+ *
+ * @param string @$signature
+ *   A string to uniquely identify this button to avoid name collisions
  * 
  * @return
  *   Code that renders the download button
  *
  */
-function labdoo_views_download_button($viewResult) {
+function labdoo_views_download_button($viewResult, $signature="") {
 
   // Compose the header of the table first                                                
   $j = 0;
@@ -3550,6 +3585,6 @@ function labdoo_views_download_button($viewResult) {
     }
   }
 
-  return labdoo_table_download_button($viewTable, "downloadButtonViews");
+  return labdoo_table_download_button($viewTable, $signature);
 }
 
