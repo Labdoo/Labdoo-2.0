@@ -119,6 +119,16 @@ down → Tastatureintrag nach unten verschieben
 
 Es können maximal 4 Tastatur-Layouts ausgewählt werden.
 
+<strong>Anpassen der Benutzeroberfläche (Loog and Feel)</strong>
+
+Man kann die grafische Oberfläche (GUI) von Lubuntu anpassen, z.B. wenn sie Windows-ähnlicher aussehen soll.
+
+Um ein anderes <strong>Look and Feel zu aktivieren</strong> geht ihr auf den Lubuntu-Start-Button unten links auf dem Bildschirm → Einstellungen (Preferences) → Erscheinungsbild anpassen (Customize Look and Feel) → im Tab Fenster (Widget) das Theme Win7 oder Win8 anklicken → im Reiter Symbolthema (Icon Theme) Win2-7.6.0 anklicken → Fenster schliessen.
+
+Um es <strong>rückgängig zu machen</strong> einfach ein anderes Theme (Lubuntu-default) und Symbolthema (Lubuntu) anklicken - oder andere Layouts, die euch gefallen.
+
+An manche Einstellung muss man sich erst gewöhnen, wenn ihr ein Windows-Theme aktiviert (dadurch wird der PC kein Windows-PC, es bleibt ein Linux / Lubuntu-PC; er sieht nur Windows-ähnlicher aus).
+
 <strong>Manuals, Video-Tutorials</strong>
 
 <img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/link-folder-videos.png" align="right" width="50"/>

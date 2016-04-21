@@ -39,7 +39,7 @@ You can also download any software interest you by using “Lubuntu Software Cen
 
 <li><strong>Game Collections</strong></li>
 
-<a href="http://wiki.ubuntuusers.de/GCompris">GCompris</a> and <a href="http://wiki.ubuntuusers.de/Spiele/Childsplay">Childsplay</a> are educational game suites for children aged 2 to 10.  The suites contain arithmetic, spelling, letter, word-finding and memory games. The goal is to promote learning through game playing.  
+<a href="http://wiki.ubuntuusers.de/GCompris">GCompris</a>, <a href="http://wiki.ubuntuusers.de/Spiele/Childsplay">Childsplay</a> and Omnitux are educational game suites for children aged 2 to 10.  The suites contain arithmetic, spelling, letter, word-finding and memory games. The goal is to promote learning through game playing.  
 
 <li><strong>Gcompris</strong></li>
 
@@ -197,12 +197,22 @@ Gcompris contains more than 100 games and education programs to help  children l
 
 <li><strong>Pysiogame</strong></li>
 
-<strong>pySioGame</strong> is a education game suite which different games can be played individually. It includes maths, reading, writing, painting, and memory activities and suitable for children between age 3 to10.
+<table> <tr><th/></tr>
+ <tr>
+<td><strong>pySioGame</strong> is a education game suite which different games can be played individually. It includes maths, reading, writing, painting, and memory activities and suitable for children between age 3 to10.</td>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/pysiogame01.png" width="130"/> </td>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/pysiogame02.png" width="150"/> </td>
+</tr> 
+</table>
+<br/>
+
+<li><strong>Omnitux</strong></li>
 
 <table> <tr><th/></tr>
  <tr>
-<td> <img src="/sites/default/files/content/wiki-de/edoovillages/pysiogame01.png" width="130"/> </td>
-<td> <img src="/sites/default/files/content/wiki-de/edoovillages/pysiogame02.png" width="150"/> </td>
+<td><strong>Omnitux</strong> Educational activities based on multimedia elements (images, sounds, and text). ie. associations, puzzles, counting activities...</td>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/omnitux1.png" width="150"/> </td>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/omnitux2.png" width="150"/> </td>
 </tr> 
 </table>
 <br/>
@@ -251,6 +261,7 @@ Gcompris contains more than 100 games and education programs to help  children l
 <tr>
             <td><a href="http://wiki.ubuntuusers.de/Dia">Dia</a></td>
            <td>Dia is a diagram editor that provides a variety of options available to create attractive charts. Besides being able to place the objects and scale-free, graphics can be included.</td>
+            <td>dia</td>
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/dia.png" width="100"/> </td>
 </tr>
 <tr>
@@ -387,8 +398,8 @@ Gcompris contains more than 100 games and education programs to help  children l
 </tr>
 
 <tr>
-            <td><a href="http://wiki.ubuntuusers.de/Step">Step</a></td>
-           <td>Step is a very comprehensive, interactive physics simulation application.</td>
+            <td><a href="https://apps.ubuntu.com/cat/applications/lucid/step/">Step</a></td>
+           <td>With Step you can learn and feel how physics works. You place some bodies on the scene, add some forces such as gravity or springs, then click "Simulate" and Step shows you how your scene will evolve according to the laws of physics.</td>
             <td>step</td>
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/step.png" width="100"/> </td>
 </tr>
@@ -410,12 +421,42 @@ Gcompris contains more than 100 games and education programs to help  children l
             <td>atomix</td>
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/atomix.png" width="100"/> </td>
 </tr>
+
 <tr>
-            <td><a href="http://edu.kde.org/blinken">blinKen</a></td>
-           <td>blinKen is a game known in the 80s under the name "Senso". It is important to remember the sequence, blinking in the fields (red, yellow, blue and green). This is then re-entered by the player. The difficulty increases with each round.</td>
-            <td>blinken</td>
-           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/blinken.png" width="100"/> </td>
+            <td><a href="https://apps.ubuntu.com/cat/applications/oneiric/biniax2/">biniax2</a></td>
+           <td>Colorful Logic game with arcade and tactics modes. </td>
+            <td>atomix</td>
+           <td> <img src="//sites/default/files/content/wiki-de/edoovillages/biniax2.png" width="100"/> </td>
 </tr>
+
+<tr>
+            <td><a href="http://www.linux-games.com/bumprace/">Bumprace</a></td>
+           <td>BumpRace is a simple arcade game. You've to get from the start to the finish line without crashing into the blocks.</td>
+            <td>atomix</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/bumprace.png" width="100"/> </td>
+</tr>
+
+<tr>
+            <td><a href="https://apps.ubuntu.com/cat/applications/precise/eboard/">eBoard, Gnuchess, Crafty (chess)</a></td>
+           <td>eboard is a graphical chess program which can function as an interface to Internet chess servers such as FICS and to chess engines such as Crafty. Gnuchess and crafty are the matching chess engines.</td>
+            <td>eboard</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/eboard.png" width="100"/> </td>
+</tr>
+
+<tr>
+            <td><a href="http://www.frozen-bubble.org/">Frozen-Bubbles</a></td>
+           <td>FColorful 3D rendered penguin animations, game idea similar to Tetris.</td>
+            <td>frozen-bubbles</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/frozenbubble.jpg" width="100"/> </td>
+</tr>
+
+<tr>
+            <td><a href="https://apps.ubuntu.com/cat/applications/precise/gbrainy/">gbrainy</a></td>
+           <td>gbrainy is a platform to train memory, arithmetical and logical capabilities with many sorts of different exercises of different difficulty levels.</td>
+            <td>gbrainy</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/gbrainy.png" width="100"/> </td>
+</tr>
+
 <tr>
             <td><a href="http://wiki.ubuntuusers.de/GCompris">GCompris</a></td>
            <td>GCompris is a collection of games for children. It combines a variety of games on various topics for different age groups. Thus contains for example GCompris Games on mathematics (small 1x1), colors, skill, working with computers etc. Recommended age 3 +.</td>
@@ -434,11 +475,54 @@ Gcompris contains more than 100 games and education programs to help  children l
             <td>ktuberling</td>
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/ktuberling.png" width="100"/> </td>
 </tr>
+
+<tr>
+            <td><a href="https://apps.ubuntu.com/cat/applications/oneiric/ltris/">Ltris</a></td>
+           <td>LTris is a very polished tetris clone, which offers three types of games. The classic mode, a figures mode, where different figures appear every level, and a multiplayer mode. LTris is highly configurable through its menu system.</td>
+            <td>ltris</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/ltris.png" width="100"/> </td>
+</tr>
+
+<tr>
+            <td><a href="https://apps.ubuntu.com/cat/applications/precise/lbreakout2/">lbreakout2</a></td>
+           <td>lbreakout2 is a game similar to the classics breakout, featuring a number of added graphical enhancements and effects. You control a paddle at the bottom of the playing-field, and must destroy bricks at the top by bouncing balls against them.</td>
+            <td>ltris</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/lbreakout2.png" width="100"/> </td>
+</tr>
+
+<tr>
+            <td><a href="http://www.minetest.net/">minetest</a></td>
+           <td>Minetest ist ein Open-World-Aufbauspiel, welches unter anderem von Minecraft inspiriert wurde. In einer zufällig generierten Welt baut man Rohstoffe ab um daraus Werkzeuge zu erschaffen und die Umwelt zu gestalten.</td>
+            <td>minetest</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/minetest.png" width="100"/> </td>
+</tr>
+
+<tr>
+            <td><a href="https://wiki.ubuntuusers.de/Spiele/Neverball/">Neverball</a></td>
+           <td>Neverball is simple: you have to collect all coins using a ball to the aim. But you control the floor, not the ball...</td>
+            <td>ri-li</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/neverball.png" width="100"/> </td>
+</tr>
+
 <tr>
             <td><a href="http://wiki.ubuntuusers.de/Spiele/Ri-li">Ri-li</a></td>
            <td>Ri-li is a skill game where you have to move a wooden train set by asking the right course of different rail networks. The goal is to collect the cars distributed in the level.</td>
             <td>ri-li</td>
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/ri-li.png" width="100"/> </td>
+</tr>
+
+<tr>
+            <td><a href="https://scratch.mit.edu/scratch_1.4/">Scratch</a></td>
+           <td>With Scratch, you can program your own interactive stories, games, and animations — and share your creations with others in the online community.</td>
+            <td>sratch</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/scratch.png" width="100"/> </td>
+</tr>
+
+<tr>
+            <td><a href="https://apps.ubuntu.com/cat/applications/precise/supertux/">Supertux</a></td>
+           <td>SuperTux is a classic 2D jump 'n run sidescroller game in a similar style like the original SuperMario games.</td>
+            <td>supertux</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/supertux.png" width="100"/> </td>
 </tr>
 
 </table>
@@ -455,10 +539,19 @@ Gcompris contains more than 100 games and education programs to help  children l
 
 <tr>
             <td><a href="http://wiki.ubuntuusers.de/Parley">Parley</a></td>
-           <td>Parley is a vocabulary trainer and one of the successors of KVocTrain. The Vocabulary is extensive and offers a variety of settings, which concerns the creation of word lists and learning.</td>
+           <td>Parley is a vocabulary trainer. The Vocabulary is extensive and offers a variety of settings, which concerns the creation of word lists and learning.</td>
             <td>parley</td>
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/parley.png" width="100"/> </td>
 </tr>
+
+<tr>
+            <td><a href="http://ankisrs.net/">Anki</a></td>
+           <td>Anki is an alternative tool to Parley. Ready to use vocabulary and learning decks can be downloaded from here https://ankiweb.net/shared/decks/</td>
+            <td>anki</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/anki.png" width="75"/> </td>
+</tr>
+
+
 </table>
 
 <li><strong>Keyboard trainer</strong></li>
@@ -581,6 +674,21 @@ Gcompris contains more than 100 games and education programs to help  children l
             <td>math</td>
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/libreoffice_math.png" width="100"/> </td>
 </tr>
+
+<tr>
+            <td><a href="https://www.firefox.com">Firefox</a></td>
+           <td>Firefox Internet Browser, also usefull to read local, off-line educational content.</td>
+            <td>firefox</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/firefox.png" width="64"/> </td>
+</tr>
+
+<tr>
+            <td><a href="http://www.netsurf-browser.org/">Netsurf</a></td>
+           <td>Fast and easy to use internet browser netsurf</td>
+            <td>firefox</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/netsurf.png" width="100"/> </td>
+</tr>
+
 
 </table>
 

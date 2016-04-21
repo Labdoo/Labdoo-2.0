@@ -124,11 +124,21 @@ vDown → Move a keyboard layout entry in the list up
 
 The maximum number of  keyboard layouts is 4.. 
 
+<strong>Customize Look and Feel</strong>
+
+You are able to change the Lubuntu graphical user interface (GUI), e.g. make it more look like Windows (if you want).
+
+In order to <strong>activate a different Look and Feel</strong> click on the Lubuntu-start button in the left bottom corner of the screen → Preferences → Customize Look and Feel → select in the tab widget e.g. the theme Win7 or Win8 → click on the icon theme and select Win2-7.6.0 → close the window.
+
+To <strong>undo / switch back to default Look and Feel</strong> just select another theme (Lubuntu-default) and icon theme (Lubuntu) - or other layouts that you like.
+
+You have to get used to some settings of this "Windows" theme (remember, it is NOT Windows, it is Linux / Lubuntu, but it looks more similar to Windows). 
+
 <strong>Manuals, video tutorials and more</strong>
 
 <img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/link-folder-videos.png" align="right" width="50"/>
 
-You can go to the folder <a href="file://localhost/home/labdoo/Public/">/home/labdoo/Public/</a>  for more manuals, video tutorials, offline wikis etc.  A tutorial video icon is placed on the desktop.  You can watch it by using Firefox or other media player (view -&gt; 1/2 size, zoom +/-).
+You can open the folder <a href="file://localhost/home/labdoo/Public/">/home/labdoo/Public/</a>  for more manuals, video tutorials, offline wikis etc.  A tutorial video icon is placed on the desktop.  You can watch it by using Firefox or other media player (view -&gt; 1/2 size, zoom +/-).
 
 Have fun learning and playing with your Labdoo laptop!
 

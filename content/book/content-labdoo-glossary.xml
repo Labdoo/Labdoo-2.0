@@ -1,0 +1,78 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>26963</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Labdoo Glossary</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>26963</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><strong>Digital Divide:</strong> A global problem arising from the fact that those who do not have access to the Internet, cannot have free access to sources of education, which leads to lesser opportunities with respect to those who do have access to the Internet. Since those who have access to the Internet learn education at a much faster pace
+than those who do not, the digital divide leads to an ever increasing socio-economic gap between these two groups.
+
+<strong>Dootronic:</strong> An electronic learning device stored in the Labdoo database.
+
+<strong>Dootrip:</strong> The action of transporting a laptop from one location to another in the luggage of volunteering travelers who have to undertake that trip regardless of the
+laptops. Dootrips effectively provide a transportation system with no economic or environmental cost.
+
+<strong>Edoovillage:</strong> A location where the Labdoo network has a school project where laptops are sent.
+
+<strong>Electronic Waste (eWaste):</strong> A global problem arising from the ever increasing consumption of electronic goods that at the end of their life time do not get properly
+recycled back to planet earth.
+
+<strong>Hub:</strong> A hub is mainly a group of people that get together from time to time to carry Labdoo activities
+
+<strong>Global Inventory Checks (GICs):</strong> A tracking system which can track deployed dootronic status. It can be used to quickly update all the dootronics assigned to an edoovillage in one shot. 
+
+<strong>Labdoo: </strong> It stands for Laboratories for Education—the mission of the Labdoo project is to use social network tools to bring laptops to children without incurring additional costs to Planet Earth.
+
+<strong> Labdooer: </strong> A Labdoo activist. 
+
+<strong> Labdoo Global Support (LGS): </strong> A support system to provide online technical help to schools around the world who receive dootronics
+
+<strong>Mini-mission:</strong> The mission of bringing a single unused laptop to a school so that children in that school can gain free access to sources of education.
+
+<strong>Labdoo Circle of Life: </strong>It is the life-path that every laptop should undertake to ensure sustainability, including the extraction of its components from Planet Earth, their assembly into the actual laptop embodiment, its usage, its delivery to a child for education purposes using dootrips, and its final recycling back to Planet Earth.
+
+<strong>Team: </strong>Labdoo provides a communication tool to help labdooers manage their own projects and activities in collaboration with other members. We call this feature "Labdoo teams". 
+
+<strong>Wiki: </strong> Wiki pages allow users share knowledge and best practices in document format.
+
+<br></br>
+<br></br></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>76</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>860</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1488</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-11</value>
+</weight>
+</book>

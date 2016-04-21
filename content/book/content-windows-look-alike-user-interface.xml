@@ -1,0 +1,58 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>26955</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Windows look-alike user interface</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>26955</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>For the known reasons and advantages Labdoo uses Linux-based computers (Lubuntu). However, some users prefer a graphical user interface (GUI), which is looks like Windows. Thus, the incorporation and the threshold for many users is lower. Please don't let us start a discussion out the Pros and Cons of such a wish. It's just another option.
+
+Here you will find a guide how to install and configuration the Lubuntu GUI to look similar to Windows 7 or Windows 8. Win7 and Win8 look-alike themes and Windows-like icons have to be downloaded. Basically, the computer will still run Linux/Lubuntu and many differences will remain. But to do so we might keep away the user from deleting Linux and installing a Windows system without educational content ...
+
+Either you can follow these instructions http://www.noobslab.com/2014/04/make-your-ubuntulinux-mint-look-like.html.
+Or you can run this script, after downloading it and made it executable http://ftp.labdoo.org/download/images/installskripts/installscript-windows-themes.sh.
+Again - this is just loading themes (design of the user interface) and icons.
+
+In order to <strong>activate</strong> click on the Lubuntu-start button in the left bottom corner of the screen → Preferences → Customize Look and Feel → select in the tab widget the theme Win7 or Win8 → click on the icon theme and select Win2-7.6.0 → close the window.
+
+To <strong>undo / switch back to default</strong> just select another theme (Lubuntu-default) and icon theme (Lubuntu) - or other layouts that you like.
+
+You have to get used to some settings of this "Windows" theme (remember, it is NOT Windows). For example,the icon of LibreOffice Writer is a blue W (Word) and the blue IE logo appears in the menu bar for the web browser As said - it's just an option. If you don't like it, you can easily switch back to Lubuntu defaults. Linux has at least this option to make it look like Windows. The other option, to make Windows look like Linux is not offered;)</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>35</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>857</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1485</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

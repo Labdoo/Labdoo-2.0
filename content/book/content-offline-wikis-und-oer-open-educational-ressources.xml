@@ -29,11 +29,11 @@
 
 <li><strong>Offline wikis and OER – Open Educational Ressources</strong></li>
 
-Alle nachfolgend Unterlagen liegen auf auf dem FTP-Server des Labdoo-Projektes http://ftp.labdoo.org/download/Public/ und können vor dort heruntergeladen werden. Wenn Labdoo Laptops mit dem Labdoo Images for Cloning installiert wurden sind diese Lerninhalte bereits installiert.
+Alle nachfolgend Unterlagen können vom FTP-Server des Labdoo-Projektes herunter geladen werde  http://ftp.labdoo.org/download/wiki-archive/. Wenn Labdoo Laptops mit dem Labdoo Images for Cloning installiert wurden sind i.d.R. die englischen Lerninhalte bereits installiert.
 
-Zum einfachen Download weiterer Lerninhalte empfehlen wir rsync http://de.wikipedia.org/wiki/Rsync. Rsync gibt es für Betriebssysteme wie Windows, Apple oder Ubuntu: http://wiki.ubuntuusers.de/rsync.
+Für einen komfortableren Download haben wir die Inhalte im tar.gz-Format gepackt. Diese Archive können mit jedem ZIP-Programm entpackt werden. Unter Lubuntu einfach rechter Mausklick aufs Archiv und hier entpacken auswählen.
 
-Oder noch einfacher, unser Installationsskript für Content http://ftp.labdoo.org/download/images/installskripts/installscript-content.sh.
+Alternativ kann der Ordner /Public http://ftp.labdoo.org/download/Public/mit rsync gespiegelt werden (http://de.wikipedia.org/wiki/Rsync). Rsync gibt es für Betriebssysteme wie Windows, Apple oder Ubuntu: http://wiki.ubuntuusers.de/rsync. Oder noch einfacher, unser Installationsskript für Content http://ftp.labdoo.org/download/images/installskripts/installscript-content.sh.
 
 Wer nur die Ordnerrechte im Ordner /home/labdoo/Public so setzen möchte, dass alle Benutzer der Gruppe labdoo (also auch der User student) darauf zugreifen können, nimmt das Skript http://ftp.labdoo.org/download/images/installskripts/set-rights-folder-files-Public-correct.sh.
 
@@ -42,13 +42,15 @@ Wer nur die Ordnerrechte im Ordner /home/labdoo/Public so setzen möchte, dass a
 <table> <tr><th> </th></tr>
 
 <tr>
-<td>Für englischsprachige Schulen setzt Labdoo.org „Wikipedia for schools“ein: http://www.sos-schools.org/wikipedia-for-schools. Es folgt dem Britischen Curriculum. Diese kindgerechte Themenauswahl nennt Labdoo „wikidoo“. Wikidoo belegt ca. 6,5 GB Plattenkapazität. I.d.R. ist wikidoo in den Images for Cloning bereits enthalten, es gibt aber auch spezielles Image PAE32_without_wikidoo, das auf Platten &lt;= 20 GB installiert werden kann. </td>
+<td>Für Schulen empfiehlt Labdoo „Wikipedia for schools“ (wikidoo) gemäss dem Britischen Curriculum. Wikipedia for schools ist in den Sprachen Englisch (Release 2008 und 2013), Französisch, Spanisch und Portugiesisch verfügbar. Der Download ist von unserem FTP-Server möglich http://ftp.labdoo.org/download/wiki-archive/wikipedia_for_schools/.
+
+Wikipedia for schools belegt ca. 6,5 GB Plattenkapazität. I.d.R. ist wikipedia for schools in den Images for Cloning bereits enthalten, es gibt aber auch spezielles Image PAE32_without_wikidoo, das auf Platten &lt;= 20 GB installiert werden kann. </td>
 
 <td><img src="/sites/default/files/content/wiki-de/edoovillages/wikidoo01.png" width="250"/>  </td>
 </tr>
 
 <tr>
-<td>Wikidoo wird dann genutzt, wenn die Schulen keinen oder nur einen sehr langsamen Internetzugang haben. SOS Children UK hat sich die 2013 die Mühe gemacht, für die Kinder interessante Artikel zu einer Offline-Sammlung zu filtern und zusammen zu stellen. Wikidoo umfasst ca. 6.000 kindgerechte Artikel, 26 Mio. Worte und 50.000 Bilder (Stand: 10/2013). http://ftp.labdoo.org/download/Public/wikidoo/</td>
+<td>Wikipedia for Schools wird dann genutzt, wenn die Schulen keinen oder nur einen sehr langsamen Internetzugang haben. Wikipedia for Schools umfasst ca. 6.000 kindgerechte Artikel, 26 Mio. Worte und 50.000 Bilder (Stand: 10/2013).</td>
 
 <td><img src="/sites/default/files/content/wiki-de/edoovillages/wikidoo02.png" width="250"/>  </td>
 </tr> 

@@ -1,0 +1,126 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>25034</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Post-Installation Configuration</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>31</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>In this section we describe the set of final post-installation steps. These steps need to be followed once you have completed the installation of the Labdoo image (as described in the previous sections) to ensure that the system is properly configured and ready to be delivered to a destination school. You can rely on both the text description as well as the videos below to complete these steps.
+
+<hr/>
+<table align="center">
+<tr><td>
+<em>Video 1. System settings (language, keyboard, driver tunnings, etc.)</em>
+</td></tr>
+<tr><td>
+[video:https://youtu.be/iM2UjEiUWik]
+<a href="http://ftp.labdoo.org/download/Public/videos/system-settings-english.webm">[Download this video]</a>
+</td></tr>
+</table>
+
+<table align="center">
+<tr><td>
+<em>Video 2. Adapt system files hosts and hostname.</em>
+</td></tr>
+<tr><td>
+[video:https://youtu.be/ATGl0aHZHAY]
+<a href="http://ftp.labdoo.org/download/Public/videos/hostname-english.webm">[Download this video]</a>
+</td></tr>
+</table>
+<hr/>
+
+<ol>
+
+<li><strong>Change the host name.</strong>
+The host name of the computer needs to be set to the Labdoo identifier. First, you will need to tag the laptop following the steps described under this page: https://www.labdoo.org/content/about-dootronics
+
+<br/>Once you have tagged the computer, modify the file hosts as follows:
+
+→ Open a terminal (press CTL + Alt + T) and  type <code>sudo nano /etc/hosts</code> (Enter) 
+→ move cursor to the end of line 2 and change the host name to the value "labdoo-XXXXXXXXX", where XXXXXXXXX is the Labdoo ID of the laptop obtained when you tagged it.
+→ save the file by pressing CTL + o (the letter o, not the number 0)
+→ leave the editor by pressing CTL + x
+
+Next, modify the file hostname: 
+
+→ Open a terminal (press CTL + Alt + T) and  type <code>sudo nano /etc/hostname</code> (Enter)
+→ change the host name to the value "labdoo-XXXXXXXXX", where XXXXXXXXX is the Labdoo ID of the laptop obtained when you tagged it. 
+→ save the file by pressing CTL + o (the letter o, not the number 0)
+→ leave the editor by pressing CTL + x
+
+</li>
+
+<li>
+<strong>Check the graphic resolution.</strong>
+Go to Preferences → Monitor Settings → select the resolution you need or stay with the resolution already set → Apply.
+</li>
+
+<li>
+<strong>Check the keyboard and language settings.</strong>
+Right mouse click on the country language icon that you will in the launch bar → then select "Keyboard Layout Handler" Settings → uncheck "Keep system layout" → click '+Add' to add up to 4 keyboard layouts or '-Remove' to remove them → Close.
+</li>
+
+<li>
+<strong>Install additional languages.</strong>
+Preferences → Language Support → Install / remove Languages → add a hook at the language(s) you want to add (remove a language by removing the hook) → Apply Changes → computer must be connected to the Internet so that i can download and install the language(s).
+
+To change to another user language move the needed language by mouse (keep left button pressed) to the to of the language list and drop it → Apply System Wide → all users will use this language. For more details refer also to (L)Ubuntu manuals under the laptop folder /home/labdoo/Public/manuals-ubuntu.
+
+Hint. If you send the computer to a country using a "non-latin" alphabet you should stay with the English language. This way the user may more easily learn about the keyboard switch. You also need to understand the foreign language and know the keyboard layout to use the computer. E.g. typing the password "labdoo" using the Chinese or Arabian keyboard layouts will result into something different and will not be accepted as password.
+
+Regional Formats. Click on the tab "regional formats", click on the triangle → select needed setting (will change format of time / date and currency) → Apply System Wide.
+
+</li>
+
+<li>
+<strong>Check for specific driver requirements.</strong>
+
+Preferences → Software &amp; Updates → Additional Drivers → wait a while 
+
+→ If "no additional drivers available" shows up, no further steps have to be taken.
+→ If a list of drivers are shown, select and install the needed driver(s) and apply Changes.
+</li>
+
+<li>
+<strong>Add Xowa Offline wikis.</strong>
+[optional] Please refer to the <a href="/content/installing-xowa-wikis">install Xowa wiki page.</a>
+</li>
+</ol></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>35</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1465</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1475</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

@@ -26,7 +26,7 @@
 </font>
 
 <ol>
-Der in diesem Wiki beschriebene Leistungsumfang geht weit über die reine Installation von dem Betriebssystem lubuntu hinaus. Durch die Installation der vorbereiteten Labdoo Images for  Cloning (für Parted Magic / Clonezilla) oder der Installationsskripte auf http://ftp.labdoo.org/download/images/ erhöht man deutlich den Nutzen für die Kinder.
+Der in diesem Wiki beschriebene Leistungsumfang geht weit über die reine Installation von dem Betriebssystem Lubuntu hinaus. Durch die Installation der vorbereiteten Labdoo Images for  Cloning (für Parted Magic / Clonezilla) oder der Installationsskripte auf http://ftp.labdoo.org/download/images/ erhöht man deutlich den Nutzen für die Kinder.
 
 Teile dieses Dokumentes basieren u.a. auf Texten und Grafiken von www.edubuntu.org und http://wiki.ubuntuusers.de/Edubuntu.
 <li><strong>Lernsoftware</strong></li>
@@ -35,11 +35,11 @@ Labdoo.org nutzt kindgerechte Edubuntu-Lernsoftware für alle Altersstufen (Vors
 
 Über Edubuntu hinaus werden mit dem Labdoo.org Installationsskript oder den Labdoo Images for Cloning (für Parted Magic / Clonezilla) viele weitere Lernsoftware und Offline-Wiki-Tools installiert (nur dann sind alle nachfolgend beschriebenen Programme installiert).
 
-Weitere Spiel- und Lernprogramme können online über das lubuntu Software Center nachgeladen werden. 
+Weitere Spiel- und Lernprogramme können online über das Lubuntu Software Center nachgeladen werden. 
 
-<li><strong>Spielesammlungen Gcompris, Childsplay, Pysiogame</strong></li>
+<li><strong>Spielesammlungen</strong></li>
 
-<a href="http://wiki.ubuntuusers.de/GCompris">GCompris</a> und <a href="http://wiki.ubuntuusers.de/Spiele/Childsplay">Childsplay</a> sind Sammlungen unterschiedlicher Lernspiele für Kinder im Vorschul- / Grundschulalter. Die Pakte enthalten Rechen-, Schreib-, Buchstaben-, Wortfindungs- und Merkspiele. Ziel ist es die Kinder auf spielerische Art und Weise zu fördern. Beide Pakete mit über 100 Spielen sind vorinstalliert auf Labdoo-Computern.
+<a href="http://wiki.ubuntuusers.de/GCompris">GCompris</a>, <a href="http://wiki.ubuntuusers.de/Spiele/Childsplay">Childsplay</a> und Omnitux sind Sammlungen unterschiedlicher Lernspiele für Kinder im Vorschul- / Grundschulalter. Die Pakte enthalten Rechen-, Schreib-, Buchstaben-, Wortfindungs- und Merkspiele. Ziel ist es die Kinder auf spielerische Art und Weise zu fördern. Beide Pakete mit über 100 Spielen sind vorinstalliert auf Labdoo-Computern.
 
 <li><strong>Gcompris Spielesammlung</strong></li>
 
@@ -198,12 +198,22 @@ Hinter den u.a. Menüpunkte verbergen sich über 100 Spiel- und Lernprogramme, d
 
 <li><strong>Pysiogame Spielesammlung</strong></li>
 
-<strong>pySioGame</strong> ist eine Sammlung von Lernspielen  für Kinder im Alter von 3 bis 10 Jahren. PySioGame beinhaltet Spiele zu den Bereichen Mathematik, Lesen, Schreiben Malen und Gedächtnistraining. 
+<table> <tr><th/></tr>
+ <tr>
+<td><strong>pySioGame</strong> ist eine Sammlung von Lernspielen  für Kinder im Alter von 3 bis 10 Jahren. PySioGame beinhaltet Spiele zu den Bereichen Mathematik, Lesen, Schreiben Malen und Gedächtnistraining. </td>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/pysiogame01.png" width="130"/> </td>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/pysiogame02.png" width="150"/> </td>
+</tr> 
+</table>
+<br/>
+
+<li><strong>Omnitux</strong></li>
 
 <table> <tr><th/></tr>
  <tr>
-<td> <img src="/sites/default/files/content/wiki-de/edoovillages/pysiogame01.png" width="130"/> </td>
-<td> <img src="/sites/default/files/content/wiki-de/edoovillages/pysiogame02.png" width="150"/> </td>
+<td><strong>Omnitux</strong> Lernspiele mit Mmultimedia-Elementen (Bilder, Sound, Text), z.B. Puzzles, Zahlen, Erdkunde...</td>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/omnitux1.png" width="150"/> </td>
+<td> <img src="/sites/default/files/content/wiki-de/edoovillages/omnitux2.png" width="150"/> </td>
 </tr> 
 </table>
 <br/>
@@ -408,16 +418,46 @@ Hinter den u.a. Menüpunkte verbergen sich über 100 Spiel- und Lernprogramme, d
 
 <tr>
             <td><a href="http://jens.triq.net/atomix.php">Atomix</a></td>
-           <td>Atomix ist ein Spiel, in dem es darum geht, vorgegebene Moleküle aus einzelnen Atomen zusammenzusetzen. Das Spielprinzip basiert auf dem AMIGA-Spiel Atomix..</td>
+           <td>Atomix ist ein Spiel, in dem es darum geht, vorgegebene Moleküle aus einzelnen Atomen zusammenzusetzen. Das Spielprinzip basiert auf dem AMIGA-Spiel Atomix.</td>
             <td>atomix</td>
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/atomix.png" width="100"/> </td>
 </tr>
+
 <tr>
-            <td><a href="http://edu.kde.org/blinken">blinKen</a></td>
-           <td>blinKen ist ein Spiel, welches in den 80er Jahren unter dem Namen "Senso" bekannt war. Es gilt, die Folge zu merken, in der die Felder (Rot, Gelb, Blau und Grün) blinken. Diese wird dann vom Spieler erneut eingegeben. Der Schwierigkeitsgrad steigt von Runde zu Runde.</td>
-            <td>blinken</td>
-           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/blinken.png" width="100"/> </td>
+            <td><a href="https://apps.ubuntu.com/cat/applications/oneiric/biniax2/">biniax2</a></td>
+           <td>Leicht zu erlernendes, buntes Logikspiel. </td>
+            <td>biniax2</td>
+           <td> <img src="//sites/default/files/content/wiki-de/edoovillages/biniax2.png" width="100"/> </td>
 </tr>
+
+<tr>
+            <td><a href="http://www.linux-games.com/bumprace/">Bumprace</a></td>
+           <td>BumpRace ist einfaches Arcadespiel. Du musst von Start bis zur Ziellinie kommen, ohne in einen der Steine zu fahren.</td>
+            <td>atomix</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/bumprace.png" width="100"/> </td>
+</tr>
+
+<tr>
+            <td><a href="https://wiki.ubuntuusers.de/Schach/">eBoard, Gnuchess, Crafty (Schach)</a></td>
+           <td>eboard ist der Spitzenreiter in der Kategorie der Schachoberflächen, Gnuchess und Crafty die dazu passenden Engines.</td>
+            <td>eboard</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/eboard.png" width="100"/> </td>
+</tr>
+
+<tr>
+            <td><a href="https://wiki.ubuntuusers.de/Spiele/Ubuntu-Spiele/Arcade/">Frozen-Bubbles</a></td>
+           <td>Das Spielprinzip von Frozen Bubble erinnert entfernt an Tetris. Man ist ein kleiner Pinguin und muss mit einer Luftblasenkanone bunte Luftblasen in den Himmel schießen, wo weitere bunte Luftblasen aneinander kleben.</td>
+            <td>frozen-bubbles</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/frozenbubble.jpg" width="100"/> </td>
+</tr>
+
+<tr>
+            <td><a href="https://wiki.ubuntuusers.de/Spiele/gbrainy/">gbrainy</a></td>
+           <td>Logikrätsel, Kopfrechenaufgaben oder Gedächtnisübungen erhalten die Leistungsfähigkeit des Gehirns. Jeder Aufgabenbereich trainiert einen anderen Bereich des Gehirns. Am Ende des Spiels findet eine Auswertung statt und hilfreiche Tipps werden eingeblendet.</td>
+            <td>gbrainy</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/gbrainy.png" width="100"/> </td>
+</tr>
+
 <tr>
             <td><a href="http://wiki.ubuntuusers.de/GCompris">GCompris</a></td>
            <td>GCompris ist eine Spielesammlung speziell für Kinder. Es vereint eine Vielzahl von Spielen zu verschiedenen Themengebieten für unterschiedliche Altersgruppen. So beinhaltet GCompris z.B. Spiele zum Thema Mathematik (kleines 1x1), Farben, Geschicklichkeit, Umgang mit dem Computer etc. Altersempfehlung 3+.</td>
@@ -436,11 +476,54 @@ Hinter den u.a. Menüpunkte verbergen sich über 100 Spiel- und Lernprogramme, d
             <td>ktuberling</td>
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/ktuberling.png" width="100"/> </td>
 </tr>
+
+<tr>
+            <td><a href="https://apps.ubuntu.com/cat/applications/oneiric/ltris/">Ltris</a></td>
+           <td>LTris ist ein ausgefeilter Tetris Clone, der 3 Spielarten enthält.  Den klassischen Modus, einen Figurenmodus, in dem man Figuren legt eun einen Multiplayer Modus. LTris can einfach und umfangreich konfiguriert werden.</td>
+            <td>ltris</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/ltris.png" width="100"/> </td>
+</tr>
+
+<tr>
+            <td><a href="https://wiki.ubuntuusers.de/Spiele/Ubuntu-Spiele/Arcade/">lbreakout2</a></td>
+           <td>Ziel des Spieles ist es, mit Hilfe des Paddles den Ball so zu lenken, dass die Mauersteine getroffen und zerstört werden. Wenn alle Steine zerstört wurden, gilt ein Level als gewonnen und das nächste Level kann beginnen. </td>
+            <td>ltris</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/lbreakout2.png" width="100"/> </td>
+</tr>
+
+<tr>
+            <td><a href="https://wiki.ubuntuusers.de/Spiele/Minetest/">minetest</a></td>
+           <td>Minetest ist ein Open-World-Aufbauspiel, welches unter anderem von Minecraft inspiriert wurde. In einer zufällig generierten Welt baut man Rohstoffe ab um daraus Werkzeuge zu erschaffen und die Umwelt zu gestalten.</td>
+            <td>minetest</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/minetest.png" width="100"/> </td>
+</tr>
+
+<tr>
+            <td><a href="https://wiki.ubuntuusers.de/Spiele/Neverball/">Neverball</a></td>
+           <td>Neverball hat ein simples Spielprinzip: Man muss mit einem Ball alle Münzen einsammeln, um das Ziel freizuschalten. Das Besondere dabei ist, dass man nicht den Ball, sondern den Boden steuert.</td>
+            <td>ri-li</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/neverball.png" width="100"/> </td>
+</tr>
+
 <tr>
             <td><a href="http://wiki.ubuntuusers.de/Spiele/Ri-li">Ri-li</a></td>
            <td>Ri-li ist ein Geschicklichkeitsspiel, in dem man eine Holzeisenbahn durch das Stellen der richtigen Weichen über verschiedene Schienennetze bewegen muss. Ziel ist es die im Level verteilten Wagons einzusammeln. </td>
             <td>ri-li</td>
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/ri-li.png" width="100"/> </td>
+</tr>
+
+<tr>
+            <td><a href="https://wiki.ubuntuusers.de/Scratch/">Scratch</a></td>
+           <td>Scratch ist eine erziehungsorientierte visuelle Programmiersprache für Kinder, Jugendliche sowie Anfänger inklusive ihrer Entwicklungsumgebung und der eng verknüpften Online-Community-Plattform.</td>
+            <td>sratch</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/scratch.png" width="100"/> </td>
+</tr>
+
+<tr>
+            <td><a href="https://wiki.ubuntuusers.de/Spiele/Ubuntu-Spiele/Jump_and_run/">Supertux</a></td>
+           <td>SuperTux ist ein Jump'n'Run Spiel, das an Super Mario erinnert. Mit Tux durch die einzelnen Level laufen und böse Gegner besiegen, indem man auf sie springt, Prämien aufsammeln und die neuen Fähigkeiten nutzen...</td>
+            <td>supertux</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/supertux.png" width="100"/> </td>
 </tr>
 
 </table>
@@ -457,10 +540,18 @@ Hinter den u.a. Menüpunkte verbergen sich über 100 Spiel- und Lernprogramme, d
 
 <tr>
             <td><a href="http://wiki.ubuntuusers.de/Parley">Parley</a></td>
-           <td>Parley ein Vokabeltrainer und der Nachfolger von KVocTrain. Der Vokabeltrainer ist sehr umfangreich und bietet eine Vielzahl von Einstellungsmöglichkeiten, was die Erstellung von Wörterlisten und das Lernen betrifft</td>
+           <td>Parley ein Vokabeltrainer. Der Vokabeltrainer ist sehr umfangreich und bietet eine Vielzahl von Einstellungsmöglichkeiten, was die Erstellung von Wörterlisten und das Lernen betrifft</td>
             <td>parley</td>
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/parley.png" width="100"/> </td>
 </tr>
+
+<tr>
+            <td><a href="https://wiki.ubuntuusers.de/Anki/">Anki</a></td>
+           <td>Anki ist eine Alternative zu Parley. Vorbereitete Vokabel- und Lerndecks können hier herunter geladen werden https://ankiweb.net/shared/decks/</td>
+            <td>anki</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/anki.png" width="75"/> </td>
+</tr>
+
 </table>
 
 <li><strong>Tipptrainer</strong></li>
@@ -541,7 +632,6 @@ Siehe auch Schreibtrainer.
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/libreoffice.png" width="100"/> </td>
 </tr>
 
-
 <tr>
             <td><a href="https://de.libreoffice.org/discover/writer/">LibreOffice Writer</a></td>
            <td>Writer hat alle Funktionen, die Sie von einem modernen, umfangreichen Textverarbeitungs- und Veröffentlichungsprogramm erwarten können. Es ist einfach genug für eine schnelle Notiz und dennoch ausreichend leistungsfähig für die Erstellung kompletter Bücher mit Inhaltsverzeichnis, Diagrammen, Verzeichnissen und vielem mehr. </td>
@@ -582,6 +672,20 @@ Siehe auch Schreibtrainer.
            <td>Math ist der Formeleditor des LibreOffice-Pakets, der aus Ihren Textdokumenten, Tabellen, Präsentationen und Zeichnungen heraus aufgerufen werden kann, um dort perfekt formatierte mathematische oder naturwissenschaftliche Formeln einzufügen. Er kann Formeln mit einer großen Bandbreite an Elementen darstellen, von Brüchen, Termen mit Exponenten und Indizes, Integralen, mathematischen Funktionen und Ungleichungen bis hin zu Gleichungssystemen oder Matrizen.</td>
             <td>math</td>
            <td> <img src="/sites/default/files/content/wiki-de/edoovillages/libreoffice_math.png" width="100"/> </td>
+</tr>
+
+<tr>
+            <td><a href="https://wiki.ubuntuusers.de/Firefox/">Firefox</a></td>
+           <td>Firefox Internet Browser, auch zur Anzeige von lokalen Offline-Lerninhalten.</td>
+            <td>firefox</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/firefox.png" width="64"/> </td>
+</tr>
+
+<tr>
+            <td><a href="http://www.netsurf-browser.org/">Netsurf</a></td>
+           <td>Schlanker, schneller Internet Browser netsurf</td>
+            <td>firefox</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/netsurf.png" width="100"/> </td>
 </tr>
 
 </table>
@@ -651,7 +755,7 @@ Siehe auch Schreibtrainer.
 </td></tr>
 </table>
 
-Eigentlich ist unter lubuntu Linux kein Virenscanner nötig, da die bestehenden Sicherheitskonzepte ausreichen und zur Zeit keine Viren für den Linux-Desktop in Umlauf sind. Aus Sicherheitsgründen kann man aber einen lizenzfreien Virenscanner, z.B <a href="http://wiki.ubuntuusers.de/ClamAV">ClamAV</a> installieren, mehr auf http://wiki.ubuntuusers.de/Virenscanner und http://wiki.ubuntuusers.de/ClamAV.
+Eigentlich ist unter Lubuntu Linux kein Virenscanner nötig, da die bestehenden Sicherheitskonzepte ausreichen und zur Zeit keine Viren für den Linux-Desktop in Umlauf sind. Aus Sicherheitsgründen kann man aber einen lizenzfreien Virenscanner, z.B <a href="http://wiki.ubuntuusers.de/ClamAV">ClamAV</a> installieren, mehr auf http://wiki.ubuntuusers.de/Virenscanner und http://wiki.ubuntuusers.de/ClamAV.
 
 Zum Aufrufen des Virenscanner das Programm <strong>ClamTK</strong> starten. SchülerInnen können in Edoovillages damit ihre USB-Sticks scannen und Viren entfernen.
 

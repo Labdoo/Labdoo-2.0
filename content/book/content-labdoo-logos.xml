@@ -36,16 +36,16 @@ Note: all the Labdoo content (inluding the following logos) can be freely downlo
 <img src="/sites/default/files/content/labdoo-toolkit/labdoo-slogan-2.png" width="500"/>
 <hr/>
 
+<hr/>
+<em>Labdoo slogan:  build a lab</em>
+<img src="/sites/default/files/content/labdoo-toolkit/labdoo-slogan-2.png" width="500"/>
+<hr/>
+
 <br/>
 
 <hr/>
 <em>Labdoo logo:  classic</em>
 <img src="/sites/default/files/content/labdoo-toolkit/logo.png" width="300"/>
-<hr/>
-
-<hr/>
-<em>Labdoo logo:  classic (alpha)</em>
-<img src="/sites/default/files/content/labdoo-toolkit/logo-alpha.png" width="300"/>
 <hr/>
 
 <hr/>
@@ -81,6 +81,14 @@ Note: all the Labdoo content (inluding the following logos) can be freely downlo
 <hr/>
 <em>Labdoo Travel logo:</em>
 <img src="/sites/default/files/content/labdoo-toolkit/labdoo-travel-logo.png" width="500"/>
+<hr/>
+
+<hr/>
+<em>Labdoo map markers. You can use this if you compose your own maps.</em>
+<img src="/sites/default/files/content/labdoo-toolkit/labdoo-marker-orange.png" width="70"/>
+<img src="/sites/default/files/content/labdoo-toolkit/labdoo-marker-green.png" width="70"/>
+<img src="/sites/default/files/content/labdoo-toolkit/labdoo-marker-blue.png" width="70"/>
+<img src="/sites/default/files/content/labdoo-toolkit/labdoo-marker-red.png" width="70"/>
 <hr/>
 </value>
 </body>

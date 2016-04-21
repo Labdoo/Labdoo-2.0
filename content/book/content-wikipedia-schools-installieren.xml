@@ -1,0 +1,54 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>26958</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Wikipedia for schools installieren</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>26958</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Wikipedia for schools (wikidoo) ist eine kindgerecht gefilterte, frei verfügbare Teilmenge von Wikipedia, gemäss dem Britschen Curriculum. Wikipedia for schools ist in den Sprachen Englisch (en, Release 2008 und 2013), Spanisch (es), Französisch (fr) und Portugiesisch (pt) verfügbar. Das englische wikipedia for schools ist bereits Teil der englischen RACHEL Sammlung.
+
+Wikipedia for schools braucht ca. 6.5GB Plattenplatz, nur die englische Version von 2008 braucht ca. 2.5GB.
+
+Zur Installation von Wikipedia for schools wird zuerst eine gepackte Datei (tar.gz) heruntergeladen. Die jeweils benötigte Sprachversion kann vom FTP-Server geladen werden http://ftp.labdoo.org/download/wiki-archive/wikipedia_for_schools/.
+
+Dann die heruntergeladene Datei im Ordner <code>/home/labdoo/Public/wikis</code> entpacken (dauert etwas...). Dann im Browser die Datei  <code>/home/labdoo/Public/wikipedia-for-schools-xx/index.html</code> (durch Doppelklick) im Browser in einem eigenen Tab öffnen. xx steht für den jeweiligen Sprachcode en, fr, es oder pt.  
+
+Um den Zugang für Anwender zu erleichtern, empfehlen wir im Browser (Firefox) einen Reiter (Tab) mit der o.a. index-Datei vorzubelegen. In der Menüleiste öffnen und als Voreinstellung der Tabs abspeichern.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>31</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>815</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1487</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

@@ -25,30 +25,30 @@
 [Please print and attach this sheet to your dootronic shipment to ensure that the recipient knows how to use the computer. To print this sheet, click on 'Printer-friendly version' at the bottom of this page. Make sure to print it using the double page option in your printer settings to minimize the amount of paper used. Also, please print only one copy of this document for each group of laptops shipped together.]
 </font>
 
-All below mentioned documents can be downloaded from http://ftp.labdoo.org/download/Public/. If a Labdoo laptop was installed using Labdoo images for cloning the English content is pre-installed.
+All below mentioned documents can be downloaded from http://ftp.labdoo.org/download/wiki-archive/. If a Labdoo laptop was installed using Labdoo images for cloning the English content is pre-installed.
 
-For an easy download we recommend rsync http://en.wikipedia.org/wiki/Rsync. Rsync is available for a lot of operating systems, e.g. Windows, Apple or Ubuntu: http://wiki.ubuntuusers.de/rsync
+For a more comfortable download we packed the wikis and content using the tar.gz archive format. You can unzip these archives with any ZIP tool. Using Lubuntu just a right mouse click and select unpack.
 
-Or even easier, use our installation script for content http://ftp.labdoo.org/download/images/installskripts/installscript-content.sh.
+You can also mirror the /Public folder http://ftp.labdoo.org/download/Public/ using rsync http://en.wikipedia.org/wiki/Rsync. Rsync is available for a lot of operating systems, e.g. Windows, Apple or Ubuntu: http://wiki.ubuntuusers.de/rsync. Or even easier, use our installation script for content http://ftp.labdoo.org/download/images/installskripts/installscript-content.sh.
 
 If you added own content to the folder /home/labdoo/Public and if you want to make sure that all users of the group labdoo (user student as well) gets access please use this script: http://ftp.labdoo.org/download/images/installskripts/set-rights-folder-files-Public-correct.sh.
 
 <ol>
 
-<li><strong>Wikipedia for schools (wikidoo, recommended)</strong></li>
+<li><strong>Wikipedia for schools ("wikidoo", recommended)</strong></li>
 
 <table> <tr><th> </th></tr>
 
 <tr>
-<td>For schools speaking English Labdoo.org recommends "Wikipedia for schools', following the UK National Curriculum : http://www.sos-schools.org/wikipedia-for-schools or http://ftp.labdoo.org/download/Public/wikidoo/, called wikidoo. </td>
+<td>For schools we suggest the wikipedia-for-schools collections, following the UK National Curriculum. Wikipedia for Schools is available in English (Release 2008 and 2013), French, Spanish and Portuguese. You can download wikipedia for schools from our FTP server http://ftp.labdoo.org/download/wiki-archive/wikipedia_for_schools/.</td>
 
 <td><img src="/sites/default/files/content/wiki-de/edoovillages/wikidoo01.png" width="300"/>  </td>
 </tr>
 
 <tr>
-<td>Wikidoo will be used, if schools have none or a very slow internet access. This themes were selected and filtered for children. Labdoo calls the wiki "wikidoo". 
+<td>Wikipedia for schools will be used, if schools have none or a very slow internet access. This themes were selected and filtered for children. Labdoo calls wikipedia for schools "wikidoo". 
 
-Wikidoo comes with about 6,000 themes, 26 mio. words and 50,000 pictures (released 10/2013). To start click on file:///home/labdoo/Public/wikidoo/index.htm
+Wikipedia for schools comes with about 6,000 themes, 26 mio. words and 50,000 pictures (released 10/2013). To start click on file:///home/labdoo/Public/wikidoo/index.htm
 </td>
 
 <td><img src="/sites/default/files/content/wiki-de/edoovillages/wikidoo02.png" width="300"/>  </td>
@@ -61,7 +61,7 @@ Wikidoo comes with about 6,000 themes, 26 mio. words and 50,000 pictures (releas
 <table> <tr><th> </th></tr>
 
 <tr>
-<td>RACHEL, a collection of license-free content, is recommended for use in English or Spanish speaking coutries http://www.worldpossible.org/rachel/. „Wikipedia for schools“ (wikidoo, see above) is part of the RACHEL collection, but also educational documents of the Khan Academy (math and science classes), MedLine Medical Encyclopedia, Hesperian Health Guides, Khan Academy (health videos), CK-12 STEM text-books, Gutenberg World Literature eBooks, OLPC Educational Games/ Lessons, UNESCO Primary School Resources, MathExpression Math Videos, Learn to Type "Power Typing", Music Theory, MIT Scratch etc..
+<td>RACHEL, a collection of license-free content, is recommended for use in English or Spanish speaking coutries http://www.worldpossible.org/rachel/. „Wikipedia for schools“ is part of the RACHEL collection, but also educational documents of the Khan Academy (math and science classes), MedLine Medical Encyclopedia, Hesperian Health Guides, Khan Academy (health videos), CK-12 STEM text-books, Gutenberg World Literature eBooks, OLPC Educational Games/ Lessons, UNESCO Primary School Resources, MathExpression Math Videos, Learn to Type "Power Typing", Music Theory, MIT Scratch etc..
 </td>
 
 <td><img src="/sites/default/files/content/wiki-de/edoovillages/rachel.jpg" width="300"/>  </td>
@@ -69,7 +69,7 @@ Wikidoo comes with about 6,000 themes, 26 mio. words and 50,000 pictures (releas
 
 <tr>
 <td>
-ACHEL can be installed locally and read in a browser (recommended). The download comes also with reader and server software for tablets (Android), server and for Windows, but those are not needed. 
+RACHEL can be installed locally and read in a browser (recommended). The download comes also with reader and server software for tablets (Android), server and for Windows, but those are not needed. 
 
 The English content takes 22,5 GB on a disc-drive. When you remove the wikidoo folder (6,5 GB) you need in total additional 16 GB more vompared to a wikidoo installation. The English RACHEL collection can be downloaded from here (please select the file with the highest release number) http://rachelfriends.org/rachelusb_32EN/
 
