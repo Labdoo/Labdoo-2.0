@@ -54,3 +54,11 @@ The following are some of the most commonly used drush queries.
     # drush php-eval "lbd_communicate_pop_email_cache(0);" # pops the top element
     #+END_EXAMPLE
 
+  - To update the Labdoo logo (the small logo located at the upper left part of each Labdoo page):
+
+    #+BEGIN_EXAMPLE
+    # Modify first the png file in lbd-set-logo.php to point to the new logo file, then run:
+    # drush @lbd php-script /var/www/lbd/profiles/labdoo/utils/lbd-set-logo.php 
+    #+END_EXAMPLE
+
+   

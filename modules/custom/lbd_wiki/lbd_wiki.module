@@ -195,6 +195,32 @@ function lbd_wiki_block_view($delta = '') {
         $code = $code . t("<strong><font color='red'>Continue reading under this section:</font></strong>");
         $code = $code . "<hr/>";
       }
+      else {
+        // This node has no children, make it's next node (if any) become its child
+        $loadedNode = node_load($nodeId);
+        $nextBook = book_next($loadedNode->book);
+        if($nextBook) {
+          $nextChild = array();
+          $nextChild['link'] = array();
+          $nextChild['link']['link_path'] = $nextBook['link_path'];
+          $nextChild['link']['link_title'] = $nextBook['link_title'];
+          $code = $code . "<hr/>";
+          $code = $code . t("<strong><font color='red'>Continue reading to the next page:</font></strong>"); 
+          $code = $code . "<hr/>";
+          $code = $code . _process_child($nextChild, $nodeId, 1);
+        }
+        $prevBook = book_prev($loadedNode->book);
+        if($prevBook) {
+          $prevChild = array();
+          $prevChild['link'] = array();
+          $prevChild['link']['link_path'] = $prevBook['link_path'];
+          $prevChild['link']['link_title'] = $prevBook['link_title'];
+          $code = $code . "<hr/>";
+          $code = $code . t("<strong><font color='red'>Go back to read the previous page:</font></strong>"); 
+          $code = $code . "<hr/>";
+          $code = $code . _process_child($prevChild, $nodeId, 1);
+        }
+      }
     }
     else {
       $code = $code . "<hr/>";
@@ -238,6 +264,8 @@ function lbd_wiki_block_view($delta = '') {
  *   A book page child array
  * @param integer $nodeId
  *   The ID of the node currently being visited
+ * @param integer $level
+ *   The level of the node in its tree 
  *
  */ 
 function _process_child($child, $nodeId, $level) {
