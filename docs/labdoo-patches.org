@@ -20,3 +20,5 @@ The following provides the list of patches that need to be applied to contribute
     #+END_EXAMPLE
 
   - String overrides are not exported to github. Remember to migrate them upon building a new server.
+
+  - The word 'Category' needs to be changed to 'Region' in the file /var/www/lbd/modules/contact/contact.pages.inc 

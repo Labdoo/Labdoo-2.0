@@ -230,7 +230,7 @@ function lbd_sample_nodes_node_export_features_default() {
       \'field_dootrip_weight\' => array(
         \'und\' => array(
           array(
-            \'value\' => \'No doojects linked to this dootrip yet\',
+            \'value\' => \'No dootronics linked to this dootrip yet\',
           ),
         ),
       ),
@@ -2095,7 +2095,7 @@ function lbd_sample_nodes_node_export_features_default() {
       \'field_dootrip_weight\' => array(
         \'und\' => array(
           array(
-            \'value\' => \'No doojects linked to this dootrip yet\',
+            \'value\' => \'No dootronics linked to this dootrip yet\',
           ),
         ),
       ),

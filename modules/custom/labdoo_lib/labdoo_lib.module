@@ -1376,7 +1376,7 @@ function labdoo_lib_form_node_form_alter(&$form, &$form_state, $form_id) {
     // to the QA team.
     $groupId = lbd_teams_page_group_id();
     $groupPath = drupal_get_path_alias("node/$groupId");
-    if(strcmp($groupPath, "content/quality-assurance-qa") != 0) {
+    if(strcmp($groupPath, "content/labdoo-global-support-lgs") != 0) {
       $form['field_are_you_a_student_teacher_']['#access'] = FALSE;
       $form['field_team_my_edoovillage']['#access'] = FALSE;
     }
@@ -2300,7 +2300,7 @@ function labdoo_render_macro_stats($type, $addTitle=False) {
 <span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numHubs</span>
 <span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Hubs') . "</span>$separator
 <span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numEdoovillages</span>
-<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Edoovillages') . "</span>$separator
+<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Schools') . "</span>$separator
 <span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numStudents</span>
 <span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Students') . "</span>$separator
 <span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numCountries</span>
@@ -2566,6 +2566,18 @@ function labdoo_block_filter_sidebar_second() {
 
   if(strcmp($path, "hubs") == 0)
       return TRUE;
+
+  if(arg(0) == 'user')
+      return TRUE;
+
+  if(arg(0) == 'registration' and !strpos($path, 'delete') and !strpos($path, 'edit')) {
+    if(user_is_logged_in()) {
+      global $user;
+      $userId = $user->uid;
+      drupal_set_message(t("You can see all your registrations from <a href=\"../user/$userId/my-events\">this page</a>."), 'status', FALSE);
+    }
+    return TRUE;
+  }
 
   return FALSE;
 }

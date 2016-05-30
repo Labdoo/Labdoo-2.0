@@ -89,7 +89,7 @@ function gic_table($form, &$form_state, $edoovillageId) {
   if($gicIsEmpty == TRUE) {
     $form['container'] = array(
       '#type'             => 'fieldset',
-      '#description'      => t('No doojects currently deployed in this project.')
+      '#description'      => t('No dootronics currently deployed in this project.')
     );
     return $form;
   }

@@ -156,6 +156,7 @@ dependencies[] = stringoverrides_migrate
 dependencies[] = eva 
 dependencies[] = entityreference_prepopulate 
 dependencies[] = calendar
+dependencies[] = registration
 
 ;;; Wiki
 dependencies[] = book

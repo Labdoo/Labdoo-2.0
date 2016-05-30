@@ -156,7 +156,7 @@ function _calculate_dootrip_weight($node) {
   $wNode = entity_metadata_wrapper('node', $node);
   $doojectsList = $wNode->field_laptops->value();
   if(!$doojectsList) {
-    return t("No doojects linked to this dootrip yet");
+    return t("No dootronics linked to this dootrip yet");
   }
 
   foreach($doojectsList as $doojectNode) {

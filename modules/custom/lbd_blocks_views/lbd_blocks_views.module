@@ -66,6 +66,10 @@ function lbd_blocks_views_views_default_views() {
   include 'lbd_blocks_views_superhub_pages.inc';
   $views[$view->name] = $view;
 
+  // My events view
+  include 'lbd_blocks_views_my_events.inc';
+  $views[$view->name] = $view;
+
   return $views;
 }
 

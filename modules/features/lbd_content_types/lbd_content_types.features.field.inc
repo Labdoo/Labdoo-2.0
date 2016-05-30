@@ -1886,6 +1886,103 @@ function lbd_content_types_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-event-field_registration'.
+  $fields['node-event-field_registration'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_registration',
+      'foreign keys' => array(
+        'registration_type' => array(
+          'columns' => array(
+            'registration_type' => 'name',
+          ),
+          'table' => 'registration_type',
+        ),
+      ),
+      'indexes' => array(
+        'registration_type' => array(
+          0 => 'registration_type',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'registration',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'registration',
+    ),
+    'field_instance' => array(
+      'bundle' => 'event',
+      'default_value' => array(
+        0 => array(
+          'registration_type' => '',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => 'Select this field if you would like to enable the registration form. This will allow you to manage labdooers\' registration to this event as well as send them event-related email notifications.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => NULL,
+          'settings' => array(),
+          'type' => 'registration_default',
+          'weight' => 10,
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_registration',
+      'label' => 'Registration',
+      'required' => 0,
+      'settings' => array(
+        'default_registration_settings' => array(
+          'capacity' => '0',
+          'reminder' => array(
+            'reminder_settings' => array(
+              'reminder_date' => NULL,
+              'reminder_template' => '',
+            ),
+            'send_reminder' => 0,
+          ),
+          'scheduling' => array(
+            'close' => NULL,
+            'open' => NULL,
+          ),
+          'settings' => array(
+            'confirmation' => 'Thank you registering to this Labdoo event. Your registration is confirmed.',
+            'confirmation_redirect' => '',
+            'from_address' => 'contact@labdoo.org',
+            'maximum_spaces' => '1',
+            'multiple_registrations' => 0,
+          ),
+          'status' => 1,
+        ),
+        'hide_register_tab' => 0,
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'registration',
+        'settings' => array(),
+        'type' => 'registration_select',
+        'weight' => '12',
+      ),
+    ),
+  );
+
   // Exported field: 'node-event-field_send_to_all_event'.
   $fields['node-event-field_send_to_all_event'] = array(
     'field_config' => array(
@@ -1943,7 +2040,7 @@ function lbd_content_types_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_send_to_all_event',
-      'label' => 'Send to all members of this team (beta)',
+      'label' => 'Send to all members of this team',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -2029,7 +2126,7 @@ function lbd_content_types_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_send_to_event',
-      'label' => 'Send only to these members: (beta)',
+      'label' => 'Send only to these members:',
       'required' => 0,
       'settings' => array(
         'behaviors' => array(
@@ -3724,6 +3821,150 @@ print $user->uid;
     ),
   );
 
+  // Exported field: 'node-superhub_page-field_additional_editors_shub'.
+  $fields['node-superhub_page-field_additional_editors_shub'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_additional_editors_shub',
+      'foreign keys' => array(
+        'users' => array(
+          'columns' => array(
+            'target_id' => 'uid',
+          ),
+          'table' => 'users',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(),
+        ),
+        'target_type' => 'user',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'superhub_page',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'deleted' => '0',
+      'description' => 'Add users who need to have permission to edit this page.',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '4',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_additional_editors_shub',
+      'label' => 'Additional editors',
+      'required' => 0,
+      'settings' => array(
+        'behaviors' => array(
+          'prepopulate' => array(
+            'status' => 0,
+          ),
+        ),
+        'nodeaccess_userreference' => array(
+          'all' => array(
+            'view' => 'view',
+          ),
+          'all_published' => '0',
+          'author' => array(
+            'delete' => 0,
+            'update' => 'update',
+            'view' => 'view',
+          ),
+          'author_published' => '0',
+          'create' => array(
+            'action' => 0,
+            'article' => 0,
+            'blog' => 0,
+            'book' => 0,
+            'dootrip' => 0,
+            'drupal_wall' => 0,
+            'edoovillage' => 0,
+            'event' => 0,
+            'gic' => 0,
+            'hub' => 0,
+            'labdoo_slide' => 0,
+            'laptop' => 0,
+            'node_gallery_gallery' => 0,
+            'node_gallery_item' => 0,
+            'page' => 0,
+            'private_page' => 0,
+            'simplenews' => 0,
+            'slider_page' => 0,
+            'superhub_page' => 0,
+            'team' => 0,
+            'team_page' => 0,
+            'team_task' => 0,
+          ),
+          'priority' => '0',
+          'referenced' => array(
+            'delete' => 0,
+            'deny_delete' => 0,
+            'deny_update' => 0,
+            'deny_view' => 0,
+            'update' => 'update',
+            'view' => 'view',
+          ),
+          'referenced_published' => '0',
+          'unused' => '0',
+          'views' => array(
+            'view' => '',
+            'view_args' => '',
+          ),
+        ),
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'size' => '60',
+        ),
+        'type' => 'entityreference_autocomplete',
+        'weight' => '7',
+      ),
+    ),
+  );
+
   // Exported field: 'node-superhub_page-field_linked_pages'.
   $fields['node-superhub_page-field_linked_pages'] = array(
     'field_config' => array(
@@ -4466,7 +4707,81 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'rows' => '1',
         ),
         'type' => 'text_textarea',
-        'weight' => '35',
+        'weight' => '40',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-team_page-field_are_you_a_student_teacher_'.
+  $fields['node-team_page-field_are_you_a_student_teacher_'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_are_you_a_student_teacher_',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => '',
+          1 => '',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'team_page',
+      'default_value' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '6',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_are_you_a_student_teacher_',
+      'label' => 'I am a student, a teacher or a staff member from an edoovillage (beta)',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'display_label' => 1,
+        ),
+        'type' => 'options_onoff',
+        'weight' => '36',
       ),
     ),
   );
@@ -4589,7 +4904,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'hidden',
+          'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '3',
@@ -4609,7 +4924,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
       ),
       'entity_type' => 'node',
       'field_name' => 'field_send_to_all_conversation',
-      'label' => 'Send to all members of this team (beta)',
+      'label' => 'Send to all members of this team',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -4621,7 +4936,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'display_label' => 1,
         ),
         'type' => 'options_onoff',
-        'weight' => '33',
+        'weight' => '38',
       ),
     ),
   );
@@ -4675,7 +4990,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'hidden',
+          'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '4',
@@ -4695,7 +5010,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
       ),
       'entity_type' => 'node',
       'field_name' => 'field_send_to_conversation',
-      'label' => 'Send only to: (beta)',
+      'label' => 'Send only to:',
       'required' => 0,
       'settings' => array(
         'behaviors' => array(
@@ -4765,7 +5080,102 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '34',
+        'weight' => '39',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-team_page-field_team_my_edoovillage'.
+  $fields['node-team_page-field_team_my_edoovillage'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_team_my_edoovillage',
+      'foreign keys' => array(
+        'node' => array(
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(
+            'edoovillage' => 'edoovillage',
+          ),
+        ),
+        'target_type' => 'node',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'team_page',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '7',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_team_my_edoovillage',
+      'label' => 'My edoovillage: ',
+      'required' => 0,
+      'settings' => array(
+        'behaviors' => array(
+          'prepopulate' => array(
+            'status' => 0,
+          ),
+        ),
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'size' => '60',
+        ),
+        'type' => 'entityreference_autocomplete',
+        'weight' => '37',
       ),
     ),
   );
@@ -4893,7 +5303,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
         'module' => 'og',
         'settings' => array(),
         'type' => 'og_complex',
-        'weight' => 0,
+        'weight' => '0',
       ),
     ),
   );
@@ -5035,7 +5445,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
       ),
       'entity_type' => 'node',
       'field_name' => 'field_send_to_all_task',
-      'label' => 'Send to all members of this team (beta)	',
+      'label' => 'Send to all members of this team',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -5121,7 +5531,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
       ),
       'entity_type' => 'node',
       'field_name' => 'field_send_to_task',
-      'label' => 'Send only to: (beta)	',
+      'label' => 'Send only to:',
       'required' => 0,
       'settings' => array(
         'behaviors' => array(
@@ -5866,6 +6276,8 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Add users who need to have permission to edit this page.');
+  t('Additional editors');
   t('Additional notification emails');
   t('Assigned to');
   t('Attachment');
@@ -5885,19 +6297,21 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
   t('Gallery Media ');
   t('Group roles and permissions');
   t('Hub');
+  t('I am a student, a teacher or a staff member from an edoovillage (beta)');
   t('Image');
   t('Labdooer');
   t('Language');
   t('Linked pages');
   t('Location');
+  t('My edoovillage: ');
   t('Photo album');
   t('Priority');
+  t('Registration');
   t('Select the superhub pages where you would like this menu block to appear');
-  t('Send only to these members: (beta)');
-  t('Send only to: (beta)');
-  t('Send only to: (beta)	');
-  t('Send to all members of this team (beta)');
-  t('Send to all members of this team (beta)	');
+  t('Select this field if you would like to enable the registration form. This will allow you to manage labdooers\' registration to this event as well as send them event-related email notifications.');
+  t('Send only to these members:');
+  t('Send only to:');
+  t('Send to all members of this team');
   t('Status');
   t('Stream it');
   t('Tab');

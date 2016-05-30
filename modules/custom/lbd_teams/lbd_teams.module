@@ -241,6 +241,8 @@ function labdoo_render_team_actions() {
 <a href='$lang/node/add/team-task?og_group_ref=$groupId'>" . t("Start task") . "</span></a></p>
 <img src='/profiles/labdoo/files/pictures/community.png' style='width: 20px; height: 21px;'/>&nbsp;
 <a href='$lang/node/add/event?og_group_ref=$groupId'>" . t("Start event") . "</span></a></p>
+<img src='/profiles/labdoo/files/pictures/my-events.png' style='width: 20px; height: 21px;'/>&nbsp;
+<a href='$lang/user/$user->uid/my-events'>" . t("My events") . "</span></a></p>
 <img src='/profiles/labdoo/files/pictures/wall.png' style='width: 20px; height: 21px;'/>&nbsp;
 <a href='$homePath/activities'>" . t("View wall") . "</span></a></p>
 <img src='/profiles/labdoo/files/pictures/calendar_icon.png' style='width: 20px; height: 21px;'/>&nbsp;
@@ -576,5 +578,67 @@ function lbd_print_team_followers($node) {
   $code = _add_team_follower_to_code($code, $userLoaded);
 
   return($code);
+}
+
+
+function event_user_is_registered($entity_type, $entity_id, $anon_mail = NULL, $uid = NULL, $states = array()) {
+  // must provide an UID or anon_mail
+  // @todo: better course of action here?
+  if (!$anon_mail && !$uid) {
+    return FALSE;
+  }
+  if (empty($states)) {
+    $states = registration_get_active_states();
+  }
+
+  $query = db_select('registration', 'r')
+    ->fields('r', array('registration_id'))
+    ->condition('entity_id', $entity_id)
+    ->condition('entity_type', $entity_type)
+    ->condition('state', $states, 'IN');
+  if ($anon_mail) {
+    // There's a user with this email, check to make sure they're not registered.
+    if ($user = user_load_by_mail($anon_mail)) {
+      $query->condition(db_or()->condition('anon_mail', $anon_mail)
+        ->condition('user_uid', $user->uid));
+    }
+    else {
+      $query->condition('anon_mail', $anon_mail);
+    }
+  }
+  elseif ($uid) {
+    $query->condition('user_uid', $uid);
+  }
+  $results = $query->execute();
+  $ids = $results->fetchField();
+  $id = ($ids=='' ? 0 : $ids);
+  return $id;
+}
+
+
+/**
+ * Implements hook_node_view
+ *  
+ */ 
+function lbd_teams_node_view($node, $view_mode) {
+  $path = drupal_get_path_alias(current_path());
+
+  // Only for events and ensure that it does not include certain URL paths
+  if($node->type == 'event' && 
+     strcmp($path, "teams-activities") && strcmp($path, "my-teams-activities") && !preg_match("/(node|content).*activities/", $path)) {
+    $regType = labdoo_lib_get_field($node, 'field_registration', 'node', 'registration_type');
+    if($regType == 'event_registration' && user_is_logged_in()) {
+      global $user;
+      $userId = $user->uid;
+      // Tell the user where to find the rest of his/her events
+      // Tell the user whether he/she is already registered to this event
+      $regId = event_user_is_registered('node', $node->nid, NULL, $userId, array('complete'));
+      if($regId > 0)
+        drupal_set_message(t("You are currently registered to this event. To unregister, go to <a href=\"../registration/$regId/delete?destination=node/$node->nid\">this link</a>"));
+      else
+        drupal_set_message(t("You are currently not registered to this event. To register, click on the 'Register' tab below."));
+      drupal_set_message(t("You can see all your registrations from <a href=\"../user/$userId/my-events\">this page</a>."), 'status', FALSE);
+    }
+  }
 }
 
