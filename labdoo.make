@@ -31,9 +31,9 @@ projects[diff] = 3.2
 ;--------------------
 ; User interface
 ;--------------------
-projects[context] = 3.6
-projects[views] = 3.11
-projects[homebox] = 2.0-beta7
+projects[context] = 3.7
+projects[views] = 3.13
+projects[homebox] = 2.0-rc1
 projects[boxes] = 1.2
 projects[edit_profile] = 1.0-beta2
 projects[wysiwyg] = 2.2
@@ -57,17 +57,17 @@ projects[hide_submit] = 2.0
 ; Security
 ;--------------------
 projects[captcha] = 1.3
-projects[recaptcha] = 2.0
-projects[honeypot] = 1.19
+projects[recaptcha] = 2.1
+projects[honeypot] = 1.22
 projects[user_restrictions] = 1.0
 
 ;--------------------
 ; Features, migrations and exports/imports
 ;--------------------
-projects[features] = 2.7
+projects[features] = 2.10
 projects[strongarm] = 2.0
 projects[features_extra] = 1.0
-projects[node_export] = 3.0
+projects[node_export] = 3.1
 projects[uuid] = 1.0-beta1
 ;projects[menu_import] = 1.6
 projects[defaultconfig][version] = 1.x-dev
@@ -92,7 +92,7 @@ projects[l10n_update] = 2.0
 ;--------------------
 ; Performance
 ;--------------------
-projects[boost] = 1.0
+projects[boost] = 1.1
 projects[memcache] = 1.5
 
 ;--------------------
@@ -167,9 +167,9 @@ projects[calendar] = 3.5
 ; Extensions and others
 ;--------------------
 projects[ctools] = 1.9
-projects[libraries] = 2.2
-projects[entity] = 1.6
-projects[xautoload] = 5.2
+projects[libraries] = 2.3
+projects[entity] = 1.7
+projects[xautoload] = 5.7
 projects[token] = 1.6
 projects[rules] = 2.9
 projects[pathauto] = 1.3
