@@ -47,3 +47,8 @@ wget http://files.drush.org/drush.phar
 chmod +x drush.phar
 mv drush.phar /usr/local/bin/drush
 drush --yes init
+
+# install certbot (for getting ssl certs with letsencrypt)
+wget https://dl.eff.org/certbot-auto
+chmod +x certbot-auto
+mv certbot-auto /usr/local/bin/certboot
