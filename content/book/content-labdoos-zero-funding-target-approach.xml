@@ -1,0 +1,88 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>165</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Labdoo's Zero Funding Target Approach</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>165</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><strong>Our philosophy</strong>
+
+You may have noticed that within the Labdoo.org system there is no place for people to make a monetary donation and the platform is 100% advertisement free. That's because Labdoo runs simply out of people's goodwill through the contribution of people's time (global collaboration) and unused resources such as laptops or travelers' luggage space (excess capacity), and therefore we require no investors to carry out our cause. The founders decided to take this approach because of several important reasons:
+
+<ul>
+<li>
+To run Labdoo, there is no need for money.  The world has so much excess capacity (laptops, travelers, connectivity, goodwill, etc), that we have the capability to solve the digital divide problem without incurring any additional cost (economic or environmental).
+</li>
+<li>
+By removing the money factor, the project's mission becomes clean and focused.  This approach implies that there is no possible confusion on what the objective of the project is and it strengthens its values. The only possible motivation supporting the project is one of making a contribution to the global community.
+</li>
+<li>
+This approach makes Project Labdoo resilient against global economic crisis. A paradox about our economic system is that when there is an economic crisis, social projects are the ones who get the biggest hits in terms of budget cuts. Hence, those that need the biggest help are the ones who get hit first and harder. This is so because of the money-dependency factor in practically all social projects. By removing the money from the equation, Labdoo can continue to operate normally even in the presence of economic recessions. In fact, Project Labdoo was created in the midst of one of the biggest economic recessions of the last 100 years. 
+</li>
+<li>
+Money does not teach global citizenship, global collaboration does. If we took the shortcut of soliciting and using lots of money to resolve our mission, then all right, we would solve the problem, but we would not learn anything along the way. It is the 'doing of things together', in collaboration, that teaches us all concepts like making our planet more sustainable and understanding that we are all part of the same global community helping each other.
+</li>
+<li>
+The opportunity cost. If we invest $100 in bringing one laptop to a needy school, automatically we are des-investing $100 from all other humanitarian projects such as the provision of health care, clean water, shelter, etc. Let's use the money for those projects that really need it.
+</li>
+<li>
+If we were a company, our best "marketing strategy" would be to advertise how low our costs are. In humanitarian aid, when it comes to choosing social projects, we believe people are very sensitive to the approach taken by the organization. If our costs were high, this would turn people off. If we keep our costs very low, that is an indication that we are taking the right approach, which helps to get more people on board.
+</li>
+<li>
+It substantially simplifies the paperwork and the logistics of international cooperation. Could you imagine the headache of administering money donations for a project that operates in more than $100 countries?
+</li>
+<li>
+It allows for exploring new and more sustainable ways to organize global communities toward solving global problems. We love to innovate and innovation happens in all possible fields, not just technology, but also in ways we organize our workflows. We see the zero funding target objective as innovation in terms of how humans can organize to achieve common objectives in the most possibly efficient way.   
+</li>
+<li>
+The 'how' can be more important than the 'what'. There is a famous sentence that was told once by a famous President: 'We choose to go to the moon, not because it is easy, but because it is hard." This idea reflects a very important concept in human society: the destination you choose to target is important (the 'what' you propose to do), but the path you choose to get there (the 'how' you propose to get there) can be even more important. The reason is that it is the path to that destination that makes you stronger, as a person, as a team, as a society. By choosing to go to the moon, it is not so much what you achieve in reaching a planet that has barely any resources, but it is more about what you learn along the way as a team by attempting to go there together. Through that journey, many new technologies were invented that today we enjoy, and society became more united and encouraged to take positive action than ever before. A new generation of kids became fascinated with what we achieved together and they too decided to become astronauts, scientists, mathematicians, doctors... simply, good men and women. At Labdoo we take the challenge of bringing education to every child in the Planet as an opportunity to make each of us stronger and more united. By choosing the path of open global collaboration, we empower everyone to take action, to learn the skills and to discover the global citizenship character that it takes for all of us to succeed together as one. This intangible, the 'how' you do things, the path you choose to achieve your target, can often (if not always) be more important than the destination you are aiming at itself.
+</li>
+</ul>
+
+<strong>The meaning of targeting zero funding: Cost per Dootronic (CPD)</strong>
+
+Of course in reality from time to time there will be unavoidable costs. For instance, let's say a hub is presenting the Labdoo idea to its community in a local event; there will be a need to build tools to help outreach and communicate. Perhaps there will be a need to <a href="../content/labdoo-roll">create a roll up</a> or to <a href="../content/outreaching-personalized-cards">print your own outreaching cards</a>. Because these costs are small, most labdooers tend to absorbe them out of their pocket (for instance, since most of us have printers at home, it costs practically nothing to print a few flyers). However, certain hubs grow to support a network of hub branches and as they organically grow, their fix costs increase too: e.g., it is not the same for a small hub at a high school to sanitize 20 laptops a year than for a few united hubs and branches to sanitize 1000 laptops. 
+
+The meaning of the words 'targeting zero funding' is not so much about the fix costs, but about the marginal costs of the project. The marginal cost are defined as the Cost per Dootronic or CPD. Our goal is to keep the CPD of the Labdoo project as nearly as possible to zero. While we understand that absolute zero is not feasible, we operate with the target to keep it as low as possible by leveraging the two pilars: (1) excess capacity and (2) global collaboration.
+
+Today our CPD is about 3 dollars per dootronic. It is important to notice that this is the average cost per dootronic (summing up expenses divided by numer of dootronics). Occasionally a laptop may cost higher than this value, but by leveraging scales, the average stays low. The CPD can be kept low because Labdoo relies on collaboration and excess capacity. The CPD value includes all the associated costs such as sanitizing unused laptops, loading the education software using free open source technology, transportation using CO2-neutral dootrips, deployment and post-deployment services via the collaborative <a href="../content/labdoo-global-support-lgs-program">Labdoo Global Support Program</a>. Our goal is to continue to keep this number as low as possible. 
+
+We are currently working on a new dashboard that will allow everyone to openly consult Project Labdoo's current CPD. Stay tune for that. </value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>76</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>860</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>949</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-13</value>
+</weight>
+</book>

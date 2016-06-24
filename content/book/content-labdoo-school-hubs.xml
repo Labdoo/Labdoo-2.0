@@ -1,0 +1,50 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>16911</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Labdoo School Hubs</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>16911</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Thank you for your interest in forming a Labdoo School Hub. We appreciate your desire to help us spread awareness in your local community. Labdoo School Hubs is a special case of Labdoo Hubs in which the Hub is run by students in a school (for instance, students in high school). Notice that not all Hubs are school hubs, since they can also be implemented in many other places (at your home, at your work, as part of your NGO work, etc.). This section is dedicated to information about Labdoo Hubs that are created within the premises of a school.
+
+Please read the following sections with care. This information will help you make the best decision during the process of creating and managing your School Hub.
+
+We hope your Labdoo experience will not only benefit the world as a whole, but also help you write a meaningful chapter in your high school life.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>34</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>818</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1062</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

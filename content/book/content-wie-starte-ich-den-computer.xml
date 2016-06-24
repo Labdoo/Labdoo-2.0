@@ -77,16 +77,9 @@ Auf dem Desktop findet ihr einen Ordner "Videos". Anklicken, dort findet ihr Vid
 
 <strong>Optional: Desktops (Benutzeroberflächen)</strong>
 
-Ein Labdoo Laptop wird mit dem Lubuntu (Linux Betriebssystem auf Ubuntu-Basis mit dem LXDE-Desktop) ausgeliefert. LXDE ist eine leicht zu lernende Oberfläche, schlank, schnell. LXDE / Lubuntu läuft auch auf älteren Rechnern ab 256 / 512 MB RAM.
-
 <img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/language_support.png" width="225" align="right"/>
 
-Optional kann man weitere Desktops (Oberflächen) installieren, die je nach Leistungsfähigkeit des Laptops gewählt werden sollten:
-
-<ul>
-<li>Unity: hohe Systemanforderungen (min 1 GB RAM)</li>
-<li>Gnome: mittlere bis hohe Systemanforderungen (756 MB - 1 GB RAM)</li>
-</ul>
+Labdoo Rechner werden mit dem Lubuntu (Linux Betriebssystem auf Ubuntu-Basis mit dem LXDE-Desktop) ausgeliefert. LXDE ist eine leicht zu lernende Oberfläche, schnell und läuft auch auf älteren Rechnern ab 512 MB RAM.
 
 <strong>Sprache, regionale Formate und Tastatureinstellungen</strong>
 
@@ -119,21 +112,31 @@ down → Tastatureintrag nach unten verschieben
 
 Es können maximal 4 Tastatur-Layouts ausgewählt werden.
 
-<strong>Anpassen der Benutzeroberfläche (Loog and Feel)</strong>
+<strong>Anpassen der Benutzeroberfläche (Look and Feel)</strong>
 
-Man kann die grafische Oberfläche (GUI) von Lubuntu anpassen, z.B. wenn sie Windows-ähnlicher aussehen soll.
+Man kann die grafische Oberfläche (GUI) von Lubuntu anpassen, z.B. wenn sie Windows-ähnlicher aussehen soll. Um ein anderes <strong>Look and Feel zu aktivieren</strong> geht ihr auf den Lubuntu-Start-Button unten links auf dem Bildschirm → Einstellungen (Preferences) → Erscheinungsbild anpassen (Customize Look and Feel) → 
+<ul>
+<li>im Tab/Reiter Fenster (Widget) ein Theme, z.B.  Windows 10 anklicken; Lubuntu Standard Fenster ist Lubuntu-default</li>
+<li>im Tab/Reiter Symbol Thema (Icon Theme) Windows 10 anklicken; Lubuntu Standard Symbol ist Lubuntu</li>
+<li>im Tab/Reiter Fensterrahmen (windows frame) Windows 10 anklicken; Lubuntu Standard Fensterrahmen ist Lubuntu-default</li>
+</ul>
+ → Fenster schliessen.
 
-Um ein anderes <strong>Look and Feel zu aktivieren</strong> geht ihr auf den Lubuntu-Start-Button unten links auf dem Bildschirm → Einstellungen (Preferences) → Erscheinungsbild anpassen (Customize Look and Feel) → im Tab Fenster (Widget) das Theme Win7 oder Win8 anklicken → im Reiter Symbolthema (Icon Theme) Win2-7.6.0 anklicken → Fenster schliessen.
+Um es <strong>rückgängig zu machen</strong> einfach ein anderes Theme oder Rahmen (Lubuntu-default) und Symbolthema (Lubuntu) anklicken - oder andere Layouts, die euch gefallen.
 
-Um es <strong>rückgängig zu machen</strong> einfach ein anderes Theme (Lubuntu-default) und Symbolthema (Lubuntu) anklicken - oder andere Layouts, die euch gefallen.
-
-An manche Einstellung muss man sich erst gewöhnen, wenn ihr ein Windows-Theme aktiviert (dadurch wird der PC kein Windows-PC, es bleibt ein Linux / Lubuntu-PC; er sieht nur Windows-ähnlicher aus).
+An manche Linux-Eigenheiten muss man sich erst gewöhnen. Wenn ihr ein Windows-Theme aktiviert, wird dadurch der PC natürlich kein Windows-PC. Es bleibt ein Linux / Lubuntu-PC, er sieht nur Windows-ähnlicher aus.
 
 <strong>Manuals, Video-Tutorials</strong>
 
 <img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/link-folder-videos.png" align="right" width="50"/>
 
 Manuals, Videotutorials, Offline-Wikis u.v.a. mehr liegen im Ordner <a href="file://localhost/home/labdoo/Public/">/home/labdoo/Public/</a>. Über das Icon "videos" auf dem Desktop geht es direkt zum Ordner mit den Videos-Tutorials. Ein Video kann in Firefox oder einem Player angeschaut werden (ggf. Ansicht +/- zoomen).
+
+<strong>Codecs für Multimedia, Filme und DVD installieren</strong>
+
+Auf dem Desktop finden Sie das Skript <code>installscript-codecs.sh</code>. Bitte führen Sie dieses Skript nur aus, wenn Sie sicher sind, dass die Gesetze und Vorschriften in Land des Computereinsatzes dies erlauben. Patent- und Urheberrechtsschutz funktionieren je nach Land anders. Bitte lassen Sie sich ggf. rechtlich beraten, wenn Sie sich nicht sicher sind, ob in ihrem Land rechtliche Beschränkung für Medien-Formate (Codecs) gelten. 
+
+Ohne Ausführung dieses Skriptes sind Sie aber nicht in der Lage, bestimmte Multimedia-Daten, Videos oder DVDs anzuschauen. Dieses Skript installiert zusätzliche Software und Codecs für Multimedia-Anwendungen. <strong>Hierzu muss der Computer mit dem Internet verbunden sein.</strong> Alternativ können Sie auch kommerzielle Multimedia-Software kaufen.
 
 Viel Spaß beim Spielen und Lernen mit deinen Freunden!    Das Labdoo Team.</value>
 </body>

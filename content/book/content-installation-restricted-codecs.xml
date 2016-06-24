@@ -21,7 +21,7 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Please notice that depending on the local law, it might be illegal to install certain codecs and multimedia extensions. Check your local regulations first prior to proceeding with the installation of the following software.
+<value>Please notice that depending on the local law, it might be illegal to install certain codecs (commercial/proprietary third-party packages) and multimedia extensions. Check your local regulations first prior to proceeding with the installation of the following software.
 
 As in all software for Ubuntu, there are two ways to do the installation: via the Ubuntu Sofware Center or via the command line.
 

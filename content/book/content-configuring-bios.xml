@@ -23,7 +23,7 @@
 <type>value</type>
 <value><strong>How to change the booting order of a laptop from the bios</strong>
 
-BIOS (Basic Input Output Subsystem) is a programmable chip that controls how information is passed to various devices in the computer system. A typical method to access the BIOS settings screen is to press ESC, F1, F2, F8 or F10 right after your start your computer.
+BIOS (Basic Input Output Subsystem) is a programmable chip that controls how information is passed to various devices in the computer system. A typical method to access the BIOS settings screen is to press ESC, F1, F2, F8 or F10 right after you start your computer.
 
 BIOS settings allow you to run a boot sequence from a hard drive, a CD-ROM drive, the network, or an external device. You may configure the order that your computer searches these physical devices for the boot sequence.
 
@@ -35,7 +35,7 @@ To specify the boot sequence:
 
 <ol>
 <li>
-Start the computer and press ESC, F1, F2, F8 or F10 multiple times during the initial startup screen. Depending on the BIOS manufacturer, a menu may appear.
+Start the computer and press ESC, F1, F2, F8 or F10 (depending on the BIOS manufacturer, try them all if needed) multiple times during the initial startup screen. A menu may appear.
 </li>
 <li>
 Choose to enter BIOS setup. The BIOS setup utility page appears.
@@ -67,11 +67,7 @@ The computer will restart and will initiate its booting process by looking first
 
 <strong>Troubleshooting potential issues with the bios.</strong>
 
-In some rare cases the BIOS could be reset during the process of deleting the hard drive information from the system, or some times older laptops do not support internal and/or external USB keyboards during the booting process.
-
-It might happen that you are not able to use the arrow keys (up, down, right, left) to configure the BIOS. In such cases  the USB control (and sometimes the internal keyboard) was deactivated. 
-
-A possible solution is to connect an external PS/2 or USB keyboard, and continue to install or adjust the BIOS.
+In some rare cases the BIOS could be reset during the process of deleting the hard drive information from the system, or some times older laptops do not support internal and/or external USB keyboards during the booting process. It might happen that you are not able to use the arrow keys (up, down, right, left) to configure the BIOS. In such cases  the USB control (and sometimes the internal keyboard) was deactivated. A possible solution is to connect an external PS/2 or USB keyboard, and continue to install or adjust the BIOS.
 </value>
 </body>
 <body>

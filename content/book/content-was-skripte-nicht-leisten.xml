@@ -53,7 +53,7 @@ Rechte Maustaste auf die Task Bar klicken → Add/Remove Panel Items → +Add �
          <li>System tray (schon installiert)</li>
         <li>Indicator Applets (zu installieren)</li>
         <li><strong>Keyboard Layout Handler (Tastatur-Layout/Umschalter) (zu installieren)</strong></li>
-        <li><strong>Resource Monitors (zu installieren)</strong></li>
+        <li><strong>CPU Usage Monitors (zu installieren)</strong></li>
          <li><strong>Network Status Monitor (zu installieren)</strong></li>
         <li><strong>Manage Network (zu installieren)</strong></li>
         <li>Digital clock (schon installiert)</li>
@@ -64,7 +64,7 @@ Die Plugins können auf der Leiste verschoben werden → Add/Remove Panel Items 
 
 <strong>Wichtig: </strong> Ab lubuntu 14.04 LTS: Keyboard Layout handler → rechte Maustaste auf Icon in der Task Bar → settings → Wichtig! Haken aus „Keep system layout“ entfernen, sonst können nicht mehrere Tastaturlayouts installiert werden.
 
-<strong>Wichtig: </strong> Ab 14.04 LTS: Unter Light Locker die Bildschirmsperre ausschalten (für User labdoo und student)
+<strong>Wichtig: </strong> Ab 14.04 LTS: Unter Preferences → Power Manager → Security → Automatically lock the session = Never und Haken entfernen aus "Lock screen when system is going to sleep" (für User labdoo und student)
 
 <strong>nur für lubuntu 12.04 LTS</strong>
 

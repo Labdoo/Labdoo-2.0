@@ -1,0 +1,102 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>28178</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Creating and Managing Labdoo Events</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>28178</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>As part of a team, you will be able to create your own community events. Events are locally organized activities which allow Labdoo activists to get together and perform certain activities. Here are examples of events that you may want to create:
+
+<ul>
+<li>
+When organizing a laptop sanitation workshop to clean up laptops and load them with the educational software.
+</li>
+<li>
+When organizing an event to collect unused laptops from your local community.
+</li>
+<li>
+When organizing your own Labdoo Conference (these are normally organized once a year in certain cities of the world).
+</li>
+<li>
+Be creative, you can create your events for pretty much any activities (from small gatherings to larger workshops or conferences) that require getting people together around the topics of spreading education and make our planet a more sustainable place.
+</li>
+</ul>
+
+The feature "Labdoo Events" allows you to create and manage your own events within the Labdoo platform. It provides functions such as creating the event, announcing the event to your community, allowing people to register to your event so you can track the head count, manage your events calendars, or sending messages to your registrants to keep them up to date about the event details, among others functions.
+
+To create an event follow the next simple steps:
+
+<ol>
+<li>
+Click on the 'Teams' menu found on the top of each Labdoo page and select 'List all teams'. This will show you the list of all Labdoo teams. Then select the most suitable team where you want to create your event according to the subject of your event. 
+</li>
+<li>
+Once you are in your selected team page, you will find a set of icons on the right side (note: please make sure first that you are subscribed to this team by clicking on the icon 'Subscribe to this team', as you can only create events for teams that you are subscribed to). Click on the icon 'Start event'. This will open a form to create your event. Enter the 'Title' of your event, a 'Description', the 'Dates' and 'Location' of the event, an optional image (e.g., the event flyer), and select whether you want to automatically announce this event to all members of the team through the option 'Send to all members of this team'.
+</li>
+<li>
+Select also the option 'Enable event registration' if you would like to enable the registration form. This will allow you to manage labdooers' registration to this event as well as send them event-related email notifications. 
+</li>
+<li>
+Click on 'Save'.
+</li>
+</ol>
+
+Your event is now created. You can now share it by clicking on the social network buttons that you will find in your event page (for Google+, Facebook, Twitter or any of your favorite platforms) or you can also copy the URL of the new event and share it.
+
+If you enabled the option 'Enable event registration', you will be allowed to manage your event registrations. In that case, your event page will have two extra tabs: 'Manage registrations' and 'Register', as shown in the picture below:
+
+<hr/>
+<table align="center">
+<tr><td>
+<em> Figure. Event example. If you enabled the option  'Enable event registration', your event will include two more tabs: 'Manage registrations' and 'Register'.</em>
+</td></tr>
+<tr><td>
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/labdoo-events-1.png" width="800"/>
+</td></tr>
+</table>
+<hr/>
+
+<strong>By clicking on the 'Register' tab</strong>, you will be able to register yourself to the event. Other Labdoo users will see this tab to register themselves too. When sharing your event, you need to provide the URL of this event page so that users can register themselves by clicking on this 'Register' tab. Notice that the 'Register' tab is also available to users who don't have a Labdoo account, allowing these users to register to your events using their email address. 
+
+<strong>By clicking on the 'Manage registrations' tab</strong>, you will enter a sub-menu with options to configure your event registrations, to see the current list of registrants and to send the registrants email announcements, among other functions (this tab is only visible to the event manager). All these functions are designed to ensure you run a successful event!
+
+We hope this text helped you understand how you can create and manage Labdoo events. As always, if you have any further questions, don't hesitate to write them on the <a href="../content/labdoo-global-support-lgs/activities">Labdoo Global Support Team Wall</a> and some Labdooer will help you resolve them. Happy teaming.
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>39</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>824</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1553</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

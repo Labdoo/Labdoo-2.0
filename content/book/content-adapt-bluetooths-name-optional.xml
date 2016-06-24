@@ -21,7 +21,7 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>If you sanitized your laptop via the advanced method, then due to the cloning process, the name of the laptop's bluethooth device will be identical with all clones. To assign a unique name to your device, run the following command on a terminal:
+<value>If you sanitized your laptop via the advanced method, then due to the cloning process, the name of the laptop's bluethooth device will be identical to all clones. To assign a unique name to your device, run the following command on a terminal:
 
 <code>sudo hciconfig hci0 name ’labdoo-XYZ-0'</code>
 

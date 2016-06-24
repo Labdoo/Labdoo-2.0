@@ -1,0 +1,61 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>161</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>MD5 Checksums</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>161</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>MD5 is a common way to calculate checksums to test if a file was downloaded correctly. You can read more about MD5 here http://en.wikipedia.org/wiki/MD5.
+
+In the folders of your unzipped Labdoo images for cloning you will find a file MD5SUM. Use these files to check if the downloaded images are healthy and not corrupted by the download process as follows.
+
+<strong>Check that the downloaded images are correct:</strong>
+
+<ul>
+<li>Open a Lubuntu terminal</li>
+<li>Navigate to the folder where the files are located <code>cd ...(path)</code> [enter] </li>
+<li>Execute the command<code>md5sum -c MD5SUM</code> [enter] </li>
+</ul>
+
+<strong>Create MD5 checksums:</strong>
+
+Open a terminal in the folder with the files and execute in a terminal
+<code>md5sum * &gt; MD5SUM</code> (Enter)</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>35</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>857</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>945</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-1</value>
+</weight>
+</book>

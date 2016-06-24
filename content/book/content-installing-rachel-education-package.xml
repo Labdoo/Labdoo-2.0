@@ -29,27 +29,28 @@ If you sanitized your laptop using the advanced method and choosing an image tha
 
 To install RACHEL, first you need to download the package into your local disk. You can choose to download it from either the RACHEL server http://rachelfriends.org/ or from the Labdoo FTP server http://ftp.labdoo.org/download/RACHEL/. 
 
-<strong>Downloading RACHEL in English</strong>
-
-Download the latest version from RACHEL's server: http://rachelfriends.org/downloads/public_ftp/rachelusb_32EN/
-or
-from Labdoo's FTP server: http://ftp.labdoo.org/download/RACHEL/RACHEL_EN.tar.gz
-
-<strong>Downloading RACHEL in Spanish</strong>
-Download the latest version from RACHEL'sserver: http://rachelfriends.org/downloads/public_ftp/rachelusb_32ES/
-or
-from Labdoo's FTP server: http://ftp.labdoo.org/download/RACHEL/RACHEL_ES.tar.gz
+<strong> RACHEL and other related educational content in English (EN), French (FR), Spanish (ES), Hindi (HI), German (DE), Portugese (PT):</strong> can be downloaded from here: http://ftp.labdoo.org/download/wiki-archive/RACHEL
 
 <strong>Installing RACHEL on a Laptop</strong>
-Once you have downloaded RACHEL, unzip it in a new folder <code>/home/labdoo/Public/RACHEL</code> (the downloading and unzipping operations could take a few hours depending on the speed of your network and computer). Once unzipped, double click on the file <code>/home/labdoo/Public/RACHEL/bin/www/starthere.html</code> to open a web browser that will take you to the start page of RACHEL. 
+Once you have downloaded RACHEL, unzip it in a new folder <code>/home/labdoo/Public/RACHEL</code> (the downloading and unzipping operations could take some time depending on the speed of your network and computer). Once unzipped, double click on the file <code>/home/labdoo/Public/RACHEL/bin/www/starthere.html</code> to open a web browser that will take you to the start page of RACHEL. 
 
 <strong>Note.</strong> The first folder "Wikipedia for Schools" is equivalent to the Xowa package; hence, if your Labdoo laptop already has Xowa installed, you can remove this folder from RACHEL, which will give you back 6,5 GB of disk space.
 
-To make access for users easier, we recommend to make the default web browser page point to RACHEL's initial page. For that, open the web browser (this instructions are for Firefox but similar steps apply to other browsers) and go to <code>File  => Open File  [ navigate to /home/labdoo/Public/RACHEL/bin/www/starthere.html ] => Open</code>. Then go to <code>Edit => Preferences [ opens a window for the settings, click on "Use current Pages" and close the tab "Preferences" ] </code>. Please repeat any of the configuration steps for both the 'labdoo' and the 'student' users.
+To make access for users easier, we recommend to make the default web browser page point to RACHEL's initial page. For that, open the web browser (this instructions are for Firefox but similar steps apply to other browsers) and go to:
+
+<code>File  =&gt; Open File  [ navigate to</code>
+<code>/home/labdoo/Public/RACHEL/bin/www/starthere.html ] =&gt; Open</code>
+
+Then go to:
+
+<code>Edit =&gt; Preferences [ opens a window for the settings, </code>
+<code>click on "Use current Pages" and close the tab "Preferences" ] </code>
+
+Please repeat any of the configuration steps for both the 'labdoo' and the 'student' users.
 
 <strong>Installing RACHEL on a Tablet</strong>
 
-The RACHEL package includes also an installation file for Android (apk file): http://rachelfriends.org/downloads/public_ftp/z-rachelandroid_APK/. But notice that as long as you read the RACHEL content in a web browser on a tablet, it is not necessary to install this apk-file. That means that you can just copy and unzip the RACHEL file to the tablet and open the file starthere.html from the tablet's web browser. With this method, you can therefore use RACHEL with any tablet (not just Android) just by using the tablet's web browser. Some tablets may not have enough built-in disk space to store RACHEL. If that's the case, you will need to include an external storage card and install RACHEL in it. 
+The RACHEL package includes also an installation file for Android (apk file): http://rachelfriends.org/downloads/public_ftp/z-rachelandroid_APK/. Notice however that as long as you read the RACHEL content in a web browser from a tablet, it is not necessary to install this apk-file. That means that you can just copy and unzip the RACHEL file to the tablet and open the file "starthere.html" from the tablet's web browser. With this method, you can use RACHEL with any tablet (not just Android) just by using the tablet's web browser. Some tablets may not have enough built-in disk space to store RACHEL. If that's the case, you will need to include an external storage card and install RACHEL in it. 
 
 <strong>Note.</strong> RACHEL is much more than just content for a web browser as it also includes executable files. Some of these executable files may not be compatible with the Labdoo operating system. However, these additional programs do not take much disk space, and hence we recommend to leave them where they are so that schools abroad can still have the option to copy these tools to other compatible platforms and use them.</value>
 </body>

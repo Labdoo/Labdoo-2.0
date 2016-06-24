@@ -21,25 +21,29 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value><img src="/sites/default/files/content/wiki-de/edoovillages/login1.png" align="right" width="200" alt="Login Screen" />
+<value><font color="red">
+[Cliquez svp sur 'Printer-friendly version' en bas de page pour imprimer et joignez le document à votre don pour que le futur utilisateur de l'ordinateur puisse le faire fonctionner correctement. Pour économiser les coûts, imprimez si possible un seul exemplaire recto-verso par envoie groupé d'ordinateurs. Merci] 
+</font>
 
-<strong>Les utilisateurs d'échelle (de l'utilisateur)</strong>
+<img src="/sites/default/files/content/wiki-de/edoovillages/login1.png" align="right" width="200" alt="Login Screen" />
 
-Pour vous connecter, il y a les sessions suivantes::
+<strong>Comptes utilisateur</strong>
 
-<strong>labdoo</strong>: c'est celle de l'administrateur: Le mot de passe est labdoo (il doit être modifié par l'enseignant dès la première utilisation parce que les droits d'administrateur permettent d'ajuster le système!)
+Chaque ordinateur portable (cloné ou installé à l'aide des scripts) est pré-installé avec 3 comptes utilisateur. Lors de la connexion, cliquez sur le petit triangle à droite de Labdoo pour faire apparaître une liste de comptes utilisateur actuellement disponibles:
 
-<strong>student</strong>: c'est celle de l'utilisateur standard: Le mot de passe est labdoo (il peut ne pas être modifié, à vous de décider!) 
+<strong>labdoo</strong>: c'est celui de l'administrateur. Le mot de passe est labdoo. Il doit être modifié par l'enseignant dès la première utilisation parce que les droits permettent d'ajuster le système! Travailler avec ce compte demande une bonne connaissance et il est recommandé que seul les enseignants connaissent le mot de passe.
+
+<strong>student</strong>: c'est celui de l'utilisateur standard. Le mot de passe est également labdoo et l'enseignant peut le modifier ou pas, à vous de décider!
 
 <img src="/sites/default/files/content/wiki-de/edoovillages/login2.png" align="right" width="200" alt="Select user" />
 
-<strong>Session d'invité (guest)</strong>: pas besoin de mot de passe pour leur utilisateur, mais toutes les données et modifications seront effacées après la déconnexion. 
+<strong>invité (guest)</strong>: un mot de passe n'est pas nécessaire aux  utilisateurs, mais toutes les données et modifications seront automatiquement effacées lors de la déconnexion.
 
 <ul>
 <br></br>
 <table> 
 
-<strong><caption>Plus d'options lors de la connexion</caption></strong>
+<strong><caption>Autres options lors de la connexion</caption></strong>
 
 <tr>
 <th><img src="/sites/default/files/content/wiki-de/edoovillages/login3.png" width="150" alt=" " /></th>
@@ -48,9 +52,9 @@ Pour vous connecter, il y a les sessions suivantes::
 </tr> 
 
 <tr>
-<td>Facultatif: sélectionnez l'un des postes de travail pré-installée (interface utilisateur)</td>
-<td><strong> Important! Lorsque vous tapez le mot de passe vous assurer que la disposition du clavier correspond à votre clavier!</strong></td>
-<td>Facultatif: Agrandir la police ou d'améliorer le contraste, si l'utilisateur est une déficience visuelle</td>
+<td>Facultatif: sélectionnez l'un des postes de travail (desktop) pré-installés</td>
+<td><strong>Important! Lors de la saisie du mot de passe, assurez-vous que le clavier est correctement sélectionné</strong></td>
+<td>Facultatif: changez la police ou améliorez le contraste, si nécessaire</td>
 </tr> 
 
 </table>
@@ -58,76 +62,71 @@ Pour vous connecter, il y a les sessions suivantes::
 <br></br>
 </ul>
 
-<strong>Pour changer le mot de passe</strong> → Cliquez sur "Paramètres Système" (System Settings)  → "Comptes Utilisateur" (user accounts) → "déverrouiller" (unlock) → mot de passe (Password) „labdoo“ → cliquez sur "Mot de passe", modifie-le.
+<strong>Pour changer le mot de passe</strong> Cliquez sur "Paramètres Système" (System Tools) → "Comptes Utilisateur" (user accounts) → "déverrouiller" (unlock) → mot de passe (Password) „labdoo“ → cliquez sur "Mot de passe", modifiez-le.
 
-Gérer les groupes → à gérer, si un utilisateur appartient à un certain groupe (par exemple de labdoo de groupe)
+Gérer les groupes → à gérer, si un utilisateur appartient à un certain groupe, administrateur ou standard
 
-<strong>Démarrage des programmes</strong>
+<strong>Por démarrer des programmes</strong>
 
 Vous pouvez lancer dès maintenant l'un des programmes d'apprentissage ludique ou de jeu dans le paquet Edubuntu:
+cliquez en bas a gauche sur l'icône Lubuntu (accueil du tableau de bord) pui sur “éducation” (education) ou „Jeux“ (games) pour démarrer le programme que vous souhaitez.
 
-cliquez sur l'icône Lubuntu (accueil du tableau de bord) → cliquez sur “éducation” (education) oder „Jeux“ (games) → Vous pouvez dès à présent jouer avec l'une d'entre elles.
+Dans le dossier "Public" vous trouverez aussi un grand nombre de manuels de référence utiles, de logiciels libres comme par exemple wikidoo, wikis hors ligne et d' encyclopédie.
+Sur le bureau, vous trouverez aussi des vidéos, des tutoriels qui montrent et vous expliquent le fonctionnement de l'ordinateur portable Labdoo ainsi qu'une encyclopédie wikipédia hors ligne Xowa.
 
-Dans le "dossier personnel" (Home)→"Public" vous trouverez vos manuels utiles et dans le sous-dossier wikidoo, déconnecté wikis et encyclopédie. 
+<strong>Facultatif: les bureaux (interfaces utilisateur)</strong>
 
-Sur le bureau, vous trouverez un dossier "vidéos". Cliquez et il montre et vous explique l'ordinateur portable Labdoo.
-
-<strong>Facultatif: Ordinateurs de bureau (interfaces utilisateur)</strong>
-
-Un ordinateur portable est livré avec la Labdoo Lubuntu (système d'exploitation Linux de base Ubuntu avec le bureau LXDE). LXDE est un outil facile à apprendre l'interface, mince, rapide. LXDE / Lubuntu fonctionne aussi sur les ordinateurs plus anciens de 256/512 Mo de RAM.
+L'ordinateur portable Labdoo est livré avec Lubuntu (système d'exploitation Linux Ubuntu avec le bureau LXDE). LXDE est une interface d'utilisation facile, rapide et fonctionne sur les ordinateurs plus anciens avec au moins 512 Mo de RAM.
 
 <img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/language_support.png" width="225" align="right"/>
 
-En option, vous pouvez installer plusieurs postes de travail (surfaces), qui devraient être choisis en fonction des performances de l'ordinateur portable:
+En option, vous pouvez installer d'autres bureaux, choisis en fonction des performances de l'ordinateur portable, comme Unity ou Gnome (minimum 1 Go de RAM).
 
-<ul>
-<li>Unity: exigences de système élevées (minimum 1 Go de RAM)</li>
-<li>Gnome: à moyen et à des exigences de haute système (756 Mo - 1 Go de RAM)</li>
-</ul>
+<strong>Modifiez les langues, formats régionaux et paramètres du clavier si l'accès internet est possible</strong>
 
-<strong>Langue, formats régionaux et les paramètres du clavier</strong>
+Vous souhaiterez peut-être activer ou installer une ou plusieurs langues.
 
-Parfois vous préférez activer ou installer une ou plusieurs langues. À cet effet ouvrez la fenêtre "Paramètres système" (System Settings) en cliquant sur cet icône:
+cliquez sur Préférences → Cliquez sur "Prise en charge des langues" (Language Support) puis sur "Installer/supprimer des langues" (Install/Remove languages) → sélectionnez la(les) langue(s) dont vous avez besoin → "Appliquer les changements" (Apply) → "Appliquer à tout le système" (Apply System-wide).
 
-cliquez sur Preferences → Cliquez sur "Prise en charge des langues" (Language Support) puis sur "Installer/supprimer des langues" (Install/Remove languages) → sélectionnez la(les) langue(s) dont vous avez besoin → "Appliquer les changements" (Apply) → "Appliquer à tout le système" (Apply System-wide).
-
-Les nouvelles langues apparaissent dans une liste: Ubuntu utilise les langues de haut en bas, si un mot n'est pas traduit dans une langue, il est traduit dans la suivante et ainsi de suite jusqu'en anglais.
+Les nouvelles langues apparaissent dans une liste: Lubuntu utilise les langues de haut en bas; si un mot n'est pas traduit dans une langue, il est traduit dans la suivante et ainsi de suite jusqu'en anglais.
 
 <img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/regional_formats.png" width="225" align="right"/>
 
-Cherchez la nouvelle langue, sélectionnez-la en maintenant la touche de la souris appuyée, faites glisser en position haute, relâchez la touche → "Appliquer les changements" (Apply) → "Appliquer à tout le système" (Apply System-wide). 
-L'ordinateur fonctionne avec la nouvelle langue après  "fermer la session" (Log out) ou "Redémarrer" (Restart).
+Cherchez la nouvelle langue, sélectionnez-la en maintenant la touche de la souris appuyée, faites glisser en position haute, relâchez la touche → "Appliquer les changements" (Apply) → "Appliquer à tout le système" (Apply System-wide). Ainsi, après  "fermer la session" (Log out) ou "Redémarrer" (Restart), l'ordinateur fonctionnera avec la nouvelle langue.
 
 <strong>formats régionaux</strong>
 
-Vous pouvez également définir les formats régionaux pour les nombres, la monnaie, la date, etc. A cet effet, sélectionnez l'onglet format régionaux (Regional Formats) puis cliquez le pays de votre choix dans la liste → "Appliquer à tout le système" (Apply System-wide).
+Vous pouvez également définir les formats régionaux pour les nombres, la monnaie, la date, etc.; Sélectionnez l'onglet format régionaux (Regional Formats) puis cliquez le pays de votre choix dans la liste → "Appliquer à tout le système" (Apply System-wide).
 
 <strong>Agencement clavier</strong>
 
 <img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/keyboard_layout_handler.png" width="225" align="right"/>
 
-Cliquez sur "Agencement du clavier" (Keyboard Layout): 
+Vous pouvez passer cette étape si l'ordinateur a été cloné avec une image.
 
-Faites un clic droit sur la barre des tâches sur l'icône "de" (ou des États-Unis ou le clavier est actif) → Réglages du clavier Handler (liste mise disposition du clavier) → Retirez le crochet "Gardez la disposition du système" si elle est encore mis →
+Faites un clic droit sur la barre des tâches sur l'icône "de" (ou “fr” ou “us” suivant le pays pour lequel le clavier est actif) → Paramètres de "Gestionnaire de dispositions de clavier" (Keyboard Layout)→ Retirez le crochet "Gardez la disposition du système"  →
 
-en ajouter (+, +Add), 
-en retirer (-, -Remove), 
-en déplacer (△▽, up, down)
++ Ajouter (+Add),
+- Enlever (-Remove),
+ou déplacer (△▽, up, down)
 
 En cliquant sur "Options..." vous pouvez définir par exemple une combinaison de touches pour la conversion rapide du clavier.
-Il est possible aussi de sélectionner son clavier dans la partie supérieure du bureau (Desktop):
-
-Vous pouvez obtenir le nouvel agencement du clavier grâce à des autocollants sur les touches.
-
+Vous pouvez obtenir aussi le nouvel agencement du clavier grâce à des autocollants sur les touches.
 Un maximum de 4 configurations de clavier peut être sélectionné.
+
+<strong>Personnaliser l'apparence (look and feel)</strong>
+
+Vous pouvez personnaliser l'interface utilisateur graphique (GUI) de Lubuntu, pour la faire ressembler plus à Windows, par exemple. 
+Cliquez sur Lubuntu-start en bas à gauche → Paramètres (Préférences) → Apparence (Customize Look and Feel) →  widget.
+cliquez sur Lubuntu-default pour avoir à nouveau l' apparence standard.
 
 <img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/common/link-folder-videos.png" align="right" width="50"/>
 
 <strong>Manuels, tutoriels vidéo</strong>
 
-Manuels, tutoriels vidéo, déconnecté Wikis u.v.a. d'autres sont dans le dossier <a href="file://localhost/home/labdoo/Public/">/home/labdoo/Public/</a>. À propos de l'icône "Vidéo" sur le bureau, il va directement dans le dossier qui contient les didacticiels vidéo. Une vidéo peut être visionnée dans Firefox ou un joueur (vue de zoom éventuel +/-).
+Manuels, tutoriels vidéo, Wikis hors ligne entre autre sont dans le dossier /home/labdoo/Public/. Le dossier «videos» contient les didacticiels vidéo.qui peuvent être visionnés dans Firefox par exemple.
 
-Amusez-vous et l'apprentissage avec vos amis! 
+Avec vos amis, amusez-vous tout en apprenant sur l'ordinateur portable Labdoo!
 
 L'équipe Labdoo.</value>
 </body>

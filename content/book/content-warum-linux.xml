@@ -1,0 +1,64 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>29115</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Warum Linux?</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>German</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>29115</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>Labdoo.org installiert auf den Lern-Computern Lubuntu (http://lubuntu.net/), eine auf Linux basierende Ubuntu-Version mit dem schlanken LXDE Desktop (http://lxde.org/ Oberfläche). Warum verwendet Labdoo kein Windows? Dies hat viele, gute Gründe:
+
+<ul>
+<li>Die gespendeten Laptops sind oft älter und Windows würde auf den Rechnern nur sehr langsam laufen. Linux ist i.d.R. 50 - 100% schneller.</li>
+<li>Die Windows-Versionen der gespendeten Rechner werden oft schon nicht mehr unterstützt oder mit Updates versorgt (Windows XP, Vista usw). Die Lubuntu Versionen sind aber aktuell und werden laufend weiterentwickelt.</li>
+<li>Virenprobleme kennt Linux nicht, tausende Labdoo Rechner laufen seit Jahren stabil. Gerade in den Ländern, in denen unsere Projekte sind, gibt es aber ein großes Virenproblem. Unter Windows würde dies laufend zu Problemen führen. Trotzdem werden die Labdoo-Rechner mit einem Virenschutzprogramm ausgerüstet. So können Schulen USB-Sticks der Schüler scannen und von Viren befreien. leider hält dies nur solange, bis dieser USB-Stick in einen PC im Internet-Café eingestöpselt wird....</li>
+<li>Labdoo installiert mehrere 100 kostenlose und lizenzfreie Lernprogramme vor, die es unter Windows nicht oder nur kostenpflichtig gibt. Weitere 80.000 Programme können kostenlos aus dem Lubuntu App-Store geladen werden.</li>
+<li>Labdoo verwendet Offline-Wikis, lizenzfreie Lerninhalte in Landessprache, um auch ohne Internetanbindung Lernmöglichkeiten zu schaffen.</li>
+<li>Auf jedem Laptops sind die wichtigsten Programme wie Libreoffice (Office Suite), Firefox, Virenscanner usw. installiert, <a href=" ../content/lernsoftware">mehr hier</a>. </li>
+<li>Für Windows sind MS-Office-Produkte kostenpflichtig oder werden illegal von den Schulen als Raubkopien eingesetzt. Daher nutzt Labdoo legal lizenzfreie Office-Suiten wie Libre-Office, die eine umfangreiche Textverarbeitung, Tabellenkalkulation, Präsentationslösung, Datenbank usw. mitbringen.</li>
+<li>Es gibt für Linux ein Windows 10-Look and Feel (Oberfläche), das auf Labdoo-Rechnern vorinstalliert ist. So kann man auch das Verhalten und die Oberfläche von Windows kennenlernen, hat aber die Vorteile von Linux (Geschwindigkeit, Stabilität, Kostenvorteil u.a.)</li>
+<li>Linux / Lubuntu verfügt über ein ausgefeiltes Rechtesystem, das nach Benutzern gestaffelte Rechte und Freigaben erlaubt, z.B. für Lehrer, Schüler und Gäste. So können die Lehrer bestimmen, welche Programme und Lerninhalte installiert werden. Und schüler können nicht versehentlich das System löschen.</li>
+<li>Linux / Lubuntu kann mehrere Sprachen parallel benutzen. Dies ermöglicht es Schulen in mehrsprachigen Ländern beliebig zwsichen den Benutzerführungen in verschiedenen Sprachen umzuschalten.</li>
+<li>Linux / Lubuntu gibt es auch in regionalen Sprachen kleinerer Länder oder Ethnien. Dies steigert den Stolz auf die eigene, regionale Sprache und zeigt, dass in der Moderne auch kleine Sprachen ihre Berechtigung haben.</li>
+</ul>
+
+Die meisten der o.a. Möglichkeiten bietet Windows nicht oder nur zu hohen Kosten an. Den Schulen steht es natürlich frei, die Rechner auf andere Betriebssysteme umzustellen. Dies wäre aber sehr schade, weil den Kindern damit etliche Lernmöglichkeiten genommen würden.
+
+Es gibt Videotutorials in Deutsch und Englisch mit einer Einführung in die Oberfläche, Lernprogramme und Lerninhalte. Offline liegen Manuals und Anleitungen in vielen Sprachen den Rechnern bei.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>33</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>817</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1576</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

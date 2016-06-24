@@ -44,7 +44,7 @@ In the next two sections, the above two features are described in more detail.</
 </bid>
 <plid>
 <type>book_array</type>
-<value>823</value>
+<value>835</value>
 </plid>
 <mlid>
 <type>book_array</type>
@@ -52,6 +52,6 @@ In the next two sections, the above two features are described in more detail.</
 </mlid>
 <weight>
 <type>book_array</type>
-<value>-3</value>
+<value>-14</value>
 </weight>
 </book>

@@ -29,7 +29,7 @@ Hierzu sind die folgenden Schritte nötig:
 <li><code>sudo pcmanfm</code>   (Enter) → Zum Ordner /mnt navigieren → dort einen Ordner mit dem Namen der Festplatte z.B. /disc2 anlegen.</li>
 <li>UUID feststellen (ID der Festplatte) → <code>sudo blkid</code>  (Enter) → in der Liste das Laufwerk suchen und UUID merken</li>
 <li>Alternativ auch über Devicemanager oder Laufwerksverwaltung möglich.</li>
-<li>UUID in Datei fstab eintragen → <code>gksudo gedit /etc/fstab</code> (Enter) →</li>
+<li>UUID in Datei fstab eintragen → <code>gksudo nano /etc/fstab</code> (Enter) →</li>
 <li>Unten die vorhandenen Zeilen einfügen, z.B.: <strong>UUID=.......(hier die UUID einsetzen) /mnt/.....(ihren Namen Platte2, disc2 o.ä.) auto defaults 0 0</strong> Zwischen den o.a. Angaben Leerzeichen lassen, speichern.</li>
 </ul>
 

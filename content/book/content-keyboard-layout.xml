@@ -5,7 +5,7 @@
 </nid>
 <title>
 <type>node_title</type>
-<value>Keyboard layout</value>
+<value>Keyboard Layout</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -138,6 +138,6 @@ You can also enclose a print-out of specific keyboard layouts with the laptop. H
 </mlid>
 <weight>
 <type>book_array</type>
-<value>0</value>
+<value>-9</value>
 </weight>
 </book>

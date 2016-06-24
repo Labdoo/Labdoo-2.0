@@ -5,7 +5,7 @@
 </nid>
 <title>
 <type>node_title</type>
-<value>Offline WIKIs and OER (Open Educational Resources)</value>
+<value>Offline Wikis and OER (Open Educational Resources)</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -152,6 +152,6 @@ To get an unlimited VIP access please send an English e-mail to Nic nic@free-ebo
 </mlid>
 <weight>
 <type>book_array</type>
-<value>-14</value>
+<value>-13</value>
 </weight>
 </book>

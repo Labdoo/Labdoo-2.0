@@ -21,7 +21,43 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>TODO</value>
+<value>The purpose of the Labdooers Dashboard is to help hub managers find volunteers information in certain region. Hub mangers who have the access right will find the "Labdooer" menu under the "Explore" pull-down menu. By clicking the "Labdooers", it will bring you to the Labdooers dashboard.
+<br/>
+<hr/>
+<em>Figure. Example of Labdooers Dashboard </em> 
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/labdooers-dashboards3.png"/>
+<hr/>
+
+<br/>
+
+
+There are two different ways to search Labdooers' information.
+
+
+<ul> <li><strong> Method 1 - Using text search </strong>
+You can find a list of Labdooers and their information by entering "City", "Country" or "username".  You can fill in more than one field to narrow your search.  
+
+After clicking on "Apply", a list of Labdooers who qualify the search condition will be list down below.
+<br/>
+<hr/>
+<em>Figure. Example of text search </em> 
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/labdooers-dashboards1.png"/>
+<hr/>
+</li> 
+<br/>
+
+ <li><strong> Method 2 - Using map location search</strong>
+You can also click on the small map provided on top of the page. A red indicator will appear on the map.  The "Latitude" and "Longitude"  will also get filled once the indicator is placed.  You can move the indicator and the "Latitude/Longitude" will be updated accordingly.
+
+After the indicator is placed on its desired location, you also need to fill the "Distance" field and give a search range. Once the location and Distance being filled, a list of Labdooers who qualify the search condition will be list down below.
+<br/>
+<hr/>
+<em>Figure. Example of  searching via map.</em> 
+<img src="/sites/default/files/content/wikibook-the-labdoo-social-network-how-it-works/labdooers-dashboards2.png"/>
+<hr/>
+</li> 
+</ul>
+<br/></value>
 </body>
 <body>
 <type>format</type>

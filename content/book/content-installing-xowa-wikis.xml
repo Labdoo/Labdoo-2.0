@@ -21,12 +21,12 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>The Tool Xowa allows access to more than 800 offline wikis so that children can read knowledge content even when they don't have access to the Internet. Remember that Xowa comes already pre-installed if you use the advanced sanitation guide. Otherwise, if you used the simple sanitation guide, you can manually install Xowa using the scripts as explained <a href='../content/installing-education-packages-using-scripts'>in this page</a>. 
+<value>The Tool Xowa allows access to more than 800 offline wikis so that children can read knowledge content even when they don't have access to the Internet. Remember that Xowa comes already pre-installed if you use the advanced sanitation guide. Otherwise, if you used the simple sanitation guide, you can manually install Xowa using the scripts as explained <a href="../content/installing-education-packages-using-scripts">in this page</a>. 
 
 There are 2 kinds of Xowa wikis:
 <ul>
 <li><strong>Version 1:</strong> only text, no pictures and no graphics (use this one if you have a small hard drive)</li>
-<li><strong>Version 2:</strong> includes version 1 and, in addition, it includes linked pictures and graphics (recommended, as it is more user-friendly and informative, although it needs more disc space)</li>
+<li><strong>Version 2:</strong> includes version 1 plus linked pictures and graphics (recommended, as it is more user-friendly and informative, although it needs more disk space)</li>
 </ul>
 
 After you have installed Xowa, you can start it by double clicking on the Xowa starter icon that you will find in the laptop desktop. 
@@ -37,17 +37,18 @@ There are 2 ways to install a specific wiki part of the Xowa suite. Scroll down 
 <strong>Import Online (supports version 1):</strong> Click in the column 'set up' on the Download link to start the download, which might last for some hours.
 </li>
 <li>
-<strong>Import Offline (supports versions 1 and 2):</strong> This is the recommended method. We recommend to download by script -> select the needed wiki and language -> Category system: version 2 -> Import: click on Generate script -> repeat until your scripts contains all the needed wikis and then click on "Run script".
+<strong>Import Offline (supports versions 1 and 2):</strong> This is the recommended method. We recommend to download by script -&gt; select the needed wiki and language -&gt; Category system: version 2 -&gt; Import: click on Generate script -&gt; repeat until your scripts contains all the needed wikis and then click on "Run script".
 
-<strong>A word of caution.</strong> Not every wiki is available in all languages, e.g. often wikivoyage is missing. When running an Offline Import you are able to select a non existing wiki and generate a script entry, but the script will crash when executing. So please check if a certain wiki exists first. Here is a trick on how to easily check easily: open 2 tabs on your browser (file -> New tab); use one tab to watch the online Import table, and the other tab to watch the offline import page; in the online page you are able to search for the needed language and wiki and quickly see if a certain wiki exists. 
+<strong>A word of caution.</strong> Not every wiki is available in all languages, e.g. often wikivoyage is missing. When running an Offline Import you are able to select a non existing wiki and generate a script entry, but the script will crash when executing. So please check if a certain wiki exists first. Here is a trick on how to easily check: open 2 tabs on your browser (file -&gt; New tab); use one tab to watch the online Import table, and the other tab to watch the offline import page; in the online page you are able to search for the needed language and wiki and quickly see if a certain wiki exists. 
 </li>
 </ul>
 
 <strong>Matching Wiki Versions</strong>
+
 The Xowa wikis can only be run with the same Xowa release that was used to download them. Labdoo updates Xowa every 6 months (in the beginning and in the middle of a year) to minimize the work for downloading wikis. So if you download new wikis at home and want to take a USB stick to an Edoovillage, ensure you do that with the same Xowa version that was installed in the laptops deployed at that Edoovillage.
 
 <strong>Enabling Arbitrary Access to the Xowa Folder</strong>
-Initially, only the default user 'labdoo' can access the manually installed Xowa wikis. To enable access for any other users, you can use a a script that you will also find in the desktop. This script is called set-rights-folder-files-Public-correct.sh. Please run this script every time educational content is installed in the folder /Public. The script starts without further input, runs for about 1 - 5 minutes, depending on the computer, and closes automatically.</value>
+Initially, only the default user 'labdoo' can access the manually installed Xowa wikis. To enable access for any other users, you can use a a script that you will also find in the desktop. This script is called set-rights-folder-files-Public-correct.sh (see <a href="../content/installing-education-packages-using-scripts">this page</a>). Please run this script every time educational content is installed in the folder /Public. The script starts without further input, runs for about 1 - 5 minutes, depending on the computer, and closes automatically.</value>
 </body>
 <body>
 <type>format</type>

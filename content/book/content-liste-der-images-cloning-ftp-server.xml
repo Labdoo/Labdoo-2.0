@@ -21,31 +21,35 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Aktuell gibt es die folgenden Labdoo Images auf Basis von Lubuntu 14.04 LTS auf dem FTP-Server http://ftp.labdoo.org/download/images/:
+<value>Labdoo Images auf Basis von Lubuntu LTS (Long Term Support) können vom FTP-Server http://ftp.labdoo.org/download/images/ herunter geladen werden (<strong>Download per Doppelklick auf den Link des gewünschten Image oder rechte Maustaste und "Speichern unter".</strong>):
 
-<strong>Standard-Images</strong>
+<strong>Übersicht der Images</strong>
+
+Im o.a. Ordner liegen der Images for Cloning. Der Name gibt Auskunft über den Inhalt das Image:
+
 <ul>
-<li><a href="http://ftp.labdoo.org/download/images/PAE32_14_04_LTS.tar.gz">PAE32_14_04_LTS (lubuntu 14.04 LTS für <strong>nonPAE und PAE 32 Bit CPU</strong>)</a></li>
-<li><a href="http://ftp.labdoo.org/download/images/PAE64_14_04_LTS.tar.gz">PAE64_14_04_LTS (lubuntu 14.04 LTS für <strong>64 Bit CPU</strong>)</a></li>
-</ul>
+<li><strong>PAE32</strong> = für 32 Bit-CPUs (im Zweifel PAE32 nehmen); <strong>PAE64</strong> = für 64 Bit CPUs</li>
 
-<strong>Spezielle Images</strong>
-<ul>
-<li><a href="http://ftp.labdoo.org/download/images/PAE32_without_wikidoo.tar.gz">PAE32_without_wikidoo</a> (Image ohne Wikipedia for schools; für Festplatten ab 20 GB)</li>
-<li><a href="http://ftp.labdoo.org/download/images/PAE64_RACHEL.tar.gz">PAE64_RACHEL</a> (Image mit vorinstalliertem <a href="https://www.labdoo.org/de/content/rachel-installieren">RACHEL</a>; für Festplatten ab 80 GB)</li>
-<li><a href="http://ftp.labdoo.org/download/images/PAE64_Refugees_DE.tar.gz">PAE64_Refugees_DE</a> (Image für Flüchtlingsprojekte im deutschsprachigen Raum; für Festplatten ab 60 GB, <a href="https://www.labdoo.org/de/content/deutschkurse-f%C3%BCr-migranten">Details dazu hier</a>)</li>
-</ul>
-Doppelklick auf den Link des gewünschten Image oder rechte Maustaste und "Speichern unter".
+<li><strong>14_04_LTS / 16_04_LTS</strong> = auf Basis von 14.04 LTS bzw. 16.04 LTS</li>
 
-Speziell für Flüchtlingsprojekte in Deutschland stellen wir ein Image bereit, dass Wörterbücher, eBooks u.a. Informationen in den häufigsten Sprachen der Flüchtlinge enthält, <a href="/de/content/deutschkurse-für-migranten">mehr dazu hier</a>.
+<li><strong>without_wikidoo</strong> = Image ohne Wikis; für Festplatten bis 20 GB</li>
+
+<li><strong>ohne weitere Hinweise</strong> = Standard-Image mit wikipedia for schools, für Festplatten &gt; 20 GB, aber &lt; 80GB</li>
+
+<li><strong>RACHEL</strong> = Image mit vorinstalliertem <a href="https://www.labdoo.org/de/content/rachel-installieren">RACHEL</a>; für Festplatten ab 80 GB</li>
+
+<li><strong>Refugees_DE</strong> = Spezielles Images für Flüchtlingsprojekte in Deutschland, mit Wörterbüchern, eBooks u.a. Informationen in den häufigsten Sprachen der Flüchtlinge, <a href="/de/content/deutschkurse-für-migranten">mehr dazu hier</a>.
+</li>
+
+</ul>
 
 <strong>Externe Platte oder USB-Stick:</strong> Bitte stellt sicher, dass die Platte für den Download Dateinen größer 4 GB handhaben kann, z.B. <strong>NTFS</strong>. <strong>FAT32</strong> kann nur eine Dateigröße bis max. 4 GB verarbeiten und bricht dann ab. Andere Formate wie iOS, Linux gehen natürlich auch, laufen aber nicht an allen Rechnern. Daher empfehlen wir NTFS als Basis.
 
 <strong>Downloadzeit: </strong>Ein Image ist ca. 11 GB groß. Bei z.B. einer Downloadrate von z.B. DSL 3000 dauert es also ca. 10 Stunden, bei DSL 6000 ca. 5 Stunden. Aber die effektive Downloadzeit hängt von vielen Faktoren ab: eurem Provider, eurem Anschluss, wieviele gleichzeitig downloaden, Engpässe auf dem Weg vom Server (Barcelona) zu euch usw.
 
 <strong>Bitte Stromsparschaltungen bzw. Schlafmodus während des Downloads abschalten, weil sonst der Download unterbrochen werden könnte.</strong>
-14.04 verweist auf das Release-Datum der Lubuntu-Version, d.h. 14.04 = April 2014. 
-LTS (Long Term Support) werden ab Erscheinen drei (3) Jahre mit Updates versorgt. Die nächste LTS-Version wird im April 2016 (16.04 LTS) erscheinen.</value>
+16.04 verweist auf das Release-Datum der Lubuntu-Version, d.h. 16.04 = April 2016. 
+LTS (Long Term Support) werden ab Erscheinen drei (3) Jahre mit Updates versorgt. Die nächste LTS-Version wird im April 2018 (18.04 LTS) erscheinen.</value>
 </body>
 <body>
 <type>format</type>

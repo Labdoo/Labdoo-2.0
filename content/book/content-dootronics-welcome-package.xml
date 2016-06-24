@@ -1,0 +1,62 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>27040</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Dootronics Welcome Package </value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>27040</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>When bringing laptops and tablets to a school, make sure you also deliver one printed copy of the "Dootronics Welcome Package".
+
+The three following links will allow you to download each of the documents that are part of the welcome package. Please print each of these three documents, put them inside an envelope and deliver them at your destination school together with the laptops/tablets.
+
+<ol>
+<li>
+Please print the <a href="/sites/default/files/content/labdoo-toolkit/labdoo-letter-recipient-welcome.pdf">Labdoo Welcome Letter</a>.
+</li>
+<li>
+Please print the <a href="/sites/default/files/content/labdoo-toolkit/labdoo-letter-recipient-quick-guide.pdf">Labdoo Quick Start Guide</a>.
+</li>
+<li>
+Please go to the <a href="../content/labdoo-global-support-sheet">LGS Welcome Sheet</a>, click on "Printer-friendly version" at the bottom of that page, and print the sheet to ensure the recipient is aware about the Labdoo Global Support Program.
+</li>
+</ol>
+<img src="/sites/default/files/content/labdoo-toolkit/labdoo-letter-recipient-welcome.png" width="700"/>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>41</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>825</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1495</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-3</value>
+</weight>
+</book>

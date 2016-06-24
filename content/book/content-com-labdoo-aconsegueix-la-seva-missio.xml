@@ -1,0 +1,66 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>28174</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Com Labdoo Aconsegueix la Seva Missió?</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>Catalan</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>0</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>76</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>El mecanisme de Labdoo per dur a terme la seva missió és a través de la creació d'una <em> xarxa social humanitària </em>. Aquesta xarxa social ofereix les següents funcions:
+<ul>
+<li>
+Proporciona una forma eficient d'organitzar la informació: identificació de les fonts de demanda, l'oferta, ordinadors portàtils, dootrips, QA recursos, etc.
+</li>
+<li>
+Proporciona una manera de trencar una missió molt llarga (sol.lucionar el tema de la fractura digital) en un gran nombre de tasques molt petites (etiquetatge, sanejament, emmagatzematge, dootrip, etc.). Cadascuna d'aquestes tasques es fa tan petita que el seu cost és insignificant.
+</li>
+<li>
+Proporciona una manera perquè tothom sigui part de la solució (construcció de la comunitat). Cada persona pot tenir el seu /la seva propi/a mini-missió.
+</li>
+<li>
+Atès que tota la informació i activitats es troben obertament disponibles a través de la xarxa social humanitària, que aporta transparència.
+</li>
+<li>
+Com un projecte humanitari pla, ajuda a trencar barreres i estereotips entre els beneficiaris i els benefactors. Per exemple, a la xarxa Labdoo, l'ajuda pot provenir dels països en desenvolupament i ser rebuda pel món desenvolupat.
+</li>
+<li>
+És divertit.
+</li>
+</ul></value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>28173</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1551</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1552</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-15</value>
+</weight>
+</book>

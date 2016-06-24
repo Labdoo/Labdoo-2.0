@@ -23,7 +23,7 @@
 <type>value</type>
 <value><strong>Introduction</strong>
 
-This wiki will lead you through the process of sanitizing Labdoo laptops using ready-to-use images over the network. This process is powerful because it allows you to sanitize laptops using a fast and efficient cloning process and hence it is ideal if you are dealing with a large number of laptops. However, this process is a bit more complex too, and hence we consider it an advanced method. If you are new to Labdoo and inexperienced with computers, we recommend you to use the <a href='content/sanitation-guide-simple-method'>Simple Sanitation Method</a>, but if you are up for learning a cool way to install powerful software in a computer, this is your guide.
+This wiki will lead you through the process of sanitizing Labdoo laptops using ready-to-use images over the network. This process is powerful because it allows you to sanitize laptops using a fast and efficient cloning process and hence it is ideal if you are dealing with a large number of laptops. However, this process is a bit more complex too, and hence we consider it an advanced method. If you are new to Labdoo and inexperienced with computers, we recommend you to use the <a href="../content/sanitation-guide-simple-method">Simple Sanitation Method</a>, but if you are up for learning a cool way to install powerful software in a computer, this is your guide.
 
 Images are a complete software copy of an installed Labdoo computer, containing everything from the operating system, software, educational content and all the optimized settings. Except for adapting the final configuration to the country of the destination edoovillage (language and keyboard) and setting the hostname, the cloning process takes care of everything for you in one shot.
 
@@ -212,7 +212,7 @@ vi cd/isolinux/gtk.cfg
 -         append vga=788 initrd=/install.386/gtk/initrd.gz --- quiet
 +        append vga=788 initrd=/install.386/gtk/initrd.gz url=http://id-install-prd.ethz.ch/labdoo/installbox/jessie/preseed.cfg locale=en_US.UTF-8 ipv6.disable=1 debconf_debug=5 netcfg/get_domain=domain.example netcfg/dhcp_timeout=60 netcfg/get_hostname=installbox --- quiet
 quit vi with ESC :wq!
-cd cd; md5sum `find ! -name "md5sum.txt" ! -path "./isolinux/*" -follow -type f` > md5sum.txt; cd ..
+cd cd; md5sum `find ! -name "md5sum.txt" ! -path "./isolinux/*" -follow -type f` &gt; md5sum.txt; cd ..
 genisoimage -o debian-jessie-installbox.iso -r -J -no-emul-boot -boot-load-size 4 -boot-info-table -b isolinux/isolinux.bin -c isolinux/boot.cat ./cd 
 isohybrid debian-jessie-installbox.iso
 

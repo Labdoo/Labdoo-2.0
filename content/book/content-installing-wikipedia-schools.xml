@@ -1,0 +1,58 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>26956</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Installing Wikipedia for Schools</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>26956</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><strong>Introduction</strong>
+
+Wikipedia for Schools is a free subset of educational wikipedia content for children and schools. It follows the British curriculum for schools and is available in the languages of English (Release 2008 and 2013), Spanish, French and Portuguese. The English wikipedia for schools is part of the English RACHEL collection too.
+
+Wikipedia for schools occupies about 6.5GB of disk space, except for the English Release 2008 which occupies about 2.5GB.
+
+To install Wikipedia for schools, first download the package into your local disk. You can download the file in the required language  from the Labdoo FTP server at http://ftp.labdoo.org/download/wiki-archive/wikipedia_for_schools/.
+
+<strong>Installing Wikipedia for schools on a Labdoo laptop</strong>
+
+Once you have downloaded the file, unzip it in the folder /home/labdoo/Public/wikis (the downloading and unzipping operations could take some time depending on the speed of your network and computer). Once unzipped, double click on the file file /home/labdoo/Public/wikis/wikipedia-for-schools-xx/index.html (where xx is the country / language code ) to open a web browser that will take you to the initial page of wikipedia for schools.
+
+To make access easier, we recommend to make the default web browser page point to the Wikipedia for Schools initial page. For that, open the web browser (this instructions are for Firefox but similar steps apply to other browsers) and go to File =&gt; Open File [ navigate to /home/labdoo/Public/wikipedia-for-schools-xx/index.html ] =&gt; Open. Then go to Edit =&gt; Preferences [ opens a window for the settings, click on "Use current Pages" and close the tab "Preferences" ] . Please repeat any of the configuration steps for both the 'labdoo' and the 'student' user accounts that come with the Labdoo computer.</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>35</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>1280</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1486</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>
