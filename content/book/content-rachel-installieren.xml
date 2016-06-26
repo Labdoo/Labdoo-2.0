@@ -25,7 +25,13 @@
 
 Als erstes müssen die Inhalte von RACHEL von euch lokal herunter geladen werden. Da dies 22,5 GB an Daten je Sprache mit sich bringt braucht ihr viel Geduld... Ihr könnt es wahlweise vom RACHEL-Server http://rachelfriends.org/ oder von unserem Labdoo FTP-Server http://ftp.labdoo.org/download/RACHEL/ herunterladen. Es gibt auf dem RACHEL-Server auch Versionen für den Pi-MInicomputer und auch spezielle Tools für Netzwerke oder Windows. Da diese Plattformen im Labdoo-Projekt (noch) keine große Rolle spielen konzentriert sich diese Anleitung auf den reinen Content und dessen Gebrauch in einem Web-Browser.
 
-<strong> RACHEL u.a. Lerninhalten in Englisch (EN), Französisch (FR), Spanisch (ES), Hindi (HI), Deutsch (DE), Portugiesisch (PT):</strong> Zum Download-Ordner auf dem Labdoo-FTP-Server: http://ftp.labdoo.org/download/wiki-archive/RACHEL
+<strong> RACHEL in Englisch (aktuelle Version 3.1.5, ca. 20 GB)</strong>
+Download vom RACHEL-Server: http://rachelfriends.org/rachelusb_32EN/rachelusb_32EN_3.1.5.zip
+Download vom Labdoo-FTP-Server: http://ftp.labdoo.org/download/RACHEL/RACHEL_EN.tar.gz
+
+<strong>RACHEL in Spanisch (aktuelle Version 1.0.0, ca. 25 GB)</strong>
+Download vom RACHEL-Server: http://rachelfriends.org/rachelusb_32ES/rachelusb_32ES_1.0.0.zip
+Download vom Labdoo-FTP-Server: http://ftp.labdoo.org/download/RACHEL/RACHEL_ES.tar.gz
 
 Dann die heruntergeladene Datei im Ordner <code>/home/labdoo/Public/RACHEL</code> entpacken (dauert sehr lange..., die Fehlermeldung am Schluss kann ignoriert werden). Ihr braucht den darin enthaltenen Ordner <code>/bin</code>, und darin die Datei  <code>/home/labdoo/Public/RACHEL/bin/www/starthere.html</code> (durch Doppelklick) im Browser öffnen - und ihr seht die Startseite von RACHEL. Direkt der erste Block "wikipedia for schools" (Labdoo nennt es wikidoo) ist auf vielen Labdoo Rechnern schon vorinstalliert. Daher könnt ihr den kompletten Ordner <code>/home/labdoo/Public/wikidoo</code> löschen. Dies spart ca. 6,5 GB Daten, wäre sonst doppelt auf dem Rechner.
 

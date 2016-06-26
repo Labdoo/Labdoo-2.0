@@ -5,7 +5,7 @@
 </nid>
 <title>
 <type>node_title</type>
-<value>Labdoo Logos</value>
+<value>Labdoo logos</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -79,19 +79,10 @@ Note: all the Labdoo content (inluding the following logos) can be freely downlo
 <hr/>
 
 <hr/>
-<em>Labdoo logo: social heart</em>
-<img src="/sites/default/files/content/labdoo-toolkit/labdoo-social-heart.png" width="500"/>
-<hr/>
-
-<hr/>
-<em>Labdoo travel logo:</em>
+<em>Labdoo Travel logo:</em>
 <img src="/sites/default/files/content/labdoo-toolkit/labdoo-travel-logo.png" width="500"/>
 <hr/>
 
-<hr/>
-<em>Labdoo activity world map:</em>
-<img src="/sites/default/files/content/labdoo-toolkit/labdoo-worldmap.png" width="700"/>
-<hr/>
 <hr/>
 <em>Labdoo map markers. You can use this if you compose your own maps.</em>
 <img src="/sites/default/files/content/labdoo-toolkit/labdoo-marker-orange.png" width="70"/>

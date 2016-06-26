@@ -5,7 +5,7 @@
 </nid>
 <title>
 <type>node_title</type>
-<value>Start a Laptop Request</value>
+<value>Start a laptop request</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -21,17 +21,36 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Thank you very much for your interest in Labdoo and in starting a laptop request for an edoovillage. The request can be presented by a single person, an association, or the school/project itself, as long as it helps children and young adults gain education.
+<value>Thank you very much for your interest in Labdoo.org and in starting a laptop request for an „edoovillage“ (so we call schools, orphan houses, youth projects, educational projects etc.). The request can be presented by a single person, an association or the school or project itself, as long as it help children and young adults to gain education.
 
-The Labdoo guidelines do not allow to contribute computers to a specific person, only to organized public/private projects or schools, and the contributions have to stay within the edoovillage. All dootronics (laptops, tablets, etc.) are tagged via their online registration and have a unique Labdoo ID number. 
+The Labdoo guidelines do not allow to give computer donation to a specific person, only to public or private projects or schools. The donation have to stay with the edoovillage. The donations are tagged (online registration) and have a unique Labdoo ID number. To proceed the donation is not allowed.
 
-To be able to accept a request, it's important to verify that the project is feasible and that there will be enough resources to successfully accomplish it. For instance, requesters and supporters should demonstrate to have travelers willing to carry the laptops to the destination (we call these dootrips) or otherwise demonstrate that there is a fair chance to find such traveling resources. All edoovilages are listed in <a href="../content/edoovillages-dashboard">this dashboard</a>. 
+Important to decide, whether a request is accepted, is the logistics, e.g. if the requester can proof to have supporters or helper to take donated laptops to the country abroad ("dootripper"). Or if there is a fair chance to find those dootripper via internet.
 
-Please fill in <a href="../content/edoovillage-request-form">the edoovillage request form that you will find in the Labdoo toolkit</a> and send it over email to the Labdoo hub that will be taking care of your project. If you do not know your assigned hub yet, then you can use the <a href="../contact/">Labdoo contact</a> form to reach out to Labdoo. Send the request form together with pictures taken from the area, town, school and the children to one of our hubs. 
+All edoovilages are listed here https://www.labdoo.org/content/edoovillages-dashboard. You are able to filter for countries or status or other criteria.
 
-Please reach out to us at least +/- 3-4 weeks before the departure of a traveler (dootripper), so we have time to prepare the laptops (dootronics). 
+Please fill in the request sheet as far as possible. What you do not know you can add later. Please return the request sheet together with pictures taken from the area, town, school and the children to one of our hubs. After an internal process of checking and if we accept your request we will add it to our homepage.
 
-Labdoo.org is only able to provide educational laptops because we receive them from donors around the world. It is difficult to tell in advance when the request will be fulfilled, but everybody can help shorten the delivery time by telling the Labdoo story to friends, family, coworkers and your local community in general, or by talking to your local press and starting a call for laptop donations. There are many <a href="../content/things-you-can-do-spread-education">ways you can do to help spread education around the world</a>. </value>
+<a href="http://ftp.labdoo.org/download/documents/english/labdoo-toolkit-english/labdoo-laptop-request-form-english.txt">- English request sheet</a>
+<a href="http://ftp.labdoo.org/download/documents/french/labdoo-toolkit-french/labdoo-laptop-request-form-french.txt">- French request sheet</a>
+<a href="http://ftp.labdoo.org/download/documents/spanish/labdoo-toolkit-spanish/labdoo-laptop-request-form-espa%c3%b1ol.txt">- Spanish request sheet</a>
+<a href="http://ftp.labdoo.org/download/documents/german/labdoo-toolkit-german/labdoo-laptop-request-form-german.txt">- German request sheet</a>
+<a href="http://ftp.labdoo.org/download/documents/romanian/labdoo-toolkit-romanian/labdoo-laptop-request-form-romanian.txt">- Romanian request sheet</a>
+<a href="http://ftp.labdoo.org/download/documents/chinese/labdoo-toolkit-chinese/labdoo-laptop-request-form-chinese.doc">- Chinese request sheet</a>
+
+In our FAQ Forum you will find more information http://www.labdoo.org/de/content/faq-forum.
+
+Please contact us +/- 3-4 weeks before your departure, so we have time to prepare laptop(s) to be taken with you. On request we return defect laptops from abroad for a safe recyclng and give spare laptops for free to the edoovillage.
+
+A project presentation in English is here http://ftp.labdoo.org/download/documents/english/labdoo-project-english.pdf.
+
+More English documents can be downloaded from here http://ftp.labdoo.org/download/documents/english/. 
+
+Labdoo.org is only able to proceed IT donations, which we received in advance. Therefore it is difficult to tell in advance, when the requested donation will be available. 
+
+But everybody can contribute by telling your friends, family etc. about Labdoo.org and ask for laptop donations and others. Or talk to the local press and start a call for laptop donation. Or become a Labdoo helper or hub. Logos, graphics etc. are linked here https://www.labdoo.org/de/content/faq-forum#FAQ02.
+
+In case of questions please send a mail to contact@Labdoo.org, thank you.</value>
 </body>
 <body>
 <type>format</type>
@@ -51,6 +70,6 @@ Labdoo.org is only able to provide educational laptops because we receive them f
 </mlid>
 <weight>
 <type>book_array</type>
-<value>-5</value>
+<value>0</value>
 </weight>
 </book>

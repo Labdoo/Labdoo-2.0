@@ -46,60 +46,60 @@
 <hr/>
 
 <ol>
+
 <li><strong>Change the host name.</strong>
-The host name of the computer needs to be set to the Labdoo identifier. First, you will need to tag the laptop following the steps described <a href="../content/about-dootronics">under this page</a>. Once you have tagged the computer, modify the file hosts as follows:
+The host name of the computer needs to be set to the Labdoo identifier. First, you will need to tag the laptop following the steps described under this page: https://www.labdoo.org/content/about-dootronics
 
-<ul>
-<li>
-Open a terminal (press CTL + Alt + T) and  type <code>sudo nano /etc/hosts</code> (Enter) 
-</li>
-<li>
-Add the line "127.0.0.1 labdoo-123456789" to this file, substituting 123456789 with the 9 digit Labdoo ID of the laptop obtained when you tagged it.
-</li>
-<li>
-Save the file by pressing CTL + o (the letter o, not the number 0)
-</li>
-<li>
-Leave the editor by pressing CTL + x
-</li>
-<li>
-Now open a terminal (press CTL + Alt + T) and  type <code>sudo nano /etc/hostname</code> (Enter)
-</li>
-<li>
-Change the host name to the value "labdoo-123456789", substituting 123456789 for the Labdoo ID of the laptop obtained when you tagged it. 
-</li>
-<li>
-Save the file by pressing CTL + o (the letter o, not the number 0)
-</li>
-<li>
-Leave the editor by pressing CTL + x
-</li>
-</ul>
+<br/>Once you have tagged the computer, modify the file hosts as follows:
+
+→ Open a terminal (press CTL + Alt + T) and  type <code>sudo nano /etc/hosts</code> (Enter) 
+→ move cursor to the end of line 2 and change the host name to the value "labdoo-XXXXXXXXX", where XXXXXXXXX is the Labdoo ID of the laptop obtained when you tagged it.
+→ save the file by pressing CTL + o (the letter o, not the number 0)
+→ leave the editor by pressing CTL + x
+
+Next, modify the file hostname: 
+
+→ Open a terminal (press CTL + Alt + T) and  type <code>sudo nano /etc/hostname</code> (Enter)
+→ change the host name to the value "labdoo-XXXXXXXXX", where XXXXXXXXX is the Labdoo ID of the laptop obtained when you tagged it. 
+→ save the file by pressing CTL + o (the letter o, not the number 0)
+→ leave the editor by pressing CTL + x
 
 </li>
+
 <li>
-<strong>Check the graphic resolution.</strong> se
+<strong>Check the graphic resolution.</strong>
 Go to Preferences → Monitor Settings → select the resolution you need or stay with the resolution already set → Apply.
 </li>
+
 <li>
 <strong>Check the keyboard and language settings.</strong>
-Right mouse click on the country language icon that you will in the launch bar → select "Keyboard Layout Handler" Settings → uncheck "Keep system layout" → click '+Add' to add up to 4 keyboard layouts or '-Remove' to remove them → Close.
+Right mouse click on the country language icon that you will in the launch bar → then select "Keyboard Layout Handler" Settings → uncheck "Keep system layout" → click '+Add' to add up to 4 keyboard layouts or '-Remove' to remove them → Close.
 </li>
+
 <li>
 <strong>Install additional languages.</strong>
-Go to the menu and select: Preferences → Language Support → Install / remove Languages → add a hook at the language(s) you want to add (remove a language by removing the hook) → Apply Changes. The computer must be connected to the Internet so that i can download and install the language(s).
+Preferences → Language Support → Install / remove Languages → add a hook at the language(s) you want to add (remove a language by removing the hook) → Apply Changes → computer must be connected to the Internet so that i can download and install the language(s).
 
-To change to another user language move the needed language by mouse (keep left button pressed) to the top of the language list and drop it → Apply System Wide → all users will use this language. For more details refer also to the (L)Ubuntu manuals under the laptop folder /home/labdoo/Public/manuals-ubuntu.
+To change to another user language move the needed language by mouse (keep left button pressed) to the to of the language list and drop it → Apply System Wide → all users will use this language. For more details refer also to (L)Ubuntu manuals under the laptop folder /home/labdoo/Public/manuals-ubuntu.
 
-<strong>HINT.</strong> If you send the computer to a country using a "non-latin" alphabet you should stay with the English language. This way the user may more easily learn about the keyboard switch. You also need to understand the foreign language and know the keyboard layout to use the computer. E.g. typing the password "labdoo" using the Chinese or Arabian keyboard layouts will result into something different and will not be accepted as password.
+Hint. If you send the computer to a country using a "non-latin" alphabet you should stay with the English language. This way the user may more easily learn about the keyboard switch. You also need to understand the foreign language and know the keyboard layout to use the computer. E.g. typing the password "labdoo" using the Chinese or Arabian keyboard layouts will result into something different and will not be accepted as password.
 
 Regional Formats. Click on the tab "regional formats", click on the triangle → select needed setting (will change format of time / date and currency) → Apply System Wide.
 
 </li>
+
 <li>
 <strong>Check for specific driver requirements.</strong>
 
-Preferences → Software &amp; Updates → Additional Drivers → wait a while → If "no additional drivers available" shows up, no further steps have to be taken. If a list of drivers are shown, select and install the needed driver(s) and apply Changes.
+Preferences → Software &amp; Updates → Additional Drivers → wait a while 
+
+→ If "no additional drivers available" shows up, no further steps have to be taken.
+→ If a list of drivers are shown, select and install the needed driver(s) and apply Changes.
+</li>
+
+<li>
+<strong>Add Xowa Offline wikis.</strong>
+[optional] Please refer to the <a href="/content/installing-xowa-wikis">install Xowa wiki page.</a>
 </li>
 </ol></value>
 </body>

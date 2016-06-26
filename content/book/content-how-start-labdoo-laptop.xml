@@ -140,11 +140,6 @@ You have to get used to some settings of this "Windows" theme (remember, it is N
 
 You can open the folder <a href="file://localhost/home/labdoo/Public/">/home/labdoo/Public/</a>  for more manuals, video tutorials, offline wikis etc.  A tutorial video icon is placed on the desktop.  You can watch it by using Firefox or other media player (view -&gt; 1/2 size, zoom +/-).
 
-<strong>Install codecs for multimedia, film and DVD</strong>
-
-If you computer was installed on base of an image for cloning you will find on each desktop a script <code>installscript-codecs.sh</code>. Legal Notice Patent and copyright laws operate differently depending on which country you are in. Please obtain legal advice if you are unsure whether a particular patent or restriction applies to a media format you wish to use in your country. Without executing this script you will not be able to watch videos or DVDs.
-This script will install restricted codecs and restricted software for multimedia applications. Only proceed, if you are sure that you want to install these codecs and restricted software. <strong>Your computer must be connected to internet, while executing this script.</strong>
-
 Have fun learning and playing with your Labdoo laptop!
 
  The Labdoo team</value>
@@ -167,6 +162,6 @@ Have fun learning and playing with your Labdoo laptop!
 </mlid>
 <weight>
 <type>book_array</type>
-<value>-10</value>
+<value>0</value>
 </weight>
 </book>

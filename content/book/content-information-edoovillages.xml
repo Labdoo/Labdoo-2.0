@@ -21,15 +21,15 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Labdoo.org uses:
+<value>Labdoo.org uses 
 <ul>
-<li>Educational software suitable for students of all ages (from pre-school to high-school)</li>
-<li>Add-ons to provide barrier-free access for blind or handicapped users</li>
-<li>Offline wikis and manuals so that educational content can be accessed even without Internet connection</li>
-<li>Virus scanner ClamAV and other tools</li>
+<li>educational software suitable for students of all ages (from pre-school to high-school)</li>
+<li>add-ons to provide barrier-free access for blind or handicapped users</li>
+<li>offline wikis and manuals so that educational content can be accessed even without an internet connection</li>
+<li>virus scanner ClamAV and other tools</li>
 </ul>
 
-Labdoo laptops are not limited to the default programs and tools provided by the Lubuntu operating system. By installing the prepared <a href="https://www.labdoo.org/content/cloning-laptops-using-prepared-labdoo-images">Labdoo images for Cloning</a> or <a href="https://www.labdoo.org/de/content/installationsskripte-%C3%BCbersicht">Installation scripts</a> you can add more useful educational content.
+Labdoo laptops are not limited to the default programs and tools provided by the Lubuntu operating system. By installing the prepared <a href="https://www.labdoo.org/content/cloning-laptops-using-prepared-labdoo-images">Labdoo images for Cloning (Parted Magic / Clonezilla)</a> or <a href="https://www.labdoo.org/de/content/installationsskripte-%C3%BCbersicht">Installation scripts</a> you can add more useful educational content.
 
 Parts of this wiki are based on text and graphics taken from www.edubuntu.org and http://wiki.ubuntuusers.de/Edubuntu.</value>
 </body>

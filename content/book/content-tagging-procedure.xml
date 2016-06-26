@@ -30,7 +30,7 @@ The following steps describe the process of tagging a Labdoo laptop.
 Login to Labdoo.org by clicking on the "Login" link located on the top right corner of www.labdoo.org.
 </li>
 <li>
-On the top pull-down menu, select "Dootronics" -&gt; "Tag it!"
+On the top pull-down menu, select "Dootronics" -> "Tag it!"
 </li>
 <li>
 Fill in the information about your dootronic (Make sure you fill all the fields marked with a "*")
@@ -45,7 +45,7 @@ If the donor desires so, it's very important to add the donor's email address to
 Click "Save" once you are done. A unique Labdoo ID number will be assigned to the laptop.
 </li>
 <li>
-On the new page after clicking 'save', click on "Print tags" to print the "Labdoo ID" labels. (Alternatively, you can manually write the Labdoo ID number on the preprint blank label sheets <a href="/sites/default/files/content/labdoo-toolkit/labdoo-laptop_id_labels.pdf" target="_blank">that you will find in this link</a>.
+On the new page after clicking 'save', click on "Print tags" to print the "Labdoo ID" labels. (Alternatively, you can manually write the Labdoo ID number on the preprint blank label sheets <a href='/sites/default/files/content/labdoo-toolkit/labdoo-laptop_id_labels.pdf' target='_blank'>that you will find in this link</a>.
 </li>
 <li>
 Tape the labels to (1) the laptop, (2) its power adapter, and all (3) the parts which come with the laptop. Ensure the taping is resistant so that the label does not get detached from the laptop.
@@ -84,6 +84,6 @@ Below is an example of a laptop tagging page.
 </mlid>
 <weight>
 <type>book_array</type>
-<value>-14</value>
+<value>-13</value>
 </weight>
 </book>

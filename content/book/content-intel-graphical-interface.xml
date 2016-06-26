@@ -1,0 +1,61 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>146</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Intel Graphical Interface</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>146</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>If you have a computer with an Intel graphical interface, there is a cool free tool by Intel Graphics for Linux that you can install, check it out: https://01.org/linuxgraphics/ 
+
+To install it do as follows:
+
+<ul>
+<li>
+Open Firefox and go to https://01.org/linuxgraphics/downloads
+</li>
+<li>
+Depending on the Ubuntu release (version and 64 or 32 Bit) download the matching software and install it.
+</li>
+<li>
+Once installed, find the newly installed application and run it. It will guide you through the process of configuring your system for Intel Graphics. Once done, you will need to restart your computer to load the new configuration.
+</li>
+</ul>
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>35</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>857</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>930</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>-5</value>
+</weight>
+</book>

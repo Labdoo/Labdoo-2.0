@@ -1,0 +1,52 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>24344</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>測試硬體問題 </value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>ChineseTraditional</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>24344</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value>This Wiki Book is for simple troubleshooting, diagnose and repair on some common faulty issues on a laptop. 
+
+Please take time to memorize <a href="../content/basic-laptop-components"> the basic components of a laptop </a>and have the repair tools ready before jumping into fixing the laptop. 
+
+From the <a href="../content/start-troubleshooting" > Start Troubleshooting</a> page, we will ask you a question.  By answering "yes" or "no", it will bring you to the next trouble shooting step.
+
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>24344</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>0</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>1454</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

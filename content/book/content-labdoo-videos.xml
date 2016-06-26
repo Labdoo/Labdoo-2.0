@@ -24,15 +24,6 @@
 <value>The following videos can be used for your own Labdoo campaigns. Let's say you need to explain a potential laptop donor how Labdoo works? you can use the 'Circle of Life' video. Need to illustrate Labdoo's grassroots growth? you can use the 'Growth Video'. As we develop more videos, they will also be added to this page.
 
 <br/>
-<strong>Labdoo's 5 Step Process to Spread Education</strong>
-<br/>
-
-<a href="https://www.youtube.com/embed/KMLAoeq0T54?autoplay=1">English</a> | <a href="https://www.youtube.com/embed/KMLAoeq0T54?cc_load_policy=1&amp;hl=fr&amp;autoplay=1">French</a> | <a href="https://www.youtube.com/embed/KMLAoeq0T54?cc_load_policy=1&amp;hl=de&amp;autoplay=1">German</a> | <a href="https://www.youtube.com/embed/KMLAoeq0T54?cc_load_policy=1&amp;hl=es&amp;autoplay=1">Spanish</a> | <a href="https://www.youtube.com/embed/KMLAoeq0T54?cc_load_policy=1&amp;hl=ca&amp;autoplay=1">Catalan</a>
-
-<a href="https://www.youtube.com/watch?v=KMLAoeq0T54"><img src="https://www.labdoo.org/sites/default/files/newsletters/en/labdoo-5step-video.png" width="600"/></a>
-
-
-<br/>
 <strong>The Circle of Life (English)</strong>
 <br/>
 [video:https://www.youtube.com/watch?v=Gpo-7GjFydw]
@@ -98,6 +89,6 @@
 </mlid>
 <weight>
 <type>book_array</type>
-<value>-1</value>
+<value>-3</value>
 </weight>
 </book>

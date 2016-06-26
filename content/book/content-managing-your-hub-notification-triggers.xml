@@ -68,6 +68,6 @@ Under 'Notification area', specify the area of the region you would like to rece
 </mlid>
 <weight>
 <type>book_array</type>
-<value>-15</value>
+<value>0</value>
 </weight>
 </book>

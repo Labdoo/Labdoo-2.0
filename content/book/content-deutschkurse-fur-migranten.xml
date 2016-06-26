@@ -25,16 +25,8 @@
 <li><strong>Spezielles Image for Cloning für Flüchtlingsprojekte</strong></li>
 
 Speziell für Flüchtlingsprojekte stellen wir ein Image for Cloning zum Download bereit (Mindestgröße Festplatte >= 80 GB). Es sind viele Inhalte, Sprachen und Wikis vorinstalliert, sodass die Rechner auch ohne Onlineanbindung gut genutzt werden können:
-
-<strong>auf Basis Lubuntu 14.04 LTS</strong>
-<a href="http://ftp.labdoo.org/download/images/PAE64_14_04_LTS_Refugees_DE.tar.gz"> <strong>PAE64_14_04_Refugees_DE für 64 Bit CPU</strong></a>
-
-<strong>auf Basis Lubuntu 16.04 LTS</strong>
-<a href="http://ftp.labdoo.org/download/images/PAE32_16_04_LTS_Refugees_DE.tar.gz"><strong>PAE32_16_04_Refugees_DE für 32 Bit CPU</strong></a>
-<a href="http://ftp.labdoo.org/download/images/PAE64_16_04_LTS_Refugees_DE.tar.gz"><strong>PAE64_16_04_Refugees_DE für 64 Bit CPU</strong></a>
+<a href="http://ftp.labdoo.org/download/images/PAE64_Refugees_DE.tar.gz">PAE64_Refugees_DE (auf Basis von Lubuntu 14.04 LTS für <strong>64 Bit CPU</strong>)</a>
 Doppelklick auf den Link des gewünschten Image oder rechte Maustaste und "Speichern unter".
-
-Alle verfügbaren Images und read-me.txt in Englisch und deutsch liegen <a href="http://ftp.labdoo.org/download/images/"><strong>hier</strong></a>. 
 
 Vorinstalliert sind (weitere Sprachen und Inhalte kann natürlich auch selber nachinstalliert werden):
 <ul>
@@ -47,18 +39,16 @@ Vorinstalliert sind (weitere Sprachen und Inhalte kann natürlich auch selber na
 <li>Bosnisch (bs),</li>
 <li>Bulgarisch (bg),</li>
 <li>Englisch (en),</li>
-<li>Farsi, Persisch (fa),</li>
 <li>Französisch (fr),</li>
 <li>Kurdisch (ku),</li>
 <li>Mazedonisch (mk),</li>
-<li>Pashtu (ps, persian),</li>
-<li>Serbisch (sr),</li>
+<li>Pashto (ps),</li>
 <li>Spanisch (es),</li>
 <li>Rumänisch (ro),</li>
 <li>Russisch (ru),</li>
+<li>Serbisch (sr),</li>
 <li>Tigrinya (ti),</li>
 <li>Türkisch (tr),</li>
-<li>Urdu (ur),</li>
 </ul>
 
 <li><strong>Offline-Homepages:</strong> aus der u.a. Linkliste haben wir die Inhalte der Homepages ganz oder teilweise gespeichert: </li>
@@ -71,8 +61,6 @@ Vorinstalliert sind (weitere Sprachen und Inhalte kann natürlich auch selber na
 </ul>
 
 </ul>
-
-Voreingestellt in diesem Migrantenimage sind die deutsche, arabische und russische Tastatur (diese und weitere als pdf / odt ausdruckbar unter http://ftp.labdoo.org/download/documents/material/keyboard%20layouts/ oder über www.tastaturaufkleber.eu aus kostenpflichtige Aufkleber zu bestellen).
 
 <li><strong>Linkliste, Deutschkurse</strong></li>
 

@@ -5,7 +5,7 @@
 </nid>
 <title>
 <type>node_title</type>
-<value>Ideas to Work on with your Hub Members</value>
+<value>Ideas to work on with your hub members</value>
 </title>
 <field_book_language>
 <type>value</type>
@@ -21,69 +21,64 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Here is a list of possible topics for the school hub to work on:
+<value>Here is a list of possible topics for the school hub to work on -
 
+<strong>1.  Introduction to the Labdoo </strong>
 <ul>
-<li><strong>Introduction to the Labdoo Project.</strong></li>
-
-<ul>
-<li>Help hub members get familiar with the Labdoo process (e.g., describe the <a href="../content/about-labdoo">state workflow S0 through S6</a>).</li>
-<li>Get familiar with the Labdoo platform (e.g., <a href="../content/labdoo-social-network-how-it-works">Labdoo teams, the wiki system, etc.</a>).</li>
+<li>Help hub members get familiar with the Labdoo process (S0-S6)  </li>
+<li>Get familiar with the Labdoo website (eg. Teams, Wiki, etc. ...)</li>
 </ul>
 
-<li><strong>Laptop Drives.</strong></li>
-
+<strong>2.  Laptop Drive</strong>
 <ul>
-<li>Reuse –  Discover idle laptops around you and put them into a better use.</li>
-<li>Repurpose – An old laptop can have a new story. It can help provide education resources for underprivileged children.</li>
-<li>Recycle –  By properly recycling a laptop, 41 lbs of carbon emission will be prevented from entering the atmosphere. This is equivalent to recycling 270 soda cans.</li>
-<li> Spread awareness among  family and friends.</li>
-<li> Set a goal on the number of laptops to be rescued for the semester.</li> 
-<li> Plan a laptop drive campaign and design a flyer for it.</li> 
-<li> Follow the link <a href="../content/labdoo-guide-rescue-laptop"> HERE </a> to learn how to effectively rescue an idle laptop.</li>
+Reuse –  Discover idle laptops around you and put them into a better use.
+Repurpose – An old laptop can have a new story. It can help provide education resources for underprivileged children.
+Recycle –  By properly recycling a laptop, 41 lbs of carbon emission will be prevented from entering the atmosphere. This is equivalent to recycling 270 soda cans.
+<li> Spread awareness among  family and friends </li>
+<li> Set a goal on the number of laptops to be rescued for the semester</li> 
+<li> Plan a laptop drive campaign and design a flyer for it</li> 
+<li> Follow the link <a href="https://www.labdoo.org/content/labdoo-guide-rescue-laptop" > HERE </a> to learn how to effectively rescue an idle laptop. </li>
 </ul>
 
-<li><strong>Technical QA Session.</strong></li>
-
+<strong>3. Technical QA Session </strong>
 <ul>
-<li>Learn how to build a Labdoo magic box (sanitizing a laptop).</li> 
-<li>Join Labdoo Monthly meetings to learn how to fix a laptop.</li> 
-<li>Examine basic laptop components together (e.g., memories, hard drives, etc.).</li>
+<li>Learn how to build a Labdoo magic box (sanitizing a laptop)</li> 
+<li>Join Labdoo Monthly meetings to learn how to fix a laptop</li> 
+<li>Examine basic laptop components together (eg. memories, hard drives, etc. ) </li>
 </ul>
 
-<li><strong>Dootrips.</strong></li>
-
+<strong>4. Dootrips </strong>
 <ul>
-<li>Learn how the laptops get delivered without additional expenses.</li>
-<li>Find traveling resources among family and friends.</li>
-<li>Try to match existing trip plans with destinations to Edoovillages or other Labdoo hubs and ask travelers to help carry a laptop to its next stop.</li>
+<li>Learn how the laptops get delivered without additional expenses</li>
+<li>Find traveling resources among family and friends</li>
+<li>Try to match existing trip plans with destinations to Edoovillages or other Labdoo hubs and ask travelers to help carry a laptop to its next stop</li>
 </ul>
 
-<li><strong>Adopt a project site (Edoovillage).</strong></li>
-
+<strong>5. Adopt a project site (Edoovillage) </strong>
 <ul>
-<li>Identify an organization which needs laptop resources.</li>
-<li>Help manage communication between the edoovillage, dootripers, and hubs.</li>
+<li>Identify an organization which needs laptop resources</li>
+<li>Help manage communication between the edoovillage, dootripers, and hubs</li>
 </ul>
 
-<li><strong>Be part of the software development team.</strong></li>
-
+<strong>6. Be part of the software development team</strong>
 <ul>
-<li>Help translate the Labdoo website into different languages.</li>
-<li>Help proof-read the Labdoo website (wikipal).</li>
-<li>Join the <a href="../content/source-code-development-team">Software Development Team Wall </a> and help test the Labdoo website, identify and report bugs.</li> 
-<li>Get familiar with the programming language PHP and the Drupal System.</li>
-<li>Sign up to <a href="https://github.com/Labdoo/Labdoo-2.0">Labdoo Github</a> and understand Labdoo framework.</li>
+<li>Help translate the Labdoo website into different languages</li>
+<li>Help proof-read the Labdoo website (wikipal)</li>
+<li>Join the <a href="https://www.labdoo.org/content/software-development">Software Development Team Wall </a> and help test the Labdoo website, identify and report bugs</li> 
+<li>Get familiar with Drupal and php</li>
+<li>Sign up to <a href= "https://github.com/Labdoo/Labdoo-2.0"> Labdoo Github </a> and understand Labdoo framework</li>
 </ul>
 
-<li><strong>Recycling.</strong></li>
-
+<strong>7. Recycling </strong>
 <ul>
-<li> Watch educational videos together (e.g., <a href="https://www.youtube.com/watch?v=qoDcOqewX5c">TED Talks</a>).</li>
-<li>Organize a field trip to recycling facility (e.g., <a href="http://www.allgreenrecycling.com/tustin/"> AllGreen Electronics Recycling, Tustin</a>).</li>
-<li>Organize an e-waste drive.</li>
+<li> Watch educational videos together, (eg. <a href="https://www.youtube.com/watch?v=qoDcOqewX5c">TED Talks</a>)</li>
+<li>Organize a field trip to recycling facility, (eg. <a href="http://www.allgreenrecycling.com/tustin/"> AllGreen Electronics Recycling, Tustin</a>)</li>
+<li>Organize an e-waste drive</li>
 </ul>
-</ul></value>
+<br></br>
+<br></br>
+
+</value>
 </body>
 <body>
 <type>format</type>

@@ -1,0 +1,149 @@
+<book>
+<nid>
+<type>node_id</type>
+<value>181</value>
+</nid>
+<title>
+<type>node_title</type>
+<value>Programs for handicapped user (barrier free)</value>
+</title>
+<field_book_language>
+<type>value</type>
+<value>English</value>
+</field_book_language>
+<field_is_first_page>
+<type>value</type>
+<value>1</value>
+</field_is_first_page>
+<field_reference_book>
+<type>target_id</type>
+<value>181</value>
+</field_reference_book>
+<body>
+<type>value</type>
+<value><li><strong>Programs for handicapped users</strong></li>
+
+The tools mentioned below might be used as an alternative to the usual ubuntu tools, as the offer a alphanumeric user interface instead of a GUI. More (in German) http://wiki.ubuntuusers.de/Barrierefreiheit
+
+<img src="/sites/default/files/content/wiki-de/edoovillages/login6.png" align="right" width="150" alt="Login Screen" />
+If the user is able to see part of the screen your can also improve the visibility by adjusting the screen parameters <strong>Large Fonts</strong> and <strong>High Contrast</strong>.
+<br/>
+
+<table> 
+<tr>
+<th><strong>program</strong></th>
+<th><strong>description</strong></th>
+<th><strong>program name</strong></th>
+<th><strong>screen shot</strong></th>
+</tr>
+
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/Orca">Orca</a></td>
+           <td>Screen reader; <strong>Wichtig:</strong> Orca will work with the desktops Unity and Gnome (Ubuntu), not with LXDE (Lubuntu), more (in German) http://wiki.ubuntuusers.de/orca; to start or end Orca press at the same time Alt + Super/Windows + S</td>
+            <td>Orca</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/orca.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/Bluefish">bluefish</a></td>
+           <td>Text based HTML editor</td>
+            <td>bluefish</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/bluefish.png" width="100"/> </td>
+</tr>
+<tr>
+            <td> <a href="http://wiki.ubuntuusers.de/Gespeaker">gespeaker</a> mbrola</td>
+           <td>Alternative converter Text → Speach</td>
+            <td>gespeaker</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/gespeaker.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/eSpeak">Espeak</a></td>
+           <td>Tool to generate electronic speach</td>
+            <td>Espeak</td>
+           <td> </td>
+</tr>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/Alpine">alpine</a></td>
+           <td>Text orientiertes e-Mail Tool (im Terminal starten → Programmname →  Enter)</td>
+            <td>alpine</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/alpine.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/Irssi">irssi</a></td>
+           <td>Text orientated e-mail tool (start in terminal → program name →  Enter)</td>
+            <td>irssi</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/irssi.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/Lynx">lynx</a></td>
+           <td>Text based web browser in a terminal (start in terminal → program name →  Enter)</td>
+            <td>lynx-cur</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/lynx.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/ELinks">Elinks</a></td>
+           <td>Text based web browser in a terminal (start in terminal → program name →  Enter)</td>
+            <td>Elinks</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/elinks.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/Midnight_Commander">Midnight Commander (mc)</a></td>
+           <td>Text based file manager (start in terminal → program name →  Enter)</td>
+            <td>MC</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/mc.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/Easystroke">easystroke</a></td>
+           <td>Maus / Gesture controlled user interface</td>
+            <td>easystroke</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/easystroke.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/Dasher">dasher</a></td>
+           <td>Text input by mouse, mousepad, Eyetracker or Touchpad</td>
+            <td>dasher</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/dasher.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://wiki.ubuntuusers.de/CellWriter">cellwriter</a></td>
+           <td>converter hand writing → text</td>
+            <td>cellwriter</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/cellwriter.png" width="100"/> </td>
+</tr>
+<tr>
+            <td><a href="http://sitplus.crea-si.com/node/118">sitplus</a></td>
+           <td>ludic-therapeutic activities</td>
+            <td>sitplus</td>
+           <td>  </td>
+</tr>
+<tr>
+            <td><a href="http://www.kde.org/applications/utilities/kmag/">kmag</a></td>
+           <td>Magnifying glass function for screen</td>
+            <td>kmag</td>
+           <td> <img src="/sites/default/files/content/wiki-de/edoovillages/kmag.png" width="100"/> </td>
+</tr>
+
+</table>
+
+</value>
+</body>
+<body>
+<type>format</type>
+<value>filtered_html_advanced</value>
+</body>
+<bid>
+<type>book_array</type>
+<value>142</value>
+</bid>
+<plid>
+<type>book_array</type>
+<value>926</value>
+</plid>
+<mlid>
+<type>book_array</type>
+<value>965</value>
+</mlid>
+<weight>
+<type>book_array</type>
+<value>0</value>
+</weight>
+</book>

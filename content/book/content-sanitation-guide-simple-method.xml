@@ -25,7 +25,8 @@
 
 This brief document describes the process of sanitizing a laptop according to the Simple Method.  
 
-[TIPS. If you'd like to get tips on how to collect unused laptops from your local community, please click <a href="../content/labdoo-guide-rescue-laptop">here</a>. After the laptop gets sanitized, you can click <a href="../content/packaging-laptops-ready-traveling">here</a> to learn different ways to package the laptops to make them ready for traveling to a needy school. If in any of these steps you get stuck during the sanitizing process, you can post your questions in the wall of the <a href="../content/quality-assurance-qa">Labdoo QA Team</a> so that others can help you.]
+If you'd like to get tips on how to collect unused laptops from your local community, please click <a href="https://www.labdoo.org/content/labdoo-guide-rescue-laptop">HERE</a>. After the laptop gets sanitized, you can click<a href="https://www.labdoo.org/content/packaging-laptops-ready-traveling"> HERE</a> to learn different ways to package the laptops to make them ready for traveling to a needy school. 
+If in any of these steps you get stuck during the sanitizing process, you can post your questions in the wall of the <a href="../content/quality-assurance-qa">Labdoo QA Team</a> so that others can help you.
 
 [video:https://youtu.be/nBUgaaHW058]
 
@@ -61,15 +62,14 @@ Select “Install Lubuntu”.
 Select the language to be installed in the laptop. If you don't know the destination country,  select “English”. If you know the destination country, select that country's language.
 </li>
 <li>
-In the "Wireless" screen, if you have internet connection, you may select the network you use from the list and enter its password.  Otherwise, leave it as default.
+In the "Wirless" screen, if you have internet connection, you may select the network you use from the list and enter its password.  Otherwise, leave it as default.
 </li>
 <li>
 The next window is just to confirm the laptop fit into the minimum Hard Drive requirement.  Hit "continue" once.
 </li>
 
 <li>
-Now we are going to do a small trick to ensure we completely remove any previous private data from the computer. Please press at the same time the keys 'Alt + CTRL + F3'. This will take you to a terminal window. In this terminal window, please enter first the following command: <code>apt-get install coreutils</code>
-[press enter]. Once this command is executed, run this other command: <code>sudo shred /dev/sda -f -v --iterations=2</code> [press enter]. (If this second command does not work, you can try with 'hda' instead of 'sda', like this: <code>sudo shred /dev/hda -f -v --iterations=2</code>.) This second command launches a process that will run for about 1 hour or so, and overwrites the disk with random values. After this process is done, press at the same time the keys 'Alt + CTRL + F7' to continue the installation process and go to the next step. (Please see the video in this page for a complementary illdustration of this step.)
+Now we are going to do a small trick to ensure we completely removal any previous private data from the computer. Please press at the same time the keys 'Alt + CTRL + F3'. This will take you to a terminal window. In this terminal window, please enter the following command: <code>sudo shred /dev/sda -f -v --iterations=2</code>. (If this command does not work, you can try with 'hda' instead of 'sda', like this: <code>sudo shred /dev/hda -f -v --iterations=2</code>.) This is a process that will run for about 1 hour or so, and overwrites the disk with random values. After this process is done, press at the same time the keys 'Alt + CTRL + F7' to continue the installation process and go to the next step. (Please see the video in this page for a complementary illustration of this step.)
 </li>
 
 <li>
@@ -116,16 +116,16 @@ When it says “Install the GRUB boot loader”, please say “Yes”.
 When it says “Is the system clock set to UTC”, please say “Yes”.
 This completes the installation of the basic operating system. Next, reboot the machine and log into the Lubuntu system using the username “labdoo and password “labdoo”. Once you are into the Lubuntu system, Make sure also that the laptop is connected to the Internet, via Ethernet cable or via WIFI. Finally, type ALT+CTRL+t to open a terminal window, and in it, type the following commands:
 
-<code>sudo apt-get update [and press ENTER]</code>
-<code>sudo apt-get install edubuntu-desktop libreoffice [and press ENTER]</code>
-<code>sudo apt-get upgrade [and press ENTER]</code>
+<code>$ sudo apt-get update [and press ENTER]</code>
+<code>$ sudo apt-get install edubuntu-desktop libreoffice [and press ENTER]</code>
+<code>$ sudo apt-get upgrade [and press ENTER]</code>
 The last two commands could take from a few minutes up to an hour or so to complete.
 </li>
 </ol>
 
 <strong>What to expect next</strong>
 
-Congratulations! You have now successfully completed your laptop drive campaign and sanitized your laptops, so they are now ready to be packed and travel.  Please go to the <a href="../../content/packaging-laptops-ready-traveling">Packaging the laptop for travelling </a> section to learn how to get the laptops ready for dootrips.
+Congratulations! You have now successfully completed your laptop drive campaign and sanitizedyour laptops, so they are now ready to be packed and travel.  Please go to the <a href="../../content/packaging-laptops-ready-traveling">Packaging the laptop for travelling </a> section to learn how to get the laptops ready for dootrips.
 <ul>
 <li>
 If you are traveling yourself to a school project, you can bring the laptops in your luggage. Try to distribute as many laptops to as many people traveling with you as possible because some countries have a limit on the amount of laptops that can be carried per person.

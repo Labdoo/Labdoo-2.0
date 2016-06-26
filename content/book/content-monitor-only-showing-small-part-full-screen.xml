@@ -21,9 +21,11 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>The installation process was successful and you are able to boot, but when logging in you are only able to see a part of the screen (usually the upper right screen corner) with a poor resolution.
+<value>The installation process was succesful and you are able to boot, but when logging in you are only able to see a part of the screen (usually the upper right screen corner) with a poor resolution.
 
-This could be because in the BIOS setting not enough RAM was allocated for the screen memory, e.g. 1 MB instead of 8 MB or more. Please check the bios and increase the memory allocated for the screen memory if necessary.</value>
+ber bereits im Anmeldebildschirm und auch im Desktop sieht man nur ca. ¼ des Bildschirminhaltes, i.d.R. die rechte obere Ecke. 
+
+This may be why in the BIOS setting (CMOS) not enough RAM was allocated for the screen memory, e.g. 1 MB instead of 8 MB or more. Please check.</value>
 </body>
 <body>
 <type>format</type>

@@ -21,16 +21,18 @@
 </field_reference_book>
 <body>
 <type>value</type>
-<value>Labdoo.org vermittelt im In- und Ausland kostenlose IT-Spenden für Schulen, Waisenhäuser, Kinder-, Jugend- und Integrationsprojekte. In diesem Wiki erfahrt ihr mehr über: 
+<value>Labdoo.org nutzt 
 <ul>
-<li>kindgerechte Lernsoftware für alle Altersstufen (Vorschule, Primar-, Sekundarstufe 1 und 2),</li>
-<li>Offline-Lerninhalte und Wikis, damit Kinder auch ohne Onlinezugang lesen und lernen können,</li>
-<li>Deutschkurse, Wörterbücher in über 100 Sprachen,</li>
-<li>Office-Programme, Virenschutz,</li>
-<li>Antragstellung und vieles mehr...</li>
+<li>kindgerechte Lernsoftware für alle Altersstufen (Vorschule, Primar-, Sekundarstufe 1 und 2)</li>
+<li>Erweiterungen für barrierefreie Zugänge (u.a. für sehbehinderte Anwender)</li>
+<li>Offline-Wikis, damit Kinder auch ohne Onlinezugang lesen und lernen können sowie</li>
+<li>Virenscanner ClamAV</li>
+<li>und viel, viel mehr...</li>
 </ul>
 
-<a href="/de/contact"><img src="/sites/default/files/content/wiki-de/edoovillages/button-create-school-de.png" alt="Antrag stellen" margin="25" padding="20" width="300" align="right" /></a> </value>
+Der in diesem Wiki beschriebene Leistungsumfang geht weit über die reine Installation von dem Betriebssystem Lubuntu hinaus. Durch die Installation der vorbereiteten <a href="https://www.labdoo.org/content/cloning-mit-fertigen-labdoo-images">Labdoo Images for  Cloning (für Parted Magic / Clonezilla)</a> oder der  <a href="https://www.labdoo.org/de/content/installationsskripte-%C3%BCbersicht">Installationsskripte</a> erhöht man deutlich den Nutzen für die Kinder.
+
+Teile dieses Wikis basieren u.a. auf Texten und Grafiken von www.edubuntu.org und http://wiki.ubuntuusers.de/Edubuntu.</value>
 </body>
 <body>
 <type>format</type>

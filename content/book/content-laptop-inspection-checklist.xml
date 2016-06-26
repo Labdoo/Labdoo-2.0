@@ -23,6 +23,9 @@
 <type>value</type>
 <value>Labdoo ID #___________________________ 
 
+<br></br>
+<br></br>
+
 1.  Make sure all parts are properly tagged with the same Labdoo ID number (laptop, adaptor and other external components)   
 
 2.  Notes on any defects or limitations (eg. no wifi, missing keys ...) 
@@ -44,7 +47,12 @@ ___________________________________________________________________________
 7. Installation of English Training Material (EnglishBanana) 
 
 8. Language:______________________________________
- </value>
+ 
+
+<br></br>
+<br></br>
+<br></br>
+</value>
 </body>
 <body>
 <type>format</type>

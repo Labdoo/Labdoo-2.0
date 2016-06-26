@@ -23,35 +23,25 @@
 <type>value</type>
 <value>To clean up a laptop from any previous information (including all private data from the previous owner), do as follows:
 
-<ol>
-<li>
-Boot your laptop from your Lubuntu disk (see <a href="../content/sanitation-guide-simple-method">the simple sanitation guide</a> to learn how to create a Lubuntu disk).
-</li>
-<li>
-On the Lubuntu menu, select the option 'Try Lubuntu'. This will start Lubuntu on the laptop.
-</li>
-<li>
-Once booted, press at the same time the keys ALT+CTRL+F3. This will take you to a terminal console.
-</li>
-<li>
-In the terminal console, type the following command to ensure that the shred application is available:
+1. Boot your laptop from your Lubuntu disk (see <a href='../content/sanitation-guide-simple-method'>the simple sanitation guide</a> to learn how to create a Lubuntu disk).
+
+2. On the Lubuntu menu, select the option 'Try Lubuntu'. This will start Lubuntu on the laptop.
+
+3. Once booted, press at the same time the keys ALT+CTRL+F3. This will take you to a terminal console.
+
+4. In the terminal console, type the following command to ensure that the shred application is available:
 
 <code>apt-get install coreutils</code>
 
-(you need to have your laptop connected to the Internet for the above command to succeed)
-</li>
-<li>
-Now type the next command:
+(you may need to have your laptop connected to the Internet for the above command to succeed)
+
+5. Now type the next command:
 
 <code>sudo shred /dev/sda -f -v --iterations=2</code>
 
-If this command does not work, you can try with 'hda' instead of 'sda', like this: <code>sudo shred /dev/hda -f -v --iterations=2</code>.
-</li>
-<li>
-Now wait for about an hour or so for the previous command to complete. At the end of this process, the laptop hard drive will have all of its previous data fully removed. You can now press ALT+CTRL+F7 to return back to the Lubuntu initial screen and turn off the laptop.
-</li>
-</ol>
-</value>
+(If this command does not work, you can try with 'hda' instead of 'sda', like this: <code>sudo shred /dev/hda -f -v --iterations=2</code>.)
+
+6. You  need now to wait about an hour or so for the previous command to complete. At the end of this process, the laptop hard drive will have all of its previous data fully removed. You can now press ALT+CTRL+F7 to return back to the Lubuntu initial screen and turn off the laptop.</value>
 </body>
 <body>
 <type>format</type>
