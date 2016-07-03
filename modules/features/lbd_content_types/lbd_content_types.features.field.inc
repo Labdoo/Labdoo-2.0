@@ -1519,7 +1519,7 @@ function lbd_content_types_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '3',
+          'weight' => '0',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -1678,7 +1678,7 @@ function lbd_content_types_field_default_fields() {
             'show_remaining_days' => 0,
           ),
           'type' => 'date_default',
-          'weight' => '0',
+          'weight' => '2',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -1770,7 +1770,7 @@ function lbd_content_types_field_default_fields() {
             'colorbox_node_style_first' => '',
           ),
           'type' => 'colorbox',
-          'weight' => '5',
+          'weight' => '4',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -1851,7 +1851,7 @@ function lbd_content_types_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '2',
+          'weight' => '1',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -1871,7 +1871,7 @@ function lbd_content_types_field_default_fields() {
       'label' => 'Location',
       'required' => 1,
       'settings' => array(
-        'text_processing' => '0',
+        'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -1924,11 +1924,10 @@ function lbd_content_types_field_default_fields() {
       'description' => 'Select this field if you would like to enable the registration form. This will allow you to manage labdooers\' registration to this event as well as send them event-related email notifications.',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => NULL,
+          'label' => 'inline',
           'settings' => array(),
-          'type' => 'registration_default',
-          'weight' => 10,
+          'type' => 'hidden',
+          'weight' => '5',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -1962,7 +1961,7 @@ function lbd_content_types_field_default_fields() {
             'open' => NULL,
           ),
           'settings' => array(
-            'confirmation' => 'Thank you registering to this Labdoo event. Your registration is confirmed.',
+            'confirmation' => 'Thank you for registering to this Labdoo event. Your registration is confirmed.',
             'confirmation_redirect' => '',
             'from_address' => 'contact@labdoo.org',
             'maximum_spaces' => '1',

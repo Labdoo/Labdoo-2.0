@@ -1386,6 +1386,51 @@ function labdoo_lib_form_node_form_alter(&$form, &$form_state, $form_id) {
 }
 
 
+function labdoo_lib_menu_alter(&$items) {
+  $items['user/%user/edit']['access callback'] = 'labdoo_permissions_access_account_edit';
+  $items['user/%user/roles']['access callback'] = 'labdoo_permissions_access_account_roles';
+}
+
+
+function labdoo_permissions_access_account_edit($account) {
+  global $user;
+
+  $isOwnAccount = $user->uid == $account->uid;
+  if($isOwnAccount)
+    return TRUE;  // Allow to edit my own account
+
+  $userRoles = array_values($user->roles);
+  if(in_array('administrator', $userRoles))
+    return TRUE;  // Admin can edit all accounts
+
+  $thisAccountRoles = array_values($account->roles);
+  if(in_array('superhub manager', $thisAccountRoles) || in_array('administrator', $thisAccountRoles))
+    return FALSE; // No one can edit superhub or admin accounts except themselves
+  
+  if(in_array('superhub manager', $userRoles) || in_array('administrator', $userRoles)) 
+    return TRUE;  // superhubs and admins can edit any other account 
+
+  return FALSE;
+}
+
+
+function labdoo_permissions_access_account_roles($account) {
+  global $user;
+  // Can't use $account->uid because it is not set for this menu tab due to having a lower weight
+  $thisPageUser = arg(1);
+  $isOwnAccount = $user->uid == $thisPageUser;
+
+  if($isOwnAccount)
+    return FALSE;
+
+  $userRoles = array_values($user->roles);
+  if(in_array('superhub manager', $userRoles) || in_array('administrator', $userRoles)) 
+    return TRUE;
+
+  return FALSE;
+}
+
+
 /**
  * Implements hook_form_user_profile_form_alter
  *
@@ -1397,6 +1442,19 @@ function labdoo_lib_form_user_profile_form_alter(&$form, &$form_state) {
   if(!in_array('hub manager', $userRoles)) {
     // If it's not a hub manager, hide the hub manager notifications field group
     field_group_hide_field_groups($form, array('group_hub_manager_notifications'));
+  }
+
+  # Superhub managers can edit any user's email address
+  # but we need to hide all other user info to ensure
+  # only the email address is available.
+  if(in_array('superhub manager', $userRoles)) {
+    $account = $form['#user'];
+    $isOwnAccount = $user->uid == $account->uid;
+    if(!$isOwnAccount) {
+      $form['account']['pass']['#access'] = FALSE;
+      $form['contact']['#access'] = FALSE;
+      $form['picture']['#access'] = FALSE;
+    }
   }
 
   return;
@@ -2177,6 +2235,7 @@ function labdoo_update_flags_dooject($method = "", $doojectId = NULL, $userId = 
  *   The type of node, it must be one of {'user', 'node', 'comment'}
  * @param string $key
  *   The key to retrieve
+ * @return The value in the field
  *
  */
 function labdoo_lib_get_field($node, $field, $type, $key) {
@@ -2187,6 +2246,37 @@ function labdoo_lib_get_field($node, $field, $type, $key) {
   if(!$item)
     return NULL;
   return($item[$key]);
+}
+
+
+/**
+ * Get the value of a node field.
+ * Return an array with all the values.
+ * This function is a generalization of labdoo_lib_get_field()
+ * to return multiple values.
+ *
+ * Field must have the key $key.
+ *
+ * @param node $node
+ *   The node where the entity field is contained
+ * @param string $field 
+ *   The entity field name 
+ * @param string $type
+ *   The type of node, it must be one of {'user', 'node', 'comment'}
+ * @param string $key
+ *   The key to retrieve
+ * @return an array with the values in the field
+ *
+ */
+function labdoo_lib_get_field_all($node, $field, $type, $key) {
+  $field_items = field_get_items($type, $node, $field);
+  if(!$field_items)
+    return;
+  $values = array();
+  foreach($field_items as $item) {
+    array_push($values, $item[$key]); 
+  }
+  return($values);
 }
 
 
@@ -2567,6 +2657,9 @@ function labdoo_block_filter_sidebar_second() {
   if(strcmp($path, "hubs") == 0)
       return TRUE;
 
+  if(strcmp($path, "content/contact-labdoo") == 0)
+      return TRUE;
+
   if(arg(0) == 'user')
       return TRUE;
 
@@ -2574,7 +2667,7 @@ function labdoo_block_filter_sidebar_second() {
     if(user_is_logged_in()) {
       global $user;
       $userId = $user->uid;
-      drupal_set_message(t("You can see all your registrations from <a href=\"../user/$userId/my-events\">this page</a>."), 'status', FALSE);
+      drupal_set_message(t("You can see all your registrations from <a href=\"../user/$userId/myevents\">this page</a>."), 'status', FALSE);
     }
     return TRUE;
   }
@@ -2707,6 +2800,9 @@ function labdoo_block_filter_header() {
       return TRUE;
 
   if(strcmp($path, "content/hubs-dashboard") == 0)
+      return TRUE;
+
+  if(strcmp($path, "content/thank-you") == 0)
       return TRUE;
 
   if((strcmp($path, "share-wall") == 0) || (strcmp($path, "content/my-share-wall") == 0))
@@ -2878,12 +2974,12 @@ function _is_my_user_page($account = NULL) {
 function labdoo_lib_menu() {
 
   $items['user/%user/metrics'] = array(
-    'access callback' => '_is_my_user_page',
+    'access callback' => user_is_logged_in,
     'access arguments' => array(1),
     'page callback' => '_labdoo_lib_user_metrics',
     'page arguments' => array(1),
-    'title' => t('Metrics'),
-    'weight' => 5,
+    'title' => t('Global contributions'),
+    'weight' => 0,
     'type' => MENU_LOCAL_TASK,
   );
 
@@ -2894,6 +2990,16 @@ function labdoo_lib_menu() {
     'page arguments' => array(1),
     'title' => t('My roles'),
     'weight' => 5,
+    'type' => MENU_LOCAL_TASK,
+  );
+
+  $items['user/%user/myevents'] = array(
+    'access callback' => '_is_my_user_page',
+    'access arguments' => array(1),
+    'page callback' => '_labdoo_lib_user_myevents',
+    'page arguments' => array(1),
+    'title' => t('My events'),
+    'weight' => 3,
     'type' => MENU_LOCAL_TASK,
   );
 
@@ -3034,7 +3140,7 @@ function _labdoo_lib_user_num_wikis($userId) {
 
 function _labdoo_lib_user_metrics($account = NULL) {
   global $user;
-  $userId = $user->uid;
+  $userId = $account->uid;
 
   if(!user_is_logged_in()) {
     return "";
@@ -3059,8 +3165,8 @@ function _labdoo_lib_user_metrics($account = NULL) {
   $labelCobalt = t('Cobalt (kg): ');
   $labelChemical = t('Chemical substances (kg): ');
 
-  $textLegend = t('(*) doojects and dootrips that you have participated with.<br>
-                   (**) measured based on number of doojects that you have participated with.');
+  $textLegend = t('(*) dootronics and dootrips that you have participated with.<br>
+                   (**) measured based on number of dootronics that you have participated with.');
 
   // Compute metrics 
   $numDoojects = _labdoo_lib_user_num_doojects($userId); 
@@ -3084,53 +3190,68 @@ function _labdoo_lib_user_metrics($account = NULL) {
   $footprintChemical = $numDoojects * 22;
 
   $code = "
-<strong>My contributions</strong>
+<strong><font color='red'>My contributions</font></strong>
 <hr/>
 <table> 
 <tr>
 <td width='180'>
 $labelDoojects
 </td>
-<td>
+<td width='100'>
 $numDoojects
+</td>
+<td>
+<a href=\"../../content/dootronics-dashboard?u=$userId\" target=\"_blank\">[See all contributed dootronics]</a>
 </td>
 </tr>
 <tr>
-<td width='180'>
+<td>
 $labelDootrips
 </td>
 <td>
 $numDootrips
 </td>
+<td>
+<a href=\"../../content/dootrips-dashboard?u=$userId\" target=\"_blank\">[See all contributed dootrips]</a>
+</td>
 </tr>
 <tr>
-<td width='180'>
+<td>
 $labelEdoovillages
 </td>
 <td>
 $numEdoovillages
 </td>
+<td>
+<a href=\"../../content/edoovillages-dashboard?u=$userId\" target=\"_blank\">[See all contributed edoovillages]</a>
+</td>
 </tr>
 <tr>
-<td width='180'>
+<td>
 $labelHubs
 </td>
 <td>
 $numHubs
 </td>
+<td>
+<a href=\"../../content/hubs-dashboard?u=$userId\" target=\"_blank\">[See all contributed hubs]</a>
+</td>
 </tr>
 <tr>
-<td width='180'>
+<td>
 $labelWiki
 </td>
 <td>
 $numWikis
 </td>
+<td>
+<a href=\"../../my-wikis?uid=$account->name\" target=\"_blank\">[See all contributed wikis]</a>
+</td>
 </tr>
 </table>
 <hr/>
 <br>
-<strong>My carbon footprint savings**</strong>
+<strong><font color='red'>My carbon footprint savings**</font></strong>
 <hr/>
 <table> 
 <tr>
@@ -3319,6 +3440,69 @@ function _labdoo_lib_user_roles($account = NULL) {
 
   return $code;
 }
+
+
+function _labdoo_lib_user_myevents($account = NULL) {
+  global $language;
+  
+  $code = "<p align='right'>You can find all the Labdoo events from 
+           <a href=\"../../teams-dashboard?type=event&field_task_status_value=All&field_task_type_value=All&uid=&combine=&uid_1=\">
+           this link</a>.</p> <hr/>";
+
+  $code = $code . "
+    <strong><font color='red'>My events</font></strong>
+    <hr/>
+    <table> 
+    <tr>
+    <th width='400' align='left'>
+    Event
+    </th>
+    <th width='200' align='left'>
+    Date
+    </th>
+    <th width='140' align='left'>
+    Update
+    </th>
+    </tr>
+  ";
+
+  $query = "SELECT registration_id, entity_id FROM registration WHERE user_uid=$account->uid";
+  $registrations = db_query($query);
+  foreach($registrations as $registration) {
+    $regId = $registration->registration_id;
+    $eventId = $registration->entity_id;
+
+    $query = "SELECT field_event_date_value from field_data_field_event_date where entity_id=$eventId";
+    $date = db_query($query)->fetchField();
+    $query = "SELECT title FROM node WHERE nid=$eventId";
+    $title = db_query($query)->fetchField();
+    $titlePath = drupal_get_path_alias("node/" .  $eventId, $language->language);
+    $redirectStr = "?destination=" . current_path();
+
+    $code = $code . "
+      <tr>
+      <td>
+      <a href=\"../../$titlePath\">$title</a>
+      </td>
+      <td>
+      $date
+      </td>
+      <td>
+      <a href=\"../../registration/$regId/edit$redirectStr\">Modify</a> | <a href=\"../../registration/$regId/delete$redirectStr\">Unregister</a> 
+      </td>
+      </tr>
+    ";
+  }
+
+  $code = $code . "</table>";
+
+  if($registrations->rowCount() == 0)
+    $code = $code . t("You have not registered to any Labdoo events yet");
+
+  return $code;
+}
+
+
 
 
 /**

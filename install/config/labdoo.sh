@@ -69,9 +69,10 @@ drush @lbd $enOrDis -y lbd_menus
 drush @lbd $enOrDis -y lbd_visualize
 drush @lbd $enOrDis -y lbd_gics
 
-# Enable Labdoo teams features (needed by lbd_roles)
+# Enable Labdoo teams related features (needed by lbd_roles)
 drush @lbd $enOrDis -y lbd_teams_features
 drush @lbd $enOrDis -y lbd_teams
+drush @lbd $enOrDis -y lbd_registration_features
 
 # Enable Wiki 
 drush @lbd $enOrDis -y lbd_wiki

@@ -1,0 +1,16 @@
+** Git commands
+
+See the document README.org located at the root of the Labdoo project (https://github.com/Labdoo/Labdoo/blob/master/README.org) for a detailed description of how to install Labdoo using git.
+
+The following are additional commands that will come often handy when developing code for Labdoo.
+
+  - To undo a commit that was wrongly pushed to the github repo, do as follows:
+
+    #+BEGIN_EXAMPLE
+    git clone https://github.com/Labdoo/Labdoo-2.0.git labdoo # Get first a local clone of project Labdoo
+    git log # Take a look at the latest commits, identify the specific hash value of the commit that you want to undo
+    git revert COMMITHASH # Revert that commit (COMMITHASH will look something like: 87024ec54e6ccaded78f3d2b808aa6a7d18ade6d)
+    git log # Check that the revert is properly logged
+    git push # Pushed the revert to the github repo (as usual, you may need to set --global user.{name,email} prior to running this command)
+    #+END_EXAMPLE
+

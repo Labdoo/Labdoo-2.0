@@ -764,6 +764,15 @@ function lbd_menus_menu() {
     'menu_name' => 'main-menu',
   );
 
+  $menus['myWikis'] = array
+  (
+    'title' => 'My wiki articles',
+    'page callback' => '_menu_item_redirect_my_wikis',
+    'access callback' => 'user_is_logged_in',
+    'type' => MENU_NORMAL_ITEM,
+    'menu_name' => 'main-menu',
+  );
+
   /*
    * URL redirects go here
    */
@@ -813,6 +822,12 @@ function _menu_item_redirect_my_actions() {
 
 function _menu_item_redirect_my_sharewall() {
   drupal_goto('content/my-share-wall');
+  return;
+}
+
+function _menu_item_redirect_my_wikis() {
+  global $user; 
+  drupal_goto('my-wikis', array('query' => array('uid' => $user->name)));
   return;
 }
 
@@ -869,6 +884,11 @@ function lbd_menus_menu_link_alter(&$item) {
 
   if ($item['page callback'] == '_menu_item_redirect_my_sharewall') {
     $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='share-wall' AND link_title='Share wall' AND menu_name='main-menu'")->fetchField();
+    $item['plid'] = $plid;
+  }
+
+  if ($item['page callback'] == '_menu_item_redirect_my_wikis') {
+    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='wiki-index' AND link_title='Wiki' AND menu_name='main-menu'")->fetchField();
     $item['plid'] = $plid;
   }
 

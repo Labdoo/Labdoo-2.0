@@ -505,6 +505,8 @@ function _email_team_event($node, $comment = NULL) {
   }
   $activityTitle = $node->title;
   $teamId = labdoo_lib_get_field($node, 'og_group_ref', 'node', 'target_id');
+  $teamIdAll = labdoo_lib_get_field_all($node, 'og_group_ref', 'node', 'target_id');
+
   $team = node_load($teamId);
   $teamName = $team->title;
 
@@ -526,7 +528,10 @@ function _email_team_event($node, $comment = NULL) {
 
   $emailsList = variable_get('site_mail', '');
   if($sendAll) { // Send to all members of this team
-    $members = lbd_teams_get_team_members($teamId);
+    $members = array();
+    foreach($teamIdAll as $thisTeamId) {
+      $members = array_merge($members, lbd_teams_get_team_members($thisTeamId));
+    }
     foreach($members as $memberId) {
       $userObj = user_load($memberId);
       $emailsList = $emailsList . ", " . $userObj->mail;
@@ -599,14 +604,16 @@ function _email_team_event($node, $comment = NULL) {
 
   // If the activity type is 'event', add the date and location
   if($activityType == 'event') {
-    $eventTime = labdoo_lib_get_field($node, 'field_event_date', 'node', 'value');
+    // Do not print the time to avoid confusing people with different time zones.
+    // Have them go to the link to find the real time of the event.
+    // $eventTime = labdoo_lib_get_field($node, 'field_event_date', 'node', 'value');
     $eventLocation = labdoo_lib_get_field($node, 'field_location_event', 'node', 'value');
     // Convert to single line
     $eventLocation = str_replace("\r", " | ", $eventLocation);
     $eventLocation = str_replace("\n", "", $eventLocation);
     $bodyHeader = "---\n";
     $bodyHeader = $bodyHeader . "Event name: " . $activityTitle . "\n";
-    $bodyHeader = $bodyHeader . "Time: " . $eventTime . "\n";
+    // $bodyHeader = $bodyHeader . "Time: " . $eventTime . "\n";
     $bodyHeader = $bodyHeader . "Location: " . $eventLocation . "\n";
     $bodyHeader = $bodyHeader . "Link: " . $activityUrl . "\n";
     $bodyHeader = $bodyHeader . "---\n\n";
@@ -945,6 +952,188 @@ function lbd_communicate_pop_email_cache($position) {
   $cachedEmailParametersArray = $cache->data; 
   unset($cachedEmailParametersArray[$position]);
   cache_set('cachedEmailParametersArray', $cachedEmailParametersArray);
+  return;
+}
+
+
+/**
+ * Constructs the contact form reasons table
+ *
+ * @return The contact form reasons table
+ *
+ */
+function _contact_reasons() {
+  $reasons = array(t('I want to contribute a laptop or a tablet (dootronic)'), 
+                   t('I want to contribute a trip (dootrip)'), 
+                   t('I want to become a Labdoo volunteer (labdooer)'), 
+                   t('I want to solicit laptops or tablets for my educational project (edoovillage)'), 
+                   t('I just want to send a message to Labdoo.org'));
+  return $reasons;
+}
+
+
+/**
+ * Constructs the contact form
+ */
+function lbd_contact_form($form, &$form_state) {
+  $country = "";
+  $reason = "";
+  if(array_key_exists('co', $_GET)) 
+    $country = $_GET['co'];
+  if(array_key_exists('re', $_GET)) 
+    $reason = $_GET['re'];
+
+  $header = "<br/><strong><font size='4' color='#FF2400'>";
+  $header .= t('Thank you for reaching out to Project Labdoo.');
+  $header .= "</font></strong><br/><font size='3' font color='#625D5D'>";
+  $header .= t('Please fill out the following form and after reviewing your message we will get back to you.');
+  $header .= "</font><br/><br/>";
+
+  // Header text
+  $form['header'] = array(
+    '#markup' => $header,
+  );
+
+  // Name
+  $form['name'] = array(
+    '#type'       => 'textfield',
+    '#title'      => t('Name'),
+    '#size'       => '20',
+    '#required'   => TRUE,
+  );
+
+  // Email
+  $form['email'] = array(
+    '#title'      => t('E-mail address'),
+    '#type'       => 'textfield',
+    '#size'       => '20',
+    '#required'   => TRUE,
+  );
+
+  // Countries
+  $countries = location_get_iso3166_list();
+  $form['country'] = array(
+    '#title'      => t('Country'),
+    '#type'       => 'select',
+    '#options'    => array_values($countries),
+    '#required'   => TRUE,
+  );
+
+  if($country != "") {
+    $form['country']['#default_value'] = array_search($country, array_keys($countries)); 
+#    $form['country']['#access'] = FALSE;
+  }
+
+  // Reason
+  $reasons = _contact_reasons();
+  $form['reason'] = array(
+    '#title'      => t('The reason you are contacting Labdoo.org'),
+    '#type'       => 'select',
+    '#options'    => $reasons,
+    '#required'   => TRUE,
+  );
+
+  if($reason != "") {
+    $form['reason']['#default_value'] = $reason; 
+#    $form['reason']['#access'] = FALSE;
+  }
+
+  // Message
+  $form['message'] = array(
+    '#title'      => t('Message'),
+    '#type'       => 'textarea',
+    '#rows'       => '5',
+    '#cols'       => '10',
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Submit'),
+  );
+
+  return $form;
+}
+
+
+/** 
+ * Validates the contact form
+ */
+function lbd_contact_form_validate($form, &$form_state) { 
+  $valid_email = $form_state['values']['email'];
+  if (!valid_email_address($valid_email)) {
+  form_set_error('email', 'Sorry. Your email address,' . $valid_email . ', is not valid. Please submit a valid E-mail address.');
+  }
+}
+
+
+/**
+ * Submits the contact form
+ */
+function lbd_contact_form_submit($form, &$form_state) {
+  $valid_email = $form_state['values']['email'];
+  $message = $form_state['values']['message'];
+  $reasons = _contact_reasons();
+  global $language;
+
+  # Send an email to the user who submitted the form
+  $langCode = $language->language;
+  if(!file_exists(_path_to_email_template($langCode) . "contact_form_submitted_subject-" . $langCode . ".email")) 
+    $langCode = 'en';
+
+  $subjectFileName = _path_to_email_template($langCode) . "contact_form_submitted_subject-" . $langCode . ".email";
+  $bodyFileName = _path_to_email_template($langCode) . "contact_form_submitted_body-" . $langCode . ".email";
+  $subjectTemplate = file_get_contents($subjectFileName);
+  $bodyTemplate = file_get_contents($bodyFileName);
+  $subject = $subjectTemplate;
+  $body = str_replace("[MESSAGE]", $message, $bodyTemplate);
+  $body = str_replace("[CONTACT_EMAIL]", variable_get('site_mail', ''), $body);
+
+  $email_params = array();
+  $email_params['type'] = "CONTACT_FORM_USER";
+  $email_params['to'] = $valid_email;
+  $email_params['subject'] = $subject;
+  $email_params['body'] = $body;
+  lbd_communicate_mail_send($email_params);
+
+  # Send an email to the superhub user in charge of the user's country/region
+  $country_codes = array_keys(location_get_iso3166_list());
+  $country_code = $country_codes[$form_state['values']['country']];
+  $country = labdoo_country_code2name($country_code); 
+  $reason_code = $form_state['values']['reason'];
+  $country2shub_email = array(
+      "Germany" => "Labdoo-DACH@Labdoo.org, contact@labdoo.org",
+      "United States" => "wendy.lu@labdoo.org, contact@labdoo.org", 
+      "Switzerland" => "zuerich-hub@labdoo.org, contact@labdoo.org", 
+      "Austria" => "Labdoo-DACH@Labdoo.org, contact@labdoo.org"
+  );
+  if(!array_key_exists($country, $country2shub_email))
+    $to_emails = variable_get('site_mail', '');
+  else
+    $to_emails = $country2shub_email[$country];
+
+  # Send this message always in English
+  $subjectFileName = _path_to_email_template("en") . "contact_form_submitted_shub_subject-en.email";
+  $bodyFileName = _path_to_email_template("en") . "contact_form_submitted_shub_body-en.email";
+  $subjectTemplate = file_get_contents($subjectFileName);
+  $bodyTemplate = file_get_contents($bodyFileName);
+  $subject = $subjectTemplate;
+  $body = str_replace("[USERNAME]", $form_state['values']['name'], $bodyTemplate);
+  $body = str_replace("[USEREMAIL]", $valid_email, $body);
+  $body = str_replace("[COUNTRY]", $country, $body);
+  $body = str_replace("[REASON]", $reasons[$form_state['values']['reason']], $body);
+  $body = str_replace("[MESSAGE]", $message, $body);
+  $body = str_replace("[CONTACT_EMAIL]", variable_get('site_mail', ''), $body);
+
+  $email_params['type'] = "CONTACT_FORM_SUPERHUB";
+  $email_params['to'] = $to_emails;
+  $email_params['subject'] = $subject;
+  $email_params['body'] = $body;
+  lbd_communicate_mail_send($email_params);
+ 
+  # Redirect to thank you page.
+  # Generate a unique URL according to country and reason so it can be used by engines like Google adwords.
+#  $form_state['redirect'] = array('content/thank-you', array('query' => array('co' => $country_code, 're' => $reason_code))); 
+  $form_state['redirect'] = 'content/thank-you';
   return;
 }
 

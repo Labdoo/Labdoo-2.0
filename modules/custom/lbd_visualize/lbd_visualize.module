@@ -192,8 +192,15 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
     $objects[$objectNid]['tagger'] = db_query($query)->fetchField(); 
 
     // Extract Manager Field 
-    $query = "SELECT name FROM users WHERE uid = " . labdoo_lib_get_field($node, 'field_manager', 'node', 'target_id');
-    $objects[$objectNid]['manager'] = db_query($query)->fetchField(); 
+    $managerUid = labdoo_lib_get_field($node, 'field_manager', 'node', 'target_id');
+    if($managerUid) {
+        $query = "SELECT name FROM users WHERE uid = " . $managerUid;
+        $objects[$objectNid]['manager'] = db_query($query)->fetchField(); 
+    }
+    else {
+        watchdog("lbd_visualize", "Laptop " . $node->title . "does not have a manager associated with it.", NULL, WATCHDOG_ERROR);
+        $objects[$objectNid]['manager'] = "";
+    }
 
     // Extract email list field 
     $objects[$objectNid]['emails'] = "";
@@ -283,7 +290,7 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
     $objects[0]['Wh'] = ""; 
     $objects[0]['notes'] = ""; 
     $objects[0]['dootripId'] = ""; 
-    $objects[0]['link'] = "No doojects in this view"; 
+    $objects[0]['link'] = "No dootronics in this view"; 
     $objects[0]['completed'] = $objects[0]['open'] = 0; 
     foreach($possibleStates as $thisState)
       $objects[0][$thisState] = 0;
