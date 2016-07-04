@@ -198,7 +198,7 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
         $objects[$objectNid]['manager'] = db_query($query)->fetchField(); 
     }
     else {
-        watchdog("lbd_visualize", "Laptop " . $node->title . "does not have a manager associated with it.", NULL, WATCHDOG_ERROR);
+        watchdog("lbd_visualize", "Laptop " . $node->title . " does not have a manager associated with it.", NULL, WATCHDOG_ERROR);
         $objects[$objectNid]['manager'] = "";
     }
 

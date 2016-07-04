@@ -505,7 +505,8 @@ function _email_team_event($node, $comment = NULL) {
   }
   $activityTitle = $node->title;
   $teamId = labdoo_lib_get_field($node, 'og_group_ref', 'node', 'target_id');
-  $teamIdAll = labdoo_lib_get_field_all($node, 'og_group_ref', 'node', 'target_id');
+  $teamIdAll = labdoo_lib_get_field_all($node, 'og_group_ref', 'node', 'target_id') +
+               labdoo_lib_get_field_all($node, 'field_additional_teams', 'node', 'target_id'); 
 
   $team = node_load($teamId);
   $teamName = $team->title;
@@ -973,6 +974,23 @@ function _contact_reasons() {
 
 
 /**
+ * Returns an array containing all the combinations of country/reason
+ * codes that are to be redirected to their own contact thank you page.
+ *
+ * This is used to help optimize the tracking performed in engines like
+ * Google adwords
+ *
+ * @return The array with all the country/reason codes
+ *
+ */ 
+function _contact_urls_redirect() {
+  $urls = array('at0', 'at1', 'at2', 'at3', 'at4',
+                'de0', 'de1', 'de2', 'de3', 'de4');
+  return $urls;
+}
+
+
+/**
  * Constructs the contact form
  */
 function lbd_contact_form($form, &$form_state) {
@@ -1132,8 +1150,12 @@ function lbd_contact_form_submit($form, &$form_state) {
  
   # Redirect to thank you page.
   # Generate a unique URL according to country and reason so it can be used by engines like Google adwords.
-#  $form_state['redirect'] = array('content/thank-you', array('query' => array('co' => $country_code, 're' => $reason_code))); 
-  $form_state['redirect'] = 'content/thank-you';
+  $urls_redirect = _contact_urls_redirect();
+  $url_code = $country_code.$reason_code;
+  if(in_array($url_code, $urls_redirect))
+    $form_state['redirect'] = 'content/thank-you-'.$url_code;
+  else  // There is no matching code, so just forward to the default thank you page.
+    $form_state['redirect'] = 'content/thank-you';
   return;
 }
 

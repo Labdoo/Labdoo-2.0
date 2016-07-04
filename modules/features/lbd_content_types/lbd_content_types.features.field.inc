@@ -4634,7 +4634,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '31',
+        'weight' => '5',
       ),
     ),
   );
@@ -4706,7 +4706,112 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'rows' => '1',
         ),
         'type' => 'text_textarea',
-        'weight' => '40',
+        'weight' => '11',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-team_page-field_additional_teams'.
+  $fields['node-team_page-field_additional_teams'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_additional_teams',
+      'foreign keys' => array(
+        'node' => array(
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'og',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'og_behavior' => array(
+              'status' => TRUE,
+            ),
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'membership_type' => 'og_membership_type_default',
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(
+            'team' => 'team',
+          ),
+        ),
+        'target_type' => 'node',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'team_page',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '8',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_additional_teams',
+      'label' => 'Share with additional teams',
+      'required' => 0,
+      'settings' => array(
+        'behaviors' => array(
+          'og_widget' => array(
+            'access_override' => 0,
+            'admin' => array(
+              'widget_type' => 'entityreference_autocomplete',
+            ),
+            'default' => array(
+              'widget_type' => 'entityreference_autocomplete',
+            ),
+            'status' => TRUE,
+          ),
+          'prepopulate' => array(
+            'status' => 0,
+          ),
+        ),
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'og',
+        'settings' => array(),
+        'type' => 'og_complex',
+        'weight' => '2',
       ),
     ),
   );
@@ -4780,7 +4885,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'display_label' => 1,
         ),
         'type' => 'options_onoff',
-        'weight' => '36',
+        'weight' => '7',
       ),
     ),
   );
@@ -4861,7 +4966,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
-        'weight' => '32',
+        'weight' => '6',
       ),
     ),
   );
@@ -4935,7 +5040,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'display_label' => 1,
         ),
         'type' => 'options_onoff',
-        'weight' => '38',
+        'weight' => '9',
       ),
     ),
   );
@@ -5079,7 +5184,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '39',
+        'weight' => '10',
       ),
     ),
   );
@@ -5174,7 +5279,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '37',
+        'weight' => '8',
       ),
     ),
   );
@@ -5302,7 +5407,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
         'module' => 'og',
         'settings' => array(),
         'type' => 'og_complex',
-        'weight' => '0',
+        'weight' => '1',
       ),
     ),
   );
@@ -6311,6 +6416,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
   t('Send only to these members:');
   t('Send only to:');
   t('Send to all members of this team');
+  t('Share with additional teams');
   t('Status');
   t('Stream it');
   t('Tab');

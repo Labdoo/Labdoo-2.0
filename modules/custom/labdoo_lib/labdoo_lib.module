@@ -1414,7 +1414,7 @@ function labdoo_permissions_access_account_edit($account) {
 }
 
 
-function labdoo_permissions_access_account_roles($account) {
+function labdoo_permissions_access_account_roles($account=NULL) {
   global $user;
   // Can't use $account->uid because it is not set for this menu tab due to having a lower weight
   $thisPageUser = arg(1);
@@ -2269,10 +2269,10 @@ function labdoo_lib_get_field($node, $field, $type, $key) {
  *
  */
 function labdoo_lib_get_field_all($node, $field, $type, $key) {
+  $values = array();
   $field_items = field_get_items($type, $node, $field);
   if(!$field_items)
-    return;
-  $values = array();
+    return($values);
   foreach($field_items as $item) {
     array_push($values, $item[$key]); 
   }
@@ -2541,7 +2541,17 @@ function labdoo_render_team_object_header() {
     return;
   $node = node_load(arg(1));
 
-  $code = $code . "<p align='right'><strong><font color='gray'>" . t("Following this conversation") . "</font></strong><br/>" . lbd_print_team_followers($node) . "</p>"; 
+  $codeTeams = "";
+  $teamsList = labdoo_lib_get_field_all($node, 'field_additional_teams', 'node', 'target_id'); 
+  foreach($teamsList as $teamId) {
+    $teamPath = drupal_get_path_alias("node/" .  $teamId) . "/activities";
+    $teamName = lbd_nodeid2title($teamId);
+    $codeTeams .= '<a href="../'.$teamPath.'">'.$teamName.'</a> ';
+  }
+
+  $code = "<p align='right'><strong><font color='gray'>" . t("Following this conversation") . "</font></strong><br/>" . lbd_print_team_followers($node) . "</p>"; 
+  if($codeTeams != "")
+    $code = $code . "<p align='right'><strong><font color='gray'>" . t("Additional teams following this conversation") . "</font></strong><br/>" . $codeTeams . "</p>"; 
   $code = $code . "<hr/>";
 
   return $code; 
