@@ -1468,8 +1468,18 @@ function labdoo_lib_form_user_profile_form_alter(&$form, &$form_state) {
 function labdoo_lib_form_alter(&$form, &$form_state, $form_id) {
 
   // Do not show the hub manager notification options during registration
-  if($form_id == 'user_register_form')
+  if($form_id == 'user_register_form') {
+    // Add a header
+    $form['customtext'] = array(
+        '#type' => 'item',
+        '#markup' => '<strong><font size="4" font color="#FF2400">'.
+                     t("Thank you for joining the Labdoo network. Fill in this form to get you started.").'</font></strong>',
+        '#weight' => -100, 
+    );
+
+    // Hide hub manager notifications field
     field_group_hide_field_groups($form, array('group_hub_manager_notifications'));
+  }
 
   // If its a dootrip and if this is a cloning operation, reset some values to avoid
   // possible mistakes
@@ -2430,7 +2440,7 @@ function labdoo_render_footer() {
   $urlValues = '"'.$langCode.'/wiki-index?field_book_language_value=All&field_reference_book_target_id='.$path[1].'"';
   $path = explode('/', drupal_get_normal_path('content/about-labdoo'));
   $urlNutshell = '"'.$langCode.'/wiki-index?field_book_language_value=All&field_reference_book_target_id='.$path[1].'"';
-  $urlContact = '"'.$langCode.'/contact'.'"';
+  $urlContact = '"'.$langCode.'/content/contact-labdoo'.'"';
 
   // Now write the code
   $aboutLabdoo = t('About Labdoo');
@@ -3620,6 +3630,15 @@ function labdoo_lib_views_pre_render(&$view) {
  * Implementation of hook_node_validate 
  */
 function labdoo_lib_node_validate($node, $form, &$form_state) {
+
+  if ($node->type == 'laptop' || $node->type == 'edoovillage' || $node->type == 'hub') {
+    $location = $node->locations[0]; 
+    if($location && (array_key_exists('locpick', $location))) {
+      if(($location['locpick']['user_latitude'] != "" && !is_numeric($location['locpick']['user_latitude'])) || 
+         ($location['locpick']['user_longitude'] != "" && !is_numeric($location['locpick']['user_longitude'])))
+        form_set_error('locations', t("Please type a correct latitude and coordinate value (example: 22.66, 5.75)")); 
+    }
+  }
 
   if ($node->type == 'dootrip') {
     $departureDate = labdoo_lib_get_field($node, 'field_departure_date', 'node', 'value');
