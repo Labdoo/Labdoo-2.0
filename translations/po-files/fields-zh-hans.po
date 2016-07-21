@@ -222,8 +222,8 @@ msgstr "黑莓机"
 
 #: field:field_device_type:#allowed_values:blackberryPi
 msgctxt "field_device_type:#allowed_values:blackberryPi"
-msgid "Blackberry Pi"
-msgstr "黑莓 Pi"
+msgid "Raspberry Pi"
+msgstr "Raspberry Pi"
 
 #: field:field_device_type:#allowed_values:desktop
 msgctxt "field_device_type:#allowed_values:desktop"

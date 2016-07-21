@@ -229,8 +229,8 @@ msgstr "BlackBerry"
 
 #: field:field_device_type:#allowed_values:blackberryPi
 msgctxt "field_device_type:#allowed_values:blackberryPi"
-msgid "Blackberry Pi"
-msgstr "BlackBerry Pi"
+msgid "Raspberry Pi"
+msgstr "Raspberry Pi"
 
 #: field:field_device_type:#allowed_values:desktop
 msgctxt "field_device_type:#allowed_values:desktop"
