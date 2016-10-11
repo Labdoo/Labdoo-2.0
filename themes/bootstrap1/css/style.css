@@ -239,12 +239,37 @@ input[type="checkbox"] {
   display:none;
 }
 
-
 .alert-error {
   background-color: #d6e9c6;
   border-color: #d6e9c6;
   color: #468847;
 }
 
+.alert-success {
+  background-color: #ffffff;
+  border-color: red;
+  color: gray;
+  width: fit-content;
+}
 
-.well{min-height:20px;padding:5px;
+#search-block-form { 
+  width:auto; 
+  max-width:700px;
+}
+
+.well {
+  min-height:20px;
+  padding:5px;
+}
+
+.field-type-taxonomy-term-reference .field-label {
+  display: inline-block;
+  float: left;
+  padding-right: 1em;
+}
+
+.field-type-taxonomy-term-reference .field-item {
+  display: inline-block;
+  padding-right: 1em;
+}
+

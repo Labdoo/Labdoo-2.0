@@ -390,6 +390,18 @@ function make_main_menu() {
             'plid' => $hubMlid, 
             'module' => 'menu',
           );
+
+  $item = array(
+            'link_path' => 'admin/config/system/google_adwords/path',
+            'link_title' => t('[Superhub] Manage adwords'),
+            'menu_name' => 'main-menu',
+            'weight' => 30,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => $hubMlid, 
+            'module' => 'menu',
+          );
+ 
   $mlid = menu_link_save($item);
 
   /*

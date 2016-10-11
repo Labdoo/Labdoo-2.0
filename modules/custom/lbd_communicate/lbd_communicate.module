@@ -984,8 +984,9 @@ function _contact_reasons() {
  *
  */ 
 function _contact_urls_redirect() {
-  $urls = array('at0', 'at1', 'at2', 'at3', 'at4',
-                'de0', 'de1', 'de2', 'de3', 'de4');
+  //$urls = array('at0', 'at1', 'at2', 'at3', 'at4',
+  //              'de0', 'de1', 'de2', 'de3', 'de4');
+  $urls = array('at', 'de', 'ch');
   return $urls;
 }
 
@@ -1028,6 +1029,14 @@ function lbd_contact_form($form, &$form_state) {
     '#required'   => TRUE,
   );
 
+  // Email
+  $form['confirm-email'] = array(
+    '#title'      => t('Confirm e-mail address'),
+    '#type'       => 'textfield',
+    '#size'       => '20',
+    '#required'   => TRUE,
+  );
+
   // Countries
   $countries = location_get_iso3166_list();
   $form['country'] = array(
@@ -1039,8 +1048,16 @@ function lbd_contact_form($form, &$form_state) {
 
   if($country != "") {
     $form['country']['#default_value'] = array_search($country, array_keys($countries)); 
-#    $form['country']['#access'] = FALSE;
+//    $form['country']['#access'] = FALSE;
   }
+
+  // Name
+  $form['city'] = array(
+    '#type'       => 'textfield',
+    '#title'      => t('City:'),
+    '#size'       => '20',
+    '#required'   => FALSE,
+  );
 
   // Reason
   $reasons = _contact_reasons();
@@ -1053,7 +1070,7 @@ function lbd_contact_form($form, &$form_state) {
 
   if($reason != "") {
     $form['reason']['#default_value'] = $reason; 
-#    $form['reason']['#access'] = FALSE;
+//    $form['reason']['#access'] = FALSE;
   }
 
   // Message
@@ -1062,6 +1079,7 @@ function lbd_contact_form($form, &$form_state) {
     '#type'       => 'textarea',
     '#rows'       => '5',
     '#cols'       => '10',
+    '#required'   => TRUE,
   );
 
   $form['submit'] = array(
@@ -1078,8 +1096,12 @@ function lbd_contact_form($form, &$form_state) {
  */
 function lbd_contact_form_validate($form, &$form_state) { 
   $valid_email = $form_state['values']['email'];
+  $confirmed_email = $form_state['values']['confirm-email'];
   if (!valid_email_address($valid_email)) {
-  form_set_error('email', 'Sorry. Your email address,' . $valid_email . ', is not valid. Please submit a valid E-mail address.');
+    form_set_error('email', 'Sorry. Your email address,' . $valid_email . ', is not valid. Please submit a valid E-mail address.');
+  }
+  if ($valid_email != $confirmed_email) {
+    form_set_error('confirm-email', 'Please make sure that your confirmation email is correct.');
   }
 }
 
@@ -1093,7 +1115,7 @@ function lbd_contact_form_submit($form, &$form_state) {
   $reasons = _contact_reasons();
   global $language;
 
-  # Send an email to the user who submitted the form
+  // Send an email to the user who submitted the form
   $langCode = $language->language;
   if(!file_exists(_path_to_email_template($langCode) . "contact_form_submitted_subject-" . $langCode . ".email")) 
     $langCode = 'en';
@@ -1113,7 +1135,7 @@ function lbd_contact_form_submit($form, &$form_state) {
   $email_params['body'] = $body;
   lbd_communicate_mail_send($email_params);
 
-  # Send an email to the superhub user in charge of the user's country/region
+  // Send an email to the superhub user in charge of the user's country/region
   $country_codes = array_keys(location_get_iso3166_list());
   $country_code = $country_codes[$form_state['values']['country']];
   $country = labdoo_country_code2name($country_code); 
@@ -1122,6 +1144,7 @@ function lbd_contact_form_submit($form, &$form_state) {
       "Germany" => "Labdoo-DACH@Labdoo.org, contact@labdoo.org",
       "United States" => "wendy.lu@labdoo.org, contact@labdoo.org", 
       "Switzerland" => "zuerich-hub@labdoo.org, contact@labdoo.org", 
+      "Taiwan" => "wendy.lu@labdoo.org, contact@labdoo.org",
       "Austria" => "Labdoo-DACH@Labdoo.org, contact@labdoo.org"
   );
   if(!array_key_exists($country, $country2shub_email))
@@ -1129,7 +1152,7 @@ function lbd_contact_form_submit($form, &$form_state) {
   else
     $to_emails = $country2shub_email[$country];
 
-  # Send this message always in English
+  // Send this message always in English
   $subjectFileName = _path_to_email_template("en") . "contact_form_submitted_shub_subject-en.email";
   $bodyFileName = _path_to_email_template("en") . "contact_form_submitted_shub_body-en.email";
   $subjectTemplate = file_get_contents($subjectFileName);
@@ -1138,6 +1161,7 @@ function lbd_contact_form_submit($form, &$form_state) {
   $body = str_replace("[USERNAME]", $form_state['values']['name'], $bodyTemplate);
   $body = str_replace("[USEREMAIL]", $valid_email, $body);
   $body = str_replace("[COUNTRY]", $country, $body);
+  $body = str_replace("[CITY]", $form_state['values']['city'], $body);
   $body = str_replace("[REASON]", $reasons[$form_state['values']['reason']], $body);
   $body = str_replace("[MESSAGE]", $message, $body);
   $body = str_replace("[CONTACT_EMAIL]", variable_get('site_mail', ''), $body);
@@ -1148,12 +1172,19 @@ function lbd_contact_form_submit($form, &$form_state) {
   $email_params['body'] = $body;
   lbd_communicate_mail_send($email_params);
  
-  # Redirect to thank you page.
-  # Generate a unique URL according to country and reason so it can be used by engines like Google adwords.
+  // Redirect to thank you page.
+  // Generate a unique URL according to country and reason so it can be used by engines like Google adwords.
   $urls_redirect = _contact_urls_redirect();
-  $url_code = $country_code.$reason_code;
+
+  // Because Google analytics only provides 20 different transitions per account, 
+  // we limit the number of possible transitions by not including the reason code.
+  // So we only include the country code and therefore we only allow one transition 
+  // per country. Hence the next line is commented out.
+  // $url_code = $country_code.$reason_code;
+  $url_code = $country_code;
+
   if(in_array($url_code, $urls_redirect))
-    $form_state['redirect'] = 'content/thank-you-'.$url_code;
+    $form_state['redirect'] = '/../content/thank-you-'.$url_code;
   else  // There is no matching code, so just forward to the default thank you page.
     $form_state['redirect'] = 'content/thank-you';
   return;

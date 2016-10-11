@@ -469,15 +469,15 @@ function lbd_actions_node_view($node, $view_mode) {
     $reason = lbd_actions_user_contributes_dooject($userId, $node);
 
     if($reason == "manager") {
-      drupal_set_message(t("You are this dootronic's manager."), 'status', FALSE);
+      labdoo_lib_msg_info("You are this dootronic's manager.");
       return;
     }
     else if($reason == "tagger") {
-      drupal_set_message(t("You have contributed to this dootronic by tagging it."), 'status', FALSE);
+      labdoo_lib_msg_info("You have contributed to this dootronic by tagging it.");
       return;
     }
     else if($reason == "dootrip") {
-      drupal_set_message(t("You have contributed to this dootronic by providing a dootrip."), 'status', FALSE);
+      labdoo_lib_msg_info("You have contributed to this dootronic by providing a dootrip.");
       return;
     }
     return;
@@ -488,11 +488,11 @@ function lbd_actions_node_view($node, $view_mode) {
     $reason = lbd_actions_user_contributes_dootrip($userId, $node);
 
     if($reason == "dootripper") {
-      drupal_set_message(t("You are a traveler in this dootrip."), 'status', FALSE);
+      labdoo_lib_msg_info("You are a traveler in this dootrip.");
       return;
     }
     else if($reason == "dooject") {
-      drupal_set_message(t("You have contributed to a dootronic that is transported by this dootrip."), 'status', FALSE);
+      labdoo_lib_msg_info("You have contributed to a dootronic that is transported by this dootrip.");
       return;
     }
 
@@ -504,15 +504,15 @@ function lbd_actions_node_view($node, $view_mode) {
     $reason = lbd_actions_user_contributes_edoovillage($userId, $node);
 
     if($reason == "manager") {
-      drupal_set_message(t("You are a manager of this edoovillage."), 'status', FALSE);
+      labdoo_lib_msg_info("You are a manager of this edoovillage.");
       return;
     }
     else if($reason == "dooject") {
-      drupal_set_message(t("You have contributed to this edoovillage with at least one dootronic."), 'status', FALSE);
+      labdoo_lib_msg_info("You have contributed to this edoovillage with at least one dootronic.");
       return;
     }
     else if($reason == "dootrip") {
-      drupal_set_message(t("You have contributed to this edoovillage by at least providing one dootrip."), 'status', FALSE);
+      labdoo_lib_msg_info("You have contributed to this edoovillage by at least providing one dootrip.");
       return;
     }
     return;
@@ -523,15 +523,15 @@ function lbd_actions_node_view($node, $view_mode) {
     $reason = lbd_actions_user_contributes_hub($userId, $node);
 
     if($reason == "manager") {
-      drupal_set_message(t("You are a manager of this hub."), 'status', FALSE);
+      labdoo_lib_msg_info("You are a manager of this hub.");
       return;
     }
     else if($reason == "dooject") {
-      drupal_set_message(t("You have contributed to this hub with at least one dootronic."), 'status', FALSE);
+      labdoo_lib_msg_info("You have contributed to this hub with at least one dootronic.");
       return;
     }
     else if($reason == "dootrip") {
-      drupal_set_message(t("You have contributed to this hub by at least providing one dootrip."), 'status', FALSE);
+      labdoo_lib_msg_info("You have contributed to this hub by at least providing one dootrip.");
       return;
     }
     return;

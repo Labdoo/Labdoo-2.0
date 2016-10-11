@@ -43,7 +43,8 @@ function labdoo_objects_user_default_permissions() {
   $permissions['create hub content'] = array(
     'name' => 'create hub content',
     'roles' => array(
-      0 => 'superhub manager',
+      0 => 'hub manager',
+      1 => 'superhub manager',
     ),
     'module' => 'node',
   );
@@ -104,7 +105,9 @@ function labdoo_objects_user_default_permissions() {
   // Exported permission: delete own hub content.
   $permissions['delete own hub content'] = array(
     'name' => 'delete own hub content',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'superhub manager',
+    ),
     'module' => 'node',
   );
 
@@ -177,7 +180,8 @@ function labdoo_objects_user_default_permissions() {
   $permissions['edit own hub content'] = array(
     'name' => 'edit own hub content',
     'roles' => array(
-      0 => 'superhub manager',
+      0 => 'hub manager',
+      1 => 'superhub manager',
     ),
     'module' => 'node',
   );

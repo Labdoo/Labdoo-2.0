@@ -29,7 +29,7 @@ function labdoo_objects_node_info() {
       'description' => t('A dootrip is a travel performed by a person or an organization which can be used to carry one or more laptops.  Dootrips enable Labdoo\'s CO2-neutral transportation system.'),
       'has_title' => '1',
       'title_label' => t('Title'),
-      'help' => '',
+      'help' => t('<p align=\'right\'><a href="../../content/dootrip-system" target="_blank" align="right">Help about dootrips</a>&nbsp;&nbsp;&nbsp;</p>'),
     ),
     'edoovillage' => array(
       'name' => t('Edoovillage'),
@@ -37,7 +37,7 @@ function labdoo_objects_node_info() {
       'description' => t('An edoovillage is a location (most typically a school or an education center) where Labdoo laptops loaded with education software are installed.'),
       'has_title' => '1',
       'title_label' => t('Title'),
-      'help' => '',
+      'help' => t('<p align=\'right\'><a href="../../content/managing-edoovillages" target="_blank" align="right">Help about edoovillages</a>&nbsp;&nbsp;&nbsp;</p>'),
     ),
     'hub' => array(
       'name' => t('Hub'),
@@ -45,7 +45,7 @@ function labdoo_objects_node_info() {
       'description' => t('Labdoo hubs are locations where laptops can be dropped and where Labdoo volunteers typically perform multiple Labdoo tasks.'),
       'has_title' => '1',
       'title_label' => t('Title'),
-      'help' => '',
+      'help' => t('<p align=\'right\'><a href="../../content/about-hubs" target="_blank" align="right">Help about hubs</a>&nbsp;&nbsp;&nbsp;</p>'),
     ),
     'laptop' => array(
       'name' => t('Dootronic'),
@@ -53,7 +53,7 @@ function labdoo_objects_node_info() {
       'description' => t('Use this content type to tag and register a laptop.'),
       'has_title' => '1',
       'title_label' => t('Title'),
-      'help' => '',
+      'help' => t('<p align=\'right\'><a href="../../content/about-dootronics" target="_blank" align="right">Help about dootronics</a>&nbsp;&nbsp;&nbsp;</p>'),
     ),
   );
   return $items;

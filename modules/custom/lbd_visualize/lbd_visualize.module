@@ -426,10 +426,16 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
     $objects[$objectNid]['delivered'] = $delivered = labdoo_getnum_doojects($objectNid, NULL, "S4"); 
 
     // Extract remaining field 
-    $objects[$objectNid]['remaining'] = $remaining = $needed - $inTransit - $delivered; 
+    $remaining = $needed - $inTransit - $delivered;
+    if($remaining < 0)
+        $remaining = 0;
+    $objects[$objectNid]['remaining'] = $remaining; 
 
     // Extract %completed field 
-    $objects[$objectNid]['pcompleted'] = floor(($needed - $remaining) / $needed * 100.00); 
+    if($needed != 0)
+        $objects[$objectNid]['pcompleted'] = floor(($needed - $remaining) / $needed * 100.00); 
+    else
+        $objects[$objectNid]['pcompleted'] = 0;
  
     // Extract number of students
     $objects[$objectNid]['numStudents'] = labdoo_lib_get_field($node, 'field_number_of_students', 'node', 'value'); 
@@ -603,13 +609,19 @@ function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher =
     $objects[$objectNid]['delivered'] = $delivered = labdoo_getnum_doojects(NULL, $objectNid, "S4"); 
 
     // Extract remaining field 
-    $objects[$objectNid]['remaining'] = $remaining = $needed - $inTransit - $delivered; 
+    $remaining = $needed - $inTransit - $delivered;
+    if($remaining < 0)
+        $remaining = 0;
+    $objects[$objectNid]['remaining'] = $remaining; 
 
     // Extract needed field 
     $objects[$objectNid]['neededShared'] = $neededShared = floor(labdoo_get_demand(NULL, $objectNid, TRUE));
 
     // Extract remaining field 
-    $objects[$objectNid]['remainingShared'] = $remainingShared = $neededShared - $inTransit - $delivered; 
+    $remainingShared = $neededShared - $inTransit - $delivered;
+    if($remainingShared < 0)
+        $remainingShared = 0;
+    $objects[$objectNid]['remainingShared'] = $remainingShared; 
 
     // Extract %completed field 
     if($needed != 0)
@@ -1584,7 +1596,8 @@ function lbd_display_slider_edoovilage_dootrips($edoovillageId) {
 
   $rows = array();
   $query = "SELECT DISTINCT(field_dootrips_target_id) FROM field_data_field_dootrips WHERE entity_id IN 
-           (SELECT entity_id FROM field_data_field_edoovillage_destination WHERE field_edoovillage_destination_target_id=:edoovillageId)";
+           (SELECT entity_id FROM field_data_field_edoovillage_destination WHERE field_edoovillage_destination_target_id=:edoovillageId) 
+           UNION SELECT entity_id FROM field_data_field_preferred_edoovillages WHERE field_preferred_edoovillages_target_id=:edoovillageId";
   $placeHolders[':edoovillageId'] = $edoovillageId;
   $result = db_query($query, $placeHolders);
 

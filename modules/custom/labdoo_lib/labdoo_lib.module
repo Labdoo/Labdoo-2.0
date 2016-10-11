@@ -1389,6 +1389,10 @@ function labdoo_lib_form_node_form_alter(&$form, &$form_state, $form_id) {
 function labdoo_lib_menu_alter(&$items) {
   $items['user/%user/edit']['access callback'] = 'labdoo_permissions_access_account_edit';
   $items['user/%user/roles']['access callback'] = 'labdoo_permissions_access_account_roles';
+  $items['admin/config/system/google_adwords/path']['access callback'] = 'labdoo_permissions_access_adwords';
+  $items['admin/config/system/google_adwords/path/add']['access callback'] = 'labdoo_permissions_access_adwords';
+  $items['admin/config/system/google_adwords/path/%/edit']['access callback'] = 'labdoo_permissions_access_adwords';
+  $items['admin/config/system/google_adwords/path/%/delete']['access callback'] = 'labdoo_permissions_access_adwords';
 }
 
 
@@ -1427,6 +1431,15 @@ function labdoo_permissions_access_account_roles($account=NULL) {
   if(in_array('superhub manager', $userRoles) || in_array('administrator', $userRoles)) 
     return TRUE;
 
+  return FALSE;
+}
+
+
+function labdoo_permissions_access_adwords($account) {
+  global $user;
+  $userRoles = array_values($user->roles);
+  if(in_array('superhub manager', $userRoles) || in_array('administrator', $userRoles)) 
+    return TRUE;
   return FALSE;
 }
 
@@ -1512,7 +1525,7 @@ function lbd_get_total_num_objects($objectType) {
     $query = "SELECT COUNT(*) FROM (SELECT DISTINCT country FROM location WHERE lid IN (SELECT lid FROM location_instance WHERE nid!=0 ORDER by nid)) AS countries";
   }
   else {
-    $query = "SELECT COUNT(*) FROM node WHERE type='$objectType'";
+    $query = "SELECT COUNT(*) FROM node WHERE type='$objectType' AND status=1";
   }
 
   $num = db_query($query)->fetchField();
@@ -2742,8 +2755,29 @@ function labdoo_block_filter_actions_feed() {
 function labdoo_block_filter_search() {
   $path = drupal_get_path_alias(current_path());
 
+  if(strcmp($path, "content/about-labdoo") == 0)
+    return FALSE;
+
+  if(strcmp($path, "content/front-page") == 0)
+    return TRUE;
+
   if(strcmp($path, "wiki-index") == 0)
-      return TRUE;
+    return TRUE;
+
+  if(strcmp($path, "user/login") == 0)
+    return FALSE;
+
+  if(strcmp($path, "user/password") == 0)
+    return FALSE;
+
+  if(strcmp($path, "user/register") == 0)
+    return FALSE;
+
+  if(strcmp($path, "user") == 0)
+    return FALSE;
+
+  if(preg_match('/^node.*activities/', $path)) 
+    return TRUE;
 
   if(labdoo_lib_node_is_type(array('book', 'team', 'team_page', 'event', 'team_task')))
     return TRUE;
@@ -2823,6 +2857,9 @@ function labdoo_block_filter_header() {
       return TRUE;
 
   if(strcmp($path, "content/thank-you") == 0)
+      return TRUE;
+
+  if(strcmp($path, "content/doopoints") == 0)
       return TRUE;
 
   if((strcmp($path, "share-wall") == 0) || (strcmp($path, "content/my-share-wall") == 0))
@@ -3811,5 +3848,23 @@ function labdoo_views_download_button($viewResult, $signature="") {
   }
 
   return labdoo_table_download_button($viewTable, $signature);
+}
+
+
+/**
+ * Prints a message of type information 
+ *
+ * @param string
+ *   msg The message to print
+ *
+ */ 
+function labdoo_lib_msg_info($msg) {
+
+  $fullMsg  = "";
+  $fullMsg .= "<img src='/sites/default/files/content/labdoo-toolkit/labdoo-equation-no-text.png' width='100'>";
+  $fullMsg .= t($msg);
+  drupal_set_message($fullMsg, 'status', FALSE);
+
+  return;
 }
 

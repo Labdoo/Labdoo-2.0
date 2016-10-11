@@ -2,7 +2,7 @@
 
 The following are some of the most commonly used SQL queries.
 
-  - To get the list of countries where Labdoo is working do as follows (the list is ordered according to order in which a country was added to Labdoo.org):
+  - To get the list of countries where Labdoo is working do as follows (the list is ordered according to the time at which a country was added to Labdoo.org):
 
     #+BEGIN_EXAMPLE
     mysql> SELECT DISTINCT country FROM location WHERE lid IN (SELECT lid FROM location_instance WHERE nid!=0 ORDER by nid);
@@ -26,7 +26,7 @@ The following are some of the most commonly used SQL queries.
     mysql> select * from simplenews_newsletter;
     #+END_EXAMPLE
 
-  - To stop sending a newsletter:
+  - To stop sending a newsletter or to allow to resend an already sent newsletter:
 
     #+BEGIN_EXAMPLE
     mysql> update simplenews_newsletter set status=0 where nid=20510; # change 20510 for the nid of the newsletter 
@@ -61,4 +61,13 @@ The following are some of the most commonly used drush queries.
     # drush @lbd php-script /var/www/lbd/profiles/labdoo/utils/lbd-set-logo.php 
     #+END_EXAMPLE
 
-   
+** Bash commands
+
+The following bash commands can come handy:
+
+  - To create a compressed tar ball with all the Labdoo pictures:
+  
+    #+BEGIN_EXAMPLE
+    # find /var/www/lbd/sites/* -name *jpg | tar zcf labdoo-pictures.tar.gz -T -   
+    #+END_EXAMPLE
+

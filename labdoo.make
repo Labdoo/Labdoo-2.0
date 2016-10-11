@@ -48,6 +48,8 @@ projects[search_config] = 1.1
 projects[hide_submit] = 2.0 
 projects[extlink] = 1.18
 projects[views_distinct] = 1.0 
+projects[search_autocomplete] = 4.7
+projects[termcase] = 1.3
 
 ;--------------------
 ; Security
@@ -71,7 +73,6 @@ projects[defaultconfig][patch][1900574] = https://www.drupal.org/files/issues/19
 projects[migrate_d2d] = 2.1
 projects[migrate] = 2.8
 
-
 ;--------------------
 ; Admin utils
 ;--------------------
@@ -83,6 +84,7 @@ projects[view_unpublished] = 1.2
 projects[menu_view_unpublished] = 1.0-beta3
 projects[role_delegation] = 1.1 
 projects[legal] = 1.5 
+projects[google_adwords] = 2.1 
 
 ;--------------------
 ; Performance

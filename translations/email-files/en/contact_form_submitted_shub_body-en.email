@@ -6,6 +6,7 @@ A user from your superhub region has sent you a message:
 User's name: [USERNAME]
 User's email address: [USEREMAIL]
 User's country: [COUNTRY]
+User's city: [CITY]
 Reason for contacting you: [REASON]
 Message:
 "[MESSAGE]"

@@ -22,6 +22,12 @@ function bootstrap1_preprocess_page(&$vars) {
   if(!empty($vars['node']) && $vars['node']->title == 'Front Page')
     $vars['title'] = '';
 
+  // Hide contact page title
+  if(!empty($vars['node']) && $vars['node']->title == 'Contact Labdoo')
+    $vars['title'] = '';
+
+
+
   // Hide share wall title
 #  if(!empty($vars['node']) && $vars['node']->title == 'My share wall')
 #    $vars['title'] = '';
@@ -44,9 +50,9 @@ function bootstrap1_preprocess_page(&$vars) {
  *
  */
 function bootstrap1_button($variables) {
-  // Undoing Bootstrap theme’s rewriting of buttons.
+  // Undoing Bootstrap theme rewriting of buttons.
   // The following implementation of theme_button overrides 
-  // bootstrap’s bootstrap_button() modification. This is
+  // bootstrap bootstrap_button() modification. This is
   // needed so that the module hide_submit can operate well,
   // otherwise it can't hide the button upon submit, which
   // leads to the problem of multiple node creation

@@ -215,7 +215,7 @@ function labdoo_objects_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '14',
+          'weight' => '15',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -245,7 +245,7 @@ function labdoo_objects_field_default_fields() {
           'rows' => '3',
         ),
         'type' => 'text_textarea',
-        'weight' => '16',
+        'weight' => '17',
       ),
     ),
   );
@@ -636,7 +636,7 @@ function labdoo_objects_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '16',
+          'weight' => '17',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -723,7 +723,7 @@ function labdoo_objects_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '18',
+        'weight' => '19',
       ),
     ),
   );
@@ -754,7 +754,7 @@ function labdoo_objects_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '17',
+          'weight' => '18',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -1103,7 +1103,7 @@ $display_output = $entity_field_item[\'value\'];',
           'data_type' => 'varchar',
         ),
         'display_format' => '$display_output = $entity_field_item[\'value\'];',
-        'recalculate' => FALSE,
+        'recalculate' => 0,
         'store' => 0,
       ),
       'translatable' => '0',
@@ -1119,7 +1119,7 @@ $display_output = $entity_field_item[\'value\'];',
           'module' => 'computed_field',
           'settings' => array(),
           'type' => 'computed_field_unsanitized',
-          'weight' => '13',
+          'weight' => '14',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -1136,16 +1136,17 @@ $display_output = $entity_field_item[\'value\'];',
       ),
       'entity_type' => 'node',
       'field_name' => 'field_dootrips_edoovillages',
-      'label' => 'Edoovillages',
-      'required' => FALSE,
+      'label' => 'Edoovillages assigned',
+      'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
       'widget' => array(
+        'active' => 0,
         'module' => 'computed_field',
         'settings' => array(),
         'type' => 'computed',
-        'weight' => '19',
+        'weight' => '20',
       ),
     ),
   );
@@ -1699,6 +1700,104 @@ $display_output = $entity_field_item[\'value\'];',
     ),
   );
 
+  // Exported field: 'node-dootrip-field_preferred_edoovillages'.
+  $fields['node-dootrip-field_preferred_edoovillages'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_preferred_edoovillages',
+      'foreign keys' => array(
+        'node' => array(
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(
+            'edoovillage' => 'edoovillage',
+          ),
+        ),
+        'target_type' => 'node',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'dootrip',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'inline',
+          'module' => 'entityreference',
+          'settings' => array(
+            'link' => 1,
+          ),
+          'type' => 'entityreference_label',
+          'weight' => '13',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_preferred_edoovillages',
+      'label' => 'Preferred edoovillage destinations',
+      'required' => 0,
+      'settings' => array(
+        'behaviors' => array(
+          'prepopulate' => array(
+            'status' => 0,
+          ),
+        ),
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'size' => '120',
+        ),
+        'type' => 'entityreference_autocomplete',
+        'weight' => '15',
+      ),
+    ),
+  );
+
   // Exported field: 'node-dootrip-field_status_dootrip'.
   $fields['node-dootrip-field_status_dootrip'] = array(
     'field_config' => array(
@@ -1764,7 +1863,7 @@ $display_output = $entity_field_item[\'value\'];',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '15',
+        'weight' => '16',
       ),
     ),
   );
@@ -3310,7 +3409,7 @@ $display_output = $entity_field_item[\'value\'];',
       ),
       'entity_type' => 'node',
       'field_name' => 'field_project_summary',
-      'label' => 'Project brief description',
+      'label' => 'Project title',
       'required' => 1,
       'settings' => array(
         'text_processing' => '0',
@@ -3320,7 +3419,7 @@ $display_output = $entity_field_item[\'value\'];',
         'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'size' => '120',
+          'size' => '80',
         ),
         'type' => 'text_textfield',
         'weight' => '2',
@@ -6436,7 +6535,7 @@ $display_output = $entity_field_item[\'value\'];',
   t('Dootronics additional notes');
   t('Dootronics\' estimated total weight');
   t('Edoovillage destination');
-  t('Edoovillages');
+  t('Edoovillages assigned');
   t('Email address, phone number, website, etc.');
   t('Example: Ubuntu 12.04, Mac OS X, Windows 7, etc.');
   t('Hard drive');
@@ -6469,10 +6568,11 @@ $display_output = $entity_field_item[\'value\'];',
   t('Parent hub');
   t('Pick me up');
   t('Picture');
+  t('Preferred edoovillage destinations');
   t('Project application');
-  t('Project brief description');
   t('Project description');
   t('Project manager(s)');
+  t('Project title');
   t('Semaphore');
   t('Serial number');
   t('Socket type');

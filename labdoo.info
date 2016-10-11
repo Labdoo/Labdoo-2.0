@@ -96,6 +96,8 @@ dependencies[] = hide_submit
 dependencies[] = date_popup 
 dependencies[] = extlink 
 dependencies[] = views_distinct 
+dependencies[] = search_autocomplete 
+dependencies[] = termcase 
 
 ;;; Features and exports/imports
 dependencies[] = strongarm
@@ -113,6 +115,7 @@ dependencies[] = view_unpublished
 dependencies[] = menu_view_unpublished 
 dependencies[] = role_delegation 
 dependencies[] = legal
+dependencies[] = google_adwords 
 
 ;;; Performance
 dependencies[] = boost
