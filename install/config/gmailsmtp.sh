@@ -35,8 +35,7 @@ sed -i /etc/ssmtp/ssmtp.conf \
     -e "/^root=/ c root=$gmail_account" \
     -e "/^AuthUser=/ c AuthUser=$gmail_account" \
     -e "/^AuthPass=/ c AuthPass=$gmail_passwd" \
-    -e "/^rewriteDomain=/ c rewriteDomain=gmail.com" \
-    -e "/^hostname=/ c hostname=$gmail_account"
+    -e "/^rewriteDomain=/ c rewriteDomain=gmail.com"
 
 sed -i /etc/ssmtp/revaliases \
     -e "/^root:/ c root:$gmail_account:smtp.gmail.com:587" \
