@@ -40,18 +40,18 @@ projects[wysiwyg] = 2.2
 libraries[tinymce][directory_name] = tinymce
 libraries[tinymce][download][type] = get
 libraries[tinymce][download][url] = http://github.com/downloads/tinymce/tinymce/tinymce_3.5.7.zip
-projects[special_menu_items] = 2.0 
-projects[computed_field] = 1.0 
-projects[entityreference_filter] = 1.5 
+projects[special_menu_items] = 2.0
+projects[computed_field] = 1.0
+projects[entityreference_filter] = 1.5
 projects[imce] = 1.9
 projects[imce_wysiwyg] = 1.0
-projects[imce_mkdir] = 1.0 
-projects[video_filter] = 3.1 
-projects[video_filter][patch][] = https://www.drupal.org/files/issues/video_filter-https-support-786774-28.patch 
+projects[imce_mkdir] = 1.0
+projects[video_filter] = 3.1
+projects[video_filter][patch][] = https://www.drupal.org/files/issues/video_filter-https-support-786774-28.patch
 projects[views_tree] = 2.0
-projects[countries] = 2.3 
-projects[search_config] = 1.1 
-projects[hide_submit] = 2.0 
+projects[countries] = 2.3
+projects[search_config] = 1.1
+projects[hide_submit] = 2.0
 
 ;--------------------
 ; Security
@@ -79,26 +79,26 @@ projects[migrate] = 2.8
 ;--------------------
 ; Admin utils
 ;--------------------
-projects[module_filter] = 2.0 
+projects[module_filter] = 2.0
 projects[drush_language] = 1.5
 projects[delete_all] = 1.1
 projects[publishcontent] = 1.3
 projects[view_unpublished] = 1.2
 projects[menu_view_unpublished] = 1.0-beta3
-projects[role_delegation] = 1.1 
-projects[legal] = 1.5 
+projects[role_delegation] = 1.1
+projects[legal] = 1.5
 projects[l10n_update] = 2.0
 
 ;--------------------
 ; Performance
 ;--------------------
-projects[boost] = 1.1
+projects[boost] = 1.2
 projects[memcache] = 1.5
 
 ;--------------------
 ; Services and social
 ;--------------------
-projects[google_analytics] = 2.1
+projects[google_analytics] = 2.3
 projects[drupalchat] = 1.7
 projects[simplenews] = 1.1
 projects[mass_contact] = 1.0
@@ -122,7 +122,7 @@ projects[l10n_update] = 1.1
 projects[i18n] = 1.13
 projects[i18nviews] = 3.x-dev
 projects[transliteration] = 3.2
-projects[lang_dropdown] = 2.5 
+projects[lang_dropdown] = 2.5
 
 ;--------------------
 ; Email and messaging
@@ -132,9 +132,7 @@ projects[mailsystem] = 2.34
 projects[mimemail] = 1.0-beta4
 projects[reroute_email] = 1.2
 projects[smtp] = 1.2
-;projects[phpmailer] = 3.x-dev
-projects[phpmailer][download][revision] = 8f7c632
-projects[phpmailer][download][branch] = 7.x-3.x
+projects[phpmailer] = 3.0-beta1
 libraries[phpmailer][directory_name] = phpmailer
 libraries[phpmailer][download][type] = get
 libraries[phpmailer][download][url] = https://github.com/PHPMailer/PHPMailer/archive/v5.2.9.zip
@@ -158,7 +156,7 @@ projects[oauth2_loginprovider] = 1.x-dev
 ;--------------------
 projects[og] = 2.7
 projects[og_extras] = 1.1
-projects[stringoverrides] = 1.8 
+projects[stringoverrides] = 1.8
 projects[eva] = 1.2
 projects[entityreference_prepopulate] = 1.5
 projects[calendar] = 3.5
@@ -166,9 +164,9 @@ projects[calendar] = 3.5
 ;--------------------
 ; Extensions and others
 ;--------------------
-projects[ctools] = 1.9
+projects[ctools] = 1.11
 projects[libraries] = 2.3
-projects[entity] = 1.7
+projects[entity] = 1.8
 projects[xautoload] = 5.7
 projects[token] = 1.6
 projects[rules] = 2.9
@@ -184,12 +182,12 @@ projects[r4032login] = 1.8
 projects[views_slideshow] = 3.1
 projects[views_autocomplete_filters] = 1.2
 projects[views_dependent_filters] = 1.1
-projects[variable] = 2.5 
+projects[variable] = 2.5
 projects[logintoboggan] = 1.5
 projects[flexslider] = 2.0-alpha3
-libraries[flexslider][directory_name] = flexslider 
+libraries[flexslider][directory_name] = flexslider
 libraries[flexslider][download][type] = get
-libraries[flexslider][download][url] = https://github.com/woothemes/FlexSlider/archive/version/2.4.0.zip 
+libraries[flexslider][download][url] = https://github.com/woothemes/FlexSlider/archive/version/2.4.0.zip
 
 ;--------------------
 ; Photo albums
@@ -197,11 +195,11 @@ libraries[flexslider][download][url] = https://github.com/woothemes/FlexSlider/a
 projects[file_entity] = 2.0-beta1
 projects[node_gallery] = 1.1
 projects[colorbox] = 2.8
-libraries[colorbox][directory_name] = colorbox 
+libraries[colorbox][directory_name] = colorbox
 libraries[colorbox][download][type] = get
-libraries[colorbox][download][url] = https://github.com/jackmoore/colorbox/archive/1.x.zip 
+libraries[colorbox][download][url] = https://github.com/jackmoore/colorbox/archive/1.x.zip
 projects[plupload] = 1.7
-libraries[plupload][directory_name] = plupload 
+libraries[plupload][directory_name] = plupload
 libraries[plupload][download][type] = get
-libraries[plupload][download][url] = https://github.com/moxiecode/plupload/archive/v1.5.8.zip 
-projects[imagemagick] = 1.0 
+libraries[plupload][download][url] = https://github.com/moxiecode/plupload/archive/v1.5.8.zip
+projects[imagemagick] = 1.0
