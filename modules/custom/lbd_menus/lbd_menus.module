@@ -201,7 +201,7 @@ function make_main_menu() {
    */
   $item = array(
             'link_path' => '<front>',
-            'link_title' => t('About dootronics'),
+            'link_title' => t('Help about dootronics'),
             'menu_name' => 'main-menu',
             'weight' => -48,
             'customized' => 1,
@@ -263,7 +263,7 @@ function make_main_menu() {
 
   $item = array(
             'link_path' => '<front>',
-            'link_title' => t('About edoovillages'),
+            'link_title' => t('Help about edoovillages'),
             'menu_name' => 'main-menu',
             'weight' => -48,
             'customized' => 1,
@@ -325,7 +325,7 @@ function make_main_menu() {
 
   $item = array(
             'link_path' => '<front>',
-            'link_title' => t('About hubs'),
+            'link_title' => t('Help about hubs'),
             'menu_name' => 'main-menu',
             'weight' => -48,
             'customized' => 1,
@@ -434,7 +434,7 @@ function make_main_menu() {
 
   $item = array(
             'link_path' => '<front>',
-            'link_title' => t('About dootrips'),
+            'link_title' => t('Help about dootrips'),
             'menu_name' => 'main-menu',
             'weight' => -48,
             'customized' => 1,
@@ -569,6 +569,17 @@ function make_main_menu() {
           );
   $mlid = menu_link_save($item);
 
+  $item = array(
+            'link_path' => '<front>',
+            'link_title' => t('Help about teams'),
+            'menu_name' => 'main-menu',
+            'weight' => -35,
+            'customized' => 1,
+            'plid' => $teamsMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
   /*
    * Newsletter menu item
    */
@@ -610,6 +621,17 @@ function make_main_menu() {
           );
   $mlid = menu_link_save($item);
 
+  $item = array(
+            'link_path' => '<front>',
+            'link_title' => t('Help about newsletters'),
+            'menu_name' => 'main-menu',
+            'weight' => -25,
+            'customized' => 1,
+            'plid' => $newsletterMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
   /*
    * Wiki menu item
    */
@@ -641,6 +663,17 @@ function make_main_menu() {
   $mlid = menu_link_save($item);
 
   $item = array(
+            'link_path' => '<front>',
+            'link_title' => t('Help about the wiki'),
+            'menu_name' => 'main-menu',
+            'weight' => -49,
+            'customized' => 1,
+            'plid' => $wikiMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
             'link_path' => '<separator>',
             'menu_name' => 'main-menu',
             'weight' => -48,
@@ -662,6 +695,23 @@ function make_main_menu() {
             'module' => 'menu',
           );
   $mlid = menu_link_save($item);
+
+   /*
+   * User menu item
+   */
+  $item = array(
+            'link_path' => 'user',
+            'link_title' => t('My account'),
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => 10,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => 0, 
+            'module' => 'menu',
+          );
+  $item['options']['attributes']['title'] = t('Log in/out and manage my account');
+  $userMlid = menu_link_save($item);
 
   /*
    * Share wall menu item
@@ -785,6 +835,107 @@ function lbd_menus_menu() {
     'menu_name' => 'main-menu',
   );
 
+  $menus['logIn'] = array
+  (
+    'title' => 'Log in',
+    'page callback' => '_menu_item_redirect_log_in',
+    'access callback' => 'user_is_anonymous',
+    'type' => MENU_NORMAL_ITEM,
+    'menu_name' => 'main-menu',
+    'weight' => -100, 
+  );
+
+  $menus['createAccount'] = array
+  (
+    'title' => 'Create a new account',
+    'page callback' => '_menu_item_redirect_create_account',
+    'access callback' => 'user_is_anonymous',
+    'type' => MENU_NORMAL_ITEM,
+    'menu_name' => 'main-menu',
+    'weight' => -90, 
+  );
+
+  $menus['logOut'] = array
+  (
+    'title' => 'Log out',
+    'page callback' => '_menu_item_redirect_log_out',
+    'access callback' => 'user_is_logged_in',
+    'type' => MENU_NORMAL_ITEM,
+    'menu_name' => 'main-menu',
+    'weight' => 100, 
+  );
+
+  $menus['gettingStarted'] = array
+  (
+    'title' => 'Getting started',
+    'page callback' => '_menu_item_redirect_getting_started',
+    'access callback' => 'user_is_logged_in',
+    'type' => MENU_NORMAL_ITEM,
+    'menu_name' => 'main-menu',
+    'weight' => -85, 
+  );
+
+  $menus['myContributions'] = array
+  (
+    'title' => 'My global contributions',
+    'page callback' => '_menu_item_redirect_my_contributions',
+    'access callback' => 'user_is_logged_in',
+    'type' => MENU_NORMAL_ITEM,
+    'menu_name' => 'main-menu',
+    'weight' => -80, 
+  );
+
+  $menus['editProfile'] = array
+  (
+    'title' => 'Edit my profile',
+    'page callback' => '_menu_item_redirect_edit_profile',
+    'access callback' => 'user_is_logged_in',
+    'type' => MENU_NORMAL_ITEM,
+    'menu_name' => 'main-menu',
+    'weight' => -70, 
+  );
+
+  $menus['editAccount'] = array
+  (
+    'title' => 'Edit my account',
+    'page callback' => '_menu_item_redirect_edit_account',
+    'access callback' => 'user_is_logged_in',
+    'type' => MENU_NORMAL_ITEM,
+    'menu_name' => 'main-menu',
+    'weight' => -60, 
+  );
+
+  $menus['myEvents'] = array
+  (
+    'title' => 'My events',
+    'page callback' => '_menu_item_redirect_my_events',
+    'access callback' => 'user_is_logged_in',
+    'type' => MENU_NORMAL_ITEM,
+    'menu_name' => 'main-menu',
+    'weight' => -50, 
+  );
+
+  $menus['myRoles'] = array
+  (
+    'title' => 'My roles',
+    'page callback' => '_menu_item_redirect_my_roles',
+    'access callback' => 'user_is_logged_in',
+    'type' => MENU_NORMAL_ITEM,
+    'menu_name' => 'main-menu',
+    'weight' => -40, 
+  );
+
+  $menus['manageFiles'] = array
+  (
+    'title' => 'Manage files',
+    'page callback' => '_menu_item_redirect_manage_files',
+    'access callback' => 'user_is_logged_in',
+    'type' => MENU_NORMAL_ITEM,
+    'menu_name' => 'main-menu',
+    'weight' => -30, 
+  );
+
+
   /*
    * URL redirects go here
    */
@@ -840,6 +991,69 @@ function _menu_item_redirect_my_sharewall() {
 function _menu_item_redirect_my_wikis() {
   global $user; 
   drupal_goto('my-wikis', array('query' => array('uid' => $user->name)));
+  return;
+}
+
+function _menu_item_redirect_log_in() {
+  drupal_goto('user/login');
+  return;
+}
+
+function _menu_item_redirect_create_account() {
+  drupal_goto('user/register');
+  return;
+}
+
+function _menu_item_redirect_log_out() {
+  drupal_goto('user/logout');
+  return;
+}
+
+function _menu_item_redirect_getting_started() {
+  global $user; 
+  drupal_goto('users/' . $user->name . '/gettingStarted');
+  return;
+}
+
+function _menu_item_redirect_my_contributions() {
+  global $user;
+  drupal_goto('users/' . $user->name . '/metrics');
+  return;
+}
+
+function _menu_item_redirect_show_profile() {
+  global $user; 
+  drupal_goto('users/' . $user->name);
+  return;
+}
+
+function _menu_item_redirect_edit_profile() {
+  global $user; 
+  drupal_goto('user/' . $user->uid . '/edit-profile');
+  return;
+}
+
+function _menu_item_redirect_edit_account() {
+  global $user; 
+  drupal_goto('user/' . $user->uid . '/edit');
+  return;
+}
+
+function _menu_item_redirect_my_events() {
+  global $user; 
+  drupal_goto('users/' . $user->name . '/myevents');
+  return;
+}
+
+function _menu_item_redirect_my_roles() {
+  global $user; 
+  drupal_goto('users/' . $user->name . '/myroles');
+  return;
+}
+
+function _menu_item_redirect_manage_files() {
+  global $user; 
+  drupal_goto('users/' . $user->name . '/imce');
   return;
 }
 
@@ -904,7 +1118,62 @@ function lbd_menus_menu_link_alter(&$item) {
     $item['plid'] = $plid;
   }
 
-  return;
+  if ($item['page callback'] == '_menu_item_redirect_log_in') {
+    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='user' AND link_title='My account' AND menu_name='main-menu'")->fetchField();
+    $item['plid'] = $plid;
+  }
+
+  if ($item['page callback'] == '_menu_item_redirect_create_account') {
+    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='user' AND link_title='My account' AND menu_name='main-menu'")->fetchField();
+    $item['plid'] = $plid;
+  }
+
+  if ($item['page callback'] == '_menu_item_redirect_log_out') {
+    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='user' AND link_title='My account' AND menu_name='main-menu'")->fetchField();
+    $item['plid'] = $plid;
+  }
+
+  if ($item['page callback'] == '_menu_item_redirect_getting_started') {
+    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='user' AND link_title='My account' AND menu_name='main-menu'")->fetchField();
+    $item['plid'] = $plid;
+  }
+
+  if ($item['page callback'] == '_menu_item_redirect_my_contributions') {
+    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='user' AND link_title='My account' AND menu_name='main-menu'")->fetchField();
+    $item['plid'] = $plid;
+  }
+
+  if ($item['page callback'] == '_menu_item_redirect_show_profile') {
+    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='user' AND link_title='My account' AND menu_name='main-menu'")->fetchField();
+    $item['plid'] = $plid;
+  }
+
+  if ($item['page callback'] == '_menu_item_redirect_edit_profile') {
+    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='user' AND link_title='My account' AND menu_name='main-menu'")->fetchField();
+    $item['plid'] = $plid;
+  }
+
+  if ($item['page callback'] == '_menu_item_redirect_edit_account') {
+    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='user' AND link_title='My account' AND menu_name='main-menu'")->fetchField();
+    $item['plid'] = $plid;
+  }
+
+  if ($item['page callback'] == '_menu_item_redirect_my_events') {
+    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='user' AND link_title='My account' AND menu_name='main-menu'")->fetchField();
+    $item['plid'] = $plid;
+  }
+
+  if ($item['page callback'] == '_menu_item_redirect_my_roles') {
+    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='user' AND link_title='My account' AND menu_name='main-menu'")->fetchField();
+    $item['plid'] = $plid;
+  }
+
+  if ($item['page callback'] == '_menu_item_redirect_manage_files') {
+    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='user' AND link_title='My account' AND menu_name='main-menu'")->fetchField();
+    $item['plid'] = $plid;
+  }
+
+ return;
 }
 
 

@@ -26,7 +26,7 @@ projects[diff] = 3.2
 ; User interface
 ;--------------------
 projects[context] = 3.6
-projects[views] = 3.11
+projects[views] = 3.14
 projects[homebox] = 2.0-beta7
 projects[boxes] = 1.2
 projects[edit_profile] = 1.0-beta2
@@ -95,7 +95,7 @@ projects[memcache] = 1.2
 ;--------------------
 ; Services and social
 ;--------------------
-projects[google_analytics] = 2.1
+projects[google_analytics] = 2.3
 projects[drupalchat] = 1.4
 projects[simplenews] = 1.1
 projects[mass_contact] = 1.0
@@ -103,7 +103,7 @@ projects[sharethis] = 2.12
 projects[addtoany] = 4.10
 projects[disqus] = 1.12
 projects[disqus][patch][] = http://drupal.org/files/disqus-https.patch
-projects[flag] = 3.6
+projects[flag] = 3.9
 projects[drupal_wall] = 2.6
 
 ;-------------------

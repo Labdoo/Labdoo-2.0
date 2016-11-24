@@ -974,6 +974,24 @@ function _contact_reasons() {
 
 
 /**
+ * Provides the summary line for each contact reason
+ *
+ * @return The contact form summary lines table
+ *
+ */
+function _contact_reasons_summary() {
+  $reasons_sum = array(t('dootronic donation'), 
+                       t('dootrip contribution'), 
+                       t('new Labdooer'), 
+                       t('edoovillage request'), 
+                       t('message'));
+  return $reasons_sum;
+}
+
+
+
+
+/**
  * Returns an array containing all the combinations of country/reason
  * codes that are to be redirected to their own contact thank you page.
  *
@@ -1113,6 +1131,7 @@ function lbd_contact_form_submit($form, &$form_state) {
   $valid_email = $form_state['values']['email'];
   $message = $form_state['values']['message'];
   $reasons = _contact_reasons();
+  $reasons_summary = _contact_reasons_summary();
   global $language;
 
   // Send an email to the user who submitted the form
@@ -1157,7 +1176,8 @@ function lbd_contact_form_submit($form, &$form_state) {
   $bodyFileName = _path_to_email_template("en") . "contact_form_submitted_shub_body-en.email";
   $subjectTemplate = file_get_contents($subjectFileName);
   $bodyTemplate = file_get_contents($bodyFileName);
-  $subject = $subjectTemplate;
+  $subject = str_replace("[COUNTRY]", $country, $subjectTemplate);
+  $subject = str_replace("[REASON]", $reasons_summary[$form_state['values']['reason']], $subject);
   $body = str_replace("[USERNAME]", $form_state['values']['name'], $bodyTemplate);
   $body = str_replace("[USEREMAIL]", $valid_email, $body);
   $body = str_replace("[COUNTRY]", $country, $body);

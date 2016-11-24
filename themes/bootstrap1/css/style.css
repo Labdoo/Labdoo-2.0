@@ -175,6 +175,22 @@ hr {
   display: none;
 }
 
+.form-type-checkbox.form-item-field-origin-of-the-trip-und-0-delete-location.form-item {
+  display: none;
+}
+
+.form-type-checkbox.form-item-field-origin-of-the-trip-und-0-re-geocode-location.form-item {
+  display: none;
+}
+
+.form-type-checkbox.form-item-field-destination-of-the-trip-und-0-delete-location.form-item {
+  display: none;
+}
+
+.form-type-checkbox.form-item-field-destination-of-the-trip-und-0-re-geocode-location.form-item {
+  display: none;
+}
+
 input[type="file"] { 
   line-height: 0px;
 }
@@ -246,9 +262,9 @@ input[type="checkbox"] {
 }
 
 .alert-success {
-  background-color: #ffffff;
-  border-color: red;
-  color: gray;
+  background-color: #fcf8e3;
+  border-color: #fbeed5;
+  color: #c09853;
   width: fit-content;
 }
 
@@ -266,10 +282,16 @@ input[type="checkbox"] {
   display: inline-block;
   float: left;
   padding-right: 1em;
+  color: red;
 }
 
 .field-type-taxonomy-term-reference .field-item {
   display: inline-block;
   padding-right: 1em;
+}
+
+
+.views-content-field-slider-tab {
+  cursor: pointer;
 }
 

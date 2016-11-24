@@ -47,7 +47,7 @@ function lbd_roles_user_default_permissions() {
     'name' => 'add content to books',
     'roles' => array(
       0 => 'administrator',
-      1 => 'book writer',
+      1 => 'wiki writer',
     ),
     'module' => 'book',
   );
@@ -73,7 +73,7 @@ function lbd_roles_user_default_permissions() {
     'name' => 'administer book outlines',
     'roles' => array(
       0 => 'administrator',
-      1 => 'book writer',
+      1 => 'wiki writer',
     ),
     'module' => 'book',
   );
@@ -123,16 +123,6 @@ function lbd_roles_user_default_permissions() {
       1 => 'newsletter manager',
     ),
     'module' => 'simplenews',
-  );
-
-  // Exported permission: assign book writer role.
-  $permissions['assign book writer role'] = array(
-    'name' => 'assign book writer role',
-    'roles' => array(
-      0 => 'administrator',
-      1 => 'superhub manager',
-    ),
-    'module' => 'role_delegation',
   );
 
   // Exported permission: assign edoovillage manager role.
@@ -204,7 +194,7 @@ function lbd_roles_user_default_permissions() {
   $permissions['create book content'] = array(
     'name' => 'create book content',
     'roles' => array(
-      0 => 'book writer',
+      0 => 'wiki writer',
     ),
     'module' => 'node',
   );
@@ -237,7 +227,7 @@ function lbd_roles_user_default_permissions() {
     'name' => 'create new books',
     'roles' => array(
       0 => 'administrator',
-      1 => 'book writer',
+      1 => 'wiki writer',
     ),
     'module' => 'book',
   );
@@ -397,7 +387,7 @@ function lbd_roles_user_default_permissions() {
   $permissions['delete own book content'] = array(
     'name' => 'delete own book content',
     'roles' => array(
-      0 => 'book writer',
+      0 => 'wiki writer',
     ),
     'module' => 'node',
   );
@@ -499,7 +489,7 @@ function lbd_roles_user_default_permissions() {
   $permissions['edit any book content'] = array(
     'name' => 'edit any book content',
     'roles' => array(
-      0 => 'book writer',
+      0 => 'wiki writer',
     ),
     'module' => 'node',
   );
@@ -600,7 +590,7 @@ function lbd_roles_user_default_permissions() {
   $permissions['edit own book content'] = array(
     'name' => 'edit own book content',
     'roles' => array(
-      0 => 'book writer',
+      0 => 'wiki writer',
     ),
     'module' => 'node',
   );
@@ -703,7 +693,7 @@ function lbd_roles_user_default_permissions() {
     'name' => 'menu view unpublished',
     'roles' => array(
       0 => 'administrator',
-      1 => 'book writer',
+      1 => 'wiki writer',
     ),
     'module' => 'menu_view_unpublished',
   );
@@ -712,7 +702,7 @@ function lbd_roles_user_default_permissions() {
   $permissions['publish any book content'] = array(
     'name' => 'publish any book content',
     'roles' => array(
-      0 => 'book writer',
+      0 => 'wiki writer',
     ),
     'module' => 'publishcontent',
   );
@@ -721,7 +711,7 @@ function lbd_roles_user_default_permissions() {
   $permissions['publish editable book content'] = array(
     'name' => 'publish editable book content',
     'roles' => array(
-      0 => 'book writer',
+      0 => 'wiki writer',
     ),
     'module' => 'publishcontent',
   );
@@ -730,7 +720,7 @@ function lbd_roles_user_default_permissions() {
   $permissions['publish own book content'] = array(
     'name' => 'publish own book content',
     'roles' => array(
-      0 => 'book writer',
+      0 => 'wiki writer',
     ),
     'module' => 'publishcontent',
   );
@@ -740,12 +730,12 @@ function lbd_roles_user_default_permissions() {
     'name' => 'revert revisions',
     'roles' => array(
       0 => 'administrator',
-      1 => 'book writer',
-      2 => 'edoovillage manager',
-      3 => 'hub manager',
-      4 => 'newsletter manager',
-      5 => 'superhub manager',
-      6 => 'team manager',
+      1 => 'edoovillage manager',
+      2 => 'hub manager',
+      3 => 'newsletter manager',
+      4 => 'superhub manager',
+      5 => 'team manager',
+      6 => 'wiki writer',
     ),
     'module' => 'node',
   );
@@ -755,8 +745,6 @@ function lbd_roles_user_default_permissions() {
     'name' => 'search action content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'anonymous user',
-      2 => 'authenticated user',
     ),
     'module' => 'search_config',
   );
@@ -816,8 +804,6 @@ function lbd_roles_user_default_permissions() {
     'name' => 'search dootrip content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'anonymous user',
-      2 => 'authenticated user',
     ),
     'module' => 'search_config',
   );
@@ -834,8 +820,6 @@ function lbd_roles_user_default_permissions() {
     'name' => 'search edoovillage content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'anonymous user',
-      2 => 'authenticated user',
     ),
     'module' => 'search_config',
   );
@@ -852,8 +836,6 @@ function lbd_roles_user_default_permissions() {
     'name' => 'search hub content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'anonymous user',
-      2 => 'authenticated user',
     ),
     'module' => 'search_config',
   );
@@ -870,8 +852,6 @@ function lbd_roles_user_default_permissions() {
     'name' => 'search laptop content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'anonymous user',
-      2 => 'authenticated user',
     ),
     'module' => 'search_config',
   );
@@ -881,8 +861,6 @@ function lbd_roles_user_default_permissions() {
     'name' => 'search node_gallery_gallery content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'anonymous user',
-      2 => 'authenticated user',
     ),
     'module' => 'search_config',
   );
@@ -897,7 +875,10 @@ function lbd_roles_user_default_permissions() {
   // Exported permission: search page content.
   $permissions['search page content'] = array(
     'name' => 'search page content',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'anonymous user',
+      1 => 'authenticated user',
+    ),
     'module' => 'search_config',
   );
 
@@ -989,7 +970,7 @@ function lbd_roles_user_default_permissions() {
   $permissions['unpublish any book content'] = array(
     'name' => 'unpublish any book content',
     'roles' => array(
-      0 => 'book writer',
+      0 => 'wiki writer',
     ),
     'module' => 'publishcontent',
   );
@@ -998,7 +979,7 @@ function lbd_roles_user_default_permissions() {
   $permissions['unpublish editable book content'] = array(
     'name' => 'unpublish editable book content',
     'roles' => array(
-      0 => 'book writer',
+      0 => 'wiki writer',
     ),
     'module' => 'publishcontent',
   );
@@ -1007,7 +988,7 @@ function lbd_roles_user_default_permissions() {
   $permissions['unpublish own book content'] = array(
     'name' => 'unpublish own book content',
     'roles' => array(
-      0 => 'book writer',
+      0 => 'wiki writer',
     ),
     'module' => 'publishcontent',
   );
@@ -1051,9 +1032,10 @@ function lbd_roles_user_default_permissions() {
     'name' => 'use text format filtered_html_advanced',
     'roles' => array(
       0 => 'administrator',
-      1 => 'book writer',
+      1 => 'edoovillage manager',
       2 => 'newsletter manager',
       3 => 'superhub manager',
+      4 => 'wiki writer',
     ),
     'module' => 'filter',
   );
@@ -1089,7 +1071,7 @@ function lbd_roles_user_default_permissions() {
     'name' => 'view any unpublished book content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'book writer',
+      1 => 'wiki writer',
     ),
     'module' => 'view_unpublished',
   );

@@ -82,7 +82,7 @@ function lbd_migration_migrate_api() {
       'Edoovillage Administrator' => 'edoovillage manager',
       'Backup and migrate' => 'authenticated user',
       'Hub Administrator' => 'hub manager',
-      'Logbook and Newsletter Editor' => 'book writer',
+      'Logbook and Newsletter Editor' => 'wiki writer',
       'Mass email unsubscribed' => 'authenticated user',
       'Hub Admin - DACH' => 'authenticated user',
       'ICanLocalize translator' => 'authenticated user',

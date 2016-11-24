@@ -10,12 +10,6 @@
 function lbd_roles_user_default_roles() {
   $roles = array();
 
-  // Exported role: book writer.
-  $roles['book writer'] = array(
-    'name' => 'book writer',
-    'weight' => '16',
-  );
-
   // Exported role: edoovillage manager.
   $roles['edoovillage manager'] = array(
     'name' => 'edoovillage manager',

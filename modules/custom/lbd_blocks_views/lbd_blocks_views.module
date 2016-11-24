@@ -283,6 +283,16 @@ function lbd_blocks_views_block_info() {
     'region' => "sidebar_second",
   );
 
+  // Block linking to the object menu block
+  $blocks['block_object_menu'] = array(
+    'info' => "Object menu",
+    'status' => 1,
+    'visibility' => BLOCK_VISIBILITY_PHP,
+    'weight' => 0,
+    'pages' => "<?php return labdoo_block_filter_object_menu(); ?>",
+    'region' => "sidebar_second",
+  );
+
   // Block linking to the search block 
   $blocks['block_link_search'] = array(
     'info' => "Search (link to the search block)",
@@ -446,6 +456,13 @@ function lbd_blocks_views_block_view($delta = '') {
       $block['subject'] = "<none>";
 //      $block['title'] = t("Available actions");
       $block['content'] = labdoo_render_team_actions();
+      break;
+
+    // Object menu
+    case 'block_object_menu':
+      $block['subject'] = "<none>";
+//      $block['title'] = t("Available actions");
+      $block['content'] = labdoo_render_object_menu();
       break;
 
     // Link to search block 

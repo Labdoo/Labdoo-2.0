@@ -45,3 +45,18 @@
     drush cache-clear all
     #+END_EXAMPLE
 
+  - To update the Linux distribution software
+
+    #+BEGIN_EXAMPLE
+    sudo su
+    apt-get update
+    apt-get upgrade
+    service chroot-lbd stop
+    reboot
+    [ssh back]
+    sudo su
+    mount /dev/xvdb1 /var/chroot/
+    service chroot-lbd stop
+    service chroot-lbd start
+    hostname www.labdoo.org
+    #+END_EXAMPLE

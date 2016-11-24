@@ -60,7 +60,7 @@ function lbd_wiki_block_info() {
     'visibility' => BLOCK_VISIBILITY_PHP,
     'weight' => 0,
     'pages' => "<?php return lbd_wiki_is_book_node() != NULL ?>", 
-    'region' => "content",
+    'region' => "none",
   );
   return $block;
 }
@@ -167,7 +167,7 @@ function lbd_wiki_block_view($delta = '') {
   $code = $code . "<hr/>";
   // Back to wiki index link
   $code = $code . "<img src='/profiles/labdoo/files/pictures/arrow_left.png' style='width: 20px; height: 21px;'/>&nbsp;" .  
-                  "<a href='../wiki-index'>" . t('Back to all wiki books') . "</span></a></p>";
+                  "<a href='../wiki-index'>" . t('Go to all wiki books') . "</span></a></p>";
 
   // Other translations link
   $nodeLoaded = node_load($book['bid']);
@@ -181,7 +181,7 @@ function lbd_wiki_block_view($delta = '') {
 
   if($printTOC) {
     $userRoles = array_values($user->roles);
-    if(in_array('book writer', $userRoles) || in_array('administrator', $userRoles)) { 
+    if(in_array('wiki writer', $userRoles) || in_array('administrator', $userRoles)) { 
       $metadata = "href='$lang/admin/content/book/" . $book['bid'] . "'";
       $code = $code . "<img src='/profiles/labdoo/files/pictures/book.png' style='width: 20px; height: 19px;'/>&nbsp;" . 
                       "<a $metadata>" . t('Reorder this book\'s hierarchy') . "</span></a></p>";
@@ -318,7 +318,7 @@ function lbd_wiki_menu_local_tasks_alter(&$data) {
       }
 //      if($value['#link']['path'] == "node/%/revisions") {
 //        $userRoles = array_values($user->roles);
-//        if(!in_array('book writer', $userRoles) && !in_array('administrator', $userRoles)) {
+//        if(!in_array('wiki writer', $userRoles) && !in_array('administrator', $userRoles)) {
 //          unset($data['tabs'][0]['output'][$key]);
 //        }
 //      }
@@ -488,6 +488,7 @@ function lbd_wiki_node_view($node, $view_mode, $langcode) {
        strcmp($path, "content/sobre-labdoo") != 0 &&
        strcmp($path, "content/zu-labdoo") != 0 &&
        strcmp($path, "content/關於labdoo") != 0) {
+       strcmp($path, "content/getting-my-mini-missions-going") != 0 &&
        labdoo_lib_msg_info("If you have any questions about this page or if you find any errors,
                             please write a message to the 
                             <a href='../content/labdoo-global-support-lgs/activities'>support wall</a> 
