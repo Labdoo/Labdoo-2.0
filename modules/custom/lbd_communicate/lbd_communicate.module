@@ -200,8 +200,7 @@ function _email_laptop_event($node) {
     $bodyFileName = _path_to_email_template($langCode) . "laptop_tagged_body-" . $langCode . ".email";
     // This is a new object, so the title (i.e., the Labdoo ID) has not 
     // being set yet.  Hence, we need to manually calculate the laptopId.
-    $numLaptops = lbd_get_total_num_objects("laptop"); 
-    $laptopId = sprintf("%09d", $numLaptops + 1);
+    $laptopId = sprintf("%09d", lbd_next_dootronic_id());
   }
   else if($newStatus == "S4") {
     $email_params['type'] = "LAPTOP_DELIVERED";
