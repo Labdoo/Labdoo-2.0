@@ -1681,6 +1681,74 @@ function lbd_display_slider_edoovilage_gics($edoovillageId) {
 
 
 /**
+ * Displays the edoovillage/hub story slider
+ * 
+ * @param nodeId Identifier of the edoovillage/hub 
+ *
+ * @return The story slider 
+ *
+ */
+function lbd_display_slider_story($nodeId) {
+  global $language;
+  global $user;
+  $langCode = $language->language;
+  $userRoles = array_values($user->roles);
+  $code = "";
+
+  if($nodeId == NULL || !is_numeric($nodeId)) 
+    return;
+
+  $code .= '<img src="/profiles/labdoo/files/pictures/labdoo-stories-header.png" width="550px"/>';
+
+  $loadedNode = node_load($nodeId);
+
+  $query = "SELECT entity_id FROM field_data_field_story_edoovillage WHERE field_story_edoovillage_target_id=$nodeId";
+  $storyNodeId = db_query($query)->fetchField();
+
+  if($storyNodeId) {
+    $loadedStoryNode = node_load($storyNodeId);
+    if($loadedStoryNode == FALSE)
+      return;
+    $sectionItems = field_get_items('node', $loadedStoryNode, 'field_story_section');
+    $code .= "<hr/><table width='500px'>";
+    foreach ($sectionItems as $sectionItem) {
+      $sectionField = field_collection_field_get_entity($sectionItem);
+      $sectionWrapper = entity_metadata_wrapper('field_collection_item', $sectionField);
+      $sectionHeading = $sectionWrapper->field_story_heading->value();
+      $sectionBody = $sectionWrapper->field_story_text->value();
+      $sectionBody = $sectionBody['safe_value'];
+//      $sectionPicture = $sectionWrapper->field_story_picture->value();
+      $code .= "<tr><td width='25px'></td><td align='center'>";
+      $code .= "<font color='red'><strong><center>" . $sectionHeading . "</center></strong></font>";
+      $code .= "</td></tr>";
+      $code .= "<tr><td width='50px'></td><td align='center'>";
+      $code .= "<center>" . $sectionBody . "</center>";
+      $code .= "</td></tr>";
+      break; # show only a preview
+    }
+    $code .= "</table>";
+    $storyUri = drupal_get_path_alias("node/" . $storyNodeId, $langCode);
+    $code .= "<a href='$storyUri'>" . t("Read more") . "...</a>"; 
+  }
+  else {
+    $code .= "<p/><ul><li>" . 
+      "To learn more about how to write a Labdoo story, go to <a href='content/labdoo-stories' target='_blank'>this page.</a>"; 
+    if(in_array('superhub manager', $userRoles) || 
+       in_array('edoovillage manager', $userRoles) || 
+       in_array('hub manager', $userRoles) || 
+       in_array('wiki manager', $userRoles) || 
+       in_array('administrator', $userRoles)) { 
+      $code .= "</li><li>To write a story for this $loadedNode->type, <a href='node/add/labdoo-story?field_story_edoovillage=$nodeId'>click here</a>";
+    }
+    $code .= "</li></ul>";
+  }
+
+  print $code;
+  return;
+}
+
+
+/**
  * Displays the hub data slider
  * 
  * @param hubId Identifier of the hub

@@ -619,6 +619,61 @@ function labdoo_render_dootrip_header() {
 
 
 /**
+ * Renders a story's header
+ *
+ * @return The code to render
+ *
+ */
+function labdoo_render_story_header() {
+  global $language;
+  $langCode = $language->language;
+  $htmlCode = '';
+
+  $nodeObj = node_load(arg(1));
+  $prevNodeId = labdoo_lib_prev_next_node($nodeObj, 'prev');
+  $nextNodeId = labdoo_lib_prev_next_node($nodeObj, 'next');
+
+  $prevUri = drupal_get_path_alias("node/" . $prevNodeId, $langCode);
+  $nextUri = drupal_get_path_alias("node/" . $nextNodeId, $langCode);
+
+  // Button 'go to' on a new row
+  $query = "SELECT field_story_edoovillage_target_id FROM field_data_field_story_edoovillage WHERE entity_id=" . arg(1);
+  $parentNodeId = db_query($query)->fetchField();
+  $loadedParentNode = node_load($parentNodeId);
+
+  if($loadedParentNode->type == "edoovillage")
+    $goBackIcon = "/profiles/labdoo/files/pictures/back-to-school-page.png' width='280px'";
+  else
+    $goBackIcon = "/profiles/labdoo/files/pictures/back-to-hub-page.png' width='230px'";
+  $htmlCode = $htmlCode . 
+              "<p><a href='../node/$parentNodeId'>
+              <img src='$goBackIcon' width='120px'/></a></p>";
+
+  // Table header
+  $htmlCode = $htmlCode . '<table align="center" width="1150px"><tr><td align="left" width="140px">';
+
+  // Left arrow
+  $htmlCode = $htmlCode . "<p><a style='float: left;' href='../" . $prevUri . "'>
+              <img src='/profiles/labdoo/files/pictures/arrow_left.png' width='30px'/>". "&nbsp;" . t("Previous story") ."</a></p>";
+  $htmlCode = $htmlCode . '</td><td align="center">';
+
+  // Decorations
+  $htmlCode = $htmlCode . '<img src="/profiles/labdoo/files/pictures/labdoo-stories-header.png" width="650px"/>';
+  $htmlCode = $htmlCode . '</td><td align="left">';
+
+  // Right arrow
+  $htmlCode = $htmlCode . "<p><a style='float: right;' href='../" . $nextUri . "'>" . t("Next story") . "&nbsp;" .
+              "<img src='/profiles/labdoo/files/pictures/arrow_right.png' width='30px'/></a></p>";
+
+  // Table ending
+  $htmlCode = $htmlCode . '</td></tr></tbody></table>';
+
+  return($htmlCode);
+}
+
+
+
+/**
  * Displays the header of an edoovillage or a hub.
  *
  * @param integer $nodeId The node identifier of a hub or an edoovillage.
@@ -944,7 +999,7 @@ function _create_photo_album($node) {
  * @return The new ID
  *
  */
-function lbd_allocate_dooject_id() {
+function lbd_next_dootronic_id() {
 
   $query = "SELECT title FROM node WHERE type='laptop' ORDER BY title ASC";
   $result = db_query($query);
@@ -1017,7 +1072,7 @@ function labdoo_lib_node_presave($node) {
      */
     // The Labdoo identifier of each
     // laptop is stored as the node's title
-    $laptopIdInt = lbd_allocate_dooject_id();
+    $laptopIdInt = lbd_next_dootronic_id();
     $node->title = sprintf("%09d", $laptopIdInt);
   }
 
@@ -1469,6 +1524,10 @@ function labdoo_lib_form_alter(&$form, &$form_state, $form_id) {
 
     // Hide hub manager notifications field
     field_group_hide_field_groups($form, array('group_hub_manager_notifications'));
+  }
+
+  if($form_id == 'labdoo_story_node_form') {
+    $form['field_story_edoovillage']['#access'] = FALSE;
   }
 
   // If its a dootrip and if this is a cloning operation, reset some values to avoid
@@ -2761,6 +2820,9 @@ function labdoo_block_filter_search() {
   if(0 === strpos($path, 'node/add/'))
     return FALSE;
 
+  if(labdoo_lib_node_is_type(array('labdoo_story')))
+    return FALSE;
+
   return TRUE;
 }
 
@@ -2790,13 +2852,7 @@ function labdoo_block_filter_language_switch() {
 function labdoo_block_filter_header() {
   $path = drupal_get_path_alias(current_path());
 
-  if(strcmp($path, "user/login") == 0)
-      return TRUE;
-
   if(strcmp($path, "user") == 0)
-      return TRUE;
-
-  if(strcmp($path, "user/register") == 0)
       return TRUE;
 
   if(strcmp($path, "user/password") == 0)
@@ -2818,6 +2874,9 @@ function labdoo_block_filter_header() {
       return TRUE;
 
   if(strcmp($path, "hub") == 0)
+      return TRUE;
+
+  if(strcmp($path, "labdoo-stories") == 0)
       return TRUE;
 
   if(strcmp($path, "contact") == 0)
@@ -2844,7 +2903,8 @@ function labdoo_block_filter_header() {
   if((strcmp($path, "share-wall") == 0) || (strcmp($path, "content/my-share-wall") == 0))
       return TRUE;
 
-  if(labdoo_lib_node_is_type(array('laptop', 'dootrip', 'node_gallery_gallery', 'drupal_wall', 'team_page', 'superhub_page', 'simplenews')))
+  if(labdoo_lib_node_is_type(array('laptop', 'dootrip', 'node_gallery_gallery', 
+                             'drupal_wall', 'team_page', 'superhub_page', 'simplenews', 'labdoo_story')))
     return TRUE;
 
   if(0 === strpos($path, 'node/add/'))
@@ -3888,7 +3948,12 @@ function labdoo_views_download_button($viewResult, $signature="") {
     $viewTable[$key+1][$j++] = "# ".$object->node_title; 
     foreach($fieldNames as $fieldName) { 
       $fieldValue = $object->$fieldName;
-      $markup = $fieldValue[0]['rendered']['#markup'];
+      // If empty, it means that field is not initialized. Just 
+      // assign an empty string.
+      if(!$fieldValue)
+        $markup = "";
+      else
+        $markup = $fieldValue[0]['rendered']['#markup'];
       $viewTable[$key+1][$j++] = $markup;
     }
   }
@@ -3958,12 +4023,37 @@ function labdoo_render_object_menu() {
   $code .= "<hr/>";
   $code .= "<p><strong><font color=#009900 size=2px>" . t("Actions available for this $objectString:") . "</font></strong></p>";
   $code .= "<hr/>";
+
   // Photo album
   $wNode = entity_metadata_wrapper('node', $nodeObj);
   $nodeAlbum = $wNode->$field_photo_album->value();
   $albumUri = drupal_get_path_alias("node/" . $nodeAlbum->nid, $langCode);
   $code .= "<p><a href='$albumUri'><img src='/profiles/labdoo/files/pictures/photo-album-icon.png' width='25px'/>&nbsp;" . 
             t("Go to photo album") . "</a></p> ";
+
+  // Story
+  $query = "SELECT entity_id FROM field_data_field_story_edoovillage WHERE field_story_edoovillage_target_id=$nodeId";
+  $parentNodeId = db_query($query)->fetchField();
+  if(!$parentNodeId) {
+    if(in_array('superhub manager', $userRoles) || 
+       in_array('edoovillage manager', $userRoles) || 
+       in_array('hub manager', $userRoles) || 
+       in_array('wiki manager', $userRoles) || 
+       in_array('administrator', $userRoles)) { 
+      $code .= "<p><a href='node/add/labdoo-story?field_story_edoovillage=$nodeId'>
+                <img src='/profiles/labdoo/files/pictures/pencil-icon.png' width='25px'/>&nbsp;" . 
+                t("Write a story about this $objectString") . "</a></p>";
+    }
+    else {
+      $code .= "<p><font color='gray'><img src='/profiles/labdoo/files/pictures/pencil-icon.png' width='25px'/>&nbsp;" . 
+                t("Write a story about this $objectString") . "</font></p>";
+    }
+  }
+  else {
+    $code .= "<p><a href='" . drupal_get_path_alias("node/" . $parentNodeId, $langCode) . "'>
+              <img src='/profiles/labdoo/files/pictures/pencil-icon.png' width='25px'/>&nbsp;" . 
+              t("Read the story about this $objectString") . "</a></p> ";
+  }
 
   // Edit 
   if(node_access("update", $nodeObj, $user) === TRUE) 
@@ -3980,7 +4070,7 @@ function labdoo_render_object_menu() {
             t("Clone this $objectString") . "</a></p> ";
   else
     $code .= "<p><font color='gray'><img src='/profiles/labdoo/files/pictures/clone-icon.png' width='25px'/>&nbsp;" . 
-              t("Clone this school") . "</font></p> ";
+              t("Clone this $objectString") . "</font></p> ";
 
   // Next and before
   $prevNodeId = labdoo_lib_prev_next_node($nodeObj, 'prev');

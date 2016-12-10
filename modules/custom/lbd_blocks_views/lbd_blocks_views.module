@@ -70,6 +70,10 @@ function lbd_blocks_views_views_default_views() {
   include 'lbd_blocks_views_my_events.inc';
   $views[$view->name] = $view;
 
+  // Stories view
+  include 'lbd_blocks_views_stories.inc';
+  $views[$view->name] = $view;
+
   return $views;
 }
 
@@ -193,6 +197,31 @@ function lbd_blocks_views_block_info() {
     return TRUE;
   else
     return FALSE;
+?>
+               ",
+    'region' => "content",
+  );
+
+  // Story header
+  $blocks['block_story_header'] = array(
+    'info' => "The header of a story",
+    'status' => 1,
+    'visibility' => BLOCK_VISIBILITY_PHP,
+    'weight' => -100,
+    'pages' => "
+<?php
+  \$match = FALSE;
+  \$types = array('labdoo_story' => 1) ;
+
+  if(arg(2) != \"\") //  Display only in node view mode
+    return FALSE;
+
+  if ((arg(0) == 'node') && is_numeric(arg(1))) {
+    \$node = node_load(arg(1));
+    \$match = isset(\$types[\$node->type]);
+  }
+
+  return \$match;
 ?>
                ",
     'region' => "content",
@@ -404,7 +433,15 @@ function lbd_blocks_views_block_view($delta = '') {
       );
       break;
 
-    // Hub header
+    // Story header
+    case 'block_story_header':
+      $block['subject'] = "<none>";
+      $block['content'] = array(
+             '#markup' => labdoo_render_story_header(),
+      );
+      break;
+
+    // Photo album header
     case 'block_photo_album_header':
       $block['subject'] = "<none>";
       $block['content'] = array(

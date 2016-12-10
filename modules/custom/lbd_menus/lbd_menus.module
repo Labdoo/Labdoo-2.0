@@ -58,7 +58,20 @@ function make_main_menu() {
   $mlid = menu_link_save($item);
 
   $item = array(
-            'link_path' => '<front>',
+            'link_path' => 'labdoo-stories',
+            'link_title' => t('Labdoo stories'),
+            'menu_name' => 'main-menu',
+            'expanded' => TRUE,
+            'weight' => -44,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => $exploreMlid, 
+            'module' => 'menu',
+          );
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'content/labdoos-corporate-social-responsibility-csr-package',
             'link_title' => t('Labdoo for Companies (CSR)'),
             'menu_name' => 'main-menu',
             'expanded' => TRUE,

@@ -27,8 +27,7 @@
   <?php 
     // Show the date the node it was created or last updated
     // for some specific content types
-    if ($type == "laptop" || $type == "dootrip" || $type == "edoovillage" || $type == "hub") {
-      print "<br>";
+    if ($type == "laptop" || $type == "dootrip" || $type == "edoovillage" || $type == "hub" || $type == "labdoo_story") {
       if($type == "laptop")
         print "<b>Date it was tagged:</b> " . format_date($node->created, 'custom', 'd/m/y/') . "<br>"; 
       else

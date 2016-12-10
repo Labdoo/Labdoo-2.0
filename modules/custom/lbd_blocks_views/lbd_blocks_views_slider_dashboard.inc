@@ -120,6 +120,10 @@ $handler->display->display_options['filters']['field_type_value']['group'] = 1;
 
 /* Display: Page - Edoovillage */
 $handler = $view->new_display('page', 'Page - Edoovillage', 'page');
+$handler->display->display_options['defaults']['pager'] = FALSE;
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['pager']['options']['items_per_page'] = '6';
+$handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['defaults']['header'] = FALSE;
 $handler->display->display_options['defaults']['fields'] = FALSE;
 /* Field: Content: Tab */
@@ -144,6 +148,31 @@ $handler->display->display_options['defaults']['sorts'] = FALSE;
 $handler->display->display_options['sorts']['field_slider_weight_value']['id'] = 'field_slider_weight_value';
 $handler->display->display_options['sorts']['field_slider_weight_value']['table'] = 'field_data_field_slider_weight';
 $handler->display->display_options['sorts']['field_slider_weight_value']['field'] = 'field_slider_weight_value';
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Filter criterion: Content: Published */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filter criterion: Content: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'slider_page' => 'slider_page',
+);
+$handler->display->display_options['filters']['type']['group'] = 1;
+/* Filter criterion: Content: Type (field_type) */
+$handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
+$handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
+$handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
+$handler->display->display_options['filters']['field_type_value']['value'] = array(
+  'edoovillage' => 'edoovillage',
+);
+$handler->display->display_options['filters']['field_type_value']['group'] = 1;
 $handler->display->display_options['path'] = 'edoovillage';
 
 /* Display: Page - Hub */
@@ -317,7 +346,7 @@ $handler->display->display_options['sorts']['created']['table'] = 'node';
 $handler->display->display_options['sorts']['created']['field'] = 'created';
 $handler->display->display_options['sorts']['created']['order'] = 'DESC';
 $handler->display->display_options['defaults']['arguments'] = FALSE;
-/* Contextual filter: Content: Source group (field_hub_laptop) */
+/* Contextual filter: Content: Source hub (field_hub_laptop) */
 $handler->display->display_options['arguments']['field_hub_laptop_target_id']['id'] = 'field_hub_laptop_target_id';
 $handler->display->display_options['arguments']['field_hub_laptop_target_id']['table'] = 'field_data_field_hub_laptop';
 $handler->display->display_options['arguments']['field_hub_laptop_target_id']['field'] = 'field_hub_laptop_target_id';
@@ -353,7 +382,7 @@ $handler->display->display_options['title'] = 'Edoovillages';
 $handler->display->display_options['defaults']['use_ajax'] = FALSE;
 $handler->display->display_options['defaults']['pager'] = FALSE;
 $handler->display->display_options['pager']['type'] = 'full';
-$handler->display->display_options['pager']['options']['items_per_page'] = '20';
+$handler->display->display_options['pager']['options']['items_per_page'] = '100';
 $handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['pager']['options']['id'] = '0';
 $handler->display->display_options['pager']['options']['quantity'] = '9';

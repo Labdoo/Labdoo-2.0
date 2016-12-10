@@ -50,6 +50,8 @@ projects[extlink] = 1.18
 projects[views_distinct] = 1.0 
 projects[search_autocomplete] = 4.7
 projects[termcase] = 1.3
+projects[field_collection] = 1.0-beta12 
+projects[simplify] = 3.3 
 
 ;--------------------
 ; Security

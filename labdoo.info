@@ -98,6 +98,8 @@ dependencies[] = extlink
 dependencies[] = views_distinct 
 dependencies[] = search_autocomplete 
 dependencies[] = termcase 
+dependencies[] = field_collection 
+dependencies[] = simplify 
 
 ;;; Features and exports/imports
 dependencies[] = strongarm

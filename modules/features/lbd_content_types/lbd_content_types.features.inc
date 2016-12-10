@@ -62,6 +62,31 @@ function lbd_content_types_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'labdoo_story' => array(
+      'name' => t('Labdoo Story'),
+      'base' => 'node_content',
+      'description' => t('Through this content type, schools can write their own stories and share them with the world.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => t('<img src=\'/profiles/labdoo/files/pictures/equation-2-alpha-small.png\' width=\'60\'>
+Here is a quick explanation of how to create your own story. For a more detailed description on how Labdoo Stories work, please refer to <a target="_blank" href=../../content/labdoo-stories>this page</a>.
+
+<ul>
+<li>
+Under the field \'Title\', type the title of your story.
+</li>
+<li>
+Stories are written by creating \'Story sections\'. Each story section has three items: the heading of the section, the actual story text, and a picture. This allows you to build your own stories by combining multiple sections, each one with their own heading, text and picture. If you don\'t want to have multiple headings for your story, you can optionally omit typing a heading in one or more sections.
+</li>
+<li>
+Add more sections to your story by clicking on the button "Add another item" below the last section.
+</li>
+<li>
+When you are done, click on "Save".
+</li>
+</ul>
+For an example of Labdoo Story, you can <a href="../../content/drops-goodwill" target="_blank">take a look at this page</a>.'),
+    ),
     'node_gallery_gallery' => array(
       'name' => t('Gallery'),
       'base' => 'node_content',

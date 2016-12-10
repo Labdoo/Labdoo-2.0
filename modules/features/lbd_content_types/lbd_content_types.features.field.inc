@@ -258,6 +258,68 @@ function lbd_content_types_field_default_fields() {
     ),
   );
 
+  // Exported field: 'comment-comment_node_labdoo_story-comment_body'.
+  $fields['comment-comment_node_labdoo_story-comment_body'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(
+        0 => 'comment',
+      ),
+      'field_name' => 'comment_body',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'comment_node_labdoo_story',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'comment',
+      'field_name' => 'comment_body',
+      'label' => 'Comment',
+      'required' => TRUE,
+      'settings' => array(
+        'text_processing' => 1,
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'text',
+        'settings' => array(
+          'rows' => 5,
+        ),
+        'type' => 'text_textarea',
+        'weight' => 0,
+      ),
+    ),
+  );
+
   // Exported field: 'comment-comment_node_node_gallery_gallery-comment_body'.
   $fields['comment-comment_node_node_gallery_gallery-comment_body'] = array(
     'field_config' => array(
@@ -888,6 +950,204 @@ function lbd_content_types_field_default_fields() {
         ),
         'type' => 'file_generic',
         'weight' => '4',
+      ),
+    ),
+  );
+
+  // Exported field: 'field_collection_item-field_story_section-field_story_heading'.
+  $fields['field_collection_item-field_story_section-field_story_heading'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_story_heading',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'field_story_section',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '0',
+        ),
+      ),
+      'entity_type' => 'field_collection_item',
+      'field_name' => 'field_story_heading',
+      'label' => 'Section heading',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '1',
+      ),
+    ),
+  );
+
+  // Exported field: 'field_collection_item-field_story_section-field_story_picture'.
+  $fields['field_collection_item-field_story_section-field_story_picture'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_story_picture',
+      'foreign keys' => array(
+        'fid' => array(
+          'columns' => array(
+            'fid' => 'fid',
+          ),
+          'table' => 'file_managed',
+        ),
+      ),
+      'indexes' => array(
+        'fid' => array(
+          0 => 'fid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'image',
+      'settings' => array(
+        'default_image' => 0,
+        'uri_scheme' => 'public',
+      ),
+      'translatable' => '0',
+      'type' => 'image',
+    ),
+    'field_instance' => array(
+      'bundle' => 'field_story_section',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'image',
+          'settings' => array(
+            'image_link' => '',
+            'image_style' => '',
+          ),
+          'type' => 'image',
+          'weight' => '2',
+        ),
+      ),
+      'entity_type' => 'field_collection_item',
+      'field_name' => 'field_story_picture',
+      'label' => 'Section picture',
+      'required' => 0,
+      'settings' => array(
+        'alt_field' => 0,
+        'default_image' => 0,
+        'file_directory' => '',
+        'file_extensions' => 'png gif jpg jpeg',
+        'max_filesize' => '',
+        'max_resolution' => '',
+        'min_resolution' => '',
+        'title_field' => 0,
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'image',
+        'settings' => array(
+          'preview_image_style' => 'thumbnail',
+          'progress_indicator' => 'throbber',
+        ),
+        'type' => 'image_image',
+        'weight' => '3',
+      ),
+    ),
+  );
+
+  // Exported field: 'field_collection_item-field_story_section-field_story_text'.
+  $fields['field_collection_item-field_story_section-field_story_text'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_story_text',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'field_story_section',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '1',
+        ),
+      ),
+      'entity_type' => 'field_collection_item',
+      'field_name' => 'field_story_text',
+      'label' => 'Section story',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '1',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'rows' => '8',
+        ),
+        'type' => 'text_textarea',
+        'weight' => '2',
       ),
     ),
   );
@@ -2711,7 +2971,7 @@ function lbd_content_types_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -2793,7 +3053,7 @@ function lbd_content_types_field_default_fields() {
             'image_style' => '',
           ),
           'type' => 'image',
-          'weight' => 1,
+          'weight' => '1',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -2832,6 +3092,185 @@ function lbd_content_types_field_default_fields() {
         ),
         'type' => 'image_image',
         'weight' => '33',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-labdoo_story-field_story_edoovillage'.
+  $fields['node-labdoo_story-field_story_edoovillage'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_story_edoovillage',
+      'foreign keys' => array(
+        'node' => array(
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(
+            'edoovillage' => 'edoovillage',
+            'hub' => 'hub',
+          ),
+        ),
+        'target_type' => 'node',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'labdoo_story',
+      'default_value' => NULL,
+      'default_value_function' => 'entityreference_prepopulate_field_default_value',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'inline',
+          'module' => 'entityreference',
+          'settings' => array(
+            'link' => 1,
+          ),
+          'type' => 'entityreference_label',
+          'weight' => '5',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_story_edoovillage',
+      'label' => 'This story comes from',
+      'required' => 1,
+      'settings' => array(
+        'behaviors' => array(
+          'prepopulate' => array(
+            'action' => 'none',
+            'action_on_edit' => 0,
+            'fallback' => 'none',
+            'providers' => array(
+              'og_context' => 0,
+              'url' => 1,
+            ),
+            'skip_perm' => '0',
+            'status' => 1,
+          ),
+        ),
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'size' => '60',
+        ),
+        'type' => 'entityreference_autocomplete',
+        'weight' => '8',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-labdoo_story-field_story_section'.
+  $fields['node-labdoo_story-field_story_section'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_story_section',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'revision_id' => array(
+          0 => 'revision_id',
+        ),
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'field_collection',
+      'settings' => array(
+        'hide_blank_items' => 1,
+        'hide_initial_item' => 0,
+        'path' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'field_collection',
+    ),
+    'field_instance' => array(
+      'bundle' => 'labdoo_story',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'field_collection',
+          'settings' => array(
+            'view_mode' => 'full',
+          ),
+          'type' => 'field_collection_fields',
+          'weight' => '4',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_story_section',
+      'label' => 'Story section',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'field_collection',
+        'settings' => array(),
+        'type' => 'field_collection_embed',
+        'weight' => '7',
       ),
     ),
   );
@@ -6411,6 +6850,9 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
   t('Photo album');
   t('Priority');
   t('Registration');
+  t('Section heading');
+  t('Section picture');
+  t('Section story');
   t('Select the superhub pages where you would like this menu block to appear');
   t('Select this field if you would like to enable the registration form. This will allow you to manage labdooers\' registration to this event as well as send them event-related email notifications.');
   t('Send only to these members:');
@@ -6418,11 +6860,13 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
   t('Send to all members of this team');
   t('Share with additional teams');
   t('Status');
+  t('Story section');
   t('Stream it');
   t('Tab');
   t('Team');
   t('Team\'s topic');
   t('Team(s)');
+  t('This story comes from');
   t('Type');
   t('Weight');
   t('Welcome message');

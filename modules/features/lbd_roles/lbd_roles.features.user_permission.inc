@@ -176,6 +176,7 @@ function lbd_roles_user_default_permissions() {
     'name' => 'clone node',
     'roles' => array(
       0 => 'administrator',
+      1 => 'superhub manager',
     ),
     'module' => 'clone',
   );
@@ -219,6 +220,19 @@ function lbd_roles_user_default_permissions() {
   $permissions['create labdoo_slide content'] = array(
     'name' => 'create labdoo_slide content',
     'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: create labdoo_story content.
+  $permissions['create labdoo_story content'] = array(
+    'name' => 'create labdoo_story content',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'edoovillage manager',
+      2 => 'hub manager',
+      3 => 'superhub manager',
+      4 => 'wiki writer',
+    ),
     'module' => 'node',
   );
 
@@ -323,6 +337,13 @@ function lbd_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: delete any labdoo_story content.
+  $permissions['delete any labdoo_story content'] = array(
+    'name' => 'delete any labdoo_story content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: delete any node_gallery_gallery content.
   $permissions['delete any node_gallery_gallery content'] = array(
     'name' => 'delete any node_gallery_gallery content',
@@ -412,6 +433,17 @@ function lbd_roles_user_default_permissions() {
   $permissions['delete own labdoo_slide content'] = array(
     'name' => 'delete own labdoo_slide content',
     'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete own labdoo_story content.
+  $permissions['delete own labdoo_story content'] = array(
+    'name' => 'delete own labdoo_story content',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'superhub manager',
+      2 => 'wiki writer',
+    ),
     'module' => 'node',
   );
 
@@ -515,6 +547,17 @@ function lbd_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: edit any labdoo_story content.
+  $permissions['edit any labdoo_story content'] = array(
+    'name' => 'edit any labdoo_story content',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'superhub manager',
+      2 => 'wiki writer',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: edit any node_gallery_gallery content.
   $permissions['edit any node_gallery_gallery content'] = array(
     'name' => 'edit any node_gallery_gallery content',
@@ -615,6 +658,19 @@ function lbd_roles_user_default_permissions() {
   $permissions['edit own labdoo_slide content'] = array(
     'name' => 'edit own labdoo_slide content',
     'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit own labdoo_story content.
+  $permissions['edit own labdoo_story content'] = array(
+    'name' => 'edit own labdoo_story content',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'edoovillage manager',
+      2 => 'hub manager',
+      3 => 'superhub manager',
+      4 => 'wiki writer',
+    ),
     'module' => 'node',
   );
 
@@ -843,6 +899,13 @@ function lbd_roles_user_default_permissions() {
   // Exported permission: search labdoo_slide content.
   $permissions['search labdoo_slide content'] = array(
     'name' => 'search labdoo_slide content',
+    'roles' => array(),
+    'module' => 'search_config',
+  );
+
+  // Exported permission: search labdoo_story content.
+  $permissions['search labdoo_story content'] = array(
+    'name' => 'search labdoo_story content',
     'roles' => array(),
     'module' => 'search_config',
   );
@@ -1086,6 +1149,13 @@ function lbd_roles_user_default_permissions() {
   // Exported permission: view any unpublished labdoo_slide content.
   $permissions['view any unpublished labdoo_slide content'] = array(
     'name' => 'view any unpublished labdoo_slide content',
+    'roles' => array(),
+    'module' => 'view_unpublished',
+  );
+
+  // Exported permission: view any unpublished labdoo_story content.
+  $permissions['view any unpublished labdoo_story content'] = array(
+    'name' => 'view any unpublished labdoo_story content',
     'roles' => array(),
     'module' => 'view_unpublished',
   );

@@ -290,8 +290,31 @@ input[type="checkbox"] {
   padding-right: 1em;
 }
 
-
 .views-content-field-slider-tab {
   cursor: pointer;
+}
+
+
+.field-name-field-story-heading {
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  font-weight: bold;
+  color: red;
+  font-size: 14pt;
+}
+
+.field-name-field-story-text {
+  width: 50%;
+  text-align: justify;
+  margin: auto;
+  font-size: 11pt;
+
+}
+
+.field-name-field-story-picture {
+  width: 40%;
+  text-align: center;
+  margin: auto;
 }
 
