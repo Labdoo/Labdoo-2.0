@@ -420,6 +420,10 @@ function _email_dootrip_event($node, $eventType) {
    */
   if($eventType != 'insert') // Only if this is a newly created dootrip (to avoid being pedantic)
     return;
+  // Only if the announce field is turned on
+  $announce = labdoo_lib_get_field($node, 'field_announce_this_dootrip', 'node', 'value');
+  if($announce == 0)
+    return;
   $subjectFileName = _path_to_email_template($langCode) . "dootrip_announce_subject-" . $langCode . ".email";
   $subjectTemplate = file_get_contents($subjectFileName);
   $subject = $subjectTemplate;

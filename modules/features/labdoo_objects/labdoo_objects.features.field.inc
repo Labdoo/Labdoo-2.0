@@ -85,6 +85,81 @@ function labdoo_objects_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-dootrip-field_announce_this_dootrip'.
+  $fields['node-dootrip-field_announce_this_dootrip'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_announce_this_dootrip',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'No',
+          1 => '1',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'dootrip',
+      'default_value' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
+      'deleted' => '0',
+      'description' => 'Check this box if you would like other users who are managing schools in the destination country to receive an email notification. It is recommended that you don\'t set this option if you already have dootronics (laptops, tablets, ...) assigned to your trip. If you still don\'t have dootronics assigned to your trip, then you can select this option so that these other users can receive a notification about your trip and assign dootronics that you can carry. See the <a href="../../content/automatic-notifications-and-managing-your-dootrips" target="_blank">wiki page on dootrips notifications for more details</a>.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 19,
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_announce_this_dootrip',
+      'label' => 'Announce this dootrip',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'display_label' => 1,
+        ),
+        'type' => 'options_onoff',
+        'weight' => '21',
+      ),
+    ),
+  );
+
   // Exported field: 'node-dootrip-field_arrival_date'.
   $fields['node-dootrip-field_arrival_date'] = array(
     'field_config' => array(
@@ -386,7 +461,7 @@ function labdoo_objects_field_default_fields() {
                 'weight' => '-98',
               ),
               'city' => array(
-                'collect' => '1',
+                'collect' => '2',
                 'default' => '',
                 'weight' => '-97',
               ),
@@ -1502,7 +1577,7 @@ $display_output = $entity_field_item[\'value\'];',
                 'weight' => '-98',
               ),
               'city' => array(
-                'collect' => '1',
+                'collect' => '2',
                 'default' => '',
                 'weight' => '-97',
               ),
@@ -1577,7 +1652,7 @@ $display_output = $entity_field_item[\'value\'];',
                     1 => 'und',
                     2 => 0,
                   ),
-                  'collect' => 1,
+                  'collect' => '1',
                   'default' => '',
                   'weight' => '-97',
                 ),
@@ -3538,7 +3613,8 @@ $display_output = $entity_field_item[\'value\'];',
       'bundle' => 'edoovillage',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Press SHIFT key to select multiple.
+See <a target=\'_blank\' href="../../../content/list-countries-voltages-and-power-plugs">this page for a list of socket types</a>.',
       'display' => array(
         'default' => array(
           'label' => 'inline',
@@ -6519,10 +6595,12 @@ $display_output = $entity_field_item[\'value\'];',
   t('Additional notification emails');
   t('Additional traveler(s) information');
   t('Amp hours');
+  t('Announce this dootrip');
   t('Arrival date');
   t('Battery duration');
   t('Brand name and model');
   t('CPU speed (Example: 1200 MHz)');
+  t('Check this box if you would like other users who are managing schools in the destination country to receive an email notification. It is recommended that you don\'t set this option if you already have dootronics (laptops, tablets, ...) assigned to your trip. If you still don\'t have dootronics assigned to your trip, then you can select this option so that these other users can receive a notification about your trip and assign dootronics that you can carry. See the <a href="../../content/automatic-notifications-and-managing-your-dootrips" target="_blank">wiki page on dootrips notifications for more details</a>.');
   t('Comments');
   t('Coordinating hub(s)');
   t('Current operating system');
@@ -6569,6 +6647,8 @@ $display_output = $entity_field_item[\'value\'];',
   t('Pick me up');
   t('Picture');
   t('Preferred edoovillage destinations');
+  t('Press SHIFT key to select multiple.
+See <a target=\'_blank\' href="../../../content/list-countries-voltages-and-power-plugs">this page for a list of socket types</a>.');
   t('Project application');
   t('Project description');
   t('Project manager(s)');
