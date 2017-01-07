@@ -787,10 +787,16 @@ function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL, $switch
     else
        $objects[$objectNid]['inTransit'] = 0;
 
-    // Extract number of dootronics completed (delivered) via this dootrips
-    if(labdoo_lib_get_field($node, 'field_status_dootrip', 'node', 'value') == "DS1") 
+    // Extract number of dootronics completed (delivered) via this dootrip
+    $arrivalData = new DateObject(labdoo_lib_get_field($node, 'field_arrival_date', 'node', 'value'), 
+                                  date_default_timezone(), 
+                                  DATE_FORMAT_ISO);
+    $nowDate = date_now();
+    $timePastDootrip = $arrivalData->diff($nowDate);
+    $timePastDootripInt =(int)$timePastDootrip->format("%r%a");
+    if($timePastDootripInt > 0)
       $objects[$objectNid]['completed'] = $numDootronics;
-    else
+    else  
       $objects[$objectNid]['completed'] = 0;
 
     // Extract dootrippers

@@ -1024,19 +1024,19 @@ function _menu_item_redirect_log_out() {
 
 function _menu_item_redirect_getting_started() {
   global $user; 
-  drupal_goto('users/' . $user->name . '/gettingStarted');
+  drupal_goto('user/' . $user->uid . '/gettingStarted');
   return;
 }
 
 function _menu_item_redirect_my_contributions() {
   global $user;
-  drupal_goto('users/' . $user->name . '/metrics');
+  drupal_goto('user/' . $user->uid . '/metrics');
   return;
 }
 
 function _menu_item_redirect_show_profile() {
   global $user; 
-  drupal_goto('users/' . $user->name);
+  drupal_goto('user/' . $user->uid);
   return;
 }
 
@@ -1054,19 +1054,19 @@ function _menu_item_redirect_edit_account() {
 
 function _menu_item_redirect_my_events() {
   global $user; 
-  drupal_goto('users/' . $user->name . '/myevents');
+  drupal_goto('user/' . $user->uid . '/myevents');
   return;
 }
 
 function _menu_item_redirect_my_roles() {
   global $user; 
-  drupal_goto('users/' . $user->name . '/myroles');
+  drupal_goto('user/' . $user->uid . '/myroles');
   return;
 }
 
 function _menu_item_redirect_manage_files() {
   global $user; 
-  drupal_goto('users/' . $user->name . '/imce');
+  drupal_goto('user/' . $user->uid . '/imce');
   return;
 }
 

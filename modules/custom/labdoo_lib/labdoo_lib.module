@@ -2688,6 +2688,9 @@ function labdoo_lib_user_presave(&$edit, &$account, $category) {
                                    $edit['locations'][0]['longitude']);
   if($ret == 0) // If successful, do not let the system attempt to geolocate it anymore
     $edit['locations'][0]['inhibit_geocode'] = TRUE;
+  else
+    $edit['locations'][0]['inhibit_geocode'] = FALSE;
+
   return;
 }
 
@@ -3039,8 +3042,10 @@ function labdoo_lib_filter_process_format($element) {
  *
  */
 function labdoo_lib_compute_dootrip_load($nodeLoaded) {
-  $dootrippers = field_get_items('node', $nodeLoaded, 'field_laptops');
-  return(count($dootrippers));
+  $dootronics = field_get_items('node', $nodeLoaded, 'field_laptops');
+  if(empty($dootronics))
+    return(0);
+  return(count($dootronics));
 }
 
 
@@ -3699,7 +3704,7 @@ function labdoo_lib_user_login(&$edit, $account)
   }
 
   // redirect to preferred language user account page 
-  drupal_goto('users/' . $account->name  . '/gettingStarted', array(
+  drupal_goto('user/' . $account->uid  . '/gettingStarted', array(
     'language' => $languages[$user_language],
   ));
 }
