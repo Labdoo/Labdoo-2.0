@@ -305,7 +305,7 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
 
   if(!$justCache && $switcher)
     print_dashboard_switcher($userId);
-  print_dashboard_objects('laptop', 'doojects', $objects, $metrics, $selectedNids, $cacheIndexPrefix, $justCache);
+  print_dashboard_objects('laptop', 'dootronics', $objects, $metrics, $selectedNids, $cacheIndexPrefix, $justCache);
 
 }
 

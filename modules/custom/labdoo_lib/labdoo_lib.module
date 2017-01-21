@@ -1311,7 +1311,6 @@ function labdoo_lib_node_delete($node) {
  */
 function labdoo_lib_form_node_form_alter(&$form, &$form_state, $form_id) {
   global $user;
-
   /*
    * Node is a laptop
    */
@@ -1414,6 +1413,17 @@ function labdoo_lib_form_node_form_alter(&$form, &$form_state, $form_id) {
     }
   }
 
+  if($form_id == 'team_page_node_form') {
+    // These fields should only be shown for the coffee shop team.
+    // Change the coffee shop team ID if it ever changes (this value
+    // is based on the production instance, it won't work in development
+    // mode).
+    $coffeeShopTeamId = 23;
+    if($form['og_group_ref']['und'][0]['default']['#default_value'][0] != $coffeeShopTeamId) {
+      $form['field_send_to_all_hub_managers']['#access'] = FALSE;
+      $form['field_send_to_all_edoo_managers']['#access'] = FALSE;
+    }
+  }
   return;
 }
 
@@ -1740,9 +1750,31 @@ function labdoo_getnum_doojects($edoovillageId, $hubId, $status) {
 
   $country_names = location_get_iso3166_list();
 
-  if($hubId) 
+  if($hubId) { 
+    if($status == "S3" || $status == "T1" || $status == "S4" || $status == "S5" || $status == "S6" || $status == "S7" || $status == "S8" || $status == "S9") {
+      // To compute the number of deployed laptops, do it from the edoovillages
+      // assigned to the hub. This will include laptops that were delivered to 
+      // edoovillages managed by this hub even if they were not tagged by this
+      // hub.
+      $query = "SELECT COUNT(*) FROM field_data_field_status WHERE field_status_value='$status' 
+                AND entity_id IN (SELECT entity_id FROM field_data_field_edoovillage_destination 
+                WHERE field_edoovillage_destination_target_id IN 
+                (SELECT entity_id FROM field_data_field_hub WHERE field_hub_target_id=$hubId))"; 
+      $numLaptops = $numLaptops + db_query($query)->fetchField();
+      // Compute also the number of laptops directly connected with the hub and take the maximum
+      // between the two calculations
+      $query = "SELECT COUNT(*) FROM field_data_field_status WHERE field_status_value='$status' 
+                AND entity_id IN (SELECT entity_id FROM field_data_field_hub_laptop WHERE field_hub_laptop_target_id=$hubId)"; 
+      $numLaptops2 = db_query($query)->fetchField();
+      if($numLaptops > $numLaptops2)
+        return $numLaptops;
+      return $numLaptops2;
+    }
+    // Laptops don't have any edoovillage assigned, so count the laptops that were directly
+    // assigned to this hub
     $query = "SELECT COUNT(*) FROM field_data_field_status WHERE field_status_value='$status' 
               AND entity_id IN (SELECT entity_id FROM field_data_field_hub_laptop WHERE field_hub_laptop_target_id=$hubId)"; 
+  }
   else if($edoovillageId)
     $query = "SELECT COUNT(*) FROM field_data_field_status WHERE field_status_value='$status' 
               AND entity_id IN (SELECT entity_id FROM field_data_field_edoovillage_destination 
@@ -4149,5 +4181,22 @@ function labdoo_block_filter_object_menu() {
     return TRUE;
 
   return FALSE;
+}
+
+
+/**
+ * Get a list of user IDs that have a certain role
+ *
+ * @param $role The Labdoo role
+ * @return The list of user IDs 
+ *
+ */
+function labdoo_lib_get_users_role($role) {
+  $query = "SELECT uid FROM users_roles WHERE rid=(SELECT rid FROM role WHERE name='$role')";
+  $users = db_query($query)->fetchAll(PDO::FETCH_ASSOC);
+  foreach($users as $user) {
+    $userList[] = $user['uid'];
+  }
+  return $userList;
 }
 

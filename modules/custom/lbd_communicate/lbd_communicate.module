@@ -531,6 +531,28 @@ function _email_team_event($node, $comment = NULL) {
     $sendAll = TRUE;
 
   $emailsList = variable_get('site_mail', '');
+
+  // If they exist, check the send to all hub/edoovillage managers flags
+  if(isset($wNode->field_send_to_all_hub_managers)) {
+    $sendAllHubs = $wNode->field_send_to_all_hub_managers->value();
+    $sendAllEdoovillages = $wNode->field_send_to_all_edoo_managers->value();
+
+    if($sendAllHubs == 1) {
+      $hubManagers = labdoo_lib_get_users_role('hub manager');
+      foreach($hubManagers as $hubManager) {
+        $userObj = user_load($hubManager);
+        $emailsList = $emailsList . ", " . $userObj->mail;
+      }
+    }
+    if($sendAllEdoovillages == 1) {
+      $edooManagers = labdoo_lib_get_users_role('edoovillage manager');
+      foreach($edooManagers as $edooManager) {
+        $userObj = user_load($edooManager);
+        $emailsList = $emailsList . ", " . $userObj->mail;
+      }
+    }
+  }
+
   if($sendAll) { // Send to all members of this team
     $members = array();
     foreach($teamIdAll as $thisTeamId) {
