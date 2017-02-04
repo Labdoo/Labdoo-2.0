@@ -778,26 +778,25 @@ function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL, $switch
 
     $dootripStatus = labdoo_lib_get_field($node, 'field_status_dootrip', 'node', 'value');
 
-    // Extract number of dootronics in transit
+    // Extract number of dootronics in transit and transported
     $wNode = entity_metadata_wrapper('node', $node);
     $dootronicsList = $wNode->field_laptops->value();
     $numDootronics = count($dootronicsList);
-    if($dootripStatus == 'DS0')
-       $objects[$objectNid]['inTransit'] = $numDootronics;
-    else
-       $objects[$objectNid]['inTransit'] = 0;
-
-    // Extract number of dootronics completed (delivered) via this dootrip
     $arrivalData = new DateObject(labdoo_lib_get_field($node, 'field_arrival_date', 'node', 'value'), 
                                   date_default_timezone(), 
                                   DATE_FORMAT_ISO);
     $nowDate = date_now();
     $timePastDootrip = $arrivalData->diff($nowDate);
     $timePastDootripInt =(int)$timePastDootrip->format("%r%a");
-    if($timePastDootripInt > 0)
+    // Check if the dootrip was completed or not and set values accordingly
+    if($timePastDootripInt > 0) {
       $objects[$objectNid]['completed'] = $numDootronics;
-    else  
+      $objects[$objectNid]['inTransit'] = 0;
+    }
+    else { 
       $objects[$objectNid]['completed'] = 0;
+      $objects[$objectNid]['inTransit'] = $numDootronics;
+    }
 
     // Extract dootrippers
     $objects[$objectNid]['dootrippers'] = '';

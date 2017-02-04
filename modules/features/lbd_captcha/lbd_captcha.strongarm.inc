@@ -92,15 +92,15 @@ function lbd_captcha_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'captcha_placement_map_cache';
   $strongarm->value = array(
-    'user_login' => array(
-      'path' => array(),
-      'key' => 'actions',
-      'weight' => 99,
-    ),
     'user_register_form' => array(
       'path' => array(),
       'key' => 'actions',
       'weight' => 99,
+    ),
+    'lbd_contact_form' => array(
+      'path' => array(),
+      'key' => 'submit',
+      'weight' => NULL,
     ),
   );
   $export['captcha_placement_map_cache'] = $strongarm;
@@ -235,14 +235,14 @@ function lbd_captcha_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'recaptcha_private_key';
-  $strongarm->value = '6LenROISAAAAAM-bbCjtdRMbNN02w368ScK3ShK0';
+  $strongarm->value = '6LcJARATAAAAAMlPiwzqvbwK8OupcwdDpzUuJFph';
   $export['recaptcha_private_key'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'recaptcha_public_key';
-  $strongarm->value = '6LenROISAAAAAH9roYsyHLzGaDQr76lhDZcm92gG';
+  $strongarm->value = '6LcJARATAAAAAOVyxRyZ67vms_XA-l5wZZk409fB';
   $export['recaptcha_public_key'] = $strongarm;
 
   $strongarm = new stdClass();

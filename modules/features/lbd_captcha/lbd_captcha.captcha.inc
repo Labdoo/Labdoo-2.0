@@ -101,6 +101,14 @@ function lbd_captcha_captcha_default_points() {
   $captcha = new stdClass();
   $captcha->disabled = FALSE; /* Edit this to true to make a default captcha disabled initially */
   $captcha->api_version = 1;
+  $captcha->form_id = 'comment_node_labdoo_story_form';
+  $captcha->module = '';
+  $captcha->captcha_type = 'default';
+  $export['comment_node_labdoo_story_form'] = $captcha;
+
+  $captcha = new stdClass();
+  $captcha->disabled = FALSE; /* Edit this to true to make a default captcha disabled initially */
+  $captcha->api_version = 1;
   $captcha->form_id = 'comment_node_laptop_form';
   $captcha->module = '';
   $captcha->captcha_type = '';

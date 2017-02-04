@@ -2015,6 +2015,17 @@ function labdoo_lib_user2edoovillage2dootronic($userId) {
  */
 function labdoo_lib_node_access($node, $op, $account) {
 
+  if($op == "delete") {
+    if($node->type == "edoovillage") {
+      $query = "SELECT COUNT(*) FROM field_data_field_status WHERE 
+                entity_id IN (SELECT entity_id FROM field_data_field_edoovillage_destination 
+                WHERE field_edoovillage_destination_target_id=$node->nid)"; 
+      $numLaptops = db_query($query)->fetchField();
+      if($numLaptops != 0) 
+        return NODE_ACCESS_DENY;
+    }
+  }
+
   // For logged in users accessing a dootronic page, check
   // if the user should have extra access rights due to
   // its relationship paths (e.g. via hub, via edoovillage)
@@ -4040,14 +4051,22 @@ function labdoo_render_object_menu() {
   if ($type == "edoovillage") {
     $field_photo_album = 'field_edoovillage_photo_album';
     $nodeId = $_GET['e'];
+    if(!is_numeric($nodeId))
+      return "";
     $nodeObj = node_load($nodeId);
+    if(!$nodeObj)
+      return "";
     $code = "";
     $objectString = "edoovillage";
   }
   else if ($type == "hub") {
     $field_photo_album = 'field_hub_photo_album';
     $nodeId = $_GET['h'];
+    if(!is_numeric($nodeId))
+      return "";
     $nodeObj = node_load($nodeId);
+    if(!$nodeObj)
+      return "";
     $code = "";
     $objectString = "hub";
   }
