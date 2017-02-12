@@ -186,7 +186,7 @@ function labdoo_lookup_coordinates($country, $city, &$lat, &$lon, $silent=True, 
     # There are various online services to pull the GPS  
     # coordinates of a location. Use one of them.
     $locationString = $street . "+" . $city . "+" . $zip . "+" . $country;
-    $query = str_replace(' ', '+', 'https://maps.googleapis.com/maps/api/geocode/json?address='.$locationString);
+    $query = str_replace(' ', '+', 'https://maps.googleapis.com/maps/api/geocode/json?address='.$locationString.'&key=AIzaSyA5kbnku56o714TnQC0cDz7LDHSO31_0iw');
     $mapQuery = drupal_http_request($query);
     if(!property_exists($mapQuery, 'data')) {
       if($silent == False)
@@ -955,7 +955,7 @@ function labdoo_lib_node_update($node) {
       //      just like we are doing with other fields.
       //      For now we leave it here as an example of an alternative technique.
       register_shutdown_function('_update_dooject_location_from_edoovillage', $node);
-      drupal_set_message(t('The location of this dooject has been automatically assigned to the location of its edoovillage.'), 'status', FALSE);
+      labdoo_lib_msg_info(t('The location of this dooject has been automatically assigned to the location of its edoovillage.'), 'status', FALSE);
     }
   }
 
@@ -1256,13 +1256,13 @@ function labdoo_lib_node_insert($node) {
   } 
 
   if($node->type == 'dootrip') {
-    drupal_set_message(t("Thank you for registering a dootrip. Please notice that 
-                          the creation of the dootrip does not guarantee that you will
-                          receive laptops. Please <a target='_blank' 
-                          href='../content/finding-and-contacting-other-labdoo-users'>
-                          contact now</a> one of the <a target='_blank' href='../hubs'>hubs near 
-                          your area</a> to check if they have any laptops in stock 
-                          that you can help bring on your trip."));
+    labdoo_lib_msg_info(t("Thank you for registering a dootrip. Please notice that 
+                           the creation of the dootrip does not guarantee that you will
+                           receive laptops. Please <a target='_blank' 
+                           href='../content/finding-and-contacting-other-labdoo-users'>
+                           contact now</a> one of the <a target='_blank' href='../hubs'>hubs near 
+                           your area</a> to check if they have any laptops in stock 
+                           that you can help bring on your trip."));
   }
 
   return;
@@ -2282,26 +2282,26 @@ function labdoo_update_flags_dooject($method = "", $doojectId = NULL, $userId = 
     {
       if($value == '1')
       {
-        drupal_set_message(t('You are already following Dootronic ' . $doojectNode->title));
+        labdoo_lib_msg_info(t('You are already following Dootronic ' . $doojectNode->title));
         return; // User is already following this dooject, just return
       }
     }
     else if($value == '0')
     {
-      drupal_set_message(t('You are not following Dootronic ' . $doojectNode->title));
+      labdoo_lib_msg_info(t('You are not following Dootronic ' . $doojectNode->title));
       return; // User is already not following this dooject, just return
     }
 
     if($value == '1')
     {
       $currList[] = $newRef;
-      drupal_set_message(t('You are now following Dootronic ' . $doojectNode->title));
+      labdoo_lib_msg_info(t('You are now following Dootronic ' . $doojectNode->title));
     }
     else
     {
       $key = array_search($newRef, $currList);
       unset($currList[$key]);
-      drupal_set_message(t('You are no longer following Dootronic ' . $doojectNode->title));
+      labdoo_lib_msg_info(t('You are no longer following Dootronic ' . $doojectNode->title));
     }
 
     $wDoojectNode->field_additional_followers->set($currList);
@@ -2312,11 +2312,11 @@ function labdoo_update_flags_dooject($method = "", $doojectId = NULL, $userId = 
     $wDoojectNode = entity_metadata_wrapper('node', $doojectNode);
     $currPickmeFlag = $wDoojectNode->field_pick_me_up->value();
     if($value == '1') {
-      drupal_set_message(t('Dootronic ' . $doojectNode->title . ' is marked as ready to be picked up'));
+      labdoo_lib_msg_info(t('Dootronic ' . $doojectNode->title . ' is marked as ready to be picked up'));
       $wDoojectNode->field_pick_me_up->set(TRUE);
     }
     else {
-      drupal_set_message(t('Dootronic ' . $doojectNode->title . ' is marked as not ready to be picked up'));
+      labdoo_lib_msg_info(t('Dootronic ' . $doojectNode->title . ' is marked as not ready to be picked up'));
       $wDoojectNode->field_pick_me_up->set(FALSE);
     }
     $wDoojectNode->save();
@@ -2784,7 +2784,7 @@ function labdoo_block_filter_sidebar_second() {
     if(user_is_logged_in()) {
       global $user;
       $userId = $user->uid;
-      drupal_set_message(t("You can see all your registrations from <a href=\"../user/$userId/myevents\">this page</a>."), 'status', FALSE);
+      labdoo_lib_msg_info(t("You can see all your registrations from <a href=\"../user/$userId/myevents\">this page</a>."), 'status', FALSE);
     }
     return TRUE;
   }
@@ -4178,7 +4178,7 @@ function labdoo_render_object_menu() {
     }
     if(in_array('HUBTYPE1', $hubTypes)) {
       $hubTypeIcon = "/sites/default/files/content/labdoo-toolkit/labdoo-marker-blue.png";
-      $hubTypeText = t("<strong><font color='blue'>Saniation point</font></strong>");
+      $hubTypeText = t("<strong><font color='#0088cc'>Sanitation point</font></strong>");
       $code .= "<img src=$hubTypeIcon width='25px'/>&nbsp;" . $hubTypeText;
     }
   } 

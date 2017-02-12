@@ -104,12 +104,12 @@ function lbd_layout_node_info() {
       'help' => '',
     ),
     'book' => array(
-      'name' => t('Book Page'),
+      'name' => t('Wiki Page'),
       'base' => 'node_content',
       'description' => t('<em>Books</em> have a built-in hierarchical navigation. Use for handbooks or tutorials.'),
       'has_title' => '1',
       'title_label' => t('Title'),
-      'help' => '',
+      'help' => t('<p align=\'right\'><a href="../../content/labdoo-wiki" target="_blank" align="right">Help about writing wiki pages</a>&nbsp;&nbsp;&nbsp;</p>'),
     ),
     'page' => array(
       'name' => t('Basic page'),

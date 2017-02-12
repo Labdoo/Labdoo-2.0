@@ -404,7 +404,7 @@ function lbd_layout_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '6',
+        'weight' => '7',
       ),
     ),
   );
@@ -434,6 +434,7 @@ function lbd_layout_field_default_fields() {
           'French' => 'French',
           'German' => 'German',
           'Italian' => 'Italian',
+          'Polish' => 'Polish',
           'Russian' => 'Russian',
           'Spanish' => 'Spanish',
         ),
@@ -456,7 +457,7 @@ function lbd_layout_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '2',
+          'weight' => '3',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -528,7 +529,7 @@ function lbd_layout_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '3',
+          'weight' => '4',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -613,7 +614,7 @@ function lbd_layout_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '4',
+          'weight' => '5',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -646,6 +647,87 @@ function lbd_layout_field_default_fields() {
         'settings' => array(),
         'type' => 'options_select',
         'weight' => '3',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-book-field_wiki_tags'.
+  $fields['node-book-field_wiki_tags'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_wiki_tags',
+      'foreign keys' => array(
+        'tid' => array(
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+          'table' => 'taxonomy_term_data',
+        ),
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'taxonomy',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'vocabulary' => 'tags',
+            'parent' => '0',
+          ),
+        ),
+        'options_list_callback' => 'i18n_taxonomy_allowed_values',
+      ),
+      'translatable' => '0',
+      'type' => 'taxonomy_term_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'book',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Enter a comma separated list of words that describe this content. The auto-completion text will also allow you to select tagged words that already exist.',
+      'display' => array(
+        'default' => array(
+          'label' => 'inline',
+          'module' => 'i18n_taxonomy',
+          'settings' => array(),
+          'type' => 'i18n_taxonomy_term_reference_link',
+          'weight' => '1',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_wiki_tags',
+      'label' => 'Tags',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'taxonomy',
+        'settings' => array(
+          'autocomplete_path' => 'taxonomy/autocomplete',
+          'size' => 60,
+        ),
+        'type' => 'taxonomy_autocomplete',
+        'weight' => '4',
       ),
     ),
   );
@@ -733,6 +815,7 @@ function lbd_layout_field_default_fields() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Comment');
+  t('Enter a comma separated list of words that describe this content. The auto-completion text will also allow you to select tagged words that already exist.');
   t('Enter a comma-separated list of words to describe your content.');
   t('Image');
   t('Is this wiki page a translation of another wiki page or is this the original?');

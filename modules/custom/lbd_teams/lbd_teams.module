@@ -622,22 +622,44 @@ function event_user_is_registered($entity_type, $entity_id, $anon_mail = NULL, $
  */ 
 function lbd_teams_node_view($node, $view_mode) {
   $path = drupal_get_path_alias(current_path());
+  global $user;
+  $userId = $user->uid;
 
   // Only for events and ensure that it does not include certain URL paths
   if($node->type == 'event' && 
      strcmp($path, "teams-activities") && strcmp($path, "my-teams-activities") && !preg_match("/(node|content).*activities/", $path)) {
     $regType = labdoo_lib_get_field($node, 'field_registration', 'node', 'registration_type');
     if($regType == 'event_registration' && user_is_logged_in()) {
-      global $user;
-      $userId = $user->uid;
       // Tell the user where to find the rest of his/her events
       // Tell the user whether he/she is already registered to this event
       $regId = event_user_is_registered('node', $node->nid, NULL, $userId, array('complete'));
       if($regId > 0)
-        drupal_set_message(t("You are currently registered to this event. To unregister, go to <a href=\"../registration/$regId/delete?destination=node/$node->nid\">this link</a>"));
+        labdoo_lib_msg_info(t("You are currently registered to this event. To unregister, go to <a href=\"../registration/$regId/delete?destination=node/$node->nid\">this link</a>"));
       else
-        drupal_set_message(t("You are currently not registered to this event. To register, click on the 'Register' tab below."));
-      drupal_set_message(t("You can see all your registrations from <a href=\"../user/$userId/myevents\">this page</a>."), 'status', FALSE);
+        labdoo_lib_msg_info(t("You are currently not registered to this event. To register, click on the 'Register' tab below."));
+      labdoo_lib_msg_info(t("You can see all your registrations from <a href=\"../user/$userId/myevents\">this page</a>."), 'status', FALSE);
+    }
+  }
+
+  // For conversations, tasks and events
+  if($node->type == 'team_page' || $node->type == 'event' || $node->type == 'team_task') {
+    $teamId = lbd_teams_page_group_id();
+    $members = lbd_teams_get_team_members($teamId);
+    if(in_array($userId, $members))  {
+      labdoo_lib_msg_info("You are a member of this team.");
+      if(!preg_match('/activities/', $path)) {
+        if($node->type == 'team_page' || $node->type == 'event') {
+            labdoo_lib_msg_info("If you want to change the list of people who will receive emails from this conversation, 
+                                 click on the 'Edit' tab below and modify the configuration under the 'Sharing options' section.");
+        }
+        else { // It's a task
+            labdoo_lib_msg_info("If you want to change the status of this task,  click on the 'Edit' tab below");
+        }
+      }
+
+    }
+    else {
+      labdoo_lib_msg_info("You are a not a member of this team. If you want to be part of this team, click on 'Subscribe to this team'.");
     }
   }
 }

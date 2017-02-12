@@ -210,22 +210,25 @@ a2a_config.linkurl = \'www.labdoo.org/hubs\';';
     'article' => 'article',
     'page' => 'page',
     'blog' => 'blog',
-    'book' => 'book',
-    'edoovillage' => 'edoovillage',
+    'slider_page' => 'slider_page',
     'gic' => 'gic',
     'node_gallery_gallery' => 'node_gallery_gallery',
     'node_gallery_item' => 'node_gallery_item',
-    'hub' => 'hub',
-    'private_page' => 'private_page',
+    'labdoo_story' => 'labdoo_story',
     'simplenews' => 'simplenews',
-    'slider_page' => 'slider_page',
+    'private_page' => 'private_page',
     'superhub_page' => 'superhub_page',
     'team' => 'team',
     'team_page' => 'team_page',
     'event' => 'event',
     'team_task' => 'team_task',
-    'laptop' => 0,
+    'book' => 'book',
     'dootrip' => 0,
+    'laptop' => 0,
+    'edoovillage' => 0,
+    'hub' => 0,
+    'labdoo_slide' => 0,
+    'drupal_wall' => 0,
   );
   $export['clone_omitted'] = $strongarm;
 
@@ -375,6 +378,13 @@ a2a_config.linkurl = \'www.labdoo.org/hubs\';';
   $strongarm->name = 'clone_use_node_type_name';
   $strongarm->value = 0;
   $export['clone_use_node_type_name'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_mobile_detect';
+  $strongarm->value = '0';
+  $export['colorbox_mobile_detect'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -548,6 +558,7 @@ a2a_config.linkurl = \'www.labdoo.org/hubs\';';
           6 => 0,
           4 => 0,
           2 => 0,
+          10 => 0,
         ),
       ),
       'containing_phrase' => array(
@@ -562,6 +573,7 @@ a2a_config.linkurl = \'www.labdoo.org/hubs\';';
           6 => 0,
           4 => 0,
           2 => 0,
+          10 => 0,
         ),
       ),
       'containing_none' => array(
@@ -576,6 +588,7 @@ a2a_config.linkurl = \'www.labdoo.org/hubs\';';
           6 => 0,
           4 => 0,
           2 => 0,
+          10 => 0,
         ),
       ),
       'types' => array(
@@ -590,30 +603,31 @@ a2a_config.linkurl = \'www.labdoo.org/hubs\';';
           6 => 0,
           4 => 0,
           2 => 0,
+          10 => 0,
         ),
         'filter' => array(
+          'action' => 'action',
           'article' => 'article',
-          'page' => 'page',
           'blog' => 'blog',
           'slider_page' => 'slider_page',
+          'dootrip' => 'dootrip',
+          'laptop' => 'laptop',
+          'edoovillage' => 'edoovillage',
           'gic' => 'gic',
+          'node_gallery_gallery' => 'node_gallery_gallery',
           'node_gallery_item' => 'node_gallery_item',
-          'simplenews' => 'simplenews',
+          'hub' => 'hub',
+          'labdoo_slide' => 'labdoo_slide',
           'private_page' => 'private_page',
-          'superhub_page' => 'superhub_page',
-          'team' => 'team',
-          'action' => 0,
-          'book' => 0,
-          'laptop' => 0,
-          'dootrip' => 0,
-          'edoovillage' => 0,
-          'node_gallery_gallery' => 0,
-          'hub' => 0,
-          'labdoo_slide' => 0,
-          'drupal_wall' => 0,
+          'drupal_wall' => 'drupal_wall',
+          'page' => 0,
+          'simplenews' => 0,
+          'superhub_page' => 0,
+          'team' => 0,
           'team_page' => 0,
           'event' => 0,
           'team_task' => 0,
+          'book' => 0,
         ),
         'groupings' => array(),
       ),
@@ -630,6 +644,7 @@ a2a_config.linkurl = \'www.labdoo.org/hubs\';';
           6 => 0,
           4 => 0,
           2 => 0,
+          10 => 0,
         ),
       ),
       'language' => array(
@@ -644,6 +659,7 @@ a2a_config.linkurl = \'www.labdoo.org/hubs\';';
           6 => 0,
           4 => 0,
           2 => 0,
+          10 => 0,
         ),
       ),
     ),
@@ -702,19 +718,19 @@ a2a_config.linkurl = \'www.labdoo.org/hubs\';';
     'extra_fields' => array(
       'form' => array(
         'locations' => array(
-          'weight' => '5',
+          'weight' => '6',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '4',
+          'weight' => '5',
         ),
       ),
       'display' => array(
         'sharethis' => array(
           'default' => array(
-            'weight' => '1',
+            'weight' => '2',
             'visible' => TRUE,
           ),
         ),
@@ -1181,10 +1197,10 @@ a2a_config.linkurl = \'www.labdoo.org/hubs\';';
   $strongarm->api_version = 1;
   $strongarm->name = 'search_active_modules';
   $strongarm->value = array(
-    'location_search' => 'location_search',
     'node' => 'node',
-    'user' => 'user',
     'file_entity' => 0,
+    'location_search' => 0,
+    'user' => 0,
   );
   $export['search_active_modules'] = $strongarm;
 
@@ -1213,6 +1229,7 @@ a2a_config.linkurl = \'www.labdoo.org/hubs\';';
           6 => 0,
           4 => 0,
           2 => 0,
+          10 => 0,
         ),
       ),
       'containing_phrase' => array(
@@ -1227,6 +1244,7 @@ a2a_config.linkurl = \'www.labdoo.org/hubs\';';
           6 => 0,
           4 => 0,
           2 => 0,
+          10 => 0,
         ),
       ),
       'containing_none' => array(
@@ -1241,6 +1259,7 @@ a2a_config.linkurl = \'www.labdoo.org/hubs\';';
           6 => 0,
           4 => 0,
           2 => 0,
+          10 => 0,
         ),
       ),
       'types' => array(
@@ -1255,30 +1274,31 @@ a2a_config.linkurl = \'www.labdoo.org/hubs\';';
           6 => 0,
           4 => 0,
           2 => 0,
+          10 => 0,
         ),
         'filter' => array(
+          'action' => 'action',
           'article' => 'article',
-          'page' => 'page',
           'blog' => 'blog',
           'slider_page' => 'slider_page',
+          'dootrip' => 'dootrip',
+          'laptop' => 'laptop',
+          'edoovillage' => 'edoovillage',
           'gic' => 'gic',
+          'node_gallery_gallery' => 'node_gallery_gallery',
           'node_gallery_item' => 'node_gallery_item',
-          'simplenews' => 'simplenews',
+          'hub' => 'hub',
+          'labdoo_slide' => 'labdoo_slide',
           'private_page' => 'private_page',
-          'superhub_page' => 'superhub_page',
-          'team' => 'team',
-          'action' => 0,
-          'book' => 0,
-          'laptop' => 0,
-          'dootrip' => 0,
-          'edoovillage' => 0,
-          'node_gallery_gallery' => 0,
-          'hub' => 0,
-          'labdoo_slide' => 0,
-          'drupal_wall' => 0,
+          'drupal_wall' => 'drupal_wall',
+          'page' => 0,
+          'simplenews' => 0,
+          'superhub_page' => 0,
+          'team' => 0,
           'team_page' => 0,
           'event' => 0,
           'team_task' => 0,
+          'book' => 0,
         ),
         'groupings' => array(),
       ),
@@ -1295,6 +1315,7 @@ a2a_config.linkurl = \'www.labdoo.org/hubs\';';
           6 => 0,
           4 => 0,
           2 => 0,
+          10 => 0,
         ),
       ),
       'language' => array(
@@ -1309,6 +1330,7 @@ a2a_config.linkurl = \'www.labdoo.org/hubs\';';
           6 => 0,
           4 => 0,
           2 => 0,
+          10 => 0,
         ),
       ),
     ),
@@ -1922,7 +1944,7 @@ a2a_config.linkurl = \'www.labdoo.org/hubs\';';
     'toggle_main_menu' => 1,
     'toggle_secondary_menu' => 1,
     'default_logo' => 0,
-    'logo_path' => 'profiles/labdoo/files/pictures/equation-2-alpha-smaller.png',
+    'logo_path' => 'profiles/labdoo/files/pictures/labdoo-site-logo.png',
     'logo_upload' => '',
     'default_favicon' => 0,
     'favicon_path' => 'profiles/labdoo/files/pictures/favicon.png',

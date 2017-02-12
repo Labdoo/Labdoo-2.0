@@ -24,7 +24,7 @@ function lbd_layout_flexslider_default_presets() {
     'reverse' => 0,
     'smoothHeight' => 0,
     'startAt' => '0',
-    'animationSpeed' => '600',
+    'animationSpeed' => '1000',
     'initDelay' => '0',
     'useCSS' => 1,
     'touch' => 1,
