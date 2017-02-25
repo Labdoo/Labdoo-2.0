@@ -26,17 +26,17 @@ libraries[lessphp][download][url] = https://github.com/oyejorge/less.php/archive
 ;--------------------
 projects[devel] = 1.5
 ;projects[coder] = 1.2
-projects[diff] = 3.2
+projects[diff] = 3.3
 
 ;--------------------
 ; User interface
 ;--------------------
 projects[context] = 3.7
-projects[views] = 3.14
+projects[views] = 3.15
 projects[homebox] = 2.0-rc1
 projects[boxes] = 1.2
 projects[edit_profile] = 1.0-beta2
-projects[wysiwyg] = 2.2
+projects[wysiwyg] = 2.3
 libraries[tinymce][directory_name] = tinymce
 libraries[tinymce][download][type] = get
 libraries[tinymce][download][url] = http://github.com/downloads/tinymce/tinymce/tinymce_3.5.7.zip
@@ -56,7 +56,7 @@ projects[hide_submit] = 2.0
 ;--------------------
 ; Security
 ;--------------------
-projects[captcha] = 1.3
+projects[captcha] = 1.4
 projects[recaptcha] = 2.1
 projects[honeypot] = 1.22
 projects[user_restrictions] = 1.0
@@ -87,7 +87,7 @@ projects[view_unpublished] = 1.2
 projects[menu_view_unpublished] = 1.0-beta3
 projects[role_delegation] = 1.1
 projects[legal] = 1.5
-projects[l10n_update] = 2.0
+projects[l10n_update] = 2.1
 
 ;--------------------
 ; Performance
@@ -164,11 +164,11 @@ projects[calendar] = 3.5
 ;--------------------
 ; Extensions and others
 ;--------------------
-projects[ctools] = 1.11
+projects[ctools] = 1.12
 projects[libraries] = 2.3
 projects[entity] = 1.8
 projects[xautoload] = 5.7
-projects[token] = 1.6
+projects[token] = 1.7
 projects[rules] = 2.9
 projects[pathauto] = 1.3
 projects[subpathauto] = 1.3
