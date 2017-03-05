@@ -42,6 +42,12 @@ function bootstrap1_preprocess_page(&$vars) {
       drupal_set_title(t('User account'));
     }
   }
+
+  // Redirect expired events
+  $status = drupal_get_http_header("status");
+  if ($status == "404 Not Found") {
+    labdoo_lib_msg_info("If you think this is an error on the Labdoo platform, please reach out to the Labdoo team at contact@labdoo.org so that we can fix it. Thank you.");
+  }
 }
 
 

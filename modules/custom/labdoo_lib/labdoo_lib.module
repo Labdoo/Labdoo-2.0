@@ -1760,7 +1760,7 @@ function labdoo_getnum_doojects($edoovillageId, $hubId, $status) {
                 AND entity_id IN (SELECT entity_id FROM field_data_field_edoovillage_destination 
                 WHERE field_edoovillage_destination_target_id IN 
                 (SELECT entity_id FROM field_data_field_hub WHERE field_hub_target_id=$hubId))"; 
-      $numLaptops = $numLaptops + db_query($query)->fetchField();
+      $numLaptops = db_query($query)->fetchField();
       // Compute also the number of laptops directly connected with the hub and take the maximum
       // between the two calculations
       $query = "SELECT COUNT(*) FROM field_data_field_status WHERE field_status_value='$status' 
@@ -3972,6 +3972,10 @@ function labdoo_table_download_button($table, $signature="", $downloadIcon="down
  */
 function labdoo_views_download_button($viewResult, $signature="") {
 
+  // If the views query is empty, return empty code
+  if(empty($viewResult))
+    return "";
+
   // Compose the header of the table first                                                
   $j = 0;
   $viewTable[0][$j++] = "ID";
@@ -3989,20 +3993,22 @@ function labdoo_views_download_button($viewResult, $signature="") {
     $viewTable[0][$j++] = $fieldInfo['label'];
   }
 
-  // Compose next the table rows
-  foreach($viewResult as $key => $object) {
-    $j = 0;
-    # Add "# " to avoid being casted to an integer value
-    $viewTable[$key+1][$j++] = "# ".$object->node_title; 
-    foreach($fieldNames as $fieldName) { 
-      $fieldValue = $object->$fieldName;
-      // If empty, it means that field is not initialized. Just 
-      // assign an empty string.
-      if(!$fieldValue)
-        $markup = "";
-      else
-        $markup = $fieldValue[0]['rendered']['#markup'];
-      $viewTable[$key+1][$j++] = $markup;
+  if(isset($fieldNames)) {
+    // Compose next the table rows
+    foreach($viewResult as $key => $object) {
+      $j = 0;
+      # Add "# " to avoid being casted to an integer value
+      $viewTable[$key+1][$j++] = "# ".$object->node_title; 
+      foreach($fieldNames as $fieldName) { 
+        $fieldValue = $object->$fieldName;
+        // If empty, it means that field is not initialized. Just 
+        // assign an empty string.
+        if(!$fieldValue)
+          $markup = "";
+        else
+          $markup = $fieldValue[0]['rendered']['#markup'];
+        $viewTable[$key+1][$j++] = $markup;
+      }
     }
   }
 

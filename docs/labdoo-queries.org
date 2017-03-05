@@ -14,6 +14,13 @@ The following are some of the most commonly used SQL queries.
     mysql> SELECT DISTINCT city FROM location WHERE lid IN (SELECT lid FROM location_instance WHERE nid!=0 ORDER by nid);
     #+END_EXAMPLE
 
+  - To get the number of users per country: 
+
+    #+BEGIN_EXAMPLE
+    mysql> select count(*) from location_instance where uid!=0;
+    mysql> SELECT country,FLOOR(COUNT(*)*TOTAL_NUM_USERS/RESULT_OF_PREVIOUS_QUERY) AS cnt FROM location WHERE lid IN (SELECT lid FROM location_instance where uid!=0) GROUP BY country ORDER BY cnt DESC;
+    #+END_EXAMPLE
+
   - To see the current status of the visualization cache:
 
     #+BEGIN_EXAMPLE

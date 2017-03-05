@@ -1814,7 +1814,7 @@ function lbd_content_types_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '4',
+        'weight' => '5',
       ),
     ),
   );
@@ -1886,7 +1886,7 @@ function lbd_content_types_field_default_fields() {
           'rows' => '1',
         ),
         'type' => 'text_textarea',
-        'weight' => '9',
+        'weight' => '3',
       ),
     ),
   );
@@ -1976,7 +1976,7 @@ function lbd_content_types_field_default_fields() {
           'year_range' => '-3:+3',
         ),
         'type' => 'date_popup',
-        'weight' => '5',
+        'weight' => '6',
       ),
     ),
   );
@@ -2237,7 +2237,7 @@ function lbd_content_types_field_default_fields() {
         'module' => 'registration',
         'settings' => array(),
         'type' => 'registration_select',
-        'weight' => '12',
+        'weight' => '9',
       ),
     ),
   );
@@ -2311,7 +2311,7 @@ function lbd_content_types_field_default_fields() {
           'display_label' => 1,
         ),
         'type' => 'options_onoff',
-        'weight' => '10',
+        'weight' => '4',
       ),
     ),
   );
@@ -2455,7 +2455,7 @@ function lbd_content_types_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '11',
+        'weight' => '5',
       ),
     ),
   );
@@ -2582,7 +2582,7 @@ function lbd_content_types_field_default_fields() {
         'module' => 'og',
         'settings' => array(),
         'type' => 'og_complex',
-        'weight' => '1',
+        'weight' => '2',
       ),
     ),
   );
@@ -5145,7 +5145,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'rows' => '1',
         ),
         'type' => 'text_textarea',
-        'weight' => '11',
+        'weight' => '7',
       ),
     ),
   );
@@ -5208,7 +5208,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '8',
+          'weight' => '10',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -5295,7 +5295,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '6',
+          'weight' => '8',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -5312,7 +5312,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
       ),
       'entity_type' => 'node',
       'field_name' => 'field_are_you_a_student_teacher_',
-      'label' => 'I am a student, a teacher or a staff member from an edoovillage (beta)',
+      'label' => 'I am a student, a teacher or a staff member from an edoovillage',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -5479,7 +5479,155 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'display_label' => 1,
         ),
         'type' => 'options_onoff',
-        'weight' => '9',
+        'weight' => '3',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-team_page-field_send_to_all_edoo_managers'.
+  $fields['node-team_page-field_send_to_all_edoo_managers'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_send_to_all_edoo_managers',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => '',
+          1 => 'Send to all edoovillage managers',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'team_page',
+      'default_value' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
+      'deleted' => '0',
+      'description' => 'Please don\'t select unless it is necessary that all hub or edoovillage managers receive this message. <a href="../../content/writing-message-all-hub-and-edoovillage-managers" target="_blank">[Help]</a>',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '6',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_send_to_all_edoo_managers',
+      'label' => 'Send to all edoovillage managers',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'display_label' => 0,
+        ),
+        'type' => 'options_onoff',
+        'weight' => '6',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-team_page-field_send_to_all_hub_managers'.
+  $fields['node-team_page-field_send_to_all_hub_managers'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_send_to_all_hub_managers',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => '',
+          1 => 'Send to all hub managers',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'team_page',
+      'default_value' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '7',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_send_to_all_hub_managers',
+      'label' => 'Send to all hub managers',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'display_label' => 0,
+        ),
+        'type' => 'options_onoff',
+        'weight' => '5',
       ),
     ),
   );
@@ -5623,7 +5771,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '10',
+        'weight' => '4',
       ),
     ),
   );
@@ -5682,7 +5830,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '7',
+          'weight' => '9',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -5926,7 +6074,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '9',
+        'weight' => '10',
       ),
     ),
   );
@@ -6000,7 +6148,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'display_label' => 1,
         ),
         'type' => 'options_onoff',
-        'weight' => '12',
+        'weight' => '2',
       ),
     ),
   );
@@ -6144,7 +6292,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '13',
+        'weight' => '3',
       ),
     ),
   );
@@ -6291,7 +6439,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '2',
+        'weight' => '4',
       ),
     ),
   );
@@ -6462,7 +6610,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'year_range' => '-3:+3',
         ),
         'type' => 'date_select',
-        'weight' => '4',
+        'weight' => '6',
       ),
     ),
   );
@@ -6536,7 +6684,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '6',
+        'weight' => '8',
       ),
     ),
   );
@@ -6612,7 +6760,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '5',
+        'weight' => '7',
       ),
     ),
   );
@@ -6684,7 +6832,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '3',
+        'weight' => '5',
       ),
     ),
   );
@@ -6840,7 +6988,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
   t('Gallery Media ');
   t('Group roles and permissions');
   t('Hub');
-  t('I am a student, a teacher or a staff member from an edoovillage (beta)');
+  t('I am a student, a teacher or a staff member from an edoovillage');
   t('Image');
   t('Labdooer');
   t('Language');
@@ -6848,6 +6996,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
   t('Location');
   t('My edoovillage: ');
   t('Photo album');
+  t('Please don\'t select unless it is necessary that all hub or edoovillage managers receive this message. <a href="../../content/writing-message-all-hub-and-edoovillage-managers" target="_blank">[Help]</a>');
   t('Priority');
   t('Registration');
   t('Section heading');
@@ -6857,6 +7006,8 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
   t('Select this field if you would like to enable the registration form. This will allow you to manage labdooers\' registration to this event as well as send them event-related email notifications.');
   t('Send only to these members:');
   t('Send only to:');
+  t('Send to all edoovillage managers');
+  t('Send to all hub managers');
   t('Send to all members of this team');
   t('Share with additional teams');
   t('Status');

@@ -21,7 +21,7 @@ function lbd_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_event';
-  $strongarm->value = 'edit-submission';
+  $strongarm->value = 'edit-comment';
   $export['additional_settings__active_tab_event'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -77,14 +77,14 @@ function lbd_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_team_page';
-  $strongarm->value = 'edit-submission';
+  $strongarm->value = 'edit-display';
   $export['additional_settings__active_tab_team_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_team_task';
-  $strongarm->value = 'edit-submission';
+  $strongarm->value = 'edit-comment';
   $export['additional_settings__active_tab_team_task'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -518,7 +518,7 @@ function lbd_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_event';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['comment_preview_event'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -588,14 +588,14 @@ function lbd_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_team_page';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['comment_preview_team_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_team_task';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['comment_preview_team_task'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -882,14 +882,14 @@ function lbd_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'diff_show_preview_changes_node_team_page';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['diff_show_preview_changes_node_team_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'diff_show_preview_changes_node_team_task';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['diff_show_preview_changes_node_team_task'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1158,13 +1158,13 @@ function lbd_content_types_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'locations' => array(
-          'weight' => '3',
+          'weight' => '2',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '2',
+          'weight' => '1',
         ),
       ),
       'display' => array(
@@ -1670,19 +1670,19 @@ function lbd_content_types_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'locations' => array(
-          'weight' => '4',
+          'weight' => '2',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '3',
+          'weight' => '1',
         ),
       ),
       'display' => array(
         'sharethis' => array(
           'default' => array(
-            'weight' => '10',
+            'weight' => '11',
             'visible' => FALSE,
           ),
         ),
@@ -1737,13 +1737,13 @@ function lbd_content_types_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'locations' => array(
-          'weight' => '8',
+          'weight' => '9',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '7',
+          'weight' => '1',
         ),
       ),
       'display' => array(
@@ -3793,7 +3793,7 @@ function lbd_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_team_page';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['node_preview_team_page'] = $strongarm;
 
   $strongarm = new stdClass();

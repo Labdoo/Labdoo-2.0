@@ -644,22 +644,23 @@ function lbd_teams_node_view($node, $view_mode) {
   // For conversations, tasks and events
   if($node->type == 'team_page' || $node->type == 'event' || $node->type == 'team_task') {
     $teamId = lbd_teams_page_group_id();
-    $members = lbd_teams_get_team_members($teamId);
-    if(in_array($userId, $members))  {
-      labdoo_lib_msg_info("You are a member of this team.");
-      if(!preg_match('/activities/', $path)) {
-        if($node->type == 'team_page' || $node->type == 'event') {
-            labdoo_lib_msg_info("If you want to change the list of people who will receive emails from this conversation, 
-                                 click on the 'Edit' tab below and modify the configuration under the 'Sharing options' section.");
-        }
-        else { // It's a task
-            labdoo_lib_msg_info("If you want to change the status of this task,  click on the 'Edit' tab below");
+    if(is_numeric($teamId)) {
+      $members = lbd_teams_get_team_members($teamId);
+      if(in_array($userId, $members))  {
+        labdoo_lib_msg_info("You are a member of this team.");
+        if(!preg_match('/activities/', $path)) {
+          if($node->type == 'team_page' || $node->type == 'event') {
+              labdoo_lib_msg_info("If you want to change the list of people who will receive emails from this conversation, 
+                                   click on the 'Edit' tab below and modify the configuration under the 'Sharing options' section.");
+          }
+          else { // It's a task
+              labdoo_lib_msg_info("If you want to change the status of this task,  click on the 'Edit' tab below");
+          }
         }
       }
-
-    }
-    else {
-      labdoo_lib_msg_info("You are a not a member of this team. If you want to be part of this team, click on 'Subscribe to this team'.");
+      else {
+        labdoo_lib_msg_info("You are not a member of this team. If you want to be part of this team, click on 'Subscribe to this team'.");
+      }
     }
   }
 }
