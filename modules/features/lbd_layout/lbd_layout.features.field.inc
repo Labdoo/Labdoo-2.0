@@ -457,7 +457,7 @@ function lbd_layout_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '3',
+          'weight' => '4',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -485,6 +485,151 @@ function lbd_layout_field_default_fields() {
         'settings' => array(),
         'type' => 'options_select',
         'weight' => '1',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-book-field_grant_edit_rights_wiki'.
+  $fields['node-book-field_grant_edit_rights_wiki'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_grant_edit_rights_wiki',
+      'foreign keys' => array(
+        'users' => array(
+          'columns' => array(
+            'target_id' => 'uid',
+          ),
+          'table' => 'users',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(),
+        ),
+        'target_type' => 'user',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'book',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'deleted' => '0',
+      'description' => 'Add users who need to have permission to edit this wiki page and all the wiki pages that are children to this page.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '2',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_grant_edit_rights_wiki',
+      'label' => 'Grant edit rights',
+      'required' => 0,
+      'settings' => array(
+        'behaviors' => array(
+          'prepopulate' => array(
+            'status' => 0,
+          ),
+        ),
+        'nodeaccess_userreference' => array(
+          'all' => array(
+            'view' => 'view',
+          ),
+          'all_published' => '0',
+          'author' => array(
+            'delete' => 0,
+            'update' => 'update',
+            'view' => 'view',
+          ),
+          'author_published' => '0',
+          'create' => array(
+            'action' => 0,
+            'article' => 0,
+            'blog' => 0,
+            'book' => 0,
+            'dootrip' => 0,
+            'drupal_wall' => 0,
+            'edoovillage' => 0,
+            'event' => 0,
+            'gic' => 0,
+            'hub' => 0,
+            'labdoo_slide' => 0,
+            'labdoo_story' => 0,
+            'laptop' => 0,
+            'node_gallery_gallery' => 0,
+            'node_gallery_item' => 0,
+            'page' => 0,
+            'private_page' => 0,
+            'simplenews' => 0,
+            'slider_page' => 0,
+            'superhub_page' => 0,
+            'team' => 0,
+            'team_page' => 0,
+            'team_task' => 0,
+          ),
+          'priority' => '0',
+          'referenced' => array(
+            'delete' => 0,
+            'deny_delete' => 0,
+            'deny_update' => 0,
+            'deny_view' => 0,
+            'update' => 'update',
+            'view' => 'view',
+          ),
+          'referenced_published' => '0',
+          'unused' => '0',
+          'views' => array(
+            'view' => '',
+            'view_args' => '',
+          ),
+        ),
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'size' => 60,
+        ),
+        'type' => 'entityreference_autocomplete',
+        'weight' => '8',
       ),
     ),
   );
@@ -529,7 +674,7 @@ function lbd_layout_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '4',
+          'weight' => '5',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -614,7 +759,7 @@ function lbd_layout_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '5',
+          'weight' => '6',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -813,10 +958,12 @@ function lbd_layout_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Add users who need to have permission to edit this wiki page and all the wiki pages that are children to this page.');
   t('Body');
   t('Comment');
   t('Enter a comma separated list of words that describe this content. The auto-completion text will also allow you to select tagged words that already exist.');
   t('Enter a comma-separated list of words to describe your content.');
+  t('Grant edit rights');
   t('Image');
   t('Is this wiki page a translation of another wiki page or is this the original?');
   t('Language');

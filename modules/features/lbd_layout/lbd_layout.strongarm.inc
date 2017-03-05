@@ -730,8 +730,8 @@ a2a_config.linkurl = \'www.labdoo.org/hubs\';';
       'display' => array(
         'sharethis' => array(
           'default' => array(
-            'weight' => '2',
-            'visible' => TRUE,
+            'weight' => '3',
+            'visible' => FALSE,
           ),
         ),
       ),
