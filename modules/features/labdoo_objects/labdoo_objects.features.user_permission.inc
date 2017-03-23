@@ -98,7 +98,9 @@ function labdoo_objects_user_default_permissions() {
   // Exported permission: delete own edoovillage content.
   $permissions['delete own edoovillage content'] = array(
     'name' => 'delete own edoovillage content',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'hub manager',
+    ),
     'module' => 'node',
   );
 

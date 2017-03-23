@@ -126,7 +126,7 @@ function labdoo_objects_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 19,
+          'weight' => '17',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -711,7 +711,7 @@ function labdoo_objects_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '17',
+          'weight' => '18',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -829,7 +829,7 @@ function labdoo_objects_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '18',
+          'weight' => '19',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -927,6 +927,78 @@ function labdoo_objects_field_default_fields() {
         'settings' => array(),
         'type' => 'number',
         'weight' => '2',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-dootrip-field_dootrip_notes'.
+  $fields['node-dootrip-field_dootrip_notes'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_dootrip_notes',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'dootrip',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '20',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_dootrip_notes',
+      'label' => 'Notes',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'rows' => '5',
+        ),
+        'type' => 'text_textarea',
+        'weight' => '22',
       ),
     ),
   );
@@ -1485,7 +1557,7 @@ $display_output = $entity_field_item[\'value\'];',
           'data_type' => 'int',
         ),
         'display_format' => '$display_output = $entity_field_item[\'value\'];',
-        'recalculate' => FALSE,
+        'recalculate' => 1,
         'store' => 1,
       ),
       'translatable' => '0',
@@ -4641,7 +4713,7 @@ See <a target=\'_blank\' href="../../../content/list-countries-voltages-and-powe
       'bundle' => 'laptop',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Add here any observations you would like to make. For instance you can add notes such as the quality of the laptop or if something is broken, a reminder, or a note on who donated the laptop.',
+      'description' => 'Add here any observations you would like to make. For instance you can add notes such as the quality of the laptop or if something is broken, a reminder, or a <a href="../../content/tricks-help-you-find-dootronics" target=\'_blank\'>note on who donated the laptop</a>.',
       'display' => array(
         'default' => array(
           'label' => 'inline',
@@ -6583,7 +6655,7 @@ See <a target=\'_blank\' href="../../../content/list-countries-voltages-and-powe
   // Translatables
   // Included for use with string extractors like potx.
   t('About this hub');
-  t('Add here any observations you would like to make. For instance you can add notes such as the quality of the laptop or if something is broken, a reminder, or a note on who donated the laptop.');
+  t('Add here any observations you would like to make. For instance you can add notes such as the quality of the laptop or if something is broken, a reminder, or a <a href="../../content/tricks-help-you-find-dootronics" target=\'_blank\'>note on who donated the laptop</a>.');
   t('Add here the email address(es) of additional people that you would like to be notified whenever this laptop changes its status.');
   t('Add users who need to have permission to edit this dootronic');
   t('Add users who want to follow this dootronic');
@@ -6632,6 +6704,7 @@ See <a target=\'_blank\' href="../../../content/list-countries-voltages-and-powe
   t('Memory');
   t('Model');
   t('Name of the person(s) or the NGO performing the dootrip if different than the dootrippers field');
+  t('Notes');
   t('Number of cores (CPU type)');
   t('Number of days you can store the dootronic(s) after the arrival date');
   t('Number of days you can store the dootronic(s) before the departure date');
