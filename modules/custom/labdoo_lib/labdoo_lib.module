@@ -1938,23 +1938,33 @@ function labdoo_lib_compute_hub_branches($nodeLoaded) {
  *
  */
 function labdoo_lib_compute_dootrip_edoovillages($nodeLoaded) {
-  $query = "SELECT DISTINCT(field_edoovillage_destination_target_id) FROM field_data_field_edoovillage_destination 
+  $query = "SELECT field_edoovillage_destination_target_id FROM field_data_field_edoovillage_destination 
             WHERE entity_id IN (SELECT field_laptops_target_id FROM field_data_field_laptops 
             WHERE entity_id=$nodeLoaded->nid)";
   $result = db_query($query);
 
-  $edoovillagesList = "";
+  $edoovillageIds = array();
   foreach($result as $item) {
-    $edoovillageName = lbd_nodeid2title($item->field_edoovillage_destination_target_id);
-    $edoovillageUri = '../node/' . $item->field_edoovillage_destination_target_id;
-    $edoovillagesList .= '<a href="' . $edoovillageUri . '">' . $edoovillageName . '</a>'; 
-    $edoovillagesList .= "<br/>";
+    $edoovillageIds[] = $item->field_edoovillage_destination_target_id;
+  }
+  $numTimes = array_count_values($edoovillageIds);
+  $edoovillagesCode = "";
+  $edoovillagesList = array();
+  foreach($edoovillageIds as $edoovillageId) {
+    if(in_array($edoovillageId, $edoovillagesList)) 
+      continue;
+    $edoovillagesList[] = $edoovillageId;
+    $numDootronics = $numTimes[$edoovillageId];
+    $edoovillageName = lbd_nodeid2title($edoovillageId);
+    $edoovillageUri = '../node/' . $edoovillageId;
+    $edoovillagesCode .= '<a href="' . $edoovillageUri . '">' . $edoovillageName . ' (Number of dootronics: ' . $numDootronics . ')</a>'; 
+    $edoovillagesCode .= "<br/>";
   }
 
-  if($edoovillagesList == "")
-    $edoovillagesList = "None";
+  if($edoovillagesCode == "")
+    $edoovillagesCode = "None";
 
-  return($edoovillagesList);
+  return($edoovillagesCode);
 }
 
 
