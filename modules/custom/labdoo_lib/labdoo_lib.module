@@ -159,6 +159,16 @@ function _update_hub($node) {
  * by querying an Internet service. Therefore, requires connectivity to the Internet.
  * To avoid all same [country, city] queries be mapped onto the same point, a small 
  * random value is added to both latitude and longitude.
+ * Cache implementation:
+ *
+ * Implementation note:
+ *   In order to avoid consuming to much network bandwidth and exhausting the Google API
+ *   quota, this function uses a cache. The cache stores geolocation query results. 
+ *
+ *   To see the current status of the cache, run the following db command:
+ *     mysql> SELECT cid FROM cache WHERE cid LIKE '%labdoo_lookup_coordinates%';
+ *   To clean the cash, run the following drush command:
+ *     # drush php-eval "cache_clear_all('labdoo_lookup_coordinates', 'cache', TRUE);" 
  *
  * @param string $country
  *   Country code (e.g. us, de, ...)
@@ -183,27 +193,34 @@ function _update_hub($node) {
  *
  */
 function labdoo_lookup_coordinates($country, $city, &$lat, &$lon, $silent=True, $street="", $state="", $zip="", $accuracy=100) {
-    # There are various online services to pull the GPS  
-    # coordinates of a location. Use one of them.
+    // Try to use the cached value if available
     $locationString = $street . "+" . $city . "+" . $zip . "+" . $country;
-    $query = str_replace(' ', '+', 'https://maps.googleapis.com/maps/api/geocode/json?address='.$locationString.'&key=AIzaSyA5kbnku56o714TnQC0cDz7LDHSO31_0iw');
-    $mapQuery = drupal_http_request($query);
-    if(!property_exists($mapQuery, 'data')) {
-      if($silent == False)
-        drupal_set_message(t('Could not resolve coordinates from the given city and country names.'), 'warning', FALSE);
-      return -1;
+    if($cacheResult = cache_get('labdoo_lookup_coordinates'.$locationString)) {
+      $coordinates = $cacheResult->data;
     }
-    $mapQueryDecoded = drupal_json_decode($mapQuery->data);
-    if(!isset($mapQueryDecoded['results'][0])) {
-//      if($mapQueryDecoded['status'] == "OVER_QUERY_LIMIT")
-//        drupal_set_message(t('We have exceeded the daily request quota for computing the map.
-//                              Please email Labdoo at contact@labdoo.org and send us the URL of i
-//                              this page so we can take a look, thanks. The Labdoo Team'), $repeat=FALSE);
-      if($silent == False)
-        drupal_set_message(t('Could not resolve coordinates from the given city and country names.'), 'warning', FALSE);
-      return -1;
+    else {
+      $query = str_replace(' ', '+', 'https://maps.googleapis.com/maps/api/geocode/json?address='.$locationString.'&key=AIzaSyA5kbnku56o714TnQC0cDz7LDHSO31_0iw');
+      $mapQuery = drupal_http_request($query);
+      if(!property_exists($mapQuery, 'data')) {
+        if($silent == False)
+          drupal_set_message(t('Could not resolve coordinates from the given city and country names.'), 'warning', FALSE);
+        return -1;
+      }
+      $mapQueryDecoded = drupal_json_decode($mapQuery->data);
+      if(!isset($mapQueryDecoded['results'][0])) {
+      if($mapQueryDecoded['status'] == "OVER_QUERY_LIMIT")
+        drupal_set_message(t('We have exceeded the daily request quota for computing the map.
+                              Please email Labdoo at contact@labdoo.org and send us the URL of i
+                              this page so we can take a look, thanks. The Labdoo Team'), $repeat=FALSE);
+        if($silent == False)
+          drupal_set_message(t('Could not resolve coordinates from the given city and country names.'), 'warning', FALSE);
+        return -1;
+      }
+      $coordinates = $mapQueryDecoded['results'][0]['geometry']['location'];
+      // Cache the value so we don't have to query the Google API again
+      cache_set('labdoo_lookup_coordinates'.$locationString, $coordinates, 'cache');
     }
-    $coordinates = $mapQueryDecoded['results'][0]['geometry']['location'];
+
     $lat = strval(floatval($coordinates['lat'])+rand(-1 * $accuracy, 1 * $accuracy)/100000);
     $lon = strval(floatval($coordinates['lng'])+rand(-1 * $accuracy, 1 * $accuracy)/100000); 
     return 0;
@@ -1951,6 +1968,10 @@ function labdoo_lib_compute_dootrip_edoovillages($nodeLoaded) {
   $edoovillagesCode = "";
   $edoovillagesList = array();
   foreach($edoovillageIds as $edoovillageId) {
+    if($edoovillageId == 0)
+      // A dootronic is assigned to this dootrip but has no
+      // edoovillage assigned, skip it.
+      continue;
     if(in_array($edoovillageId, $edoovillagesList)) 
       continue;
     $edoovillagesList[] = $edoovillageId;
@@ -3217,6 +3238,8 @@ function _labdoo_lib_user_num_dootrips($userId) {
 
   $query = $query . ") AS t GROUP BY entity_id HAVING count(*) >= " . $numberOfQueries;
   $result = db_query($query, $placeHolders);
+//  foreach($result as $item) 
+//    labdoo_lib_print_array($item->entity_id);
   $num = $result->rowCount();
 
   return($num);
@@ -3341,17 +3364,17 @@ function _labdoo_lib_user_metrics($account = NULL) {
 
   // Compute carbon footprint (constants are taken from the Labdoo carbon footprint calculator)
   $footprintCarbon = $numDoojects * 18.59;
-  $footprintTrees = $numDoojects * 2;
-  $footprintGas = $numDoojects * 26.5;
-  $footprintPlastic = $numDoojects * 59;
-  $footprintWater = $numDoojects * 1500;
-  $footprintAluminum = $numDoojects * 270;
-  $footprintGold = $numDoojects * 0.22;
-  $footprintSilver = $numDoojects * 0.44;
-  $footprintPalladium = $numDoojects * 0.08;
-  $footprintCopper = $numDoojects * 0.3;
-  $footprintCobalt = $numDoojects * 0.065;
-  $footprintChemical = $numDoojects * 22;
+  $footprintTrees = $footprintCarbon / 18.59  * 2;
+  $footprintGas = $footprintCarbon / 18.59  * 26.5;
+  $footprintPlastic = $footprintCarbon / 18.59  * 59;
+  $footprintWater = $footprintCarbon / 18.59  * 1500;
+  $footprintAluminum = $footprintCarbon / 18.59  * 270;
+  $footprintGold = $footprintCarbon / 18.59  * 0.22;
+  $footprintSilver = $footprintCarbon / 18.59  * 0.44;
+  $footprintPalladium = $footprintCarbon / 18.59  * 0.08;
+  $footprintCopper = $footprintCarbon / 18.59  * 0.3;
+  $footprintCobalt = $footprintCarbon / 18.59  * 0.065;
+  $footprintChemical = $footprintCarbon / 18.59  * 22;
 
   $code = "
 <strong><font color='red'>My contributions</font></strong>

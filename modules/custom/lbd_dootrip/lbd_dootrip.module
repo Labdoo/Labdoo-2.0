@@ -141,14 +141,14 @@ function lbd_dootrip_node_insert($node) {
 
 
 /**
- * _calculate_dootrip_weight
+ * labdoo_calculate_dootrip_weight
  *
  * @param node $node
  *   A dootrip node
  * @return A message indicating the weight of all the doojects associated with the dootrip
  *
  */
-function _calculate_dootrip_weight($node) {
+function labdoo_calculate_dootrip_weight($node) {
   $weight = 0;
   $suffix = "";
   $prefix = "";
@@ -174,10 +174,113 @@ function _calculate_dootrip_weight($node) {
   }
 
   if($weight == 0) 
-    return t("Please update the weight of each individual dooject");
+    return t("Please update the weight of each individual dootronic");
   else
     return t($suffix . $weight . " Kgms" . $prefix);
-  return $weight;
+}
+
+
+/**
+ * Calculates the great-circle distance between two points, with
+ * the Vincenty formula.
+ * @param float $latitudeFrom Latitude of start point in [deg decimal]
+ * @param float $longitudeFrom Longitude of start point in [deg decimal]
+ * @param float $latitudeTo Latitude of target point in [deg decimal]
+ * @param float $longitudeTo Longitude of target point in [deg decimal]
+ * @param float $earthRadius Mean earth radius in [m]
+ * @return float Distance between points in [m] (same as earthRadius)
+ */
+function _vincentyGreatCircleDistance($latitudeFrom, 
+                                      $longitudeFrom, 
+                                      $latitudeTo, 
+                                      $longitudeTo, 
+                                      $earthRadius = 6371000) {
+  // convert from degrees to radians
+  $latFrom = deg2rad($latitudeFrom);
+  $lonFrom = deg2rad($longitudeFrom);
+  $latTo = deg2rad($latitudeTo);
+  $lonTo = deg2rad($longitudeTo);
+
+  $lonDelta = $lonTo - $lonFrom;
+  $a = pow(cos($latTo) * sin($lonDelta), 2) +
+    pow(cos($latFrom) * sin($latTo) - sin($latFrom) * cos($latTo) * cos($lonDelta), 2);
+  $b = sin($latFrom) * sin($latTo) + cos($latFrom) * cos($latTo) * cos($lonDelta);
+
+  $angle = atan2(sqrt($a), $b);
+  return $angle * $earthRadius;
+}
+
+
+/**
+ * _calculate_dootrip_distance
+ *
+ * @param node $node
+ *   A dootrip node
+ * @return The traveling distance of the dootrip in Kms
+ *
+ */
+function _calculate_dootrip_distance($node) {
+  $srcLat = "";
+  $srcLon = "";
+  $dstLat = "";
+  $dstLon = "";
+
+  $srcCity = labdoo_lib_get_field($node, 'field_origin_of_the_trip', 'node', 'city'); 
+  $srcCity = preg_replace('/\s+/', '%20', $srcCity);
+  $srcCountry = labdoo_lib_get_field($node, 'field_origin_of_the_trip', 'node', 'country'); 
+  $srcCountryLong = labdoo_country_code2name($srcCountry);
+
+  $dstCity = labdoo_lib_get_field($node, 'field_destination_of_the_trip', 'node', 'city'); 
+  $dstCity = preg_replace('/\s+/', '%20', $dstCity);
+  $dstCountry = labdoo_lib_get_field($node, 'field_destination_of_the_trip', 'node', 'country'); 
+  $dstCountryLong = labdoo_country_code2name($dstCountry);
+
+  if(labdoo_lookup_coordinates($srcCountry, $srcCity, $srcLat, $srcLon) < 0) 
+    return t("[Not available this time, try again later]");
+  if(labdoo_lookup_coordinates($dstCountry, $dstCity, $dstLat, $dstLon) < 0) 
+    return t("[Not available this time, try again later]");
+
+  $distKms = round(_vincentyGreatCircleDistance($srcLat, $srcLon, $dstLat, $dstLon)/1000);
+  return $distKms;
+}
+
+
+/**
+ * labdoo_calculate_dootrip_distance
+ *
+ * @param node $node
+ *   A dootrip node
+ * @return A message indicating the traveling distance of the dootrip
+ *
+ */
+function labdoo_calculate_dootrip_distance($node) {
+  return(strval(_calculate_dootrip_distance($node)) . " Kms");
+}
+
+
+/**
+ * labdoo_calculate_dootrip_co2_savings
+ *
+ * @param node $node
+ *   A dootrip node
+ * @return A message indicating the amount of CO2 emissions saved thanks to the dootrip
+ *
+ */
+function labdoo_calculate_dootrip_co2_savings($node) {
+  $dootronicWeightKgms = 2.5; // The dootronic weight field is not mandatory, so assume here a reasonable value
+  $CO2gramsPerKgmPerKm = 0.5; // See http://timeforchange.org/co2-emissions-shipping-goods 
+  $numDootronics = 1;         // If no dootronics assigned, use the smallest number
+
+  $dootronics = field_get_items('node', $node, 'field_laptops');
+  if(!empty($dootronics))
+    $numDootronics = count($dootronics);
+
+  $co2SavingsKgms = round($CO2gramsPerKgmPerKm * 
+                          $numDootronics * 
+                          $dootronicWeightKgms *
+                          _calculate_dootrip_distance($node) / 1000, 1); 
+
+  return(strval($co2SavingsKgms) . t(" Kgms of CO2 emissions saved"));
 }
 
 

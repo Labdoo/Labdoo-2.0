@@ -54,7 +54,7 @@ function sanitizeStringForVisualization($unsanitizedText) {
  *
  *  In order to scale up the computation of the dashboard (as the number of objects increase),
  *  the code incorporates a cache. The cache stores results for both geolocation maps and 
- *  tables and is indexed accross all possible dimensions of the dashboards: users, doojects,
+ *  tables and is indexed across all possible dimensions of the dashboards: users, doojects,
  *  dootrips, hubs, edoovillages.
  *
  *  To see the current status of the cache, run the following db command:
