@@ -1599,6 +1599,28 @@ function lbd_get_total_num_objects($objectType) {
 }
 
 
+/** 
+ * Calculates the total CO2 savings due to dootrips 
+ * 
+ * @return The CO2 savings
+ *  
+ */
+function lbd_get_co2_savings_dootrip() {
+  $co2Saved = 0;
+
+  $query = "SELECT nid, vid FROM node WHERE type='dootrip'";
+  $dootrips = db_query($query);
+  foreach($dootrips as $dootrip) {
+    $dootripNode = node_load($dootrip->nid);
+    $stringSavings = labdoo_calculate_dootrip_co2_savings($dootripNode);
+    $co2Saved = $co2Saved + floatval(explode(' ', trim($stringSavings))[0]);
+  }
+     
+  return($co2Saved);
+}
+
+
+
 /**
  * _update_city
  *
@@ -2492,6 +2514,20 @@ function labdoo_render_macro_stats($type, $addTitle=False) {
   $numStudents = lbd_get_total_num_objects('student');
   $numCountries = lbd_get_total_num_objects('country');;
 
+  // Compute CO2 savings
+  // CO2 savings = Savings from dootronics + savings from dootrips
+  if($cacheResult = cache_get('labdoo_co2_savings_dootrip')) {
+    $co2SavingsDootrip = $cacheResult->data;
+  }
+  else {
+    $co2SavingsDootrip = lbd_get_co2_savings_dootrip(); 
+    // Save it in the cache
+    // Note: this cache is periodically cleaned up in labdoo_lib_cron
+    cache_set('labdoo_co2_savings_dootrip', $co2SavingsDootrip, 'cache');
+  }
+  $co2SavingsDootronic = $numLaptopsDelivered * 18.59; 
+  $co2SavingsTotal = intval($co2SavingsDootrip + $co2SavingsDootronic);
+
   if($type == "vertical") {
     $header = "";
     $separator = "<br>";
@@ -2518,16 +2554,16 @@ function labdoo_render_macro_stats($type, $addTitle=False) {
   $code = $code . $statsTitle . "
 <span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsTagged</span>
 <span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Dootronics tagged') . "</span>$separator
-<span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsTransit</span>
-<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('In transit') . "</span>$separator
 <span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsDelivered</span>
 <span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Delivered') . "</span>$separator
-<span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numHubs</span>
-<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Hubs') . "</span>$separator
 <span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numEdoovillages</span>
 <span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Schools') . "</span>$separator
 <span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numStudents</span>
 <span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Students') . "</span>$separator
+<span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numHubs</span>
+<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Hubs') . "</span>$separator
+<span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$co2SavingsTotal</span>
+<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Kg CO2 saved') . "</span>$separator
 <span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numCountries</span>
 <span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Countries') . "</span>$separator
 $trailer
@@ -4256,5 +4292,16 @@ function labdoo_lib_get_users_role($role) {
     $userList[] = $user['uid'];
   }
   return $userList;
+}
+
+
+/*
+ * Implementation of hook_cron
+ *
+ */
+function labdoo_lib_cron() {
+  // Clean up
+  cache_clear_all('labdoo_co2_savings_dootrip', 'cache', TRUE);
+  return;
 }
 
