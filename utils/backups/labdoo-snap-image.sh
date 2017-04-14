@@ -53,9 +53,10 @@ max_backups=5                                               # Maximum number of 
 # ------------------------------------------------------------------------
 
 today=$(date +"%Y%m%d")                                       # Today's date as YYYMMDD
+last_day=$(date --date="$max_backups days ago" +"%Y%m%d")     # Last day to keep a backup instance
 snapshot_date=$(date --date="1 day ago" +"%Y-%m-%d")          # Oldest day of snapshot to search
 new_ami_name="LabdooProductionAMI-"$today                     # Name of the newly created backup AMI
-del_ami_name="LabdooProductionAMI-"$(($today-$max_backups))   # Name of the old backup AMI to delete
+del_ami_name="LabdooProductionAMI-"$last_day                  # Name of the old backup AMI to delete
 
 # Make sure aws is in the PATH
 export PATH=~/.local/bin:$PATH
