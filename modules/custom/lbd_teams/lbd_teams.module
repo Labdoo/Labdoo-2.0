@@ -553,15 +553,12 @@ function lbd_print_team_followers($node) {
 
   if($sendAll) { 
     $code = $code . "<a href='../content/team-members?t=" . lbd_teams_page_group_id() . "'>" . "Everyone in this group</a>";
-    return $code;
   }
-  else { // Send only to users in the 'send to' field
-    if(property_exists($node, $sendToFieldName)) {
-      if($node->$sendToFieldName) {
-        foreach(field_get_items('node', $node, $sendToFieldName) as $element) {
-          $userLoaded = user_load($element['target_id']);
-          $code = _add_team_follower_to_code($code, $userLoaded);
-        }
+  if(property_exists($node, $sendToFieldName)) {
+    if($node->$sendToFieldName) {
+      foreach(field_get_items('node', $node, $sendToFieldName) as $element) {
+        $userLoaded = user_load($element['target_id']);
+        $code = _add_team_follower_to_code($code, $userLoaded);
       }
     }
   }

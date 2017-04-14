@@ -199,7 +199,7 @@ function labdoo_lookup_coordinates($country, $city, &$lat, &$lon, $silent=True, 
       $coordinates = $cacheResult->data;
     }
     else {
-      $query = str_replace(' ', '+', 'https://maps.googleapis.com/maps/api/geocode/json?address='.$locationString.'&key=AIzaSyA5kbnku56o714TnQC0cDz7LDHSO31_0iw');
+      $query = str_replace(' ', '+', 'https://maps.googleapis.com/maps/api/geocode/json?address='.$locationString.'&key=AIzaSyDGx3UaHAxbEQ-iAhvNKedeRTQ5L890YLU');
       $mapQuery = drupal_http_request($query);
       if(!property_exists($mapQuery, 'data')) {
         if($silent == False)

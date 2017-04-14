@@ -800,9 +800,12 @@ function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL, $switch
 
     // Extract dootrippers
     $objects[$objectNid]['dootrippers'] = '';
-    foreach(field_get_items('node', $node, 'field_dootripper_s_') as $element) {
-      $userObj = user_load($element['target_id']);
-      $objects[$objectNid]['dootrippers'] = $objects[$objectNid]['dootrippers'] . ' ' . $userObj->name;
+    $dootrippersList = field_get_items('node', $node, 'field_dootripper_s_'); 
+    if(!empty($dootrippersList)) {
+        foreach($dootrippersList as $element) {
+          $userObj = user_load($element['target_id']);
+          $objects[$objectNid]['dootrippers'] = $objects[$objectNid]['dootrippers'] . ' ' . $userObj->name;
+        }
     }
 
     // Extract additional dootripper info
