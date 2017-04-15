@@ -159,6 +159,16 @@ function _update_hub($node) {
  * by querying an Internet service. Therefore, requires connectivity to the Internet.
  * To avoid all same [country, city] queries be mapped onto the same point, a small 
  * random value is added to both latitude and longitude.
+ * Cache implementation:
+ *
+ * Implementation note:
+ *   In order to avoid consuming to much network bandwidth and exhausting the Google API
+ *   quota, this function uses a cache. The cache stores geolocation query results. 
+ *
+ *   To see the current status of the cache, run the following db command:
+ *     mysql> SELECT cid FROM cache WHERE cid LIKE '%labdoo_lookup_coordinates%';
+ *   To clean the cash, run the following drush command:
+ *     # drush php-eval "cache_clear_all('labdoo_lookup_coordinates', 'cache', TRUE);" 
  *
  * @param string $country
  *   Country code (e.g. us, de, ...)
@@ -183,27 +193,34 @@ function _update_hub($node) {
  *
  */
 function labdoo_lookup_coordinates($country, $city, &$lat, &$lon, $silent=True, $street="", $state="", $zip="", $accuracy=100) {
-    # There are various online services to pull the GPS  
-    # coordinates of a location. Use one of them.
+    // Try to use the cached value if available
     $locationString = $street . "+" . $city . "+" . $zip . "+" . $country;
-    $query = str_replace(' ', '+', 'https://maps.googleapis.com/maps/api/geocode/json?address='.$locationString.'&key=AIzaSyA5kbnku56o714TnQC0cDz7LDHSO31_0iw');
-    $mapQuery = drupal_http_request($query);
-    if(!property_exists($mapQuery, 'data')) {
-      if($silent == False)
-        drupal_set_message(t('Could not resolve coordinates from the given city and country names.'), 'warning', FALSE);
-      return -1;
+    if($cacheResult = cache_get('labdoo_lookup_coordinates'.$locationString)) {
+      $coordinates = $cacheResult->data;
     }
-    $mapQueryDecoded = drupal_json_decode($mapQuery->data);
-    if(!isset($mapQueryDecoded['results'][0])) {
-//      if($mapQueryDecoded['status'] == "OVER_QUERY_LIMIT")
-//        drupal_set_message(t('We have exceeded the daily request quota for computing the map.
-//                              Please email Labdoo at contact@labdoo.org and send us the URL of i
-//                              this page so we can take a look, thanks. The Labdoo Team'), $repeat=FALSE);
-      if($silent == False)
-        drupal_set_message(t('Could not resolve coordinates from the given city and country names.'), 'warning', FALSE);
-      return -1;
+    else {
+      $query = str_replace(' ', '+', 'https://maps.googleapis.com/maps/api/geocode/json?address='.$locationString.'&key=AIzaSyDGx3UaHAxbEQ-iAhvNKedeRTQ5L890YLU');
+      $mapQuery = drupal_http_request($query);
+      if(!property_exists($mapQuery, 'data')) {
+        if($silent == False)
+          drupal_set_message(t('Could not resolve coordinates from the given city and country names.'), 'warning', FALSE);
+        return -1;
+      }
+      $mapQueryDecoded = drupal_json_decode($mapQuery->data);
+      if(!isset($mapQueryDecoded['results'][0])) {
+      if($mapQueryDecoded['status'] == "OVER_QUERY_LIMIT")
+        drupal_set_message(t('We have exceeded the daily request quota for computing the map.
+                              Please email Labdoo at contact@labdoo.org and send us the URL of i
+                              this page so we can take a look, thanks. The Labdoo Team'), $repeat=FALSE);
+        if($silent == False)
+          drupal_set_message(t('Could not resolve coordinates from the given city and country names.'), 'warning', FALSE);
+        return -1;
+      }
+      $coordinates = $mapQueryDecoded['results'][0]['geometry']['location'];
+      // Cache the value so we don't have to query the Google API again
+      cache_set('labdoo_lookup_coordinates'.$locationString, $coordinates, 'cache');
     }
-    $coordinates = $mapQueryDecoded['results'][0]['geometry']['location'];
+
     $lat = strval(floatval($coordinates['lat'])+rand(-1 * $accuracy, 1 * $accuracy)/100000);
     $lon = strval(floatval($coordinates['lng'])+rand(-1 * $accuracy, 1 * $accuracy)/100000); 
     return 0;
@@ -546,8 +563,11 @@ function _generate_dootrip_dootronics_table($node) {
   $dootronicsTable[$i][$j++] = "Serial number";
   $dootronicsTable[$i][$j++] = "Watt-hours";
   $dootronicsTable[$i][$j++] = "Weight";
+  $dootronicsTable[$i][$j++] = "Edoovillage";
+  $dootronicsTable[$i][$j++] = "Edoovillage link";
 
   // For each dootronic, add a row to the table
+  // (make sure to order items correctly)
   foreach($doojectsList as $doojectNode) {
     if(!key_exists('nid', $doojectNode))
       continue;
@@ -555,7 +575,7 @@ function _generate_dootrip_dootronics_table($node) {
     $j = 0;
     $doojectLoaded = node_load($doojectNode->nid);
     $wDoojectLoaded = entity_metadata_wrapper('node', $doojectLoaded);
-    // Extract the status
+    // Extract the ID
     $dootronicsTable[$i][$j++] = "# " . $doojectLoaded->title; 
     // Extract the status
     $dootronicsTable[$i][$j++] = $wDoojectLoaded->field_status->value();
@@ -567,6 +587,17 @@ function _generate_dootrip_dootronics_table($node) {
     $dootronicsTable[$i][$j++] = $wDoojectLoaded->field_battery_watt_hours->value();
     // Extract the weight (hack: should extract Kgms units from the field)
     $dootronicsTable[$i][$j++] = $wDoojectLoaded->field_dooject_weight->value() . " Kgms"; 
+    // Extract the edoovillage (if any)
+    $edoovillageNode = $wDoojectLoaded->field_edoovillage_destination->value(); 
+    if($edoovillageNode) 
+      $dootronicsTable[$i][$j++] = lbd_nodeid2title($edoovillageNode->nid); 
+    else
+      $dootronicsTable[$i][$j++] = "Not assigned";
+    // Extract the edoovillage link
+    if($edoovillageNode) 
+      $dootronicsTable[$i][$j++] = "https://www.labdoo.org/" . drupal_get_path_alias("node/" . $edoovillageNode->nid);
+    else
+      $dootronicsTable[$i][$j++] = "Not assigned";
   }
 
   return($dootronicsTable);
@@ -1582,6 +1613,28 @@ function lbd_get_total_num_objects($objectType) {
 }
 
 
+/** 
+ * Calculates the total CO2 savings due to dootrips 
+ * 
+ * @return The CO2 savings
+ *  
+ */
+function lbd_get_co2_savings_dootrip() {
+  $co2Saved = 0;
+
+  $query = "SELECT nid, vid FROM node WHERE type='dootrip'";
+  $dootrips = db_query($query);
+  foreach($dootrips as $dootrip) {
+    $dootripNode = node_load($dootrip->nid);
+    $stringSavings = labdoo_calculate_dootrip_co2_savings($dootripNode);
+    $co2Saved = $co2Saved + floatval(explode(' ', trim($stringSavings))[0]);
+  }
+     
+  return($co2Saved);
+}
+
+
+
 /**
  * _update_city
  *
@@ -1938,23 +1991,37 @@ function labdoo_lib_compute_hub_branches($nodeLoaded) {
  *
  */
 function labdoo_lib_compute_dootrip_edoovillages($nodeLoaded) {
-  $query = "SELECT DISTINCT(field_edoovillage_destination_target_id) FROM field_data_field_edoovillage_destination 
+  $query = "SELECT field_edoovillage_destination_target_id FROM field_data_field_edoovillage_destination 
             WHERE entity_id IN (SELECT field_laptops_target_id FROM field_data_field_laptops 
             WHERE entity_id=$nodeLoaded->nid)";
   $result = db_query($query);
 
-  $edoovillagesList = "";
+  $edoovillageIds = array();
   foreach($result as $item) {
-    $edoovillageName = lbd_nodeid2title($item->field_edoovillage_destination_target_id);
-    $edoovillageUri = '../node/' . $item->field_edoovillage_destination_target_id;
-    $edoovillagesList .= '<a href="' . $edoovillageUri . '">' . $edoovillageName . '</a>'; 
-    $edoovillagesList .= "<br/>";
+    $edoovillageIds[] = $item->field_edoovillage_destination_target_id;
+  }
+  $numTimes = array_count_values($edoovillageIds);
+  $edoovillagesCode = "";
+  $edoovillagesList = array();
+  foreach($edoovillageIds as $edoovillageId) {
+    if($edoovillageId == 0)
+      // A dootronic is assigned to this dootrip but has no
+      // edoovillage assigned, skip it.
+      continue;
+    if(in_array($edoovillageId, $edoovillagesList)) 
+      continue;
+    $edoovillagesList[] = $edoovillageId;
+    $numDootronics = $numTimes[$edoovillageId];
+    $edoovillageName = lbd_nodeid2title($edoovillageId);
+    $edoovillageUri = '../node/' . $edoovillageId;
+    $edoovillagesCode .= '<a href="' . $edoovillageUri . '">' . $edoovillageName . ' (Number of dootronics: ' . $numDootronics . ')</a>'; 
+    $edoovillagesCode .= "<br/>";
   }
 
-  if($edoovillagesList == "")
-    $edoovillagesList = "None";
+  if($edoovillagesCode == "")
+    $edoovillagesCode = "None";
 
-  return($edoovillagesList);
+  return($edoovillagesCode);
 }
 
 
@@ -2461,6 +2528,20 @@ function labdoo_render_macro_stats($type, $addTitle=False) {
   $numStudents = lbd_get_total_num_objects('student');
   $numCountries = lbd_get_total_num_objects('country');;
 
+  // Compute CO2 savings
+  // CO2 savings = Savings from dootronics + savings from dootrips
+  if($cacheResult = cache_get('labdoo_co2_savings_dootrip')) {
+    $co2SavingsDootrip = $cacheResult->data;
+  }
+  else {
+    $co2SavingsDootrip = lbd_get_co2_savings_dootrip(); 
+    // Save it in the cache
+    // Note: this cache is periodically cleaned up in labdoo_lib_cron
+    cache_set('labdoo_co2_savings_dootrip', $co2SavingsDootrip, 'cache');
+  }
+  $co2SavingsDootronic = $numLaptopsDelivered * 18.59; 
+  $co2SavingsTotal = intval($co2SavingsDootrip + $co2SavingsDootronic);
+
   if($type == "vertical") {
     $header = "";
     $separator = "<br>";
@@ -2487,16 +2568,16 @@ function labdoo_render_macro_stats($type, $addTitle=False) {
   $code = $code . $statsTitle . "
 <span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsTagged</span>
 <span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Dootronics tagged') . "</span>$separator
-<span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsTransit</span>
-<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('In transit') . "</span>$separator
 <span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsDelivered</span>
 <span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Delivered') . "</span>$separator
-<span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numHubs</span>
-<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Hubs') . "</span>$separator
 <span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numEdoovillages</span>
 <span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Schools') . "</span>$separator
 <span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numStudents</span>
 <span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Students') . "</span>$separator
+<span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numHubs</span>
+<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Hubs') . "</span>$separator
+<span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$co2SavingsTotal</span>
+<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Kg CO2 saved') . "</span>$separator
 <span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numCountries</span>
 <span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Countries') . "</span>$separator
 $trailer
@@ -3207,6 +3288,8 @@ function _labdoo_lib_user_num_dootrips($userId) {
 
   $query = $query . ") AS t GROUP BY entity_id HAVING count(*) >= " . $numberOfQueries;
   $result = db_query($query, $placeHolders);
+//  foreach($result as $item) 
+//    labdoo_lib_print_array($item->entity_id);
   $num = $result->rowCount();
 
   return($num);
@@ -3331,17 +3414,17 @@ function _labdoo_lib_user_metrics($account = NULL) {
 
   // Compute carbon footprint (constants are taken from the Labdoo carbon footprint calculator)
   $footprintCarbon = $numDoojects * 18.59;
-  $footprintTrees = $numDoojects * 2;
-  $footprintGas = $numDoojects * 26.5;
-  $footprintPlastic = $numDoojects * 59;
-  $footprintWater = $numDoojects * 1500;
-  $footprintAluminum = $numDoojects * 270;
-  $footprintGold = $numDoojects * 0.22;
-  $footprintSilver = $numDoojects * 0.44;
-  $footprintPalladium = $numDoojects * 0.08;
-  $footprintCopper = $numDoojects * 0.3;
-  $footprintCobalt = $numDoojects * 0.065;
-  $footprintChemical = $numDoojects * 22;
+  $footprintTrees = $footprintCarbon / 18.59  * 2;
+  $footprintGas = $footprintCarbon / 18.59  * 26.5;
+  $footprintPlastic = $footprintCarbon / 18.59  * 59;
+  $footprintWater = $footprintCarbon / 18.59  * 1500;
+  $footprintAluminum = $footprintCarbon / 18.59  * 270;
+  $footprintGold = $footprintCarbon / 18.59  * 0.22;
+  $footprintSilver = $footprintCarbon / 18.59  * 0.44;
+  $footprintPalladium = $footprintCarbon / 18.59  * 0.08;
+  $footprintCopper = $footprintCarbon / 18.59  * 0.3;
+  $footprintCobalt = $footprintCarbon / 18.59  * 0.065;
+  $footprintChemical = $footprintCarbon / 18.59  * 22;
 
   $code = "
 <strong><font color='red'>My contributions</font></strong>
@@ -4223,5 +4306,16 @@ function labdoo_lib_get_users_role($role) {
     $userList[] = $user['uid'];
   }
   return $userList;
+}
+
+
+/*
+ * Implementation of hook_cron
+ *
+ */
+function labdoo_lib_cron() {
+  // Clean up
+  cache_clear_all('labdoo_co2_savings_dootrip', 'cache', TRUE);
+  return;
 }
 

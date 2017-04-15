@@ -563,13 +563,12 @@ function _email_team_event($node, $comment = NULL) {
       $emailsList = $emailsList . ", " . $userObj->mail;
     }
   }
-  else { // Send only to users in the 'send to' field
-    if(property_exists($node, $sendToFieldName)) {
-      if($node->$sendToFieldName) {
-        foreach(field_get_items('node', $node, $sendToFieldName) as $element) {
-          $userObj = user_load($element['target_id']);
-          $emailsList = $emailsList . ", " . $userObj->mail;
-        }
+  // Add additional users based on the 'send to' field
+  if(property_exists($node, $sendToFieldName)) {
+    if($node->$sendToFieldName) {
+      foreach(field_get_items('node', $node, $sendToFieldName) as $element) {
+        $userObj = user_load($element['target_id']);
+        $emailsList = $emailsList . ", " . $userObj->mail;
       }
     }
   }

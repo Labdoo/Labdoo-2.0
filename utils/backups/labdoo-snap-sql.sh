@@ -20,7 +20,12 @@
 set -x
 
 sqldumpname='lbd-snap-sql-'$(date +"%Y%m%d").sql
-/usr/bin/drush @lbd cc all
+
+# Do not clean the cache, otherwise we may drain 
+# outstanding team conversation messages. So keep
+# the following line commented.
+#/usr/bin/drush @lbd cc all
+
 # Ensure the folder /lbd-snap-sql exists with the right permissions
 /usr/bin/drush @lbd sql-dump > /lbd-snap-sql/$sqldumpname
 /usr/bin/drush @lbd cron

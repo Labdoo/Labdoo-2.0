@@ -1873,7 +1873,7 @@ function lbd_content_types_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_additional_emails_event',
-      'label' => 'Additional notification emails',
+      'label' => 'Share with additional email addresses',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -1886,7 +1886,7 @@ function lbd_content_types_field_default_fields() {
           'rows' => '1',
         ),
         'type' => 'text_textarea',
-        'weight' => '3',
+        'weight' => '5',
       ),
     ),
   );
@@ -2299,7 +2299,7 @@ function lbd_content_types_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_send_to_all_event',
-      'label' => 'Send to all members of this team',
+      'label' => 'Share with all members of this team',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -2311,7 +2311,7 @@ function lbd_content_types_field_default_fields() {
           'display_label' => 1,
         ),
         'type' => 'options_onoff',
-        'weight' => '4',
+        'weight' => '3',
       ),
     ),
   );
@@ -2385,7 +2385,7 @@ function lbd_content_types_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_send_to_event',
-      'label' => 'Send only to these members:',
+      'label' => 'Share with additional users',
       'required' => 0,
       'settings' => array(
         'behaviors' => array(
@@ -2416,6 +2416,7 @@ function lbd_content_types_field_default_fields() {
             'gic' => 0,
             'hub' => 0,
             'labdoo_slide' => 0,
+            'labdoo_story' => 0,
             'laptop' => 0,
             'node_gallery_gallery' => 0,
             'node_gallery_item' => 0,
@@ -2455,7 +2456,7 @@ function lbd_content_types_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '5',
+        'weight' => '4',
       ),
     ),
   );
@@ -5132,7 +5133,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
       ),
       'entity_type' => 'node',
       'field_name' => 'field_additional_emails_conver',
-      'label' => 'Additional notification emails',
+      'label' => 'Share with additional email addresses',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -5250,7 +5251,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
         'module' => 'og',
         'settings' => array(),
         'type' => 'og_complex',
-        'weight' => '2',
+        'weight' => '3',
       ),
     ),
   );
@@ -5467,7 +5468,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
       ),
       'entity_type' => 'node',
       'field_name' => 'field_send_to_all_conversation',
-      'label' => 'Send to all members of this team',
+      'label' => 'Share with all members of this team',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -5479,7 +5480,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           'display_label' => 1,
         ),
         'type' => 'options_onoff',
-        'weight' => '3',
+        'weight' => '2',
       ),
     ),
   );
@@ -5541,7 +5542,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
       ),
       'entity_type' => 'node',
       'field_name' => 'field_send_to_all_edoo_managers',
-      'label' => 'Send to all edoovillage managers',
+      'label' => 'Share with all edoovillage managers',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -5615,7 +5616,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
       ),
       'entity_type' => 'node',
       'field_name' => 'field_send_to_all_hub_managers',
-      'label' => 'Send to all hub managers',
+      'label' => 'Share with all hub managers',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -5701,7 +5702,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
       ),
       'entity_type' => 'node',
       'field_name' => 'field_send_to_conversation',
-      'label' => 'Send only to:',
+      'label' => 'Share with additional users',
       'required' => 0,
       'settings' => array(
         'behaviors' => array(
@@ -5732,6 +5733,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
             'gic' => 0,
             'hub' => 0,
             'labdoo_slide' => 0,
+            'labdoo_story' => 0,
             'laptop' => 0,
             'node_gallery_gallery' => 0,
             'node_gallery_item' => 0,
@@ -5965,7 +5967,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
           ),
           'prepopulate' => array(
             'action' => 'hide',
-            'action_on_edit' => 0,
+            'action_on_edit' => 1,
             'fallback' => 'none',
             'providers' => array(
               'og_context' => 0,
@@ -6136,7 +6138,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
       ),
       'entity_type' => 'node',
       'field_name' => 'field_send_to_all_task',
-      'label' => 'Send to all members of this team',
+      'label' => 'Share with all members of this team',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -6222,7 +6224,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
       ),
       'entity_type' => 'node',
       'field_name' => 'field_send_to_task',
-      'label' => 'Send only to:',
+      'label' => 'Share with additional users',
       'required' => 0,
       'settings' => array(
         'behaviors' => array(
@@ -6253,6 +6255,7 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
             'gic' => 0,
             'hub' => 0,
             'labdoo_slide' => 0,
+            'labdoo_story' => 0,
             'laptop' => 0,
             'node_gallery_gallery' => 0,
             'node_gallery_item' => 0,
@@ -6969,7 +6972,6 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
   // Included for use with string extractors like potx.
   t('Add users who need to have permission to edit this page.');
   t('Additional editors');
-  t('Additional notification emails');
   t('Assigned to');
   t('Attachment');
   t('Body');
@@ -7004,12 +7006,12 @@ Remember that in each team, you will be able to create forum entries, tasks, eve
   t('Section story');
   t('Select the superhub pages where you would like this menu block to appear');
   t('Select this field if you would like to enable the registration form. This will allow you to manage labdooers\' registration to this event as well as send them event-related email notifications.');
-  t('Send only to these members:');
-  t('Send only to:');
-  t('Send to all edoovillage managers');
-  t('Send to all hub managers');
-  t('Send to all members of this team');
+  t('Share with additional email addresses');
   t('Share with additional teams');
+  t('Share with additional users');
+  t('Share with all edoovillage managers');
+  t('Share with all hub managers');
+  t('Share with all members of this team');
   t('Status');
   t('Story section');
   t('Stream it');

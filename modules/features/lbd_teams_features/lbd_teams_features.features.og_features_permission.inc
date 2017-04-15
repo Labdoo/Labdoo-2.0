@@ -132,17 +132,23 @@ function lbd_teams_features_og_features_default_permissions() {
 
   // Exported og permission: 'node:team:update any event content'
   $permissions['node:team:update any event content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:team:update any team_page content'
   $permissions['node:team:update any team_page content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:team:update any team_task content'
   $permissions['node:team:update any team_task content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:team:update group'

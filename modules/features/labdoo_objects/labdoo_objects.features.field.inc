@@ -123,10 +123,9 @@ function labdoo_objects_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'list',
           'settings' => array(),
-          'type' => 'list_default',
-          'weight' => 19,
+          'type' => 'hidden',
+          'weight' => '21',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -155,7 +154,7 @@ function labdoo_objects_field_default_fields() {
           'display_label' => 1,
         ),
         'type' => 'options_onoff',
-        'weight' => '21',
+        'weight' => '23',
       ),
     ),
   );
@@ -252,6 +251,81 @@ function labdoo_objects_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-dootrip-field_co2_savings_dootrip'.
+  $fields['node-dootrip-field_co2_savings_dootrip'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_co2_savings_dootrip',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'computed_field',
+      'settings' => array(
+        'code' => 'drupal_page_is_cacheable(FALSE);
+$entity_field[0][\'value\'] = labdoo_calculate_dootrip_co2_savings($entity);',
+        'database' => array(
+          'data_default' => '',
+          'data_index' => 0,
+          'data_length' => '32',
+          'data_not_NULL' => 0,
+          'data_precision' => '10',
+          'data_scale' => '2',
+          'data_size' => 'normal',
+          'data_type' => 'int',
+        ),
+        'display_format' => 'drupal_page_is_cacheable(FALSE);
+$display_output = $entity_field_item[\'value\'];',
+        'recalculate' => 0,
+        'store' => 0,
+      ),
+      'translatable' => '0',
+      'type' => 'computed',
+    ),
+    'field_instance' => array(
+      'bundle' => 'dootrip',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'inline',
+          'module' => 'computed_field',
+          'settings' => array(),
+          'type' => 'computed_field_plain',
+          'weight' => '14',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_co2_savings_dootrip',
+      'label' => 'CO2 emissions savings',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'computed_field',
+        'settings' => array(),
+        'type' => 'computed',
+        'weight' => '16',
+      ),
+    ),
+  );
+
   // Exported field: 'node-dootrip-field_comments'.
   $fields['node-dootrip-field_comments'] = array(
     'field_config' => array(
@@ -290,7 +364,7 @@ function labdoo_objects_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '15',
+          'weight' => '17',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -320,7 +394,7 @@ function labdoo_objects_field_default_fields() {
           'rows' => '3',
         ),
         'type' => 'text_textarea',
-        'weight' => '17',
+        'weight' => '19',
       ),
     ),
   );
@@ -659,6 +733,81 @@ function labdoo_objects_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-dootrip-field_distance_dootrip'.
+  $fields['node-dootrip-field_distance_dootrip'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_distance_dootrip',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'computed_field',
+      'settings' => array(
+        'code' => 'drupal_page_is_cacheable(FALSE);
+$entity_field[0][\'value\'] = labdoo_calculate_dootrip_distance($entity);',
+        'database' => array(
+          'data_default' => '',
+          'data_index' => 0,
+          'data_length' => '32',
+          'data_not_NULL' => 0,
+          'data_precision' => '10',
+          'data_scale' => '2',
+          'data_size' => 'normal',
+          'data_type' => 'int',
+        ),
+        'display_format' => 'drupal_page_is_cacheable(FALSE);
+$display_output = $entity_field_item[\'value\'];',
+        'recalculate' => 0,
+        'store' => 0,
+      ),
+      'translatable' => '0',
+      'type' => 'computed',
+    ),
+    'field_instance' => array(
+      'bundle' => 'dootrip',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'inline',
+          'module' => 'computed_field',
+          'settings' => array(),
+          'type' => 'computed_field_plain',
+          'weight' => '13',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_distance_dootrip',
+      'label' => 'Travel distance',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'computed_field',
+        'settings' => array(),
+        'type' => 'computed',
+        'weight' => '15',
+      ),
+    ),
+  );
+
   // Exported field: 'node-dootrip-field_dootrip_additional_editors'.
   $fields['node-dootrip-field_dootrip_additional_editors'] = array(
     'field_config' => array(
@@ -711,7 +860,7 @@ function labdoo_objects_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '17',
+          'weight' => '19',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -798,7 +947,7 @@ function labdoo_objects_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '19',
+        'weight' => '21',
       ),
     ),
   );
@@ -829,7 +978,7 @@ function labdoo_objects_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '18',
+          'weight' => '20',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -931,6 +1080,78 @@ function labdoo_objects_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-dootrip-field_dootrip_notes'.
+  $fields['node-dootrip-field_dootrip_notes'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_dootrip_notes',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'dootrip',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '22',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_dootrip_notes',
+      'label' => 'Notes',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'rows' => '5',
+        ),
+        'type' => 'text_textarea',
+        'weight' => '24',
+      ),
+    ),
+  );
+
   // Exported field: 'node-dootrip-field_dootrip_weight'.
   $fields['node-dootrip-field_dootrip_weight'] = array(
     'field_config' => array(
@@ -945,7 +1166,7 @@ function labdoo_objects_field_default_fields() {
       'module' => 'computed_field',
       'settings' => array(
         'code' => 'drupal_page_is_cacheable(FALSE);
-$entity_field[0][\'value\'] = _calculate_dootrip_weight($entity);',
+$entity_field[0][\'value\'] = labdoo_calculate_dootrip_weight($entity);',
         'database' => array(
           'data_default' => '',
           'data_index' => 0,
@@ -958,7 +1179,7 @@ $entity_field[0][\'value\'] = _calculate_dootrip_weight($entity);',
         ),
         'display_format' => 'drupal_page_is_cacheable(FALSE);
 $display_output = $entity_field_item[\'value\'];',
-        'recalculate' => FALSE,
+        'recalculate' => 0,
         'store' => 0,
       ),
       'translatable' => '0',
@@ -1194,7 +1415,7 @@ $display_output = $entity_field_item[\'value\'];',
           'module' => 'computed_field',
           'settings' => array(),
           'type' => 'computed_field_unsanitized',
-          'weight' => '14',
+          'weight' => '16',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -1221,7 +1442,7 @@ $display_output = $entity_field_item[\'value\'];',
         'module' => 'computed_field',
         'settings' => array(),
         'type' => 'computed',
-        'weight' => '20',
+        'weight' => '22',
       ),
     ),
   );
@@ -1485,7 +1706,7 @@ $display_output = $entity_field_item[\'value\'];',
           'data_type' => 'int',
         ),
         'display_format' => '$display_output = $entity_field_item[\'value\'];',
-        'recalculate' => FALSE,
+        'recalculate' => 1,
         'store' => 1,
       ),
       'translatable' => '0',
@@ -1832,7 +2053,7 @@ $display_output = $entity_field_item[\'value\'];',
             'link' => 1,
           ),
           'type' => 'entityreference_label',
-          'weight' => '13',
+          'weight' => '15',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -1868,7 +2089,7 @@ $display_output = $entity_field_item[\'value\'];',
           'size' => '120',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '15',
+        'weight' => '17',
       ),
     ),
   );
@@ -1938,7 +2159,7 @@ $display_output = $entity_field_item[\'value\'];',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '16',
+        'weight' => '18',
       ),
     ),
   );
@@ -4641,7 +4862,7 @@ See <a target=\'_blank\' href="../../../content/list-countries-voltages-and-powe
       'bundle' => 'laptop',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Add here any observations you would like to make. For instance you can add notes such as the quality of the laptop or if something is broken, a reminder, or a note on who donated the laptop.',
+      'description' => 'Add here any observations you would like to make. For instance you can add notes such as the quality of the laptop or if something is broken, a reminder, or a <a href="../../content/tricks-help-you-find-dootronics" target=\'_blank\'>note on who donated the laptop</a>.',
       'display' => array(
         'default' => array(
           'label' => 'inline',
@@ -6583,7 +6804,7 @@ See <a target=\'_blank\' href="../../../content/list-countries-voltages-and-powe
   // Translatables
   // Included for use with string extractors like potx.
   t('About this hub');
-  t('Add here any observations you would like to make. For instance you can add notes such as the quality of the laptop or if something is broken, a reminder, or a note on who donated the laptop.');
+  t('Add here any observations you would like to make. For instance you can add notes such as the quality of the laptop or if something is broken, a reminder, or a <a href="../../content/tricks-help-you-find-dootronics" target=\'_blank\'>note on who donated the laptop</a>.');
   t('Add here the email address(es) of additional people that you would like to be notified whenever this laptop changes its status.');
   t('Add users who need to have permission to edit this dootronic');
   t('Add users who want to follow this dootronic');
@@ -6599,6 +6820,7 @@ See <a target=\'_blank\' href="../../../content/list-countries-voltages-and-powe
   t('Arrival date');
   t('Battery duration');
   t('Brand name and model');
+  t('CO2 emissions savings');
   t('CPU speed (Example: 1200 MHz)');
   t('Check this box if you would like other users who are managing schools in the destination country to receive an email notification. It is recommended that you don\'t set this option if you already have dootronics (laptops, tablets, ...) assigned to your trip. If you still don\'t have dootronics assigned to your trip, then you can select this option so that these other users can receive a notification about your trip and assign dootronics that you can carry. See the <a href="../../content/automatic-notifications-and-managing-your-dootrips" target="_blank">wiki page on dootrips notifications for more details</a>.');
   t('Comments');
@@ -6632,6 +6854,7 @@ See <a target=\'_blank\' href="../../../content/list-countries-voltages-and-powe
   t('Memory');
   t('Model');
   t('Name of the person(s) or the NGO performing the dootrip if different than the dootrippers field');
+  t('Notes');
   t('Number of cores (CPU type)');
   t('Number of days you can store the dootronic(s) after the arrival date');
   t('Number of days you can store the dootronic(s) before the departure date');
@@ -6663,6 +6886,7 @@ See <a target=\'_blank\' href="../../../content/list-countries-voltages-and-powe
   t('The user currently managing this dootronic');
   t('The user who tagged this dootronic');
   t('This field is updated automatically once dootrips are assigned to this dootronic. You can also optionally set this field manually adding dootrips by typing their name.');
+  t('Travel distance');
   t('Upload here a picture of the dootronic. A picture is a helpful way for donors to ensure that they are looking at the correct dootronic. Please do not use pictures that you may find on the Internet, as they may be copyrighted.  Instead, please take a picture with your own camera. Once the dootronic reaches a school, you can also upload another picture with the students using it.');
   t('User(s) who will be part of this dootrip');
   t('Volts');

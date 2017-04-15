@@ -26,7 +26,7 @@ projects[diff] = 3.2
 ; User interface
 ;--------------------
 projects[context] = 3.6
-projects[views] = 3.14
+projects[views] = 3.15
 projects[homebox] = 2.0-beta7
 projects[boxes] = 1.2
 projects[edit_profile] = 1.0-beta2
