@@ -167,7 +167,7 @@ function lbd_wiki_block_view($delta = '') {
   $code = $code . "<hr/>";
   // Back to wiki index link
   $code = $code . "<img src='/profiles/labdoo/files/pictures/arrow_left.png' style='width: 20px; height: 21px;'/>&nbsp;" .  
-                  "<a href='../wiki-index'>" . t('Go to all wiki books') . "</span></a></p>";
+                  "<a href=" . $lang . "/wiki-index>" . t('Go to all wiki books') . "</span></a></p>";
 
   // Other translations link
   $nodeLoaded = node_load($book['bid']);

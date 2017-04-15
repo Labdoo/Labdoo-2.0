@@ -563,8 +563,11 @@ function _generate_dootrip_dootronics_table($node) {
   $dootronicsTable[$i][$j++] = "Serial number";
   $dootronicsTable[$i][$j++] = "Watt-hours";
   $dootronicsTable[$i][$j++] = "Weight";
+  $dootronicsTable[$i][$j++] = "Edoovillage";
+  $dootronicsTable[$i][$j++] = "Edoovillage link";
 
   // For each dootronic, add a row to the table
+  // (make sure to order items correctly)
   foreach($doojectsList as $doojectNode) {
     if(!key_exists('nid', $doojectNode))
       continue;
@@ -572,7 +575,7 @@ function _generate_dootrip_dootronics_table($node) {
     $j = 0;
     $doojectLoaded = node_load($doojectNode->nid);
     $wDoojectLoaded = entity_metadata_wrapper('node', $doojectLoaded);
-    // Extract the status
+    // Extract the ID
     $dootronicsTable[$i][$j++] = "# " . $doojectLoaded->title; 
     // Extract the status
     $dootronicsTable[$i][$j++] = $wDoojectLoaded->field_status->value();
@@ -584,6 +587,17 @@ function _generate_dootrip_dootronics_table($node) {
     $dootronicsTable[$i][$j++] = $wDoojectLoaded->field_battery_watt_hours->value();
     // Extract the weight (hack: should extract Kgms units from the field)
     $dootronicsTable[$i][$j++] = $wDoojectLoaded->field_dooject_weight->value() . " Kgms"; 
+    // Extract the edoovillage (if any)
+    $edoovillageNode = $wDoojectLoaded->field_edoovillage_destination->value(); 
+    if($edoovillageNode) 
+      $dootronicsTable[$i][$j++] = lbd_nodeid2title($edoovillageNode->nid); 
+    else
+      $dootronicsTable[$i][$j++] = "Not assigned";
+    // Extract the edoovillage link
+    if($edoovillageNode) 
+      $dootronicsTable[$i][$j++] = "https://www.labdoo.org/" . drupal_get_path_alias("node/" . $edoovillageNode->nid);
+    else
+      $dootronicsTable[$i][$j++] = "Not assigned";
   }
 
   return($dootronicsTable);
