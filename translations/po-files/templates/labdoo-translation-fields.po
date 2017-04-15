@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2015-12-05 14:01+0000\n"
+"POT-Creation-Date: 2017-04-15 09:49+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -11,9 +11,99 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
+#: field:field_additional_editors_shub:superhub_page:description
+msgctxt "field_additional_editors_shub:superhub_page:description"
+msgid "Add users who need to have permission to edit this page."
+msgstr ""
+
+#: field:field_additional_editors_shub:superhub_page:label
+msgctxt "field_additional_editors_shub:superhub_page:label"
+msgid "Additional editors"
+msgstr ""
+
+#: field:field_additional_emails_event:event:description
+msgctxt "field_additional_emails_event:event:description"
+msgid "Enter a comma-separated list of correct email addresses."
+msgstr ""
+
+#: field:field_announce_this_dootrip:dootrip:description
+msgctxt "field_announce_this_dootrip:dootrip:description"
+msgid ""
+"Check this box if you would like other users who are managing schools "
+"in the destination country to receive an email notification. It is "
+"recommended that you don't set this option if you already have "
+"dootronics (laptops, tablets, ...) assigned to your trip. If you still "
+"don't have dootronics assigned to your trip, then you can select this "
+"option so that these other users can receive a notification about your "
+"trip and assign dootronics that you can carry. See the <a "
+"href=\"../../content/automatic-notifications-and-managing-your-dootrips\" "
+"target=\"_blank\">wiki page on dootrips notifications for more "
+"details</a>."
+msgstr ""
+
+#: field:field_book_language:#allowed_values:Catalan
+msgctxt "field_book_language:#allowed_values:Catalan"
+msgid "Catalan"
+msgstr ""
+
+#: field:field_book_language:#allowed_values:ChineseSimplified
+msgctxt "field_book_language:#allowed_values:ChineseSimplified"
+msgid "Chinese (simplified)"
+msgstr ""
+
+#: field:field_book_language:#allowed_values:ChineseTraditional
+msgctxt "field_book_language:#allowed_values:ChineseTraditional"
+msgid "Chinese (traditional)"
+msgstr ""
+
+#: field:field_book_language:#allowed_values:English
+msgctxt "field_book_language:#allowed_values:English"
+msgid "English"
+msgstr ""
+
+#: field:field_book_language:#allowed_values:French
+msgctxt "field_book_language:#allowed_values:French"
+msgid "French"
+msgstr ""
+
+#: field:field_book_language:#allowed_values:German
+msgctxt "field_book_language:#allowed_values:German"
+msgid "German"
+msgstr ""
+
+#: field:field_book_language:#allowed_values:Italian
+msgctxt "field_book_language:#allowed_values:Italian"
+msgid "Italian"
+msgstr ""
+
+#: field:field_book_language:#allowed_values:Polish
+msgctxt "field_book_language:#allowed_values:Polish"
+msgid "Polish"
+msgstr ""
+
+#: field:field_book_language:#allowed_values:Russian
+msgctxt "field_book_language:#allowed_values:Russian"
+msgid "Russian"
+msgstr ""
+
+#: field:field_book_language:#allowed_values:Serbian
+msgctxt "field_book_language:#allowed_values:Serbian"
+msgid "Serbian"
+msgstr ""
+
+#: field:field_book_language:#allowed_values:Spanish
+msgctxt "field_book_language:#allowed_values:Spanish"
+msgid "Spanish"
+msgstr ""
+
 #: field:field_branches:hub:label
 msgctxt "field_branches:hub:label"
 msgid "Hub branches"
+msgstr ""
+
+#: field:field_co2_savings_dootrip:dootrip:label
+msgctxt "field_co2_savings_dootrip:dootrip:label"
+msgid "CO2 emissions savings"
 msgstr ""
 
 #: field:field_conv_comment_attach:comment_node_team_page:label
@@ -26,9 +116,14 @@ msgctxt "field_device_type:#allowed_values:internetTablet"
 msgid "Internet tablet"
 msgstr ""
 
+#: field:field_distance_dootrip:dootrip:label
+msgctxt "field_distance_dootrip:dootrip:label"
+msgid "Travel distance"
+msgstr ""
+
 #: field:field_dootrips_edoovillages:dootrip:label
 msgctxt "field_dootrips_edoovillages:dootrip:label"
-msgid "Edoovillages"
+msgid "Edoovillages assigned"
 msgstr ""
 
 #: field:field_dootrip_additional_emails:dootrip:label
@@ -36,14 +131,102 @@ msgctxt "field_dootrip_additional_emails:dootrip:label"
 msgid "Additional notification emails"
 msgstr ""
 
+#: field:field_dootrip_notes:dootrip:label
+msgctxt "field_dootrip_notes:dootrip:label"
+msgid "Notes"
+msgstr ""
+
+#: field:field_grant_edit_rights_wiki:book:description
+msgctxt "field_grant_edit_rights_wiki:book:description"
+msgid ""
+"Add users who need to have permission to edit this wiki page and all "
+"the wiki pages that are children to this page. Lear more <a "
+"href=\"../../content/allowing-other-users-edit-wiki-page\" "
+"target=\"_blank\">about this feature by reading this wiki page</a>."
+msgstr ""
+
+#: field:field_grant_edit_rights_wiki:book:label
+msgctxt "field_grant_edit_rights_wiki:book:label"
+msgid "Grant edit rights"
+msgstr ""
+
+#: field:field_hub_manager_notifications:#allowed_values:HUB_PICKME
+msgctxt "field_hub_manager_notifications:#allowed_values:HUB_PICKME"
+msgid "Upon a dootronic being marked with the 'pick me up' flag"
+msgstr ""
+
+#: field:field_hub_manager_notifications:#allowed_values:HUB_TAGGED
+msgctxt "field_hub_manager_notifications:#allowed_values:HUB_TAGGED"
+msgid "Uppon tagging a dootronic"
+msgstr ""
+
+#: field:field_hub_manager_notifications:#allowed_values:USER_NEW
+msgctxt "field_hub_manager_notifications:#allowed_values:USER_NEW"
+msgid "Upon a new user joining Project Labdoo"
+msgstr ""
+
+#: field:field_hub_manager_notifications:user:description
+msgctxt "field_hub_manager_notifications:user:description"
+msgid ""
+"Select which types of notifications you want to receive as a hub "
+"manager. [<a "
+"href=\"../../content/managing-your-hub-notification-triggers\" "
+"target=\"_blank\">Help</a>]"
+msgstr ""
+
+#: field:field_hub_manager_notifications:user:label
+msgctxt "field_hub_manager_notifications:user:label"
+msgid "Types of notifications"
+msgstr ""
+
 #: field:field_image_event:event:label
 msgctxt "field_image_event:event:label"
 msgid "Image"
 msgstr ""
 
+#: field:field_labdoo_hub:event_registration:description
+msgctxt "field_labdoo_hub:event_registration:description"
+msgid ""
+"If you belong to a Labdoo hub, select it from the list. Otherwise, "
+"leave this field blank. "
+msgstr ""
+
+#: field:field_labdoo_hub:event_registration:label
+msgctxt "field_labdoo_hub:event_registration:label"
+msgid "Labdoo hub"
+msgstr ""
+
 #: field:field_location_event:event:label
 msgctxt "field_location_event:event:label"
 msgid "Location"
+msgstr ""
+
+#: field:field_notification_area:user:description
+msgctxt "field_notification_area:user:description"
+msgid ""
+"Specify the region you would like to receive notifications from. For "
+"instance, if you set this value to 50 km, you will receive "
+"notifications from activity happening within 50 kms of your home "
+"location.  [<a "
+"href=\"../../content/managing-your-hub-notification-triggers\" "
+"target=\"_blank\">Help</a>]"
+msgstr ""
+
+#: field:field_notification_area:user:label
+msgctxt "field_notification_area:user:label"
+msgid "Notification area"
+msgstr ""
+
+#: field:field_organization:event_registration:description
+msgctxt "field_organization:event_registration:description"
+msgid ""
+"Type the name of the organization you are part of. If none, you can "
+"type 'Individual'."
+msgstr ""
+
+#: field:field_organization:event_registration:label
+msgctxt "field_organization:event_registration:label"
+msgid "Organization"
 msgstr ""
 
 #: field:field_pick_me_up:#allowed_values:0
@@ -61,29 +244,85 @@ msgctxt "field_pick_me_up:laptop:label"
 msgid "Pick me up"
 msgstr ""
 
-#: field:field_send_to_all_conversation:team_page:label
-msgctxt "field_send_to_all_conversation:team_page:label"
-msgid "Send to all members of this team (beta)"
+#: field:field_preferred_edoovillages:dootrip:label
+msgctxt "field_preferred_edoovillages:dootrip:label"
+msgid "Preferred edoovillage destinations"
 msgstr ""
 
-#: field:field_send_to_all_task:team_task:label
-msgctxt "field_send_to_all_task:team_task:label"
-msgid "Send to all members of this team (beta)\t"
+#: field:field_registration:event:description
+msgctxt "field_registration:event:description"
+msgid ""
+"Select this field if you would like to enable the registration form. "
+"This will allow you to manage labdooers' registration to this event as "
+"well as send them event-related email notifications."
 msgstr ""
 
-#: field:field_send_to_conversation:team_page:label
-msgctxt "field_send_to_conversation:team_page:label"
-msgid "Send only to: (beta)"
+#: field:field_registration:event:label
+msgctxt "field_registration:event:label"
+msgid "Registration"
 msgstr ""
 
-#: field:field_send_to_task:team_task:label
-msgctxt "field_send_to_task:team_task:label"
-msgid "Send only to: (beta)\t"
+#: field:field_story_edoovillage:labdoo_story:label
+msgctxt "field_story_edoovillage:labdoo_story:label"
+msgid "This story comes from"
+msgstr ""
+
+#: field:field_story_heading:field_story_section:label
+msgctxt "field_story_heading:field_story_section:label"
+msgid "Section heading"
+msgstr ""
+
+#: field:field_story_picture:field_story_section:label
+msgctxt "field_story_picture:field_story_section:label"
+msgid "Section picture"
+msgstr ""
+
+#: field:field_story_section:labdoo_story:label
+msgctxt "field_story_section:labdoo_story:label"
+msgid "Story section"
+msgstr ""
+
+#: field:field_story_text:field_story_section:label
+msgctxt "field_story_text:field_story_section:label"
+msgid "Section story"
+msgstr ""
+
+#: field:field_stream_it:action:label
+msgctxt "field_stream_it:action:label"
+msgid "Stream it"
+msgstr ""
+
+#: field:field_task_comment_attach:comment_node_team_task:label
+msgctxt "field_task_comment_attach:comment_node_team_task:label"
+msgid "Attachment"
 msgstr ""
 
 #: field:field_task_due_date:team_task:label
 msgctxt "field_task_due_date:team_task:label"
 msgid "Due date"
+msgstr ""
+
+#: field:field_username:user:label
+msgctxt "field_username:user:label"
+msgid "Username"
+msgstr ""
+
+#: field:field_wiki_tags:book:description
+msgctxt "field_wiki_tags:book:description"
+msgid ""
+"Enter a comma separated list of words that describe this content. The "
+"auto-completion text will also allow you to select tagged words that "
+"already exist."
+msgstr ""
+
+#: field:field_wiki_tags:book:label
+msgctxt "field_wiki_tags:book:label"
+msgid "Tags"
+msgstr ""
+
+#: field:field_your_name:event_registration:label
+msgctxt "field_your_name:event_registration:label"
+msgid "Registrant name"
 msgstr ""
 
 #: field:og_roles_permissions:#allowed_values:0
@@ -156,6 +395,16 @@ msgctxt "field_additional_editors:laptop:label"
 msgid "Additional editors"
 msgstr ""
 
+#: field:field_additional_emails_conver:team_page:label
+msgctxt "field_additional_emails_conver:team_page:label"
+msgid "Share with additional email addresses"
+msgstr ""
+
+#: field:field_additional_emails_event:event:label
+msgctxt "field_additional_emails_event:event:label"
+msgid "Share with additional email addresses"
+msgstr ""
+
 #: field:field_additional_files:edoovillage:label
 msgctxt "field_additional_files:edoovillage:label"
 msgid "Additional files"
@@ -181,7 +430,9 @@ msgctxt "field_additional_notes:laptop:description"
 msgid ""
 "Add here any observations you would like to make. For instance you can "
 "add notes such as the quality of the laptop or if something is broken, "
-"a reminder, or a note on who donated the laptop."
+"a reminder, or a <a "
+"href=\"../../content/tricks-help-you-find-dootronics\" "
+"target='_blank'>note on who donated the laptop</a>."
 msgstr ""
 
 #: field:field_additional_notes:laptop:label
@@ -201,6 +452,11 @@ msgctxt "field_additional_notification_em:laptop:label"
 msgid "Additional notification emails"
 msgstr ""
 
+#: field:field_additional_teams:team_page:label
+msgctxt "field_additional_teams:team_page:label"
+msgid "Share with additional teams"
+msgstr ""
+
 #: field:field_additional_traveler_s_info:dootrip:description
 msgctxt "field_additional_traveler_s_info:dootrip:description"
 msgid ""
@@ -216,6 +472,11 @@ msgstr ""
 #: field:field_amp_hours:laptop:label
 msgctxt "field_amp_hours:laptop:label"
 msgid "Amp hours"
+msgstr ""
+
+#: field:field_announce_this_dootrip:dootrip:label
+msgctxt "field_announce_this_dootrip:dootrip:label"
+msgid "Announce this dootrip"
 msgstr ""
 
 #: field:field_arrival_date:dootrip:label
@@ -312,11 +573,6 @@ msgctxt "field_device_type:#allowed_values:blackberryPi"
 msgid "Raspberry Pi"
 msgstr ""
 
-#: field:field_device_type:#allowed_values:blackberryPi
-msgctxt "field_device_type:#allowed_values:blackberryPi"
-msgid "Raspberry Pi"
-msgstr ""
-
 #: field:field_device_type:#allowed_values:desktop
 msgctxt "field_device_type:#allowed_values:desktop"
 msgid "Desktop"
@@ -335,11 +591,6 @@ msgstr ""
 #: field:field_device_type:#allowed_values:googlePhone
 msgctxt "field_device_type:#allowed_values:googlePhone"
 msgid "Android phone"
-msgstr ""
-
-#: field:field_device_type:#allowed_values:internetTable
-msgctxt "field_device_type:#allowed_values:internetTable"
-msgid "Internet tablet"
 msgstr ""
 
 #: field:field_device_type:#allowed_values:ipad
@@ -545,7 +796,7 @@ msgstr ""
 
 #: field:field_hub_laptop:laptop:label
 msgctxt "field_hub_laptop:laptop:label"
-msgid "Source group"
+msgid "Source hub"
 msgstr ""
 
 #: field:field_hub_manager_s_:hub:label
@@ -786,7 +1037,7 @@ msgstr ""
 
 #: field:field_project_summary:edoovillage:label
 msgctxt "field_project_summary:edoovillage:label"
-msgid "Project brief description"
+msgid "Project title"
 msgstr ""
 
 #: field:field_reference_book:book:label
@@ -812,6 +1063,46 @@ msgstr ""
 #: field:field_semaphore:edoovillage:label
 msgctxt "field_semaphore:edoovillage:label"
 msgid "Semaphore"
+msgstr ""
+
+#: field:field_send_to_all_conversation:team_page:label
+msgctxt "field_send_to_all_conversation:team_page:label"
+msgid "Share with all members of this team"
+msgstr ""
+
+#: field:field_send_to_all_edoo_managers:team_page:label
+msgctxt "field_send_to_all_edoo_managers:team_page:label"
+msgid "Share with all edoovillage managers"
+msgstr ""
+
+#: field:field_send_to_all_event:event:label
+msgctxt "field_send_to_all_event:event:label"
+msgid "Share with all members of this team"
+msgstr ""
+
+#: field:field_send_to_all_hub_managers:team_page:label
+msgctxt "field_send_to_all_hub_managers:team_page:label"
+msgid "Share with all hub managers"
+msgstr ""
+
+#: field:field_send_to_all_task:team_task:label
+msgctxt "field_send_to_all_task:team_task:label"
+msgid "Share with all members of this team"
+msgstr ""
+
+#: field:field_send_to_conversation:team_page:label
+msgctxt "field_send_to_conversation:team_page:label"
+msgid "Share with additional users"
+msgstr ""
+
+#: field:field_send_to_event:event:label
+msgctxt "field_send_to_event:event:label"
+msgid "Share with additional users"
+msgstr ""
+
+#: field:field_send_to_task:team_task:label
+msgctxt "field_send_to_task:team_task:label"
+msgid "Share with additional users"
 msgstr ""
 
 #: field:field_serial_number:laptop:description
@@ -1206,5 +1497,4 @@ msgstr ""
 msgctxt "og_user_node:user:label"
 msgid "Group membership"
 msgstr ""
-
 
