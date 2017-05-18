@@ -2858,6 +2858,9 @@ function labdoo_block_filter_sidebar_second() {
   if(strcmp($path, "content/contact-labdoo") == 0)
       return TRUE;
 
+  if(strcmp($path, "content/notification-email") == 0)
+      return TRUE;
+
   if(arg(0) == 'user')
       return TRUE;
 
@@ -4317,5 +4320,17 @@ function labdoo_lib_cron() {
   // Clean up
   cache_clear_all('labdoo_co2_savings_dootrip', 'cache', TRUE);
   return;
+}
+
+
+/*
+ * Converts a string into an HTML link
+ * 
+ * @param string The string
+ * @return The html code
+ *        
+ */
+function labdoo_lib_convert_html_link($link) {
+  return "<a href=$link>" . $link . "</a>";
 }
 

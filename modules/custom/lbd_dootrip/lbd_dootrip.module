@@ -34,6 +34,8 @@
  *   A user friendly name for the source field
  * @param string $dst_name
  *   A user friendly name for the destination field
+ * @param boolean $new
+ *   True if the node was newly created, false otherwise
  */
 function _update_linked_nodes($node, $src_field, $dst_field, $src_name, $dst_name, $new=FALSE) {
 
@@ -115,10 +117,10 @@ function _update_linked_nodes($node, $src_field, $dst_field, $src_name, $dst_nam
 function lbd_dootrip_node_update($node) {
 
   if($node->type == 'laptop') 
-    _update_linked_nodes($node, 'field_dootrips', 'field_laptops', 'dooject', 'dootrip', FALSE); 
+    _update_linked_nodes($node, 'field_dootrips', 'field_laptops', 'dootronic', 'dootrip', FALSE); 
 
   if($node->type == 'dootrip') 
-    _update_linked_nodes($node, 'field_laptops', 'field_dootrips', 'dootrip', 'dooject', FALSE); 
+    _update_linked_nodes($node, 'field_laptops', 'field_dootrips', 'dootrip', 'dootronic', FALSE); 
 
   return;
 }
@@ -131,10 +133,10 @@ function lbd_dootrip_node_update($node) {
 function lbd_dootrip_node_insert($node) {
 
   if($node->type == 'laptop') 
-    _update_linked_nodes($node, 'field_dootrips', 'field_laptops', 'dooject', 'dootrip', TRUE); 
+    _update_linked_nodes($node, 'field_dootrips', 'field_laptops', 'dootronic', 'dootrip', TRUE); 
 
   if($node->type == 'dootrip') 
-    _update_linked_nodes($node, 'field_laptops', 'field_dootrips', 'dootrip', 'dooject', TRUE); 
+    _update_linked_nodes($node, 'field_laptops', 'field_dootrips', 'dootrip', 'dootronic', TRUE); 
 
   return;
 }

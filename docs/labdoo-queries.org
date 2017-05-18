@@ -39,6 +39,16 @@ The following are some of the most commonly used SQL queries.
     mysql> update simplenews_newsletter set status=0 where nid=20510; # change 20510 for the nid of the newsletter 
     #+END_EXAMPLE
 
+  - Dootronics performance for a given year:
+
+    #+BEGIN_EXAMPLE
+    mysql> SELECT AVG(field_cpu_value) FROM field_data_field_cpu WHERE entity_id IN (SELECT nid FROM node WHERE YEAR(FROM_UNIXTIME(created))=2016);
+    mysql> SELECT AVG(field_memory_value) FROM field_data_field_memory WHERE entity_id IN (SELECT nid FROM node WHERE YEAR(FROM_UNIXTIME(created))=2016);
+    mysql> SELECT AVG(field_hard_drive_value) FROM field_data_field_hard_drive WHERE entity_id IN (SELECT nid FROM node WHERE YEAR(FROM_UNIXTIME(created))=2016);
+    mysql> SELECT AVG(field_battery_duration_value) FROM field_data_field_battery_duration WHERE entity_id IN (SELECT nid FROM node WHERE YEAR(FROM_UNIXTIME(created))=2016);
+    #+END_EXAMPLE
+
+
 ** Drush Queries
 
 The following are some of the most commonly used drush queries.

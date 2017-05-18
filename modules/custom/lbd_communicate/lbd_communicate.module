@@ -170,6 +170,7 @@ function _path_to_email_template($langCode) {
 function _email_laptop_event($node) {
   global $base_url;
   global $user;
+  $params = array();
 
   if(property_exists($node, 'original')) {
     $previousStatus = labdoo_lib_get_field($node->original, 'field_status', 'node', 'value');
@@ -201,17 +202,20 @@ function _email_laptop_event($node) {
     // This is a new object, so the title (i.e., the Labdoo ID) has not 
     // being set yet.  Hence, we need to manually calculate the laptopId.
     $laptopId = sprintf("%09d", lbd_next_dootronic_id());
+    $params["NOTTYPE"] = "laptop_tagged";
   }
   else if($newStatus == "S4") {
     $email_params['type'] = "LAPTOP_DELIVERED";
     $subjectFileName = _path_to_email_template($langCode) . "laptop_delivered_subject-" . $langCode . ".email";
     $bodyFileName = _path_to_email_template($langCode) . "laptop_delivered_body-" . $langCode . ".email";
     $edoovillageNid = labdoo_lib_get_field($node, 'field_edoovillage_destination', 'node', 'target_id');
+    $params["NOTTYPE"] = "laptop_delivered";
   }
   else {
     $email_params['type'] = "LAPTOP_UPDATED";
     $subjectFileName = _path_to_email_template($langCode) . "laptop_updated_subject-" . $langCode . ".email";
     $bodyFileName = _path_to_email_template($langCode) . "laptop_updated_body-" . $langCode . ".email";
+    $params["NOTTYPE"] = "laptop_updated";
   }
 
   $emailsList = $user->mail;
@@ -302,12 +306,18 @@ function _email_laptop_event($node) {
 
   $subject = str_replace("[ID]", $laptopId, $subjectTemplate);
   $subject = $subject . $extraInfo;
-  $body = str_replace("[ID]", $laptopId, $bodyTemplate);
-  $body = str_replace("[STATUS]", $statusLabels[$newStatus] . $extraInfo, $body);
-  $body = str_replace("[LAPTOP_URL]", url('content/'. $laptopId, array('absolute' => TRUE)), $body);
-  $body = str_replace("[EDOOVILLAGE_URL]", url('node/'. $edoovillageNid, array('absolute' => TRUE)), $body);
-  $body = str_replace("[CONTACT_EMAIL]", variable_get('site_mail', ''), $body);
-  $body = str_replace("[DASHBOARD_URL]", $base_url . '/content/dashboard-slider', $body);
+
+  $params["ID"] = $laptopId;
+  $params["STATUS"] = $statusLabels[$newStatus] . $extraInfo;
+  $params["LAPTOP_URL"] = url(drupal_get_path_alias('content/'. $laptopId), array('absolute' => TRUE));
+  $params["LAPTOP_URL"] = labdoo_lib_convert_html_link($params["LAPTOP_URL"]);
+  $params["EDOOVILLAGE_URL"] = url(drupal_get_path_alias('node/'. $edoovillageNid), array('absolute' => TRUE));
+  $params["EDOOVILLAGE_URL"] = labdoo_lib_convert_html_link($params["EDOOVILLAGE_URL"]);
+  $params["CONTACT_EMAIL"] = variable_get('site_mail', '');
+  $params["DASHBOARD_URL"] = $base_url . '/content/dashboard-slider';
+  $params["DASHBOARD_URL"] = labdoo_lib_convert_html_link($params["DASHBOARD_URL"]);
+  $body = $bodyTemplate;
+  _body_do_parameters($params, $body);
 
   $email_params['subject'] = $subject;
   $email_params['body'] = $body;
@@ -324,6 +334,7 @@ function _email_laptop_event($node) {
 function _email_dootrip_event($node, $eventType) {
   global $user;
   global $base_url;
+  $params = array();
 
   $langCode = user_preferred_language($user)->language;
   if(!file_exists(_path_to_email_template($langCode) . "dootrip_added_subject-" . $langCode . ".email")) 
@@ -340,6 +351,7 @@ function _email_dootrip_event($node, $eventType) {
     $email_params['type'] = "DOOTRIP_ADDED";
     $subjectFileName = _path_to_email_template($langCode) . "dootrip_added_subject-" . $langCode . ".email";
     $bodyFileName = _path_to_email_template($langCode) . "dootrip_added_body-" . $langCode . ".email";
+    $params["NOTTYPE"] = "dootrip_added";
   }
   else { 
     // If we are here, there are two types of events possible: 
@@ -384,12 +396,15 @@ function _email_dootrip_event($node, $eventType) {
     $email_params['type'] = "DOOTRIP_UPDATED"; 
     $subjectFileName = _path_to_email_template($langCode) . "dootrip_updated_subject-" . $langCode . ".email";
     $bodyFileName = _path_to_email_template($langCode) . "dootrip_updated_body-" . $langCode . ".email";
+    $params["NOTTYPE"] = "dootrip_updated";
   }
 
   /*
    * Send out notification email to dootripper 
    */
   $dootripTitle = $node->title; 
+  // Remove the hashtag as that confuses the URL parameters
+  $dootripTitle = str_replace('#', '', $dootripTitle);
   $emailsList = labdoo_dootrip_extract_emails($node);    
   if(strpos($emailsList, $user->mail) == FALSE)
     $emailsList = $emailsList . ", " . $user->mail;
@@ -404,9 +419,14 @@ function _email_dootrip_event($node, $eventType) {
   $subject = preg_replace('/^\[Labdoo\] [0-9]+ /', '[Labdoo] ', trim($subject));
   $subject = preg_replace('/^\[Labdoo\] - /', '[Labdoo] ', trim($subject));
 
-  $body = str_replace("[DOOTRIP_URL]", $base_url . '/node/' . $dootripNid, $bodyTemplate);
-  $body = str_replace("[CONTACT_EMAIL]", variable_get('site_mail', ''), $body);
-  $body = str_replace("[DASHBOARD_URL]", $base_url . '/content/dashboard-slider', $body);
+  $params["DOOTRIP_TITLE"] = $dootripTitle;
+  $params["DOOTRIP_URL"] = url(drupal_get_path_alias('node/' . $dootripNid), array('absolute' => TRUE));
+  $params["DOOTRIP_URL"] = labdoo_lib_convert_html_link($params["DOOTRIP_URL"]);
+  $params["CONTACT_EMAIL"] = variable_get('site_mail', '');
+  $params["DASHBOARD_URL"] = $base_url . '/content/dashboard-slider';
+  $params["DASHBOARD_URL"] = labdoo_lib_convert_html_link($params["DASHBOARD_URL"]);
+  $body = $bodyTemplate;
+  _body_do_parameters($params, $body);
 
   $email_params['subject'] = $subject;
   $email_params['body'] = $body;
@@ -429,9 +449,15 @@ function _email_dootrip_event($node, $eventType) {
   $subject = $subjectTemplate;
   $bodyFileName = _path_to_email_template($langCode) . "dootrip_announce_body-" . $langCode . ".email";
   $bodyTemplate = file_get_contents($bodyFileName);
-  $body = str_replace("[DOOTRIP_URL]", $base_url . '/node/' . $dootripNid, $bodyTemplate);
-  $body = str_replace("[CONTACT_EMAIL]", variable_get('site_mail', ''), $body);
-  $body = str_replace("[DASHBOARD_URL]", $base_url . '/content/dashboard-slider', $body);
+
+  $params["NOTTYPE"] = "dootrip_announce";
+  $params["DOOTRIP_URL"] = url(drupal_get_path_alias('node/' . $dootripNid), array('absolute' => TRUE));
+  $params["DOOTRIP_URL"] = labdoo_lib_convert_html_link($params["DOOTRIP_URL"]);
+  $params["CONTACT_EMAIL"] = variable_get('site_mail', '');
+  $params["DASHBOARD_URL"] = $base_url . '/content/dashboard-slider';
+  $params["DASHBOARD_URL"] = labdoo_lib_convert_html_link($params["DASHBOARD_URL"]);
+  $body = $bodyTemplate;
+  _body_do_parameters($params, $body);
 
   $email_params['subject'] = $subject;
   $email_params['body'] = $body;
@@ -648,7 +674,6 @@ function _email_team_event($node, $comment = NULL) {
   $email_params['subject'] = $subject;
   $email_params['body'] = $body;
   $email_params['to'] = variable_get('site_mail');
-
   $email_params['headers']['Bcc'] = $emailsList;
 
   lbd_communicate_mail_send($email_params);
@@ -714,6 +739,7 @@ function lbd_communicate_comment_presave($comment) {
 function lbd_communicate_user_insert(&$edit, $account, $category) {
   global $base_url;
   global $language;
+  $params = array();
 
   /*
    * Send our welcome message to user.
@@ -731,13 +757,17 @@ function lbd_communicate_user_insert(&$edit, $account, $category) {
 
   $subjectFileName = _path_to_email_template($langCode) . "user_created_subject-" . $langCode . ".email";
   $bodyFileName = _path_to_email_template($langCode) . "user_created_body-" . $langCode . ".email";
+  $params["NOTTYPE"] = "user_created";
 
   $subjectTemplate = file_get_contents($subjectFileName);
   $bodyTemplate = file_get_contents($bodyFileName);
 
   $subject = $subjectTemplate;
-  $body = str_replace("[LABDOOUSER]", $edit['name'], $bodyTemplate);
-  $body = str_replace("[DASHBOARD_URL]", $base_url . '/content/dashboard-slider', $body);
+
+  $params["LABDOOUSER"] = $edit['name'];
+  $params["DASHBOARD_URL"] = $base_url . '/content/dashboard-slider';
+  $body = $bodyTemplate;
+  _body_do_parameters($params, $body);
 
   $email_params['subject'] = $subject;
   $email_params['body'] = $body;
@@ -794,12 +824,16 @@ function lbd_communicate_user_insert(&$edit, $account, $category) {
   $langCode = 'en';
   $subjectFileName = _path_to_email_template($langCode) . "notification_user_created_subject-" . $langCode . ".email";
   $bodyFileName = _path_to_email_template($langCode) . "notification_user_created_body-" . $langCode . ".email";
+  $params["NOTTYPE"] = "notification_user_created";
 
   $subjectTemplate = file_get_contents($subjectFileName);
   $bodyTemplate = file_get_contents($bodyFileName);
 
   $subject = $subjectTemplate;
-  $body = str_replace("[USERID]", $edit['uid'], $bodyTemplate);
+
+  $params["USERID"] = $edit['uid'];
+  $body = $bodyTemplate;
+  _body_do_parameters($params, $body);
 
   $email_params['subject'] = $subject;
   $email_params['body'] = $body;
@@ -841,6 +875,8 @@ function lbd_communicate_cron() {
   $DOOTRIP_EMAIL_EXPIRED_PERIOD = 864000; // In seconds (10 days after expiration, send notification)
   $DOOTRIP_EMAIL_EXPIRED_REPETITIONS = 3; // Send three more notifications in the same interval (i.e., 10, 20, 30 days)
   $cron_last = variable_get('cron_last');
+  $params = array();
+  $params["NOTTYPE"] = "dootrip_expired";
 
   /*
    * Check for dootrips which have expired
@@ -918,19 +954,21 @@ function lbd_communicate_cron() {
     $subject = preg_replace('/^[0-9]+ /', '', trim($subject));
     $subject = preg_replace('/^- /', '', trim($subject));
 
-    $body = str_replace("[DOOTRIP_URL]", $base_url . '/node/' . $dootripNid, $bodyTemplate);
-    $body = str_replace("[CONTACT_EMAIL]", variable_get('site_mail', ''), $body);
+    $params["DOOTRIP_URL"] = url(drupal_get_path_alias('node/' . $dootripNid), array('absolute' => TRUE));
+    $params["DOOTRIP_URL"] = labdoo_lib_convert_html_link($params["DOOTRIP_URL"]);
+    $params["CONTACT_EMAIL"] = variable_get('site_mail', '');
+    $body = $bodyTemplate;
+    _body_do_parameters($params, $body);
 
     $email_params['subject'] = $subject;
     $email_params['body'] = $body;
 
     lbd_communicate_mail_send($email_params);
-
   }
 
   // Check for any batches of emails that were too large to be sent out 
   // and which were chopped into smaller batches. Any outstanding batch
-  // is saved in the cached under the cid 'cachedEmailParametersArray'
+  // is saved in the cache under the cid 'cachedEmailParametersArray'
   $cache = cache_get('cachedEmailParametersArray');
   if($cache && property_exists($cache, 'data')) {
     $cachedEmailParametersArray = $cache->data;
@@ -1157,6 +1195,7 @@ function lbd_contact_form_submit($form, &$form_state) {
   $reasons = _contact_reasons();
   $reasons_summary = _contact_reasons_summary();
   global $language;
+  $params = array();
 
   // Send an email to the user who submitted the form
   $langCode = $language->language;
@@ -1168,8 +1207,12 @@ function lbd_contact_form_submit($form, &$form_state) {
   $subjectTemplate = file_get_contents($subjectFileName);
   $bodyTemplate = file_get_contents($bodyFileName);
   $subject = $subjectTemplate;
-  $body = str_replace("[MESSAGE]", $message, $bodyTemplate);
-  $body = str_replace("[CONTACT_EMAIL]", variable_get('site_mail', ''), $body);
+
+  $params["NOTTYPE"] = "contact_form_submitted";
+  $params["MESSAGE"] = $message;
+  $params["CONTACT_EMAIL"] = variable_get('site_mail', '');
+  $body = $bodyTemplate;
+  _body_do_parameters($params, $body);
 
   $email_params = array();
   $email_params['type'] = "CONTACT_FORM_USER";
@@ -1231,6 +1274,86 @@ function lbd_contact_form_submit($form, &$form_state) {
     $form_state['redirect'] = '/../content/thank-you-'.$url_code;
   else  // There is no matching code, so just forward to the default thank you page.
     $form_state['redirect'] = 'content/thank-you';
+  return;
+}
+
+
+/*
+ * Resolve all the parameters in a message body
+ *
+ * @params $params An array with the key-value pairs needed to resolve the parameters 
+ * @params $body The message body
+ * 
+ */
+function _body_do_parameters($params, &$body) {
+  // Please add new fields to this array whenever a new
+  // language is added to the list of supported languages 
+  // in labdoo/translations/email-files
+  $supportedLanguages = array("ca" => "Catalan", 
+                              "de" => "Deutsch", 
+                              "en" => "English", 
+                              "es" => "Spanish", 
+                              "fr" => "French", 
+                              "nl" => "Nederlands", 
+                              "zh-hant" => "Chinese");
+
+  $urlParameters = "?" . drupal_http_build_query($params);
+
+  $htmlCode  = "<hr/>" . t("View this message in other languages:");
+  $htmlCode .= "<br/>";
+
+  foreach($supportedLanguages as $code => $language) {
+    $urlParameters .= "&" . "language" . "=" . $code;
+    $htmlCode .= "<a href='https://www.labdoo.org/content/notification-email$urlParameters'>$language</a> | "; 
+  }
+  $htmlCode = substr($htmlCode, 0, -2);
+  $htmlCode .= "<hr/>";
+
+  $body = str_replace("[LANGUAGE_MENU]", $htmlCode, $body);
+
+  foreach($params as $key => $value) {
+    $body = str_replace("[" . $key . "]", $value, $body);
+  }
+  return;
+}
+
+
+/**
+ * Print an email notification. This is used in the page
+ * https://www.labdoo.org/content/notification-email 
+ *
+ */
+function lbd_communicate_print_notification_email() {
+  $params = drupal_get_query_parameters();
+
+  if(!array_key_exists("NOTTYPE", $params)) {
+    drupal_set_message(t("Missing notification type"));
+    return;
+  }
+
+  $langCode = "";
+  if(array_key_exists("language", $params)) 
+    $langCode = $params["language"];
+  if(!file_exists(_path_to_email_template($langCode) . $params["NOTTYPE"] . "_subject-" . $langCode . ".email")) 
+    $langCode = 'en';
+
+  if(!file_exists(_path_to_email_template($langCode) . $params["NOTTYPE"] . "_subject-" . $langCode . ".email")) { 
+     drupal_set_message("Incorrect notification type");
+    return;
+  }
+
+  $subjectFileName = _path_to_email_template($langCode) . $params["NOTTYPE"] . "_subject-" . $langCode . ".email";
+  $bodyFileName = _path_to_email_template($langCode) . $params["NOTTYPE"] . "_body-" . $langCode . ".email";
+  $subject = file_get_contents($subjectFileName);
+  $body = file_get_contents($bodyFileName);
+
+  foreach($params as $key => $value) 
+    $subject = str_replace("[" . $key . "]", $value, $subject);
+  _body_do_parameters($params, $body);
+
+  print(nl2br('<strong><font size="4" color="gray">' . $subject . "</font></strong><br/>"));
+  print(nl2br($body));
+
   return;
 }
 
