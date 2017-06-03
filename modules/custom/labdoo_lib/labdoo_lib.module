@@ -41,8 +41,11 @@ function labdoo_country_code2name($countryCode) {
  * This function can be used to generate cloudtags with http://worditout.com/word-cloud/make-a-new-one
  *
  */
-function labdoo_list_all_countries() {
-  $query = "SELECT country FROM location";
+function labdoo_list_all_countries($unique=False) {
+  if($unique)
+    $query = "SELECT DISTINCT country FROM location";
+  else
+    $query = "SELECT country FROM location";
   $countries = db_query($query);
   foreach($countries as $country) {
     # Substitute blank spaces with sign "~" so that countries with multiple words can be processed together
@@ -2519,6 +2522,12 @@ function labdoo_render_language_switch() {
  *
  */
 function labdoo_render_macro_stats($type, $addTitle=False) {
+  global $language;
+  $defaultLanguage = language_default();
+  $langCode = "";
+  if($language->language != $defaultLanguage->language)
+    $langCode = "/" . $language->language;
+
   $numLaptopsNeeded = labdoo_get_demand(NULL, NULL, FALSE); 
   $numLaptopsDelivered = labdoo_getnum_doojects(NULL, NULL, 'S4');
   $numLaptopsTransit = labdoo_getnum_doojects(NULL, NULL, 'T1') + labdoo_getnum_doojects(NULL, NULL, 'S3'); 
@@ -2566,20 +2575,20 @@ function labdoo_render_macro_stats($type, $addTitle=False) {
 
   $code = $header;
   $code = $code . $statsTitle . "
-<span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsTagged</span>
-<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Dootronics tagged') . "</span>$separator
-<span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numLaptopsDelivered</span>
-<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Delivered') . "</span>$separator
-<span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numEdoovillages</span>
-<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Schools') . "</span>$separator
-<span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numStudents</span>
-<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Students') . "</span>$separator
-<span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numHubs</span>
-<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Hubs') . "</span>$separator
-<span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$co2SavingsTotal</span>
-<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Kg CO2 saved') . "</span>$separator
-<span style=\"font-size: 22px; align: left; line-height: 30px; color: #ff0000\">$numCountries</span>
-<span style=\"font-size: 12px; align: left; line-height: 30px; \">" . t('Countries') . "</span>$separator
+<span style=\"font-size: 22px; align: left; line-height: 30px; \"><a href=$langCode/content/dootronics-dashboard style=\"color: #ff0000\">$numLaptopsTagged</a></span>
+<span style=\"font-size: 12px; align: left; line-height: 30px; \"><a href=$langCode/content/dootronics-dashboard style=\"color: #333333\">" . t('Dootronics tagged') . "</a></span>$separator
+<span style=\"font-size: 22px; align: left; line-height: 30px; \"><a href=$langCode/content/dootronics-dashboard style=\"color: #ff0000\">$numLaptopsDelivered</a></span>
+<span style=\"font-size: 12px; align: left; line-height: 30px; \"><a href=$langCode/content/dootronics-dashboard style=\"color: #333333\">" . t('Delivered') . "</a></span>$separator
+<span style=\"font-size: 22px; align: left; line-height: 30px; \"><a href=$langCode/content/edoovillages-dashboard style=\"color: #ff0000\">$numEdoovillages</a></span>
+<span style=\"font-size: 12px; align: left; line-height: 30px; \"><a href=$langCode/content/edoovillages-dashboard style=\"color: #333333\">" . t('Schools') . "</a></span>$separator
+<span style=\"font-size: 22px; align: left; line-height: 30px; \"><a href=$langCode/content/edoovillages-dashboard style=\"color: #ff0000\">$numStudents</a></span>
+<span style=\"font-size: 12px; align: left; line-height: 30px; \"><a href=$langCode/content/edoovillages-dashboard style=\"color: #333333\">" . t('Students') . "</a></span>$separator
+<span style=\"font-size: 22px; align: left; line-height: 30px; \"><a href=$langCode/content/hubs-dashboard style=\"color: #ff0000\">$numHubs</a></span>
+<span style=\"font-size: 12px; align: left; line-height: 30px; \"><a href=$langCode/content/hubs-dashboard style=\"color: #333333\">" . t('Hubs') . "</a></span>$separator
+<span style=\"font-size: 22px; align: left; line-height: 30px; \"><a href=$langCode/content/dootronics-dashboard style=\"color: #ff0000\">$co2SavingsTotal</a></span>
+<span style=\"font-size: 12px; align: left; line-height: 30px; \"><a href=$langCode/content/dootronics-dashboard style=\"color: #333333\">" . t('Kg CO2 saved') . "</a></span>$separator
+<span style=\"font-size: 22px; align: left; line-height: 30px; \"><a href=$langCode/content/dootronics-dashboard style=\"color: #ff0000\">$numCountries</a></span>
+<span style=\"font-size: 12px; align: left; line-height: 30px; \"><a href=$langCode/content/dootronics-dashboard style=\"color: #333333\">" . t('Countries') . "</a></span>$separator
 $trailer
   ";
 
