@@ -5,7 +5,8 @@
 * Installation in development mode
 
   The recommended way of installation is to build a new server from
-  scratch, inside a chroot environment.
+  scratch, inside a chroot environment. The following instructions
+  have been verified to work on Ubuntu.
 
   + Get a copy of the project from GitHub:
     #+BEGIN_EXAMPLE
