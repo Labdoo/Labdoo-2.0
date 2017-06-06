@@ -286,13 +286,13 @@ function labdoo_objects_strongarm() {
           'weight' => '1',
         ),
         'locations' => array(
-          'weight' => '20',
+          'weight' => '21',
         ),
       ),
       'display' => array(
         'sharethis' => array(
           'default' => array(
-            'weight' => '18',
+            'weight' => '19',
             'visible' => TRUE,
           ),
         ),
