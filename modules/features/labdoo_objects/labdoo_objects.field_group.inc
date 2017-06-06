@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function labdoo_objects_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -23,19 +23,18 @@ function labdoo_objects_field_group_info() {
     'label' => 'Additional Information',
     'weight' => '2',
     'children' => array(
-      0 => 'field_additional_notes',
-      1 => 'field_amp_hours',
-      2 => 'field_battery_duration',
-      3 => 'field_battery_watt_hours',
-      4 => 'field_cpu',
-      5 => 'field_cpu_type',
-      6 => 'field_current_operating_system',
-      7 => 'field_dooject_weight',
-      8 => 'field_hard_drive',
-      9 => 'field_keyboard',
-      10 => 'field_memory',
-      11 => 'field_tagger',
-      12 => 'field_volts',
+      0 => 'field_amp_hours',
+      1 => 'field_battery_duration',
+      2 => 'field_battery_watt_hours',
+      3 => 'field_cpu',
+      4 => 'field_cpu_type',
+      5 => 'field_current_operating_system',
+      6 => 'field_dooject_weight',
+      7 => 'field_hard_drive',
+      8 => 'field_keyboard',
+      9 => 'field_memory',
+      10 => 'field_tagger',
+      11 => 'field_volts',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -47,7 +46,7 @@ function labdoo_objects_field_group_info() {
       ),
     ),
   );
-  $export['group_additional_information|node|laptop|default'] = $field_group;
+  $field_groups['group_additional_information|node|laptop|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -93,7 +92,7 @@ function labdoo_objects_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_additional_information|node|laptop|form'] = $field_group;
+  $field_groups['group_additional_information|node|laptop|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -108,15 +107,16 @@ function labdoo_objects_field_group_info() {
     'label' => 'Basic Information',
     'weight' => '1',
     'children' => array(
-      0 => 'field_device_type',
-      1 => 'field_dootrips',
-      2 => 'field_edoovillage_destination',
-      3 => 'field_hub_laptop',
-      4 => 'field_manager',
-      5 => 'field_model',
-      6 => 'field_picture',
-      7 => 'field_serial_number',
-      8 => 'field_status',
+      0 => 'field_additional_notes',
+      1 => 'field_device_type',
+      2 => 'field_dootrips',
+      3 => 'field_edoovillage_destination',
+      4 => 'field_hub_laptop',
+      5 => 'field_manager',
+      6 => 'field_model',
+      7 => 'field_picture',
+      8 => 'field_serial_number',
+      9 => 'field_status',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -128,7 +128,7 @@ function labdoo_objects_field_group_info() {
       ),
     ),
   );
-  $export['group_basic_information|node|laptop|default'] = $field_group;
+  $field_groups['group_basic_information|node|laptop|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -167,7 +167,7 @@ function labdoo_objects_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_basic_information|node|laptop|form'] = $field_group;
+  $field_groups['group_basic_information|node|laptop|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -193,7 +193,7 @@ function labdoo_objects_field_group_info() {
       ),
     ),
   );
-  $export['group_laptop_data|node|laptop|form'] = $field_group;
+  $field_groups['group_laptop_data|node|laptop|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -219,7 +219,14 @@ function labdoo_objects_field_group_info() {
       ),
     ),
   );
-  $export['group_laptop_information|node|laptop|default'] = $field_group;
+  $field_groups['group_laptop_information|node|laptop|default'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Additional Information');
+  t('Basic Information');
+  t('Data');
+  t('Laptop Information');
+
+  return $field_groups;
 }

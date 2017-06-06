@@ -1126,11 +1126,12 @@ $display_output = $entity_field_item[\'value\'];',
     'field_instance' => array(
       'bundle' => 'dootrip',
       'default_value' => NULL,
+      'default_value_function' => '',
       'deleted' => '0',
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'inline',
+          'label' => 'above',
           'module' => 'entityreference',
           'settings' => array(
             'link' => FALSE,
@@ -1154,16 +1155,22 @@ $display_output = $entity_field_item[\'value\'];',
       'entity_type' => 'node',
       'field_name' => 'field_dootrip_hub',
       'label' => 'Hub',
-      'required' => FALSE,
+      'required' => 0,
       'settings' => array(
+        'behaviors' => array(
+          'prepopulate' => array(
+            'status' => 0,
+          ),
+        ),
         'user_register_form' => FALSE,
       ),
       'widget' => array(
+        'active' => 1,
         'module' => 'entityreference',
         'settings' => array(
           'match_operator' => 'CONTAINS',
           'path' => '',
-          'size' => 60,
+          'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
         'weight' => '11',
@@ -4960,7 +4967,7 @@ See <a target=\'_blank\' href="../../../content/list-countries-voltages-and-powe
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '18',
+          'weight' => '11',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -6388,7 +6395,7 @@ See <a target=\'_blank\' href="../../../content/list-countries-voltages-and-powe
         ),
       ),
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Check this box if you want a Labdoo volunteer to pick up the laptop from your location. <a href="../../content/pick-me" target="_blank">[Help]</a>',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -6913,6 +6920,7 @@ See <a target=\'_blank\' href="../../../content/list-countries-voltages-and-powe
   t('Brand name and model');
   t('CO2 emissions savings');
   t('CPU speed (Example: 1200 MHz)');
+  t('Check this box if you want a Labdoo volunteer to pick up the laptop from your location. <a href="../../content/pick-me" target="_blank">[Help]</a>');
   t('Check this box if you would like other users who are managing schools in the destination country to receive an email notification. It is recommended that you don\'t set this option if you already have dootronics (laptops, tablets, ...) assigned to your trip. If you still don\'t have dootronics assigned to your trip, then you can select this option so that these other users can receive a notification about your trip and assign dootronics that you can carry. See the <a href="../../content/automatic-notifications-and-managing-your-dootrips" target="_blank">wiki page on dootrips notifications for more details</a>.');
   t('Comments');
   t('Coordinating hub(s)');
