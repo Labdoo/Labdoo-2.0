@@ -170,11 +170,17 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
     $objects[$objectNid]['ID'] = $node->title; 
 
     // Extract Hub Field 
-    $objects[$objectNid]['hub'] = lbd_nodeid2title(labdoo_lib_get_field($node, 'field_hub_laptop', 'node', 'target_id'));
+    $hubsList = labdoo_lib_get_field_all($node, 'field_hub_laptop', 'node', 'target_id');
+    $hubsListStr = "";
+    foreach($hubsList as $hubNodeId) { 
+      $hubsListStr .= "<a href='../node/$hubNodeId' target='_blank'>" . lbd_nodeid2title($hubNodeId) . "</a> | ";
+    }
+    $objects[$objectNid]['hub'] = substr($hubsListStr, 0, -3);
 
     // Extract Edoovillage Field 
+    $edoovillageNodeId = labdoo_lib_get_field($node, 'field_edoovillage_destination', 'node', 'target_id');
     if(!empty($node->field_edoovillage_destination)) 
-      $objects[$objectNid]['edoovillage'] = lbd_nodeid2title(labdoo_lib_get_field($node, 'field_edoovillage_destination', 'node', 'target_id'));
+      $objects[$objectNid]['edoovillage'] = "<a href='../node/$edoovillageNodeId' target='_blank'>" . lbd_nodeid2title($edoovillageNodeId) . "</a>"; 
     else
       $objects[$objectNid]['edoovillage'] = "Not assigned";
 
