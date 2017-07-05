@@ -954,6 +954,7 @@ function lbd_communicate_cron() {
     $subject = preg_replace('/^[0-9]+ /', '', trim($subject));
     $subject = preg_replace('/^- /', '', trim($subject));
 
+    $params["DOOTRIP_TITLE"] = $dootripTitle;
     $params["DOOTRIP_URL"] = url(drupal_get_path_alias('node/' . $dootripNid), array('absolute' => TRUE));
     $params["DOOTRIP_URL"] = labdoo_lib_convert_html_link($params["DOOTRIP_URL"]);
     $params["CONTACT_EMAIL"] = variable_get('site_mail', '');
@@ -1290,12 +1291,12 @@ function _body_do_parameters($params, &$body) {
   // language is added to the list of supported languages 
   // in labdoo/translations/email-files
   $supportedLanguages = array("ca" => "Catalan", 
+                              "zh-hant" => "Chinese",
                               "de" => "Deutsch", 
                               "en" => "English", 
-                              "es" => "Spanish", 
                               "fr" => "French", 
                               "nl" => "Nederlands", 
-                              "zh-hant" => "Chinese");
+                              "es" => "Spanish");
 
   $urlParameters = "?" . drupal_http_build_query($params);
 

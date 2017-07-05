@@ -4218,8 +4218,9 @@ function labdoo_render_object_menu() {
               t("Edit this $objectString") . "</a></p> ";
 
   // Revisions
-  $code .= "<p><a href='node/$nodeId/revisions'><img src='/profiles/labdoo/files/pictures/revisions-icon.png' width='25px'/>&nbsp;" . 
-            t("Review changes") . "</a></p> ";
+  if(count(node_revision_list($nodeObj)) > 1)
+    $code .= "<p><a href='node/$nodeId/revisions'><img src='/profiles/labdoo/files/pictures/revisions-icon.png' width='25px'/>&nbsp;" . 
+              t("Review changes") . "</a></p> ";
 
   // Clone
   if(in_array('superhub manager', $userRoles) || in_array('administrator', $userRoles)) 

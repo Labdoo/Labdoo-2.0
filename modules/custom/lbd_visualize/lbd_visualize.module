@@ -173,16 +173,16 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
     $hubsList = labdoo_lib_get_field_all($node, 'field_hub_laptop', 'node', 'target_id');
     $hubsListStr = "";
     foreach($hubsList as $hubNodeId) { 
-      $hubsListStr .= "<a href='../node/$hubNodeId' target='_blank'>" . lbd_nodeid2title($hubNodeId) . "</a> | ";
+      $hubsListStr .= lbd_nodeid2title($hubNodeId) . " | ";
     }
     $objects[$objectNid]['hub'] = substr($hubsListStr, 0, -3);
 
     // Extract Edoovillage Field 
     $edoovillageNodeId = labdoo_lib_get_field($node, 'field_edoovillage_destination', 'node', 'target_id');
     if(!empty($node->field_edoovillage_destination)) 
-      $objects[$objectNid]['edoovillage'] = "<a href='../node/$edoovillageNodeId' target='_blank'>" . lbd_nodeid2title($edoovillageNodeId) . "</a>"; 
+      $objects[$objectNid]['edoovillage'] = lbd_nodeid2title($edoovillageNodeId); 
     else
-      $objects[$objectNid]['edoovillage'] = "Not assigned";
+      $objects[$objectNid]['edoovillage'] = "";
 
     // Extract Status Field 
     $objects[$objectNid]['status'] = $objectstatus = labdoo_lib_get_field($node, 'field_status', 'node', 'value');
@@ -231,17 +231,15 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
 
     // Dootrips field 
     $dootripsFieldList = field_get_items('node', $node, 'field_dootrips'); 
-    $dootripsStrList = "";
+    $objects[$objectNid]['dootripId'] = "";
     if(!empty($dootripsFieldList)) {
+      $dootripsStrList = "";
       foreach($dootripsFieldList as $key => $dootripNode) {
-        $dstLoaded = node_load($dootripNode['target_id']);
-        if($dootripsStrList == "")
-          $dootripsStrList = "#" . lbd_extract_dootrip_id($dstLoaded->title);  
-        else
-          $dootripsStrList = $dootripsStrList . ", " . "#" . lbd_extract_dootrip_id($dstLoaded->title);  
+        $dootripNodeId = $dootripNode['target_id'];
+        $dootripsStrList .= "#" . lbd_extract_dootrip_id(lbd_nodeid2title($dootripNodeId)) . " ";
       }
+      $objects[$objectNid]['dootripId'] = substr($dootripsStrList, 0, -1);
     }
-    $objects[$objectNid]['dootripId'] = $dootripsStrList; 
 
     // Extract Model Field 
     $objects[$objectNid]['model'] = labdoo_lib_get_field($node, 'field_model', 'node', 'value');
@@ -418,8 +416,12 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
 
     // Extract hubs 
     $objects[$objectNid]['hub'] = "";
-    foreach(field_get_items('node', $node, 'field_hub') as $item)
-      $objects[$objectNid]['hub'] = $objects[$objectNid]['hub'] . " " . lbd_nodeid2title($item['target_id']);
+    $hubsListStr = "";
+    foreach(field_get_items('node', $node, 'field_hub') as $item) {
+      $hubNodeId = $item['target_id'];
+      $hubsListStr .= lbd_nodeid2title($hubNodeId) . " | ";
+    }
+    $objects[$objectNid]['hub'] = substr($hubsListStr, 0, -3);
 
     // Extract needed field 
     $objects[$objectNid]['needed'] = $needed = labdoo_lib_get_field($node, 'field_number_of_laptops_needed', 'node', 'value');
@@ -1119,12 +1121,6 @@ var stringFilter = new google.visualization.ControlWrapper({
                    });
   ");
 
-  // For the dootrips dashboard, present in descending alphabetic order.
-  if($objectsType == 'dootrip')
-    $sortAscValue = 'false';
-  else
-    $sortAscValue = 'true';
-
   print("
 
 /*
@@ -1140,7 +1136,8 @@ var table = new google.visualization.ChartWrapper({
                 'page': 'enable',
                 'pageSize' : 50,
                 'sortColumn' : 0,
-                'sortAscending' : " . $sortAscValue . "
+                'sortAscending' : false,
+                'sort' : 'enable'
               },
               view: {columns: [0, 1, 2, 3, 4]} 
             });

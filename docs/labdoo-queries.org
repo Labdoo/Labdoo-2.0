@@ -8,6 +8,8 @@ The following are some of the most commonly used SQL queries.
     mysql> SELECT DISTINCT country FROM location WHERE lid IN (SELECT lid FROM location_instance WHERE nid!=0 ORDER by nid);
     #+END_EXAMPLE
 
+  - Note: you can also use the php function labdoo_list_all_countries() to print all countries and cities.
+
   - To get the same list for cities instead of countries:
 
     #+BEGIN_EXAMPLE
