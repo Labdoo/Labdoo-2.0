@@ -90,6 +90,10 @@ function _partition_email_params($emailString) {
 function lbd_communicate_mail_send($email_params) {
   global $user;
 
+  // Remove email address duplicates
+  if(array_key_exists('headers', $email_params) && array_key_exists('Bcc', $email_params['headers']))
+    $email_params['headers']['Bcc'] = implode(',', array_unique(explode(',', $email_params['headers']['Bcc'])));
+
   if(array_key_exists('headers', $email_params) && array_key_exists('Bcc', $email_params['headers'])) {
     // Throttle the amount of email sent out to a maximum of LBD_COMM_MAX_EMAILS_BATCH emails
     // and have the rest be processed in the next cron job.
@@ -311,10 +315,9 @@ function _email_laptop_event($node) {
   $params["STATUS"] = $statusLabels[$newStatus] . $extraInfo;
   $params["LAPTOP_URL"] = url(drupal_get_path_alias('content/'. $laptopId), array('absolute' => TRUE));
   $params["LAPTOP_URL"] = labdoo_lib_convert_html_link($params["LAPTOP_URL"]);
-  $params["EDOOVILLAGE_URL"] = url(drupal_get_path_alias('node/'. $edoovillageNid), array('absolute' => TRUE));
-  $params["EDOOVILLAGE_URL"] = labdoo_lib_convert_html_link($params["EDOOVILLAGE_URL"]);
+  $params["EDOOVILLAGE_URL"] = labdoo_lib_generate_html_link_from_nid($edoovillageNid, lbd_nodeid2title($edoovillageNid));
   $params["CONTACT_EMAIL"] = variable_get('site_mail', '');
-  $params["DASHBOARD_URL"] = $base_url . '/content/dashboard-slider';
+  $params["DASHBOARD_URL"] = $base_url . '/content/getting-started';
   $params["DASHBOARD_URL"] = labdoo_lib_convert_html_link($params["DASHBOARD_URL"]);
   $body = $bodyTemplate;
   _body_do_parameters($params, $body);
@@ -420,10 +423,9 @@ function _email_dootrip_event($node, $eventType) {
   $subject = preg_replace('/^\[Labdoo\] - /', '[Labdoo] ', trim($subject));
 
   $params["DOOTRIP_TITLE"] = $dootripTitle;
-  $params["DOOTRIP_URL"] = url(drupal_get_path_alias('node/' . $dootripNid), array('absolute' => TRUE));
-  $params["DOOTRIP_URL"] = labdoo_lib_convert_html_link($params["DOOTRIP_URL"]);
+  $params["DOOTRIP_URL"] = labdoo_lib_generate_html_link_from_nid($dootripNid, $dootripTitle); 
   $params["CONTACT_EMAIL"] = variable_get('site_mail', '');
-  $params["DASHBOARD_URL"] = $base_url . '/content/dashboard-slider';
+  $params["DASHBOARD_URL"] = $base_url . '/content/getting-started';
   $params["DASHBOARD_URL"] = labdoo_lib_convert_html_link($params["DASHBOARD_URL"]);
   $body = $bodyTemplate;
   _body_do_parameters($params, $body);
@@ -451,10 +453,9 @@ function _email_dootrip_event($node, $eventType) {
   $bodyTemplate = file_get_contents($bodyFileName);
 
   $params["NOTTYPE"] = "dootrip_announce";
-  $params["DOOTRIP_URL"] = url(drupal_get_path_alias('node/' . $dootripNid), array('absolute' => TRUE));
-  $params["DOOTRIP_URL"] = labdoo_lib_convert_html_link($params["DOOTRIP_URL"]);
+  $params["DOOTRIP_URL"] = labdoo_lib_generate_html_link_from_nid($dootripNid, $dootripTitle); 
   $params["CONTACT_EMAIL"] = variable_get('site_mail', '');
-  $params["DASHBOARD_URL"] = $base_url . '/content/dashboard-slider';
+  $params["DASHBOARD_URL"] = $base_url . '/content/getting-started';
   $params["DASHBOARD_URL"] = labdoo_lib_convert_html_link($params["DASHBOARD_URL"]);
   $body = $bodyTemplate;
   _body_do_parameters($params, $body);
@@ -534,8 +535,9 @@ function _email_team_event($node, $comment = NULL) {
   }
   $activityTitle = $node->title;
   $teamId = labdoo_lib_get_field($node, 'og_group_ref', 'node', 'target_id');
-  $teamIdAll = labdoo_lib_get_field_all($node, 'og_group_ref', 'node', 'target_id') +
-               labdoo_lib_get_field_all($node, 'field_additional_teams', 'node', 'target_id'); 
+  $teamIdAll = labdoo_lib_get_field_all($node, 'og_group_ref', 'node', 'target_id');
+  if(property_exists($node, 'field_additional_teams'))
+    $teamIdAll = array_merge($teamIdAll, labdoo_lib_get_field_all($node, 'field_additional_teams', 'node', 'target_id')); 
 
   $team = node_load($teamId);
   $teamName = $team->title;
@@ -589,6 +591,7 @@ function _email_team_event($node, $comment = NULL) {
       $emailsList = $emailsList . ", " . $userObj->mail;
     }
   }
+
   // Add additional users based on the 'send to' field
   if(property_exists($node, $sendToFieldName)) {
     if($node->$sendToFieldName) {
@@ -765,7 +768,7 @@ function lbd_communicate_user_insert(&$edit, $account, $category) {
   $subject = $subjectTemplate;
 
   $params["LABDOOUSER"] = $edit['name'];
-  $params["DASHBOARD_URL"] = $base_url . '/content/dashboard-slider';
+  $params["DASHBOARD_URL"] = $base_url . '/content/getting-started';
   $body = $bodyTemplate;
   _body_do_parameters($params, $body);
 
@@ -955,8 +958,7 @@ function lbd_communicate_cron() {
     $subject = preg_replace('/^- /', '', trim($subject));
 
     $params["DOOTRIP_TITLE"] = $dootripTitle;
-    $params["DOOTRIP_URL"] = url(drupal_get_path_alias('node/' . $dootripNid), array('absolute' => TRUE));
-    $params["DOOTRIP_URL"] = labdoo_lib_convert_html_link($params["DOOTRIP_URL"]);
+    $params["DOOTRIP_URL"] = labdoo_lib_generate_html_link_from_nid($dootripNid, $dootripTitle); 
     $params["CONTACT_EMAIL"] = variable_get('site_mail', '');
     $body = $bodyTemplate;
     _body_do_parameters($params, $body);

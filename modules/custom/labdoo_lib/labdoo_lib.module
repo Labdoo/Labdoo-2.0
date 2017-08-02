@@ -2120,7 +2120,6 @@ function labdoo_lib_node_access($node, $op, $account) {
   return NODE_ACCESS_IGNORE;
 }
 
-
 /**
  * Implements hook_node_view
  *
@@ -2128,6 +2127,8 @@ function labdoo_lib_node_access($node, $op, $account) {
 function labdoo_lib_node_view($node, $view_mode) {
   global $language;
   global $user;
+
+  $path = drupal_get_path_alias(current_path());
 
   // TODO DE-COLORBOX: temporary fix. This forces a redirect of all photo galleries in German language
   // to the default language English, because there is a bug that prevents them from loading the 
@@ -2137,8 +2138,26 @@ function labdoo_lib_node_view($node, $view_mode) {
   // See also https://www.labdoo.org/content/slideshow-feature-does-not-work-german-de-language
   if($language->language == 'de' && $node->type == 'node_gallery_gallery' && $view_mode == 'full' && arg(0) == 'node') {
     $options = array('query' => array('lan' => 'de'));
-    drupal_goto('../' . drupal_get_path_alias("node/" .  $node->nid), $options);
+    drupal_goto('../' . $path, $options);
   }
+
+  // Add to this table any necessary redirects.
+  // Follow the examples to add new entries.
+  $labdoo_lib_page_redirects = [
+    "ca/content/about-labdoo" => "content/sobre-labdoo",  // per language redirect 
+    "de/content/about-labdoo" => "content/zu-labdoo",
+    "content/zu-labdoo" => "LabdooD"                      // redirect for all languages 
+  ];
+
+  // Perform any page redirect if needed
+  if($language->language == "en")
+    $extended_path = $path;
+  else
+    $extended_path = $language->language . "/" . $path;
+  if(array_key_exists($extended_path, $labdoo_lib_page_redirects)) 
+    drupal_goto($labdoo_lib_page_redirects[$extended_path]);
+  else if(array_key_exists($path, $labdoo_lib_page_redirects)) 
+    drupal_goto($labdoo_lib_page_redirects[$path]);  
 
   if($node->type == 'laptop') {
     $method = '';
@@ -2169,7 +2188,6 @@ function labdoo_lib_node_view($node, $view_mode) {
   // Handle page redirects here
 
   $languages = language_list();
-  $path = drupal_get_path_alias(current_path());
 
   if(($node->type == 'edoovillage') && (strcmp($path, "edoovillage") != 0) && ($view_mode == 'full')) {
     drupal_goto('edoovillage', array('language' => $languages[$language->language], 'query' => array('e' => $node->nid)));
@@ -4336,11 +4354,31 @@ function labdoo_lib_cron() {
 /*
  * Converts a string into an HTML link
  * 
- * @param string The string
- * @return The html code
+ * @param string $link 
+ *   The link 
+ * @return string
+ *   The HTML code
  *        
  */
 function labdoo_lib_convert_html_link($link) {
   return "<a href=$link>" . $link . "</a>";
+}
+
+
+/*
+ * Generates an HTML link of a node from its ID
+ * 
+ * @param integer $nid
+ *   The node ID 
+ * @param string $text 
+ *   The text to display in the HTML link 
+ * @return string
+ *   The HTML code of the link
+ *        
+ */
+
+function labdoo_lib_generate_html_link_from_nid($nid, $text) {
+  $url = url('node/'. $nid, array('absolute' => TRUE, 'alias' => TRUE)); 
+  return "<a href=$url>" . $text . "</a>";
 }
 

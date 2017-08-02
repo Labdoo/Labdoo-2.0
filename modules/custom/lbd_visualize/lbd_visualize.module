@@ -1134,7 +1134,7 @@ var table = new google.visualization.ChartWrapper({
                 'allowHtml': true, 
                 'showRowNumber': true,
                 'page': 'enable',
-                'pageSize' : 50,
+                'pageSize' : 250,
                 'sortColumn' : 0,
                 'sortAscending' : false,
                 'sort' : 'enable'
@@ -1527,7 +1527,10 @@ function lbd_display_slider_edoovilage_doojects($edoovillageId = NULL) {
   if($loadedNode->type != "edoovillage")
     return;
 
-  print("<a href='content/about-dootronics' target='_blank'>[Click here for help about dootronics]</a><br/><hr/>");
+  print("<a href='content/about-dootronics' target='_blank'>" . t("[Click here for help about dootronics]") . "</a><br/><hr/>");
+  print("<a href='content/dootronics-dashboard?e=$edoovillageId' target='_blank'>" . 
+        t("[Click here to see in detail all the dootronics for this edoovillage]") . "</a><br/><hr/>");
+
 
   // Render the download button
   $viewResult = views_get_view_result('slider_dashboard', 'block_edoovillage_doojects', $edoovillageId);
@@ -1560,6 +1563,10 @@ function lbd_display_slider_edoovilage_metrics($edoovillageId) {
     return;
 
   print("<a href='content/visualization-dashboards' target='_blank'>[Click here to learn more about visualizing metrics]</a><br/><hr/>");
+  print("<a href='content/dootronics-dashboard?e=$edoovillageId' target='_blank'>" . 
+        t("[Click here to expand the results of this dashboard]") . "</a><br/><hr/>");
+
+
   lbd_display_dashboard_doojects(NULL, NULL, $edoovillageId, NULL, FALSE); 
 
   return;
@@ -1804,7 +1811,10 @@ function lbd_display_slider_hub_edoovillages($hubId) {
   if($loadedNode->type != "hub")
     return;
 
-  print("<a href='content/managing-edoovillages' target='_blank'>[Click here for help about edoovillages]</a><br/><hr/>");
+  print("<a href='content/managing-edoovillages' target='_blank'>" . t("[Click here for help about edoovillages]") . "</a><br/><hr/>");
+  print("<a href='content/edoovillages-dashboard?h=$hubId' target='_blank'>" .  
+        t("[Click here to see in detail all the edoovillages managed by this hub]") . "</a><br/><hr/>");
+
 
   // Render the download button
   $viewResult = views_get_view_result('slider_dashboard', 'block_hub_edoovillages', $hubId);
@@ -1843,7 +1853,9 @@ function lbd_display_slider_hub_doojects($hubId) {
 
   $block = module_invoke('views', 'block_view', 'slider_dashboard-block_hub_doojects');
 
-  print("<a href='content/about-dootronics' target='_blank'>[Click here for help about dootronics]</a><br/><hr/>");
+  print("<a href='content/about-dootronics' target='_blank'>" . t("[Click here for help about dootronics]") . "</a><br/><hr/>");
+  print("<a href='content/dootronics-dashboard?h=$hubId' target='_blank'>" . 
+        t("[Click here to see in detail all the dootronics for this hub]") . "</a><br/><hr/>");
 
   // Render the download button
   $viewResult = views_get_view_result('slider_dashboard', 'block_hub_doojects', $hubId);
@@ -1875,6 +1887,8 @@ function lbd_display_slider_hub_metrics($hubId) {
     return;
 
   print("<a href='content/visualization-dashboards' target='_blank'>[Click here to learn more about visualizing metrics]</a><br/><hr/>");
+  print("<a href='content/dootronics-dashboard?h=$hubId' target='_blank'>" . 
+        t("[Click here to expand the results of this dashboard]") . "</a><br/><hr/>");
   lbd_display_dashboard_doojects(NULL, $hubId, NULL, NULL, FALSE); 
   return;
 }
