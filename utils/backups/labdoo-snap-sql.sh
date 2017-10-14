@@ -30,3 +30,5 @@ sqldumpname='lbd-snap-sql-'$(date +"%Y%m%d").sql
 /usr/bin/drush @lbd sql-dump > /lbd-snap-sql/$sqldumpname
 /usr/bin/drush @lbd cron
 
+# Remove backups older than 5 days
+/usr/bin/find /lbd-snap-sql/ -mtime +5 -exec rm {} \;
