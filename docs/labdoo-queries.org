@@ -65,6 +65,8 @@ The following are some of the most commonly used drush queries.
 
     #+BEGIN_EXAMPLE
     # drush php-eval "print_r(cache_get('cachedEmailParametersArray'));" 
+    # # Count the number of remaining emails addresses
+    # drush php-eval "print_r(cache_get('cachedEmailParametersArray'));" | grep @ | sed 's/, /\n/g' | wc -l
     #+END_EXAMPLE
 
   - To remove the top email batch set from the cache:

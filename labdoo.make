@@ -85,13 +85,13 @@ projects[publishcontent] = 1.3
 projects[view_unpublished] = 1.2
 projects[menu_view_unpublished] = 1.0-beta3
 projects[role_delegation] = 1.1 
-projects[legal] = 1.5 
+projects[legal] = 1.7 
 projects[google_adwords] = 2.1 
 
 ;--------------------
 ; Performance
 ;--------------------
-projects[boost] = 1.0
+projects[boost] = 1.2
 projects[memcache] = 1.2
 
 ;--------------------
@@ -131,7 +131,7 @@ projects[email] = 1.3
 projects[mailsystem] = 2.34
 projects[mimemail] = 1.0-beta4
 projects[reroute_email] = 1.2
-projects[smtp] = 1.2
+projects[smtp] = 1.7
 ;projects[phpmailer] = 3.x-dev
 projects[phpmailer][download][revision] = 8f7c632
 projects[phpmailer][download][branch] = 7.x-3.x
@@ -156,7 +156,7 @@ projects[oauth2_loginprovider] = 1.x-dev
 ;--------------------
 ; Labdoo teams
 ;--------------------
-projects[og] = 2.7
+projects[og] = 2.9
 projects[og_extras] = 1.1
 projects[stringoverrides] = 1.8 
 projects[eva] = 1.2
@@ -176,7 +176,7 @@ projects[rules] = 2.9
 projects[pathauto] = 1.3
 projects[subpathauto] = 1.3
 projects[entityreference] = 1.1
-projects[field_group] = 1.4
+projects[field_group] = 1.5
 projects[date] = 2.9
 projects[nodeaccess_userreference] = 3.10
 projects[conditional_fields] = 3.0-alpha2

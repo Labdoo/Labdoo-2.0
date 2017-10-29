@@ -1234,7 +1234,7 @@ function lbd_contact_form_submit($form, &$form_state) {
       "United States" => "wendy.lu@labdoo.org, contact@labdoo.org", 
       "Switzerland" => "zuerich-hub@labdoo.org, contact@labdoo.org", 
       "Taiwan" => "wendy.lu@labdoo.org, contact@labdoo.org",
-      "Austria" => "Labdoo-DACH@Labdoo.org, contact@labdoo.org"
+      "Austria" => "Salzburg-Hub@Labdoo.org, contact@labdoo.org"
   );
   if(!array_key_exists($country, $country2shub_email))
     $to_emails = variable_get('site_mail', '');
