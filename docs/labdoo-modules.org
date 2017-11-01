@@ -5,7 +5,7 @@
   - Contributed modules. These are modules written by the Drupal community.
     Labdoo uses these modules as provided by the community to enrich the 
     Labdoo platform with standard Drupal features. These modules are downloaded 
-    from https://www.drupal.org/download via the drush command.
+    from https://www.drupal.org/project/project_module via the drush command.
     Because these modules are provided
     by the community, they are not modified by the Labdoo project. (There
     are only a few exceptions in which some of the contributed
