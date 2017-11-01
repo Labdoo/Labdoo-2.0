@@ -1,9 +1,52 @@
-* Introduction: Labdoo Modules
+* Introduction: Modules
 
-  Labdoo features are generally implemented via modules, which act as standalone
-  building blocks. This document describes how to create a Labdoo module.
+  The Labdoo project has three types of modules:
 
-* Steps to Create a Labdoo Module
+  - Contributed modules. These are modules written by the Drupal community.
+    Labdoo uses these modules as provided by the community to enrich the 
+    Labdoo platform with standard Drupal features. These modules are downloaded 
+    from https://www.drupal.org/download via the drush command.
+    Because these modules are provided
+    by the community, they are not modified by the Labdoo project. (There
+    are only a few exceptions in which some of the contributed
+    modules are patched, see the file docs/labdoo-patches.org.) These modules
+    are kept under the folder /var/www/lbd/profiles/labdoo/modules/contrib/.
+
+  - Custom modules. These are modules written from scratch and are specific
+    to the Labdoo platform. This is were the main Labdoo code resides. The
+    code in these modules is actively modified by the Labdoo developers. 
+    If you need to write code for Labdoo, this is where you will most likely
+    be working. These modules are kept under the folder 
+    /var/www/lbd/profiles/labdoo/modules/custom.
+
+  - Feature modules. These are modules automatically generated via Drupal's
+    features (https://www.drupal.org/project/features). These modules are generated
+    via the drush features command and they are used to automatically generate
+    the code that renders some of the features in the Labdoo platform. Because
+    the code in these modules is automatically generated, their code is not
+    to be modified. For more information, see 
+    https://github.com/Labdoo/Labdoo/blob/master/modules/features/README.org.
+    These modules are kept under the folder /var/www/lbd/profiles/labdoo/modules/features.
+
+  In the next section, we summarize the steps to create each of these modules.
+
+* Steps to Install a Contributed Module
+
+  - To install a contributed module:
+
+    #+BEGIN_EXAMPLE
+    # drush @lbd dl $module_name  # download the module
+    # drush @lbd en $module_name  # enable the module
+    #+END_EXAMPLE
+
+  - To make the installation permanent as part of the Labdoo project, 
+    add the line 'projects[$module_name] = $module_version' in the file
+    /var/www/lbd/profiles/labdoo/labdoo.make. Then add a line
+    'dependencies[] = $module_name' to labdoo.info. After doing this,
+    future installations of the Labdoo project will include the new
+    module.
+
+* Steps to Create a Custom Labdoo Module
 
   - Create a new folder under the path lbd/profiles/labdoo/modules/custom/
 
@@ -17,10 +60,10 @@
   - Create your code inside the folder lbd_mymodule following the standard
     process of building modules in Drupal. That is, create at least the files 
     lbd_mymodule.info and lbd_mymodule.module plus any additional files needed
-    to support your module.
+    to support your code.
 
   - Make sure to document correctly your code. Don't forget to include the clauses
-    @defgroup, @file and @ingroup and make sure that each function is properly
+    @defgroup, @file and @ingroup and ensure that each function is properly
     documented following the Drupal standard. (E.g., make sure to use the clauses 
     @param and @return.) This is important to ensure that 
     documentation of the code can be properly and automatically generated.
@@ -37,3 +80,7 @@
 
       + Add a dependencies[] clause in the file lbd/profiles/labdoo/labdoo.info 
 
+
+* Steps to Create a Feature Module
+
+  Please see https://github.com/Labdoo/Labdoo/blob/master/modules/features/README.org.
