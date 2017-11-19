@@ -461,6 +461,9 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
     // Extract creation date
     $objects[$objectNid]['createdDate'] = format_date($node->created, 'custom', 'Y-m-d');
 
+    // Extract status field 
+    $objects[$objectNid]['semaphore'] = labdoo_lib_get_field($node, 'field_semaphore', 'node', 'value'); 
+
     // Get the country
     $country_names = location_get_iso3166_list();
     $objects[$objectNid]['country'] = $node->location['country'];
@@ -496,6 +499,7 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
     $objects[0]['link'] = "No edoovillages in this view"; 
     $objects[0]['completed'] = $objects[0]['open'] = 0; 
     $objects[0]['createdDate'] = ""; 
+    $objects[0]['semaphore'] = ""; 
 
   }
 
@@ -512,6 +516,7 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
   $metrics[10] = array('label' => 'Completed', 'field' => 'completed', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
   $metrics[11] = array('label' => 'Open', 'field' => 'open', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
   $metrics[12] = array('label' => 'Date created', 'field' => 'createdDate', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[13] = array('label' => 'Semaphore', 'field' => 'semaphore', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
 
   cache_set($cacheIndexPrefix . 'objects', $objects, 'cache');
   cache_set($cacheIndexPrefix . 'metrics', $metrics, 'cache');
@@ -650,6 +655,9 @@ function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher =
     // Extract creation date
     $objects[$objectNid]['createdDate'] = format_date($node->created, 'custom', 'Y-m-d');
 
+    // Extract status field 
+    $objects[$objectNid]['semaphore'] = labdoo_lib_get_field($node, 'field_hub_status', 'node', 'value'); 
+
     // Get the country
     $country_names = location_get_iso3166_list();
     if(isset($node->location['country'])) 
@@ -685,6 +693,7 @@ function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher =
     $objects[0]['country'] = "";
     $objects[0]['link'] = "No hubs in this view"; 
     $objects[0]['createdDate'] = ""; 
+    $objects[0]['semaphore'] = ""; 
 
   }
 
@@ -698,6 +707,7 @@ function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher =
   $metrics[7] = array('label' => 'Delivered (D)', 'field' => 'delivered', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
   $metrics[8] = array('label' => 'Remaining (R = N-T-D)', 'field' => 'remainingShared', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
   $metrics[9] = array('label' => 'Date created', 'field' => 'createdDate', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[10] = array('label' => 'Semaphore', 'field' => 'semaphore', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
 
   cache_set($cacheIndexPrefix . 'objects', $objects, 'cache');
   cache_set($cacheIndexPrefix . 'metrics', $metrics, 'cache');
@@ -821,6 +831,14 @@ function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL, $switch
       $objects[$objectNid]['inTransit'] = $numDootronics;
     }
 
+    // Mark the dootronic as loaded if Capacity <= Transported + In Transit
+    if($objects[$objectNid]['capacity'] <= $objects[$objectNid]['completed'] + $objects[$objectNid]['inTransit']) {
+      $objects[$objectNid]['loaded'] = "Full";
+    }
+    else {
+      $objects[$objectNid]['loaded'] = "Not full";
+    }
+
     // Extract dootrippers
     $objects[$objectNid]['dootrippers'] = '';
     $dootrippersList = field_get_items('node', $node, 'field_dootripper_s_'); 
@@ -873,6 +891,7 @@ function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL, $switch
     $objects[0]['status'] = "";
     $objects[0]['inTransit'] = 0;
     $objects[0]['completed'] = 0;
+    $objects[0]['loaded'] = "";
     $objects[0]['dootrippers'] = "";
     $objects[0]['additionalInfo'] = "";
     $objects[0]['srcCountry'] = "";
@@ -889,13 +908,14 @@ function lbd_display_dashboard_dootrips($userId = NULL, $country = NULL, $switch
   $metrics[3] = array('label' => 'In transit', 'field' => 'inTransit', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
   $metrics[4] = array('label' => 'Transported', 'field' => 'completed', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
   $metrics[5] = array('label' => 'Status', 'field' => 'status', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
-  $metrics[6] = array('label' => 'Origin', 'field' => 'srcCountry', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
-  $metrics[7] = array('label' => 'Destination', 'field' => 'dstCountry', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
-  $metrics[8] = array('label' => 'Arrival', 'field' => 'arrivalDate', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[9] = array('label' => 'Dootrippers', 'field' => 'dootrippers', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[10] = array('label' => 'Additional info', 'field' => 'additionalInfo', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[11] = array('label' => 'Total number of dootrips', 'field' => 'numberDootrips', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[12] = array('label' => 'Date created', 'field' => 'createdDate', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[6] = array('label' => 'Load', 'field' => 'loaded', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+  $metrics[7] = array('label' => 'Origin', 'field' => 'srcCountry', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+  $metrics[8] = array('label' => 'Destination', 'field' => 'dstCountry', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+  $metrics[9] = array('label' => 'Arrival', 'field' => 'arrivalDate', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[10] = array('label' => 'Dootrippers', 'field' => 'dootrippers', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[11] = array('label' => 'Additional info', 'field' => 'additionalInfo', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[12] = array('label' => 'Total number of dootrips', 'field' => 'numberDootrips', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[13] = array('label' => 'Date created', 'field' => 'createdDate', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
 
   cache_set($cacheIndexPrefix . 'objects', $objects, 'cache');
   cache_set($cacheIndexPrefix . 'metrics', $metrics, 'cache');
@@ -1815,6 +1835,11 @@ function lbd_display_slider_hub_data($hubId) {
     return;
   if($loadedNode->type != "hub")
     return;
+
+  if($loadedNode->status == 0) {
+    print('<strong><font size="4" font color="#FF2400">'. t("This hub is currently not active" . '</font></strong>'));
+    return;
+  }
 
   $viewedNode = node_view($loadedNode);
   print(labdoo_render_map_geolocate_node($hubId, False, "map-slider-hub-data"));

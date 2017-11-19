@@ -4134,7 +4134,7 @@ See <a target=\'_blank\' href="../../../content/list-countries-voltages-and-powe
           'module' => 'computed_field',
           'settings' => array(),
           'type' => 'computed_field_unsanitized',
-          'weight' => '8',
+          'weight' => '6',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -4204,7 +4204,7 @@ See <a target=\'_blank\' href="../../../content/list-countries-voltages-and-powe
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '3',
+          'weight' => '5',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -4234,7 +4234,7 @@ See <a target=\'_blank\' href="../../../content/list-countries-voltages-and-powe
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '6',
+        'weight' => '8',
       ),
     ),
   );
@@ -4291,7 +4291,7 @@ See <a target=\'_blank\' href="../../../content/list-countries-voltages-and-powe
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '7',
+          'weight' => '8',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -4438,7 +4438,7 @@ See <a target=\'_blank\' href="../../../content/list-countries-voltages-and-powe
             'link' => 1,
           ),
           'type' => 'entityreference_label',
-          'weight' => '0',
+          'weight' => '1',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -4530,6 +4530,85 @@ See <a target=\'_blank\' href="../../../content/list-countries-voltages-and-powe
     ),
   );
 
+  // Exported field: 'node-hub-field_hub_status'.
+  $fields['node-hub-field_hub_status'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_hub_status',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          'open' => 'Open',
+          'inactive' => 'Inactive',
+          'closed' => 'Closed',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'hub',
+      'default_value' => array(
+        0 => array(
+          'value' => 'open',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => 'Open: the hub is open and active
+<br/>
+Inactive: the hub is temporarily inactive and it cannot accept nor provide any dootronics
+<br/>
+Closed: the hub is closed (new volunteers are welcome to help reopen this hub)
+<a href="../../content/managing-your-hub-semaphore" target=\'_blank\'>[more help]</a>',
+      'display' => array(
+        'default' => array(
+          'label' => 'inline',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => '0',
+        ),
+        'node_gallery_node_thumbnail' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_hub_status',
+      'label' => 'Semaphore',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
+        'weight' => '6',
+      ),
+    ),
+  );
+
   // Exported field: 'node-hub-field_parent_hub'.
   $fields['node-hub-field_parent_hub'] = array(
     'field_config' => array(
@@ -4587,7 +4666,7 @@ See <a target=\'_blank\' href="../../../content/list-countries-voltages-and-powe
             'link' => 1,
           ),
           'type' => 'entityreference_label',
-          'weight' => '1',
+          'weight' => '2',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -4616,10 +4695,14 @@ See <a target=\'_blank\' href="../../../content/list-countries-voltages-and-powe
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_select',
-        'weight' => '4',
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'size' => 60,
+        ),
+        'type' => 'entityreference_autocomplete',
+        'weight' => '3',
       ),
     ),
   );
@@ -4661,7 +4744,7 @@ See <a target=\'_blank\' href="../../../content/list-countries-voltages-and-powe
           'module' => 'i18n_field',
           'settings' => array(),
           'type' => 'i18n_list_default',
-          'weight' => '2',
+          'weight' => '4',
         ),
         'node_gallery_node_thumbnail' => array(
           'label' => 'above',
@@ -6127,7 +6210,7 @@ See <a target=\'_blank\' href="../../../content/list-countries-voltages-and-powe
   $fields['node-laptop-field_manager'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_manager',
@@ -6226,6 +6309,7 @@ See <a target=\'_blank\' href="../../../content/list-countries-voltages-and-powe
             'gic' => 0,
             'hub' => 0,
             'labdoo_slide' => 0,
+            'labdoo_story' => 0,
             'laptop' => 0,
             'node_gallery_gallery' => 0,
             'node_gallery_item' => 0,
@@ -7017,6 +7101,12 @@ See <a target=\'_blank\' href="../../../content/list-countries-voltages-and-powe
   t('Number of teachers');
   t('On-site point of contact');
   t('Once you know the dootronic(s) that you will be carrying with this dootrip, enter their Labdoo identifier here.');
+  t('Open: the hub is open and active
+<br/>
+Inactive: the hub is temporarily inactive and it cannot accept nor provide any dootronics
+<br/>
+Closed: the hub is closed (new volunteers are welcome to help reopen this hub)
+<a href="../../content/managing-your-hub-semaphore" target=\'_blank\'>[more help]</a>');
   t('Origin of the trip');
   t('Parent hub');
   t('Pick me up');

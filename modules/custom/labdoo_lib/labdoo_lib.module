@@ -1140,22 +1140,78 @@ function lbd_allocate_edoovillage_id() {
 
 
 /**
+ * Attempts to acquire a lock
+ *
+ * @param string The lock name
+ *
+ * @return True if it was acquired, False otherwise
+ *
+ */
+function lbd_lock_acquire($lock_name) {
+  $num_trials = 5;
+  $wait_for_release = 10; // in seconds
+
+  while($num_trials--) {
+    if(lock_acquire($lock_name)) {
+      return True;
+    }
+    // Waits until the lock is released or until
+    // $wait_for_release seconds have passed.
+    lock_wait($lock_name, $wait_for_release);
+  }
+
+  return False;
+}
+
+
+/**
+ * Releases a lock
+ *
+ * @param string The lock name
+ *
+ */
+function lbd_lock_release($lock_name) {
+  lock_release($lock_name);
+}
+
+
+/**
+ * Acquire a lock and schedule its release when 
+ * the current thread exits
+ *
+ * @param string The lock name
+ *
+ * @return True if it successfully acquired the lock, False otherwise
+ *
+ */
+function labdoo_lib_lock_thread($lock_name) {
+  lbd_lock_acquire($lock_name);
+  register_shutdown_function('lbd_lock_release', $lock_name);
+  return;
+}
+ 
+
+/**
  * Implementation of hook_node_presave
  *
  */
 function labdoo_lib_node_presave($node) {
 
-  if(!property_exists($node, 'original') && $node->type == 'laptop') {
-    /*
-     * Update the title and path alias
-     */
-    // The Labdoo identifier of each
-    // laptop is stored as the node's title
-    $laptopIdInt = lbd_next_dootronic_id();
-    $node->title = sprintf("%09d", $laptopIdInt);
-  }
-
   if($node->type == 'laptop') {
+    // This is a new dootronic, lock this call to avoid potential ID collisions
+    // if two tagging operations happen concurrently
+    labdoo_lib_lock_thread('lock_update_dootronic');
+
+    if(!property_exists($node, 'original')) {
+      /*
+       * Update the title and path alias
+       */
+      // The Labdoo identifier of each
+      // laptop is stored as the node's title
+      $laptopIdInt = lbd_next_dootronic_id();
+      $node->title = sprintf("%09d", $laptopIdInt);
+    }
+
     // Add laptop path alias for 1.0 compatibility.
     // There are basically two ways to access a laptop:
     // via laptop/$ID or content/$ID
@@ -1194,6 +1250,8 @@ function labdoo_lib_node_presave($node) {
   }
 
   if($node->type == 'edoovillage') {
+    // Protect this call to avoid ID collisions
+    labdoo_lib_lock_thread('lock_update_edoovillage');
     /*
      * Update title in case any of its parts was modified
      */
@@ -1272,6 +1330,8 @@ function labdoo_lib_node_presave($node) {
   }
 
   if($node->type == 'dootrip') {
+    // Protect this call to avoid ID collisions
+    labdoo_lib_lock_thread('lock_update_dootrip');
     /*
      * Update the title
      */
@@ -1670,6 +1730,7 @@ function lbd_get_total_num_objects($objectType) {
     $query = "SELECT SUM(field_number_of_students_value) FROM field_data_field_number_of_students";
   }
   else if($objectType == 'country') {
+    // TODO: fix so only the latest vid version of each node is considered (to avoid countries that were removed)
     $query = "SELECT COUNT(*) FROM (SELECT DISTINCT country FROM location WHERE lid IN (SELECT lid FROM location_instance WHERE nid!=0 ORDER by nid)) AS countries";
   }
   else {
@@ -1679,6 +1740,10 @@ function lbd_get_total_num_objects($objectType) {
   $num = db_query($query)->fetchField();
   if(!$num)
     return 0;
+ 
+  // Remove this work around once the above TODO is cleaned up
+  if($objectType == 'country')
+    $num = $num - 1;
 
   return($num);
 }
@@ -2218,6 +2283,12 @@ function labdoo_lib_node_view($node, $view_mode) {
   ];
 
   // Perform any page redirect if needed
+
+  // TODO: implement the reverse path => start from content/about-labdoo =>
+  //       switch to Catalan => takes you to ca/content/sobre-labdoo =>
+  //       switch to German => should take you to de/content/zu-labdoo
+  //       This can be done by finding a reverse connecting path in labdoo_lib_page_redirects
+
   if($language->language == "en")
     $extended_path = $path;
   else
@@ -2263,11 +2334,17 @@ function labdoo_lib_node_view($node, $view_mode) {
 
   $languages = language_list();
 
-  if(($node->type == 'edoovillage') && (strcmp($path, "edoovillage") != 0) && ($view_mode == 'full')) {
+  if(($node->type == 'edoovillage') &&       // only redirect edoovillages
+     (strcmp($path, "edoovillage") != 0) &&  // avoid infinite loop by not redirecting the target URL itself
+     (strpos($path, 'revisions') == 0) &&    // do not redirect when in revision mode
+     ($view_mode == 'full')) {               // only redirect when in full view mode
     drupal_goto('edoovillage', array('language' => $languages[$language->language], 'query' => array('e' => $node->nid)));
   }
 
-  if(($node->type == 'hub') && (strcmp($path, "hub") != 0) && ($view_mode == 'full')) {
+  if(($node->type == 'hub') && 
+     (strcmp($path, "hub") != 0) && 
+     (strpos($path, 'revisions') == 0) && 
+     ($view_mode == 'full')) {
     drupal_goto('hub', array('language' => $languages[$language->language], 'query' => array('h' => $node->nid)));
   }
 
@@ -2649,12 +2726,13 @@ function labdoo_render_macro_stats($type, $addTitle=False) {
     $trailer = "<br>";
   }
   else {
-    $blockLanguage = module_invoke('lang_dropdown', 'block_view', 'language');
-    $languageSwitchCode = render($blockLanguage["content"]); 
-    $languageSwitchCode = str_replace("<form ", "<form style='height:10px' ", $languageSwitchCode);
-    $header = "<table><tr><td style='width:1090px'>";
-    $separator = "&nbsp; &nbsp;";
-    $trailer ="</td><td>"."</td><td width='130px' align='center'>".labdoo_render_language_switch()."</td></tr></table>";
+    // TODO: check if path belongs to labdoo_lib_page_redirects
+    //       If it does, then do display the language switch 
+    if(!labdoo_lib_node_is_type(array('book'))) {
+      $header = "<table><tr><td style='width:1090px'>";
+      $separator = "&nbsp; &nbsp;";
+      $trailer ="</td><td>"."</td><td width='130px' align='center'>".labdoo_render_language_switch()."</td></tr></table>";
+    }
   }
 
   $statsTitle = "";
@@ -3139,6 +3217,9 @@ function labdoo_block_filter_header() {
     return TRUE;
 
   if(0 === strpos($path, 'node/add/'))
+      return TRUE;
+
+  if(arg(0) == 'node' && arg(2) == 'edit')
       return TRUE;
 
   if(lbd_teams_page_group_id() || (0 === strpos($path, 'content/team-members')))
@@ -4347,7 +4428,7 @@ function labdoo_render_object_menu() {
     // Semaphore
     $code .= "<hr/>";
     $code .= "<p><strong><font color=#009900 size=2px>" . t("This edoovillage's semaphore ") . "</font></strong>";
-    $code .= "<a target='_blank' href='../content/managing-your-edoovillage-semaphore'>[" . t("Help") . "]</a></p>";
+    $code .= "<a target='_blank' href='content/managing-your-edoovillage-semaphore'>[" . t("Help") . "]</a></p>";
     $code .= "<hr/>";
 
     if(!file_exists(dirname(__FILE__) . "/../../../files/pictures/semaphore-red-" . $langCode . ".png"))
@@ -4367,6 +4448,22 @@ function labdoo_render_object_menu() {
     $code .= "<hr/>";
   }
   if($type == 'hub') {
+    // Semaphore
+    $code .= "<hr/>";
+    $code .= "<p><strong><font color=#009900 size=2px>" . t("This hub's semaphore ") . "</font></strong>";
+    $code .= "<a target='_blank' href='content/managing-your-hub-semaphore'>[" . t("Help") . "]</a></p>";
+    $code .= "<hr/>";
+
+    if(!file_exists(dirname(__FILE__) . "/../../../files/pictures/semaphore-hub-red-" . $langCode . ".png"))
+      $langCode = 'en';
+    $semaphorePic = 'semaphore-hub-green-' . $langCode . '.png';
+    $semaphoreState = labdoo_lib_get_field($nodeObj, 'field_hub_status', 'node', 'value');
+    if($semaphoreState == 'inactive')
+      $semaphorePic = 'semaphore-hub-yellow-' . $langCode . '.png';
+    else if($semaphoreState == 'closed')
+      $semaphorePic = 'semaphore-hub-red-' . $langCode . '.png';
+    $code .= "<img src='/profiles/labdoo/files/pictures/$semaphorePic' width='100px'/>";
+
     // Hub type 
     $code .= "<hr/>";
     $code .= "<p><strong><font color=#009900 size=2px>" . t("Hub capabilities: ") . "</font></strong>";

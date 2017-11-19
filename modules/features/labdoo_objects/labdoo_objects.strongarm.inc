@@ -426,7 +426,7 @@ function labdoo_objects_strongarm() {
       'display' => array(
         'sharethis' => array(
           'default' => array(
-            'weight' => '10',
+            'weight' => '7',
             'visible' => TRUE,
           ),
         ),
