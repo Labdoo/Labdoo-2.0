@@ -1,0 +1,16 @@
+** Logs
+
+The following logs can help you debug Labdoo code:
+
+  - To show Drupal's watchdog:
+
+    #+BEGIN_EXAMPLE
+    drush wd-show [tail --full --count=50] 
+    #+END_EXAMPLE
+
+  - To show Apache's error log:
+
+    #+BEGIN_EXAMPLE
+    tail -f /var/log/apache2/error.log 
+    #+END_EXAMPLE
+

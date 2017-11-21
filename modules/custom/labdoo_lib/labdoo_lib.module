@@ -1730,8 +1730,8 @@ function lbd_get_total_num_objects($objectType) {
     $query = "SELECT SUM(field_number_of_students_value) FROM field_data_field_number_of_students";
   }
   else if($objectType == 'country') {
-    // TODO: fix so only the latest vid version of each node is considered (to avoid countries that were removed)
-    $query = "SELECT COUNT(*) FROM (SELECT DISTINCT country FROM location WHERE lid IN (SELECT lid FROM location_instance WHERE nid!=0 ORDER by nid)) AS countries";
+    $query = "SELECT COUNT(*) FROM (SELECT DISTINCT country FROM location WHERE lid IN 
+              (SELECT lid FROM location_instance WHERE vid IN (SELECT vid FROM node))) AS countries";
   }
   else {
     $query = "SELECT COUNT(*) FROM node WHERE type='$objectType' AND status=1";
@@ -1741,10 +1741,6 @@ function lbd_get_total_num_objects($objectType) {
   if(!$num)
     return 0;
  
-  // Remove this work around once the above TODO is cleaned up
-  if($objectType == 'country')
-    $num = $num - 1;
-
   return($num);
 }
 
