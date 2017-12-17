@@ -318,3 +318,12 @@ input[type="checkbox"] {
   margin: auto;
 }
 
+.field-semaphore {
+  font-weight: bold;
+  color: gray;
+}
+
+.field-lbd-comments-views {
+  color: black; 
+}
+

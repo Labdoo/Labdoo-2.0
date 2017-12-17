@@ -1229,6 +1229,8 @@ function lbd_contact_form_submit($form, &$form_state) {
   $country_code = $country_codes[$form_state['values']['country']];
   $country = labdoo_country_code2name($country_code); 
   $reason_code = $form_state['values']['reason'];
+
+  // Forwarding email based on country
   $country2shub_email = array(
       "Germany" => "Labdoo-DACH@Labdoo.org, contact@labdoo.org",
       "United States" => "wendy.lu@labdoo.org, contact@labdoo.org", 
@@ -1240,6 +1242,15 @@ function lbd_contact_form_submit($form, &$form_state) {
     $to_emails = variable_get('site_mail', '');
   else
     $to_emails = $country2shub_email[$country];
+
+  // Forwarding email based on city
+  $city2shub_email = array(
+      // Make sure these are lower case city names
+      "madrid" => "victoria.mota@labdoo.org, cesar.seoane@labdoo.org, contact@labdoo.org"
+  );
+  $city_lowcase = strtolower($form_state['values']['city']);
+  if(array_key_exists($city_lowcase, $city2shub_email))
+    $to_emails = $city2shub_email[$city_lowcase];
 
   // Send this message always in English
   $subjectFileName = _path_to_email_template("en") . "contact_form_submitted_shub_subject-en.email";

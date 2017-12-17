@@ -512,7 +512,7 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
   $metrics[6] = array('label' => '% Completed', 'field' => 'pcompleted', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
   $metrics[7] = array('label' => 'Number of students', 'field' => 'numStudents', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
   $metrics[8] = array('label' => 'Status', 'field' => 'status', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
-  $metrics[9] = array('label' => 'Countries', 'field' => 'country', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+  $metrics[9] = array('label' => 'Country', 'field' => 'country', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
   $metrics[10] = array('label' => 'Completed', 'field' => 'completed', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
   $metrics[11] = array('label' => 'Open', 'field' => 'open', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
   $metrics[12] = array('label' => 'Date created', 'field' => 'createdDate', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
@@ -637,7 +637,8 @@ function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher =
         $remaining = 0;
     $objects[$objectNid]['remaining'] = $remaining; 
 
-    // Extract needed field 
+    // Extract 'Shared' metrics used for aggregate calculations (to avoid double counting)
+    // Extract needed shared 
     $objects[$objectNid]['neededShared'] = $neededShared = floor(labdoo_get_demand(NULL, $objectNid, TRUE));
 
     // Extract remaining field 
@@ -655,8 +656,17 @@ function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher =
     // Extract creation date
     $objects[$objectNid]['createdDate'] = format_date($node->created, 'custom', 'Y-m-d');
 
-    // Extract status field 
-    $objects[$objectNid]['semaphore'] = labdoo_lib_get_field($node, 'field_hub_status', 'node', 'value'); 
+    // Extract status/semaphore field 
+    $semaphoreValue = labdoo_lib_get_field($node, 'field_hub_status', 'node', 'value'); 
+    if($semaphoreValue == 'open') {
+      $objects[$objectNid]['semaphore'] = "<strong><font color='#109618'>$semaphoreValue</font></strong>";
+    }
+    else if($semaphoreValue == 'inactive') {
+      $objects[$objectNid]['semaphore'] = "<strong><font color='orange'>$semaphoreValue</font></strong>"; 
+    }
+    else {
+      $objects[$objectNid]['semaphore'] = "<strong><font color='red'>$semaphoreValue</font></strong>"; 
+    }
 
     // Get the country
     $country_names = location_get_iso3166_list();
@@ -701,13 +711,13 @@ function lbd_display_dashboard_hubs($userId = NULL, $country = NULL, $switcher =
   $metrics[1] = array('label' => 'Needed (N)', 'field' => 'needed', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
   $metrics[2] = array('label' => 'Remaining (R = N-T-D)', 'field' => 'remaining', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
   $metrics[3] = array('label' => '% Completed', 'field' => 'pcompleted', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
-  $metrics[4] = array('label' => 'Countries', 'field' => 'country', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
-  $metrics[5] = array('label' => 'Needed (N)', 'field' => 'neededShared', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[6] = array('label' => 'In transit (T)', 'field' => 'intransit', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[7] = array('label' => 'Delivered (D)', 'field' => 'delivered', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[8] = array('label' => 'Remaining (R = N-T-D)', 'field' => 'remainingShared', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[9] = array('label' => 'Date created', 'field' => 'createdDate', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[10] = array('label' => 'Semaphore', 'field' => 'semaphore', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[4] = array('label' => 'Country', 'field' => 'country', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+  $metrics[5] = array('label' => 'Semaphore', 'field' => 'semaphore', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[6] = array('label' => 'Needed', 'field' => 'neededShared', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[7] = array('label' => 'In transit (T)', 'field' => 'intransit', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[8] = array('label' => 'Delivered (D)', 'field' => 'delivered', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[9] = array('label' => 'Remaining (R = N-T-D)', 'field' => 'remainingShared', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[10] = array('label' => 'Date created', 'field' => 'createdDate', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
 
   cache_set($cacheIndexPrefix . 'objects', $objects, 'cache');
   cache_set($cacheIndexPrefix . 'metrics', $metrics, 'cache');

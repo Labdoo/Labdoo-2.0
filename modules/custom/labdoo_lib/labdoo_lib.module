@@ -993,7 +993,7 @@ function labdoo_lib_node_update($node) {
       //      just like we are doing with other fields.
       //      For now we leave it here as an example of an alternative technique.
       register_shutdown_function('_update_dooject_location_from_edoovillage', $node);
-      labdoo_lib_msg_info(t('The location of this dooject has been automatically assigned to the location of its edoovillage.'), 'status', FALSE);
+      labdoo_lib_msg_info(t('The location of this dooject has been automatically assigned to the location of its edoovillage.'));
     }
   }
 
@@ -2273,9 +2273,25 @@ function labdoo_lib_node_view($node, $view_mode) {
   // Add to this table any necessary redirects.
   // Follow the examples to add new entries.
   $labdoo_lib_page_redirects = [
-    "ca/content/about-labdoo" => "content/sobre-labdoo",  // per language redirect 
+    "ca/content/about-labdoo" => "content/sobre-labdoo",  // Example type 1: per language redirect 
+    "content/zu-labdoo" => "LabdooD",                     // Example type 2: redirect for all languages 
+    // Add below more entries following one of the two types
     "de/content/about-labdoo" => "content/zu-labdoo",
-    "content/zu-labdoo" => "LabdooD"                      // redirect for all languages 
+    "content/überblick-lerninhalte-ftp-server" => "content/overview-educational-content-provided-labdoo-ftp-server",
+    "content/impressum-0" => "content/impressum",
+    // Main helpers in Spanish
+    "es/content/about-labdoo" => "content/acerca-de-labdoo",
+    "es/content/about-hubs" => "content/acerca-de-los-hubs-centros-de-operación",
+    "es/content/managing-edoovillages" => "content/administración-de-edoovillage",
+    "es/content/about-dootronics" => "content/acerca-de-los-dootronics-dispositivos-donados",
+    "es/content/dootrip-system" => "content/el-sistema-de-dootrips",
+    "es/content/about-teams" => "content/acerca-de-los-equipos",
+    "es/content/newsletters" => "content/boletines",
+    "es/content/labdoo-wiki" => "content/labdoo-wiki-0",
+    "es/content/labdoo-user-accounts" => "content/cuentas-de-usuario-de-labdoo",
+    "es/content/labdoo-global-support-lgs-program" => "content/programa-de-soporte-global-de-labdoo-sgl",
+    "es/content/labdoo-cities" => "content/labdoo-para-ciudades",
+    "es/content/labdoos-corporate-social-responsibility-csr-package" => "content/paquete-labdoo-de-responsabilidad-social-corporativa-rsc"
   ];
 
   // Perform any page redirect if needed
@@ -2320,12 +2336,6 @@ function labdoo_lib_node_view($node, $view_mode) {
     }
   }
 
-  if($node->type == 'hub') {
-    labdoo_lib_msg_info("Hint: to contact this hub, please make sure you are logged into your Labdoo account and then click
-                         on the username next to the field 'Hub manager(s)' to go to the manager's page. From there,
-                         click on the tab 'Contact'.");
-  }
-
   // Handle page redirects here
 
   $languages = language_list();
@@ -2338,7 +2348,7 @@ function labdoo_lib_node_view($node, $view_mode) {
   }
 
   if(($node->type == 'hub') && 
-     (strcmp($path, "hub") != 0) && 
+     (strcmp($path, 'hub') != 0) && 
      (strpos($path, 'revisions') == 0) && 
      ($view_mode == 'full')) {
     drupal_goto('hub', array('language' => $languages[$language->language], 'query' => array('h' => $node->nid)));
@@ -2716,18 +2726,18 @@ function labdoo_render_macro_stats($type, $addTitle=False) {
   $co2SavingsDootronic = $numLaptopsDelivered * 18.59; 
   $co2SavingsTotal = intval($co2SavingsDootrip + $co2SavingsDootronic);
 
-  if($type == "vertical") {
-    $header = "";
-    $separator = "<br>";
-    $trailer = "<br>";
-  }
-  else {
+  $header = "";
+  $separator = "<br>";
+  $trailer = "<br>";
+ 
+  if($type == "horizontal") {
+    $separator = "&nbsp; &nbsp;";
+    $trailer ="<br/>";
     // TODO: check if path belongs to labdoo_lib_page_redirects
     //       If it does, then do display the language switch 
     if(!labdoo_lib_node_is_type(array('book'))) {
       $header = "<table><tr><td style='width:1090px'>";
-      $separator = "&nbsp; &nbsp;";
-      $trailer ="</td><td>"."</td><td width='130px' align='center'>".labdoo_render_language_switch()."</td></tr></table>";
+      $trailer ="</td><td width='130px' align='center'>".labdoo_render_language_switch()."</td></tr></table>";
     }
   }
 
@@ -3043,7 +3053,7 @@ function labdoo_block_filter_sidebar_second() {
     if(user_is_logged_in()) {
       global $user;
       $userId = $user->uid;
-      labdoo_lib_msg_info(t("You can see all your registrations from <a href=\"../user/$userId/myevents\">this page</a>."), 'status', FALSE);
+      labdoo_lib_msg_info(t("You can see all your registrations from <a href=\"../user/$userId/myevents\">this page</a>."));
     }
     return TRUE;
   }
@@ -3098,8 +3108,8 @@ function labdoo_block_filter_actions_feed() {
 function labdoo_block_filter_search() {
   $path = drupal_get_path_alias(current_path());
 
-  if(strcmp($path, "content/about-labdoo") == 0)
-    return FALSE;
+//  if(strcmp($path, "content/about-labdoo") == 0)
+//    return FALSE;
 
   if(strcmp($path, "user/login") == 0)
     return FALSE;
@@ -3380,7 +3390,7 @@ function _is_my_user_page($account = NULL) {
 function labdoo_lib_menu() {
 
   $items['user/%user/metrics'] = array(
-    'access callback' => user_is_logged_in,
+    'access callback' => 'user_is_logged_in',
     'access arguments' => array(1),
     'page callback' => '_labdoo_lib_user_metrics',
     'page arguments' => array(1),
@@ -4454,10 +4464,21 @@ function labdoo_render_object_menu() {
       $langCode = 'en';
     $semaphorePic = 'semaphore-hub-green-' . $langCode . '.png';
     $semaphoreState = labdoo_lib_get_field($nodeObj, 'field_hub_status', 'node', 'value');
-    if($semaphoreState == 'inactive')
+    if($semaphoreState == 'inactive') {
       $semaphorePic = 'semaphore-hub-yellow-' . $langCode . '.png';
-    else if($semaphoreState == 'closed')
+      labdoo_lib_msg_info(t("This hub is temporarily inactive. You can't communicate with this hub until its semaphore goes back to green.")); 
+    }
+    else if($semaphoreState == 'closed') {
       $semaphorePic = 'semaphore-hub-red-' . $langCode . '.png';
+      labdoo_lib_msg_info(t("This hub was closed. If you would like to volunteer and take over its management operations, 
+                           reach out the Labdoo team at contact@labdoo.org.")); 
+    }
+    else {
+      labdoo_lib_msg_info(t("Hint: to contact this hub, please make sure you are logged into your Labdoo account and then click
+                           on the username next to the field 'Hub manager(s)' to go to the manager's page. From there,
+                           click on the tab 'Contact'."));
+    }
+
     $code .= "<img src='/profiles/labdoo/files/pictures/$semaphorePic' width='100px'/>";
 
     // Hub type 
