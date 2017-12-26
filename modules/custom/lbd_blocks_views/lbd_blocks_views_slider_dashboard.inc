@@ -306,13 +306,6 @@ $handler->display->display_options['fields']['country']['field'] = 'country';
 $handler->display->display_options['fields']['field_status']['id'] = 'field_status';
 $handler->display->display_options['fields']['field_status']['table'] = 'field_data_field_status';
 $handler->display->display_options['fields']['field_status']['field'] = 'field_status';
-/* Field: Content: Updated date */
-$handler->display->display_options['fields']['changed']['id'] = 'changed';
-$handler->display->display_options['fields']['changed']['table'] = 'node';
-$handler->display->display_options['fields']['changed']['field'] = 'changed';
-$handler->display->display_options['fields']['changed']['label'] = 'Last updated';
-$handler->display->display_options['fields']['changed']['date_format'] = 'short';
-$handler->display->display_options['fields']['changed']['second_date_format'] = 'long';
 /* Field: Content: Model */
 $handler->display->display_options['fields']['field_model']['id'] = 'field_model';
 $handler->display->display_options['fields']['field_model']['table'] = 'field_data_field_model';
@@ -321,10 +314,6 @@ $handler->display->display_options['fields']['field_model']['field'] = 'field_mo
 $handler->display->display_options['fields']['field_serial_number']['id'] = 'field_serial_number';
 $handler->display->display_options['fields']['field_serial_number']['table'] = 'field_data_field_serial_number';
 $handler->display->display_options['fields']['field_serial_number']['field'] = 'field_serial_number';
-/* Field: Content: Watt-hours */
-$handler->display->display_options['fields']['field_battery_watt_hours']['id'] = 'field_battery_watt_hours';
-$handler->display->display_options['fields']['field_battery_watt_hours']['table'] = 'field_data_field_battery_watt_hours';
-$handler->display->display_options['fields']['field_battery_watt_hours']['field'] = 'field_battery_watt_hours';
 /* Field: Content: Weight */
 $handler->display->display_options['fields']['field_dooject_weight']['id'] = 'field_dooject_weight';
 $handler->display->display_options['fields']['field_dooject_weight']['table'] = 'field_data_field_dooject_weight';
@@ -458,17 +447,28 @@ $handler->display->display_options['sorts']['created']['table'] = 'node';
 $handler->display->display_options['sorts']['created']['field'] = 'created';
 $handler->display->display_options['sorts']['created']['order'] = 'DESC';
 $handler->display->display_options['defaults']['arguments'] = FALSE;
-/* Contextual filter: Content: Coordinating hub(s) (field_hub) */
-$handler->display->display_options['arguments']['field_hub_target_id']['id'] = 'field_hub_target_id';
-$handler->display->display_options['arguments']['field_hub_target_id']['table'] = 'field_data_field_hub';
-$handler->display->display_options['arguments']['field_hub_target_id']['field'] = 'field_hub_target_id';
-$handler->display->display_options['arguments']['field_hub_target_id']['default_action'] = 'default';
-$handler->display->display_options['arguments']['field_hub_target_id']['default_argument_type'] = 'php';
-$handler->display->display_options['arguments']['field_hub_target_id']['default_argument_options']['code'] = 'if(!empty($_GET[\'h\']))
-  return($_GET[\'h\']);';
-$handler->display->display_options['arguments']['field_hub_target_id']['summary']['number_of_records'] = '0';
-$handler->display->display_options['arguments']['field_hub_target_id']['summary']['format'] = 'default_summary';
-$handler->display->display_options['arguments']['field_hub_target_id']['summary_options']['items_per_page'] = '25';
+/* Contextual filter: Content: Nid */
+$handler->display->display_options['arguments']['nid']['id'] = 'nid';
+$handler->display->display_options['arguments']['nid']['table'] = 'node';
+$handler->display->display_options['arguments']['nid']['field'] = 'nid';
+$handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+$handler->display->display_options['arguments']['nid']['default_argument_type'] = 'php';
+$handler->display->display_options['arguments']['nid']['default_argument_options']['code'] = 'if(!empty($_GET[\'h\'])) {
+  $edoovillages = labdoo_lib_hub2edoovillage($_GET[\'h\']);
+  $edoovillagesString="";
+  foreach($edoovillages as $edoovillage) {
+    if ($edoovillagesString=="")
+      $edoovillagesString .= $edoovillage;
+    else
+      $edoovillagesString .= "+" . $edoovillage;
+  }
+  return($edoovillagesString);
+}
+';
+$handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+$handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+$handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+$handler->display->display_options['arguments']['nid']['break_phrase'] = TRUE;
 $handler->display->display_options['defaults']['filter_groups'] = FALSE;
 $handler->display->display_options['defaults']['filters'] = FALSE;
 /* Filter criterion: Content: Published */
@@ -555,13 +555,6 @@ $handler->display->display_options['fields']['country']['field'] = 'country';
 $handler->display->display_options['fields']['field_status']['id'] = 'field_status';
 $handler->display->display_options['fields']['field_status']['table'] = 'field_data_field_status';
 $handler->display->display_options['fields']['field_status']['field'] = 'field_status';
-/* Field: Content: Updated date */
-$handler->display->display_options['fields']['changed']['id'] = 'changed';
-$handler->display->display_options['fields']['changed']['table'] = 'node';
-$handler->display->display_options['fields']['changed']['field'] = 'changed';
-$handler->display->display_options['fields']['changed']['label'] = 'Last updated';
-$handler->display->display_options['fields']['changed']['date_format'] = 'short';
-$handler->display->display_options['fields']['changed']['second_date_format'] = 'long';
 /* Field: Content: Model */
 $handler->display->display_options['fields']['field_model']['id'] = 'field_model';
 $handler->display->display_options['fields']['field_model']['table'] = 'field_data_field_model';
@@ -570,10 +563,6 @@ $handler->display->display_options['fields']['field_model']['field'] = 'field_mo
 $handler->display->display_options['fields']['field_serial_number']['id'] = 'field_serial_number';
 $handler->display->display_options['fields']['field_serial_number']['table'] = 'field_data_field_serial_number';
 $handler->display->display_options['fields']['field_serial_number']['field'] = 'field_serial_number';
-/* Field: Content: Watt-hours */
-$handler->display->display_options['fields']['field_battery_watt_hours']['id'] = 'field_battery_watt_hours';
-$handler->display->display_options['fields']['field_battery_watt_hours']['table'] = 'field_data_field_battery_watt_hours';
-$handler->display->display_options['fields']['field_battery_watt_hours']['field'] = 'field_battery_watt_hours';
 /* Field: Content: Weight */
 $handler->display->display_options['fields']['field_dooject_weight']['id'] = 'field_dooject_weight';
 $handler->display->display_options['fields']['field_dooject_weight']['table'] = 'field_data_field_dooject_weight';

@@ -101,8 +101,11 @@ $handler = $view->new_display('page', 'Global', 'page');
 $handler->display->display_options['defaults']['title'] = FALSE;
 $handler->display->display_options['title'] = 'Global inventory';
 $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+$handler->display->display_options['defaults']['access'] = FALSE;
+$handler->display->display_options['access']['type'] = 'perm';
 $handler->display->display_options['defaults']['query'] = FALSE;
 $handler->display->display_options['query']['type'] = 'views_query';
+$handler->display->display_options['query']['options']['disable_sql_rewrite'] = TRUE;
 $handler->display->display_options['defaults']['pager'] = FALSE;
 $handler->display->display_options['pager']['type'] = 'some';
 $handler->display->display_options['pager']['options']['items_per_page'] = '2000';
@@ -219,15 +222,15 @@ $handler->display->display_options['filters']['views_dependent_filter_1']['contr
   'article' => 0,
   'page' => 0,
   'blog' => 0,
-  'book' => 0,
   'slider_page' => 0,
-  'laptop' => 0,
   'dootrip' => 0,
+  'laptop' => 0,
   'gic' => 0,
   'node_gallery_gallery' => 0,
   'node_gallery_item' => 0,
   'hub' => 0,
   'labdoo_slide' => 0,
+  'labdoo_story' => 0,
   'simplenews' => 0,
   'private_page' => 0,
   'drupal_wall' => 0,
@@ -236,14 +239,60 @@ $handler->display->display_options['filters']['views_dependent_filter_1']['contr
   'team_page' => 0,
   'event' => 0,
   'team_task' => 0,
+  'book' => 0,
 );
 $handler->display->display_options['filters']['views_dependent_filter_1']['dependent_filters'] = array(
   'field_edoovillage_status_value' => 'field_edoovillage_status_value',
   'field_hub_target_id' => 'field_hub_target_id',
+  'distance' => 0,
   'country' => 0,
   'field_status_value' => 0,
   'field_hub_laptop_target_id' => 0,
   'keys' => 0,
+  'field_pick_me_up_value' => 0,
+  'keys_1' => 0,
+);
+/* Filter criterion: Global: Dependent filter */
+$handler->display->display_options['filters']['views_dependent_filter_2']['id'] = 'views_dependent_filter_2';
+$handler->display->display_options['filters']['views_dependent_filter_2']['table'] = 'views';
+$handler->display->display_options['filters']['views_dependent_filter_2']['field'] = 'views_dependent_filter';
+$handler->display->display_options['filters']['views_dependent_filter_2']['group'] = 1;
+$handler->display->display_options['filters']['views_dependent_filter_2']['controller_filter'] = 'type';
+$handler->display->display_options['filters']['views_dependent_filter_2']['controller_values'] = array(
+  'hub' => 'hub',
+  'action' => 0,
+  'article' => 0,
+  'page' => 0,
+  'blog' => 0,
+  'slider_page' => 0,
+  'dootrip' => 0,
+  'laptop' => 0,
+  'edoovillage' => 0,
+  'gic' => 0,
+  'node_gallery_gallery' => 0,
+  'node_gallery_item' => 0,
+  'labdoo_slide' => 0,
+  'labdoo_story' => 0,
+  'simplenews' => 0,
+  'private_page' => 0,
+  'drupal_wall' => 0,
+  'superhub_page' => 0,
+  'team' => 0,
+  'team_page' => 0,
+  'event' => 0,
+  'team_task' => 0,
+  'book' => 0,
+);
+$handler->display->display_options['filters']['views_dependent_filter_2']['dependent_filters'] = array(
+  'field_hub_status_value' => 'field_hub_status_value',
+  'distance' => 0,
+  'country' => 0,
+  'field_status_value' => 0,
+  'field_hub_laptop_target_id' => 0,
+  'keys' => 0,
+  'field_edoovillage_status_value' => 0,
+  'field_hub_target_id' => 0,
+  'field_pick_me_up_value' => 0,
 );
 /* Filter criterion: Location: Distance / Proximity */
 $handler->display->display_options['filters']['distance']['id'] = 'distance';
@@ -406,6 +455,7 @@ $handler->display->display_options['filters']['field_hub_target_id']['expose']['
 $handler->display->display_options['filters']['field_pick_me_up_value']['id'] = 'field_pick_me_up_value';
 $handler->display->display_options['filters']['field_pick_me_up_value']['table'] = 'field_data_field_pick_me_up';
 $handler->display->display_options['filters']['field_pick_me_up_value']['field'] = 'field_pick_me_up_value';
+$handler->display->display_options['filters']['field_pick_me_up_value']['group'] = 1;
 $handler->display->display_options['filters']['field_pick_me_up_value']['exposed'] = TRUE;
 $handler->display->display_options['filters']['field_pick_me_up_value']['expose']['operator_id'] = 'field_pick_me_up_value_op';
 $handler->display->display_options['filters']['field_pick_me_up_value']['expose']['label'] = 'Pick me up';
@@ -424,6 +474,29 @@ $handler->display->display_options['filters']['field_pick_me_up_value']['expose'
   4 => 0,
   10 => 0,
 );
+/* Filter criterion: Content: Semaphore (field_hub_status) */
+$handler->display->display_options['filters']['field_hub_status_value']['id'] = 'field_hub_status_value';
+$handler->display->display_options['filters']['field_hub_status_value']['table'] = 'field_data_field_hub_status';
+$handler->display->display_options['filters']['field_hub_status_value']['field'] = 'field_hub_status_value';
+$handler->display->display_options['filters']['field_hub_status_value']['group'] = 1;
+$handler->display->display_options['filters']['field_hub_status_value']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_hub_status_value']['expose']['operator_id'] = 'field_hub_status_value_op';
+$handler->display->display_options['filters']['field_hub_status_value']['expose']['label'] = 'Semaphore';
+$handler->display->display_options['filters']['field_hub_status_value']['expose']['operator'] = 'field_hub_status_value_op';
+$handler->display->display_options['filters']['field_hub_status_value']['expose']['identifier'] = 'field_hub_status_value';
+$handler->display->display_options['filters']['field_hub_status_value']['expose']['multiple'] = TRUE;
+$handler->display->display_options['filters']['field_hub_status_value']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  7 => 0,
+  8 => 0,
+  9 => 0,
+  3 => 0,
+  5 => 0,
+  6 => 0,
+  4 => 0,
+  10 => 0,
+);
 $handler->display->display_options['path'] = 'map';
 
 /* Display: Dootrips */
@@ -431,6 +504,10 @@ $handler = $view->new_display('page', 'Dootrips', 'page_1');
 $handler->display->display_options['defaults']['title'] = FALSE;
 $handler->display->display_options['title'] = 'Dootrips';
 $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+$handler->display->display_options['defaults']['pager'] = FALSE;
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['pager']['options']['items_per_page'] = '250';
+$handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['defaults']['style_plugin'] = FALSE;
 $handler->display->display_options['style_plugin'] = 'gmap';
 $handler->display->display_options['style_options']['macro'] = '[gmap width=1175px | height=600px | zoom=2]';
@@ -454,6 +531,12 @@ $handler->display->display_options['row_options']['inline'] = array(
   'title' => 'title',
 );
 $handler->display->display_options['defaults']['row_options'] = FALSE;
+$handler->display->display_options['defaults']['header'] = FALSE;
+/* Header: Global: Unfiltered text */
+$handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+$handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+$handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+$handler->display->display_options['header']['area_text_custom']['content'] = '<a target="_blank" href="../content/dootrip-system">[Help about Dootrips]</a>';
 $handler->display->display_options['defaults']['relationships'] = FALSE;
 $handler->display->display_options['defaults']['fields'] = FALSE;
 /* Field: Content: Title */
@@ -599,30 +682,25 @@ $handler->display->display_options['defaults']['use_more_always'] = FALSE;
 $handler->display->display_options['use_more_always'] = FALSE;
 $handler->display->display_options['defaults']['use_more_text'] = FALSE;
 $handler->display->display_options['defaults']['group_by'] = FALSE;
+$handler->display->display_options['defaults']['access'] = FALSE;
+$handler->display->display_options['access']['type'] = 'perm';
 $handler->display->display_options['defaults']['query'] = FALSE;
 $handler->display->display_options['query']['type'] = 'views_query';
+$handler->display->display_options['query']['options']['disable_sql_rewrite'] = TRUE;
 $handler->display->display_options['pager']['type'] = 'some';
 $handler->display->display_options['pager']['options']['items_per_page'] = '2000';
 $handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['defaults']['style_plugin'] = FALSE;
 $handler->display->display_options['style_plugin'] = 'table';
 $handler->display->display_options['style_options']['columns'] = array(
-  'counter' => 'counter',
   'title' => 'title',
   'type' => 'type',
   'city' => 'city',
   'country' => 'country',
   'created' => 'created',
-  'field_status' => 'field_status',
-  'field_pick_me_up' => 'field_pick_me_up',
 );
-$handler->display->display_options['style_options']['default'] = 'title';
+$handler->display->display_options['style_options']['default'] = 'created';
 $handler->display->display_options['style_options']['info'] = array(
-  'counter' => array(
-    'align' => '',
-    'separator' => '',
-    'empty_column' => 0,
-  ),
   'title' => array(
     'sortable' => 1,
     'default_sort_order' => 'asc',
@@ -653,24 +731,10 @@ $handler->display->display_options['style_options']['info'] = array(
   ),
   'created' => array(
     'sortable' => 1,
-    'default_sort_order' => 'asc',
+    'default_sort_order' => 'desc',
     'align' => '',
     'separator' => '',
     'empty_column' => 0,
-  ),
-  'field_status' => array(
-    'sortable' => 1,
-    'default_sort_order' => 'asc',
-    'align' => '',
-    'separator' => '',
-    'empty_column' => 1,
-  ),
-  'field_pick_me_up' => array(
-    'sortable' => 1,
-    'default_sort_order' => 'asc',
-    'align' => '',
-    'separator' => '',
-    'empty_column' => 1,
   ),
 );
 $handler->display->display_options['style_options']['sticky'] = TRUE;
@@ -716,15 +780,6 @@ $handler->display->display_options['fields']['created']['field'] = 'created';
 $handler->display->display_options['fields']['created']['label'] = 'Created on';
 $handler->display->display_options['fields']['created']['date_format'] = 'long';
 $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
-/* Field: Content: Status */
-$handler->display->display_options['fields']['field_status']['id'] = 'field_status';
-$handler->display->display_options['fields']['field_status']['table'] = 'field_data_field_status';
-$handler->display->display_options['fields']['field_status']['field'] = 'field_status';
-/* Field: Content: Pick me up */
-$handler->display->display_options['fields']['field_pick_me_up']['id'] = 'field_pick_me_up';
-$handler->display->display_options['fields']['field_pick_me_up']['table'] = 'field_data_field_pick_me_up';
-$handler->display->display_options['fields']['field_pick_me_up']['field'] = 'field_pick_me_up';
-$handler->display->display_options['fields']['field_pick_me_up']['empty'] = 'Disabled';
 $handler->display->display_options['defaults']['filter_groups'] = FALSE;
 $handler->display->display_options['defaults']['filters'] = FALSE;
 /* Filter criterion: Content: Published */
@@ -950,6 +1005,28 @@ $handler->display->display_options['filters']['field_pick_me_up_value']['expose'
   4 => 0,
   10 => 0,
 );
+/* Filter criterion: Content: Semaphore (field_hub_status) */
+$handler->display->display_options['filters']['field_hub_status_value']['id'] = 'field_hub_status_value';
+$handler->display->display_options['filters']['field_hub_status_value']['table'] = 'field_data_field_hub_status';
+$handler->display->display_options['filters']['field_hub_status_value']['field'] = 'field_hub_status_value';
+$handler->display->display_options['filters']['field_hub_status_value']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_hub_status_value']['expose']['operator_id'] = 'field_hub_status_value_op';
+$handler->display->display_options['filters']['field_hub_status_value']['expose']['label'] = 'Semaphore (field_hub_status)';
+$handler->display->display_options['filters']['field_hub_status_value']['expose']['operator'] = 'field_hub_status_value_op';
+$handler->display->display_options['filters']['field_hub_status_value']['expose']['identifier'] = 'field_hub_status_value';
+$handler->display->display_options['filters']['field_hub_status_value']['expose']['multiple'] = TRUE;
+$handler->display->display_options['filters']['field_hub_status_value']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  7 => 0,
+  8 => 0,
+  9 => 0,
+  3 => 0,
+  5 => 0,
+  6 => 0,
+  4 => 0,
+  10 => 0,
+);
 $handler->display->display_options['displays'] = array(
   'page' => 'page',
   'default' => 0,
@@ -984,7 +1061,7 @@ $handler->display->display_options['style_options']['columns'] = array(
   'field_arrival_date' => 'field_arrival_date',
   'field_status_dootrip' => 'field_status_dootrip',
 );
-$handler->display->display_options['style_options']['default'] = 'title';
+$handler->display->display_options['style_options']['default'] = 'field_departure_date';
 $handler->display->display_options['style_options']['info'] = array(
   'title' => array(
     'sortable' => 1,
@@ -1002,7 +1079,7 @@ $handler->display->display_options['style_options']['info'] = array(
   ),
   'field_departure_date' => array(
     'sortable' => 1,
-    'default_sort_order' => 'asc',
+    'default_sort_order' => 'desc',
     'align' => '',
     'separator' => '',
     'empty_column' => 0,
@@ -1188,16 +1265,34 @@ $handler->display->display_options['defaults']['style_options'] = FALSE;
 $handler->display->display_options['defaults']['row_plugin'] = FALSE;
 $handler->display->display_options['row_plugin'] = 'fields';
 $handler->display->display_options['row_options']['inline'] = array(
-  'title' => 'title',
   'country' => 'country',
-  'field_types_of_mini_missions' => 'field_types_of_mini_missions',
   'city' => 'city',
+  'title' => 'title',
+  'field_types_of_mini_missions' => 'field_types_of_mini_missions',
+  'field_hub_status' => 'field_hub_status',
 );
 $handler->display->display_options['row_options']['separator'] = '|';
 $handler->display->display_options['defaults']['row_options'] = FALSE;
 $handler->display->display_options['defaults']['header'] = FALSE;
+/* Header: Global: Unfiltered text */
+$handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+$handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+$handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+$handler->display->display_options['header']['area_text_custom']['content'] = '<a target="_blank" href="../content/about-hubs">[Help about Labdoo hubs]</a>';
 $handler->display->display_options['defaults']['footer'] = FALSE;
 $handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Location: Country */
+$handler->display->display_options['fields']['country']['id'] = 'country';
+$handler->display->display_options['fields']['country']['table'] = 'location';
+$handler->display->display_options['fields']['country']['field'] = 'country';
+$handler->display->display_options['fields']['country']['label'] = '';
+$handler->display->display_options['fields']['country']['element_label_colon'] = FALSE;
+/* Field: Location: City */
+$handler->display->display_options['fields']['city']['id'] = 'city';
+$handler->display->display_options['fields']['city']['table'] = 'location';
+$handler->display->display_options['fields']['city']['field'] = 'city';
+$handler->display->display_options['fields']['city']['label'] = '';
+$handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
 /* Field: Content: Title */
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -1218,34 +1313,33 @@ $handler->display->display_options['fields']['nid']['id'] = 'nid';
 $handler->display->display_options['fields']['nid']['table'] = 'node';
 $handler->display->display_options['fields']['nid']['field'] = 'nid';
 $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-/* Field: Location: Country */
-$handler->display->display_options['fields']['country']['id'] = 'country';
-$handler->display->display_options['fields']['country']['table'] = 'location';
-$handler->display->display_options['fields']['country']['field'] = 'country';
-$handler->display->display_options['fields']['country']['label'] = '';
-$handler->display->display_options['fields']['country']['element_label_colon'] = FALSE;
-/* Field: Location: City */
-$handler->display->display_options['fields']['city']['id'] = 'city';
-$handler->display->display_options['fields']['city']['table'] = 'location';
-$handler->display->display_options['fields']['city']['field'] = 'city';
-$handler->display->display_options['fields']['city']['label'] = '';
-$handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
 /* Field: Content: Hub type */
 $handler->display->display_options['fields']['field_types_of_mini_missions']['id'] = 'field_types_of_mini_missions';
 $handler->display->display_options['fields']['field_types_of_mini_missions']['table'] = 'field_data_field_types_of_mini_missions';
 $handler->display->display_options['fields']['field_types_of_mini_missions']['field'] = 'field_types_of_mini_missions';
 $handler->display->display_options['fields']['field_types_of_mini_missions']['label'] = 'Type';
 $handler->display->display_options['fields']['field_types_of_mini_missions']['delta_offset'] = '0';
+/* Field: Content: Semaphore */
+$handler->display->display_options['fields']['field_hub_status']['id'] = 'field_hub_status';
+$handler->display->display_options['fields']['field_hub_status']['table'] = 'field_data_field_hub_status';
+$handler->display->display_options['fields']['field_hub_status']['field'] = 'field_hub_status';
+$handler->display->display_options['fields']['field_hub_status']['label'] = '';
+$handler->display->display_options['fields']['field_hub_status']['element_class'] = 'field-semaphore';
+$handler->display->display_options['fields']['field_hub_status']['element_label_colon'] = FALSE;
 $handler->display->display_options['defaults']['sorts'] = FALSE;
+/* Sort criterion: Location: Country */
+$handler->display->display_options['sorts']['country']['id'] = 'country';
+$handler->display->display_options['sorts']['country']['table'] = 'location';
+$handler->display->display_options['sorts']['country']['field'] = 'country';
+$handler->display->display_options['sorts']['country']['country_sort'] = 'code';
+/* Sort criterion: Location: City */
+$handler->display->display_options['sorts']['city']['id'] = 'city';
+$handler->display->display_options['sorts']['city']['table'] = 'location';
+$handler->display->display_options['sorts']['city']['field'] = 'city';
 /* Sort criterion: Content: Title */
 $handler->display->display_options['sorts']['title']['id'] = 'title';
 $handler->display->display_options['sorts']['title']['table'] = 'node';
 $handler->display->display_options['sorts']['title']['field'] = 'title';
-/* Sort criterion: Content: Post date */
-$handler->display->display_options['sorts']['created']['id'] = 'created';
-$handler->display->display_options['sorts']['created']['table'] = 'node';
-$handler->display->display_options['sorts']['created']['field'] = 'created';
-$handler->display->display_options['sorts']['created']['order'] = 'DESC';
 $handler->display->display_options['defaults']['filter_groups'] = FALSE;
 $handler->display->display_options['defaults']['filters'] = FALSE;
 /* Filter criterion: Content: Published */
@@ -1262,10 +1356,12 @@ $handler->display->display_options['filters']['type']['field'] = 'type';
 $handler->display->display_options['filters']['type']['value'] = array(
   'hub' => 'hub',
 );
+$handler->display->display_options['filters']['type']['group'] = 1;
 /* Filter criterion: Location: Country */
 $handler->display->display_options['filters']['country']['id'] = 'country';
 $handler->display->display_options['filters']['country']['table'] = 'location';
 $handler->display->display_options['filters']['country']['field'] = 'country';
+$handler->display->display_options['filters']['country']['group'] = 1;
 $handler->display->display_options['filters']['country']['exposed'] = TRUE;
 $handler->display->display_options['filters']['country']['expose']['operator_id'] = 'country_op';
 $handler->display->display_options['filters']['country']['expose']['label'] = 'Country';

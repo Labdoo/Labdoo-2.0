@@ -87,6 +87,7 @@ projects[menu_view_unpublished] = 1.0-beta3
 projects[role_delegation] = 1.1 
 projects[legal] = 1.7 
 projects[google_adwords] = 2.1 
+projects[linkchecker] = 1.3
 
 ;--------------------
 ; Performance

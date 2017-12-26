@@ -118,6 +118,7 @@ dependencies[] = menu_view_unpublished
 dependencies[] = role_delegation 
 dependencies[] = legal
 dependencies[] = google_adwords 
+dependencies[] = linkchecker
 
 ;;; Performance
 dependencies[] = boost

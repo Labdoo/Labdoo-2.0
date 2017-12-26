@@ -1231,6 +1231,7 @@ function lbd_contact_form_submit($form, &$form_state) {
   $reason_code = $form_state['values']['reason'];
 
   // Forwarding email based on country
+  // In production, set this table to the correct email addresses
   $country2shub_email = array(
       "Germany" => "Labdoo-DACH@Labdoo.org, contact@labdoo.org",
       "United States" => "wendy.lu@labdoo.org, contact@labdoo.org", 
@@ -1238,10 +1239,17 @@ function lbd_contact_form_submit($form, &$form_state) {
       "Taiwan" => "wendy.lu@labdoo.org, contact@labdoo.org",
       "Austria" => "Salzburg-Hub@Labdoo.org, contact@labdoo.org"
   );
-  if(!array_key_exists($country, $country2shub_email))
-    $to_emails = variable_get('site_mail', '');
-  else
+  if(array_key_exists($country, $country2shub_email))
     $to_emails = $country2shub_email[$country];
+  else {
+    // Rest of the world. Do round robin based on a pool of volunteers.
+    // In production, set this list to the correct email addresses.
+    $world_emails_pool = array('jordi.ros@labdoo.org', 'elena.parpal@labdoo.org', 'montse.vivero@labdoo.org');
+    // Keep it simple, and select emails randomly
+    // The following line to be enabled in a few days once we initate the round robin team
+//    $to_emails = "contact@labdoo.org," . $world_emails_pool[time() % sizeof($world_emails_pool)]; 
+    $to_emails = "contact@labdoo.org";
+  }
 
   // Forwarding email based on city
   $city2shub_email = array(

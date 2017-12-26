@@ -358,7 +358,12 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
 
   if($hubId != NULL) 
   {
-    $queryHub = "(SELECT DISTINCT entity_id FROM field_data_field_hub WHERE (field_hub_target_id=:hid))";
+    $queryHub = "(SELECT tHub.entity_id FROM
+                   ((SELECT DISTINCT entity_id FROM field_data_field_hub WHERE (field_hub_target_id=:hid))
+                   UNION
+                   (SELECT DISTINCT field_edoovillage_destination_target_id as entity_id FROM field_data_field_edoovillage_destination
+                    WHERE entity_id IN (SELECT entity_id FROM field_data_field_hub_laptop
+                    WHERE field_hub_laptop_target_id=:hid) AND field_edoovillage_destination_target_id != 0)) AS tHub)";
     $query = $query . " UNION ALL " . $queryHub;
     $placeHolders[':hid'] = $hubId;
     $numberOfQueries++;
@@ -2052,6 +2057,13 @@ function lbd_visualize_cron() {
   lbd_display_dashboard_hubs(NULL, NULL, TRUE, TRUE); 
   lbd_display_dashboard_edoovillages(NULL, NULL, NULL, TRUE, TRUE); 
   lbd_display_dashboard_dootrips(NULL, NULL, TRUE, TRUE);
+
+  // Re-compute the hubs dashboards 
+  $query = "SELECT nid FROM node WHERE type='hub'";
+  $result = db_query($query);
+  foreach($result as $item) {
+    lbd_display_dashboard_doojects(NULL, $item->nid, NULL, NULL, TRUE, TRUE);
+  }
 
   return;
 }
