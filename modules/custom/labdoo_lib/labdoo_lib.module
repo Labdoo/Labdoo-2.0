@@ -1142,7 +1142,7 @@ function lbd_allocate_edoovillage_id() {
 /**
  * Attempts to acquire a lock
  *
- * @param string The lock name
+ * @param string $lock_name The lock name
  *
  * @return True if it was acquired, False otherwise
  *
@@ -1167,7 +1167,7 @@ function lbd_lock_acquire($lock_name) {
 /**
  * Releases a lock
  *
- * @param string The lock name
+ * @param string $lock_name The lock name
  *
  */
 function lbd_lock_release($lock_name) {
@@ -1179,7 +1179,7 @@ function lbd_lock_release($lock_name) {
  * Acquire a lock and schedule its release when 
  * the current thread exits
  *
- * @param string The lock name
+ * @param string $lock_name The lock name
  *
  * @return True if it successfully acquired the lock, False otherwise
  *
@@ -1589,16 +1589,34 @@ function labdoo_lib_form_node_form_alter(&$form, &$form_state, $form_id) {
 }
 
 
+/**
+ * Implements hook_menu_alter
+ *
+ */
 function labdoo_lib_menu_alter(&$items) {
+  // User account access
   $items['user/%user/edit']['access callback'] = 'labdoo_permissions_access_account_edit';
   $items['user/%user/roles']['access callback'] = 'labdoo_permissions_access_account_roles';
+  // Adwords access
   $items['admin/config/system/google_adwords/path']['access callback'] = 'labdoo_permissions_access_adwords';
   $items['admin/config/system/google_adwords/path/add']['access callback'] = 'labdoo_permissions_access_adwords';
   $items['admin/config/system/google_adwords/path/%/edit']['access callback'] = 'labdoo_permissions_access_adwords';
   $items['admin/config/system/google_adwords/path/%/delete']['access callback'] = 'labdoo_permissions_access_adwords';
+  // Photo albums access
+  $items['node/%node_gallery_api_gallery/sort']['access callback'] = 'labdoo_permissions_access_photoalbum';
+  $items['node/%node_gallery_api_gallery/items']['access callback'] = 'labdoo_permissions_access_photoalbum';
+  $items['node/%node_gallery_api_gallery/upload']['access callback'] = 'labdoo_permissions_access_photoalbum_upload';
 }
 
 
+/**
+ * Controls access to edit user account
+ *
+ * @param string $account The account upon which access is to be checked
+ *
+ * @return True if user is allowed access, false otherwise
+ *
+ */ 
 function labdoo_permissions_access_account_edit($account) {
   global $user;
 
@@ -1621,6 +1639,14 @@ function labdoo_permissions_access_account_edit($account) {
 }
 
 
+/**
+ * Controls access to account's roles
+ *
+ * @param string $account The account upon which access is to be checked
+ *
+ * @return True if user is allowed access, false otherwise
+ *
+ */ 
 function labdoo_permissions_access_account_roles($account=NULL) {
   global $user;
   // Can't use $account->uid because it is not set for this menu tab due to having a lower weight
@@ -1638,12 +1664,62 @@ function labdoo_permissions_access_account_roles($account=NULL) {
 }
 
 
-function labdoo_permissions_access_adwords($account=NULL) {
+/**
+ * Controls access to adwords dashboard 
+ *
+ * @return True if user is allowed access, false otherwise
+ *
+ */ 
+function labdoo_permissions_access_adwords() {
   global $user;
   $userRoles = array_values($user->roles);
   if(in_array('superhub manager', $userRoles) || in_array('administrator', $userRoles)) 
     return TRUE;
   return FALSE;
+}
+
+
+/**
+ * Controls access to photo albums
+ *
+ * @param string $op The operation being requested
+ * @param node $gallery The photo album node
+ * @param user $account If used, the user owning the photo album 
+ *
+ * @return True if user is allowed access, false otherwise
+ *
+ */ 
+function labdoo_permissions_access_photoalbum($op, $gallery = NULL, $account = NULL) {
+  global $user;
+
+  // If user is logged in and has edit rights to this edoovillage or hub, return TRUE
+  if (user_is_logged_in()) {
+    // It's either an edoovillage or a hub photo album
+    $nodeId = labdoo_lib_get_field($gallery, 'field_photo_album_edoovillage', 'node', 'target_id');
+    if(!$nodeId)
+      $nodeId = labdoo_lib_get_field($gallery, 'field_photo_album_hub', 'node', 'target_id');
+    $loadedNode = node_load($nodeId);
+    $editorIds = labdoo_lib_get_field_all($loadedNode, 'field_edoo_additional_editors', 'node', 'target_id'); 
+    if(in_array($user->uid, $editorIds)) 
+      return TRUE;
+  }
+
+  // Fall back to the default user_access hook
+  return node_gallery_api_user_access($op, $gallery, $account);
+}
+
+
+/**
+ * Controls access to upload photos in albums
+ *
+ * @param node $gallery The photo album node
+ * @param string $item_type If used, node type of the item to be uploaded 
+ *
+ * @return True if user is allowed access, false otherwise
+ *
+ */ 
+function labdoo_permissions_access_photoalbum_upload($gallery, $item_type = NULL) {
+  return labdoo_permissions_access_photoalbum('upload', $gallery);
 }
 
 
