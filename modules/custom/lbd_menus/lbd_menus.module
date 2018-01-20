@@ -770,6 +770,26 @@ function make_main_menu() {
 }
 
 
+/**
+ * Checks if user has wiki writer rights
+ *
+ * @return True if user is logged in and has wiki writer rights; False otherwise 
+ */
+function _user_has_wiki_rights() {
+  global $user;
+
+  if(!user_is_logged_in())
+    return FALSE;
+
+  $userRoles = array_values($user->roles);
+  
+  if(!in_array('wiki writer', $userRoles)) 
+    return FALSE;
+
+  return TRUE;
+}
+
+
 /*
  * Implements hook_menu
  *
@@ -938,6 +958,16 @@ function lbd_menus_menu() {
     'weight' => -40, 
   );
 
+  $menus['myBrokenLinks'] = array
+  (
+    'title' => 'My broken links',
+    'page callback' => '_menu_item_redirect_my_broken_links',
+    'access callback' => '_user_has_wiki_rights',
+    'type' => MENU_NORMAL_ITEM,
+    'menu_name' => 'main-menu',
+    'weight' => -35, 
+  );
+
   $menus['manageFiles'] = array
   (
     'title' => 'Manage files',
@@ -1064,6 +1094,12 @@ function _menu_item_redirect_my_roles() {
   return;
 }
 
+function _menu_item_redirect_my_broken_links() {
+  global $user; 
+  drupal_goto('user/' . $user->uid . '/linkchecker');
+  return;
+}
+
 function _menu_item_redirect_manage_files() {
   global $user; 
   drupal_goto('user/' . $user->uid . '/imce');
@@ -1181,6 +1217,11 @@ function lbd_menus_menu_link_alter(&$item) {
     $item['plid'] = $plid;
   }
 
+  if ($item['page callback'] == '_menu_item_redirect_my_broken_links') {
+    $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='user' AND link_title='My account' AND menu_name='main-menu'")->fetchField();
+    $item['plid'] = $plid;
+  }
+ 
   if ($item['page callback'] == '_menu_item_redirect_manage_files') {
     $plid = db_query("SELECT mlid FROM menu_links WHERE link_path='user' AND link_title='My account' AND menu_name='main-menu'")->fetchField();
     $item['plid'] = $plid;
