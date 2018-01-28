@@ -46,7 +46,7 @@ function bootstrap1_preprocess_page(&$vars) {
   // Redirect expired events
   $status = drupal_get_http_header("status");
   if ($status == "404 Not Found") {
-    labdoo_lib_msg_info("If you think this is an error on the Labdoo platform, please reach out to the Labdoo team at contact@labdoo.org so that we can fix it. Thank you.");
+    labdoo_lib_msg_info("This content could not be found. Maybe this content existed before but it has already been removed (or moved to another location) by another user or maybe it never existed. If you think this is an error on the Labdoo platform, please reach out to the Labdoo team at contact@labdoo.org so that we can fix it. Thank you.");
   }
 }
 

@@ -1244,11 +1244,10 @@ function lbd_contact_form_submit($form, &$form_state) {
   else {
     // Rest of the world. Do round robin based on a pool of volunteers.
     // In production, set this list to the correct email addresses.
-    $world_emails_pool = array('jordi.ros@labdoo.org', 'elena.parpal@labdoo.org', 'montse.vivero@labdoo.org');
+    // (Note: we commit this into git for convenience only.)
+    $world_emails_pool = array('jordi.ros@labdoo.org', 'elena.parpal@labdoo.org');
     // Keep it simple, and select emails randomly
-    // The following line to be enabled in a few days once we initate the round robin team
-//    $to_emails = "contact@labdoo.org," . $world_emails_pool[time() % sizeof($world_emails_pool)]; 
-    $to_emails = "contact@labdoo.org";
+    $to_emails = "contact@labdoo.org," . $world_emails_pool[time() % sizeof($world_emails_pool)]; 
   }
 
   // Forwarding email based on city

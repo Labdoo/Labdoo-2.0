@@ -2378,7 +2378,9 @@ function labdoo_lib_node_view($node, $view_mode) {
     "content/zu-labdoo" => "LabdooD",                     // Example type 2: redirect for all languages 
     // Add below more entries following one of the two types
     "de/content/about-labdoo" => "content/zu-labdoo",
-    "content/überblick-lerninhalte-ftp-server" => "content/overview-educational-content-provided-labdoo-ftp-server",
+    "content/überblick-lerninhalte-ftp-server" => "content/overview-educational-content",
+    "content/educational-content-oer-open-educational-resources" => "content/overview-educational-content",
+    "content/offline-wikis-et-ressources-éducatives-libres" => "content/overview-educational-content",
     "content/impressum-0" => "content/impressum",
     "newsletter/labdoo-newsletter-global" => "newsletters",
     // Main helpers in Spanish
@@ -2393,7 +2395,20 @@ function labdoo_lib_node_view($node, $view_mode) {
     "es/content/labdoo-user-accounts" => "content/cuentas-de-usuario-de-labdoo",
     "es/content/labdoo-global-support-lgs-program" => "content/programa-de-soporte-global-de-labdoo-sgl",
     "es/content/labdoo-cities" => "content/labdoo-para-ciudades",
-    "es/content/labdoos-corporate-social-responsibility-csr-package" => "content/paquete-labdoo-de-responsabilidad-social-corporativa-rsc"
+    "es/content/labdoos-corporate-social-responsibility-csr-package" => "content/paquete-labdoo-de-responsabilidad-social-corporativa-rsc",
+    // Main helpers in Catalan
+    "ca/content/about-hubs" => "content/el-hubs-labdoo",
+    "ca/content/managing-edoovillages" => "content/gestionar-una-edoovillage",
+    // TODO: complete the next mappings when translations are completed
+    // "ca/content/about-dootronics" => "",
+    // "ca/content/dootrip-system" => "",
+    // "ca/content/about-teams" => "",
+    // "ca/content/newsletters" => "",
+    // "ca/content/labdoo-wiki" => "",
+    // "ca/content/labdoo-user-accounts" => "",
+    // "ca/content/labdoo-global-support-lgs-program" => "",
+    // "ca/content/labdoos-corporate-social-responsibility-csr-package" => "",
+    "ca/content/labdoo-cities" => "content/labdoo-ciutats"
   ];
 
   // Perform any page redirect if needed
@@ -4679,5 +4694,18 @@ function labdoo_lib_convert_html_link($link) {
 function labdoo_lib_generate_html_link_from_nid($nid, $text) {
   $url = url('node/'. $nid, array('absolute' => TRUE, 'alias' => TRUE)); 
   return "<a href=$url>" . $text . "</a>";
+}
+
+
+/**
+ * hook_google_recaptcha_always_protect_alter
+ * Alters the list of always protected forms.
+ *
+ * @param array $always_protected
+ *   List of always protected forms.
+ */
+function labdoo_lib_google_recaptcha_always_protect_alter(&$always_protected) {
+  // Add Labdoo contact form to the list of always protected forms
+  $always_protected[] = 'lbd_contact_form';
 }
 
