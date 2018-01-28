@@ -58,6 +58,7 @@ projects[simplify] = 3.3
 ;--------------------
 projects[captcha] = 1.3
 projects[recaptcha] = 1.12
+projects[google_recaptcha] = 1.2
 projects[honeypot] = 1.21
 projects[user_restrictions] = 1.0
 

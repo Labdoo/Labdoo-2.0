@@ -101,6 +101,13 @@ dependencies[] = termcase
 dependencies[] = field_collection 
 dependencies[] = simplify 
 
+;;; Security
+dependencies[] = captcha 
+dependencies[] = recaptcha
+dependencies[] = google_recaptcha
+dependencies[] = honeypot 
+dependencies[] = user_restrictions
+
 ;;; Features and exports/imports
 dependencies[] = strongarm
 dependencies[] = features
@@ -111,7 +118,6 @@ dependencies[] = node_export_features
 
 ;;; Admin Utils
 dependencies[] = module_filter
-dependencies[] = user_restrictions
 dependencies[] = publishcontent 
 dependencies[] = view_unpublished 
 dependencies[] = menu_view_unpublished 
