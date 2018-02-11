@@ -199,7 +199,7 @@ function gic_table_submit($form, &$form_state) {
     node_save($gicNode);
   }
 
-  drupal_set_message(t('Your GIC table has been submitted successfully.'));
+  labdoo_lib_msg_info('Your GIC table has been submitted successfully.');
   $form_state['redirect'] = array('edoovillage', array('query' => array('e' => $edoovillageId)));
 
   return;

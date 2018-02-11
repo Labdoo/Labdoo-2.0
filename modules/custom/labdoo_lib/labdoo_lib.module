@@ -1686,7 +1686,7 @@ function labdoo_permissions_access_adwords() {
  * @param node $gallery The photo album node
  * @param user $account If used, the user owning the photo album 
  *
- * @return True if user is allowed access, false otherwise
+ * @return True if user is allowed access, fall back to default return value otherwise
  *
  */ 
 function labdoo_permissions_access_photoalbum($op, $gallery = NULL, $account = NULL) {
@@ -1696,11 +1696,11 @@ function labdoo_permissions_access_photoalbum($op, $gallery = NULL, $account = N
   if (user_is_logged_in()) {
     // It's either an edoovillage or a hub photo album
     $nodeId = labdoo_lib_get_field($gallery, 'field_photo_album_edoovillage', 'node', 'target_id');
-    if(!$nodeId)
+    if(!$nodeId) { // It's a hub photo album
       $nodeId = labdoo_lib_get_field($gallery, 'field_photo_album_hub', 'node', 'target_id');
+    }
     $loadedNode = node_load($nodeId);
-    $editorIds = labdoo_lib_get_field_all($loadedNode, 'field_edoo_additional_editors', 'node', 'target_id'); 
-    if(in_array($user->uid, $editorIds)) 
+    if(labdoo_lib_edoo_hub_edit_access($loadedNode, $user))
       return TRUE;
   }
 
@@ -2310,11 +2310,47 @@ function labdoo_lib_hub2edoovillage($hubId) {
 
 
 /**
+ * Checks if user has (specific) edit rights to an edoovillage or hub without such
+ * user being a (general) edoovillage or hub manager
+ *
+ * @param node $node The edoovillage or hub node (must be one of the two)
+ * @param user $user The user upon which edit access is to be checked 
+ *
+ * @return True if user has edit rights, False otherwise
+ *
+ */
+function labdoo_lib_edoo_hub_edit_access($node, $user) {
+  // Assumes node is always either an edoovillage or a hub
+  if($node->type == 'edoovillage') {
+    $field_additional_editors = 'field_edoo_additional_editors';
+    $field_managers = 'field_project_manager_s_';
+  }
+  else {  // It's a hub
+    $field_additional_editors = 'field_hub_additional_editors';
+    $field_managers = 'field_hub_manager_s_';
+  }
+  $editorIds = labdoo_lib_get_field_all($node, $field_additional_editors, 'node', 'target_id'); 
+  if(in_array($user->uid, $editorIds)) 
+    return TRUE;
+  $managerIds = labdoo_lib_get_field_all($node, $field_managers, 'node', 'target_id'); 
+  if(in_array($user->uid, $managerIds)) 
+    return TRUE;
+  return FALSE;
+}
+
+
+/**
  * Implements hook_node_access
  *
  */
 function labdoo_lib_node_access($node, $op, $account) {
+  global $user;
 
+  if(!user_is_logged_in()) 
+    return NODE_ACCESS_IGNORE;
+
+  // Do not allow to delete edoovillages
+  // that have dootronics assigned
   if($op == "delete") {
     if($node->type == "edoovillage") {
       $query = "SELECT COUNT(*) FROM field_data_field_status WHERE 
@@ -2326,15 +2362,26 @@ function labdoo_lib_node_access($node, $op, $account) {
     }
   }
 
+  // Allow users with edit rights on an edoovillage (or hub) to be able
+  // to write a story for that edoovillage
+  $path = drupal_get_path_alias(current_path());
+  if(0 === strpos($path, 'node/add/labdoo-story')) {
+    $edoovillageId = $_GET['field_story_edoovillage']; 
+    $edoovillageNode = node_load($edoovillageId);
+    if($edoovillageNode) {
+      if(labdoo_lib_edoo_hub_edit_access($edoovillageNode, $user)) {
+        return NODE_ACCESS_ALLOW;
+      }
+    }
+  }
+
   // For logged in users accessing a dootronic page, check
   // if the user should have extra access rights due to
   // its relationship paths (e.g. via hub, via edoovillage)
   // with the dootronic
-  if(!user_is_logged_in()) 
+  if(!property_exists($node, 'type')) {
     return NODE_ACCESS_IGNORE;
-
-  if(!property_exists($node, 'type'))
-    return NODE_ACCESS_IGNORE;
+  }
     
   if($node->type == 'laptop') {
     $dootronicsList = labdoo_lib_user2hub2dootronic($account->uid);
@@ -4501,7 +4548,8 @@ function labdoo_render_object_menu() {
        in_array('edoovillage manager', $userRoles) || 
        in_array('hub manager', $userRoles) || 
        in_array('wiki manager', $userRoles) || 
-       in_array('administrator', $userRoles)) { 
+       in_array('administrator', $userRoles) ||
+       labdoo_lib_edoo_hub_edit_access($nodeObj, $user)) { 
       $code .= "<p><a href='node/add/labdoo-story?field_story_edoovillage=$nodeId'>
                 <img src='/profiles/labdoo/files/pictures/pencil-icon.png' width='25px'/>&nbsp;" . 
                 t("Write a story about this $objectString") . "</a></p>";
