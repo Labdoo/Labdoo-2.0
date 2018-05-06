@@ -107,6 +107,8 @@ dependencies[] = recaptcha
 dependencies[] = google_recaptcha
 dependencies[] = honeypot 
 dependencies[] = user_restrictions
+dependencies[] = antibot
+dependencies[] = spambot
 
 ;;; Features and exports/imports
 dependencies[] = strongarm

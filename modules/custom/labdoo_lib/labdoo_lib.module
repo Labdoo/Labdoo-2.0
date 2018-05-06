@@ -1472,6 +1472,7 @@ function labdoo_lib_node_delete($node) {
  */
 function labdoo_lib_form_node_form_alter(&$form, &$form_state, $form_id) {
   global $user;
+
   /*
    * Node is a laptop
    */
@@ -1758,6 +1759,25 @@ function labdoo_lib_form_user_profile_form_alter(&$form, &$form_state) {
  *
  */
 function labdoo_lib_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+  $userId = $user->uid;
+
+  // Do not present comment form in team pages if a user is not a member of that team
+  if ($form_id == 'comment_node_team_page_form' || $form_id == 'comment_node_team_task_form') {
+    $teamId = lbd_teams_page_group_id();
+    $members = lbd_teams_get_team_members($teamId);
+    if(!in_array($userId, $members))  {
+      unset($form['author']);
+      unset($form['subject']);
+      unset($form['comment_body']);
+      if ($form_id == 'comment_node_team_page_form')
+        unset($form['field_conv_comment_attach']);
+      if ($form_id == 'comment_node_team_task_form')
+        unset($form['field_task_comment_attach']);
+      unset($form['actions']['submit'] );
+      unset($form['actions']['preview'] );
+    }
+  }
 
   // Do not show the hub manager notification options during registration
   if($form_id == 'user_register_form') {
@@ -3793,7 +3813,7 @@ $labelDoojects
 $numDoojects
 </td>
 <td>
-<a href=\"../../content/dootronics-dashboard?u=$userId\" target=\"_blank\">[See all contributed dootronics]</a>
+<a href=\"../../content/dootronics-dashboard?u=$userId\" target=\"_blank\">" . t("[See all contributed dootronics]") . "</a>
 </td>
 </tr>
 <tr>
@@ -3804,7 +3824,7 @@ $labelDootrips
 $numDootrips
 </td>
 <td>
-<a href=\"../../content/dootrips-dashboard?u=$userId\" target=\"_blank\">[See all contributed dootrips]</a>
+<a href=\"../../content/dootrips-dashboard?u=$userId\" target=\"_blank\">" . t("[See all contributed dootrips]") . "</a>
 </td>
 </tr>
 <tr>
@@ -3815,7 +3835,7 @@ $labelEdoovillages
 $numEdoovillages
 </td>
 <td>
-<a href=\"../../content/edoovillages-dashboard?u=$userId\" target=\"_blank\">[See all contributed edoovillages]</a>
+<a href=\"../../content/edoovillages-dashboard?u=$userId\" target=\"_blank\">" . t("[See all contributed edoovillages]") . "</a>
 </td>
 </tr>
 <tr>
@@ -3826,7 +3846,7 @@ $labelHubs
 $numHubs
 </td>
 <td>
-<a href=\"../../content/hubs-dashboard?u=$userId\" target=\"_blank\">[See all contributed hubs]</a>
+<a href=\"../../content/hubs-dashboard?u=$userId\" target=\"_blank\">" . t("[See all contributed hubs]") . "</a>
 </td>
 </tr>
 <tr>
@@ -3837,7 +3857,7 @@ $labelWiki
 $numWikis
 </td>
 <td>
-<a href=\"../../my-wikis?uid=$account->name\" target=\"_blank\">[See all contributed wikis]</a>
+<a href=\"../../my-wikis?uid=$account->name\" target=\"_blank\">" . t("[See all contributed wikis]") . "</a>
 </td>
 </tr>
 </table>
@@ -4753,7 +4773,76 @@ function labdoo_lib_generate_html_link_from_nid($nid, $text) {
  *   List of always protected forms.
  */
 function labdoo_lib_google_recaptcha_always_protect_alter(&$always_protected) {
-  // Add Labdoo contact form to the list of always protected forms
+  // Add Labdoo contact form to the list of always rotected forms
   $always_protected[] = 'lbd_contact_form';
+  $always_protected[] = 'comment_node_team_page_form';
+  $always_protected[] = 'comment_node_team_task_form';
+  $always_protected[] = 'team_page_node_form';
+  $always_protected[] = 'team_task_node_form';
+  $always_protected[] = 'event_node_form';
+}
+
+
+/**
+ * hook_codec_info
+ *
+ * Implements codec for YouTube video without cookies (used for GDPR compliance) 
+ *
+ */
+function labdoo_lib_codec_info() {
+  $codecs = array();
+  $codecs['youtube_nocookie'] = array(
+    'name' => t('YouTubeNoCookie'),
+    'instructions' => t('This codec delivers youtube videos without using cookies (e.g., for GDPR compliance).'),
+    'sample_url' => 'http://www.youtube-nocookie.com/watch?v=uN1qUeId',
+    'callback' => 'video_filter_youtube_nocookie',
+    'html5_callback' => 'video_filter_youtube_html5_nocookie',
+    'regexp' => array(
+      '/youtube-nocookie\.com\/watch\?.*?v=([a-z0-9\-_]+)/i',
+      '/youtu-nocookie.be\/([a-z0-9\-_]+)/i',
+      '/youtube-nocookie\.com\/v\/([a-z0-9\-_]+)/i',
+      '/youtube-nocookie\.com\/embed\/([a-z0-9\-_]+)/i',
+    ),
+    'ratio' => 16 / 9,
+    'control_bar_height' => 0,
+  );
+  return $codecs;
+}
+
+
+/**
+ * Callback for YouTube codec without cookies.
+ *
+ * @see video_filter_codec_info()
+ */
+function video_filter_youtube_nocookie($video) {
+  $attributes = array(
+    'rel' => $video['related'] ? 'rel=1' : 'rel=0',
+    'autoplay' => $video['autoplay'] ? 'autoplay=1' : 'autoplay=0',
+    'fs' => 'fs=1',
+  );
+
+  $video['source'] = '//www.youtube-nocookie.com/v/' . $video['codec']['matches'][1] . '?' . implode('&amp;', $attributes);
+
+  $params['wmode'] = 'opaque';
+
+  return video_filter_flash($video, $params);
+}
+
+
+/**
+ * HTML5 callback for YouTube codec without cookies.
+ *
+ * @see video_filter_codec_info()
+ */
+function video_filter_youtube_html5_nocookie($video) {
+  $attributes = array(
+    'rel' => $video['related'] ? 'rel=1' : 'rel=0',
+    'autoplay' => $video['autoplay'] ? 'autoplay=1' : 'autoplay=0',
+    'wmode' => 'wmode=opaque',
+  );
+  $video['source'] = '//www.youtube-nocookie.com/embed/' . $video['codec']['matches'][1] . '?' . implode('&amp;', $attributes);
+
+  return video_filter_iframe($video);
 }
 

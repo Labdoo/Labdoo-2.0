@@ -75,6 +75,12 @@ The following are some of the most commonly used drush queries.
     # drush php-eval "lbd_communicate_pop_email_cache(0);" # pops the top element
     #+END_EXAMPLE
 
+  - To send out a new batch of pending emails (and to run lbd_communicate's cron job which checks other communication aspects):
+
+    #+BEGIN_EXAMPLE
+    # drush php-eval "lbd_communicate_cron();" 
+    #+END_EXAMPLE
+
   - To update the Labdoo logo (the small logo located at the upper left part of each Labdoo page):
 
     #+BEGIN_EXAMPLE

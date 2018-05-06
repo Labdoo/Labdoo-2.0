@@ -26,7 +26,7 @@ projects[diff] = 3.2
 ; User interface
 ;--------------------
 projects[context] = 3.6
-projects[views] = 3.15
+projects[views] = 3.20
 projects[homebox] = 2.0-beta7
 projects[boxes] = 1.2
 projects[edit_profile] = 1.0-beta2
@@ -56,11 +56,13 @@ projects[simplify] = 3.3
 ;--------------------
 ; Security
 ;--------------------
-projects[captcha] = 1.3
+projects[captcha] = 1.5
 projects[recaptcha] = 1.12
 projects[google_recaptcha] = 1.2
 projects[honeypot] = 1.21
 projects[user_restrictions] = 1.0
+projects[antibot] = 1.0
+projects[spambot] = 1.5
 
 ;--------------------
 ; Features, migrations and exports/imports
@@ -171,13 +173,13 @@ projects[registration] = 1.6
 ;--------------------
 projects[ctools] = 1.9
 projects[libraries] = 2.2
-projects[entity] = 1.6
+projects[entity] = 1.9
 projects[xautoload] = 4.5
 projects[token] = 1.6
 projects[rules] = 2.9
 projects[pathauto] = 1.3
 projects[subpathauto] = 1.3
-projects[entityreference] = 1.1
+projects[entityreference] = 1.5
 projects[field_group] = 1.5
 projects[date] = 2.9
 projects[nodeaccess_userreference] = 3.10
