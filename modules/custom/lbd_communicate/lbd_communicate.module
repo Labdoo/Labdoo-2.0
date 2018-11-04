@@ -147,6 +147,7 @@ function lbd_communicate_mail_send($email_params) {
 //    drupal_set_message(t('An automatic email has been sent out to the user(s) connected with this event.'));
   }
   else {
+// labdoo_lib_print_array($result); // enable only for temporary debugging
     drupal_set_message(t('There was a problem sending an automatic message, please contact Labdoo at ' . variable_get('site_mail', 'contact@labdoo.org')), 'error');
   }
 
@@ -222,8 +223,10 @@ function _email_laptop_event($node) {
     $params["NOTTYPE"] = "laptop_updated";
   }
 
-  $emailsList = $user->mail;
+  $emailsList = $user->mail;  // This is BCC-ed (the default)
+  $emailsListCC = "";         // This is CC-ed
   $emailsList = $emailsList . ", " . labdoo_dooject_extract_emails($node);    
+  $emailsListCC = $emailsListCC . ", " . labdoo_dooject_extract_emails($node, True);
 
   // If dooject has associated dootrips, add the dootrippers email address too
   $wNode = entity_metadata_wrapper('node', $node);
@@ -236,6 +239,7 @@ function _email_laptop_event($node) {
         continue;
       $dootripLoaded = node_load($dootripNode->nid);
       $emailsList = $emailsList . ", " . labdoo_dootrip_extract_emails($dootripLoaded); 
+      $emailsListCC = $emailsListCC . ", " . labdoo_dootrip_extract_emails($dootripLoaded, True);
     }
   }
 
@@ -296,7 +300,8 @@ function _email_laptop_event($node) {
     }
   }
 
-  $email_params['to'] = $emailsList; 
+  $email_params['to'] = $emailsListCC . ", " . variable_get('site_mail');
+  $email_params['headers']['Bcc'] = $emailsList;
 
   $subjectTemplate = file_get_contents($subjectFileName);
   $bodyTemplate = file_get_contents($bodyFileName);
@@ -409,9 +414,11 @@ function _email_dootrip_event($node, $eventType) {
   // Remove the hashtag as that confuses the URL parameters
   $dootripTitle = str_replace('#', '', $dootripTitle);
   $emailsList = labdoo_dootrip_extract_emails($node);    
+  $emailsListCC = labdoo_dootrip_extract_emails($node, True);
   if(strpos($emailsList, $user->mail) == FALSE)
     $emailsList = $emailsList . ", " . $user->mail;
-  $email_params['to'] = $emailsList; 
+  $email_params['to'] = $emailsListCC . ", " . variable_get('site_mail');
+  $email_params['headers']['Bcc'] = $emailsList;
   $dootripNid = $node->nid;
 
   $subjectTemplate = file_get_contents($subjectFileName);
@@ -946,9 +953,11 @@ function lbd_communicate_cron() {
      */
     $dootripTitle = $node->title; 
     $emailsList = labdoo_dootrip_extract_emails($node);    
+    $emailsListCC = labdoo_dootrip_extract_emails($node, True);
     if(strpos($emailsList, $user->mail) == FALSE)
       $emailsList = $emailsList . ", " . $user->mail;
-    $email_params['to'] = $emailsList; 
+    $email_params['to'] = $emailsListCC . ", " . variable_get('site_mail');
+    $email_params['headers']['Bcc'] = $emailsList;
     $dootripNid = $node->nid;
 
     $subjectTemplate = file_get_contents($subjectFileName);

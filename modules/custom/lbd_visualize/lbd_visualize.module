@@ -509,18 +509,18 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
   }
 
   $metrics[0] = array('label' => 'Edoovillage', 'field' => 'link', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[1] = array('label' => 'Hubs', 'field' => 'hub', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
-  $metrics[2] = array('label' => 'Needed (N)', 'field' => 'needed', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[3] = array('label' => 'In transit (T)', 'field' => 'intransit', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[4] = array('label' => 'Delivered (D)', 'field' => 'delivered', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[5] = array('label' => 'Remaining (R = N-T-D)', 'field' => 'remaining', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[6] = array('label' => '% Completed', 'field' => 'pcompleted', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
-  $metrics[7] = array('label' => 'Number of students', 'field' => 'numStudents', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[8] = array('label' => 'Status', 'field' => 'status', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
-  $metrics[9] = array('label' => 'Country', 'field' => 'country', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
-  $metrics[10] = array('label' => 'Completed', 'field' => 'completed', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[11] = array('label' => 'Open', 'field' => 'open', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[12] = array('label' => 'Date created', 'field' => 'createdDate', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[1] = array('label' => 'Date created', 'field' => 'createdDate', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[2] = array('label' => 'Hubs', 'field' => 'hub', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+  $metrics[3] = array('label' => 'Needed (N)', 'field' => 'needed', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[4] = array('label' => 'In transit (T)', 'field' => 'intransit', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[5] = array('label' => 'Delivered (D)', 'field' => 'delivered', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[6] = array('label' => 'Remaining (R = N-T-D)', 'field' => 'remaining', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[7] = array('label' => '% Completed', 'field' => 'pcompleted', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "yes");
+  $metrics[8] = array('label' => 'Number of students', 'field' => 'numStudents', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+  $metrics[9] = array('label' => 'Status', 'field' => 'status', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+  $metrics[10] = array('label' => 'Country', 'field' => 'country', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+  $metrics[11] = array('label' => 'Completed', 'field' => 'completed', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+  $metrics[12] = array('label' => 'Open', 'field' => 'open', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
   $metrics[13] = array('label' => 'Semaphore', 'field' => 'semaphore', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
 
   cache_set($cacheIndexPrefix . 'objects', $objects, 'cache');
@@ -1180,6 +1180,8 @@ var stringFilter = new google.visualization.ControlWrapper({
   $tableSortingCol = 0;
   if($objectsType == "dootrip") 
     $tableSortingCol = 1;
+  if($objectsType == "edoovillage") 
+    $tableSortingCol = 1;
 
   print("
 
@@ -1199,7 +1201,7 @@ var table = new google.visualization.ChartWrapper({
                 'sortAscending' : false,
                 'sort' : 'enable'
               },
-              view: {columns: [0, 1, 2, 3, 4, 5]} 
+              view: {columns: [0, 1, 2, 3, 4, 5, 6]} 
             });
 
 /*
@@ -1251,7 +1253,7 @@ var initState = {
   foreach($metrics as $index => $metric) { 
     if($metric['menu'] == "yes") {
       print("columnsTable.addRow([$index, data.getColumnLabel($index)]);");
-      if($columnsCounter < 5)
+      if($columnsCounter < 6)
         print("initState.selectedValues.push(data.getColumnLabel($index));");
       $columnsCounter++;
     }
@@ -2040,10 +2042,13 @@ function lbd_display_dooject_column_chart($objectNid, $type)
 
 
 /*
- * Implementation of hook_cron
+ * Rebuild the dashboards  
+ *
+ * This method is to be run via an external cron job like this:
+ *   40 * * * * /usr/bin/drush --root=/var/www/lbd/ php-eval "lbd_visualize_rebuild_dashboards();"
  *
  */
-function lbd_visualize_cron() {
+function lbd_visualize_rebuild_dashboards() {
 
   // Clean up all the volatile-marked entries (these are all dashboards
   // different than the general ones)
@@ -2051,12 +2056,17 @@ function lbd_visualize_cron() {
   cache_clear_all('lbd_visualization_edoovillage_volatile', 'cache', TRUE);
   cache_clear_all('lbd_visualization_hub_volatile', 'cache', TRUE);
   cache_clear_all('lbd_visualization_dootrip_volatile', 'cache', TRUE);
+  drupal_set_message("Cleared all Labdoo dashboards");
 
   // Re-compute the general (non-volatile marked) dashboards
   lbd_display_dashboard_doojects(NULL, NULL, NULL, NULL, TRUE, TRUE);
+  drupal_set_message("Rebuilt the dootronics dashboard");
   lbd_display_dashboard_hubs(NULL, NULL, TRUE, TRUE); 
+  drupal_set_message("Rebuilt the hubs dashboard");
   lbd_display_dashboard_edoovillages(NULL, NULL, NULL, TRUE, TRUE); 
+  drupal_set_message("Rebuilt the edoovillages dashboard");
   lbd_display_dashboard_dootrips(NULL, NULL, TRUE, TRUE);
+  drupal_set_message("Rebuilt the dootrips dashboard");
 
   // Re-compute the hubs dashboards 
   $query = "SELECT nid FROM node WHERE type='hub'";
@@ -2064,6 +2074,7 @@ function lbd_visualize_cron() {
   foreach($result as $item) {
     lbd_display_dashboard_doojects(NULL, $item->nid, NULL, NULL, TRUE, TRUE);
   }
+  drupal_set_message("Rebuilt the hub specific dashboards");
 
   return;
 }

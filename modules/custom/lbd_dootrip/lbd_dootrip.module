@@ -50,8 +50,7 @@ function _update_linked_nodes($node, $src_field, $dst_field, $src_name, $dst_nam
     $dstListOld = array();
   }
   else {
-    $srcLoaded = node_load($node->nid);
-    $dstListOld = field_get_items('node', $srcLoaded, $src_field);
+    $dstListOld = field_get_items('node', $node->original, $src_field);
   }
 
   if($dstListNew == $dstListOld)
@@ -66,7 +65,16 @@ function _update_linked_nodes($node, $src_field, $dst_field, $src_name, $dst_nam
     $srcList = $wDstNode->$dst_field->value();
     if(!$srcList) 
       $srcList = array();
-    if($new || !in_array($srcLoaded, $srcList)) {
+    $addIt = True;
+    if(!$new) {
+      foreach($srcList as $key => $srcNode) {
+        if($srcNode->nid == $node->nid) {
+          $addIt = FALSE;
+          break;
+        }
+      }      
+    }
+    if($addIt) {
       drupal_set_message("The " . $src_name . " '" . $node->title . "'  was added to the " . $dst_name . " '" . $dstLoaded->title . "'", 'status', FALSE);
       $srcList[] = $node;
       $wDstNode->$dst_field->set($srcList);
@@ -93,7 +101,7 @@ function _update_linked_nodes($node, $src_field, $dst_field, $src_name, $dst_nam
         continue;
 
       foreach($srcList as $key => $srcNode) {
-        if($srcNode->nid == $srcLoaded->nid) {
+        if($srcNode->nid == $node->nid) {
           unset($srcList[$key]);
           drupal_set_message("The " . $src_name . " '" . $node->title . "'  was removed from the " . $dst_name . " '" . $dstLoaded->title . "'", 'status', FALSE);
           $wDstNode->$dst_field->set($srcList);
