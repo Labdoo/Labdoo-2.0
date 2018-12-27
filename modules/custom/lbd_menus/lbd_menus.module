@@ -404,6 +404,8 @@ function make_main_menu() {
             'module' => 'menu',
           );
 
+  $mlid = menu_link_save($item);
+
   $item = array(
             'link_path' => 'admin/config/system/google_adwords/path',
             'link_title' => t('[Superhub] Manage adwords'),
@@ -415,6 +417,32 @@ function make_main_menu() {
             'module' => 'menu',
           );
  
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'clone-dootronics',
+            'link_title' => t('[Superhub] Clone dootronics'),
+            'menu_name' => 'main-menu',
+            'weight' => 40,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => $hubMlid,
+            'module' => 'menu',
+          );
+
+  $mlid = menu_link_save($item);
+
+  $item = array(
+            'link_path' => 'update-dootronics',
+            'link_title' => t('[Superhub] Update dootronics'),
+            'menu_name' => 'main-menu',
+            'weight' => 50,
+            'language' => 'en',
+            'customized' => 1,
+            'plid' => $hubMlid,
+            'module' => 'menu',
+          );
+
   $mlid = menu_link_save($item);
 
   /*
@@ -784,6 +812,26 @@ function _user_has_wiki_rights() {
   $userRoles = array_values($user->roles);
   
   if(!in_array('wiki writer', $userRoles)) 
+    return FALSE;
+
+  return TRUE;
+}
+
+
+/**
+ * Checks if user has superhub rights
+ *
+ * @return True if user is logged in and has superhub rights; False otherwise 
+ */
+function _user_has_superhub_rights() {
+  global $user;
+
+  if(!user_is_logged_in())
+    return FALSE;
+
+  $userRoles = array_values($user->roles);
+
+  if(!in_array('superhub manager', $userRoles))
     return FALSE;
 
   return TRUE;

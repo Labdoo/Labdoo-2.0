@@ -58,7 +58,7 @@ function lbd_communicate_mail($key, &$message, $email_params) {
  *
  */
 function _partition_email_params($emailString) {
-  $LBD_COMM_MAX_EMAILS_BATCH = 20;
+  $LBD_COMM_MAX_EMAILS_BATCH = 40;
 
   $emailList = explode(",", $emailString);
   if(sizeof($emailList) > $LBD_COMM_MAX_EMAILS_BATCH) {

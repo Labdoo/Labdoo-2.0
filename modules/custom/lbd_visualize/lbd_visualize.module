@@ -2043,38 +2043,65 @@ function lbd_display_dooject_column_chart($objectNid, $type)
 
 /*
  * Rebuild the dashboards  
+ * To avoid too much computational overhead, we have two versions:
+ *    higher_frequency (that should be run more often) and 
+ *    lower_frequency (that should be run less often)
  *
  * This method is to be run via an external cron job like this:
- *   40 * * * * /usr/bin/drush --root=/var/www/lbd/ php-eval "lbd_visualize_rebuild_dashboards();"
+ *   40 * * * * /usr/bin/drush --root=/var/www/lbd/ php-eval "lbd_visualize_rebuild_dashboards_higher_frequency();"
+ *   30 *\/2 * * * /usr/bin/drush --root=/var/www/lbd/ php-eval "lbd_visualize_rebuild_dashboards_lower_frequency();"
  *
  */
-function lbd_visualize_rebuild_dashboards() {
+function lbd_visualize_rebuild_dashboards_higher_frequency() {
 
   // Clean up all the volatile-marked entries (these are all dashboards
-  // different than the general ones)
+  // different than the general ones) for laptops and dootrips 
+  // (these are considered top priority according to user feedback)
   cache_clear_all('lbd_visualization_dooject_volatile', 'cache', TRUE);
-  cache_clear_all('lbd_visualization_edoovillage_volatile', 'cache', TRUE);
-  cache_clear_all('lbd_visualization_hub_volatile', 'cache', TRUE);
   cache_clear_all('lbd_visualization_dootrip_volatile', 'cache', TRUE);
-  drupal_set_message("Cleared all Labdoo dashboards");
+  drupal_set_message("Cleared dootronic and dootrip general dashboards");
 
   // Re-compute the general (non-volatile marked) dashboards
   lbd_display_dashboard_doojects(NULL, NULL, NULL, NULL, TRUE, TRUE);
   drupal_set_message("Rebuilt the dootronics dashboard");
+  lbd_display_dashboard_dootrips(NULL, NULL, TRUE, TRUE);
+  drupal_set_message("Rebuilt the dootrips dashboard");
+
+  // Re-compute the highest volume hubs dashboards (these take long to
+  // load, so we recompute them here since they were just cleaned up 
+  // above)
+  lbd_display_dashboard_doojects(NULL, 431, NULL, NULL, TRUE, TRUE);
+  lbd_display_dashboard_doojects(NULL, 440, NULL, NULL, TRUE, TRUE);
+  lbd_display_dashboard_doojects(NULL, 15811, NULL, NULL, TRUE, TRUE);
+  lbd_display_dashboard_doojects(NULL, 218, NULL, NULL, TRUE, TRUE);
+  drupal_set_message("Rebuilt the hub specific dashboards");
+
+  return;
+}
+
+
+function lbd_visualize_rebuild_dashboards_lower_frequency() {
+
+  // Clean up all the volatile-marked entries (these are all dashboards
+  // different than the general ones) for edoovillages and hubs 
+  // (these are considered lower priority according to user feedback)
+  cache_clear_all('lbd_visualization_edoovillage_volatile', 'cache', TRUE);
+  cache_clear_all('lbd_visualization_hub_volatile', 'cache', TRUE);
+  drupal_set_message("Cleared edoovillage and hub Labdoo dashboards");
+
+  // Re-compute the general (non-volatile marked) dashboards
   lbd_display_dashboard_hubs(NULL, NULL, TRUE, TRUE); 
   drupal_set_message("Rebuilt the hubs dashboard");
   lbd_display_dashboard_edoovillages(NULL, NULL, NULL, TRUE, TRUE); 
   drupal_set_message("Rebuilt the edoovillages dashboard");
-  lbd_display_dashboard_dootrips(NULL, NULL, TRUE, TRUE);
-  drupal_set_message("Rebuilt the dootrips dashboard");
 
-  // Re-compute the hubs dashboards 
-  $query = "SELECT nid FROM node WHERE type='hub'";
-  $result = db_query($query);
-  foreach($result as $item) {
-    lbd_display_dashboard_doojects(NULL, $item->nid, NULL, NULL, TRUE, TRUE);
-  }
-  drupal_set_message("Rebuilt the hub specific dashboards");
+//  // Re-compute the hubs dashboards 
+//  $query = "SELECT nid FROM node WHERE type='hub'";
+//  $result = db_query($query);
+//  foreach($result as $item) {
+//    lbd_display_dashboard_doojects(NULL, $item->nid, NULL, NULL, TRUE, TRUE);
+//  }
+//  drupal_set_message("Rebuilt the hub specific dashboards");
 
   return;
 }

@@ -2552,7 +2552,7 @@ function labdoo_lib_node_view($node, $view_mode) {
     "ca/content/about-hubs" => "content/el-hubs-labdoo",
     "ca/content/managing-edoovillages" => "content/gestionar-una-edoovillage",
     // TODO: complete the next mappings when translations are completed
-    // "ca/content/about-dootronics" => "",
+    "ca/content/about-dootronics" => "content/què-són-els-dootronics",
     // "ca/content/dootrip-system" => "",
     // "ca/content/about-teams" => "",
     // "ca/content/newsletters" => "",
@@ -3503,6 +3503,12 @@ function labdoo_block_filter_header() {
   if(lbd_wiki_is_book_node())
     return TRUE;
 
+  if(strcmp($path, "update-dootronics") == 0)
+      return TRUE;
+
+  if(strcmp($path, "clone-dootronics") == 0)
+      return TRUE;
+
   return FALSE;
 }
 
@@ -3696,6 +3702,24 @@ function labdoo_lib_menu() {
     'title' => t('Getting started'),
     'weight' => 0,
     'type' => MENU_LOCAL_TASK,
+  );
+
+  $items['clone-dootronics'] = array(
+    'title' => 'Clone a dootronic multiple times in one shot',
+    'description' => 'The dootronics clone form.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('dootronic_clone_form'),
+    'access callback' => '_user_has_superhub_rights',
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['update-dootronics'] = array(
+    'title' => 'Update a list of dootronics in one shot',
+    'description' => 'The dootronics file upload form.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('dootronic_file_upload_form'),
+    'access callback' => '_user_has_superhub_rights',
+    'type' => MENU_CALLBACK,
   );
 
   return $items;
@@ -4961,6 +4985,12 @@ function labdoo_lib_reset_cookie_compliance() {
 /**
  *  This function can be used to fix laptop collisions. 
  *
+ *  @param integer $nid
+ *      The node ID of the oldest collisioned laptop (if it's not the oldest--i.e., smallest value--
+ *      it will not fix the collision)
+ *  @param string $laptopId 
+ *      The colissioned laptop ID
+ *
  *  Example:
  *      drush php-eval "fix_laptop_collision(58491, \"000014309\");"
  *
@@ -4982,7 +5012,7 @@ function fix_laptop_collision($nid, $laptopId) {
     }
   }
   if ($numberDootronics > 1 && $iAmOldest) {
-    print("I am oldest node");  
+    print("I am the oldest node\n");  
     // Find out if the previous or next IDs are available
     $laptopIdPrev = strval(intval($laptopId) - 1);
     $laptopIdNext = strval(intval($laptopId) + 1);
@@ -5061,5 +5091,125 @@ function labdoo_lib_dootrips_total_kms() {
   }
      
   return($totalKms);
+}
+
+
+function dootronic_clone_form($form, &$form_state) {
+
+ $form['dootronic_id'] = array(
+    '#type' => 'textfield',
+    '#title' => t('<strong>Use this form to clone multiple times a dootronic.</strong><br/><br/>
+                   Enter the ID of the dootronic you want to clone:'),
+    '#prefix' => '<img src="/sites/default/files/content/general-objects/upload-image.png" width="600"><br/><br/><br/>',
+    '#size' => 10,
+    '#maxlength' => 10,
+    '#required' => TRUE,
+  );
+
+ $form['clone_quantity'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Enter the quantity of clones you want to generate:'),
+    '#size' => 10,
+    '#maxlength' => 10,
+    '#required' => TRUE,
+  );
+
+  $form['submit_button'] = array(
+    '#type' => 'submit',
+    '#value' => t('Clone'),
+  );
+
+  return $form;
+}
+
+function dootronic_clone_form_validate($form, &$form_state) {
+  $max_num_clones = 20;
+  $dootronic_id = $form_state['values']['dootronic_id'];
+  $clone_quantity = $form_state['values']['clone_quantity'];
+
+  # Check the format of the dootronic ID
+  if(!is_numeric($dootronic_id) || intval($dootronic_id) <= 0)
+    form_set_error('dootronic_id', t('Dootric ID must be a 9 digit number.'));
+
+  # Check the dootronic ID
+  $nid = db_query("SELECT nid from node WHERE type='laptop' AND title=:title", array(":title"=> $dootronic_id))->fetchField();
+  if(!$nid)
+    form_set_error('dootronic_id', t('Dootric ID does not exist. Please use an ID of an existing dootronic making sure you type the full 9 digits.'));
+
+  # Check the format and limits of the quantity value
+  if(!is_numeric($clone_quantity) || intval($clone_quantity) > $max_num_clones || intval($clone_quantity) < 1)
+    form_set_error('clone_quantity', t('Please make sure that the quantify of clones is a number between 1 and :maxquant.',
+                   array(":maxquant" => $max_num_clones)));
+
+
+}
+
+function dootronic_clone_form_submit($form, &$form_state) {
+  $dootronic_id = $form_state['values']['dootronic_id'];
+  $clone_quantity = $form_state['values']['clone_quantity'];
+
+  $nid = db_query("SELECT nid from node WHERE type='laptop' AND title=:title", array(":title"=> $dootronic_id))->fetchField();
+  if(!$nid)
+    labdoo_lib_msg_info("Could not clone this dootronic. Error when looking up the dootronic.");
+  $node = node_load($nid);
+  if(!$node)
+    labdoo_lib_msg_info("Could not clone this dootronic. Error when loading the dootronic.");
+
+  for($i = 1; $i <= $clone_quantity; $i++) {
+    unset($node->nid);
+    unset($node->vid);
+    node_save($node);
+    $cloned_id = db_query("SELECT title from node WHERE nid=:nodeid", array(":nodeid" => $node->nid))->fetchField();
+    labdoo_lib_msg_info(t("Dootronic :did1 was correctly cloned into dootronic :did2.", array(":did1" => $dootronic_id, ":did2" => $cloned_id)));
+  }
+
+  return;
+}
+
+
+function dootronic_file_upload_form($form, &$form_state) {
+  $form = array();
+  $form['file'] = array(
+        '#type' => 'file',
+        '#title' => t('<strong>Use this form to upload and execute an automatic dootronic update file.</strong><br/><br/>
+                      Upload and execute an automatic dootronic update (adu) file:'),
+        '#prefix' => '<img src="/sites/default/files/content/general-objects/upload-image.png" width="600"><br/><br/><br/>',
+        '#description' => t('Allowed file extensions: adu'),
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Upload and execute'),
+  );
+
+  return $form;
+}
+
+function dootronic_file_upload_form_validate($form, &$form_state) {
+  $file = file_save_upload('file', array(
+#       'file_validate_is_image' => array(),
+        'file_validate_extensions' => array('adu'),
+  ));
+
+  if ($file) {
+    if ($file = file_move($file, 'public://')) {
+      $form_state['values']['file'] = $file;
+    }
+    else {
+      form_set_error('file', t('Failed to write the uploaded file the site\'s file folder.'));
+    }
+  }
+  else {
+    form_set_error('file', t('No file was uploaded.'));
+  }
+}
+
+function dootronic_file_upload_form_submit($form, &$form_state) {
+  $file=$form_state['values']['file'];
+  unset($form_state['values']['file']);
+  $file->status = FILE_STATUS_PERMANENT;
+  file_save($file);
+  // TODO: process the file
+  drupal_set_message(t('The form has been submitted and the file @filename has been correctly executed.',
+             array('@filename' => $file->filename)));
 }
 
