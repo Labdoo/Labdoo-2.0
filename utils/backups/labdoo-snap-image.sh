@@ -40,14 +40,14 @@
 #  - User of profile_dst* must correspond to userid_dst
 #  - profile_dst* must be in region_dst*
 
-profile_src=FILLIN                                          # Source profile where instance resides
-profile_dst1=FILLIN                                         # Destination profile where backup AMI is to be shared 
+profile_src=FILLIN                                       # Source profile where instance resides
+profile_dst1=FILLIN                                      # Destination profile where backup AMI is to be shared 
 profile_dst2=FILLIN                                         # Destination profile where backup AMI is to be replicated 
-userid_dst=FILLIN                                           # AWS user ID of destination profiles
-region_dst1="us-east-1"                                     # Destination region where the back is shared
-region_dst2="eu-central-1"                                  # Destination region where the back is replicated
-instance_id_prod=i-4d6b099d                                 # Instance to backup (production)
-#instance_id_dev=i-9e939b75                                 # Instance to backup (development) 
+userid_dst=FILLIN                                     # AWS user ID of destination profiles
+region_dst1="eu-central-1"                                  # Destination region where the back is shared
+region_dst2="us-east-1"                                     # Destination region where the back is replicated
+instance_id_prod=FILLIN                        # Instance to backup (production)
+#instance_id_dev=FILLIN                                 # Instance to backup (development) 
 max_backups=5                                               # Maximum number of backup AMIs kept
 
 # ------------------------------------------------------------------------
@@ -62,15 +62,17 @@ del_ami_name="LabdooProductionAMI-"$last_day                  # Name of the old 
 export PATH=~/.local/bin:$PATH
 source ~/.profile
 
-# Exit if the AMI already exists
+
+# Exit if the AMI for today already exists
 echo "Checking if backup AMI $new_ami_name already exists..."
 state=$(aws ec2 describe-images --owners self --profile $profile_src --query 'Images[*].[Name,State]' | grep $new_ami_name | awk '{print $2}')
 if [ "$state" != "" ]; then
-  echo "Backup AMI already exists, nothing to do."
+  echo "Backup AMI $new_ami_name already exists, nothing to do."
   exit
 fi
 
-# Create the AMI
+
+# Create the AMI for today - 
 echo "Image does not exist, creating backup AMI $new_ami_name ..."
 aws ec2 create-image --no-reboot --profile $profile_src --instance-id $instance_id_prod --name $new_ami_name --description "Labdoo production AMI as of "$today
 
@@ -90,9 +92,10 @@ echo " done."
 # Get the AMI ID and its snapshots IDs
 echo "Getting the AMI ID and its snapshots corresponding to AMI $new_ami_name"
 image_id=$(aws ec2 describe-images --owners self --profile $profile_src --query 'Images[*].[Name,ImageId]' | grep $new_ami_name | awk '{print $2}')
-snapshot_ids=($(aws ec2 --profile labdoo describe-snapshots --query 'Snapshots[?StartTime>=`'$snapshot_date'`]' | grep $image_id | grep --only-matching "snap-[0-9a-z]*"))
+snapshot_ids=($(aws ec2 --profile $profile_src describe-snapshots --query 'Snapshots[?StartTime>=`'$snapshot_date'`]' | grep $image_id | grep --only-matching "snap-[0-9a-z]*"))
 
-# Share the AMI with the destination profie
+
+# Share the AMI with the destination profile
 #   Share first the AMI and then all of its snapshots
 echo "Sharing AMI $image_id with destination user $userid_dst"
 aws ec2 modify-image-attribute --profile $profile_src --image-id $image_id --launch-permission "{\"Add\":[{\"UserId\":\"$userid_dst\"}]}"
@@ -129,14 +132,29 @@ do
 done
 
 # Remove the max_backup-th oldest image if it exists 
-echo "Checking if any old AMI needs to be deleted/deregistered..."
+echo "Checking if any old AMI needs to be deleted/deregistered in the Origin account [Backup of $max_backups days ago]"
 image_id_del=$(aws ec2 describe-images --owners self --profile $profile_src --query 'Images[*].[Name,ImageId]' | grep $del_ami_name | awk '{print $2}')
 if [ "$image_id_del" != "" ]; then
   echo "Deleting/deregistering AMI $del_ami_name which is too old to keep..."
   aws ec2 deregister-image --profile $profile_src --image-id $image_id_del 
   echo "Done."
-  exit
 else
-  echo "No backup AMI old enough to delete."
+  echo "No backup AMI $del_ami_name to delete. [Backup of $max_backups days ago]"
 fi
 
+
+echo "Checking if any old AMI needs to be deleted/deregistered in the Destination account [Backup of $max_backups days ago - except on 1st and 15th of month, to be kept for historical backup]"
+date --date="$max_backups days ago" +"%d"
+if [ "$(date --date="$max_backups days ago" +"%d")" -eq 01 ] || [ "$(date --date="$max_backups days ago" +"%d")" -eq 15 ] ; then 
+	echo "We will leave the backup of day $last_day for having historical backups"
+else
+	image_id_del=$(aws ec2 describe-images --owners self --profile $profile_dst2 --query 'Images[*].[Name,ImageId]' | grep $del_ami_name | awk '{print $2}')
+	if [ "$image_id_del" != "" ]; then
+  		echo "Deleting/deregistering AMI Backup-$del_ami_name which is too old to keep..."
+  		aws ec2 deregister-image --profile $profile_dst2 --image-id $image_id_del 
+  		echo "Done."
+  	else
+  		echo "No backup AMI $del_ami_name to delete. [Backup of $max_backups days ago]"
+	fi
+fi
+echo "Concluded execution of labdoo-snap-image.sh"
