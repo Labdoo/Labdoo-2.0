@@ -52,9 +52,9 @@
 #  - profile_dst* must be in region_dst*
 
 profile_src=migjornEU                                       # Source profile where instance resides
-profile_dst1=labdooEU                                      # Destination profile where backup AMI is to be shared 
+profile_dst1=labdooEU                                       # Destination profile where backup AMI is to be shared 
 profile_dst2=labdoo                                         # Destination profile where backup AMI is to be replicated 
-userid_dst=FILLIN                                     # AWS user ID of destination profiles
+userid_dst=FILLIN                                     	    # AWS user ID of destination profiles
 region_dst1="eu-central-1"                                  # Destination region where the back is shared
 region_dst2="us-east-1"                                     # Destination region where the back is replicated
 instance_id_prod=i-091ad475f7db2fd17                        # Instance to backup (production)
