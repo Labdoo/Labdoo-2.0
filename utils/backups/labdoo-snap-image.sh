@@ -40,15 +40,15 @@
 #  - User of profile_dst* must correspond to userid_dst
 #  - profile_dst* must be in region_dst*
 
-profile_src=FILLIN                                       # Source profile where instance resides
-profile_dst1=FILLIN                                      # Destination profile where backup AMI is to be shared 
-profile_dst2=FILLIN                                         # Destination profile where backup AMI is to be replicated 
-userid_dst=FILLIN                                     # AWS user ID of destination profiles
-region_dst1="eu-central-1"                                  # Destination region where the back is shared
-region_dst2="us-east-1"                                     # Destination region where the back is replicated
-instance_id_prod=FILLIN                        # Instance to backup (production)
-#instance_id_dev=FILLIN                                 # Instance to backup (development) 
-max_backups=5                                               # Maximum number of backup AMIs kept
+profile_src=FILLIN                                       # Source profile where instance resides and where the backup is to be created
+profile_dst1=FILLIN                                      # Destination profile where backup AMI is to be shared from - normally the same as the Source Profile
+profile_dst2=FILLIN                                      # Destination profile where backup AMI is to be replicated 
+userid_dst=FILLIN                                        # AWS user ID of destination profiles (dst2)
+region_dst1="eu-central-1"                               # Destination region where the back is shared
+region_dst2="us-east-1"                                  # Destination region where the back is replicated
+instance_id_prod=FILLIN                        		 # Instance to backup (production)
+#instance_id_dev=FILLIN                                  # Instance to backup (development) 
+max_backups=5                                            # Maximum number of backup AMIs kept
 
 # ------------------------------------------------------------------------
 
