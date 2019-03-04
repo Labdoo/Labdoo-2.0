@@ -17,41 +17,44 @@
 # region = us-east-1
 # output = text
 #
-# [profile FILLIN_WITH_profile_dst1]
+# [profile FILLIN_WITH_profile_dst]
 # aws_access_key_id = FILLIN 
 # aws_secret_access_key = FILLIN 
 # region = eu-central-1
 # output = text
 #
-# [profile FILLIN_WITH_profile_dst2]
-# aws_access_key_id = FILLIN 
-# aws_secret_access_key = FILLIN 
-# region = us-east-1
-# output = text
 #
 # EOF
 #
 
 # ------------------------------------------------------------------------
-
-# Modify the following parameteres as needed.
-# Notes: 
-#  - Region of profile_dst1 must be the same as region of profile_src
-#  - User of profile_dst* must correspond to userid_dst
-#  - profile_dst* must be in region_dst*
-
-profile_src=FILLIN                                       # Source profile where instance resides and where the backup is to be created
-profile_dst1=FILLIN                                      # Destination profile where backup AMI is to be shared from - normally the same as the Source Profile
-profile_dst2=FILLIN                                      # Destination profile where backup AMI is to be replicated 
-userid_dst=FILLIN                                        # AWS user ID of destination profiles (dst2)
-region_dst1="eu-central-1"                               # Destination region where the back is shared
-region_dst2="us-east-1"                                  # Destination region where the back is replicated
-instance_id_prod=FILLIN                        		 # Instance to backup (production)
-#instance_id_dev=FILLIN                                  # Instance to backup (development) 
+# Modify the following parameteres as needed, 
+#GENERAL CONFIGURATION PARAMETERS
+instance_id_prod=i-0763472799d555d0c                     # EC2 Instance to backup (can be production or devevelopement)
 max_backups=5                                            # Maximum number of backup AMIs kept
 
-# ------------------------------------------------------------------------
 
+#PROGRAMATIC USER ids are
+#EEUU - 362656287327
+#EUROPE -578955585868
+
+#UNCOMMENT THE PARAMETERS CORRESPONDING TO THE DIRECTION IN WHICH YOU WANT TO DO THE BACKUP
+#COPY FROM USA TO EU
+#profile_src=labdooUSA                                    # Source profile where instance resides and where the backup is to be created
+#profile_dst=labdooEU                                    # Destination profile where backup AMI is to be replicated 
+#userid_dst=578955585868                                  # AWS user ID of destination profiles (dst2)
+#region_src="us-east-1"                               # Destination region where the back is shared
+#region_dst="eu-central-1"                                  # Destination region where the back is replicated
+
+#COPY FROM EU TO USA
+profile_src=labdooEU                                     # Source profile where instance resides and where the backup is to be created
+profile_dst=labdooUSA                                   # Destination profile where backup AMI is to be replicated 
+userid_dst=362656287327                                  # AWS user ID of destination profiles (dst2)
+region_src="eu-central-1"                               # Destination region where the back is shared
+region_dst="us-east-1"                                  # Destination region where the back is replicated
+
+# ------------------------------------------------------------------------
+# IN CASE OF EXTRAORDINARY (Not Scheduled) BACKUP BEWARE TO CHANGE THE AMI NAME (script is checking that a Backup already exists for that day)
 today=$(date +"%Y%m%d")                                       # Today's date as YYYMMDD
 last_day=$(date --date="$max_backups days ago" +"%Y%m%d")     # Last day to keep a backup instance
 snapshot_date=$(date --date="1 day ago" +"%Y-%m-%d")          # Oldest day of snapshot to search
@@ -106,14 +109,14 @@ do
 done
 
 # Copy the AMI to another region
-echo "Copying AMI $image_id in region $region_dst1 to destination $region_dst2"
-aws ec2 copy-image --profile $profile_dst1 --source-region $region_dst1 --region $region_dst2 --source-image-id $image_id --name "Backup-"$new_ami_name
+echo "Copying AMI $image_id in region $region_src to destination $region_dst"
+aws ec2 copy-image --profile $profile_dst --source-region $region_src --region $region_dst --source-image-id $image_id --name "Backup-"$new_ami_name
 
 echo "Waiting for AMI copy to complete..."
 # Wait until the AMI has been copied
 while true
 do
-  state=$(aws ec2 describe-images --owners self --profile $profile_dst2 --query 'Images[*].[Name,State]' | grep $new_ami_name | awk '{print $2}')
+  state=$(aws ec2 describe-images --owners self --profile $profile_dst --query 'Images[*].[Name,State]' | grep $new_ami_name | awk '{print $2}')
   if [ "$state" == "available" ]; then
     break
   fi
@@ -148,10 +151,10 @@ date --date="$max_backups days ago" +"%d"
 if [ "$(date --date="$max_backups days ago" +"%d")" -eq 01 ] || [ "$(date --date="$max_backups days ago" +"%d")" -eq 15 ] ; then 
 	echo "We will leave the backup of day $last_day for having historical backups"
 else
-	image_id_del=$(aws ec2 describe-images --owners self --profile $profile_dst2 --query 'Images[*].[Name,ImageId]' | grep $del_ami_name | awk '{print $2}')
+	image_id_del=$(aws ec2 describe-images --owners self --profile $profile_dst --query 'Images[*].[Name,ImageId]' | grep $del_ami_name | awk '{print $2}')
 	if [ "$image_id_del" != "" ]; then
   		echo "Deleting/deregistering AMI Backup-$del_ami_name which is too old to keep..."
-  		aws ec2 deregister-image --profile $profile_dst2 --image-id $image_id_del 
+  		aws ec2 deregister-image --profile $profile_dst --image-id $image_id_del 
   		echo "Done."
   	else
   		echo "No backup AMI $del_ami_name to delete. [Backup of $max_backups days ago]"
