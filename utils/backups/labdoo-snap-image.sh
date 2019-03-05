@@ -66,7 +66,7 @@ export PATH=~/.local/bin:$PATH
 source ~/.profile
 
 
-# Exit if the AMI for today already exists
+# Exit if the today'a AMI already exists
 echo "Checking if backup AMI $new_ami_name already exists..."
 state=$(aws ec2 describe-images --owners self --profile $profile_src --query 'Images[*].[Name,State]' | grep $new_ami_name | awk '{print $2}')
 if [ "$state" != "" ]; then
@@ -75,7 +75,7 @@ if [ "$state" != "" ]; then
 fi
 
 
-# Create the AMI for today - 
+# Create the today's AMI - 
 echo "Image does not exist, creating backup AMI $new_ami_name ..."
 aws ec2 create-image --no-reboot --profile $profile_src --instance-id $instance_id_prod --name $new_ami_name --description "Labdoo production AMI as of "$today
 
