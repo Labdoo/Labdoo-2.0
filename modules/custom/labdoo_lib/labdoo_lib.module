@@ -1176,11 +1176,9 @@ function lbd_allocate_edoovillage_id() {
 
   $query = "SELECT title FROM node WHERE type='edoovillage' ORDER BY title ASC";
   $result = db_query($query);
+  $total_num_edoovillages = lbd_get_total_num_objects('edoovillage');
 
-  // The following algorithm searches for any possible
-  // holes in the Labdoo ID space and if none, allocates the next 
-  // smallest ID
-  $potentialId = 0;
+  $edoovillageIds = array();
   foreach($result as $item) {
     $edoovillageWords = explode(' ', $item->title);
     // This edoovillage uses the old notation and has no ID, skip it
@@ -1189,6 +1187,18 @@ function lbd_allocate_edoovillage_id() {
     // This edoovillage uses the new notation, extract its ID
     $edoovillageNumber = explode('#', $edoovillageWords[1]);
     $thisId = intval($edoovillageNumber[1]);
+    array_push($edoovillageIds, $thisId);
+  }
+  sort($edoovillageIds);
+
+  // The following algorithm searches for any possible
+  // holes in the Labdoo ID space and if none, allocates the next 
+  // smallest ID
+  $potentialId = 0;
+  $smallestId = 999999999999;
+  foreach($edoovillageIds as $thisId) {
+    if ($smallestId > $thisId)
+      $smallestId = $thisId;
     if (!$potentialId) {
       $potentialId = $thisId + 1;
       continue;
@@ -1202,7 +1212,13 @@ function lbd_allocate_edoovillage_id() {
   // using the ID notation. Just assigned it the number of
   // edoovillages + 1. 
   if (!$potentialId)
-    return lbd_get_total_num_objects('edoovillage') + 1;
+    return $total_num_edoovillages + 1;
+  // If the potential ID is larger than the total number of edoovillages,
+  // this means that we deleted an edoovillage which did not have an ID. Thus
+  // we should assign an ID just one number smaller than the smallest ID we 
+  // currently have, expanding the ID set from the left rather than from the right.
+  if ($potentialId > $total_num_edoovillages + 1) 
+    return($smallestId - 1);
   return($potentialId);
 }
 
