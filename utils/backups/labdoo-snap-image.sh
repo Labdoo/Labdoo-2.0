@@ -66,12 +66,13 @@ export PATH=~/.local/bin:$PATH
 source ~/.profile
 
 
-# Exit if the AMI for today already exists
+# Exit if the today'a AMI already exists
 echo "Checking if backup AMI $new_ami_name already exists..."
 state=$(aws ec2 describe-images --owners self --profile $profile_src --query 'Images[*].[Name,State]' | grep $new_ami_name | awk '{print $2}')
 if [ "$state" != "" ]; then
 	echo "Backup AMI $new_ami_name already exists, no Backup will be done."
 else
+
 
 
 
