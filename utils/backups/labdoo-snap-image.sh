@@ -30,8 +30,8 @@
 # ------------------------------------------------------------------------
 # Modify the following parameteres as needed, 
 #GENERAL CONFIGURATION PARAMETERS
-instance_id_prod=i-00f548ab184e535d6                     # EC2 Instance to backup (can be production or devevelopement)
-max_backups=2                                            # Maximum number of backup AMIs kept
+instance_id_prod=i-00f548ab184e535d6            # EC2 Instance to backup (can be production or devevelopement)
+max_backups=5                                   # Maximum number of backup AMIs kept
 
 
 #PROGRAMATIC USER ids are
@@ -40,26 +40,26 @@ max_backups=2                                            # Maximum number of bac
 
 #UNCOMMENT THE PARAMETERS CORRESPONDING TO THE DIRECTION IN WHICH YOU WANT TO DO THE BACKUP
 #COPY FROM USA TO EU
-profile_src=labdooUSA                                    # Source profile where instance resides and where the backup is to be created
-profile_dst=labdooEU                                    # Destination profile where backup AMI is to be replicated 
-userid_dst=578955585868                                  # AWS user ID of destination profiles (dst2)
-region_src="us-east-1"                               # Destination region where the back is shared
-region_dst="eu-central-1"                                  # Destination region where the back is replicated
+profile_src=labdooUSA				# Source profile where instance resides and where the backup is to be created
+profile_dst=labdooEU                            # Destination profile where backup AMI is to be replicated 
+userid_dst=578955585868                         # AWS user ID of destination profiles (dst2)
+region_src="us-east-1"                          # Destination region where the back is shared
+region_dst="eu-central-1"                       # Destination region where the back is replicated
 
 #COPY FROM EU TO USA
-#profile_src=labdooEU                                     # Source profile where instance resides and where the backup is to be created
-#profile_dst=labdooUSA                                   # Destination profile where backup AMI is to be replicated 
-#userid_dst=362656287327                                  # AWS user ID of destination profiles (dst2)
-#region_src="eu-central-1"                               # Destination region where the back is shared
-#region_dst="us-east-1"                                  # Destination region where the back is replicated
+#profile_src=labdooEU                           # Source profile where instance resides and where the backup is to be created
+#profile_dst=labdooUSA                          # Destination profile where backup AMI is to be replicated 
+#userid_dst=362656287327                        # AWS user ID of destination profiles (dst2)
+#region_src="eu-central-1"                      # Destination region where the back is shared
+#region_dst="us-east-1"                         # Destination region where the back is replicated
 
 # ------------------------------------------------------------------------
 # IN CASE OF EXTRAORDINARY (Not Scheduled) BACKUP BEWARE TO CHANGE THE AMI NAME (script is checking that a Backup already exists for that day)
-today=$(date +"%Y%m%d")                                       # Today's date as YYYMMDD
+today=$(date +"%Y%m%d")                         # Today's date as YYYMMDD
 last_day=$(date --date="$max_backups days ago" +"%Y%m%d")     # Last day to keep a backup instance
 snapshot_date=$(date --date="$max_backups day ago" +"%Y-%m-%d")          # Oldest day of snapshot to search
-new_ami_name="LabdooProductionAMI-"$today                     # Name of the newly created backup AMI
-del_ami_name="LabdooProductionAMI-"$last_day                  # Name of the old backup AMI to delete
+new_ami_name="LabdooProductionAMI-"$today       # Name of the newly created backup AMI
+del_ami_name="LabdooProductionAMI-"$last_day    # Name of the old backup AMI to delete
 
 # Make sure aws is in the PATH
 export PATH=~/.local/bin:$PATH
@@ -178,5 +178,5 @@ else
 		echo "No backup AMI $del_ami_name to delete. [Backup of $max_backups days ago]"
 	fi
 fi
-echo "Concluded execution of labdoo-snap-image.sh"
+echo "Completed execution of labdoo-snap-image.sh"
 
