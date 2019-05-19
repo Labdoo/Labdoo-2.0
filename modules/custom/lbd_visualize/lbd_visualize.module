@@ -1196,7 +1196,7 @@ var table = new google.visualization.ChartWrapper({
                 'allowHtml': true, 
                 'showRowNumber': true,
                 'page': 'enable',
-                'pageSize' : 250,
+                'pageSize' : 50,
                 'sortColumn' : $tableSortingCol,
                 'sortAscending' : false,
                 'sort' : 'enable'

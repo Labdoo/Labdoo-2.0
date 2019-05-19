@@ -202,7 +202,7 @@ function labdoo_lookup_coordinates($country, $city, &$lat, &$lon, $silent=True, 
       $coordinates = $cacheResult->data;
     }
     else {
-      $query = str_replace(' ', '+', 'https://maps.googleapis.com/maps/api/geocode/json?address='.$locationString.'&key=AIzaSyDGx3UaHAxbEQ-iAhvNKedeRTQ5L890YLU');
+      $query = str_replace(' ', '+', 'https://maps.googleapis.com/maps/api/geocode/json?address='.$locationString.'&key=AIzaSyDdcmHPMZz_m_FXzWhm8FliU2R6MifP3xs');
       $mapQuery = drupal_http_request($query);
       if(!property_exists($mapQuery, 'data')) {
         if($silent == False) {
@@ -2514,6 +2514,11 @@ function labdoo_lib_node_view($node, $view_mode) {
   global $language;
   global $user;
 
+/*labdoo_lib_msg_info("[UPDATE: 09/05/2019 19:50 CET] - WE ARE BACK<br/>
+<hr/>
+After some turbulent period the page is back and fully functional again. We hope that after this 'vacation period' you fully recharged batteries... Continue spreading education around the world and thank you for your patience!
+<hr/>
+"); */
 //labdoo_lib_msg_info("[29 Mar 2019 22:20 UTC] FTP Server is down. We are trying to restore the service. ");
 // Temporary code to deal with GDPR
 // If user not re-registered to newsletter, send friendly reminder
