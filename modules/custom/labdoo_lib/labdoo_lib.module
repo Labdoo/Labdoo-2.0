@@ -2514,12 +2514,11 @@ function labdoo_lib_node_view($node, $view_mode) {
   global $language;
   global $user;
 
-/*labdoo_lib_msg_info("[UPDATE: 09/05/2019 19:50 CET] - WE ARE BACK<br/>
+/*labdoo_lib_msg_info("[PLANNED MAINTENANCE DOWNTIME ON 30/05/2019 from 8:00 to 9:00 CEST]<br/>
 <hr/>
-After some turbulent period the page is back and fully functional again. We hope that after this 'vacation period' you fully recharged batteries... Continue spreading education around the world and thank you for your patience!
+We will be performing some tiny maintenance activities. Dont worry, it will not take long. Sorry for the inconvinience
 <hr/>
 "); */
-//labdoo_lib_msg_info("[29 Mar 2019 22:20 UTC] FTP Server is down. We are trying to restore the service. ");
 // Temporary code to deal with GDPR
 // If user not re-registered to newsletter, send friendly reminder
 //  if(user_is_logged_in()) {
@@ -2669,12 +2668,45 @@ function lbd_print_dooject_labels($laptopid = NULL) {
        compartment. Check this <a href="/profiles/labdoo/files/pictures/tagging-flow.png" class="colorbox-load">drawing</a> if in doubt.')
   );
 
+  $isRange = 0;
   foreach($query as $param) {
     $keyPair = explode('=', $param);
-    if($keyPair[0] != "id")
-      continue;
-    $laptopid = $keyPair[1];
+    if($keyPair[0] == "id_first") {
+      $laptopidFirst = $keyPair[1];
+      $isRange += 1;
+    }
+    if($keyPair[0] == "id_last") {
+      $laptopidLast = $keyPair[1];
+      $isRange += 1;
+    }
+    
+  }
 
+  if($isRange == 1) {
+    print(t('<p>Wrong Parameters. Please use both an id_first and an id_last parameter to define a range of tags.</p>'));
+    return; 
+  }
+
+  $laptopIdList = array();
+  if($isRange == 2) {
+    if(!ctype_digit($laptopidFirst) or !ctype_digit($laptopidLast)) {
+      print(t('<p>Wrong Parameters. Please use a valid <span style="color:#ff0000;">9 digit</span> number to correctly display tags.</p>'));
+      return; 
+    }
+    for ($x = $laptopidFirst; $x <= $laptopidLast; $x++) {
+      array_push($laptopIdList, sprintf("%09d", $x));
+    }
+  }
+  else {
+    foreach($query as $param) {
+      $keyPair = explode('=', $param);
+      if($keyPair[0] != "id")
+        continue;
+      array_push($laptopIdList, $keyPair[1]);
+    }
+  }
+
+  foreach($laptopIdList as $laptopid) {
     $nodeId = lbd_laptopid2nodeid($laptopid);
     if($nodeId == "" || (($nodeLoaded = node_load($nodeId)) == FALSE)) {
       print(t('<p>Wrong Identifier. Please use a valid <span style="color:#ff0000;">9 digit</span> number to correctly display tags.</p>'));
