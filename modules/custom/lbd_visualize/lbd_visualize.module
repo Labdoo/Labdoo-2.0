@@ -1099,10 +1099,19 @@ function print_dashboard_objects($objectsType, $objectsName, $objects, $metrics,
     $dataString .= '[';
 
     foreach($metrics as $index => $metric) { 
-      // TODO: checking for whether it is numeric
-      // may not be the most generic way to approach this
-      // and may not accommodate for all cases
-      if(is_numeric($object[$metric['field']])) {
+      // TODO: checking for whether it is numeric or a string.
+      // May not be the most generic way to approach this
+      // and may not accommodate for all cases.
+      //
+      // NOTE: Some fields can take both types (numeric and string) depending on the actual
+      // value. One example is the 'Serial Number', which could for instance be 1234 or "ABCD".
+      // This would lead to mixing both types in the same column. Google Charts needs to infer
+      // a single type value for the whole column. This results in NaN for those values that are
+      // strings when the column value is inferred to be numeric. To resolve this, 
+      // we include strcmp() here against these fields that can accept
+      // both string and numeric values to force them to be interpreted as strings all the time
+      // in order to avoid the NaN issue. For now, only the serialNumber field is in this category.
+      if(is_numeric($object[$metric['field']]) && strcmp($metric['field'], "serialNumber")) {
         $dataString .= $object[$metric['field']] . ',';
       }
 
@@ -1486,7 +1495,7 @@ google.setOnLoadCallback(drawVisualization);
             <br/>
           </td>
         </tr>
-        <tr><td><a href='../content/searching-inside-visualization-dashboards' target='_blank'>Search help</a></tr></td>
+        <tr><td><a href='../content/searching-inside-visualization-dashboards-and-meaning-fields' target='_blank'>Helper: How to search and description of fields</a></tr></td>
         <tr style='vertical-align: top'>
           <td colspan='1'; style='width: 200px'>
             <div id='controlTextFilter'></div>
