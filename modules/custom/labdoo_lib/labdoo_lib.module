@@ -2112,13 +2112,15 @@ function labdoo_get_demand($edoovillageId, $hubId, $doAverage) {
  *
  * @param integer $edoovillageId The ID of an edoovillage 
  * @param integer $hubId The ID of a hub 
- * @param string $status The status of the laptops
+ * @param string  $status The status of the laptops
+ * @param boolean $checkHistory If true, check also historical values 
+                  (used only when $edoovillageId and $hubId are NULL)
  *
  * @return The number of doojects in the status $status that
  * are assigned to the given edoovillage or hub
  * 
  */ 
-function labdoo_getnum_doojects($edoovillageId, $hubId, $status) {
+function labdoo_getnum_doojects($edoovillageId, $hubId, $status, $checkHistory = False) {
 
   $country_names = location_get_iso3166_list();
 
@@ -2147,12 +2149,19 @@ function labdoo_getnum_doojects($edoovillageId, $hubId, $status) {
     $query = "SELECT COUNT(*) FROM field_data_field_status WHERE field_status_value='$status' 
               AND entity_id IN (SELECT entity_id FROM field_data_field_hub_laptop WHERE field_hub_laptop_target_id=$hubId)"; 
   }
-  else if($edoovillageId)
+  else if($edoovillageId) {
     $query = "SELECT COUNT(*) FROM field_data_field_status WHERE field_status_value='$status' 
               AND entity_id IN (SELECT entity_id FROM field_data_field_edoovillage_destination 
               WHERE field_edoovillage_destination_target_id=$edoovillageId)"; 
-  else
-    $query = "SELECT COUNT(*) FROM field_data_field_status WHERE field_status_value='$status'"; 
+  }
+  else {
+    if($checkHistory) {
+      $query = "SELECT COUNT(DISTINCT(entity_id)) FROM field_revision_field_status WHERE field_status_value='$status'"; 
+    }
+    else {
+      $query = "SELECT COUNT(*) FROM field_data_field_status WHERE field_status_value='$status'"; 
+    }
+  }
 
   $numLaptops = db_query($query)->fetchField();
 
@@ -3037,7 +3046,7 @@ function labdoo_render_macro_stats($type, $addTitle=False) {
     $langCode = "/" . $language->language;
 
   $numLaptopsNeeded = labdoo_get_demand(NULL, NULL, FALSE); 
-  $numLaptopsDelivered = labdoo_getnum_doojects(NULL, NULL, 'S4');
+  $numLaptopsDelivered = labdoo_getnum_doojects(NULL, NULL, 'S4', True);
   $numLaptopsTransit = labdoo_getnum_doojects(NULL, NULL, 'T1') + labdoo_getnum_doojects(NULL, NULL, 'S3'); 
   $numLaptopsTagged = lbd_get_total_num_objects('laptop'); 
   $numHubs = lbd_get_total_num_objects('hub');
