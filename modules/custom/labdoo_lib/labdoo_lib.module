@@ -5423,8 +5423,12 @@ function dootronic_file_upload_form_submit($form, &$form_state) {
     // Keyboard type
     $wNode->field_keyboard_type->set($dootronic->keyboard_layout);
 
-    // Set the status to S2
-    $wNode->field_status->set("S2");
+    // Set the status. If quality_check is not empty, the laptop didn't pass the quality check.
+    $status = "S2";
+    if (property_exists($dootronic, "quality_check") && __value_is_present($dootronic->quality_check)) {
+            $status = "S5";
+    }
+    $wNode->field_status->set($status);
 
     // Save the new dootronic information
     node_save($node);
