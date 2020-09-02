@@ -5396,7 +5396,6 @@ function dootronic_file_upload_form_submit($form, &$form_state) {
       $technical_notes_value .= "disk2_model: " . $dootronic->disk2_model . "; ";
     if (__value_is_present($dootronic->disk2_type))
       $technical_notes_value .= "disk2_type: " . $dootronic->disk2_type . "; ";
-    $wNode->field_technical_notes->set($technical_notes_value);
 
     // Additional emails
     if (__value_is_present($dootronic->donor_email)) {
@@ -5427,8 +5426,10 @@ function dootronic_file_upload_form_submit($form, &$form_state) {
     $status = "S2";
     if (property_exists($dootronic, "quality_check") && __value_is_present($dootronic->quality_check)) {
             $status = "S5";
+            $technical_notes_value .= "Failed quality check: " . $dootronic->quality_check . "; ";
     }
     $wNode->field_status->set($status);
+    $wNode->field_technical_notes->set($technical_notes_value);
 
     // Save the new dootronic information
     node_save($node);
