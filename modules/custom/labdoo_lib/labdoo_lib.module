@@ -5460,7 +5460,6 @@ function dootronic_file_upload_form_submit($form, &$form_state) {
     $status = "S2";
     if (__json_value_is_present($dootronic, 'state')) {
       $status = $dootronic->state;
-    }
     $wNode->field_status->set($status);
 
     // Save the new dootronic information
