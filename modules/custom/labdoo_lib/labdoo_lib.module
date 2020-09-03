@@ -5429,7 +5429,7 @@ function dootronic_file_upload_form_submit($form, &$form_state) {
     // Keyboard type
     $wNode->field_keyboard_type->set($dootronic->keyboard_layout);
 
-    // Set the status. If quality_check is not empty, the laptop didn't pass the quality check.
+    // Set the status. For example, some laptops may be tagged as S5 (waiting for repairs)
     $status = "S2";
     if (__json_value_is_present($dootronic, 'state')) {
       $status = $dootronic->state;
