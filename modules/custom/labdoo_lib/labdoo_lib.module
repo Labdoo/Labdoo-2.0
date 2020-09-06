@@ -2528,6 +2528,33 @@ function labdoo_lib_node_view($node, $view_mode) {
 We will be performing some tiny maintenance activities. Dont worry, it will not take long. Sorry for the inconvinience
 <hr/>
 "); */
+
+
+
+  $path = drupal_get_path_alias(current_path());
+
+  // The following are some front page messages we enable from time to time.
+  // By default, keep them commented out.
+  /*
+  labdoo_lib_msg_info("Join our next online technical Q&A workshop on August 31, 2020 at 20:00 CEST<br/>
+  <hr/>
+  For more information, <a href='https://www.labdoo.org/content/labdoo-technical-qa-online-1h-workshop-monday-31-2000-est'>access this link.</a>
+  <hr/>
+  "); 
+  */
+
+  /*
+  if((strcmp($path, 'content/front-page') == 0)) {
+  labdoo_lib_msg_info("NEW FEATURE: TRY A LABDOO LAPTOP IN THE CLOUD
+  <br/>
+  <hr/>
+  If you want to get a feel of what a Labdoo laptop looks like with its educational software fully loaded, check the following online demo:<br/>
+  <hr/>
+  Please log under:  <a target='_blank' href=http://cloud.labdoo.org>http://cloud.labdoo.org</a>
+  <p>Username: student</p>Password: labdoo</p>");
+  }
+  */
+
 // Temporary code to deal with GDPR
 // If user not re-registered to newsletter, send friendly reminder
 //  if(user_is_logged_in()) {
@@ -2543,18 +2570,18 @@ We will be performing some tiny maintenance activities. Dont worry, it will not 
 //                             occuring around the world."));
 //  }
 
-  $path = drupal_get_path_alias(current_path());
-
   // TODO DE-COLORBOX: temporary fix. This forces a redirect of all photo galleries in German language
   // to the default language English, because there is a bug that prevents them from loading the 
   // colorbox slideshow. We also add a URL parameter 'lan=de' so that the links in the photo album
   // can be dynamically set to point back to the 'de' pages.
   // Upon fixing this bug, the following redirect can be removed.
   // See also https://www.labdoo.org/content/slideshow-feature-does-not-work-german-de-language
-  if($language->language == 'de' && $node->type == 'node_gallery_gallery' && $view_mode == 'full' && arg(0) == 'node') {
-    $options = array('query' => array('lan' => 'de'));
-    drupal_goto('../' . $path, $options);
-  }
+  //
+  // This feature is now disabled, as it does not work with automatic language redirect
+//  if($language->language == 'de' && $node->type == 'node_gallery_gallery' && $view_mode == 'full' && arg(0) == 'node') {
+//    $options = array('query' => array('lan' => 'de'));
+//    drupal_goto('../' . $path, $options);
+//  }
 
   // Add to this table any necessary redirects.
   // Follow the examples to add new entries.

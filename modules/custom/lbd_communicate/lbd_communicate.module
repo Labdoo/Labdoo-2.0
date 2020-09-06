@@ -1241,68 +1241,104 @@ function lbd_contact_form_submit($form, &$form_state) {
   $country = labdoo_country_code2name($country_code); 
   $reason_code = $form_state['values']['reason'];
 
-  // Forwarding email based on country
-  // In production, set this table to the correct email addresses
+  // Forwarding email based on country:
+  // (Note: In production, set email addresses here to the correct values.
+  //  We commit this to git only for convenience.)
   $country2shub_email = array(
-      "Germany" => "Labdoo-DACH@Labdoo.org, contact@labdoo.org",
-      "United States" => "wendy.lu@labdoo.org, new-york-hub@labdoo.org, contact@labdoo.org", 
-      "Switzerland" => "zuerich-hub@labdoo.org, contact@labdoo.org", 
-      "Taiwan" => "wendy.lu@labdoo.org, contact@labdoo.org",
-      "Austria" => "Salzburg-Hub@Labdoo.org, contact@labdoo.org"
+      "Germany" => "Labdoo-DACH@Labdoo.org",
+      "United States" => "wendy.lu@labdoo.org, new-york-hub@labdoo.org", 
+      "Switzerland" => "zuerich-hub@labdoo.org", 
+      "Taiwan" => "wendy.lu@labdoo.org",
+      "Austria" => "Salzburg-Hub@Labdoo.org"
   );
-  if(array_key_exists($country, $country2shub_email))
-    $to_emails = $country2shub_email[$country];
-  else {
-    // Rest of the world. Do round robin based on a pool of volunteers.
-    // In production, set this list to the correct email addresses.
-    // (Note: we commit this into git for convenience only.)
-    $world_emails_pool = array('jordi.ros@labdoo.org', 'elena.parpal@labdoo.org');
-    // Keep it simple, and select emails randomly
-    $to_emails = "contact@labdoo.org," . $world_emails_pool[time() % sizeof($world_emails_pool)]; 
-  }
 
   // Forwarding email based on city
   $city2shub_email = array(
       // Make sure these are lower case city names
       // TODO: This should really use regular expressions to help reduce the number of entries;
       //       for now this is ok but if we need to scale this up consider using regexes.
-      "madrid" => "victoria.mota@labdoo.org, cesar.seoane@labdoo.org, contact@labdoo.org",
-      "new york" => "new-york-hub@labdoo.org, contact@labdoo.org",
-      "new york city" => "new-york-hub@labdoo.org, contact@labdoo.org",
-      "ny" => "new-york-hub@labdoo.org, contact@labdoo.org",
-      "nyc" => "new-york-hub@labdoo.org, contact@labdoo.org",
-      "manhattan, new york" => "new-york-hub@labdoo.org, contact@labdoo.org",
-      "queens, new york" => "new-york-hub@labdoo.org, contact@labdoo.org",
-      "brooklyn, new york" => "new-york-hub@labdoo.org, contact@labdoo.org",
-      "bronx, new york" => "new-york-hub@labdoo.org, contact@labdoo.org",
-      "staten island, new york" => "new-york-hub@labdoo.org, contact@labdoo.org",
-      "nj" => "new-york-hub@labdoo.org, contact@labdoo.org",
-      "new jersey" => "new-york-hub@labdoo.org, contact@labdoo.org"
+      "madrid" => "victoria.mota@labdoo.org, cesar.seoane@labdoo.org",
+      "new york" => "new-york-hub@labdoo.org",
+      "new york city" => "new-york-hub@labdoo.org",
+      "ny" => "new-york-hub@labdoo.org",
+      "nyc" => "new-york-hub@labdoo.org",
+      "manhattan, new york" => "new-york-hub@labdoo.org",
+      "queens, new york" => "new-york-hub@labdoo.org",
+      "brooklyn, new york" => "new-york-hub@labdoo.org",
+      "bronx, new york" => "new-york-hub@labdoo.org",
+      "staten island, new york" => "new-york-hub@labdoo.org",
+      "nj" => "new-york-hub@labdoo.org",
+      "new jersey" => "new-york-hub@labdoo.org"
   );
+
+  // Forwardind email for fall back case (none of the above cases)
+  //$world_emails_pool = array('anna.artis@labdoo.org', 'alicia.hernandez@labdoo.org');
+  $world_emails_pool = array('alicia.hernandez@labdoo.org');
+
+  if(array_key_exists($country, $country2shub_email)) {
+    $to_emails = $country2shub_email[$country];
+  }
+  else {
+    // Rest of the world. Do round robin based on the pool of volunteers in $world_emails_pool.
+    // Keep it simple, and select emails randomly
+    $to_emails = $world_emails_pool[time() % sizeof($world_emails_pool)]; 
+  }
+
   $city_lowcase = strtolower($form_state['values']['city']);
   if(array_key_exists($city_lowcase, $city2shub_email))
     $to_emails = $city2shub_email[$city_lowcase];
 
-  // Send this message always in English
-  $subjectFileName = _path_to_email_template("en") . "contact_form_submitted_shub_subject-en.email";
-  $bodyFileName = _path_to_email_template("en") . "contact_form_submitted_shub_body-en.email";
-  $subjectTemplate = file_get_contents($subjectFileName);
-  $bodyTemplate = file_get_contents($bodyFileName);
-  $subject = str_replace("[COUNTRY]", $country, $subjectTemplate);
-  $subject = str_replace("[REASON]", $reasons_summary[$form_state['values']['reason']], $subject);
-  $body = str_replace("[USERNAME]", $form_state['values']['name'], $bodyTemplate);
-  $body = str_replace("[USEREMAIL]", $valid_email, $body);
-  $body = str_replace("[COUNTRY]", $country, $body);
-  $body = str_replace("[CITY]", $form_state['values']['city'], $body);
-  $body = str_replace("[REASON]", $reasons[$form_state['values']['reason']], $body);
-  $body = str_replace("[MESSAGE]", $message, $body);
-  $body = str_replace("[CONTACT_EMAIL]", variable_get('site_mail', ''), $body);
+  // Send message to superhub managers except for the case of reason = 3
+  // (User solicits laptops). In this case, send an email back to requester
+  // asking for more information.
 
-  $email_params['type'] = "CONTACT_FORM_SUPERHUB";
-  $email_params['to'] = $to_emails;
-  $email_params['subject'] = $subject;
-  $email_params['body'] = $body;
-  lbd_communicate_mail_send($email_params);
+  if(($reason_code != 3) || !in_array($to_emails, $world_emails_pool)) {
+//  if(1 == 1) { // reason_code != 3) {
+    // Send this message always in English
+    $subjectFileName = _path_to_email_template("en") . "contact_form_submitted_shub_subject-en.email";
+    $bodyFileName = _path_to_email_template("en") . "contact_form_submitted_shub_body-en.email";
+    $subjectTemplate = file_get_contents($subjectFileName);
+    $bodyTemplate = file_get_contents($bodyFileName);
+    $subject = str_replace("[COUNTRY]", $country, $subjectTemplate);
+    $subject = str_replace("[REASON]", $reasons_summary[$form_state['values']['reason']], $subject);
+    $body = str_replace("[USERNAME]", $form_state['values']['name'], $bodyTemplate);
+    $body = str_replace("[USEREMAIL]", $valid_email, $body);
+    $body = str_replace("[COUNTRY]", $country, $body);
+    $body = str_replace("[CITY]", $form_state['values']['city'], $body);
+    $body = str_replace("[REASON]", $reasons[$form_state['values']['reason']], $body);
+    $body = str_replace("[MESSAGE]", $message, $body);
+    $body = str_replace("[CONTACT_EMAIL]", variable_get('site_mail', ''), $body);
+
+    $email_params['type'] = "CONTACT_FORM_SUPERHUB";
+    $email_params['to'] = "contact@labdoo.org," . $to_emails;
+    $email_params['subject'] = $subject;
+    $email_params['body'] = $body;
+    lbd_communicate_mail_send($email_params);
+  }
+  else {
+//  if (1 == 1) {
+    if(!file_exists(_path_to_email_template($langCode) . "edoovillage_need_info_subject-" . $langCode . ".email"))
+      $langCode = 'en';
+
+    $subjectFileName = _path_to_email_template($langCode) . "edoovillage_need_info_subject-" . $langCode . ".email";
+    $bodyFileName = _path_to_email_template($langCode) . "edoovillage_need_info_body-" . $langCode . ".email";
+    $subjectTemplate = file_get_contents($subjectFileName);
+    $bodyTemplate = file_get_contents($bodyFileName);
+    $subject = $subjectTemplate;
+    $body = $bodyTemplate;
+
+    $params["NOTTYPE"] = "edoovillage_need_info";
+    $params["CONTACT_EMAIL_RESPONDER"] = $to_emails; 
+    _body_do_parameters($params, $body);
+
+    $email_params = array();
+    $email_params['type'] = "EDOOVILLAGE_NEED_INFO";
+    $email_params['to'] = "contact@labdoo.org," . $valid_email;
+//    $email_params['to'] = "jordi.ros@labdoo.org";
+    $email_params['subject'] = $subject;
+    $email_params['body'] = $body;
+    lbd_communicate_mail_send($email_params);
+  }
  
   // Redirect to thank you page.
   // Generate a unique URL according to country and reason so it can be used by engines like Google adwords.
@@ -1342,11 +1378,15 @@ function _body_do_parameters($params, &$body) {
                               "nl" => "Nederlands", 
                               "es" => "Spanish");
 
+  // Build first the language switchers on the header of the email
+
+  // All parameters are part of the hyperlink for each language switch
   $urlParameters = "?" . drupal_http_build_query($params);
 
   $htmlCode  = "<hr/>" . t("View this message in other languages:");
   $htmlCode .= "<br/>";
 
+  // Build each language switcher
   foreach($supportedLanguages as $code => $language) {
     $urlParameters .= "&" . "language" . "=" . $code;
     $htmlCode .= "<a href='https://www.labdoo.org/content/notification-email$urlParameters'>$language</a> | "; 
@@ -1356,6 +1396,7 @@ function _body_do_parameters($params, &$body) {
 
   $body = str_replace("[LANGUAGE_MENU]", $htmlCode, $body);
 
+  // Replace the rest of parameters found in the email body
   foreach($params as $key => $value) {
     $body = str_replace("[" . $key . "]", $value, $body);
   }

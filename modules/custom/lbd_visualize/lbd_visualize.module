@@ -134,7 +134,13 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
   }
   if($edoovillageId != NULL)
   {
-    $queryEdoovillage = "(SELECT entity_id FROM field_data_field_edoovillage_destination WHERE (field_edoovillage_destination_target_id=:eid))";
+    // By using "IN ($edoovillageId)" below, this supports seeing all dootronics assigned to a *list* of edoovillages.
+    // This subtle feature was added to help visualize dootronics during the Covid-19 crisis.
+    // Example querying for 3 edoovillages: https://www.labdoo.org/content/dootronics-dashboard?e=92941,92953,92958
+    // Note that this does not really use the $placeHolders array and it directly adds $edoovillageId to the query below.
+    // Somehow it was not picking it up using $placeHolders, possibly a string representation issue. Left for future
+    // debugging due to lack of time.
+    $queryEdoovillage = "(SELECT entity_id FROM field_data_field_edoovillage_destination WHERE (field_edoovillage_destination_target_id IN ($edoovillageId)))";
     $query = $query . " UNION ALL " . $queryEdoovillage;
     $placeHolders[':eid'] = $edoovillageId; 
     $numberOfQueries++;
@@ -166,8 +172,25 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
 
     $node = node_load($item->entity_id);
 
+    // Continue if ID not within requested boundaries
+    // Query example: https://www.labdoo.org/content/dootronics-dashboard?e=93145,1457&minID=22000&maxID=23000
+    $intID = (int)$node->title; 
+    if(!empty($_GET['minID'])) { 
+      $minID = (int)$_GET['minID'];
+      if ($intID < $minID) {
+          continue;
+      }
+    }
+    if(!empty($_GET['maxID'])) { 
+      $maxID = (int)$_GET['maxID'];
+      if ($intID > $maxID) {
+          continue;
+      }
+    }
+
     // Extract Labdoo ID 
     $objects[$objectNid]['ID'] = $node->title; 
+
 
     // Extract Hub Field 
     $hubsList = labdoo_lib_get_field_all($node, 'field_hub_laptop', 'node', 'target_id');
@@ -1070,7 +1093,7 @@ function print_dashboard_objects($objectsType, $objectsName, $objects, $metrics,
   <meta http-equiv='content-type' content='text/html; charset=utf-8'/>
     <title>Dootronics Dashboard Using Google Visualization API</title>
     <script type='text/javascript' src='https://www.google.com/jsapi'></script>
-    <script type='text/javascript'>google.load('visualization', '1.1', {packages: ['controls', 'geomap']});</script>
+    <script type='text/javascript'>google.charts.load('current', {packages: ['controls', 'geomap', 'geochart']});</script>
     <script type='text/javascript'>
       function drawVisualization() {
         // Prepare the data
@@ -1181,7 +1204,10 @@ var stringFilter = new google.visualization.ControlWrapper({
                        'filterColumnLabel': 'Free-Text Search',
                        'label': 'Free-Text Search',
                        'matchType': 'any'
-                     }
+                     },
+    state: {
+        value: '" . $_GET['search'] . "'
+    } 
                    });
   ");
 
@@ -1421,6 +1447,9 @@ function updateColumnChart() {
   print("
 
 google.visualization.events.addListener(stringFilter, 'statechange', updateColumnChart);
+// Fire a 'ready' event to ensure the URL 'search' parameter is loaded if present
+// Example of query: https://www.labdoo.org/content/edoovillages-dashboard?search=covid-19
+google.visualization.events.addListener(stringFilter, 'ready', updateColumnChart);
 
 /*
  * Attach an event handler to the CSV download button
@@ -1495,7 +1524,7 @@ google.setOnLoadCallback(drawVisualization);
             <br/>
           </td>
         </tr>
-        <tr><td><a href='../content/searching-inside-visualization-dashboards-and-meaning-fields' target='_blank'>Helper: How to search and description of fields</a></tr></td>
+        <tr><td><a href='../content/searching-inside-visualization-dashboards-and-meaning-fields' target='_blank'>" . t("Helper: How to search and description of fields") . "</a></tr></td>
         <tr style='vertical-align: top'>
           <td colspan='1'; style='width: 200px'>
             <div id='controlTextFilter'></div>

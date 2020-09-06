@@ -50,6 +50,11 @@ The following are some of the most commonly used SQL queries.
     mysql> SELECT AVG(field_battery_duration_value) FROM field_data_field_battery_duration WHERE entity_id IN (SELECT nid FROM node WHERE YEAR(FROM_UNIXTIME(created))=2016);
     #+END_EXAMPLE
 
+  - Get email addresses of all hub managers for a given country (example: "es"):
+    
+    #+BEGIN_EXAMPLE
+    mysql> select mail from users where uid in (select field_hub_manager_s__target_id from field_data_field_hub_manager_s_ where entity_id in (select nid from node where (type="hub" and nid in (select nid from location_instance where lid in (select lid from location where country="es")))));
+    #+END_EXAMPLE
 
 ** Drush Queries
 
