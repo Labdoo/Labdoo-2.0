@@ -5291,7 +5291,7 @@ function __json_value_is_present($obj, $name) {
   if (!property_exists($obj, $name)) {
     return False;
   }
-  $value = $obj->{$property};
+  $value = $obj->{$name};
   if ($value != "" &&
       strtolower($value) != "n/a"     &&
       strtolower($value) != "null"    &&
