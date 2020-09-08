@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: ubuntu:trusty
+
+    steps:
+      - checkout
+      - run: ./install/circleci.sh
+      - run: su -s /bin/bash www-data -c "/usr/bin/php /var/www/lbd/scripts/run-tests.sh --verbose --concurrency 16 Labdoo"

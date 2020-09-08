@@ -9,7 +9,7 @@ then
     set +a
 fi
 
-lbd=/usr/local/src/labdoo/install
+lbd=$code_dir/install
 
 $lbd/config/domain.sh
 $lbd/config/mysql_passwords.sh
@@ -25,5 +25,3 @@ fi
 
 ### drush may create some css/js files with wrong permissions
 chown www-data: -R /var/www/lbd*/sites/default/files/{css,js}
-
-$lbd/config/mysqld.sh stop

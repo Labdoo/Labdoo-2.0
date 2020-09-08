@@ -21,7 +21,7 @@ cp -a libraries/bootstrap themes/contrib/bootstrap/
 ### reinstall the whole application).
 cd $drupal_dir/profiles/
 mv labdoo labdoo-bak
-cp -a $code_dir .
+cp -a $code_dir ./labdoo
 ### copy contrib libraries and modules
 cp -a labdoo-bak/libraries/ labdoo/
 cp -a labdoo-bak/modules/contrib/ labdoo/modules/
