@@ -7,4 +7,4 @@ jobs:
     steps:
       - checkout
       - run: ./install/circleci.sh
-      - run: su -s /bin/bash www-data -c "/usr/bin/php /var/www/lbd/scripts/run-tests.sh --verbose --concurrency 16 Labdoo"
+      # - run: su -s /bin/bash www-data -c "/usr/bin/php /var/www/lbd/scripts/run-tests.sh --verbose --concurrency 16 Labdoo"
