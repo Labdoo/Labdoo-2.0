@@ -1,0 +1,25 @@
+<?php
+
+class LabdooLibUnitTestCase extends DrupalUnitTestCase {
+
+  public static function getInfo() {
+    return array(
+      'name' => 'Labdoo lib unit tests',
+      'description' => "Labdoo tests that don't require a full Drupal instance",
+      'group' => 'Labdoo',
+    );
+  }
+
+  public function testJSONValue() {
+    $str = '{"a": "N/A", "b": "null", "x": 123}';
+    $data = json_decode($str);
+    $this->assertNotNull($data, "json_decode");
+    $this->assertFalse(__json_value_is_present($data, "a"), "N/A should return false");
+    $this->assertFalse(__json_value_is_present($data, "b"), "null should return false");
+    $this->assertFalse(__json_value_is_present($data, "c"), "missing field should return false");
+    $this->assertTrue(__json_value_is_present($data, "x"), "present field should return true");
+  }
+
+}
+
+?>
