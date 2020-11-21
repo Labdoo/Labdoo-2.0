@@ -1,4 +1,4 @@
-** Configuraiton of Labdoo's email server parameters.
+** Configuration of Labdoo's email server parameters.
 
   - To configure labdoo's email server parameters, modify the file /etc/ssmtp/ssmtp.conf. Here is a sample:
 
