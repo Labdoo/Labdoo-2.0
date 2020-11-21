@@ -60,3 +60,43 @@
     service chroot-lbd start
     hostname www.labdoo.org
     #+END_EXAMPLE
+
+** Upgrading the Ubuntu OS
+
+  - Upgrade of the base OS
+
+    #+BEGIN_EXAMPLE
+    XXX
+    #+END_EXAMPLE
+
+  - Upgrade of the jailed OS
+
+    #+BEGIN_EXAMPLE
+    XXX
+    #+END_EXAMPLE
+
+  - At the end of the above process, it's likely that you will need to update some of the configuration files, as the upgrade may have overwritten them. Make sure the following parameters are set as follows:
+
+    #+BEGIN_EXAMPLE
+    ==> # cat /etc/php/7.0/cli/php.ini | grep upload_max_filesize  # use the right version of php here
+    upload_max_filesize = 20M
+
+    ==> # cat /etc/php/7.0/cli/php.ini | grep post_max_size
+    post_max_size = 21M
+
+    ==> # cat /etc/php/7.0/apache2/php.ini | grep memory_limit
+    memory_limit = 500M
+
+    ==> # cat /etc/mysql/my.cnf | grep innodb_buffer_pool_size
+    innodb_buffer_pool_size         = 3000M
+    #+END_EXAMPLE
+
+    ==> # head /usr/share/apache2/ask-for-passphrase
+    echo "xxx"  # use the right password
+    exit
+    #+END_EXAMPLE
+
+** Upgrading the hardware
+
+    - Important: remember to update the instance ID in Labdoo's AWS AMI and Volume snapshot script to make sure the backups are done on the correct instance.
+
