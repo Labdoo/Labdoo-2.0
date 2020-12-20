@@ -202,7 +202,7 @@ function labdoo_lookup_coordinates($country, $city, &$lat, &$lon, $silent=True, 
       $coordinates = $cacheResult->data;
     }
     else {
-      $query = str_replace(' ', '+', 'https://maps.googleapis.com/maps/api/geocode/json?address='.$locationString.'&key=xxxx');
+      $query = str_replace(' ', '+', 'https://maps.googleapis.com/maps/api/geocode/json?address='.$locationString.'&key=AIzaSyDdcmHPMZz_m_FXzWhm8FliU2R6MifP3xs');
       $mapQuery = drupal_http_request($query);
       if(!property_exists($mapQuery, 'data')) {
         if($silent == False) {
@@ -2533,15 +2533,17 @@ We will be performing some tiny maintenance activities. Dont worry, it will not 
 
   $path = drupal_get_path_alias(current_path());
 
+  if($node->type == 'edoovillage') {
+      labdoo_lib_msg_info("Traveling to this country and you would like to bring a laptop to this project? <a href=\"content/contact-labdoo?re=1\">Reach out to Labdoo</a> and we will help you make the difference.");
+  }  
+
   // The following are some front page messages we enable from time to time.
   // By default, keep them commented out.
-  /*
-  labdoo_lib_msg_info("Join our next online technical Q&A workshop on August 31, 2020 at 20:00 CEST<br/>
+/*labdoo_lib_msg_info("Join our next online technical Q&A workshop on October 19, 2020 at 20:00 CEST<br/>
   <hr/>
-  For more information, <a href='https://www.labdoo.org/content/labdoo-technical-qa-online-1h-workshop-monday-31-2000-est'>access this link.</a>
+  For more information, <a href='https://www.labdoo.org/content/virtual-interactive-sanitizing-workshop-0-hero-monday-1910-2100-2100'>access this link.</a>
   <hr/>
-  "); 
-  */
+  ");*/ 
 
   /*
   if((strcmp($path, 'content/front-page') == 0)) {
@@ -3501,6 +3503,9 @@ function labdoo_block_filter_search() {
   if(strcmp($path, "content/doopoints") == 0)
     return FALSE;
 
+  if(strcmp($path, "content/doopoints-miami-hub") == 0)
+    return FALSE;
+
   if(0 === strpos($path, 'node/add/'))
     return FALSE;
 
@@ -3582,6 +3587,9 @@ function labdoo_block_filter_header() {
       return TRUE;
 
   if(strcmp($path, "content/doopoints") == 0)
+      return TRUE;
+
+  if(strcmp($path, "content/doopoints-miami-hub") == 0)
       return TRUE;
 
   if((strcmp($path, "share-wall") == 0) || (strcmp($path, "content/my-share-wall") == 0))

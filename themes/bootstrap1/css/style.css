@@ -327,3 +327,16 @@ input[type="checkbox"] {
   color: black; 
 }
 
+.views-slideshow-pager-fields .active img {
+  border: 3px solid #fff;
+}
+
+.views-slideshow-pager-fields img {
+  max-width: 175px;
+  max-height: 75px;
+}
+
+.views-slideshow-pager-fields > div{
+  padding-left: 0px;
+}
+

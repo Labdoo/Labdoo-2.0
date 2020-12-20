@@ -78,6 +78,9 @@ function sanitizeStringForVisualization($unsanitizedText) {
  *
  */
 function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovillageId = NULL, $country = NULL, $switcher = TRUE, $justCache = FALSE) {
+  // Maximum number of objects to refresh at each call of this functions.
+  // This limit is needed to avoid memory exhaustion.
+  $MAX_NUM_OBJECTS = 5000; 
   // Personalized dashboards are marked as volatile, so the cache refresher run by cron can easily differentiate them.
   // The cache for this type of dashboards is usually smaller, and it's ok to simply clean them up periodically and have users
   // recompute them upon viewing them. The other caches (the general ones not marked as volatile), take a long time to 
@@ -88,256 +91,299 @@ function lbd_display_dashboard_doojects($userId = NULL, $hubId = NULL, $edoovill
     $volatileString = '';
   $cacheIndexPrefix = 'lbd_visualization_dooject_' . $volatileString . 'u' . $userId . 'h' . $hubId . 'e' . $edoovillageId . 'c' . $country . '_';
   // Fast path: first check the cache
-  if(!$justCache && ($cache = cache_get($cacheIndexPrefix . 'objects'))) {
-    $objects = $cache->data;
-    $cache = cache_get($cacheIndexPrefix . 'metrics');
-    $metrics = $cache->data;
-    $cache = cache_get($cacheIndexPrefix . 'selected_nids');
-    $selectedNids = $cache->data;
+  if(!$justCache) {
+    $cache = cache_get($cacheIndexPrefix . '0_' . 'objects'); // Pull the first batch, if present
+    if($cache) {
+      $cache = cache_get($cacheIndexPrefix . 'metrics'); // The metrics section is not batched
+      $metrics = $cache->data;
+      $batch_id = 0;
+      // Now pull all the batches
+      $objects = array();
+      $selectedNids = array();
+      while(($cache = cache_get($cacheIndexPrefix . $batch_id . '_' . 'objects'))) {
+	$objects = $objects + $cache->data;
+	$cache = cache_get($cacheIndexPrefix . $batch_id . '_' . 'selected_nids');
+	$selectedNids = $selectedNids + $cache->data;
+	$batch_id = $batch_id + 1;
+      }
+    }
+
   }
 
   else {
- 
-  global $language;
-  $defaultLanguage = language_default();
-  $defaultLanguageCode = $defaultLanguage->language;
 
-  $possibleStates = array('S0', 'S1', 'S2',  'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S9', 'T1', 'T2');
-
-  $numberOfQueries = 1;
-  $queryAll = "(SELECT entity_id FROM field_data_field_tagger)";
-  $query = "SELECT t.entity_id FROM (" . $queryAll;
-  $placeHolders = array();
-
-  if($userId != NULL)
-  {
-    $queryUser = "(SELECT tUser.entity_id FROM 
-                   (SELECT entity_id FROM field_data_field_tagger WHERE (field_tagger_target_id=:uid) 
-                    UNION
-                    SELECT entity_id FROM field_data_field_manager WHERE (field_manager_target_id=:uid)
-                    UNION
-                    SELECT entity_id FROM field_data_field_additional_editors WHERE (field_additional_editors_target_id=:uid) 
-                    UNION
-                    SELECT entity_id FROM field_data_field_additional_followers WHERE (field_additional_followers_target_id=:uid)
-                   )
-                  AS tUser)";
-    $query = $query . " UNION ALL " . $queryUser;
-    $placeHolders[':uid'] = $userId; 
-    $numberOfQueries++;
-  }
-  if($hubId != NULL) 
-  {
-    $queryHub = "(SELECT entity_id FROM field_data_field_hub_laptop WHERE (field_hub_laptop_target_id=:hid))";
-    $query = $query . " UNION ALL " . $queryHub;
-    $placeHolders[':hid'] = $hubId; 
-    $numberOfQueries++;
-  }
-  if($edoovillageId != NULL)
-  {
-    // By using "IN ($edoovillageId)" below, this supports seeing all dootronics assigned to a *list* of edoovillages.
-    // This subtle feature was added to help visualize dootronics during the Covid-19 crisis.
-    // Example querying for 3 edoovillages: https://www.labdoo.org/content/dootronics-dashboard?e=92941,92953,92958
-    // Note that this does not really use the $placeHolders array and it directly adds $edoovillageId to the query below.
-    // Somehow it was not picking it up using $placeHolders, possibly a string representation issue. Left for future
-    // debugging due to lack of time.
-    $queryEdoovillage = "(SELECT entity_id FROM field_data_field_edoovillage_destination WHERE (field_edoovillage_destination_target_id IN ($edoovillageId)))";
-    $query = $query . " UNION ALL " . $queryEdoovillage;
-    $placeHolders[':eid'] = $edoovillageId; 
-    $numberOfQueries++;
-  }
-  if($country != NULL)
-  {
-    $queryCountry = "(SELECT nid AS entity_id FROM location_instance 
-                      WHERE lid IN (SELECT lid FROM location WHERE country=:co) 
-                      AND nid IN (SELECT entity_id FROM field_data_field_tagger))";
-    $query = $query . " UNION ALL " . $queryCountry;
-    $placeHolders[':co'] = $country; 
-    $numberOfQueries++;
-  } 
-
-  $query = $query . ") AS t GROUP BY entity_id HAVING count(*) >= " . $numberOfQueries;
-
-  $result = db_query($query, $placeHolders);
-
-  $objects = array();
-  $selectedNids = array();
-
-  $limitCounter = 1000000;
-  foreach($result as $item) {
-    if($limitCounter-- == 0)
-      break;
-
-    $objectNid = $item->entity_id;
-    array_push($selectedNids, $objectNid);
-
-    $node = node_load($item->entity_id);
-
-    // Continue if ID not within requested boundaries
-    // Query example: https://www.labdoo.org/content/dootronics-dashboard?e=93145,1457&minID=22000&maxID=23000
-    $intID = (int)$node->title; 
-    if(!empty($_GET['minID'])) { 
-      $minID = (int)$_GET['minID'];
-      if ($intID < $minID) {
-          continue;
-      }
-    }
-    if(!empty($_GET['maxID'])) { 
-      $maxID = (int)$_GET['maxID'];
-      if ($intID > $maxID) {
-          continue;
-      }
-    }
-
-    // Extract Labdoo ID 
-    $objects[$objectNid]['ID'] = $node->title; 
-
-
-    // Extract Hub Field 
-    $hubsList = labdoo_lib_get_field_all($node, 'field_hub_laptop', 'node', 'target_id');
-    $hubsListStr = "";
-    foreach($hubsList as $hubNodeId) { 
-      $hubsListStr .= lbd_nodeid2title($hubNodeId) . " | ";
-    }
-    $objects[$objectNid]['hub'] = substr($hubsListStr, 0, -3);
-
-    // Extract Edoovillage Field 
-    $edoovillageNodeId = labdoo_lib_get_field($node, 'field_edoovillage_destination', 'node', 'target_id');
-    if(!empty($node->field_edoovillage_destination)) 
-      $objects[$objectNid]['edoovillage'] = lbd_nodeid2title($edoovillageNodeId); 
-    else
-      $objects[$objectNid]['edoovillage'] = "";
-
-    // Extract Status Field 
-    $objects[$objectNid]['status'] = $objectstatus = labdoo_lib_get_field($node, 'field_status', 'node', 'value');
-
-    // Extract Notes Field 
-    if(!empty($node->field_additional_notes)) 
-      $objects[$objectNid]['notes'] = labdoo_lib_get_field($node, 'field_additional_notes', 'node', 'value'); 
-    else
-      $objects[$objectNid]['notes'] = "";
-
-    // Extract Tagger Field 
-    $query = "SELECT name FROM users WHERE uid = " . labdoo_lib_get_field($node, 'field_tagger', 'node', 'target_id');
-    $objects[$objectNid]['tagger'] = db_query($query)->fetchField(); 
-
-    // Extract Manager Field 
-    $managerUid = labdoo_lib_get_field($node, 'field_manager', 'node', 'target_id');
-    if($managerUid) {
-        $query = "SELECT name FROM users WHERE uid = " . $managerUid;
-        $objects[$objectNid]['manager'] = db_query($query)->fetchField(); 
-    }
+    // Get the batch ID that identifies the subset of dootronics we
+    // need to process in this call
+    if(!($cache = cache_get($cacheIndexPrefix . 'batch_id'))) {
+      // If it has been deleted from the cache, start from zero
+      cache_set($cacheIndexPrefix . 'batch_id', "0", 'cache');
+      $batch_id = "0";
+    }  
     else {
-        watchdog("lbd_visualize", "Laptop " . $node->title . " does not have a manager associated with it.", NULL, WATCHDOG_ERROR);
-        $objects[$objectNid]['manager'] = "";
+      $cache = cache_get($cacheIndexPrefix . 'batch_id');
+      $batch_id = $cache->data;
     }
+ 
+    global $language;
+    $defaultLanguage = language_default();
+    $defaultLanguageCode = $defaultLanguage->language;
 
-    // Extract email list field 
-    $objects[$objectNid]['emails'] = "";
-    if(!empty($node->field_additional_notification_em)) 
-      foreach(field_get_items('node', $node, 'field_additional_notification_em') as $item)
-        $objects[$objectNid]['emails'] = $objects[$objectNid]['emails'] . " " . $item['email'];
+    $possibleStates = array('S0', 'S1', 'S2',  'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S9', 'T1', 'T2');
 
-    // Extract the country 
-    $country_names = location_get_iso3166_list();
-    $objects[$objectNid]['country'] = $node->location['country'];
-    if(array_key_exists($node->location['country'], $country_names))
-        $objects[$objectNid]['country'] = $country_names[$node->location['country']];
+    $numberOfQueries = 1;
+    $queryAll = "(SELECT entity_id FROM field_data_field_tagger)";
+    $query = "SELECT t.entity_id FROM (" . $queryAll;
+    $placeHolders = array();
 
-    // Extract the serial number 
-    $objects[$objectNid]['serialNumber'] = labdoo_lib_get_field($node, 'field_serial_number', 'node', 'value'); 
+    if($userId != NULL)
+    {
+      $queryUser = "(SELECT tUser.entity_id FROM 
+                     (SELECT entity_id FROM field_data_field_tagger WHERE (field_tagger_target_id=:uid) 
+                      UNION
+                      SELECT entity_id FROM field_data_field_manager WHERE (field_manager_target_id=:uid)
+                      UNION
+                      SELECT entity_id FROM field_data_field_additional_editors WHERE (field_additional_editors_target_id=:uid) 
+                      UNION
+                      SELECT entity_id FROM field_data_field_additional_followers WHERE (field_additional_followers_target_id=:uid)
+                     )
+                    AS tUser)";
+      $query = $query . " UNION ALL " . $queryUser;
+      $placeHolders[':uid'] = $userId; 
+      $numberOfQueries++;
+    }
+    if($hubId != NULL) 
+    {
+      $queryHub = "(SELECT entity_id FROM field_data_field_hub_laptop WHERE (field_hub_laptop_target_id=:hid))";
+      $query = $query . " UNION ALL " . $queryHub;
+      $placeHolders[':hid'] = $hubId; 
+      $numberOfQueries++;
+    }
+    if($edoovillageId != NULL)
+    {
+      // By using "IN ($edoovillageId)" below, this supports seeing all dootronics assigned to a *list* of edoovillages.
+      // This subtle feature was added to help visualize dootronics during the Covid-19 crisis.
+      // Example querying for 3 edoovillages: https://www.labdoo.org/content/dootronics-dashboard?e=92941,92953,92958
+      // Note that this does not really use the $placeHolders array and it directly adds $edoovillageId to the query below.
+      // Somehow it was not picking it up using $placeHolders, possibly a string representation issue. Left for future
+      // debugging due to lack of time.
+      $queryEdoovillage = "(SELECT entity_id FROM field_data_field_edoovillage_destination WHERE (field_edoovillage_destination_target_id IN ($edoovillageId)))";
+      $query = $query . " UNION ALL " . $queryEdoovillage;
+      $placeHolders[':eid'] = $edoovillageId; 
+      $numberOfQueries++;
+    }
+    if($country != NULL)
+    {
+      $queryCountry = "(SELECT nid AS entity_id FROM location_instance 
+                        WHERE lid IN (SELECT lid FROM location WHERE country=:co) 
+                        AND nid IN (SELECT entity_id FROM field_data_field_tagger))";
+      $query = $query . " UNION ALL " . $queryCountry;
+      $placeHolders[':co'] = $country; 
+      $numberOfQueries++;
+    } 
 
-    // Pick me up flag
-    if(labdoo_lib_get_field($node, 'field_pick_me_up', 'node', 'value') == 1)
-      $objects[$objectNid]['pickMeUp'] = 'yes';
-    else 
-      $objects[$objectNid]['pickMeUp'] = 'no';
+    $query = $query . ") AS t GROUP BY entity_id HAVING count(*) >= " . $numberOfQueries . " ORDER BY t.entity_id DESC";
 
-    // Dootrips field 
-    $dootripsFieldList = field_get_items('node', $node, 'field_dootrips'); 
-    $objects[$objectNid]['dootripId'] = "";
-    if(!empty($dootripsFieldList)) {
-      $dootripsStrList = "";
-      foreach($dootripsFieldList as $key => $dootripNode) {
-        $dootripNodeId = $dootripNode['target_id'];
-        $dootripsStrList .= "#" . lbd_extract_dootrip_id(lbd_nodeid2title($dootripNodeId)) . " ";
+    $result = db_query($query, $placeHolders);
+
+    $objects = array();
+    $selectedNids = array();
+
+    // Compute the range of objects we need to process in this call
+    $range_min = $batch_id * $MAX_NUM_OBJECTS + 1;
+    $range_max = ($batch_id + 1) * $MAX_NUM_OBJECTS;
+    $current_object_num = 0;
+
+    $limitCounter = 200000000;
+    foreach($result as $item) {
+
+      $current_object_num = $current_object_num + 1;
+      if($current_object_num < $range_min || $current_object_num > $range_max) 
+	continue;
+
+      if($limitCounter-- == 0)
+        break;
+
+      $objectNid = $item->entity_id;
+      array_push($selectedNids, $objectNid);
+
+      $node = node_load($item->entity_id);
+
+      // Continue if ID not within requested boundaries
+      // Query example: https://www.labdoo.org/content/dootronics-dashboard?e=93145,1457&minID=22000&maxID=23000
+      $intID = (int)$node->title; 
+      if(!empty($_GET['minID'])) { 
+        $minID = (int)$_GET['minID'];
+        if ($intID < $minID) {
+            continue;
+        }
       }
-      $objects[$objectNid]['dootripId'] = substr($dootripsStrList, 0, -1);
+      if(!empty($_GET['maxID'])) { 
+        $maxID = (int)$_GET['maxID'];
+        if ($intID > $maxID) {
+            continue;
+        }
+      }
+
+      // Extract Labdoo ID 
+      $objects[$objectNid]['ID'] = $node->title; 
+
+
+      // Extract Hub Field 
+      $hubsList = labdoo_lib_get_field_all($node, 'field_hub_laptop', 'node', 'target_id');
+      $hubsListStr = "";
+      foreach($hubsList as $hubNodeId) { 
+        $hubsListStr .= lbd_nodeid2title($hubNodeId) . " | ";
+      }
+      $objects[$objectNid]['hub'] = substr($hubsListStr, 0, -3);
+
+      // Extract Edoovillage Field 
+      $edoovillageNodeId = labdoo_lib_get_field($node, 'field_edoovillage_destination', 'node', 'target_id');
+      if(!empty($node->field_edoovillage_destination)) 
+        $objects[$objectNid]['edoovillage'] = lbd_nodeid2title($edoovillageNodeId); 
+      else
+        $objects[$objectNid]['edoovillage'] = "";
+
+      // Extract Status Field 
+      $objects[$objectNid]['status'] = $objectstatus = labdoo_lib_get_field($node, 'field_status', 'node', 'value');
+
+      // Extract Notes Field 
+      if(!empty($node->field_additional_notes)) 
+        $objects[$objectNid]['notes'] = labdoo_lib_get_field($node, 'field_additional_notes', 'node', 'value'); 
+      else
+        $objects[$objectNid]['notes'] = "";
+
+      // Extract Tagger Field 
+      $query = "SELECT name FROM users WHERE uid = " . labdoo_lib_get_field($node, 'field_tagger', 'node', 'target_id');
+      $objects[$objectNid]['tagger'] = db_query($query)->fetchField(); 
+
+      // Extract Manager Field 
+      $managerUid = labdoo_lib_get_field($node, 'field_manager', 'node', 'target_id');
+      if($managerUid) {
+          $query = "SELECT name FROM users WHERE uid = " . $managerUid;
+          $objects[$objectNid]['manager'] = db_query($query)->fetchField(); 
+      }
+      else {
+          watchdog("lbd_visualize", "Laptop " . $node->title . " does not have a manager associated with it.", NULL, WATCHDOG_ERROR);
+          $objects[$objectNid]['manager'] = "";
+      }
+
+      // Extract email list field 
+      $objects[$objectNid]['emails'] = "";
+      if(!empty($node->field_additional_notification_em)) 
+        foreach(field_get_items('node', $node, 'field_additional_notification_em') as $item)
+          $objects[$objectNid]['emails'] = $objects[$objectNid]['emails'] . " " . $item['email'];
+
+      // Extract the country 
+      $country_names = location_get_iso3166_list();
+      $objects[$objectNid]['country'] = $node->location['country'];
+      if(array_key_exists($node->location['country'], $country_names))
+          $objects[$objectNid]['country'] = $country_names[$node->location['country']];
+
+      // Extract the serial number 
+      $objects[$objectNid]['serialNumber'] = labdoo_lib_get_field($node, 'field_serial_number', 'node', 'value'); 
+
+      // Pick me up flag
+      if(labdoo_lib_get_field($node, 'field_pick_me_up', 'node', 'value') == 1)
+        $objects[$objectNid]['pickMeUp'] = 'yes';
+      else 
+        $objects[$objectNid]['pickMeUp'] = 'no';
+
+      // Dootrips field 
+      $dootripsFieldList = field_get_items('node', $node, 'field_dootrips'); 
+      $objects[$objectNid]['dootripId'] = "";
+      if(!empty($dootripsFieldList)) {
+        $dootripsStrList = "";
+        foreach($dootripsFieldList as $key => $dootripNode) {
+          $dootripNodeId = $dootripNode['target_id'];
+          $dootripsStrList .= "#" . lbd_extract_dootrip_id(lbd_nodeid2title($dootripNodeId)) . " ";
+        }
+        $objects[$objectNid]['dootripId'] = substr($dootripsStrList, 0, -1);
+      }
+
+      // Extract Model Field 
+      $objects[$objectNid]['model'] = labdoo_lib_get_field($node, 'field_model', 'node', 'value');
+
+      // Extract creation date
+      $objects[$objectNid]['createdDate'] = format_date($node->created, 'custom', 'Y-m-d');
+
+      // Extract Watt-hours
+      $volts = labdoo_lib_get_field($node, 'field_volts', 'node', 'value');
+      $mAh = labdoo_lib_get_field($node, 'field_amp_hours', 'node', 'value');
+      $objects[$objectNid]['Wh'] = $volts * $mAh / 1000; 
+
+      // Calculate the link to the object 
+      $urlPath = drupal_get_path_alias("node/" . $objectNid, $language->language); 
+      if($language->language != $defaultLanguageCode)
+        $urlPath = $language->language . "/" . $urlPath;
+      $objects[$objectNid]['link'] = "<!--$node->title (comment added to help alphabetically order this column)-->" . 
+                                     "<a href=/$urlPath>$node->title</a>";
+
+      // Mark the state so we can perform counting operations
+      foreach($possibleStates as $thisState)
+        $objects[$objectNid][$thisState] = ($objectstatus == $thisState ? 1 : 0);
+
     }
 
-    // Extract Model Field 
-    $objects[$objectNid]['model'] = labdoo_lib_get_field($node, 'field_model', 'node', 'value');
+    $metrics[0] = array('label' => 'Labdoo ID', 'field' => 'link', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+    $metrics[1] = array('label' => 'Status', 'field' => 'status', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+    $metrics[2] = array('label' => 'Hub', 'field' => 'hub', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+    $metrics[3] = array('label' => 'Edoovillage', 'field' => 'edoovillage', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+    $metrics[4] = array('label' => 'Country', 'field' => 'country', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
+    $metrics[5] = array('label' => 'Serial number', 'field' => 'serialNumber', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+    $metrics[6] = array('label' => 'Pick me up', 'field' => 'pickMeUp', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+    $metrics[7] = array('label' => 'Model', 'field' => 'model', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+    $metrics[8] = array('label' => 'Date created', 'field' => 'createdDate', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+    $metrics[9] = array('label' => 'Wh', 'field' => 'Wh', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+    $metrics[10] = array('label' => 'Dootrips', 'field' => 'dootripId', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+    $metrics[11] = array('label' => 'Notes', 'field' => 'notes', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
+    $metrics[12] = array('label' => 'S0 - tagged', 'field' => 'S0', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+    $metrics[13] = array('label' => 'S1 - donated', 'field' => 'S1', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+    $metrics[14] = array('label' => 'S2 - sanitized', 'field' => 'S2', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+    $metrics[15] = array('label' => 'S3 - assigned', 'field' => 'S3', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+    $metrics[16] = array('label' => 'T1 - in transit', 'field' => 'T1', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+    $metrics[17] = array('label' => 'S4 - deployed', 'field' => 'S4', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+    $metrics[18] = array('label' => 'S5 - needs recycle', 'field' => 'S5', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
+    $metrics[19] = array('label' => 'S6 - recycled', 'field' => 'S6', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
 
-    // Extract creation date
-    $objects[$objectNid]['createdDate'] = format_date($node->created, 'custom', 'Y-m-d');
+    if(empty($objects)) {
 
-    // Extract Watt-hours
-    $volts = labdoo_lib_get_field($node, 'field_volts', 'node', 'value');
-    $mAh = labdoo_lib_get_field($node, 'field_amp_hours', 'node', 'value');
-    $objects[$objectNid]['Wh'] = $volts * $mAh / 1000; 
-
-    // Calculate the link to the object 
-    $urlPath = drupal_get_path_alias("node/" . $objectNid, $language->language); 
-    if($language->language != $defaultLanguageCode)
-      $urlPath = $language->language . "/" . $urlPath;
-    $objects[$objectNid]['link'] = "<!--$node->title (comment added to help alphabetically order this column)-->" . 
-                                   "<a href=/$urlPath>$node->title</a>";
-
-    // Mark the state so we can perform counting operations
-    foreach($possibleStates as $thisState)
-      $objects[$objectNid][$thisState] = ($objectstatus == $thisState ? 1 : 0);
-
-  }
-
-  $metrics[0] = array('label' => 'Labdoo ID', 'field' => 'link', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[1] = array('label' => 'Status', 'field' => 'status', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
-  $metrics[2] = array('label' => 'Hub', 'field' => 'hub', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
-  $metrics[3] = array('label' => 'Edoovillage', 'field' => 'edoovillage', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
-  $metrics[4] = array('label' => 'Country', 'field' => 'country', 'aggregate' => 'no', 'picker' => 'yes', 'menu' => "yes", 'slider' => "no");
-  $metrics[5] = array('label' => 'Serial number', 'field' => 'serialNumber', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[6] = array('label' => 'Pick me up', 'field' => 'pickMeUp', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[7] = array('label' => 'Model', 'field' => 'model', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[8] = array('label' => 'Date created', 'field' => 'createdDate', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[9] = array('label' => 'Wh', 'field' => 'Wh', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[10] = array('label' => 'Dootrips', 'field' => 'dootripId', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[11] = array('label' => 'Notes', 'field' => 'notes', 'aggregate' => 'no', 'picker' => 'no', 'menu' => "yes", 'slider' => "no");
-  $metrics[12] = array('label' => 'S0 - tagged', 'field' => 'S0', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[13] = array('label' => 'S1 - donated', 'field' => 'S1', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[14] = array('label' => 'S2 - sanitized', 'field' => 'S2', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[15] = array('label' => 'S3 - assigned', 'field' => 'S3', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[16] = array('label' => 'T1 - in transit', 'field' => 'T1', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[17] = array('label' => 'S4 - deployed', 'field' => 'S4', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[18] = array('label' => 'S5 - needs recycle', 'field' => 'S5', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-  $metrics[19] = array('label' => 'S6 - recycled', 'field' => 'S6', 'aggregate' => 'yes', 'picker' => 'no', 'menu' => "no", 'slider' => "no");
-
-  if(empty($objects)) {
-
-    $objects[0]['edoovillage'] = ""; 
-    $objects[0]['hub'] = "";
-    $objects[0]['status'] = "";
-    $objects[0]['country'] = "";
-    $objects[0]['serialNumber'] = ""; 
-    $objects[0]['pickMeUp'] = ""; 
-    $objects[0]['model'] = ""; 
-    $objects[0]['createdDate'] = ""; 
-    $objects[0]['Wh'] = ""; 
-    $objects[0]['notes'] = ""; 
-    $objects[0]['dootripId'] = ""; 
-    $objects[0]['link'] = "No dootronics in this view"; 
-    $objects[0]['completed'] = $objects[0]['open'] = 0; 
-    foreach($possibleStates as $thisState)
+      $objects[0]['edoovillage'] = ""; 
+      $objects[0]['hub'] = "";
+      $objects[0]['status'] = "";
+      $objects[0]['country'] = "";
+      $objects[0]['serialNumber'] = ""; 
+      $objects[0]['pickMeUp'] = ""; 
+      $objects[0]['model'] = ""; 
+      $objects[0]['createdDate'] = ""; 
+      $objects[0]['Wh'] = ""; 
+      $objects[0]['notes'] = ""; 
+      $objects[0]['dootripId'] = ""; 
+      $objects[0]['link'] = "No dootronics in this view"; 
+      $objects[0]['completed'] = $objects[0]['open'] = 0; 
+      foreach($possibleStates as $thisState)
       $objects[0][$thisState] = 0;
 
-  }
+    }
 
-  cache_set($cacheIndexPrefix . 'objects', $objects, 'cache');
-  cache_set($cacheIndexPrefix . 'metrics', $metrics, 'cache');
-  cache_set($cacheIndexPrefix . 'selected_nids', $selectedNids, 'cache');
+    // Store results into the cache
+    cache_set($cacheIndexPrefix . $batch_id . '_' . 'objects', $objects, 'cache');
+    cache_set($cacheIndexPrefix . $batch_id . '_' . 'selected_nids', $selectedNids, 'cache');
+    cache_set($cacheIndexPrefix . 'metrics', $metrics, 'cache');  // Metrics descriptions are the same for all batches, so no need to add batch_id
+
+    if($current_object_num <= $range_max) {
+      $next_batch_id = "0";
+    }
+    else {
+      $next_batch_id = (string)((int)$batch_id + 1);
+    }
+    cache_set($cacheIndexPrefix . 'batch_id', $next_batch_id, 'cache');
 
   }
 
   if(!$justCache && $switcher)
     print_dashboard_switcher($userId);
-  print_dashboard_objects('laptop', 'dootronics', $objects, $metrics, $selectedNids, $cacheIndexPrefix, $justCache);
+  if(!$justCache)
+    print_dashboard_objects('laptop', 'dootronics', $objects, $metrics, $selectedNids, $cacheIndexPrefix, $justCache);
 
 }
 
@@ -382,11 +428,11 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
   if($hubId != NULL) 
   {
     $queryHub = "(SELECT tHub.entity_id FROM
-                   ((SELECT DISTINCT entity_id FROM field_data_field_hub WHERE (field_hub_target_id=:hid))
+                   ((SELECT DISTINCT entity_id FROM field_data_field_hub WHERE (field_hub_target_id IN ($hubId) ))
                    UNION
                    (SELECT DISTINCT field_edoovillage_destination_target_id as entity_id FROM field_data_field_edoovillage_destination
                     WHERE entity_id IN (SELECT entity_id FROM field_data_field_hub_laptop
-                    WHERE field_hub_laptop_target_id=:hid) AND field_edoovillage_destination_target_id != 0)) AS tHub)";
+                    WHERE field_hub_laptop_target_id IN ($hubId)) AND field_edoovillage_destination_target_id != 0)) AS tHub)";
     $query = $query . " UNION ALL " . $queryHub;
     $placeHolders[':hid'] = $hubId;
     $numberOfQueries++;
@@ -2085,11 +2131,25 @@ function lbd_display_dooject_column_chart($objectNid, $type)
  *    higher_frequency (that should be run more often) and 
  *    lower_frequency (that should be run less often)
  *
+ * Dec 20, 2020: Added lbd_visualize_rebuild_dashboards_dootronics() to just rebuild the dootronics dashboard.
+ *               As this dashboard is growing fast, we had to switch to a batch approach to reconstruct it.
+ *               So we need to run it more often too, thus we are going to reconstruct it separately at its own pace.
+ *
  * This method is to be run via an external cron job like this:
  *   40 * * * * /usr/bin/drush --root=/var/www/lbd/ php-eval "lbd_visualize_rebuild_dashboards_higher_frequency();"
  *   30 *\/2 * * * /usr/bin/drush --root=/var/www/lbd/ php-eval "lbd_visualize_rebuild_dashboards_lower_frequency();"
+ *   5-59/10 * * * * /usr/bin/drush --root=/var/www/lbd/ php-eval "lbd_visualize_rebuild_dashboards_dootronics();"
  *
  */
+function lbd_visualize_rebuild_dashboards_dootronics() {
+
+  // Re-compute the general (non-volatile marked) dashboards
+  lbd_display_dashboard_doojects(NULL, NULL, NULL, NULL, TRUE, TRUE);
+  drupal_set_message("Rebuilt the dootronics dashboard");
+ 
+  return;
+}
+
 function lbd_visualize_rebuild_dashboards_higher_frequency() {
 
   // Clean up all the volatile-marked entries (these are all dashboards
@@ -2100,8 +2160,6 @@ function lbd_visualize_rebuild_dashboards_higher_frequency() {
   drupal_set_message("Cleared dootronic and dootrip general dashboards");
 
   // Re-compute the general (non-volatile marked) dashboards
-  lbd_display_dashboard_doojects(NULL, NULL, NULL, NULL, TRUE, TRUE);
-  drupal_set_message("Rebuilt the dootronics dashboard");
   lbd_display_dashboard_dootrips(NULL, NULL, TRUE, TRUE);
   drupal_set_message("Rebuilt the dootrips dashboard");
 

@@ -8,6 +8,7 @@ Gebruikers e-mailadres: [USEREMAIL]
 Gebruikers land: [COUNTRY]
 Gebruikers stad: [CITY]
 De reden waarom er contact met je wordt opgenomen: [REASON]
+Campaign: [CAMPAIGN]
 Bericht:
 "[MESSAGE]"
 ---

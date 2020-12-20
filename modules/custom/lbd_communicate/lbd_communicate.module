@@ -1091,10 +1091,14 @@ function _contact_urls_redirect() {
 function lbd_contact_form($form, &$form_state) {
   $country = "";
   $reason = "";
+  $campaign = "";
   if(array_key_exists('co', $_GET)) 
     $country = $_GET['co'];
   if(array_key_exists('re', $_GET)) 
     $reason = $_GET['re'];
+  if(array_key_exists('campaign', $_GET)) 
+    $campaign = $_GET['campaign'];
+
 
   $header = "<br/><strong><font size='4' color='#FF2400'>";
   $header .= t('Thank you for reaching out to Project Labdoo.');
@@ -1166,6 +1170,12 @@ function lbd_contact_form($form, &$form_state) {
     $form['reason']['#default_value'] = $reason; 
 //    $form['reason']['#access'] = FALSE;
   }
+
+  // Campaign (hidden fielf)
+  $form['campaign'] = array(
+    '#type'       => 'hidden',
+    '#value'   => $campaign,
+  );
 
   // Message
   $form['message'] = array(
@@ -1240,6 +1250,7 @@ function lbd_contact_form_submit($form, &$form_state) {
   $country_code = $country_codes[$form_state['values']['country']];
   $country = labdoo_country_code2name($country_code); 
   $reason_code = $form_state['values']['reason'];
+  $campaign = $form_state['values']['campaign'];
 
   // Forwarding email based on country:
   // (Note: In production, set email addresses here to the correct values.
@@ -1272,8 +1283,8 @@ function lbd_contact_form_submit($form, &$form_state) {
   );
 
   // Forwardind email for fall back case (none of the above cases)
-  //$world_emails_pool = array('anna.artis@labdoo.org', 'alicia.hernandez@labdoo.org');
-  $world_emails_pool = array('alicia.hernandez@labdoo.org');
+  $world_emails_pool = array('anna.artis@labdoo.org', 'alicia.hernandez@labdoo.org');
+  //$world_emails_pool = array('alicia.hernandez@labdoo.org');
 
   if(array_key_exists($country, $country2shub_email)) {
     $to_emails = $country2shub_email[$country];
@@ -1308,6 +1319,7 @@ function lbd_contact_form_submit($form, &$form_state) {
     $body = str_replace("[REASON]", $reasons[$form_state['values']['reason']], $body);
     $body = str_replace("[MESSAGE]", $message, $body);
     $body = str_replace("[CONTACT_EMAIL]", variable_get('site_mail', ''), $body);
+    $body = str_replace("[CAMPAIGN]", $campaign, $body);
 
     $email_params['type'] = "CONTACT_FORM_SUPERHUB";
     $email_params['to'] = "contact@labdoo.org," . $to_emails;
