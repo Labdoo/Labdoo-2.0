@@ -3081,6 +3081,31 @@ function labdoo_render_macro_stats($type, $addTitle=False) {
   $numStudents = lbd_get_total_num_objects('student');
   $numCountries = lbd_get_total_num_objects('country');;
 
+
+  //Addition to generate json file for passing stats to WP  - https://github.com/Labdoo/Labdoo/issues/96
+  
+  $myfile = fopen("/var/www/lbd/data.json", "w");
+  $txt="{\n";
+  fwrite($myfile, $txt);
+  $txt="  \"_coment\": \"This is a JSON file execlusively generated to send this information to the Wordpress marker, is generated on labdoo_render_macro_stats\",\n";
+  fwrite($myfile, $txt);
+  $txt="  \"level1\": {\n";
+  fwrite($myfile, $txt);
+  $txt="    \"dootronics\": \"$numLaptopsTagged\",\n";
+  fwrite($myfile, $txt);
+  $txt="    \"escuelas\": \"$numEdoovillages\",\n";
+  fwrite($myfile, $txt);
+  $txt="    \"estudiantes\": \"$numStudents\",\n";
+  fwrite($myfile, $txt);
+  $txt="    \"hubs\": \"$numHubs\",\n";
+  fwrite($myfile, $txt);
+  $txt="    \"paises\": \"$numCountries\"\n";
+  fwrite($myfile, $txt);
+  $txt="}}";
+  fwrite($myfile, $txt);
+  fclose($myfile);
+
+
   // Compute CO2 savings
   // CO2 savings = Savings from dootronics + savings from dootrips
   if($cacheResult = cache_get('labdoo_co2_savings_dootrip')) {
