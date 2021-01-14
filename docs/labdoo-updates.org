@@ -75,10 +75,11 @@
     XXX
     #+END_EXAMPLE
   
-  - Reconfigure lbdjail service to start automatically (might be required after upgrade of the OS since the service is customized one), this guarantees that the lbd services is always started when the host OS node is booted
+  - Reconfigure lbdjail service to start automatically (might be required after upgrade of the OS since the service is customized one), this guarantees that the lbd services is always started when the host OS node is booted.
+  These changes are to be done in he host (outside the jail)
 
     #+BEGIN_EXAMPLE
-    root@ec2-35-158-107-132:~# cat /etc/systemd/system/lbdjail.service
+root@ec2-35-158-107-132:~# cat /etc/systemd/system/lbdjail.service
 [Unit]
 Description=LABDOO jail service
 After=network.target
