@@ -74,8 +74,56 @@
     #+BEGIN_EXAMPLE
     XXX
     #+END_EXAMPLE
+  
+  - Reconfigure lbdjail service to start automatically (might be required after upgrade of the OS since the service is customized one), this guarantees that the lbd services is always started when the host OS node is booted
 
-  - At the end of the above process, it's likely that you will need to update some of the configuration files, as the upgrade may have overwritten them. Make sure the following parameters are set as follows:
+    #+BEGIN_EXAMPLE
+    root@ec2-35-158-107-132:~# cat /etc/systemd/system/lbdjail.service
+[Unit]
+Description=LABDOO jail service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=oneshot
+#Restart=always
+#RestartSec=1
+User=root
+#ExecStartPre=/bin/mount /dev/xvdg1 /var/chroot/
+ExecStart=/usr/sbin/service chroot-lbd start
+#ExecStop=/usr/sbin/service chroot-lbd stop
+[Install]
+WantedBy=multi-user.target
+
+
+[Install]
+WantedBy=multi-user.target
+
+
+root@ec2-35-158-107-132:~#sysctl enable lbdjail
+-------------
+
+
+root@ec2-35-158-107-132:~# cat /etc/init.d/chroot-lbd
+#!/bin/bash
+
+CHROOT='/var/chroot/lbd'
+
+case "$1" in
+    start)
+
+        mount /dev/xvdg1 /var/chroot/            <<< Added to autostart by javier!! BEWARE IF DISK CHANGES
+	      for dir in proc dev sys dev/pts
+        do
+            mount -o bind /$dir $CHROOT/$dir
+        done
+        chroot $CHROOT/ mount -a
+        # start the services inside the CHROOT
+        chroot $CHROOT/ /etc/init.d/supervisor start
+        ;;
+    #+END_EXAMPLE
+
+  - At the end of the above process, it's likely that you will need to update some of the PHP configuration files, as the upgrade may have overwritten them. Make sure the following parameters are set as follows:
 
     #+BEGIN_EXAMPLE
     ==> # cat /etc/php/7.0/cli/php.ini | grep upload_max_filesize  # use the right version of php here
@@ -90,7 +138,10 @@
     ==> # cat /etc/mysql/my.cnf | grep innodb_buffer_pool_size
     innodb_buffer_pool_size         = 3000M
     #+END_EXAMPLE
-
+ 
+ - At the end of the above process, it's also likely that you have to reenable the automatic usage of the passphrase for the certificates, since the apache apgrade, if re-installing it, might have lost it
+    
+    #+BEGIN_EXAMPLE
     ==> # head /usr/share/apache2/ask-for-passphrase
     echo "xxx"  # use the right password
     exit
