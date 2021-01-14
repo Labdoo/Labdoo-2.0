@@ -13,4 +13,14 @@ The following are additional commands that will come often handy when developing
     git log # Check that the revert is properly logged
     git push # Pushed the revert to the github repo (as usual, you may need to set --global user.{name,email} prior to running this command)
     #+END_EXAMPLE
+    
+   - To download the repo and work in a new branch that you have created in the MASTER, and commit it do as follows:
+
+    #+BEGIN_EXAMPLE
+    git clone https://github.com/Labdoo/Labdoo-2.0.git labdoo # Get first a local clone of project Labdoo
+    git branch -r # Take a look at the branches, yours should be there
+    git git fetch origin issue97_utils_to_generated_and_upload_json_to_wp    # Download the Branch to your local repository 
+    git checkout issue97_utils_to_generated_and_upload_json_to_wp # Check that the revert is properly logged
+    git push # Pushed the revert to the github repo (as usual, you may need to set --global user.{name,email} prior to running this command)
+    #+END_EXAMPLE
 
