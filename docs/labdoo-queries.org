@@ -55,6 +55,51 @@ The following are some of the most commonly used SQL queries.
     #+BEGIN_EXAMPLE
     mysql> select mail from users where uid in (select field_hub_manager_s__target_id from field_data_field_hub_manager_s_ where entity_id in (select nid from node where (type="hub" and nid in (select nid from location_instance where lid in (select lid from location where country="es")))));
     #+END_EXAMPLE
+    
+    
+  - Get User ID for a user with his username:
+    
+    #+BEGIN_EXAMPLE
+   mysql> select * from users where name="jprisab";
+    #+END_EXAMPLE
+    
+  - Get Projects where a user ID is set as manager:
+    
+    #+BEGIN_EXAMPLE
+   mysql> select * from  field_data_field_project_manager_s_ where field_project_manager_s__target_id=3000;
+    #+END_EXAMPLE
+    
+  - Get Addidional Notification mails from the projects where a user is manager:
+    
+    #+BEGIN_EXAMPLE
+   mysql> select * from field_data_field_edoo_additional_notif_em where entity_id in (select entity_id from  field_data_field_project_manager_s_ where field_project_manager_s__target_id=3000);
+    #+END_EXAMPLE
+    
+  - Get Addidional Notification mails from the projects where a user is manager:
+    
+    #+BEGIN_EXAMPLE
+   mysql> select * from field_data_field_edoo_additional_notif_em where entity_id in (select entity_id from  field_data_field_project_manager_s_ where field_project_manager_s__target_id=3000);
+    #+END_EXAMPLE
+    
+   - Get On Site Point of Contact info of  the projects where a user is manager:
+    
+    #+BEGIN_EXAMPLE
+   mysql> select * from field_data_field_on_site_point_of_contact where entity_id in (select entity_id from  field_data_field_project_manager_s_ where field_project_manager_s__target_id=3000);
+   
+   in bash with the output
+   
+   $ grep -i -o '[A-Z0-9._%+-]\+@[A-Z0-9.-]\+\.[A-Z]\{2,4\}' OUTPUTFILE | sort -u
+    #+END_EXAMPLE
+    
+   -  Project description the projects where a user is manager:
+    
+    #+BEGIN_EXAMPLE
+   mysql> select * from field_data_field_project_description where entity_id in (select entity_id from  field_data_field_project_manager_s_ where field_project_manager_s__target_id=3000);
+   
+   in bash with the output
+   
+   $ grep -i -o '[A-Z0-9._%+-]\+@[A-Z0-9.-]\+\.[A-Z]\{2,4\}' OUTPUTFILE | sort -u
+    #+END_EXAMPLE
 
 ** Drush Queries
 
