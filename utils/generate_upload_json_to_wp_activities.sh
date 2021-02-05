@@ -21,6 +21,9 @@ file_destination=/home/wpsyncjson/data_events.json
 file_local_temorar=/tmp/temp_drush_temp
 
 
+#Path in WP to have the files found
+LOCATIONIMGSINWP=/wp-content/uploads/events_icons
+
 
 
 #Execute the command to extract the information and store in the temporary folder (after cleaning it a bit)
@@ -43,7 +46,10 @@ while read line; do
        	MSG=$(echo $line | awk -F "href=" '{print $2}' | awk -F ">" '{print $2}' | awk -F " in" '{print $1}')
 	CITY=$(echo $line | awk -F "href=" '{print $2}' | awk -F " in " '{print $2}' | awk -F "," '{print $1}')
 	COUNTRY=$(echo $line | awk -F "href=" '{print $2}' | awk -F ", " '{print $2}' | awk -F "." '{print $1}')
-	IMAGE=$(echo $line | awk -F "img src=\"" '{print $2}' | awk -F "\"" '{print "https://platform.labdoo.org"$1}')
+
+        #IMAGE=$(echo $line | awk -F "img src=\"" '{print $2}' | awk -F "\"" '{print "https://platform.labdoo.org"$1}')
+        IMAGE=$(echo $line | awk -F "pictures" '{print $2}' | awk -F "\"" '{print "/wp-content/uploads/events_icons" $1".jpg"}')
+
 	URL=$(echo $line | awk -F "a href=\"" '{print $2}' | awk -F "\"" '{print "https://platform.labdoo.org"$1}')
 
 #Create a proper json line with the fields
