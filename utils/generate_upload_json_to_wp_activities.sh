@@ -29,6 +29,10 @@ LOCATIONIMGSINWP=/wp-content/uploads/events_icons
 #Execute the command to extract the information and store in the temporary folder (after cleaning it a bit)
 /usr/bin/drush --root=/var/www/lbd/ php-eval "\$blockFeed = module_invoke('views', 'block_view', 'actions-block_1'); \$blockFeed2 = array_values(\$blockFeed)[0]; print(array_values(\$blockFeed2)[0]);"  | egrep -E " ago|node" | tr -d '\n' | sed "s/\width/\n/g" > $file_local_temorar
 
+#Megachapuza para evitar los problemas con la redireccion en la pagina de WP de todo lo que lleva edoovillage en el nombre
+sed -i 's/edoovillage.png/edoo_village.png/g' $file_local_temorar
+sed -i 's/hub.png/hu_b.png/g' $file_local_temorar
+
 
 LINENR=0
 
