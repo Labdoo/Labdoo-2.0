@@ -51,12 +51,24 @@ while read line; do
 	CITY=$(echo $line | awk -F "href=" '{print $2}' | awk -F " in " '{print $2}' | awk -F "," '{print $1}')
 	COUNTRY=$(echo $line | awk -F "href=" '{print $2}' | awk -F ", " '{print $2}' | awk -F "." '{print $1}')
 
-        #IMAGE=$(echo $line | awk -F "img src=\"" '{print $2}' | awk -F "\"" '{print "https://platform.labdoo.org"$1}')
+        
+	#Check if it is a dootrip, in that case the structure you are using as "in CITY,COUNTRY" is not valid
+	#need to use " to CITY (COUNTRY)"
+	if [[ $MSG == Dootrip* ]]
+        then
+                CITY=$(echo $line | awk -F "href=" '{print $2}' | awk -F ") to " '{print $2}' | awk -F "(" '{print $1}')
+                COUNTRY=$(echo $line | awk -F "href=" '{print $2}' | awk -F "(" '{print $3}' | awk -F ")" '{print $1}')
+        else
+                CITY=$(echo $line | awk -F "href=" '{print $2}' | awk -F " in " '{print $2}' | awk -F "," '{print $1}')
+                COUNTRY=$(echo $line | awk -F "href=" '{print $2}' | awk -F ", " '{print $2}' | awk -F "." '{print $1}')
+        fi
+
+	#IMAGE=$(echo $line | awk -F "img src=\"" '{print $2}' | awk -F "\"" '{print "https://platform.labdoo.org"$1}')
         IMAGE=$(echo $line | awk -F "pictures" '{print $2}' | awk -F "\"" '{print "/wp-content/uploads/events_icons" $1".jpg"}')
 
 	URL=$(echo $line | awk -F "a href=\"" '{print $2}' | awk -F "\"" '{print "https://platform.labdoo.org"$1}')
 
-#Create a proper json line with the fields
+	#Create a proper json line with the fields
 	printf '{"city":"%s","country":"%s","time":"%s","msg":"%s","url":"%s","image":"%s"}' "$CITY" "$COUNTRY" "$TIME" "$MSG" "$URL" "$IMAGE" >>   $file_origin
 	
 	LINENR=$((LINENR+1))
