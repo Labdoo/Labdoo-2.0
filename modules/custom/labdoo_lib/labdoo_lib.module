@@ -3159,9 +3159,18 @@ function labdoo_macro_stats_to_json() {
 
   // Compute CO2 savings
   // CO2 savings = Savings from dootronics + savings from dootrips
-  $co2SavingsDootrip = $cacheResult->data;
+  if($cacheResult = cache_get('labdoo_co2_savings_dootrip')) {
+    $co2SavingsDootrip = $cacheResult->data;
+  }
+  else {
+    $co2SavingsDootrip = lbd_get_co2_savings_dootrip();
+    // Save it in the cache
+    // Note: this cache is periodically cleaned up in labdoo_lib_cron
+    cache_set('labdoo_co2_savings_dootrip', $co2SavingsDootrip, 'cache');
+  }
   $co2SavingsDootronic = $numLaptopsDelivered * 18.59;
   $co2SavingsTotal = intval($co2SavingsDootrip + $co2SavingsDootronic);
+
 
 
   $myfile = fopen("/var/www/lbd/data.json", "w");
