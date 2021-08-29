@@ -15,7 +15,7 @@ destination_user_key_location=/usr/local/src/labdoo/utils/wpsyncjson.pem
 file_origin=/var/www/lbd/data_events.json
 
 #Where in the remote server this script will put the generated json
-file_destination=/home/wpsyncjson/data_events.json
+file_destination=/home/wpsyncjson/tags_data.json
 
 #Temporary file for usage of this script
 file_local_temorar=/tmp/temp_drush_temp
@@ -82,8 +82,14 @@ printf '
   }}
 ' >> $file_origin
 
-#Push the generated file
-scp -i $destination_user_key_location $file_origin $destination_user@$destination_host:$file_destination
+#Push the generated file if jsonlint validates is, otherwise the previous one will remain
+if jsonlint-php $file_origin ; then
+	scp -i $destination_user_key_location $file_origin $destination_user@$destination_host:$file_destination
+	exit 0
+else
+	echo "command returned some error"
+	exit 1
+fi
 
 
 # Of course in the destination folder it will have to be linked the relevant expected file, to the generated one
