@@ -180,4 +180,3 @@ else
 	fi
 fi
 echo "Completed execution of labdoo-snap-image.sh"
-
