@@ -58,6 +58,7 @@ while read line; do
         then
                 CITY=$(echo $line | awk -F "href=" '{print $2}' | awk -F ") to " '{print $2}' | awk -F "(" '{print $1}')
                 COUNTRY=$(echo $line | awk -F "href=" '{print $2}' | awk -F "(" '{print $3}' | awk -F ")" '{print $1}')
+		MSG=$(echo $line | awk -F "href=" '{print $2}' | awk -F ">" '{print $2}' | awk -F "...<" '{print $1}')
         else
                 CITY=$(echo $line | awk -F "href=" '{print $2}' | awk -F " in " '{print $2}' | awk -F "," '{print $1}')
                 COUNTRY=$(echo $line | awk -F "href=" '{print $2}' | awk -F ", " '{print $2}' | awk -F "." '{print $1}')
