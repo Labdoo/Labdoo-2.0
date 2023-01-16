@@ -285,10 +285,14 @@ function labdoo_calculate_dootrip_co2_savings($node) {
   if(!empty($dootronics))
     $numDootronics = count($dootronics);
 
+  $dootrip_distance = _calculate_dootrip_distance($node);
+  if(!is_numeric($dootrip_distance))
+    $dootrip_distance = 0;
+
   $co2SavingsKgms = round($CO2gramsPerKgmPerKm * 
                           $numDootronics * 
                           $dootronicWeightKgms *
-                          _calculate_dootrip_distance($node) / 1000, 1); 
+                          $dootrip_distance / 1000, 1); 
 
   if ($numDootronics == 1)
     return(strval($co2SavingsKgms) . t(" Kgms of CO2 emissions will be saved assuming one laptop is transported"));

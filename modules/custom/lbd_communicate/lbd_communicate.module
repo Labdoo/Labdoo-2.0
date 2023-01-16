@@ -141,16 +141,23 @@ function lbd_communicate_mail_send($email_params) {
   // message delivery; only that there were no PHP-related issues encountered
   // while sending.
   $result = drupal_mail($module, $key, $to, $language, $email_params, $from, $send);
+  if ($result['result'] == FALSE) {
+      // labdoo_lib_print_array($result); // enable only for temporary debugging
+      drupal_set_message(t('Due to high-load, there was a problem sending an automatic message, please contact Labdoo at ' . variable_get('site_mail', 'contact@labdoo.org')), 'error');
+  } 
 
-  if ($result['result'] == TRUE) {
-// Commenting this out to avoid being too pedantic 
-//    drupal_set_message(t('An automatic email has been sent out to the user(s) connected with this event.'));
-  }
-  else {
-// labdoo_lib_print_array($result); // enable only for temporary debugging
-    drupal_set_message(t('There was a problem sending an automatic message, please contact Labdoo at ' . variable_get('site_mail', 'contact@labdoo.org')), 'error');
-  }
+  // Log every email that goes out. This is done as a safety measure, in case the sending of the email fails,
+  // we can still recover the email communication.
+  // Needs a cron job like this (outside the fail) to backup the file and avoid growing it forever:
+  // 0 8 * * * /usr/bin/scp /var/chroot/lbd/var/www/lbd/profiles/labdoo/modules/custom/labdoo-email.log labdoo_write@ftp.labdoo.org:labdoo-email-$(date +\%s).log && 
+  // mv /var/chroot/lbd/var/www/lbd/profiles/labdoo/modules/custom/labdoo-email.log /var/chroot/lbd/var/www/lbd/profiles/labdoo/modules/custom/labdoo-email.log.backup && 
+  // touch /var/chroot/lbd/var/www/lbd/profiles/labdoo/modules/custom/labdoo-email.log && chown www-data:www-data /var/chroot/lbd/var/www/lbd/profiles/labdoo/modules/custom/labdoo-email.log
 
+  $email_log = "/var/www/lbd/profiles/labdoo/modules/custom/labdoo-email.log";
+  file_put_contents($email_log, "----------------------------------\n", FILE_APPEND);
+  file_put_contents($email_log, date("F j, Y, g:i a"), FILE_APPEND);
+  file_put_contents($email_log, "\n----------------------------------\n", FILE_APPEND);
+  file_put_contents($email_log, print_r($email_params, true), FILE_APPEND);
 }
 
 
@@ -452,7 +459,7 @@ function _email_dootrip_event($node, $eventType) {
   // Only if the announce field is turned on
   $announce = labdoo_lib_get_field($node, 'field_announce_this_dootrip', 'node', 'value');
   $announce = 0; // This feature disabled for now
-                 // See https://www.labdoo.org/content/dootrip-announce-feature-breaks-some-times
+                 // See https://platform.labdoo.org/content/dootrip-announce-feature-breaks-some-times
   if($announce == 0)
     return;
   $subjectFileName = _path_to_email_template($langCode) . "dootrip_announce_subject-" . $langCode . ".email";
@@ -881,6 +888,8 @@ function lbd_communicate_mail_alter(&$message) {
 /*
  * Implementation of hook_cron
  *
+ * Please ensure this function is run once an hour, see [*] 
+ *
  */
 function lbd_communicate_cron() {
   global $base_url;
@@ -915,9 +924,10 @@ function lbd_communicate_cron() {
       // Don't notify unless $i * $DOOTRIP_EMAIL_EXPIRED_PERIOD seconds have passed.
       if($timePastSinceDootrip < ($i * $DOOTRIP_EMAIL_EXPIRED_PERIOD)) 
         continue;
-      // If the following condition is true, it means a previous instance of cron
-      // has already taken care of it, so no need to re-notify.
-      if(($i * $DOOTRIP_EMAIL_EXPIRED_PERIOD) < ($timePastSinceDootrip - $timePastSinceCron))
+      // [*] The following assumes that this function is run once every hour (3600 seconds).
+      // Basically, do not renotify after more than one hour has passed since we sent
+      // the last notification.
+      if(($i * $DOOTRIP_EMAIL_EXPIRED_PERIOD) < ($timePastSinceDootrip - 3600))
         continue;
       $doNotification = TRUE;
     } 
@@ -1040,7 +1050,7 @@ function lbd_communicate_pop_email_cache($position) {
  *
  */
 function _contact_reasons() {
-  $reasons = array(t('I want to contribute a laptop or a tablet (dootronic)'), 
+  $reasons = array(t('I want to contribute a device (laptop, tablet, mobile phone, etc.)'), 
                    t('I want to contribute a trip (dootrip)'), 
                    t('I want to become a Labdoo volunteer (labdooer)'), 
                    t('I want to solicit laptops or tablets for my educational project (edoovillage)'), 
@@ -1256,7 +1266,7 @@ function lbd_contact_form_submit($form, &$form_state) {
   // (Note: In production, set email addresses here to the correct values.
   //  We commit this to git only for convenience.)
   $country2shub_email = array(
-      "Germany" => "Labdoo-DACH@Labdoo.org",
+      "Germany" => "contact-D@Labdoo.org",
       "United States" => "wendy.lu@labdoo.org, new-york-hub@labdoo.org", 
       "Switzerland" => "zuerich-hub@labdoo.org", 
       "Taiwan" => "wendy.lu@labdoo.org",
@@ -1268,7 +1278,7 @@ function lbd_contact_form_submit($form, &$form_state) {
       // Make sure these are lower case city names
       // TODO: This should really use regular expressions to help reduce the number of entries;
       //       for now this is ok but if we need to scale this up consider using regexes.
-      "madrid" => "victoria.mota@labdoo.org, cesar.seoane@labdoo.org",
+      "madrid" => "cesar.seoane@labdoo.org, andres.martin@labdoo.org",
       "new york" => "new-york-hub@labdoo.org",
       "new york city" => "new-york-hub@labdoo.org",
       "ny" => "new-york-hub@labdoo.org",
@@ -1283,8 +1293,8 @@ function lbd_contact_form_submit($form, &$form_state) {
   );
 
   // Forwardind email for fall back case (none of the above cases)
-  $world_emails_pool = array('anna.artis@labdoo.org', 'alicia.hernandez@labdoo.org');
-  //$world_emails_pool = array('alicia.hernandez@labdoo.org');
+  $world_emails_pool = array('jordi.hernandez@labdoo.org', 'eulalia.picas@labdoo.org', 'maite.fortino@labdoo.org');
+//  $world_emails_pool = array('jordi.hernandez@labdoo.org', 'eulalia.picas@labdoo.org', 'pedro.tort@labdoo.org', 'maite.fortino@labdoo.org');
 
   if(array_key_exists($country, $country2shub_email)) {
     $to_emails = $country2shub_email[$country];
@@ -1345,7 +1355,7 @@ function lbd_contact_form_submit($form, &$form_state) {
 
     $email_params = array();
     $email_params['type'] = "EDOOVILLAGE_NEED_INFO";
-    $email_params['to'] = "contact@labdoo.org," . $valid_email;
+    $email_params['to'] = "contact@labdoo.org," . $valid_email . "," . $to_emails;
 //    $email_params['to'] = "jordi.ros@labdoo.org";
     $email_params['subject'] = $subject;
     $email_params['body'] = $body;
@@ -1401,7 +1411,7 @@ function _body_do_parameters($params, &$body) {
   // Build each language switcher
   foreach($supportedLanguages as $code => $language) {
     $urlParameters .= "&" . "language" . "=" . $code;
-    $htmlCode .= "<a href='https://www.labdoo.org/content/notification-email$urlParameters'>$language</a> | "; 
+    $htmlCode .= "<a href='https://platform.labdoo.org/content/notification-email$urlParameters'>$language</a> | "; 
   }
   $htmlCode = substr($htmlCode, 0, -2);
   $htmlCode .= "<hr/>";
@@ -1418,7 +1428,7 @@ function _body_do_parameters($params, &$body) {
 
 /**
  * Print an email notification. This is used in the page
- * https://www.labdoo.org/content/notification-email 
+ * https://platform.labdoo.org/content/notification-email 
  *
  */
 function lbd_communicate_print_notification_email() {

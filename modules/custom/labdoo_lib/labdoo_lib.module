@@ -202,7 +202,9 @@ function labdoo_lookup_coordinates($country, $city, &$lat, &$lon, $silent=True, 
       $coordinates = $cacheResult->data;
     }
     else {
-      $query = str_replace(' ', '+', 'https://maps.googleapis.com/maps/api/geocode/json?address='.$locationString.'&key=AIzaSyDdcmHPMZz_m_FXzWhm8FliU2R6MifP3xs');
+      // See https://console.cloud.google.com/apis/credentials?folder=&organizationId=&project=labdoo.org:api-project-592255177105
+      // for a list of keys
+      $query = str_replace(' ', '+', 'https://maps.googleapis.com/maps/api/geocode/json?address='.$locationString.'&key=xxx');
       $mapQuery = drupal_http_request($query);
       if(!property_exists($mapQuery, 'data')) {
         if($silent == False) {
@@ -296,7 +298,7 @@ function labdoo_render_map_geolocate_node($nodeId = NULL, $displayDoojects = Fal
       $nodeCountry = labdoo_country_code2name($node->locations[0]['country']);
       $locations[0]->balloon_text = "Hub: $nodeCity, $nodeCountry";
       // Geolocate the branches too
-      $hubBranches = labdoo_lib_hub_branches_list($node);
+      $hubBranches = labdoo_lib_hub_branches_list($node->nid);
       $i = 0;
       foreach($hubBranches as $hubBranch) {
         $i++;
@@ -602,7 +604,7 @@ function _generate_dootrip_dootronics_table($node) {
       $dootronicsTable[$i][$j++] = "Not assigned";
     // Extract the edoovillage link
     if($edoovillageNode) 
-      $dootronicsTable[$i][$j++] = "https://www.labdoo.org/" . drupal_get_path_alias("node/" . $edoovillageNode->nid);
+      $dootronicsTable[$i][$j++] = "https://platform.labdoo.org/" . drupal_get_path_alias("node/" . $edoovillageNode->nid);
     else
       $dootronicsTable[$i][$j++] = "Not assigned";
   }
@@ -2228,7 +2230,7 @@ function lbd_laptopid2nodeid($laptopId)
  *
  */
 function lbd_generate_qrcode($tag, $widthHeight ='60', $EC_level='L', $margin='0') {
-  $thisTag = urlencode("http://www.labdoo.org/laptop/".$tag);
+  $thisTag = urlencode("http://platform.labdoo.org/laptop/".$tag);
   echo '<img src="https://api.qrserver.com/v1/create-qr-code/?size='.$widthHeight.'x'.$widthHeight.'&data='.$thisTag.'"/>';
   return;
 }
@@ -2258,19 +2260,24 @@ function labdoo_lib_compute_watt_hours($nodeLoaded) {
 
 
 /**
- * Given a hub, it returns the node IDs of its branches
+ * Given a hub, it returns the node IDs of its branches (recursively)
  *
  * @param node $nodeLoaded The hub node (loaded)
  *
  * @return The list of node IDs of the hub branches
  *
  */
-function labdoo_lib_hub_branches_list($nodeLoaded) {
-  $query = "SELECT entity_id FROM field_data_field_parent_hub WHERE field_parent_hub_target_id=$nodeLoaded->nid";
+function labdoo_lib_hub_branches_list($nid) {
+  $query = "SELECT entity_id FROM field_data_field_parent_hub WHERE field_parent_hub_target_id=$nid";
   $result = db_query($query);
 
   $branchIdList = array();
   foreach($result as $item) {
+    // Find also all hub branches from this hub recursively (for all sublevels)
+    $branchIdList2 = labdoo_lib_hub_branches_list($item->entity_id);
+    foreach($branchIdList2 as $hub_nid) {
+      array_push($branchIdList, $hub_nid);
+    }
     array_push($branchIdList, $item->entity_id);
   }
  
@@ -2287,7 +2294,7 @@ function labdoo_lib_hub_branches_list($nodeLoaded) {
  *
  */
 function labdoo_lib_compute_hub_branches($nodeLoaded) {
-  $hubBranches = labdoo_lib_hub_branches_list($nodeLoaded);
+  $hubBranches = labdoo_lib_hub_branches_list($nodeLoaded->nid);
 
   $branchesCode = "";
   $branchesList = array();
@@ -2523,13 +2530,8 @@ function labdoo_lib_node_view($node, $view_mode) {
   global $language;
   global $user;
 
-/*labdoo_lib_msg_info("[PLANNED MAINTENANCE DOWNTIME ON 30/05/2019 from 8:00 to 9:00 CEST]<br/>
-<hr/>
-We will be performing some tiny maintenance activities. Dont worry, it will not take long. Sorry for the inconvinience
-<hr/>
-"); */
-
-
+//labdoo_lib_msg_info("<a>Maintenance Note: Labdoo will be down for maintenance on 21/02/2021 from 6:00 to 9:00 CEST<br/></a>"); 
+//labdoo_lib_msg_info("<a>During this upgrade we will deploy a new Labdoo landing page. Stay tuned for the new exciting changes!</a>"); 
 
   $path = drupal_get_path_alias(current_path());
 
@@ -2541,7 +2543,7 @@ We will be performing some tiny maintenance activities. Dont worry, it will not 
   // By default, keep them commented out.
 /*labdoo_lib_msg_info("Join our next online technical Q&A workshop on October 19, 2020 at 20:00 CEST<br/>
   <hr/>
-  For more information, <a href='https://www.labdoo.org/content/virtual-interactive-sanitizing-workshop-0-hero-monday-1910-2100-2100'>access this link.</a>
+  For more information, <a href='https://platform.labdoo.org/content/virtual-interactive-sanitizing-workshop-0-hero-monday-1910-2100-2100'>access this link.</a>
   <hr/>
   ");*/ 
 
@@ -2577,7 +2579,7 @@ We will be performing some tiny maintenance activities. Dont worry, it will not 
   // colorbox slideshow. We also add a URL parameter 'lan=de' so that the links in the photo album
   // can be dynamically set to point back to the 'de' pages.
   // Upon fixing this bug, the following redirect can be removed.
-  // See also https://www.labdoo.org/content/slideshow-feature-does-not-work-german-de-language
+  // See also https://platform.labdoo.org/content/slideshow-feature-does-not-work-german-de-language
   //
   // This feature is now disabled, as it does not work with automatic language redirect
 //  if($language->language == 'de' && $node->type == 'node_gallery_gallery' && $view_mode == 'full' && arg(0) == 'node') {
@@ -2597,6 +2599,18 @@ We will be performing some tiny maintenance activities. Dont worry, it will not 
     "content/offline-wikis-et-ressources-éducatives-libres" => "content/overview-educational-content",
     "content/impressum-0" => "content/impressum",
     "newsletter/labdoo-newsletter-global" => "newsletters",
+    "content/front-page" => "content/edoovillages-dashboard",  // Added when we deployed the WP landing pages which took over the Drupal front page
+    // Redirects for German super-hub pages
+    "LabdooD" => "https://www.labdoo.org/deu/de/",
+    "LabdooA" => "https://www.labdoo.org/deu/de/",
+    "LabdooCH" => "https://labdoo.ch/",
+    "content/Projektpartner" => "https://www.labdoo.org/deu/de/partner/",
+    "content/spender" => "https://www.labdoo.org/deu/de/spender/",
+    "content/labdooorg-ev-d" => "https://www.labdoo.org/deu/de/labdoo-ev/",
+    "content/verein-labdooorg-ch" => "https://labdoo.ch/",
+    "content/faq-forum" => "https://www.labdoo.org/deu/de/faq/",
+    "content/impressum" => "https://www.labdoo.org/deu/de/impressum/",
+
     // Main helpers in Spanish
     "es/content/about-labdoo" => "content/acerca-de-labdoo",
     "es/content/about-hubs" => "content/acerca-de-los-hubs-centros-de-operación",
@@ -2611,16 +2625,16 @@ We will be performing some tiny maintenance activities. Dont worry, it will not 
     "es/content/labdoo-cities" => "content/labdoo-para-ciudades",
     "es/content/labdoos-corporate-social-responsibility-csr-package" => "content/paquete-labdoo-de-responsabilidad-social-corporativa-rsc",
     // Main helpers in Catalan
-    "ca/content/about-hubs" => "content/el-hubs-labdoo",
+    "ca/content/about-hubs" => "content/què-són-els-hubs",
     "ca/content/managing-edoovillages" => "content/gestionar-una-edoovillage",
     // TODO: complete the next mappings when translations are completed
     "ca/content/about-dootronics" => "content/què-són-els-dootronics",
-    // "ca/content/dootrip-system" => "",
-    // "ca/content/about-teams" => "",
-    // "ca/content/newsletters" => "",
-    // "ca/content/labdoo-wiki" => "",
-    // "ca/content/labdoo-user-accounts" => "",
-    // "ca/content/labdoo-global-support-lgs-program" => "",
+    "ca/content/dootrip-system" => "content/el-sistema-de-dootrips-0",
+    "ca/content/about-teams" => "content/què-són-els-equips",
+    "ca/content/newsletters" => "content/newsletters-1",
+    "ca/content/labdoo-wiki" => "content/la-wiki-de-labdoo",
+    "ca/content/labdoo-user-accounts" => "content/comptes-dusuari-de-labdoo",
+    "ca/content/labdoo-global-support-lgs-program" => "content/com-rebre-ajuda-de-lequip-tècnic-de-labdoo",
     // "ca/content/labdoos-corporate-social-responsibility-csr-package" => "",
     "ca/content/labdoo-cities" => "content/labdoo-ciutats"
   ];
@@ -3141,6 +3155,72 @@ $trailer
 
   return $code;
 }
+
+
+/**     
+ * Renders the Labdoo iGlobal Statistics and generates a JSON file 
+ * https://github.com/Labdoo/Labdoo/issues/96
+ *
+ */
+function labdoo_macro_stats_to_json() {
+
+  $numLaptopsNeeded = labdoo_get_demand(NULL, NULL, FALSE);
+  $numLaptopsDelivered = labdoo_getnum_doojects(NULL, NULL, 'S4', True);
+  $numLaptopsTransit = labdoo_getnum_doojects(NULL, NULL, 'T1') + labdoo_getnum_doojects(NULL, NULL, 'S3');
+  $numLaptopsTagged = lbd_get_total_num_objects('laptop');
+  $numHubs = lbd_get_total_num_objects('hub');
+  $numEdoovillages = lbd_get_total_num_objects('edoovillage');
+  $numStudents = lbd_get_total_num_objects('student');
+  $numCountries = lbd_get_total_num_objects('country');;
+
+  // Compute CO2 savings
+  // CO2 savings = Savings from dootronics + savings from dootrips
+  //$co2SavingsDootrip = $cacheResult->data;
+  //$co2SavingsDootronic = $numLaptopsDelivered * 18.59;
+  //$co2SavingsTotal = intval($co2SavingsDootrip + $co2SavingsDootronic);
+
+if($cacheResult = cache_get('labdoo_co2_savings_dootrip')) {
+    $co2SavingsDootrip = $cacheResult->data;
+  }
+  else {
+    $co2SavingsDootrip = lbd_get_co2_savings_dootrip(); 
+    // Save it in the cache
+    // Note: this cache is periodically cleaned up in labdoo_lib_cron
+    cache_set('labdoo_co2_savings_dootrip', $co2SavingsDootrip, 'cache');
+  }
+  $co2SavingsDootronic = $numLaptopsDelivered * 18.59; 
+  $co2SavingsTotal = intval($co2SavingsDootrip + $co2SavingsDootronic);
+
+
+  $myfile = fopen("/var/www/lbd/data.json", "w");
+
+  $txt="{\n";
+  fwrite($myfile, $txt);
+  $txt="  \"_coment\": \"This is a JSON file execlusively generated to send this information to the Wordpress marker, is generated on labdoo_render_macro_stats\",\n";
+  fwrite($myfile, $txt);
+
+  $txt="  \"level1\": {\n";
+  fwrite($myfile, $txt);
+
+  $txt="    \"dootronics\": \"$numLaptopsTagged\",\n";
+  fwrite($myfile, $txt);
+  $txt="    \"escuelas\": \"$numEdoovillages\",\n";
+  fwrite($myfile, $txt);
+  $txt="    \"estudiantes\": \"$numStudents\",\n";
+  fwrite($myfile, $txt);
+  $txt="    \"hubs\": \"$numHubs\",\n";
+  fwrite($myfile, $txt);
+  $txt="    \"paises\": \"$numCountries\",\n";
+  fwrite($myfile, $txt);
+  $txt="    \"co2saved\": \"$co2SavingsTotal\"\n";
+  fwrite($myfile, $txt);
+  $txt="}}";
+  fwrite($myfile, $txt);
+  fclose($myfile);
+
+
+}
+
 
 
 /**
@@ -4874,9 +4954,9 @@ function labdoo_render_object_menu() {
       $semaphorePic = 'semaphore-hub-red-' . $langCode . '.png';
       $parentHub = $wNode->field_parent_hub->value();
       if($parentHub)
-        $closed_message = t("This branch is no longer active");
+        $closed_message = t("This branch is not active");
       else
-        $closed_message = t("This hub is no longer active");
+        $closed_message = t("This hub is not active");
       drupal_set_message("<strong><font color=red size=6px>" . $closed_message  . "</font></strong>", 'warning', FALSE);
       labdoo_lib_msg_info(t("Please do not try to contact this hub.")); 
       labdoo_lib_msg_info(t("If you would like to volunteer and take over this hub's management operations, reach out to the Labdoo team at contact@labdoo.org.")); 
@@ -4996,7 +5076,8 @@ function labdoo_lib_generate_html_link_from_nid($nid, $text) {
  *   List of always protected forms.
  */
 function labdoo_lib_google_recaptcha_always_protect_alter(&$always_protected) {
-  // Add Labdoo contact form to the list of always rotected forms
+  // Add Labdoo contact form to the list of always protected forms
+  // Commented out for DT campaign in Germany
   $always_protected[] = 'lbd_contact_form';
   $always_protected[] = 'comment_node_team_page_form';
   $always_protected[] = 'comment_node_team_task_form';
@@ -5371,19 +5452,21 @@ function dootronic_file_upload_form_submit($form, &$form_state) {
 
     // Model
     $model_value = "";
-    if(__json_value_is_present($dootronic, 'manufacturer'))
+    if (__json_value_is_present($dootronic, 'manufacturer'))
       $model_value .= $dootronic->manufacturer . "; ";
-    if(__json_value_is_present($dootronic, 'device_model'))
+    if (__json_value_is_present($dootronic, 'device_model'))
       $model_value .= $dootronic->device_model . "; ";
-    if(__json_value_is_present($dootronic, 'product_name'))
+    if (__json_value_is_present($dootronic, 'product_name'))
       $model_value .= $dootronic->product_name . "; ";
     $wNode->field_model->set($model_value);
 
     // Serial number
-    $wNode->field_serial_number->set($dootronic->serial_no);
+    if (__json_value_is_present($dootronic, 'serial_no')) {
+      $wNode->field_serial_number->set($dootronic->serial_no);
+    }
 
     // Number of cores
-    if  (__json_value_is_present($dootronic, 'cpu_count')) {
+    if (__json_value_is_present($dootronic, 'cpu_count')) {
       $possible_core_count = list_allowed_values(field_info_field("field_cpu_type"));
       $max_core_count = intval(end($possible_core_count));
       $core_count = intval($dootronic->cpu_count);
@@ -5393,10 +5476,12 @@ function dootronic_file_upload_form_submit($form, &$form_state) {
     }
 
     // CPU speed
-    $wNode->field_cpu->set($dootronic->cpu_speed_mhz);
+    if (__json_value_is_present($dootronic, 'cpu_speed_mhz')) 
+      $wNode->field_cpu->set($dootronic->cpu_speed_mhz);
 
     // Memory size
-    $wNode->field_memory->set($dootronic->memory_size_mb);
+    if (__json_value_is_present($dootronic, 'memory_size_mb')) 
+      $wNode->field_memory->set($dootronic->memory_size_mb);
 
     // Disk size
     $disk_size = 0;
@@ -5407,7 +5492,8 @@ function dootronic_file_upload_form_submit($form, &$form_state) {
     $wNode->field_hard_drive->set($disk_size);
 
     // Operating system
-    $wNode->field_current_operating_system->set($dootronic->os_version);
+    if (__json_value_is_present($dootronic, 'os_version')) 
+      $wNode->field_current_operating_system->set($dootronic->os_version);
 
     // Notes
     $additional_notes_value = "";
@@ -5462,7 +5548,8 @@ function dootronic_file_upload_form_submit($form, &$form_state) {
     }
 
     // Keyboard type
-    $wNode->field_keyboard_type->set($dootronic->keyboard_layout);
+    if (__json_value_is_present($dootronic, 'keyboard_layout')) 
+      $wNode->field_keyboard_type->set($dootronic->keyboard_layout);
 
     // Set the status. For example, some laptops may be tagged as S5 (waiting for repairs)
     $status = "S2";
@@ -5470,6 +5557,14 @@ function dootronic_file_upload_form_submit($form, &$form_state) {
       $status = $dootronic->state;
     }
     $wNode->field_status->set($status);
+
+    if (__json_value_is_present($dootronic, 'hub')) {
+      $wNode->field_hub_laptop->set(explode(",", $dootronic->hub));
+    }
+
+    if (__json_value_is_present($dootronic, 'edoovillage')) {
+      $wNode->field_edoovillage_destination->set($dootronic->edoovillage);
+    }
 
     // Save the new dootronic information
     node_save($node);
