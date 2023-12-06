@@ -199,17 +199,13 @@ function labdoo_lookup_coordinates($country, $city, &$lat, &$lon, $silent=True, 
     // Try to use the cached value if available
     $locationString = $street . "+" . $city . "+" . $zip . "+" . $country;
     if($cacheResult = cache_get('labdoo_lookup_coordinates'.$locationString)) {
-//file_put_contents("/tmp/googleapi-calls.txt", "BP1: " . $locationString . "\n", FILE_APPEND);
       $coordinates = $cacheResult->data;
-//file_put_contents("/tmp/googleapi-calls.txt", "BP1.1: " . print_r($coordinates, TRUE) . "\n", FILE_APPEND);
     }
     else {
       // See https://console.cloud.google.com/apis/credentials?folder=&organizationId=&project=labdoo.org:api-project-592255177105
       // for a list of keys
-      $query = str_replace(' ', '+', 'https://maps.googleapis.com/maps/api/geocode/json?address='.$locationString.'&key=AIzaSyBTacelbLYWh_JtVKA6nb93g-LuNn1oZ_E');
+      $query = str_replace(' ', '+', 'https://maps.googleapis.com/maps/api/geocode/json?address='.$locationString.'&key=xxx');
       $mapQuery = drupal_http_request($query);
-//file_put_contents("/tmp/googleapi-calls.txt", "BP2: " . $query . "\n", FILE_APPEND);
-//file_put_contents("/tmp/googleapi-calls.txt", "BP2.1: " . print_r($mapQuery, TRUE) . "\n", FILE_APPEND);
       if(!property_exists($mapQuery, 'data')) {
         if($silent == False) {
           drupal_set_message(t('Could not resolve coordinates from the given city and country names.'), 'warning', FALSE);
