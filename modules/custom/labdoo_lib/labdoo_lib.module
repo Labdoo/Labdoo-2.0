@@ -199,13 +199,17 @@ function labdoo_lookup_coordinates($country, $city, &$lat, &$lon, $silent=True, 
     // Try to use the cached value if available
     $locationString = $street . "+" . $city . "+" . $zip . "+" . $country;
     if($cacheResult = cache_get('labdoo_lookup_coordinates'.$locationString)) {
+//file_put_contents("/tmp/googleapi-calls.txt", "BP1: " . $locationString . "\n", FILE_APPEND);
       $coordinates = $cacheResult->data;
+//file_put_contents("/tmp/googleapi-calls.txt", "BP1.1: " . print_r($coordinates, TRUE) . "\n", FILE_APPEND);
     }
     else {
       // See https://console.cloud.google.com/apis/credentials?folder=&organizationId=&project=labdoo.org:api-project-592255177105
       // for a list of keys
-      $query = str_replace(' ', '+', 'https://maps.googleapis.com/maps/api/geocode/json?address='.$locationString.'&key=xxx');
+      $query = str_replace(' ', '+', 'https://maps.googleapis.com/maps/api/geocode/json?address='.$locationString.'&key=AIzaSyBTacelbLYWh_JtVKA6nb93g-LuNn1oZ_E');
       $mapQuery = drupal_http_request($query);
+//file_put_contents("/tmp/googleapi-calls.txt", "BP2: " . $query . "\n", FILE_APPEND);
+//file_put_contents("/tmp/googleapi-calls.txt", "BP2.1: " . print_r($mapQuery, TRUE) . "\n", FILE_APPEND);
       if(!property_exists($mapQuery, 'data')) {
         if($silent == False) {
           drupal_set_message(t('Could not resolve coordinates from the given city and country names.'), 'warning', FALSE);
@@ -215,10 +219,11 @@ function labdoo_lookup_coordinates($country, $city, &$lat, &$lon, $silent=True, 
       }
       $mapQueryDecoded = drupal_json_decode($mapQuery->data);
       if(!isset($mapQueryDecoded['results'][0])) {
-      if($mapQueryDecoded['status'] == "OVER_QUERY_LIMIT")
-        drupal_set_message(t('We have exceeded the daily request quota for computing the map.
-                              Please email Labdoo at contact@labdoo.org and send us the URL of i
-                              this page so we can take a look, thanks. The Labdoo Team'), $repeat=FALSE);
+        if($mapQueryDecoded['status'] == "OVER_QUERY_LIMIT") {
+//        drupal_set_message(t('We have exceeded the daily request quota for computing the map.
+//                              Please email Labdoo at contact@labdoo.org and send us the URL of i
+//                              this page so we can take a look, thanks. The Labdoo Team'), $repeat=FALSE);
+        }
         if($silent == False) {
           drupal_set_message(t('Could not resolve coordinates from the given city and country names.'), 'warning', FALSE);
           drupal_set_message('City: ' . $city . ' | country: ' . $country, 'warning', FALSE);
@@ -2263,20 +2268,24 @@ function labdoo_lib_compute_watt_hours($nodeLoaded) {
  * Given a hub, it returns the node IDs of its branches (recursively)
  *
  * @param node $nodeLoaded The hub node (loaded)
+ * @param int $levelsLeft Number of additional recursive calls that are allowed
  *
  * @return The list of node IDs of the hub branches
  *
  */
-function labdoo_lib_hub_branches_list($nid) {
+function labdoo_lib_hub_branches_list($nid, $levelsLeft=3) {
+  $levelsLeft = $levelsLeft - 1;
   $query = "SELECT entity_id FROM field_data_field_parent_hub WHERE field_parent_hub_target_id=$nid";
   $result = db_query($query);
 
   $branchIdList = array();
   foreach($result as $item) {
     // Find also all hub branches from this hub recursively (for all sublevels)
-    $branchIdList2 = labdoo_lib_hub_branches_list($item->entity_id);
-    foreach($branchIdList2 as $hub_nid) {
-      array_push($branchIdList, $hub_nid);
+    if($levelsLeft) {
+      $branchIdList2 = labdoo_lib_hub_branches_list($item->entity_id, $levelsLeft);
+      foreach($branchIdList2 as $hub_nid) {
+        array_push($branchIdList, $hub_nid);
+      }
     }
     array_push($branchIdList, $item->entity_id);
   }
@@ -5318,7 +5327,7 @@ function dootronic_clone_form($form, &$form_state) {
 }
 
 function dootronic_clone_form_validate($form, &$form_state) {
-  $max_num_clones = 50;
+  $max_num_clones = 100;
   $dootronic_id = $form_state['values']['dootronic_id'];
   $clone_quantity = $form_state['values']['clone_quantity'];
 
@@ -5375,6 +5384,12 @@ function dootronic_file_upload_form($form, &$form_state) {
         '#prefix' => '<img src="/sites/default/files/content/general-objects/upload-image.png" width="600"><br/><br/><br/>',
         '#description' => t('Allowed file extensions: json'),
   );
+
+  $form['edoovillage_only'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Only update the \'status\' and \'edoovillage\' fields of each dootronic.'),
+  );
+
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Upload and execute'),
@@ -5421,6 +5436,7 @@ function dootronic_file_upload_form_submit($form, &$form_state) {
   $file=$form_state['values']['file'];
   unset($form_state['values']['file']);
   $file->status = FILE_STATUS_PERMANENT;
+  $edoovillage_only = $form_state['values']['edoovillage_only'];
 
   // Save the file for our records
   file_save($file);
@@ -5450,106 +5466,113 @@ function dootronic_file_upload_form_submit($form, &$form_state) {
     }
     $wNode = entity_metadata_wrapper('node', $node);
 
-    // Model
-    $model_value = "";
-    if (__json_value_is_present($dootronic, 'manufacturer'))
-      $model_value .= $dootronic->manufacturer . "; ";
-    if (__json_value_is_present($dootronic, 'device_model'))
-      $model_value .= $dootronic->device_model . "; ";
-    if (__json_value_is_present($dootronic, 'product_name'))
-      $model_value .= $dootronic->product_name . "; ";
-    $wNode->field_model->set($model_value);
+    if (!$edoovillage_only) { // Only do all the fields if edoovillage_only is not set 
+      // Model
+      $model_value = "";
+      if (__json_value_is_present($dootronic, 'manufacturer'))
+        $model_value .= $dootronic->manufacturer . "; ";
+      if (__json_value_is_present($dootronic, 'device_model'))
+        $model_value .= $dootronic->device_model . "; ";
+      if (__json_value_is_present($dootronic, 'product_name'))
+        $model_value .= $dootronic->product_name . "; ";
+      $wNode->field_model->set($model_value);
 
-    // Serial number
-    if (__json_value_is_present($dootronic, 'serial_no')) {
-      $wNode->field_serial_number->set($dootronic->serial_no);
+      // Serial number
+      if (__json_value_is_present($dootronic, 'serial_no')) {
+        $wNode->field_serial_number->set($dootronic->serial_no);
+      }
+
+      // Number of cores
+      if (__json_value_is_present($dootronic, 'cpu_count')) {
+        $possible_core_count = list_allowed_values(field_info_field("field_cpu_type"));
+        $max_core_count = intval(end($possible_core_count));
+        $core_count = intval($dootronic->cpu_count);
+        if ($core_count > $max_core_count)
+          $core_count = $max_core_count;
+        $wNode->field_cpu_type->set($core_count);
+      }
+
+      // CPU speed
+      if (__json_value_is_present($dootronic, 'cpu_speed_mhz')) 
+        $wNode->field_cpu->set($dootronic->cpu_speed_mhz);
+
+      // Memory size
+      if (__json_value_is_present($dootronic, 'memory_size_mb')) 
+        $wNode->field_memory->set($dootronic->memory_size_mb);
+
+      // Disk size
+      $disk_size = 0;
+      if (__json_value_is_present($dootronic, 'disk1_size_gb'))
+        $disk_size = $disk_size + intval($dootronic->disk1_size_gb);
+      if (__json_value_is_present($dootronic, 'disk2_size_gb'))
+        $disk_size = $disk_size + intval($dootronic->disk2_size_gb);
+      $wNode->field_hard_drive->set($disk_size);
+
+      // Operating system
+      if (__json_value_is_present($dootronic, 'os_version')) 
+        $wNode->field_current_operating_system->set($dootronic->os_version);
+
+      // Notes
+      $additional_notes_value = "";
+      if (__json_value_is_present($dootronic, 'notes'))
+        $additional_notes_value .= $dootronic->notes . "; ";
+      if (__json_value_is_present($dootronic, 'collected_via'))
+        $additional_notes_value .= "Collected via: " . $dootronic->collected_via . "; ";
+      if (__json_value_is_present($dootronic, 'donor_name'))
+        $additional_notes_value .= "Donated by: " . $dootronic->donor_name . "; ";
+      if (__json_value_is_present($dootronic, 'collection_date'))
+        $additional_notes_value .= "Collection date: " . $dootronic->collection_date . "; ";
+      $wNode->field_additional_notes->set($additional_notes_value);
+
+      // Technical notes
+      $technical_notes_value = "";
+      if (__json_value_is_present($dootronic, 'ts'))
+        $technical_notes_value .= "Date of quality check: " . $dootronic->ts . "; ";
+      if (__json_value_is_present($dootronic, 'cpu_model'))
+        $technical_notes_value .= "CPU model: " . $dootronic->cpu_model . "; ";
+      if (__json_value_is_present($dootronic, 'disk1_model'))
+        $technical_notes_value .= "disk1_model: " . $dootronic->disk1_model . "; ";
+      if (__json_value_is_present($dootronic, 'disk1_type'))
+        $technical_notes_value .= "disk1_type: " . $dootronic->disk1_type . "; ";
+      if (__json_value_is_present($dootronic, 'disk2_model'))
+        $technical_notes_value .= "disk2_model: " . $dootronic->disk2_model . "; ";
+      if (__json_value_is_present($dootronic, 'disk2_type'))
+        $technical_notes_value .= "disk2_type: " . $dootronic->disk2_type . "; ";
+      if (__json_value_is_present($dootronic, 'quality_check'))
+        $technical_notes_value .= "Failed quality check: " . $dootronic->quality_check. "; ";
+      $wNode->field_technical_notes->set($technical_notes_value);
+
+      // Additional emails
+      if (__json_value_is_present($dootronic, 'donor_email')) {
+        // Must be a comma separated list of emails
+        $wNode->field_additional_notification_em->set(explode(",", $dootronic->donor_email));
+      }
+      else
+        $wNode->field_additional_notification_em->set(array());
+
+      // Weight
+      if (__json_value_is_present($dootronic, 'laptop_weight_kg'))
+        $wNode->field_dooject_weight->set(floatval($dootronic->laptop_weight_kg));
+      else
+        $wNode->field_dooject_weight->set(NULL);
+
+      // Voltage and ampers
+      if (__json_value_is_present($dootronic, 'battery_voltage')) {
+        $wNode->field_volts->set(floatval($dootronic->battery_voltage));
+        if (__json_value_is_present($dootronic, 'battery_energy_mwh'))
+          $amp_hour_int = intval(floatval($dootronic->battery_energy_mwh) / floatval($dootronic->battery_voltage));
+          $wNode->field_amp_hours->set($amp_hour_int);
+      }
+
+      // Keyboard type
+      if (__json_value_is_present($dootronic, 'keyboard_layout')) 
+        $wNode->field_keyboard_type->set($dootronic->keyboard_layout);
+
+      // Hub
+      if (__json_value_is_present($dootronic, 'hub')) {
+        $wNode->field_hub_laptop->set(explode(",", $dootronic->hub));
+      }
     }
-
-    // Number of cores
-    if (__json_value_is_present($dootronic, 'cpu_count')) {
-      $possible_core_count = list_allowed_values(field_info_field("field_cpu_type"));
-      $max_core_count = intval(end($possible_core_count));
-      $core_count = intval($dootronic->cpu_count);
-      if ($core_count > $max_core_count)
-        $core_count = $max_core_count;
-      $wNode->field_cpu_type->set($core_count);
-    }
-
-    // CPU speed
-    if (__json_value_is_present($dootronic, 'cpu_speed_mhz')) 
-      $wNode->field_cpu->set($dootronic->cpu_speed_mhz);
-
-    // Memory size
-    if (__json_value_is_present($dootronic, 'memory_size_mb')) 
-      $wNode->field_memory->set($dootronic->memory_size_mb);
-
-    // Disk size
-    $disk_size = 0;
-    if (__json_value_is_present($dootronic, 'disk1_size_gb'))
-      $disk_size = $disk_size + intval($dootronic->disk1_size_gb);
-    if (__json_value_is_present($dootronic, 'disk2_size_gb'))
-      $disk_size = $disk_size + intval($dootronic->disk2_size_gb);
-    $wNode->field_hard_drive->set($disk_size);
-
-    // Operating system
-    if (__json_value_is_present($dootronic, 'os_version')) 
-      $wNode->field_current_operating_system->set($dootronic->os_version);
-
-    // Notes
-    $additional_notes_value = "";
-    if (__json_value_is_present($dootronic, 'notes'))
-      $additional_notes_value .= $dootronic->notes . "; ";
-    if (__json_value_is_present($dootronic, 'collected_via'))
-      $additional_notes_value .= "Collected via: " . $dootronic->collected_via . "; ";
-    if (__json_value_is_present($dootronic, 'donor_name'))
-      $additional_notes_value .= "Donated by: " . $dootronic->donor_name . "; ";
-    if (__json_value_is_present($dootronic, 'collection_date'))
-      $additional_notes_value .= "Collection date: " . $dootronic->collection_date . "; ";
-    $wNode->field_additional_notes->set($additional_notes_value);
-
-    // Technical notes
-    $technical_notes_value = "";
-    if (__json_value_is_present($dootronic, 'ts'))
-      $technical_notes_value .= "Date of quality check: " . $dootronic->ts . "; ";
-    if (__json_value_is_present($dootronic, 'cpu_model'))
-      $technical_notes_value .= "CPU model: " . $dootronic->cpu_model . "; ";
-    if (__json_value_is_present($dootronic, 'disk1_model'))
-      $technical_notes_value .= "disk1_model: " . $dootronic->disk1_model . "; ";
-    if (__json_value_is_present($dootronic, 'disk1_type'))
-      $technical_notes_value .= "disk1_type: " . $dootronic->disk1_type . "; ";
-    if (__json_value_is_present($dootronic, 'disk2_model'))
-      $technical_notes_value .= "disk2_model: " . $dootronic->disk2_model . "; ";
-    if (__json_value_is_present($dootronic, 'disk2_type'))
-      $technical_notes_value .= "disk2_type: " . $dootronic->disk2_type . "; ";
-    if (__json_value_is_present($dootronic, 'quality_check'))
-      $technical_notes_value .= "Failed quality check: " . $dootronic->quality_check. "; ";
-    $wNode->field_technical_notes->set($technical_notes_value);
-
-    // Additional emails
-    if (__json_value_is_present($dootronic, 'donor_email')) {
-      // Must be a comma separated list of emails
-      $wNode->field_additional_notification_em->set(explode(",", $dootronic->donor_email));
-    }
-    else
-      $wNode->field_additional_notification_em->set(array());
-
-    // Weight
-    if (__json_value_is_present($dootronic, 'laptop_weight_kg'))
-      $wNode->field_dooject_weight->set(floatval($dootronic->laptop_weight_kg));
-    else
-      $wNode->field_dooject_weight->set(NULL);
-
-    // Voltage and ampers
-    if (__json_value_is_present($dootronic, 'battery_voltage')) {
-      $wNode->field_volts->set(floatval($dootronic->battery_voltage));
-      if (__json_value_is_present($dootronic, 'battery_energy_mwh'))
-        $amp_hour_int = intval(floatval($dootronic->battery_energy_mwh) / floatval($dootronic->battery_voltage));
-        $wNode->field_amp_hours->set($amp_hour_int);
-    }
-
-    // Keyboard type
-    if (__json_value_is_present($dootronic, 'keyboard_layout')) 
-      $wNode->field_keyboard_type->set($dootronic->keyboard_layout);
 
     // Set the status. For example, some laptops may be tagged as S5 (waiting for repairs)
     $status = "S2";
@@ -5558,10 +5581,7 @@ function dootronic_file_upload_form_submit($form, &$form_state) {
     }
     $wNode->field_status->set($status);
 
-    if (__json_value_is_present($dootronic, 'hub')) {
-      $wNode->field_hub_laptop->set(explode(",", $dootronic->hub));
-    }
-
+    // Edoovillage
     if (__json_value_is_present($dootronic, 'edoovillage')) {
       $wNode->field_edoovillage_destination->set($dootronic->edoovillage);
     }

@@ -1293,8 +1293,9 @@ function lbd_contact_form_submit($form, &$form_state) {
   );
 
   // Forwardind email for fall back case (none of the above cases)
+//  $world_emails_pool = array('jordi.hernandez@labdoo.org', 'eulalia.picas@labdoo.org', 'pedro.tort@labdoo.org', 'maite.fortino@labdoo.org', 'hontangas@labdoo.org');
   $world_emails_pool = array('jordi.hernandez@labdoo.org', 'eulalia.picas@labdoo.org', 'maite.fortino@labdoo.org');
-//  $world_emails_pool = array('jordi.hernandez@labdoo.org', 'eulalia.picas@labdoo.org', 'pedro.tort@labdoo.org', 'maite.fortino@labdoo.org');
+//  $world_emails_pool = array('jordi.hernandez@labdoo.org', 'eulalia.picas@labdoo.org', 'pedro.tort@labdoo.org');
 
   if(array_key_exists($country, $country2shub_email)) {
     $to_emails = $country2shub_email[$country];

@@ -474,7 +474,11 @@ function lbd_display_dashboard_edoovillages($userId = NULL, $hubId = NULL, $coun
   $objects = array();
   $selectedNids = array();
 
+  $limitCounter = 1000000000;
   foreach($result as $item) {
+
+    if($limitCounter-- == 0)
+      break;
 
     $objectNid = $item->entity_id;
     array_push($selectedNids, $objectNid);
